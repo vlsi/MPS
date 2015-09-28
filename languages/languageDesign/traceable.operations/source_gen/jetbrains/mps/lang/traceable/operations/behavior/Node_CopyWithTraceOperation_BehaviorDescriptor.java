@@ -6,6 +6,12 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Node_CopyWithTraceOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

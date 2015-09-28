@@ -19,22 +19,22 @@
       <unit at="14,0,54,0" name="jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="IconResourceBundle_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.resources.behavior.IconResourceBundle_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.resources.behavior.IconResourceBundle_BehaviorDescriptor" />
     </file>
     <file name="IconResourceDeclaration_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.resources.behavior.IconResourceDeclaration_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.resources.behavior.IconResourceDeclaration_BehaviorDescriptor" />
     </file>
     <file name="IconResourceExpression_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.resources.behavior.IconResourceExpression_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.resources.behavior.IconResourceExpression_BehaviorDescriptor" />
     </file>
     <file name="IconResourceReference_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.resources.behavior.IconResourceReference_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.resources.behavior.IconResourceReference_BehaviorDescriptor" />
     </file>
     <file name="IconResource_BehaviorDescriptor.java">
-      <unit at="8,0,18,0" name="jetbrains.mps.lang.resources.behavior.IconResource_BehaviorDescriptor" />
+      <unit at="13,0,24,0" name="jetbrains.mps.lang.resources.behavior.IconResource_BehaviorDescriptor" />
     </file>
     <file name="Resource_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="jetbrains.mps.lang.resources.behavior.Resource_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)/8974276187400029987">

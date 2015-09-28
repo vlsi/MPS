@@ -12,6 +12,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
 import jetbrains.mps.checkedName.PropertyReference;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class FinderDeclaration_BehaviorDescriptor extends AbstractFinderDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept __thisConcept__, SNode candidate) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -9,6 +9,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractConceptDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
     return null;

@@ -5,6 +5,12 @@ package org.jetbrains.mps.samples.Money.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MoneyLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public String virtual_getVariableExpectedName_1213877519781(SNode __thisNode__) {
     return null;

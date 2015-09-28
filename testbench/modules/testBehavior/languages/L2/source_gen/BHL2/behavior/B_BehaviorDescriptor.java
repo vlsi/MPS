@@ -4,6 +4,12 @@ package BHL2.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class B_BehaviorDescriptor extends A_BehaviorDescriptor {
   public Object virtual_foo2_4929719867390408776(SNode __thisNode__) {
     return null;

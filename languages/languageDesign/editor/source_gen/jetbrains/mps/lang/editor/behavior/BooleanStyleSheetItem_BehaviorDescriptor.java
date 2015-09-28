@@ -6,6 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BooleanStyleSheetItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public boolean virtual_useQuery_1223387362946(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

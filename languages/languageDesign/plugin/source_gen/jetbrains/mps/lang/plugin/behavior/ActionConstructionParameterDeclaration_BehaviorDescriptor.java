@@ -5,6 +5,12 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ActionConstructionParameterDeclaration_BehaviorDescriptor extends DefaultClassifierFieldDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor {
 
   @Override

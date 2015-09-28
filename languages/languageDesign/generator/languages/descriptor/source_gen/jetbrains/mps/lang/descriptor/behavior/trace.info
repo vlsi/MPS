@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="GeneratorInternal_Aspect_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorInternal_Aspect_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorInternal_Aspect_BehaviorDescriptor" />
     </file>
     <file name="LanguageDescriptor_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

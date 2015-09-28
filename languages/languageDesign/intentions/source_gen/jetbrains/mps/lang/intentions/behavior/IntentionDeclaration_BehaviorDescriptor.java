@@ -4,6 +4,12 @@ package jetbrains.mps.lang.intentions.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IntentionDeclaration_BehaviorDescriptor extends BaseIntentionDeclaration_BehaviorDescriptor {
   public SNode virtual_getBaseConcept_2621449412040133768(SNode __thisNode__) {
     return null;

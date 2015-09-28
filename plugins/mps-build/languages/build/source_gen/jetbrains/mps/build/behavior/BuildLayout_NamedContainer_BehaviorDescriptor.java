@@ -10,6 +10,12 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
   public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }

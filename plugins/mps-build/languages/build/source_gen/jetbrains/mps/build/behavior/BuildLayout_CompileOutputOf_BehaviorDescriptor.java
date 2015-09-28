@@ -5,6 +5,12 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_CompileOutputOf_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_FileSet_BehaviorDescriptor {
   public boolean virtual_isImplicit_1330375798085107777(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

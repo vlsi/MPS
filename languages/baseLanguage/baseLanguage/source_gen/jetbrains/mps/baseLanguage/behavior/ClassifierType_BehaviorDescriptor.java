@@ -9,6 +9,12 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IClassifierType_BehaviorDescriptor, IGenericType_BehaviorDescriptor {
   public boolean virtual_canBeCoerced_6321644624958501287(SNode __thisNode__, String conceptFqName) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

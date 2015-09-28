@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CheckedDotExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor {
   public boolean virtual_allowsNullOperand_4585239809762176541(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

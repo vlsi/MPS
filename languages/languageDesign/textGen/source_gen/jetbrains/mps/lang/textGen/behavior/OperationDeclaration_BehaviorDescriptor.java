@@ -7,6 +7,12 @@ import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescr
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OperationDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
   public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
     return null;

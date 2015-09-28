@@ -5,6 +5,12 @@ package jetbrains.mps.lang.behavior.test.behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class B_BehaviorDescriptor extends A_BehaviorDescriptor {
   public String virtual_staticVirtualMethod_4731970554577185580(SConcept __thisConcept__, String in, int dummy) {
     return null;

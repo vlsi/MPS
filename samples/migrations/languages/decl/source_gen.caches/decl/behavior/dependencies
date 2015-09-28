@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="decl.behavior.DeclMigrationData_Component_BehaviorDescriptor" file="DeclMigrationData_Component_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="decl.behavior.DeclMigrationData_WholeModule_BehaviorDescriptor" file="DeclMigrationData_WholeModule_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -16,6 +18,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="decl.behavior.NewComponent_BehaviorDescriptor" file="NewComponent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -28,6 +31,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="decl.behavior.OldComponent_BehaviorDescriptor" file="OldComponent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />

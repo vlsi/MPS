@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TrivialNodeId_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements NodeIdentity_BehaviorDescriptor {
   public SNode virtual_instantiate_9032177546941558391(SNode __thisNode__, SModel model) {
     return null;

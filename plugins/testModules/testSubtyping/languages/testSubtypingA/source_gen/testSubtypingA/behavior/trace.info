@@ -16,7 +16,7 @@
       <unit at="14,0,42,0" name="testSubtypingA.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="WrapperType_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="testSubtypingA.behavior.WrapperType_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="testSubtypingA.behavior.WrapperType_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9c0cad77-7f20-4fb1-84ed-cb5159082ca7(testSubtypingA.behavior)/2078093584693144862">

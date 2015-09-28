@@ -8,6 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ParameterDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IResolveInfo_BehaviorDescriptor, IVariableAssignment_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public SNode virtual_createReference_1213877517482(SNode __thisNode__) {
     return null;

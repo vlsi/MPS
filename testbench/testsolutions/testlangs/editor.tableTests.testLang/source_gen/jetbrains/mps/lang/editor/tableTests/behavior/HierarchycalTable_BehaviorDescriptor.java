@@ -5,6 +5,12 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class HierarchycalTable_BehaviorDescriptor extends Table_BehaviorDescriptor {
   public int virtual_getInitialColumnCount_1262430001741498026(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Integer.TYPE);

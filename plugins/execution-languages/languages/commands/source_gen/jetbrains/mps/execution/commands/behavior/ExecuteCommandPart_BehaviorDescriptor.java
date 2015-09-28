@@ -10,6 +10,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ExecuteCommandPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
   public SNode virtual_getBody_1239354440022(SNode __thisNode__) {
     return null;

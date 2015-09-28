@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="PrimitiveTypeDescriptor_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeDescriptor_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeDescriptor_BehaviorDescriptor" />
     </file>
     <file name="PrimitiveTypeRef_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeRef_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.blTypes.behavior.PrimitiveTypeRef_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

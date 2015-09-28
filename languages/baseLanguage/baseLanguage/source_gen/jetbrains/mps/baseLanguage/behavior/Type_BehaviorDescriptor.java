@@ -13,6 +13,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.Map;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public boolean virtual_canBeCoerced_6321644624958501287(SNode __thisNode__, String conceptFqName) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

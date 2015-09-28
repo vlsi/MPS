@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="MigratingConcept_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="updatedLanguage.behavior.MigratingConcept_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="updatedLanguage.behavior.MigratingConcept_BehaviorDescriptor" />
     </file>
     <file name="RootConcept_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="updatedLanguage.behavior.RootConcept_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="updatedLanguage.behavior.RootConcept_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -12,6 +12,12 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefacto
 import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.scope.Scope;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ActionDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClassifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public SNode virtual_createSuperType_1217433657148(SNode __thisNode__) {
     return null;

@@ -7,6 +7,12 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConsoleModelExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public String virtual_getShortHelp_473081947982699339(SConcept __thisConcept__) {
     return null;

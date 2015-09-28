@@ -17,7 +17,7 @@
       <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CheckedDotExpression_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4f21a85f-2360-4902-a7db-0bcdaedbbb5c(jetbrains.mps.baseLanguage.checkedDots.behavior)/3674434577577159919">

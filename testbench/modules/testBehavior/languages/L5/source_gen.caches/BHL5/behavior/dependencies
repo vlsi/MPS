@@ -20,6 +20,7 @@
   </dependency>
   <dependency className="BHL5.behavior.C0_BehaviorDescriptor" file="C0_BehaviorDescriptor.java">
     <classNode dependClassName="BHL5.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -31,6 +32,7 @@
   </dependency>
   <dependency className="BHL5.behavior.C1_BehaviorDescriptor" file="C1_BehaviorDescriptor.java">
     <classNode dependClassName="BHL5.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -57,6 +59,7 @@
   </dependency>
   <dependency className="BHL5.behavior.C2_BehaviorDescriptor" file="C2_BehaviorDescriptor.java">
     <classNode dependClassName="BHL5.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -68,6 +71,7 @@
   </dependency>
   <dependency className="BHL5.behavior.C3_BehaviorDescriptor" file="C3_BehaviorDescriptor.java">
     <classNode dependClassName="BHL5.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -95,6 +99,7 @@
   <dependency className="BHL5.behavior.C4_BehaviorDescriptor" file="C4_BehaviorDescriptor.java">
     <classNode dependClassName="BHL5.behavior.C3_BehaviorDescriptor" />
     <classNode dependClassName="BHL5.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.lang.Cloneable" />
@@ -106,6 +111,7 @@
   <dependency className="BHL5.behavior.C5_BehaviorDescriptor" file="C5_BehaviorDescriptor.java">
     <classNode dependClassName="BHL5.behavior.C3_BehaviorDescriptor" />
     <classNode dependClassName="BHL5.behavior.I1_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.lang.Cloneable" />

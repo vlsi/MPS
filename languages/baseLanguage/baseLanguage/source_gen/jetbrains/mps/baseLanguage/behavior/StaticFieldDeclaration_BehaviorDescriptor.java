@@ -14,6 +14,12 @@ import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

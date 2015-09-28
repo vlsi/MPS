@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OrderReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements OrderConstraints_BehaviorDescriptor {
   public SNode virtual_getOrder_3038738109029048953(SNode __thisNode__) {
     return null;

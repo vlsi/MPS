@@ -16,10 +16,10 @@
       <unit at="14,0,42,0" name="jetbrains.mps.baseLanguage.logging.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="LogStatement_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.logging.behavior.LogStatement_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.logging.behavior.LogStatement_BehaviorDescriptor" />
     </file>
     <file name="PrintStatement_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.logging.behavior.PrintStatement_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.logging.behavior.PrintStatement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:10e26070-7ddd-4eff-9570-d2a7151f9936(jetbrains.mps.baseLanguage.logging.behavior)/2511103526757020849">

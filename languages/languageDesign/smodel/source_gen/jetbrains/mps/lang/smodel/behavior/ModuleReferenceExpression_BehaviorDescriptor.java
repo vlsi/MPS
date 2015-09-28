@@ -7,6 +7,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ModuleReferenceExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public List<SModule> virtual_getVisibleModules_4040588429969394404(SNode __thisNode__) {
     return null;

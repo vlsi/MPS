@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.MacroHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildTextStringPart_BehaviorDescriptor extends BuildStringPart_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public String virtual_getText_4380385936562037054(SNode __thisNode__, MacroHelper helper) {
     return null;

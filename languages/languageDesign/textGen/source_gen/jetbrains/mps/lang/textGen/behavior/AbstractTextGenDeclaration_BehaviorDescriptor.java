@@ -8,6 +8,12 @@ import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractTextGenDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public List<SNode> virtual_getAvailableOperations_1234781444746(SNode __thisNode__) {
     return null;

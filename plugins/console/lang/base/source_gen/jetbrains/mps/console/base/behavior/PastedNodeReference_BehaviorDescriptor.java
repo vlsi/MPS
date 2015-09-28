@@ -8,6 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import com.intellij.openapi.project.Project;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, INodeWithReference_BehaviorDescriptor {
   public boolean virtual_canExecute_3282455643657932881(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

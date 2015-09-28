@@ -16,25 +16,25 @@
       <unit at="14,0,42,0" name="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ListValue_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
     </file>
     <file name="PatternTest_BehaviorDescriptor.java">
-      <unit at="14,0,49,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
+      <unit at="19,0,55,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
     </file>
     <file name="PropertyValue_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
     </file>
     <file name="TestListReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
     </file>
     <file name="TestPropertyVariableReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
     </file>
     <file name="TestVariableReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
     </file>
     <file name="VariableValue_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d2b7cfed-de53-404b-aa28-8afd6d7632e0(jetbrains.mps.lang.pattern.testLang.behavior)/394224946578869061">

@@ -8,6 +8,12 @@ import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class QueryDefinition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IWillBeClassifier_BehaviorDescriptor {
   public SNode virtual_baseClassifier_4125795553993767872(SNode __thisNode__) {
     return null;

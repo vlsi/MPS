@@ -8,6 +8,12 @@ import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Quotation_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMetaLevelChanger_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public int virtual_getMetaLevelChange_201537367881074474(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Integer.TYPE);

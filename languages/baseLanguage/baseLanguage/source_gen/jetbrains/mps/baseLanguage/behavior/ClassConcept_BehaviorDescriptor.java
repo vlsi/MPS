@@ -13,6 +13,12 @@ import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public boolean virtual_checkLoops_3980490811621705349(SNode __thisNode__, Set<SNode> visited) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -16,16 +16,16 @@
       <unit at="14,0,42,0" name="jetbrains.mps.calculator.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Calculator_BehaviorDescriptor.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.calculator.behavior.Calculator_BehaviorDescriptor" />
+      <unit at="18,0,42,0" name="jetbrains.mps.calculator.behavior.Calculator_BehaviorDescriptor" />
     </file>
     <file name="InputFieldReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.calculator.behavior.InputFieldReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.calculator.behavior.InputFieldReference_BehaviorDescriptor" />
     </file>
     <file name="InputField_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.calculator.behavior.InputField_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.calculator.behavior.InputField_BehaviorDescriptor" />
     </file>
     <file name="OutputField_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.calculator.behavior.OutputField_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.calculator.behavior.OutputField_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:97129371-9ac5-4a71-bfd5-5b11db119de9(jetbrains.mps.calculator.behavior)/4159153485696906651">

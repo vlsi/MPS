@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class UnboundClosureParameterDeclaration_BehaviorDescriptor extends ParameterDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
 
   @Override

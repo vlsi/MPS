@@ -17,106 +17,106 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="Attribute_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
     </file>
     <file name="BaseCommentAttribute_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
     </file>
     <file name="BaseConcept_BehaviorDescriptor.java">
-      <unit at="12,0,38,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+      <unit at="17,0,44,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,110,0" name="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildAttribute_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor" />
     </file>
     <file name="ExportScopeModule_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
     </file>
     <file name="ExportScopeNamespace_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" />
     </file>
     <file name="ExportScopePublic_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" />
     </file>
     <file name="ExportScope_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
+      <unit at="12,0,22,0" name="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
     </file>
     <file name="IAntisuppressErrors_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" />
     </file>
     <file name="ICanSuppressErrors_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor" />
     </file>
     <file name="IContainer_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor" />
     </file>
     <file name="IDeprecatable_BehaviorDescriptor.java">
-      <unit at="11,0,16,0" name="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
+      <unit at="12,0,17,0" name="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
     </file>
     <file name="IDontApplyTypesystemRules_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" />
     </file>
     <file name="IDontSubstituteByDefault_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     </file>
     <file name="IMetaLevelChanger_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor" />
     </file>
     <file name="INamedConcept_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     </file>
     <file name="IResolveInfo_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
     </file>
     <file name="ISkipConstraintsChecking_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" />
     </file>
     <file name="IStubForAnotherConcept_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" />
     </file>
     <file name="ISuppressErrors_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
     </file>
     <file name="IType_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
     </file>
     <file name="IWrapper_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
     </file>
     <file name="ImplementationContainer_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
     </file>
     <file name="ImplementationPart_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
     </file>
     <file name="ImplementationWithStubPart_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor" />
     </file>
     <file name="InterfacePart_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
     </file>
     <file name="LinkAttribute_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
     </file>
     <file name="NodeAttribute_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
     </file>
     <file name="PropertyAttribute_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
     </file>
     <file name="ScopeFacade_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
     </file>
     <file name="ScopeProvider_BehaviorDescriptor.java">
-      <unit at="12,0,17,0" name="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
+      <unit at="13,0,18,0" name="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
     </file>
     <file name="SideTransformInfo_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.SideTransformInfo_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.core.behavior.SideTransformInfo_BehaviorDescriptor" />
     </file>
     <file name="SuppressErrorsAnnotation_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1213877396626">

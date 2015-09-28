@@ -16,7 +16,7 @@
       <unit at="14,0,42,0" name="jetbrains.mps.transformation.test.errorReporting.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ErrorReportingRoot_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.transformation.test.errorReporting.behavior.ErrorReportingRoot_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.transformation.test.errorReporting.behavior.ErrorReportingRoot_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:7b09edd3-2151-4e12-ac29-9997c3ec4408(jetbrains.mps.transformation.test.errorReporting.behavior)/2511103526757027804">

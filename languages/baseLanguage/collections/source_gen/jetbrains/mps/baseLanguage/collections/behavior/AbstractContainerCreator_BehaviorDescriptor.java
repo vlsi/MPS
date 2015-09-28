@@ -8,6 +8,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractContainerCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public boolean virtual_canHaveParameter_2261417478150191157(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -13,6 +13,12 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, ITypeApplicable_BehaviorDescriptor, IHasModifiers_BehaviorDescriptor, ImplementationContainer_BehaviorDescriptor {
   public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

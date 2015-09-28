@@ -6,7 +6,8 @@ import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 
 /**
  * Will be removed after 3.3
- * Need to suppport compilation; this class does not involved in the actual method invocation
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
  */
 @Deprecated
 public interface IStyleSheetMember_BehaviorDescriptor extends IStyle_BehaviorDescriptor, IStyleContainer_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IStyleSheetItem_BehaviorDescriptor {

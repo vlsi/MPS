@@ -12,8 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class ConceptMethodDeclaration_Behavior {

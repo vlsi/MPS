@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class ConceptFunctionParameter_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IParameter_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_EchoXml_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildStringContainer_BehaviorDescriptor {
   public Color virtual_getColorForTextPart_6083230236994422116(SNode __thisNode__, @NonNls String role) {
     return null;

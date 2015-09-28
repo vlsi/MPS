@@ -5,6 +5,12 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_Filemode_BehaviorDescriptor extends BuildLayout_TransparentContainer_BehaviorDescriptor {
   public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode __thisNode__, Context context) {
     return null;

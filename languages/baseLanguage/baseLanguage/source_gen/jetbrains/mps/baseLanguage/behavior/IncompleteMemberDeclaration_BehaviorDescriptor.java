@@ -9,6 +9,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IncompleteMemberDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

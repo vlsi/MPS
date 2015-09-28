@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StyleAttributeDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetItem_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public SNode virtual_getDefaultValue_7677730757102472473(SNode __thisNode__) {
     return null;

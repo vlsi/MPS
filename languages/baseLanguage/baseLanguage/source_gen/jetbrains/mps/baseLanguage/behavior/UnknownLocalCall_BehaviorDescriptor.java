@@ -8,6 +8,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class UnknownLocalCall_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor, IYetUnresolved_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public SNode virtual_deriveType_1213877435747(SNode __thisNode__, SNode expression) {
     return null;

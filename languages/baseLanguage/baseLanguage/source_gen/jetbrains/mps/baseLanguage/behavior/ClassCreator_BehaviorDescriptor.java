@@ -6,6 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ClassCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor {
   public SNode virtual_deriveType_1213877435747(SNode __thisNode__, SNode expression) {
     return null;

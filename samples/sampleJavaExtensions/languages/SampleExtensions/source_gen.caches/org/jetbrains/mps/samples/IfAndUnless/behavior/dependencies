@@ -20,6 +20,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" file="FalseFlow_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
@@ -52,6 +53,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" file="Flow_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_BehaviorDescriptor" />
@@ -83,6 +85,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" file="MyIfStatement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
@@ -92,6 +95,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" file="TrueFlow_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
@@ -121,6 +125,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" file="UnlessStatement_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />

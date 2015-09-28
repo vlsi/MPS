@@ -4,6 +4,12 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ModifiedCommandHistoryItem_BehaviorDescriptor extends CommandHolder_BehaviorDescriptor {
   public SNode virtual_getCommandToEdit_691634242167796942(SNode __thisNode__) {
     return null;

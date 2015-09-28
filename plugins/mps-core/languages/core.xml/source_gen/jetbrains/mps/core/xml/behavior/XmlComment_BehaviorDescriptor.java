@@ -5,6 +5,12 @@ package jetbrains.mps.core.xml.behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class XmlComment_BehaviorDescriptor extends XmlContent_BehaviorDescriptor implements XmlPrologElement_BehaviorDescriptor {
   public boolean virtual_isFirst_1262430001741498376(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

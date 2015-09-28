@@ -16,58 +16,58 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="AbstractAntiquotation_BehaviorDescriptor.java">
-      <unit at="13,0,16,0" name="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
+      <unit at="14,0,17,0" name="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
     </file>
     <file name="Antiquotation_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,74,0" name="jetbrains.mps.lang.quotation.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_InternalReferenceHolder_BehaviorDescriptor" />
     </file>
     <file name="GeneratorInternal_PropertyDescriptor_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_PropertyDescriptor_BehaviorDescriptor" />
     </file>
     <file name="GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="jetbrains.mps.lang.quotation.behavior.GeneratorInternal_ReferenceDescriptor_BehaviorDescriptor" />
     </file>
     <file name="ListAntiquotation_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderExpression_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderInitLink_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
+      <unit at="14,0,29,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderInitPart_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderInitProperty_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderList_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderNode_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderRef_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilder_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" />
     </file>
     <file name="PropertyAntiquotation_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
     </file>
     <file name="Quotation_BehaviorDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" />
+      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" />
     </file>
     <file name="ReferenceAntiquotation_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1262430001741642838">

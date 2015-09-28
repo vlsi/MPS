@@ -6,6 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OrRegexp_BehaviorDescriptor extends BinaryRegexp_BehaviorDescriptor {
   public String virtual_getString_1222432436326(SNode __thisNode__, List<SNode> vars) {
     return null;

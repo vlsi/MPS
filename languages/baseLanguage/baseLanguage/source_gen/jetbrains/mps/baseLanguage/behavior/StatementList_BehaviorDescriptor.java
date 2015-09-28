@@ -12,6 +12,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IContainer_BehaviorDescriptor, ILocalVariableElementList_BehaviorDescriptor, ImplementationWithStubPart_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, ScopeFacade_BehaviorDescriptor {
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode __thisNode__) {
     return null;

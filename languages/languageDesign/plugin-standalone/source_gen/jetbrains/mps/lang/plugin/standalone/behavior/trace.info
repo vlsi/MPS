@@ -14,40 +14,40 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="ApplicationPluginDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,46,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ApplicationPluginDisposeBlock_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginDisposeBlock_BehaviorDescriptor" />
     </file>
     <file name="ApplicationPluginInitBlock_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginInitBlock_BehaviorDescriptor" />
     </file>
     <file name="ApplicationPluginType_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ApplicationPluginType_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,70,0" name="jetbrains.mps.lang.plugin.standalone.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="GetPreferencesComponentInProjectOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.standalone.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.standalone.behavior.GetPreferencesComponentInProjectOperation_BehaviorDescriptor" />
     </file>
     <file name="GetToolInProjectOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.standalone.behavior.GetToolInProjectOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.standalone.behavior.GetToolInProjectOperation_BehaviorDescriptor" />
     </file>
     <file name="ProjectPluginDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,46,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ProjectPluginDisposeBlock_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginDisposeBlock_BehaviorDescriptor" />
     </file>
     <file name="ProjectPluginInitBlock_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginInitBlock_BehaviorDescriptor" />
     </file>
     <file name="ProjectPluginType_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.plugin.standalone.behavior.ProjectPluginType_BehaviorDescriptor" />
     </file>
     <file name="StandalonePluginDescriptor_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.standalone.behavior.StandalonePluginDescriptor_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.plugin.standalone.behavior.StandalonePluginDescriptor_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/1262430001741703666">

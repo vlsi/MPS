@@ -10,6 +10,12 @@ import java.util.Set;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_BehaviorDescriptor {
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode __thisNode__) {
     return null;

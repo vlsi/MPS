@@ -7,6 +7,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PriorityQueueCreator_BehaviorDescriptor extends AbstractContainerCreator_BehaviorDescriptor {
   public SNode virtual_createType_1237722437229(SNode __thisNode__) {
     return null;

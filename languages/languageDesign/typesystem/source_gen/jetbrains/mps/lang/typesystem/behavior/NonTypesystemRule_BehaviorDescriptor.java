@@ -4,6 +4,12 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NonTypesystemRule_BehaviorDescriptor extends AbstractCheckingRule_BehaviorDescriptor implements IRuleWithOneNode_BehaviorDescriptor {
   public void virtual_setBaseConcept_6261424444345963020(SNode __thisNode__, SNode baseConcept) {
   }

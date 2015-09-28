@@ -24,6 +24,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor" file="BuildSolutionRunnerAspect_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
@@ -73,6 +74,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerPlugin_BehaviorDescriptor" file="BuildSolutionRunnerPlugin_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildPlugin_BehaviorDescriptor" />

@@ -5,6 +5,12 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ExternalFigureReference_BehaviorDescriptor extends AbstractFigureReference_BehaviorDescriptor {
   public List<String> virtual_getFigureParameterNames_1491555030356445722(SNode __thisNode__) {
     return null;

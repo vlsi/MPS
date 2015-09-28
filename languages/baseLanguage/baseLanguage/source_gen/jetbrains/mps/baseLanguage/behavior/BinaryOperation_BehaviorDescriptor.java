@@ -7,6 +7,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BinaryOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IBinaryLike_BehaviorDescriptor {
   public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode __thisNode__, Object leftValue, Object rightValue) {
     return null;

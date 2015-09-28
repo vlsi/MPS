@@ -7,6 +7,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IBinaryLike_BehaviorDescriptor, IConditional_BehaviorDescriptor {
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode __thisNode__, SNode leaf, boolean rightParen) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -17,61 +17,61 @@
       <unit at="14,0,70,0" name="jetbrains.mps.lang.project.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DevKit_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.project.behavior.DevKit_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.DevKit_BehaviorDescriptor" />
     </file>
     <file name="Generator_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.project.behavior.Generator_BehaviorDescriptor" />
+      <unit at="12,0,24,0" name="jetbrains.mps.lang.project.behavior.Generator_BehaviorDescriptor" />
     </file>
     <file name="Language_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.project.behavior.Language_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.Language_BehaviorDescriptor" />
     </file>
     <file name="MappingConfigExternalRef_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_BehaviorDescriptor" />
     </file>
     <file name="MappingConfigNormalRef_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_BehaviorDescriptor" />
     </file>
     <file name="MappingConfigRefAllGlobal_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefAllGlobal_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefAllGlobal_BehaviorDescriptor" />
     </file>
     <file name="MappingConfigRefAllLocal_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefAllLocal_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefAllLocal_BehaviorDescriptor" />
     </file>
     <file name="MappingConfigRefBase_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_BehaviorDescriptor" />
     </file>
     <file name="MappingConfigRefSet_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_BehaviorDescriptor" />
     </file>
     <file name="MappingPriorityRule_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.MappingPriorityRule_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.MappingPriorityRule_BehaviorDescriptor" />
     </file>
     <file name="ModelReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.ModelReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModelReference_BehaviorDescriptor" />
     </file>
     <file name="ModelRoot_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.ModelRoot_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModelRoot_BehaviorDescriptor" />
     </file>
     <file name="ModuleDependency_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.ModuleDependency_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.ModuleDependency_BehaviorDescriptor" />
     </file>
     <file name="ModuleReference_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" />
     </file>
     <file name="Module_BehaviorDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
+      <unit at="14,0,32,0" name="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
     </file>
     <file name="Solution_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" />
     </file>
     <file name="SourcePath_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.SourcePath_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.SourcePath_BehaviorDescriptor" />
     </file>
     <file name="StubEntry_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.StubEntry_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.StubEntry_BehaviorDescriptor" />
     </file>
     <file name="StubSolution_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.project.behavior.StubSolution_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.project.behavior.StubSolution_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)/1250389701475344621">

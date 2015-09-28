@@ -6,6 +6,12 @@ import jetbrains.mps.lang.smodel.behavior.Link_SetNewChildOperation_BehaviorDesc
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NF_Link_SetNewChildOperation_BehaviorDescriptor extends Link_SetNewChildOperation_BehaviorDescriptor {
   public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -5,6 +5,12 @@ package jetbrains.mps.lang.smodelTests.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReferenceContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ICanSuppressErrors_BehaviorDescriptor {
 
   @Override

@@ -8,6 +8,12 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class LinkDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public String virtual_getMessage_1225207468592(SNode __thisNode__) {
     return null;

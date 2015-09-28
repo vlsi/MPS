@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CellModel_TransactionalProperty_BehaviorDescriptor extends CellModel_AbstractLabel_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ImplementationWithStubPart_BehaviorDescriptor {
   public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
     return null;

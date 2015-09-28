@@ -8,6 +8,12 @@ import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BaseExtensionMethodContainer_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IVisible_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor {
   public List<SNode> virtual_getMembers_1213877531970(SNode __thisNode__) {
     return null;

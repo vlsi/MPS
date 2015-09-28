@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildExternalLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }

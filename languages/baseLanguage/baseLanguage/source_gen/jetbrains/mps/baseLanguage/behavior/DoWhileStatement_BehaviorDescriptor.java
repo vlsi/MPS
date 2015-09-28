@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DoWhileStatement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor implements IConditional_BehaviorDescriptor {
   public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode __thisNode__, @NotNull SNode child, boolean value) {
     return null;

@@ -9,6 +9,12 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.project.Project;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class VariableDeclaration_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, IVariableDeclaration_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

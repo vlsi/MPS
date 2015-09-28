@@ -17,91 +17,91 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="AbstractionVarRef_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef_BehaviorDescriptor" />
     </file>
     <file name="AbstractionVariable_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVariable_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVariable_BehaviorDescriptor" />
     </file>
     <file name="AddOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AddOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.AddOperation_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,70,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinaryNumericOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryNumericOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryNumericOperation_BehaviorDescriptor" />
     </file>
     <file name="BinaryOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryOperation_BehaviorDescriptor" />
     </file>
     <file name="BinaryStringOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryStringOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.BinaryStringOperation_BehaviorDescriptor" />
     </file>
     <file name="ConcatenateOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.ConcatenateOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.ConcatenateOperation_BehaviorDescriptor" />
     </file>
     <file name="DivideOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.DivideOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.DivideOperation_BehaviorDescriptor" />
     </file>
     <file name="FunctionType_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.FunctionType_BehaviorDescriptor" />
     </file>
     <file name="LambdaAbstraction_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_BehaviorDescriptor" />
     </file>
     <file name="LambdaApplication_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_BehaviorDescriptor" />
     </file>
     <file name="LambdaExpression_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_BehaviorDescriptor" />
     </file>
     <file name="LambdaType_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaType_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LambdaType_BehaviorDescriptor" />
     </file>
     <file name="LetExpression_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetExpression_BehaviorDescriptor" />
     </file>
     <file name="LetRef_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetRef_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetRef_BehaviorDescriptor" />
     </file>
     <file name="LetVariable_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetVariable_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.LetVariable_BehaviorDescriptor" />
     </file>
     <file name="MultipleExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.MultipleExpression_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.MultipleExpression_BehaviorDescriptor" />
     </file>
     <file name="MultiplyOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.MultiplyOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.MultiplyOperation_BehaviorDescriptor" />
     </file>
     <file name="NumberType_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.NumberType_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.NumberType_BehaviorDescriptor" />
     </file>
     <file name="NumericConstant_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.NumericConstant_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.NumericConstant_BehaviorDescriptor" />
     </file>
     <file name="ParenthesisExpression_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.ParenthesisExpression_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.ParenthesisExpression_BehaviorDescriptor" />
     </file>
     <file name="Program_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.Program_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.Program_BehaviorDescriptor" />
     </file>
     <file name="StringConstant_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.StringConstant_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.StringConstant_BehaviorDescriptor" />
     </file>
     <file name="StringType_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.StringType_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.StringType_BehaviorDescriptor" />
     </file>
     <file name="SubtractOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.SubtractOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.SubtractOperation_BehaviorDescriptor" />
     </file>
     <file name="VariableOwner_BehaviorDescriptor.java">
-      <unit at="12,0,16,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_BehaviorDescriptor" />
+      <unit at="13,0,17,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableOwner_BehaviorDescriptor" />
     </file>
     <file name="VariableReference_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableReference_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.VariableReference_BehaviorDescriptor" />
     </file>
     <file name="Variable_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.Variable_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.samples.lambdaCalculus.behavior.Variable_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:86bef719-3805-4be3-860b-08555adf519c(jetbrains.mps.samples.lambdaCalculus.behavior)/1308935328408190990">

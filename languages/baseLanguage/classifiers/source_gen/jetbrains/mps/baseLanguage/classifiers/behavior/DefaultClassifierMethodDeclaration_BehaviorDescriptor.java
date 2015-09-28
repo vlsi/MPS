@@ -10,6 +10,12 @@ import javax.swing.Icon;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DefaultClassifierMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor, IVisible_BehaviorDescriptor {
   public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

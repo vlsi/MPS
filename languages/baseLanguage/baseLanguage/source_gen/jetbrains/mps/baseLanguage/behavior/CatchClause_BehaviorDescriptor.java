@@ -9,6 +9,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CatchClause_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public List<SNode> virtual_getScopeVariables_5067982036267369894(SNode __thisNode__) {
     return null;

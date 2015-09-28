@@ -16,112 +16,112 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="AbstractAppendPart_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_BehaviorDescriptor" />
     </file>
     <file name="AbstractTextGenDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,31,0" name="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_BehaviorDescriptor" />
     </file>
     <file name="AbstractTextGenParameter_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_BehaviorDescriptor" />
+      <unit at="15,0,27,0" name="jetbrains.mps.lang.textGen.behavior.AbstractTextGenParameter_BehaviorDescriptor" />
     </file>
     <file name="AppendOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.AppendOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.AppendOperation_BehaviorDescriptor" />
     </file>
     <file name="AttributedNodePart_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.AttributedNodePart_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.AttributedNodePart_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,114,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BufferParameter_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
+      <unit at="12,0,24,0" name="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
     </file>
     <file name="CollectionAppendPart_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.CollectionAppendPart_BehaviorDescriptor" />
     </file>
     <file name="ConceptTextGenDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,36,0" name="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,42,0" name="jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ConstantStringAppendPart_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.textGen.behavior.ConstantStringAppendPart_BehaviorDescriptor" />
     </file>
     <file name="ContextParameter_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.ContextParameter_BehaviorDescriptor" />
+      <unit at="12,0,24,0" name="jetbrains.mps.lang.textGen.behavior.ContextParameter_BehaviorDescriptor" />
     </file>
     <file name="DecreaseDepthOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.DecreaseDepthOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.DecreaseDepthOperation_BehaviorDescriptor" />
     </file>
     <file name="EncodingDeclarationBase_BehaviorDescriptor.java">
-      <unit at="10,0,13,0" name="jetbrains.mps.lang.textGen.behavior.EncodingDeclarationBase_BehaviorDescriptor" />
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.textGen.behavior.EncodingDeclarationBase_BehaviorDescriptor" />
     </file>
     <file name="EncodingDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.textGen.behavior.EncodingDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.lang.textGen.behavior.EncodingDeclaration_BehaviorDescriptor" />
     </file>
     <file name="EncodingLiteral_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.EncodingLiteral_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.EncodingLiteral_BehaviorDescriptor" />
     </file>
     <file name="ExtensionDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.textGen.behavior.ExtensionDeclaration_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.textGen.behavior.ExtensionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="FilenameFunction_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.textGen.behavior.FilenameFunction_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.textGen.behavior.FilenameFunction_BehaviorDescriptor" />
     </file>
     <file name="FoundErrorOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.FoundErrorOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.FoundErrorOperation_BehaviorDescriptor" />
     </file>
     <file name="GenerateTextDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.textGen.behavior.GenerateTextDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.lang.textGen.behavior.GenerateTextDeclaration_BehaviorDescriptor" />
     </file>
     <file name="IncreaseDepthOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.IncreaseDepthOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.IncreaseDepthOperation_BehaviorDescriptor" />
     </file>
     <file name="IndentBufferOperation_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
     </file>
     <file name="IndentPart_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.IndentPart_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.IndentPart_BehaviorDescriptor" />
     </file>
     <file name="LanguageTextGenDeclaration_BehaviorDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
+      <unit at="14,0,29,0" name="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
     </file>
     <file name="LayoutPart_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.textGen.behavior.LayoutPart_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.textGen.behavior.LayoutPart_BehaviorDescriptor" />
     </file>
     <file name="NewLineAppendPart_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
     </file>
     <file name="NodeAppendPart_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
     </file>
     <file name="NodeParameter_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.textGen.behavior.NodeParameter_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.textGen.behavior.NodeParameter_BehaviorDescriptor" />
     </file>
     <file name="OperationCall_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.OperationCall_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.OperationCall_BehaviorDescriptor" />
     </file>
     <file name="OperationDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ReferenceAppendPart_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.ReferenceAppendPart_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.textGen.behavior.ReferenceAppendPart_BehaviorDescriptor" />
     </file>
     <file name="SimpleTextGenOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_BehaviorDescriptor" />
     </file>
     <file name="StubOperationDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,22,0" name="jetbrains.mps.lang.textGen.behavior.StubOperationDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,28,0" name="jetbrains.mps.lang.textGen.behavior.StubOperationDeclaration_BehaviorDescriptor" />
     </file>
     <file name="TextUnitLayout_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.TextUnitLayout_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.TextUnitLayout_BehaviorDescriptor" />
     </file>
     <file name="UtilityMethodCall_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodCall_BehaviorDescriptor" />
     </file>
     <file name="UtilityMethodDeclaration_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodDeclaration_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodDeclaration_BehaviorDescriptor" />
     </file>
     <file name="WithIndentOperation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.WithIndentOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.textGen.behavior.WithIndentOperation_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/1234257860776">

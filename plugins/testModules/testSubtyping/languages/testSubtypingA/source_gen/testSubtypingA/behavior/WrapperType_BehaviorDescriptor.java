@@ -5,6 +5,12 @@ package testSubtypingA.behavior;
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class WrapperType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
     return null;

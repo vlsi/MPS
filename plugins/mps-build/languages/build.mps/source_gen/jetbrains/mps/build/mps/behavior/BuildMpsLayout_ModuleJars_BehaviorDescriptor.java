@@ -8,6 +8,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMpsLayout_ModuleJars_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
   public boolean virtual_exports_6547494638219603457(SNode __thisNode__, Object object) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

@@ -4,6 +4,12 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMpsLayout_ModuleXml_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
 
   @Override

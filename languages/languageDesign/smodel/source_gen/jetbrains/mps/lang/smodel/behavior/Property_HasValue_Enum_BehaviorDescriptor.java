@@ -5,6 +5,12 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Property_HasValue_Enum_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public boolean virtual_applicableToEnumProperty_1262430001741498259(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

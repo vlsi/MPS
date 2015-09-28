@@ -6,8 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class RunConfigurationProducer_Behavior {

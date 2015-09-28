@@ -10,8 +10,8 @@ import jetbrains.mps.lang.core.behavior.IMetaLevelChanger__BehaviorDescriptor;
 import jetbrains.mps.scope.EmptyScope;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class AbstractAntiquotation_Behavior {

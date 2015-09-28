@@ -8,6 +8,12 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildLayout_Container_BehaviorDescriptor, BuildLayout_PathElement_BehaviorDescriptor {
   public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }

@@ -6,6 +6,12 @@ import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDes
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Parameter_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor {
   public SNode virtual_getDeclaration_9097849371503884215(SNode __thisNode__) {
     return null;

@@ -33,8 +33,8 @@ import jetbrains.mps.util.Pair;
 import java.util.HashSet;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class AbstractConceptDeclaration_Behavior {

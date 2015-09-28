@@ -17,46 +17,46 @@
       <unit at="14,0,70,0" name="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BreakpointCreator_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
     </file>
     <file name="BreakpointableNodeItem_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
     </file>
     <file name="ConceptDeclarationReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_Concept_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
+      <unit at="16,0,34,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
     </file>
     <file name="CreateBreakpointOperation_BehaviorDescriptor.java">
-      <unit at="11,0,34,0" name="jetbrains.mps.debugger.api.lang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
+      <unit at="16,0,40,0" name="jetbrains.mps.debugger.api.lang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
     </file>
     <file name="DebuggerConfiguration_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
     </file>
     <file name="DebuggerReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
     </file>
     <file name="DebuggerType_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
     </file>
     <file name="GetDebuggerSettings_Function_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741703317">

@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ExtractStaticMethod_CallExpression_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode __thisNode__, String methodName) {
     return null;

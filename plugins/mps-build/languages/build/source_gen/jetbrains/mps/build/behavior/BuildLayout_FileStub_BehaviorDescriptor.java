@@ -6,6 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_PureNode_BehaviorDescriptor, BuildSource_SingleFile_BehaviorDescriptor {
   public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }

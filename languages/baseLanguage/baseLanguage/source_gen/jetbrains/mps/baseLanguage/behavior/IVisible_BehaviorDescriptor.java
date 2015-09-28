@@ -5,7 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 /**
  * Will be removed after 3.3
- * Need to suppport compilation; this class does not involved in the actual method invocation
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
  */
 @Deprecated
 public interface IVisible_BehaviorDescriptor {

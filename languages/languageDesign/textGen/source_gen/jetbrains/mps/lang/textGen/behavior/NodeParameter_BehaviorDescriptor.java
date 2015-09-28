@@ -5,6 +5,12 @@ package jetbrains.mps.lang.textGen.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NodeParameter_BehaviorDescriptor extends AbstractTextGenParameter_BehaviorDescriptor {
   public boolean virtual_isParameterObjectUsed_1213877522926(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

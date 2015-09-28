@@ -13,28 +13,28 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="AbstractStateMachineElement_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,42,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="EventReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.EventReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.EventReference_BehaviorDescriptor" />
     </file>
     <file name="Event_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Event_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Event_BehaviorDescriptor" />
     </file>
     <file name="StateMachine_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateMachine_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateMachine_BehaviorDescriptor" />
     </file>
     <file name="StateReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateReference_BehaviorDescriptor" />
     </file>
     <file name="State_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.State_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.State_BehaviorDescriptor" />
     </file>
     <file name="Transition_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Transition_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Transition_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:69c80171-1c29-4a65-a4dd-6ac282fe55ff(jetbrains.mps.samples.multipleProjections.stateMachine.behavior)/7943979732673457913">

@@ -5,6 +5,12 @@ package BHL1.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class A1_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements I1_BehaviorDescriptor {
   public void virtual_bar_7433446194418049811(SNode __thisNode__) {
   }

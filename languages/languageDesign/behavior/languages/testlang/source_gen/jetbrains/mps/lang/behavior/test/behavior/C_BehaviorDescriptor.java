@@ -4,6 +4,12 @@ package jetbrains.mps.lang.behavior.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class C_BehaviorDescriptor extends B_BehaviorDescriptor implements I_BehaviorDescriptor {
   public String virtual_abstractVirtualMethod_4731970554577217984(SNode __thisNode__, int x) {
     return null;

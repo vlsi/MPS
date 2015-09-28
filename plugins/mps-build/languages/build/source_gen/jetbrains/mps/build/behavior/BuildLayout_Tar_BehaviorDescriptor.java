@@ -6,6 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_Tar_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor implements BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor, BuildLayout_PureNode_BehaviorDescriptor {
   public String virtual_getFileSetExtension_6408167411310575216(SNode __thisNode__) {
     return null;

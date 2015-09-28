@@ -14,46 +14,46 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BaseClassifierType_BehaviorDescriptor.java">
-      <unit at="9,0,18,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
+      <unit at="14,0,24,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,82,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DefaultClassifierFieldAccessOperation_BehaviorDescriptor.java">
-      <unit at="10,0,33,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
+      <unit at="15,0,39,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldAccessOperation_BehaviorDescriptor" />
     </file>
     <file name="DefaultClassifierFieldDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,46,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_BehaviorDescriptor" />
     </file>
     <file name="DefaultClassifierMethodCallOperation_BehaviorDescriptor.java">
-      <unit at="10,0,33,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodCallOperation_BehaviorDescriptor" />
+      <unit at="15,0,39,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodCallOperation_BehaviorDescriptor" />
     </file>
     <file name="DefaultClassifierMethodDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,45,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
+      <unit at="18,0,51,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
     </file>
     <file name="DefaultClassifierType_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor" />
     </file>
     <file name="DefaultClassifier_BehaviorDescriptor.java">
-      <unit at="10,0,39,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor" />
+      <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor" />
     </file>
     <file name="IClassifierPart_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
     </file>
     <file name="IClassifier_BehaviorDescriptor.java">
-      <unit at="14,0,22,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor" />
+      <unit at="15,0,23,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor" />
     </file>
     <file name="IMemberOperation_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_BehaviorDescriptor" />
+      <unit at="12,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_BehaviorDescriptor" />
     </file>
     <file name="IMember_BehaviorDescriptor.java">
-      <unit at="14,0,23,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor" />
+      <unit at="15,0,24,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor" />
     </file>
     <file name="SuperClassifierExpresson_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_BehaviorDescriptor" />
     </file>
     <file name="ThisClassifierExpression_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_BehaviorDescriptor" />
+      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)/1213877255427">

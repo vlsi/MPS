@@ -9,6 +9,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TypeVariableReference_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode __thisNode__, Map<SNode, SNode> substitutions) {
   }

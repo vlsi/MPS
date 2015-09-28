@@ -4,6 +4,12 @@ package jetbrains.mps.samples.generator_demo.demoLang6.behavior;
 
 import jetbrains.mps.sampleXML.behavior.ElementPart_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Label_BehaviorDescriptor extends ElementPart_BehaviorDescriptor {
 
   @Override

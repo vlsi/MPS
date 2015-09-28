@@ -7,6 +7,12 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Evaluator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, IEvaluatorConcept_BehaviorDescriptor {
   public SNode virtual_getCode_317191294093624551(SNode __thisNode__) {
     return null;

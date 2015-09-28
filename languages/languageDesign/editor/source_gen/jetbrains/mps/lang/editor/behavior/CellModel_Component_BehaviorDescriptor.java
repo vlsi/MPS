@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescr
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CellModel_Component_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
   public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
     return null;

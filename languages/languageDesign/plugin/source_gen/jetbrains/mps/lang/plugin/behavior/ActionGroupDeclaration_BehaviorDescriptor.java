@@ -11,6 +11,12 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.checkedName.PropertyReference;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ActionGroupDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, ActionGroupMember_BehaviorDescriptor, IClassifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor {
   public SNode virtual_createSuperType_1217433657148(SNode __thisNode__) {
     return null;

@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class Shape_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public void virtual_drawShapeAt_4001135958238383544(SNode __thisNode__, Graphics graphics, int x, int y) {
   }

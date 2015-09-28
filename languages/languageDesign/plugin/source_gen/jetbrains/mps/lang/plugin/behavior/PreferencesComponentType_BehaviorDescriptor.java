@@ -6,6 +6,12 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavi
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PreferencesComponentType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
   public SNode virtual_getClassExpression_1213877337357(SNode __thisNode__) {
     return null;

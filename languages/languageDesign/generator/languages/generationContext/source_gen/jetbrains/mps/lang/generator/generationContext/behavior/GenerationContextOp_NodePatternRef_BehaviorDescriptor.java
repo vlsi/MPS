@@ -4,6 +4,12 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class GenerationContextOp_NodePatternRef_BehaviorDescriptor extends GenerationContextOp_PatternRef_BehaviorDescriptor {
   public SNode virtual_getTarget_1758784108620114792(SNode __thisNode__) {
     return null;

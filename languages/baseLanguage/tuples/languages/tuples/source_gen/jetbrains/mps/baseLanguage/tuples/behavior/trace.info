@@ -22,31 +22,31 @@
       <unit at="14,0,70,0" name="jetbrains.mps.baseLanguage.tuples.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="IndexedTupleLiteral_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleLiteral_BehaviorDescriptor" />
+      <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleLiteral_BehaviorDescriptor" />
     </file>
     <file name="IndexedTupleMemberAccessExpression_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleMemberAccessExpression_BehaviorDescriptor" />
+      <unit at="15,0,27,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleMemberAccessExpression_BehaviorDescriptor" />
     </file>
     <file name="IndexedTupleType_BehaviorDescriptor.java">
-      <unit at="12,0,46,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType_BehaviorDescriptor" />
+      <unit at="17,0,52,0" name="jetbrains.mps.baseLanguage.tuples.behavior.IndexedTupleType_BehaviorDescriptor" />
     </file>
     <file name="NamedTupleComponentAccessOperation_BehaviorDescriptor.java">
-      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentAccessOperation_BehaviorDescriptor" />
+      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentAccessOperation_BehaviorDescriptor" />
     </file>
     <file name="NamedTupleComponentDeclaration_BehaviorDescriptor.java">
-      <unit at="15,0,41,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration_BehaviorDescriptor" />
+      <unit at="20,0,47,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentDeclaration_BehaviorDescriptor" />
     </file>
     <file name="NamedTupleComponentReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentReference_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleComponentReference_BehaviorDescriptor" />
     </file>
     <file name="NamedTupleDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,41,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_BehaviorDescriptor" />
+      <unit at="18,0,47,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_BehaviorDescriptor" />
     </file>
     <file name="NamedTupleLiteral_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral_BehaviorDescriptor" />
+      <unit at="13,0,28,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral_BehaviorDescriptor" />
     </file>
     <file name="NamedTupleType_BehaviorDescriptor.java">
-      <unit at="13,0,35,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_BehaviorDescriptor" />
+      <unit at="18,0,41,0" name="jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0fb6a3b3-d9c2-4977-abcb-f851ef5e4897(jetbrains.mps.baseLanguage.tuples.behavior)/1238852249419">

@@ -4,6 +4,12 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Generator_BehaviorDescriptor extends Module_BehaviorDescriptor {
   public String virtual_getModuleReference_9020561928507315628(SNode __thisNode__) {
     return null;

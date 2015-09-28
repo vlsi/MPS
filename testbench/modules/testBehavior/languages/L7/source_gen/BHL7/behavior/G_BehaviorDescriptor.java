@@ -5,6 +5,12 @@ package BHL7.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class G_BehaviorDescriptor extends F_BehaviorDescriptor implements I2_BehaviorDescriptor {
   public int virtual_foo_6097773470847816360(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Integer.TYPE);

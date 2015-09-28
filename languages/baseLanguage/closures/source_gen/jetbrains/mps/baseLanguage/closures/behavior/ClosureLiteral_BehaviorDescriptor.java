@@ -14,6 +14,12 @@ import jetbrains.mps.scope.Scope;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IStatementListContainer_BehaviorDescriptor, IContainsStatementList_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IFinalWrapper_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public SNode virtual_getBody_1239354440022(SNode __thisNode__) {
     return null;

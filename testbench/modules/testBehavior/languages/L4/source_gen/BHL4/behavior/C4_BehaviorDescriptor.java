@@ -5,6 +5,12 @@ package BHL4.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class C4_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements I_BehaviorDescriptor, I2_BehaviorDescriptor, I1_BehaviorDescriptor {
   public Object virtual_foo_7688460527007471061(SNode __thisNode__) {
     return null;

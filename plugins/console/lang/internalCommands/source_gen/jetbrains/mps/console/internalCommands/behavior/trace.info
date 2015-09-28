@@ -16,16 +16,16 @@
       <unit at="14,0,54,0" name="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConsoleModelExpression_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_BehaviorDescriptor" />
     </file>
     <file name="InternalMode_BehaviorDescriptor.java">
-      <unit at="11,0,43,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
+      <unit at="16,0,49,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
     </file>
     <file name="ReloadClassesCommand_BehaviorDescriptor.java">
-      <unit at="11,0,24,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
+      <unit at="16,0,30,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
     </file>
     <file name="ShowRepositoryCommand_BehaviorDescriptor.java">
-      <unit at="11,0,21,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
+      <unit at="16,0,27,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/5582028874770305521">

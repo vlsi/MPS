@@ -17,112 +17,112 @@
       <unit at="14,0,78,0" name="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="GenerationContextOp_Base_BehaviorDescriptor.java">
-      <unit at="12,0,35,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
+      <unit at="17,0,41,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ContextVarRef_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_BehaviorDescriptor" />
+      <unit at="12,0,24,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_CopyWithTrace_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CopyWithTrace_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CopyWithTrace_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_CreateUniqueName_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_DirtyNode_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_DirtyNode_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_DirtyNode_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GenParameterRef_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GenParameterRef_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GenParameterRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetExport_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetExport_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetExport_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetInputModel_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInputModel_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInputModel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetInvocationContext_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInvocationContext_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInvocationContext_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabel_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabel_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputModel_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputModel_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputModel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetTemplateNode_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetTemplateNode_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetTemplateNode_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_LinkPatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_BehaviorDescriptor" />
+      <unit at="12,0,26,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_NodePatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_BehaviorDescriptor" />
+      <unit at="12,0,26,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ParameterRef_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ParameterRef_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ParameterRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_PatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,17,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_BehaviorDescriptor" />
+      <unit at="12,0,23,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_PropertyPatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_BehaviorDescriptor" />
+      <unit at="12,0,26,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_RegisterLabel_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_RegisterLabel_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_RegisterLabel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_SessionObjectAccess_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowErrorMessage_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowErrorMessage_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowErrorMessage_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowInfoMessage_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowInfoMessage_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowInfoMessage_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowMessageBase_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowMessageBase_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowMessageBase_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowWarningMessage_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowWarningMessage_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowWarningMessage_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_StepObjectAccess_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_TransientObjectAccess_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_VarRef_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_VarRef_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_VarRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextType_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextType_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextType_BehaviorDescriptor" />
     </file>
     <file name="TemplateFunctionParameter_generationContext_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1217892542812">

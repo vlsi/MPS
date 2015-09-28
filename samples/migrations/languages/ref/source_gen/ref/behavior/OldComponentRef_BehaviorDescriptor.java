@@ -5,6 +5,12 @@ package ref.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import decl.behavior.OldComponentMember_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OldComponentRef_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements OldComponentMember_BehaviorDescriptor {
 
   @Override

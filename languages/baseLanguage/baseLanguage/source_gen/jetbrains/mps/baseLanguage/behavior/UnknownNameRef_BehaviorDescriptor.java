@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class UnknownNameRef_BehaviorDescriptor extends Expression_BehaviorDescriptor implements Tokens_BehaviorDescriptor, IYetUnresolved_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode __thisNode__) {
     return null;

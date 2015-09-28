@@ -14,19 +14,19 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="A_BehaviorDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.lang.behavior.test.behavior.A_BehaviorDescriptor" />
+      <unit at="14,0,32,0" name="jetbrains.mps.lang.behavior.test.behavior.A_BehaviorDescriptor" />
     </file>
     <file name="B_BehaviorDescriptor.java">
-      <unit at="8,0,26,0" name="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" />
+      <unit at="13,0,32,0" name="jetbrains.mps.lang.behavior.test.behavior.B_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,54,0" name="jetbrains.mps.lang.behavior.test.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="C_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" />
+      <unit at="12,0,30,0" name="jetbrains.mps.lang.behavior.test.behavior.C_BehaviorDescriptor" />
     </file>
     <file name="I_BehaviorDescriptor.java">
-      <unit at="11,0,16,0" name="jetbrains.mps.lang.behavior.test.behavior.I_BehaviorDescriptor" />
+      <unit at="12,0,17,0" name="jetbrains.mps.lang.behavior.test.behavior.I_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:afdbc9d4-5f41-49d5-9022-ed168658fbf0(jetbrains.mps.lang.behavior.test.behavior)/4731970554577184914">

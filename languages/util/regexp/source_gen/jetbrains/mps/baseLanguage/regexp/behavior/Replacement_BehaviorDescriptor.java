@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class Replacement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public String virtual_toString_3796137614137538905(SNode __thisNode__, SNode search) {
     return null;

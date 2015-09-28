@@ -5,6 +5,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" file="Attribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -46,6 +47,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" file="BaseCommentAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor" />
@@ -91,6 +93,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" file="BaseConcept_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -177,6 +180,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor" file="ChildAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
@@ -216,6 +220,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" file="ExportScopeModule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
@@ -254,6 +259,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_BehaviorDescriptor" file="ExportScopeNamespace_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
@@ -291,6 +297,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScopePublic_BehaviorDescriptor" file="ExportScopePublic_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" />
@@ -343,6 +350,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.ExportScope_BehaviorDescriptor" file="ExportScope_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
@@ -618,6 +626,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" file="LinkAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
@@ -653,6 +662,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" file="NodeAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
@@ -671,6 +681,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" file="PropertyAttribute_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
@@ -743,6 +754,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.SideTransformInfo_BehaviorDescriptor" file="SideTransformInfo_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
@@ -753,6 +765,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_BehaviorDescriptor" file="SuppressErrorsAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />

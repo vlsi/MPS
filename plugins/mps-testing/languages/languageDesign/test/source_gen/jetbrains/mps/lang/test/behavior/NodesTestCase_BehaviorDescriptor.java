@@ -11,6 +11,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NodesTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestCase_BehaviorDescriptor, IClassifier_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public boolean virtual_canRunInProcess_6436735966448788391(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

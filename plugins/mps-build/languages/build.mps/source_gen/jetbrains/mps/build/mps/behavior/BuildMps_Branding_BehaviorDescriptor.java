@@ -6,6 +6,12 @@ import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildSource_FilesetProjectPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMps_Branding_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements BuildSource_FilesetProjectPart_BehaviorDescriptor {
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
     return null;

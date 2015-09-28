@@ -23,6 +23,7 @@
   <dependency className="BHL4.behavior.C1_BehaviorDescriptor" file="C1_BehaviorDescriptor.java">
     <classNode dependClassName="BHL4.behavior.I1_BehaviorDescriptor" />
     <classNode dependClassName="BHL4.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -56,6 +57,7 @@
   <dependency className="BHL4.behavior.C2_BehaviorDescriptor" file="C2_BehaviorDescriptor.java">
     <classNode dependClassName="BHL4.behavior.I1_BehaviorDescriptor" />
     <classNode dependClassName="BHL4.behavior.I2_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -68,6 +70,7 @@
     <classNode dependClassName="BHL4.behavior.I1_BehaviorDescriptor" />
     <classNode dependClassName="BHL4.behavior.I2_BehaviorDescriptor" />
     <classNode dependClassName="BHL4.behavior.I_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -80,6 +83,7 @@
     <classNode dependClassName="BHL4.behavior.I1_BehaviorDescriptor" />
     <classNode dependClassName="BHL4.behavior.I2_BehaviorDescriptor" />
     <classNode dependClassName="BHL4.behavior.I_BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

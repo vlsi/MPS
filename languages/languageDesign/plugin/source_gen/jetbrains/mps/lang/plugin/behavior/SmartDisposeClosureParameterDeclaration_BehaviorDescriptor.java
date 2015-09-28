@@ -4,6 +4,12 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.baseLanguage.closures.behavior.UnboundClosureParameterDeclaration_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SmartDisposeClosureParameterDeclaration_BehaviorDescriptor extends UnboundClosureParameterDeclaration_BehaviorDescriptor {
 
   @Override

@@ -5,6 +5,12 @@ package jetbrains.mps.console.base.behavior;
 import jetbrains.mps.lang.smodel.query.behavior.ExpressionHelpProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PrintExpression_BehaviorDescriptor extends AbstractPrintExpression_BehaviorDescriptor implements ExpressionHelpProvider_BehaviorDescriptor {
   public String virtual_getDisplayString_6891027939994892943(SConcept __thisConcept__) {
     return null;

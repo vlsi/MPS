@@ -8,6 +8,12 @@ import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescrip
 import jetbrains.mps.execution.settings.behavior.PersistentConfigurationAssistent_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractRunConfigurationExecutor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor, PersistentConfigurationAssistent_BehaviorDescriptor {
   public String virtual_getBaseName_4366236229294148974(SNode __thisNode__) {
     return null;

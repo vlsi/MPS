@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SimpleBuilder_BehaviorDescriptor extends Builder_BehaviorDescriptor {
   public SNode virtual_getAttachStatement_7288041816792215495(SNode __thisNode__, SNode childBuilder, SNode parentRef, SNode childRef) {
     return null;

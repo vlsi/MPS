@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="CustomType_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="testSubtypingB.behavior.CustomType_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="testSubtypingB.behavior.CustomType_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

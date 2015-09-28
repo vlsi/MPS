@@ -15,6 +15,12 @@ import jetbrains.mps.scope.Scope;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

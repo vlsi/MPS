@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class GlobalStatisticTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatisticsTarget_BehaviorDescriptor, INodeSetReference_BehaviorDescriptor {
   public Iterable<SNode> virtual_getNodes_5207260697411458163(SNode __thisNode__, ConsoleContext c) {
     return null;

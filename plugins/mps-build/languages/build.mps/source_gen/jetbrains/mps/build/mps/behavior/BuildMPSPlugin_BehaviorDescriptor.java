@@ -10,6 +10,12 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMPSPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
   public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }

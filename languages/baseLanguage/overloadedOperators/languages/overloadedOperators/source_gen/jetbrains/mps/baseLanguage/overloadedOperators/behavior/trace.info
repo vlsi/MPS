@@ -18,34 +18,34 @@
       <unit at="14,0,50,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BinaryOperationReference_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BinaryOperationReference_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BinaryOperationReference_BehaviorDescriptor" />
     </file>
     <file name="ContainerImport_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_BehaviorDescriptor" />
     </file>
     <file name="CustomOperatorDeclaration_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorDeclaration_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorDeclaration_BehaviorDescriptor" />
     </file>
     <file name="CustomOperatorUsage_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_BehaviorDescriptor" />
     </file>
     <file name="CustomOperator_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperator_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperator_BehaviorDescriptor" />
     </file>
     <file name="LeftOperand_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.LeftOperand_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.LeftOperand_BehaviorDescriptor" />
     </file>
     <file name="Operator_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.Operator_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.Operator_BehaviorDescriptor" />
     </file>
     <file name="OverloadedBinaryOperator_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_BehaviorDescriptor" />
     </file>
     <file name="OverloadedOperatorContainer_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
     </file>
     <file name="RightOperand_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.RightOperand_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.RightOperand_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/1141736782992984502">

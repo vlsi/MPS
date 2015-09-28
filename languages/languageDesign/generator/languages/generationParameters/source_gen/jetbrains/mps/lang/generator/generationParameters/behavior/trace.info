@@ -16,13 +16,13 @@
       <unit at="14,0,42,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DefaultGenerationParameterId_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGenerationParameterId_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGenerationParameterId_BehaviorDescriptor" />
     </file>
     <file name="DefaultGeneratorParameterContainer_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
     </file>
     <file name="DefaultGeneratorParameter_BehaviorDescriptor.java">
-      <unit at="10,0,24,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
+      <unit at="15,0,30,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)/8484425748929510084">

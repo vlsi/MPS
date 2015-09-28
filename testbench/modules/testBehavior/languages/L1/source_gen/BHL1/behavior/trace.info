@@ -13,19 +13,19 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="A1_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="BHL1.behavior.A1_BehaviorDescriptor" />
+      <unit at="13,0,27,0" name="BHL1.behavior.A1_BehaviorDescriptor" />
     </file>
     <file name="A_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="BHL1.behavior.A_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="BHL1.behavior.A_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,54,0" name="BHL1.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="I1_BehaviorDescriptor.java">
-      <unit at="11,0,16,0" name="BHL1.behavior.I1_BehaviorDescriptor" />
+      <unit at="12,0,17,0" name="BHL1.behavior.I1_BehaviorDescriptor" />
     </file>
     <file name="I_BehaviorDescriptor.java">
-      <unit at="11,0,15,0" name="BHL1.behavior.I_BehaviorDescriptor" />
+      <unit at="12,0,16,0" name="BHL1.behavior.I_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e76e445e-2173-496b-9059-50cca123009f(BHL1.behavior)/6123852159203091685">

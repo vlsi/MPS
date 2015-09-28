@@ -8,6 +8,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Node_ConceptMethodCall_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor implements IMethodCall_BehaviorDescriptor {
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

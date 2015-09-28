@@ -11,6 +11,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TemplateDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, IParameterizedTemplate_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept __thisConcept__, SNode candidate) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

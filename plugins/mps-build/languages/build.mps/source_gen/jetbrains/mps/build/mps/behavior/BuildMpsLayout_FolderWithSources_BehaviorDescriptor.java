@@ -6,6 +6,12 @@ import jetbrains.mps.build.behavior.BuildLayout_InJarNode_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMpsLayout_FolderWithSources_BehaviorDescriptor extends BuildMpsLayout_ModuleSources_BehaviorDescriptor implements BuildLayout_InJarNode_BehaviorDescriptor {
   public boolean virtual_reexportsFromJar_5970181360961342219(SNode __thisNode__, Object o) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

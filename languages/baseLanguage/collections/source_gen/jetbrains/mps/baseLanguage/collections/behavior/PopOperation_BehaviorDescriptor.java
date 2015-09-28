@@ -7,6 +7,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PopOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor implements IStackOperation_BehaviorDescriptor, IDequeOperation_BehaviorDescriptor, IApplicableToStack_BehaviorDescriptor {
   public SNode virtual_expectedOperandType_6368025520509018230(SNode __thisNode__, SNode elementType) {
     return null;

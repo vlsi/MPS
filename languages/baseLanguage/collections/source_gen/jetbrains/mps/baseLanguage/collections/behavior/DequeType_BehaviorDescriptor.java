@@ -8,6 +8,12 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DequeType_BehaviorDescriptor extends QueueType_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public boolean virtual_canBeCoerced_6321644624958501287(SNode __thisNode__, String conceptFqName) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

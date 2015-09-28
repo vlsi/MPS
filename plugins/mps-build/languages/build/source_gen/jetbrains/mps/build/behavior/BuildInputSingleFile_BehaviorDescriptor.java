@@ -5,6 +5,12 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildInputSingleFile_BehaviorDescriptor extends BuildInputFileSet_BehaviorDescriptor implements BuildLayout_FileSet_BehaviorDescriptor, BuildSource_SingleFile_BehaviorDescriptor {
   public String virtual_getApproximateName_5610619299013425878(SNode __thisNode__) {
     return null;

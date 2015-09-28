@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class VariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements TypeAnnotable_BehaviorDescriptor, IVariableReference_BehaviorDescriptor, ILocalReference_BehaviorDescriptor {
   public Object virtual_eval_1213877519769(SNode __thisNode__, SModule module) {
     return null;

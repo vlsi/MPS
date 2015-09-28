@@ -6,6 +6,12 @@ import jetbrains.mps.lang.smodel.behavior.Node_InsertNewPrevSiblingOperation_Beh
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor extends Node_InsertNewPrevSiblingOperation_BehaviorDescriptor {
   public boolean virtual_applicableToNode_1262430001741498076(SConcept __thisConcept__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);

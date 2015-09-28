@@ -22,6 +22,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildModuleTestsPlugin_BehaviorDescriptor" file="BuildModuleTestsPlugin_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -73,6 +74,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModuleGroup_BehaviorDescriptor" file="BuildMpsLayout_TestModuleGroup_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -112,6 +114,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModule_BehaviorDescriptor" file="BuildMpsLayout_TestModule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -156,6 +159,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_BehaviorDescriptor" file="BuildMpsLayout_TestModules_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
@@ -174,6 +178,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.tests.behavior.BuildMpsLayout_TestModules_Content_BehaviorDescriptor" file="BuildMpsLayout_TestModules_Content_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

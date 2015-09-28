@@ -7,6 +7,12 @@ import jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class InternalAnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor {
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
     return null;

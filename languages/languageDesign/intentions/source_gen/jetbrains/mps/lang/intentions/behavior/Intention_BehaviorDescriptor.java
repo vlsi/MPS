@@ -7,6 +7,12 @@ import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_Behav
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Intention_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements AutoInitDSLClass_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor {
   public SNode virtual_getDescriptor_1055884086724995485(SNode __thisNode__) {
     return null;
