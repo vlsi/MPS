@@ -264,6 +264,7 @@ public class ClosureLiteralType_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.FONT_SIZE, 0, 9);
     editorCell.getStyle().putAll(style);
+    ClosureLiteralType_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
