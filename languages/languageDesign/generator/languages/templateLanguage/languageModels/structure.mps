@@ -1529,6 +1529,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="gZJmXo3" resolve="SourceSubstituteMacro_SourceNodesQuery" />
     </node>
+    <node concept="1TJgyj" id="2h9GiJ3xGad" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="anchorQuery" />
+      <ref role="20lvS9" node="SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4mp7qFmCXde">
     <property role="R5$K7" value="false" />
@@ -1887,7 +1892,7 @@
     <property role="3GE5qa" value="rule" />
     <property role="TrG5h" value="WeavingAnchorQuery" />
     <property role="34LRSv" value="weaving anchor node " />
-    <property role="R4oN_" value="controls exect location in parent where node is weaved to" />
+    <property role="R4oN_" value="controls exact location in parent where child is weaved to" />
     <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
 </model>

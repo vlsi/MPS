@@ -16,18 +16,24 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.template.WeavingAnchorContext;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Queries associated with a weaving rule
+ * Weaved nodes are generally simply appended to the list of parent's children. This query gives greater control over insertion point.
+ * No assumption shall be made on whether output model is complete or not, i.e. output parent node (aka context node) might not be
+ * attached to model yet.
  * @author Artem Tikhomirov
+ * @since 3.3
  */
-public interface WeaveRuleQuery extends Query {
+public interface WeaveAnchorQuery extends Query {
+
   /**
-   * Mandatory query of a rule that gives node in output model that would serve as parent for weaved nodes
+   * Optional query to get anchor node for a node being weaved.
    * @param ctx environment for the query, never <code>null</code>
-   * @return parent node in output model for nodes being weaved into
+   * @return node to appear next to the weaved one, or <code>null</code> to append weaved node to the end of children node list
    */
-  SNode contextNode(WeavingMappingRuleContext ctx) throws GenerationFailureException;
+  @Nullable
+  SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException;
 }

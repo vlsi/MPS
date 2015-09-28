@@ -63,7 +63,7 @@ public class TemplateFunctionMethodName {
   }
 
   public static String weaving_AnchorQuery(SNode function) {
-    return "weaving_AnchorQuery" + function.getNodeId().toString();
+    return "weaving_AnchorQuery_" + function.getNodeId().toString();
   }
 
   public static String mapSrcMacro_MapperFunction(SNode function) {

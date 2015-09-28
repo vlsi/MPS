@@ -42,12 +42,15 @@ public class WeavingAnchorContext extends TemplateQueryContext {
   }
 
   /**
-   * 'mainContextNode' query parameter
+   * @return 'mainContextNode' query parameter, never <code>null</code>
    */
   public SNode getMainContextNode() {
     return myOutputParent;
   }
 
+  /**
+   * @return node being weaved into {@link #getMainContextNode() parent}, never <code>null</code>
+   */
   @Override
   public SNode getOutputNode() {
     return myOutputNode;

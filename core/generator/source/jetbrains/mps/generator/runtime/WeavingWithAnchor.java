@@ -17,18 +17,18 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Evgeny Gryaznov, Nov 29, 2010
+ * Common interface for weave macro and weave rule to answer location to weave node into.
+ * @author Artem Tikhomirov
+ * @since 3.3
  */
-public interface TemplateWeavingRule extends TemplateRuleWithCondition, TemplateRuleForConcept, WeavingWithAnchor {
-
+public interface WeavingWithAnchor {
   /**
-   * @return node in output model to host weaved nodes
+   * anchor node to follow <code>outputNode</code> in the children list of <code>outputParent</code>, <code>null</code> indicating 'end of the list',
    */
-  @NotNull
-  SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
-
-  boolean apply(TemplateExecutionEnvironment environment, TemplateContext context, SNode outputContextNode) throws GenerationException;
+  @Nullable
+  SNode getAnchorNode(@NotNull TemplateContext context, @NotNull SNode outputParent, @NotNull SNode outputNode) throws GenerationFailureException;
 }

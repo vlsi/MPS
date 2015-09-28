@@ -30,6 +30,7 @@ import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
@@ -45,6 +46,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -145,6 +147,17 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
   @NotNull
   @Override
+  public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull SNode ruleOrMacro) {
+    SNode anchorQuery = RuleUtil.isNodeMacro(ruleOrMacro) ? RuleUtil.getWeaveMacro_AnchorQuery(ruleOrMacro) : RuleUtil.getWeaveRule_AnchorQuery(ruleOrMacro);
+    String anchorQueryMethod = anchorQuery == null ? null : TemplateFunctionMethodName.weaving_AnchorQuery(anchorQuery);
+    if (anchorQueryMethod != null) {
+      return new Impl(ruleOrMacro.getReference(), anchorQueryMethod);
+    }
+    return super.getWeaveAnchorQuery(ruleOrMacro);
+  }
+
+  @NotNull
+  @Override
   public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
     SNode codeBlock = RuleUtil.getMappingScript_CodeBlock(script);
     String codeBlockMethod = codeBlock == null ? null : TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock);
@@ -222,7 +235,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition,
-      InlineSwitchCaseCondition {
+      InlineSwitchCaseCondition, WeaveAnchorQuery {
 
     private final String myMethodName;
     private final boolean myDefValue;
@@ -343,6 +356,19 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
       return getMethod(ctx).invoke(ctx);
+    }
+
+    @Nullable
+    @Override
+    public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
+      try {
+        return this.<SNode>createMethod().invoke(ctx);
+      } catch (ClassNotFoundException e) {
+        ctx.showWarningMessage(null, String.format("cannot find anchor node query '%s' : evaluate to null", myMethodName));
+      } catch (NoSuchMethodException e) {
+        ctx.showWarningMessage(null, String.format("cannot find anchor node query '%s' : evaluate to null", myMethodName));
+      }
+      return null;
     }
   }
 
