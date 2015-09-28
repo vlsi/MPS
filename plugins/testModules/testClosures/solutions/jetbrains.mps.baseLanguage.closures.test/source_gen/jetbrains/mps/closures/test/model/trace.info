@@ -382,28 +382,40 @@
       <node id="7289865355732881079" at="18,117,19,125" concept="2" />
       <node id="7289865355732881079" at="22,77,23,117" concept="2" />
       <node id="7289865355732881079" at="23,117,24,129" concept="2" />
-      <node id="7289865355732881079" at="28,75,29,235" concept="5" />
-      <node id="7289865355732881079" at="29,235,30,128" concept="2" />
-      <node id="7289865355732881079" at="32,79,33,235" concept="5" />
-      <node id="7289865355732881079" at="33,235,34,128" concept="2" />
-      <node id="7289865355732881079" at="28,0,32,0" concept="4" trace="test_NodeErrorCheck5462327771639049246#()V" />
-      <node id="7289865355732881079" at="32,0,36,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <node id="7289865355732881079" at="27,73,28,117" concept="2" />
+      <node id="7289865355732881079" at="28,117,29,125" concept="2" />
+      <node id="7289865355732881079" at="33,75,34,235" concept="5" />
+      <node id="7289865355732881079" at="34,235,35,128" concept="2" />
+      <node id="7289865355732881079" at="37,79,38,235" concept="5" />
+      <node id="7289865355732881079" at="38,235,39,128" concept="2" />
+      <node id="7289865355732881079" at="41,75,42,235" concept="5" />
+      <node id="7289865355732881079" at="42,235,43,128" concept="2" />
+      <node id="7289865355732881079" at="33,0,37,0" concept="4" trace="test_NodeErrorCheck5462327771639049246#()V" />
+      <node id="7289865355732881079" at="37,0,41,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <node id="7289865355732881079" at="41,0,45,0" concept="4" trace="test_NodeErrorCheck1674014916759209386#()V" />
       <node id="7289865355732881079" at="16,0,21,0" concept="4" trace="test_NodeErrorCheck5462327771639049246#()V" />
       <node id="7289865355732881079" at="21,0,26,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <node id="7289865355732881079" at="26,0,31,0" concept="4" trace="test_NodeErrorCheck1674014916759209386#()V" />
       <scope id="7289865355732881079" at="17,73,19,125" />
       <scope id="7289865355732881079" at="22,77,24,129" />
-      <scope id="7289865355732881079" at="28,75,30,128">
+      <scope id="7289865355732881079" at="27,73,29,125" />
+      <scope id="7289865355732881079" at="33,75,35,128">
         <var name="operation" id="7289865355732881079" />
       </scope>
-      <scope id="7289865355732881079" at="32,79,34,128">
+      <scope id="7289865355732881079" at="37,79,39,128">
         <var name="operation" id="7289865355732881079" />
       </scope>
-      <scope id="7289865355732881079" at="28,0,32,0" />
-      <scope id="7289865355732881079" at="32,0,36,0" />
+      <scope id="7289865355732881079" at="41,75,43,128">
+        <var name="operation" id="7289865355732881079" />
+      </scope>
+      <scope id="7289865355732881079" at="33,0,37,0" />
+      <scope id="7289865355732881079" at="37,0,41,0" />
+      <scope id="7289865355732881079" at="41,0,45,0" />
       <scope id="7289865355732881079" at="16,0,21,0" />
       <scope id="7289865355732881079" at="21,0,26,0" />
-      <unit id="7289865355732881079" at="26,0,37,0" name="jetbrains.mps.closures.test.model.Generics_Test$TestBody" />
-      <unit id="7289865355732881079" at="14,0,38,0" name="jetbrains.mps.closures.test.model.Generics_Test" />
+      <scope id="7289865355732881079" at="26,0,31,0" />
+      <unit id="7289865355732881079" at="31,0,46,0" name="jetbrains.mps.closures.test.model.Generics_Test$TestBody" />
+      <unit id="7289865355732881079" at="14,0,47,0" name="jetbrains.mps.closures.test.model.Generics_Test" />
     </file>
   </root>
 </debug-info>

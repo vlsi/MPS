@@ -1412,6 +1412,74 @@
         </node>
       </node>
     </node>
+    <node concept="1qefOq" id="1sViVae8NrR" role="1SKRRt">
+      <node concept="312cEu" id="1sViVae8NGc" role="1qenE9">
+        <property role="2bfB8j" value="true" />
+        <property role="TrG5h" value="FunctionTypeNotAdapted" />
+        <node concept="2tJIrI" id="1sViVae8NL7" role="jymVt" />
+        <node concept="3clFb_" id="1sViVae8NLJ" role="jymVt">
+          <property role="TrG5h" value="method1" />
+          <node concept="37vLTG" id="1sViVae8NOi" role="3clF46">
+            <property role="TrG5h" value="fun" />
+            <node concept="1ajhzC" id="1sViVae8NPi" role="1tU5fm">
+              <node concept="3cqZAl" id="1sViVae8NQ0" role="1ajl9A" />
+            </node>
+          </node>
+          <node concept="3cqZAl" id="1sViVae8NLL" role="3clF45" />
+          <node concept="3Tm1VV" id="1sViVae8NLM" role="1B3o_S" />
+          <node concept="3clFbS" id="1sViVae8NLN" role="3clF47">
+            <node concept="3clFbF" id="1sViVae8NXS" role="3cqZAp">
+              <node concept="1rXfSq" id="1sViVae8NXR" role="3clFbG">
+                <ref role="37wK5l" node="1sViVae8NRP" resolve="acceptRunnable" />
+                <node concept="37vLTw" id="1sViVae8NZZ" role="37wK5m">
+                  <ref role="3cqZAo" node="1sViVae8NOi" resolve="fun" />
+                  <node concept="7CXmI" id="1sViVae8OmD" role="lGtFl">
+                    <node concept="1TM$A" id="1sViVae8OmE" role="7EUXB" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2tJIrI" id="1sViVae8NLc" role="jymVt" />
+        <node concept="3clFb_" id="1sViVae8Oqo" role="jymVt">
+          <property role="TrG5h" value="method2" />
+          <node concept="3cqZAl" id="1sViVae8Oqq" role="3clF45" />
+          <node concept="3Tm1VV" id="1sViVae8Oqr" role="1B3o_S" />
+          <node concept="3clFbS" id="1sViVae8Oqs" role="3clF47">
+            <node concept="3clFbF" id="1sViVae8OtX" role="3cqZAp">
+              <node concept="1rXfSq" id="1sViVae8OtW" role="3clFbG">
+                <ref role="37wK5l" node="1sViVae8NRP" resolve="acceptRunnable" />
+                <node concept="1bVj0M" id="1sViVae8OuF" role="37wK5m">
+                  <node concept="3clFbS" id="1sViVae8OuG" role="1bW5cS" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2tJIrI" id="1sViVae8Oo0" role="jymVt" />
+        <node concept="3clFb_" id="1sViVae8NRP" role="jymVt">
+          <property role="TrG5h" value="acceptRunnable" />
+          <node concept="3cqZAl" id="1sViVae8NRR" role="3clF45" />
+          <node concept="3Tm1VV" id="1sViVae8NRS" role="1B3o_S" />
+          <node concept="3clFbS" id="1sViVae8NRT" role="3clF47" />
+          <node concept="37vLTG" id="1sViVae8NWn" role="3clF46">
+            <property role="TrG5h" value="run" />
+            <node concept="3uibUv" id="1sViVae8NWm" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="1sViVae8NGd" role="1B3o_S" />
+        <node concept="3UR2Jj" id="1sViVae8NMT" role="lGtFl">
+          <node concept="TZ5HA" id="1sViVae8NMU" role="TZ5H$">
+            <node concept="1dT_AC" id="1sViVae8NMV" role="1dT_Ay">
+              <property role="1dT_AB" value="See MPS-21750" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="2UguNb" id="4Je5yFFjFCM">
     <property role="TrG5h" value="Closures" />
