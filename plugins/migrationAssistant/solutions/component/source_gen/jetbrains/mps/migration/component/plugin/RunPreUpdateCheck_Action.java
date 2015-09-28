@@ -4,9 +4,37 @@ package jetbrains.mps.migration.component.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import java.util.List;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.migration.component.util.MigrationComponent;
+import jetbrains.mps.ide.migration.MigrationManager;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.smodel.query.CommandUtil;
+import jetbrains.mps.smodel.query.QueryExecutionContext;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
+import java.util.Set;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.ide.migration.check.MigrationProblemsOutputUtil;
 
 public class RunPreUpdateCheck_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -20,6 +48,116 @@ public class RunPreUpdateCheck_Action extends BaseAction {
     return true;
   }
   @Override
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    return true;
+  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
+
+    final MigrationComponent mc = ((MigrationComponent) event.getData(CommonDataKeys.PROJECT).getComponent(MigrationManager.class));
+    {
+      final SearchScope scope = CommandUtil.createScope(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      for (final SModule module : Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModule>() {
+        public boolean accept(SModule it) {
+          return MigrationsUtil.isModuleMigrateable(it);
+        }
+      })) {
+        Set<SLanguage> languages = new SLanguageHierarchy(module.getUsedLanguages()).getExtended();
+        Iterable<MigrationScript> scripts = SetSequence.fromSet(languages).translate(new ITranslator2<SLanguage, MigrationScript>() {
+          public Iterable<MigrationScript> translate(final SLanguage it) {
+            return new Iterable<MigrationScript>() {
+              public Iterator<MigrationScript> iterator() {
+                return new YieldingIterator<MigrationScript>() {
+                  private int __CP__ = 0;
+                  protected boolean moveToNext() {
+__loop__:
+                    do {
+__switch__:
+                      switch (this.__CP__) {
+                        case -1:
+                          assert false : "Internal error";
+                          return false;
+                        case 2:
+                          this._2_ver = 0;
+                        case 3:
+                          if (!(_2_ver < it.getLanguageVersion())) {
+                            this.__CP__ = 1;
+                            break;
+                          }
+                          this.__CP__ = 4;
+                          break;
+                        case 5:
+                          _2_ver++;
+                          this.__CP__ = 3;
+                          break;
+                        case 8:
+                          if (_7_script != null) {
+                            this.__CP__ = 9;
+                            break;
+                          }
+                          this.__CP__ = 5;
+                          break;
+                        case 10:
+                          this.__CP__ = 5;
+                          this.yield(_7_script);
+                          return true;
+                        case 0:
+                          this.__CP__ = 2;
+                          break;
+                        case 4:
+                          this._7_script = mc.fetchScript(new MigrationScriptReference(it, _2_ver), true);
+                          this.__CP__ = 8;
+                          break;
+                        case 9:
+                          this.__CP__ = 10;
+                          break;
+                        default:
+                          break __loop__;
+                      }
+                    } while (true);
+                    return false;
+                  }
+                  private int _2_ver;
+                  private MigrationScript _7_script;
+                };
+              }
+            };
+          }
+        });
+        ListSequence.fromList(problems).addSequence(Sequence.fromIterable(scripts).translate(new ITranslator2<MigrationScript, Problem>() {
+          public Iterable<Problem> translate(MigrationScript it) {
+            return it.check(module);
+          }
+        }));
+
+        if (ListSequence.fromList(problems).isEmpty()) {
+          Messages.showMessageDialog(event.getData(CommonDataKeys.PROJECT), "Migration", "Project can be migrated", null);
+          return;
+        }
+      }
+    }
+
+    MigrationProblemsOutputUtil.showProblems(event.getData(CommonDataKeys.PROJECT), problems);
   }
 }

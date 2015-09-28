@@ -46,6 +46,7 @@
     <import index="t99v" ref="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="dwmc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.uiDesigner.core(MPS.IDEA/)" />
+    <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" implicit="true" />
     <import index="auc7" ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)" implicit="true" />
   </imports>
   <registry>
@@ -2864,7 +2865,7 @@
         <node concept="3Tm1VV" id="2htE_P_NbBr" role="1B3o_S" />
         <node concept="A3Dl8" id="2htE_P_NbBs" role="3clF45">
           <node concept="3uibUv" id="2htE_P_NbBt" role="A3Ik2">
-            <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+            <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
           </node>
         </node>
         <node concept="3clFbS" id="2htE_P_NbBu" role="3clF47">
@@ -2966,7 +2967,7 @@
         <node concept="3Tm1VV" id="2htE_P_Np6z" role="1B3o_S" />
         <node concept="A3Dl8" id="2htE_P_Np6$" role="3clF45">
           <node concept="3uibUv" id="2htE_P_Np6_" role="A3Ik2">
-            <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+            <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
           </node>
         </node>
         <node concept="3clFbS" id="2htE_P_Np6A" role="3clF47">
@@ -3057,7 +3058,7 @@
         <node concept="3Tm1VV" id="2htE_P_OnpK" role="1B3o_S" />
         <node concept="A3Dl8" id="2htE_P_OnpL" role="3clF45">
           <node concept="3uibUv" id="2htE_P_OnpM" role="A3Ik2">
-            <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+            <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
           </node>
         </node>
         <node concept="3clFbS" id="2htE_P_OnpN" role="3clF47">
@@ -3066,7 +3067,7 @@
               <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
               <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
               <node concept="3uibUv" id="2htE_P_Orqw" role="3PaCim">
-                <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+                <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
               </node>
             </node>
           </node>
@@ -3170,7 +3171,7 @@
         <node concept="3Tm1VV" id="2htE_P_OKgS" role="1B3o_S" />
         <node concept="A3Dl8" id="2htE_P_OKgT" role="3clF45">
           <node concept="3uibUv" id="2htE_P_OKgU" role="A3Ik2">
-            <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+            <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
           </node>
         </node>
         <node concept="3clFbS" id="2htE_P_OKgV" role="3clF47">
@@ -3201,7 +3202,7 @@
                             </node>
                           </node>
                           <node concept="3uibUv" id="7k0ZD$h8mQH" role="10QFUM">
-                            <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+                            <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
                           </node>
                         </node>
                       </node>
@@ -4922,7 +4923,7 @@
       <node concept="3Tm1VV" id="2htE_P_MrCy" role="1B3o_S" />
       <node concept="A3Dl8" id="2htE_P_MrCz" role="3clF45">
         <node concept="3uibUv" id="2htE_P_MrC$" role="A3Ik2">
-          <ref role="3uigEE" to="t99v:3n7MNzO_IjP" resolve="Problem" />
+          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
         </node>
       </node>
       <node concept="P$JXv" id="2htE_P_PJ_z" role="lGtFl">

@@ -132,7 +132,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     MapSequence.fromMap(loadedDescriptors).clear();
   }
 
-  public MigrationScript fetchScript(MigrationScriptReference scriptReference) {
+  public MigrationScript fetchScript(MigrationScriptReference scriptReference, boolean silently) {
     SLanguage depLanguage = scriptReference.getLanguage();
     int current = scriptReference.getFromVersion();
     MigrationDescriptor md = getMigrationDescriptor((Language) depLanguage.getSourceModule());
@@ -213,7 +213,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     }).select(new ISelector<MigrationScriptReference, String>() {
       public String select(MigrationScriptReference it) {
-        MigrationScript script = fetchScript(it);
+        MigrationScript script = fetchScript(it, false);
         String langNameShrinked = NameUtil.compactNamespace(it.getLanguage().getQualifiedName());
 
         if (script == null) {
@@ -243,7 +243,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
               continue;
             }
             for (int v = ver; v < currentLangVersion; v++) {
-              if (fetchScript(new MigrationScriptReference(lang, v)) == null) {
+              if (fetchScript(new MigrationScriptReference(lang, v), false) == null) {
                 ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage,Integer>from(module, lang, v));
                 // next used language, please 
                 break;
@@ -436,7 +436,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                 if (!(MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module))) {
                   return false;
                 }
-                MigrationScript loaded = fetchScript(it);
+                MigrationScript loaded = fetchScript(it, false);
                 if (loaded == null) {
                   return false;
                 }

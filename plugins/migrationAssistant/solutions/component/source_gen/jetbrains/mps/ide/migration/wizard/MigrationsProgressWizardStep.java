@@ -39,7 +39,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.migration.check.Problem;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import org.apache.log4j.Logger;

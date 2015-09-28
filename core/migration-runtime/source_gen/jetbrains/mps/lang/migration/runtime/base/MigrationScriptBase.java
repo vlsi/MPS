@@ -5,7 +5,6 @@ package jetbrains.mps.lang.migration.runtime.base;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.util.Pair;
 import java.util.Collections;
 import jetbrains.mps.util.containers.EmptyIterable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -49,7 +48,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
     return false;
   }
 
-  public Iterable<Pair<SNode, String>> check(SModule module) {
+  public Iterable<Problem> check(SModule module) {
     return Collections.emptyList();
   }
 

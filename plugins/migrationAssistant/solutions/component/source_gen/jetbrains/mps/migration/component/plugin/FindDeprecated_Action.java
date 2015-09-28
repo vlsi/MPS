@@ -8,6 +8,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,6 +31,11 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.migration.check.MigrationProblemsOutputUtil;
+import com.intellij.openapi.application.ModalityState;
 
 public class FindDeprecated_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,6 +55,12 @@ public class FindDeprecated_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
       if (p == null) {
         return false;
       }
@@ -161,6 +174,7 @@ public class FindDeprecated_Action extends BaseAction {
       });
     }
 
+    final Wrappers._T<Iterable<SReference>> usagesOfDeprecated = new Wrappers._T<Iterable<SReference>>();
     {
       final SearchScope scope = CommandUtil.createScope(event.getData(MPSCommonDataKeys.MPS_PROJECT));
       final QueryExecutionContext context = new QueryExecutionContext() {
@@ -168,13 +182,25 @@ public class FindDeprecated_Action extends BaseAction {
           return scope;
         }
       };
-      Sequence.fromIterable(deprecatedMembers).translate(new ITranslator2<SNode, SReference>() {
+      usagesOfDeprecated.value = Sequence.fromIterable(deprecatedMembers).translate(new ITranslator2<SNode, SReference>() {
         public Iterable<SReference> translate(SNode it) {
           return CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), it);
         }
       });
-
-      // todo show 
     }
+
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            MigrationProblemsOutputUtil.showNodes(event.getData(CommonDataKeys.PROJECT), "Usages of deprecated stuff", Sequence.fromIterable(usagesOfDeprecated.value).select(new ISelector<SReference, SNode>() {
+              public SNode select(SReference it) {
+                return it.getSourceNode();
+              }
+            }));
+          }
+        });
+      }
+    }, ModalityState.NON_MODAL);
   }
 }
