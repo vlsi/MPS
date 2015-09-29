@@ -26528,6 +26528,37 @@
     <node concept="1l3spV" id="5rNMDvYzen4" role="1l3spN">
       <node concept="m$_wl" id="1x6h9EwqP32" role="39821P">
         <ref role="m_rDy" node="6EN03E8oSte" resolve="jetbrains.mps.ide.make" />
+        <node concept="28jJK3" id="66bZsO2S0Zc" role="39821P">
+          <node concept="55IIr" id="66bZsO2S0Ze" role="28jJRO">
+            <node concept="2Ry0Ak" id="66bZsO2S0Zv" role="iGT6I">
+              <property role="2Ry0Am" value="plugins" />
+              <node concept="2Ry0Ak" id="66bZsO2S0Z$" role="2Ry0An">
+                <property role="2Ry0Am" value="mpsmake" />
+                <node concept="2Ry0Ak" id="66bZsO2S0ZD" role="2Ry0An">
+                  <property role="2Ry0Am" value="source_gen" />
+                  <node concept="2Ry0Ak" id="66bZsO2S0ZI" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains" />
+                    <node concept="2Ry0Ak" id="66bZsO2S0ZN" role="2Ry0An">
+                      <property role="2Ry0Am" value="mps" />
+                      <node concept="2Ry0Ak" id="66bZsO2S0ZS" role="2Ry0An">
+                        <property role="2Ry0Am" value="ide" />
+                        <node concept="2Ry0Ak" id="66bZsO2S0ZX" role="2Ry0An">
+                          <property role="2Ry0Am" value="make" />
+                          <node concept="2Ry0Ak" id="66bZsO2S102" role="2Ry0An">
+                            <property role="2Ry0Am" value="actions" />
+                            <node concept="2Ry0Ak" id="66bZsO2S107" role="2Ry0An">
+                              <property role="2Ry0Am" value="startup.properties" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="398223" id="5qX22802cfd" role="39821P">
           <node concept="L2wRC" id="5qX22802cgV" role="39821P">
             <ref role="L2wRA" node="71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />

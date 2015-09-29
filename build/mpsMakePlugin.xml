@@ -47,6 +47,9 @@
     <jar destfile="${build.layout}/mps-make/lib/icons.jar" duplicate="preserve">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
+    <copy todir="${build.layout}/mps-make">
+      <fileset file="${basedir}/plugins/mpsmake/source_gen/jetbrains/mps/ide/make/actions/startup.properties" />
+    </copy>
     <mkdir dir="${build.layout}/mps-make/solutions" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.make.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.make.jar/META-INF" />
