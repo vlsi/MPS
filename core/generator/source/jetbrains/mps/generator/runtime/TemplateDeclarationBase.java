@@ -15,10 +15,22 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Collection;
+
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateDeclaration} to use as superclass in generated code
  * to facilitate future API changes
  * @author Artem Tikhomirov
  */
 public abstract class TemplateDeclarationBase implements TemplateDeclaration {
+  @Override
+  public Collection<SNode> weave(@NotNull WeaveContext context, @NotNull NodeWeaveFacility weaveFacility) throws GenerationException {
+    // how come there's an exception, not emptyList? see TemplateDeclarationWeavingAware2
+    throw new GenerationFailureException("This template doesn't support weaving");
+  }
 }

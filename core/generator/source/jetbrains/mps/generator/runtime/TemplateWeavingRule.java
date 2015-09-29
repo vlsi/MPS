@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface TemplateWeavingRule extends TemplateRuleWithCondition, TemplateRuleForConcept, WeavingWithAnchor {
 
   /**
+   * FIXME what's the point to have getContextNode here if all we do is check it's from output model (WeavingProcessor#checkContext)
+   * and pass to apply() then.
    * @return node in output model to host weaved nodes
    */
   @NotNull

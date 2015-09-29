@@ -17,8 +17,11 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
+import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +29,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 
 /**
@@ -36,12 +41,17 @@ import java.util.Iterator;
 public final class NodeWeaveSupport implements NodeWeaveFacility {
   private final TemplateContext myTemplateContext;
   private final SNodeReference myTemplateNode;
+  private final TemplateExecutionEnvironmentImpl myEnv;
   private final TemplateGenerator myGenerator;
+  @NotNull
+  private final WeaveContext myWeaveContext;
 
-  public NodeWeaveSupport(@NotNull TemplateContext templateContext, @NotNull SNodeReference templateNodeReference, @NotNull TemplateGenerator generator) {
-    myTemplateContext = templateContext;
+  public NodeWeaveSupport(@NotNull WeaveContext weaveContext, @NotNull SNodeReference templateNodeReference, @NotNull TemplateExecutionEnvironmentImpl env) {
+    myWeaveContext = weaveContext;
+    myTemplateContext = weaveContext.getTemplateContext();
     myTemplateNode = templateNodeReference;
-    myGenerator = generator;
+    myEnv = env;
+    myGenerator = env.getGenerator();
   }
   @Override
   public void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) {
@@ -78,5 +88,23 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
       }
     }
     contextParentNode.insertChildBefore(childRole, outputNodeToWeave, anchor);
+  }
+
+  @Override
+  public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, Object... args) throws GenerationException {
+    TemplateDeclaration templateDeclarationInstance = myEnv.loadTemplateDeclaration(templateDeclaration, myTemplateNode, myTemplateContext, args);
+    if (templateDeclarationInstance instanceof TemplateDeclarationWeavingAware) {
+      // compatibility
+      return ((TemplateDeclarationWeavingAware) templateDeclarationInstance).weave(myEnv, myTemplateContext, myWeaveContext.getContextNode());
+    }
+    if (templateDeclarationInstance != null /*templateDeclarationInstance instanceof TemplateDeclarationWeavingAware2*/) {
+      return templateDeclarationInstance.weave(myWeaveContext, this);
+    }
+    return Collections.emptyList();
+  }
+
+  @Override
+  public Collection<SNode> weaveTemplate(@NotNull TemplateDeclaration templateDeclaration) throws GenerationException {
+    return templateDeclaration.weave(myWeaveContext, this);
   }
 }

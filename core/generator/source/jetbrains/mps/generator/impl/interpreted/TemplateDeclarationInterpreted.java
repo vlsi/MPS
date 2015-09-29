@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.TemplateContainer;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
+import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +35,7 @@ import java.util.Map;
 /**
  * Evgeny Gryaznov, 12/13/10
  */
-public class TemplateDeclarationInterpreted implements TemplateDeclaration {
+public class TemplateDeclarationInterpreted extends TemplateDeclarationBase {
 
   private static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
 
