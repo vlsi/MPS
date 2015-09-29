@@ -241,16 +241,6 @@
       <zipfileset file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-pluginSolution-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.tmp}/default/null.jar" />
-    <mkdir dir="${build.tmp}/default/null.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/null.jar/META-INF/module.xml">
-      <module namespace="" type="language" uuid="">
-        <dependencies />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/mps-devkit/languages/languageDesign/null.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/default/null.jar" />
-    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.structure.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.structure.pluginSolution.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.lang.structure.pluginSolution.jar/META-INF/module.xml">
