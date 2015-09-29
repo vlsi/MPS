@@ -5676,9 +5676,6 @@
         <node concept="3LEDTy" id="5vJ3D8AkrM0" role="3LEDUa">
           <ref role="3LEDTV" node="7Kfy9QB6L1S" resolve="jetbrains.mps.baseLanguage.javadoc" />
         </node>
-        <node concept="3LEDTy" id="51adnVzTmeh" role="3LEDUa">
-          <ref role="3LEDTV" node="3ZgZ1njKuFL" resolve="jetbrains.mps.lang.smodel.query" />
-        </node>
       </node>
       <node concept="3LEwk6" id="7Kfy9QB6KXP" role="2G$12L">
         <property role="BnDLt" value="true" />
