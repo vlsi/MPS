@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.InternalFlag;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -122,32 +124,29 @@ public class PathManager {
   }
 
   public static Collection<String> getBootstrapPaths() {
-    Collection<String> paths = getBootstrapPathsIfPackaged();
-    if (paths != null) return paths;
-    else {
-      paths = new ArrayList<String>(2);
+    Collection<String> paths = getBootstrapPathsFromLibFolder();
+    if (new File(getCorePath()).exists()) {
       paths.add(getCorePath());
-      paths.add(getEditorPath());
-      return Collections.unmodifiableCollection(paths);
     }
+    if (new File(getEditorPath()).exists()) {
+      paths.add(getEditorPath());
+    }
+    return Collections.unmodifiableCollection(paths);
   }
 
-  @Nullable
-  private static Collection<String> getBootstrapPathsIfPackaged() {
-    File libDir = new File(getPackagedLibPath());
+  @NotNull
+  private static Collection<String> getBootstrapPathsFromLibFolder() {
+    List<String> paths = new ArrayList<String>();
+    File libDir = new File(getLibPath());
     if (libDir.exists() && libDir.isDirectory()) {
-      List<String> paths = new ArrayList<String>();
       for (File jar : libDir.listFiles(JAR_FILE_FILTER)) {
         paths.add(jar.getAbsolutePath());
       }
-      if (paths.size() > 0) {
-        return Collections.unmodifiableCollection(paths);
-      }
     }
-    return null;
+    return paths;
   }
 
-  private static String getPackagedLibPath() {
+  private static String getLibPath() {
     return getHomePath() + File.separator + "lib";
   }
 
