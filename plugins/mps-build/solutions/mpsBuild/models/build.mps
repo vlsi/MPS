@@ -2433,12 +2433,10 @@
             <node concept="1kK7hY" id="36zc_GPwDhm" role="39821P">
               <ref role="1kK7hZ" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
               <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-runtime-src.jar" />
+                <property role="1cIVw0" value="mps-behavior-runtime.jar" />
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3981dx" id="36zc_GPwDhn" role="39821P">
           <node concept="398223" id="36zc_GPwDho" role="39821P">
             <node concept="3_J27D" id="36zc_GPwDhp" role="Nbhlr">
               <node concept="3Mxwew" id="36zc_GPwDhq" role="3MwsjC">
@@ -2447,11 +2445,6 @@
             </node>
             <node concept="3$exzU" id="36zc_GPwDhr" role="39821P">
               <ref role="3$exzV" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
-            </node>
-          </node>
-          <node concept="3_J27D" id="36zc_GPwDhs" role="Nbhlr">
-            <node concept="3Mxwew" id="36zc_GPwDht" role="3MwsjC">
-              <property role="3MwjfP" value="mps-behavior-runtime-src.jar" />
             </node>
           </node>
         </node>
@@ -2473,12 +2466,10 @@
             <node concept="1kK7hY" id="36zc_GPwFZK" role="39821P">
               <ref role="1kK7hZ" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
               <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-api-src.jar" />
+                <property role="1cIVw0" value="mps-behavior-api.jar" />
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3981dx" id="36zc_GPwFZy" role="39821P">
           <node concept="398223" id="36zc_GPwFZz" role="39821P">
             <node concept="3_J27D" id="36zc_GPwFZ$" role="Nbhlr">
               <node concept="3Mxwew" id="36zc_GPwFZ_" role="3MwsjC">
@@ -2487,11 +2478,6 @@
             </node>
             <node concept="3$exzU" id="36zc_GPwFZA" role="39821P">
               <ref role="3$exzV" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
-            </node>
-          </node>
-          <node concept="3_J27D" id="36zc_GPwFZB" role="Nbhlr">
-            <node concept="3Mxwew" id="36zc_GPwFZC" role="3MwsjC">
-              <property role="3MwjfP" value="mps-behavior-api-src.jar" />
             </node>
           </node>
         </node>
@@ -5356,6 +5342,10 @@
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
+        </node>
+        <node concept="1E1SXE" id="22aNHp6GhVY" role="3bR37C">
+          <property role="1E1SXH" value="true" />
+          <ref role="1E1SXG" node="6e4RFSGTIz7" resolve="mps-behavior-api" />
         </node>
       </node>
       <node concept="1E1JtA" id="bOvjGOUy$U" role="2G$12L">
