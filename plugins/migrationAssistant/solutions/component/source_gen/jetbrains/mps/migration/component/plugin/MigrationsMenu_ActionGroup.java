@@ -15,7 +15,8 @@ public class MigrationsMenu_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action");
-      MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.component.plugin.FindDeprecated_Action");
+      MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action");
+      MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action");
       MigrationsMenu_ActionGroup.this.addAction("jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);

@@ -16,8 +16,9 @@ public class Component_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new ExecuteMigrationAssistant_Action());
     addAction(new ExecuteRerunnableMigrations_Action());
-    addAction(new FindDeprecated_Action());
     addAction(new RunPreUpdateCheck_Action());
+    addAction(new ShowDeprecatedStuff_Action());
+    addAction(new ShowDeprecatedUsages_Action());
     // groups 
     addGroup(new MigrationsMenu_ActionGroup());
     addGroup(new Migrations_ActionGroup());

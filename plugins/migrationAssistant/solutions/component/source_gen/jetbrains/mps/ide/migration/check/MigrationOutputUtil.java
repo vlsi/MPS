@@ -4,39 +4,44 @@ package jetbrains.mps.ide.migration.check;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MigrationProblemsOutputUtil {
+public class MigrationOutputUtil {
   public static void showProblems(final Project project, Iterable<Problem> problems) {
-    show(project, problems, new _FunctionTypes._return_P1_E0<SearchResult<ModelCheckerIssue>, Problem>() {
-      public SearchResult<ModelCheckerIssue> invoke(Problem p) {
+    show(project, null, Sequence.fromIterable(problems).select(new ISelector<Problem, SearchResult<ModelCheckerIssue>>() {
+      public SearchResult<ModelCheckerIssue> select(Problem p) {
         return new SearchResult<ModelCheckerIssue>(issueByProblem(p), p.getReason(), p.getCategory());
       }
-    });
+    }));
   }
 
-  public static void showNodes(final Project project, final String category, Iterable<SNode> nodes) {
-    show(project, nodes, new _FunctionTypes._return_P1_E0<SearchResult<ModelCheckerIssue>, SNode>() {
-      public SearchResult<ModelCheckerIssue> invoke(SNode n) {
-        return new SearchResult<ModelCheckerIssue>(new ModelCheckerIssue.NodeIssue(n, "", null), n, category);
+  public static void showNodes(final Project project, Tuples._2<String, Iterable<SNode>>... toShow) {
+    show(project, null, Sequence.fromIterable(Sequence.fromArray(toShow)).translate(new ITranslator2<Tuples._2<String, Iterable<SNode>>, SearchResult<ModelCheckerIssue>>() {
+      public Iterable<SearchResult<ModelCheckerIssue>> translate(final Tuples._2<String, Iterable<SNode>> cat) {
+        return Sequence.fromIterable(cat._1()).select(new ISelector<SNode, SearchResult<ModelCheckerIssue>>() {
+          public SearchResult<ModelCheckerIssue> select(SNode node) {
+            return new SearchResult<ModelCheckerIssue>(new ModelCheckerIssue.NodeIssue(node, "", null), node, cat._0());
+          }
+        });
       }
-    });
+    }));
   }
 
   private static ModelCheckerIssue issueByProblem(Problem p) {
@@ -57,7 +62,7 @@ public class MigrationProblemsOutputUtil {
     return null;
   }
 
-  private static <T> void show(final Project project, Iterable<T> problems, final _FunctionTypes._return_P1_E0<? extends SearchResult, ? super T> trans) {
+  private static <T> void show(final Project project, Iterable<SNode> searchedNodes, Iterable<SearchResult> items) {
     ModelCheckerViewer v = new ModelCheckerViewer(project) {
       @Override
       protected void close() {
@@ -66,11 +71,7 @@ public class MigrationProblemsOutputUtil {
       }
     };
     final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-    Sequence.fromIterable(problems).select(new ISelector<T, SearchResult>() {
-      public SearchResult select(T it) {
-        return trans.invoke(it);
-      }
-    }).where(new IWhereFilter<SearchResult>() {
+    Sequence.fromIterable(items).where(new IWhereFilter<SearchResult>() {
       public boolean accept(SearchResult it) {
         return it != null;
       }
@@ -79,8 +80,11 @@ public class MigrationProblemsOutputUtil {
         result.add(it);
       }
     });
+    if (searchedNodes != null) {
+      result.getSearchedNodes().addAll(Sequence.fromIterable(searchedNodes).toListSequence());
+    }
     v.setSearchResults(result);
     ModelCheckerTool.getInstance(project).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
   }
-  protected static Logger LOG = LogManager.getLogger(MigrationProblemsOutputUtil.class);
+  protected static Logger LOG = LogManager.getLogger(MigrationOutputUtil.class);
 }

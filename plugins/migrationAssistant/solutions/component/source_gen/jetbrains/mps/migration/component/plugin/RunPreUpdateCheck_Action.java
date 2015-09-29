@@ -34,7 +34,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.migration.check.MigrationProblemsOutputUtil;
+import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 
 public class RunPreUpdateCheck_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -158,6 +158,6 @@ __switch__:
       }
     }
 
-    MigrationProblemsOutputUtil.showProblems(event.getData(CommonDataKeys.PROJECT), problems);
+    MigrationOutputUtil.showProblems(event.getData(CommonDataKeys.PROJECT), problems);
   }
 }
