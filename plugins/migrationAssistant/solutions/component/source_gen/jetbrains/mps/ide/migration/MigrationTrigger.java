@@ -23,7 +23,7 @@ import jetbrains.mps.ide.platform.watching.ReloadManager;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
-import jetbrains.mps.ide.migration.check.MigrationProblemsOutputUtil;
+import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -161,7 +161,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                       public void run() {
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
-                            MigrationProblemsOutputUtil.showProblems(myProject, myErrors.getProblems());
+                            MigrationOutputUtil.showProblems(myProject, myErrors.getProblems());
                           }
                         });
                       }

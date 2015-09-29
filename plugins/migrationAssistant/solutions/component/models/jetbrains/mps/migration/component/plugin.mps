@@ -1383,11 +1383,11 @@
                             <ref role="2WH_rO" node="5$zfhXzr51s" resolve="project" />
                           </node>
                         </node>
+                        <node concept="Xl_RD" id="5$zfhXzrlKw" role="37wK5m">
+                          <property role="Xl_RC" value="No problems found.\nProject can be migrated" />
+                        </node>
                         <node concept="Xl_RD" id="5$zfhXzrh08" role="37wK5m">
                           <property role="Xl_RC" value="Migration" />
-                        </node>
-                        <node concept="Xl_RD" id="5$zfhXzrlKw" role="37wK5m">
-                          <property role="Xl_RC" value="Project can be migrated" />
                         </node>
                         <node concept="10Nm6u" id="5$zfhXzrmKK" role="37wK5m" />
                       </node>

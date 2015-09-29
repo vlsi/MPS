@@ -152,7 +152,7 @@ __switch__:
         }));
 
         if (ListSequence.fromList(problems).isEmpty()) {
-          Messages.showMessageDialog(event.getData(CommonDataKeys.PROJECT), "Migration", "Project can be migrated", null);
+          Messages.showMessageDialog(event.getData(CommonDataKeys.PROJECT), "No problems found.\nProject can be migrated", "Migration", null);
           return;
         }
       }

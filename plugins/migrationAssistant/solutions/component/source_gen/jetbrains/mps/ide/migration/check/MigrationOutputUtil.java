@@ -62,7 +62,7 @@ public class MigrationOutputUtil {
     return null;
   }
 
-  private static <T> void show(final Project project, Iterable<SNode> searchedNodes, Iterable<SearchResult> items) {
+  private static <T> void show(final Project project, Iterable<SNode> searchedNodes, Iterable<SearchResult<?>> items) {
     ModelCheckerViewer v = new ModelCheckerViewer(project) {
       @Override
       protected void close() {
@@ -71,12 +71,12 @@ public class MigrationOutputUtil {
       }
     };
     final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-    Sequence.fromIterable(items).where(new IWhereFilter<SearchResult>() {
-      public boolean accept(SearchResult it) {
+    Sequence.fromIterable(items).where(new IWhereFilter<SearchResult<?>>() {
+      public boolean accept(SearchResult<?> it) {
         return it != null;
       }
-    }).visitAll(new IVisitor<SearchResult>() {
-      public void visit(SearchResult it) {
+    }).visitAll(new IVisitor<SearchResult<?>>() {
+      public void visit(SearchResult<?> it) {
         result.add(it);
       }
     });
