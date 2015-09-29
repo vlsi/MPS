@@ -285,14 +285,14 @@
     </language>
   </registry>
   <node concept="2S6QgY" id="hpoNNqY">
-    <property role="TrG5h" value="ConvertInferenceRuleToNonTypesystemRule" />
+    <property role="TrG5h" value="ConvertInferenceRuleToCheckingRule" />
     <property role="3GE5qa" value="definition.rule" />
     <ref role="2ZfgGC" to="tpd4:h5YbPVU" resolve="InferenceRule" />
     <node concept="2S6ZIM" id="hpoNNqZ" role="2ZfVej">
       <node concept="3clFbS" id="hpoNNr0" role="2VODD2">
         <node concept="3cpWs6" id="hpoOuS_" role="3cqZAp">
           <node concept="Xl_RD" id="hpoOvaV" role="3cqZAk">
-            <property role="Xl_RC" value="Convert to Non-Typesystem Rule" />
+            <property role="Xl_RC" value="Convert to Checking Rule" />
           </node>
         </node>
       </node>

@@ -23,14 +23,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public final class ConvertInferenceRuleToNonTypesystemRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertInferenceRuleToCheckingRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public ConvertInferenceRuleToNonTypesystemRule_Intention() {
+  public ConvertInferenceRuleToCheckingRule_Intention() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "1195490883262"));
   }
   @Override
   public String getPresentation() {
-    return "ConvertInferenceRuleToNonTypesystemRule";
+    return "ConvertInferenceRuleToCheckingRule";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -49,7 +49,7 @@ public final class ConvertInferenceRuleToNonTypesystemRule_Intention extends Int
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInferenceRuleToNonTypesystemRule_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInferenceRuleToCheckingRule_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -58,7 +58,7 @@ public final class ConvertInferenceRuleToNonTypesystemRule_Intention extends Int
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Convert to Non-Typesystem Rule";
+      return "Convert to Checking Rule";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -77,7 +77,7 @@ public final class ConvertInferenceRuleToNonTypesystemRule_Intention extends Int
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return ConvertInferenceRuleToNonTypesystemRule_Intention.this;
+      return ConvertInferenceRuleToCheckingRule_Intention.this;
     }
   }
 }
