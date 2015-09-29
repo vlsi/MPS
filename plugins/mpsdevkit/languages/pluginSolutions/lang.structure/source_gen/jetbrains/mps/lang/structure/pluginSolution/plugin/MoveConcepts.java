@@ -194,9 +194,9 @@ public class MoveConcepts extends MoveNodesDefault {
                 AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_u6ijv2_a0c0i0c0a0o0a91a5("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
 
 
-                MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(sourceLanguage).setName("Move_concept_" + SPropertyOperations.getString(oldConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-                builder.appendExecuteStatements(MoveConceptUtil.replaceExactInstances(oldConcept, newConcept, builder));
-                builder.addDependency(targetModel).addDependency(new ModuleRepositoryFacade(project.getRepository()).getModelByName("jetbrains.mps.lang.structure.plugin"));
+                MigrationScriptBuilder msb = MigrationScriptBuilder.createMigrationScript(sourceLanguage).setName("Move_concept_" + SPropertyOperations.getString(oldConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                msb.appendExecuteStatements(MoveConceptUtil.replaceExactInstances(oldConcept, newConcept, msb));
+                msb.addDependency(targetModel).addDependency(new ModuleRepositoryFacade(project.getRepository()).getModelByName("jetbrains.mps.lang.structure.plugin"));
                 sourceLanguage.addDependency(targetLanguage.getModuleReference(), false);
                 targetLanguage.addDependency(sourceLanguage.getModuleReference(), false);
 
@@ -205,8 +205,8 @@ public class MoveConcepts extends MoveNodesDefault {
                   public boolean accept(SNode it) {
                     return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "8260330507834347594");
                   }
-                }).first(), _quotation_createNode_u6ijv2_a0a21a8a2a0a41a0t0f(builder.getScript()));
-                executeAfterBuilder.addDependency(SNodeOperations.getModel(builder.getScript()));
+                }).first(), _quotation_createNode_u6ijv2_a0a21a8a2a0a41a0t0f(msb.getScript()));
+                executeAfterBuilder.addDependency(SNodeOperations.getModel(msb.getScript()));
 
 
                 Iterable<MoveRefactoringContributor> moveNodesBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
