@@ -1152,6 +1152,9 @@
     <node concept="lpD6D" id="ROe8AA1GAV" role="lpD6w">
       <ref role="lpD7u" to="tpej:ROe8A_SmDX" resolve="CaseInsensitiveDuplicatedClassifierName" />
     </node>
+    <node concept="lpD6D" id="6gZBjbXXKgP" role="lpD6w">
+      <ref role="lpD7u" to="tpej:6gZBjbXWPp4" resolve="CharAssignmentConversion" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRQmKZ" role="lpD6w">
       <ref role="lpD7u" to="tpej:2jmlBNW7vIq" resolve="ClassifierNameUniqueness" />
     </node>
