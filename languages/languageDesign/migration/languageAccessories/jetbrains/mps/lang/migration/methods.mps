@@ -230,7 +230,7 @@
       <property role="TrG5h" value="isRerunnable" />
       <ref role="2NexVz" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="QcxE9" id="1JWcQ2VeX3z" role="2IRzpu">
-        <property role="QcwnP" value="migration is not rerunnable" />
+        <property role="QcwnP" value="&lt;migration is not rerunnable&gt;" />
       </node>
     </node>
     <node concept="QNuUh" id="1_lSsE3RFpE" role="QNr5C">
@@ -325,7 +325,7 @@
         </node>
       </node>
       <node concept="QcxE9" id="1JWcQ2VeXI3" role="2IRzpu">
-        <property role="QcwnP" value="no result checking" />
+        <property role="QcwnP" value="&lt;no result checking&gt;" />
       </node>
     </node>
     <node concept="1bVj0M" id="2VRROcY5Jyi" role="2qJGf4">
