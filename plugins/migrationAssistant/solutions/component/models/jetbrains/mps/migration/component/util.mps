@@ -5604,7 +5604,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="51adnVzUvma" role="3clF46">
-        <property role="TrG5h" value="scope" />
+        <property role="TrG5h" value="s" />
         <node concept="3uibUv" id="51adnVzVQ79" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
         </node>
@@ -5640,7 +5640,7 @@
                   <ref role="3cqZAo" node="51adnVzUrsd" resolve="depScope" />
                 </node>
                 <node concept="37vLTw" id="51adnVzULnj" role="37wK5m">
-                  <ref role="3cqZAo" node="51adnVzUvma" resolve="scope" />
+                  <ref role="3cqZAo" node="51adnVzUvma" resolve="s" />
                 </node>
               </node>
             </node>
@@ -5659,7 +5659,7 @@
                   <ref role="3cqZAo" node="51adnVzUrsd" resolve="depScope" />
                 </node>
                 <node concept="37vLTw" id="51adnVzUYNk" role="37wK5m">
-                  <ref role="3cqZAo" node="51adnVzUvma" resolve="scope" />
+                  <ref role="3cqZAo" node="51adnVzUvma" resolve="s" />
                 </node>
               </node>
             </node>
@@ -5676,7 +5676,7 @@
     <node concept="2YIFZL" id="51adnVzVq2Z" role="jymVt">
       <property role="TrG5h" value="deprecated" />
       <node concept="37vLTG" id="51adnVzVq33" role="3clF46">
-        <property role="TrG5h" value="scope" />
+        <property role="TrG5h" value="s" />
         <node concept="3uibUv" id="51adnVzVMvG" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
         </node>
@@ -5708,7 +5708,7 @@
               <node concept="1rXfSq" id="51adnVzVvH5" role="25WWJ7">
                 <ref role="37wK5l" node="51adnVzUpHf" resolve="depLinks" />
                 <node concept="37vLTw" id="51adnVzVRz9" role="37wK5m">
-                  <ref role="3cqZAo" node="51adnVzVq33" resolve="scope" />
+                  <ref role="3cqZAo" node="51adnVzVq33" resolve="s" />
                 </node>
               </node>
             </node>
@@ -5723,7 +5723,7 @@
               <node concept="1rXfSq" id="51adnVzVRVS" role="25WWJ7">
                 <ref role="37wK5l" node="51adnVzUpj1" resolve="depProps" />
                 <node concept="37vLTw" id="51adnVzVRVT" role="37wK5m">
-                  <ref role="3cqZAo" node="51adnVzVq33" resolve="scope" />
+                  <ref role="3cqZAo" node="51adnVzVq33" resolve="s" />
                 </node>
               </node>
             </node>
@@ -5738,7 +5738,7 @@
               <node concept="1rXfSq" id="51adnVzVSWk" role="25WWJ7">
                 <ref role="37wK5l" node="51adnVzUo$e" resolve="depConcepts" />
                 <node concept="37vLTw" id="51adnVzVSWl" role="37wK5m">
-                  <ref role="3cqZAo" node="51adnVzVq33" resolve="scope" />
+                  <ref role="3cqZAo" node="51adnVzVq33" resolve="s" />
                 </node>
               </node>
             </node>
@@ -5753,7 +5753,7 @@
               <node concept="1rXfSq" id="51adnVzVTNA" role="25WWJ7">
                 <ref role="37wK5l" node="51adnVzVVEW" resolve="depNodes" />
                 <node concept="37vLTw" id="51adnVzVTNB" role="37wK5m">
-                  <ref role="3cqZAo" node="51adnVzVq33" resolve="scope" />
+                  <ref role="3cqZAo" node="51adnVzVq33" resolve="s" />
                 </node>
               </node>
             </node>
@@ -5780,7 +5780,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="51adnVzWmza" role="3clF46">
-        <property role="TrG5h" value="scope" />
+        <property role="TrG5h" value="s" />
         <node concept="3uibUv" id="51adnVzWmzb" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
         </node>
@@ -5789,7 +5789,7 @@
         <node concept="L3pyB" id="51adnVzUYML" role="3cqZAp">
           <node concept="2OqwBi" id="51adnVzWo0W" role="L3pyr">
             <node concept="37vLTw" id="51adnVzWnNo" role="2Oq$k0">
-              <ref role="3cqZAo" node="51adnVzWmza" resolve="scope" />
+              <ref role="3cqZAo" node="51adnVzWmza" resolve="s" />
             </node>
             <node concept="liA8E" id="51adnVzWoqx" role="2OqNvi">
               <ref role="37wK5l" to="lui2:~SearchScope.getModules():java.lang.Iterable" resolve="getModules" />
@@ -5862,7 +5862,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="51adnVzULn2" role="3clF46">
-        <property role="TrG5h" value="scope" />
+        <property role="TrG5h" value="s" />
         <node concept="3uibUv" id="51adnVzW5Ws" role="1tU5fm">
           <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
         </node>
@@ -5871,7 +5871,7 @@
         <node concept="L3pyB" id="51adnVzULkv" role="3cqZAp">
           <node concept="2OqwBi" id="51adnVzW6yy" role="L3pyr">
             <node concept="37vLTw" id="51adnVzULn7" role="2Oq$k0">
-              <ref role="3cqZAo" node="51adnVzULn2" resolve="scope" />
+              <ref role="3cqZAo" node="51adnVzULn2" resolve="s" />
             </node>
             <node concept="liA8E" id="51adnVzW7cG" role="2OqNvi">
               <ref role="37wK5l" to="lui2:~SearchScope.getModules():java.lang.Iterable" resolve="getModules" />

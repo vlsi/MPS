@@ -202,7 +202,6 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1171903607971" name="jetbrains.mps.baseLanguage.structure.WildCardType" flags="in" index="3qTvmN" />
       <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
         <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
@@ -2894,8 +2893,8 @@
             <node concept="3uibUv" id="51adnVzX5pd" role="1Lm7xW">
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
-            <node concept="A3Dl8" id="51adnVzX5qF" role="1Lm7xW">
-              <node concept="3Tqbb2" id="51adnVzX5qG" role="A3Ik2" />
+            <node concept="2hMVRd" id="51adnVzZu8x" role="1Lm7xW">
+              <node concept="3Tqbb2" id="51adnVzZu8z" role="2hN53Y" />
             </node>
           </node>
         </node>
@@ -3275,7 +3274,9 @@
         <node concept="A3Dl8" id="5$zfhXztxD8" role="1tU5fm">
           <node concept="3uibUv" id="51adnVzX6Cm" role="A3Ik2">
             <ref role="3uigEE" to="g4jo:J2bOg02GHT" resolve="SearchResult" />
-            <node concept="3qTvmN" id="51adnVzYt13" role="11_B2D" />
+            <node concept="3uibUv" id="51adnVzZkii" role="11_B2D">
+              <ref role="3uigEE" to="phxh:3etVqSRKzT$" resolve="ModelCheckerIssue" />
+            </node>
           </node>
         </node>
       </node>

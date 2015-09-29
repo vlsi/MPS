@@ -23,25 +23,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 public class DeprecatedUtil {
-  public static Set<SNode> usagesOfDeprecated(SearchScope depScope, SearchScope scope) {
+  public static Set<SNode> usagesOfDeprecated(SearchScope depScope, SearchScope s) {
     Set<SNode> usagesOfDeprecated = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedMeta(depScope, scope)));
-    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedNodes(depScope, scope)));
+    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedMeta(depScope, s)));
+    SetSequence.fromSet(usagesOfDeprecated).addSequence(Sequence.fromIterable(DeprecatedUtil.usagesOfDeprecatedNodes(depScope, s)));
     return usagesOfDeprecated;
   }
 
-  public static Set<SNode> deprecated(SearchScope scope) {
+  public static Set<SNode> deprecated(SearchScope s) {
     Set<SNode> deprecated = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depLinks(scope)));
-    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depProps(scope)));
-    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depConcepts(scope)));
-    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depNodes(scope)));
+    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depLinks(s)));
+    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depProps(s)));
+    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depConcepts(s)));
+    SetSequence.fromSet(deprecated).addSequence(Sequence.fromIterable(depNodes(s)));
     return deprecated;
   }
 
-  private static Iterable<SNode> usagesOfDeprecatedNodes(SearchScope depScope, SearchScope scope) {
+  private static Iterable<SNode> usagesOfDeprecatedNodes(SearchScope depScope, SearchScope s) {
     {
-      final SearchScope scope = CommandUtil.createScope(scope.getModules());
+      final SearchScope scope = CommandUtil.createScope(s.getModules());
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -59,9 +59,9 @@ public class DeprecatedUtil {
     }
   }
 
-  private static Iterable<SNode> usagesOfDeprecatedMeta(SearchScope depScope, SearchScope scope) {
+  private static Iterable<SNode> usagesOfDeprecatedMeta(SearchScope depScope, SearchScope s) {
     {
-      final SearchScope scope = CommandUtil.createScope(scope.getModules());
+      final SearchScope scope = CommandUtil.createScope(s.getModules());
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;

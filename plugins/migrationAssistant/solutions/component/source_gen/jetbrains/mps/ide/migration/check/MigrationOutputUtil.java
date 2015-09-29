@@ -9,8 +9,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
@@ -32,10 +34,10 @@ public class MigrationOutputUtil {
     }));
   }
 
-  public static void showNodes(final Project project, Tuples._2<String, Iterable<SNode>>... toShow) {
-    show(project, null, Sequence.fromIterable(Sequence.fromArray(toShow)).translate(new ITranslator2<Tuples._2<String, Iterable<SNode>>, SearchResult<ModelCheckerIssue>>() {
-      public Iterable<SearchResult<ModelCheckerIssue>> translate(final Tuples._2<String, Iterable<SNode>> cat) {
-        return Sequence.fromIterable(cat._1()).select(new ISelector<SNode, SearchResult<ModelCheckerIssue>>() {
+  public static void showNodes(final Project project, Tuples._2<String, Set<SNode>>... toShow) {
+    show(project, null, Sequence.fromIterable(Sequence.fromArray(toShow)).translate(new ITranslator2<Tuples._2<String, Set<SNode>>, SearchResult<ModelCheckerIssue>>() {
+      public Iterable<SearchResult<ModelCheckerIssue>> translate(final Tuples._2<String, Set<SNode>> cat) {
+        return SetSequence.fromSet(cat._1()).select(new ISelector<SNode, SearchResult<ModelCheckerIssue>>() {
           public SearchResult<ModelCheckerIssue> select(SNode node) {
             return new SearchResult<ModelCheckerIssue>(new ModelCheckerIssue.NodeIssue(node, "", null), node, cat._0());
           }
@@ -62,7 +64,7 @@ public class MigrationOutputUtil {
     return null;
   }
 
-  private static <T> void show(final Project project, Iterable<SNode> searchedNodes, Iterable<SearchResult<?>> items) {
+  private static <T> void show(final Project project, Iterable<SNode> searchedNodes, Iterable<SearchResult<ModelCheckerIssue>> items) {
     ModelCheckerViewer v = new ModelCheckerViewer(project) {
       @Override
       protected void close() {
@@ -71,12 +73,12 @@ public class MigrationOutputUtil {
       }
     };
     final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-    Sequence.fromIterable(items).where(new IWhereFilter<SearchResult<?>>() {
-      public boolean accept(SearchResult<?> it) {
+    Sequence.fromIterable(items).where(new IWhereFilter<SearchResult<ModelCheckerIssue>>() {
+      public boolean accept(SearchResult<ModelCheckerIssue> it) {
         return it != null;
       }
-    }).visitAll(new IVisitor<SearchResult<?>>() {
-      public void visit(SearchResult<?> it) {
+    }).visitAll(new IVisitor<SearchResult<ModelCheckerIssue>>() {
+      public void visit(SearchResult<ModelCheckerIssue> it) {
         result.add(it);
       }
     });
