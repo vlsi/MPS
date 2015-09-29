@@ -25,6 +25,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -94,6 +95,7 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -224,6 +226,13 @@
       </node>
     </node>
     <node concept="qMXn0" id="536fTXa4ZaL" role="QNr5C" />
+    <node concept="QNuUh" id="1JWcQ2VeWIs" role="QNr5C">
+      <property role="TrG5h" value="isRerunnable" />
+      <ref role="2NexVz" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="QcxE9" id="1JWcQ2VeX3z" role="2IRzpu">
+        <property role="QcwnP" value="migration is not rerunnable" />
+      </node>
+    </node>
     <node concept="QNuUh" id="1_lSsE3RFpE" role="QNr5C">
       <property role="TrG5h" value="description" />
       <ref role="2NexVz" to="tpck:fKAOsGN" resolve="string" />
@@ -299,6 +308,24 @@
             <node concept="3Tqbb2" id="4F5w8gPXEEQ" role="1tU5fm" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="q3mfq" id="1JWcQ2VeXpD" role="QNr5C">
+      <property role="TrG5h" value="check" />
+      <node concept="q3mfp" id="1JWcQ2VeXI5" role="q3mfl">
+        <property role="TrG5h" value="m" />
+        <node concept="3uibUv" id="1JWcQ2VeXI6" role="q3mfr">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="1JWcQ2VeXHJ" role="q3mfk">
+        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+        <node concept="3uibUv" id="1JWcQ2VeXHT" role="11_B2D">
+          <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+        </node>
+      </node>
+      <node concept="QcxE9" id="1JWcQ2VeXI3" role="2IRzpu">
+        <property role="QcwnP" value="no result checking" />
       </node>
     </node>
     <node concept="1bVj0M" id="2VRROcY5Jyi" role="2qJGf4">
