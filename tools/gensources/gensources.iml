@@ -305,7 +305,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/baseLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.dataFlow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.migration/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.plugin/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.quotation/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.structure/source_gen" isTestSource="false" />
