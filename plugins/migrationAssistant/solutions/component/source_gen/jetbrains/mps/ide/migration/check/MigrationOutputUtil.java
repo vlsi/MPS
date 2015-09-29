@@ -11,16 +11,17 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -35,15 +36,21 @@ public class MigrationOutputUtil {
   }
 
   public static void showNodes(final Project project, Tuples._2<String, Set<SNode>>... toShow) {
-    show(project, null, Sequence.fromIterable(Sequence.fromArray(toShow)).translate(new ITranslator2<Tuples._2<String, Set<SNode>>, SearchResult<ModelCheckerIssue>>() {
-      public Iterable<SearchResult<ModelCheckerIssue>> translate(final Tuples._2<String, Set<SNode>> cat) {
-        return SetSequence.fromSet(cat._1()).select(new ISelector<SNode, SearchResult<ModelCheckerIssue>>() {
-          public SearchResult<ModelCheckerIssue> select(SNode node) {
-            return new SearchResult<ModelCheckerIssue>(new ModelCheckerIssue.NodeIssue(node, "", null), node, cat._0());
+    final SearchResults sr = new SearchResults<SNode>();
+    Sequence.fromIterable(Sequence.fromArray(toShow)).translate(new ITranslator2<Tuples._2<String, Set<SNode>>, SearchResult<SNode>>() {
+      public Iterable<SearchResult<SNode>> translate(final Tuples._2<String, Set<SNode>> cat) {
+        return SetSequence.fromSet(cat._1()).select(new ISelector<SNode, SearchResult<SNode>>() {
+          public SearchResult<SNode> select(SNode node) {
+            return new SearchResult<SNode>(node, node, cat._0());
           }
         });
       }
-    }));
+    }).visitAll(new IVisitor<SearchResult<SNode>>() {
+      public void visit(SearchResult<SNode> it) {
+        sr.add(it);
+      }
+    });
+    project.getComponent(UsagesViewTool.class).show(sr, "No results to show");
   }
 
   private static ModelCheckerIssue issueByProblem(Problem p) {
