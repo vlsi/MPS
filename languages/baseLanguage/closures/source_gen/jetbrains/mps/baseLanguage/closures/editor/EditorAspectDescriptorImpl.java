@@ -22,32 +22,34 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 3:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ClosureLiteral_Editor()));
       case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ClosureLiteralType_Editor()));
       case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CompactInvokeFunctionExpression_Editor()));
       case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ControlAbstractionContainer_Editor()));
       case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ControlAbstractionDeclaration_Editor()));
       case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ControlClosureLiteral_Editor()));
       case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FunctionType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FunctionMethodDeclaration_Editor()));
       case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FunctionType_Editor()));
       case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InvokeExpression_Editor()));
       case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InvokeFunctionExpression_Editor()));
       case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InvokeFunctionOperation_Editor()));
       case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnboundClosureParameterDeclaration_Editor()));
       case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnrestrictedClosureLiteral_Editor()));
       case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnrestrictedFunctionType_Editor()));
       case 17:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new YieldAllStatement_Editor()));
+      case 18:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new YieldStatement_Editor()));
       default:
     }
@@ -59,5 +61,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
 }

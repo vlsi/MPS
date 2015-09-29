@@ -158,6 +158,7 @@
       <concept id="3175313036448560967" name="jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation" flags="nn" index="SfwO_" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
       </concept>
@@ -872,8 +873,8 @@
   <node concept="vrV6u" id="3vRuGRSaF5">
     <property role="20vvCb" value="customContainers" />
     <property role="TrG5h" value="customContainers" />
-    <node concept="1ajhzC" id="6j5CbT7vrf1" role="luc8K">
-      <node concept="2I9FWS" id="6j5CbT7vrf5" role="1ajl9A">
+    <node concept="9cv3F" id="3Gulco4rgKr" role="luc8K">
+      <node concept="2I9FWS" id="3Gulco4rgKs" role="1ajl9A">
         <ref role="2I9WkF" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
       </node>
     </node>

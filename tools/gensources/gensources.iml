@@ -580,6 +580,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/testModules">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen" isTestSource="false" />

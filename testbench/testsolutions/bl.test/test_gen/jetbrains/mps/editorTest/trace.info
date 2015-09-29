@@ -2027,6 +2027,160 @@
       <unit id="2278396422093812354" at="10,0,30,0" name="jetbrains.mps.editorTest.BS_InInitializerBeggining_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484595147">
+    <file name="SplitSingleLineComment1_Test.java">
+      <node id="2321301958484595147" at="15,63,16,107" concept="2" />
+      <node id="2321301958484595147" at="16,107,17,104" concept="2" />
+      <node id="2321301958484595147" at="24,51,25,63" concept="2" />
+      <node id="2321301958484596908" at="25,63,26,74" concept="2" />
+      <node id="2321301958484595147" at="12,0,14,0" concept="1" trace="SplitSingleLineComment1_Test#()V" />
+      <node id="2321301958484595147" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484595147" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment1#()V" />
+      <node id="2321301958484595147" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484595147" at="12,41,12,41" />
+      <scope id="2321301958484595147" at="21,23,21,23" />
+      <scope id="2321301958484595147" at="12,0,14,0" />
+      <scope id="2321301958484595147" at="15,63,17,104" />
+      <scope id="2321301958484595147" at="21,0,23,0" />
+      <scope id="2321301958484595147" at="24,51,26,74" />
+      <scope id="2321301958484595147" at="14,0,19,0" />
+      <scope id="2321301958484595147" at="23,0,28,0" />
+      <unit id="2321301958484595147" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment1_Test$TestBody" />
+      <unit id="2321301958484595147" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484597195">
+    <file name="SplitSingleLineComment2_Test.java">
+      <node id="2321301958484597195" at="15,63,16,107" concept="2" />
+      <node id="2321301958484597195" at="16,107,17,104" concept="2" />
+      <node id="2321301958484597195" at="24,51,25,63" concept="2" />
+      <node id="2321301958484597216" at="25,63,26,74" concept="2" />
+      <node id="2321301958484597195" at="12,0,14,0" concept="1" trace="SplitSingleLineComment2_Test#()V" />
+      <node id="2321301958484597195" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484597195" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment2#()V" />
+      <node id="2321301958484597195" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484597195" at="12,41,12,41" />
+      <scope id="2321301958484597195" at="21,23,21,23" />
+      <scope id="2321301958484597195" at="12,0,14,0" />
+      <scope id="2321301958484597195" at="15,63,17,104" />
+      <scope id="2321301958484597195" at="21,0,23,0" />
+      <scope id="2321301958484597195" at="24,51,26,74" />
+      <scope id="2321301958484597195" at="14,0,19,0" />
+      <scope id="2321301958484597195" at="23,0,28,0" />
+      <unit id="2321301958484597195" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment2_Test$TestBody" />
+      <unit id="2321301958484597195" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484597301">
+    <file name="SplitSingleLineComment3_Test.java">
+      <node id="2321301958484597301" at="15,63,16,107" concept="2" />
+      <node id="2321301958484597301" at="16,107,17,104" concept="2" />
+      <node id="2321301958484597301" at="24,51,25,63" concept="2" />
+      <node id="2321301958484597323" at="25,63,26,80" concept="2" />
+      <node id="2321301958484597301" at="12,0,14,0" concept="1" trace="SplitSingleLineComment3_Test#()V" />
+      <node id="2321301958484597301" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484597301" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment3#()V" />
+      <node id="2321301958484597301" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484597301" at="12,41,12,41" />
+      <scope id="2321301958484597301" at="21,23,21,23" />
+      <scope id="2321301958484597301" at="12,0,14,0" />
+      <scope id="2321301958484597301" at="15,63,17,104" />
+      <scope id="2321301958484597301" at="21,0,23,0" />
+      <scope id="2321301958484597301" at="24,51,26,80" />
+      <scope id="2321301958484597301" at="14,0,19,0" />
+      <scope id="2321301958484597301" at="23,0,28,0" />
+      <unit id="2321301958484597301" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment3_Test$TestBody" />
+      <unit id="2321301958484597301" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484597339">
+    <file name="SplitSingleLineComment4_Test.java">
+      <node id="2321301958484597339" at="15,63,16,107" concept="2" />
+      <node id="2321301958484597339" at="16,107,17,104" concept="2" />
+      <node id="2321301958484597339" at="24,51,25,63" concept="2" />
+      <node id="2321301958484597361" at="25,63,26,74" concept="2" />
+      <node id="2321301958484597339" at="12,0,14,0" concept="1" trace="SplitSingleLineComment4_Test#()V" />
+      <node id="2321301958484597339" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484597339" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment4#()V" />
+      <node id="2321301958484597339" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484597339" at="12,41,12,41" />
+      <scope id="2321301958484597339" at="21,23,21,23" />
+      <scope id="2321301958484597339" at="12,0,14,0" />
+      <scope id="2321301958484597339" at="15,63,17,104" />
+      <scope id="2321301958484597339" at="21,0,23,0" />
+      <scope id="2321301958484597339" at="24,51,26,74" />
+      <scope id="2321301958484597339" at="14,0,19,0" />
+      <scope id="2321301958484597339" at="23,0,28,0" />
+      <unit id="2321301958484597339" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment4_Test$TestBody" />
+      <unit id="2321301958484597339" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment4_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484597426">
+    <file name="SplitSingleLineComment5_Test.java">
+      <node id="2321301958484597426" at="15,63,16,107" concept="2" />
+      <node id="2321301958484597426" at="16,107,17,104" concept="2" />
+      <node id="2321301958484597426" at="24,51,25,63" concept="2" />
+      <node id="2321301958484597448" at="25,63,26,74" concept="2" />
+      <node id="2321301958484597426" at="12,0,14,0" concept="1" trace="SplitSingleLineComment5_Test#()V" />
+      <node id="2321301958484597426" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484597426" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment5#()V" />
+      <node id="2321301958484597426" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484597426" at="12,41,12,41" />
+      <scope id="2321301958484597426" at="21,23,21,23" />
+      <scope id="2321301958484597426" at="12,0,14,0" />
+      <scope id="2321301958484597426" at="15,63,17,104" />
+      <scope id="2321301958484597426" at="21,0,23,0" />
+      <scope id="2321301958484597426" at="24,51,26,74" />
+      <scope id="2321301958484597426" at="14,0,19,0" />
+      <scope id="2321301958484597426" at="23,0,28,0" />
+      <unit id="2321301958484597426" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment5_Test$TestBody" />
+      <unit id="2321301958484597426" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment5_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484597603">
+    <file name="SplitSingleLineComment6_Test.java">
+      <node id="2321301958484597603" at="15,63,16,107" concept="2" />
+      <node id="2321301958484597603" at="16,107,17,104" concept="2" />
+      <node id="2321301958484597603" at="24,51,25,63" concept="2" />
+      <node id="2321301958484597626" at="25,63,26,74" concept="2" />
+      <node id="2321301958484597603" at="12,0,14,0" concept="1" trace="SplitSingleLineComment6_Test#()V" />
+      <node id="2321301958484597603" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484597603" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment6#()V" />
+      <node id="2321301958484597603" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484597603" at="12,41,12,41" />
+      <scope id="2321301958484597603" at="21,23,21,23" />
+      <scope id="2321301958484597603" at="12,0,14,0" />
+      <scope id="2321301958484597603" at="15,63,17,104" />
+      <scope id="2321301958484597603" at="21,0,23,0" />
+      <scope id="2321301958484597603" at="24,51,26,74" />
+      <scope id="2321301958484597603" at="14,0,19,0" />
+      <scope id="2321301958484597603" at="23,0,28,0" />
+      <unit id="2321301958484597603" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment6_Test$TestBody" />
+      <unit id="2321301958484597603" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment6_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2321301958484597706">
+    <file name="SplitSingleLineComment7_Test.java">
+      <node id="2321301958484597706" at="15,63,16,107" concept="2" />
+      <node id="2321301958484597706" at="16,107,17,104" concept="2" />
+      <node id="2321301958484597706" at="24,51,25,63" concept="2" />
+      <node id="2321301958484597730" at="25,63,26,74" concept="2" />
+      <node id="2321301958484597706" at="12,0,14,0" concept="1" trace="SplitSingleLineComment7_Test#()V" />
+      <node id="2321301958484597706" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2321301958484597706" at="14,0,19,0" concept="5" trace="test_SplitSingleLineComment7#()V" />
+      <node id="2321301958484597706" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2321301958484597706" at="12,41,12,41" />
+      <scope id="2321301958484597706" at="21,23,21,23" />
+      <scope id="2321301958484597706" at="12,0,14,0" />
+      <scope id="2321301958484597706" at="15,63,17,104" />
+      <scope id="2321301958484597706" at="21,0,23,0" />
+      <scope id="2321301958484597706" at="24,51,26,74" />
+      <scope id="2321301958484597706" at="14,0,19,0" />
+      <scope id="2321301958484597706" at="23,0,28,0" />
+      <unit id="2321301958484597706" at="19,0,29,0" name="jetbrains.mps.editorTest.SplitSingleLineComment7_Test$TestBody" />
+      <unit id="2321301958484597706" at="10,0,30,0" name="jetbrains.mps.editorTest.SplitSingleLineComment7_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2322823743453985855">
     <file name="WrappingCellShouldntBeSelectable_Test.java">
       <node id="2322823743453985855" at="15,72,16,107" concept="2" />

@@ -510,7 +510,7 @@
       <node concept="3EZMnI" id="h5Ycgjp" role="3EZMnx">
         <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="h5Ycgjq" role="3EZMnx">
-          <property role="3F0ifm" value="rule" />
+          <property role="3F0ifm" value="inference rule" />
           <node concept="VPxyj" id="hEZKQ_k" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>

@@ -884,7 +884,7 @@
     <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/nontypesystem.png" />
     <property role="TrG5h" value="NonTypesystemRule" />
-    <property role="34LRSv" value="Non-Typesystem Rule" />
+    <property role="34LRSv" value="Checking Rule" />
     <property role="3GE5qa" value="definition.rule" />
     <property role="1pbfSe" value="1213456912" />
     <ref role="1TJDcQ" node="hp8hY$D" resolve="AbstractCheckingRule" />

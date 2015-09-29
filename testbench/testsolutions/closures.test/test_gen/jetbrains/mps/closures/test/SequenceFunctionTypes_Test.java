@@ -177,7 +177,8 @@ __switch__:
         };
       }
     });
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
+
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return seq;
       }
