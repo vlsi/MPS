@@ -13,13 +13,19 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.smodel.query.CommandUtil;
+import jetbrains.mps.smodel.query.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.ex.IFileEx;
 
@@ -83,10 +89,11 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
    * be combined into one piece of universal code
    */
   private static void removeGenSources(Project p) {
-    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+    Iterable<SModule> modulesToClean;
+    Sequence.fromIterable(getModulesForCleanup(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         IFile outputDir = it.getOutputPath();
-        IFile testDir = check_jwqyzj_a0b0a0a0a91(it.getFacet(TestsFacet.class));
+        IFile testDir = check_jwqyzj_a0b0a0a1a91(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
           IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           refreshAndDelete(outputDir);
@@ -101,10 +108,26 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     });
   }
 
+  private static Iterable<SModule> getModulesForCleanup(Project p) {
+    {
+      final SearchScope scope = CommandUtil.createScope(p);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      return Sequence.fromIterable(CommandUtil.modules(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SModule>() {
+        public boolean accept(SModule it) {
+          return !((Solution.isBootstrapSolution(it.getModuleReference()))) && !((it instanceof DevKit));
+        }
+      });
+    }
+  }
+
   private static void removeClassesGen(Project p) {
-    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+    Sequence.fromIterable(getModulesForCleanup(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
-        IFile classesGen = check_jwqyzj_a0a0a0a0a12(it.getFacet(JavaModuleFacet.class));
+        IFile classesGen = check_jwqyzj_a0a0a0a0a32(it.getFacet(JavaModuleFacet.class));
         refreshAndDelete(classesGen);
       }
     });
@@ -127,13 +150,13 @@ public class CleanSourcesMigration extends BaseProjectMigration implements Proje
     }
     f.delete();
   }
-  private static IFile check_jwqyzj_a0b0a0a0a91(TestsFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0b0a0a1a91(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-  private static IFile check_jwqyzj_a0a0a0a0a12(JavaModuleFacet checkedDotOperand) {
+  private static IFile check_jwqyzj_a0a0a0a0a32(JavaModuleFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassesGen();
     }
