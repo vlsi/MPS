@@ -145,7 +145,7 @@ public class MpsEnvironment extends EnvironmentBase {
 
   @Nullable
   protected ClassLoader rootClassLoader() {
-    return null;
+    return MpsEnvironment.class.getClassLoader();
   }
   protected static Logger LOG = LogManager.getLogger(MpsEnvironment.class);
 }

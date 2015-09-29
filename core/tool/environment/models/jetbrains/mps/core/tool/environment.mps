@@ -2021,7 +2021,14 @@
       </node>
       <node concept="3clFbS" id="3eUNqOk9bhD" role="3clF47">
         <node concept="3cpWs6" id="5A5jZrz4gNq" role="3cqZAp">
-          <node concept="10Nm6u" id="5A5jZrz4gNr" role="3cqZAk" />
+          <node concept="2OqwBi" id="1dXEpoKqjkZ" role="3cqZAk">
+            <node concept="3VsKOn" id="1dXEpoKq1kL" role="2Oq$k0">
+              <ref role="3VsUkX" node="6rx4kZDk6yp" resolve="MpsEnvironment" />
+            </node>
+            <node concept="liA8E" id="1dXEpoKqk0$" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
