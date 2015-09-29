@@ -21,6 +21,10 @@ public class RemoveOddAnnotations extends MigrationScriptBase {
   public String getCaption() {
     return "Remove @dslclass annotations from instances of AutoInitDSLClass";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);

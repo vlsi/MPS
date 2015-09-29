@@ -17,6 +17,10 @@ public class MoveDocTagsIntoTagsChildCollection extends MigrationScriptBase {
   public String getCaption() {
     return "MoveDocTagsIntoTagsChildCollection";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(SModule m) {
     Iterable<SModel> models = m.getModels();
     Sequence.fromIterable(models).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
