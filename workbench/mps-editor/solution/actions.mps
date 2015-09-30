@@ -7188,7 +7188,7 @@
                         <ref role="3cqZAo" node="2M3H3BXpUDQ" resolve="group" />
                       </node>
                       <node concept="liA8E" id="2M3H3BXpUDW" role="2OqNvi">
-                        <ref role="37wK5l" to="qkt:~ActionGroup.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+                        <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
                         <node concept="tl45R" id="2M3H3BXpUDX" role="37wK5m" />
                       </node>
                     </node>
@@ -7367,7 +7367,7 @@
               <ref role="3cqZAo" node="2M3H3BXpUEP" resolve="group" />
             </node>
             <node concept="liA8E" id="2M3H3BXpUEV" role="2OqNvi">
-              <ref role="37wK5l" to="qkt:~ActionGroup.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+              <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
               <node concept="tl45R" id="2M3H3BXpUEW" role="37wK5m" />
             </node>
           </node>

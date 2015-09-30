@@ -6322,7 +6322,7 @@
                     <node concept="3clFbS" id="ndZCfAIfKf" role="3clF47">
                       <node concept="3clFbF" id="ndZCfAIfKg" role="3cqZAp">
                         <node concept="3nyPlj" id="ndZCfAIfKh" role="3clFbG">
-                          <ref role="37wK5l" to="qkt:~ActionGroup.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+                          <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
                           <node concept="37vLTw" id="2BHiRxglXOF" role="37wK5m">
                             <ref role="3cqZAo" node="ndZCfAIfJX" resolve="e" />
                           </node>

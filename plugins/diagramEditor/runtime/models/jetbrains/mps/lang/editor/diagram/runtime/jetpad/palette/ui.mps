@@ -546,7 +546,7 @@
       <node concept="3clFbS" id="1or34_f2jO9" role="3clF47">
         <node concept="3clFbF" id="1or34_f2jOd" role="3cqZAp">
           <node concept="3nyPlj" id="1or34_f2jOc" role="3clFbG">
-            <ref role="37wK5l" to="qkt:~ActionGroup.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
+            <ref role="37wK5l" to="qkt:~AnAction.update(com.intellij.openapi.actionSystem.AnActionEvent):void" resolve="update" />
             <node concept="37vLTw" id="1or34_f2jOb" role="37wK5m">
               <ref role="3cqZAo" node="1or34_f2jO7" resolve="event" />
             </node>

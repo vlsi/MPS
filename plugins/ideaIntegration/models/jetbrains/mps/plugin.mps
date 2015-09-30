@@ -419,23 +419,20 @@
         <node concept="3cpWs8" id="3T639SbDhq9" role="3cqZAp">
           <node concept="3cpWsn" id="3T639SbDhqa" role="3cpWs9">
             <property role="TrG5h" value="projectStore" />
-            <node concept="2OqwBi" id="3T639SbDJZE" role="33vP2m">
-              <node concept="liA8E" id="3T639SbDOjN" role="2OqNvi">
-                <ref role="37wK5l" to="nos0:~ProjectEx.getStateStore():com.intellij.openapi.components.impl.stores.IProjectStore" resolve="getStateStore" />
-              </node>
-              <node concept="1eOMI4" id="3T639SbDFDR" role="2Oq$k0">
-                <node concept="10QFUN" id="3T639SbDzie" role="1eOMHV">
-                  <node concept="3uibUv" id="3T639SbDBki" role="10QFUM">
-                    <ref role="3uigEE" to="nos0:~ProjectEx" resolve="ProjectEx" />
-                  </node>
-                  <node concept="37vLTw" id="3T639SbDnk8" role="10QFUP">
-                    <ref role="3cqZAo" node="7vbFQ4bPXuL" resolve="project" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3uibUv" id="3T639SbDhqb" role="1tU5fm">
               <ref role="3uigEE" to="dz3k:~IProjectStore" resolve="IProjectStore" />
+            </node>
+            <node concept="10QFUN" id="7C$AW5VBCDz" role="33vP2m">
+              <node concept="3uibUv" id="7C$AW5VBCUZ" role="10QFUM">
+                <ref role="3uigEE" to="dz3k:~IProjectStore" resolve="IProjectStore" />
+              </node>
+              <node concept="2YIFZM" id="7C$AW5VBCbS" role="10QFUP">
+                <ref role="37wK5l" to="1m72:~ComponentsPackage.getStateStore(com.intellij.openapi.components.ComponentManager):com.intellij.openapi.components.impl.stores.IComponentStore" resolve="getStateStore" />
+                <ref role="1Pybhc" to="1m72:~ComponentsPackage" resolve="ComponentsPackage" />
+                <node concept="37vLTw" id="7C$AW5VBCtd" role="37wK5m">
+                  <ref role="3cqZAo" node="7vbFQ4bPXuL" resolve="project" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
