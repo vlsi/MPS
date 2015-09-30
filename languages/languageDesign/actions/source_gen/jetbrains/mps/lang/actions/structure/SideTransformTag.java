@@ -14,12 +14,20 @@ public enum SideTransformTag {
   ext_4("ext_4", "ext_4_RTransform"),
   ext_5("ext_5", "ext_5_RTransform");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  SideTransformTag(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<SideTransformTag> getConstants() {
     List<SideTransformTag> list = ListSequence.fromList(new LinkedList<SideTransformTag>());
@@ -57,13 +65,5 @@ public enum SideTransformTag {
       return SideTransformTag.ext_5;
     }
     return SideTransformTag.getDefault();
-  }
-  private String myValue;
-  SideTransformTag(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -13,12 +13,20 @@ public enum RefactoringTargetKind_Enum {
   solution("solution", "solution"),
   devkit("devkit", "devkit");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  RefactoringTargetKind_Enum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<RefactoringTargetKind_Enum> getConstants() {
     List<RefactoringTargetKind_Enum> list = ListSequence.fromList(new LinkedList<RefactoringTargetKind_Enum>());
@@ -52,13 +60,5 @@ public enum RefactoringTargetKind_Enum {
       return RefactoringTargetKind_Enum.devkit;
     }
     return RefactoringTargetKind_Enum.getDefault();
-  }
-  private String myValue;
-  RefactoringTargetKind_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -11,12 +11,20 @@ public enum BuildSource_JavaContentFolderKind {
   test("test", "test"),
   excluded("excluded", "excluded");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  BuildSource_JavaContentFolderKind(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<BuildSource_JavaContentFolderKind> getConstants() {
     List<BuildSource_JavaContentFolderKind> list = ListSequence.fromList(new LinkedList<BuildSource_JavaContentFolderKind>());
@@ -42,13 +50,5 @@ public enum BuildSource_JavaContentFolderKind {
       return BuildSource_JavaContentFolderKind.excluded;
     }
     return BuildSource_JavaContentFolderKind.getDefault();
-  }
-  private String myValue;
-  BuildSource_JavaContentFolderKind(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

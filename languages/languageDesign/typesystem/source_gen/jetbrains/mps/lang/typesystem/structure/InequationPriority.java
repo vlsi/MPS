@@ -13,12 +13,20 @@ public enum InequationPriority {
   _3("3", 3),
   inf("inf", 500);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final int myValue;
+  InequationPriority(String name, int value) {
+    myName = name;
+    myValue = value;
+  }
+  public int getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Integer.toString(myValue);
   }
   public static List<InequationPriority> getConstants() {
     List<InequationPriority> list = ListSequence.fromList(new LinkedList<InequationPriority>());
@@ -52,13 +60,5 @@ public enum InequationPriority {
       return InequationPriority.inf;
     }
     return InequationPriority.getDefault();
-  }
-  private int myValue;
-  InequationPriority(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public int getValue() {
-    return this.myValue;
   }
 }

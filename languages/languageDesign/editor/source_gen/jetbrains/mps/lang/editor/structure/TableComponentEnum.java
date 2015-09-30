@@ -10,12 +10,20 @@ public enum TableComponentEnum {
   horizontal_collection("horizontal collection", "HORIZONTAL_COLLECTION"),
   vertical_collection("vertical collection", "VERTICAL_COLLECTION");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  TableComponentEnum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<TableComponentEnum> getConstants() {
     List<TableComponentEnum> list = ListSequence.fromList(new LinkedList<TableComponentEnum>());
@@ -37,13 +45,5 @@ public enum TableComponentEnum {
       return TableComponentEnum.vertical_collection;
     }
     return TableComponentEnum.getDefault();
-  }
-  private String myValue;
-  TableComponentEnum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

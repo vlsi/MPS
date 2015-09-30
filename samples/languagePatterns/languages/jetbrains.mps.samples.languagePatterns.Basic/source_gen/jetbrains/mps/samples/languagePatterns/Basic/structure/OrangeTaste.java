@@ -11,12 +11,20 @@ public enum OrangeTaste {
   Sour("Sour", null),
   Bitter("Bitter", null);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  OrangeTaste(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<OrangeTaste> getConstants() {
     List<OrangeTaste> list = ListSequence.fromList(new LinkedList<OrangeTaste>());
@@ -42,13 +50,5 @@ public enum OrangeTaste {
       return OrangeTaste.Bitter;
     }
     return OrangeTaste.getDefault();
-  }
-  private String myValue;
-  OrangeTaste(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

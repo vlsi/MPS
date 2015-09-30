@@ -12,12 +12,20 @@ public enum MatrixNormKind {
   norm2F("F", 2),
   normMax("max", 3);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final int myValue;
+  MatrixNormKind(String name, int value) {
+    myName = name;
+    myValue = value;
+  }
+  public int getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Integer.toString(myValue);
   }
   public static List<MatrixNormKind> getConstants() {
     List<MatrixNormKind> list = ListSequence.fromList(new LinkedList<MatrixNormKind>());
@@ -47,13 +55,5 @@ public enum MatrixNormKind {
       return MatrixNormKind.normMax;
     }
     return MatrixNormKind.getDefault();
-  }
-  private int myValue;
-  MatrixNormKind(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public int getValue() {
-    return this.myValue;
   }
 }

@@ -18,12 +18,20 @@ public enum UseInTest {
   argsInTemplateCall("Expressions in ITemplateCall arguments", "argsInTemplateCall"),
   none("none", "none");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  UseInTest(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<UseInTest> getConstants() {
     List<UseInTest> list = ListSequence.fromList(new LinkedList<UseInTest>());
@@ -77,13 +85,5 @@ public enum UseInTest {
       return UseInTest.none;
     }
     return UseInTest.getDefault();
-  }
-  private String myValue;
-  UseInTest(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }
