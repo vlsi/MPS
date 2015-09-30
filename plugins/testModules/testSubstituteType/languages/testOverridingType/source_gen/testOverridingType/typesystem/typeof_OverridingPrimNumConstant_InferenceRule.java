@@ -32,10 +32,7 @@ public class typeof_OverridingPrimNumConstant_InferenceRule extends AbstractInfe
     return MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x5b362c13a4988795L, "testOverridingType.structure.OverridingPrimNumConstant");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean ok = argument.getConcept().isSubConceptOf(getApplicableConcept());
-      return new IsApplicableStatus(ok, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   private static SNode _quotation_createNode_kl4nnl_a0a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

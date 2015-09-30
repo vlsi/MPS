@@ -28,16 +28,14 @@ public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRu
     return MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, "testOverridingType.structure.OverrideAnnotation");
   }
   public IsApplicableStatus isApplicableAndPattern(final SNode argument) {
-    {
-      boolean ok = argument.getConcept().isSubConceptOf(getApplicableConcept());
-      if (ok) {
-        return new IsApplicableStatus(new IsApplicableStatus.Probe() {
-          public boolean eval() {
-            return PresenceCondition_BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(argument, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
-          }
-        }, null);
-      }
-      return new IsApplicableStatus(ok, null);
+    if (argument.getConcept().isSubConceptOf(getApplicableConcept())) {
+      return new IsApplicableStatus(new IsApplicableStatus.Probe() {
+        public boolean eval() {
+          return PresenceCondition_BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(argument, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
+        }
+      }, null);
+    } else {
+      return new IsApplicableStatus(false, null);
     }
   }
   public boolean overrides() {
