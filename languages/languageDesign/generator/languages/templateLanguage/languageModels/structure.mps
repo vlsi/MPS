@@ -18,7 +18,10 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -307,6 +310,10 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contextNodeQuery" />
       <ref role="20lvS9" node="hf2c0UL" resolve="TemplateFragment_ContextNodeQuery" />
+      <node concept="asaX9" id="6t_vhrz0Pv" role="lGtFl">
+        <property role="YLQ7P" value="https://youtrack.jetbrains.com/issue/MPS-22695" />
+        <property role="YLPcu" value="MPS 3.3" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="gcjVnq8">
@@ -938,6 +945,10 @@
     <property role="34LRSv" value="template fragment context node" />
     <property role="1pbfSe" value="1037037628" />
     <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
+    <node concept="asaX9" id="6t_vhrz0CF" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="https://youtrack.jetbrains.com/issue/MPS-22695" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hf2cCeX">
     <property role="R5$K7" value="false" />

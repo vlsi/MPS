@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import java.util.Collection;
 /**
  * Evgeny Gryaznov, 10/22/10
  */
-public interface TemplateDeclaration {
+public interface TemplateDeclaration extends TemplateDeclarationWeavingAware2 {
 
   SNodeReference getTemplateNode();
 
