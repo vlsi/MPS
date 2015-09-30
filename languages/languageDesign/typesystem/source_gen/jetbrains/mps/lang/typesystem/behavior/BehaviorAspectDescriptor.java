@@ -67,12 +67,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySubstituteTypeRule_BehaviorDescriptor = new SubstituteTypeRule_BehaviorDescriptor();
   private final BHDescriptor myConceptFunctionParameter_Selection_BehaviorDescriptor = new ConceptFunctionParameter_Selection_BehaviorDescriptor();
   private final BHDescriptor mySupersedeConceptFunction_BehaviorDescriptor = new SupersedeConceptFunction_BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableConceptFunction_BehaviorDescriptor = new IsApplicableConceptFunction_BehaviorDescriptor();
   private final BHDescriptor myQuickFixFieldReference_BehaviorDescriptor = new QuickFixFieldReference_BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[56];
+    myConceptBehaviorIds = new long[57];
     myConceptBehaviorIds[0] = 0x1117e29d976L;
     myConceptBehaviorIds[1] = 0x1117e2a88b3L;
     myConceptBehaviorIds[2] = 0x1117e2c3e68L;
@@ -128,7 +129,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[52] = 0x58e32a0782bca52aL;
     myConceptBehaviorIds[53] = 0x611e7dc14a69a014L;
     myConceptBehaviorIds[54] = 0x65684a1aee252403L;
-    myConceptBehaviorIds[55] = 0x70489eee8479b55dL;
+    myConceptBehaviorIds[55] = 0x669222c8f1941d7fL;
+    myConceptBehaviorIds[56] = 0x70489eee8479b55dL;
   }
 
   @Deprecated
@@ -253,6 +255,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 54:
         return mySupersedeConceptFunction_BehaviorDescriptor;
       case 55:
+        return myIsApplicableConceptFunction_BehaviorDescriptor;
+      case 56:
         return myQuickFixFieldReference_BehaviorDescriptor;
       default:
         return null;

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.smodel.query.DFABuilders" file="DFABuilders.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.query.Language" file="Language.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -8,6 +12,8 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.actions.ActionAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.constraints.ConstraintsAspectDescriptor" />

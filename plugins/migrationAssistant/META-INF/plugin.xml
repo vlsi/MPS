@@ -25,12 +25,16 @@
   <depends>jetbrains.mps.ide.modelchecker</depends>
 
   <actions>
-    <action id="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" class="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action"></action>
-    <group id="jetbrains.mps.migration.component.plugin.MigationAssistantActions_ActionGroup">
-      <reference ref="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" />
-      <add-to-group group-id="ToolsMenu" anchor="last" />
+    <group id="Migration" text="Migration" configurable="true" popup="true" compact="true">
+      <add-to-group group-id="MainMenu" relative-to-action="ToolsMenu" anchor="after" />
     </group>
   </actions>
+
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.migration.component.plugin.Component_PluginInitializer</implementation-class>
+    </component>
+  </application-components>
 
   <project-components>
     <component>

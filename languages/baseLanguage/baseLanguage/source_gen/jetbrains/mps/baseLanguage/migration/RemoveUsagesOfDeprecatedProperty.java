@@ -25,6 +25,10 @@ public class RemoveUsagesOfDeprecatedProperty extends MigrationScriptBase {
   public String getCaption() {
     return "RemoveUsagesOfDeprecatedProperty";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);

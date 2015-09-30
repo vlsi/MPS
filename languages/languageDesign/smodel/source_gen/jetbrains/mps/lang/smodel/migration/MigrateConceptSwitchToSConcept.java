@@ -25,6 +25,10 @@ public class MigrateConceptSwitchToSConcept extends MigrationScriptBase {
   public String getCaption() {
     return "Migrate \"concept switch\" to SConcept";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);

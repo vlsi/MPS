@@ -556,7 +556,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/baseLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.dataFlow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.migration/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.plugin/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.quotation/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.structure/source_gen" isTestSource="false" />
@@ -564,7 +563,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/baseLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.dataFlow/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.migration/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.plugin/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.quotation/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsdevkit/languages/pluginSolutions/lang.structure/classes_gen" />
@@ -574,10 +572,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/classes_gen" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsmake">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/testModules">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" isTestSource="false" />
@@ -598,6 +592,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubstituteType/languages/testAnnotatedType/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/testModules/testSubstituteType/languages/testOverridingType/classes_gen" />

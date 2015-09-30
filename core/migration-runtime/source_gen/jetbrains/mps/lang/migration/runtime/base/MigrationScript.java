@@ -11,10 +11,12 @@ public interface MigrationScript {
   public MigrationScriptReference getDescriptor();
   public Iterable<MigrationScriptReference> executeAfter();
   public Iterable<MigrationScriptReference> requiresData();
+  public boolean isRerunnable();
 
   public void setDataCollector(DataCollector dataCollector);
   @Nullable
   public SNode execute(SModule module);
+  public Iterable<Problem> check(SModule module);
 
 
   /**

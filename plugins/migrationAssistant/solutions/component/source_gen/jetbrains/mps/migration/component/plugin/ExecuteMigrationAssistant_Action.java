@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.MigrationDialogUtil;
 

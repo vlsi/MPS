@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
@@ -133,17 +132,17 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     MapSequence.fromMap(loadedDescriptors).clear();
   }
 
-  public MigrationScript fetchScript(MigrationScriptReference scriptReference) {
+  public MigrationScript fetchScript(MigrationScriptReference scriptReference, boolean silently) {
     SLanguage depLanguage = scriptReference.getLanguage();
     int current = scriptReference.getFromVersion();
     MigrationDescriptor md = getMigrationDescriptor((Language) depLanguage.getSourceModule());
-    if (md == null) {
+    if (md == null && !(silently)) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration descriptor for language " + depLanguage + ".");
       }
     }
     MigrationScript script = check_gd1mrb_a0e0u(md, current);
-    if (script == null) {
+    if (script == null && !(silently)) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration script for language " + depLanguage + ", version " + current + ".");
       }
@@ -214,7 +213,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     }).select(new ISelector<MigrationScriptReference, String>() {
       public String select(MigrationScriptReference it) {
-        MigrationScript script = fetchScript(it);
+        MigrationScript script = fetchScript(it, false);
         String langNameShrinked = NameUtil.compactNamespace(it.getLanguage().getQualifiedName());
 
         if (script == null) {
@@ -244,7 +243,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
               continue;
             }
             for (int v = ver; v < currentLangVersion; v++) {
-              if (fetchScript(new MigrationScriptReference(lang, v)) == null) {
+              if (fetchScript(new MigrationScriptReference(lang, v), false) == null) {
                 ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage,Integer>from(module, lang, v));
                 // next used language, please 
                 break;
@@ -437,7 +436,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                 if (!(MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module))) {
                   return false;
                 }
-                MigrationScript loaded = fetchScript(it);
+                MigrationScript loaded = fetchScript(it, false);
                 if (loaded == null) {
                   return false;
                 }

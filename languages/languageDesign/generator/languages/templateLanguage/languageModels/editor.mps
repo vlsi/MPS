@@ -16,13 +16,10 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpd3" ref="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
-    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -66,6 +63,7 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="795210086017940429" name="jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem" flags="lg" index="xShMh" />
       <concept id="7667276221847612943" name="jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList" flags="in" index="2$ogOm" />
       <concept id="7667276221847612622" name="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" flags="ng" index="2$ogZn">
         <reference id="4203201205843994215" name="applicableConcept" index="jxYdt" />
@@ -1548,6 +1546,9 @@
             <node concept="VPM3Z" id="hEU$PWu" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
+            <node concept="3nxI2P" id="6t_vhrz1uV" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
           </node>
           <node concept="3F0ifn" id="hf2dFyA" role="3EZMnx">
             <property role="3F0ifm" value=":" />
@@ -1558,11 +1559,34 @@
           <node concept="3F1sOY" id="hf2dFyB" role="3EZMnx">
             <property role="1$x2rV" value="&lt;main context node&gt;" />
             <ref role="1NtTu8" to="tpf8:hf2ejkb" />
+            <node concept="xShMh" id="6t_vhr$lU3" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
           </node>
           <node concept="VPM3Z" id="hEU$PrL" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
           <node concept="2iRfu4" id="i2IBXW8" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="6t_vhrzJNw" role="3EZMnx">
+          <node concept="3F0ifn" id="6t_vhrzJNx" role="3EZMnx">
+            <node concept="VPM3Z" id="6t_vhr$lXq" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="6t_vhrzJON" role="3EZMnx">
+            <node concept="VPM3Z" id="6t_vhr$lVJ" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="6t_vhrzJP3" role="3EZMnx">
+            <property role="3F0ifm" value="Do not use fragment's context query. They will be removed in the next release" />
+            <ref role="1k5W1q" node="6t_vhrzKdF" resolve="Comment" />
+          </node>
+          <node concept="VPM3Z" id="6t_vhrzJNC" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="2iRfu4" id="6t_vhrzJND" role="2iSdaV" />
         </node>
         <node concept="VPM3Z" id="hEU$PLs" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -4614,6 +4638,15 @@
       </node>
       <node concept="VechU" id="5Ex$Jzqi8Pw" role="3F10Kt">
         <property role="Vb096" value="DARK_GREEN" />
+      </node>
+    </node>
+    <node concept="14StLt" id="6t_vhrzKdF" role="V601i">
+      <property role="TrG5h" value="Comment" />
+      <node concept="VPxyj" id="6t_vhrzKe$" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+      </node>
+      <node concept="VechU" id="6t_vhrzKeD" role="3F10Kt">
+        <property role="Vb096" value="lightGray" />
       </node>
     </node>
   </node>

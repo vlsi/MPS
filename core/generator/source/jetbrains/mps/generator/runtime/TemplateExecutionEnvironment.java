@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
@@ -115,7 +116,13 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 
-  // FIXME part of NodeWeaveFacility?
+  /**
+   * Invoked from generated template code when a template that produces nodes to weave resides in another
+   * generator module or model (see reduce_TemplateInvocationWeave. XXX why model - 'generate generators' is per module option, shall check other module only)
+   * @deprecated Use {@link #prepareWeave(WeaveContext, SNodeReference)} and {@link NodeWeaveFacility#weaveTemplate(SNodeReference, Object...)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
@@ -166,6 +173,8 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   void postProcess(@NotNull NodePostProcessor postProcessor);
 
   /**
+   * @deprecated use {@link #prepareWeave(WeaveContext, SNodeReference)} instead.
+   * This method was introduces in 3.3 and has never been part of public non-EAP release. Once next EAP/RC is out, remove this method
    * FIXME PROVISIONAL API
    * FIXME Consider splitting validation aspect from child addition, which could be generated.
    * FIXME perhaps, {@link #weaveTemplate(SNodeReference, SNodeReference, TemplateContext, SNode, Object...)} could be part of NodeWeaveFacility as well?
@@ -173,10 +182,14 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    * @return utility capable of node weaving with respect to the given context
    */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.2)
   NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode);
 
+  NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
+
   /**
-   * @deprecated use {@link #weaveNode(TemplateContext, SNodeReference)} and {@link NodeWeaveFacility} instead
+   * @deprecated use {@link #prepareWeave(WeaveContext, SNodeReference)}} and {@link NodeWeaveFacility} instead
    */
   @Deprecated
   @ToRemove(version = 3.3)
