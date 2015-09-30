@@ -10,12 +10,20 @@ public enum StyleAttributeKind {
   inherited("inherited", true),
   simple("simple", false);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final boolean myValue;
+  StyleAttributeKind(String name, boolean value) {
+    myName = name;
+    myValue = value;
+  }
+  public boolean getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Boolean.toString(myValue);
   }
   public static List<StyleAttributeKind> getConstants() {
     List<StyleAttributeKind> list = ListSequence.fromList(new LinkedList<StyleAttributeKind>());
@@ -37,13 +45,5 @@ public enum StyleAttributeKind {
       return StyleAttributeKind.simple;
     }
     return StyleAttributeKind.getDefault();
-  }
-  private boolean myValue;
-  StyleAttributeKind(String name, boolean value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public boolean getValue() {
-    return this.myValue;
   }
 }

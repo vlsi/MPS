@@ -11,12 +11,20 @@ public enum _CaretPosition_Enum {
   first("first", "FIRST"),
   last("last", "LAST");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  _CaretPosition_Enum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<_CaretPosition_Enum> getConstants() {
     List<_CaretPosition_Enum> list = ListSequence.fromList(new LinkedList<_CaretPosition_Enum>());
@@ -42,13 +50,5 @@ public enum _CaretPosition_Enum {
       return _CaretPosition_Enum.last;
     }
     return _CaretPosition_Enum.getDefault();
-  }
-  private String myValue;
-  _CaretPosition_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

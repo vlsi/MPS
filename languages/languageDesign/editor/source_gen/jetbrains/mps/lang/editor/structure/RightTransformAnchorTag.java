@@ -15,12 +15,20 @@ public enum RightTransformAnchorTag {
   ext_4("ext_4", "ext_4_RTransform"),
   ext_5("ext_5", "ext_5_RTransform");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  RightTransformAnchorTag(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<RightTransformAnchorTag> getConstants() {
     List<RightTransformAnchorTag> list = ListSequence.fromList(new LinkedList<RightTransformAnchorTag>());
@@ -62,13 +70,5 @@ public enum RightTransformAnchorTag {
       return RightTransformAnchorTag.ext_5;
     }
     return RightTransformAnchorTag.getDefault();
-  }
-  private String myValue;
-  RightTransformAnchorTag(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

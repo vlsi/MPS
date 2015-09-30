@@ -10,12 +10,20 @@ public enum ValueType {
   Quantity("QUANTITY", "Quantity"),
   Money("MONEY", "Money");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  ValueType(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<ValueType> getConstants() {
     List<ValueType> list = ListSequence.fromList(new LinkedList<ValueType>());
@@ -37,13 +45,5 @@ public enum ValueType {
       return ValueType.Money;
     }
     return ValueType.getDefault();
-  }
-  private String myValue;
-  ValueType(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

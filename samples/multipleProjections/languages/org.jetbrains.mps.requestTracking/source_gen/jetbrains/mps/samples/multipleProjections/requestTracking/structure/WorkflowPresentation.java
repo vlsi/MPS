@@ -10,12 +10,20 @@ public enum WorkflowPresentation {
   structural("structural", "structural"),
   tabular("tabular", "tabular");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  WorkflowPresentation(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<WorkflowPresentation> getConstants() {
     List<WorkflowPresentation> list = ListSequence.fromList(new LinkedList<WorkflowPresentation>());
@@ -37,13 +45,5 @@ public enum WorkflowPresentation {
       return WorkflowPresentation.tabular;
     }
     return WorkflowPresentation.getDefault();
-  }
-  private String myValue;
-  WorkflowPresentation(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

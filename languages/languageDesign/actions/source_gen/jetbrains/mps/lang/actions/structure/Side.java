@@ -11,12 +11,20 @@ public enum Side {
   left("left", "left"),
   both_sides("both sides", "both");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  Side(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<Side> getConstants() {
     List<Side> list = ListSequence.fromList(new LinkedList<Side>());
@@ -42,13 +50,5 @@ public enum Side {
       return Side.both_sides;
     }
     return Side.getDefault();
-  }
-  private String myValue;
-  Side(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -14,12 +14,20 @@ public enum Keymap {
   KDE("KDE", "Default for KDE"),
   Default("Default", "$default");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  Keymap(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<Keymap> getConstants() {
     List<Keymap> list = ListSequence.fromList(new LinkedList<Keymap>());
@@ -57,13 +65,5 @@ public enum Keymap {
       return Keymap.Default;
     }
     return Keymap.getDefault();
-  }
-  private String myValue;
-  Keymap(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

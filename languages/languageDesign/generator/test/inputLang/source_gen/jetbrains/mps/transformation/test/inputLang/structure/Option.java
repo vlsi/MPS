@@ -11,12 +11,20 @@ public enum Option {
   option_1("option_1", "option_1"),
   drop_it("drop it", "drop_it");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  Option(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<Option> getConstants() {
     List<Option> list = ListSequence.fromList(new LinkedList<Option>());
@@ -42,13 +50,5 @@ public enum Option {
       return Option.drop_it;
     }
     return Option.getDefault();
-  }
-  private String myValue;
-  Option(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }
