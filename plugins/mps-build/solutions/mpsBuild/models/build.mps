@@ -27593,6 +27593,11 @@
             <ref role="1Busuk" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6mpEeJcOtfp" role="3bR37C">
+          <node concept="1Busua" id="6mpEeJcOtfq" role="1SiIV1">
+            <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="ymnOULAU2c" role="2G$12L">
         <property role="BnDLt" value="true" />

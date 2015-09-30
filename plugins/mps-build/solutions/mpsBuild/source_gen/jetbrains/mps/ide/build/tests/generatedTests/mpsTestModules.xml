@@ -66,7 +66,7 @@
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/testAnnotatedType.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testAnnotatedType1" />
+      <fileset dir="${build.tmp}/java/out/testAnnotatedType2" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testAnnotatedType.jar1" />
@@ -117,7 +117,7 @@
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/testOverridingType.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testOverridingType1" />
+      <fileset dir="${build.tmp}/java/out/testOverridingType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testOverridingType.jar1" />
@@ -168,7 +168,7 @@
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/testWrappedType.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testWrappedType1" />
+      <fileset dir="${build.tmp}/java/out/testWrappedType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testWrappedType.jar1" />
@@ -321,7 +321,7 @@
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/testSubtypingB.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testSubtypingB1" />
+      <fileset dir="${build.tmp}/java/out/testSubtypingB" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testSubtypingB.jar1" />
@@ -689,8 +689,8 @@
   
   <target name="java.compile.testOverridingType" depends="java.compile.testAnnotatedType, fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testOverridingType1" />
-    <javac2 destdir="${build.tmp}/java/out/testOverridingType1" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <mkdir dir="${build.tmp}/java/out/testOverridingType" />
+    <javac2 destdir="${build.tmp}/java/out/testOverridingType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" />
@@ -728,7 +728,7 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/testOverridingType1">
+    <copy todir="${build.tmp}/java/out/testOverridingType">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -755,7 +755,7 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/testAnnotatedType1" />
-        <pathelement path="${build.tmp}/java/out/testOverridingType1" />
+        <pathelement path="${build.tmp}/java/out/testOverridingType" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -782,8 +782,8 @@
   
   <target name="java.compile.testWrappedType" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testWrappedType1" />
-    <javac2 destdir="${build.tmp}/java/out/testWrappedType1" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <mkdir dir="${build.tmp}/java/out/testWrappedType" />
+    <javac2 destdir="${build.tmp}/java/out/testWrappedType" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" />
@@ -820,7 +820,7 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/testWrappedType1">
+    <copy todir="${build.tmp}/java/out/testWrappedType">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -846,7 +846,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testWrappedType1" />
+        <pathelement path="${build.tmp}/java/out/testWrappedType" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1055,8 +1055,8 @@
   
   <target name="java.compile.testSubtypingB" depends="java.compile.testSubtypingA, fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testSubtypingB1" />
-    <javac2 destdir="${build.tmp}/java/out/testSubtypingB1" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <mkdir dir="${build.tmp}/java/out/testSubtypingB" />
+    <javac2 destdir="${build.tmp}/java/out/testSubtypingB" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" />
@@ -1094,7 +1094,7 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/testSubtypingB1">
+    <copy todir="${build.tmp}/java/out/testSubtypingB">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -1121,7 +1121,7 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/testSubtypingA1" />
-        <pathelement path="${build.tmp}/java/out/testSubtypingB1" />
+        <pathelement path="${build.tmp}/java/out/testSubtypingB" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
