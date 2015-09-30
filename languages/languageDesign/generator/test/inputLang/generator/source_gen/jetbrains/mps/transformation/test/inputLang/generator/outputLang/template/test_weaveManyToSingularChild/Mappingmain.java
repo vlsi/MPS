@@ -21,6 +21,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.impl.WeaveContextImpl;
 
 @Generated
 public class Mappingmain extends MapConfigBase implements TemplateMappingConfiguration {
@@ -62,11 +64,15 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_1218738876108(new WeavingMappingRuleContext(context, getRuleNode()));
     }
+    @NotNull
+    @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_1218738863685(new WeavingMappingRuleContext(context, getRuleNode()));
     }
+    @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
-      Collection<SNode> tlist1 = new Templateweave__InputNode__A().weave(environment, context, outputContextNode);
+      NodeWeaveFacility.WeaveContext weaveContext = new WeaveContextImpl(outputContextNode, context, WeavingRule0.this);
+      Collection<SNode> tlist1 = environment.prepareWeave(weaveContext, new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738992786")).weaveTemplate(new Templateweave__InputNode__A());
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
