@@ -144,6 +144,11 @@
       <property role="20kJfa" value="supercedesFun" />
       <ref role="20lvS9" node="6lCixFI9ig3" resolve="SupersedeConceptFunction" />
     </node>
+    <node concept="1TJgyj" id="6qi8GzL_bYz" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="applicableFun" />
+      <ref role="20lvS9" node="6qi8GzL_1PZ" resolve="IsApplicableConceptFunction" />
+    </node>
     <node concept="PrWs8" id="3SW4jvYrbIJ" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
@@ -2082,6 +2087,12 @@
     <property role="1pbfSe" value="639999186" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="asaX9" id="4x8Jh$mQ$5O" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="6qi8GzL_1PZ">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="IsApplicableConceptFunction" />
+    <property role="1pbfSe" value="1478901831" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 

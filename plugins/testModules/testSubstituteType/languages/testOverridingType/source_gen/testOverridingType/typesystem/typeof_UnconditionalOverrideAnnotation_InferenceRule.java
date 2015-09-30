@@ -42,7 +42,10 @@ public class typeof_UnconditionalOverrideAnnotation_InferenceRule extends Abstra
     return MetaAdapterFactory.getConcept(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x19f3ac4f6f2a050aL, "testOverridingType.structure.UnconditionalOverrideAnnotation");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
+    {
+      boolean ok = argument.getConcept().isSubConceptOf(getApplicableConcept());
+      return new IsApplicableStatus(ok, null);
+    }
   }
   public boolean supercedesAttributed(final SNode overrideAnnotation, IsApplicableStatus status) {
     return true;
