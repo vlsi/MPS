@@ -24,6 +24,10 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
   public String getCaption() {
     return "Replace all non-textual nodes of SingleLineComment with the new generic way of commenting out code";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(SModule m) {
     Iterable<SModel> models = ((Iterable<SModel>) m.getModels());
     Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
@@ -32,7 +36,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
         // Remove meaningless empty text comment parts 
         ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && isEmptyString(trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")))) && ListSequence.fromList(SNodeOperations.getAllSiblings(it, false)).isNotEmpty();
+            return SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment")) && isEmptyString(trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")))) && ListSequence.fromList(SNodeOperations.getAllSiblings(it, false)).isNotEmpty();
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -66,7 +70,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  public static String trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0b(String str) {
+  public static String trim_o7ozeo_a0a0a0a0a0a0a0c0a0a0a0b0c(String str) {
     return (str == null ? null : str.trim());
   }
 }

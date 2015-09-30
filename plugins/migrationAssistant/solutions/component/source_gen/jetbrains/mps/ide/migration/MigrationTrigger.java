@@ -14,7 +14,7 @@ import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -23,19 +23,12 @@ import jetbrains.mps.ide.platform.watching.ReloadManager;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.ide.migration.check.Problem;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import com.intellij.openapi.application.ModalityState;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -168,36 +161,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                       public void run() {
                         ModelAccess.instance().runReadAction(new Runnable() {
                           public void run() {
-                            ModelCheckerViewer v = new ModelCheckerViewer(myProject) {
-                              @Override
-                              protected void close() {
-                                ModelCheckerTool.getInstance(myProject).closeTab(this);
-                                super.close();
-                              }
-                            };
-                            final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-                            Sequence.fromIterable(myErrors.getProblems()).visitAll(new IVisitor<Problem>() {
-                              public void visit(Problem it) {
-                                Object r = it.getReason();
-
-                                ModelCheckerIssue mci;
-                                if (r instanceof SNode) {
-                                  mci = new ModelCheckerIssue.NodeIssue(((org.jetbrains.mps.openapi.model.SNode) r), it.getMessage(), null);
-                                } else if (r instanceof SModule) {
-                                  mci = new ModelCheckerIssue.ModuleIssue(it.getMessage(), null);
-                                } else {
-                                  throw new IllegalArgumentException(r.getClass().getName());
-                                }
-                                result.add(new SearchResult<ModelCheckerIssue>(mci, r, it.getCategory()));
-                              }
-                            });
-                            v.setSearchResults(result);
-                            ModelCheckerTool.getInstance(myProject).showTabWithResults(v, "Migration issues", IdeIcons.MODULE_GROUP_CLOSED);
+                            MigrationOutputUtil.showProblems(myProject, myErrors.getProblems());
                           }
                         });
                       }
                     }, ModalityState.NON_MODAL);
-
                   }
                 });
               }

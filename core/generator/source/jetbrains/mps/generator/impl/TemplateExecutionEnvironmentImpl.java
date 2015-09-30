@@ -279,7 +279,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       return;
     }
     final SContainmentLink role = ((ConceptMetaInfoConverter) contextParentNode.getConcept()).convertAggregation(childRole);
-    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave);
+    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave, null);
   }
 
   @NotNull

@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.WeaveTemplateContainer;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -31,9 +32,11 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -52,6 +55,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
   private WeaveTemplateContainer myWeaveTemplates;
   private WeaveRuleCondition myCondition;
   private WeaveRuleQuery myContentNodeQuery;
+  private WeaveAnchorQuery myAnchorQuery;
 
   public TemplateWeavingRuleInterpreted(SNode rule) {
     super(rule.getReference(), MetaAdapterByDeclaration.getConcept(RuleUtil.getBaseRuleApplicableConcept(rule)), RuleUtil.getBaseRuleApplyToConceptInheritors(rule));
@@ -76,12 +80,22 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
     myMappingName = RuleUtil.getBaseRuleLabel(myRuleNode);
   }
 
+  @NotNull
   @Override
   public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
     if (myContentNodeQuery == null) {
       myContentNodeQuery = environment.getQueryProvider(getRuleNode()).getWeaveRuleQuery(myRuleNode);
     }
     return myContentNodeQuery.contextNode(new WeavingMappingRuleContext(context, getRuleNode()));
+  }
+
+  @Nullable
+  @Override
+  public SNode getAnchorNode(@NotNull TemplateContext context, @NotNull SNode outputParent, @NotNull SNode outputNode) throws GenerationFailureException {
+    if (myAnchorQuery == null) {
+      myAnchorQuery = context.getEnvironment().getQueryProvider(getRuleNode()).getWeaveAnchorQuery(myRuleNode);
+    }
+    return myAnchorQuery.anchorNode(new WeavingAnchorContext(context, getRuleNode(), outputParent, outputNode));
   }
 
   @Override
@@ -117,7 +131,7 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
   private WeaveTemplateContainer getWeavingTemplateContainer(IGeneratorLogger log) {
     if (myWeaveTemplates == null) {
       assert myTemplate != null;
-      myWeaveTemplates = new WeaveTemplateContainer(myTemplate);
+      myWeaveTemplates = new WeaveTemplateContainer(myTemplate, this);
       myWeaveTemplates.initialize(log);
     }
     return myWeaveTemplates;

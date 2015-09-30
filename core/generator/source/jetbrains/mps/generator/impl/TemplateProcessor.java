@@ -27,15 +27,18 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.template.QueryExecutor;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.runtime.WeavingWithAnchor;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -472,10 +475,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
   }
 
   // $WEAVE$
-  private static class WeaveMacro extends MacroWithInput {
+  private static class WeaveMacro extends MacroWithInput implements WeavingWithAnchor {
+    private WeaveAnchorQuery myAnchorQuery;
 
     protected WeaveMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
       super(macro, templateNode, next, templateProcessor);
+
     }
 
     @NotNull
@@ -505,7 +510,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
             GeneratorUtil.describeIfExists(templateContext.getInput(), "input"));
         return _outputNodes;
       }
-      WeaveTemplateContainer wtc = new WeaveTemplateContainer(template);
+      WeaveTemplateContainer wtc = new WeaveTemplateContainer(template, this);
       wtc.initialize(getLogger());
 
       SNode contextNode = _outputNodes.get(0);
@@ -513,6 +518,15 @@ public final class TemplateProcessor implements ITemplateProcessor {
         wtc.apply(contextNode, templateContext.subContext(node));
       }
       return _outputNodes;
+    }
+
+    @Nullable
+    @Override
+    public SNode getAnchorNode(@NotNull TemplateContext context, @NotNull SNode outputParent, @NotNull SNode outputNode) throws GenerationFailureException {
+      if (myAnchorQuery == null) {
+        myAnchorQuery = context.getEnvironment().getQueryProvider(getMacroNodeRef()).getWeaveAnchorQuery(macro);
+      }
+      return myAnchorQuery.anchorNode(new WeavingAnchorContext(context, getMacroNodeRef(), outputParent, outputNode));
     }
   }
 

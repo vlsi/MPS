@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -1161,6 +1161,9 @@
     </node>
     <node concept="lpD6D" id="ROe8AA1GAV" role="lpD6w">
       <ref role="lpD7u" to="tpej:ROe8A_SmDX" resolve="CaseInsensitiveDuplicatedClassifierName" />
+    </node>
+    <node concept="lpD6D" id="6gZBjbXXKgP" role="lpD6w">
+      <ref role="lpD7u" to="tpej:6gZBjbXWPp4" resolve="CharAssignmentConversion" />
     </node>
     <node concept="lpD6D" id="2TdQhrRQmKZ" role="lpD6w">
       <ref role="lpD7u" to="tpej:2jmlBNW7vIq" resolve="ClassifierNameUniqueness" />

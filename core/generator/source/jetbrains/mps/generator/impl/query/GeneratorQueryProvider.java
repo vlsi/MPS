@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,12 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Represents an API of QueriesGenerated using *Condition objects, source of the queries
  * Callers can reuse condition objects obtained during current generation session.
+ *
+ * XXX It doesn't look right to pass SNode in there - when we deal with generated template code, there are hardly SNodes to pass around.
+ *     OTOH, one may perceive this as front-end to generated queries for an interpreted code (which always possesses SNode), while
+ *     generated code doesn't need this as it invokes queries directly (such approach, however, prevents us from using GQP as factory
+ *     for augmented queries (e.g. trace/access recording)).
+ *
  * @author Artem Tikhomirov
  */
 public interface GeneratorQueryProvider {
@@ -37,8 +43,17 @@ public interface GeneratorQueryProvider {
   DropRuleCondition getDropRuleCondition(@NotNull SNode rule);
   @NotNull
   WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule);
+  /**
+   * @param rule weaving rule
+   */
   @NotNull
   WeaveRuleQuery getWeaveRuleQuery(@NotNull SNode rule);
+
+  /**
+   * @param ruleOrMacro weaving rule or WeaveMacro
+   */
+  @NotNull
+  WeaveAnchorQuery getWeaveAnchorQuery(@NotNull SNode ruleOrMacro);
   @NotNull
   ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script);
   @NotNull

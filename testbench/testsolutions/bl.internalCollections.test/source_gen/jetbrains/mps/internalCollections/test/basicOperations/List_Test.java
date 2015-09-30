@@ -119,6 +119,13 @@ public class List_Test extends Util_Test {
     String[] strings = ListSequence.fromList(test2).toGenericArray(String.class);
     Assert.assertEquals(Arrays.asList(strings), test2);
   }
+  public void test_toArrayArray() throws Exception {
+    // MPS-22673 
+    List<byte[]> loab = ListSequence.fromList(new ArrayList<byte[]>());
+    ListSequence.fromList(loab).addElement(new byte[]{0, 1, 2});
+    byte[][] array = ListSequence.fromList(loab).toGenericArray(byte[].class);
+    Assert.assertTrue(Arrays.equals(new byte[]{0, 1, 2}, array[0]));
+  }
   public void test_insertSet() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 5);
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 5}), test);

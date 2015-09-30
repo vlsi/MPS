@@ -37,7 +37,7 @@ import java.util.*;
 public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<State> implements ITypeErrorComponent {
 
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new HashSet<Pair<SNode, String>>();
-  private Set<SNode> myCurrentTypedTermsToInvalidate = new HashSet<SNode>();
+  private Queue<SNode> myCurrentTypedTermsToInvalidate = new LinkedList<SNode>();
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodes
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
   private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
@@ -136,7 +136,8 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     }
 
     //typed terms
-    for (SNode node : myCurrentTypedTermsToInvalidate) {
+    while(!myCurrentTypedTermsToInvalidate.isEmpty()) {
+      SNode node = myCurrentTypedTermsToInvalidate.remove();
       doInvalidate(myTypedTermsToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
       doInvalidate(myNodesToDependentNodesWithNTRules.get(node), invalidatedNodesAndRules);
     }

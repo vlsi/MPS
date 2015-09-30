@@ -1760,6 +1760,71 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="SFyHGUIUDp" role="jymVt">
+      <property role="TrG5h" value="weavingAnchor" />
+      <node concept="1WS0z7" id="SFyHGUIUDq" role="lGtFl">
+        <node concept="3JmXsc" id="SFyHGUIUDr" role="3Jn$fo">
+          <node concept="3clFbS" id="SFyHGUIUDs" role="2VODD2">
+            <node concept="3clFbF" id="SFyHGUIUDt" role="3cqZAp">
+              <node concept="2OqwBi" id="SFyHGUIUDu" role="3clFbG">
+                <node concept="2OqwBi" id="SFyHGUIUDv" role="2Oq$k0">
+                  <node concept="1iwH7S" id="SFyHGUIUDw" role="2Oq$k0" />
+                  <node concept="1r8y6K" id="SFyHGUIUDx" role="2OqNvi" />
+                </node>
+                <node concept="2SmgA7" id="SFyHGUIUDy" role="2OqNvi">
+                  <node concept="chp4Y" id="SFyHGUJ2xu" role="1dBWTz">
+                    <ref role="cht4Q" to="tpf8:SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="SFyHGUIUD$" role="1B3o_S" />
+      <node concept="3Tqbb2" id="SFyHGUIUD_" role="3clF45" />
+      <node concept="37vLTG" id="SFyHGUIUDA" role="3clF46">
+        <property role="TrG5h" value="_context" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="SFyHGUJ8cO" role="1tU5fm">
+          <ref role="3uigEE" to="q1l7:~WeavingAnchorContext" resolve="WeavingAnchorContext" />
+        </node>
+      </node>
+      <node concept="17Uvod" id="SFyHGUIUDC" role="lGtFl">
+        <property role="2qtEX9" value="name" />
+        <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+        <node concept="3zFVjK" id="SFyHGUIUDD" role="3zH0cK">
+          <node concept="3clFbS" id="SFyHGUIUDE" role="2VODD2">
+            <node concept="3cpWs6" id="SFyHGUIUDF" role="3cqZAp">
+              <node concept="2YIFZM" id="SFyHGUJ3Ax" role="3cqZAk">
+                <ref role="37wK5l" to="q1l7:~TemplateFunctionMethodName.weaving_AnchorQuery(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="weaving_AnchorQuery" />
+                <ref role="1Pybhc" to="q1l7:~TemplateFunctionMethodName" resolve="TemplateFunctionMethodName" />
+                <node concept="30H73N" id="SFyHGUJ3Az" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="SFyHGUIUDK" role="3clF47">
+        <node concept="29HgVG" id="SFyHGUIUDL" role="lGtFl">
+          <node concept="3NFfHV" id="SFyHGUIUDM" role="3NFExx">
+            <node concept="3clFbS" id="SFyHGUIUDN" role="2VODD2">
+              <node concept="3cpWs6" id="SFyHGUIUDO" role="3cqZAp">
+                <node concept="2OqwBi" id="SFyHGUIUDP" role="3cqZAk">
+                  <node concept="30H73N" id="SFyHGUIUDR" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="SFyHGUIUDT" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="SFyHGUIUDU" role="3cqZAp">
+          <node concept="10Nm6u" id="SFyHGUIUDV" role="3cqZAk" />
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="5piO3v59kXA" role="jymVt">
       <property role="TrG5h" value="mappingScriptCode" />
       <node concept="37vLTG" id="7YwkI8ddWMC" role="3clF46">

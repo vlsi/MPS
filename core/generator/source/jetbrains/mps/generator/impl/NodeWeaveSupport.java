@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -42,9 +43,14 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
     myTemplateNode = templateNodeReference;
     myGenerator = generator;
   }
-
   @Override
   public void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) {
+    weave(contextParentNode, childRole, outputNodeToWeave, null);
+  }
+
+  @Override
+  public void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave, @Nullable SNode anchor) {
+    assert anchor == null || anchor.getParent() == contextParentNode; // perhaps, this check shall be up the stack?
     TracingUtil.fillOriginalNode(myTemplateContext.getInput(), outputNodeToWeave, false);
 
     // check child
@@ -54,19 +60,23 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
       myGenerator.getLogger().warning(myTemplateNode, status.getMessage("weave node"), status.describe(
           GeneratorUtil.describeInput(myTemplateContext), GeneratorUtil.describe(contextParentNode, "context parent node")));
       // spit out the warning, but try to add anyway
-      contextParentNode.addChild(childRole, outputNodeToWeave);
+      // fall-through
     } else {
-      // add
-      if (childRole.isMultiple()) {
-        contextParentNode.addChild(childRole, outputNodeToWeave);
-      } else {
+      if (!childRole.isMultiple()) {
         final Iterator<? extends SNode> children = contextParentNode.getChildren(childRole).iterator();
         if (children.hasNext()) {
           // if singular child then don't add more that 1 child
-          contextParentNode.removeChild(children.next());
+          SNode singleChild = children.next();
+          contextParentNode.removeChild(singleChild);
+          String msg = String.format("Attempt to weave a child into the role '%s' that doesn't accept multiple children and has child already set", childRole.getName());
+          myGenerator.getLogger().warning(myTemplateNode, msg,
+              GeneratorUtil.describeInput(myTemplateContext), GeneratorUtil.describe(contextParentNode, "context parent node"),
+              GeneratorUtil.describe(singleChild, "removed child"),
+              GeneratorUtil.describeIfExists(outputNodeToWeave, "weaved node"),
+              GeneratorUtil.describeIfExists(anchor, "anchor node"));
         }
-        contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
+    contextParentNode.insertChildBefore(childRole, outputNodeToWeave, anchor);
   }
 }

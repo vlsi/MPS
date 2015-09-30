@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Collection;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
