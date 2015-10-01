@@ -305,6 +305,7 @@
         <property id="3335207478148060173" name="customContent" index="3PtdQa" />
         <reference id="1265949165890536425" name="module" index="L2wRA" />
         <child id="4356762679305730677" name="jarLocations" index="3yL2VB" />
+        <child id="3335207478148056905" name="deployedJar" index="3PtcVe" />
         <child id="3335207478148060176" name="sourceJar" index="3PtdQn" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
@@ -26493,11 +26494,12 @@
           <node concept="L2wRC" id="5qX22802cgV" role="39821P">
             <property role="3PtdQa" value="true" />
             <ref role="L2wRA" node="71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />
-            <node concept="3PtdJl" id="2T92ovrm8qI" role="3PtdQn">
-              <node concept="398223" id="3h$sv3jqL4H" role="39821P">
-                <node concept="3_J27D" id="3h$sv3jqL4J" role="Nbhlr">
-                  <node concept="3Mxwew" id="3h$sv3jqL56" role="3MwsjC">
-                    <property role="3MwjfP" value="module" />
+            <node concept="3PtdJl" id="2T92ovrm8qI" role="3PtdQn" />
+            <node concept="3PtdJl" id="1PSIGmrRqvD" role="3PtcVe">
+              <node concept="398223" id="1PSIGmrRqvL" role="39821P">
+                <node concept="3_J27D" id="1PSIGmrRqvM" role="Nbhlr">
+                  <node concept="3Mxwew" id="1PSIGmrRqvX" role="3MwsjC">
+                    <property role="3MwjfP" value="META-INF" />
                   </node>
                 </node>
                 <node concept="28jJK3" id="2T92ovrhYJj" role="39821P">

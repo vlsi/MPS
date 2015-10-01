@@ -74,6 +74,7 @@
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.make" />
       <fileset dir="${mps_home}/plugins/mpsmake" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/mpsmake/source_gen" includes="**/trace.info, **/exports" />
+      <zipfileset file="${mps_home}/plugins/mpsmake/source_gen/jetbrains/mps/ide/make/actions/startup.properties" prefix="META-INF" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.make.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake">
@@ -86,7 +87,6 @@
       </fileset>
       <zipfileset file="${mps_home}/plugins/mpsmake/jetbrains.mps.ide.make.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake" prefix="module/" />
-      <zipfileset file="${mps_home}/plugins/mpsmake/source_gen/jetbrains/mps/ide/make/actions/startup.properties" prefix="module" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
