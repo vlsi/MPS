@@ -33,9 +33,13 @@ public class MigrateDeclarations extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the declarations using a TransformStatement";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new MigrateDeclarations.Pattern_9wc3oy_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new MigrateDeclarations.Pattern_9wc3oy_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -69,10 +73,10 @@ public class MigrateDeclarations extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, "declarations"), 0);
   }
 
-  public static class Pattern_9wc3oy_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9wc3oy_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_deps;
     /*package*/ String patternVar_name;
-    public Pattern_9wc3oy_a0a0a0a1() {
+    public Pattern_9wc3oy_a0a0a0a2() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, "declarations.structure.OldComponent");

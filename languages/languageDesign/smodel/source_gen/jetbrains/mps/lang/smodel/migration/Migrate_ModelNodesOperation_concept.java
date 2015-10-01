@@ -33,9 +33,13 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
   public String getCaption() {
     return "Migrate_ModelNodesOperation_concept";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Migrate_ModelNodesOperation_concept.Pattern_vs95qi_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new Migrate_ModelNodesOperation_concept.Pattern_vs95qi_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -69,7 +73,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
             public void invoke(SNode oldNode, SNode newNode) {
               List<SNode> attributes = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(oldNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode attr) {
-                  return eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a1(LinkAttribute_BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attr), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
+                  return eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a2(LinkAttribute_BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attr), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x110b8590898L, "concept"));
                 }
               }).toListSequence();
               ListSequence.fromList(attributes).visitAll(new IVisitor<SNode>() {
@@ -89,9 +93,9 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0);
   }
 
-  public static class Pattern_vs95qi_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_vs95qi_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-    public Pattern_vs95qi_a0a0a0a1() {
+    public Pattern_vs95qi_a0a0a0a2() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, "jetbrains.mps.lang.smodel.structure.Model_NodesOperation");
@@ -133,7 +137,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument"), quotedNode_3);
     return quotedNode_2;
   }
-  private static boolean eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a1(Object a, Object b) {
+  private static boolean eq_vs95qi_a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

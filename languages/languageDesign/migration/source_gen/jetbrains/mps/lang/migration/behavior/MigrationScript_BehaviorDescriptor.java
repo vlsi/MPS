@@ -35,6 +35,7 @@ public final class MigrationScript_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Iterable<SNode>> getExecuteAfter_id2bWK$jI6RRp = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getExecuteAfter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2bWK$jI6RRp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Iterable<SNode>> getRequiredData_id7s$_UJMVosT = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getRequiredData").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7s$_UJMVosT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<SNode> getProducedData_id7s$_UJMVDH8 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getProducedData").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7s$_UJMVDH8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> isRerunnable_id1JWcQ2Vfe4u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isRerunnable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1JWcQ2Vfe4u").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<SNode> getMethod_id6d7r2Fq2j7f = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6d7r2Fq2j7f").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
   public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<String> getClassName_id5Fumpqe4XH$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5Fumpqe4XH$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
@@ -44,7 +45,7 @@ public final class MigrationScript_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> fromVersion_id4uVwhQyFcnl = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("fromVersion").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFcnl").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Boolean> isVersionSet_id4uVwhQyFpOe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isVersionSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFpOe").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescription_id7s$_UJMUysQ, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getProducedData_id7s$_UJMVDH8, getMethod_id6d7r2Fq2j7f, getPresentation_idhEwIMiw, getClassName_id5Fumpqe4XH$, hasData_idw$qRK82$4u, getGeneratedClassName_id7w5LXrJJkLe, getDescriptor_idUBgfI9eMAt, fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescription_id7s$_UJMUysQ, getExecuteAfter_id2bWK$jI6RRp, getRequiredData_id7s$_UJMVosT, getProducedData_id7s$_UJMVDH8, isRerunnable_id1JWcQ2Vfe4u, getMethod_id6d7r2Fq2j7f, getPresentation_idhEwIMiw, getClassName_id5Fumpqe4XH$, hasData_idw$qRK82$4u, getGeneratedClassName_id7w5LXrJJkLe, getDescriptor_idUBgfI9eMAt, fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -60,6 +61,10 @@ public final class MigrationScript_BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static SNode getProducedData_id7s$_UJMVDH8(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(SNodeOperations.cast(Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5820409521798105972"), __thisNode__)).first(), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL, "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration")), MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL, 0x50c63f9f4a0dad15L, "dataType"));
+  }
+  private static Boolean isRerunnable_id1JWcQ2Vfe4u(@NotNull SNode __thisNode__) {
+    SNode prop = Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "2016543223706274716"), __thisNode__)).first();
+    return prop != null && SPropertyOperations.getBoolean(SNodeOperations.cast(prop, MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.BooleanPropertyInstance")), MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L, 0x59e9926e84100ec4L, "value"));
   }
   private static SNode getMethod_id6d7r2Fq2j7f(@NotNull SNode __thisNode__, SNode md) {
     return SNodeOperations.cast(Sequence.fromIterable(DSLClassMember_BehaviorDescriptor.find_id2gzehMfi1$l.invoke(md, __thisNode__)).first(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance"));
@@ -120,18 +125,20 @@ public final class MigrationScript_BehaviorDescriptor extends BaseBHDescriptor {
       case 3:
         return (T) getProducedData_id7s$_UJMVDH8(node);
       case 4:
-        return (T) getMethod_id6d7r2Fq2j7f(node, (SNode) parameters[0]);
+        return (T) isRerunnable_id1JWcQ2Vfe4u(node);
       case 5:
-        return (T) getPresentation_idhEwIMiw(node);
+        return (T) getMethod_id6d7r2Fq2j7f(node, (SNode) parameters[0]);
       case 6:
-        return (T) getClassName_id5Fumpqe4XH$(node);
+        return (T) getPresentation_idhEwIMiw(node);
       case 7:
+        return (T) getClassName_id5Fumpqe4XH$(node);
+      case 8:
         return (T) hasData_idw$qRK82$4u(node);
-      case 9:
-        return (T) getDescriptor_idUBgfI9eMAt(node);
       case 10:
-        return (T) fromVersion_id4uVwhQyFcnl(node);
+        return (T) getDescriptor_idUBgfI9eMAt(node);
       case 11:
+        return (T) fromVersion_id4uVwhQyFcnl(node);
+      case 12:
         return (T) isVersionSet_id4uVwhQyFpOe(node);
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -145,7 +152,7 @@ public final class MigrationScript_BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 8:
+      case 9:
         return (T) getGeneratedClassName_id7w5LXrJJkLe(concept);
       default:
         throw new BHMethodNotFoundException(this, method);

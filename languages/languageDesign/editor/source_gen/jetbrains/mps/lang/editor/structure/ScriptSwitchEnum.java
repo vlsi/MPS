@@ -11,12 +11,20 @@ public enum ScriptSwitchEnum {
   superscript("superscript", "SUPERSCRIPT"),
   subscript("subscript", "SUBSCRIPT");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  ScriptSwitchEnum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<ScriptSwitchEnum> getConstants() {
     List<ScriptSwitchEnum> list = ListSequence.fromList(new LinkedList<ScriptSwitchEnum>());
@@ -42,13 +50,5 @@ public enum ScriptSwitchEnum {
       return ScriptSwitchEnum.subscript;
     }
     return ScriptSwitchEnum.getDefault();
-  }
-  private String myValue;
-  ScriptSwitchEnum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

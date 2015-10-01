@@ -239,6 +239,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.CheckingUtil" file="CheckingUtil.java">
     <classNode dependClassName="java.lang.Byte" />
+    <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />

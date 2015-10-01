@@ -74,6 +74,7 @@
   <node concept="1TIwiD" id="2uZcAeY8Z3v">
     <property role="3GE5qa" value="refactoring.reference" />
     <property role="TrG5h" value="ReflectionNodeReference" />
+    <property role="1pbfSe" value="438099134" />
     <ref role="1TJDcQ" node="2GZlO$G5$zc" resolve="AbstractNodeReference" />
     <node concept="1TJgyi" id="2uZcAeY8Zhf" role="1TKVEl">
       <property role="TrG5h" value="nodeId" />
@@ -91,6 +92,7 @@
   <node concept="1TIwiD" id="6szrkDoc28u">
     <property role="TrG5h" value="MoveNode" />
     <property role="3GE5qa" value="refactoring" />
+    <property role="1pbfSe" value="1085042840" />
     <ref role="1TJDcQ" node="2GZlO$G5z5o" resolve="RefactoringPart" />
     <node concept="1TJgyj" id="6szrkDod3Ol" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -114,6 +116,7 @@
   <node concept="1TIwiD" id="6szrkDoc3tL">
     <property role="3GE5qa" value="refactoring.reference" />
     <property role="TrG5h" value="DirectNodeReference" />
+    <property role="1pbfSe" value="1085037381" />
     <ref role="1TJDcQ" node="2GZlO$G5$zc" resolve="AbstractNodeReference" />
     <node concept="1TJgyj" id="6szrkDoc3Cg" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -126,6 +129,7 @@
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="RefactoringStep" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1084606459" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4uVwhQyPCRg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -158,6 +162,7 @@
     <property role="TrG5h" value="RefactoringPart" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1465223329" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5$zc">
@@ -165,6 +170,7 @@
     <property role="TrG5h" value="AbstractNodeReference" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1465229333" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5_Lt">
@@ -172,16 +178,19 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MoveNodeSpecialization" />
+    <property role="1pbfSe" value="1465234342" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6Q">
     <property role="3GE5qa" value="refactoring.specialization" />
     <property role="TrG5h" value="MoveConcept" />
+    <property role="1pbfSe" value="1465293055" />
     <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6R">
     <property role="3GE5qa" value="refactoring.specialization" />
     <property role="TrG5h" value="MoveReferenceLink" />
+    <property role="1pbfSe" value="1465293056" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6S">
@@ -189,16 +198,19 @@
     <property role="TrG5h" value="MoveConceptMember" />
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
+    <property role="1pbfSe" value="1465293057" />
     <ref role="1TJDcQ" node="2GZlO$G5_Lt" resolve="MoveNodeSpecialization" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6T">
     <property role="3GE5qa" value="refactoring.specialization" />
     <property role="TrG5h" value="MoveProperty" />
+    <property role="1pbfSe" value="1465293058" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
   </node>
   <node concept="1TIwiD" id="2GZlO$G5O6U">
     <property role="3GE5qa" value="refactoring.specialization" />
     <property role="TrG5h" value="MoveContainmentLink" />
+    <property role="1pbfSe" value="1465293059" />
     <ref role="1TJDcQ" node="2GZlO$G5O6S" resolve="MoveConceptMember" />
   </node>
   <node concept="1TIwiD" id="6rIOn75Y3Ja">
@@ -218,10 +230,12 @@
   <node concept="PlHQZ" id="4uVwhQyFcjm">
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="IMigrationUnit" />
+    <property role="1pbfSe" value="362265101" />
   </node>
   <node concept="1TIwiD" id="4uVwhQyPCRd">
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="RefactoringOrderDependency" />
+    <property role="1pbfSe" value="359526678" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4uVwhQyPCRe" role="1TKVEi">
       <property role="20lmBu" value="reference" />

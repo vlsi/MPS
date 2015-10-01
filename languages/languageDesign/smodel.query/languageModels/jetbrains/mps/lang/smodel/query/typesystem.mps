@@ -104,6 +104,7 @@
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
+      <concept id="1179832490862" name="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" flags="nn" index="2NvLDW" />
       <concept id="1227096774658" name="jetbrains.mps.lang.typesystem.structure.MessageStatement" flags="ng" index="2OEH$v">
         <child id="1227096802790" name="nodeToReport" index="2OEOjV" />
       </concept>
@@ -919,42 +920,42 @@
     <property role="TrG5h" value="typeof_ScopeProvider" />
     <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="3F2FyKbNNPo" role="18ibNy">
-      <node concept="1ZobV4" id="2ZOO3bS4H3O" role="3cqZAp">
+      <node concept="2NvLDW" id="3F2FyKbNVdL" role="3cqZAp">
         <property role="3wDh2S" value="true" />
-        <node concept="mw_s8" id="2ZOO3bS4H3Q" role="1ZfhK$">
-          <node concept="1Z2H0r" id="2ZOO3bS4H3R" role="mwGJk">
-            <node concept="2OqwBi" id="2ZOO3bS4H3S" role="1Z2MuG">
-              <node concept="1YBJjd" id="2ZOO3bS4H3T" role="2Oq$k0">
+        <node concept="mw_s8" id="3F2FyKbNVdO" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3F2FyKbNOjl" role="mwGJk">
+            <node concept="2OqwBi" id="3F2FyKbNOmx" role="1Z2MuG">
+              <node concept="1YBJjd" id="3F2FyKbNOjL" role="2Oq$k0">
                 <ref role="1YBMHb" node="3F2FyKbNNPq" resolve="scopeProvider" />
               </node>
-              <node concept="3TrEf2" id="2ZOO3bS4H3U" role="2OqNvi">
+              <node concept="3TrEf2" id="3F2FyKbNVb4" role="2OqNvi">
                 <ref role="3Tt5mk" to="3xdn:3F2FyKbNNqR" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="2ZOO3bS4H3V" role="1ZfhKB">
-          <node concept="2c44tf" id="2ZOO3bS4H3W" role="mwGJk">
-            <node concept="2usRSg" id="2ZOO3bS4H3X" role="2c44tc">
-              <node concept="A3Dl8" id="2ZOO3bS4H3Y" role="2usUpS">
-                <node concept="3Tqbb2" id="2ZOO3bS4H3Z" role="A3Ik2" />
+        <node concept="mw_s8" id="3F2FyKbNVkL" role="1ZfhKB">
+          <node concept="2c44tf" id="3F2FyKbNVkM" role="mwGJk">
+            <node concept="2usRSg" id="3F2FyKbNVkN" role="2c44tc">
+              <node concept="A3Dl8" id="3F2FyKbNVkO" role="2usUpS">
+                <node concept="3Tqbb2" id="3F2FyKbNVkP" role="A3Ik2" />
               </node>
-              <node concept="H_c77" id="2ZOO3bS4H40" role="2usUpS" />
-              <node concept="A3Dl8" id="2ZOO3bS4H41" role="2usUpS">
-                <node concept="H_c77" id="2ZOO3bS4H42" role="A3Ik2" />
+              <node concept="H_c77" id="3F2FyKbNVnk" role="2usUpS" />
+              <node concept="A3Dl8" id="3F2FyKbNVkS" role="2usUpS">
+                <node concept="H_c77" id="3F2FyKbNVkT" role="A3Ik2" />
               </node>
-              <node concept="3uibUv" id="2ZOO3bS4H43" role="2usUpS">
+              <node concept="3uibUv" id="3F2FyKbNXXO" role="2usUpS">
                 <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
               </node>
-              <node concept="A3Dl8" id="2ZOO3bS4H44" role="2usUpS">
-                <node concept="3uibUv" id="2ZOO3bS4H45" role="A3Ik2">
+              <node concept="A3Dl8" id="3F2FyKbNVkU" role="2usUpS">
+                <node concept="3uibUv" id="3F2FyKbNVkV" role="A3Ik2">
                   <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                 </node>
               </node>
-              <node concept="3uibUv" id="2ZOO3bS4H46" role="2usUpS">
+              <node concept="3uibUv" id="3F2FyKbNY6e" role="2usUpS">
                 <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
               </node>
-              <node concept="3uibUv" id="2ZOO3bS4H47" role="2usUpS">
+              <node concept="3uibUv" id="ZwXbs7Vr2D" role="2usUpS">
                 <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
               </node>
             </node>

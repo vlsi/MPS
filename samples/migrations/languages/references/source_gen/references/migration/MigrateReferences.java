@@ -30,9 +30,13 @@ public class MigrateReferences extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the references using a TransformStatement";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -69,9 +73,9 @@ public class MigrateReferences extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x1610048531ac4899L, 0x91122289e22843ddL, "references"), 0);
   }
 
-  public static class Pattern_w5820p_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_w5820p_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_comp;
-    public Pattern_w5820p_a0a0a0a1() {
+    public Pattern_w5820p_a0a0a0a2() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0x1610048531ac4899L, 0x91122289e22843ddL, 0x6aff2c104931574dL, "references.structure.OldComponentRef");

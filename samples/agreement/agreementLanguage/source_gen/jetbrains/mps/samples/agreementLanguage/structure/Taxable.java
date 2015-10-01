@@ -10,12 +10,20 @@ public enum Taxable {
   taxable("TAXABLE", true),
   tax_free("TAXFREE", false);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final boolean myValue;
+  Taxable(String name, boolean value) {
+    myName = name;
+    myValue = value;
+  }
+  public boolean getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Boolean.toString(myValue);
   }
   public static List<Taxable> getConstants() {
     List<Taxable> list = ListSequence.fromList(new LinkedList<Taxable>());
@@ -37,13 +45,5 @@ public enum Taxable {
       return Taxable.tax_free;
     }
     return Taxable.getDefault();
-  }
-  private boolean myValue;
-  Taxable(String name, boolean value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public boolean getValue() {
-    return this.myValue;
   }
 }

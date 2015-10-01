@@ -15,10 +15,13 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
@@ -85,5 +88,12 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
   @Override
   public boolean applyToInheritors() {
     return myApplyToSubConcepts;
+  }
+
+  @Nullable
+  @Override
+  public SNode getAnchorNode(@NotNull TemplateContext context, @NotNull SNode outputParent, @NotNull SNode outputNode) throws GenerationFailureException {
+    // default implementation, legacy behavior - just append new node to the end of the children list
+    return null;
   }
 }

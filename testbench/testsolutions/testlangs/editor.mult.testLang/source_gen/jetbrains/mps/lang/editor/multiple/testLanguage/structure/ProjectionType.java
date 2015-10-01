@@ -11,12 +11,20 @@ public enum ProjectionType {
   rich("rich", "rich"),
   compact("compact", "compact");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  ProjectionType(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<ProjectionType> getConstants() {
     List<ProjectionType> list = ListSequence.fromList(new LinkedList<ProjectionType>());
@@ -42,13 +50,5 @@ public enum ProjectionType {
       return ProjectionType.compact;
     }
     return ProjectionType.getDefault();
-  }
-  private String myValue;
-  ProjectionType(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

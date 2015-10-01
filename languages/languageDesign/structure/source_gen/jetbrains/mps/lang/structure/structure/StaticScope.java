@@ -11,12 +11,20 @@ public enum StaticScope {
   root("containing root", "root"),
   none("none", "none");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  StaticScope(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<StaticScope> getConstants() {
     List<StaticScope> list = ListSequence.fromList(new LinkedList<StaticScope>());
@@ -42,13 +50,5 @@ public enum StaticScope {
       return StaticScope.none;
     }
     return StaticScope.getDefault();
-  }
-  private String myValue;
-  StaticScope(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

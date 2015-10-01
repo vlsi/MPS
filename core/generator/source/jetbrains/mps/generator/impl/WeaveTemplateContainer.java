@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.WeavingWithAnchor;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -37,10 +38,12 @@ import java.util.List;
 public class WeaveTemplateContainer {
 
   private final SNode myTemplateNode;
+  private final WeavingWithAnchor myAnchorQuery;
   private List<SNode> myFragments;
 
-  public WeaveTemplateContainer(@NotNull SNode templateContainer) {
+  public WeaveTemplateContainer(@NotNull SNode templateContainer, @NotNull WeavingWithAnchor weaveAnchorQuery) {
     myTemplateNode = templateContainer;
+    myAnchorQuery = weaveAnchorQuery;
   }
 
   public void initialize(IGeneratorLogger log) {
@@ -70,7 +73,8 @@ public class WeaveTemplateContainer {
           final NodeWeaveFacility weaveSupport = env.weaveNode(context, templateFragment.getReference());
 
           for (SNode outputNodeToWeave : outputNodesToWeave) {
-            weaveSupport.weave(contextParentNode, childRole, outputNodeToWeave);
+            SNode anchor = myAnchorQuery.getAnchorNode(context, contextParentNode, outputNodeToWeave);
+            weaveSupport.weave(contextParentNode, childRole, outputNodeToWeave, anchor);
           }
         } catch (DismissTopMappingRuleException e) {
           env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",

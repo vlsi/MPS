@@ -17,73 +17,73 @@
   <root nodeRef="r:3b810168-3010-426e-9275-12b4e509a27b(jetbrains.mps.samples.heating.structure)/5063359128233346660">
     <file name="DayDataType.java">
       <node id="5063359128233346660" at="18,0,19,0" concept="2" trace="myName" />
-      <node id="5063359128233346660" at="19,27,20,23" concept="6" />
-      <node id="5063359128233346660" at="22,36,23,24" concept="6" />
-      <node id="5063359128233346660" at="25,50,26,82" concept="5" />
-      <node id="5063359128233346660" at="26,82,27,63" concept="1" />
-      <node id="5063359128233346660" at="27,63,28,64" concept="1" />
-      <node id="5063359128233346660" at="28,64,29,66" concept="1" />
-      <node id="5063359128233346660" at="29,66,30,65" concept="1" />
-      <node id="5063359128233346660" at="30,65,31,63" concept="1" />
-      <node id="5063359128233346660" at="31,63,32,65" concept="1" />
-      <node id="5063359128233346660" at="32,65,33,63" concept="1" />
-      <node id="5063359128233346660" at="33,63,34,16" concept="6" />
-      <node id="5063359128233346660" at="36,42,37,30" concept="6" />
-      <node id="5063359128233346660" at="40,24,41,38" concept="6" />
-      <node id="5063359128233346660" at="43,62,44,32" concept="6" />
-      <node id="5063359128233346660" at="46,63,47,33" concept="6" />
-      <node id="5063359128233346660" at="49,65,50,35" concept="6" />
-      <node id="5063359128233346660" at="52,64,53,34" concept="6" />
-      <node id="5063359128233346660" at="55,62,56,32" concept="6" />
-      <node id="5063359128233346660" at="58,64,59,34" concept="6" />
-      <node id="5063359128233346660" at="61,62,62,32" concept="6" />
-      <node id="5063359128233346660" at="63,5,64,36" concept="6" />
-      <node id="5063359128233346660" at="66,0,67,0" concept="2" trace="myValue" />
-      <node id="5063359128233346660" at="67,42,68,23" concept="1" />
-      <node id="5063359128233346660" at="68,23,69,25" concept="1" />
-      <node id="5063359128233346660" at="71,28,72,24" concept="6" />
+      <node id="5063359128233346660" at="19,27,20,18" concept="6" />
+      <node id="5063359128233346660" at="22,0,23,0" concept="2" trace="myValue" />
+      <node id="5063359128233346660" at="23,42,24,18" concept="1" />
+      <node id="5063359128233346660" at="24,18,25,20" concept="1" />
+      <node id="5063359128233346660" at="27,28,28,19" concept="6" />
+      <node id="5063359128233346660" at="30,36,31,19" concept="6" />
+      <node id="5063359128233346660" at="33,50,34,82" concept="5" />
+      <node id="5063359128233346660" at="34,82,35,63" concept="1" />
+      <node id="5063359128233346660" at="35,63,36,64" concept="1" />
+      <node id="5063359128233346660" at="36,64,37,66" concept="1" />
+      <node id="5063359128233346660" at="37,66,38,65" concept="1" />
+      <node id="5063359128233346660" at="38,65,39,63" concept="1" />
+      <node id="5063359128233346660" at="39,63,40,65" concept="1" />
+      <node id="5063359128233346660" at="40,65,41,63" concept="1" />
+      <node id="5063359128233346660" at="41,63,42,16" concept="6" />
+      <node id="5063359128233346660" at="44,42,45,30" concept="6" />
+      <node id="5063359128233346660" at="48,24,49,38" concept="6" />
+      <node id="5063359128233346660" at="51,62,52,32" concept="6" />
+      <node id="5063359128233346660" at="54,63,55,33" concept="6" />
+      <node id="5063359128233346660" at="57,65,58,35" concept="6" />
+      <node id="5063359128233346660" at="60,64,61,34" concept="6" />
+      <node id="5063359128233346660" at="63,62,64,32" concept="6" />
+      <node id="5063359128233346660" at="66,64,67,34" concept="6" />
+      <node id="5063359128233346660" at="69,62,70,32" concept="6" />
+      <node id="5063359128233346660" at="71,5,72,36" concept="6" />
       <node id="5063359128233346660" at="19,0,22,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="5063359128233346660" at="22,0,25,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="5063359128233346660" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/heating/structure/DayDataType;" />
-      <node id="5063359128233346660" at="39,54,42,5" concept="3" />
-      <node id="5063359128233346660" at="42,5,45,5" concept="3" />
-      <node id="5063359128233346660" at="45,5,48,5" concept="3" />
-      <node id="5063359128233346660" at="48,5,51,5" concept="3" />
-      <node id="5063359128233346660" at="51,5,54,5" concept="3" />
-      <node id="5063359128233346660" at="54,5,57,5" concept="3" />
-      <node id="5063359128233346660" at="57,5,60,5" concept="3" />
-      <node id="5063359128233346660" at="60,5,63,5" concept="3" />
-      <node id="5063359128233346660" at="71,0,74,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="5063359128233346660" at="67,0,71,0" concept="0" trace="DayDataType#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="5063359128233346660" at="25,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="5063359128233346660" at="39,0,66,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/heating/structure/DayDataType;" />
-      <scope id="5063359128233346660" at="19,27,20,23" />
-      <scope id="5063359128233346660" at="22,36,23,24" />
-      <scope id="5063359128233346660" at="36,42,37,30" />
-      <scope id="5063359128233346660" at="40,24,41,38" />
-      <scope id="5063359128233346660" at="43,62,44,32" />
-      <scope id="5063359128233346660" at="46,63,47,33" />
-      <scope id="5063359128233346660" at="49,65,50,35" />
-      <scope id="5063359128233346660" at="52,64,53,34" />
-      <scope id="5063359128233346660" at="55,62,56,32" />
-      <scope id="5063359128233346660" at="58,64,59,34" />
-      <scope id="5063359128233346660" at="61,62,62,32" />
-      <scope id="5063359128233346660" at="71,28,72,24" />
-      <scope id="5063359128233346660" at="67,42,69,25" />
+      <node id="5063359128233346660" at="27,0,30,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="5063359128233346660" at="30,0,33,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="5063359128233346660" at="44,0,47,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/heating/structure/DayDataType;" />
+      <node id="5063359128233346660" at="47,54,50,5" concept="3" />
+      <node id="5063359128233346660" at="50,5,53,5" concept="3" />
+      <node id="5063359128233346660" at="53,5,56,5" concept="3" />
+      <node id="5063359128233346660" at="56,5,59,5" concept="3" />
+      <node id="5063359128233346660" at="59,5,62,5" concept="3" />
+      <node id="5063359128233346660" at="62,5,65,5" concept="3" />
+      <node id="5063359128233346660" at="65,5,68,5" concept="3" />
+      <node id="5063359128233346660" at="68,5,71,5" concept="3" />
+      <node id="5063359128233346660" at="23,0,27,0" concept="0" trace="DayDataType#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="5063359128233346660" at="33,0,44,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="5063359128233346660" at="47,0,74,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/heating/structure/DayDataType;" />
+      <scope id="5063359128233346660" at="19,27,20,18" />
+      <scope id="5063359128233346660" at="27,28,28,19" />
+      <scope id="5063359128233346660" at="30,36,31,19" />
+      <scope id="5063359128233346660" at="44,42,45,30" />
+      <scope id="5063359128233346660" at="48,24,49,38" />
+      <scope id="5063359128233346660" at="51,62,52,32" />
+      <scope id="5063359128233346660" at="54,63,55,33" />
+      <scope id="5063359128233346660" at="57,65,58,35" />
+      <scope id="5063359128233346660" at="60,64,61,34" />
+      <scope id="5063359128233346660" at="63,62,64,32" />
+      <scope id="5063359128233346660" at="66,64,67,34" />
+      <scope id="5063359128233346660" at="69,62,70,32" />
+      <scope id="5063359128233346660" at="23,42,25,20" />
       <scope id="5063359128233346660" at="19,0,22,0" />
-      <scope id="5063359128233346660" at="22,0,25,0" />
-      <scope id="5063359128233346660" at="36,0,39,0" />
-      <scope id="5063359128233346660" at="71,0,74,0" />
-      <scope id="5063359128233346660" at="67,0,71,0">
+      <scope id="5063359128233346660" at="27,0,30,0" />
+      <scope id="5063359128233346660" at="30,0,33,0" />
+      <scope id="5063359128233346660" at="44,0,47,0" />
+      <scope id="5063359128233346660" at="23,0,27,0">
         <var name="name" id="5063359128233346660" />
         <var name="value" id="5063359128233346660" />
       </scope>
-      <scope id="5063359128233346660" at="25,50,34,16">
+      <scope id="5063359128233346660" at="33,50,42,16">
         <var name="list" id="5063359128233346660" />
       </scope>
-      <scope id="5063359128233346660" at="25,0,36,0" />
-      <scope id="5063359128233346660" at="39,54,64,36" />
-      <scope id="5063359128233346660" at="39,0,66,0">
+      <scope id="5063359128233346660" at="33,0,44,0" />
+      <scope id="5063359128233346660" at="47,54,72,36" />
+      <scope id="5063359128233346660" at="47,0,74,0">
         <var name="value" id="5063359128233346660" />
       </scope>
       <unit id="5063359128233346660" at="9,0,75,0" name="jetbrains.mps.samples.heating.structure.DayDataType" />

@@ -29,9 +29,13 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
   public String getCaption() {
     return "Add CommentLine child to DeprecatedBlockDocTags";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -65,8 +69,8 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"), 0);
   }
 
-  public static class Pattern_fgay1s_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_fgay1s_a0a0a0a1() {
+  public static class Pattern_fgay1s_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_fgay1s_a0a0a0a2() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");

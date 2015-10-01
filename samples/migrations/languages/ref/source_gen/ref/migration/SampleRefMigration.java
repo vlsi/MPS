@@ -31,6 +31,10 @@ public class SampleRefMigration extends MigrationScriptBase {
   public String getCaption() {
     return "migrate the references using smodel API";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     final Map<SModule, SNode> declData = getDataCollector().collectData(m, new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x9de7c5ceea6f4fb4L, 0xa7ba45e62b53cbadL, "decl"), 1));
     // the received data are of a map type - mapping modules to their respective migration information 

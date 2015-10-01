@@ -522,7 +522,7 @@
       <node id="2620437876316403310" at="332,0,335,0" concept="7" trace="getProblems#()Ljava/lang/Iterable;" />
       <node id="2620437876316539594" at="338,0,341,0" concept="2" trace="MigrationsMissingError#(Ljava/util/List;)V" />
       <node id="2620437876316505136" at="341,0,344,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <node id="4404440421171663419" at="346,0,349,0" concept="7" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/ide/migration/check/Problem;" />
+      <node id="4404440421171663419" at="346,0,349,0" concept="7" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/lang/migration/runtime/base/Problem;" />
       <node id="5056846664196649738" at="90,0,94,0" concept="7" trace="isFinished#()Z" />
       <node id="8570387127138396901" at="108,0,112,0" concept="7" trace="run#()V" />
       <node id="6508209524259161795" at="139,0,143,7" concept="6" />

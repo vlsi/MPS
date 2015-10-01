@@ -27,9 +27,13 @@ public class TestMigration extends MigrationScriptBase {
   public String getCaption() {
     return "TestMigration";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new TestMigration.Pattern_53jq1q_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new TestMigration.Pattern_53jq1q_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -68,8 +72,8 @@ public class TestMigration extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xa59395ba5d944758L, 0xa87cb11e086d5491L, "updatedLanguage"), 0);
   }
 
-  public static class Pattern_53jq1q_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_53jq1q_a0a0a0a1() {
+  public static class Pattern_53jq1q_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_53jq1q_a0a0a0a2() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xa59395ba5d944758L, 0xa87cb11e086d5491L, 0x42068cb67bc5737L, "updatedLanguage.structure.MigratingConcept");

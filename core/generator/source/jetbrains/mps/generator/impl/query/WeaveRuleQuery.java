@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,14 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
+ * Queries associated with a weaving rule
  * @author Artem Tikhomirov
  */
 public interface WeaveRuleQuery extends Query {
+  /**
+   * Mandatory query of a rule that gives node in output model that would serve as parent for weaved nodes
+   * @param ctx environment for the query, never <code>null</code>
+   * @return parent node in output model for nodes being weaved into
+   */
   SNode contextNode(WeavingMappingRuleContext ctx) throws GenerationFailureException;
 }

@@ -32,9 +32,13 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
   public String getCaption() {
     return "Add necessary parentheses to NotExpressions";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a0a1();
+      final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -68,9 +72,9 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0);
   }
 
-  public static class Pattern_fbexqr_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_fbexqr_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_expr;
-    public Pattern_fbexqr_a0a0a0a1() {
+    public Pattern_fbexqr_a0a0a0a2() {
     }
     public SConcept getConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression");

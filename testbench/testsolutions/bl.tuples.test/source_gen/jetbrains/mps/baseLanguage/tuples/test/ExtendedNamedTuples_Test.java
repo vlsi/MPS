@@ -19,6 +19,21 @@ public class ExtendedNamedTuples_Test extends TestCase {
     bar = qux;
     Assert.assertEquals(new Bar(1, "asd", "xyz", 234.0), bar);
   }
+  public void test_extended_tuple_component() throws Exception {
+    Bar bar = new Bar(-1, null, null, 0.0);
+
+    bar.num(1234);
+    bar.str("xyz");
+    bar.id("ABCDEF");
+    bar.size(0.123456);
+
+    Foo foo = bar;
+    Assert.assertEquals(1234, (int) foo.num());
+    Assert.assertEquals("xyz", foo.str());
+
+    Assert.assertEquals("ABCDEF", bar.id());
+    Assert.assertEquals(0.123456, (double) bar.size());
+  }
   public ExtendedNamedTuples_Test() {
   }
 }

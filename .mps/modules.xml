@@ -257,6 +257,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmake/jetbrains.mps.ide.make.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/jetbrains.mps.baseLanguage.closures.test.msd" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testAnnotatedType/testAnnotatedType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testOverridingType/testOverridingType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testWrappedType/testWrappedType.mpl" folder="tests.substituteType" />

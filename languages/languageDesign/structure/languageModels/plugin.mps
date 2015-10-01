@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -114,6 +114,7 @@
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ng" index="9cv3F" />
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
         <child id="1199542501692" name="parameterType" index="1ajw0F" />
@@ -181,14 +182,14 @@
   </registry>
   <node concept="vrV6u" id="6UyJMA9FNHS">
     <property role="20vvCb" value="NodeRenamer" />
-    <node concept="1ajhzC" id="6UyJMA9FTIi" role="luc8K">
-      <node concept="10P_77" id="6UyJMA9FTIm" role="1ajl9A" />
-      <node concept="3uibUv" id="1A52nmyUeKz" role="1ajw0F">
+    <node concept="9cv3F" id="5_glQXufNeH" role="luc8K">
+      <node concept="3uibUv" id="5_glQXufNeI" role="1ajw0F">
         <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
       </node>
-      <node concept="3Tqbb2" id="6UyJMA9FTIp" role="1ajw0F" />
-      <node concept="17QB3L" id="6UyJMA9FTIs" role="1ajw0F" />
-      <node concept="17QB3L" id="6UyJMA9FTIu" role="1ajw0F" />
+      <node concept="3Tqbb2" id="5_glQXufNeJ" role="1ajw0F" />
+      <node concept="17QB3L" id="5_glQXufNeK" role="1ajw0F" />
+      <node concept="17QB3L" id="5_glQXufNeL" role="1ajw0F" />
+      <node concept="10P_77" id="5_glQXufNeM" role="1ajl9A" />
     </node>
   </node>
   <node concept="312cEu" id="4dr7st0kFTM">

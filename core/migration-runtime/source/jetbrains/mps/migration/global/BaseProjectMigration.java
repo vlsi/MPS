@@ -34,6 +34,11 @@ public abstract class BaseProjectMigration implements ProjectMigration {
   }
 
   @Override
+  public boolean isRerunnable() {
+    return false;
+  }
+
+  @Override
   public final void execute(Project p) {
     if (!doExecute(p)) return;
     setExecuted(p);

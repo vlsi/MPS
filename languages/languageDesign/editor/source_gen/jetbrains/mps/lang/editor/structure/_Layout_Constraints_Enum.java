@@ -11,12 +11,20 @@ public enum _Layout_Constraints_Enum {
   noflow("noflow", "noflow"),
   none("none", null);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  _Layout_Constraints_Enum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<_Layout_Constraints_Enum> getConstants() {
     List<_Layout_Constraints_Enum> list = ListSequence.fromList(new LinkedList<_Layout_Constraints_Enum>());
@@ -42,13 +50,5 @@ public enum _Layout_Constraints_Enum {
       return _Layout_Constraints_Enum.none;
     }
     return _Layout_Constraints_Enum.getDefault();
-  }
-  private String myValue;
-  _Layout_Constraints_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

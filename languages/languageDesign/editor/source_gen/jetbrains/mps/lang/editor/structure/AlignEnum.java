@@ -11,12 +11,20 @@ public enum AlignEnum {
   right("right", "RIGHT"),
   center("center", "CENTER");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  AlignEnum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<AlignEnum> getConstants() {
     List<AlignEnum> list = ListSequence.fromList(new LinkedList<AlignEnum>());
@@ -42,13 +50,5 @@ public enum AlignEnum {
       return AlignEnum.center;
     }
     return AlignEnum.getDefault();
-  }
-  private String myValue;
-  AlignEnum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

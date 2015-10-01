@@ -10,12 +10,20 @@ public enum SideTransformSide {
   right("right", "right"),
   left("left", "left");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  SideTransformSide(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<SideTransformSide> getConstants() {
     List<SideTransformSide> list = ListSequence.fromList(new LinkedList<SideTransformSide>());
@@ -37,13 +45,5 @@ public enum SideTransformSide {
       return SideTransformSide.left;
     }
     return SideTransformSide.getDefault();
-  }
-  private String myValue;
-  SideTransformSide(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

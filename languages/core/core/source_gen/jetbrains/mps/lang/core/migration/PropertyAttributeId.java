@@ -21,6 +21,10 @@ public class PropertyAttributeId extends MigrationScriptBase {
   public String getCaption() {
     return "add id to property/link attributes";
   }
+  @Override
+  public boolean isRerunnable() {
+    return false;
+  }
   public SNode execute(final SModule m) {
     Iterable<SModel> models = m.getModels();
     Iterable<SNode> propertyAttributes = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {

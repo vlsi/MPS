@@ -11,12 +11,20 @@ public enum NodePresentationOptions {
   referent_("referent", "default_referent"),
   custom_("custom", "custom");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  NodePresentationOptions(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<NodePresentationOptions> getConstants() {
     List<NodePresentationOptions> list = ListSequence.fromList(new LinkedList<NodePresentationOptions>());
@@ -42,13 +50,5 @@ public enum NodePresentationOptions {
       return NodePresentationOptions.custom_;
     }
     return NodePresentationOptions.getDefault();
-  }
-  private String myValue;
-  NodePresentationOptions(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -117,6 +117,7 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_1n0h5d_b2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1n0h5d_c2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1n0h5d_d2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1n0h5d_e2a(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_1n0h5d_a2a(EditorContext editorContext, SNode node) {
@@ -253,6 +254,69 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
 
     protected String getNoTargetText() {
       return "<none>";
+    }
+
+  }
+  private EditorCell createCollection_1n0h5d_e2a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_1n0h5d_e2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_1n0h5d_a4c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1n0h5d_b4c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1n0h5d_c4c0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_1n0h5d_a4c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "anchor");
+    editorCell.setCellId("Constant_1n0h5d_a4c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_1n0h5d_b4c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_1n0h5d_b4c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_1n0h5d_c4c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new WeaveMacro_Editor.anchorQuerySingleRoleHandler_1n0h5d_c4c0(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, 0x2449b12bc386c28dL, "anchorQuery"), editorContext);
+    return provider.createCell();
+  }
+  private class anchorQuerySingleRoleHandler_1n0h5d_c4c0 extends SingleRoleCellProvider {
+    public anchorQuerySingleRoleHandler_1n0h5d_c4c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("anchorQuery");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_anchorQuery");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<no anchorQuery>";
     }
 
   }
