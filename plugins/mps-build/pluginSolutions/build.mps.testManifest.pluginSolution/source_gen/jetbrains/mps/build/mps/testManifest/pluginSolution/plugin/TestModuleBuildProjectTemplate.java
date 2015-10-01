@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.io.File;
 import org.apache.log4j.Level;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -35,6 +35,9 @@ public class TestModuleBuildProjectTemplate {
     this.target = target;
   }
 
+  /**
+   * Creates a new test build project but does not add it to the model.
+   */
   public SNode createBuildProject(SNode conf, List<SNode> tmms) {
     List<SNode> languageElements;
     List<SNode> testsElements;
@@ -42,7 +45,7 @@ public class TestModuleBuildProjectTemplate {
 
     SNode root = _quotation_createNode_gglig1_a0e0d(SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-test-languages", (languageElements = createLanguageElements(tmms)), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-tests", (testsElements = createTestElements(tmms)), createLanguageFolderElements(languageElements), createTestFolderElements(testsElements), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml", (testGroup = createTestModuleGroup()), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
 
-    return SModelOperations.addRootNode(target, updateReferences(root, testGroup));
+    return updateReferences(root, testGroup);
   }
 
   private List<SNode> createLanguageElements(List<SNode> tmms) {
