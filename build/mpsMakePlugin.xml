@@ -84,9 +84,9 @@
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
-      <fileset file="${mps_home}/plugins/mpsmake/source_gen/jetbrains/mps/ide/make/actions/startup.properties" />
       <zipfileset file="${mps_home}/plugins/mpsmake/jetbrains.mps.ide.make.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake" prefix="module/" />
+      <zipfileset file="${mps_home}/plugins/mpsmake/source_gen/jetbrains/mps/ide/make/actions/startup.properties" prefix="module" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>

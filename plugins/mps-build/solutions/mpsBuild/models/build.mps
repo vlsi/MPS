@@ -26494,27 +26494,34 @@
             <property role="3PtdQa" value="true" />
             <ref role="L2wRA" node="71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />
             <node concept="3PtdJl" id="2T92ovrm8qI" role="3PtdQn">
-              <node concept="28jJK3" id="2T92ovrhYJj" role="39821P">
-                <node concept="398BVA" id="2T92ovrn8LF" role="28jJRO">
-                  <ref role="398BVh" node="5rNMDvYzen0" resolve="mps_home" />
-                  <node concept="2Ry0Ak" id="2T92ovrn8LQ" role="iGT6I">
-                    <property role="2Ry0Am" value="plugins" />
-                    <node concept="2Ry0Ak" id="2T92ovrn8LR" role="2Ry0An">
-                      <property role="2Ry0Am" value="mpsmake" />
-                      <node concept="2Ry0Ak" id="2T92ovrn8LS" role="2Ry0An">
-                        <property role="2Ry0Am" value="source_gen" />
-                        <node concept="2Ry0Ak" id="2T92ovrn8LT" role="2Ry0An">
-                          <property role="2Ry0Am" value="jetbrains" />
-                          <node concept="2Ry0Ak" id="2T92ovrn8LU" role="2Ry0An">
-                            <property role="2Ry0Am" value="mps" />
-                            <node concept="2Ry0Ak" id="2T92ovrn8LV" role="2Ry0An">
-                              <property role="2Ry0Am" value="ide" />
-                              <node concept="2Ry0Ak" id="2T92ovrn8LW" role="2Ry0An">
-                                <property role="2Ry0Am" value="make" />
-                                <node concept="2Ry0Ak" id="2T92ovrn8LX" role="2Ry0An">
-                                  <property role="2Ry0Am" value="actions" />
-                                  <node concept="2Ry0Ak" id="2T92ovrn8LY" role="2Ry0An">
-                                    <property role="2Ry0Am" value="startup.properties" />
+              <node concept="398223" id="3h$sv3jqL4H" role="39821P">
+                <node concept="3_J27D" id="3h$sv3jqL4J" role="Nbhlr">
+                  <node concept="3Mxwew" id="3h$sv3jqL56" role="3MwsjC">
+                    <property role="3MwjfP" value="module" />
+                  </node>
+                </node>
+                <node concept="28jJK3" id="2T92ovrhYJj" role="39821P">
+                  <node concept="398BVA" id="2T92ovrn8LF" role="28jJRO">
+                    <ref role="398BVh" node="5rNMDvYzen0" resolve="mps_home" />
+                    <node concept="2Ry0Ak" id="2T92ovrn8LQ" role="iGT6I">
+                      <property role="2Ry0Am" value="plugins" />
+                      <node concept="2Ry0Ak" id="2T92ovrn8LR" role="2Ry0An">
+                        <property role="2Ry0Am" value="mpsmake" />
+                        <node concept="2Ry0Ak" id="2T92ovrn8LS" role="2Ry0An">
+                          <property role="2Ry0Am" value="source_gen" />
+                          <node concept="2Ry0Ak" id="2T92ovrn8LT" role="2Ry0An">
+                            <property role="2Ry0Am" value="jetbrains" />
+                            <node concept="2Ry0Ak" id="2T92ovrn8LU" role="2Ry0An">
+                              <property role="2Ry0Am" value="mps" />
+                              <node concept="2Ry0Ak" id="2T92ovrn8LV" role="2Ry0An">
+                                <property role="2Ry0Am" value="ide" />
+                                <node concept="2Ry0Ak" id="2T92ovrn8LW" role="2Ry0An">
+                                  <property role="2Ry0Am" value="make" />
+                                  <node concept="2Ry0Ak" id="2T92ovrn8LX" role="2Ry0An">
+                                    <property role="2Ry0Am" value="actions" />
+                                    <node concept="2Ry0Ak" id="2T92ovrn8LY" role="2Ry0An">
+                                      <property role="2Ry0Am" value="startup.properties" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>
