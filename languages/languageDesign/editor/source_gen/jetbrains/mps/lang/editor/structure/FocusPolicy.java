@@ -12,12 +12,20 @@ public enum FocusPolicy {
   firstEditableCell("firstEditableCell", 2),
   attractsRecursively("attractsRecursively", 3);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final int myValue;
+  FocusPolicy(String name, int value) {
+    myName = name;
+    myValue = value;
+  }
+  public int getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Integer.toString(myValue);
   }
   public static List<FocusPolicy> getConstants() {
     List<FocusPolicy> list = ListSequence.fromList(new LinkedList<FocusPolicy>());
@@ -47,13 +55,5 @@ public enum FocusPolicy {
       return FocusPolicy.attractsRecursively;
     }
     return FocusPolicy.getDefault();
-  }
-  private int myValue;
-  FocusPolicy(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public int getValue() {
-    return this.myValue;
   }
 }

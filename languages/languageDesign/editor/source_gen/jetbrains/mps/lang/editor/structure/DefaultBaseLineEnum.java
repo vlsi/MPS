@@ -11,12 +11,20 @@ public enum DefaultBaseLineEnum {
   collection_center("collection center", "CENTER"),
   last_cell_baseline("last cell baseline", "LAST");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  DefaultBaseLineEnum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<DefaultBaseLineEnum> getConstants() {
     List<DefaultBaseLineEnum> list = ListSequence.fromList(new LinkedList<DefaultBaseLineEnum>());
@@ -42,13 +50,5 @@ public enum DefaultBaseLineEnum {
       return DefaultBaseLineEnum.last_cell_baseline;
     }
     return DefaultBaseLineEnum.getDefault();
-  }
-  private String myValue;
-  DefaultBaseLineEnum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

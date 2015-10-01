@@ -17,65 +17,65 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/1209559274358">
     <file name="RefactoringTargetKind_Enum.java">
       <node id="1209559274358" at="16,0,17,0" concept="2" trace="myName" />
-      <node id="1209559274358" at="17,27,18,23" concept="6" />
-      <node id="1209559274358" at="20,36,21,24" concept="6" />
-      <node id="1209559274358" at="23,65,24,112" concept="5" />
-      <node id="1209559274358" at="24,112,25,76" concept="1" />
-      <node id="1209559274358" at="25,76,26,77" concept="1" />
-      <node id="1209559274358" at="26,77,27,80" concept="1" />
-      <node id="1209559274358" at="27,80,28,80" concept="1" />
-      <node id="1209559274358" at="28,80,29,78" concept="1" />
-      <node id="1209559274358" at="29,78,30,16" concept="6" />
-      <node id="1209559274358" at="32,57,33,43" concept="6" />
-      <node id="1209559274358" at="36,24,37,53" concept="6" />
-      <node id="1209559274358" at="39,75,40,45" concept="6" />
-      <node id="1209559274358" at="42,76,43,46" concept="6" />
-      <node id="1209559274358" at="45,79,46,49" concept="6" />
-      <node id="1209559274358" at="48,79,49,49" concept="6" />
-      <node id="1209559274358" at="51,77,52,47" concept="6" />
-      <node id="1209559274358" at="53,5,54,51" concept="6" />
-      <node id="1209559274358" at="56,0,57,0" concept="2" trace="myValue" />
-      <node id="1209559274358" at="57,57,58,23" concept="1" />
-      <node id="1209559274358" at="58,23,59,25" concept="1" />
-      <node id="1209559274358" at="61,28,62,24" concept="6" />
+      <node id="1209559274358" at="17,27,18,18" concept="6" />
+      <node id="1209559274358" at="20,0,21,0" concept="2" trace="myValue" />
+      <node id="1209559274358" at="21,57,22,18" concept="1" />
+      <node id="1209559274358" at="22,18,23,20" concept="1" />
+      <node id="1209559274358" at="25,28,26,19" concept="6" />
+      <node id="1209559274358" at="28,36,29,19" concept="6" />
+      <node id="1209559274358" at="31,65,32,112" concept="5" />
+      <node id="1209559274358" at="32,112,33,76" concept="1" />
+      <node id="1209559274358" at="33,76,34,77" concept="1" />
+      <node id="1209559274358" at="34,77,35,80" concept="1" />
+      <node id="1209559274358" at="35,80,36,80" concept="1" />
+      <node id="1209559274358" at="36,80,37,78" concept="1" />
+      <node id="1209559274358" at="37,78,38,16" concept="6" />
+      <node id="1209559274358" at="40,57,41,43" concept="6" />
+      <node id="1209559274358" at="44,24,45,53" concept="6" />
+      <node id="1209559274358" at="47,75,48,45" concept="6" />
+      <node id="1209559274358" at="50,76,51,46" concept="6" />
+      <node id="1209559274358" at="53,79,54,49" concept="6" />
+      <node id="1209559274358" at="56,79,57,49" concept="6" />
+      <node id="1209559274358" at="59,77,60,47" concept="6" />
+      <node id="1209559274358" at="61,5,62,51" concept="6" />
       <node id="1209559274358" at="17,0,20,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1209559274358" at="20,0,23,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1209559274358" at="32,0,35,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
-      <node id="1209559274358" at="35,69,38,5" concept="3" />
-      <node id="1209559274358" at="38,5,41,5" concept="3" />
-      <node id="1209559274358" at="41,5,44,5" concept="3" />
-      <node id="1209559274358" at="44,5,47,5" concept="3" />
-      <node id="1209559274358" at="47,5,50,5" concept="3" />
-      <node id="1209559274358" at="50,5,53,5" concept="3" />
-      <node id="1209559274358" at="61,0,64,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1209559274358" at="57,0,61,0" concept="0" trace="RefactoringTargetKind_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1209559274358" at="23,0,32,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1209559274358" at="35,0,56,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
-      <scope id="1209559274358" at="17,27,18,23" />
-      <scope id="1209559274358" at="20,36,21,24" />
-      <scope id="1209559274358" at="32,57,33,43" />
-      <scope id="1209559274358" at="36,24,37,53" />
-      <scope id="1209559274358" at="39,75,40,45" />
-      <scope id="1209559274358" at="42,76,43,46" />
-      <scope id="1209559274358" at="45,79,46,49" />
-      <scope id="1209559274358" at="48,79,49,49" />
-      <scope id="1209559274358" at="51,77,52,47" />
-      <scope id="1209559274358" at="61,28,62,24" />
-      <scope id="1209559274358" at="57,57,59,25" />
+      <node id="1209559274358" at="25,0,28,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="1209559274358" at="28,0,31,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1209559274358" at="40,0,43,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
+      <node id="1209559274358" at="43,69,46,5" concept="3" />
+      <node id="1209559274358" at="46,5,49,5" concept="3" />
+      <node id="1209559274358" at="49,5,52,5" concept="3" />
+      <node id="1209559274358" at="52,5,55,5" concept="3" />
+      <node id="1209559274358" at="55,5,58,5" concept="3" />
+      <node id="1209559274358" at="58,5,61,5" concept="3" />
+      <node id="1209559274358" at="21,0,25,0" concept="0" trace="RefactoringTargetKind_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1209559274358" at="31,0,40,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="1209559274358" at="43,0,64,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
+      <scope id="1209559274358" at="17,27,18,18" />
+      <scope id="1209559274358" at="25,28,26,19" />
+      <scope id="1209559274358" at="28,36,29,19" />
+      <scope id="1209559274358" at="40,57,41,43" />
+      <scope id="1209559274358" at="44,24,45,53" />
+      <scope id="1209559274358" at="47,75,48,45" />
+      <scope id="1209559274358" at="50,76,51,46" />
+      <scope id="1209559274358" at="53,79,54,49" />
+      <scope id="1209559274358" at="56,79,57,49" />
+      <scope id="1209559274358" at="59,77,60,47" />
+      <scope id="1209559274358" at="21,57,23,20" />
       <scope id="1209559274358" at="17,0,20,0" />
-      <scope id="1209559274358" at="20,0,23,0" />
-      <scope id="1209559274358" at="32,0,35,0" />
-      <scope id="1209559274358" at="61,0,64,0" />
-      <scope id="1209559274358" at="57,0,61,0">
+      <scope id="1209559274358" at="25,0,28,0" />
+      <scope id="1209559274358" at="28,0,31,0" />
+      <scope id="1209559274358" at="40,0,43,0" />
+      <scope id="1209559274358" at="21,0,25,0">
         <var name="name" id="1209559274358" />
         <var name="value" id="1209559274358" />
       </scope>
-      <scope id="1209559274358" at="23,65,30,16">
+      <scope id="1209559274358" at="31,65,38,16">
         <var name="list" id="1209559274358" />
       </scope>
-      <scope id="1209559274358" at="23,0,32,0" />
-      <scope id="1209559274358" at="35,69,54,51" />
-      <scope id="1209559274358" at="35,0,56,0">
+      <scope id="1209559274358" at="31,0,40,0" />
+      <scope id="1209559274358" at="43,69,62,51" />
+      <scope id="1209559274358" at="43,0,64,0">
         <var name="value" id="1209559274358" />
       </scope>
       <unit id="1209559274358" at="9,0,65,0" name="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum" />

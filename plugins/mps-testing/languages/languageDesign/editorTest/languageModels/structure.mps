@@ -458,5 +458,37 @@
       <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
     </node>
   </node>
+  <node concept="1TIwiD" id="5qrsiYWoAxo">
+    <property role="1pbfSe" value="318626183" />
+    <property role="TrG5h" value="CollapsedByDefault" />
+    <property role="3GE5qa" value="folding" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="5qrsiYWpnbK">
+    <property role="1pbfSe" value="318825503" />
+    <property role="3GE5qa" value="folding" />
+    <property role="TrG5h" value="FoldingContainer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5qrsiYWpnbL" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="collapsedByDefault" />
+      <ref role="20lvS9" node="5qrsiYWoAxo" resolve="CollapsedByDefault" />
+    </node>
+    <node concept="1TJgyj" id="K6TtETsmdm" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="collapsedConditionally" />
+      <ref role="20lvS9" node="K6TtETsmdp" resolve="CollapsedConditionally" />
+    </node>
+    <node concept="1TJgyi" id="K6TtETsvsn" role="1TKVEl">
+      <property role="TrG5h" value="collapsed" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="K6TtETsmdp">
+    <property role="1pbfSe" value="981972685" />
+    <property role="3GE5qa" value="folding" />
+    <property role="TrG5h" value="CollapsedConditionally" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

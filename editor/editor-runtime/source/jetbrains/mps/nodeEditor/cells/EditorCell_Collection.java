@@ -504,6 +504,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       return;
     }
     myFolded = folded;
+    if (!isInTree()) {
+      return;
+    }
     getEditor().setFolded(this, folded);
     requestRelayout();
   }
@@ -511,11 +514,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   public void fold(boolean programmaticaly) {
     if (!isFoldable()) return;
     if (isFolded()) {
-      // updating editor's myFoldedCells set (sometimes this method is called from Memento) 
-      getEditor().setFolded(this, true);
+      // updating editor's myFoldedCells set (sometimes this method is called from Memento)
+      if (isInTree()) {
+        getEditor().setFolded(this, true);
+      }
       return;
     }
     setFolded(true);
+    if (!isInTree()) {
+      return;
+    }
     if (!isUnderFolded()) {
       addUnfoldingListener();
       removeFoldingListenerForChildren();
@@ -655,6 +663,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       return;
     }
     setFolded(false);
+    if (!isInTree()) {
+      return;
+    }
     if (!isUnderFolded()) {
       removeUnfoldingListener();
       addUnfoldingListenerForChildren();
@@ -905,6 +916,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
     if (isFoldable()) {
       getEditor().getCellTracker().addFoldableCell(this);
+    }
+    if (isFolded()) {
+      getEditor().setFolded(this, true);
+      if (!isUnderFolded()) {
+        addUnfoldingListener();
+      }
     }
   }
 

@@ -17,65 +17,65 @@
   <root nodeRef="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)/6370754048397540921">
     <file name="RuleType.java">
       <node id="6370754048397540921" at="16,0,17,0" concept="2" trace="myName" />
-      <node id="6370754048397540921" at="17,27,18,23" concept="6" />
-      <node id="6370754048397540921" at="20,36,21,24" concept="6" />
-      <node id="6370754048397540921" at="23,47,24,76" concept="5" />
-      <node id="6370754048397540921" at="24,76,25,69" concept="1" />
-      <node id="6370754048397540921" at="25,69,26,71" concept="1" />
-      <node id="6370754048397540921" at="26,71,27,72" concept="1" />
-      <node id="6370754048397540921" at="27,72,28,71" concept="1" />
-      <node id="6370754048397540921" at="28,71,29,68" concept="1" />
-      <node id="6370754048397540921" at="29,68,30,16" concept="6" />
-      <node id="6370754048397540921" at="32,39,33,36" concept="6" />
-      <node id="6370754048397540921" at="36,24,37,35" concept="6" />
-      <node id="6370754048397540921" at="39,68,40,38" concept="6" />
-      <node id="6370754048397540921" at="42,70,43,40" concept="6" />
-      <node id="6370754048397540921" at="45,71,46,41" concept="6" />
-      <node id="6370754048397540921" at="48,70,49,40" concept="6" />
-      <node id="6370754048397540921" at="51,67,52,37" concept="6" />
-      <node id="6370754048397540921" at="53,5,54,33" concept="6" />
-      <node id="6370754048397540921" at="56,0,57,0" concept="2" trace="myValue" />
-      <node id="6370754048397540921" at="57,39,58,23" concept="1" />
-      <node id="6370754048397540921" at="58,23,59,25" concept="1" />
-      <node id="6370754048397540921" at="61,28,62,24" concept="6" />
+      <node id="6370754048397540921" at="17,27,18,18" concept="6" />
+      <node id="6370754048397540921" at="20,0,21,0" concept="2" trace="myValue" />
+      <node id="6370754048397540921" at="21,39,22,18" concept="1" />
+      <node id="6370754048397540921" at="22,18,23,20" concept="1" />
+      <node id="6370754048397540921" at="25,28,26,19" concept="6" />
+      <node id="6370754048397540921" at="28,36,29,19" concept="6" />
+      <node id="6370754048397540921" at="31,47,32,76" concept="5" />
+      <node id="6370754048397540921" at="32,76,33,69" concept="1" />
+      <node id="6370754048397540921" at="33,69,34,71" concept="1" />
+      <node id="6370754048397540921" at="34,71,35,72" concept="1" />
+      <node id="6370754048397540921" at="35,72,36,71" concept="1" />
+      <node id="6370754048397540921" at="36,71,37,68" concept="1" />
+      <node id="6370754048397540921" at="37,68,38,16" concept="6" />
+      <node id="6370754048397540921" at="40,39,41,36" concept="6" />
+      <node id="6370754048397540921" at="44,24,45,35" concept="6" />
+      <node id="6370754048397540921" at="47,68,48,38" concept="6" />
+      <node id="6370754048397540921" at="50,70,51,40" concept="6" />
+      <node id="6370754048397540921" at="53,71,54,41" concept="6" />
+      <node id="6370754048397540921" at="56,70,57,40" concept="6" />
+      <node id="6370754048397540921" at="59,67,60,37" concept="6" />
+      <node id="6370754048397540921" at="61,5,62,33" concept="6" />
       <node id="6370754048397540921" at="17,0,20,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="6370754048397540921" at="20,0,23,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="6370754048397540921" at="32,0,35,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/project/structure/RuleType;" />
-      <node id="6370754048397540921" at="35,51,38,5" concept="3" />
-      <node id="6370754048397540921" at="38,5,41,5" concept="3" />
-      <node id="6370754048397540921" at="41,5,44,5" concept="3" />
-      <node id="6370754048397540921" at="44,5,47,5" concept="3" />
-      <node id="6370754048397540921" at="47,5,50,5" concept="3" />
-      <node id="6370754048397540921" at="50,5,53,5" concept="3" />
-      <node id="6370754048397540921" at="61,0,64,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="6370754048397540921" at="57,0,61,0" concept="0" trace="RuleType#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="6370754048397540921" at="23,0,32,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="6370754048397540921" at="35,0,56,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/project/structure/RuleType;" />
-      <scope id="6370754048397540921" at="17,27,18,23" />
-      <scope id="6370754048397540921" at="20,36,21,24" />
-      <scope id="6370754048397540921" at="32,39,33,36" />
-      <scope id="6370754048397540921" at="36,24,37,35" />
-      <scope id="6370754048397540921" at="39,68,40,38" />
-      <scope id="6370754048397540921" at="42,70,43,40" />
-      <scope id="6370754048397540921" at="45,71,46,41" />
-      <scope id="6370754048397540921" at="48,70,49,40" />
-      <scope id="6370754048397540921" at="51,67,52,37" />
-      <scope id="6370754048397540921" at="61,28,62,24" />
-      <scope id="6370754048397540921" at="57,39,59,25" />
+      <node id="6370754048397540921" at="25,0,28,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="6370754048397540921" at="28,0,31,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="6370754048397540921" at="40,0,43,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/project/structure/RuleType;" />
+      <node id="6370754048397540921" at="43,51,46,5" concept="3" />
+      <node id="6370754048397540921" at="46,5,49,5" concept="3" />
+      <node id="6370754048397540921" at="49,5,52,5" concept="3" />
+      <node id="6370754048397540921" at="52,5,55,5" concept="3" />
+      <node id="6370754048397540921" at="55,5,58,5" concept="3" />
+      <node id="6370754048397540921" at="58,5,61,5" concept="3" />
+      <node id="6370754048397540921" at="21,0,25,0" concept="0" trace="RuleType#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="6370754048397540921" at="31,0,40,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="6370754048397540921" at="43,0,64,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/project/structure/RuleType;" />
+      <scope id="6370754048397540921" at="17,27,18,18" />
+      <scope id="6370754048397540921" at="25,28,26,19" />
+      <scope id="6370754048397540921" at="28,36,29,19" />
+      <scope id="6370754048397540921" at="40,39,41,36" />
+      <scope id="6370754048397540921" at="44,24,45,35" />
+      <scope id="6370754048397540921" at="47,68,48,38" />
+      <scope id="6370754048397540921" at="50,70,51,40" />
+      <scope id="6370754048397540921" at="53,71,54,41" />
+      <scope id="6370754048397540921" at="56,70,57,40" />
+      <scope id="6370754048397540921" at="59,67,60,37" />
+      <scope id="6370754048397540921" at="21,39,23,20" />
       <scope id="6370754048397540921" at="17,0,20,0" />
-      <scope id="6370754048397540921" at="20,0,23,0" />
-      <scope id="6370754048397540921" at="32,0,35,0" />
-      <scope id="6370754048397540921" at="61,0,64,0" />
-      <scope id="6370754048397540921" at="57,0,61,0">
+      <scope id="6370754048397540921" at="25,0,28,0" />
+      <scope id="6370754048397540921" at="28,0,31,0" />
+      <scope id="6370754048397540921" at="40,0,43,0" />
+      <scope id="6370754048397540921" at="21,0,25,0">
         <var name="name" id="6370754048397540921" />
         <var name="value" id="6370754048397540921" />
       </scope>
-      <scope id="6370754048397540921" at="23,47,30,16">
+      <scope id="6370754048397540921" at="31,47,38,16">
         <var name="list" id="6370754048397540921" />
       </scope>
-      <scope id="6370754048397540921" at="23,0,32,0" />
-      <scope id="6370754048397540921" at="35,51,54,33" />
-      <scope id="6370754048397540921" at="35,0,56,0">
+      <scope id="6370754048397540921" at="31,0,40,0" />
+      <scope id="6370754048397540921" at="43,51,62,33" />
+      <scope id="6370754048397540921" at="43,0,64,0">
         <var name="value" id="6370754048397540921" />
       </scope>
       <unit id="6370754048397540921" at="9,0,65,0" name="jetbrains.mps.lang.project.structure.RuleType" />

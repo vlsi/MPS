@@ -16363,7 +16363,7 @@
   </node>
   <node concept="13h7C7" id="4YHrdUcAhyx">
     <property role="3GE5qa" value="CellModel" />
-    <ref role="13h7C2" to="tpc2:7hmFG5jLZmy" resolve="CellModel_Redispatch" />
+    <ref role="13h7C2" to="tpc2:7hmFG5jLZmy" resolve="CellModel_NextEditor" />
     <node concept="13hLZK" id="4YHrdUcAhyy" role="13h7CW">
       <node concept="3clFbS" id="4YHrdUcAhyz" role="2VODD2" />
     </node>

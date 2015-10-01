@@ -17,57 +17,57 @@
   <root nodeRef="r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/3803436373353348028">
     <file name="OrangeTaste.java">
       <node id="3803436373353348028" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="3803436373353348028" at="15,27,16,23" concept="6" />
-      <node id="3803436373353348028" at="18,36,19,24" concept="6" />
-      <node id="3803436373353348028" at="21,50,22,82" concept="5" />
-      <node id="3803436373353348028" at="22,82,23,62" concept="1" />
-      <node id="3803436373353348028" at="23,62,24,61" concept="1" />
-      <node id="3803436373353348028" at="24,61,25,63" concept="1" />
-      <node id="3803436373353348028" at="25,63,26,16" concept="6" />
-      <node id="3803436373353348028" at="28,42,29,29" concept="6" />
-      <node id="3803436373353348028" at="32,24,33,38" concept="6" />
-      <node id="3803436373353348028" at="35,61,36,31" concept="6" />
-      <node id="3803436373353348028" at="38,60,39,30" concept="6" />
-      <node id="3803436373353348028" at="41,62,42,32" concept="6" />
-      <node id="3803436373353348028" at="43,5,44,36" concept="6" />
-      <node id="3803436373353348028" at="46,0,47,0" concept="2" trace="myValue" />
-      <node id="3803436373353348028" at="47,42,48,23" concept="1" />
-      <node id="3803436373353348028" at="48,23,49,25" concept="1" />
-      <node id="3803436373353348028" at="51,28,52,24" concept="6" />
+      <node id="3803436373353348028" at="15,27,16,18" concept="6" />
+      <node id="3803436373353348028" at="18,0,19,0" concept="2" trace="myValue" />
+      <node id="3803436373353348028" at="19,42,20,18" concept="1" />
+      <node id="3803436373353348028" at="20,18,21,20" concept="1" />
+      <node id="3803436373353348028" at="23,28,24,19" concept="6" />
+      <node id="3803436373353348028" at="26,36,27,19" concept="6" />
+      <node id="3803436373353348028" at="29,50,30,82" concept="5" />
+      <node id="3803436373353348028" at="30,82,31,62" concept="1" />
+      <node id="3803436373353348028" at="31,62,32,61" concept="1" />
+      <node id="3803436373353348028" at="32,61,33,63" concept="1" />
+      <node id="3803436373353348028" at="33,63,34,16" concept="6" />
+      <node id="3803436373353348028" at="36,42,37,29" concept="6" />
+      <node id="3803436373353348028" at="40,24,41,38" concept="6" />
+      <node id="3803436373353348028" at="43,61,44,31" concept="6" />
+      <node id="3803436373353348028" at="46,60,47,30" concept="6" />
+      <node id="3803436373353348028" at="49,62,50,32" concept="6" />
+      <node id="3803436373353348028" at="51,5,52,36" concept="6" />
       <node id="3803436373353348028" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="3803436373353348028" at="18,0,21,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="3803436373353348028" at="28,0,31,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
-      <node id="3803436373353348028" at="31,54,34,5" concept="3" />
-      <node id="3803436373353348028" at="34,5,37,5" concept="3" />
-      <node id="3803436373353348028" at="37,5,40,5" concept="3" />
-      <node id="3803436373353348028" at="40,5,43,5" concept="3" />
-      <node id="3803436373353348028" at="51,0,54,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="3803436373353348028" at="47,0,51,0" concept="0" trace="OrangeTaste#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3803436373353348028" at="21,0,28,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="3803436373353348028" at="31,0,46,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
-      <scope id="3803436373353348028" at="15,27,16,23" />
-      <scope id="3803436373353348028" at="18,36,19,24" />
-      <scope id="3803436373353348028" at="28,42,29,29" />
-      <scope id="3803436373353348028" at="32,24,33,38" />
-      <scope id="3803436373353348028" at="35,61,36,31" />
-      <scope id="3803436373353348028" at="38,60,39,30" />
-      <scope id="3803436373353348028" at="41,62,42,32" />
-      <scope id="3803436373353348028" at="51,28,52,24" />
-      <scope id="3803436373353348028" at="47,42,49,25" />
+      <node id="3803436373353348028" at="23,0,26,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="3803436373353348028" at="26,0,29,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="3803436373353348028" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
+      <node id="3803436373353348028" at="39,54,42,5" concept="3" />
+      <node id="3803436373353348028" at="42,5,45,5" concept="3" />
+      <node id="3803436373353348028" at="45,5,48,5" concept="3" />
+      <node id="3803436373353348028" at="48,5,51,5" concept="3" />
+      <node id="3803436373353348028" at="19,0,23,0" concept="0" trace="OrangeTaste#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3803436373353348028" at="29,0,36,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="3803436373353348028" at="39,0,54,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/languagePatterns/Basic/structure/OrangeTaste;" />
+      <scope id="3803436373353348028" at="15,27,16,18" />
+      <scope id="3803436373353348028" at="23,28,24,19" />
+      <scope id="3803436373353348028" at="26,36,27,19" />
+      <scope id="3803436373353348028" at="36,42,37,29" />
+      <scope id="3803436373353348028" at="40,24,41,38" />
+      <scope id="3803436373353348028" at="43,61,44,31" />
+      <scope id="3803436373353348028" at="46,60,47,30" />
+      <scope id="3803436373353348028" at="49,62,50,32" />
+      <scope id="3803436373353348028" at="19,42,21,20" />
       <scope id="3803436373353348028" at="15,0,18,0" />
-      <scope id="3803436373353348028" at="18,0,21,0" />
-      <scope id="3803436373353348028" at="28,0,31,0" />
-      <scope id="3803436373353348028" at="51,0,54,0" />
-      <scope id="3803436373353348028" at="47,0,51,0">
+      <scope id="3803436373353348028" at="23,0,26,0" />
+      <scope id="3803436373353348028" at="26,0,29,0" />
+      <scope id="3803436373353348028" at="36,0,39,0" />
+      <scope id="3803436373353348028" at="19,0,23,0">
         <var name="name" id="3803436373353348028" />
         <var name="value" id="3803436373353348028" />
       </scope>
-      <scope id="3803436373353348028" at="21,50,26,16">
+      <scope id="3803436373353348028" at="29,50,34,16">
         <var name="list" id="3803436373353348028" />
       </scope>
-      <scope id="3803436373353348028" at="21,0,28,0" />
-      <scope id="3803436373353348028" at="31,54,44,36" />
-      <scope id="3803436373353348028" at="31,0,46,0">
+      <scope id="3803436373353348028" at="29,0,36,0" />
+      <scope id="3803436373353348028" at="39,54,52,36" />
+      <scope id="3803436373353348028" at="39,0,54,0">
         <var name="value" id="3803436373353348028" />
       </scope>
       <unit id="3803436373353348028" at="9,0,55,0" name="jetbrains.mps.samples.languagePatterns.Basic.structure.OrangeTaste" />

@@ -13,12 +13,20 @@ public enum RuleType {
   after_or_together("after or together (>=)", "after_or_together"),
   strictly_after("after (>)", "strictly_after");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  RuleType(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<RuleType> getConstants() {
     List<RuleType> list = ListSequence.fromList(new LinkedList<RuleType>());
@@ -52,13 +60,5 @@ public enum RuleType {
       return RuleType.strictly_after;
     }
     return RuleType.getDefault();
-  }
-  private String myValue;
-  RuleType(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }
