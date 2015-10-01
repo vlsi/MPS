@@ -426,6 +426,9 @@
     <node concept="lpD6D" id="K6TtETsJwT" role="lpD6w">
       <ref role="lpD7u" to="hcvu:K6TtETsIvq" resolve="CellConditionallyUncollapsed" />
     </node>
+    <node concept="lpD6D" id="6PT0agmOgRi" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:5qrsiYWoAxm" resolve="CellFoldedByDefault" />
+    </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
     </node>
