@@ -573,6 +573,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/jetbrains.mps.ide.java.tests/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mpsmake">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/testModules">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/test_gen" isTestSource="false" />
