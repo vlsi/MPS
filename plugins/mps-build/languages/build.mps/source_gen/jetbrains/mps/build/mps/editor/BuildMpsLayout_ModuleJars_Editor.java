@@ -133,7 +133,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_aqxvre_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_aqxvre_b2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aqxvre_c2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_aqxvre_d2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_aqxvre_d2a(editorContext, node));
     return editorCell;
   }
   private static boolean renderingCondition_aqxvre_a2a(SNode node, EditorContext editorContext) {
@@ -180,6 +180,7 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
       editorCell.getStyle().putAll(style);
     }
 
@@ -208,12 +209,21 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_aqxvre_d2a(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new BuildMpsLayout_ModuleJars_Editor.sourceJarSingleRoleHandler_aqxvre_d2a(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd410L, "sourceJar"), editorContext);
+  private EditorCell createCollection_aqxvre_d2a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_aqxvre_d2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createRefNode_aqxvre_a3c0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createRefNode_aqxvre_a3c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new BuildMpsLayout_ModuleJars_Editor.sourceJarSingleRoleHandler_aqxvre_a3c0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd410L, "sourceJar"), editorContext);
     return provider.createCell();
   }
-  private class sourceJarSingleRoleHandler_aqxvre_d2a extends SingleRoleCellProvider {
-    public sourceJarSingleRoleHandler_aqxvre_d2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class sourceJarSingleRoleHandler_aqxvre_a3c0 extends SingleRoleCellProvider {
+    public sourceJarSingleRoleHandler_aqxvre_a3c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     public EditorCell createChildCell(EditorContext editorContext, SNode child) {

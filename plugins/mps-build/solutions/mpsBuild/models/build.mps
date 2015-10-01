@@ -305,7 +305,7 @@
         <property id="3335207478148060173" name="customContent" index="3PtdQa" />
         <reference id="1265949165890536425" name="module" index="L2wRA" />
         <child id="4356762679305730677" name="jarLocations" index="3yL2VB" />
-        <child id="3335207478148056905" name="deployedJar" index="3PtcVe" />
+        <child id="3335207478148060176" name="sourceJar" index="3PtdQn" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
       <concept id="2105528055260548241" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources" flags="ng" index="1bldCd" />
@@ -26493,26 +26493,27 @@
           <node concept="L2wRC" id="5qX22802cgV" role="39821P">
             <property role="3PtdQa" value="true" />
             <ref role="L2wRA" node="71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />
-            <node concept="3PtdJl" id="2T92ovrhYCU" role="3PtcVe">
+            <node concept="3PtdJl" id="2T92ovrm8qI" role="3PtdQn">
               <node concept="28jJK3" id="2T92ovrhYJj" role="39821P">
-                <node concept="55IIr" id="2T92ovrhYJk" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2T92ovrhYJl" role="iGT6I">
+                <node concept="398BVA" id="2T92ovrn8LF" role="28jJRO">
+                  <ref role="398BVh" node="5rNMDvYzen0" resolve="mps_home" />
+                  <node concept="2Ry0Ak" id="2T92ovrn8LQ" role="iGT6I">
                     <property role="2Ry0Am" value="plugins" />
-                    <node concept="2Ry0Ak" id="2T92ovrhYJm" role="2Ry0An">
+                    <node concept="2Ry0Ak" id="2T92ovrn8LR" role="2Ry0An">
                       <property role="2Ry0Am" value="mpsmake" />
-                      <node concept="2Ry0Ak" id="2T92ovrhYJn" role="2Ry0An">
+                      <node concept="2Ry0Ak" id="2T92ovrn8LS" role="2Ry0An">
                         <property role="2Ry0Am" value="source_gen" />
-                        <node concept="2Ry0Ak" id="2T92ovrhYJo" role="2Ry0An">
+                        <node concept="2Ry0Ak" id="2T92ovrn8LT" role="2Ry0An">
                           <property role="2Ry0Am" value="jetbrains" />
-                          <node concept="2Ry0Ak" id="2T92ovrhYJp" role="2Ry0An">
+                          <node concept="2Ry0Ak" id="2T92ovrn8LU" role="2Ry0An">
                             <property role="2Ry0Am" value="mps" />
-                            <node concept="2Ry0Ak" id="2T92ovrhYJq" role="2Ry0An">
+                            <node concept="2Ry0Ak" id="2T92ovrn8LV" role="2Ry0An">
                               <property role="2Ry0Am" value="ide" />
-                              <node concept="2Ry0Ak" id="2T92ovrhYJr" role="2Ry0An">
+                              <node concept="2Ry0Ak" id="2T92ovrn8LW" role="2Ry0An">
                                 <property role="2Ry0Am" value="make" />
-                                <node concept="2Ry0Ak" id="2T92ovrhYJs" role="2Ry0An">
+                                <node concept="2Ry0Ak" id="2T92ovrn8LX" role="2Ry0An">
                                   <property role="2Ry0Am" value="actions" />
-                                  <node concept="2Ry0Ak" id="2T92ovrhYJt" role="2Ry0An">
+                                  <node concept="2Ry0Ak" id="2T92ovrn8LY" role="2Ry0An">
                                     <property role="2Ry0Am" value="startup.properties" />
                                   </node>
                                 </node>
