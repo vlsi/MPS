@@ -40,6 +40,7 @@
   <dependencies>
     <dependency reexport="false">6be63454-b482-4f5d-b8b7-d3f627e961a7(UtilSolution)</dependency>
     <dependency reexport="false">43359135-f67c-4a3d-9fdd-a3d7dba50995(BHL1)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>

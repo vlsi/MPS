@@ -18,6 +18,7 @@ package jetbrains.mps.core.aspects.behaviour;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
+import jetbrains.mps.core.aspects.behaviour.api.SAbstractType;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.api.SMethodId;
@@ -32,7 +33,9 @@ import org.jetbrains.mps.openapi.language.*;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -108,15 +111,52 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   /**
-   * used against a single null in the varargs arguments
+   * in the case of the last vararg argument converts all arguments into arguments + separate array for the vararg arguments
+   * also used against a single null in the varargs arguments
    */
-  @NotNull
-  private Object[] getParametersArray(Object[] parameters) {
-    Object[] newParameters = parameters;
+  @Nullable
+  private Object[] getParametersArray(@NotNull List<SParameter> methodParameters, Object... parameters) {
     if (parameters == null) {
-      newParameters = new Object[]{null};
+      return new Object[]{null};
     }
-    return newParameters;
+    if (methodParameters.isEmpty()) {
+      return new Object[0];
+    }
+    SParameter lastPrm = methodParameters.get(methodParameters.size() - 1);
+    if (lastPrm instanceof SVarArgParameter) {
+      Object[] newParameters = new Object[methodParameters.size()];
+      SAbstractType componentType = ((SVarArgParameter) lastPrm).getComponentType();
+      Class<?> javaComponentType = Object.class;
+      if (componentType instanceof SJavaCompoundType) {
+        javaComponentType = ((SJavaCompoundType) componentType).getJavaType();
+      }
+      newParameters[methodParameters.size() - 1] = Array.newInstance(javaComponentType, parameters.length - methodParameters.size() + 1);
+      for (int i = 0; i < parameters.length; ++i) {
+        if (i < methodParameters.size() - 1) {
+          newParameters[i] = parameters[i];
+        } else {
+          Array.set(newParameters[methodParameters.size() - 1], i - methodParameters.size() + 1, parameters[i]);
+        }
+      }
+      return newParameters;
+    } else {
+      if (methodParameters.size() == 1) { // that means that we could be passing a single array
+        if (lastPrm.getType() instanceof SJavaCompoundType) {
+          Class<?> javaType = ((SJavaCompoundType) lastPrm.getType()).getJavaType();
+          if (javaType.isArray()) {
+            Class<?> componentType = javaType.getComponentType();
+            for (int i = 0; i < parameters.length; ++i) {
+              if (parameters[i] == null) continue;
+              if (!componentType.isAssignableFrom(parameters[i].getClass())) {
+                return parameters;
+              }
+            }
+            parameters = new Object[]{parameters};
+          }
+        }
+      }
+      return parameters;
+    }
   }
 
   @NotNull
@@ -126,7 +166,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       throw new IllegalArgumentException("For now one cannot pass arguments to a behavior constructor");
     }
     SNode node = SModelUtil_new.instantiateConceptDeclaration(myConcept, model, null, false);
-    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor, getParametersArray(parameters));
+    new ConstructionHandler(myAncestorCache, myConcept).initNode(node, constructor, getParametersArray(Collections.<SParameter>emptyList(), parameters));
     return node;
   }
 
@@ -136,9 +176,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     checkNotStatic(method);
     checkForConcept(node.getConcept());
 
-    Object[] newParameters = getParametersArray(parameters);
     if (method.isVirtual()) {
-      return invokeVirtual(node, method, newParameters);
+      return invokeVirtual(node, method, parameters);
     } else {
       return invokeNonVirtual(node, method, parameters);
     }
@@ -150,9 +189,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     checkStatic(method);
     checkForConcept(concept);
 
-    Object[] newParameters = getParametersArray(parameters);
     if (method.isVirtual()) {
-      return invokeVirtual(concept, method, newParameters);
+      return invokeVirtual(concept, method, parameters);
     } else {
       return invokeNonVirtual(concept, method, parameters);
     }
@@ -160,20 +198,36 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   private void checkForConcept(@NotNull SAbstractConcept concept) {
     if (!concept.isSubConceptOf(myConcept)) {
-      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not subconcept of " + myConcept);
+      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not a subconcept of " + myConcept);
     }
   }
 
   private <T> void checkParameters(@NotNull SMethod<T> method, @NotNull Object[] parameters) {
-    if (method.getParameters().size() != parameters.length) {
-      throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
+    List<SParameter> declaredParameters = method.getParameters();
+    boolean hasVarArg = !declaredParameters.isEmpty() && declaredParameters.get(declaredParameters.size() - 1) instanceof SVarArgParameter;
+    if (!hasVarArg) {
+      if (declaredParameters.size() != parameters.length) {
+        throw new BHMethodArgumentsCountDoNotMatch(method, parameters.length);
+      }
     }
-    List<SParameter> sParameters = method.getParameters();
-    for (int i = 0; i < sParameters.size(); ++i) {
+    for (int i = 0; i < parameters.length; ++i) {
       if (parameters[i] != null) {
         Class<?> aClass = parameters[i].getClass();
-        if (!sParameters.get(i).getType().isAssignableFrom(new SJavaCompoundTypeImpl(aClass))) {
-          throw new BHArgumentsDoNotMatch(method, parameters, sParameters, i);
+        SJavaCompoundTypeImpl passedObjectType = new SJavaCompoundTypeImpl(aClass);
+        if (hasVarArg && (i >= declaredParameters.size() - 1)) { // that lies in vararg argument
+          SArrayType varArgType = (SArrayType) declaredParameters.get(declaredParameters.size() - 1).getType();
+          if (parameters.length == declaredParameters.size()) { // an array could be passed
+            if (varArgType.isAssignableFrom(passedObjectType)) {
+              continue;
+            }
+          }
+          if (!varArgType.getInternalType().isAssignableFrom(passedObjectType)) {
+            throw new BHArgumentsDoNotMatch(method, parameters, declaredParameters, i);
+          }
+        } else {
+          if (!declaredParameters.get(i).getType().isAssignableFrom(passedObjectType)) {
+            throw new BHArgumentsDoNotMatch(method, parameters, declaredParameters, i);
+          }
         }
       }
     }
@@ -191,15 +245,13 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   private <T> T invokeNonVirtualCommon(@NotNull NodeOrConcept nodeOrConcept, @NotNull SMethod<T> method, Object... parameters) {
     checkInitialized();
-    @NotNull Object[] parametersArray = getParametersArray(parameters);
     checkForConcept(nodeOrConcept.getConcept());
-    checkParameters(method, parametersArray);
 
     if (method.getModifiers().isPrivate()) {
       if (nodeOrConcept.getNode() != null) {
-        return invokeSpecial(nodeOrConcept.getNode(), method, parametersArray);
+        return invokeSpecial(nodeOrConcept.getNode(), method, parameters);
       } else {
-        return invokeSpecial(nodeOrConcept.getConcept(), method, parametersArray);
+        return invokeSpecial(nodeOrConcept.getConcept(), method, parameters);
       }
     }
     Iterable<SAbstractConcept> ancestors = myAncestorCache.getAncestorsInvocationOrder();
@@ -209,9 +261,9 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         BaseBHDescriptor baseBHDescriptor = (BaseBHDescriptor) bhDescriptor;
         if (baseBHDescriptor.hasDeclaredMethod(method)) {
           if (nodeOrConcept.getNode() != null) {
-            return baseBHDescriptor.invokeSpecial(nodeOrConcept.getNode(), method, parametersArray);
+            return baseBHDescriptor.invokeSpecial(nodeOrConcept.getNode(), method, parameters);
           } else {
-            return baseBHDescriptor.invokeSpecial(nodeOrConcept.getConcept(), method, parametersArray);
+            return baseBHDescriptor.invokeSpecial(nodeOrConcept.getConcept(), method, parameters);
           }
         }
       } else {
@@ -233,20 +285,18 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     }
   }
 
-  private <T> T invokeVirtual(SNode node, SMethod<T> method, @NotNull Object[] parameters) {
+  private <T> T invokeVirtual(SNode node, SMethod<T> method, Object... parameters) {
     BaseBHDescriptor baseBHDescriptor = commonInvokeVirtual(method, parameters);
     return baseBHDescriptor.invokeSpecial(node, method, parameters);
   }
 
-  private <T> T invokeVirtual(SAbstractConcept concept, SMethod<T> method, @NotNull Object[] parameters) {
+  private <T> T invokeVirtual(SAbstractConcept concept, SMethod<T> method, Object... parameters) {
     BaseBHDescriptor baseBHDescriptor = commonInvokeVirtual(method, parameters);
     return baseBHDescriptor.invokeSpecial(concept, method, parameters);
   }
 
   @NotNull
-  private <T> BaseBHDescriptor commonInvokeVirtual(SMethod<T> method, @NotNull Object[] parameters) {
-    checkParameters(method, parameters);
-
+  private <T> BaseBHDescriptor commonInvokeVirtual(SMethod<T> method, Object... parameters) {
     BHDescriptor bhDescriptor = myVTable.get(method);
     if (bhDescriptor == null) {
       throw new BHMethodNotFoundException(this, method);
@@ -260,7 +310,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     checkInitialized();
     checkNotStatic(method);
     checkForConcept(node.getConcept());
-    return invokeSpecial0(node, method, getParametersArray(parameters));
+    @Nullable Object[] parametersArray = getParametersArray(method.getParameters(), parameters);
+    if (parametersArray != null) {
+      checkParameters(method, parametersArray);
+    }
+    return invokeSpecial0(node, method, parametersArray);
   }
 
   @Override
@@ -268,7 +322,11 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     checkInitialized();
     checkStatic(method);
     checkForConcept(concept);
-    return invokeSpecial0(concept, method, getParametersArray(parameters));
+    @Nullable Object[] parametersArray = getParametersArray(method.getParameters(), parameters);
+    if (parametersArray != null) {
+      checkParameters(method, parametersArray);
+    }
+    return invokeSpecial0(concept, method, parametersArray);
   }
 
   @Nullable
@@ -316,15 +374,17 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * @param constructor -- constructor to invoke
    * @param parameters -- parameters to pass to the constructor
    */
-  protected abstract void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] parameters);
+  protected abstract void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters);
 
   /**
    * invokes a method without dynamic resolution
    *
    * @generated : switch by the method; direct invocation in each case
+   * @param parameters is an array of arguments.
+   *                   NB: in the case of the last var arg parameter, the last array member is actually packed into another array
    * @throws BHMethodNotFoundException if the method has not been found
    **/
-  protected abstract <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, Object... parameters);
+  protected abstract <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters);
 
   /**
    * invokes a static method without dynamic resolution
@@ -332,43 +392,43 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * @generated : switch by the method; direct invocation in each case
    * @throws BHMethodNotFoundException if the method has not been found
    **/
-  protected abstract <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, Object... parameters);
+    protected abstract <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters);
 
-  /**
-   * @return true iff the method exists (constructor is not a method here)
-   **/
-  private <T> boolean hasDeclaredMethod(@NotNull SMethod<T> method) {
-    return getDeclaredMethods().contains(method);
-  }
+    /**
+     * @return true iff the method exists (constructor is not a method here)
+     **/
+    private <T> boolean hasDeclaredMethod(@NotNull SMethod<T> method) {
+                                                                          return getDeclaredMethods().contains(method);
+                                                                                                                                                                                             }
 
-  @Override
-  public String toString() {
-    return getConcept() + " BHDescriptor";
-  }
+    @Override
+    public String toString() {
+                                 return getConcept() + " BHDescriptor";
+                                                                                                    }
 
-  private final class ConstructionHandler {
-    private final AncestorCache myAncestorCache;
-    private final SAbstractConcept myConcept;
+    private final class ConstructionHandler {
+      private final AncestorCache myAncestorCache;
+      private final SAbstractConcept myConcept;
 
-    public ConstructionHandler(AncestorCache ancestorCache, SAbstractConcept concept) {
-      myAncestorCache = ancestorCache;
-      myConcept = concept;
-    }
+      public ConstructionHandler(AncestorCache ancestorCache, SAbstractConcept concept) {
+                                                                                          myAncestorCache = ancestorCache;
+                                                                                          myConcept = concept;
+                                                                                          }
 
-    public void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] parameters) {
-      assert myConcept.equals(node.getConcept());
-      for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
-        BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
-        if (ancestorDescriptor instanceof BaseBHDescriptor) {
-          ((BaseBHDescriptor) ancestorDescriptor).initNode(node, constructor, parameters);
+      public void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
+        assert myConcept.equals(node.getConcept());
+        for (SAbstractConcept ancestor : myAncestorCache.getAncestorsConstructionOrder()) {
+          BHDescriptor ancestorDescriptor = BaseBHDescriptor.this.getBHDescriptor(ancestor);
+          if (ancestorDescriptor instanceof BaseBHDescriptor) {
+            ((BaseBHDescriptor) ancestorDescriptor).initNode(node, constructor, parameters);
+          }
         }
       }
     }
-  }
 
-  private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
-    public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
-      super("Method " + method + " has " + method.getParameters().size() + " parameters in the declaration while " + length + " have been passed");
+    private class BHMethodArgumentsCountDoNotMatch extends RuntimeException {
+      public BHMethodArgumentsCountDoNotMatch(SMethod method, int length) {
+        super("Method " + method + " has " + method.getParameters().size() + " parameters in the declaration while " + length + " have been passed");
     }
   }
 

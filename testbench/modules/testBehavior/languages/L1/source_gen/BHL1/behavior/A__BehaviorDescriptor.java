@@ -12,28 +12,84 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import UtilSolution.util.TestResults;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24cbL, "BHL1.structure.A");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> foo_id5jWiLvujMjC = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujMjC").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> foo_id5jWiLvujMjC = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5jWiLvujMjC").registry(REGISTRY).build();
+  public static final SMethod<Boolean> varArgNull_id56Rew6rCKv6 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("varArgNull").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("56Rew6rCKv6").registry(REGISTRY).build(SMethodBuilder.createVarArgPrm(String.class, ""));
+  public static final SMethod<Boolean> arrArgNull_id56Rew6rCKDf = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("arrArgNull").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("56Rew6rCKDf").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String[].class, ""));
+  public static final SMethod<Integer> varArgLen_id6yTVdLqTssn = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("varArgLen").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yTVdLqTssn").registry(REGISTRY).build(SMethodBuilder.createVarArgPrm(String.class, ""));
+  public static final SMethod<Integer> varArgPrim_id56Rew6rDMfR = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("varArgPrim").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("56Rew6rDMfR").registry(REGISTRY).build(SMethodBuilder.createVarArgPrm(Integer.TYPE, ""));
+  public static final SMethod<Integer> varArgLen2_id6yTVdLqUPAs = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("varArgLen2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yTVdLqUPAs").registry(REGISTRY).build(SMethodBuilder.createVarArgPrm(List[][].class, ""));
+  public static final SMethod<Integer> varArgLen3_id6yTVdLqV1qL = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("varArgLen3").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yTVdLqV1qL").registry(REGISTRY).build(SMethodBuilder.createVarArgPrm(List.class, ""));
+  public static final SMethod<Integer> varArgLen4_id6Jh0tXoS5Ab = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("varArgLen4").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Jh0tXoS5Ab").registry(REGISTRY).build(SMethodBuilder.createVarArgPrm(Integer.TYPE, ""));
+  public static final SMethod<Integer> arrayArg_id6yTVdLqT_bJ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("arrayArg").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yTVdLqT_bJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String[].class, ""));
+  public static final SMethod<Integer> arrayArg1_id6Jh0tXoSfUR = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("arrayArg1").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Jh0tXoSfUR").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String[].class, ""), SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Integer> arrayArg2_id6yTVdLqTFk5 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("arrayArg2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yTVdLqTFk5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String[][].class, ""));
+  public static final SMethod<Integer> arrayArg3_id6Jh0tXoS5z0 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("arrayArg3").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Jh0tXoS5z0").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(int[].class, ""));
+  public static final SMethod<Long> longReturn_id20h3iLqUOkD = new SMethodBuilder<Long>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("longReturn").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20h3iLqUOkD").registry(REGISTRY).build();
+  public static final SMethod<Integer> boxing1_id95Aegakr_K = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("boxing1").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("95Aegakr_K").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Integer> boxing2_id95AegakrCe = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("boxing2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("95AegakrCe").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5jWiLvujMjC);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5jWiLvujMjC, varArgNull_id56Rew6rCKv6, arrArgNull_id56Rew6rCKDf, varArgLen_id6yTVdLqTssn, varArgPrim_id56Rew6rDMfR, varArgLen2_id6yTVdLqUPAs, varArgLen3_id6yTVdLqV1qL, varArgLen4_id6Jh0tXoS5Ab, arrayArg_id6yTVdLqT_bJ, arrayArg1_id6Jh0tXoSfUR, arrayArg2_id6yTVdLqTFk5, arrayArg3_id6Jh0tXoS5z0, longReturn_id20h3iLqUOkD, boxing1_id95Aegakr_K, boxing2_id95AegakrCe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Integer foo_id5jWiLvujMjC(@NotNull SNode __thisNode__) {
+  private static int foo_id5jWiLvujMjC(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
+  }
+  private static boolean varArgNull_id56Rew6rCKv6(@NotNull SNode __thisNode__, String... args) {
+    return args == null;
+  }
+  private static boolean arrArgNull_id56Rew6rCKDf(@NotNull SNode __thisNode__, String[] args) {
+    return args == null;
+  }
+  private static int varArgLen_id6yTVdLqTssn(@NotNull SNode __thisNode__, String... strs) {
+    return strs.length;
+  }
+  private static int varArgPrim_id56Rew6rDMfR(@NotNull SNode __thisNode__, Integer... strs) {
+    return strs.length;
+  }
+  private static int varArgLen2_id6yTVdLqUPAs(@NotNull SNode __thisNode__, List<String[]>[][]... strs) {
+    return strs.length;
+  }
+  private static int varArgLen3_id6yTVdLqV1qL(@NotNull SNode __thisNode__, List<String[]>... strs) {
+    return strs.length;
+  }
+  private static int varArgLen4_id6Jh0tXoS5Ab(@NotNull SNode __thisNode__, Integer... ints) {
+    return ints.length;
+  }
+  private static int arrayArg_id6yTVdLqT_bJ(@NotNull SNode __thisNode__, String[] args) {
+    return args.length;
+  }
+  private static int arrayArg1_id6Jh0tXoSfUR(@NotNull SNode __thisNode__, String[] args, String arg) {
+    return args.length;
+  }
+  private static int arrayArg2_id6yTVdLqTFk5(@NotNull SNode __thisNode__, String[][] args) {
+    return args.length;
+  }
+  private static int arrayArg3_id6Jh0tXoS5z0(@NotNull SNode __thisNode__, int[] args) {
+    return args.length;
+  }
+  private static long longReturn_id20h3iLqUOkD(@NotNull SNode __thisNode__) {
+    return 1;
+  }
+  private static Integer boxing1_id95Aegakr_K(@NotNull SNode __thisNode__, int a) {
+    return a;
+  }
+  private static int boxing2_id95AegakrCe(@NotNull SNode __thisNode__, Integer a) {
+    return a;
   }
 
   /*package*/ A__BehaviorDescriptor() {
@@ -41,26 +97,54 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) foo_id5jWiLvujMjC(node);
+        return (T) ((Integer) foo_id5jWiLvujMjC(node));
+      case 1:
+        return (T) ((Boolean) varArgNull_id56Rew6rCKv6(node, (String[]) parameters[0]));
+      case 2:
+        return (T) ((Boolean) arrArgNull_id56Rew6rCKDf(node, (String[]) parameters[0]));
+      case 3:
+        return (T) ((Integer) varArgLen_id6yTVdLqTssn(node, (String[]) parameters[0]));
+      case 4:
+        return (T) ((Integer) varArgPrim_id56Rew6rDMfR(node, (Integer[]) parameters[0]));
+      case 5:
+        return (T) ((Integer) varArgLen2_id6yTVdLqUPAs(node, (List<String[]>[][][]) parameters[0]));
+      case 6:
+        return (T) ((Integer) varArgLen3_id6yTVdLqV1qL(node, (List<String[]>[]) parameters[0]));
+      case 7:
+        return (T) ((Integer) varArgLen4_id6Jh0tXoS5Ab(node, (Integer[]) parameters[0]));
+      case 8:
+        return (T) ((Integer) arrayArg_id6yTVdLqT_bJ(node, (String[]) parameters[0]));
+      case 9:
+        return (T) ((Integer) arrayArg1_id6Jh0tXoSfUR(node, (String[]) parameters[0], (String) parameters[1]));
+      case 10:
+        return (T) ((Integer) arrayArg2_id6yTVdLqTFk5(node, (String[][]) parameters[0]));
+      case 11:
+        return (T) ((Integer) arrayArg3_id6Jh0tXoS5z0(node, (int[]) parameters[0]));
+      case 12:
+        return (T) ((Long) longReturn_id20h3iLqUOkD(node));
+      case 13:
+        return (T) ((Integer) boxing1_id95Aegakr_K(node, (Integer) parameters[0]));
+      case 14:
+        return (T) ((Integer) boxing2_id95AegakrCe(node, (Integer) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
