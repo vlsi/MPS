@@ -12,7 +12,7 @@ import UtilSolution.util.TestResults;
 @Deprecated
 public class C_Behavior {
   public static int call_foo_6167444251392482383(SAbstractConcept __thisConcept__) {
-    return C__BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__);
+    return ((int) C__BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__));
   }
   public static int call_bar_6167444251392482410(SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;

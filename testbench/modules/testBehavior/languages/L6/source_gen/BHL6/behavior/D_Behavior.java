@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class D_Behavior {
   public static int call_foo_6167444251392484356(SNode __thisNode__) {
-    return B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__);
+    return ((int) B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__));
   }
   public static void call_bar2_5616724231236691656(SNode __thisNode__) {
     B__BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__).byteValue();

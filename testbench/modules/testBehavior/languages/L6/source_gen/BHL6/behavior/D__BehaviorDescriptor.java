@@ -39,13 +39,13 @@ public final class D__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static int foo_id5mnatV0hyg4(@NotNull SNode __thisNode__) {
-    return B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__);
+    return ((int) B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__));
   }
   private static int foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
-    return B__BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__);
+    return ((int) B__BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__));
   }
   private static int foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
-    return B__BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__);
+    return ((int) B__BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__));
   }
   private static int bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
@@ -54,7 +54,7 @@ public final class D__BehaviorDescriptor extends BaseBHDescriptor {
     B__BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__).byteValue();
   }
   private static int foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
-    return B__BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__);
+    return ((int) B__BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__));
   }
   private static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;

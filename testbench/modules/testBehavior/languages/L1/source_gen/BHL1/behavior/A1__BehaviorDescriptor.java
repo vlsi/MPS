@@ -25,13 +25,21 @@ public final class A1__BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Void> bar_id6sCTYS3h6cj = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6sCTYS3h6cj").registry(REGISTRY).build();
+  public static final SMethod<Float> foo_id3ZhVC3HVRva = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("foo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3ZhVC3HVRva").registry(REGISTRY).build();
+  public static final SMethod<Integer> bar2_id3ZhVC3HVRvp = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3ZhVC3HVRvp").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(bar_id6sCTYS3h6cj);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(bar_id6sCTYS3h6cj, foo_id3ZhVC3HVRva, bar2_id3ZhVC3HVRvp);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   private static void bar_id6sCTYS3h6cj(@NotNull SNode __thisNode__) {
+  }
+  private static float foo_id3ZhVC3HVRva(@NotNull SNode __thisNode__) {
+    return 1;
+  }
+  private static int bar2_id3ZhVC3HVRvp(@NotNull SNode __thisNode__) {
+    return (int) ((float) A1__BehaviorDescriptor.foo_id3ZhVC3HVRva.invoke(__thisNode__));
   }
 
   /*package*/ A1__BehaviorDescriptor() {
@@ -53,6 +61,10 @@ public final class A1__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         bar_id6sCTYS3h6cj(node);
         return null;
+      case 1:
+        return (T) ((Float) foo_id3ZhVC3HVRva(node));
+      case 2:
+        return (T) ((Integer) bar2_id3ZhVC3HVRvp(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -77,7 +77,7 @@ public final class B__BehaviorDescriptor extends BaseBHDescriptor {
       case 2:
         return (T) ((Integer) primitiveReturnValue_id4Rfm9LCctz9(node));
       case 3:
-        return (T) ((Integer) primitiveParameter_id7zO8mNAVjjo(node, (Integer) parameters[0], (Boolean) parameters[1], (Double) parameters[2]));
+        return (T) ((Integer) primitiveParameter_id7zO8mNAVjjo(node, ((int) (Integer) parameters[0]), ((boolean) (Boolean) parameters[1]), ((double) (Double) parameters[2])));
       case 4:
         return (T) ((Integer) nonPrimitiveParameter_id4Tk5Y39EB1$(node, (Integer) parameters[0]));
       case 5:

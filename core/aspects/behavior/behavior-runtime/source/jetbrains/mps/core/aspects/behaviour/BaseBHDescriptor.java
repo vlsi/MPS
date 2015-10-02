@@ -110,37 +110,58 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     return myBehaviorRegistry.getBHDescriptor(concept);
   }
 
-  /**
-   * in the case of the last vararg argument converts all arguments into arguments + separate array for the vararg arguments
-   * also used against a single null in the varargs arguments
-   */
-  @Nullable
-  private Object[] getParametersArray(@NotNull List<SParameter> methodParameters, Object... parameters) {
-    if (parameters == null) {
-      return new Object[]{null};
+  static class ParametersTypeConverter {
+    private final List<SParameter> myMethodParameters;
+
+    ParametersTypeConverter(@NotNull List<SParameter> methodParameters) {
+      myMethodParameters = methodParameters;
     }
-    if (methodParameters.isEmpty()) {
-      return new Object[0];
+
+    private SParameter getLastParameter() {
+      return myMethodParameters.get(myMethodParameters.size() - 1);
     }
-    SParameter lastPrm = methodParameters.get(methodParameters.size() - 1);
-    if (lastPrm instanceof SVarArgParameter) {
-      Object[] newParameters = new Object[methodParameters.size()];
-      SAbstractType componentType = ((SVarArgParameter) lastPrm).getComponentType();
+
+    public Object[] convertParameters(Object... parameters) {
+      if (parameters == null) {
+        return new Object[]{null};
+      }
+      if (myMethodParameters.isEmpty()) {
+        return new Object[0];
+      }
+      Object[] newParameters;
+      SParameter lastPrm = getLastParameter();
+      if (lastPrm instanceof SVarArgParameter) {
+        newParameters = resolveVarArg(parameters);
+      } else {
+        newParameters = resolveSingleArrayArgumentProblem(parameters);
+      }
+      return newParameters;
+    }
+
+    @NotNull
+    private Object[] resolveVarArg(@NotNull Object[] parameters) {
+      SVarArgParameter lastPrm = (SVarArgParameter) getLastParameter();
+      Object[] newParameters = new Object[myMethodParameters.size()];
+      SAbstractType componentType = lastPrm.getComponentType();
       Class<?> javaComponentType = Object.class;
       if (componentType instanceof SJavaCompoundType) {
         javaComponentType = ((SJavaCompoundType) componentType).getJavaType();
       }
-      newParameters[methodParameters.size() - 1] = Array.newInstance(javaComponentType, parameters.length - methodParameters.size() + 1);
+      newParameters[myMethodParameters.size() - 1] = Array.newInstance(javaComponentType, parameters.length - myMethodParameters.size() + 1);
       for (int i = 0; i < parameters.length; ++i) {
-        if (i < methodParameters.size() - 1) {
+        if (i < myMethodParameters.size() - 1) {
           newParameters[i] = parameters[i];
         } else {
-          Array.set(newParameters[methodParameters.size() - 1], i - methodParameters.size() + 1, parameters[i]);
+          Array.set(newParameters[myMethodParameters.size() - 1], i - myMethodParameters.size() + 1, parameters[i]);
         }
       }
       return newParameters;
-    } else {
-      if (methodParameters.size() == 1) { // that means that we could be passing a single array
+    }
+
+    @NotNull
+    private Object[] resolveSingleArrayArgumentProblem(@NotNull Object[] parameters) {
+      SParameter lastPrm = getLastParameter();
+      if (myMethodParameters.size() == 1) { // that means that we could be passing a single array
         if (lastPrm.getType() instanceof SJavaCompoundType) {
           Class<?> javaType = ((SJavaCompoundType) lastPrm.getType()).getJavaType();
           if (javaType.isArray()) {
@@ -157,6 +178,14 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       }
       return parameters;
     }
+  }
+  /**
+   * in the case of the last vararg argument converts all arguments into arguments + separate array for the vararg arguments
+   * also used against a single null in the varargs arguments
+   */
+  @Nullable
+  private Object[] getParametersArray(@NotNull List<SParameter> methodParameters, Object... parameters) {
+    return new ParametersTypeConverter(methodParameters).convertParameters(parameters);
   }
 
   @NotNull
@@ -214,7 +243,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       if (parameters[i] != null) {
         Class<?> aClass = parameters[i].getClass();
         SJavaCompoundTypeImpl passedObjectType = new SJavaCompoundTypeImpl(aClass);
-        if (hasVarArg && (i >= declaredParameters.size() - 1)) { // that lies in vararg argument
+        if (hasVarArg && (i >= declaredParameters.size() - 1)) { // that lies in a vararg argument
           SArrayType varArgType = (SArrayType) declaredParameters.get(declaredParameters.size() - 1).getType();
           if (parameters.length == declaredParameters.size()) { // an array could be passed
             if (varArgType.isAssignableFrom(passedObjectType)) {
@@ -434,7 +463,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
 
   private class BHArgumentsDoNotMatch extends RuntimeException {
     public BHArgumentsDoNotMatch(SMethod<?> method, Object[] parameters, List<SParameter> sParameters, int i) {
-      super(parameters[i] + " does not match " + sParameters.get(i) + " while calling " + method + " in the " + BaseBHDescriptor.this + " descirptor");
+      super("The parameter " + parameters[i] + " of the type " + parameters[i].getClass() + " does not match " + sParameters.get(i) +
+          " while calling " + method + " in the " + BaseBHDescriptor.this + " descriptor");
     }
   }
 

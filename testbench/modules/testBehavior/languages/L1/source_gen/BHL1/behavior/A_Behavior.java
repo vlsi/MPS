@@ -20,7 +20,7 @@ public class A_Behavior {
   public static int call_varArgLen_7546323081797945111(SNode __thisNode__, String... strs) {
     return strs.length;
   }
-  public static int call_varArgPrim_5888238816391013367(SNode __thisNode__, Integer... strs) {
+  public static int call_varArgPrim_5888238816391013367(SNode __thisNode__, int... strs) {
     return strs.length;
   }
   public static int call_varArgLen2_7546323081798310300(SNode __thisNode__, List<String[]>[][]... strs) {
@@ -29,7 +29,7 @@ public class A_Behavior {
   public static int call_varArgLen3_7546323081798358705(SNode __thisNode__, List<String[]>... strs) {
     return strs.length;
   }
-  public static int call_varArgLen4_7768992890971249035(SNode __thisNode__, Integer... ints) {
+  public static int call_varArgLen4_7768992890971249035(SNode __thisNode__, int... ints) {
     return ints.length;
   }
   public static int call_arrayArg_7546323081797980911(SNode __thisNode__, String[] args) {
@@ -52,5 +52,30 @@ public class A_Behavior {
   }
   public static int call_boxing2_163705066661984782(SNode __thisNode__, Integer a) {
     return a;
+  }
+  public static int call_conversion1_4598718932037044418(SNode __thisNode__, float f) {
+    return (int) f;
+  }
+  public static float call_conversion2_7409093844552457978(SNode __thisNode__, int a) {
+    return a;
+  }
+  public static Integer call_conversion3_7409093844552458518(SNode __thisNode__, float f) {
+    return (int) f;
+  }
+  public static Float call_conversion4_7409093844552459068(SNode __thisNode__, int a) {
+    return (float) a;
+  }
+  public static int call_conversion5_7409093844552459628(SNode __thisNode__, Float f) {
+    return (int) ((float) f);
+  }
+  public static float call_conversion6_4279359955658624944(SNode __thisNode__, Integer a) {
+    return ((int) a);
+  }
+  public static float call_conversion0_7409093844552456633(SNode __thisNode__, int a) {
+    // TODO write test 
+    return a;
+  }
+  public static int call_conversion7_360045928603650586(SNode __thisNode__) {
+    return ((int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1))));
   }
 }

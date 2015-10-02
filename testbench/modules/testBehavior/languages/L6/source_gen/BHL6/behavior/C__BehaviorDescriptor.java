@@ -36,7 +36,7 @@ public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static int foo_id5mnatV0hxLf(@NotNull SAbstractConcept __thisConcept__) {
-    return C__BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__);
+    return ((int) C__BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__));
   }
   private static int bar_id5mnatV0hxLE(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;

@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 @Deprecated
 public class E_Behavior {
   public static int call_foo_6167444251392485299(SAbstractConcept __thisConcept__) {
-    return C__BehaviorDescriptor.foo_id5mnatV0hxLf.invokeSpecial(__thisConcept__);
+    return ((int) C__BehaviorDescriptor.foo_id5mnatV0hxLf.invokeSpecial(__thisConcept__));
   }
 }
