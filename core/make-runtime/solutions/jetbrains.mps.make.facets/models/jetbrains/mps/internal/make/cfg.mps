@@ -121,6 +121,7 @@
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
         <child id="1199542501692" name="parameterType" index="1ajw0F" />
@@ -347,11 +348,11 @@
       <property role="TrG5h" value="myPathToFile" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="5OeL7nc7QqS" role="1B3o_S" />
-      <node concept="1ajhzC" id="5OeL7nc7Q$H" role="1tU5fm">
-        <node concept="3uibUv" id="5OeL7nc7Q$I" role="1ajl9A">
+      <node concept="9cv3F" id="7qWwyLT1vlb" role="1tU5fm">
+        <node concept="17QB3L" id="7qWwyLT1vlc" role="1ajw0F" />
+        <node concept="3uibUv" id="7qWwyLT1vld" role="1ajl9A">
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
-        <node concept="17QB3L" id="5OeL7nc7Q$J" role="1ajw0F" />
       </node>
     </node>
     <node concept="312cEg" id="5OeL7nca1st" role="jymVt">
@@ -392,11 +393,11 @@
       </node>
       <node concept="37vLTG" id="5OeL7nc7QcK" role="3clF46">
         <property role="TrG5h" value="f" />
-        <node concept="1ajhzC" id="5OeL7nc7QcI" role="1tU5fm">
-          <node concept="3uibUv" id="5OeL7nc7QgG" role="1ajl9A">
+        <node concept="9cv3F" id="7qWwyLT1vpv" role="1tU5fm">
+          <node concept="17QB3L" id="7qWwyLT1vpw" role="1ajw0F" />
+          <node concept="3uibUv" id="7qWwyLT1vpx" role="1ajl9A">
             <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
           </node>
-          <node concept="17QB3L" id="5OeL7nc7Qgq" role="1ajw0F" />
         </node>
       </node>
     </node>

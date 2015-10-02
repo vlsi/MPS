@@ -231,6 +231,7 @@
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
       </concept>
@@ -594,8 +595,8 @@
       <property role="TrG5h" value="myDispose" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="3oW7HLfqDij" role="1B3o_S" />
-      <node concept="1ajhzC" id="3oW7HLfqDik" role="1tU5fm">
-        <node concept="3cqZAl" id="3oW7HLfqDil" role="1ajl9A" />
+      <node concept="9cv3F" id="7qWwyLT0LpD" role="1tU5fm">
+        <node concept="3cqZAl" id="7qWwyLT0LpE" role="1ajl9A" />
       </node>
       <node concept="2AHcQZ" id="3oW7HLfqDim" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
@@ -618,8 +619,8 @@
       </node>
       <node concept="37vLTG" id="3oW7HLfqDiu" role="3clF46">
         <property role="TrG5h" value="dispose" />
-        <node concept="1ajhzC" id="3oW7HLfqDiv" role="1tU5fm">
-          <node concept="3cqZAl" id="3oW7HLfqDiw" role="1ajl9A" />
+        <node concept="9cv3F" id="7qWwyLT0LsX" role="1tU5fm">
+          <node concept="3cqZAl" id="7qWwyLT0LsY" role="1ajl9A" />
         </node>
         <node concept="2AHcQZ" id="3oW7HLfqDix" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
