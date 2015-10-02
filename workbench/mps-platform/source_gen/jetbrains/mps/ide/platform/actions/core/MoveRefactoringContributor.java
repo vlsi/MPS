@@ -4,9 +4,11 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface MoveRefactoringContributor {
   public void willBeMoved(List<SNode> n);
+  public SearchResults<SNode> getAffectedNodes();
   public void isMoved(List<SNode> n);
   public void commit();
 

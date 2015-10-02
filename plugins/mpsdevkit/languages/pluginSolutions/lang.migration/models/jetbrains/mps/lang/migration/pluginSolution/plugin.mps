@@ -46,6 +46,8 @@
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
+    <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -425,6 +427,7 @@
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" flags="nn" index="39bAoz" />
+      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
@@ -1549,6 +1552,23 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="6msDcinL4Dn" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getAffectedNodes" />
+      <node concept="3uibUv" id="6msDcinL8$E" role="3clF45">
+        <ref role="3uigEE" to="g4jo:J2bOg02HbG" resolve="SearchResults" />
+      </node>
+      <node concept="3Tm1VV" id="6msDcinL4Dp" role="1B3o_S" />
+      <node concept="3clFbS" id="6msDcinL4Dr" role="3clF47">
+        <node concept="3cpWs6" id="6msDcinL9zS" role="3cqZAp">
+          <node concept="2ShNRf" id="6msDcinLant" role="3cqZAk">
+            <node concept="1pGfFk" id="6msDcinL9B$" role="2ShVmc">
+              <ref role="37wK5l" to="g4jo:J2bOg02HbW" resolve="SearchResults" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3clFb_" id="5ZhKIheo0aE" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
@@ -1569,7 +1589,7 @@
                 <node concept="1pGfFk" id="5ZhKIheppXr" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
                   <node concept="Xl_RD" id="5ZhKIheppXs" role="37wK5m">
-                    <property role="Xl_RC" value="isMoved() should be called before willBeMoved()" />
+                    <property role="Xl_RC" value="isMoved() should be called after willBeMoved()" />
                   </node>
                 </node>
               </node>
@@ -1770,7 +1790,7 @@
                 <node concept="1pGfFk" id="5ZhKIhepPbH" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
                   <node concept="Xl_RD" id="5ZhKIhepPf$" role="37wK5m">
-                    <property role="Xl_RC" value="Commit should be called after willBeMoved() and isMoved()" />
+                    <property role="Xl_RC" value="commit() should be called after willBeMoved() and isMoved()" />
                   </node>
                 </node>
               </node>
@@ -2386,6 +2406,160 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="6msDcinLcuD" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getAffectedNodes" />
+      <node concept="3uibUv" id="6msDcinLcuE" role="3clF45">
+        <ref role="3uigEE" to="g4jo:J2bOg02HbG" resolve="SearchResults" />
+      </node>
+      <node concept="3Tm1VV" id="6msDcinLcuF" role="1B3o_S" />
+      <node concept="3clFbS" id="6msDcinLcuH" role="3clF47">
+        <node concept="3clFbJ" id="6msDcinLTem" role="3cqZAp">
+          <node concept="3clFbS" id="6msDcinLTeo" role="3clFbx">
+            <node concept="YS8fn" id="6msDcinLVsp" role="3cqZAp">
+              <node concept="2ShNRf" id="6msDcinLVwa" role="YScLw">
+                <node concept="1pGfFk" id="6msDcinLVM8" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="Xl_RD" id="6msDcinLVRW" role="37wK5m">
+                    <property role="Xl_RC" value="isMoved() can be called only after willBeMoved()" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6msDcinLUJ5" role="3clFbw">
+            <node concept="10Nm6u" id="6msDcinLUMH" role="3uHU7w" />
+            <node concept="37vLTw" id="6msDcinLUao" role="3uHU7B">
+              <ref role="3cqZAo" node="5ZhKIheuw7U" resolve="affectedNodes" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6msDcinLfa0" role="3cqZAp">
+          <node concept="3cpWsn" id="6msDcinLfa1" role="3cpWs9">
+            <property role="TrG5h" value="results" />
+            <node concept="3uibUv" id="6msDcinLf9Y" role="1tU5fm">
+              <ref role="3uigEE" to="g4jo:J2bOg02HbG" resolve="SearchResults" />
+            </node>
+            <node concept="2ShNRf" id="6msDcinLfa2" role="33vP2m">
+              <node concept="1pGfFk" id="6msDcinLfa3" role="2ShVmc">
+                <ref role="37wK5l" to="g4jo:J2bOg02HbW" resolve="SearchResults" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6msDcinLgzz" role="3cqZAp">
+          <node concept="2OqwBi" id="6msDcinLij4" role="3clFbG">
+            <node concept="2OqwBi" id="6msDcinLh3z" role="2Oq$k0">
+              <node concept="37vLTw" id="6msDcinLgzx" role="2Oq$k0">
+                <ref role="3cqZAo" node="6msDcinLfa1" resolve="results" />
+              </node>
+              <node concept="liA8E" id="6msDcinLid0" role="2OqNvi">
+                <ref role="37wK5l" to="g4jo:J2bOg02Hcu" resolve="getSearchedNodes" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6msDcinLi_E" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.addAll(java.util.Collection):boolean" resolve="addAll" />
+              <node concept="2OqwBi" id="6msDcinLRFX" role="37wK5m">
+                <node concept="2OqwBi" id="6msDcinLJkh" role="2Oq$k0">
+                  <node concept="37vLTw" id="6msDcinLIXm" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5TeDeYjktXN" resolve="myParts" />
+                  </node>
+                  <node concept="3$u5V9" id="6msDcinLJOB" role="2OqNvi">
+                    <node concept="1bVj0M" id="6msDcinLJOD" role="23t8la">
+                      <node concept="3clFbS" id="6msDcinLJOE" role="1bW5cS">
+                        <node concept="3clFbF" id="6msDcinLK3y" role="3cqZAp">
+                          <node concept="2OqwBi" id="6msDcinLK9r" role="3clFbG">
+                            <node concept="37vLTw" id="6msDcinLK3x" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6msDcinLJOF" resolve="it" />
+                            </node>
+                            <node concept="liA8E" id="6msDcinLRn$" role="2OqNvi">
+                              <ref role="37wK5l" to="6f4m:6msDcinLOF9" resolve="getFrom" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="6msDcinLJOF" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="6msDcinLJOG" role="1tU5fm" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="ANE8D" id="6msDcinLRXR" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6msDcinLqCb" role="3cqZAp">
+          <node concept="2OqwBi" id="6msDcinLrHT" role="3clFbG">
+            <node concept="2OqwBi" id="6msDcinLrwy" role="2Oq$k0">
+              <node concept="37vLTw" id="6msDcinLqC9" role="2Oq$k0">
+                <ref role="3cqZAo" node="6msDcinLfa1" resolve="results" />
+              </node>
+              <node concept="liA8E" id="6msDcinLr_l" role="2OqNvi">
+                <ref role="37wK5l" to="g4jo:J2bOg02Hc_" resolve="getSearchResults" />
+              </node>
+            </node>
+            <node concept="liA8E" id="6msDcinLs7_" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.addAll(java.util.Collection):boolean" resolve="addAll" />
+              <node concept="2OqwBi" id="6msDcinLpdc" role="37wK5m">
+                <node concept="2OqwBi" id="6msDcinL$a1" role="2Oq$k0">
+                  <node concept="2OqwBi" id="6msDcinLmgy" role="2Oq$k0">
+                    <node concept="37vLTw" id="6msDcinLlTK" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5ZhKIheuw7U" resolve="affectedNodes" />
+                    </node>
+                    <node concept="3goQfb" id="6msDcinLmPJ" role="2OqNvi">
+                      <node concept="1bVj0M" id="6msDcinLmPL" role="23t8la">
+                        <node concept="3clFbS" id="6msDcinLmPM" role="1bW5cS">
+                          <node concept="3clFbF" id="6msDcinLn5_" role="3cqZAp">
+                            <node concept="37vLTw" id="6msDcinLzXY" role="3clFbG">
+                              <ref role="3cqZAo" node="6msDcinLmPN" resolve="it" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Rh6nW" id="6msDcinLmPN" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="6msDcinLmPO" role="1tU5fm" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3$u5V9" id="6msDcinL$v6" role="2OqNvi">
+                    <node concept="1bVj0M" id="6msDcinL$v8" role="23t8la">
+                      <node concept="3clFbS" id="6msDcinL$v9" role="1bW5cS">
+                        <node concept="3clFbF" id="6msDcinL$G0" role="3cqZAp">
+                          <node concept="2ShNRf" id="6msDcinLtam" role="3clFbG">
+                            <node concept="1pGfFk" id="6msDcinLyZl" role="2ShVmc">
+                              <ref role="37wK5l" to="g4jo:J2bOg02GIy" resolve="SearchResult" />
+                              <node concept="37vLTw" id="6msDcinL$Wq" role="37wK5m">
+                                <ref role="3cqZAo" node="6msDcinL$va" resolve="it" />
+                              </node>
+                              <node concept="Xl_RD" id="6msDcinLEFJ" role="37wK5m">
+                                <property role="Xl_RC" value="reference" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="6msDcinL$va" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="6msDcinL$vb" role="1tU5fm" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="ANE8D" id="6msDcinLzC1" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6msDcinLdWR" role="3cqZAp">
+          <node concept="37vLTw" id="6msDcinLfa4" role="3cqZAk">
+            <ref role="3cqZAo" node="6msDcinLfa1" resolve="results" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3clFb_" id="5ZhKIheuaG1" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
@@ -2404,9 +2578,9 @@
             <node concept="YS8fn" id="5ZhKIheumw8" role="3cqZAp">
               <node concept="2ShNRf" id="5ZhKIheumw9" role="YScLw">
                 <node concept="1pGfFk" id="5ZhKIheumwa" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
                   <node concept="Xl_RD" id="5ZhKIheumwb" role="37wK5m">
-                    <property role="Xl_RC" value="isMoved() should be called before willBeMoved()" />
+                    <property role="Xl_RC" value="isMoved() should be called after willBeMoved()" />
                   </node>
                 </node>
               </node>
@@ -2594,7 +2768,7 @@
                 <node concept="1pGfFk" id="5ZhKIheuKyb" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
                   <node concept="Xl_RD" id="5ZhKIheuKyc" role="37wK5m">
-                    <property role="Xl_RC" value="Commit should be called after willBeMoved() and isMoved()" />
+                    <property role="Xl_RC" value="commit() should be called after willBeMoved() and isMoved()" />
                   </node>
                 </node>
               </node>

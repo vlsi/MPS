@@ -15,19 +15,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Set;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Map;
@@ -104,55 +102,45 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           return;
         }
 
-        Set<SReference> refUsages = findUsages(project, nodesToMove);
-        SearchResults<SNode> searchResults = nodesToRefactoringResult(nodesToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
-          public SNode select(SReference it) {
-            return it.getSourceNode();
+        final Iterable<MoveRefactoringContributor> refactoringBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
+          public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
+            return it.createContributor(new MoveContextImpl(project.getScope()));
           }
-        }), "reference");
+        }).where(new IWhereFilter<MoveRefactoringContributor>() {
+          public boolean accept(MoveRefactoringContributor it) {
+            return it != null;
+          }
+        });
+
+        final List<SNode> nodesToMoveWithDescendants = ListSequence.fromList(nodesToMove).translate(new ITranslator2<SNode, SNode>() {
+          public Iterable<SNode> translate(SNode it) {
+            return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
+          }
+        }).toListSequence();
+        for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+          builder.willBeMoved(nodesToMoveWithDescendants);
+        }
+
+        SearchResults<SNode> searchResults = new SearchResults<SNode>();
+        for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+          searchResults.addAll(builder.getAffectedNodes());
+        }
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
           public void invoke(Set<SNode> included) {
-            Iterable<MoveRefactoringContributor> msb = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
-              public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
-                return it.createContributor(new MoveContext() {
-                  public SearchScope getSearchScope() {
-                    return project.getScope();
-                  }
-                });
-              }
-            }).where(new IWhereFilter<MoveRefactoringContributor>() {
-              public boolean accept(MoveRefactoringContributor it) {
-                return it != null;
-              }
-            });
-
-            final List<SNode> nodesToMoveWithDescendants = ListSequence.fromList(nodesToMove).translate(new ITranslator2<SNode, SNode>() {
-              public Iterable<SNode> translate(SNode it) {
-                return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
-              }
-            }).toListSequence();
-            Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
-              public void visit(MoveRefactoringContributor it) {
-                it.willBeMoved(nodesToMoveWithDescendants);
-              }
-            });
             newLocation.insertNodes(nodesToMove);
-            Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
-              public void visit(MoveRefactoringContributor it) {
-                it.isMoved(nodesToMoveWithDescendants);
-              }
-            });
-            Sequence.fromIterable(msb).visitAll(new IVisitor<MoveRefactoringContributor>() {
-              public void visit(MoveRefactoringContributor it) {
-                it.commit();
-              }
-            });
+            for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+              builder.isMoved(nodesToMoveWithDescendants);
+            }
+            for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+              builder.commit();
+            }
           }
         }, "Move nodes");
       }
     });
   }
 
+  @Deprecated
   public Set<SReference> findUsages(MPSProject project, Iterable<SNode> nodes) {
     return FindUsagesFacade.getInstance().findUsages(project.getScope(), SetSequence.fromSetWithValues(new HashSet<SNode>(), Sequence.fromIterable(nodes).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -161,6 +149,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     })), new EmptyProgressMonitor());
   }
 
+  @Deprecated
   public Map<SReference, SNode> classifyUsages(Iterable<SReference> usages) {
     Map<SReference, SNode> result = MapSequence.fromMap(new HashMap<SReference, SNode>());
     for (SReference ref : Sequence.fromIterable(usages)) {
@@ -169,6 +158,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     return result;
   }
 
+  @Deprecated
   public SearchResults<SNode> nodesToRefactoringResult(Collection<SNode> searchedNodes, Iterable<SNode> usages, final String category) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     searchResults.getSearchedNodes().addAll(searchedNodes);
@@ -181,6 +171,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   }
 
 
+  @Deprecated
   public void updateUsage(SReference usage, SNode newTarget) {
     usage.getSourceNode().setReferenceTarget(usage.getLink(), newTarget);
   }

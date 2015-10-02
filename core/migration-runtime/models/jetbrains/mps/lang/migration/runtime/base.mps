@@ -2543,6 +2543,34 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="6msDcinLOF9" role="jymVt">
+      <property role="TrG5h" value="getFrom" />
+      <node concept="3uibUv" id="6msDcinLOFa" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3Tm1VV" id="6msDcinLOFb" role="1B3o_S" />
+      <node concept="3clFbS" id="6msDcinLOFc" role="3clF47">
+        <node concept="3clFbF" id="6msDcinLOFd" role="3cqZAp">
+          <node concept="37vLTw" id="6msDcinLOFe" role="3clFbG">
+            <ref role="3cqZAo" node="5TeDeYjk7MA" resolve="myFrom" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="6msDcinLMb_" role="jymVt">
+      <property role="TrG5h" value="getTo" />
+      <node concept="3uibUv" id="6msDcinLOiv" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3Tm1VV" id="6msDcinLMbC" role="1B3o_S" />
+      <node concept="3clFbS" id="6msDcinLMbD" role="3clF47">
+        <node concept="3clFbF" id="6msDcinLOCy" role="3cqZAp">
+          <node concept="37vLTw" id="6msDcinLPdK" role="3clFbG">
+            <ref role="3cqZAo" node="5TeDeYjk7f4" resolve="myTo" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="4uVwhQyQ2vC" role="1B3o_S" />
     <node concept="3uibUv" id="4uVwhQyQ2w6" role="EKbjA">
       <ref role="3uigEE" node="4uVwhQyPI7d" resolve="RefactoringPart" />

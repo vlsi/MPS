@@ -84,6 +84,12 @@ public class MoveNodePart implements RefactoringPart {
   public void updateUsage(SReference usage, SNodeReference newReference) {
     usage.getSourceNode().setReference(usage.getLink(), jetbrains.mps.smodel.SReference.create(usage.getLink(), usage.getSourceNode(), newReference.getModelReference(), newReference.getNodeId()));
   }
+  public SNodeReference getFrom() {
+    return myFrom;
+  }
+  public SNodeReference getTo() {
+    return myTo;
+  }
   private static boolean eq_8rsufn_a0a0a0a0a0a0d0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

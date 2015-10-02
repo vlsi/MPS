@@ -19,6 +19,7 @@ import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
@@ -79,9 +80,12 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       });
     }
   }
+  public SearchResults getAffectedNodes() {
+    return new SearchResults();
+  }
   public void isMoved(List<SNode> nodes) {
     if (myMoveNodeItems == null) {
-      throw new IllegalArgumentException("isMoved() should be called before willBeMoved()");
+      throw new IllegalArgumentException("isMoved() should be called after willBeMoved()");
     }
     if (ListSequence.fromList(nodes).isNotEmpty()) {
       Iterable<SModule> seq = ListSequence.fromList(nodes).select(new ISelector<SNode, SModule>() {
@@ -92,7 +96,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       myTargetModule = Sequence.fromIterable(seq).first();
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SModule>() {
         public boolean accept(SModule it) {
-          return eq_t528rj_a0a0a0a0a0a2a1a8(it, myTargetModule);
+          return eq_t528rj_a0a0a0a0a0a2a1a9(it, myTargetModule);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same module.");
@@ -117,7 +121,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
 
   public void commit() {
     if (myMoveNodeItems == null) {
-      throw new IllegalStateException("Commit should be called after willBeMoved() and isMoved()");
+      throw new IllegalStateException("commit() should be called after willBeMoved() and isMoved()");
     }
     if (ListSequence.fromList(myMoveNodeItems).isEmpty()) {
       return;
@@ -158,7 +162,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
   private static boolean eq_t528rj_a0a0a0a0a0a2a2a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_t528rj_a0a0a0a0a0a2a1a8(Object a, Object b) {
+  private static boolean eq_t528rj_a0a0a0a0a0a2a1a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

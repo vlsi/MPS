@@ -17,6 +17,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
 
 public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
@@ -70,9 +73,30 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       ListSequence.fromList(affectedNodes).addElement(Sequence.fromIterable(part.getAffectedNodes(mySearchScope, myRepository)).toListSequence());
     }
   }
+  public SearchResults getAffectedNodes() {
+    if (affectedNodes == null) {
+      throw new IllegalStateException("isMoved() can be called only after willBeMoved()");
+    }
+    SearchResults results = new SearchResults();
+    results.getSearchedNodes().addAll(ListSequence.fromList(myParts).select(new ISelector<MoveNodePart, SNodeReference>() {
+      public SNodeReference select(MoveNodePart it) {
+        return it.getFrom();
+      }
+    }).toListSequence());
+    results.getSearchResults().addAll(ListSequence.fromList(affectedNodes).translate(new ITranslator2<List<SNodeReference>, SNodeReference>() {
+      public Iterable<SNodeReference> translate(List<SNodeReference> it) {
+        return it;
+      }
+    }).select(new ISelector<SNodeReference, SearchResult>() {
+      public SearchResult select(SNodeReference it) {
+        return new SearchResult(it, "reference");
+      }
+    }).toListSequence());
+    return results;
+  }
   public void isMoved(List<SNode> nodes) {
     if (myParts == null) {
-      throw new IllegalArgumentException("isMoved() should be called before willBeMoved()");
+      throw new IllegalStateException("isMoved() should be called after willBeMoved()");
     }
 
     if (ListSequence.fromList(nodes).isNotEmpty()) {
@@ -83,7 +107,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       });
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SRepository>() {
         public boolean accept(SRepository it) {
-          return eq_f4ilh2_a0a0a0a0a0a1a2a31(it, myRepository);
+          return eq_f4ilh2_a0a0a0a0a0a1a2a41(it, myRepository);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same repository.");
@@ -106,7 +130,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
   }
   public void commit() {
     if (myParts == null) {
-      throw new IllegalStateException("Commit should be called after willBeMoved() and isMoved()");
+      throw new IllegalStateException("commit() should be called after willBeMoved() and isMoved()");
     }
     if (ListSequence.fromList(myParts).count() == ListSequence.fromList(affectedNodes).count()) {
       throw new IllegalStateException("affectedNodes is not properly initialized");
@@ -137,7 +161,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
   private static boolean eq_f4ilh2_a0a0a0a0a0a2a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_f4ilh2_a0a0a0a0a0a1a2a31(Object a, Object b) {
+  private static boolean eq_f4ilh2_a0a0a0a0a0a1a2a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

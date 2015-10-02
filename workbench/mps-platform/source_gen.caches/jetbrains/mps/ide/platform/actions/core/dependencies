@@ -10,7 +10,12 @@
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveContext" file="MoveContext.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.platform.actions.core.MoveContextImpl" file="MoveContextImpl.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault" file="MoveNodesDefault.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -26,14 +31,13 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContextImpl" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringViewUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -51,7 +55,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring" file="MoveNodesRefactoring.java">
@@ -90,6 +93,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" file="MoveRefactoringContributor.java">
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
