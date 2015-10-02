@@ -467,6 +467,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -1393,7 +1394,7 @@
   </node>
   <node concept="13MO4I" id="46FlynTmGE7">
     <property role="3GE5qa" value="" />
-    <property role="TrG5h" value="reduce_LocalBehaviorMethodCallG" />
+    <property role="TrG5h" value="reduce_LocalBehaviorMethodCall" />
     <ref role="3gUMe" to="1i04:5CBvrhXldvx" resolve="LocalBehaviorMethodCall" />
     <node concept="312cEu" id="78MdKhpIsx5" role="13RCb5">
       <property role="2bfB8j" value="true" />
@@ -6645,7 +6646,7 @@
                     <ref role="3cqZAo" node="3ZhVC3HVVsM" resolve="thisConcept" />
                   </node>
                   <node concept="5jKBG" id="3ZhVC3HW3ox" role="lGtFl">
-                    <ref role="v9R2y" node="46FlynTmGE7" resolve="reduce_LocalBehaviorMethodCallG" />
+                    <ref role="v9R2y" node="46FlynTmGE7" resolve="reduce_LocalBehaviorMethodCall" />
                   </node>
                 </node>
                 <node concept="10Oyi0" id="3ZhVC3HW8f0" role="10QFUM">
@@ -6674,6 +6675,26 @@
               <node concept="1W57fq" id="3ZhVC3HW4Wz" role="lGtFl">
                 <node concept="3IZrLx" id="3ZhVC3HW4W_" role="3IZSJc">
                   <node concept="3clFbS" id="3ZhVC3HW4WB" role="2VODD2">
+                    <node concept="3clFbJ" id="73m2EIT5aFH" role="3cqZAp">
+                      <node concept="3clFbS" id="73m2EIT5aFJ" role="3clFbx">
+                        <node concept="3cpWs6" id="73m2EIT5cp5" role="3cqZAp">
+                          <node concept="3clFbT" id="73m2EIT5cwT" role="3cqZAk">
+                            <property role="3clFbU" value="false" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="73m2EIT5bHO" role="3clFbw">
+                        <node concept="2OqwBi" id="73m2EIT5b3m" role="2Oq$k0">
+                          <node concept="30H73N" id="73m2EIT5aT6" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="73m2EIT5boF" role="2OqNvi" />
+                        </node>
+                        <node concept="1mIQ4w" id="73m2EIT5bXU" role="2OqNvi">
+                          <node concept="chp4Y" id="73m2EIT5cb3" role="cj9EA">
+                            <ref role="cht4Q" to="tpee:fzclF8j" resolve="ExpressionStatement" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3cpWs8" id="3ZhVC3HW54Z" role="3cqZAp">
                       <node concept="3cpWsn" id="3ZhVC3HW552" role="3cpWs9">
                         <property role="TrG5h" value="type" />
@@ -6740,7 +6761,7 @@
                       <ref role="3cqZAo" node="3ZhVC3HVVsM" resolve="thisConcept" />
                     </node>
                     <node concept="5jKBG" id="3ZhVC3HWfYX" role="lGtFl">
-                      <ref role="v9R2y" node="46FlynTmGE7" resolve="reduce_LocalBehaviorMethodCallG" />
+                      <ref role="v9R2y" node="46FlynTmGE7" resolve="reduce_LocalBehaviorMethodCall" />
                     </node>
                   </node>
                 </node>

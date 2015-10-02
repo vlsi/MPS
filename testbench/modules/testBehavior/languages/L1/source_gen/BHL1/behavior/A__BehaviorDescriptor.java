@@ -48,8 +48,9 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Float> conversion6_id3HzlNjB44YK = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("conversion6").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3HzlNjB44YK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.class, ""));
   public static final SMethod<Float> conversion0_id6rioTyS5hAT = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("conversion0").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6rioTyS5hAT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   public static final SMethod<Integer> conversion7_idjZ8XPdfKCq = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("conversion7").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("jZ8XPdfKCq").registry(REGISTRY).build();
+  public static final SMethod<Integer> conversion8_idjZ8XPdg3mY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("conversion8").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("jZ8XPdg3mY").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5jWiLvujMjC, varArgNull_id56Rew6rCKv6, arrArgNull_id56Rew6rCKDf, varArgLen_id6yTVdLqTssn, varArgPrim_id56Rew6rDMfR, varArgLen2_id6yTVdLqUPAs, varArgLen3_id6yTVdLqV1qL, varArgLen4_id6Jh0tXoS5Ab, arrayArg_id6yTVdLqT_bJ, arrayArg1_id6Jh0tXoSfUR, arrayArg2_id6yTVdLqTFk5, arrayArg3_id6Jh0tXoS5z0, longReturn_id20h3iLqUOkD, boxing1_id95Aegakr_K, boxing2_id95AegakrCe, conversion1_id3ZhVC3HVCz2, conversion2_id6rioTyS5hVU, conversion3_id6rioTyS5i4m, conversion4_id6rioTyS5icW, conversion5_id6rioTyS5ilG, conversion6_id3HzlNjB44YK, conversion0_id6rioTyS5hAT, conversion7_idjZ8XPdfKCq);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5jWiLvujMjC, varArgNull_id56Rew6rCKv6, arrArgNull_id56Rew6rCKDf, varArgLen_id6yTVdLqTssn, varArgPrim_id56Rew6rDMfR, varArgLen2_id6yTVdLqUPAs, varArgLen3_id6yTVdLqV1qL, varArgLen4_id6Jh0tXoS5Ab, arrayArg_id6yTVdLqT_bJ, arrayArg1_id6Jh0tXoSfUR, arrayArg2_id6yTVdLqTFk5, arrayArg3_id6Jh0tXoS5z0, longReturn_id20h3iLqUOkD, boxing1_id95Aegakr_K, boxing2_id95AegakrCe, conversion1_id3ZhVC3HVCz2, conversion2_id6rioTyS5hVU, conversion3_id6rioTyS5i4m, conversion4_id6rioTyS5icW, conversion5_id6rioTyS5ilG, conversion6_id3HzlNjB44YK, conversion0_id6rioTyS5hAT, conversion7_idjZ8XPdfKCq, conversion8_idjZ8XPdg3mY);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -122,7 +123,10 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
     return a;
   }
   private static int conversion7_idjZ8XPdfKCq(@NotNull SNode __thisNode__) {
-    return ((int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1))));
+    return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
+  }
+  private static int conversion8_idjZ8XPdg3mY(@NotNull SNode __thisNode__) {
+    return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
   }
 
   /*package*/ A__BehaviorDescriptor() {
@@ -187,6 +191,8 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Float) conversion0_id6rioTyS5hAT(node, ((int) (Integer) parameters[0])));
       case 22:
         return (T) ((Integer) conversion7_idjZ8XPdfKCq(node));
+      case 23:
+        return (T) ((Integer) conversion8_idjZ8XPdg3mY(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

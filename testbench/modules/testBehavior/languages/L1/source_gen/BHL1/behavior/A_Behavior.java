@@ -76,6 +76,9 @@ public class A_Behavior {
     return a;
   }
   public static int call_conversion7_360045928603650586(SNode __thisNode__) {
-    return ((int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1))));
+    return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
+  }
+  public static int call_conversion8_360045928603727294(SNode __thisNode__) {
+    return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
   }
 }

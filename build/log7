@@ -1,4 +1,0 @@
-Buildfile: /Users/apyshkin/workspace/git/mps/build/test.xml
-
-unpack:
-    [unzip] Expanding: /Users/apyshkin/workspace/git/mps/build/artifacts/mpsDistribution/7777.zip into /Users/apyshkin/workspace/git/mps/build/tmp/tests

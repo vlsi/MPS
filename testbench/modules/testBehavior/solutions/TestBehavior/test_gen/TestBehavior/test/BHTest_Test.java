@@ -356,7 +356,7 @@ public class BHTest_Test extends TestCase {
   }
   public void test_voidMethod() throws Exception {
     SNode nodeB = createB_a2wy8c_a0a0hc0();
-    Assert.assertSame(null, BHL7.behavior.A__BehaviorDescriptor.justVoidReturnTypeMethod_id5mnatV0hB9t.invoke(nodeB));
+    BHL7.behavior.A__BehaviorDescriptor.justVoidReturnTypeMethod_id5mnatV0hB9t.invoke(nodeB);
   }
   public void test_parameterTypes() throws Exception {
     SNode nodeC = createC_a2wy8c_a0a0ic0();
@@ -415,6 +415,10 @@ public class BHTest_Test extends TestCase {
     Assert.assertSame(3, K__BehaviorDescriptor.foo_id6r9lTJu8BNQ.invoke(nodeK, nodeC));
     Assert.assertSame(3, K__BehaviorDescriptor.foo_id6r9lTJu8BNQ.invoke(nodeK, nodeB));
     Assert.assertSame(3, K__BehaviorDescriptor.foo_id6r9lTJu8BNQ.invoke(nodeK, nodeA));
+  }
+  public void test_booleanMethodCall() throws Exception {
+    SNode nodeA = createA_a2wy8c_a0a0pc0();
+    BHL7.behavior.A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(nodeA);
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
@@ -768,6 +772,11 @@ public class BHTest_Test extends TestCase {
   private static SNode createK_a2wy8c_a0d0oc0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x66c9579bde227bd6L, "BHL7.structure.K"), null, null, false);
+    return n1;
+  }
+  private static SNode createA_a2wy8c_a0a0pc0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), null, null, false);
     return n1;
   }
 }

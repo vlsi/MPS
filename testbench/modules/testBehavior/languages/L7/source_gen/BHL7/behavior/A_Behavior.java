@@ -21,5 +21,13 @@ public class A_Behavior {
   public static void call_justVoidReturnTypeMethod_6167444251392504413(SNode __thisNode__) {
   }
   public static void call_justVoidReturnTypeMethod2_5722502787480038418(SNode __thisNode__) {
+    A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(__thisNode__.getConcept());
+    A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(__thisNode__);
+    A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(__thisNode__);
+    SNode nodeA = null;
+    A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(nodeA);
+  }
+  public static boolean call_boolMethod_360045928603804516(SNode __thisNode__) {
+    return true;
   }
 }

@@ -31,8 +31,9 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Object> staticVirtualMethod_id5mnatV0hATt = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("staticVirtualMethod").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hATt").registry(REGISTRY).build();
   public static final SMethod<Void> justVoidReturnTypeMethod_id5mnatV0hB9t = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("justVoidReturnTypeMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mnatV0hB9t").registry(REGISTRY).build();
   public static final SMethod<Void> justVoidReturnTypeMethod2_id4XEqvthVyKi = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("justVoidReturnTypeMethod2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XEqvthVyKi").registry(REGISTRY).build();
+  public static final SMethod<Boolean> boolMethod_idjZ8XPdgmd$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("boolMethod").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("jZ8XPdgmd$").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_id5mnatV0hAPp, virtualMethod_id5mnatV0hAPC, staticMethod_id5mnatV0hAQH, staticVirtualMethod_id5mnatV0hATt, justVoidReturnTypeMethod_id5mnatV0hB9t, justVoidReturnTypeMethod2_id4XEqvthVyKi);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtualMethod_id5mnatV0hAPp, virtualMethod_id5mnatV0hAPC, staticMethod_id5mnatV0hAQH, staticVirtualMethod_id5mnatV0hATt, justVoidReturnTypeMethod_id5mnatV0hB9t, justVoidReturnTypeMethod2_id4XEqvthVyKi, boolMethod_idjZ8XPdgmd$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -52,6 +53,14 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static void justVoidReturnTypeMethod_id5mnatV0hB9t(@NotNull SNode __thisNode__) {
   }
   private static void justVoidReturnTypeMethod2_id4XEqvthVyKi(@NotNull SNode __thisNode__) {
+    A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(__thisNode__.getConcept());
+    A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(__thisNode__);
+    A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(__thisNode__);
+    SNode nodeA = null;
+    A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(nodeA);
+  }
+  private static boolean boolMethod_idjZ8XPdgmd$(@NotNull SNode __thisNode__) {
+    return true;
   }
 
   /*package*/ A__BehaviorDescriptor() {
@@ -80,6 +89,8 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
       case 5:
         justVoidReturnTypeMethod2_id4XEqvthVyKi(node);
         return null;
+      case 6:
+        return (T) ((Boolean) boolMethod_idjZ8XPdgmd$(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

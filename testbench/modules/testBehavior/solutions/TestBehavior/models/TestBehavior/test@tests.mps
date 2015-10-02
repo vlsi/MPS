@@ -3302,8 +3302,8 @@
               </node>
             </node>
           </node>
-          <node concept="3vMLTj" id="4Rfm9LCcunN" role="3cqZAp">
-            <node concept="2OqwBi" id="4Rfm9LCcunO" role="3tpDZA">
+          <node concept="3clFbF" id="73m2EIT6GZy" role="3cqZAp">
+            <node concept="2OqwBi" id="4Rfm9LCcunO" role="3clFbG">
               <node concept="37vLTw" id="4Rfm9LCcunP" role="2Oq$k0">
                 <ref role="3cqZAo" node="4Rfm9LCcunJ" resolve="nodeB" />
               </node>
@@ -3311,7 +3311,6 @@
                 <ref role="37wK5l" to="5a2:5mnatV0hB9t" resolve="justVoidReturnTypeMethod" />
               </node>
             </node>
-            <node concept="10Nm6u" id="4Rfm9LCcxfu" role="3tpDZB" />
           </node>
         </node>
       </node>
@@ -3917,6 +3916,36 @@
             </node>
             <node concept="3cmrfG" id="6r9lTJu8CGX" role="3tpDZB">
               <property role="3cmrfH" value="3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3s$Bmu" id="jZ8XPdhR9V" role="3s_gse">
+        <property role="3s$Bm0" value="booleanMethodCall" />
+        <node concept="3cqZAl" id="jZ8XPdhR9W" role="3clF45" />
+        <node concept="3Tm1VV" id="jZ8XPdhR9X" role="1B3o_S" />
+        <node concept="3clFbS" id="jZ8XPdhR9Y" role="3clF47">
+          <node concept="3cpWs8" id="jZ8XPdhRI4" role="3cqZAp">
+            <node concept="3cpWsn" id="jZ8XPdhRI7" role="3cpWs9">
+              <property role="TrG5h" value="nodeA" />
+              <node concept="3Tqbb2" id="jZ8XPdhRI3" role="1tU5fm">
+                <ref role="ehGHo" to="n871:5mnatV0hAOW" resolve="A" />
+              </node>
+              <node concept="2pJPEk" id="jZ8XPdhRQG" role="33vP2m">
+                <node concept="2pJPED" id="jZ8XPdhRRF" role="2pJPEn">
+                  <ref role="2pJxaS" to="n871:5mnatV0hAOW" resolve="A" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="jZ8XPdhRID" role="3cqZAp">
+            <node concept="2OqwBi" id="jZ8XPdhRJN" role="3clFbG">
+              <node concept="37vLTw" id="jZ8XPdhRIB" role="2Oq$k0">
+                <ref role="3cqZAo" node="jZ8XPdhRI7" resolve="nodeA" />
+              </node>
+              <node concept="2qgKlT" id="jZ8XPdhRMn" role="2OqNvi">
+                <ref role="37wK5l" to="5a2:jZ8XPdgmd$" resolve="boolMethod" />
+              </node>
             </node>
           </node>
         </node>

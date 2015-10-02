@@ -61,7 +61,6 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
     return false;
   }
 
-
   @NotNull
   @Override
   public Class<?> getJavaType() {
