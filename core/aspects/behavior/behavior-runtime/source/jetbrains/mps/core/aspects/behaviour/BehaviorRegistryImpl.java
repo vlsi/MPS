@@ -18,6 +18,7 @@ package jetbrains.mps.core.aspects.behaviour;
 import jetbrains.mps.core.aspects.behaviour.api.BHDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.MethodResolutionOrder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
@@ -52,7 +53,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   private final ConceptInLoadingStorage<String> myLegacyStorage = new ConceptInLoadingStorage<String>();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
   private final Map<String, BehaviorDescriptor> myLegacyBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
-  private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SAbstractConcept, BHDescriptor>();
+  private final Map<SConceptId, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SConceptId, BHDescriptor>();
   private final LanguageRegistry myLanguageRegistry;
 
   public BehaviorRegistryImpl(LanguageRegistry languageRegistry) {
@@ -96,7 +97,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   @Override
   @NotNull
   public BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
-    BHDescriptor descriptor = myBHDescriptors.get(concept);
+    BHDescriptor descriptor = myBHDescriptors.get(MetaIdHelper.getConcept(concept));
     if (descriptor != null) {
       return descriptor;
     }
@@ -137,7 +138,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
         LOG.error("Exception while behavior descriptor creating " + concept, e);
         descriptor = new IllegalBHDescriptor(concept);
       }
-      myBHDescriptors.put(concept, descriptor);
+      myBHDescriptors.put(MetaIdHelper.getConcept(concept), descriptor);
       return descriptor;
     } finally {
       myStorage.finishLoading(concept);
