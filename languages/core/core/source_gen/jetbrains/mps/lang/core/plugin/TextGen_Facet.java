@@ -440,12 +440,15 @@ public class TextGen_Facet extends IFacet.Stub {
                   final TextGenResult tgr = resultQueue.poll(1, TimeUnit.MINUTES);
                   Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
                   Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
+
+                  _output_21gswx_a0c = Sequence.fromIterable(_output_21gswx_a0c).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(tgr.getModel(), tgr.getModel().getModule(), tgr))));
+
                   for (TextUnit tu : tgr.getUnits()) {
                     if (tu.getState() == TextUnit.Status.Failed) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text for " + tu.getFileName())));
                       continue;
                     }
-                    // FIXME could output TextUnits directly 
+                    // compatibility code until all uses of FResource from TextGen are removed 
                     String fname = tu.getFileName();
                     MapSequence.fromMap(texts).put(fname, tu);
                     SNodeReference sourceNode = TracingUtil.getInput(tu.getStartNode());

@@ -23,6 +23,7 @@
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -60,9 +61,14 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
@@ -119,6 +125,9 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1164879685961" name="throwsItem" index="Sfmx6" />
@@ -209,9 +218,13 @@
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -979,6 +992,27 @@
     <node concept="3Tm1VV" id="AA4r4ZpGBC" role="1B3o_S" />
     <node concept="3uibUv" id="4y1ziYt2EwI" role="3TOOP4">
       <ref role="3uigEE" node="53cwQkIeuMb" resolve="IFResource" />
+    </node>
+    <node concept="3UR2Jj" id="7G8hLbKzAW6" role="lGtFl">
+      <node concept="TZ5HI" id="7G8hLbKzAWo" role="3nqlJM">
+        <node concept="TZ5HA" id="7G8hLbKzAWp" role="3HnX3l">
+          <node concept="1dT_AC" id="7G8hLbKzAY9" role="1dT_Ay">
+            <property role="1dT_AB" value="TextGen now produces TextGenOutcomeResource, which reflects text generation outcome much better than map (string, object). For compatibility, TextGen would yield these resources in 3.3." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="7G8hLbKzAWv" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="2AHcQZ" id="7G8hLbKzAWH" role="2AJF6D">
+      <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+      <node concept="2B6LJw" id="7G8hLbKzAXo" role="2B76xF">
+        <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+        <node concept="3b6qkQ" id="7G8hLbKzAY2" role="2B70Vg">
+          <property role="$nhwW" value="3.3" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="2fD8I5" id="AA4r4ZpI9Q">
