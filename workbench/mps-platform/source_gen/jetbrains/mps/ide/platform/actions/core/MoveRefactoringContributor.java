@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public interface MoveRefactoringContributor {
+  public String getDescription();
   public void willBeMoved(List<SNode> n);
   public SearchResults<SNode> getAffectedNodes();
   public void isMoved(List<SNode> n);

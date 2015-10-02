@@ -51,6 +51,9 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
     }
   }
 
+  public String getDescription() {
+    return "Write migration";
+  }
 
   public void willBeMoved(List<SNode> nodes) {
     myMoveNodeItems = ListSequence.fromList(new ArrayList<SNode>(ListSequence.fromList(nodes).count()));
@@ -64,14 +67,14 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       mySourceModule = Sequence.fromIterable(seq).first();
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SModule>() {
         public boolean accept(SModule it) {
-          return eq_t528rj_a0a0a0a0a0a2a2a7(it, mySourceModule);
+          return eq_t528rj_a0a0a0a0a0a2a2a8(it, mySourceModule);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same module.");
       }
     }
     for (final SNode from : ListSequence.fromList(nodes)) {
-      final SNode moveNodeItem = createMoveNode_t528rj_a0a0d0h(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(from)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(null), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")));
+      final SNode moveNodeItem = createMoveNode_t528rj_a0a0d0i(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(from)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(null), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")));
       ListSequence.fromList(myMoveNodeItems).addElement(moveNodeItem);
       Sequence.fromIterable(new ExtensionPoint<MoveNodesContributor>("jetbrains.mps.lang.migration.pluginSolution.MoveNodesContributor").getObjects()).visitAll(new IVisitor<MoveNodesContributor>() {
         public void visit(MoveNodesContributor it) {
@@ -80,8 +83,8 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       });
     }
   }
-  public SearchResults getAffectedNodes() {
-    return new SearchResults();
+  public SearchResults<SNode> getAffectedNodes() {
+    return new SearchResults<SNode>();
   }
   public void isMoved(List<SNode> nodes) {
     if (myMoveNodeItems == null) {
@@ -96,7 +99,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       myTargetModule = Sequence.fromIterable(seq).first();
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SModule>() {
         public boolean accept(SModule it) {
-          return eq_t528rj_a0a0a0a0a0a2a1a9(it, myTargetModule);
+          return eq_t528rj_a0a0a0a0a0a2a1a01(it, myTargetModule);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same module.");
@@ -148,7 +151,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
 
     }
   }
-  private static SNode createMoveNode_t528rj_a0a0d0h(Object p0, Object p1) {
+  private static SNode createMoveNode_t528rj_a0a0d0i(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.util.structure.MoveNode"), null, null, false);
     if (p0 != null) {
@@ -159,10 +162,10 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
     }
     return n1;
   }
-  private static boolean eq_t528rj_a0a0a0a0a0a2a2a7(Object a, Object b) {
+  private static boolean eq_t528rj_a0a0a0a0a0a2a2a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_t528rj_a0a0a0a0a0a2a1a9(Object a, Object b) {
+  private static boolean eq_t528rj_a0a0a0a0a0a2a1a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

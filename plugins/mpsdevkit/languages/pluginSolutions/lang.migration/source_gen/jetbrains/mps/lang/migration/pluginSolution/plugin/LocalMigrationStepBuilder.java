@@ -48,6 +48,10 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
     mySearchScope = searchScope;
   }
 
+  public String getDescription() {
+    return "Update references in current project";
+  }
+
   public void willBeMoved(List<SNode> nodes) {
     myParts = ListSequence.fromList(new ArrayList<MoveNodePart>(ListSequence.fromList(nodes).count()));
     if (ListSequence.fromList(nodes).isNotEmpty()) {
@@ -59,7 +63,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       myRepository = Sequence.fromIterable(seq).first();
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SRepository>() {
         public boolean accept(SRepository it) {
-          return eq_f4ilh2_a0a0a0a0a0a2a1a21(it, myRepository);
+          return eq_f4ilh2_a0a0a0a0a0a2a1a41(it, myRepository);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same repository.");
@@ -73,23 +77,23 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       ListSequence.fromList(affectedNodes).addElement(Sequence.fromIterable(part.getAffectedNodes(mySearchScope, myRepository)).toListSequence());
     }
   }
-  public SearchResults getAffectedNodes() {
+  public SearchResults<SNode> getAffectedNodes() {
     if (affectedNodes == null) {
       throw new IllegalStateException("isMoved() can be called only after willBeMoved()");
     }
-    SearchResults results = new SearchResults();
-    results.getSearchedNodes().addAll(ListSequence.fromList(myParts).select(new ISelector<MoveNodePart, SNodeReference>() {
-      public SNodeReference select(MoveNodePart it) {
-        return it.getFrom();
+    SearchResults<SNode> results = new SearchResults<SNode>();
+    results.getSearchedNodes().addAll(ListSequence.fromList(myParts).select(new ISelector<MoveNodePart, SNode>() {
+      public SNode select(MoveNodePart it) {
+        return it.getFrom().resolve(myRepository);
       }
     }).toListSequence());
     results.getSearchResults().addAll(ListSequence.fromList(affectedNodes).translate(new ITranslator2<List<SNodeReference>, SNodeReference>() {
       public Iterable<SNodeReference> translate(List<SNodeReference> it) {
         return it;
       }
-    }).select(new ISelector<SNodeReference, SearchResult>() {
-      public SearchResult select(SNodeReference it) {
-        return new SearchResult(it, "reference");
+    }).select(new ISelector<SNodeReference, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(SNodeReference it) {
+        return new SearchResult<SNode>(it.resolve(myRepository), "reference");
       }
     }).toListSequence());
     return results;
@@ -107,7 +111,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       });
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SRepository>() {
         public boolean accept(SRepository it) {
-          return eq_f4ilh2_a0a0a0a0a0a1a2a41(it, myRepository);
+          return eq_f4ilh2_a0a0a0a0a0a1a2a61(it, myRepository);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same repository.");
@@ -132,7 +136,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
     if (myParts == null) {
       throw new IllegalStateException("commit() should be called after willBeMoved() and isMoved()");
     }
-    if (ListSequence.fromList(myParts).count() == ListSequence.fromList(affectedNodes).count()) {
+    if (ListSequence.fromList(myParts).count() != ListSequence.fromList(affectedNodes).count()) {
       throw new IllegalStateException("affectedNodes is not properly initialized");
     }
     if (ListSequence.fromList(myParts).isEmpty()) {
@@ -158,10 +162,10 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       }
     }
   }
-  private static boolean eq_f4ilh2_a0a0a0a0a0a2a1a21(Object a, Object b) {
+  private static boolean eq_f4ilh2_a0a0a0a0a0a2a1a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_f4ilh2_a0a0a0a0a0a1a2a41(Object a, Object b) {
+  private static boolean eq_f4ilh2_a0a0a0a0a0a1a2a61(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

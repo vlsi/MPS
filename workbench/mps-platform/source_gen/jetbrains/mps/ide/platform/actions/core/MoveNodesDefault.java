@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -102,7 +103,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           return;
         }
 
-        final Iterable<MoveRefactoringContributor> refactoringBuilders = Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
+        final List<MoveRefactoringContributor> selectedBuilders = SelectContributorsDialog.selectContributors(ProjectHelper.toIdeaProject(project), Sequence.fromIterable(new ExtensionPoint<MoveRefactoringContributor.MoveNodesBuilderFactory>("jetbrains.mps.ide.platform.MoveNodesBuilderEP").getObjects()).select(new ISelector<MoveRefactoringContributor.MoveNodesBuilderFactory, MoveRefactoringContributor>() {
           public MoveRefactoringContributor select(MoveRefactoringContributor.MoveNodesBuilderFactory it) {
             return it.createContributor(new MoveContextImpl(project.getScope()));
           }
@@ -110,28 +111,28 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           public boolean accept(MoveRefactoringContributor it) {
             return it != null;
           }
-        });
+        }).toListSequence());
 
         final List<SNode> nodesToMoveWithDescendants = ListSequence.fromList(nodesToMove).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
             return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
           }
         }).toListSequence();
-        for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+        for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
           builder.willBeMoved(nodesToMoveWithDescendants);
         }
 
         SearchResults<SNode> searchResults = new SearchResults<SNode>();
-        for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+        for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
           searchResults.addAll(builder.getAffectedNodes());
         }
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
           public void invoke(Set<SNode> included) {
             newLocation.insertNodes(nodesToMove);
-            for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+            for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               builder.isMoved(nodesToMoveWithDescendants);
             }
-            for (MoveRefactoringContributor builder : Sequence.fromIterable(refactoringBuilders)) {
+            for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               builder.commit();
             }
           }
