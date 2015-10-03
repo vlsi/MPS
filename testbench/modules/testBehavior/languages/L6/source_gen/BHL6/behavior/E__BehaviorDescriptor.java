@@ -33,10 +33,10 @@ public final class E__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5mnatV0hyuN(@NotNull SAbstractConcept __thisConcept__) {
-    return ((int) C__BehaviorDescriptor.foo_id5mnatV0hxLf.invokeSpecial(__thisConcept__));
+  /*package*/ static int foo_id5mnatV0hyuN(@NotNull SAbstractConcept __thisConcept__) {
+    return C__BehaviorDescriptor.foo_id5mnatV0hxLf.invokeSpecial(__thisConcept__);
   }
-  private static Object virtual_id47lrFSh1$Ca(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static Object virtual_id47lrFSh1$Ca(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
 

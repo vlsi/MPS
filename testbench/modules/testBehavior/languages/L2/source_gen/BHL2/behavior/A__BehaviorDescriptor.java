@@ -35,16 +35,16 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object nonVirtual_id7zO8mNAVlna(@NotNull SNode __thisNode__) {
+  /*package*/ static Object nonVirtual_id7zO8mNAVlna(@NotNull SNode __thisNode__) {
     return A__BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(__thisNode__);
   }
-  private static Object foo_id6EMTxOPT5LT(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo_id6EMTxOPT5LT(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static Object foo2_id4hDSxB1Zrx8(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo2_id4hDSxB1Zrx8(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static void testCommentGeneration_id1eK5xBtRrre(@NotNull SNode __thisNode__) {
+  /*package*/ static void testCommentGeneration_id1eK5xBtRrre(@NotNull SNode __thisNode__) {
     /*
       int a = 0;
       a = 1;

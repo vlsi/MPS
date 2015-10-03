@@ -32,31 +32,35 @@ public final class D__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Void> bar2_id4RMBeRWcir8 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("bar2").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RMBeRWcir8").registry(REGISTRY).build();
   public static final SMethod<Integer> foo5_id1olXtyGAKsY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo5").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKsY").registry(REGISTRY).build();
   public static final SMethod<Object> foo6_id186XXh$CxOf = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo6").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("186XXh$CxOf").registry(REGISTRY).build();
+  public static final SMethod<Object> foo7_id1eK5xBtRuXu = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo7").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1eK5xBtRuXu").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8, foo5_id1olXtyGAKsY, foo6_id186XXh$CxOf);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hyg4, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, bar1_id5jWiLvujSC6, bar2_id4RMBeRWcir8, foo5_id1olXtyGAKsY, foo6_id186XXh$CxOf, foo7_id1eK5xBtRuXu);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5mnatV0hyg4(@NotNull SNode __thisNode__) {
-    return ((int) B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__));
+  /*package*/ static int foo_id5mnatV0hyg4(@NotNull SNode __thisNode__) {
+    return B__BehaviorDescriptor.foo_id5mnatV0hwZQ.invokeSpecial(__thisNode__);
   }
-  private static int foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
-    return ((int) B__BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__));
+  /*package*/ static int foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
+    return B__BehaviorDescriptor.foo1_id5jWiLvujSmw.invokeSpecial(__thisNode__);
   }
-  private static int foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
-    return ((int) B__BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__));
+  /*package*/ static int foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
+    return B__BehaviorDescriptor.foo2_id5jWiLvujSzJ.invokeSpecial(__thisNode__);
   }
-  private static int bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
+  /*package*/ static int bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static void bar2_id4RMBeRWcir8(@NotNull SNode __thisNode__) {
+  /*package*/ static void bar2_id4RMBeRWcir8(@NotNull SNode __thisNode__) {
     B__BehaviorDescriptor.foo3_id4RMBeRWcio1.invokeSpecial(__thisNode__).byteValue();
   }
-  private static int foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
-    return ((int) B__BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__));
+  /*package*/ static int foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
+    return B__BehaviorDescriptor.foo5_id1olXtyGAKsY.invokeSpecial(__thisNode__);
   }
-  private static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
+    return TestResults.POLYMORPHIC_CHILD;
+  }
+  /*package*/ static Object foo7_id1eK5xBtRuXu(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
 
@@ -91,6 +95,8 @@ public final class D__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Integer) foo5_id1olXtyGAKsY(node));
       case 6:
         return (T) ((Object) foo6_id186XXh$CxOf(node));
+      case 7:
+        return (T) ((Object) foo7_id1eK5xBtRuXu(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

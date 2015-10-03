@@ -35,16 +35,16 @@ public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5mnatV0hxLf(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static int foo_id5mnatV0hxLf(@NotNull SAbstractConcept __thisConcept__) {
     return ((int) C__BehaviorDescriptor.bar_id5mnatV0hxLE.invoke(__thisConcept__));
   }
-  private static int bar_id5mnatV0hxLE(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static int bar_id5mnatV0hxLE(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static Object virtual_id47lrFSh1$Ca(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static Object virtual_id47lrFSh1$Ca(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static Object nonVirtual_id7zO8mNAVkj1(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static Object nonVirtual_id7zO8mNAVkj1(@NotNull SAbstractConcept __thisConcept__) {
     return C__BehaviorDescriptor.virtual_id47lrFSh1$Ca.invoke(__thisConcept__);
   }
 

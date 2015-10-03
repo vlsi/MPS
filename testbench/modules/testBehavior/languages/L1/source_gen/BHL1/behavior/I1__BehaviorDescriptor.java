@@ -33,7 +33,7 @@ public final class I1__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id7Ts2tYwvl$V(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo_id7Ts2tYwvl$V(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_METHOD;
   }
 

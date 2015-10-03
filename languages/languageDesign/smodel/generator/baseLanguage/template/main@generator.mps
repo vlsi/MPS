@@ -169,6 +169,9 @@
         <child id="1154542793668" name="componentType" index="3g7fb8" />
         <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -17438,7 +17441,7 @@
                                   </node>
                                   <node concept="2YIFZM" id="3ZhVC3HXwo2" role="33vP2m">
                                     <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
-                                    <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                                    <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                                     <node concept="30H73N" id="3ZhVC3HXwo3" role="37wK5m" />
                                   </node>
                                 </node>
@@ -17823,7 +17826,7 @@
                                       <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                                     </node>
                                     <node concept="2YIFZM" id="3ZhVC3HX_JB" role="33vP2m">
-                                      <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                                      <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                                       <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
                                       <node concept="30H73N" id="3ZhVC3HX_JC" role="37wK5m" />
                                     </node>
@@ -18111,23 +18114,21 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="1gVbGN" id="yOqIWcnRyq" role="3cqZAp">
+                        <node concept="2OqwBi" id="yOqIWcnRYN" role="1gVkn0">
+                          <node concept="37vLTw" id="yOqIWcnREY" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7rdthmpJDZi" resolve="enclosingMethod" />
+                          </node>
+                          <node concept="3x8VRR" id="yOqIWcnSnv" role="2OqNvi" />
+                        </node>
+                      </node>
                       <node concept="3cpWs6" id="7rdthmpJDZp" role="3cqZAp">
-                        <node concept="1eOMI4" id="7rdthmpJDZq" role="3cqZAk">
-                          <node concept="1Wc70l" id="7rdthmpJDZr" role="1eOMHV">
-                            <node concept="2OqwBi" id="7rdthmpJDZs" role="3uHU7B">
-                              <node concept="3x8VRR" id="7rdthmpJDZt" role="2OqNvi" />
-                              <node concept="37vLTw" id="7rdthmpJDZu" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7rdthmpJDZi" resolve="enclosingMethod" />
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="7rdthmpJDZv" role="3uHU7w">
-                              <node concept="37vLTw" id="7rdthmpJDZw" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7rdthmpJDZi" resolve="enclosingMethod" />
-                              </node>
-                              <node concept="3TrcHB" id="7rdthmpJDZx" role="2OqNvi">
-                                <ref role="3TsBF5" to="1i04:55xfRZxar9d" resolve="isStatic" />
-                              </node>
-                            </node>
+                        <node concept="2OqwBi" id="7rdthmpJDZv" role="3cqZAk">
+                          <node concept="37vLTw" id="7rdthmpJDZw" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7rdthmpJDZi" resolve="enclosingMethod" />
+                          </node>
+                          <node concept="3TrcHB" id="7rdthmpJDZx" role="2OqNvi">
+                            <ref role="3TsBF5" to="1i04:55xfRZxar9d" resolve="isStatic" />
                           </node>
                         </node>
                       </node>
@@ -18396,7 +18397,7 @@
                                 </node>
                                 <node concept="2YIFZM" id="3ZhVC3HX9$m" role="33vP2m">
                                   <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
-                                  <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                                  <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                                   <node concept="30H73N" id="3ZhVC3HX9$n" role="37wK5m" />
                                 </node>
                               </node>
@@ -18434,7 +18435,7 @@
                             </node>
                             <node concept="2YIFZM" id="3ZhVC3HX9$$" role="33vP2m">
                               <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
-                              <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                              <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                               <node concept="30H73N" id="3ZhVC3HX9$_" role="37wK5m" />
                             </node>
                           </node>
@@ -18481,7 +18482,7 @@
                             </node>
                             <node concept="2YIFZM" id="3ZhVC3HX9$Q" role="33vP2m">
                               <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
-                              <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                              <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                               <node concept="30H73N" id="3ZhVC3HX9$R" role="37wK5m" />
                             </node>
                           </node>
@@ -18724,7 +18725,7 @@
                                     <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                                   </node>
                                   <node concept="2YIFZM" id="3ZhVC3HXikV" role="33vP2m">
-                                    <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                                    <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                                     <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
                                     <node concept="30H73N" id="3ZhVC3HXikW" role="37wK5m" />
                                   </node>
@@ -18763,7 +18764,7 @@
                               </node>
                               <node concept="2YIFZM" id="3ZhVC3HXil9" role="33vP2m">
                                 <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
-                                <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                                <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                                 <node concept="30H73N" id="3ZhVC3HXila" role="37wK5m" />
                               </node>
                             </node>
@@ -18810,7 +18811,7 @@
                               </node>
                               <node concept="2YIFZM" id="3ZhVC3HXilr" role="33vP2m">
                                 <ref role="37wK5l" to="tp26:5$gQw6IXl4O" resolve="getNearestOverridenMethod" />
-                                <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodCallUtils" />
+                                <ref role="1Pybhc" to="tp26:1OqTjpdqwxK" resolve="ConceptMethodSuperCallUtils" />
                                 <node concept="30H73N" id="3ZhVC3HXils" role="37wK5m" />
                               </node>
                             </node>

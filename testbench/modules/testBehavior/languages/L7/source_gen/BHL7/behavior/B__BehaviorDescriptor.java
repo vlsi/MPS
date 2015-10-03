@@ -37,22 +37,22 @@ public final class B__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
+  /*package*/ static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  private static Object staticVirtualMethod_id5mnatV0hATt(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static Object staticVirtualMethod_id5mnatV0hATt(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  private static int primitiveReturnValue_id4Rfm9LCctz9(@NotNull SNode __thisNode__) {
+  /*package*/ static int primitiveReturnValue_id4Rfm9LCctz9(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static int primitiveParameter_id7zO8mNAVjjo(@NotNull SNode __thisNode__, int a, boolean b, double d) {
+  /*package*/ static int primitiveParameter_id7zO8mNAVjjo(@NotNull SNode __thisNode__, int a, boolean b, double d) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static int nonPrimitiveParameter_id4Tk5Y39EB1$(@NotNull SNode __thisNode__, Integer a) {
+  /*package*/ static int nonPrimitiveParameter_id4Tk5Y39EB1$(@NotNull SNode __thisNode__, Integer a) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static Class<Integer> genericReturnValue_id4Rfm9LCcu90(@NotNull SNode __thisNode__) {
+  /*package*/ static Class<Integer> genericReturnValue_id4Rfm9LCcu90(@NotNull SNode __thisNode__) {
     return Integer.class;
   }
 

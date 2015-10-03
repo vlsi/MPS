@@ -55,77 +55,77 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5jWiLvujMjC(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id5jWiLvujMjC(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static boolean varArgNull_id56Rew6rCKv6(@NotNull SNode __thisNode__, String... args) {
+  /*package*/ static boolean varArgNull_id56Rew6rCKv6(@NotNull SNode __thisNode__, String... args) {
     return args == null;
   }
-  private static boolean arrArgNull_id56Rew6rCKDf(@NotNull SNode __thisNode__, String[] args) {
+  /*package*/ static boolean arrArgNull_id56Rew6rCKDf(@NotNull SNode __thisNode__, String[] args) {
     return args == null;
   }
-  private static int varArgLen_id6yTVdLqTssn(@NotNull SNode __thisNode__, String... strs) {
+  /*package*/ static int varArgLen_id6yTVdLqTssn(@NotNull SNode __thisNode__, String... strs) {
     return strs.length;
   }
-  private static int varArgPrim_id56Rew6rDMfR(@NotNull SNode __thisNode__, int... strs) {
+  /*package*/ static int varArgPrim_id56Rew6rDMfR(@NotNull SNode __thisNode__, int... strs) {
     return strs.length;
   }
-  private static int varArgLen2_id6yTVdLqUPAs(@NotNull SNode __thisNode__, List<String[]>[][]... strs) {
+  /*package*/ static int varArgLen2_id6yTVdLqUPAs(@NotNull SNode __thisNode__, List<String[]>[][]... strs) {
     return strs.length;
   }
-  private static int varArgLen3_id6yTVdLqV1qL(@NotNull SNode __thisNode__, List<String[]>... strs) {
+  /*package*/ static int varArgLen3_id6yTVdLqV1qL(@NotNull SNode __thisNode__, List<String[]>... strs) {
     return strs.length;
   }
-  private static int varArgLen4_id6Jh0tXoS5Ab(@NotNull SNode __thisNode__, int... ints) {
+  /*package*/ static int varArgLen4_id6Jh0tXoS5Ab(@NotNull SNode __thisNode__, int... ints) {
     return ints.length;
   }
-  private static int arrayArg_id6yTVdLqT_bJ(@NotNull SNode __thisNode__, String[] args) {
+  /*package*/ static int arrayArg_id6yTVdLqT_bJ(@NotNull SNode __thisNode__, String[] args) {
     return args.length;
   }
-  private static int arrayArg1_id6Jh0tXoSfUR(@NotNull SNode __thisNode__, String[] args, String arg) {
+  /*package*/ static int arrayArg1_id6Jh0tXoSfUR(@NotNull SNode __thisNode__, String[] args, String arg) {
     return args.length;
   }
-  private static int arrayArg2_id6yTVdLqTFk5(@NotNull SNode __thisNode__, String[][] args) {
+  /*package*/ static int arrayArg2_id6yTVdLqTFk5(@NotNull SNode __thisNode__, String[][] args) {
     return args.length;
   }
-  private static int arrayArg3_id6Jh0tXoS5z0(@NotNull SNode __thisNode__, int[] args) {
+  /*package*/ static int arrayArg3_id6Jh0tXoS5z0(@NotNull SNode __thisNode__, int[] args) {
     return args.length;
   }
-  private static long longReturn_id20h3iLqUOkD(@NotNull SNode __thisNode__) {
+  /*package*/ static long longReturn_id20h3iLqUOkD(@NotNull SNode __thisNode__) {
     return 1;
   }
-  private static Integer boxing1_id95Aegakr_K(@NotNull SNode __thisNode__, int a) {
+  /*package*/ static Integer boxing1_id95Aegakr_K(@NotNull SNode __thisNode__, int a) {
     return a;
   }
-  private static int boxing2_id95AegakrCe(@NotNull SNode __thisNode__, Integer a) {
+  /*package*/ static int boxing2_id95AegakrCe(@NotNull SNode __thisNode__, Integer a) {
     return a;
   }
-  private static int conversion1_id3ZhVC3HVCz2(@NotNull SNode __thisNode__, float f) {
+  /*package*/ static int conversion1_id3ZhVC3HVCz2(@NotNull SNode __thisNode__, float f) {
     return (int) f;
   }
-  private static float conversion2_id6rioTyS5hVU(@NotNull SNode __thisNode__, int a) {
+  /*package*/ static float conversion2_id6rioTyS5hVU(@NotNull SNode __thisNode__, int a) {
     return a;
   }
-  private static Integer conversion3_id6rioTyS5i4m(@NotNull SNode __thisNode__, float f) {
+  /*package*/ static Integer conversion3_id6rioTyS5i4m(@NotNull SNode __thisNode__, float f) {
     return (int) f;
   }
-  private static Float conversion4_id6rioTyS5icW(@NotNull SNode __thisNode__, int a) {
+  /*package*/ static Float conversion4_id6rioTyS5icW(@NotNull SNode __thisNode__, int a) {
     return (float) a;
   }
-  private static int conversion5_id6rioTyS5ilG(@NotNull SNode __thisNode__, Float f) {
+  /*package*/ static int conversion5_id6rioTyS5ilG(@NotNull SNode __thisNode__, Float f) {
     return (int) ((float) f);
   }
-  private static float conversion6_id3HzlNjB44YK(@NotNull SNode __thisNode__, Integer a) {
+  /*package*/ static float conversion6_id3HzlNjB44YK(@NotNull SNode __thisNode__, Integer a) {
     return ((int) a);
   }
-  private static float conversion0_id6rioTyS5hAT(@NotNull SNode __thisNode__, int a) {
+  /*package*/ static float conversion0_id6rioTyS5hAT(@NotNull SNode __thisNode__, int a) {
     // TODO write test 
     return a;
   }
-  private static int conversion7_idjZ8XPdfKCq(@NotNull SNode __thisNode__) {
+  /*package*/ static int conversion7_idjZ8XPdfKCq(@NotNull SNode __thisNode__) {
     return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
   }
-  private static int conversion8_idjZ8XPdg3mY(@NotNull SNode __thisNode__) {
+  /*package*/ static int conversion8_idjZ8XPdg3mY(@NotNull SNode __thisNode__) {
     return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
   }
 

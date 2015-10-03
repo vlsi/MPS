@@ -32,7 +32,7 @@ public final class G__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id5mnatV0h_el(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static Object foo_id5mnatV0h_el(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
 

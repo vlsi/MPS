@@ -105,6 +105,11 @@ public final class IllegalBHDescriptor implements BHDescriptor {
     throw new IllegalBehaviorException(myConcept);
   }
 
+  @Override
+  public String toString() {
+    return "IllegalBHDescriptor[" + myConcept + "]";
+  }
+
   private static class IllegalBehaviorException extends RuntimeException {
     public IllegalBehaviorException(SAbstractConcept concept) {
       super("IllegalBehaviorDescriptor was created for the concept " + concept + " and which does not support the requested operation.");

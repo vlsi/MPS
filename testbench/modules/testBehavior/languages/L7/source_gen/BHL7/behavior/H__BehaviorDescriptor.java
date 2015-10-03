@@ -33,10 +33,10 @@ public final class H__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id3DBjXYFZcwm(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id3DBjXYFZcwm(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static int foo_id3DBjXYFZcwx(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id3DBjXYFZcwx(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE + 1;
   }
 

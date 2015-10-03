@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="BHL3.behavior.A_Behavior" file="A_Behavior.java">
-    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="BHL3.behavior.A__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -36,7 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL3.behavior.B_Behavior" file="B_Behavior.java">
-    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="BHL3.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -32,7 +32,7 @@ public final class I2__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id6EMTxOPT9nl(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo_id6EMTxOPT9nl(@NotNull SNode __thisNode__) {
     return TestResults.DIAMOND_I2;
   }
 

@@ -33,10 +33,10 @@ public final class B__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id6EMTxOPT5LT(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo_id6EMTxOPT5LT(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
-  private static Object foo2_id4hDSxB1Zrx8(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo2_id4hDSxB1Zrx8(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_CHILD;
   }
 

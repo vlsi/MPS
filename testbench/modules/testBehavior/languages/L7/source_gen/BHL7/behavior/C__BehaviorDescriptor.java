@@ -33,10 +33,10 @@ public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int argTypeResolve_id1hQsMcvxKQo(@NotNull SNode __thisNode__, Integer a) {
+  /*package*/ static int argTypeResolve_id1hQsMcvxKQo(@NotNull SNode __thisNode__, Integer a) {
     return TestResults.SPECIFIED_RETURN_VALUE;
   }
-  private static int argTypeResolve_id1hQsMcvxKXP(@NotNull SNode __thisNode__, Object o) {
+  /*package*/ static int argTypeResolve_id1hQsMcvxKXP(@NotNull SNode __thisNode__, Object o) {
     return TestResults.NOT_SPECIFIED_RETURN_VALUE;
   }
 

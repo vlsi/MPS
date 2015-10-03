@@ -11,12 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class A_Behavior {
   public static Object call_nonVirtual_8715627930483250634(SNode __thisNode__) {
-    return A__BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(__thisNode__);
+    return A__BehaviorDescriptor.nonVirtual_id7zO8mNAVlna(__thisNode__);
   }
   public static void call_testCommentGeneration_1418658182973994702(SNode __thisNode__) {
-    /*
-      int a = 0;
-      a = 1;
-    */
+    A__BehaviorDescriptor.testCommentGeneration_id1eK5xBtRrre(__thisNode__);
   }
 }

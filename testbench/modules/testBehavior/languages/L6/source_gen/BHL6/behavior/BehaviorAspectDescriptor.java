@@ -13,6 +13,10 @@ import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myH__BehaviorDescriptor = new H__BehaviorDescriptor();
+  private final BHDescriptor myJ__BehaviorDescriptor = new J__BehaviorDescriptor();
+  private final BHDescriptor myI1__BehaviorDescriptor = new I1__BehaviorDescriptor();
+  private final BHDescriptor myI2__BehaviorDescriptor = new I2__BehaviorDescriptor();
+  private final BHDescriptor myI__BehaviorDescriptor = new I__BehaviorDescriptor();
   private final BHDescriptor myA__BehaviorDescriptor = new A__BehaviorDescriptor();
   private final BHDescriptor myB__BehaviorDescriptor = new B__BehaviorDescriptor();
   private final BHDescriptor myC__BehaviorDescriptor = new C__BehaviorDescriptor();
@@ -24,15 +28,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[8];
+    myConceptBehaviorIds = new long[12];
     myConceptBehaviorIds[0] = 0x1206f7d464a22147L;
-    myConceptBehaviorIds[1] = 0x559729dec04606a7L;
-    myConceptBehaviorIds[2] = 0x559729dec0460fdaL;
-    myConceptBehaviorIds[3] = 0x559729dec0461c33L;
-    myConceptBehaviorIds[4] = 0x559729dec04623e8L;
-    myConceptBehaviorIds[5] = 0x559729dec0462797L;
-    myConceptBehaviorIds[6] = 0x559729dec0465379L;
-    myConceptBehaviorIds[7] = 0x559729dec0465442L;
+    myConceptBehaviorIds[1] = 0x13b01619ddde16fdL;
+    myConceptBehaviorIds[2] = 0x13b01619ddde175eL;
+    myConceptBehaviorIds[3] = 0x13b01619ddde1769L;
+    myConceptBehaviorIds[4] = 0x13b01619ddde1774L;
+    myConceptBehaviorIds[5] = 0x559729dec04606a7L;
+    myConceptBehaviorIds[6] = 0x559729dec0460fdaL;
+    myConceptBehaviorIds[7] = 0x559729dec0461c33L;
+    myConceptBehaviorIds[8] = 0x559729dec04623e8L;
+    myConceptBehaviorIds[9] = 0x559729dec0462797L;
+    myConceptBehaviorIds[10] = 0x559729dec0465379L;
+    myConceptBehaviorIds[11] = 0x559729dec0465442L;
   }
 
   @Deprecated
@@ -49,18 +57,26 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myH__BehaviorDescriptor;
       case 1:
-        return myA__BehaviorDescriptor;
+        return myJ__BehaviorDescriptor;
       case 2:
-        return myB__BehaviorDescriptor;
+        return myI1__BehaviorDescriptor;
       case 3:
-        return myC__BehaviorDescriptor;
+        return myI2__BehaviorDescriptor;
       case 4:
-        return myD__BehaviorDescriptor;
+        return myI__BehaviorDescriptor;
       case 5:
-        return myE__BehaviorDescriptor;
+        return myA__BehaviorDescriptor;
       case 6:
-        return myF__BehaviorDescriptor;
+        return myB__BehaviorDescriptor;
       case 7:
+        return myC__BehaviorDescriptor;
+      case 8:
+        return myD__BehaviorDescriptor;
+      case 9:
+        return myE__BehaviorDescriptor;
+      case 10:
+        return myF__BehaviorDescriptor;
+      case 11:
         return myG__BehaviorDescriptor;
       default:
         return null;

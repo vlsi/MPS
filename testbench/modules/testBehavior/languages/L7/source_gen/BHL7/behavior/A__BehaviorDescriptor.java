@@ -38,28 +38,28 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int nonVirtualMethod_id5mnatV0hAPp(@NotNull SNode __thisNode__) {
+  /*package*/ static int nonVirtualMethod_id5mnatV0hAPp(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
+  /*package*/ static Object virtualMethod_id5mnatV0hAPC(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static int staticMethod_id5mnatV0hAQH(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static int staticMethod_id5mnatV0hAQH(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static Object staticVirtualMethod_id5mnatV0hATt(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static Object staticVirtualMethod_id5mnatV0hATt(@NotNull SAbstractConcept __thisConcept__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
-  private static void justVoidReturnTypeMethod_id5mnatV0hB9t(@NotNull SNode __thisNode__) {
+  /*package*/ static void justVoidReturnTypeMethod_id5mnatV0hB9t(@NotNull SNode __thisNode__) {
   }
-  private static void justVoidReturnTypeMethod2_id4XEqvthVyKi(@NotNull SNode __thisNode__) {
+  /*package*/ static void justVoidReturnTypeMethod2_id4XEqvthVyKi(@NotNull SNode __thisNode__) {
     A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(__thisNode__.getConcept());
     A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(__thisNode__);
     A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(__thisNode__);
     SNode nodeA = null;
     A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$.invoke(nodeA);
   }
-  private static boolean boolMethod_idjZ8XPdgmd$(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean boolMethod_idjZ8XPdgmd$(@NotNull SNode __thisNode__) {
     return true;
   }
 

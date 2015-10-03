@@ -31,7 +31,7 @@ public final class I__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5jWiLvujMjC(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id5jWiLvujMjC(@NotNull SNode __thisNode__) {
     return 1;
   }
 

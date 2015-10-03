@@ -12,73 +12,72 @@ import java.util.List;
 @Deprecated
 public class A_Behavior {
   public static boolean call_varArgNull_5888238816390744006(SNode __thisNode__, String... args) {
-    return args == null;
+    return A__BehaviorDescriptor.varArgNull_id56Rew6rCKv6(__thisNode__, args);
   }
   public static boolean call_arrArgNull_5888238816390744655(SNode __thisNode__, String[] args) {
-    return args == null;
+    return A__BehaviorDescriptor.arrArgNull_id56Rew6rCKDf(__thisNode__, args);
   }
   public static int call_varArgLen_7546323081797945111(SNode __thisNode__, String... strs) {
-    return strs.length;
+    return A__BehaviorDescriptor.varArgLen_id6yTVdLqTssn(__thisNode__, strs);
   }
   public static int call_varArgPrim_5888238816391013367(SNode __thisNode__, int... strs) {
-    return strs.length;
+    return A__BehaviorDescriptor.varArgPrim_id56Rew6rDMfR(__thisNode__, strs);
   }
   public static int call_varArgLen2_7546323081798310300(SNode __thisNode__, List<String[]>[][]... strs) {
-    return strs.length;
+    return A__BehaviorDescriptor.varArgLen2_id6yTVdLqUPAs(__thisNode__, strs);
   }
   public static int call_varArgLen3_7546323081798358705(SNode __thisNode__, List<String[]>... strs) {
-    return strs.length;
+    return A__BehaviorDescriptor.varArgLen3_id6yTVdLqV1qL(__thisNode__, strs);
   }
   public static int call_varArgLen4_7768992890971249035(SNode __thisNode__, int... ints) {
-    return ints.length;
+    return A__BehaviorDescriptor.varArgLen4_id6Jh0tXoS5Ab(__thisNode__, ints);
   }
   public static int call_arrayArg_7546323081797980911(SNode __thisNode__, String[] args) {
-    return args.length;
+    return A__BehaviorDescriptor.arrayArg_id6yTVdLqT_bJ(__thisNode__, args);
   }
   public static int call_arrayArg1_7768992890971291319(SNode __thisNode__, String[] args, String arg) {
-    return args.length;
+    return A__BehaviorDescriptor.arrayArg1_id6Jh0tXoSfUR(__thisNode__, args, arg);
   }
   public static int call_arrayArg2_7546323081798006021(SNode __thisNode__, String[][] args) {
-    return args.length;
+    return A__BehaviorDescriptor.arrayArg2_id6yTVdLqTFk5(__thisNode__, args);
   }
   public static int call_arrayArg3_7768992890971248832(SNode __thisNode__, int[] args) {
-    return args.length;
+    return A__BehaviorDescriptor.arrayArg3_id6Jh0tXoS5z0(__thisNode__, args);
   }
   public static long call_longReturn_2310642567972865321(SNode __thisNode__) {
-    return 1;
+    return A__BehaviorDescriptor.longReturn_id20h3iLqUOkD(__thisNode__);
   }
   public static Integer call_boxing1_163705066661984624(SNode __thisNode__, int a) {
-    return a;
+    return A__BehaviorDescriptor.boxing1_id95Aegakr_K(__thisNode__, a);
   }
   public static int call_boxing2_163705066661984782(SNode __thisNode__, Integer a) {
-    return a;
+    return A__BehaviorDescriptor.boxing2_id95AegakrCe(__thisNode__, a);
   }
   public static int call_conversion1_4598718932037044418(SNode __thisNode__, float f) {
-    return (int) f;
+    return A__BehaviorDescriptor.conversion1_id3ZhVC3HVCz2(__thisNode__, f);
   }
   public static float call_conversion2_7409093844552457978(SNode __thisNode__, int a) {
-    return a;
+    return A__BehaviorDescriptor.conversion2_id6rioTyS5hVU(__thisNode__, a);
   }
   public static Integer call_conversion3_7409093844552458518(SNode __thisNode__, float f) {
-    return (int) f;
+    return A__BehaviorDescriptor.conversion3_id6rioTyS5i4m(__thisNode__, f);
   }
   public static Float call_conversion4_7409093844552459068(SNode __thisNode__, int a) {
-    return (float) a;
+    return A__BehaviorDescriptor.conversion4_id6rioTyS5icW(__thisNode__, a);
   }
   public static int call_conversion5_7409093844552459628(SNode __thisNode__, Float f) {
-    return (int) ((float) f);
+    return A__BehaviorDescriptor.conversion5_id6rioTyS5ilG(__thisNode__, f);
   }
   public static float call_conversion6_4279359955658624944(SNode __thisNode__, Integer a) {
-    return ((int) a);
+    return A__BehaviorDescriptor.conversion6_id3HzlNjB44YK(__thisNode__, a);
   }
   public static float call_conversion0_7409093844552456633(SNode __thisNode__, int a) {
-    // TODO write test 
-    return a;
+    return A__BehaviorDescriptor.conversion0_id6rioTyS5hAT(__thisNode__, a);
   }
   public static int call_conversion7_360045928603650586(SNode __thisNode__) {
-    return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
+    return A__BehaviorDescriptor.conversion7_idjZ8XPdfKCq(__thisNode__);
   }
   public static int call_conversion8_360045928603727294(SNode __thisNode__) {
-    return (int) ((float) A__BehaviorDescriptor.conversion0_id6rioTyS5hAT.invoke(__thisNode__, ((int) 1)));
+    return A__BehaviorDescriptor.conversion8_idjZ8XPdg3mY(__thisNode__);
   }
 }

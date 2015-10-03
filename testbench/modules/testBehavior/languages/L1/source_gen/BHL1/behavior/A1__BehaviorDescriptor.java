@@ -33,12 +33,12 @@ public final class A1__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void bar_id6sCTYS3h6cj(@NotNull SNode __thisNode__) {
+  /*package*/ static void bar_id6sCTYS3h6cj(@NotNull SNode __thisNode__) {
   }
-  private static float foo_id3ZhVC3HVRva(@NotNull SNode __thisNode__) {
+  /*package*/ static float foo_id3ZhVC3HVRva(@NotNull SNode __thisNode__) {
     return 1;
   }
-  private static int bar2_id3ZhVC3HVRvp(@NotNull SNode __thisNode__) {
+  /*package*/ static int bar2_id3ZhVC3HVRvp(@NotNull SNode __thisNode__) {
     return (int) ((float) A1__BehaviorDescriptor.foo_id3ZhVC3HVRva.invoke(__thisNode__));
   }
 

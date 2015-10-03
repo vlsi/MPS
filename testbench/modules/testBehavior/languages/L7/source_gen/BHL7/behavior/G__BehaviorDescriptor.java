@@ -32,10 +32,10 @@ public final class G__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5ivDaCiFPaC(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id5ivDaCiFPaC(@NotNull SNode __thisNode__) {
     return 2;
   }
-  private static int foo_id7lSf34kYg5f(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id7lSf34kYg5f(@NotNull SNode __thisNode__) {
     return 3;
   }
 

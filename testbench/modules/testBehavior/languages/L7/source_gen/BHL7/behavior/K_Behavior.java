@@ -11,12 +11,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class K_Behavior {
   public static Object call_foo_7406547389145840626(SNode __thisNode__, SNode node) {
-    return 1;
+    return K__BehaviorDescriptor.foo_id6r9lTJu8BJM(__thisNode__, node);
   }
   public static Object call_foo_7406547389145840812(SNode __thisNode__, SNode node) {
-    return 2;
+    return K__BehaviorDescriptor.foo_id6r9lTJu8BMG(__thisNode__, node);
   }
   public static Object call_foo_7406547389145840886(SNode __thisNode__, SNode node) {
-    return 3;
+    return K__BehaviorDescriptor.foo_id6r9lTJu8BNQ(__thisNode__, node);
   }
 }

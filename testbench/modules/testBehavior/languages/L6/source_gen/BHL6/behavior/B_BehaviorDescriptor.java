@@ -28,6 +28,9 @@ public class B_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Object virtual_foo6_1298998034136440079(SNode __thisNode__) {
     return null;
   }
+  public Object virtual_foo7_1418658182974009182(SNode __thisNode__) {
+    return null;
+  }
 
   @Override
   public String getConceptFqName() {

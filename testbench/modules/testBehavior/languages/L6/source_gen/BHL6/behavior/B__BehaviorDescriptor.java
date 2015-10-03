@@ -35,40 +35,44 @@ public final class B__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> foo4_id1olXtyGAKpB = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo4").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKpB").registry(REGISTRY).build();
   public static final SMethod<Integer> foo5_id1olXtyGAKsY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("foo5").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1olXtyGAKsY").registry(REGISTRY).build();
   public static final SMethod<Object> foo6_id186XXh$CxOf = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo6").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("186XXh$CxOf").registry(REGISTRY).build();
+  public static final SMethod<Object> foo7_id1eK5xBtRuXu = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo7").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1eK5xBtRuXu").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, foo3_id4RMBeRWcio1, privateMethod_id1olXtyGAKnt, foo4_id1olXtyGAKpB, foo5_id1olXtyGAKsY, foo6_id186XXh$CxOf);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(foo_id5mnatV0hwZQ, bar_id5mnatV0hx04, bar1_id5jWiLvujSC6, foo1_id5jWiLvujSmw, foo2_id5jWiLvujSzJ, foo3_id4RMBeRWcio1, privateMethod_id1olXtyGAKnt, foo4_id1olXtyGAKpB, foo5_id1olXtyGAKsY, foo6_id186XXh$CxOf, foo7_id1eK5xBtRuXu);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5mnatV0hwZQ(@NotNull SNode __thisNode__) {
-    return ((int) B__BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__));
+  /*package*/ static int foo_id5mnatV0hwZQ(@NotNull SNode __thisNode__) {
+    return B__BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
   }
-  private static int bar_id5mnatV0hx04(@NotNull SNode __thisNode__) {
+  /*package*/ static int bar_id5mnatV0hx04(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static int bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
+  /*package*/ static int bar1_id5jWiLvujSC6(@NotNull SNode __thisNode__) {
     return TestResults.INCORRECT_RETURN_VALUE;
   }
-  private static int foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo1_id5jWiLvujSmw(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static int foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo2_id5jWiLvujSzJ(@NotNull SNode __thisNode__) {
     return ((int) B__BehaviorDescriptor.bar1_id5jWiLvujSC6.invoke(__thisNode__));
   }
-  private static Integer foo3_id4RMBeRWcio1(@NotNull SNode __thisNode__) {
+  /*package*/ static Integer foo3_id4RMBeRWcio1(@NotNull SNode __thisNode__) {
     return Integer.valueOf(1);
   }
-  private static int privateMethod_id1olXtyGAKnt(@NotNull SNode __thisNode__, Object obj) {
+  /*package*/ static int privateMethod_id1olXtyGAKnt(@NotNull SNode __thisNode__, Object obj) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
-  private static int foo4_id1olXtyGAKpB(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo4_id1olXtyGAKpB(@NotNull SNode __thisNode__) {
     return ((int) B__BehaviorDescriptor.privateMethod_id1olXtyGAKnt.invoke(__thisNode__, null));
   }
-  private static int foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo5_id1olXtyGAKsY(@NotNull SNode __thisNode__) {
     return ((int) B__BehaviorDescriptor.privateMethod_id1olXtyGAKnt.invoke(__thisNode__, null));
   }
-  private static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
+    return TestResults.POLYMORPHIC_PARENT;
+  }
+  /*package*/ static Object foo7_id1eK5xBtRuXu(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
   }
 
@@ -108,6 +112,8 @@ public final class B__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Integer) foo5_id1olXtyGAKsY(node));
       case 9:
         return (T) ((Object) foo6_id186XXh$CxOf(node));
+      case 10:
+        return (T) ((Object) foo7_id1eK5xBtRuXu(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

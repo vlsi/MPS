@@ -13,6 +13,7 @@
     <classNode dependClassName="BHL6.behavior.C__BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.D__BehaviorDescriptor" />
     <classNode dependClassName="BHL6.behavior.E__BehaviorDescriptor" />
+    <classNode dependClassName="BHL6.behavior.I__BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.A__BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="BHL7.behavior.C__BehaviorDescriptor" />

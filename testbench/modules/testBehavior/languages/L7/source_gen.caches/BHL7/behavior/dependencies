@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="BHL7.behavior.A_Behavior" file="A_Behavior.java">
     <classNode dependClassName="BHL7.behavior.A__BehaviorDescriptor" />
-    <classNode dependClassName="UtilSolution.util.TestResults" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -43,7 +42,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL7.behavior.B_Behavior" file="B_Behavior.java">
-    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="BHL7.behavior.B__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
@@ -111,7 +110,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
   <dependency className="BHL7.behavior.C_Behavior" file="C_Behavior.java">
-    <classNode dependClassName="UtilSolution.util.TestResults" />
+    <classNode dependClassName="BHL7.behavior.C__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -421,6 +420,7 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="BHL7.behavior.K_Behavior" file="K_Behavior.java">
+    <classNode dependClassName="BHL7.behavior.K__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

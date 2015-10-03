@@ -33,13 +33,13 @@ public final class K__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id6r9lTJu8BJM(@NotNull SNode __thisNode__, SNode node) {
+  /*package*/ static Object foo_id6r9lTJu8BJM(@NotNull SNode __thisNode__, SNode node) {
     return 1;
   }
-  private static Object foo_id6r9lTJu8BMG(@NotNull SNode __thisNode__, SNode node) {
+  /*package*/ static Object foo_id6r9lTJu8BMG(@NotNull SNode __thisNode__, SNode node) {
     return 2;
   }
-  private static Object foo_id6r9lTJu8BNQ(@NotNull SNode __thisNode__, SNode node) {
+  /*package*/ static Object foo_id6r9lTJu8BNQ(@NotNull SNode __thisNode__, SNode node) {
     return 3;
   }
 

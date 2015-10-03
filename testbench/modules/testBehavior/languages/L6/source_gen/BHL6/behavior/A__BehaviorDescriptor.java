@@ -34,13 +34,13 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static int foo_id5mnatV0hwr3(@NotNull SNode __thisNode__) {
+  /*package*/ static int foo_id5mnatV0hwr3(@NotNull SNode __thisNode__) {
     return ((int) A__BehaviorDescriptor.bar_id5mnatV0hwrh.invoke(__thisNode__));
   }
-  private static int bar_id5mnatV0hwrh(@NotNull SNode __thisNode__) {
+  /*package*/ static int bar_id5mnatV0hwrh(@NotNull SNode __thisNode__) {
     return ((int) A__BehaviorDescriptor.bar2_id6LtvT_VTCe3.invoke(__thisNode__));
   }
-  private static int bar2_id6LtvT_VTCe3(@NotNull SNode __thisNode__) {
+  /*package*/ static int bar2_id6LtvT_VTCe3(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;
   }
 

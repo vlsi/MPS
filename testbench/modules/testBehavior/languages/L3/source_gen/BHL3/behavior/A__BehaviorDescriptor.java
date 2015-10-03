@@ -32,7 +32,7 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object foo_id6EMTxOPT7e1(@NotNull SNode __thisNode__) {
+  /*package*/ static Object foo_id6EMTxOPT7e1(@NotNull SNode __thisNode__) {
     return TestResults.NON_VIRTUAL_PARENT;
   }
 

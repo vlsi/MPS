@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper;
 import jetbrains.mps.lang.behavior.behavior.ConceptMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.behavior.ConceptBehavior__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
+import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodSuperCallUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.behavior.generator.template.util.Constants;
@@ -785,21 +785,21 @@ public class QueriesGenerated {
     return new MethodNameHelper(conceptMethodDeclaration).getGeneratedId();
   }
   public static Object propertyMacro_GetPropertyValue_4598718932037441823(final PropertyMacroContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     SNode behavior = ConceptMethodDeclaration__BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(methodDeclaration);
     return ConceptBehavior__BehaviorDescriptor.getBehaviorFqName_id66HNO1XTVFW.invoke(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_4598718932037441841(final PropertyMacroContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     return new MethodNameHelper(methodDeclaration).getGeneratedString();
   }
   public static Object propertyMacro_GetPropertyValue_4598718932037477700(final PropertyMacroContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     SNode behavior = ConceptMethodDeclaration__BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(methodDeclaration);
     return ConceptBehavior__BehaviorDescriptor.getBehaviorFqName_id66HNO1XTVFW.invoke(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_4598718932037477718(final PropertyMacroContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     return new MethodNameHelper(methodDeclaration).getGeneratedString();
   }
   public static Object propertyMacro_GetPropertyValue_4598718932037610685(final PropertyMacroContext _context) {
@@ -908,7 +908,7 @@ public class QueriesGenerated {
     throw new IllegalArgumentException();
   }
   public static Object referenceMacro_GetReferent_4598718932037535229(final ReferenceMacroContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     return SLinkOperations.getTarget(ConceptMethodDeclaration__BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(methodDeclaration), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
   }
   public static Object referenceMacro_GetReferent_4598718932037535269(final ReferenceMacroContext _context) {
@@ -916,7 +916,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(ConceptMethodDeclaration__BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(conceptMethodDeclaration), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
   }
   public static Object referenceMacro_GetReferent_4598718932037557218(final ReferenceMacroContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     return SLinkOperations.getTarget(ConceptMethodDeclaration__BehaviorDescriptor.getBehaviour_idhP3pnNF.invoke(methodDeclaration), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
   }
   public static Object referenceMacro_GetReferent_4598718932037557258(final ReferenceMacroContext _context) {
@@ -1064,7 +1064,8 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_8560627202335350387(final IfMacroContext _context) {
     SNode enclosingMethod = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false, false);
-    return ((enclosingMethod != null) && SPropertyOperations.getBoolean(enclosingMethod, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")));
+    assert (enclosingMethod != null);
+    return SPropertyOperations.getBoolean(enclosingMethod, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic"));
   }
   public static boolean ifMacro_Condition_4598718932037455074(final IfMacroContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode())), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
@@ -1969,7 +1970,7 @@ public class QueriesGenerated {
     return SNodeOperations.cast(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
   }
   public static SNode sourceNodeQuery_4598718932037441809(final SourceSubstituteMacroNodeContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")));
   }
   public static SNode sourceNodeQuery_4598718932037491100(final SourceSubstituteMacroNodeContext _context) {
@@ -1979,7 +1980,7 @@ public class QueriesGenerated {
     return SNodeOperations.cast(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(_context.getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
   }
   public static SNode sourceNodeQuery_4598718932037477686(final SourceSubstituteMacroNodeContext _context) {
-    SNode methodDeclaration = ConceptMethodCallUtils.getNearestOverridenMethod(_context.getNode());
+    SNode methodDeclaration = ConceptMethodSuperCallUtils.getNearestOverridenMethod(_context.getNode());
     return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")));
   }
   public static SNode sourceNodeQuery_4598718932037610638(final SourceSubstituteMacroNodeContext _context) {
