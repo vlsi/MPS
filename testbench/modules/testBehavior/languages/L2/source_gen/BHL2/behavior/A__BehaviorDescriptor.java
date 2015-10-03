@@ -28,8 +28,9 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Object> nonVirtual_id7zO8mNAVlna = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("nonVirtual").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7zO8mNAVlna").registry(REGISTRY).build();
   public static final SMethod<Object> foo_id6EMTxOPT5LT = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EMTxOPT5LT").registry(REGISTRY).build();
   public static final SMethod<Object> foo2_id4hDSxB1Zrx8 = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("foo2").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("4hDSxB1Zrx8").registry(REGISTRY).build();
+  public static final SMethod<Void> testCommentGeneration_id1eK5xBtRrre = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("testCommentGeneration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1eK5xBtRrre").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtual_id7zO8mNAVlna, foo_id6EMTxOPT5LT, foo2_id4hDSxB1Zrx8);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(nonVirtual_id7zO8mNAVlna, foo_id6EMTxOPT5LT, foo2_id4hDSxB1Zrx8, testCommentGeneration_id1eK5xBtRrre);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -42,6 +43,12 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
   }
   private static Object foo2_id4hDSxB1Zrx8(@NotNull SNode __thisNode__) {
     return TestResults.POLYMORPHIC_PARENT;
+  }
+  private static void testCommentGeneration_id1eK5xBtRrre(@NotNull SNode __thisNode__) {
+    /*
+      int a = 0;
+      a = 1;
+    */
   }
 
   /*package*/ A__BehaviorDescriptor() {
@@ -66,6 +73,9 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Object) foo_id6EMTxOPT5LT(node));
       case 2:
         return (T) ((Object) foo2_id4hDSxB1Zrx8(node));
+      case 3:
+        testCommentGeneration_id1eK5xBtRrre(node);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }
