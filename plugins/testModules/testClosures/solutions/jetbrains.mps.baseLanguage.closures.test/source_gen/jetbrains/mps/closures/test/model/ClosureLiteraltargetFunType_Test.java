@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor;
+import jetbrains.mps.lang.test.behavior.NodeCheckOperation_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.helper.Values;
 import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -26,6 +27,11 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
     this.runTest("jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test$TestBody", "test_throwsOrder", true);
   }
+  @Test
+  public void test_NodeErrorCheck3981396688773519576() throws Throwable {
+    this.initTest("${mps_home}", "r:115773d0-1d8a-4cef-9476-a19eb511afc3(jetbrains.mps.closures.test.model)", false);
+    this.runTest("jetbrains.mps.closures.test.model.ClosureLiteraltargetFunType_Test$TestBody", "test_NodeErrorCheck3981396688773519576", true);
+  }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_throwsOrder() throws Exception {
@@ -37,8 +43,12 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
       new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType_BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(funtype));
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_as9vne_c0a4a0());
     }
+    public void test_NodeErrorCheck3981396688773519576() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("3981396688773519576"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation_BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6374750171056867612"));
+    }
     public TemplateQueryContext getContext() {
-      return (TemplateQueryContext) new MockTemplateQueryContext();
+      return (TemplateQueryContext) ((TemplateQueryContext) new MockTemplateQueryContext());
     }
     public void assertLiteralTarget(TemplateQueryContext gencontext, SNode literal, SNode expected) {
       SNode target = (SNode) Values.LITERAL_TARGET.get(gencontext, literal);
