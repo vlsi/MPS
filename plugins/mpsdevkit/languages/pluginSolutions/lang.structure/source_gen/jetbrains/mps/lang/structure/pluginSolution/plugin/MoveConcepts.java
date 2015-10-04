@@ -99,30 +99,34 @@ public class MoveConcepts extends MoveNodesDefault {
       return;
     }
 
+    final Wrappers._T<SModel> targetModel = new Wrappers._T<SModel>();
+    final Wrappers._T<Language> targetLanguage = new Wrappers._T<Language>();
+    final Wrappers._T<Map<LanguageAspect, List<SNode>>> aspectsMap = new Wrappers._T<Map<LanguageAspect, List<SNode>>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SModel targetModel = targetModelRef.resolve(project.getRepository());
-        final Language targetLanguage = (Language) targetModel.getModule();
-        final Map<LanguageAspect, List<SNode>> aspectsMap = MoveConceptUtil.getAspectNodes(sourceLanguage, conceptsToMove);
+        targetModel.value = targetModelRef.resolve(project.getRepository());
+        targetLanguage.value = (Language) targetModel.value.getModule();
+        aspectsMap.value = MoveConceptUtil.getAspectNodes(sourceLanguage, conceptsToMove);
 
-        List<ToMoveItem> moveAspects = ListSequence.fromList(new ArrayList<ToMoveItem>());
-        ListSequence.fromList(moveAspects).addElement(new ToMoveItem(conceptsToMove, new NodeLocation.NodeLocationRoot(targetModel)));
-        for (LanguageAspect aspect : SetSequence.fromSet(MapSequence.fromMap(aspectsMap).keySet())) {
-          ListSequence.fromList(moveAspects).addElement(new ToMoveItem(MapSequence.fromMap(aspectsMap).get(aspect), new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage, aspect)));
-        }
-
-        MoveNodesDefault.doMove(project, moveAspects, new Runnable() {
-          public void run() {
-            for (IMapping<LanguageAspect, List<SNode>> aspectItem : MapSequence.fromMap(aspectsMap)) {
-              SModelOperations.validateLanguagesAndImports(aspectItem.key().get(targetLanguage), true, true);
-            }
-            sourceLanguage.addDependency(targetLanguage.getModuleReference(), false);
-            targetLanguage.addDependency(sourceLanguage.getModuleReference(), false);
-            MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage);
-          }
-        });
       }
     });
+
+    List<ToMoveItem> moveAspects = ListSequence.fromList(new ArrayList<ToMoveItem>());
+    ListSequence.fromList(moveAspects).addElement(new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationRoot(targetModel.value)));
+    for (LanguageAspect aspect : SetSequence.fromSet(MapSequence.fromMap(aspectsMap.value).keySet())) {
+      ListSequence.fromList(moveAspects).addElement(new ToMoveItem(MapSequence.fromMap(aspectsMap.value).get(aspect), new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage.value, aspect)));
+    }
+    MoveNodesDefault.doMove(project, moveAspects, new Runnable() {
+      public void run() {
+        for (IMapping<LanguageAspect, List<SNode>> aspectItem : MapSequence.fromMap(aspectsMap.value)) {
+          SModelOperations.validateLanguagesAndImports(aspectItem.key().get(targetLanguage.value), true, true);
+        }
+        sourceLanguage.addDependency(targetLanguage.value.getModuleReference(), false);
+        targetLanguage.value.addDependency(sourceLanguage.getModuleReference(), false);
+        MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage.value);
+      }
+    });
+
 
   }
 

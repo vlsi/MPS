@@ -159,6 +159,10 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     }).toListSequence());
 
+    if (selectedBuilders == null) {
+      return;
+    }
+
     final Wrappers._T<List<SNode>> nodesToMoveWithDescendants = new Wrappers._T<List<SNode>>();
     final Wrappers._T<SearchResults<SNode>> searchResults = new Wrappers._T<SearchResults<SNode>>();
 
@@ -188,6 +192,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         project.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             List<Boolean> shouldKeepOldNodes = ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(nodesToMoveWithDescendants.value).count()));
+            for (SNode i : ListSequence.fromList(nodesToMoveWithDescendants.value)) {
+              ListSequence.fromList(shouldKeepOldNodes).addElement(false);
+            }
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               List<Boolean> builderRequires = builder.shouldKeepOldNodes(ListSequence.fromList(nodesToMoveWithDescendants.value).select(new ISelector<SNode, Boolean>() {
                 public Boolean select(SNode it) {
@@ -198,7 +205,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
                   }).contains(it);
                 }
               }).toListSequence());
-              for (int i = 0; i < ListSequence.fromList(shouldKeepOldNodes).count(); i++) {
+              for (int i = 0; i < ListSequence.fromList(nodesToMoveWithDescendants.value).count(); i++) {
                 ListSequence.fromList(shouldKeepOldNodes).setElement(i, ListSequence.fromList(shouldKeepOldNodes).getElement(i) || (ListSequence.fromList(builderRequires).getElement(i)));
               }
             }
@@ -210,11 +217,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             }
 
             {
-              Iterator<SNode> oldNode_it = ListSequence.fromList(toMove).translate(new ITranslator2<ToMoveItem, SNode>() {
-                public Iterable<SNode> translate(ToMoveItem it) {
-                  return it.nodes();
-                }
-              }).iterator();
+              Iterator<SNode> oldNode_it = ListSequence.fromList(nodesToMoveWithDescendants.value).iterator();
               Iterator<Boolean> shoudKeep_it = ListSequence.fromList(shouldKeepOldNodes).iterator();
               SNode oldNode_var;
               boolean shoudKeep_var;
