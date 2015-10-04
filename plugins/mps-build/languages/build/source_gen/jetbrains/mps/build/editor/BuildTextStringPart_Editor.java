@@ -57,7 +57,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zen9g6_a0a(SNode node, EditorContext editorContext) {
-    return BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
+    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
   }
   private EditorCell createProperty_zen9g6_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -134,7 +134,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zen9g6_a0a_0(SNode node, EditorContext editorContext) {
-    return BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
+    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
   }
   private EditorCell createProperty_zen9g6_a0a_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);

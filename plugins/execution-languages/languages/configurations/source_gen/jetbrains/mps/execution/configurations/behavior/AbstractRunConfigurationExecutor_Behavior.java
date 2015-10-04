@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class AbstractRunConfigurationExecutor_Behavior {
   public static String call_getCanExecuteMethodName_7806358006983616236(SNode __thisNode__) {
-    return "canExecute";
+    return AbstractRunConfigurationExecutor__BehaviorDescriptor.getCanExecuteMethodName_id6LlKjXrMerG(__thisNode__);
   }
 }

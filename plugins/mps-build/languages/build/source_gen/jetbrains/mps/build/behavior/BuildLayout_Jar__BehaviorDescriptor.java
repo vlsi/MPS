@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.UnpackHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -24,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -33,22 +33,22 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f9aL, "jetbrains.mps.build.structure.BuildLayout_Jar");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(UnpackHelper.class, Iterable.class)));
-  public static final SMethod<Boolean> isFile_id1bWeed$oPZ2 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFile").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oPZ2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> exports_id5FtnUVJQES1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exports").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FtnUVJQES1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Object.class)));
-  /*package*/ static final SMethod<Boolean> scanInJarNodes_id5bqm540K$Gi = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("scanInJarNodes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("5bqm540K$Gi").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), Object.class)));
-  public static final SMethod<String> getApproximateName_id4RsV8qJDnFm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getApproximateName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RsV8qJDnFm").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getFileSetExtension_id5zIo$W4pFTK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFileSetExtension").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFTK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasPrefixAttribute_id5zIo$W4pFU0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasPrefixAttribute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFU0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasFileModeAttribute_id5zIo$W4pFU5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasFileModeAttribute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFU5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getExpectedExtension_id62K_yvYRytT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getExpectedExtension").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("62K_yvYRytT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> unpack_id6bGbH3Svq6g = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6bGbH3Svq6g").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""), SMethodBuilder.createJavaParameter(Iterable.class, ""));
+  public static final SMethod<Boolean> isFile_id1bWeed$oPZ2 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFile").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oPZ2").registry(REGISTRY).build();
+  public static final SMethod<Boolean> exports_id5FtnUVJQES1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exports").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FtnUVJQES1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""));
+  /*package*/ static final SMethod<Boolean> scanInJarNodes_id5bqm540K$Gi = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("scanInJarNodes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("5bqm540K$Gi").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Object.class, ""));
+  public static final SMethod<String> getApproximateName_id4RsV8qJDnFm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getApproximateName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RsV8qJDnFm").registry(REGISTRY).build();
+  public static final SMethod<String> getFileSetExtension_id5zIo$W4pFTK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFileSetExtension").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFTK").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasPrefixAttribute_id5zIo$W4pFU0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasPrefixAttribute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFU0").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasFileModeAttribute_id5zIo$W4pFU5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasFileModeAttribute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zIo$W4pFU5").registry(REGISTRY).build();
+  public static final SMethod<String> getExpectedExtension_id62K_yvYRytT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getExpectedExtension").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("62K_yvYRytT").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(unpack_id6bGbH3Svq6g, isFile_id1bWeed$oPZ2, exports_id5FtnUVJQES1, scanInJarNodes_id5bqm540K$Gi, getApproximateName_id4RsV8qJDnFm, getFileSetExtension_id5zIo$W4pFTK, hasPrefixAttribute_id5zIo$W4pFU0, hasFileModeAttribute_id5zIo$W4pFU5, getExpectedExtension_id62K_yvYRytT);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
+  /*package*/ static void unpack_id6bGbH3Svq6g(@NotNull SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(__thisNode__);
     String parentLocation = helper.contentLocations().get(parent);
     String zipLocation = parentLocation + "/" + BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), helper.getMacroHelper());
@@ -61,10 +61,10 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
       helper.contentLocations().put(__thisNode__, tempPath);
     }
   }
-  private static Boolean isFile_id1bWeed$oPZ2(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isFile_id1bWeed$oPZ2(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static Boolean exports_id5FtnUVJQES1(@NotNull SNode __thisNode__, Object object) {
+  /*package*/ static boolean exports_id5FtnUVJQES1(@NotNull SNode __thisNode__, Object object) {
     if (object instanceof SNode) {
       final SNode node = (SNode) object;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"))) {
@@ -74,38 +74,38 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
           }
         });
       } else {
-        return BuildLayout_Jar__BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, __thisNode__, object);
+        return ((boolean) BuildLayout_Jar__BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, __thisNode__, object));
       }
     }
     return false;
   }
-  private static Boolean scanInJarNodes_id5bqm540K$Gi(@NotNull final SNode __thisNode__, SNode container, final Object object) {
+  /*package*/ static boolean scanInJarNodes_id5bqm540K$Gi(@NotNull final SNode __thisNode__, SNode container, final Object object) {
     if (ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && BuildLayout_InJarNode__BehaviorDescriptor.reexportsFromJar_id5bqm540K$Gb.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), object);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")) && (boolean) BuildLayout_InJarNode__BehaviorDescriptor.reexportsFromJar_id5bqm540K$Gb.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L, "jetbrains.mps.build.structure.BuildLayout_InJarNode")), object);
       }
     })) {
       return true;
     }
     return ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) && BuildLayout_Jar__BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), object);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")) && ((boolean) BuildLayout_Jar__BehaviorDescriptor.scanInJarNodes_id5bqm540K$Gi.invoke(__thisNode__, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")), object));
       }
     });
   }
-  private static String getApproximateName_id4RsV8qJDnFm(@NotNull SNode __thisNode__) {
-    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
+  /*package*/ static String getApproximateName_id4RsV8qJDnFm(@NotNull SNode __thisNode__) {
+    return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null);
   }
-  private static String getFileSetExtension_id5zIo$W4pFTK(@NotNull SNode __thisNode__) {
+  /*package*/ static String getFileSetExtension_id5zIo$W4pFTK(@NotNull SNode __thisNode__) {
     return "zipfileset";
   }
-  private static Boolean hasPrefixAttribute_id5zIo$W4pFU0(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasPrefixAttribute_id5zIo$W4pFU0(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static Boolean hasFileModeAttribute_id5zIo$W4pFU5(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasFileModeAttribute_id5zIo$W4pFU5(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static String getExpectedExtension_id62K_yvYRytT(@NotNull SNode __thisNode__) {
+  /*package*/ static String getExpectedExtension_id62K_yvYRytT(@NotNull SNode __thisNode__) {
     return ".jar";
   }
 
@@ -114,12 +114,12 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -129,28 +129,28 @@ public final class BuildLayout_Jar__BehaviorDescriptor extends BaseBHDescriptor 
         unpack_id6bGbH3Svq6g(node, (UnpackHelper) parameters[0], (Iterable<Object>) parameters[1]);
         return null;
       case 1:
-        return (T) isFile_id1bWeed$oPZ2(node);
+        return (T) ((Boolean) isFile_id1bWeed$oPZ2(node));
       case 2:
-        return (T) exports_id5FtnUVJQES1(node, (Object) parameters[0]);
+        return (T) ((Boolean) exports_id5FtnUVJQES1(node, (Object) parameters[0]));
       case 3:
-        return (T) scanInJarNodes_id5bqm540K$Gi(node, (SNode) parameters[0], (Object) parameters[1]);
+        return (T) ((Boolean) scanInJarNodes_id5bqm540K$Gi(node, (SNode) parameters[0], (Object) parameters[1]));
       case 4:
-        return (T) getApproximateName_id4RsV8qJDnFm(node);
+        return (T) ((String) getApproximateName_id4RsV8qJDnFm(node));
       case 5:
-        return (T) getFileSetExtension_id5zIo$W4pFTK(node);
+        return (T) ((String) getFileSetExtension_id5zIo$W4pFTK(node));
       case 6:
-        return (T) hasPrefixAttribute_id5zIo$W4pFU0(node);
+        return (T) ((Boolean) hasPrefixAttribute_id5zIo$W4pFU0(node));
       case 7:
-        return (T) hasFileModeAttribute_id5zIo$W4pFU5(node);
+        return (T) ((Boolean) hasFileModeAttribute_id5zIo$W4pFU5(node));
       case 8:
-        return (T) getExpectedExtension_id62K_yvYRytT(node);
+        return (T) ((String) getExpectedExtension_id62K_yvYRytT(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

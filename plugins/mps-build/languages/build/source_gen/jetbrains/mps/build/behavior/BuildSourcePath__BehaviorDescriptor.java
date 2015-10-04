@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.MacroHelper;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,11 +26,11 @@ public final class BuildSourcePath__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getLocalPath_id4Kip2_918Y$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLocalPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918Y$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<String> getRelativePath_id4Kip2_918YF = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRelativePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918YF").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getAntPath_id7ro1ZztyOh5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAntPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7ro1ZztyOh5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<String> getLastSegment_id1bWeed$oUb5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLastSegment").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oUb5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(MacroHelper.class)));
-  public static final SMethod<SNode> getParent_id7wpYgMyTXsR = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7wpYgMyTXsR").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getLocalPath_id4Kip2_918Y$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLocalPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918Y$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<String> getRelativePath_id4Kip2_918YF = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRelativePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918YF").registry(REGISTRY).build();
+  public static final SMethod<String> getAntPath_id7ro1ZztyOh5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAntPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7ro1ZztyOh5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<String> getLastSegment_id1bWeed$oUb5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLastSegment").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oUb5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MacroHelper.class, ""));
+  public static final SMethod<SNode> getParent_id7wpYgMyTXsR = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7wpYgMyTXsR").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLocalPath_id4Kip2_918Y$, getRelativePath_id4Kip2_918YF, getAntPath_id7ro1ZztyOh5, getLastSegment_id1bWeed$oUb5, getParent_id7wpYgMyTXsR);
 
@@ -39,19 +38,19 @@ public final class BuildSourcePath__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Nullable
-  private static String getLocalPath_id4Kip2_918Y$(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getLocalPath_id4Kip2_918Y$(@NotNull SNode __thisNode__, Context context) {
     return null;
   }
-  private static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
     return null;
   }
-  private static String getAntPath_id7ro1ZztyOh5(@NotNull SNode __thisNode__, Context context) {
-    return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__);
+  /*package*/ static String getAntPath_id7ro1ZztyOh5(@NotNull SNode __thisNode__, Context context) {
+    return ((String) BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__));
   }
-  private static String getLastSegment_id1bWeed$oUb5(@NotNull SNode __thisNode__, MacroHelper helper) {
+  /*package*/ static String getLastSegment_id1bWeed$oUb5(@NotNull SNode __thisNode__, MacroHelper helper) {
     return null;
   }
-  private static SNode getParent_id7wpYgMyTXsR(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getParent_id7wpYgMyTXsR(@NotNull SNode __thisNode__) {
     return null;
   }
 
@@ -60,34 +59,34 @@ public final class BuildSourcePath__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getLocalPath_id4Kip2_918Y$(node, (Context) parameters[0]);
+        return (T) ((String) getLocalPath_id4Kip2_918Y$(node, (Context) parameters[0]));
       case 1:
-        return (T) getRelativePath_id4Kip2_918YF(node);
+        return (T) ((String) getRelativePath_id4Kip2_918YF(node));
       case 2:
-        return (T) getAntPath_id7ro1ZztyOh5(node, (Context) parameters[0]);
+        return (T) ((String) getAntPath_id7ro1ZztyOh5(node, (Context) parameters[0]));
       case 3:
-        return (T) getLastSegment_id1bWeed$oUb5(node, (MacroHelper) parameters[0]);
+        return (T) ((String) getLastSegment_id1bWeed$oUb5(node, (MacroHelper) parameters[0]));
       case 4:
-        return (T) getParent_id7wpYgMyTXsR(node);
+        return (T) ((SNode) getParent_id7wpYgMyTXsR(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

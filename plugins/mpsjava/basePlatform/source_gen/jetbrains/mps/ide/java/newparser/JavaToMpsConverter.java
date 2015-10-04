@@ -872,7 +872,7 @@ public class JavaToMpsConverter {
     final List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")))));
+      ListSequence.fromList(refs).addSequence(ListSequence.fromList(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")))));
       ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(it)));
@@ -1008,7 +1008,7 @@ public class JavaToMpsConverter {
   public static Iterable<SReference> deepReferences(SNode node) {
 
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
-    ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(node)));
+    ListSequence.fromList(refs).addSequence(ListSequence.fromList(SNodeOperations.getReferences(node)));
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(child)));
     }

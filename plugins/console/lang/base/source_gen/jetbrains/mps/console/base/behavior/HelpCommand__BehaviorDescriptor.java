@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import java.util.List;
@@ -39,6 +38,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -47,28 +47,28 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, "jetbrains.mps.console.base.structure.HelpCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> doExecute_id2SpVAIqougW = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("doExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2SpVAIqougW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(ConsoleContext.class, ConsoleStream.class)));
-  public static final SMethod<String> getShortHelp_idqgIopNa9Hb = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getShortelp").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("qgIopNa9Hb").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getHelpPage_id64VftqEen2L = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getHelpPage").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("64VftqEen2L").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> doExecute_id2SpVAIqougW = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("doExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2SpVAIqougW").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(ConsoleContext.class, ""), SMethodBuilder.createJavaParameter(ConsoleStream.class, ""));
+  public static final SMethod<String> getShortHelp_idqgIopNa9Hb = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getShortelp").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("qgIopNa9Hb").registry(REGISTRY).build();
+  public static final SMethod<String> getHelpPage_id64VftqEen2L = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getHelpPage").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("64VftqEen2L").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(doExecute_id2SpVAIqougW, getShortHelp_idqgIopNa9Hb, getHelpPage_id64VftqEen2L);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
+  /*package*/ static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")) == null)) {
       Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider").getDeclarationNode(), ((BaseConsoleTab) context.getOutputWindow()).getConsoleModel())).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SNodeOperations.asNode(it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && AbstractConceptDeclaration__BehaviorDescriptor.isDefaultSubstitutable_id6spw4TQeyqh.invoke(SNodeOperations.asNode(it));
+          return SNodeOperations.isInstanceOf(SNodeOperations.asNode(it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isDefaultSubstitutable_id6spw4TQeyqh.invoke(SNodeOperations.asNode(it));
         }
       }).sort(new ISelector<SNode, String>() {
         public String select(SNode it) {
-          return HelpProvider__BehaviorDescriptor.getGroup_id60B$833p9Uj.invoke(SNodeOperations.asSConcept(it));
+          return (String) HelpProvider__BehaviorDescriptor.getGroup_id60B$833p9Uj.invoke(SNodeOperations.asSConcept(it));
         }
       }, true).alsoSort(new ISelector<SNode, String>() {
         public String select(SNode it) {
-          return HelpProvider__BehaviorDescriptor.getKind_id64VftqEenf4.invoke(SNodeOperations.asSConcept(it));
+          return (String) HelpProvider__BehaviorDescriptor.getKind_id64VftqEenf4.invoke(SNodeOperations.asSConcept(it));
         }
       }, true).alsoSort(new ISelector<SNode, String>() {
         public String select(SNode it) {
@@ -132,7 +132,7 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
       }
       console.addText("Constructions available in console:\n\n");
       console.addText(output.toString());
-    } else if (AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command")), SNodeOperations.getNode("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "473081947981012231"))) {
+    } else if ((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command")), SNodeOperations.getNode("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "473081947981012231"))) {
       String helpPage;
       try {
         SNode chp = (SNode) (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command"));
@@ -147,10 +147,10 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
   }
-  private static String getShortHelp_idqgIopNa9Hb(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static String getShortHelp_idqgIopNa9Hb(@NotNull SAbstractConcept __thisConcept__) {
     return "display this help or a help page for a specific command";
   }
-  private static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
     return "When called without any arguments, lists all available commands with their brief description.\nWhen a command is specified, help specific to that command is printed.";
   }
 
@@ -159,12 +159,12 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -179,16 +179,16 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 1:
-        return (T) getShortHelp_idqgIopNa9Hb(concept);
+        return (T) ((String) getShortHelp_idqgIopNa9Hb(concept));
       case 2:
-        return (T) getHelpPage_id64VftqEen2L(concept);
+        return (T) ((String) getHelpPage_id64VftqEen2L(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

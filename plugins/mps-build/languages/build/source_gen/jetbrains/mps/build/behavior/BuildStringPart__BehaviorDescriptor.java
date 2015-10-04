@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.MacroHelper;
 import java.util.List;
 import java.util.Arrays;
@@ -20,35 +19,36 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL, "jetbrains.mps.build.structure.BuildStringPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> punctuationLeft_id4qU2HB9e$4N = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("punctuationLeft").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qU2HB9e$4N").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isFirstPositionAllowed_idyEtdY40p7m = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFirstPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40p7m").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isLastPositionAllowed_idyEtdY40wNH = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLastPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40wNH").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getText_id3NagsOfTq4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3NagsOfTq4Y").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(MacroHelper.class)));
+  public static final SMethod<Boolean> punctuationLeft_id4qU2HB9e$4N = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("punctuationLeft").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qU2HB9e$4N").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isFirstPositionAllowed_idyEtdY40p7m = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFirstPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40p7m").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isLastPositionAllowed_idyEtdY40wNH = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLastPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40wNH").registry(REGISTRY).build();
+  public static final SMethod<String> getText_id3NagsOfTq4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3NagsOfTq4Y").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MacroHelper.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(punctuationLeft_id4qU2HB9e$4N, isFirstPositionAllowed_idyEtdY40p7m, isLastPositionAllowed_idyEtdY40wNH, getText_id3NagsOfTq4Y);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean punctuationLeft_id4qU2HB9e$4N(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean punctuationLeft_id4qU2HB9e$4N(@NotNull SNode __thisNode__) {
     if (SNodeOperations.getIndexInParent(__thisNode__) == 0) {
       return false;
     }
     return eq_5tsa61_a0b0m(SNodeOperations.getConceptDeclaration(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConceptDeclaration(__thisNode__));
   }
-  private static Boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static Boolean isLastPositionAllowed_idyEtdY40wNH(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isLastPositionAllowed_idyEtdY40wNH(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static String getText_id3NagsOfTq4Y(@NotNull SNode __thisNode__, MacroHelper helper) {
+  /*package*/ static String getText_id3NagsOfTq4Y(@NotNull SNode __thisNode__, MacroHelper helper) {
     return "";
   }
 
@@ -57,32 +57,32 @@ public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) punctuationLeft_id4qU2HB9e$4N(node);
+        return (T) ((Boolean) punctuationLeft_id4qU2HB9e$4N(node));
       case 1:
-        return (T) isFirstPositionAllowed_idyEtdY40p7m(node);
+        return (T) ((Boolean) isFirstPositionAllowed_idyEtdY40p7m(node));
       case 2:
-        return (T) isLastPositionAllowed_idyEtdY40wNH(node);
+        return (T) ((Boolean) isLastPositionAllowed_idyEtdY40wNH(node));
       case 3:
-        return (T) getText_id3NagsOfTq4Y(node, (MacroHelper) parameters[0]);
+        return (T) ((String) getText_id3NagsOfTq4Y(node, (MacroHelper) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

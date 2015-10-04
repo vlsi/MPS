@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import java.util.Arrays;
@@ -23,27 +22,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Project.class)));
-  public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
+  public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, Project project) {
+  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, Project project) {
     StringSelection contents = new StringSelection(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")));
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
     final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project);
     dialog.show();
   }
-  private static Boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")) != null;
   }
 
@@ -52,12 +52,12 @@ public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -67,14 +67,14 @@ public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor 
         execute_id7oNS25df64x(node, (Project) parameters[0]);
         return null;
       case 1:
-        return (T) canExecute_id2QdC0h7dh1h(node);
+        return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

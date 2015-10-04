@@ -52,7 +52,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_ayjduv_a1a0(EditorContext editorContext, SNode node) {
-    return !(BuildStringPart__BehaviorDescriptor.isFirstPositionAllowed_idyEtdY40p7m.invoke(node));
+    return !((boolean) BuildStringPart__BehaviorDescriptor.isFirstPositionAllowed_idyEtdY40p7m.invoke(node));
   }
   private EditorCell createRefCell_ayjduv_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
@@ -118,6 +118,6 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_ayjduv_a1c0(EditorContext editorContext, SNode node) {
-    return !(BuildStringPart__BehaviorDescriptor.isLastPositionAllowed_idyEtdY40wNH.invoke(node));
+    return !((boolean) BuildStringPart__BehaviorDescriptor.isLastPositionAllowed_idyEtdY40wNH.invoke(node));
   }
 }

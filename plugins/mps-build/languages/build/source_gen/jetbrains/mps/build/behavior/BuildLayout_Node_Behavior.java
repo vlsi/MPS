@@ -4,8 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
  * Will be removed after 3.3
@@ -14,10 +12,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public class BuildLayout_Node_Behavior {
   public static void call_appendName_internal_1368030936106708110(SAbstractConcept __thisConcept__, SNode node, StringBuilder sb) {
-    SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L, "jetbrains.mps.build.structure.BuildLayout_PathElement"));
-    if (parent != null) {
-      BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node").getDeclarationNode()), parent, sb);
-    }
-    BuildLayout_PathElement__BehaviorDescriptor.appendName_id1bWeed$ownT.invoke(node, parent, sb);
+    BuildLayout_Node__BehaviorDescriptor.appendName_internal_id1bWeed$oEMe(__thisConcept__, node, sb);
   }
 }

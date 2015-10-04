@@ -51,7 +51,7 @@ public class Slot_tabular_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ggt0rc_a0a(SNode node, EditorContext editorContext) {
-    return Slot__BehaviorDescriptor.isCustomizing_idNU25Mr1t4q.invoke(node);
+    return (boolean) Slot__BehaviorDescriptor.isCustomizing_idNU25Mr1t4q.invoke(node);
   }
   private EditorCell createProperty_ggt0rc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);

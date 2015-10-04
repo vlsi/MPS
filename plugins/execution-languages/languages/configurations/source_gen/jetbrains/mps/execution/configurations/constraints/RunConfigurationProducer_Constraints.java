@@ -27,7 +27,7 @@ public class RunConfigurationProducer_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return RunConfigurationProducer__BehaviorDescriptor.getDisplayedName_id3MnZbusxbtz.invoke(node);
+        return (String) RunConfigurationProducer__BehaviorDescriptor.getDisplayedName_id3MnZbusxbtz.invoke(node);
       }
     });
     return properties;

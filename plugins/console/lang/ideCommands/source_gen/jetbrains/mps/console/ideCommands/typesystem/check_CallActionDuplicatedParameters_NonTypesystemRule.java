@@ -27,7 +27,7 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
     final Iterable<SNode> parameters = SLinkOperations.getChildren(callAction, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, 0x4d7759afce9587afL, "parameter"));
     Iterable<SNode> parameterFields = Sequence.fromIterable(parameters).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return ActionCallParameter__BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(it);
+        return (SNode) ActionCallParameter__BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(it);
       }
     }).distinct();
     Iterable<? extends Iterable<SNode>> grouped = Sequence.fromIterable(parameterFields).select(new ISelector<SNode, ISequence<SNode>>() {

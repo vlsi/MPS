@@ -165,7 +165,7 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_xi87ym_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BuildSolutionRunnerAspect__BehaviorDescriptor.getClassName_id1aYLt$9dW4N.invoke(node);
+        return (String) BuildSolutionRunnerAspect__BehaviorDescriptor.getClassName_id1aYLt$9dW4N.invoke(node);
       }
       public void setText(String s) {
       }

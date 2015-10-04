@@ -4,10 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
  * Will be removed after 3.3
@@ -16,6 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class BuildSource_JavaContentFolder_Behavior {
   public static String call_getAntPath_2389279258816946193(SNode __thisNode__, Context context) {
-    return BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, 0x668c6cfbafacdc53L, "basePath")), context) + "/" + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, 0x263ae7d4319546c7L, "relativePath"));
+    return BuildSource_JavaContentFolder__BehaviorDescriptor.getAntPath_id24CrdeMZy0h(__thisNode__, context);
   }
 }

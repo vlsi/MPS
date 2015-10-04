@@ -4,9 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.MacroHelper;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
  * Will be removed after 3.3
@@ -15,10 +12,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public class BuildString_Behavior {
   public static String call_getText_4380385936562005550(SNode __thisNode__, MacroHelper helper) {
-    StringBuilder sb = new StringBuilder();
-    for (SNode n : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, 0x440d7ea3b68cba4bL, "parts")))) {
-      sb.append(BuildStringPart__BehaviorDescriptor.getText_id3NagsOfTq4Y.invoke(n, helper));
-    }
-    return sb.toString();
+    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI(__thisNode__, helper);
   }
 }

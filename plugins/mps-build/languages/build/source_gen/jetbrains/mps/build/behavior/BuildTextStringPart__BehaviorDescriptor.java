@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.MacroHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -28,19 +27,19 @@ public final class BuildTextStringPart__BehaviorDescriptor extends BaseBHDescrip
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getText_id3NagsOfTq4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3NagsOfTq4Y").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(MacroHelper.class)));
-  public static final SMethod<SNode> getContainer_id5hFYqIiYHaE = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContainer").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5hFYqIiYHaE").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getText_id3NagsOfTq4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3NagsOfTq4Y").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MacroHelper.class, ""));
+  public static final SMethod<SNode> getContainer_id5hFYqIiYHaE = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContainer").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5hFYqIiYHaE").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getText_id3NagsOfTq4Y, getContainer_id5hFYqIiYHaE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getText_id3NagsOfTq4Y(@NotNull SNode __thisNode__, MacroHelper helper) {
+  /*package*/ static String getText_id3NagsOfTq4Y(@NotNull SNode __thisNode__, MacroHelper helper) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, 0x440d7ea3b68c4d56L, "text"));
   }
   @Nullable
-  private static SNode getContainer_id5hFYqIiYHaE(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getContainer_id5hFYqIiYHaE(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"))) {
       return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"));
     }
@@ -52,28 +51,28 @@ public final class BuildTextStringPart__BehaviorDescriptor extends BaseBHDescrip
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getText_id3NagsOfTq4Y(node, (MacroHelper) parameters[0]);
+        return (T) ((String) getText_id3NagsOfTq4Y(node, (MacroHelper) parameters[0]));
       case 1:
-        return (T) getContainer_id5hFYqIiYHaE(node);
+        return (T) ((SNode) getContainer_id5hFYqIiYHaE(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

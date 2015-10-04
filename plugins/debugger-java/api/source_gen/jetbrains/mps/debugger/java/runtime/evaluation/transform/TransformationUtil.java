@@ -283,7 +283,7 @@ public class TransformationUtil {
       } else {
         SNode rootClassifier = classifier;
         String suffix = "";
-        while (((Boolean) BHReflection.invoke(rootClassifier, SMethodTrimmedId.create("isInner", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "sWroEc0xXl")))) {
+        while (((boolean) (Boolean) BHReflection.invoke(rootClassifier, SMethodTrimmedId.create("isInner", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), "sWroEc0xXl")))) {
           suffix = "$" + SPropertyOperations.getString(rootClassifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
           rootClassifier = SNodeOperations.cast(SNodeOperations.getParent(rootClassifier), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }

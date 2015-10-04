@@ -4,13 +4,6 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 
 /**
  * Will be removed after 3.3
@@ -19,23 +12,13 @@ import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescri
 @Deprecated
 public class RunConfiguration_Behavior {
   @Nullable
-  public static SNode call_getExecutor_3754890006475713427(final SNode __thisNode__) {
-    return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"))).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration")) == __thisNode__;
-      }
-    });
+  public static SNode call_getExecutor_3754890006475713427(SNode __thisNode__) {
+    return RunConfiguration__BehaviorDescriptor.getExecutor_id3gs394eDyIj(__thisNode__);
   }
   public static boolean call_isForeign_4042467058397504911(SNode __thisNode__) {
-    if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind")) == null)) {
-      return false;
-    }
-    return neq_g3syr7_a0b0b(SNodeOperations.getModel(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind"))), SNodeOperations.getModel(__thisNode__));
+    return RunConfiguration__BehaviorDescriptor.isForeign_id3wpI_WC06mf(__thisNode__);
   }
   public static String call_getGeneratedFactoryName_2256484787298832736(SNode __thisNode__) {
-    return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_Factory";
-  }
-  private static boolean neq_g3syr7_a0b0b(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
+    return RunConfiguration__BehaviorDescriptor.getGeneratedFactoryName_id1XgDflG1h5w(__thisNode__);
   }
 }

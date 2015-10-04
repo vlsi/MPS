@@ -19,7 +19,7 @@ public class check_BuildLayout_JarManifest_NonTypesystemRule extends AbstractNon
   public check_BuildLayout_JarManifest_NonTypesystemRule() {
   }
   public void applyRule(final SNode manifest, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (BuildLayout_JarManifest__BehaviorDescriptor.isInJar_id5V$ev8kKReX.invoke(manifest) && (SLinkOperations.getTarget(manifest, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, 0x67af4eb97391dfc1L, "name")) != null)) {
+    if ((boolean) BuildLayout_JarManifest__BehaviorDescriptor.isInJar_id5V$ev8kKReX.invoke(manifest) && (SLinkOperations.getTarget(manifest, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, 0x67af4eb97391dfc1L, "name")) != null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(manifest, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, 0x67af4eb97391dfc1L, "name")), "Jar manifest name will be ignored.", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "8990969321156011416", null, errorTarget);

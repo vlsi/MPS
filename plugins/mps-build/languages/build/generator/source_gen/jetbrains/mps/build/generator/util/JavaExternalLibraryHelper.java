@@ -37,7 +37,7 @@ public class JavaExternalLibraryHelper {
     List<SNode> artifacts = new ArrayList<SNode>();
     List<SNode> jarContainers = new ArrayList<SNode>();
 
-    if (BuildSource_JavaLibrary__BehaviorDescriptor.canExportByParts_id4RsV8qJGJnM.invoke(library)) {
+    if ((boolean) BuildSource_JavaLibrary__BehaviorDescriptor.canExportByParts_id4RsV8qJGJnM.invoke(library)) {
       for (SNode element : ListSequence.fromList(SLinkOperations.getChildren(library, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")))) {
         SNode jcp = SNodeOperations.as(element, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"));
         if ((jcp == null)) {

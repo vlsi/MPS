@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -23,32 +22,33 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class StartProcessHandlerStatement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getComponent_id1ovLDatOk_Z = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getComponent").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1ovLDatOk_Z").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getDispose_id1ovLDatOkDx = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDispose").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1ovLDatOkDx").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getListener_id1ovLDatOkE5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getListener").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1ovLDatOkE5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  /*package*/ static final SMethod<SNode> getComponentByName_id1ovLDatOkEK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getComponentByName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("1ovLDatOkEK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
+  public static final SMethod<SNode> getComponent_id1ovLDatOk_Z = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getComponent").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1ovLDatOk_Z").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDispose_id1ovLDatOkDx = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDispose").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1ovLDatOkDx").registry(REGISTRY).build();
+  public static final SMethod<SNode> getListener_id1ovLDatOkE5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getListener").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1ovLDatOkE5").registry(REGISTRY).build();
+  /*package*/ static final SMethod<SNode> getComponentByName_id1ovLDatOkEK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getComponentByName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("1ovLDatOkEK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getComponent_id1ovLDatOk_Z, getDispose_id1ovLDatOkDx, getListener_id1ovLDatOkE5, getComponentByName_id1ovLDatOkEK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode getComponent_id1ovLDatOk_Z(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getComponent_id1ovLDatOk_Z(@NotNull SNode __thisNode__) {
     return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "component");
   }
-  private static SNode getDispose_id1ovLDatOkDx(@NotNull SNode __thisNode__) {
-    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "dispose");
+  /*package*/ static SNode getDispose_id1ovLDatOkDx(@NotNull SNode __thisNode__) {
+    return ((SNode) StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "dispose"));
   }
-  private static SNode getListener_id1ovLDatOkE5(@NotNull SNode __thisNode__) {
-    return StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "listener");
+  /*package*/ static SNode getListener_id1ovLDatOkE5(@NotNull SNode __thisNode__) {
+    return ((SNode) StartProcessHandlerStatement__BehaviorDescriptor.getComponentByName_id1ovLDatOkEK.invoke(__thisNode__, "listener"));
   }
-  private static SNode getComponentByName_id1ovLDatOkEK(@NotNull SNode __thisNode__, final String name) {
+  /*package*/ static SNode getComponentByName_id1ovLDatOkEK(@NotNull SNode __thisNode__, final String name) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, 0x161fc6929dcff3a0L, "tool")) == null)) {
       return null;
     }
@@ -68,32 +68,32 @@ public final class StartProcessHandlerStatement__BehaviorDescriptor extends Base
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getComponent_id1ovLDatOk_Z(node);
+        return (T) ((SNode) getComponent_id1ovLDatOk_Z(node));
       case 1:
-        return (T) getDispose_id1ovLDatOkDx(node);
+        return (T) ((SNode) getDispose_id1ovLDatOkDx(node));
       case 2:
-        return (T) getListener_id1ovLDatOkE5(node);
+        return (T) ((SNode) getListener_id1ovLDatOkE5(node));
       case 3:
-        return (T) getComponentByName_id1ovLDatOkEK(node, (String) parameters[0]);
+        return (T) ((SNode) getComponentByName_id1ovLDatOkEK(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

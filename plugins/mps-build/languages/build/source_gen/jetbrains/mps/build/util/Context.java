@@ -82,7 +82,7 @@ public class Context {
     if ((buildProject == null)) {
       return null;
     }
-    return BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, this);
+    return (String) BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, this);
   }
   public RelativePathHelper getRelativePathHelper(@NotNull SModel model) {
     if (model.getModule() instanceof TransientModelsModule && myGenerationContext != null) {

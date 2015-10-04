@@ -22,7 +22,7 @@ public class hasSameSignatureTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_list() throws Exception {
       this.addNodeById("5157939743593407746");
-      Assert.assertTrue(BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(SNodeOperations.cast(this.getNodeById("5157939743593407754"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), SNodeOperations.cast(this.getNodeById("5157939743593407754"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
+      Assert.assertTrue((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(SNodeOperations.cast(this.getNodeById("5157939743593407754"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), SNodeOperations.cast(this.getNodeById("5157939743593407754"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
     }
   }
 }

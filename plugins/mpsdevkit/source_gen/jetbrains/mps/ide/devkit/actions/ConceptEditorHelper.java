@@ -29,7 +29,7 @@ public class ConceptEditorHelper {
     for (SNode root : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(root), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect")) && SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"))) {
         SNode candidate = (SNode) root;
-        if (((Boolean) BHReflection.invoke(SNodeOperations.asSConcept(candidate), SMethodTrimmedId.create("canBeAppliedToNode", null, "7IH442d05tK"), node))) {
+        if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept(candidate), SMethodTrimmedId.create("canBeAppliedToNode", null, "7IH442d05tK"), node))) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }

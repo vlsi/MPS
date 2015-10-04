@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -59,7 +58,7 @@ public class DiffModelUtil {
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
     final SModelReference oldModelRef = getOriginalSModelRef(modelRef);
     for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
-      Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+      ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
           return modelRef.equals(it.getTargetSModelReference());
         }

@@ -112,7 +112,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_7k9x8q_a0b0a(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return PastedNodeReference__BehaviorDescriptor.getText_id5Yox2dUTCkJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference")), node);
+          return (String) PastedNodeReference__BehaviorDescriptor.getText_id5Yox2dUTCkJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference")), node);
         }
         public void setText(String s) {
         }
@@ -146,7 +146,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(node);
+        return (String) INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(node);
       }
       public void setText(String s) {
       }

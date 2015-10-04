@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -21,28 +20,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class HighLevelCustomViewer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getValueTypeCopy_id2q5hg4fWIQ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getValueTypeCopy").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2q5hg4fWIQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getClassName_id6$g4PBN66FS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6$g4PBN66FS").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getClassFqName_id6$g4PBN67n2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6$g4PBN67n2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<SNode> getValueTypeCopy_id2q5hg4fWIQ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getValueTypeCopy").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2q5hg4fWIQ").registry(REGISTRY).build();
+  public static final SMethod<String> getClassName_id6$g4PBN66FS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6$g4PBN66FS").registry(REGISTRY).build();
+  public static final SMethod<String> getClassFqName_id6$g4PBN67n2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClassFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6$g4PBN67n2").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getValueTypeCopy_id2q5hg4fWIQ, getClassName_id6$g4PBN66FS, getClassFqName_id6$g4PBN67n2);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode getValueTypeCopy_id2q5hg4fWIQ(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getValueTypeCopy_id2q5hg4fWIQ(@NotNull SNode __thisNode__) {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x9a1514043fbc1aL, "valueType")));
   }
-  private static String getClassName_id6$g4PBN66FS(@NotNull SNode __thisNode__) {
+  /*package*/ static String getClassName_id6$g4PBN66FS(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_WrapperFactory";
   }
-  private static String getClassFqName_id6$g4PBN67n2(@NotNull SNode __thisNode__) {
+  /*package*/ static String getClassFqName_id6$g4PBN67n2(@NotNull SNode __thisNode__) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(__thisNode__)) + "." + HighLevelCustomViewer__BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(__thisNode__);
   }
 
@@ -51,30 +51,30 @@ public final class HighLevelCustomViewer__BehaviorDescriptor extends BaseBHDescr
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getValueTypeCopy_id2q5hg4fWIQ(node);
+        return (T) ((SNode) getValueTypeCopy_id2q5hg4fWIQ(node));
       case 1:
-        return (T) getClassName_id6$g4PBN66FS(node);
+        return (T) ((String) getClassName_id6$g4PBN66FS(node));
       case 2:
-        return (T) getClassFqName_id6$g4PBN67n2(node);
+        return (T) ((String) getClassFqName_id6$g4PBN67n2(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

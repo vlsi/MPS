@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,30 +48,30 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isPackaged_id3_glsEmok8d = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isPackaged").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3_glsEmok8d").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<String> getBasePath_id4jjtc7WZOyG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7WZOyG").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<String> getScriptsPath_id4ahc858UcHk = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getScriptsPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4ahc858UcHk").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<String> getOutputFileName_id4gSHdTptyu0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOutputFileName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4gSHdTptyu0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getBasePathRelativeToScriptsPath_id4vrYmjR0nBP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePathRelativeToScriptsPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4vrYmjR0nBP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  /*package*/ static final SMethod<Scope> getScope_id13YBgBBRT49 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("13YBgBBRT49").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SAbstractConcept>) ((Class) Object.class), String.class)));
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Scope> getScope_id6GEzh_Hz_wK = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6GEzh_Hz_wK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), String.class, Integer.TYPE)));
-  public static final SMethod<Iterable<SNode>> getVisibleProjects_id13YBgBBRSOL = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getVisibleProjects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("13YBgBBRSOL").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Boolean.TYPE)));
-  /*package*/ static final SMethod<Void> collectVisibleProjects_id13YBgBBRSXj = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectVisibleProjects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("13YBgBBRSXj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Set.class, (Class<SNode>) ((Class) Object.class))));
-  /*package*/ static final SMethod<Scope> getBuildMacroScope_id3h9a8EwPwcy = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getBuildMacroScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("3h9a8EwPwcy").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<Set<SNode>>) ((Class) Object.class))));
-  public static final SMethod<Boolean> canEditBaseDir_idz2ICeMSPWq = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canEditBaseDir").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("z2ICeMSPWq").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> isPackaged_id3_glsEmok8d = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isPackaged").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3_glsEmok8d").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<String> getBasePath_id4jjtc7WZOyG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7WZOyG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<String> getScriptsPath_id4ahc858UcHk = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getScriptsPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4ahc858UcHk").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<String> getOutputFileName_id4gSHdTptyu0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOutputFileName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4gSHdTptyu0").registry(REGISTRY).build();
+  public static final SMethod<String> getBasePathRelativeToScriptsPath_id4vrYmjR0nBP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePathRelativeToScriptsPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4vrYmjR0nBP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  /*package*/ static final SMethod<Scope> getScope_id13YBgBBRT49 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("13YBgBBRT49").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id6GEzh_Hz_wK = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6GEzh_Hz_wK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Iterable<SNode>> getVisibleProjects_id13YBgBBRSOL = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getVisibleProjects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("13YBgBBRSOL").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
+  /*package*/ static final SMethod<Void> collectVisibleProjects_id13YBgBBRSXj = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectVisibleProjects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("13YBgBBRSXj").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Set.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  /*package*/ static final SMethod<Scope> getBuildMacroScope_id3h9a8EwPwcy = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getBuildMacroScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("3h9a8EwPwcy").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> canEditBaseDir_idz2ICeMSPWq = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canEditBaseDir").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("z2ICeMSPWq").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isPackaged_id3_glsEmok8d, getBasePath_id4jjtc7WZOyG, getScriptsPath_id4ahc858UcHk, getOutputFileName_id4gSHdTptyu0, getBasePathRelativeToScriptsPath_id4vrYmjR0nBP, getScope_id13YBgBBRT49, getScope_id3fifI_xCJOQ, getScope_id6GEzh_Hz_wK, getVisibleProjects_id13YBgBBRSOL, collectVisibleProjects_id13YBgBBRSXj, getBuildMacroScope_id3h9a8EwPwcy, canEditBaseDir_idz2ICeMSPWq);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean isPackaged_id3_glsEmok8d(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static boolean isPackaged_id3_glsEmok8d(@NotNull SNode __thisNode__, Context context) {
     RelativePathHelper relativePathHelper = context.getRelativePathHelper(SNodeOperations.getModel(__thisNode__));
     return relativePathHelper == null;
   }
   @Nullable
-  private static String getBasePath_id4jjtc7WZOyG(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getBasePath_id4jjtc7WZOyG(@NotNull SNode __thisNode__, Context context) {
     RelativePathHelper relativePathHelper = context.getRelativePathHelper(SNodeOperations.getModel(__thisNode__));
     if (relativePathHelper == null) {
       // model is packaged, i.e. no base path for it 
@@ -88,16 +87,16 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     return relativePathHelper.getBasePath();
   }
   @Nullable
-  private static String getScriptsPath_id4ahc858UcHk(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getScriptsPath_id4ahc858UcHk(@NotNull SNode __thisNode__, Context context) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4291308148e8c6beL, "scriptsDir")) != null)) {
       return BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4291308148e8c6beL, "scriptsDir")), context);
     }
     return BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(__thisNode__, context);
   }
-  private static String getOutputFileName_id4gSHdTptyu0(@NotNull SNode __thisNode__) {
+  /*package*/ static String getOutputFileName_id4gSHdTptyu0(@NotNull SNode __thisNode__) {
     return (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4438b4de59410ebcL, "fileName"))) ? "build.xml" : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4438b4de59410ebcL, "fileName")));
   }
-  private static String getBasePathRelativeToScriptsPath_id4vrYmjR0nBP(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getBasePathRelativeToScriptsPath_id4vrYmjR0nBP(@NotNull SNode __thisNode__, Context context) {
     String scriptsPath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(__thisNode__, context);
     String basePath = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(__thisNode__, context);
     try {
@@ -110,7 +109,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       return null;
     }
   }
-  private static Scope getScope_id13YBgBBRT49(@NotNull SNode __thisNode__, SAbstractConcept kind, String role) {
+  /*package*/ static Scope getScope_id13YBgBBRT49(@NotNull SNode __thisNode__, SAbstractConcept kind, String role) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d0bfc9L, "jetbrains.mps.build.structure.BuildExternalLayout"))) {
       return new ModelPlusImportedScope(SNodeOperations.getModel(__thisNode__), true, kind);
     }
@@ -119,7 +118,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       final SNode _this = __thisNode__;
       return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(__thisNode__), true, kind), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
-          return n != _this && !(Sequence.fromIterable(BuildProject__BehaviorDescriptor.getVisibleProjects_id13YBgBBRSOL.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), false)).contains(_this));
+          return n != _this && !(Sequence.fromIterable(BuildProject__BehaviorDescriptor.getVisibleProjects_id13YBgBBRSOL.invoke(SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), ((boolean) false))).contains(_this));
         }
       });
     }
@@ -146,7 +145,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return new EmptyScope();
   }
-  private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, final SNode child) {
+  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"))) {
       return BuildProject__BehaviorDescriptor.getBuildMacroScope_id3h9a8EwPwcy.invoke(__thisNode__, child, SetSequence.fromSet(new HashSet<SNode>()));
     }
@@ -156,10 +155,10 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return new EmptyScope();
   }
-  private static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, SNodeOperations.asSConcept(kind), role);
+  /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
+    return ((Scope) BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, SNodeOperations.asSConcept(kind), role));
   }
-  private static Iterable<SNode> getVisibleProjects_id13YBgBBRSOL(@NotNull final SNode __thisNode__, boolean directDependenciesOnly) {
+  /*package*/ static Iterable<SNode> getVisibleProjects_id13YBgBBRSOL(@NotNull final SNode __thisNode__, boolean directDependenciesOnly) {
     if (directDependenciesOnly) {
       return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -177,7 +176,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       return result;
     }
   }
-  private static void collectVisibleProjects_id13YBgBBRSXj(@NotNull SNode __thisNode__, Set<SNode> result, SNode current) {
+  /*package*/ static void collectVisibleProjects_id13YBgBBRSXj(@NotNull SNode __thisNode__, Set<SNode> result, SNode current) {
     if (!(result.add(current))) {
       return;
     }
@@ -188,7 +187,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       BuildProject__BehaviorDescriptor.collectVisibleProjects_id13YBgBBRSXj.invoke(__thisNode__, result, SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")));
     }
   }
-  private static Scope getBuildMacroScope_id3h9a8EwPwcy(@NotNull SNode __thisNode__, final SNode child, final Set<SNode> visited) {
+  /*package*/ static Scope getBuildMacroScope_id3h9a8EwPwcy(@NotNull SNode __thisNode__, final SNode child, final Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(__thisNode__)) {
       return new EmptyScope();
     }
@@ -199,7 +198,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       // we are imported => give away only public macro 
       rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return BuildMacro__BehaviorDescriptor.isPublic_id5FtnUVJQZyL.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro")));
+          return (boolean) BuildMacro__BehaviorDescriptor.isPublic_id5FtnUVJQZyL.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro")));
         }
       });
     }
@@ -232,7 +231,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return BuildProject__BehaviorDescriptor.getBuildMacroScope_id3h9a8EwPwcy.invoke(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), child, visited);
+        return (Scope) BuildProject__BehaviorDescriptor.getBuildMacroScope_id3h9a8EwPwcy.invoke(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), child, visited);
       }
     }));
     ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
@@ -248,7 +247,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       }
     };
   }
-  private static Boolean canEditBaseDir_idz2ICeMSPWq(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean canEditBaseDir_idz2ICeMSPWq(@NotNull SNode __thisNode__) {
     return true;
   }
 
@@ -257,49 +256,49 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) isPackaged_id3_glsEmok8d(node, (Context) parameters[0]);
+        return (T) ((Boolean) isPackaged_id3_glsEmok8d(node, (Context) parameters[0]));
       case 1:
-        return (T) getBasePath_id4jjtc7WZOyG(node, (Context) parameters[0]);
+        return (T) ((String) getBasePath_id4jjtc7WZOyG(node, (Context) parameters[0]));
       case 2:
-        return (T) getScriptsPath_id4ahc858UcHk(node, (Context) parameters[0]);
+        return (T) ((String) getScriptsPath_id4ahc858UcHk(node, (Context) parameters[0]));
       case 3:
-        return (T) getOutputFileName_id4gSHdTptyu0(node);
+        return (T) ((String) getOutputFileName_id4gSHdTptyu0(node));
       case 4:
-        return (T) getBasePathRelativeToScriptsPath_id4vrYmjR0nBP(node, (Context) parameters[0]);
+        return (T) ((String) getBasePathRelativeToScriptsPath_id4vrYmjR0nBP(node, (Context) parameters[0]));
       case 5:
-        return (T) getScope_id13YBgBBRT49(node, (SAbstractConcept) parameters[0], (String) parameters[1]);
+        return (T) ((Scope) getScope_id13YBgBBRT49(node, (SAbstractConcept) parameters[0], (String) parameters[1]));
       case 6:
-        return (T) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]);
+        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 7:
-        return (T) getScope_id6GEzh_Hz_wK(node, (SNode) parameters[0], (String) parameters[1], (Integer) parameters[2]);
+        return (T) ((Scope) getScope_id6GEzh_Hz_wK(node, (SNode) parameters[0], (String) parameters[1], ((int) (Integer) parameters[2])));
       case 8:
-        return (T) getVisibleProjects_id13YBgBBRSOL(node, (Boolean) parameters[0]);
+        return (T) ((Iterable<SNode>) getVisibleProjects_id13YBgBBRSOL(node, ((boolean) (Boolean) parameters[0])));
       case 9:
         collectVisibleProjects_id13YBgBBRSXj(node, (Set<SNode>) parameters[0], (SNode) parameters[1]);
         return null;
       case 10:
-        return (T) getBuildMacroScope_id3h9a8EwPwcy(node, (SNode) parameters[0], (Set<SNode>) parameters[1]);
+        return (T) ((Scope) getBuildMacroScope_id3h9a8EwPwcy(node, (SNode) parameters[0], (Set<SNode>) parameters[1]));
       case 11:
-        return (T) canEditBaseDir_idz2ICeMSPWq(node);
+        return (T) ((Boolean) canEditBaseDir_idz2ICeMSPWq(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

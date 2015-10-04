@@ -131,7 +131,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
             }).ofType(SNode.class), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
             List<SNodeReference> rv = Sequence.fromIterable(allConcepts).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode concept) {
-                return ((Boolean) BHReflection.invoke(concept, SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR"))) || !(conceptsInUse.contains(NameUtil.nodeFQName(concept)));
+                return ((boolean) (Boolean) BHReflection.invoke(concept, SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR"))) || !(conceptsInUse.contains(NameUtil.nodeFQName(concept)));
               }
             }).select(new ISelector<SNode, SNodeReference>() {
               public SNodeReference select(SNode it) {

@@ -57,7 +57,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<String> queryResult = new Computable<Iterable<String>>() {
           public Iterable<String> compute() {
-            return BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(_context.getCurrentTargetNode(), BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
+            return (List<String>) BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(_context.getCurrentTargetNode(), BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
           }
         }.compute();
         if (queryResult != null) {
@@ -197,7 +197,7 @@ public class QueriesGenerated {
               if (_matcher_0.find()) {
                 SNode container = (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) ? SNodeOperations.getParent(_context.getParentNode()) : _context.getParentNode());
                 if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"))) {
-                  if (BuildStringContainer__BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(SNodeOperations.cast(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer")), pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) ? _context.getParentNode().getRoleInParent() : _context.getCurrentTargetNode().getRoleInParent()))) {
+                  if ((boolean) BuildStringContainer__BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(SNodeOperations.cast(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer")), pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) ? _context.getParentNode().getRoleInParent() : _context.getCurrentTargetNode().getRoleInParent()))) {
                     return pattern;
                   }
                 } else if (!(pattern.contains("$"))) {

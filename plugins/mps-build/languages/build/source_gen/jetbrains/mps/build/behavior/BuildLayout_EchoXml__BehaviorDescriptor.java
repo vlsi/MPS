@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.Context;
 import java.util.List;
 import java.util.Arrays;
@@ -21,24 +20,25 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class BuildLayout_EchoXml__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6a3e160a3eff6a94L, "jetbrains.mps.build.structure.BuildLayout_EchoXml");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isValidPart_id7XQqoCTkVIS = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValidPart").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XQqoCTkVIS").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class, String.class)));
-  public static final SMethod<String> getOutputPath_WithMacro_id41K1b4v58vm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOutputPath_WithMacro").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("41K1b4v58vm").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
+  public static final SMethod<Boolean> isValidPart_id7XQqoCTkVIS = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValidPart").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XQqoCTkVIS").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<String> getOutputPath_WithMacro_id41K1b4v58vm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOutputPath_WithMacro").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("41K1b4v58vm").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isValidPart_id7XQqoCTkVIS, getOutputPath_WithMacro_id41K1b4v58vm);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean isValidPart_id7XQqoCTkVIS(@NotNull SNode __thisNode__, String propertyValue, String role) {
+  /*package*/ static boolean isValidPart_id7XQqoCTkVIS(@NotNull SNode __thisNode__, String propertyValue, String role) {
     return !((propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\")));
   }
-  private static String getOutputPath_WithMacro_id41K1b4v58vm(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getOutputPath_WithMacro_id41K1b4v58vm(@NotNull SNode __thisNode__, Context context) {
     if ((SNodeOperations.getParent(__thisNode__) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) {
       String parentChildrenTargetDir = BuildLayout_Container__BehaviorDescriptor.getChildrenOutputDir_WithMacro_id450ejGzh8bb.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container")), context);
       return parentChildrenTargetDir + "/" + BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6a3e160a3eff6a94L, 0x6a3e160a3eff6a96L, "fileName")), context.getMacros(__thisNode__));
@@ -51,28 +51,28 @@ public final class BuildLayout_EchoXml__BehaviorDescriptor extends BaseBHDescrip
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) isValidPart_id7XQqoCTkVIS(node, (String) parameters[0], (String) parameters[1]);
+        return (T) ((Boolean) isValidPart_id7XQqoCTkVIS(node, (String) parameters[0], (String) parameters[1]));
       case 1:
-        return (T) getOutputPath_WithMacro_id41K1b4v58vm(node, (Context) parameters[0]);
+        return (T) ((String) getOutputPath_WithMacro_id41K1b4v58vm(node, (Context) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

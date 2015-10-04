@@ -262,7 +262,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     public BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0j2a() {
     }
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BwfJavaModule__BehaviorDescriptor.getCompilerNames_id3Par5_LaIPl.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule")));
+      return (List<String>) BwfJavaModule__BehaviorDescriptor.getCompilerNames_id3Par5_LaIPl.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule")));
     }
   }
   private EditorCell createConstant_nphvgz_k2a(EditorContext editorContext, SNode node) {

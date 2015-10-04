@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -30,6 +29,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,16 +39,16 @@ public final class BuildJavaPlugin__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9ac67L, "jetbrains.mps.build.structure.BuildJavaPlugin");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Scope> getProjectStructureScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getProjectStructureScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SAbstractConcept>) ((Class) Object.class))));
-  public static final SMethod<Scope> getLayoutScope_id13YBgBBRSOA = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getLayoutScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("13YBgBBRSOA").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SAbstractConcept>) ((Class) Object.class))));
-  public static final SMethod<Iterable<SNode>> getImportedLibraries_id3zFnP6MwWdL = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getImportedLibraries").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3zFnP6MwWdL").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Scope> getProjectStructureScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getProjectStructureScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getLayoutScope_id13YBgBBRSOA = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getLayoutScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("13YBgBBRSOA").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
+  public static final SMethod<Iterable<SNode>> getImportedLibraries_id3zFnP6MwWdL = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getImportedLibraries").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3zFnP6MwWdL").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getProjectStructureScope_id3fifI_xCJOQ, getLayoutScope_id13YBgBBRSOA, getImportedLibraries_id3zFnP6MwWdL);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Scope getProjectStructureScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, final SAbstractConcept kind) {
+  /*package*/ static Scope getProjectStructureScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, final SAbstractConcept kind) {
     if (kind == MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
       return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
         @Override
@@ -64,7 +64,7 @@ public final class BuildJavaPlugin__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule")) || SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"))) {
-      Iterable<DescendantsScope> forAllVisible = Sequence.fromIterable(BuildProject__BehaviorDescriptor.getVisibleProjects_id13YBgBBRSOL.invoke(BuildPlugin__BehaviorDescriptor.getProject_id13YBgBBS7ex.invoke(__thisNode__), false)).select(new ISelector<SNode, DescendantsScope>() {
+      Iterable<DescendantsScope> forAllVisible = Sequence.fromIterable(BuildProject__BehaviorDescriptor.getVisibleProjects_id13YBgBBRSOL.invoke(BuildPlugin__BehaviorDescriptor.getProject_id13YBgBBS7ex.invoke(__thisNode__), ((boolean) false))).select(new ISelector<SNode, DescendantsScope>() {
         public DescendantsScope select(SNode it) {
           return DescendantsScope.forNamedElements(it, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"), kind);
         }
@@ -75,14 +75,14 @@ public final class BuildJavaPlugin__BehaviorDescriptor extends BaseBHDescriptor 
 
     return null;
   }
-  private static Scope getLayoutScope_id13YBgBBRSOA(@NotNull SNode __thisNode__, SAbstractConcept kind) {
+  /*package*/ static Scope getLayoutScope_id13YBgBBRSOA(@NotNull SNode __thisNode__, SAbstractConcept kind) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x23f6fd361bdcfd27L, "jetbrains.mps.build.structure.BuildSource_CompilablePart"))) {
       return DescendantsScope.forNamedElements(BuildPlugin__BehaviorDescriptor.getProject_id13YBgBBS7ex.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"), kind);
     }
 
     return null;
   }
-  private static Iterable<SNode> getImportedLibraries_id3zFnP6MwWdL(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> getImportedLibraries_id3zFnP6MwWdL(@NotNull SNode __thisNode__) {
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_bn484n_a0a0a0c(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target")));
   }
 
@@ -91,30 +91,30 @@ public final class BuildJavaPlugin__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getProjectStructureScope_id3fifI_xCJOQ(node, (SAbstractConcept) parameters[0]);
+        return (T) ((Scope) getProjectStructureScope_id3fifI_xCJOQ(node, (SAbstractConcept) parameters[0]));
       case 1:
-        return (T) getLayoutScope_id13YBgBBRSOA(node, (SAbstractConcept) parameters[0]);
+        return (T) ((Scope) getLayoutScope_id13YBgBBRSOA(node, (SAbstractConcept) parameters[0]));
       case 2:
-        return (T) getImportedLibraries_id3zFnP6MwWdL(node);
+        return (T) ((Iterable<SNode>) getImportedLibraries_id3zFnP6MwWdL(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

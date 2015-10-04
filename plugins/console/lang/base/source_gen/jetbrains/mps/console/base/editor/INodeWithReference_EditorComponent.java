@@ -45,7 +45,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     return editorCell;
   }
   private static boolean renderingCondition_clzyhh_a0(SNode node, EditorContext editorContext) {
-    return IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
+    return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
   }
   private EditorCell createRefCell_clzyhh_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
@@ -92,7 +92,7 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
   private EditorCell createReadOnlyModelAccessor_clzyhh_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(node);
+        return (String) INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(node);
       }
       public void setText(String s) {
       }

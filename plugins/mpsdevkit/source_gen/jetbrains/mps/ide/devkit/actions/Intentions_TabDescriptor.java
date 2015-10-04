@@ -40,7 +40,7 @@ public class Intentions_TabDescriptor extends RelationDescriptor {
     return ICON;
   }
   public List<SNode> getNodes(SNode node) {
-    return ((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.INTENTIONS));
+    return ((List<SNode>) (List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.INTENTIONS));
   }
   public boolean isSingle() {
     return false;

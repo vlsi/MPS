@@ -33,7 +33,7 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode archive = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), true, false);
-    return archive != null && BuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor.hasFileModeAttribute_id5zIo$W4pFU5.invoke(archive) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
+    return archive != null && (boolean) BuildLayout_ContainerAcceptingFileSet__BehaviorDescriptor.hasFileModeAttribute_id5zIo$W4pFU5.invoke(archive) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7801138212747054670");
 }

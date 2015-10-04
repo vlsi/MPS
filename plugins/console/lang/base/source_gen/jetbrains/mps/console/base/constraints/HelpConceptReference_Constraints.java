@@ -48,7 +48,7 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(((SNode) _context.getParameterNode())));
+            return (String) HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(((SNode) _context.getParameterNode())));
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
@@ -58,12 +58,12 @@ public class HelpConceptReference_Constraints extends BaseConstraintsDescriptor 
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new FilteringScope(new SubconceptsScope(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider").getDeclarationNode(), _context.getModel()) {
               public String getName(SNode child) {
-                return HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(((SNode) child)));
+                return (String) HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(((SNode) child)));
               }
             }) {
               @Override
               public boolean isExcluded(SNode node) {
-                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && !(AbstractConceptDeclaration__BehaviorDescriptor.isDefaultSubstitutable_id6spw4TQeyqh.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))));
+                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isDefaultSubstitutable_id6spw4TQeyqh.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))));
               }
             };
           }

@@ -34,7 +34,7 @@ public class JavaExportUtil {
       return;
     }
 
-    if (BuildSource_JavaLibrary__BehaviorDescriptor.canExportByParts_id4RsV8qJGJnM.invoke(target)) {
+    if ((boolean) BuildSource_JavaLibrary__BehaviorDescriptor.canExportByParts_id4RsV8qJGJnM.invoke(target)) {
       List<Tuples._2<SNode, Boolean>> result = ListSequence.fromList(new ArrayList<Tuples._2<SNode, Boolean>>());
 
       for (SNode element : ListSequence.fromList(SLinkOperations.getChildren(target, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")))) {

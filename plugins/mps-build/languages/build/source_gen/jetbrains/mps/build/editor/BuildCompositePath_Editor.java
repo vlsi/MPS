@@ -91,7 +91,7 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
     }
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(node, BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
+      return (List<String>) BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(node, BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
     }
   }
   private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {

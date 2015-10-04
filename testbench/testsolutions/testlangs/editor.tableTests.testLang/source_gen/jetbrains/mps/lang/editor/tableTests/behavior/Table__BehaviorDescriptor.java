@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -23,21 +22,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class Table__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, "jetbrains.mps.lang.editor.tableTests.structure.Table");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Integer> getInitialColumnCount_id1653mnvAgqE = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getInitialColumnCount").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgqE").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> getInitialRowCount_id1653mnvAgrI = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getInitialRowCount").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrI").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Integer> getInitialColumnCount_id1653mnvAgqE = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getInitialColumnCount").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgqE").registry(REGISTRY).build();
+  public static final SMethod<Integer> getInitialRowCount_id1653mnvAgrI = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getInitialRowCount").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrI").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getInitialColumnCount_id1653mnvAgqE, getInitialRowCount_id1653mnvAgrI);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
-    for (int i = 0; i < Table__BehaviorDescriptor.getInitialRowCount_id1653mnvAgrI.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); i++) {
+    for (int i = 0; i < (int) Table__BehaviorDescriptor.getInitialRowCount_id1653mnvAgrI.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); i++) {
       SNode row = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, "jetbrains.mps.lang.editor.tableTests.structure.Row")));
-      for (int j = 0; j < Table__BehaviorDescriptor.getInitialColumnCount_id1653mnvAgqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); j++) {
+      for (int j = 0; j < (int) Table__BehaviorDescriptor.getInitialColumnCount_id1653mnvAgqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))); j++) {
         SNode dataCell = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, "jetbrains.mps.lang.editor.tableTests.structure.DataCell")));
         SPropertyOperations.set(dataCell, MetaAdapterFactory.getProperty(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea4L, 0x28004d411fa3bea5L, "value"), "$" + i + " " + j + "$");
         ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, 0x28004d411fa3bea7L, "cells"))).addElement(dataCell);
@@ -46,10 +46,10 @@ public final class Table__BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
 
-  private static Integer getInitialColumnCount_id1653mnvAgqE(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static int getInitialColumnCount_id1653mnvAgqE(@NotNull SAbstractConcept __thisConcept__) {
     return 3;
   }
-  private static Integer getInitialRowCount_id1653mnvAgrI(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static int getInitialRowCount_id1653mnvAgrI(@NotNull SAbstractConcept __thisConcept__) {
     return 5;
   }
 
@@ -58,12 +58,12 @@ public final class Table__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -75,16 +75,16 @@ public final class Table__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getInitialColumnCount_id1653mnvAgqE(concept);
+        return (T) ((Integer) getInitialColumnCount_id1653mnvAgqE(concept));
       case 1:
-        return (T) getInitialRowCount_id1653mnvAgrI(concept);
+        return (T) ((Integer) getInitialRowCount_id1653mnvAgrI(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

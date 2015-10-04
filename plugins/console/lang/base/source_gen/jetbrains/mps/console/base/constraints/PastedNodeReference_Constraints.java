@@ -34,7 +34,7 @@ public class PastedNodeReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(_context.getReferenceNode());
+            return (String) INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(_context.getReferenceNode());
           }
         };
       }

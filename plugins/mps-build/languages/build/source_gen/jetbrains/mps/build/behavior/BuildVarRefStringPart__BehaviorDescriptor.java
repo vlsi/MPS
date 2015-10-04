@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.MacroHelper;
 import java.util.List;
 import java.util.Arrays;
@@ -22,22 +21,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class BuildVarRefStringPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getText_id3NagsOfTq4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3NagsOfTq4Y").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(MacroHelper.class)));
-  public static final SMethod<Boolean> isLastPositionAllowed_idyEtdY40wNH = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLastPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40wNH").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isFirstPositionAllowed_idyEtdY40p7m = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFirstPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40p7m").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getText_id3NagsOfTq4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3NagsOfTq4Y").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MacroHelper.class, ""));
+  public static final SMethod<Boolean> isLastPositionAllowed_idyEtdY40wNH = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLastPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40wNH").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isFirstPositionAllowed_idyEtdY40p7m = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFirstPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("yEtdY40p7m").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getText_id3NagsOfTq4Y, isLastPositionAllowed_idyEtdY40wNH, isFirstPositionAllowed_idyEtdY40p7m);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getText_id3NagsOfTq4Y(@NotNull SNode __thisNode__, MacroHelper helper) {
+  /*package*/ static String getText_id3NagsOfTq4Y(@NotNull SNode __thisNode__, MacroHelper helper) {
     String macroName = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     if (helper != null) {
       macroName = helper.getName(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, 0x440d7ea3b68b7d02L, "macro")));
@@ -48,10 +48,10 @@ public final class BuildVarRefStringPart__BehaviorDescriptor extends BaseBHDescr
     }
     return "${" + macroName + "}";
   }
-  private static Boolean isLastPositionAllowed_idyEtdY40wNH(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isLastPositionAllowed_idyEtdY40wNH(@NotNull SNode __thisNode__) {
     return (SNodeOperations.getNextSibling(__thisNode__) == null);
   }
-  private static Boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart")));
   }
 
@@ -60,30 +60,30 @@ public final class BuildVarRefStringPart__BehaviorDescriptor extends BaseBHDescr
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getText_id3NagsOfTq4Y(node, (MacroHelper) parameters[0]);
+        return (T) ((String) getText_id3NagsOfTq4Y(node, (MacroHelper) parameters[0]));
       case 1:
-        return (T) isLastPositionAllowed_idyEtdY40wNH(node);
+        return (T) ((Boolean) isLastPositionAllowed_idyEtdY40wNH(node));
       case 2:
-        return (T) isFirstPositionAllowed_idyEtdY40p7m(node);
+        return (T) ((Boolean) isFirstPositionAllowed_idyEtdY40p7m(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

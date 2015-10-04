@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import java.util.List;
@@ -31,6 +30,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -39,14 +39,14 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x188f8efcef689c71L, "jetbrains.mps.console.base.structure.GeneratedCommand");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id5WvH$QO9bva = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5WvH$QO9bva").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(ConsoleContext.class, ConsoleStream.class, Runnable.class, Runnable.class)));
+  public static final SMethod<Void> execute_id5WvH$QO9bva = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5WvH$QO9bva").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(ConsoleContext.class, ""), SMethodBuilder.createJavaParameter(ConsoleStream.class, ""), SMethodBuilder.createJavaParameter(Runnable.class, ""), SMethodBuilder.createJavaParameter(Runnable.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id5WvH$QO9bva);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void execute_id5WvH$QO9bva(@NotNull SNode __thisNode__, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
+  /*package*/ static void execute_id5WvH$QO9bva(@NotNull SNode __thisNode__, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         final SModel model = ((BaseConsoleTab) context.getOutputWindow()).getConsoleModel();
@@ -101,12 +101,12 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -121,7 +121,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

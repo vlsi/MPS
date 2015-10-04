@@ -18,7 +18,7 @@ public class LocalArtifacts extends VisibleArtifacts {
   @Override
   public SNode findArtifact(Object id) {
     for (SNode artifact : this.getArtifacts()) {
-      if (BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(artifact, id)) {
+      if ((boolean) BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(artifact, id)) {
         return artifact;
       }
     }

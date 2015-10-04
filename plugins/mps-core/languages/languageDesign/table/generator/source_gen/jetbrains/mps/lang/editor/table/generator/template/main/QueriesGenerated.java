@@ -19,7 +19,7 @@ public class QueriesGenerated {
     return QueriesUtil.getUnicName(EditorCellModel__BehaviorDescriptor.getCellId_idhHbewHT.invoke(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
   public static Object propertyMacro_GetPropertyValue_6189378527250534452(final PropertyMacroContext _context) {
-    return EditorCellModel__BehaviorDescriptor.getFactoryMethodName_idhHfE2BD.invoke(_context.getNode(), _context);
+    return (String) EditorCellModel__BehaviorDescriptor.getFactoryMethodName_idhHfE2BD.invoke(_context.getNode(), _context);
   }
   public static Object referenceMacro_GetReferent_293523277269610528(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L, "rowsLinkDeclaration"))), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));

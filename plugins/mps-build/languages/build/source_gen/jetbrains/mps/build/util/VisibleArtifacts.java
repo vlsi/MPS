@@ -183,7 +183,7 @@ public class VisibleArtifacts {
     }
     for (SNode artifact : this.getArtifacts()) {
       assert !(SNodeOperations.getModel(artifact).getModule() instanceof TransientModelsModule);
-      if (BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(artifact, id)) {
+      if ((boolean) BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(artifact, id)) {
         dependenciesHelper.artifacts().put(id, artifact);
         return artifact;
       }

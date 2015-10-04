@@ -46,7 +46,7 @@ public class AttachMappingLabel_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode node = event.getData(MPSCommonDataKeys.NODE);
-    if (!(BaseConcept__BehaviorDescriptor.isInTemplates_idhEwIMij.invoke(node))) {
+    if (!((boolean) BaseConcept__BehaviorDescriptor.isInTemplates_idhEwIMij.invoke(node))) {
       return false;
     }
     //  not an element from generator language 

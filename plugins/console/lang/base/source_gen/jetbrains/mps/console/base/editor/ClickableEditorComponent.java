@@ -47,13 +47,13 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_k1kh9z_a0a(EditorContext editorContext, SNode node) {
-    if (IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node)) {
+    if ((boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node)) {
       return MPSColors.DARK_BLUE;
     } else {
       return MPSColors.GRAY;
     }
   }
   private static boolean _StyleParameter_QueryFunction_k1kh9z_a1a(EditorContext editorContext, SNode node) {
-    return IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
+    return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
   }
 }

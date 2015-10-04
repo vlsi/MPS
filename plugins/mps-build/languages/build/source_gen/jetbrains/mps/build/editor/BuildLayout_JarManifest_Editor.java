@@ -88,7 +88,7 @@ public class BuildLayout_JarManifest_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_gnweac_a1a(SNode node, EditorContext editorContext) {
-    return !(BuildLayout_JarManifest__BehaviorDescriptor.isInJar_id5V$ev8kKReX.invoke(node)) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, 0x67af4eb97391dfc1L, "name")) != null);
+    return !((boolean) BuildLayout_JarManifest__BehaviorDescriptor.isInJar_id5V$ev8kKReX.invoke(node)) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f2eL, 0x67af4eb97391dfc1L, "name")) != null);
   }
   private EditorCell createCollection_gnweac_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import java.util.Arrays;
@@ -24,22 +23,23 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Project.class)));
-  public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getTextWhenBroken_idigjXyuNrou = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTextWhenBroken").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("igjXyuNrou").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
+  public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
+  public static final SMethod<String> getTextWhenBroken_idigjXyuNrou = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTextWhenBroken").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("igjXyuNrou").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h, getTextWhenBroken_idigjXyuNrou);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, Project project) {
+  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, Project project) {
     SNode targetNode = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null) {
@@ -47,10 +47,10 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
     }
     NavigationSupport.getInstance().openNode(mpsProject, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
   }
-  private static Boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")) != null;
   }
-  private static String getTextWhenBroken_idigjXyuNrou(@NotNull SNode __thisNode__) {
+  /*package*/ static String getTextWhenBroken_idigjXyuNrou(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e75e1c4L, "referencePresentation")) + " (deleted node)";
   }
 
@@ -59,12 +59,12 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -74,16 +74,16 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
         execute_id7oNS25df64x(node, (Project) parameters[0]);
         return null;
       case 1:
-        return (T) canExecute_id2QdC0h7dh1h(node);
+        return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       case 2:
-        return (T) getTextWhenBroken_idigjXyuNrou(node);
+        return (T) ((String) getTextWhenBroken_idigjXyuNrou(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

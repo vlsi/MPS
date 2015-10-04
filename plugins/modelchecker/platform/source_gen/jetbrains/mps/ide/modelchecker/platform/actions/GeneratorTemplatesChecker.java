@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -55,7 +54,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
         }
 
         try {
-          for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+          for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
             if (progressMonitor.isCanceled()) {
               return;
             }

@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
@@ -41,14 +40,14 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getBasePath_id4jjtc7WZMYz = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7WZMYz").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<Void> fetchDependencies_id57YmpYyL8F1 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("fetchDependencies").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57YmpYyL8F1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(VisibleArtifacts.class, RequiredDependenciesBuilder.class)));
-  public static final SMethod<String> getRelativePath_id4Kip2_918YF = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRelativePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918YF").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getAntPath_id7ro1ZztyOh5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAntPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7ro1ZztyOh5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  /*package*/ static final SMethod<String> getUnpackPath_id7ro1Zzt$ck7 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getUnpackPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7ro1Zzt$ck7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<String> calculateUnpackPath_idBHdWlMbKE2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("calculateUnpackPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("BHdWlMbKE2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<SNode> getUnpackTask_id7N6lJotWaNm = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getUnpackTask").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7N6lJotWaNm").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Context.class)));
-  public static final SMethod<SNode> getTargetTask_id5Wv1_bQ1rcK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTargetTask").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5Wv1_bQ1rcK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getBasePath_id4jjtc7WZMYz = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7WZMYz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<Void> fetchDependencies_id57YmpYyL8F1 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("fetchDependencies").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57YmpYyL8F1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(VisibleArtifacts.class, ""), SMethodBuilder.createJavaParameter(RequiredDependenciesBuilder.class, ""));
+  public static final SMethod<String> getRelativePath_id4Kip2_918YF = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRelativePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918YF").registry(REGISTRY).build();
+  public static final SMethod<String> getAntPath_id7ro1ZztyOh5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAntPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7ro1ZztyOh5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  /*package*/ static final SMethod<String> getUnpackPath_id7ro1Zzt$ck7 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getUnpackPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7ro1Zzt$ck7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<String> calculateUnpackPath_idBHdWlMbKE2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("calculateUnpackPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("BHdWlMbKE2").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<SNode> getUnpackTask_id7N6lJotWaNm = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getUnpackTask").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7N6lJotWaNm").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
+  public static final SMethod<SNode> getTargetTask_id5Wv1_bQ1rcK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTargetTask").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5Wv1_bQ1rcK").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZMYz, fetchDependencies_id57YmpYyL8F1, getRelativePath_id4Kip2_918YF, getAntPath_id7ro1ZztyOh5, getUnpackPath_id7ro1Zzt$ck7, calculateUnpackPath_idBHdWlMbKE2, getUnpackTask_id7N6lJotWaNm, getTargetTask_id5Wv1_bQ1rcK);
 
@@ -56,24 +55,24 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
   }
 
   @Nullable
-  private static String getBasePath_id4jjtc7WZMYz(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getBasePath_id4jjtc7WZMYz(@NotNull SNode __thisNode__, Context context) {
     return BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context) + "!";
   }
-  private static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+  /*package*/ static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     artifacts.needsFetch(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), false, false));
     // and still, ???? 
   }
-  private static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
     return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"))) + "!/" + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
-  private static String getAntPath_id7ro1ZztyOh5(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getAntPath_id7ro1ZztyOh5(@NotNull SNode __thisNode__, Context context) {
     String unpackPath = BuildSourceArchiveRelativePath__BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context);
     if ((unpackPath == null || unpackPath.length() == 0)) {
       return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__);
     }
     return unpackPath + "/" + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
-  private static String getUnpackPath_id7ro1Zzt$ck7(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String getUnpackPath_id7ro1Zzt$ck7(@NotNull SNode __thisNode__, Context context) {
     TemplateQueryContext generationContext = context.getGenerationContext();
     if (generationContext == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -89,11 +88,11 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     }
     return unpackPath;
   }
-  private static String calculateUnpackPath_idBHdWlMbKE2(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static String calculateUnpackPath_idBHdWlMbKE2(@NotNull SNode __thisNode__, Context context) {
     SNode nlayout = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"), true, false);
     return context.getTempPath(__thisNode__, BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context.getMacros(__thisNode__)).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : "default"));
   }
-  private static SNode getUnpackTask_id7N6lJotWaNm(@NotNull SNode __thisNode__, Context context) {
+  /*package*/ static SNode getUnpackTask_id7N6lJotWaNm(@NotNull SNode __thisNode__, Context context) {
     String archivePath = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")));
     SNode unpackTask = _quotation_createNode_ll2z5f_a0b0g(BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context), BuildSourceArchiveRelativePath__BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context));
     if (archivePath.endsWith(".jar")) {
@@ -110,7 +109,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     }
     return unpackTask;
   }
-  private static SNode getTargetTask_id5Wv1_bQ1rcK(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getTargetTask_id5Wv1_bQ1rcK(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(_quotation_createNode_ll2z5f_a0a0h(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, 0x2670d5989d5ace57L, "target"));
   }
 
@@ -119,41 +118,41 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getBasePath_id4jjtc7WZMYz(node, (Context) parameters[0]);
+        return (T) ((String) getBasePath_id4jjtc7WZMYz(node, (Context) parameters[0]));
       case 1:
         fetchDependencies_id57YmpYyL8F1(node, (VisibleArtifacts) parameters[0], (RequiredDependenciesBuilder) parameters[1]);
         return null;
       case 2:
-        return (T) getRelativePath_id4Kip2_918YF(node);
+        return (T) ((String) getRelativePath_id4Kip2_918YF(node));
       case 3:
-        return (T) getAntPath_id7ro1ZztyOh5(node, (Context) parameters[0]);
+        return (T) ((String) getAntPath_id7ro1ZztyOh5(node, (Context) parameters[0]));
       case 4:
-        return (T) getUnpackPath_id7ro1Zzt$ck7(node, (Context) parameters[0]);
+        return (T) ((String) getUnpackPath_id7ro1Zzt$ck7(node, (Context) parameters[0]));
       case 5:
-        return (T) calculateUnpackPath_idBHdWlMbKE2(node, (Context) parameters[0]);
+        return (T) ((String) calculateUnpackPath_idBHdWlMbKE2(node, (Context) parameters[0]));
       case 6:
-        return (T) getUnpackTask_id7N6lJotWaNm(node, (Context) parameters[0]);
+        return (T) ((SNode) getUnpackTask_id7N6lJotWaNm(node, (Context) parameters[0]));
       case 7:
-        return (T) getTargetTask_id5Wv1_bQ1rcK(node);
+        return (T) ((SNode) getTargetTask_id5Wv1_bQ1rcK(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

@@ -102,7 +102,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
     if (SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")) != null) {
       SPropertyOperations.set(editorDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
     }
-    BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("createDefaultEditor", MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "2$SWsiCt8Y$"), false);
+    BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("createDefaultEditor", MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "2$SWsiCt8Y$"), ((boolean) false));
     ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
   }
   private static boolean eq_e50aup_a0d0g(Object a, Object b) {

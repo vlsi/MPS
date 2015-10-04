@@ -14,7 +14,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
@@ -22,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,25 +31,25 @@ public final class ConceptFunction_CreateBreakpoint__BehaviorDescriptor extends 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb93aL, "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getThrowableTypes_id5op8ooRkkc7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getThrowableTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5op8ooRkkc7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
+  public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getThrowableTypes_id5op8ooRkkc7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getThrowableTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5op8ooRkkc7").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConceptFunctionParameter_id2D1PBM_bxJg, getExpectedReturnType_idhEwIGRD, getThrowableTypes_id5op8ooRkkc7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
     List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "1270798772176052880"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "1270798772176052876"));
     return result;
   }
-  private static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     return _quotation_createNode_m5jr7m_a0a1();
   }
-  private static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
     List<SNode> result = ConceptFunction__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invokeSpecial(__thisNode__);
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_m5jr7m_a0a0a1a2())));
     return result;
@@ -60,35 +60,35 @@ public final class ConceptFunction_CreateBreakpoint__BehaviorDescriptor extends 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 1:
-        return (T) getExpectedReturnType_idhEwIGRD(node);
+        return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
       case 2:
-        return (T) getThrowableTypes_id5op8ooRkkc7(node);
+        return (T) ((List<SNode>) getThrowableTypes_id5op8ooRkkc7(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getApplicableConceptFunctionParameter_id2D1PBM_bxJg(concept);
+        return (T) ((List<SNode>) getApplicableConceptFunctionParameter_id2D1PBM_bxJg(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -13,27 +13,27 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.console.tool.ConsoleContext;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class IStatisticsTarget__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb2L, "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Iterable<Tuples._2<String, Integer>>> getStat_id6vMIJHUBlVT = new SMethodBuilder<Iterable<Tuples._2<String, Integer>>>(new SJavaCompoundTypeImpl((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class))).name("getStat").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6vMIJHUBlVT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(ConsoleContext.class)));
+  public static final SMethod<Iterable<Tuples._2<String, Integer>>> getStat_id6vMIJHUBlVT = new SMethodBuilder<Iterable<Tuples._2<String, Integer>>>(new SJavaCompoundTypeImpl((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class))).name("getStat").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6vMIJHUBlVT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(ConsoleContext.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getStat_id6vMIJHUBlVT);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Iterable<Tuples._2<String, Integer>> getStat_id6vMIJHUBlVT(@NotNull SNode __thisNode__, ConsoleContext context) {
+  /*package*/ static Iterable<Tuples._2<String, Integer>> getStat_id6vMIJHUBlVT(@NotNull SNode __thisNode__, ConsoleContext context) {
     return null;
   }
 
@@ -42,26 +42,26 @@ public final class IStatisticsTarget__BehaviorDescriptor extends BaseBHDescripto
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getStat_id6vMIJHUBlVT(node, (ConsoleContext) parameters[0]);
+        return (T) ((Iterable<Tuples._2<String, Integer>>) getStat_id6vMIJHUBlVT(node, (ConsoleContext) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -31,9 +30,9 @@ public final class RunConfiguration__BehaviorDescriptor extends BaseBHDescriptor
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, "jetbrains.mps.execution.configurations.structure.RunConfiguration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getExecutor_id3gs394eDyIj = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExecutor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3gs394eDyIj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isForeign_id3wpI_WC06mf = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isForeign").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wpI_WC06mf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getGeneratedFactoryName_id1XgDflG1h5w = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedFactoryName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1XgDflG1h5w").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<SNode> getExecutor_id3gs394eDyIj = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExecutor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3gs394eDyIj").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isForeign_id3wpI_WC06mf = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isForeign").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wpI_WC06mf").registry(REGISTRY).build();
+  public static final SMethod<String> getGeneratedFactoryName_id1XgDflG1h5w = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedFactoryName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1XgDflG1h5w").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExecutor_id3gs394eDyIj, isForeign_id3wpI_WC06mf, getGeneratedFactoryName_id1XgDflG1h5w);
 
@@ -41,20 +40,20 @@ public final class RunConfiguration__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   @Nullable
-  private static SNode getExecutor_id3gs394eDyIj(@NotNull final SNode __thisNode__) {
+  /*package*/ static SNode getExecutor_id3gs394eDyIj(@NotNull final SNode __thisNode__) {
     return ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration")) == __thisNode__;
       }
     });
   }
-  private static Boolean isForeign_id3wpI_WC06mf(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isForeign_id3wpI_WC06mf(@NotNull SNode __thisNode__) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind")) == null)) {
       return false;
     }
     return neq_dhv8ye_a0b0m(SNodeOperations.getModel(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, 0x2153d8f1c1f48ae2L, "configurationKind"))), SNodeOperations.getModel(__thisNode__));
   }
-  private static String getGeneratedFactoryName_id1XgDflG1h5w(@NotNull SNode __thisNode__) {
+  /*package*/ static String getGeneratedFactoryName_id1XgDflG1h5w(@NotNull SNode __thisNode__) {
     return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(__thisNode__) + "_Factory";
   }
 
@@ -63,30 +62,30 @@ public final class RunConfiguration__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getExecutor_id3gs394eDyIj(node);
+        return (T) ((SNode) getExecutor_id3gs394eDyIj(node));
       case 1:
-        return (T) isForeign_id3wpI_WC06mf(node);
+        return (T) ((Boolean) isForeign_id3wpI_WC06mf(node));
       case 2:
-        return (T) getGeneratedFactoryName_id1XgDflG1h5w(node);
+        return (T) ((String) getGeneratedFactoryName_id1XgDflG1h5w(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

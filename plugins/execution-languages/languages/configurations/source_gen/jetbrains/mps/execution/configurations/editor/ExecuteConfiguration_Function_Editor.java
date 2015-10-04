@@ -44,7 +44,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ydtnyj_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ConceptFunction__BehaviorDescriptor.getHeader_id2v69eKc6GlE.invoke(node);
+        return (String) ConceptFunction__BehaviorDescriptor.getHeader_id2v69eKc6GlE.invoke(node);
       }
       public void setText(String s) {
       }

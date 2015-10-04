@@ -61,13 +61,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_264293128390879201(final PropertyMacroContext _context) {
-    return HighLevelCustomViewer__BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(_context.getNode());
+    return (String) HighLevelCustomViewer__BehaviorDescriptor.getClassName_id6$g4PBN66FS.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_8275758777999533495(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, 0x9a151404409225L, "watchable")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_722903304966670688(final PropertyMacroContext _context) {
-    return HighLevelCustomViewer__BehaviorDescriptor.getClassFqName_id6$g4PBN67n2.invoke(_context.getNode());
+    return (String) HighLevelCustomViewer__BehaviorDescriptor.getClassFqName_id6$g4PBN67n2.invoke(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_8275758777999533505(final ReferenceMacroContext _context) {
     return Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, 0x9a151404409225L, "watchable")), "watchable"))).first();

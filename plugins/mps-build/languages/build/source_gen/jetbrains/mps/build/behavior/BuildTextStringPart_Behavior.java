@@ -4,8 +4,6 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
  * Will be removed after 3.3
@@ -15,9 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class BuildTextStringPart_Behavior {
   @Nullable
   public static SNode call_getContainer_6083230236994622122(SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"))) {
-      return SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(__thisNode__)), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"));
-    }
-    return null;
+    return BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE(__thisNode__);
   }
 }

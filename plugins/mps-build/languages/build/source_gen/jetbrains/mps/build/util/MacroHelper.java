@@ -41,7 +41,7 @@ public final class MacroHelper {
       if (usedNames.contains(SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
         context.reportProblem("duplicate macro name", m);
       }
-      add(m, null, (BuildMacro__BehaviorDescriptor.isPublic_id5FtnUVJQZyL.invoke(m) ? SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "." + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : null));
+      add(m, null, ((boolean) BuildMacro__BehaviorDescriptor.isPublic_id5FtnUVJQZyL.invoke(m) ? SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "." + SPropertyOperations.getString(m, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : null));
     }
     for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

@@ -14,7 +14,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -26,14 +25,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class DecisionTable__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Set<SNode>> referencedLVDs_id3mtcPBWFCmw = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("referencedLVDs").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3mtcPBWFCmw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Set<SNode>> referencedParams_id3mtcPBWFDo3 = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("referencedParams").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3mtcPBWFDo3").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Set<SNode>> referencedLVDs_id3mtcPBWFCmw = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("referencedLVDs").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3mtcPBWFCmw").registry(REGISTRY).build();
+  public static final SMethod<Set<SNode>> referencedParams_id3mtcPBWFDo3 = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("referencedParams").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3mtcPBWFDo3").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(referencedLVDs_id3mtcPBWFCmw, referencedParams_id3mtcPBWFDo3);
 
@@ -48,7 +48,7 @@ public final class DecisionTable__BehaviorDescriptor extends BaseBHDescriptor {
     SLinkOperations.addNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0x65c13e6709b64695L, 0xaf8852024b7d2027L, 0x1b942309931b1581L, 0x1b942309931b1586L, "resultValues"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
   }
 
-  private static Set<SNode> referencedLVDs_id3mtcPBWFCmw(@NotNull SNode __thisNode__) {
+  /*package*/ static Set<SNode> referencedLVDs_id3mtcPBWFCmw(@NotNull SNode __thisNode__) {
     Set<SNode> res = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(res).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -61,7 +61,7 @@ public final class DecisionTable__BehaviorDescriptor extends BaseBHDescriptor {
     }));
     return res;
   }
-  private static Set<SNode> referencedParams_id3mtcPBWFDo3(@NotNull SNode __thisNode__) {
+  /*package*/ static Set<SNode> referencedParams_id3mtcPBWFDo3(@NotNull SNode __thisNode__) {
     Set<SNode> params = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(params).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -80,28 +80,28 @@ public final class DecisionTable__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) referencedLVDs_id3mtcPBWFCmw(node);
+        return (T) ((Set<SNode>) referencedLVDs_id3mtcPBWFCmw(node));
       case 1:
-        return (T) referencedParams_id3mtcPBWFDo3(node);
+        return (T) ((Set<SNode>) referencedParams_id3mtcPBWFDo3(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

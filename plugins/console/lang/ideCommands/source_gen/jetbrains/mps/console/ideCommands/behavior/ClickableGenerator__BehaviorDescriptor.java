@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import com.intellij.openapi.project.Project;
 import java.util.List;
 import java.util.Arrays;
@@ -34,6 +33,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -41,15 +41,15 @@ public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescript
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Project.class)));
-  public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
+  public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, final Project project) {
+  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, final Project project) {
     final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(ModuleId.fromString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
 
     final MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(module, ProjectHelper.toMPSProject(project));
@@ -120,7 +120,7 @@ __switch__:
       }
     });
   }
-  private static Boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return isNotEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId")));
   }
 
@@ -129,12 +129,12 @@ __switch__:
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -144,14 +144,14 @@ __switch__:
         execute_id7oNS25df64x(node, (Project) parameters[0]);
         return null;
       case 1:
-        return (T) canExecute_id2QdC0h7dh1h(node);
+        return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

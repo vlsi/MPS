@@ -204,7 +204,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
           @Override
           public void createElement(int row, int column) {
             if (row > 0 && column > 0) {
-              SNode slot = DailyPlan__BehaviorDescriptor.slotByStartTime_id2XgRSpVOzcU.invoke(node, row - 1);
+              SNode slot = DailyPlan__BehaviorDescriptor.slotByStartTime_id2XgRSpVOzcU.invoke(node, ((int) (row - 1)));
               if (slot == null) {
                 SNode item = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot")));
                 SPropertyOperations.set(item, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start"), "" + (row - 1));

@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -32,27 +31,27 @@ public final class RunConfigurationExecutor__BehaviorDescriptor extends BaseBHDe
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isDebuggable_idoym_8btfV8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDebuggable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("oym_8btfV8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> canBeSimple_id5pE1_aqYssM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeSimple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5pE1_aqYssM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimple_id5pE1_aqYZtD = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5pE1_aqYZtD").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getCommand_id5pE1_aqZ2LK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getCommand").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5pE1_aqZ2LK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> isDebuggable_idoym_8btfV8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDebuggable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("oym_8btfV8").registry(REGISTRY).build();
+  public static final SMethod<Boolean> canBeSimple_id5pE1_aqYssM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeSimple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5pE1_aqYssM").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimple_id5pE1_aqYZtD = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5pE1_aqYZtD").registry(REGISTRY).build();
+  public static final SMethod<SNode> getCommand_id5pE1_aqZ2LK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getCommand").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5pE1_aqZ2LK").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDebuggable_idoym_8btfV8, canBeSimple_id5pE1_aqYssM, isSimple_id5pE1_aqYZtD, getCommand_id5pE1_aqZ2LK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean isDebuggable_idoym_8btfV8(@NotNull SNode __thisNode__) {
-    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (RunConfigurationExecutor__BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
+  /*package*/ static boolean isDebuggable_idoym_8btfV8(@NotNull SNode __thisNode__) {
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) != null) || (((boolean) RunConfigurationExecutor__BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(__thisNode__)) && SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x566a06529af9d7ddL, "canDebug")));
   }
-  private static Boolean canBeSimple_id5pE1_aqYssM(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean canBeSimple_id5pE1_aqYssM(@NotNull SNode __thisNode__) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), _quotation_createNode_wnz9gp_b0a0a1());
   }
-  private static Boolean isSimple_id5pE1_aqYZtD(@NotNull SNode __thisNode__) {
-    return RunConfigurationExecutor__BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
+  /*package*/ static boolean isSimple_id5pE1_aqYZtD(@NotNull SNode __thisNode__) {
+    return ((boolean) RunConfigurationExecutor__BehaviorDescriptor.canBeSimple_id5pE1_aqYssM.invoke(__thisNode__)) && (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
   }
   @Nullable
-  private static SNode getCommand_id5pE1_aqZ2LK(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getCommand_id5pE1_aqZ2LK(@NotNull SNode __thisNode__) {
     {
       IMatchingPattern pattern_wnz9gp_a0d = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.commands.structure.CommandProcessType");
       SNode coercedNode_wnz9gp_a0d = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x6e425276ab38aea1L, "execute"))), pattern_wnz9gp_a0d);
@@ -71,32 +70,32 @@ public final class RunConfigurationExecutor__BehaviorDescriptor extends BaseBHDe
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) isDebuggable_idoym_8btfV8(node);
+        return (T) ((Boolean) isDebuggable_idoym_8btfV8(node));
       case 1:
-        return (T) canBeSimple_id5pE1_aqYssM(node);
+        return (T) ((Boolean) canBeSimple_id5pE1_aqYssM(node));
       case 2:
-        return (T) isSimple_id5pE1_aqYZtD(node);
+        return (T) ((Boolean) isSimple_id5pE1_aqYZtD(node));
       case 3:
-        return (T) getCommand_id5pE1_aqZ2LK(node);
+        return (T) ((SNode) getCommand_id5pE1_aqZ2LK(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

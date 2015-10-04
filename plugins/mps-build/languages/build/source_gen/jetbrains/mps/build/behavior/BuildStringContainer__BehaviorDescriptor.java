@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.awt.Color;
 import java.util.List;
 import java.util.Arrays;
@@ -27,8 +26,8 @@ public final class BuildStringContainer__BehaviorDescriptor extends BaseBHDescri
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isValidPart_id7XQqoCTkVIS = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValidPart").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XQqoCTkVIS").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class, String.class)));
-  public static final SMethod<Color> getColorForTextPart_id5hFYqIiXWl$ = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getColorForTextPart").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5hFYqIiXWl$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
+  public static final SMethod<Boolean> isValidPart_id7XQqoCTkVIS = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValidPart").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XQqoCTkVIS").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Color> getColorForTextPart_id5hFYqIiXWl$ = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getColorForTextPart").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5hFYqIiXWl$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isValidPart_id7XQqoCTkVIS, getColorForTextPart_id5hFYqIiXWl$);
 
@@ -36,7 +35,7 @@ public final class BuildStringContainer__BehaviorDescriptor extends BaseBHDescri
   }
 
   @Nullable
-  private static Color getColorForTextPart_id5hFYqIiXWl$(@NotNull SNode __thisNode__, @NonNls String role) {
+  /*package*/ static Color getColorForTextPart_id5hFYqIiXWl$(@NotNull SNode __thisNode__, @NonNls String role) {
     return null;
   }
 
@@ -45,26 +44,26 @@ public final class BuildStringContainer__BehaviorDescriptor extends BaseBHDescri
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 1:
-        return (T) getColorForTextPart_id5hFYqIiXWl$(node, (String) parameters[0]);
+        return (T) ((Color) getColorForTextPart_id5hFYqIiXWl$(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

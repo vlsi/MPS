@@ -170,7 +170,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         }
         SNode overridenMethod = SetSequence.fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ((Boolean) BHReflection.invoke(it, SMethodTrimmedId.create("hasSameSignature", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "hEwIB0z"), derivedClassifierMethod));
+            return ((boolean) (Boolean) BHReflection.invoke(it, SMethodTrimmedId.create("hasSameSignature", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "hEwIB0z"), derivedClassifierMethod));
           }
         });
         if (overridenMethod != null) {
@@ -259,10 +259,10 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     return ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
   }
   private String getClassifierPresentation(SNode classifier) {
-    return ((String) BHReflection.invoke(classifier, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
+    return ((String) (String) BHReflection.invoke(classifier, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
   }
   private String getEnumConstantPresentation(SNode enumConstantDeclaration) {
-    return ((String) BHReflection.invoke(enumConstantDeclaration, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
+    return ((String) (String) BHReflection.invoke(enumConstantDeclaration, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
   }
   private static boolean isParameterType(SNode type) {
     SNode parent = SNodeOperations.getParent(type);
