@@ -68,7 +68,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_8791205313600587351(final PropertyMacroContext _context) {
-    return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, 0x7a00a2a7a8b080dbL, "classifier")));
+    return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, 0x7a00a2a7a8b080dbL, "classifier")));
   }
   public static Object referenceMacro_GetReferent_8567847449660562845(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ExtractToField");
@@ -165,13 +165,13 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"));
   }
   public static Iterable<SNode> sourceNodesQuery_3136320261568143549(final SourceSubstituteMacroNodesContext _context) {
-    return Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(_context.getNode());
+    return (Iterable<SNode>) Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_5822086619725756164(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"));
   }
   public static Iterable<SNode> sourceNodesQuery_3136320261568118134(final SourceSubstituteMacroNodesContext _context) {
-    return Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(_context.getNode());
+    return (Iterable<SNode>) Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_7805405506192339195(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"));

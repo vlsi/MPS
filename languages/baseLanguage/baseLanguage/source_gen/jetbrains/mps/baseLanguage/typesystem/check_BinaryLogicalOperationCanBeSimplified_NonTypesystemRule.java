@@ -34,7 +34,7 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     SModule module = SNodeOperations.getModel(binaryOperation).getModule();
 
     // Both sides could be eliminated 
-    if (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(binaryOperation)) {
+    if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(binaryOperation)) {
       Object binaryValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(binaryOperation, module);
       if (binaryValue != null && binaryValue instanceof Boolean) {
         {
@@ -51,8 +51,8 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
       }
     }
 
-    Object leftValue = (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(left) ? Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(left, module) : null);
-    Object rightValue = (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(right) ? Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(right, module) : null);
+    Object leftValue = ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(left) ? Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(left, module) : null);
+    Object rightValue = ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(right) ? Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(right, module) : null);
 
     if (leftValue != null && leftValue instanceof Boolean) {
       value = (Boolean) leftValue;

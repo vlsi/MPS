@@ -77,7 +77,7 @@ public class CheckingUtil {
       return SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && (!(SPropertyOperations.getString(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")).startsWith("\\u")) || !(SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"))));
     }
 
-    if (!(SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"))) || !(Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expr))) {
+    if (!(SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"))) || !((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expr))) {
       return false;
     }
     try {
@@ -87,7 +87,7 @@ public class CheckingUtil {
       }
 
 
-      // Beware, an Integer constant is not a guarantee that the expr is of type IntegerType.
+      // Beware, an Integer constant is not a guarantee that the expr is of type IntegerType. 
       // This must be checked in the caller rules. 
       int value = ((Integer) compileTimeConstantValue).intValue();
 

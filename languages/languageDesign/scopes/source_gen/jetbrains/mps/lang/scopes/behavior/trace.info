@@ -39,16 +39,16 @@
       <node id="2995585510566823813" at="30,0,31,0" concept="6" trace="getScope_id6GEzh_Hz_wK" />
       <node id="2995585510566823813" at="31,0,32,0" concept="6" trace="getScope_id2AitiqbD8uQ" />
       <node id="2995585510566823813" at="33,0,34,0" concept="6" trace="BH_METHODS" />
-      <node id="2995585510566833899" at="38,103,39,146" concept="5" />
-      <node id="2995585510566833907" at="41,112,42,158" concept="5" />
+      <node id="2995585510566833899" at="38,107,39,156" concept="5" />
+      <node id="2995585510566833907" at="41,116,42,168" concept="5" />
       <node id="2995585510566823813" at="45,58,46,20" concept="8" />
-      <node id="2995585510566823813" at="50,108,51,21" concept="1" />
-      <node id="2995585510566823813" at="55,113,56,49" concept="4" />
+      <node id="2995585510566823813" at="50,114,51,21" concept="1" />
+      <node id="2995585510566823813" at="55,114,56,49" concept="4" />
       <node id="2995585510566823813" at="57,26,58,56" concept="10" />
-      <node id="2995585510566823813" at="61,13,62,94" concept="5" />
-      <node id="2995585510566823813" at="63,13,64,120" concept="5" />
+      <node id="2995585510566823813" at="61,13,62,104" concept="5" />
+      <node id="2995585510566823813" at="63,13,64,138" concept="5" />
       <node id="2995585510566823813" at="65,14,66,58" concept="10" />
-      <node id="2995585510566823813" at="71,127,72,49" concept="4" />
+      <node id="2995585510566823813" at="71,128,72,49" concept="4" />
       <node id="2995585510566823813" at="73,26,74,56" concept="10" />
       <node id="2995585510566823813" at="77,14,78,58" concept="10" />
       <node id="2995585510566823813" at="84,48,85,22" concept="5" />
@@ -67,13 +67,13 @@
       <node id="2995585510566823813" at="70,0,81,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="2995585510566823813" at="54,0,69,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="2995585510566823813" at="35,63,35,63" />
-      <scope id="2995585510566823813" at="38,103,39,146" />
-      <scope id="2995585510566823813" at="41,112,42,158" />
+      <scope id="2995585510566823818" at="38,107,39,156" />
+      <scope id="2995585510566823834" at="41,116,42,168" />
       <scope id="2995585510566823813" at="45,58,46,20" />
-      <scope id="2995585510566823813" at="50,108,51,21" />
+      <scope id="2995585510566823813" at="50,114,51,21" />
       <scope id="2995585510566823813" at="57,26,58,56" />
-      <scope id="2995585510566823813" at="61,13,62,94" />
-      <scope id="2995585510566823813" at="63,13,64,120" />
+      <scope id="2995585510566823813" at="61,13,62,104" />
+      <scope id="2995585510566823813" at="63,13,64,138" />
       <scope id="2995585510566823813" at="65,14,66,58" />
       <scope id="2995585510566823813" at="73,26,74,56" />
       <scope id="2995585510566823813" at="77,14,78,58" />
@@ -95,13 +95,13 @@
       </scope>
       <scope id="2995585510566823813" at="45,0,48,0" />
       <scope id="2995585510566823813" at="49,0,53,0">
-        <var name="array" id="2995585510566823813" />
         <var name="constructor" id="2995585510566823813" />
         <var name="node" id="2995585510566823813" />
+        <var name="parameters" id="2995585510566823813" />
       </scope>
       <scope id="2995585510566823813" at="82,0,87,0" />
       <scope id="2995585510566823813" at="88,0,93,0" />
-      <scope id="2995585510566823813" at="71,127,79,5">
+      <scope id="2995585510566823813" at="71,128,79,5">
         <var name="methodIndex" id="2995585510566823813" />
       </scope>
       <scope id="2995585510566823813" at="70,0,81,0">
@@ -109,7 +109,7 @@
         <var name="method" id="2995585510566823813" />
         <var name="parameters" id="2995585510566823813" />
       </scope>
-      <scope id="2995585510566823813" at="55,113,67,5">
+      <scope id="2995585510566823813" at="55,114,67,5">
         <var name="methodIndex" id="2995585510566823813" />
       </scope>
       <scope id="2995585510566823813" at="54,0,69,0">

@@ -479,14 +479,14 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a11a(SNode node, EditorContext editorContext) {
-    return BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node);
+    return (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node);
   }
   private EditorCell createComponent_359zr8_m0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent");
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a21a(SNode node, EditorContext editorContext) {
-    return !(BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node));
+    return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node));
   }
   private EditorCell createCollection_359zr8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

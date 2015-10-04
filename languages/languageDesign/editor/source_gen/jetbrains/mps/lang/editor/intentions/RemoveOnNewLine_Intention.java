@@ -36,7 +36,7 @@ public final class RemoveOnNewLine_Intention extends IntentionDescriptorBase imp
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return EditorCellModel__BehaviorDescriptor.isOnNewLine_idi0pUMOG.invoke(node);
+    return (boolean) EditorCellModel__BehaviorDescriptor.isOnNewLine_idi0pUMOG.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

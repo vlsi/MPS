@@ -32,7 +32,7 @@ public class ErrorReportUtil {
 
       if (Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(possibleSuppressors, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f43L, "jetbrains.mps.lang.core.structure.ISuppressErrors"))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode attr) {
-          return ((Boolean) BHReflection.invoke(attr, SMethodTrimmedId.create("suppress", null, "2WmWrdnSpX7"), node));
+          return ((boolean) (Boolean) BHReflection.invoke(attr, SMethodTrimmedId.create("suppress", null, "2WmWrdnSpX7"), node));
         }
       })) {
         return false;

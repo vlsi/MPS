@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -22,24 +21,25 @@ import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class UnrestrictedFunctionType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getRuntimeClassName_idhTXTW9V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeClassName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTXTW9V").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getRuntimeSignature_idhEwIOjZ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeSignature").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOjZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getRuntimeAdapterClassName_idhUQ$n8M = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeAdapterClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hUQ$n8M").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getTerminateType_idhVqPOyZ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTerminateType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hVqPOyZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
+  public static final SMethod<String> getRuntimeClassName_idhTXTW9V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeClassName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTXTW9V").registry(REGISTRY).build();
+  public static final SMethod<String> getRuntimeSignature_idhEwIOjZ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeSignature").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOjZ").registry(REGISTRY).build();
+  public static final SMethod<String> getRuntimeAdapterClassName_idhUQ$n8M = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeAdapterClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hUQ$n8M").registry(REGISTRY).build();
+  public static final SMethod<SNode> getTerminateType_idhVqPOyZ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTerminateType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hVqPOyZ").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getRuntimeClassName_idhTXTW9V, getRuntimeSignature_idhEwIOjZ, getRuntimeAdapterClassName_idhUQ$n8M, getTerminateType_idhVqPOyZ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
+  /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4e013cL, "parameterType"))) {
@@ -49,10 +49,10 @@ public final class UnrestrictedFunctionType__BehaviorDescriptor extends BaseBHDe
     sb.append("==>").append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, 0x11eda2b270fL, "terminateType"))));
     return sb.append("}").toString();
   }
-  private static String getRuntimeClassName_idhTXTW9V(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRuntimeClassName_idhTXTW9V(@NotNull SNode __thisNode__) {
     return "_UnrestrictedFunctionTypes";
   }
-  private static String getRuntimeSignature_idhEwIOjZ(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRuntimeSignature_idhEwIOjZ(@NotNull SNode __thisNode__) {
     StringBuilder sb = new StringBuilder();
     if ((FunctionType__BehaviorDescriptor.getResultType_idhTY4wo3.invoke(__thisNode__) != null)) {
       sb.append("_return");
@@ -68,10 +68,10 @@ public final class UnrestrictedFunctionType__BehaviorDescriptor extends BaseBHDe
     sb.append("_E").append(ListSequence.fromList(FunctionType__BehaviorDescriptor.getNormalizedThrowsTypes_id2ZrgyPlTDZP.invoke(__thisNode__)).count());
     return sb.toString();
   }
-  private static String getRuntimeAdapterClassName_idhUQ$n8M(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRuntimeAdapterClassName_idhUQ$n8M(@NotNull SNode __thisNode__) {
     return "_UnrestrictedClosures";
   }
-  private static SNode getTerminateType_idhVqPOyZ(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getTerminateType_idhVqPOyZ(@NotNull SNode __thisNode__) {
     SNode tt = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e505b9d83L, 0x11eda2b270fL, "terminateType"));
     if (SNodeOperations.isInstanceOf(tt, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
       List<SNode> args = SLinkOperations.getChildren(SNodeOperations.cast(tt, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType")), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"));
@@ -85,34 +85,34 @@ public final class UnrestrictedFunctionType__BehaviorDescriptor extends BaseBHDe
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getPresentation_idhEwIMiw(node);
+        return (T) ((String) getPresentation_idhEwIMiw(node));
       case 1:
-        return (T) getRuntimeClassName_idhTXTW9V(node);
+        return (T) ((String) getRuntimeClassName_idhTXTW9V(node));
       case 2:
-        return (T) getRuntimeSignature_idhEwIOjZ(node);
+        return (T) ((String) getRuntimeSignature_idhEwIOjZ(node));
       case 3:
-        return (T) getRuntimeAdapterClassName_idhUQ$n8M(node);
+        return (T) ((String) getRuntimeAdapterClassName_idhUQ$n8M(node));
       case 4:
-        return (T) getTerminateType_idhVqPOyZ(node);
+        return (T) ((SNode) getTerminateType_idhVqPOyZ(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

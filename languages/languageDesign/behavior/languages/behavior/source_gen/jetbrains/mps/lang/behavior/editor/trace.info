@@ -791,7 +791,7 @@
       <node id="313898386613796553" at="340,66,341,40" concept="2" />
       <node id="313898386613796553" at="341,40,342,34" concept="2" />
       <node id="313898386613796553" at="342,34,343,22" concept="7" />
-      <node id="313898386613796558" at="347,31,348,113" concept="7" />
+      <node id="313898386613796558" at="347,31,348,122" concept="7" />
       <node id="313898386613796554" at="352,44,353,46" concept="7" />
       <node id="313898386613796554" at="355,13,356,79" concept="2" />
       <node id="313898386613796554" at="356,79,357,82" concept="2" />
@@ -1189,7 +1189,7 @@
       <scope id="1225194473508" at="324,96,325,83" />
       <scope id="1225194473508" at="325,83,326,82" />
       <scope id="313898386613796574" at="329,98,330,182" />
-      <scope id="313898386613796557" at="347,31,348,113" />
+      <scope id="313898386613796557" at="347,31,348,122" />
       <scope id="313898386613796554" at="352,44,353,46" />
       <scope id="313898386613796571" at="391,35,392,14" />
       <scope id="313898386613796571" at="394,69,395,67" />
@@ -2141,7 +2141,7 @@
   <root nodeRef="r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)/1225202142298">
     <file name="ConceptMethodDeclaration_Menu.java">
       <node id="1225202142298" at="20,42,21,128" concept="9" />
-      <node id="1225202142303" at="26,120,27,450" concept="7" />
+      <node id="1225202142303" at="26,120,27,464" concept="7" />
       <node id="1225202142300" at="29,148,30,100" concept="2" />
       <node id="1225202142316" at="32,149,33,186" concept="2" />
       <node id="1225202142323" at="33,186,34,362" concept="2" />
@@ -2155,7 +2155,7 @@
       <node id="1225202142300" at="32,0,37,0" concept="5" trace="handleAction_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="1225202142300" at="24,66,24,66" />
       <scope id="1225202142298" at="20,42,21,128" />
-      <scope id="1225202142302" at="26,120,27,450" />
+      <scope id="1225202142302" at="26,120,27,464" />
       <scope id="1225202142300" at="29,148,30,100" />
       <scope id="1225202142300" at="37,45,38,19" />
       <scope id="1225202142300" at="24,0,26,0" />

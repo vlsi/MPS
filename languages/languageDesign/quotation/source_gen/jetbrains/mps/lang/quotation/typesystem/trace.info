@@ -546,7 +546,7 @@
       <node id="8182547171709457733" at="60,30,64,168" concept="0" />
       <node id="8182547171709457029" at="24,61,29,9" concept="0" />
       <node id="8182547171709457731" at="32,61,37,9" concept="0" />
-      <node id="8182547171709457029" at="23,235,30,7" concept="4" />
+      <node id="8182547171709457029" at="23,245,30,7" concept="4" />
       <node id="8182547171709457731" at="31,12,38,7" concept="4" />
       <node id="8182547171709457034" at="50,0,57,0" concept="8" trace="_quotation_createNode_729lck_a0a0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8182547171709457729" at="31,10,39,5" concept="0" />
@@ -580,7 +580,7 @@
         <var name="facade" id="8182547171709457034" />
         <var name="quotedNode_2" id="8182547171709457034" />
       </scope>
-      <scope id="8182547171709457040" at="23,235,30,7" />
+      <scope id="8182547171709457040" at="23,245,30,7" />
       <scope id="8182547171709457730" at="31,12,38,7" />
       <scope id="8182547171709457034" at="50,0,57,0">
         <var name="parameter_1" id="8182547171709457034" />
@@ -777,7 +777,7 @@
     <file name="typeof_LightQuotationLinkList_InferenceRule.java">
       <node id="8182547171709952633" at="25,117,26,231" concept="6" />
       <node id="8182547171709952816" at="26,231,27,15" concept="6" />
-      <node id="8182547171709952844" at="28,236,29,358" concept="2" />
+      <node id="8182547171709952844" at="28,246,29,358" concept="2" />
       <node id="8182547171709952867" at="30,12,31,359" concept="2" />
       <node id="7838325468139342753" at="33,5,34,46" concept="6" />
       <node id="7838325468139342753" at="34,46,35,205" concept="6" />
@@ -830,7 +830,7 @@
       <node id="8182547171709952796" at="64,0,74,0" concept="8" trace="_quotation_createNode_ttlvyh_a0a0a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8182547171709952572" at="25,0,48,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8182547171709952572" at="23,56,23,56" />
-      <scope id="8182547171709952771" at="28,236,29,358" />
+      <scope id="8182547171709952771" at="28,246,29,358" />
       <scope id="8182547171709952793" at="30,12,31,359" />
       <scope id="8182547171709952572" at="48,50,49,162" />
       <scope id="8182547171709952572" at="51,68,52,102" />

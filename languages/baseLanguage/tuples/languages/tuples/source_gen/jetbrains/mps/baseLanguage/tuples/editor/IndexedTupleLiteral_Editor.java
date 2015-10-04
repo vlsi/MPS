@@ -47,7 +47,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_rvpzqy_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return IndexedTupleLiteral__BehaviorDescriptor.getLeftBracket_id1653mnvAgn6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) IndexedTupleLiteral__BehaviorDescriptor.getLeftBracket_id1653mnvAgn6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -128,7 +128,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_rvpzqy_c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return IndexedTupleLiteral__BehaviorDescriptor.getRightBracket_id1653mnvAgtJ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) IndexedTupleLiteral__BehaviorDescriptor.getRightBracket_id1653mnvAgtJ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }

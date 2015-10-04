@@ -5,16 +5,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 /**
  * Will be removed after 3.3
@@ -22,43 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
  */
 @Deprecated
 public class IApplicableToNothing_Behavior {
-  public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept __thisConcept__) {
-    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    List<SNode> implementList;
-
-    SNode thisc = __thisConcept__.getDeclarationNode();
-    if (SNodeOperations.isInstanceOf(thisc, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) thisc), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
-        }
-      }).toListSequence();
-
-    } else {
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(__thisConcept__)));
-      implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) thisc), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, 0x110356e9df4L, "extends"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, 0x110356fe029L, "intfc"));
-        }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
-        }
-      }).toListSequence();
-    }
-
-    for (SNode impl : ListSequence.fromList(implementList)) {
-      // casting twice to avoid "not comparable" type error 
-      SNode conceptNode = impl;
-      SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(SNodeOperations.asSConcept(((SNode) conceptNode)))));
-    }
-    return result;
+  public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(SAbstractConcept __thisConcept__) {
+    return IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB(__thisConcept__);
   }
   public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept __thisConcept__, SNode concept) {
-    return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")));
+    return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7(__thisConcept__, concept);
   }
 }

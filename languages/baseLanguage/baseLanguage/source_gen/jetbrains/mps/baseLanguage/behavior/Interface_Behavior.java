@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class Interface_Behavior {
   public static boolean call_canBeStatic_3190746170685014638(SNode __thisNode__) {
-    return Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(__thisNode__) && !(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__));
+    return Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I(__thisNode__);
   }
 }

@@ -26,7 +26,7 @@ public class check_NotExpressionCanBeSimplified_NonTypesystemRule extends Abstra
     while (SNodeOperations.isInstanceOf(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
       currentExpression = SLinkOperations.getTarget(SNodeOperations.cast(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"));
     }
-    if (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(currentExpression)) {
+    if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(currentExpression)) {
       SModule module = SNodeOperations.getModel(notExpression).getModule();
       Object value = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(currentExpression, module);
       if (value != null && value instanceof Boolean) {

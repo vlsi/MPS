@@ -84,7 +84,7 @@ public class QueriesGenerated {
             Iterable<SNode> classes = SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
             return Sequence.fromIterable(classes).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode it) {
-                return ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(it);
+                return (Iterable<SNode>) ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(it);
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
@@ -122,7 +122,7 @@ public class QueriesGenerated {
     Iterable<SNode> classes = SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getParentNode(), false).getAvailableElements(null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     return Sequence.fromIterable(classes).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(it);
+        return (Iterable<SNode>) ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(it);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

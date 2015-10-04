@@ -104,7 +104,7 @@ public final class SuroundWithTryCatch_Intention extends IntentionDescriptorBase
 
       final Iterable<SNode> handledExceptions = Sequence.fromIterable(caughtExceptions).concat(Sequence.fromIterable(thrownExceptions));
 
-      Set<SNode> uncaughtThrowables = StatementList__BehaviorDescriptor.uncaughtThrowables_id2SVUfbZ9Qq1.invoke(SLinkOperations.getTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f383e83d4L, "body")), false);
+      Set<SNode> uncaughtThrowables = StatementList__BehaviorDescriptor.uncaughtThrowables_id2SVUfbZ9Qq1.invoke(SLinkOperations.getTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f383e83d4L, "body")), ((boolean) false));
       if (SetSequence.fromSet(uncaughtThrowables).isNotEmpty()) {
         ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).clear();
         SetSequence.fromSet(uncaughtThrowables).visitAll(new IVisitor<SNode>() {

@@ -13,13 +13,13 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -28,79 +28,79 @@ public final class DataTypeDeclaration__BehaviorDescriptor extends BaseBHDescrip
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> toBaseLanguageType_idhEwI9ym = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("toBaseLanguageType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwI9ym").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimple_idhKtF$7L = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtF$7L").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isEnum_idhKtFDel = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnum").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtFDel").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimpleString_idhKtFG6a = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleString").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtFG6a").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimpleInteger_idhKtGkcn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGkcn").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimpleBoolean_idhKtGpIQ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGpIQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isEnumOfString_idhKtGw8K = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnumOfString").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGw8K").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isEnumOfInteger_idhKtGCmu = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnumOfInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGCmu").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isEnumOfBoolean_idhKtGHoM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnumOfBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGHoM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimpleStringOrEnumOfString_idhKtGPCt = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleStringOrEnumOfString").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGPCt").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimpleIntegerOrEnumOfInteger_idhKtGTZR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleIntegerOrEnumOfInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGTZR").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSimpleBooleanOrEnumOfBoolean_idhKtGY3g = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleBooleanOrEnumOfBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGY3g").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<SNode> toBaseLanguageType_idhEwI9ym = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("toBaseLanguageType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwI9ym").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimple_idhKtF$7L = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimple").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtF$7L").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isEnum_idhKtFDel = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnum").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtFDel").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimpleString_idhKtFG6a = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleString").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtFG6a").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimpleInteger_idhKtGkcn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGkcn").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimpleBoolean_idhKtGpIQ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGpIQ").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isEnumOfString_idhKtGw8K = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnumOfString").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGw8K").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isEnumOfInteger_idhKtGCmu = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnumOfInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGCmu").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isEnumOfBoolean_idhKtGHoM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEnumOfBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGHoM").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimpleStringOrEnumOfString_idhKtGPCt = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleStringOrEnumOfString").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGPCt").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimpleIntegerOrEnumOfInteger_idhKtGTZR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleIntegerOrEnumOfInteger").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGTZR").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSimpleBooleanOrEnumOfBoolean_idhKtGY3g = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSimpleBooleanOrEnumOfBoolean").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKtGY3g").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(toBaseLanguageType_idhEwI9ym, isSimple_idhKtF$7L, isEnum_idhKtFDel, isSimpleString_idhKtFG6a, isSimpleInteger_idhKtGkcn, isSimpleBoolean_idhKtGpIQ, isEnumOfString_idhKtGw8K, isEnumOfInteger_idhKtGCmu, isEnumOfBoolean_idhKtGHoM, isSimpleStringOrEnumOfString_idhKtGPCt, isSimpleIntegerOrEnumOfInteger_idhKtGTZR, isSimpleBooleanOrEnumOfBoolean_idhKtGY3g);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode toBaseLanguageType_idhEwI9ym(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode toBaseLanguageType_idhEwI9ym(@NotNull SNode __thisNode__) {
     return _quotation_createNode_47r3zh_a0a0();
   }
-  private static Boolean isSimple_idhKtF$7L(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isSimple_idhKtF$7L(@NotNull SNode __thisNode__) {
     return SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) || SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"));
   }
-  private static Boolean isEnum_idhKtFDel(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isEnum_idhKtFDel(@NotNull SNode __thisNode__) {
     return SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
-  private static Boolean isSimpleString_idhKtFG6a(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isSimpleString_idhKtFG6a(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isString_idhKtFRO6.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+      return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isString_idhKtFRO6.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     } else if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc268c7a37L, "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration"))) {
       return true;
     }
     return false;
   }
-  private static Boolean isSimpleInteger_idhKtGkcn(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isSimpleInteger_idhKtGkcn(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+      return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     }
     return false;
   }
-  private static Boolean isSimpleBoolean_idhKtGpIQ(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isSimpleBoolean_idhKtGpIQ(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
+      return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc3652de27L, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")));
     }
     return false;
   }
-  private static Boolean isEnumOfString_idhKtGw8K(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isEnumOfString_idhKtGw8K(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isString_idhKtFRO6.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+      return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isString_idhKtFRO6.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
     }
     return false;
   }
-  private static Boolean isEnumOfInteger_idhKtGCmu(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isEnumOfInteger_idhKtGCmu(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+      return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isInteger_idhKtFYCF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
     }
     return false;
   }
-  private static Boolean isEnumOfBoolean_idhKtGHoM(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isEnumOfBoolean_idhKtGHoM(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-      return PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
+      return (boolean) PrimitiveDataTypeDeclaration__BehaviorDescriptor.isBoolean_idhKtG1tp.invoke(SLinkOperations.getTarget(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc3210ef05L, "memberDataType")));
     }
     return false;
   }
-  private static Boolean isSimpleStringOrEnumOfString_idhKtGPCt(@NotNull SNode __thisNode__) {
-    return DataTypeDeclaration__BehaviorDescriptor.isEnumOfString_idhKtGw8K.invoke(__thisNode__) || DataTypeDeclaration__BehaviorDescriptor.isSimpleString_idhKtFG6a.invoke(__thisNode__);
+  /*package*/ static boolean isSimpleStringOrEnumOfString_idhKtGPCt(@NotNull SNode __thisNode__) {
+    return ((boolean) DataTypeDeclaration__BehaviorDescriptor.isEnumOfString_idhKtGw8K.invoke(__thisNode__)) || ((boolean) DataTypeDeclaration__BehaviorDescriptor.isSimpleString_idhKtFG6a.invoke(__thisNode__));
   }
-  private static Boolean isSimpleIntegerOrEnumOfInteger_idhKtGTZR(@NotNull SNode __thisNode__) {
-    return DataTypeDeclaration__BehaviorDescriptor.isEnumOfInteger_idhKtGCmu.invoke(__thisNode__) || DataTypeDeclaration__BehaviorDescriptor.isSimpleInteger_idhKtGkcn.invoke(__thisNode__);
+  /*package*/ static boolean isSimpleIntegerOrEnumOfInteger_idhKtGTZR(@NotNull SNode __thisNode__) {
+    return ((boolean) DataTypeDeclaration__BehaviorDescriptor.isEnumOfInteger_idhKtGCmu.invoke(__thisNode__)) || ((boolean) DataTypeDeclaration__BehaviorDescriptor.isSimpleInteger_idhKtGkcn.invoke(__thisNode__));
   }
-  private static Boolean isSimpleBooleanOrEnumOfBoolean_idhKtGY3g(@NotNull SNode __thisNode__) {
-    return DataTypeDeclaration__BehaviorDescriptor.isEnumOfBoolean_idhKtGHoM.invoke(__thisNode__) || DataTypeDeclaration__BehaviorDescriptor.isSimpleBoolean_idhKtGpIQ.invoke(__thisNode__);
+  /*package*/ static boolean isSimpleBooleanOrEnumOfBoolean_idhKtGY3g(@NotNull SNode __thisNode__) {
+    return ((boolean) DataTypeDeclaration__BehaviorDescriptor.isEnumOfBoolean_idhKtGHoM.invoke(__thisNode__)) || ((boolean) DataTypeDeclaration__BehaviorDescriptor.isSimpleBoolean_idhKtGpIQ.invoke(__thisNode__));
   }
 
   /*package*/ DataTypeDeclaration__BehaviorDescriptor() {
@@ -108,48 +108,48 @@ public final class DataTypeDeclaration__BehaviorDescriptor extends BaseBHDescrip
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) toBaseLanguageType_idhEwI9ym(node);
+        return (T) ((SNode) toBaseLanguageType_idhEwI9ym(node));
       case 1:
-        return (T) isSimple_idhKtF$7L(node);
+        return (T) ((Boolean) isSimple_idhKtF$7L(node));
       case 2:
-        return (T) isEnum_idhKtFDel(node);
+        return (T) ((Boolean) isEnum_idhKtFDel(node));
       case 3:
-        return (T) isSimpleString_idhKtFG6a(node);
+        return (T) ((Boolean) isSimpleString_idhKtFG6a(node));
       case 4:
-        return (T) isSimpleInteger_idhKtGkcn(node);
+        return (T) ((Boolean) isSimpleInteger_idhKtGkcn(node));
       case 5:
-        return (T) isSimpleBoolean_idhKtGpIQ(node);
+        return (T) ((Boolean) isSimpleBoolean_idhKtGpIQ(node));
       case 6:
-        return (T) isEnumOfString_idhKtGw8K(node);
+        return (T) ((Boolean) isEnumOfString_idhKtGw8K(node));
       case 7:
-        return (T) isEnumOfInteger_idhKtGCmu(node);
+        return (T) ((Boolean) isEnumOfInteger_idhKtGCmu(node));
       case 8:
-        return (T) isEnumOfBoolean_idhKtGHoM(node);
+        return (T) ((Boolean) isEnumOfBoolean_idhKtGHoM(node));
       case 9:
-        return (T) isSimpleStringOrEnumOfString_idhKtGPCt(node);
+        return (T) ((Boolean) isSimpleStringOrEnumOfString_idhKtGPCt(node));
       case 10:
-        return (T) isSimpleIntegerOrEnumOfInteger_idhKtGTZR(node);
+        return (T) ((Boolean) isSimpleIntegerOrEnumOfInteger_idhKtGTZR(node));
       case 11:
-        return (T) isSimpleBooleanOrEnumOfBoolean_idhKtGY3g(node);
+        return (T) ((Boolean) isSimpleBooleanOrEnumOfBoolean_idhKtGY3g(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

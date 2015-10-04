@@ -25,8 +25,8 @@
       <node id="1236698667104" at="41,35,42,17" concept="7" />
       <node id="1236698667104" at="45,37,46,129" concept="2" />
       <node id="1236698667104" at="47,5,48,30" concept="7" />
-      <node id="1217259708145042641" at="54,87,55,135" concept="7" />
-      <node id="1237466368073" at="58,78,59,96" concept="6" />
+      <node id="1217259708145042641" at="54,87,55,145" concept="7" />
+      <node id="1237466368073" at="58,78,59,106" concept="6" />
       <node id="1237466405797" at="60,201,61,352" concept="2" />
       <node id="1237467371671" at="62,14,63,342" concept="2" />
       <node id="1236698667104" at="67,48,68,42" concept="7" />
@@ -40,7 +40,7 @@
       <node id="1236698667104" at="40,0,44,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="1236698667104" at="53,0,57,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="1236698667104" at="66,0,70,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-      <node id="1237466391505" at="59,96,64,7" concept="4" />
+      <node id="1237466391505" at="59,106,64,7" concept="4" />
       <node id="1236698667104" at="44,0,50,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1236698667104" at="30,0,37,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1236698667104" at="57,0,66,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
@@ -51,7 +51,7 @@
       <scope id="1237466202832" at="37,91,38,382" />
       <scope id="1236698667104" at="41,35,42,17" />
       <scope id="1236698667104" at="45,37,46,129" />
-      <scope id="1236698667106" at="54,87,55,135" />
+      <scope id="1236698667106" at="54,87,55,145" />
       <scope id="1237466391506" at="60,201,61,352" />
       <scope id="1237466424424" at="62,14,63,342" />
       <scope id="1236698667104" at="67,48,68,42" />

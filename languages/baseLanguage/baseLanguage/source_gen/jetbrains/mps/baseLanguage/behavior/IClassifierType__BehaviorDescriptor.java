@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
 import java.util.Arrays;
@@ -32,24 +31,25 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class IClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x66c71d82c2eb7f7eL, "jetbrains.mps.baseLanguage.structure.IClassifierType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getClassifier_id6r77ob2URY9 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassifier").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URY9").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> getTypeParameters_id6r77ob2URYe = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getTypeParameters").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URYe").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> getMembers_id6r77ob2V1Fr = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2V1Fr").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> getVisibleMembers_id5laDzmpBPtZ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getVisibleMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5laDzmpBPtZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Void> populateMembers_id6r77ob2USS_ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2USS_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(MembersPopulatingContext.class, (Class<SNode>) ((Class) Object.class))));
+  public static final SMethod<SNode> getClassifier_id6r77ob2URY9 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassifier").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URY9").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getTypeParameters_id6r77ob2URYe = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getTypeParameters").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URYe").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getMembers_id6r77ob2V1Fr = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2V1Fr").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getVisibleMembers_id5laDzmpBPtZ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getVisibleMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5laDzmpBPtZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Void> populateMembers_id6r77ob2USS_ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2USS_").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getClassifier_id6r77ob2URY9, getTypeParameters_id6r77ob2URYe, getMembers_id6r77ob2V1Fr, getVisibleMembers_id5laDzmpBPtZ, populateMembers_id6r77ob2USS_);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Iterable<SNode> getMembers_id6r77ob2V1Fr(@NotNull final SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> getMembers_id6r77ob2V1Fr(@NotNull final SNode __thisNode__) {
     if (__thisNode__ == null) {
       // todo: this in virtual methods cannot be null but in non-virtual can be. think about it 
       return Collections.emptyList();
@@ -77,14 +77,14 @@ public final class IClassifierType__BehaviorDescriptor extends BaseBHDescriptor 
       }
     });
   }
-  private static Iterable<SNode> getVisibleMembers_id5laDzmpBPtZ(@NotNull final SNode __thisNode__, final SNode contextNode) {
+  /*package*/ static Iterable<SNode> getVisibleMembers_id5laDzmpBPtZ(@NotNull final SNode __thisNode__, final SNode contextNode) {
     return Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, __thisNode__, contextNode);
+        return (boolean) IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, __thisNode__, contextNode);
       }
     });
   }
-  private static void populateMembers_id6r77ob2USS_(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
+  /*package*/ static void populateMembers_id6r77ob2USS_(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
     SNode thisClassifier = IClassifierType__BehaviorDescriptor.getClassifier_id6r77ob2URY9.invoke(__thisNode__);
 
     if ((thisClassifier != null)) {
@@ -103,21 +103,21 @@ public final class IClassifierType__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 2:
-        return (T) getMembers_id6r77ob2V1Fr(node);
+        return (T) ((Iterable<SNode>) getMembers_id6r77ob2V1Fr(node));
       case 3:
-        return (T) getVisibleMembers_id5laDzmpBPtZ(node, (SNode) parameters[0]);
+        return (T) ((Iterable<SNode>) getVisibleMembers_id5laDzmpBPtZ(node, (SNode) parameters[0]));
       case 4:
         populateMembers_id6r77ob2USS_(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
@@ -127,7 +127,7 @@ public final class IClassifierType__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

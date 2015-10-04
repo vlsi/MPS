@@ -551,9 +551,9 @@
       <node id="1237731331234" at="413,376,414,40" concept="8" />
       <node id="1237732032340" at="434,94,435,375" concept="2" />
       <node id="1237732041788" at="435,375,436,40" concept="8" />
-      <node id="1237731273764" at="457,210,458,900" concept="8" />
+      <node id="1237731273764" at="457,210,458,920" concept="8" />
       <node id="1237731265768" at="457,0,460,0" concept="9" trace="sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1237731265768#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="1237731265769" at="457,210,458,900" />
+      <scope id="1237731265769" at="457,210,458,920" />
       <scope id="1237731291265" at="412,94,414,40" />
       <scope id="1237732002047" at="434,94,436,40" />
       <scope id="1237731265768" at="457,0,460,0">
@@ -791,9 +791,9 @@
     <file name="QueriesGenerated.java">
       <node id="1562299158921287216" at="518,94,519,380" concept="2" />
       <node id="1562299158921287222" at="519,380,520,40" concept="8" />
-      <node id="1562299158921287175" at="541,216,542,783" concept="8" />
+      <node id="1562299158921287175" at="541,216,542,793" concept="8" />
       <node id="1562299158921287173" at="541,0,544,0" concept="9" trace="sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1562299158921287173#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="1562299158921287174" at="541,216,542,783" />
+      <scope id="1562299158921287174" at="541,216,542,793" />
       <scope id="1562299158921287215" at="518,94,520,40" />
       <scope id="1562299158921287173" at="541,0,544,0">
         <var name="_context" id="1562299158921287173" />
@@ -805,9 +805,9 @@
     <file name="QueriesGenerated.java">
       <node id="1562299158921333174" at="547,94,548,380" concept="2" />
       <node id="1562299158921333180" at="548,380,549,40" concept="8" />
-      <node id="1562299158921333143" at="570,206,571,560" concept="8" />
+      <node id="1562299158921333143" at="570,206,571,570" concept="8" />
       <node id="1562299158921333141" at="570,0,573,0" concept="9" trace="sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1562299158921333141#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="1562299158921333142" at="570,206,571,560" />
+      <scope id="1562299158921333142" at="570,206,571,570" />
       <scope id="1562299158921333173" at="547,94,549,40" />
       <scope id="1562299158921333141" at="570,0,573,0">
         <var name="_context" id="1562299158921333141" />

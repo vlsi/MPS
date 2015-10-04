@@ -59,7 +59,7 @@ public class ModelReferenceFQName implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_ho2vdo_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node);
+        return (String) ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node);
       }
       public void setText(String s) {
       }

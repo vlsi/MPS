@@ -66,14 +66,14 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(EditorContext editorContext, SNode node) {
-    if (RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(node)) {
+    if ((boolean) RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(node)) {
       return MPSFonts.BOLD_ITALIC;
     } else {
       return MPSFonts.ITALIC;
     }
   }
   private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(EditorContext editorContext, SNode node) {
-    if (RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(node)) {
+    if ((boolean) RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(node)) {
       return Color.BLUE;
     } else {
       return Color.GRAY;

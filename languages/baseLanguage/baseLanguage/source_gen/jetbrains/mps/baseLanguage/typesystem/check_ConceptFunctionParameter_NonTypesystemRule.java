@@ -37,7 +37,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
           return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(parameterConcept), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)));
         }
       });
-      if (Sequence.fromIterable(seq).isEmpty() && ConceptFunctionParameter__BehaviorDescriptor.needConceptFunction_idhZKliUO.invoke(parameter)) {
+      if (Sequence.fromIterable(seq).isEmpty() && (boolean) ConceptFunctionParameter__BehaviorDescriptor.needConceptFunction_idhZKliUO.invoke(parameter)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313958459", null, errorTarget);

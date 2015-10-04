@@ -6,15 +6,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Will be removed after 3.3
@@ -23,33 +14,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Deprecated
 public class TryCatchStatement_Behavior {
   public static void call_collectUncatchedThrowables_4313092516462065508(SAbstractConcept __thisConcept__, Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
-    Set<SNode> thrownsFromBody = SetSequence.fromSet(new HashSet<SNode>());
-    StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(body, thrownsFromBody, ignoreMayBeThrowables);
-
-    // remove what we have catched 
-    for (SNode caatch : ListSequence.fromList(catchClause)) {
-      SLinkOperations.getTarget(caatch, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable"));
-      Set<SNode> toRemove = SetSequence.fromSet(new HashSet<SNode>());
-      for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
-        SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(_quotation_createNode_1bi1ep_a0a1a2a4a2(thrownFromBody), catchedType)) {
-          SetSequence.fromSet(toRemove).addElement(thrownFromBody);
-        }
-      }
-      SetSequence.fromSet(thrownsFromBody).removeSequence(SetSequence.fromSet(toRemove));
-    }
-    SetSequence.fromSet(throwables).addSequence(SetSequence.fromSet(thrownsFromBody));
-
-    // now collect what was thrown in catch blocks 
-    for (SNode caatch : ListSequence.fromList(catchClause)) {
-      StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(SLinkOperations.getTarget(caatch, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f2L, "catchBody")), throwables, ignoreMayBeThrowables);
-    }
-  }
-  private static SNode _quotation_createNode_1bi1ep_a0a1a2a4a2(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
-    return quotedNode_2;
+    TryCatchStatement__BehaviorDescriptor.collectUncatchedThrowables_id3JrbGEZ7vt$(__thisConcept__, throwables, body, catchClause, ignoreMayBeThrowables);
   }
 }

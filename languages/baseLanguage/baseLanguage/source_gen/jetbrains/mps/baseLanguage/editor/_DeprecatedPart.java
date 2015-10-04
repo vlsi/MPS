@@ -56,7 +56,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated")) && IBLDeprecatable__BehaviorDescriptor.shouldDeprecatedDocBeVisible_id7gdCoemJ2WL.invoke(node);
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated")) && (boolean) IBLDeprecatable__BehaviorDescriptor.shouldDeprecatedDocBeVisible_id7gdCoemJ2WL.invoke(node);
   }
   private EditorCell createConstant_uc5iyq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");

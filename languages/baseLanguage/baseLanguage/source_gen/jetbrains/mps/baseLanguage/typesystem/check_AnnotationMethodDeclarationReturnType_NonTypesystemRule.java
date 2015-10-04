@@ -20,7 +20,7 @@ public class check_AnnotationMethodDeclarationReturnType_NonTypesystemRule exten
   }
   public void applyRule(final SNode annotationMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode returnType = SLinkOperations.getTarget(annotationMethodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"));
-    if (!(AnnotationMethodDeclaration__BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(annotationMethodDeclaration, returnType))) {
+    if (!((boolean) AnnotationMethodDeclaration__BehaviorDescriptor.isGoodReturnType_id5JI19Xbr7EK.invoke(annotationMethodDeclaration, returnType))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnType, "invalid type for annotation member", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184120343376", null, errorTarget);
     }

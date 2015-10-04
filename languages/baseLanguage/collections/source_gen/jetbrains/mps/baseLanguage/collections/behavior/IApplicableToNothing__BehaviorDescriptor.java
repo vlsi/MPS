@@ -14,7 +14,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Set;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -27,23 +26,24 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getApplicableTypes_id5cL0w3DYzxf = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableTypes").modifiers(SModifiersImpl.create(13, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("5cL0w3DYzxf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Set<SNode>> getAllApplicableTypes_id5cL0w3DYWgB = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("getAllApplicableTypes").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5cL0w3DYWgB").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  /*package*/ static final SMethod<Boolean> hasApplicableTypes_id1QUKo_K_4f7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasApplicableTypes").modifiers(SModifiersImpl.create(1, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("1QUKo_K_4f7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<SNode> expectedOperandType_id5xvLnyYzY1Q = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("expectedOperandType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5xvLnyYzY1Q").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
+  public static final SMethod<List<SNode>> getApplicableTypes_id5cL0w3DYzxf = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableTypes").modifiers(SModifiersImpl.create(13, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("5cL0w3DYzxf").registry(REGISTRY).build();
+  public static final SMethod<Set<SNode>> getAllApplicableTypes_id5cL0w3DYWgB = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("getAllApplicableTypes").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5cL0w3DYWgB").registry(REGISTRY).build();
+  /*package*/ static final SMethod<Boolean> hasApplicableTypes_id1QUKo_K_4f7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasApplicableTypes").modifiers(SModifiersImpl.create(1, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("1QUKo_K_4f7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> expectedOperandType_id5xvLnyYzY1Q = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("expectedOperandType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5xvLnyYzY1Q").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableTypes_id5cL0w3DYzxf, getAllApplicableTypes_id5cL0w3DYWgB, hasApplicableTypes_id1QUKo_K_4f7, expectedOperandType_id5xvLnyYzY1Q);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Set<SNode> getAllApplicableTypes_id5cL0w3DYWgB(@NotNull final SAbstractConcept __thisConcept__) {
+  /*package*/ static Set<SNode> getAllApplicableTypes_id5cL0w3DYWgB(@NotNull final SAbstractConcept __thisConcept__) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> implementList;
 
@@ -55,7 +55,7 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
+          return ((boolean) IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it));
         }
       }).toListSequence();
 
@@ -67,7 +67,7 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it);
+          return ((boolean) IApplicableToNothing__BehaviorDescriptor.hasApplicableTypes_id1QUKo_K_4f7.invoke(__thisConcept__, it));
         }
       }).toListSequence();
     }
@@ -79,10 +79,10 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
     }
     return result;
   }
-  private static Boolean hasApplicableTypes_id1QUKo_K_4f7(@NotNull SAbstractConcept __thisConcept__, SNode concept) {
+  /*package*/ static boolean hasApplicableTypes_id1QUKo_K_4f7(@NotNull SAbstractConcept __thisConcept__, SNode concept) {
     return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")) && !(SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing")));
   }
-  private static SNode expectedOperandType_id5xvLnyYzY1Q(@NotNull SNode __thisNode__, SNode elementType) {
+  /*package*/ static SNode expectedOperandType_id5xvLnyYzY1Q(@NotNull SNode __thisNode__, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType")));
     for (SNode et : IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
       if ((et != null)) {
@@ -101,35 +101,35 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 3:
-        return (T) expectedOperandType_id5xvLnyYzY1Q(node, (SNode) parameters[0]);
+        return (T) ((SNode) expectedOperandType_id5xvLnyYzY1Q(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 1:
-        return (T) getAllApplicableTypes_id5cL0w3DYWgB(concept);
+        return (T) ((Set<SNode>) getAllApplicableTypes_id5cL0w3DYWgB(concept));
       case 2:
-        return (T) hasApplicableTypes_id1QUKo_K_4f7(concept, (SNode) parameters[0]);
+        return (T) ((Boolean) hasApplicableTypes_id1QUKo_K_4f7(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -128,13 +128,13 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return EditorCellModel__BehaviorDescriptor.getTextBackgroundColor_idhL7BhMP.invoke(node);
   }
   private static int _StyleParameter_QueryFunction_hop3er_a5b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel__BehaviorDescriptor.getFontStyle_idhLcv3Z9.invoke(node);
+    return (int) EditorCellModel__BehaviorDescriptor.getFontStyle_idhLcv3Z9.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_hop3er_a6b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel__BehaviorDescriptor.isUnderlined_idhLmqR8u.invoke(node);
+    return (boolean) EditorCellModel__BehaviorDescriptor.isUnderlined_idhLmqR8u.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_hop3er_a7b0(EditorContext editorContext, SNode node) {
-    return EditorCellModel__BehaviorDescriptor.isStrikeOut_idhNnL8J1.invoke(node);
+    return (boolean) EditorCellModel__BehaviorDescriptor.isStrikeOut_idhNnL8J1.invoke(node);
   }
   private EditorCell createComponent_hop3er_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");

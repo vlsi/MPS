@@ -134,7 +134,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_9o2gp8_a0c0(EditorContext editorContext, SNode node) {
-    return !(StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"))));
+    return !((boolean) StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"))));
   }
   private EditorCell createRefNode_9o2gp8_d0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new ClosureLiteral_Editor.bodySingleRoleHandler_9o2gp8_d0(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"), editorContext);

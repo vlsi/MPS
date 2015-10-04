@@ -55,7 +55,7 @@ public class ConceptFunctionAliased_Component implements ConceptEditorComponent 
   private EditorCell createReadOnlyModelAccessor_ohhbpy_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ConceptFunction__BehaviorDescriptor.getHeaderForAliasedEditor_id2v69eKc6I0x.invoke(node);
+        return (String) ConceptFunction__BehaviorDescriptor.getHeaderForAliasedEditor_id2v69eKc6I0x.invoke(node);
       }
       public void setText(String s) {
       }

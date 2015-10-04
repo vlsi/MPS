@@ -35,7 +35,7 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return FieldReferenceOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(node);
+        return (boolean) FieldReferenceOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
@@ -64,7 +64,7 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return InstanceMethodCallOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(node);
+        return (boolean) InstanceMethodCallOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
@@ -93,7 +93,7 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node);
+        return (boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {

@@ -9,6 +9,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDes
 @Generated
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1199881492477(final BaseMappingRuleContext _context) {
-    return !(ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
+    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
   }
 }

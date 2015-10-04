@@ -359,7 +359,7 @@ public class QueriesGenerated {
             return result;
           }
           public boolean returnSmallPart(SNode nodeToWrap) {
-            return Type__BehaviorDescriptor.selectOnVariableCreation_idhEwIzO8.invoke(nodeToWrap);
+            return (boolean) Type__BehaviorDescriptor.selectOnVariableCreation_idhEwIzO8.invoke(nodeToWrap);
           }
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
@@ -532,11 +532,11 @@ public class QueriesGenerated {
             //  'qualified this' - only in inner classes 
             List<SNode> result = new ArrayList<SNode>();
             SNode classifier = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-            if (!(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classifier))) {
+            if (!((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classifier))) {
               for (SNode parentClassifier : SNodeOperations.getNodeAncestors(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false)) {
                 if (!(SNodeOperations.isInstanceOf(parentClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
                   ListSequence.fromList(result).addElement(parentClassifier);
-                  if (IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(parentClassifier)) {
+                  if ((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(parentClassifier)) {
                     break;
                   }
                 }
@@ -2757,7 +2757,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null && VariableDeclaration__BehaviorDescriptor.isInitializable_idhEwJfMK.invoke(_context.getSourceNode());
+    return SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null && (boolean) VariableDeclaration__BehaviorDescriptor.isInitializable_idhEwJfMK.invoke(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Type_1177505359407(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -3489,7 +3489,7 @@ __switch__:
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
       return false;
     }
-    return Classifier__BehaviorDescriptor.hasStaticMemebers_idhFq8xqE.invoke(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+    return (boolean) Classifier__BehaviorDescriptor.hasStaticMemebers_idhFq8xqE.invoke(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1214919536691(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -3760,7 +3760,7 @@ __switch__:
     {
       Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return ThisExpression__BehaviorDescriptor.getPossibleClassifiers_idhGcjiYt.invoke(_context.getSourceNode());
+          return (List<SNode>) ThisExpression__BehaviorDescriptor.getPossibleClassifiers_idhGcjiYt.invoke(_context.getSourceNode());
         }
       }.compute();
       if (parameterObjects != null) {
@@ -3937,7 +3937,7 @@ __switch__:
       return false;
     }
     SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
-    return AssignmentExpression__BehaviorDescriptor.canConvertToLocalVariableDeclaration_idhLFstkU.invoke(assignment) && SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")) == _context.getSourceNode();
+    return (boolean) AssignmentExpression__BehaviorDescriptor.canConvertToLocalVariableDeclaration_idhLFstkU.invoke(assignment) && SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")) == _context.getSourceNode();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1224071208705(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5223,7 +5223,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_3731731823337580891(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return IncompleteMemberHelper.canBeMethod(_context.getSourceNode()) && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf94L, "static")) == false && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf96L, "final")) == false && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdb595L, "synchronized")) == false && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x73f30e3dfbaac721L, "native")) == false && IncompleteMemberDeclaration__BehaviorDescriptor.canBeMadeAbstract_id5py1MO2Oyuj.invoke(_context.getSourceNode());
+    return IncompleteMemberHelper.canBeMethod(_context.getSourceNode()) && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf94L, "static")) == false && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf96L, "final")) == false && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdb595L, "synchronized")) == false && SPropertyOperations.getBoolean(_context.getSourceNode(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x73f30e3dfbaac721L, "native")) == false && (boolean) IncompleteMemberDeclaration__BehaviorDescriptor.canBeMadeAbstract_id5py1MO2Oyuj.invoke(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_8355037393080618621(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5519,7 +5519,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassConcept_3190746170661154807(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && ClassConcept__BehaviorDescriptor.canBeStatic_id2L7NFMAtrRg.invoke(_context.getSourceNode());
+    return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && (boolean) ClassConcept__BehaviorDescriptor.canBeStatic_id2L7NFMAtrRg.invoke(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_ClassConcept_6136581231955973061(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5546,7 +5546,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassConcept_6136581231955973062(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && ClassConcept__BehaviorDescriptor.canBeStatic_id2L7NFMAtrRg.invoke(_context.getSourceNode());
+    return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && (boolean) ClassConcept__BehaviorDescriptor.canBeStatic_id2L7NFMAtrRg.invoke(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_ClassConcept_3190746170633737870(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5785,7 +5785,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Interface_2293171564559492056(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I.invoke(_context.getSourceNode());
+    return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && (boolean) Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I.invoke(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Interface_6136581231969824599(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5812,7 +5812,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Interface_6136581231969824600(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return !(ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I.invoke(_context.getSourceNode());
+    return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(_context.getSourceNode())) && (boolean) Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I.invoke(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BaseMethodDeclaration_2843835887910033774(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

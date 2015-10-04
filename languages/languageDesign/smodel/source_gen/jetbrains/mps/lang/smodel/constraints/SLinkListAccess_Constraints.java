@@ -49,7 +49,7 @@ public class SLinkListAccess_Constraints extends BaseConstraintsDescriptor {
             List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(dotOperandConcept);
             return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
+                return !((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
               }
             }).toListSequence();
           }

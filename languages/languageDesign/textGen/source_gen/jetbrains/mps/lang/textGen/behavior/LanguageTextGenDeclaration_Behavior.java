@@ -4,12 +4,6 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
  * Will be removed after 3.3
@@ -18,31 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class LanguageTextGenDeclaration_Behavior {
   public static List<SNode> call_getParameters_1234799367488(SNode __thisNode__) {
-    if (__thisNode__ == null) {
-      return ListSequence.fromList(new ArrayList<SNode>());
-    }
-    List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(LanguageTextGenDeclaration__BehaviorDescriptor.getApplicableHiddenParameter_id2D1PBM_bxIF.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
-    return (List<SNode>) result;
+    return LanguageTextGenDeclaration__BehaviorDescriptor.getParameters_idhXZLLl0(__thisNode__);
   }
   public static List<SNode> call_getAvailableFunctions_1234781318196(SNode __thisNode__) {
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> list = LanguageTextGenDeclaration__BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, new ArrayList<SNode>(), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
-    for (SNode baseTextGen : list) {
-      for (SNode func : SLinkOperations.getChildren(baseTextGen, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f6f8860bdL, "function"))) {
-        if (SPropertyOperations.getString(func, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) != null) {
-          ListSequence.fromList(result).addElement(func);
-        }
-      }
-    }
-    return result;
+    return LanguageTextGenDeclaration__BehaviorDescriptor.getAvailableFunctions_idhXYGUKO(__thisNode__);
   }
   public static List<SNode> call_getBaseTextGenComponents_1234781318244(SNode __thisNode__, List<SNode> list, SNode node) {
-    ListSequence.fromList(list).addElement(node);
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration")))) {
-      return list;
-    } else {
-      return LanguageTextGenDeclaration__BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$.invoke(__thisNode__, list, (SNode) SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
-    }
+    return LanguageTextGenDeclaration__BehaviorDescriptor.getBaseTextGenComponents_idhXYGUL$(__thisNode__, list, node);
   }
 }

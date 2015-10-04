@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class UnrestrictedFunctionType_Behavior {
   public static String call_getRuntimeAdapterClassName_1231423631922(SNode __thisNode__) {
-    return "_UnrestrictedClosures";
+    return UnrestrictedFunctionType__BehaviorDescriptor.getRuntimeAdapterClassName_idhUQ$n8M(__thisNode__);
   }
 }

@@ -81,7 +81,7 @@ public class QueriesGenerated {
     return IntentionsManager.getDescriptorClassName(module.getModuleReference());
   }
   public static Object propertyMacro_GetPropertyValue_647666612127743999(final PropertyMacroContext _context) {
-    return BaseIntentionDeclaration__BehaviorDescriptor.getGeneratedName_id5rGvd38DcHL.invoke(_context.getNode());
+    return (String) BaseIntentionDeclaration__BehaviorDescriptor.getGeneratedName_id5rGvd38DcHL.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_3927053800880514588(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cc67aL, "isAvailableInChildNodes"));

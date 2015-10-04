@@ -87,7 +87,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return NamedTupleType__BehaviorDescriptor.getLeftBracket_id1653mnvAgn0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) NamedTupleType__BehaviorDescriptor.getLeftBracket_id1653mnvAgn0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -166,7 +166,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_c0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return NamedTupleType__BehaviorDescriptor.getRightBracket_id1653mnvAgq6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) NamedTupleType__BehaviorDescriptor.getRightBracket_id1653mnvAgq6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -198,7 +198,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_a1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
+        return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
       }
       public void setText(String s) {
       }

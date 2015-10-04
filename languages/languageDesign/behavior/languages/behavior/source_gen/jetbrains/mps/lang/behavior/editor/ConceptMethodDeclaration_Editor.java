@@ -345,7 +345,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_gmtuod_c9c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethodConceptName_idhP3pnOc.invoke(node);
+        return (String) ConceptMethodDeclaration__BehaviorDescriptor.getOverridenMethodConceptName_idhP3pnOc.invoke(node);
       }
       public void setText(String s) {
       }

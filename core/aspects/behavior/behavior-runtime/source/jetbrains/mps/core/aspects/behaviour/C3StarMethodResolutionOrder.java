@@ -158,6 +158,7 @@ public final class C3StarMethodResolutionOrder implements CachingMethodResolutio
         if (succeeded) return true;
       }
       if (localOrder.preserveOrder()) {
+        if (myLocalOrder.isEmpty()) return false;
         T candidate = myLocalOrder.get(0);
         boolean succeeded = checkCandidateAndAddToResult(result, candidate, localOrder);
         if (succeeded) return true;

@@ -112,7 +112,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_uj0cpq_a3a(SNode node, EditorContext editorContext) {
-    return Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node) && IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
+    return (boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node) && (boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_uj0cpq_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
@@ -476,7 +476,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_uj0cpq_a2c31a(SNode node, EditorContext editorContext) {
-    return !(Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || Sequence.fromIterable(Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(node)).isNotEmpty();
+    return !((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || (boolean) Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || Sequence.fromIterable(Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(node)).isNotEmpty();
   }
   private EditorCell createConstant_uj0cpq_d2n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -644,7 +644,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_uj0cpq_a5c31a(SNode node, EditorContext editorContext) {
-    return !(Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c7540b43aL, "classInitializer")) != null);
+    return !((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || (boolean) Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c7540b43aL, "classInitializer")) != null);
   }
   private EditorCell createRefNodeList_uj0cpq_g2n0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ClassConcept_Editor.fieldListHandler_uj0cpq_g2n0(node, "field", editorContext);
@@ -974,7 +974,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_uj0cpq_a11c31a(SNode node, EditorContext editorContext) {
-    return !(Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(node)).isNotEmpty();
+    return !((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || (boolean) Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(node)).isNotEmpty();
   }
   private EditorCell createConstant_uj0cpq_m2n0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -1150,7 +1150,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_uj0cpq_a4a_0(SNode node, EditorContext editorContext) {
-    return Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
+    return (boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_uj0cpq_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");

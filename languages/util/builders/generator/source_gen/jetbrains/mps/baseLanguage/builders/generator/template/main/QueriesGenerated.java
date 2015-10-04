@@ -40,13 +40,13 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x61f1de4171d2bf0eL, "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator")), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder"));
   }
   public static SNode sourceNodeQuery_7057666463730728106(final SourceSubstituteMacroNodeContext _context) {
-    return Builder__BehaviorDescriptor.getResultType_id67LR$5LQPoF.invoke(_context.getNode());
+    return (SNode) Builder__BehaviorDescriptor.getResultType_id67LR$5LQPoF.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_7057666463730783295(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder"));
   }
   public static SNode sourceNodeQuery_8009360033694992840(final SourceSubstituteMacroNodeContext _context) {
-    return Builder__BehaviorDescriptor.getResultType_id67LR$5LQPoF.invoke(_context.getNode());
+    return (SNode) Builder__BehaviorDescriptor.getResultType_id67LR$5LQPoF.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_8009360033695057975(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a08195e1cL, "jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement")), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a08195e1cL, 0x6c473c8a08195e1fL, "expression"));
@@ -66,13 +66,13 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_5867364036373952047(final MapSrcMacroContext _context) {
     SNode context = Builder__BehaviorDescriptor.getContextBuilder_id67LR$5LPgSh.invoke(_context.getNode());
     SNode ref = _quotation_createNode_x583g4_a0b0o(_context.getOutputNodeByInputNodeAndMappingLabel(context, "builderVar"));
-    return Builder__BehaviorDescriptor.getCreatorExpression_id67LR$5LQRIR.invoke(_context.getNode(), ref);
+    return (SNode) Builder__BehaviorDescriptor.getCreatorExpression_id67LR$5LQRIR.invoke(_context.getNode(), ref);
   }
   public static SNode mapSrcMacro_mapper_5867364036373950596(final MapSrcMacroContext _context) {
     SNode childRef = _quotation_createNode_x583g4_a0a0p(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder")), "builderVar"));
     SNode parentBuilder = Builder__BehaviorDescriptor.getContextBuilder_id67LR$5LPgSh.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder")));
     SNode parentRef = _quotation_createNode_x583g4_a0c0p(_context.getOutputNodeByInputNodeAndMappingLabel(parentBuilder, "builderVar"));
-    return Builder__BehaviorDescriptor.getAttachStatement_id6k$kQGI5UZ7.invoke(parentBuilder, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder")), parentRef, childRef);
+    return (SNode) Builder__BehaviorDescriptor.getAttachStatement_id6k$kQGI5UZ7.invoke(parentBuilder, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6c473c8a081aa9e4L, 0x429426276e2ee2f8L, "builder")), parentRef, childRef);
   }
   private static SNode _quotation_createNode_x583g4_a0b0o(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

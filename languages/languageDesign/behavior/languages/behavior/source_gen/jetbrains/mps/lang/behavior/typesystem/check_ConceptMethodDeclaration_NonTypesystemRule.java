@@ -19,7 +19,7 @@ public class check_ConceptMethodDeclaration_NonTypesystemRule extends AbstractNo
   public check_ConceptMethodDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ConceptMethodDeclaration__BehaviorDescriptor.isCorrectlyOverriden_idhQYykEj.invoke(method))) {
+    if (!((boolean) ConceptMethodDeclaration__BehaviorDescriptor.isCorrectlyOverriden_idhQYykEj.invoke(method))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "Method signature doesn't match signature in the base concept", "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1227262769261", null, errorTarget);

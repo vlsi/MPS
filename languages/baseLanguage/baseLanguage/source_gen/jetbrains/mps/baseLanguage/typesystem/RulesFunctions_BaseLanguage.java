@@ -609,8 +609,8 @@ __switch__:
             } else {
               if (ListSequence.fromList(ancSLs).contains(IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(SNodeOperations.as(anc, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"))))) {
                 SNode methodLike = SNodeOperations.cast(anc, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L, "jetbrains.mps.baseLanguage.structure.IMethodLike"));
-                supportsCheckedExceptions = IMethodLike__BehaviorDescriptor.supportsCheckedExceptions_id7orZYjMoFMH.invoke(methodLike);
-                if (IMethodLike__BehaviorDescriptor.implicitThrows_id4kX30tnJ9kz.invoke(methodLike)) {
+                supportsCheckedExceptions = (boolean) IMethodLike__BehaviorDescriptor.supportsCheckedExceptions_id7orZYjMoFMH.invoke(methodLike);
+                if ((boolean) IMethodLike__BehaviorDescriptor.implicitThrows_id4kX30tnJ9kz.invoke(methodLike)) {
                   ListSequence.fromList(throwTypes).clear();
                 } else {
                   for (final SNode thr : IMethodLike__BehaviorDescriptor.getThrowableTypes_id5op8ooRkkc7.invoke(methodLike)) {

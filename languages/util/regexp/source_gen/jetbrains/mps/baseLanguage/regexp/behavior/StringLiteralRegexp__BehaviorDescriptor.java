@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
@@ -20,32 +19,33 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class StringLiteralRegexp__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getString_idhMuDF1A = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getString").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hMuDF1A").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<List<SNode>>) ((Class) Object.class))));
-  public static final SMethod<Boolean> isValid_id48bMILtL4il = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValid").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("48bMILtL4il").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> toRegexp_id7eq8FHGGy0G = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("toRegexp").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7eq8FHGGy0G").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
-  public static final SMethod<Boolean> isHexChar_id7KMCQ$NHaYO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isHexChar").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7KMCQ$NHaYO").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Character.TYPE)));
+  public static final SMethod<String> getString_idhMuDF1A = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getString").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hMuDF1A").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isValid_id48bMILtL4il = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isValid").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("48bMILtL4il").registry(REGISTRY).build();
+  public static final SMethod<String> toRegexp_id7eq8FHGGy0G = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("toRegexp").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7eq8FHGGy0G").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Boolean> isHexChar_id7KMCQ$NHaYO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isHexChar").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7KMCQ$NHaYO").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Character.TYPE, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getString_idhMuDF1A, isValid_id48bMILtL4il, toRegexp_id7eq8FHGGy0G, isHexChar_id7KMCQ$NHaYO);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
+  /*package*/ static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
     return StringLiteralRegexp__BehaviorDescriptor.toRegexp_id7eq8FHGGy0G.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text")));
   }
-  private static Boolean isValid_id48bMILtL4il(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isValid_id48bMILtL4il(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text")))) {
       return false;
     }
     return StringLiteralRegexp__BehaviorDescriptor.toRegexp_id7eq8FHGGy0G.invoke(__thisNode__, SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, 0x11174a0b84fL, "text"))) != null;
   }
-  private static String toRegexp_id7eq8FHGGy0G(@NotNull SNode __thisNode__, String s) {
+  /*package*/ static String toRegexp_id7eq8FHGGy0G(@NotNull SNode __thisNode__, String s) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
       char c = s.charAt(i);
@@ -62,7 +62,7 @@ public final class StringLiteralRegexp__BehaviorDescriptor extends BaseBHDescrip
               return null;
             }
             c = s.charAt(i);
-            if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+            if (!((boolean) StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), ((char) c)))) {
               return null;
             }
             sb.append(c);
@@ -99,7 +99,7 @@ public final class StringLiteralRegexp__BehaviorDescriptor extends BaseBHDescrip
     }
     return sb.toString();
   }
-  private static Boolean isHexChar_id7KMCQ$NHaYO(@NotNull SAbstractConcept __thisConcept__, char c) {
+  /*package*/ static boolean isHexChar_id7KMCQ$NHaYO(@NotNull SAbstractConcept __thisConcept__, char c) {
     return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
   }
 
@@ -108,37 +108,37 @@ public final class StringLiteralRegexp__BehaviorDescriptor extends BaseBHDescrip
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getString_idhMuDF1A(node, (List<SNode>) parameters[0]);
+        return (T) ((String) getString_idhMuDF1A(node, (List<SNode>) parameters[0]));
       case 1:
-        return (T) isValid_id48bMILtL4il(node);
+        return (T) ((Boolean) isValid_id48bMILtL4il(node));
       case 2:
-        return (T) toRegexp_id7eq8FHGGy0G(node, (String) parameters[0]);
+        return (T) ((String) toRegexp_id7eq8FHGGy0G(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 3:
-        return (T) isHexChar_id7KMCQ$NHaYO(concept, (Character) parameters[0]);
+        return (T) ((Boolean) isHexChar_id7KMCQ$NHaYO(concept, ((char) (Character) parameters[0])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

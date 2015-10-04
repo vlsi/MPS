@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -27,6 +26,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -35,22 +35,22 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> checkExport_id2erkSmBSC_o = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkExport").modifiers(SModifiersImpl.create(12, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("2erkSmBSC_o").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class, (Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Boolean> checkExport_id2erkSmBSDLR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkExport").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2erkSmBSDLR").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Boolean.TYPE, (Class<SNode>) ((Class) Object.class), String.class)));
-  /*package*/ static final SMethod<Boolean> checkExportDefault_id7auzIIk9gg7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkExportDefault").modifiers(SModifiersImpl.create(1, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7auzIIk9gg7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Boolean.TYPE, (Class<SNode>) ((Class) Object.class), String.class)));
-  public static final SMethod<SNode> getExportScope_id3ye0wbzmGx_ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExportScope").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3ye0wbzmGx_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<String> getNamespace_id2erkSmBSCAp = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNamespace").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2erkSmBSCAp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
+  public static final SMethod<Boolean> checkExport_id2erkSmBSC_o = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkExport").modifiers(SModifiersImpl.create(12, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("2erkSmBSC_o").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> checkExport_id2erkSmBSDLR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkExport").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2erkSmBSDLR").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""));
+  /*package*/ static final SMethod<Boolean> checkExportDefault_id7auzIIk9gg7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkExportDefault").modifiers(SModifiersImpl.create(1, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7auzIIk9gg7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<SNode> getExportScope_id3ye0wbzmGx_ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExportScope").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3ye0wbzmGx_").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getNamespace_id2erkSmBSCAp = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNamespace").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2erkSmBSCAp").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(checkExport_id2erkSmBSC_o, checkExport_id2erkSmBSDLR, checkExportDefault_id7auzIIk9gg7, getExportScope_id3ye0wbzmGx_, getNamespace_id2erkSmBSCAp);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean checkExport_id2erkSmBSDLR(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
+  /*package*/ static boolean checkExport_id2erkSmBSDLR(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
     SNode exp = ExportScope__BehaviorDescriptor.getExportScope_id3ye0wbzmGx_.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
-    return namespace == null || (((exp == null) ? ExportScope__BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), isConcept, node, namespace) : ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSC_o.invoke(exp, namespace, node)));
+    return namespace == null || (((exp == null) ? (boolean) ExportScope__BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), ((boolean) isConcept), node, namespace) : (boolean) ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSC_o.invoke(exp, namespace, node)));
   }
-  private static Boolean checkExportDefault_id7auzIIk9gg7(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
+  /*package*/ static boolean checkExportDefault_id7auzIIk9gg7(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
     /*
       return (isConcept ? true : namespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node)));
     */
@@ -65,7 +65,7 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
     // stubs are module by default, all other are public now 
     return !(SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))));
   }
-  private static SNode getExportScope_id3ye0wbzmGx_(@NotNull SAbstractConcept __thisConcept__, SNode node) {
+  /*package*/ static SNode getExportScope_id3ye0wbzmGx_(@NotNull SAbstractConcept __thisConcept__, SNode node) {
     // return effective ExportScope or null 
     /*
       return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
@@ -76,7 +76,7 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
     */
     return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")));
   }
-  private static String getNamespace_id2erkSmBSCAp(@NotNull SAbstractConcept __thisConcept__, SNode node) {
+  /*package*/ static String getNamespace_id2erkSmBSCAp(@NotNull SAbstractConcept __thisConcept__, SNode node) {
     SModule module = check_ogf5a0_a0a0e(SNodeOperations.getModel(node));
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
@@ -89,12 +89,12 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -106,20 +106,20 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 1:
-        return (T) checkExport_id2erkSmBSDLR(concept, (Boolean) parameters[0], (SNode) parameters[1], (String) parameters[2]);
+        return (T) ((Boolean) checkExport_id2erkSmBSDLR(concept, ((boolean) (Boolean) parameters[0]), (SNode) parameters[1], (String) parameters[2]));
       case 2:
-        return (T) checkExportDefault_id7auzIIk9gg7(concept, (Boolean) parameters[0], (SNode) parameters[1], (String) parameters[2]);
+        return (T) ((Boolean) checkExportDefault_id7auzIIk9gg7(concept, ((boolean) (Boolean) parameters[0]), (SNode) parameters[1], (String) parameters[2]));
       case 3:
-        return (T) getExportScope_id3ye0wbzmGx_(concept, (SNode) parameters[0]);
+        return (T) ((SNode) getExportScope_id3ye0wbzmGx_(concept, (SNode) parameters[0]));
       case 4:
-        return (T) getNamespace_id2erkSmBSCAp(concept, (SNode) parameters[0]);
+        return (T) ((String) getNamespace_id2erkSmBSCAp(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

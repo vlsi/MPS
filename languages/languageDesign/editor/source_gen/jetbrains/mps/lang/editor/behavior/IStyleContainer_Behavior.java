@@ -4,14 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import java.util.Set;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 /**
  * Will be removed after 3.3
@@ -20,19 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 @Deprecated
 public class IStyleContainer_Behavior {
   public static List<SNode> call_getClassItems_1219419901278(SNode __thisNode__, SNode itemConcept) {
-    List<SNode> result = new ArrayList<SNode>();
-    IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(__thisNode__, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
-    return result;
+    return IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu(__thisNode__, itemConcept);
   }
   public static void call_fillClassItems_2551781846503685010(SNode __thisNode__, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
-    for (SNode item : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))) {
-      if (SNodeOperations.isInstanceOf(item, SNodeOperations.asSConcept(itemConcept))) {
-        ListSequence.fromList(classItems).addElement(item);
-      }
-    }
-    SetSequence.fromSet(visitedContainers).addElement(__thisNode__);
-    if ((IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__) != null) && !(SetSequence.fromSet(visitedContainers).contains(IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__)))) {
-      IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(IStyleContainer__BehaviorDescriptor.getParent_idhJF64sU.invoke(__thisNode__), classItems, itemConcept, visitedContainers);
-    }
+    IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii(__thisNode__, classItems, itemConcept, visitedContainers);
   }
 }

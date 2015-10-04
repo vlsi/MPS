@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -29,25 +28,26 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class StyleClass__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> hasCycles_id6rIuTvxpF4l = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasCycles").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6rIuTvxpF4l").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> getPriority_id1F_pHBEuveg = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getPriority").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1F_pHBEuveg").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasApplyCycles_id2airAaTkVMd = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasApplyCycles").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2airAaTkVMd").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> hasCycles_id6rIuTvxpF4l = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasCycles").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6rIuTvxpF4l").registry(REGISTRY).build();
+  public static final SMethod<Integer> getPriority_id1F_pHBEuveg = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getPriority").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1F_pHBEuveg").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasApplyCycles_id2airAaTkVMd = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasApplyCycles").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2airAaTkVMd").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(hasCycles_id6rIuTvxpF4l, getPriority_id1F_pHBEuveg, hasApplyCycles_id2airAaTkVMd);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean hasCycles_id6rIuTvxpF4l(@NotNull SNode __thisNode__) {
-    return StyleClass__BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__) == -1;
+  /*package*/ static boolean hasCycles_id6rIuTvxpF4l(@NotNull SNode __thisNode__) {
+    return ((int) StyleClass__BehaviorDescriptor.getPriority_id1F_pHBEuveg.invoke(__thisNode__)) == -1;
   }
-  private static Integer getPriority_id1F_pHBEuveg(@NotNull SNode __thisNode__) {
+  /*package*/ static int getPriority_id1F_pHBEuveg(@NotNull SNode __thisNode__) {
     Map<SNode, Integer> priorities = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
     List<SNode> extendsTree = ListSequence.fromListAndArray(new LinkedList<SNode>(), __thisNode__);
@@ -91,7 +91,7 @@ public final class StyleClass__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return MapSequence.fromMap(priorities).get(__thisNode__);
   }
-  private static Boolean hasApplyCycles_id2airAaTkVMd(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasApplyCycles_id2airAaTkVMd(@NotNull SNode __thisNode__) {
     List<SNode> dependencies = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> adding = ListSequence.fromListAndArray(new ArrayList<SNode>(), __thisNode__);
     while (ListSequence.fromList(adding).isNotEmpty()) {
@@ -117,30 +117,30 @@ public final class StyleClass__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) hasCycles_id6rIuTvxpF4l(node);
+        return (T) ((Boolean) hasCycles_id6rIuTvxpF4l(node));
       case 1:
-        return (T) getPriority_id1F_pHBEuveg(node);
+        return (T) ((Integer) getPriority_id1F_pHBEuveg(node));
       case 2:
-        return (T) hasApplyCycles_id2airAaTkVMd(node);
+        return (T) ((Boolean) hasApplyCycles_id2airAaTkVMd(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

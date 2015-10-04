@@ -36,7 +36,7 @@ public final class RemoveNewLine_Intention extends IntentionDescriptorBase imple
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return EditorCellModel__BehaviorDescriptor.isNewLine_idi0pLPAc.invoke(node);
+    return (boolean) EditorCellModel__BehaviorDescriptor.isNewLine_idi0pLPAc.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

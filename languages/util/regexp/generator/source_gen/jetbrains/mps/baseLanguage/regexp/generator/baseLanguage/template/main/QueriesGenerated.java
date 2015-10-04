@@ -56,7 +56,7 @@ public class QueriesGenerated {
     return result;
   }
   public static Object propertyMacro_GetPropertyValue_6717546899049700876(final PropertyMacroContext _context) {
-    return Regexp__BehaviorDescriptor.toString_idhEwIUjb.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp")));
+    return (String) Regexp__BehaviorDescriptor.toString_idhEwIUjb.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp")));
   }
   public static Object propertyMacro_GetPropertyValue_6717546899049700886(final PropertyMacroContext _context) {
     int result = 0;
@@ -136,7 +136,7 @@ public class QueriesGenerated {
     return _context.createUniqueName("REPLREGEXP", null);
   }
   public static Object propertyMacro_GetPropertyValue_3796137614137206989(final PropertyMacroContext _context) {
-    return ReplaceRegexpOperation__BehaviorDescriptor.getReplacementString_id3iI_KKp9qzv.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation")));
+    return (String) ReplaceRegexpOperation__BehaviorDescriptor.getReplacementString_id3iI_KKp9qzv.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation")));
   }
   public static Object referenceMacro_GetReferent_1175170026388(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(RegexUtil.findRegexpUsingConstructionFor(_context.getNode()), "matcher");

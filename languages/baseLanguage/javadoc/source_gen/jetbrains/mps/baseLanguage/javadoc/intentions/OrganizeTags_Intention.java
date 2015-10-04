@@ -34,7 +34,7 @@ public final class OrganizeTags_Intention extends IntentionDescriptorBase implem
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

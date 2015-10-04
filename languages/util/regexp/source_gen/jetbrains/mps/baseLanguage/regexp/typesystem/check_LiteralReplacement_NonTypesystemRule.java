@@ -18,7 +18,7 @@ public class check_LiteralReplacement_NonTypesystemRule extends AbstractNonTypes
   public check_LiteralReplacement_NonTypesystemRule() {
   }
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(LiteralReplacement__BehaviorDescriptor.isValid_id3iI_KKpaMFg.invoke(literal))) {
+    if (!((boolean) LiteralReplacement__BehaviorDescriptor.isValid_id3iI_KKpaMFg.invoke(literal))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Incorrect regexp string literal", "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "3796137614137565931", null, errorTarget);

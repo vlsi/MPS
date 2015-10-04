@@ -14,7 +14,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
@@ -55,6 +54,7 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -65,47 +65,47 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<Icon>> getMarkIcons_id3pOfV45ExLD = new SMethodBuilder<List<Icon>>(new SJavaCompoundTypeImpl(List.class)).name("getMarkIcons").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3pOfV45ExLD").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Scope> getVisibleMembers_id70J2WaK$Uj3 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getVisibleMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("70J2WaK$Uj3").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getMembers_idhEwJjl2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJjl2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Scope> getMembers_id1UeCwxlVpJs = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1UeCwxlVpJs").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getExtendedClassifierTypes_id1UeCwxlWKny = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExtendedClassifierTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1UeCwxlWKny").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Set<SNode>> getAllExtendedClassifiers_id2xreLMO8jma = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("getAllExtendedClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xreLMO8jma").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Void> getAllExtendedClassifiers_id2xreLMO8jm_ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("getAllExtendedClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("2xreLMO8jm_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<Set<SNode>>) ((Class) Object.class))));
-  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasStaticMemebers_idhFq8xqE = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasStaticMemebers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hFq8xqE").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getNestedName_id7q4lzBFjvIX = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNestedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7q4lzBFjvIX").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getNestedNameInContext_id7q4lzBFjvF8 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNestedNameInContext").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7q4lzBFjvF8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Boolean> isStatic_idsWroEc0xXc = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStatic").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("sWroEc0xXc").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isStatic_id6r77ob2USS8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStatic").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2USS8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isInner_idsWroEc0xXl = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInner").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("sWroEc0xXl").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> checkLoops_id3sXyOQUqKq0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkLoops").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3sXyOQUqKq0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isDescendant_id6dL7A1DpKo1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDescendant").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6dL7A1DpKo1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Boolean> isDescendant_checkLoops_id6dL7A1DpKoA = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDescendant_checkLoops").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("6dL7A1DpKoA").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<Set<SNode>>) ((Class) Object.class))));
-  public static final SMethod<Boolean> isSame_id4dzXPK1BpyE = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSame").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("4dzXPK1BpyE").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Boolean> checkLoops_id3sXyOQUqKq5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkLoops").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("3sXyOQUqKq5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<Set<SNode>>) ((Class) Object.class))));
-  public static final SMethod<Boolean> canInstantiateIn_id610WLfjPjne = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canInstantiateIn").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("610WLfjPjne").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getOwnMethods_id1DPgsAlM_WC = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOwnMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1DPgsAlM_WC").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Icon> getAdditionalIcon_id4mxbjAOAE$e = new SMethodBuilder<Icon>(new SJavaCompoundTypeImpl(Icon.class)).name("getAdditionalIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4mxbjAOAE$e").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getThisType_id2RtWPFZ12w7 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getThisType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RtWPFZ12w7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getWithResolvedTypevars_id2RtWPFZ0VAJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getWithResolvedTypevars").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RtWPFZ0VAJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class))));
-  /*package*/ static final SMethod<SNode> getResolvedVar_id2RtWPFZ12Bt = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getResolvedVar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2RtWPFZ12Bt").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class))));
-  /*package*/ static final SMethod<SNode> getResolvedMethodVar_idIqmIRMsvlW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getResolvedMethodVar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("IqmIRMsvlW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Iterable<SNode>> getTypeVariables_id6r77ob2URXZ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getTypeVariables").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URXZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> getSuperTypes_id6r77ob2URYj = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getSuperTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URYj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getThisType_id6r77ob2UWbY = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getThisType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UWbY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Void> populateMembers_id6r77ob2USUV = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2USUV").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(MembersPopulatingContext.class, (Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Iterable<SNode>> members_id1hodSy8nQmC = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("members").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1hodSy8nQmC").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> nestedClassifiers_id4_LVZ3pBjGQ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("nestedClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4_LVZ3pBjGQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> staticFields_id4_LVZ3pBr7M = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("staticFields").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4_LVZ3pBr7M").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> staticMethods_id7fFTwQrQPHW = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("staticMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7fFTwQrQPHW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> methods_id4_LVZ3pBKCn = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("methods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4_LVZ3pBKCn").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> canBeInterfaceMember_id2zJQqQIUx2B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeInterfaceMember").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2zJQqQIUx2B").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getNonStaticContextClassifiers_id5S7J9l$QYtM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNonStaticContextClassifiers").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5S7J9l$QYtM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<SNode> getContextClassifier_id5mDmeD1aaq0 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContextClassifier").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mDmeD1aaq0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getAccessibleMembers_id_8Pw6zYia7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAccessibleMembers").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("_8Pw6zYia7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), Integer.TYPE)));
+  public static final SMethod<List<Icon>> getMarkIcons_id3pOfV45ExLD = new SMethodBuilder<List<Icon>>(new SJavaCompoundTypeImpl(List.class)).name("getMarkIcons").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3pOfV45ExLD").registry(REGISTRY).build();
+  public static final SMethod<Scope> getVisibleMembers_id70J2WaK$Uj3 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getVisibleMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("70J2WaK$Uj3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getFqName_idhEwIO9y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFqName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIO9y").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getMembers_idhEwJjl2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJjl2").registry(REGISTRY).build();
+  public static final SMethod<Scope> getMembers_id1UeCwxlVpJs = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1UeCwxlVpJs").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getExtendedClassifierTypes_id1UeCwxlWKny = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExtendedClassifierTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1UeCwxlWKny").registry(REGISTRY).build();
+  public static final SMethod<Set<SNode>> getAllExtendedClassifiers_id2xreLMO8jma = new SMethodBuilder<Set<SNode>>(new SJavaCompoundTypeImpl((Class<Set<SNode>>) ((Class) Object.class))).name("getAllExtendedClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xreLMO8jma").registry(REGISTRY).build();
+  public static final SMethod<Void> getAllExtendedClassifiers_id2xreLMO8jm_ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("getAllExtendedClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("2xreLMO8jm_").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasStaticMemebers_idhFq8xqE = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasStaticMemebers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hFq8xqE").registry(REGISTRY).build();
+  public static final SMethod<String> getNestedName_id7q4lzBFjvIX = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNestedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7q4lzBFjvIX").registry(REGISTRY).build();
+  public static final SMethod<String> getNestedNameInContext_id7q4lzBFjvF8 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getNestedNameInContext").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7q4lzBFjvF8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isStatic_idsWroEc0xXc = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStatic").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("sWroEc0xXc").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isStatic_id6r77ob2USS8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStatic").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2USS8").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isInner_idsWroEc0xXl = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInner").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("sWroEc0xXl").registry(REGISTRY).build();
+  public static final SMethod<Boolean> checkLoops_id3sXyOQUqKq0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkLoops").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3sXyOQUqKq0").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isDescendant_id6dL7A1DpKo1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDescendant").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6dL7A1DpKo1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isDescendant_checkLoops_id6dL7A1DpKoA = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDescendant_checkLoops").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("6dL7A1DpKoA").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isSame_id4dzXPK1BpyE = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSame").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("4dzXPK1BpyE").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> checkLoops_id3sXyOQUqKq5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("checkLoops").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("3sXyOQUqKq5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> canInstantiateIn_id610WLfjPjne = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canInstantiateIn").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("610WLfjPjne").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getOwnMethods_id1DPgsAlM_WC = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOwnMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1DPgsAlM_WC").registry(REGISTRY).build();
+  public static final SMethod<Icon> getAdditionalIcon_id4mxbjAOAE$e = new SMethodBuilder<Icon>(new SJavaCompoundTypeImpl(Icon.class)).name("getAdditionalIcon").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4mxbjAOAE$e").registry(REGISTRY).build();
+  public static final SMethod<SNode> getThisType_id2RtWPFZ12w7 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getThisType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RtWPFZ12w7").registry(REGISTRY).build();
+  public static final SMethod<SNode> getWithResolvedTypevars_id2RtWPFZ0VAJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getWithResolvedTypevars").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RtWPFZ0VAJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  /*package*/ static final SMethod<SNode> getResolvedVar_id2RtWPFZ12Bt = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getResolvedVar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2RtWPFZ12Bt").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  /*package*/ static final SMethod<SNode> getResolvedMethodVar_idIqmIRMsvlW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getResolvedMethodVar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("IqmIRMsvlW").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Iterable<SNode>> getTypeVariables_id6r77ob2URXZ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getTypeVariables").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URXZ").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getSuperTypes_id6r77ob2URYj = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getSuperTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2URYj").registry(REGISTRY).build();
+  public static final SMethod<SNode> getThisType_id6r77ob2UWbY = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getThisType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2UWbY").registry(REGISTRY).build();
+  public static final SMethod<Void> populateMembers_id6r77ob2USUV = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("populateMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6r77ob2USUV").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MembersPopulatingContext.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Iterable<SNode>> members_id1hodSy8nQmC = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("members").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1hodSy8nQmC").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> nestedClassifiers_id4_LVZ3pBjGQ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("nestedClassifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4_LVZ3pBjGQ").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> staticFields_id4_LVZ3pBr7M = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("staticFields").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4_LVZ3pBr7M").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> staticMethods_id7fFTwQrQPHW = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("staticMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7fFTwQrQPHW").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> methods_id4_LVZ3pBKCn = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("methods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4_LVZ3pBKCn").registry(REGISTRY).build();
+  public static final SMethod<Boolean> canBeInterfaceMember_id2zJQqQIUx2B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeInterfaceMember").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2zJQqQIUx2B").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getNonStaticContextClassifiers_id5S7J9l$QYtM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNonStaticContextClassifiers").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5S7J9l$QYtM").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getContextClassifier_id5mDmeD1aaq0 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContextClassifier").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5mDmeD1aaq0").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getAccessibleMembers_id_8Pw6zYia7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAccessibleMembers").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("_8Pw6zYia7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getMarkIcons_id3pOfV45ExLD, getVisibleMembers_id70J2WaK$Uj3, getFqName_idhEwIO9y, getMembers_idhEwJjl2, getMembers_id1UeCwxlVpJs, getExtendedClassifierTypes_id1UeCwxlWKny, getAllExtendedClassifiers_id2xreLMO8jma, getAllExtendedClassifiers_id2xreLMO8jm_, getPresentation_idhEwIMiw, hasStaticMemebers_idhFq8xqE, getNestedName_id7q4lzBFjvIX, getNestedNameInContext_id7q4lzBFjvF8, isStatic_idsWroEc0xXc, isStatic_id6r77ob2USS8, isInner_idsWroEc0xXl, checkLoops_id3sXyOQUqKq0, isDescendant_id6dL7A1DpKo1, isDescendant_checkLoops_id6dL7A1DpKoA, isSame_id4dzXPK1BpyE, checkLoops_id3sXyOQUqKq5, canInstantiateIn_id610WLfjPjne, getOwnMethods_id1DPgsAlM_WC, getAdditionalIcon_id4mxbjAOAE$e, getThisType_id2RtWPFZ12w7, getWithResolvedTypevars_id2RtWPFZ0VAJ, getResolvedVar_id2RtWPFZ12Bt, getResolvedMethodVar_idIqmIRMsvlW, getScope_id3fifI_xCJOQ, getTypeVariables_id6r77ob2URXZ, getSuperTypes_id6r77ob2URYj, getThisType_id6r77ob2UWbY, populateMembers_id6r77ob2USUV, members_id1hodSy8nQmC, nestedClassifiers_id4_LVZ3pBjGQ, staticFields_id4_LVZ3pBr7M, staticMethods_id7fFTwQrQPHW, methods_id4_LVZ3pBKCn, canBeInterfaceMember_id2zJQqQIUx2B, getNonStaticContextClassifiers_id5S7J9l$QYtM, getContextClassifier_id5mDmeD1aaq0, getAccessibleMembers_id_8Pw6zYia7);
 
@@ -113,25 +113,25 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     SLinkOperations.setNewChild(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")));
   }
 
-  private static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
+  /*package*/ static List<Icon> getMarkIcons_id3pOfV45ExLD(@NotNull SNode __thisNode__) {
     List<Icon> markIcons = new ArrayList<Icon>(BaseConcept__BehaviorDescriptor.getMarkIcons_id3pOfV45ExLD.invokeSpecial(__thisNode__));
-    if ((SNodeOperations.getParent(__thisNode__) != null) && IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__)) {
+    if ((SNodeOperations.getParent(__thisNode__) != null) && ((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__))) {
       markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     }
     return markIcons;
   }
   @Deprecated
-  private static Scope getVisibleMembers_id70J2WaK$Uj3(@NotNull SNode __thisNode__, SNode contextNode, SNode kind) {
+  /*package*/ static Scope getVisibleMembers_id70J2WaK$Uj3(@NotNull SNode __thisNode__, SNode contextNode, SNode kind) {
     return MemberScopes.visibleClassifierMembers(__thisNode__, kind, contextNode);
   }
-  private static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
+  /*package*/ static String getFqName_idhEwIO9y(@NotNull SNode __thisNode__) {
     SNode parentClassifier = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     if (parentClassifier != null) {
       return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(parentClassifier) + "." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
     return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invokeSpecial(__thisNode__);
   }
-  private static List<SNode> getMembers_idhEwJjl2(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getMembers_idhEwJjl2(@NotNull SNode __thisNode__) {
     List<SNode> members = new ArrayList<SNode>();
     ListSequence.fromList(members).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -141,7 +141,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     return members;
   }
   @Deprecated
-  private static Scope getMembers_id1UeCwxlVpJs(@NotNull SNode __thisNode__, final SNode kind) {
+  /*package*/ static Scope getMembers_id1UeCwxlVpJs(@NotNull SNode __thisNode__, final SNode kind) {
     // use sequence<node<IClassifierMember> getMembers() instead 
     // returns all accessible classifier members in classifier 
     SNode thisType = IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(__thisNode__);
@@ -167,19 +167,19 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       return new EmptyScope();
     }
   }
-  private static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull final SNode __thisNode__) {
     // todo: maybe use typesystem instead of this method??? 
 
     return new ArrayList<SNode>();
   }
-  private static Set<SNode> getAllExtendedClassifiers_id2xreLMO8jma(@NotNull SNode __thisNode__) {
+  /*package*/ static Set<SNode> getAllExtendedClassifiers_id2xreLMO8jma(@NotNull SNode __thisNode__) {
     // should be cached // based on extended classifiers 
     // without cyclic dependencies checking 
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jm_.invoke(__thisNode__, result);
     return result;
   }
-  private static void getAllExtendedClassifiers_id2xreLMO8jm_(@NotNull SNode __thisNode__, Set<SNode> nodes) {
+  /*package*/ static void getAllExtendedClassifiers_id2xreLMO8jm_(@NotNull SNode __thisNode__, Set<SNode> nodes) {
     if (SetSequence.fromSet(nodes).contains(__thisNode__)) {
       return;
     }
@@ -188,16 +188,16 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jm_.invoke(SLinkOperations.getTarget(extended, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), nodes);
     }
   }
-  private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
+  /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"));
   }
-  private static Boolean hasStaticMemebers_idhFq8xqE(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasStaticMemebers_idhFq8xqE(@NotNull SNode __thisNode__) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(__thisNode__)).isNotEmpty();
   }
-  private static String getNestedName_id7q4lzBFjvIX(@NotNull SNode __thisNode__) {
-    return Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(__thisNode__, null);
+  /*package*/ static String getNestedName_id7q4lzBFjvIX(@NotNull SNode __thisNode__) {
+    return ((String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(__thisNode__, null));
   }
-  private static String getNestedNameInContext_id7q4lzBFjvF8(@NotNull SNode __thisNode__, SNode context) {
+  /*package*/ static String getNestedNameInContext_id7q4lzBFjvF8(@NotNull SNode __thisNode__, SNode context) {
     List<SNode> containers = ListSequence.fromList(SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).reversedList();
     List<SNode> contextContainers = SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true);
 
@@ -238,30 +238,30 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     return result.toString();
   }
   @Deprecated
-  private static Boolean isStatic_idsWroEc0xXc(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isStatic_idsWroEc0xXc(@NotNull SNode __thisNode__) {
     // use virtual method instead 
-    return IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__);
+    return ((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__));
   }
-  private static Boolean isStatic_id6r77ob2USS8(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isStatic_id6r77ob2USS8(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       return true;
     }
     // ignore the value of nonStatic for top-level classes 
     return SNodeOperations.getParent(__thisNode__) == null || !(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic")));
   }
-  private static Boolean isInner_idsWroEc0xXl(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isInner_idsWroEc0xXl(@NotNull SNode __thisNode__) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
-  private static Boolean checkLoops_id3sXyOQUqKq0(@NotNull SNode __thisNode__) {
-    return Classifier__BehaviorDescriptor.checkLoops_id3sXyOQUqKq5.invoke(__thisNode__, SetSequence.fromSet(new HashSet<SNode>()));
+  /*package*/ static boolean checkLoops_id3sXyOQUqKq0(@NotNull SNode __thisNode__) {
+    return ((boolean) Classifier__BehaviorDescriptor.checkLoops_id3sXyOQUqKq5.invoke(__thisNode__, SetSequence.fromSet(new HashSet<SNode>())));
   }
-  private static Boolean isDescendant_id6dL7A1DpKo1(@NotNull SNode __thisNode__, SNode nodeToCompare) {
-    return Classifier__BehaviorDescriptor.isDescendant_checkLoops_id6dL7A1DpKoA.invoke(__thisNode__, nodeToCompare, SetSequence.fromSet(new HashSet<SNode>()));
+  /*package*/ static boolean isDescendant_id6dL7A1DpKo1(@NotNull SNode __thisNode__, SNode nodeToCompare) {
+    return ((boolean) Classifier__BehaviorDescriptor.isDescendant_checkLoops_id6dL7A1DpKoA.invoke(__thisNode__, nodeToCompare, SetSequence.fromSet(new HashSet<SNode>())));
   }
-  private static Boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, SNode nodeToCompare, Set<SNode> visited) {
+  /*package*/ static boolean isDescendant_checkLoops_id6dL7A1DpKoA(@NotNull SNode __thisNode__, SNode nodeToCompare, Set<SNode> visited) {
     return false;
   }
-  private static Boolean isSame_id4dzXPK1BpyE(@NotNull SNode __thisNode__, SNode that) {
+  /*package*/ static boolean isSame_id4dzXPK1BpyE(@NotNull SNode __thisNode__, SNode that) {
     if (SNodeOperations.getConceptDeclaration(__thisNode__) != SNodeOperations.getConceptDeclaration(that)) {
       return false;
     }
@@ -272,17 +272,17 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return __thisNode__ == that;
   }
-  private static Boolean checkLoops_id3sXyOQUqKq5(@NotNull SNode __thisNode__, Set<SNode> visited) {
+  /*package*/ static boolean checkLoops_id3sXyOQUqKq5(@NotNull SNode __thisNode__, Set<SNode> visited) {
     return false;
   }
-  private static Boolean canInstantiateIn_id610WLfjPjne(@NotNull SNode __thisNode__, SNode context) {
+  /*package*/ static boolean canInstantiateIn_id610WLfjPjne(@NotNull SNode __thisNode__, SNode context) {
     List<SNode> contextClassifiers = Classifier__BehaviorDescriptor.getNonStaticContextClassifiers_id5S7J9l$QYtM.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), context);
     List<SNode> required = Classifier__BehaviorDescriptor.getNonStaticContextClassifiers_id5S7J9l$QYtM.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__);
     ListSequence.fromList(required).removeElement(__thisNode__);
     for (final SNode req : required) {
       if (!(ListSequence.fromList(contextClassifiers).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode cl) {
-          return Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(cl, req);
+          return (boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(cl, req);
         }
       }))) {
         return false;
@@ -290,15 +290,15 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return true;
   }
-  private static List<SNode> getOwnMethods_id1DPgsAlM_WC(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getOwnMethods_id1DPgsAlM_WC(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(__thisNode__)));
     return result;
   }
-  private static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
-    return IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__);
+  /*package*/ static Icon getAdditionalIcon_id4mxbjAOAE$e(@NotNull SNode __thisNode__) {
+    return ((Icon) IVisible__BehaviorDescriptor.getVisibilityIcon_id4mxbjAOAG0d.invoke(__thisNode__));
   }
-  private static SNode getThisType_id2RtWPFZ12w7(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getThisType_id2RtWPFZ12w7(@NotNull SNode __thisNode__) {
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), __thisNode__);
     for (SNode decl : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))) {
@@ -308,7 +308,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return result;
   }
-  private static SNode getWithResolvedTypevars_id2RtWPFZ0VAJ(@NotNull SNode __thisNode__, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
+  /*package*/ static SNode getWithResolvedTypevars_id2RtWPFZ0VAJ(@NotNull SNode __thisNode__, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
     SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(__thisNode__), new Classifier__BehaviorDescriptor.Pattern_hx1769_a1a0a0a37(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
       return Classifier__BehaviorDescriptor.getResolvedVar_id2RtWPFZ12Bt.invoke(__thisNode__, SNodeOperations.cast(t, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), ancestor, coercedType, method, baseMethod);
@@ -323,7 +323,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       return result;
     }
   }
-  private static SNode getResolvedVar_id2RtWPFZ12Bt(@NotNull SNode __thisNode__, SNode reference, SNode ancestor, SNode coercedType, SNode method, SNode baseMethod) {
+  /*package*/ static SNode getResolvedVar_id2RtWPFZ12Bt(@NotNull SNode __thisNode__, SNode reference, SNode ancestor, SNode coercedType, SNode method, SNode baseMethod) {
     SNode decl = SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"));
     int i = ListSequence.fromList(SLinkOperations.getChildren(ancestor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).indexOf(decl);
     SNode resolvedVar;
@@ -340,7 +340,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return resolvedVar;
   }
-  private static SNode getResolvedMethodVar_idIqmIRMsvlW(@NotNull SNode __thisNode__, SNode reference, SNode method, SNode baseMethod) {
+  /*package*/ static SNode getResolvedMethodVar_idIqmIRMsvlW(@NotNull SNode __thisNode__, SNode reference, SNode method, SNode baseMethod) {
     int i = ListSequence.fromList(SLinkOperations.getChildren(baseMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).indexOf(SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
     if (i >= 0 && i <= ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).count()) {
       SNode varRef = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), null);
@@ -349,11 +349,11 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return null;
   }
-  private static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, final SNode kind, SNode child) {
+  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, final SNode kind, SNode child) {
     while (SNodeOperations.getParent(child) != __thisNode__ && child != null) {
       child = SNodeOperations.getParent(child);
     }
-    final boolean isStaticContext = !((child == null)) && ((SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) && ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) || (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) || SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer")));
+    final boolean isStaticContext = !((child == null)) && ((SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) && (boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) || (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && (boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) || SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, "jetbrains.mps.baseLanguage.structure.StaticInitializer")));
 
     // todo: remove this logic from Classifier 
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
@@ -485,19 +485,19 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
 
     return ScopeUtils.lazyParentScope(__thisNode__, kind);
   }
-  private static Iterable<SNode> getTypeVariables_id6r77ob2URXZ(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> getTypeVariables_id6r77ob2URXZ(@NotNull SNode __thisNode__) {
     return SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"));
   }
-  private static Iterable<SNode> getSuperTypes_id6r77ob2URYj(@NotNull SNode __thisNode__) {
-    return Classifier__BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invoke(__thisNode__);
+  /*package*/ static Iterable<SNode> getSuperTypes_id6r77ob2URYj(@NotNull SNode __thisNode__) {
+    return ((List<SNode>) Classifier__BehaviorDescriptor.getExtendedClassifierTypes_id1UeCwxlWKny.invoke(__thisNode__));
   }
-  private static SNode getThisType_id6r77ob2UWbY(@NotNull SNode __thisNode__) {
-    return Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(__thisNode__);
+  /*package*/ static SNode getThisType_id6r77ob2UWbY(@NotNull SNode __thisNode__) {
+    return ((SNode) Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(__thisNode__));
   }
-  private static void populateMembers_id6r77ob2USUV(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifierType) {
+  /*package*/ static void populateMembers_id6r77ob2USUV(@NotNull SNode __thisNode__, MembersPopulatingContext context, SNode classifierType) {
     // do nothing by default 
   }
-  private static Iterable<SNode> members_id1hodSy8nQmC(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> members_id1hodSy8nQmC(@NotNull SNode __thisNode__) {
     // todo: change on .members 
     List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
 
@@ -521,7 +521,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
 
     return members;
   }
-  private static Iterable<SNode> nestedClassifiers_id4_LVZ3pBjGQ(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> nestedClassifiers_id4_LVZ3pBjGQ(@NotNull SNode __thisNode__) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
@@ -532,7 +532,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
     });
   }
-  private static Iterable<SNode> staticFields_id4_LVZ3pBr7M(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> staticFields_id4_LVZ3pBr7M(@NotNull SNode __thisNode__) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
@@ -543,7 +543,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
     });
   }
-  private static Iterable<SNode> staticMethods_id7fFTwQrQPHW(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> staticMethods_id7fFTwQrQPHW(@NotNull SNode __thisNode__) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
@@ -554,7 +554,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
     });
   }
-  private static Iterable<SNode> methods_id4_LVZ3pBKCn(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> methods_id4_LVZ3pBKCn(@NotNull SNode __thisNode__) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
@@ -565,10 +565,10 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
     });
   }
-  private static Boolean canBeInterfaceMember_id2zJQqQIUx2B(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean canBeInterfaceMember_id2zJQqQIUx2B(@NotNull SAbstractConcept __thisConcept__) {
     return true;
   }
-  private static List<SNode> getNonStaticContextClassifiers_id5S7J9l$QYtM(@NotNull SAbstractConcept __thisConcept__, SNode context) {
+  /*package*/ static List<SNode> getNonStaticContextClassifiers_id5S7J9l$QYtM(@NotNull SAbstractConcept __thisConcept__, SNode context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode current : ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true))) {
       if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
@@ -579,7 +579,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
         ListSequence.fromList(result).addElement(classifier);
       } else {
         ListSequence.fromList(result).addElement(current);
-        if (IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(current)) {
+        if ((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(current)) {
           // according to Java rules static inner classifiers can be only on the second level so we can 
           // safely break here 
           break;
@@ -588,7 +588,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return result;
   }
-  private static SNode getContextClassifier_id5mDmeD1aaq0(@NotNull SAbstractConcept __thisConcept__, SNode expr) {
+  /*package*/ static SNode getContextClassifier_id5mDmeD1aaq0(@NotNull SAbstractConcept __thisConcept__, SNode expr) {
     SNode concept = ClassConcept__BehaviorDescriptor.getContextClass_id6WzWPTX2$6q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), expr);
     if (concept != null) {
       return concept;
@@ -596,7 +596,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.getNodeAncestor(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
   }
   @Deprecated
-  private static List<SNode> getAccessibleMembers_id_8Pw6zYia7(@NotNull SAbstractConcept __thisConcept__, SNode contextNode, int constraint) {
+  /*package*/ static List<SNode> getAccessibleMembers_id_8Pw6zYia7(@NotNull SAbstractConcept __thisConcept__, SNode contextNode, int constraint) {
     SNode classifier = ClassConcept__BehaviorDescriptor.getContextClass_id6WzWPTX2$6q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), contextNode);
     List<SNode> result = new ArrayList<SNode>();
     while (classifier != null) {
@@ -605,7 +605,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
           return SNodeOperations.as(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
         }
       }));
-      if (!(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
+      if (!((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
         classifier = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
       } else {
         break;
@@ -619,113 +619,113 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getMarkIcons_id3pOfV45ExLD(node);
+        return (T) ((List<Icon>) getMarkIcons_id3pOfV45ExLD(node));
       case 1:
-        return (T) getVisibleMembers_id70J2WaK$Uj3(node, (SNode) parameters[0], (SNode) parameters[1]);
+        return (T) ((Scope) getVisibleMembers_id70J2WaK$Uj3(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 2:
-        return (T) getFqName_idhEwIO9y(node);
+        return (T) ((String) getFqName_idhEwIO9y(node));
       case 3:
-        return (T) getMembers_idhEwJjl2(node);
+        return (T) ((List<SNode>) getMembers_idhEwJjl2(node));
       case 4:
-        return (T) getMembers_id1UeCwxlVpJs(node, (SNode) parameters[0]);
+        return (T) ((Scope) getMembers_id1UeCwxlVpJs(node, (SNode) parameters[0]));
       case 5:
-        return (T) getExtendedClassifierTypes_id1UeCwxlWKny(node);
+        return (T) ((List<SNode>) getExtendedClassifierTypes_id1UeCwxlWKny(node));
       case 6:
-        return (T) getAllExtendedClassifiers_id2xreLMO8jma(node);
+        return (T) ((Set<SNode>) getAllExtendedClassifiers_id2xreLMO8jma(node));
       case 7:
         getAllExtendedClassifiers_id2xreLMO8jm_(node, (Set<SNode>) parameters[0]);
         return null;
       case 8:
-        return (T) getPresentation_idhEwIMiw(node);
+        return (T) ((String) getPresentation_idhEwIMiw(node));
       case 9:
-        return (T) hasStaticMemebers_idhFq8xqE(node);
+        return (T) ((Boolean) hasStaticMemebers_idhFq8xqE(node));
       case 10:
-        return (T) getNestedName_id7q4lzBFjvIX(node);
+        return (T) ((String) getNestedName_id7q4lzBFjvIX(node));
       case 11:
-        return (T) getNestedNameInContext_id7q4lzBFjvF8(node, (SNode) parameters[0]);
+        return (T) ((String) getNestedNameInContext_id7q4lzBFjvF8(node, (SNode) parameters[0]));
       case 12:
-        return (T) isStatic_idsWroEc0xXc(node);
+        return (T) ((Boolean) isStatic_idsWroEc0xXc(node));
       case 13:
-        return (T) isStatic_id6r77ob2USS8(node);
+        return (T) ((Boolean) isStatic_id6r77ob2USS8(node));
       case 14:
-        return (T) isInner_idsWroEc0xXl(node);
+        return (T) ((Boolean) isInner_idsWroEc0xXl(node));
       case 15:
-        return (T) checkLoops_id3sXyOQUqKq0(node);
+        return (T) ((Boolean) checkLoops_id3sXyOQUqKq0(node));
       case 16:
-        return (T) isDescendant_id6dL7A1DpKo1(node, (SNode) parameters[0]);
+        return (T) ((Boolean) isDescendant_id6dL7A1DpKo1(node, (SNode) parameters[0]));
       case 17:
-        return (T) isDescendant_checkLoops_id6dL7A1DpKoA(node, (SNode) parameters[0], (Set<SNode>) parameters[1]);
+        return (T) ((Boolean) isDescendant_checkLoops_id6dL7A1DpKoA(node, (SNode) parameters[0], (Set<SNode>) parameters[1]));
       case 18:
-        return (T) isSame_id4dzXPK1BpyE(node, (SNode) parameters[0]);
+        return (T) ((Boolean) isSame_id4dzXPK1BpyE(node, (SNode) parameters[0]));
       case 19:
-        return (T) checkLoops_id3sXyOQUqKq5(node, (Set<SNode>) parameters[0]);
+        return (T) ((Boolean) checkLoops_id3sXyOQUqKq5(node, (Set<SNode>) parameters[0]));
       case 20:
-        return (T) canInstantiateIn_id610WLfjPjne(node, (SNode) parameters[0]);
+        return (T) ((Boolean) canInstantiateIn_id610WLfjPjne(node, (SNode) parameters[0]));
       case 21:
-        return (T) getOwnMethods_id1DPgsAlM_WC(node);
+        return (T) ((List<SNode>) getOwnMethods_id1DPgsAlM_WC(node));
       case 22:
-        return (T) getAdditionalIcon_id4mxbjAOAE$e(node);
+        return (T) ((Icon) getAdditionalIcon_id4mxbjAOAE$e(node));
       case 23:
-        return (T) getThisType_id2RtWPFZ12w7(node);
+        return (T) ((SNode) getThisType_id2RtWPFZ12w7(node));
       case 24:
-        return (T) getWithResolvedTypevars_id2RtWPFZ0VAJ(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3]);
+        return (T) ((SNode) getWithResolvedTypevars_id2RtWPFZ0VAJ(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3]));
       case 25:
-        return (T) getResolvedVar_id2RtWPFZ12Bt(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3], (SNode) parameters[4]);
+        return (T) ((SNode) getResolvedVar_id2RtWPFZ12Bt(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2], (SNode) parameters[3], (SNode) parameters[4]));
       case 26:
-        return (T) getResolvedMethodVar_idIqmIRMsvlW(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2]);
+        return (T) ((SNode) getResolvedMethodVar_idIqmIRMsvlW(node, (SNode) parameters[0], (SNode) parameters[1], (SNode) parameters[2]));
       case 27:
-        return (T) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]);
+        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 28:
-        return (T) getTypeVariables_id6r77ob2URXZ(node);
+        return (T) ((Iterable<SNode>) getTypeVariables_id6r77ob2URXZ(node));
       case 29:
-        return (T) getSuperTypes_id6r77ob2URYj(node);
+        return (T) ((Iterable<SNode>) getSuperTypes_id6r77ob2URYj(node));
       case 30:
-        return (T) getThisType_id6r77ob2UWbY(node);
+        return (T) ((SNode) getThisType_id6r77ob2UWbY(node));
       case 31:
         populateMembers_id6r77ob2USUV(node, (MembersPopulatingContext) parameters[0], (SNode) parameters[1]);
         return null;
       case 32:
-        return (T) members_id1hodSy8nQmC(node);
+        return (T) ((Iterable<SNode>) members_id1hodSy8nQmC(node));
       case 33:
-        return (T) nestedClassifiers_id4_LVZ3pBjGQ(node);
+        return (T) ((Iterable<SNode>) nestedClassifiers_id4_LVZ3pBjGQ(node));
       case 34:
-        return (T) staticFields_id4_LVZ3pBr7M(node);
+        return (T) ((Iterable<SNode>) staticFields_id4_LVZ3pBr7M(node));
       case 35:
-        return (T) staticMethods_id7fFTwQrQPHW(node);
+        return (T) ((Iterable<SNode>) staticMethods_id7fFTwQrQPHW(node));
       case 36:
-        return (T) methods_id4_LVZ3pBKCn(node);
+        return (T) ((Iterable<SNode>) methods_id4_LVZ3pBKCn(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 37:
-        return (T) canBeInterfaceMember_id2zJQqQIUx2B(concept);
+        return (T) ((Boolean) canBeInterfaceMember_id2zJQqQIUx2B(concept));
       case 38:
-        return (T) getNonStaticContextClassifiers_id5S7J9l$QYtM(concept, (SNode) parameters[0]);
+        return (T) ((List<SNode>) getNonStaticContextClassifiers_id5S7J9l$QYtM(concept, (SNode) parameters[0]));
       case 39:
-        return (T) getContextClassifier_id5mDmeD1aaq0(concept, (SNode) parameters[0]);
+        return (T) ((SNode) getContextClassifier_id5mDmeD1aaq0(concept, (SNode) parameters[0]));
       case 40:
-        return (T) getAccessibleMembers_id_8Pw6zYia7(concept, (SNode) parameters[0], (Integer) parameters[1]);
+        return (T) ((List<SNode>) getAccessibleMembers_id_8Pw6zYia7(concept, (SNode) parameters[0], ((int) (Integer) parameters[1])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

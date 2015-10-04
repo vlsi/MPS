@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
  * Will be removed after 3.3
@@ -16,12 +12,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Deprecated
 public class NamedTupleDeclaration_Behavior {
   public static List<SNode> call_allExtends_3142843783245461132(SNode __thisNode__) {
-    List<SNode> result = new ArrayList<SNode>();
-    SNode ntd = __thisNode__;
-    while ((ntd != null) && !(ListSequence.fromList(result).contains(ntd))) {
-      ListSequence.fromList(result).addElement(ntd);
-      ntd = SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x479eb1f896fa444L, "extended")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-    }
-    return result;
+    return NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc(__thisNode__);
   }
 }

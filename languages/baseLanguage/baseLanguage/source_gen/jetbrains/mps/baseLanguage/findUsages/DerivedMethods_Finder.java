@@ -50,7 +50,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
       for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessors.getInstance().getDerivedClassifiers(classifier, scope))) {
         Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(derivedClassifier)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(instanceMethod, it);
+            return (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(instanceMethod, it);
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -61,7 +61,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
           for (SNode enumConstant : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(derivedClassifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant")))) {
             ListSequence.fromList(SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(instanceMethod, it);
+                return (boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(instanceMethod, it);
               }
             }).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {

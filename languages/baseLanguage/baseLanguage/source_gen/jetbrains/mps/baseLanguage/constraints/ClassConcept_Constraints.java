@@ -28,7 +28,7 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
     super(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L));
   }
   public String getAlternativeIcon(SNode node) {
-    if (Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(node, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Throwable"))) {
+    if ((boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(node, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~Throwable"))) {
       if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
         return "${language_descriptor}/icons/abstractException.png";
       }

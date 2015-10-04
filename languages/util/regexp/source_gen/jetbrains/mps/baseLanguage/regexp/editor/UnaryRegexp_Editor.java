@@ -55,7 +55,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext) {
-    return UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
+    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createRefNode_xoe8gq_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new UnaryRegexp_Editor.regexpSingleRoleHandler_xoe8gq_b0(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"), editorContext);
@@ -101,7 +101,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext) {
-    return UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
+    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createComponent_xoe8gq_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");

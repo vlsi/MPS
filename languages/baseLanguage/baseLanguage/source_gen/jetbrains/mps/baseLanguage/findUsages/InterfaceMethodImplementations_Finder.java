@@ -54,7 +54,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
         }
       })) {
         for (SNode sMethod : Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classNode))) {
-          if (BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(sMethod, node)) {
+          if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(sMethod, node)) {
             ListSequence.fromList(_results).addElement(sMethod);
           }
         }

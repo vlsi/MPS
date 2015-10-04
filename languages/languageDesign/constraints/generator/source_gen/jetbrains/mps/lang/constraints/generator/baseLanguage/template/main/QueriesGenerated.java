@@ -89,7 +89,7 @@ public class QueriesGenerated {
     return _context.getOriginalInputModel().getReference().toString();
   }
   public static Object propertyMacro_GetPropertyValue_7423954551252434639(final PropertyMacroContext _context) {
-    return _context.getOriginalCopiedInputNode((ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isValidatorGenerated_idsZm2ZQHsri.invoke(((SNode) _context.getVariable("factory"))) ? ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.getValidator_id2_ZlElkqg42.invoke(((SNode) _context.getVariable("factory"))) : ((SNode) _context.getVariable("factory")))).getNodeId().toString();
+    return _context.getOriginalCopiedInputNode(((boolean) ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isValidatorGenerated_idsZm2ZQHsri.invoke(((SNode) _context.getVariable("factory"))) ? ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.getValidator_id2_ZlElkqg42.invoke(((SNode) _context.getVariable("factory"))) : ((SNode) _context.getVariable("factory")))).getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_2196823097109809234(final PropertyMacroContext _context) {
     SNode constraints = ListSequence.fromList(SModelOperations.roots(_context.getOriginalInputModel(), null)).where(new IWhereFilter<SNode>() {
@@ -229,7 +229,7 @@ public class QueriesGenerated {
     return (((SNode) _context.getVariable("presentation")) != null);
   }
   public static boolean ifMacro_Condition_5979740912231476080(final IfMacroContext _context) {
-    return ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isValidatorGenerated_idsZm2ZQHsri.invoke(((SNode) _context.getVariable("factory")));
+    return (boolean) ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isValidatorGenerated_idsZm2ZQHsri.invoke(((SNode) _context.getVariable("factory")));
   }
   public static boolean ifMacro_Condition_5934496548013422436(final IfMacroContext _context) {
     return (((SNode) _context.getVariable("presentation")) != null);

@@ -4,18 +4,6 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 /**
  * Will be removed after 3.3
@@ -24,58 +12,15 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 @Deprecated
 public class ExportScope_Behavior {
   public static boolean call_checkExport_2565736246230031479(SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
-    SNode exp = ExportScope__BehaviorDescriptor.getExportScope_id3ye0wbzmGx_.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
-    return namespace == null || (((exp == null) ? ExportScope__BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), isConcept, node, namespace) : ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSC_o.invoke(exp, namespace, node)));
+    return ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSDLR(__thisConcept__, isConcept, node, namespace);
   }
   public static boolean call_checkExportDefault_8259195909097980935(SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
-    /*
-      return (isConcept ? true : namespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node)));
-    */
-    String targetNamespace = ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
-    if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {
-      return true;
-    }
-    // while problem with adapters is not solved 
-    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))) && targetNamespace.startsWith("jetbrains.mps")) {
-      return namespace.startsWith("jetbrains.mps");
-    }
-    // stubs are module by default, all other are public now 
-    return !(SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))));
+    return ExportScope__BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7(__thisConcept__, isConcept, node, namespace);
   }
   public static SNode call_getExportScope_4075196924244445285(SAbstractConcept __thisConcept__, SNode node) {
-    // return effective ExportScope or null 
-    /*
-      return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope"))) != null);
-        }
-      }), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")));
-    */
-    return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")));
+    return ExportScope__BehaviorDescriptor.getExportScope_id3ye0wbzmGx_(__thisConcept__, node);
   }
   public static String call_getNamespace_2565736246230026649(SAbstractConcept __thisConcept__, SNode node) {
-    SModule module = check_ogf5a0_a0a0e(SNodeOperations.getModel(node));
-    if (module instanceof Generator) {
-      module = ((Generator) module).getSourceLanguage();
-    }
-    return check_ogf5a0_a2a4(check_ogf5a0_a0c0e(((AbstractModule) module)));
-  }
-  private static SModule check_ogf5a0_a0a0e(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static String check_ogf5a0_a2a4(ModuleDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNamespace();
-    }
-    return null;
-  }
-  private static ModuleDescriptor check_ogf5a0_a0c0e(AbstractModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModuleDescriptor();
-    }
-    return null;
+    return ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp(__thisConcept__, node);
   }
 }

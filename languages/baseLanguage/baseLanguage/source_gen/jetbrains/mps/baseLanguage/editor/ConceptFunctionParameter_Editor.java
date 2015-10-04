@@ -36,6 +36,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_q0ga01_a1a(EditorContext editorContext, SNode node) {
-    return IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)));
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(node)));
   }
 }

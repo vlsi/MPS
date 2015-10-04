@@ -12,28 +12,28 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class SymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111791aa602L, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> validateChar_id75Jea4IFjf5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("validateChar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("75Jea4IFjf5").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
-  public static final SMethod<String> escapeChar_id75Jea4IEVWQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("escapeChar").modifiers(SModifiersImpl.create(2, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("75Jea4IEVWQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
+  public static final SMethod<String> validateChar_id75Jea4IFjf5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("validateChar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("75Jea4IFjf5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<String> escapeChar_id75Jea4IEVWQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("escapeChar").modifiers(SModifiersImpl.create(2, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("75Jea4IEVWQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(validateChar_id75Jea4IFjf5, escapeChar_id75Jea4IEVWQ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String validateChar_id75Jea4IFjf5(@NotNull SNode __thisNode__, String s) {
+  /*package*/ static String validateChar_id75Jea4IFjf5(@NotNull SNode __thisNode__, String s) {
     StringBuilder sb = new StringBuilder();
     int i = 0;
     char c = s.charAt(i);
@@ -50,7 +50,7 @@ public final class SymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor 
             return null;
           }
           c = s.charAt(i);
-          if (!(StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), c))) {
+          if (!((boolean) StringLiteralRegexp__BehaviorDescriptor.isHexChar_id7KMCQ$NHaYO.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a0992dL, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp").getDeclarationNode()), ((char) c)))) {
             return null;
           }
           sb.append(c);
@@ -90,7 +90,7 @@ public final class SymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return sb.toString();
   }
-  private static String escapeChar_id75Jea4IEVWQ(@NotNull SNode __thisNode__, String s) {
+  /*package*/ static String escapeChar_id75Jea4IEVWQ(@NotNull SNode __thisNode__, String s) {
     String res = SymbolClassPart__BehaviorDescriptor.validateChar_id75Jea4IFjf5.invoke(__thisNode__, s);
     if (res == null) {
       if (s.equals("\\")) {
@@ -106,28 +106,28 @@ public final class SymbolClassPart__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) validateChar_id75Jea4IFjf5(node, (String) parameters[0]);
+        return (T) ((String) validateChar_id75Jea4IFjf5(node, (String) parameters[0]));
       case 1:
-        return (T) escapeChar_id75Jea4IEVWQ(node, (String) parameters[0]);
+        return (T) ((String) escapeChar_id75Jea4IEVWQ(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

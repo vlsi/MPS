@@ -359,9 +359,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ac(jetbrains.mps.lang.typesystem.actions)/2401040147804061846">
     <file name="QueriesGenerated.java">
       <node id="2401040147804097678" at="124,190,125,237" concept="5" />
-      <node id="2401040147804062168" at="125,237,126,510" concept="6" />
+      <node id="2401040147804062168" at="125,237,126,520" concept="6" />
       <node id="2401040147804061848" at="124,0,128,0" concept="8" trace="nodeSubstituteActionsBuilder_Precondition_Expression_2401040147804061848#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="2401040147804061849" at="124,190,126,510">
+      <scope id="2401040147804061849" at="124,190,126,520">
         <var name="absRule" id="2401040147804097679" />
       </scope>
       <scope id="2401040147804061848" at="124,0,128,0">
@@ -413,7 +413,7 @@
       <node id="5866463677139562795" at="109,238,110,18" concept="6" />
       <node id="5866463677139552560" at="111,5,112,0" concept="7" />
       <node id="5866463677139578173" at="112,0,113,241" concept="5" />
-      <node id="5866463677139878745" at="114,243,115,18" concept="6" />
+      <node id="5866463677139878745" at="114,253,115,18" concept="6" />
       <node id="5866463677139884894" at="116,5,117,17" concept="6" />
       <node id="7750890258733180777" at="95,280,98,17" concept="3" />
       <node id="5866463677139558481" at="108,189,111,5" concept="3" />
@@ -421,7 +421,7 @@
       <node id="7750890258733139493" at="108,0,119,0" concept="8" trace="nodeSubstituteActionsBuilder_Precondition_Statement_7750890258733139493#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <scope id="7750890258733180780" at="96,52,97,180" />
       <scope id="5866463677139558484" at="109,238,110,18" />
-      <scope id="5866463677139737897" at="114,243,115,18" />
+      <scope id="5866463677139737897" at="114,253,115,18" />
       <scope id="7750890258733155877" at="94,98,99,28">
         <var name="rule" id="7750890258731491399" />
       </scope>

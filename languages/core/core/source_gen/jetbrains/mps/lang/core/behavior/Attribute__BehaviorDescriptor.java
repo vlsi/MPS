@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
@@ -20,15 +19,16 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getRole_id1653mnvAgoG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRole").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgoG").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> multiple_id1653mnvAgpO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("multiple").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgpO").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getAttributed_id2D1PBM_bxHl = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAttributed").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxHl").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getRole_id1653mnvAgoG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRole").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgoG").registry(REGISTRY).build();
+  public static final SMethod<Boolean> multiple_id1653mnvAgpO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("multiple").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgpO").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getAttributed_id2D1PBM_bxHl = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAttributed").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxHl").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getRole_id1653mnvAgoG, multiple_id1653mnvAgpO, getAttributed_id2D1PBM_bxHl);
 
@@ -36,17 +36,17 @@ public final class Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Deprecated
-  private static String getRole_id1653mnvAgoG(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static String getRole_id1653mnvAgoG(@NotNull SAbstractConcept __thisConcept__) {
     // use this method 
     return AttributeDesignTimeOperations.getAttributeRole(__thisConcept__.getDeclarationNode());
   }
   @Deprecated
-  private static Boolean multiple_id1653mnvAgpO(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean multiple_id1653mnvAgpO(@NotNull SAbstractConcept __thisConcept__) {
     // use this method 
     return AttributeDesignTimeOperations.isMultipleAttribute(__thisConcept__.getDeclarationNode());
   }
   @Deprecated
-  private static List<SNode> getAttributed_id2D1PBM_bxHl(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static List<SNode> getAttributed_id2D1PBM_bxHl(@NotNull SAbstractConcept __thisConcept__) {
     // use this method 
     return Sequence.fromIterable(AttributeDesignTimeOperations.getApplicableConcepts(__thisConcept__.getDeclarationNode())).toListSequence();
   }
@@ -56,12 +56,12 @@ public final class Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -73,18 +73,18 @@ public final class Attribute__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getRole_id1653mnvAgoG(concept);
+        return (T) ((String) getRole_id1653mnvAgoG(concept));
       case 1:
-        return (T) multiple_id1653mnvAgpO(concept);
+        return (T) ((Boolean) multiple_id1653mnvAgpO(concept));
       case 2:
-        return (T) getAttributed_id2D1PBM_bxHl(concept);
+        return (T) ((List<SNode>) getAttributed_id2D1PBM_bxHl(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

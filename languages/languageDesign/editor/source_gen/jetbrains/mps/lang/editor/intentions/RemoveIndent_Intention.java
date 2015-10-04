@@ -36,7 +36,7 @@ public final class RemoveIndent_Intention extends IntentionDescriptorBase implem
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return EditorCellModel__BehaviorDescriptor.isIndented_idi0pN94$.invoke(node);
+    return (boolean) EditorCellModel__BehaviorDescriptor.isIndented_idi0pN94$.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

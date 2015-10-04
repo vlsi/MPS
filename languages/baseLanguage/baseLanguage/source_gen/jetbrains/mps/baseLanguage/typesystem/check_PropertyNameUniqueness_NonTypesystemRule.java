@@ -70,7 +70,7 @@ public class check_PropertyNameUniqueness_NonTypesystemRule extends AbstractNonT
       }
     }
 
-    if (Property__BehaviorDescriptor.hasSetter_idhEwIJ0S.invoke(property)) {
+    if ((boolean) Property__BehaviorDescriptor.hasSetter_idhEwIJ0S.invoke(property)) {
       duplicate = Sequence.fromIterable(visibleMethods).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           SNode method = SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));

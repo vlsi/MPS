@@ -153,6 +153,6 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_689p1d_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x11cd79149a9L, "query")) != null) && BooleanStyleSheetItem__BehaviorDescriptor.useQuery_idhNn$rq2.invoke(node);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x11cd79149a9L, "query")) != null) && (boolean) BooleanStyleSheetItem__BehaviorDescriptor.useQuery_idhNn$rq2.invoke(node);
   }
 }

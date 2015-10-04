@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.checkedName.PropertyReference;
 import java.util.List;
@@ -25,6 +24,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -35,42 +35,42 @@ public final class BaseToolDeclaration__BehaviorDescriptor extends BaseBHDescrip
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getGeneratedName_id5FstybB4d83 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d83").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getGeneratedClassFQName_id5FstybB4d8e = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedClassFQName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d8e").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasNumber_id5FstybB4d8v = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasNumber").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d8v").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> createType_idhEwJimy = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJimy").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> createSuperType_idhHOGPWW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createSuperType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHOGPWW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getExpandedIconPath_id5FstybB4d94 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getExpandedIconPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d94").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<PropertyReference> getPropertyToCheck_id4cWf37B8oYh = new SMethodBuilder<PropertyReference>(new SJavaCompoundTypeImpl((Class<PropertyReference>) ((Class) Object.class))).name("getPropertyToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oYh").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getGeneratedName_id5FstybB4d83 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d83").registry(REGISTRY).build();
+  public static final SMethod<String> getGeneratedClassFQName_id5FstybB4d8e = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedClassFQName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d8e").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasNumber_id5FstybB4d8v = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasNumber").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d8v").registry(REGISTRY).build();
+  public static final SMethod<SNode> createType_idhEwJimy = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJimy").registry(REGISTRY).build();
+  public static final SMethod<SNode> createSuperType_idhHOGPWW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createSuperType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHOGPWW").registry(REGISTRY).build();
+  public static final SMethod<String> getExpandedIconPath_id5FstybB4d94 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getExpandedIconPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FstybB4d94").registry(REGISTRY).build();
+  public static final SMethod<PropertyReference> getPropertyToCheck_id4cWf37B8oYh = new SMethodBuilder<PropertyReference>(new SJavaCompoundTypeImpl((Class<PropertyReference>) ((Class) Object.class))).name("getPropertyToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oYh").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getGeneratedName_id5FstybB4d83, getGeneratedClassFQName_id5FstybB4d8e, hasNumber_id5FstybB4d8v, createType_idhEwJimy, createSuperType_idhHOGPWW, getExpandedIconPath_id5FstybB4d94, getPropertyToCheck_id4cWf37B8oYh);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getGeneratedName_id5FstybB4d83(@NotNull SNode __thisNode__) {
+  /*package*/ static String getGeneratedName_id5FstybB4d83(@NotNull SNode __thisNode__) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) + "_Tool";
   }
-  private static String getGeneratedClassFQName_id5FstybB4d8e(@NotNull SNode __thisNode__) {
+  /*package*/ static String getGeneratedClassFQName_id5FstybB4d8e(@NotNull SNode __thisNode__) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + BaseToolDeclaration__BehaviorDescriptor.getGeneratedName_id5FstybB4d83.invoke(__thisNode__);
   }
-  private static Boolean hasNumber_id5FstybB4d8v(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasNumber_id5FstybB4d8v(@NotNull SNode __thisNode__) {
     return !(SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), null));
   }
-  private static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
     return _quotation_createNode_7ol7e8_a0a3(__thisNode__);
   }
-  private static SNode createSuperType_idhHOGPWW(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode createSuperType_idhHOGPWW(@NotNull SNode __thisNode__) {
     return _quotation_createNode_7ol7e8_a0a4();
   }
-  private static String getExpandedIconPath_id5FstybB4d94(@NotNull SNode __thisNode__) {
+  /*package*/ static String getExpandedIconPath_id5FstybB4d94(@NotNull SNode __thisNode__) {
     SModule module = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__).getModule();
     if (!(module instanceof AbstractModule)) {
       return null;
     }
     return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf6eL, "icon")));
   }
-  private static PropertyReference getPropertyToCheck_id4cWf37B8oYh(@NotNull SNode __thisNode__) {
+  /*package*/ static PropertyReference getPropertyToCheck_id4cWf37B8oYh(@NotNull SNode __thisNode__) {
     return new PropertyReference(__thisNode__, "caption");
   }
 
@@ -79,38 +79,38 @@ public final class BaseToolDeclaration__BehaviorDescriptor extends BaseBHDescrip
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getGeneratedName_id5FstybB4d83(node);
+        return (T) ((String) getGeneratedName_id5FstybB4d83(node));
       case 1:
-        return (T) getGeneratedClassFQName_id5FstybB4d8e(node);
+        return (T) ((String) getGeneratedClassFQName_id5FstybB4d8e(node));
       case 2:
-        return (T) hasNumber_id5FstybB4d8v(node);
+        return (T) ((Boolean) hasNumber_id5FstybB4d8v(node));
       case 3:
-        return (T) createType_idhEwJimy(node);
+        return (T) ((SNode) createType_idhEwJimy(node));
       case 4:
-        return (T) createSuperType_idhHOGPWW(node);
+        return (T) ((SNode) createSuperType_idhHOGPWW(node));
       case 5:
-        return (T) getExpandedIconPath_id5FstybB4d94(node);
+        return (T) ((String) getExpandedIconPath_id5FstybB4d94(node));
       case 6:
-        return (T) getPropertyToCheck_id4cWf37B8oYh(node);
+        return (T) ((PropertyReference) getPropertyToCheck_id4cWf37B8oYh(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

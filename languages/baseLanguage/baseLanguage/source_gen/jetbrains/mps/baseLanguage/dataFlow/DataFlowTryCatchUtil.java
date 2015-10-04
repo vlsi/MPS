@@ -23,7 +23,7 @@ public class DataFlowTryCatchUtil {
   public static List<SNode> getPossibleCatches(SNode source, List<SNode> catchClauses) {
     List<SNode> result = new ArrayList<SNode>();
     SNode statement = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
-    Set<SNode> uncaughtThrowables = Statement__BehaviorDescriptor.uncaughtThrowables_id4Gt7ANIVAVT.invoke(statement, false);
+    Set<SNode> uncaughtThrowables = Statement__BehaviorDescriptor.uncaughtThrowables_id4Gt7ANIVAVT.invoke(statement, ((boolean) false));
     for (SNode catchClause : catchClauses) {
       SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, _quotation_createNode_l1x7gt_b0a0a1a3a1()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, _quotation_createNode_l1x7gt_b0a0a1a3a1_0()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(_quotation_createNode_l1x7gt_a0a0b0d0b(), caughtType)) {

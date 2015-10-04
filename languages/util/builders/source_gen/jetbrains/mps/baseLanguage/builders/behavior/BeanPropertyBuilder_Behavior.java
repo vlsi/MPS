@@ -11,17 +11,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 @Deprecated
 public class BeanPropertyBuilder_Behavior {
   public static String call_getPropertyName_2679357232284040711(SAbstractConcept __thisConcept__, String methodName) {
-    String prefix = "set";
-    if (methodName == null) {
-      return null;
-    }
-    if (!(methodName.startsWith(prefix))) {
-      return null;
-    }
-    if (methodName.length() <= prefix.length()) {
-      return null;
-    }
-    String suffix = methodName.substring(prefix.length());
-    return Character.toLowerCase(suffix.charAt(0)) + suffix.substring(1);
+    return BeanPropertyBuilder__BehaviorDescriptor.getPropertyName_id2kIZjjSEvS7(__thisConcept__, methodName);
   }
 }

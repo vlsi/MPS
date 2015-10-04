@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.Arrays;
@@ -27,26 +26,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class DSLDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DSLDescriptor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getPreferredConcept_id1_lSsE3TA5X = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getPreferredConcept").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1_lSsE3TA5X").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Void> initializeInstance_id2VRROcY8CaS = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("initializeInstance").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VRROcY8CaS").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<SModel>) ((Class) Object.class))));
-  public static final SMethod<String> getGeneratedClassName_id2VRROcY7Vt6 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VRROcY7Vt6").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> getClassLikeMembers_id2iCqkkxuhoj = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getClassLikeMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2iCqkkxuhoj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<SNode> getPreferredConcept_id1_lSsE3TA5X = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getPreferredConcept").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1_lSsE3TA5X").registry(REGISTRY).build();
+  public static final SMethod<Void> initializeInstance_id2VRROcY8CaS = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("initializeInstance").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VRROcY8CaS").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""));
+  public static final SMethod<String> getGeneratedClassName_id2VRROcY7Vt6 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getGeneratedClassName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VRROcY7Vt6").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getClassLikeMembers_id2iCqkkxuhoj = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getClassLikeMembers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2iCqkkxuhoj").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPreferredConcept_id1_lSsE3TA5X, initializeInstance_id2VRROcY8CaS, getGeneratedClassName_id2VRROcY7Vt6, getClassLikeMembers_id2iCqkkxuhoj);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode getPreferredConcept_id1_lSsE3TA5X(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getPreferredConcept_id1_lSsE3TA5X(@NotNull SNode __thisNode__) {
     return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")) == null ? SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198") : SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")));
   }
-  private static void initializeInstance_id2VRROcY8CaS(@NotNull SNode __thisNode__, SNode classLike, SModel futureModel) {
+  /*package*/ static void initializeInstance_id2VRROcY8CaS(@NotNull SNode __thisNode__, SNode classLike, SModel futureModel) {
     if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83eb220eL, "initializer")) == null) {
       return;
     }
@@ -64,10 +64,10 @@ public final class DSLDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
       e.printStackTrace();
     }
   }
-  private static String getGeneratedClassName_id2VRROcY7Vt6(@NotNull SNode __thisNode__) {
+  /*package*/ static String getGeneratedClassName_id2VRROcY7Vt6(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_Queries";
   }
-  private static Iterable<SNode> getClassLikeMembers_id2iCqkkxuhoj(@NotNull SNode __thisNode__) {
+  /*package*/ static Iterable<SNode> getClassLikeMembers_id2iCqkkxuhoj(@NotNull SNode __thisNode__) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember"))));
     return result;
@@ -78,33 +78,33 @@ public final class DSLDescriptor__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getPreferredConcept_id1_lSsE3TA5X(node);
+        return (T) ((SNode) getPreferredConcept_id1_lSsE3TA5X(node));
       case 1:
         initializeInstance_id2VRROcY8CaS(node, (SNode) parameters[0], (SModel) parameters[1]);
         return null;
       case 2:
-        return (T) getGeneratedClassName_id2VRROcY7Vt6(node);
+        return (T) ((String) getGeneratedClassName_id2VRROcY7Vt6(node));
       case 3:
-        return (T) getClassLikeMembers_id2iCqkkxuhoj(node);
+        return (T) ((Iterable<SNode>) getClassLikeMembers_id2iCqkkxuhoj(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

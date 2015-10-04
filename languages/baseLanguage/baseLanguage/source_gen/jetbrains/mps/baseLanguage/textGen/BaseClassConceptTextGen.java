@@ -35,8 +35,8 @@ public abstract class BaseClassConceptTextGen {
     SNode lastMember = Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)).last();
     for (SNode member : Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)) {
       if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-        boolean needsLineBefore = ClassifierMember__BehaviorDescriptor.needsEmptyLineBefore_idzB21h1tQit.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
-        boolean needsLineAfter = ClassifierMember__BehaviorDescriptor.needsEmptyLineAfter_idzB21h1tQNm.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
+        boolean needsLineBefore = (boolean) ClassifierMember__BehaviorDescriptor.needsEmptyLineBefore_idzB21h1tQit.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
+        boolean needsLineAfter = (boolean) ClassifierMember__BehaviorDescriptor.needsEmptyLineAfter_idzB21h1tQNm.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
         BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), ctx);
         tgs.appendNode(member);
         BaseLanguageTextGen.newLine(needsLineAfter && !((lastMember == member)), ctx);

@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import java.util.Arrays;
@@ -27,34 +26,35 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class IClassifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> createType_idhEwJimy = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJimy").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> createSuperType_idhHOGPWW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createSuperType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHOGPWW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getParts_idhEwJimO = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJimO").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getMembers_idhEwJink = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJink").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getMembers_idhEwJioW = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJioW").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<IExtractMethodRefactoringProcessor> getExtractMethodRefactoringProcessor_idhLwHWdT = new SMethodBuilder<IExtractMethodRefactoringProcessor>(new SJavaCompoundTypeImpl(IExtractMethodRefactoringProcessor.class)).name("getExtractMethodRefactoringProcessor").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLwHWdT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<List<SNode>>) ((Class) Object.class))));
-  public static final SMethod<SNode> getContextClassifier_idhEwJim4 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContextClassifier").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJim4").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
+  public static final SMethod<SNode> createType_idhEwJimy = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJimy").registry(REGISTRY).build();
+  public static final SMethod<SNode> createSuperType_idhHOGPWW = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("createSuperType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHOGPWW").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getParts_idhEwJimO = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJimO").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getMembers_idhEwJink = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJink").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getMembers_idhEwJioW = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getMembers").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJioW").registry(REGISTRY).build();
+  public static final SMethod<IExtractMethodRefactoringProcessor> getExtractMethodRefactoringProcessor_idhLwHWdT = new SMethodBuilder<IExtractMethodRefactoringProcessor>(new SJavaCompoundTypeImpl(IExtractMethodRefactoringProcessor.class)).name("getExtractMethodRefactoringProcessor").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLwHWdT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getContextClassifier_idhEwJim4 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getContextClassifier").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJim4").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(createType_idhEwJimy, createSuperType_idhHOGPWW, getParts_idhEwJimO, getMembers_idhEwJink, getMembers_idhEwJioW, getExtractMethodRefactoringProcessor_idhLwHWdT, getContextClassifier_idhEwJim4);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode createType_idhEwJimy(@NotNull SNode __thisNode__) {
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType")));
     SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier"), __thisNode__);
     return result;
   }
-  private static SNode createSuperType_idhHOGPWW(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode createSuperType_idhHOGPWW(@NotNull SNode __thisNode__) {
     return null;
   }
-  private static List<SNode> getParts_idhEwJimO(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getParts_idhEwJimO(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode part : SModelOperations.roots(SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6e188eL, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"))) {
       if (IClassifierPart__BehaviorDescriptor.getMainClassifier_idhEwIfO4.invoke(part) == __thisNode__) {
@@ -63,7 +63,7 @@ public final class IClassifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return result;
   }
-  private static List<SNode> getMembers_idhEwJink(@NotNull SNode __thisNode__, SNode contextNode) {
+  /*package*/ static List<SNode> getMembers_idhEwJink(@NotNull SNode __thisNode__, SNode contextNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode member : IClassifier__BehaviorDescriptor.getMembers_idhEwJioW.invoke(__thisNode__)) {
       if (IMember__BehaviorDescriptor.getVisiblity_idhEwIBC5.invoke(member) == null && SNodeOperations.getModel(member) == SNodeOperations.getModel(contextNode)) {
@@ -84,7 +84,7 @@ public final class IClassifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return result;
   }
-  private static List<SNode> getMembers_idhEwJioW(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getMembers_idhEwJioW(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getChildren(__thisNode__)) {
       if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6becc0L, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"))) {
@@ -96,7 +96,7 @@ public final class IClassifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return result;
   }
-  private static IExtractMethodRefactoringProcessor getExtractMethodRefactoringProcessor_idhLwHWdT(@NotNull SNode __thisNode__, List<SNode> nodesToRefactor) {
+  /*package*/ static IExtractMethodRefactoringProcessor getExtractMethodRefactoringProcessor_idhLwHWdT(@NotNull SNode __thisNode__, List<SNode> nodesToRefactor) {
     return new AbstractExtractMethodRefactoringProcessor(__thisNode__, nodesToRefactor) {
       @Override
       public SNode createNewMethod() {
@@ -114,7 +114,7 @@ public final class IClassifier__BehaviorDescriptor extends BaseBHDescriptor {
       }
     };
   }
-  private static SNode getContextClassifier_idhEwJim4(@NotNull SAbstractConcept __thisConcept__, SNode contextNode) {
+  /*package*/ static SNode getContextClassifier_idhEwJim4(@NotNull SAbstractConcept __thisConcept__, SNode contextNode) {
     SNode classifier = SNodeOperations.getNodeAncestor(contextNode, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), true, false);
     if (classifier != null) {
       return classifier;
@@ -127,43 +127,43 @@ public final class IClassifier__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) createType_idhEwJimy(node);
+        return (T) ((SNode) createType_idhEwJimy(node));
       case 1:
-        return (T) createSuperType_idhHOGPWW(node);
+        return (T) ((SNode) createSuperType_idhHOGPWW(node));
       case 2:
-        return (T) getParts_idhEwJimO(node);
+        return (T) ((List<SNode>) getParts_idhEwJimO(node));
       case 3:
-        return (T) getMembers_idhEwJink(node, (SNode) parameters[0]);
+        return (T) ((List<SNode>) getMembers_idhEwJink(node, (SNode) parameters[0]));
       case 4:
-        return (T) getMembers_idhEwJioW(node);
+        return (T) ((List<SNode>) getMembers_idhEwJioW(node));
       case 5:
-        return (T) getExtractMethodRefactoringProcessor_idhLwHWdT(node, (List<SNode>) parameters[0]);
+        return (T) ((IExtractMethodRefactoringProcessor) getExtractMethodRefactoringProcessor_idhLwHWdT(node, (List<SNode>) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 6:
-        return (T) getContextClassifier_idhEwJim4(concept, (SNode) parameters[0]);
+        return (T) ((SNode) getContextClassifier_idhEwJim4(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

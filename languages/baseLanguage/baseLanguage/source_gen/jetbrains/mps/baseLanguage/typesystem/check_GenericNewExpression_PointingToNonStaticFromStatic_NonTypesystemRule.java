@@ -42,11 +42,11 @@ public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesys
         return eq_r95zp5_a0a0a0a0a0a3a1(SNodeOperations.getParent(member), SNodeOperations.getParent(target.value));
       }
     });
-    if ((method == null) || !(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(method))) {
+    if ((method == null) || !((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(method))) {
       return;
     }
 
-    if (Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(target.value) && !(IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(target.value))) {
+    if ((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(target.value) && !((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(target.value))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(genericNewExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), "No enclosing instance of type " + SNodeOperations.getParent(target.value) + " is accessible", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "966837649713150029", null, errorTarget);

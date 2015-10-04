@@ -34,7 +34,7 @@ public final class MakeOneLiner_Intention extends IntentionDescriptorBase implem
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node)) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e370L, "forceOneLine")));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node)) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e370L, "forceOneLine")));
   }
   @Override
   public boolean isSurroundWith() {

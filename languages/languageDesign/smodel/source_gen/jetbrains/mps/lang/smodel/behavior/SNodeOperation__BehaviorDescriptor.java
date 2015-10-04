@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -27,99 +26,100 @@ import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getLeftExpression_idhEwJdGu = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGu").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getLeftExpressionLeftExpression_idhEwJdGS = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGS").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getLeftExpressionOperation_idhEwJdHi = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionOperation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHi").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getParameter_idhEwJdHG = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHG").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Boolean> operandCanBeNull_idhWYZ0eEN6z = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("operandCanBeNull").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWYZ0eEN6z").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getVariableExpectedName_idhEwIP$B = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVariableExpectedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIP$B").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToModel_id1653mnvAf1y = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToModel").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAf1y").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToConceptProperty_id1653mnvAgpp = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToConceptProperty").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgpp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToNode_id1653mnvAgrs = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToNode").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrs").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToSimpleProperty_id1653mnvAgrO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToSimpleProperty").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrO").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToEnumProperty_id1653mnvAguj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToEnumProperty").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAguj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToLink_id1653mnvAgvK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLink").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgvK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToConcept_id1653mnvAgvQ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgvQ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToSConcept_id7E3Sw0HhwkZ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7E3Sw0HhwkZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> applicableToLinkList_id1653mnvAgwe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLinkList").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgwe").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getApplicableParameter_id2D1PBM_bxI0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxI0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getLeftNodeConcept_idhEwJdFJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftNodeConcept").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdFJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
+  public static final SMethod<SNode> getLeftExpression_idhEwJdGu = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGu").registry(REGISTRY).build();
+  public static final SMethod<SNode> getLeftExpressionLeftExpression_idhEwJdGS = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGS").registry(REGISTRY).build();
+  public static final SMethod<SNode> getLeftExpressionOperation_idhEwJdHi = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionOperation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHi").registry(REGISTRY).build();
+  public static final SMethod<SNode> getParameter_idhEwJdHG = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> operandCanBeNull_idhWYZ0eEN6z = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("operandCanBeNull").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWYZ0eEN6z").registry(REGISTRY).build();
+  public static final SMethod<String> getVariableExpectedName_idhEwIP$B = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVariableExpectedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIP$B").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToModel_id1653mnvAf1y = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToModel").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAf1y").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToConceptProperty_id1653mnvAgpp = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToConceptProperty").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgpp").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToNode_id1653mnvAgrs = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToNode").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrs").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToSimpleProperty_id1653mnvAgrO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToSimpleProperty").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrO").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToEnumProperty_id1653mnvAguj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToEnumProperty").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAguj").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToLink_id1653mnvAgvK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLink").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgvK").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToConcept_id1653mnvAgvQ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgvQ").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToSConcept_id7E3Sw0HhwkZ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7E3Sw0HhwkZ").registry(REGISTRY).build();
+  public static final SMethod<Boolean> applicableToLinkList_id1653mnvAgwe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLinkList").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgwe").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getApplicableParameter_id2D1PBM_bxI0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxI0").registry(REGISTRY).build();
+  public static final SMethod<SNode> getLeftNodeConcept_idhEwJdFJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftNodeConcept").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdFJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLeftExpression_idhEwJdGu, getLeftExpressionLeftExpression_idhEwJdGS, getLeftExpressionOperation_idhEwJdHi, getParameter_idhEwJdHG, operandCanBeNull_idhWYZ0eEN6z, getVariableExpectedName_idhEwIP$B, applicableToModel_id1653mnvAf1y, applicableToConceptProperty_id1653mnvAgpp, applicableToNode_id1653mnvAgrs, applicableToSimpleProperty_id1653mnvAgrO, applicableToEnumProperty_id1653mnvAguj, applicableToLink_id1653mnvAgvK, applicableToConcept_id1653mnvAgvQ, applicableToSConcept_id7E3Sw0HhwkZ, applicableToLinkList_id1653mnvAgwe, getApplicableParameter_id2D1PBM_bxI0, getLeftNodeConcept_idhEwJdFJ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode getLeftExpression_idhEwJdGu(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getLeftExpression_idhEwJdGu(@NotNull SNode __thisNode__) {
     SNode parent = SNodeOperations.getParent(__thisNode__);
     return SLinkOperations.getTarget(SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
   }
-  private static SNode getLeftExpressionLeftExpression_idhEwJdGS(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getLeftExpressionLeftExpression_idhEwJdGS(@NotNull SNode __thisNode__) {
     SNode leftExpression = SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__);
     if (!(SNodeOperations.isInstanceOf(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
       return null;
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
   }
-  private static SNode getLeftExpressionOperation_idhEwJdHi(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getLeftExpressionOperation_idhEwJdHi(@NotNull SNode __thisNode__) {
     SNode leftExpression = SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(__thisNode__);
     if (!(SNodeOperations.isInstanceOf(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")))) {
       return null;
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
   }
-  private static SNode getParameter_idhEwJdHG(@NotNull SNode __thisNode__, final SNode parameterConcept) {
+  /*package*/ static SNode getParameter_idhEwJdHG(@NotNull SNode __thisNode__, final SNode parameterConcept) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(parameterConcept));
       }
     }).first();
   }
-  private static Boolean operandCanBeNull_idhWYZ0eEN6z(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean operandCanBeNull_idhWYZ0eEN6z(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static String getVariableExpectedName_idhEwIP$B(@NotNull SNode __thisNode__) {
+  /*package*/ static String getVariableExpectedName_idhEwIP$B(@NotNull SNode __thisNode__) {
     String variableExpectedName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
     return variableExpectedName;
   }
-  private static Boolean applicableToModel_id1653mnvAf1y(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToModel_id1653mnvAf1y(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToConceptProperty_id1653mnvAgpp(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToConceptProperty_id1653mnvAgpp(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToNode_id1653mnvAgrs(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToNode_id1653mnvAgrs(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToSimpleProperty_id1653mnvAgrO(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToSimpleProperty_id1653mnvAgrO(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToEnumProperty_id1653mnvAguj(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToEnumProperty_id1653mnvAguj(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToLink_id1653mnvAgvK(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToLink_id1653mnvAgvK(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
   @Deprecated
-  private static Boolean applicableToConcept_id1653mnvAgvQ(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToConcept_id1653mnvAgvQ(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToSConcept_id7E3Sw0HhwkZ(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToSConcept_id7E3Sw0HhwkZ(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static Boolean applicableToLinkList_id1653mnvAgwe(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean applicableToLinkList_id1653mnvAgwe(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  private static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
-  private static SNode getLeftNodeConcept_idhEwJdFJ(@NotNull SAbstractConcept __thisConcept__, SNode parent) {
+  /*package*/ static SNode getLeftNodeConcept_idhEwJdFJ(@NotNull SAbstractConcept __thisConcept__, SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
     SNode result = SModelLanguageUtil.getConcept(operand);
     if ((result != null)) {
@@ -135,63 +135,63 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getLeftExpression_idhEwJdGu(node);
+        return (T) ((SNode) getLeftExpression_idhEwJdGu(node));
       case 1:
-        return (T) getLeftExpressionLeftExpression_idhEwJdGS(node);
+        return (T) ((SNode) getLeftExpressionLeftExpression_idhEwJdGS(node));
       case 2:
-        return (T) getLeftExpressionOperation_idhEwJdHi(node);
+        return (T) ((SNode) getLeftExpressionOperation_idhEwJdHi(node));
       case 3:
-        return (T) getParameter_idhEwJdHG(node, (SNode) parameters[0]);
+        return (T) ((SNode) getParameter_idhEwJdHG(node, (SNode) parameters[0]));
       case 4:
-        return (T) operandCanBeNull_idhWYZ0eEN6z(node);
+        return (T) ((Boolean) operandCanBeNull_idhWYZ0eEN6z(node));
       case 5:
-        return (T) getVariableExpectedName_idhEwIP$B(node);
+        return (T) ((String) getVariableExpectedName_idhEwIP$B(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 6:
-        return (T) applicableToModel_id1653mnvAf1y(concept);
+        return (T) ((Boolean) applicableToModel_id1653mnvAf1y(concept));
       case 7:
-        return (T) applicableToConceptProperty_id1653mnvAgpp(concept);
+        return (T) ((Boolean) applicableToConceptProperty_id1653mnvAgpp(concept));
       case 8:
-        return (T) applicableToNode_id1653mnvAgrs(concept);
+        return (T) ((Boolean) applicableToNode_id1653mnvAgrs(concept));
       case 9:
-        return (T) applicableToSimpleProperty_id1653mnvAgrO(concept);
+        return (T) ((Boolean) applicableToSimpleProperty_id1653mnvAgrO(concept));
       case 10:
-        return (T) applicableToEnumProperty_id1653mnvAguj(concept);
+        return (T) ((Boolean) applicableToEnumProperty_id1653mnvAguj(concept));
       case 11:
-        return (T) applicableToLink_id1653mnvAgvK(concept);
+        return (T) ((Boolean) applicableToLink_id1653mnvAgvK(concept));
       case 12:
-        return (T) applicableToConcept_id1653mnvAgvQ(concept);
+        return (T) ((Boolean) applicableToConcept_id1653mnvAgvQ(concept));
       case 13:
-        return (T) applicableToSConcept_id7E3Sw0HhwkZ(concept);
+        return (T) ((Boolean) applicableToSConcept_id7E3Sw0HhwkZ(concept));
       case 14:
-        return (T) applicableToLinkList_id1653mnvAgwe(concept);
+        return (T) ((Boolean) applicableToLinkList_id1653mnvAgwe(concept));
       case 15:
-        return (T) getApplicableParameter_id2D1PBM_bxI0(concept);
+        return (T) ((List<SNode>) getApplicableParameter_id2D1PBM_bxI0(concept));
       case 16:
-        return (T) getLeftNodeConcept_idhEwJdFJ(concept, (SNode) parameters[0]);
+        return (T) ((SNode) getLeftNodeConcept_idhEwJdFJ(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

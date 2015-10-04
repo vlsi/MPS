@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
@@ -32,6 +31,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -44,29 +44,29 @@ public final class FunctionType__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<String>> getVariableSuffixes_idhEwIzNo = new SMethodBuilder<List<String>>(new SJavaCompoundTypeImpl((Class<List<String>>) ((Class) Object.class))).name("getVariableSuffixes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIzNo").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getClassExpression_idhEwIzOd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassExpression").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIzOd").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getRuntimeSignature_idhEwIOjZ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeSignature").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOjZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getRuntimeClassName_idhTXTW9V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeClassName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTXTW9V").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getResultType_idhTY4wo3 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getResultType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTY4wo3").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> unmeet_idi0lWwAi = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("unmeet").modifiers(SModifiersImpl.create(0, AccessPrivileges.PACKAGE)).concept(CONCEPT).id("i0lWwAi").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<SNode> getTerminateType_idhVqPOyZ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTerminateType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hVqPOyZ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getDeclarationRuntimeType_idhTOKQzf = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDeclarationRuntimeType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTOKQzf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getRuntimeType_idhTOJ6nH = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getRuntimeType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTOJ6nH").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getDeclarationRuntimeType_idH4u0Q2K3hM = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDeclarationRuntimeType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("H4u0Q2K3hM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<SNode> getNormalizedReturnType_idhEwIOp4 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNormalizedReturnType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOp4").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getNormalizedTerminateType_idhVr6OUT = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNormalizedTerminateType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hVr6OUT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getNormalizedThrowsTypes_id2ZrgyPlTDZP = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNormalizedThrowsTypes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2ZrgyPlTDZP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getNormalizedSequenceParameterReturnType_idhEwIOpc = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNormalizedSequenceParameterReturnType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOpc").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getNormalizedParameterTypes_idhEwIOps = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNormalizedParameterTypes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOps").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getPresentation_idhEwIMiw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIMiw").registry(REGISTRY).build();
+  public static final SMethod<List<String>> getVariableSuffixes_idhEwIzNo = new SMethodBuilder<List<String>>(new SJavaCompoundTypeImpl((Class<List<String>>) ((Class) Object.class))).name("getVariableSuffixes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIzNo").registry(REGISTRY).build();
+  public static final SMethod<SNode> getClassExpression_idhEwIzOd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassExpression").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIzOd").registry(REGISTRY).build();
+  public static final SMethod<String> getRuntimeSignature_idhEwIOjZ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeSignature").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOjZ").registry(REGISTRY).build();
+  public static final SMethod<String> getRuntimeClassName_idhTXTW9V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRuntimeClassName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTXTW9V").registry(REGISTRY).build();
+  public static final SMethod<SNode> getResultType_idhTY4wo3 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getResultType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTY4wo3").registry(REGISTRY).build();
+  public static final SMethod<SNode> unmeet_idi0lWwAi = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("unmeet").modifiers(SModifiersImpl.create(0, AccessPrivileges.PACKAGE)).concept(CONCEPT).id("i0lWwAi").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getTerminateType_idhVqPOyZ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTerminateType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hVqPOyZ").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDeclarationRuntimeType_idhTOKQzf = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDeclarationRuntimeType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTOKQzf").registry(REGISTRY).build();
+  public static final SMethod<SNode> getRuntimeType_idhTOJ6nH = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getRuntimeType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTOJ6nH").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDeclarationRuntimeType_idH4u0Q2K3hM = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDeclarationRuntimeType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("H4u0Q2K3hM").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getNormalizedReturnType_idhEwIOp4 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNormalizedReturnType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOp4").registry(REGISTRY).build();
+  public static final SMethod<SNode> getNormalizedTerminateType_idhVr6OUT = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNormalizedTerminateType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hVr6OUT").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getNormalizedThrowsTypes_id2ZrgyPlTDZP = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNormalizedThrowsTypes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2ZrgyPlTDZP").registry(REGISTRY).build();
+  public static final SMethod<SNode> getNormalizedSequenceParameterReturnType_idhEwIOpc = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getNormalizedSequenceParameterReturnType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOpc").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getNormalizedParameterTypes_idhEwIOps = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNormalizedParameterTypes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIOps").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getVariableSuffixes_idhEwIzNo, getClassExpression_idhEwIzOd, getRuntimeSignature_idhEwIOjZ, getRuntimeClassName_idhTXTW9V, getResultType_idhTY4wo3, unmeet_idi0lWwAi, getTerminateType_idhVqPOyZ, getDeclarationRuntimeType_idhTOKQzf, getRuntimeType_idhTOJ6nH, getDeclarationRuntimeType_idH4u0Q2K3hM, getNormalizedReturnType_idhEwIOp4, getNormalizedTerminateType_idhVr6OUT, getNormalizedThrowsTypes_id2ZrgyPlTDZP, getNormalizedSequenceParameterReturnType_idhEwIOpc, getNormalizedParameterTypes_idhEwIOps);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
+  /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4e013cL, "parameterType"))) {
@@ -76,13 +76,13 @@ public final class FunctionType__BehaviorDescriptor extends BaseBHDescriptor {
     sb.append("=>").append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType"))));
     return sb.append("}").toString();
   }
-  private static List<String> getVariableSuffixes_idhEwIzNo(@NotNull SNode __thisNode__) {
+  /*package*/ static List<String> getVariableSuffixes_idhEwIzNo(@NotNull SNode __thisNode__) {
     return Arrays.asList("function");
   }
-  private static SNode getClassExpression_idhEwIzOd(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getClassExpression_idhEwIzOd(@NotNull SNode __thisNode__) {
     return _quotation_createNode_ksvwin_a0a2();
   }
-  private static String getRuntimeSignature_idhEwIOjZ(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRuntimeSignature_idhEwIOjZ(@NotNull SNode __thisNode__) {
     StringBuilder sb = new StringBuilder();
     if ((FunctionType__BehaviorDescriptor.getResultType_idhTY4wo3.invoke(__thisNode__) != null)) {
       sb.append("_return");
@@ -93,10 +93,10 @@ public final class FunctionType__BehaviorDescriptor extends BaseBHDescriptor {
     sb.append("_E").append(ListSequence.fromList(FunctionType__BehaviorDescriptor.getNormalizedThrowsTypes_id2ZrgyPlTDZP.invoke(__thisNode__)).count());
     return sb.toString();
   }
-  private static String getRuntimeClassName_idhTXTW9V(@NotNull SNode __thisNode__) {
+  /*package*/ static String getRuntimeClassName_idhTXTW9V(@NotNull SNode __thisNode__) {
     return "_FunctionTypes";
   }
-  private static SNode getResultType_idhTY4wo3(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getResultType_idhTY4wo3(@NotNull SNode __thisNode__) {
     SNode rt = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType"));
     rt = FunctionType__BehaviorDescriptor.unmeet_idi0lWwAi.invoke(__thisNode__, SNodeOperations.copyNode(rt));
     if (SNodeOperations.isInstanceOf(rt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
@@ -107,7 +107,7 @@ public final class FunctionType__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return SNodeOperations.cast(rt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
   }
-  private static SNode unmeet_idi0lWwAi(@NotNull SNode __thisNode__, SNode possiblyMeet) {
+  /*package*/ static SNode unmeet_idi0lWwAi(@NotNull SNode __thisNode__, SNode possiblyMeet) {
     SNode tmp = possiblyMeet;
 with_meet:
     while (SNodeOperations.isInstanceOf(tmp, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
@@ -130,10 +130,10 @@ with_meet:
     }
     return tmp;
   }
-  private static SNode getTerminateType_idhVqPOyZ(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getTerminateType_idhVqPOyZ(@NotNull SNode __thisNode__) {
     return null;
   }
-  private static SNode getDeclarationRuntimeType_idhTOKQzf(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getDeclarationRuntimeType_idhTOKQzf(@NotNull SNode __thisNode__) {
     SNode ice = RuntimeUtil.functionClassifier(FunctionType__BehaviorDescriptor.getRuntimeClassName_idhTXTW9V.invoke(__thisNode__), FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
     if (ice == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
@@ -161,7 +161,7 @@ with_meet:
     }
     return ct;
   }
-  private static SNode getRuntimeType_idhTOJ6nH(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getRuntimeType_idhTOJ6nH(@NotNull SNode __thisNode__) {
     SNode ice = RuntimeUtil.functionClassifier(FunctionType__BehaviorDescriptor.getRuntimeClassName_idhTXTW9V.invoke(__thisNode__), FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
@@ -186,7 +186,7 @@ with_meet:
     }
     return ct;
   }
-  private static SNode getDeclarationRuntimeType_idH4u0Q2K3hM(@NotNull SNode __thisNode__, SNode sample) {
+  /*package*/ static SNode getDeclarationRuntimeType_idH4u0Q2K3hM(@NotNull SNode __thisNode__, SNode sample) {
     SNode ice = RuntimeUtil.functionClassifier(FunctionType__BehaviorDescriptor.getRuntimeClassName_idhTXTW9V.invoke(__thisNode__), FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
     if (ice == null) {
       throw new RuntimeException("No classifier found:" + FunctionType__BehaviorDescriptor.getRuntimeSignature_idhEwIOjZ.invoke(__thisNode__));
@@ -219,23 +219,23 @@ with_meet:
     }
     return ct;
   }
-  private static SNode getNormalizedReturnType_idhEwIOp4(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getNormalizedReturnType_idhEwIOp4(@NotNull SNode __thisNode__) {
     return ((FunctionType__BehaviorDescriptor.getResultType_idhTY4wo3.invoke(__thisNode__) != null) ? ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType__BehaviorDescriptor.getResultType_idhTY4wo3.invoke(__thisNode__)) : _quotation_createNode_ksvwin_a0a0l());
   }
-  private static SNode getNormalizedTerminateType_idhVr6OUT(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getNormalizedTerminateType_idhVr6OUT(@NotNull SNode __thisNode__) {
     return ((FunctionType__BehaviorDescriptor.getTerminateType_idhVqPOyZ.invoke(__thisNode__) != null) ? ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType__BehaviorDescriptor.getTerminateType_idhVqPOyZ.invoke(__thisNode__)) : _quotation_createNode_ksvwin_a0a0m());
   }
-  private static List<SNode> getNormalizedThrowsTypes_id2ZrgyPlTDZP(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getNormalizedThrowsTypes_id2ZrgyPlTDZP(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> visited = new ArrayList<SNode>();
 with_throws:
     for (SNode tt : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x11ad99d9c36L, "throwsType"))) {
       SNode clstt = SNodeOperations.as(tt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       if (clstt != null) {
-        if (!(Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SLinkOperations.getTarget(clstt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SLinkOperations.getTarget(_quotation_createNode_ksvwin_a0a0a0a1a2a31(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
+        if (!((boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SLinkOperations.getTarget(clstt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SLinkOperations.getTarget(_quotation_createNode_ksvwin_a0a0a0a1a2a31(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
           for (int i = 0; i < ListSequence.fromList(visited).count(); ++i) {
             SNode restt = ListSequence.fromList(visited).getElement(i);
-            if (Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SLinkOperations.getTarget(restt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SLinkOperations.getTarget(clstt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))) {
+            if ((boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SLinkOperations.getTarget(restt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), SLinkOperations.getTarget(clstt, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))) {
               ListSequence.fromList(visited).setElement(i, clstt);
               continue with_throws;
             }
@@ -249,7 +249,7 @@ with_throws:
     ListSequence.fromList(result).addSequence(ListSequence.fromList(visited));
     return result;
   }
-  private static SNode getNormalizedSequenceParameterReturnType_idhEwIOpc(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getNormalizedSequenceParameterReturnType_idhEwIOpc(@NotNull SNode __thisNode__) {
     {
       IMatchingPattern pattern_ksvwin_a0o = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_ksvwin_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4d5371L, "resultType")), pattern_ksvwin_a0o);
@@ -260,7 +260,7 @@ with_throws:
     }
     return null;
   }
-  private static List<SNode> getNormalizedParameterTypes_idhEwIOps(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getNormalizedParameterTypes_idhEwIOps(@NotNull SNode __thisNode__) {
     List<SNode> resList = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> paramTypes = SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x1174a4e013cL, "parameterType"));
     int idx = 0;
@@ -277,56 +277,56 @@ with_throws:
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getPresentation_idhEwIMiw(node);
+        return (T) ((String) getPresentation_idhEwIMiw(node));
       case 1:
-        return (T) getVariableSuffixes_idhEwIzNo(node);
+        return (T) ((List<String>) getVariableSuffixes_idhEwIzNo(node));
       case 2:
-        return (T) getClassExpression_idhEwIzOd(node);
+        return (T) ((SNode) getClassExpression_idhEwIzOd(node));
       case 3:
-        return (T) getRuntimeSignature_idhEwIOjZ(node);
+        return (T) ((String) getRuntimeSignature_idhEwIOjZ(node));
       case 4:
-        return (T) getRuntimeClassName_idhTXTW9V(node);
+        return (T) ((String) getRuntimeClassName_idhTXTW9V(node));
       case 5:
-        return (T) getResultType_idhTY4wo3(node);
+        return (T) ((SNode) getResultType_idhTY4wo3(node));
       case 6:
-        return (T) unmeet_idi0lWwAi(node, (SNode) parameters[0]);
+        return (T) ((SNode) unmeet_idi0lWwAi(node, (SNode) parameters[0]));
       case 7:
-        return (T) getTerminateType_idhVqPOyZ(node);
+        return (T) ((SNode) getTerminateType_idhVqPOyZ(node));
       case 8:
-        return (T) getDeclarationRuntimeType_idhTOKQzf(node);
+        return (T) ((SNode) getDeclarationRuntimeType_idhTOKQzf(node));
       case 9:
-        return (T) getRuntimeType_idhTOJ6nH(node);
+        return (T) ((SNode) getRuntimeType_idhTOJ6nH(node));
       case 10:
-        return (T) getDeclarationRuntimeType_idH4u0Q2K3hM(node, (SNode) parameters[0]);
+        return (T) ((SNode) getDeclarationRuntimeType_idH4u0Q2K3hM(node, (SNode) parameters[0]));
       case 11:
-        return (T) getNormalizedReturnType_idhEwIOp4(node);
+        return (T) ((SNode) getNormalizedReturnType_idhEwIOp4(node));
       case 12:
-        return (T) getNormalizedTerminateType_idhVr6OUT(node);
+        return (T) ((SNode) getNormalizedTerminateType_idhVr6OUT(node));
       case 13:
-        return (T) getNormalizedThrowsTypes_id2ZrgyPlTDZP(node);
+        return (T) ((List<SNode>) getNormalizedThrowsTypes_id2ZrgyPlTDZP(node));
       case 14:
-        return (T) getNormalizedSequenceParameterReturnType_idhEwIOpc(node);
+        return (T) ((SNode) getNormalizedSequenceParameterReturnType_idhEwIOpc(node));
       case 15:
-        return (T) getNormalizedParameterTypes_idhEwIOps(node);
+        return (T) ((List<SNode>) getNormalizedParameterTypes_idhEwIOps(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

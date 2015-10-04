@@ -25,7 +25,7 @@ public class check_CellModel_RefNodeList_InferenceRule extends AbstractInference
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(refNodeList, "aggregation link expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180295464579", null, errorTarget);
     }
-    if (!(!(LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(lnk)))) {
+    if (!(!((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(lnk)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(refNodeList, "multiple cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180295464588", null, errorTarget);
     }

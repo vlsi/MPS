@@ -23,7 +23,7 @@ public class StaticMethodCall_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node)) {
+      if ((boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node)) {
         StaticMethodCall__BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
       }
     }
@@ -37,7 +37,7 @@ public class StaticMethodCall_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node)) {
+      if ((boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node)) {
         StaticMethodCall__BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
       }
     }

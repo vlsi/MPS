@@ -4,15 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
 
 /**
  * Will be removed after 3.3
@@ -20,39 +11,10 @@ import jetbrains.mps.smodel.SReference;
  */
 @Deprecated
 public class IMethodCall_Behavior {
-  public static Object[] call_getActualArguments_1219275428261(SNode __thisNode__, final SModule module) {
-    return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
-      public Object select(SNode it) {
-        return Expression__BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
-      }
-    }).toGenericArray(Object.class);
+  public static Object[] call_getActualArguments_1219275428261(SNode __thisNode__, SModule module) {
+    return IMethodCall__BehaviorDescriptor.getActualArguments_idhJyuD6_(__thisNode__, module);
   }
   public static SNode call_getConcreteType_8008512149545161843(SNode __thisNode__, SNode typeVariableReference, SNode coercedClt, SNode methodClassifier) {
-    List<SNode> parameters = SLinkOperations.getChildren(coercedClt, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"));
-    if (ListSequence.fromList(parameters).isEmpty()) {
-      return _quotation_createNode_fq0410_a0a1a2();
-    }
-    SNode concreteType;
-    int index = SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration")));
-    if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))) == methodClassifier && ListSequence.fromList(parameters).count() > index) {
-      concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(index));
-    } else {
-      concreteType = _quotation_createNode_fq0410_a0a0a4a2();
-    }
-    return concreteType;
-  }
-  private static SNode _quotation_createNode_fq0410_a0a1a2() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()"), facade.createNodeId("~Object")));
-    return quotedNode_1;
-  }
-  private static SNode _quotation_createNode_fq0410_a0a0a4a2() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()"), facade.createNodeId("~Object")));
-    return quotedNode_1;
+    return IMethodCall__BehaviorDescriptor.getConcreteType_id6WzWPTX2xhN(__thisNode__, typeVariableReference, coercedClt, methodClassifier);
   }
 }

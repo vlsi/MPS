@@ -48,7 +48,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     // if != nonAbstract - use it 
     Iterable<SNode> nonAbstractMethods = Sequence.fromIterable(groupWithEqualSignature).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
+        return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

@@ -28,7 +28,7 @@ public class check_TernaryOperationCanBeSimplified_NonTypesystemRule extends Abs
     SNode remainingNode;
     Boolean value;
     SModule module = SNodeOperations.getModel(ternaryOperatorExpression).getModule();
-    if (Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(condition)) {
+    if ((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(condition)) {
       Object conditionValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(condition, module);
       if (conditionValue != null && conditionValue instanceof Boolean) {
         value = (Boolean) conditionValue;

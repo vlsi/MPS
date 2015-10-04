@@ -442,14 +442,14 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_j4vm40_a51a(SNode node, EditorContext editorContext) {
-    return BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node);
+    return (boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node);
   }
   private EditorCell createComponent_j4vm40_q0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent");
     return editorCell;
   }
   private static boolean renderingCondition_j4vm40_a61a(SNode node, EditorContext editorContext) {
-    return !(BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node));
+    return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node));
   }
   private EditorCell createCollection_j4vm40_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

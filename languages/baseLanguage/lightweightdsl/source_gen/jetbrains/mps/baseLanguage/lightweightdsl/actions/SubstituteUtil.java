@@ -27,7 +27,7 @@ public class SubstituteUtil {
 
     return Sequence.fromIterable(SNodeOperations.ofConcept(DSLDescriptor__BehaviorDescriptor.getClassLikeMembers_id2iCqkkxuhoj.invoke(descr), SNodeOperations.asSConcept(memberConcept))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode md) {
-        if (DSLClassMember__BehaviorDescriptor.isMultiple_id1QReUKIGS9B.invoke(md)) {
+        if ((boolean) DSLClassMember__BehaviorDescriptor.isMultiple_id1QReUKIGS9B.invoke(md)) {
           return true;
         }
         return Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(md, classNode)).isEmpty();

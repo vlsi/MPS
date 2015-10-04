@@ -15,7 +15,7 @@ public class DependentType_subtypeOfItsValue_SubtypingRule extends SubtypingRule
   public DependentType_subtypeOfItsValue_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode dependentTypeInstance, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return DependentTypeInstance__BehaviorDescriptor.getMyType_id7T23sO8yx5P.invoke(dependentTypeInstance);
+    return (SNode) DependentTypeInstance__BehaviorDescriptor.getMyType_id7T23sO8yx5P.invoke(dependentTypeInstance);
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, "jetbrains.mps.baseLanguage.lightweightdsl.structure.DependentTypeInstance");

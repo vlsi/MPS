@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import java.util.Arrays;
@@ -20,37 +19,38 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class StringLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Object> eval_idhEwJgmp = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("eval").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgmp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(SModule.class)));
-  public static final SMethod<Boolean> constant_id1653mnvAgr2 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("constant").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgr2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isCompileTimeConstant_idi1LOPRp = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCompileTimeConstant").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LOPRp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Object> getCompileTimeConstantValue_idi1LP2xI = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("getCompileTimeConstantValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LP2xI").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(SModule.class)));
-  public static final SMethod<Boolean> isCorrect_idhLEXzwL = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCorrect").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLEXzwL").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  /*package*/ static final SMethod<Boolean> isHexChar_idhLEZYVw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isHexChar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("hLEZYVw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Character.TYPE)));
+  public static final SMethod<Object> eval_idhEwJgmp = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("eval").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgmp").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
+  public static final SMethod<Boolean> constant_id1653mnvAgr2 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("constant").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgr2").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isCompileTimeConstant_idi1LOPRp = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCompileTimeConstant").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LOPRp").registry(REGISTRY).build();
+  public static final SMethod<Object> getCompileTimeConstantValue_idi1LP2xI = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("getCompileTimeConstantValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1LP2xI").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SModule.class, ""));
+  public static final SMethod<Boolean> isCorrect_idhLEXzwL = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCorrect").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLEXzwL").registry(REGISTRY).build();
+  /*package*/ static final SMethod<Boolean> isHexChar_idhLEZYVw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isHexChar").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("hLEZYVw").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Character.TYPE, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(eval_idhEwJgmp, constant_id1653mnvAgr2, isCompileTimeConstant_idi1LOPRp, getCompileTimeConstantValue_idi1LP2xI, isCorrect_idhLEXzwL, isHexChar_idhLEZYVw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
+  /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
   }
-  private static Boolean constant_id1653mnvAgr2(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean constant_id1653mnvAgr2(@NotNull SAbstractConcept __thisConcept__) {
     return true;
   }
-  private static Boolean isCompileTimeConstant_idi1LOPRp(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isCompileTimeConstant_idi1LOPRp(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static Object getCompileTimeConstantValue_idi1LP2xI(@NotNull SNode __thisNode__, SModule module) {
+  /*package*/ static Object getCompileTimeConstantValue_idi1LP2xI(@NotNull SNode __thisNode__, SModule module) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
   }
-  private static Boolean isCorrect_idhLEXzwL(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isCorrect_idhLEXzwL(@NotNull SNode __thisNode__) {
     boolean isEscapeMode = false;
     boolean isUnicodeMode = false;
     boolean isSymbolCodeMode = false;
@@ -85,7 +85,7 @@ public final class StringLiteral__BehaviorDescriptor extends BaseBHDescriptor {
           digitNumber = 0;
         }
       } else if (isUnicodeMode) {
-        if (Character.isDigit(c) || StringLiteral__BehaviorDescriptor.isHexChar_idhLEZYVw.invoke(__thisNode__, c)) {
+        if (Character.isDigit(c) || ((boolean) StringLiteral__BehaviorDescriptor.isHexChar_idhLEZYVw.invoke(__thisNode__, ((char) c)))) {
           unicodeDigitNumber++;
         } else {
           return false;
@@ -103,7 +103,7 @@ public final class StringLiteral__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return true;
   }
-  private static Boolean isHexChar_idhLEZYVw(@NotNull SNode __thisNode__, char ch) {
+  /*package*/ static boolean isHexChar_idhLEZYVw(@NotNull SNode __thisNode__, char ch) {
     if (Character.isDigit(ch)) {
       return true;
     }
@@ -116,41 +116,41 @@ public final class StringLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) eval_idhEwJgmp(node, (SModule) parameters[0]);
+        return (T) ((Object) eval_idhEwJgmp(node, (SModule) parameters[0]));
       case 2:
-        return (T) isCompileTimeConstant_idi1LOPRp(node);
+        return (T) ((Boolean) isCompileTimeConstant_idi1LOPRp(node));
       case 3:
-        return (T) getCompileTimeConstantValue_idi1LP2xI(node, (SModule) parameters[0]);
+        return (T) ((Object) getCompileTimeConstantValue_idi1LP2xI(node, (SModule) parameters[0]));
       case 4:
-        return (T) isCorrect_idhLEXzwL(node);
+        return (T) ((Boolean) isCorrect_idhLEXzwL(node));
       case 5:
-        return (T) isHexChar_idhLEZYVw(node, (Character) parameters[0]);
+        return (T) ((Boolean) isHexChar_idhLEZYVw(node, ((char) (Character) parameters[0])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 1:
-        return (T) constant_id1653mnvAgr2(concept);
+        return (T) ((Boolean) constant_id1653mnvAgr2(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

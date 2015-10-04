@@ -36,7 +36,7 @@ public final class ConvertToReturnStatement_Intention extends IntentionDescripto
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ExpressionStatement__BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(node);
+    return (boolean) ExpressionStatement__BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

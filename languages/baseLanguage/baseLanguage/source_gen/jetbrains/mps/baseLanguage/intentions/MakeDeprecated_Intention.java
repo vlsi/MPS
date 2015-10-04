@@ -47,7 +47,7 @@ public final class MakeDeprecated_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
+      if ((boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
         return "Remove Deprecation";
       } else {
         return "Deprecate";
@@ -55,7 +55,7 @@ public final class MakeDeprecated_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
+      if ((boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
         IBLDeprecatable__BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invoke(node);
       } else {
         ModuleDependencyUtils.addDependencyOnJavaDocIfMissing(SNodeOperations.getModel(node));

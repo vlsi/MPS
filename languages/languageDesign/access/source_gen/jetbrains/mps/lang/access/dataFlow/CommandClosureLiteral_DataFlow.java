@@ -15,7 +15,7 @@ public class CommandClosureLiteral_DataFlow extends DataFlowBuilder {
   public CommandClosureLiteral_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    if (IStatementListContainer__BehaviorDescriptor.isExecuteSynchronous_idhTIpcC8.invoke(_context.getNode())) {
+    if ((boolean) IStatementListContainer__BehaviorDescriptor.isExecuteSynchronous_idhTIpcC8.invoke(_context.getNode())) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body")));
     } else {
       for (SNode var : StatementList__BehaviorDescriptor.getExternalVariablesDeclarations_idhF5UhAC.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body")))) {

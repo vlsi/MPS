@@ -18,9 +18,9 @@ public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNon
   public check_HasSuperConstructorCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ConstructorDeclaration__BehaviorDescriptor.containsImplicitSuperConstructorCall_id6d19RW5IPof.invoke(constructorDeclaration)) {
+    if ((boolean) ConstructorDeclaration__BehaviorDescriptor.containsImplicitSuperConstructorCall_id6d19RW5IPof.invoke(constructorDeclaration)) {
       SNode superConstructor = ConstructorDeclaration__BehaviorDescriptor.getSuperDefaultConstructor_id6d19RW5J1tP.invoke(constructorDeclaration);
-      if (superConstructor == null && !(ConstructorDeclaration__BehaviorDescriptor.hasImplicitSuperDefaultConstructor_id5lFB3KB0eQS.invoke(constructorDeclaration))) {
+      if (superConstructor == null && !((boolean) ConstructorDeclaration__BehaviorDescriptor.hasImplicitSuperDefaultConstructor_id5lFB3KB0eQS.invoke(constructorDeclaration))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorDeclaration, "there is no default constructor available in superclass", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2782601603365247587", null, errorTarget);

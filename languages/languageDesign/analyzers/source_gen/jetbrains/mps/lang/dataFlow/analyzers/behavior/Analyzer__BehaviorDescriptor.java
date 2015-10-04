@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
@@ -24,36 +23,37 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class Analyzer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getAnalyzerRunnerName_id9V7Nft_oXD = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAnalyzerRunnerName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("9V7Nft_oXD").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getAnalyzerRunnerFqName_id9V7Nft_vlj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAnalyzerRunnerFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("9V7Nft_vlj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getAnalyzerName_id9V7Nft_oXY = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAnalyzerName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("9V7Nft_oXY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getRules_id3_iNRJnrAhj = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getRules").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3_iNRJnrAhj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getAnalyzerRunnerName_id9V7Nft_oXD = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAnalyzerRunnerName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("9V7Nft_oXD").registry(REGISTRY).build();
+  public static final SMethod<String> getAnalyzerRunnerFqName_id9V7Nft_vlj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAnalyzerRunnerFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("9V7Nft_vlj").registry(REGISTRY).build();
+  public static final SMethod<String> getAnalyzerName_id9V7Nft_oXY = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAnalyzerName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("9V7Nft_oXY").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getRules_id3_iNRJnrAhj = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getRules").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3_iNRJnrAhj").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getAnalyzerRunnerName_id9V7Nft_oXD, getAnalyzerRunnerFqName_id9V7Nft_vlj, getAnalyzerName_id9V7Nft_oXY, getRules_id3_iNRJnrAhj);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getAnalyzerRunnerName_id9V7Nft_oXD(@NotNull SNode __thisNode__) {
+  /*package*/ static String getAnalyzerRunnerName_id9V7Nft_oXD(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "AnalyzerRunner";
   }
-  private static String getAnalyzerRunnerFqName_id9V7Nft_vlj(@NotNull SNode __thisNode__) {
+  /*package*/ static String getAnalyzerRunnerFqName_id9V7Nft_vlj(@NotNull SNode __thisNode__) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__));
     if (longName.equals("")) {
       return Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
     }
     return longName + "." + Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
   }
-  private static String getAnalyzerName_id9V7Nft_oXY(@NotNull SNode __thisNode__) {
+  /*package*/ static String getAnalyzerName_id9V7Nft_oXY(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";
   }
-  private static List<SNode> getRules_id3_iNRJnrAhj(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getRules_id3_iNRJnrAhj(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode rule : SModelOperations.rootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
       if (SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer")) == __thisNode__) {
@@ -68,32 +68,32 @@ public final class Analyzer__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getAnalyzerRunnerName_id9V7Nft_oXD(node);
+        return (T) ((String) getAnalyzerRunnerName_id9V7Nft_oXD(node));
       case 1:
-        return (T) getAnalyzerRunnerFqName_id9V7Nft_vlj(node);
+        return (T) ((String) getAnalyzerRunnerFqName_id9V7Nft_vlj(node));
       case 2:
-        return (T) getAnalyzerName_id9V7Nft_oXY(node);
+        return (T) ((String) getAnalyzerName_id9V7Nft_oXY(node));
       case 3:
-        return (T) getRules_id3_iNRJnrAhj(node);
+        return (T) ((List<SNode>) getRules_id3_iNRJnrAhj(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

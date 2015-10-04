@@ -245,7 +245,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_du6pr9_a2b1b0(SNode node, EditorContext editorContext) {
-    return BaseToolDeclaration__BehaviorDescriptor.hasNumber_id5FstybB4d8v.invoke(node);
+    return (boolean) BaseToolDeclaration__BehaviorDescriptor.hasNumber_id5FstybB4d8v.invoke(node);
   }
   private EditorCell createConstant_du6pr9_a2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

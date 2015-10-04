@@ -52,11 +52,11 @@ public final class SetWithIndent_Intention extends IntentionDescriptorBase imple
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Append " + ((AbstractAppendPart__BehaviorDescriptor.withIndent_idi0uJgJ6.invoke(node) ? "without" : "with")) + " Indent";
+      return "Append " + (((boolean) AbstractAppendPart__BehaviorDescriptor.withIndent_idi0uJgJ6.invoke(node) ? "without" : "with")) + " Indent";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      boolean indent = AbstractAppendPart__BehaviorDescriptor.withIndent_idi0uJgJ6.invoke(node);
+      boolean indent = (boolean) AbstractAppendPart__BehaviorDescriptor.withIndent_idi0uJgJ6.invoke(node);
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"))) {
         SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")), MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, 0x1201534c74dL, "withIndent"), "" + (!(indent)));
       } else {

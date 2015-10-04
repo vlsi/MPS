@@ -16,7 +16,7 @@ public class CoerceUtil {
     if (conceptFqName == null) {
       return true;
     }
-    return (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")) ? ((Boolean) BHReflection.invoke(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")), SMethodTrimmedId.create("canBeCoerced", null, "5uUZ$FUUb6B"), conceptFqName)) : true);
+    return (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")) ? ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")), SMethodTrimmedId.create("canBeCoerced", null, "5uUZ$FUUb6B"), conceptFqName)) : true);
   }
   public static boolean canBeCoerced(SNode type, SNode conceptNode) {
     return canBeCoerced(type, NameUtil.nodeFQName(conceptNode));

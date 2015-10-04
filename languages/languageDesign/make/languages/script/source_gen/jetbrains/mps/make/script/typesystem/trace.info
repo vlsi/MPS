@@ -548,7 +548,7 @@
   <root nodeRef="r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)/4630580602658457580">
     <file name="IResource_subtypeOf_ResourceType_InequationReplacementRule.java">
       <node id="4630580602658571259" at="23,97,24,178" concept="6" />
-      <node id="4630580602658541826" at="24,178,25,275" concept="7" />
+      <node id="4630580602658541826" at="24,178,25,285" concept="7" />
       <node id="4630580602658616655" at="29,7,30,75" concept="6" />
       <node id="4630580602658616655" at="30,75,31,204" concept="6" />
       <node id="4630580602658616655" at="31,204,32,64" concept="2" />
@@ -594,7 +594,7 @@
       <scope id="4630580602658457580" at="54,57,55,154" />
       <scope id="4630580602658457580" at="57,59,58,156" />
       <scope id="4630580602658457580" at="21,0,23,0" />
-      <scope id="4630580602658536801" at="23,97,25,275">
+      <scope id="4630580602658536801" at="23,97,25,285">
         <var name="clazz" id="4630580602658571260" />
       </scope>
       <scope id="4630580602658541835" at="62,30,64,458" />

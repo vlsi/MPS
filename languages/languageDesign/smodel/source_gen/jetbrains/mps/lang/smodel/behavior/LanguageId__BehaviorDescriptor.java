@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -22,24 +21,25 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class LanguageId__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SLanguage> getLanguage_id34EJa6aIcyj = new SMethodBuilder<SLanguage>(new SJavaCompoundTypeImpl(SLanguage.class)).name("getLanguage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("34EJa6aIcyj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Void> setLanguage_id34EJa6aIcyw = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setLanguage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("34EJa6aIcyw").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(SLanguage.class)));
+  public static final SMethod<SLanguage> getLanguage_id34EJa6aIcyj = new SMethodBuilder<SLanguage>(new SJavaCompoundTypeImpl(SLanguage.class)).name("getLanguage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("34EJa6aIcyj").registry(REGISTRY).build();
+  public static final SMethod<Void> setLanguage_id34EJa6aIcyw = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setLanguage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("34EJa6aIcyw").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(SLanguage.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLanguage_id34EJa6aIcyj, setLanguage_id34EJa6aIcyw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SLanguage getLanguage_id34EJa6aIcyj(@NotNull SNode __thisNode__) {
+  /*package*/ static SLanguage getLanguage_id34EJa6aIcyj(@NotNull SNode __thisNode__) {
     return MetaAdapterFactory.getLanguage(SLanguageId.deserialize(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"))), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace")));
   }
-  private static void setLanguage_id34EJa6aIcyw(@NotNull SNode __thisNode__, SLanguage language) {
+  /*package*/ static void setLanguage_id34EJa6aIcyw(@NotNull SNode __thisNode__, SLanguage language) {
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"), IdHelper.getLanguageId(language).serialize());
     SPropertyOperations.set(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace"), language.getQualifiedName());
   }
@@ -49,19 +49,19 @@ public final class LanguageId__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getLanguage_id34EJa6aIcyj(node);
+        return (T) ((SLanguage) getLanguage_id34EJa6aIcyj(node));
       case 1:
         setLanguage_id34EJa6aIcyw(node, (SLanguage) parameters[0]);
         return null;
@@ -71,7 +71,7 @@ public final class LanguageId__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

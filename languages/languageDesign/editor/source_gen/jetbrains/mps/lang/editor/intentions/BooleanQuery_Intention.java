@@ -36,7 +36,7 @@ public final class BooleanQuery_Intention extends IntentionDescriptorBase implem
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BooleanStyleSheetItem__BehaviorDescriptor.useQuery_idhNn$rq2.invoke(node);
+    return (boolean) BooleanStyleSheetItem__BehaviorDescriptor.useQuery_idhNn$rq2.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

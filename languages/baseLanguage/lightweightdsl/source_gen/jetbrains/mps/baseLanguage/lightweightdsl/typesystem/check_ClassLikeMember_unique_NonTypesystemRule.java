@@ -27,7 +27,7 @@ public class check_ClassLikeMember_unique_NonTypesystemRule extends AbstractNonT
     }
 
     for (SNode memberDescriptor : ListSequence.fromList(SLinkOperations.getChildren(DSLDescriptorUtil.getDescriptor(classLike), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")))) {
-      if (!(DSLClassMember__BehaviorDescriptor.isMultiple_id1QReUKIGS9B.invoke(memberDescriptor))) {
+      if (!((boolean) DSLClassMember__BehaviorDescriptor.isMultiple_id1QReUKIGS9B.invoke(memberDescriptor))) {
         if (Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(memberDescriptor, classLike)).count() > 1) {
           for (SNode member : Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(memberDescriptor, classLike))) {
             {

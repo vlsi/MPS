@@ -5,16 +5,9 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 /**
  * Will be removed after 3.3
@@ -24,15 +17,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class ModuleReferenceExpression_Behavior {
   @Nullable
   public static SModule call_getModule_4040588429969043137(SNode __thisNode__) {
-    if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId")) == null) {
-      return null;
-    }
-    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId"))));
+    return ModuleReferenceExpression__BehaviorDescriptor.getModule_id3wj3sjzQUV1(__thisNode__);
   }
   @NotNull
   public static List<SModule> call_getVisibleModules_4040588429969394431(SAbstractConcept __thisConcept__) {
-    List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
-    return result;
+    return ModuleReferenceExpression__BehaviorDescriptor.getVisibleModules_id3wj3sjzSgFZ(__thisConcept__);
   }
 }

@@ -76,7 +76,7 @@ public class Common_Component implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_tf8r10_a0b0(SNode node, EditorContext editorContext) {
-    return !(EditorCellModel__BehaviorDescriptor.isCellIdInitialized_idhTuDsSD.invoke(node));
+    return !((boolean) EditorCellModel__BehaviorDescriptor.isCellIdInitialized_idhTuDsSD.invoke(node));
   }
   private EditorCell createConstant_tf8r10_a0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell id");

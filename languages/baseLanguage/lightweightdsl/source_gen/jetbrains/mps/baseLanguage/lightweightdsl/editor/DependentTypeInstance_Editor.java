@@ -25,7 +25,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_1x58an_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
+        return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
       }
       public void setText(String s) {
       }

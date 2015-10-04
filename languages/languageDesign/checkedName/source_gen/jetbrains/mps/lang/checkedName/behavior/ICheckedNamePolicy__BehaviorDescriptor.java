@@ -14,30 +14,30 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.checkedName.PropertyReference;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class ICheckedNamePolicy__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xfe9d76d7580945c9L, 0xae28a40915b4d6ffL, 0x433c3c31e7218f38L, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getDescendantsToCheck_id4cWf37B8oXl = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDescendantsToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXl").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getDescendantToCheck_id4cWf37B8oXJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDescendantToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<PropertyReference>> getPropertiesToCheck_id4cWf37B8oXP = new SMethodBuilder<List<PropertyReference>>(new SJavaCompoundTypeImpl((Class<List<PropertyReference>>) ((Class) Object.class))).name("getPropertiesToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<PropertyReference> getPropertyToCheck_id4cWf37B8oYh = new SMethodBuilder<PropertyReference>(new SJavaCompoundTypeImpl((Class<PropertyReference>) ((Class) Object.class))).name("getPropertyToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oYh").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<List<SNode>> getDescendantsToCheck_id4cWf37B8oXl = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDescendantsToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXl").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDescendantToCheck_id4cWf37B8oXJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDescendantToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXJ").registry(REGISTRY).build();
+  public static final SMethod<List<PropertyReference>> getPropertiesToCheck_id4cWf37B8oXP = new SMethodBuilder<List<PropertyReference>>(new SJavaCompoundTypeImpl((Class<List<PropertyReference>>) ((Class) Object.class))).name("getPropertiesToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oXP").registry(REGISTRY).build();
+  public static final SMethod<PropertyReference> getPropertyToCheck_id4cWf37B8oYh = new SMethodBuilder<PropertyReference>(new SJavaCompoundTypeImpl((Class<PropertyReference>) ((Class) Object.class))).name("getPropertyToCheck").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4cWf37B8oYh").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescendantsToCheck_id4cWf37B8oXl, getDescendantToCheck_id4cWf37B8oXJ, getPropertiesToCheck_id4cWf37B8oXP, getPropertyToCheck_id4cWf37B8oYh);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static List<SNode> getDescendantsToCheck_id4cWf37B8oXl(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getDescendantsToCheck_id4cWf37B8oXl(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     SNode dsc = ICheckedNamePolicy__BehaviorDescriptor.getDescendantToCheck_id4cWf37B8oXJ.invoke(__thisNode__);
     if (dsc != null) {
@@ -45,10 +45,10 @@ public final class ICheckedNamePolicy__BehaviorDescriptor extends BaseBHDescript
     }
     return result;
   }
-  private static SNode getDescendantToCheck_id4cWf37B8oXJ(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getDescendantToCheck_id4cWf37B8oXJ(@NotNull SNode __thisNode__) {
     return null;
   }
-  private static List<PropertyReference> getPropertiesToCheck_id4cWf37B8oXP(@NotNull SNode __thisNode__) {
+  /*package*/ static List<PropertyReference> getPropertiesToCheck_id4cWf37B8oXP(@NotNull SNode __thisNode__) {
     List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
     PropertyReference property = ICheckedNamePolicy__BehaviorDescriptor.getPropertyToCheck_id4cWf37B8oYh.invoke(__thisNode__);
     if (property != null) {
@@ -56,7 +56,7 @@ public final class ICheckedNamePolicy__BehaviorDescriptor extends BaseBHDescript
     }
     return result;
   }
-  private static PropertyReference getPropertyToCheck_id4cWf37B8oYh(@NotNull SNode __thisNode__) {
+  /*package*/ static PropertyReference getPropertyToCheck_id4cWf37B8oYh(@NotNull SNode __thisNode__) {
     return null;
   }
 
@@ -65,32 +65,32 @@ public final class ICheckedNamePolicy__BehaviorDescriptor extends BaseBHDescript
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getDescendantsToCheck_id4cWf37B8oXl(node);
+        return (T) ((List<SNode>) getDescendantsToCheck_id4cWf37B8oXl(node));
       case 1:
-        return (T) getDescendantToCheck_id4cWf37B8oXJ(node);
+        return (T) ((SNode) getDescendantToCheck_id4cWf37B8oXJ(node));
       case 2:
-        return (T) getPropertiesToCheck_id4cWf37B8oXP(node);
+        return (T) ((List<PropertyReference>) getPropertiesToCheck_id4cWf37B8oXP(node));
       case 3:
-        return (T) getPropertyToCheck_id4cWf37B8oYh(node);
+        return (T) ((PropertyReference) getPropertyToCheck_id4cWf37B8oYh(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

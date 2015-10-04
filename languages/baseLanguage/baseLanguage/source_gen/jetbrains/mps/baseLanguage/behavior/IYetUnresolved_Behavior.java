@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class IYetUnresolved_Behavior {
   public static SNode call_findClass_5230012391932867419(SNode __thisNode__, SNode from, String className) {
-    // FIXME remove this: it's here only to give idea-compiled solutions access to language classes 
-    return ResolveUnknownUtil.findClass(from, className);
+    return IYetUnresolved__BehaviorDescriptor.findClass_id4ykJ8Y83bdr(__thisNode__, from, className);
   }
 }

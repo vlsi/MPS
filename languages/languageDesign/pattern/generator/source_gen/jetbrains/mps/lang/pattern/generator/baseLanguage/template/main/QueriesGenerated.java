@@ -549,7 +549,7 @@ public class QueriesGenerated {
     return result;
   }
   public static Iterable<SNode> sourceNodesQuery_7207007552736298787(final SourceSubstituteMacroNodesContext _context) {
-    return PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU.invoke(_context.getNode());
+    return (List<SNode>) PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_412500033819200973(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
@@ -564,10 +564,10 @@ public class QueriesGenerated {
     return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern"), false, new SAbstractConcept[]{});
   }
   public static Iterable<SNode> sourceNodesQuery_412500033819201106(final SourceSubstituteMacroNodesContext _context) {
-    return PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU.invoke(_context.getNode());
+    return (List<SNode>) PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_4855904478357130364(final SourceSubstituteMacroNodesContext _context) {
-    return PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU.invoke(_context.getNode());
+    return (List<SNode>) PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1767704432736121445(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), false, new SAbstractConcept[]{});

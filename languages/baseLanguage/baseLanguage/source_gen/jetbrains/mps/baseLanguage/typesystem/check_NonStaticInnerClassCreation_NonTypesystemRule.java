@@ -20,7 +20,7 @@ public class check_NonStaticInnerClassCreation_NonTypesystemRule extends Abstrac
   public check_NonStaticInnerClassCreation_NonTypesystemRule() {
   }
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Classifier__BehaviorDescriptor.canInstantiateIn_id610WLfjPjne.invoke(SLinkOperations.getTarget(IMethodCall__BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(classCreator), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), classCreator))) {
+    if (!((boolean) Classifier__BehaviorDescriptor.canInstantiateIn_id610WLfjPjne.invoke(SLinkOperations.getTarget(IMethodCall__BehaviorDescriptor.getInstanceType_id6WzWPTX2vuB.invoke(classCreator), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), classCreator))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classCreator, "Can't instantiate here", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6935810692634467390", null, errorTarget);
     }

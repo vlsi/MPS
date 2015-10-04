@@ -43,7 +43,7 @@ public final class B__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static int foo_id5mnatV0hwZQ(@NotNull SNode __thisNode__) {
-    return B__BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__);
+    return ((int) B__BehaviorDescriptor.bar_id5mnatV0hx04.invoke(__thisNode__));
   }
   /*package*/ static int bar_id5mnatV0hx04(@NotNull SNode __thisNode__) {
     return TestResults.DEFAULT_RETURN_VALUE;

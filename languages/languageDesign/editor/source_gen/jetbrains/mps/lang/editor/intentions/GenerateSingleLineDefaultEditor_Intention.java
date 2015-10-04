@@ -55,7 +55,7 @@ public final class GenerateSingleLineDefaultEditor_Intention extends IntentionDe
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      ConceptEditorDeclaration__BehaviorDescriptor.createDefaultEditor_id2$SWsiCt8Y$.invoke(node, false);
+      ConceptEditorDeclaration__BehaviorDescriptor.createDefaultEditor_id2$SWsiCt8Y$.invoke(node, ((boolean) false));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

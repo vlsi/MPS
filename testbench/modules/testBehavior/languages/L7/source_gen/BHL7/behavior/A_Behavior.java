@@ -17,13 +17,22 @@ public class A_Behavior {
   public static int call_staticMethod_6167444251392503213(SAbstractConcept __thisConcept__) {
     return A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH(__thisConcept__);
   }
-  public static void call_justVoidReturnTypeMethod_6167444251392504413(SNode __thisNode__) {
-    A__BehaviorDescriptor.justVoidReturnTypeMethod_id5mnatV0hB9t(__thisNode__);
+  public static void call_justVoidReturnTypeMethod1_6167444251392504413(SNode __thisNode__) {
+    A__BehaviorDescriptor.justVoidReturnTypeMethod1_id5mnatV0hB9t(__thisNode__);
   }
   public static void call_justVoidReturnTypeMethod2_5722502787480038418(SNode __thisNode__) {
     A__BehaviorDescriptor.justVoidReturnTypeMethod2_id4XEqvthVyKi(__thisNode__);
   }
-  public static boolean call_boolMethod_360045928603804516(SNode __thisNode__) {
-    return A__BehaviorDescriptor.boolMethod_idjZ8XPdgmd$(__thisNode__);
+  public static boolean call_boolMethod1_2569465595672254009(SNode __thisNode__) {
+    return A__BehaviorDescriptor.boolMethod1_id2eC$PxWCtoT(__thisNode__);
+  }
+  public static boolean call_boolMethod2_360045928603804516(SNode __thisNode__) {
+    return A__BehaviorDescriptor.boolMethod2_idjZ8XPdgmd$(__thisNode__);
+  }
+  public static Iterable<Boolean> call_seqMethod_2569465595672315305(SNode __thisNode__) {
+    return A__BehaviorDescriptor.seqMethod_id2eC$PxWCGmD(__thisNode__);
+  }
+  public static Iterable<Boolean> call_seqMethod2_2569465595672564713(SNode __thisNode__) {
+    return A__BehaviorDescriptor.seqMethod2_id2eC$PxWDDfD(__thisNode__);
   }
 }

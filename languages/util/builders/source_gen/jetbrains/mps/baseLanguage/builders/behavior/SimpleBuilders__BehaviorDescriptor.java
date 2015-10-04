@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,40 +22,41 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class SimpleBuilders__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isDescendant_id4wDZIZrG$7u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDescendant").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4wDZIZrG$7u").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getDescendands_id4wDZIZrG$7X = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDescendands").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4wDZIZrG$7X").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SModel>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getAncestors_id5oOCLRAZ01U = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAncestors").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5oOCLRAZ01U").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> isDescendant_id4wDZIZrG$7u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDescendant").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4wDZIZrG$7u").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getDescendands_id4wDZIZrG$7X = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getDescendands").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4wDZIZrG$7X").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getAncestors_id5oOCLRAZ01U = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAncestors").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5oOCLRAZ01U").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isDescendant_id4wDZIZrG$7u, getDescendands_id4wDZIZrG$7X, getAncestors_id5oOCLRAZ01U);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean isDescendant_id4wDZIZrG$7u(@NotNull SNode __thisNode__, SNode b) {
+  /*package*/ static boolean isDescendant_id4wDZIZrG$7u(@NotNull SNode __thisNode__, SNode b) {
     if (__thisNode__ == b) {
       return true;
     }
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")) == null)) {
       return false;
     }
-    return SimpleBuilders__BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
+    return (boolean) SimpleBuilders__BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, 0x4829feefdbb0cd12L, "extendsBuilder")), b);
   }
-  private static List<SNode> getDescendands_id4wDZIZrG$7X(@NotNull SNode __thisNode__, SModel context) {
+  /*package*/ static List<SNode> getDescendands_id4wDZIZrG$7X(@NotNull SNode __thisNode__, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode sb : SModelOperations.rootsIncludingImported(context, MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e3bL, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"))) {
-      if (SimpleBuilders__BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(sb, __thisNode__)) {
+      if ((boolean) SimpleBuilders__BehaviorDescriptor.isDescendant_id4wDZIZrG$7u.invoke(sb, __thisNode__)) {
         ListSequence.fromList(result).addElement(sb);
       }
     }
     return result;
   }
-  private static List<SNode> getAncestors_id5oOCLRAZ01U(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getAncestors_id5oOCLRAZ01U(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     SNode current = __thisNode__;
     while (current != null) {
@@ -71,30 +71,30 @@ public final class SimpleBuilders__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) isDescendant_id4wDZIZrG$7u(node, (SNode) parameters[0]);
+        return (T) ((Boolean) isDescendant_id4wDZIZrG$7u(node, (SNode) parameters[0]));
       case 1:
-        return (T) getDescendands_id4wDZIZrG$7X(node, (SModel) parameters[0]);
+        return (T) ((List<SNode>) getDescendands_id4wDZIZrG$7X(node, (SModel) parameters[0]));
       case 2:
-        return (T) getAncestors_id5oOCLRAZ01U(node);
+        return (T) ((List<SNode>) getAncestors_id5oOCLRAZ01U(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

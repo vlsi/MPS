@@ -4,9 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 /**
  * Will be removed after 3.3
@@ -15,20 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Deprecated
 public class ThisExpression_Behavior {
   public static List<SNode> call_getPossibleClassifiers_1215682129821(SNode __thisNode__) {
-    return Classifier__BehaviorDescriptor.getNonStaticContextClassifiers_id5S7J9l$QYtM.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), __thisNode__);
+    return ThisExpression__BehaviorDescriptor.getPossibleClassifiers_idhGcjiYt(__thisNode__);
   }
   public static SNode call_getContextClassifierMember_6516287307421538194(SNode __thisNode__) {
-    SNode classConcept = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"));
-    if ((classConcept != null)) {
-      for (SNode classifierMember : SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false)) {
-        if (SNodeOperations.getParent(classifierMember) == classConcept) {
-          return classifierMember;
-        }
-      }
-      return null;
-    } else {
-      SNode classifierMember = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), false, false);
-      return classifierMember;
-    }
+    return ThisExpression__BehaviorDescriptor.getContextClassifierMember_id5DIwcw5fPui(__thisNode__);
   }
 }

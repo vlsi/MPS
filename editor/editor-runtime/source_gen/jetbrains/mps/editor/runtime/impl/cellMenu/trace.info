@@ -25,7 +25,7 @@
       <node id="3368017140643690488" at="37,40,38,284" concept="7" />
       <node id="3368017140643690424" at="39,41,40,13" concept="8" />
       <node id="2190776171358671436" at="42,208,43,121" concept="2" />
-      <node id="1503962097793478103" at="45,265,46,124" concept="2" />
+      <node id="1503962097793478103" at="45,275,46,124" concept="2" />
       <node id="1503962097793478127" at="47,5,48,115" concept="2" />
       <node id="2479108860611100296" at="48,115,49,38" concept="2" />
       <node id="2479108860610978831" at="52,36,53,37" concept="8" />
@@ -46,7 +46,7 @@
       <node id="3368017140643570614" at="35,0,51,0" concept="1" trace="DefaultReferenceSubstituteInfoActionsFactory#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cellMenu/DefaultReferenceSubstituteInfo;)V" />
       <scope id="3368017140643690423" at="39,41,40,13" />
       <scope id="3368017140643690431" at="42,208,43,121" />
-      <scope id="659731673107302987" at="45,265,46,124" />
+      <scope id="659731673107302987" at="45,275,46,124" />
       <scope id="2479108860610978830" at="52,36,53,37" />
       <scope id="2479108860610978881" at="58,404,62,315">
         <var name="parent" id="2479108860611060387" />

@@ -4,10 +4,6 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 /**
  * Will be removed after 3.3
@@ -16,12 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 @Deprecated
 public class IClassifierPart_Behavior {
   public static List<SNode> call_getMembers_1213877255431(SNode __thisNode__) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode child : SNodeOperations.getChildren(__thisNode__)) {
-      if (SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6becc0L, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"))) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6becc0L, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")));
-      }
-    }
-    return result;
+    return IClassifierPart__BehaviorDescriptor.getMembers_idhEwIfO7(__thisNode__);
   }
 }

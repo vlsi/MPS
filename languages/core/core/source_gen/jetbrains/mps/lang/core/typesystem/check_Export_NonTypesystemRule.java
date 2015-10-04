@@ -16,7 +16,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -35,15 +35,15 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
       return;
     }
     // check concept of the node 
-    if (!(ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSDLR.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), true, SNodeOperations.getConceptDeclaration(node), namespace))) {
+    if (!((boolean) ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSDLR.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), ((boolean) true), SNodeOperations.getConceptDeclaration(node), namespace))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8935196238174954469", null, errorTarget);
       }
     }
     // check references 
-    for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-      if (!(ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSDLR.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), false, SLinkOperations.getTargetNode(ref), namespace))) {
+    for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+      if (!((boolean) ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSDLR.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), ((boolean) false), SLinkOperations.getTargetNode(ref), namespace))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget(SLinkOperations.getRole(ref));

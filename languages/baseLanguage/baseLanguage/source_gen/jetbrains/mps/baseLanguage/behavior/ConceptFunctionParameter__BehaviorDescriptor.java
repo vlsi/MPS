@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -22,36 +21,37 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class ConceptFunctionParameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> getFromParameterObject_idhEwJh7s = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("getFromParameterObject").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJh7s").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isParameterObjectUsed_idhEwJh7I = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterObjectUsed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJh7I").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> findConceptFunction_idhEwJh7Q = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findConceptFunction").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJh7Q").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getParameterName_idhP8qAbK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getParameterName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hP8qAbK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getDeclaration_idhP8xjWn = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDeclaration").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hP8xjWn").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> needConceptFunction_idhZKliUO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("needConceptFunction").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hZKliUO").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getType_id27DJnJtIQ9C = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("27DJnJtIQ9C").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> dontUseParameterObject_id1653mnvAgv$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("dontUseParameterObject").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgv$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> getFromParameterObject_idhEwJh7s = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("getFromParameterObject").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJh7s").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isParameterObjectUsed_idhEwJh7I = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isParameterObjectUsed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJh7I").registry(REGISTRY).build();
+  public static final SMethod<SNode> findConceptFunction_idhEwJh7Q = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findConceptFunction").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJh7Q").registry(REGISTRY).build();
+  public static final SMethod<String> getParameterName_idhP8qAbK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getParameterName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hP8qAbK").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDeclaration_idhP8xjWn = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDeclaration").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hP8xjWn").registry(REGISTRY).build();
+  public static final SMethod<Boolean> needConceptFunction_idhZKliUO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("needConceptFunction").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hZKliUO").registry(REGISTRY).build();
+  public static final SMethod<SNode> getType_id27DJnJtIQ9C = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("27DJnJtIQ9C").registry(REGISTRY).build();
+  public static final SMethod<Boolean> dontUseParameterObject_id1653mnvAgv$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("dontUseParameterObject").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgv$").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getFromParameterObject_idhEwJh7s, isParameterObjectUsed_idhEwJh7I, findConceptFunction_idhEwJh7Q, getParameterName_idhP8qAbK, getDeclaration_idhP8xjWn, needConceptFunction_idhZKliUO, getType_id27DJnJtIQ9C, dontUseParameterObject_id1653mnvAgv$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean getFromParameterObject_idhEwJh7s(@NotNull SNode __thisNode__) {
-    if (!(ConceptFunctionParameter__BehaviorDescriptor.isParameterObjectUsed_idhEwJh7I.invoke(__thisNode__))) {
+  /*package*/ static boolean getFromParameterObject_idhEwJh7s(@NotNull SNode __thisNode__) {
+    if (!(((boolean) ConceptFunctionParameter__BehaviorDescriptor.isParameterObjectUsed_idhEwJh7I.invoke(__thisNode__)))) {
       return false;
     }
-    return ConceptFunction__BehaviorDescriptor.usesParameterObjectFor_idhEwIGRw.invoke(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__), __thisNode__);
+    return (boolean) ConceptFunction__BehaviorDescriptor.usesParameterObjectFor_idhEwIGRw.invoke(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__), __thisNode__);
   }
-  private static Boolean isParameterObjectUsed_idhEwJh7I(@NotNull SNode __thisNode__) {
-    return !(ConceptFunctionParameter__BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
+  /*package*/ static boolean isParameterObjectUsed_idhEwJh7I(@NotNull SNode __thisNode__) {
+    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
   }
-  private static SNode findConceptFunction_idhEwJh7Q(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode findConceptFunction_idhEwJh7Q(@NotNull SNode __thisNode__) {
     List<SNode> functions = SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(__thisNode__);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
@@ -60,19 +60,19 @@ public final class ConceptFunctionParameter__BehaviorDescriptor extends BaseBHDe
       }
     }).first();
   }
-  private static String getParameterName_idhP8qAbK(@NotNull SNode __thisNode__) {
+  /*package*/ static String getParameterName_idhP8qAbK(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
   }
-  private static SNode getDeclaration_idhP8xjWn(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getDeclaration_idhP8xjWn(@NotNull SNode __thisNode__) {
     return SNodeOperations.getConceptDeclaration(__thisNode__);
   }
-  private static Boolean needConceptFunction_idhZKliUO(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean needConceptFunction_idhZKliUO(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
     return null;
   }
-  private static Boolean dontUseParameterObject_id1653mnvAgv$(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static boolean dontUseParameterObject_id1653mnvAgv$(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
 
@@ -81,45 +81,45 @@ public final class ConceptFunctionParameter__BehaviorDescriptor extends BaseBHDe
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getFromParameterObject_idhEwJh7s(node);
+        return (T) ((Boolean) getFromParameterObject_idhEwJh7s(node));
       case 1:
-        return (T) isParameterObjectUsed_idhEwJh7I(node);
+        return (T) ((Boolean) isParameterObjectUsed_idhEwJh7I(node));
       case 2:
-        return (T) findConceptFunction_idhEwJh7Q(node);
+        return (T) ((SNode) findConceptFunction_idhEwJh7Q(node));
       case 3:
-        return (T) getParameterName_idhP8qAbK(node);
+        return (T) ((String) getParameterName_idhP8qAbK(node));
       case 4:
-        return (T) getDeclaration_idhP8xjWn(node);
+        return (T) ((SNode) getDeclaration_idhP8xjWn(node));
       case 5:
-        return (T) needConceptFunction_idhZKliUO(node);
+        return (T) ((Boolean) needConceptFunction_idhZKliUO(node));
       case 6:
-        return (T) getType_id27DJnJtIQ9C(node);
+        return (T) ((SNode) getType_id27DJnJtIQ9C(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 7:
-        return (T) dontUseParameterObject_id1653mnvAgv$(concept);
+        return (T) ((Boolean) dontUseParameterObject_id1653mnvAgv$(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

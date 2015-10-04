@@ -63,12 +63,12 @@ public class MoveRefactoringUtils {
   }
   public static void fixImportsFromNode(SNode node) {
     for (SNode descendant : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{}))) {
-      for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(descendant))) {
+      for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(descendant))) {
         addNodeModelImportIfNeed(node, SLinkOperations.getTargetNode(reference));
       }
     }
   }
   public static boolean isReference(SNode node) {
-    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
+    return ListSequence.fromList(SNodeOperations.getChildren(node)).isEmpty() && ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1;
   }
 }

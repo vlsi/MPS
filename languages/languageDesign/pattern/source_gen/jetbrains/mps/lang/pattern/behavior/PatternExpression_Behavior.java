@@ -4,15 +4,6 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
  * Will be removed after 3.3
@@ -21,40 +12,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class PatternExpression_Behavior {
   public static List<SNode> call_getVariables_4855904478357072957(SNode __thisNode__) {
-    List<SNode> variables = new ArrayList<SNode>();
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), false, new SAbstractConcept[]{})));
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
-    ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), false, new SAbstractConcept[]{})));
-    /*
-      if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x4363a36537b0b250L, "jetbrains.mps.lang.pattern.structure.OrPatternClause"))) {
-        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, 0x3b2f5e7b070d317eL, "variable"))));
-      }
-    */
-    return variables;
+    return PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX(__thisNode__);
   }
   public static List<SNode> call_getUniqueVariables_4855904478357073018(SNode __thisNode__) {
-    List<SNode> variables = PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
-    List<SNode> result = new ArrayList<SNode>();
-    Set<String> names = new HashSet<String>();
-    for (SNode var : variables) {
-      if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
-        ListSequence.fromList(result).addElement(var);
-        names.add(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-      }
-    }
-    return result;
+    return PatternExpression__BehaviorDescriptor.getUniqueVariables_id4dzCQkRGULU(__thisNode__);
   }
   public static List<SNode> call_getOwnVariables_8288845019109059987(SNode __thisNode__) {
-    List<SNode> variables = PatternExpression__BehaviorDescriptor.getVariables_id4dzCQkRGUKX.invoke(__thisNode__);
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode var : variables) {
-      if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x27f758f8bc6aaa84L, "jetbrains.mps.lang.pattern.structure.OrPattern")) && SNodeOperations.getParent(var) != __thisNode__))) {
-        ListSequence.fromList(result).addElement(var);
-      }
-    }
-    return result;
+    return PatternExpression__BehaviorDescriptor.getOwnVariables_id7c7Ta3MgIQj(__thisNode__);
   }
   public static boolean call_hasVariable_4855904478357073120(SNode __thisNode__) {
-    return false;
+    return PatternExpression__BehaviorDescriptor.hasVariable_id4dzCQkRGUNw(__thisNode__);
   }
 }

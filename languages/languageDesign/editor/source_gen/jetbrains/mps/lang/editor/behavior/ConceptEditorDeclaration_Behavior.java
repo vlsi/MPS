@@ -11,10 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class ConceptEditorDeclaration_Behavior {
   public static void call_createDefaultEditor_2970389781192937380(SNode __thisNode__, boolean multiline) {
-    if (multiline) {
-      new DefaultEditorBuilder(__thisNode__).buildStatementLike();
-    } else {
-      new DefaultEditorBuilder(__thisNode__).buildExpressionLike();
-    }
+    ConceptEditorDeclaration__BehaviorDescriptor.createDefaultEditor_id2$SWsiCt8Y$(__thisNode__, multiline);
   }
 }

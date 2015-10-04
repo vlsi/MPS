@@ -429,7 +429,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_y68cfu_a4d7a(SNode node, EditorContext editorContext) {
-    return !(Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c7540b43aL, "classInitializer")) != null);
+    return !((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node)) || (boolean) Classifier__BehaviorDescriptor.isStatic_idsWroEc0xXc.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c7540b43aL, "classInitializer")) != null);
   }
   private EditorCell createRefNodeList_y68cfu_f3h0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new EnumClass_Editor.fieldListHandler_y68cfu_f3h0(node, "field", editorContext);

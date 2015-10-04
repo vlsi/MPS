@@ -39,7 +39,7 @@ public final class AddAnnotation_Intention extends IntentionDescriptorBase imple
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).isNotEmpty()) {
       return false;
     }
-    if (!(HasAnnotation__BehaviorDescriptor.canBeAnnotated_idhWp4PwP.invoke(node))) {
+    if (!((boolean) HasAnnotation__BehaviorDescriptor.canBeAnnotated_idhWp4PwP.invoke(node))) {
       return false;
     }
     SNode selectedNode = editorContext.getSelectedNode();

@@ -20,7 +20,7 @@ public class check_AttributedNodeExpression_NonTypesystemRule extends AbstractNo
   }
   public void applyRule(final SNode ane, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode absRule = SNodeOperations.getNodeAncestor(ane, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e7b5c73L, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), false, false);
-    if (!((absRule != null) && AbstractRule__BehaviorDescriptor.isAttributeRule_id6lCixFI9vx1.invoke(absRule))) {
+    if (!((absRule != null) && (boolean) AbstractRule__BehaviorDescriptor.isAttributeRule_id6lCixFI9vx1.invoke(absRule))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ane, "attributedNode is not available in this context", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "7307171874934071490", null, errorTarget);
     }

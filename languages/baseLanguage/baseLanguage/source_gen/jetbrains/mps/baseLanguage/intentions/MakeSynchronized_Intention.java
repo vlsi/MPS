@@ -38,7 +38,7 @@ public final class MakeSynchronized_Intention extends IntentionDescriptorBase im
     if ((SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) == null)) {
       return false;
     }
-    if (BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node)) {
+    if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(node)) {
       return false;
     }
     return true;

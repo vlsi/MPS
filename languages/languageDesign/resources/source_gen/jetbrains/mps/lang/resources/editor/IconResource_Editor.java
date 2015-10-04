@@ -108,7 +108,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext) {
-    return IconResource__BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node);
+    return (boolean) IconResource__BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node);
   }
   private EditorCell createCollection_79r3b6_a0a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -234,7 +234,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
-    return (IconResource__BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node) ? Color.BLACK : Color.RED);
+    return ((boolean) IconResource__BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node) ? Color.BLACK : Color.RED);
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

@@ -22,7 +22,7 @@ public class ClassLikeMemberPlaceholderMenu extends AbstractCellMenuPart_Generic
   }
   @Override
   protected String getMatchingText(Object object) {
-    return DSLClassMember__BehaviorDescriptor.getMatchingText_id2nUiI4k7qhh.invoke(((SNode) object));
+    return (String) DSLClassMember__BehaviorDescriptor.getMatchingText_id2nUiI4k7qhh.invoke(((SNode) object));
   }
   protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
     EditorUtil.substitutePlaceholder(((SNode) node));

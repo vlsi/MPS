@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,36 +42,37 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import java.util.HashSet;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  /*package*/ static final SMethod<SModel> getAspectModel_id7g4OXB0yli3 = new SMethodBuilder<SModel>(new SJavaCompoundTypeImpl((Class<SModel>) ((Class) Object.class))).name("getAspectModel").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7g4OXB0yli3").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(LanguageAspect.class)));
-  public static final SMethod<List<SNode>> findConceptAspectCollection_id1n18fON7w20 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findConceptAspectCollection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1n18fON7w20").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(LanguageAspect.class)));
-  public static final SMethod<SNode> findConceptAspect_id7g4OXB0ykew = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findConceptAspect").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7g4OXB0ykew").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(LanguageAspect.class)));
-  public static final SMethod<SNode> findConceptAspect_id7g4OXB0yku$ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findConceptAspect").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7g4OXB0yku$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SModel>) ((Class) Object.class))));
-  public static final SMethod<Void> findConceptAspectCollection_id7g4OXB0yl26 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("findConceptAspectCollection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7g4OXB0yl26").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SModel>) ((Class) Object.class), (Class<List<SNode>>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> findGeneratorFragments_id5zMz2aJEI4B = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findGeneratorFragments").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zMz2aJEI4B").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> findAllAspects_id6Ito2ECxcpP = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findAllAspects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Ito2ECxcpP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getPresentation_id280s3ZNTXNS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("280s3ZNTXNS").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getAvailableConceptMethods_idhEwILGo = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAvailableConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILGo").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getVirtualConceptMethods_idhEwILHM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getVirtualConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILHM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getNotImplementedConceptMethods_idhEwILIz = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNotImplementedConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILIz").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> findLinkDeclaration_idhEwILKz = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findLinkDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILKz").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
-  public static final SMethod<List<SNode>> getLinkDeclarations_idhEwILKK = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLinkDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILKK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getReferenceLinkDeclarations_idhEwILL0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getReferenceLinkDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILL0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getAggregationLinkDeclarations_idhEwILLp = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAggregationLinkDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILLp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getPropertyDeclarations_idhEwILLM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getPropertyDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILLM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> findPropertyDeclaration_idhK3S4A1 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findPropertyDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hK3S4A1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
-  public static final SMethod<Boolean> isDefaultSubstitutable_id6spw4TQeyqh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDefaultSubstitutable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6spw4TQeyqh").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSubconceptOf_id73yVtVlWOga = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSubconceptOf").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("73yVtVlWOga").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getImmediateSuperconcepts_idhMuxyK2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getImmediateSuperconcepts").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hMuxyK2").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Iterable<SNode>> getAllSuperConcepts_id2A8AB0rAWpG = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getAllSuperConcepts").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2A8AB0rAWpG").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Boolean.TYPE)));
-  /*package*/ static final SMethod<Void> collectSuperConcepts_id2A8AB0rB3NH = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectSuperConcepts").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2A8AB0rB3NH").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<Set<SNode>>) ((Class) Object.class))));
-  public static final SMethod<SNode> computeInHierarchy_id3CiBrVcn5fe = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("computeInHierarchy").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3CiBrVcn5fe").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>>) ((Class) Object.class))));
-  public static final SMethod<Pair<Set<SNode>, Set<SNode>>> getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK = new SMethodBuilder<Pair<Set<SNode>, Set<SNode>>>(new SJavaCompoundTypeImpl(Pair.class)).name("getInLanguageAndNotInLanguageAncestors").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("54xSEBmK0MK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  /*package*/ static final SMethod<SModel> getAspectModel_id7g4OXB0yli3 = new SMethodBuilder<SModel>(new SJavaCompoundTypeImpl((Class<SModel>) ((Class) Object.class))).name("getAspectModel").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7g4OXB0yli3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(LanguageAspect.class, ""));
+  public static final SMethod<List<SNode>> findConceptAspectCollection_id1n18fON7w20 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findConceptAspectCollection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1n18fON7w20").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(LanguageAspect.class, ""));
+  public static final SMethod<SNode> findConceptAspect_id7g4OXB0ykew = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findConceptAspect").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7g4OXB0ykew").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(LanguageAspect.class, ""));
+  public static final SMethod<SNode> findConceptAspect_id7g4OXB0yku$ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findConceptAspect").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7g4OXB0yku$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""));
+  public static final SMethod<Void> findConceptAspectCollection_id7g4OXB0yl26 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("findConceptAspectCollection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7g4OXB0yl26").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> findGeneratorFragments_id5zMz2aJEI4B = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findGeneratorFragments").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zMz2aJEI4B").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> findAllAspects_id6Ito2ECxcpP = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findAllAspects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6Ito2ECxcpP").registry(REGISTRY).build();
+  public static final SMethod<String> getPresentation_id280s3ZNTXNS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("280s3ZNTXNS").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getAvailableConceptMethods_idhEwILGo = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAvailableConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILGo").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getVirtualConceptMethods_idhEwILHM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getVirtualConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILHM").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getNotImplementedConceptMethods_idhEwILIz = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNotImplementedConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILIz").registry(REGISTRY).build();
+  public static final SMethod<SNode> findLinkDeclaration_idhEwILKz = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findLinkDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILKz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<List<SNode>> getLinkDeclarations_idhEwILKK = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLinkDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILKK").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getReferenceLinkDeclarations_idhEwILL0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getReferenceLinkDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILL0").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getAggregationLinkDeclarations_idhEwILLp = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAggregationLinkDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILLp").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getPropertyDeclarations_idhEwILLM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getPropertyDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILLM").registry(REGISTRY).build();
+  public static final SMethod<SNode> findPropertyDeclaration_idhK3S4A1 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findPropertyDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hK3S4A1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Boolean> isDefaultSubstitutable_id6spw4TQeyqh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isDefaultSubstitutable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6spw4TQeyqh").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSubconceptOf_id73yVtVlWOga = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSubconceptOf").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("73yVtVlWOga").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getImmediateSuperconcepts_idhMuxyK2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getImmediateSuperconcepts").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hMuxyK2").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SNode>> getAllSuperConcepts_id2A8AB0rAWpG = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getAllSuperConcepts").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2A8AB0rAWpG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
+  /*package*/ static final SMethod<Void> collectSuperConcepts_id2A8AB0rB3NH = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectSuperConcepts").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2A8AB0rB3NH").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> computeInHierarchy_id3CiBrVcn5fe = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("computeInHierarchy").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3CiBrVcn5fe").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Pair<Set<SNode>, Set<SNode>>> getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK = new SMethodBuilder<Pair<Set<SNode>, Set<SNode>>>(new SJavaCompoundTypeImpl(Pair.class)).name("getInLanguageAndNotInLanguageAncestors").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("54xSEBmK0MK").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getAspectModel_id7g4OXB0yli3, findConceptAspectCollection_id1n18fON7w20, findConceptAspect_id7g4OXB0ykew, findConceptAspect_id7g4OXB0yku$, findConceptAspectCollection_id7g4OXB0yl26, findGeneratorFragments_id5zMz2aJEI4B, findAllAspects_id6Ito2ECxcpP, getPresentation_id280s3ZNTXNS, getAvailableConceptMethods_idhEwILGo, getVirtualConceptMethods_idhEwILHM, getNotImplementedConceptMethods_idhEwILIz, findLinkDeclaration_idhEwILKz, getLinkDeclarations_idhEwILKK, getReferenceLinkDeclarations_idhEwILL0, getAggregationLinkDeclarations_idhEwILLp, getPropertyDeclarations_idhEwILLM, findPropertyDeclaration_idhK3S4A1, isDefaultSubstitutable_id6spw4TQeyqh, isSubconceptOf_id73yVtVlWOga, getImmediateSuperconcepts_idhMuxyK2, getAllSuperConcepts_id2A8AB0rAWpG, collectSuperConcepts_id2A8AB0rB3NH, computeInHierarchy_id3CiBrVcn5fe, getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK);
 
@@ -81,7 +81,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
 
   @Deprecated
   @ToRemove(version = 3.3)
-  private static SModel getAspectModel_id7g4OXB0yli3(@NotNull SNode __thisNode__, LanguageAspect aspect) {
+  /*package*/ static SModel getAspectModel_id7g4OXB0yli3(@NotNull SNode __thisNode__, LanguageAspect aspect) {
     // [MM] this usage of LanguageAspect is reviewed 
     Language language = SModelUtil.getDeclaringLanguage(__thisNode__);
     if (language == null) {
@@ -95,7 +95,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
   @Deprecated
   @ToRemove(version = 3.3)
-  private static List<SNode> findConceptAspectCollection_id1n18fON7w20(@NotNull SNode __thisNode__, LanguageAspect aspect) {
+  /*package*/ static List<SNode> findConceptAspectCollection_id1n18fON7w20(@NotNull SNode __thisNode__, LanguageAspect aspect) {
     // [MM] this usage of LanguageAspect is reviewed 
     List<SNode> result = new ArrayList<SNode>();
     SModel model = AbstractConceptDeclaration__BehaviorDescriptor.getAspectModel_id7g4OXB0yli3.invoke(__thisNode__, aspect);
@@ -104,11 +104,11 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
   @Deprecated
   @ToRemove(version = 3.3)
-  private static SNode findConceptAspect_id7g4OXB0ykew(@NotNull SNode __thisNode__, LanguageAspect aspect) {
+  /*package*/ static SNode findConceptAspect_id7g4OXB0ykew(@NotNull SNode __thisNode__, LanguageAspect aspect) {
     SModel model = AbstractConceptDeclaration__BehaviorDescriptor.getAspectModel_id7g4OXB0yli3.invoke(__thisNode__, aspect);
     return AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0yku$.invoke(__thisNode__, model);
   }
-  private static SNode findConceptAspect_id7g4OXB0yku$(@NotNull SNode __thisNode__, SModel model) {
+  /*package*/ static SNode findConceptAspect_id7g4OXB0yku$(@NotNull SNode __thisNode__, SModel model) {
     if (model == null) {
       return null;
     }
@@ -119,7 +119,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     }
     return null;
   }
-  private static void findConceptAspectCollection_id7g4OXB0yl26(@NotNull SNode __thisNode__, SModel model, List<SNode> collection) {
+  /*package*/ static void findConceptAspectCollection_id7g4OXB0yl26(@NotNull SNode __thisNode__, SModel model, List<SNode> collection) {
     if (model == null) {
       return;
     }
@@ -129,7 +129,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
       }
     }
   }
-  private static List<SNode> findGeneratorFragments_id5zMz2aJEI4B(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> findGeneratorFragments_id5zMz2aJEI4B(@NotNull SNode __thisNode__) {
     Language language = SModelUtil.getDeclaringLanguage(__thisNode__);
     List<SNode> result = new ArrayList<SNode>();
     if (language == null) {
@@ -144,12 +144,12 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
           } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"))) {
             // generator rules 
             for (SNode r : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), false, new SAbstractConcept[]{}))) {
-              if (SLinkOperations.getTarget(r, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept")) == __thisNode__ || (SPropertyOperations.getBoolean(r, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc6d8f674L, "applyToConceptInheritors")) && Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, false)).contains(SLinkOperations.getTarget(r, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept"))))) {
+              if (SLinkOperations.getTarget(r, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept")) == __thisNode__ || (SPropertyOperations.getBoolean(r, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc6d8f674L, "applyToConceptInheritors")) && Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, ((boolean) false))).contains(SLinkOperations.getTarget(r, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept"))))) {
                 ListSequence.fromList(result).addElement(r);
               }
             }
             for (SNode r : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, "jetbrains.mps.lang.generator.structure.DropRootRule"), false, new SAbstractConcept[]{}))) {
-              if (Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, true)).contains(SLinkOperations.getTarget(r, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, 0x11c0ad36598L, "applicableConcept")))) {
+              if (Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, ((boolean) true))).contains(SLinkOperations.getTarget(r, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, 0x11c0ad36598L, "applicableConcept")))) {
                 ListSequence.fromList(result).addElement(r);
               }
             }
@@ -161,7 +161,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
   @ToRemove(version = 3.3)
   @Deprecated
-  private static List<SNode> findAllAspects_id6Ito2ECxcpP(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> findAllAspects_id6Ito2ECxcpP(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
       ListSequence.fromList(result).addElement(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(__thisNode__, aspect));
@@ -178,10 +178,10 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
 
     return result;
   }
-  private static String getPresentation_id280s3ZNTXNS(@NotNull SNode __thisNode__) {
+  /*package*/ static String getPresentation_id280s3ZNTXNS(@NotNull SNode __thisNode__) {
     return (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null ? SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) : SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  private static List<SNode> getAvailableConceptMethods_idhEwILGo(@NotNull SNode __thisNode__, SNode context) {
+  /*package*/ static List<SNode> getAvailableConceptMethods_idhEwILGo(@NotNull SNode __thisNode__, SNode context) {
     List<SNode> methods = new ArrayList<SNode>();
     if (__thisNode__ == null) {
       return methods;
@@ -217,7 +217,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     }
     return methods;
   }
-  private static List<SNode> getVirtualConceptMethods_idhEwILHM(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getVirtualConceptMethods_idhEwILHM(@NotNull SNode __thisNode__) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode concept : SConceptOperations.getAllSuperConcepts(__thisNode__, false)) {
       SNode behaviour = SNodeOperations.cast(AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0ykew.invoke(concept, LanguageAspect.BEHAVIOR), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
@@ -231,7 +231,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     }
     return methods;
   }
-  private static List<SNode> getNotImplementedConceptMethods_idhEwILIz(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getNotImplementedConceptMethods_idhEwILIz(@NotNull SNode __thisNode__) {
     List<SNode> abstractMethods = new ArrayList<SNode>();
     List<SNode> implementedMethods = new ArrayList<SNode>();
     List<SNode> concepts = SConceptOperations.getAllSuperConcepts(__thisNode__, false);
@@ -250,13 +250,13 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     ListSequence.fromList(abstractMethods).removeSequence(ListSequence.fromList(implementedMethods));
     return abstractMethods;
   }
-  private static SNode findLinkDeclaration_idhEwILKz(@NotNull SNode __thisNode__, String role) {
+  /*package*/ static SNode findLinkDeclaration_idhEwILKz(@NotNull SNode __thisNode__, String role) {
     return SNodeOperations.cast(SModelSearchUtil.findLinkDeclaration(__thisNode__, role), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
-  private static List<SNode> getLinkDeclarations_idhEwILKK(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getLinkDeclarations_idhEwILKK(@NotNull SNode __thisNode__) {
     return (List<SNode>) SModelSearchUtil.getLinkDeclarations(__thisNode__);
   }
-  private static List<SNode> getReferenceLinkDeclarations_idhEwILL0(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getReferenceLinkDeclarations_idhEwILL0(@NotNull SNode __thisNode__) {
     List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(__thisNode__);
     return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -264,7 +264,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
       }
     }).toListSequence();
   }
-  private static List<SNode> getAggregationLinkDeclarations_idhEwILLp(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getAggregationLinkDeclarations_idhEwILLp(@NotNull SNode __thisNode__) {
     List<SNode> links = AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(__thisNode__);
     return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -272,26 +272,26 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
       }
     }).toListSequence();
   }
-  private static List<SNode> getPropertyDeclarations_idhEwILLM(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getPropertyDeclarations_idhEwILLM(@NotNull SNode __thisNode__) {
     List<SNode> properties = SModelSearchUtil.getPropertyDeclarations(__thisNode__);
     return (List<SNode>) properties;
   }
-  private static SNode findPropertyDeclaration_idhK3S4A1(@NotNull SNode __thisNode__, String name) {
+  /*package*/ static SNode findPropertyDeclaration_idhK3S4A1(@NotNull SNode __thisNode__, String name) {
     SNode p = SModelSearchUtil.findPropertyDeclaration(__thisNode__, name);
     return SNodeOperations.cast(p, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
   @Deprecated
   @ToRemove(version = 3.3)
-  private static Boolean isDefaultSubstitutable_id6spw4TQeyqh(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isDefaultSubstitutable_id6spw4TQeyqh(@NotNull SNode __thisNode__) {
     return !(SNodeOperations.asSConcept(__thisNode__).isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
-  private static Boolean isSubconceptOf_id73yVtVlWOga(@NotNull SNode __thisNode__, SNode superconcept) {
+  /*package*/ static boolean isSubconceptOf_id73yVtVlWOga(@NotNull SNode __thisNode__, SNode superconcept) {
     if (superconcept == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
       return true;
     }
-    return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, true)).contains(superconcept);
+    return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(__thisNode__, ((boolean) true))).contains(superconcept);
   }
-  private static Iterable<SNode> getAllSuperConcepts_id2A8AB0rAWpG(@NotNull SNode __thisNode__, boolean includeSelf) {
+  /*package*/ static Iterable<SNode> getAllSuperConcepts_id2A8AB0rAWpG(@NotNull SNode __thisNode__, boolean includeSelf) {
     Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());
     AbstractConceptDeclaration__BehaviorDescriptor.collectSuperConcepts_id2A8AB0rB3NH.invoke(__thisNode__, __thisNode__, concepts);
     if (!(includeSelf)) {
@@ -299,7 +299,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
     }
     return concepts;
   }
-  private static void collectSuperConcepts_id2A8AB0rB3NH(@NotNull SNode __thisNode__, SNode concept, Set<SNode> result) {
+  /*package*/ static void collectSuperConcepts_id2A8AB0rB3NH(@NotNull SNode __thisNode__, SNode concept, Set<SNode> result) {
     if (SetSequence.fromSet(result).contains(concept) || (concept == null)) {
       return;
     }
@@ -308,7 +308,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
       AbstractConceptDeclaration__BehaviorDescriptor.collectSuperConcepts_id2A8AB0rB3NH.invoke(__thisNode__, superConcept, result);
     }
   }
-  private static SNode computeInHierarchy_id3CiBrVcn5fe(@NotNull SNode __thisNode__, _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> predicate) {
+  /*package*/ static SNode computeInHierarchy_id3CiBrVcn5fe(@NotNull SNode __thisNode__, _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> predicate) {
     // todo: comment method!, use generics 
     SNode result = predicate.invoke(__thisNode__);
     if (result != null) {
@@ -328,7 +328,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
 
     return null;
   }
-  private static Pair<Set<SNode>, Set<SNode>> getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK(@NotNull SNode __thisNode__) {
+  /*package*/ static Pair<Set<SNode>, Set<SNode>> getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK(@NotNull SNode __thisNode__) {
     // todo: use tuple 
     Set<SNode> inLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> notInLanguageAncestors = SetSequence.fromSet(new HashSet<SNode>());
@@ -356,72 +356,72 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getAspectModel_id7g4OXB0yli3(node, (LanguageAspect) parameters[0]);
+        return (T) ((SModel) getAspectModel_id7g4OXB0yli3(node, (LanguageAspect) parameters[0]));
       case 1:
-        return (T) findConceptAspectCollection_id1n18fON7w20(node, (LanguageAspect) parameters[0]);
+        return (T) ((List<SNode>) findConceptAspectCollection_id1n18fON7w20(node, (LanguageAspect) parameters[0]));
       case 2:
-        return (T) findConceptAspect_id7g4OXB0ykew(node, (LanguageAspect) parameters[0]);
+        return (T) ((SNode) findConceptAspect_id7g4OXB0ykew(node, (LanguageAspect) parameters[0]));
       case 3:
-        return (T) findConceptAspect_id7g4OXB0yku$(node, (SModel) parameters[0]);
+        return (T) ((SNode) findConceptAspect_id7g4OXB0yku$(node, (SModel) parameters[0]));
       case 4:
         findConceptAspectCollection_id7g4OXB0yl26(node, (SModel) parameters[0], (List<SNode>) parameters[1]);
         return null;
       case 5:
-        return (T) findGeneratorFragments_id5zMz2aJEI4B(node);
+        return (T) ((List<SNode>) findGeneratorFragments_id5zMz2aJEI4B(node));
       case 6:
-        return (T) findAllAspects_id6Ito2ECxcpP(node);
+        return (T) ((List<SNode>) findAllAspects_id6Ito2ECxcpP(node));
       case 7:
-        return (T) getPresentation_id280s3ZNTXNS(node);
+        return (T) ((String) getPresentation_id280s3ZNTXNS(node));
       case 8:
-        return (T) getAvailableConceptMethods_idhEwILGo(node, (SNode) parameters[0]);
+        return (T) ((List<SNode>) getAvailableConceptMethods_idhEwILGo(node, (SNode) parameters[0]));
       case 9:
-        return (T) getVirtualConceptMethods_idhEwILHM(node);
+        return (T) ((List<SNode>) getVirtualConceptMethods_idhEwILHM(node));
       case 10:
-        return (T) getNotImplementedConceptMethods_idhEwILIz(node);
+        return (T) ((List<SNode>) getNotImplementedConceptMethods_idhEwILIz(node));
       case 11:
-        return (T) findLinkDeclaration_idhEwILKz(node, (String) parameters[0]);
+        return (T) ((SNode) findLinkDeclaration_idhEwILKz(node, (String) parameters[0]));
       case 12:
-        return (T) getLinkDeclarations_idhEwILKK(node);
+        return (T) ((List<SNode>) getLinkDeclarations_idhEwILKK(node));
       case 13:
-        return (T) getReferenceLinkDeclarations_idhEwILL0(node);
+        return (T) ((List<SNode>) getReferenceLinkDeclarations_idhEwILL0(node));
       case 14:
-        return (T) getAggregationLinkDeclarations_idhEwILLp(node);
+        return (T) ((List<SNode>) getAggregationLinkDeclarations_idhEwILLp(node));
       case 15:
-        return (T) getPropertyDeclarations_idhEwILLM(node);
+        return (T) ((List<SNode>) getPropertyDeclarations_idhEwILLM(node));
       case 16:
-        return (T) findPropertyDeclaration_idhK3S4A1(node, (String) parameters[0]);
+        return (T) ((SNode) findPropertyDeclaration_idhK3S4A1(node, (String) parameters[0]));
       case 17:
-        return (T) isDefaultSubstitutable_id6spw4TQeyqh(node);
+        return (T) ((Boolean) isDefaultSubstitutable_id6spw4TQeyqh(node));
       case 18:
-        return (T) isSubconceptOf_id73yVtVlWOga(node, (SNode) parameters[0]);
+        return (T) ((Boolean) isSubconceptOf_id73yVtVlWOga(node, (SNode) parameters[0]));
       case 20:
-        return (T) getAllSuperConcepts_id2A8AB0rAWpG(node, (Boolean) parameters[0]);
+        return (T) ((Iterable<SNode>) getAllSuperConcepts_id2A8AB0rAWpG(node, ((boolean) (Boolean) parameters[0])));
       case 21:
         collectSuperConcepts_id2A8AB0rB3NH(node, (SNode) parameters[0], (Set<SNode>) parameters[1]);
         return null;
       case 22:
-        return (T) computeInHierarchy_id3CiBrVcn5fe(node, (_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>) parameters[0]);
+        return (T) ((SNode) computeInHierarchy_id3CiBrVcn5fe(node, (_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>) parameters[0]));
       case 23:
-        return (T) getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK(node);
+        return (T) ((Pair<Set<SNode>, Set<SNode>>) getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

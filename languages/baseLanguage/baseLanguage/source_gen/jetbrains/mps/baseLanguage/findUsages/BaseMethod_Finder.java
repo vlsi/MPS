@@ -82,7 +82,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
           }
         }
         for (SNode classMethod : Sequence.fromIterable(classMethods)) {
-          if (BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(classMethod, method)) {
+          if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.hasSameSignature_idhEwIB0z.invoke(classMethod, method)) {
             SetSequence.fromSet(results).addElement(classMethod);
           }
         }

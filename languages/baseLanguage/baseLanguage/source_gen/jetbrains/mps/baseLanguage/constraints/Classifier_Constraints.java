@@ -43,7 +43,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       }
       @Override
       public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-        return Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(_context.getParameterNode(), _context.getEnclosingNode());
+        return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(_context.getParameterNode(), _context.getEnclosingNode());
       }
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
@@ -66,7 +66,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "nestedName";
-        return Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invoke(node);
+        return (String) Classifier__BehaviorDescriptor.getNestedName_id7q4lzBFjvIX.invoke(node);
       }
     });
     properties.put(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, 0x116b17cd415L), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, 0x116b17cd415L), this) {

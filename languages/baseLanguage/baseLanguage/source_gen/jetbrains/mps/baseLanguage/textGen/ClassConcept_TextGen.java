@@ -24,7 +24,7 @@ public class ClassConcept_TextGen extends TextGenDescriptorBase {
     BaseLanguageTextGen.fileHeader(ctx.getPrimaryInput(), ctx);
     BaseLanguageTextGen.annotations(ctx.getPrimaryInput(), ctx);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(ctx.getPrimaryInput(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), ctx);
-    if (Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(ctx.getPrimaryInput()) && IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(ctx.getPrimaryInput())) {
+    if ((boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(ctx.getPrimaryInput()) && (boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(ctx.getPrimaryInput())) {
       tgs.append("static ");
     }
     if (SPropertyOperations.getBoolean(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {

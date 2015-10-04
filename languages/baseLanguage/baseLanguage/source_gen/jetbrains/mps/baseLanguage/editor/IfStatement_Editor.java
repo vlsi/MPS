@@ -174,7 +174,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a0a4a(EditorContext editorContext, SNode node) {
-    return !(IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
   }
   private EditorCell createCollection_eb7h0d_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -188,10 +188,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a1b4a(EditorContext editorContext, SNode node) {
-    return !(IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a2b4a(EditorContext editorContext, SNode node) {
-    return !(IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
   }
   private EditorCell createRefNode_eb7h0d_a1e0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new IfStatement_Editor.ifTrueSingleRoleHandler_eb7h0d_a1e0(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), editorContext);

@@ -49,7 +49,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
       }
       if (!(somethingReturned)) {
         Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());
-        StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(func), throwables, true);
+        StatementList__BehaviorDescriptor.collectUncaughtThrowables_id4Gt7ANIVHca.invoke(IMethodLike__BehaviorDescriptor.getBody_idi2fhZ_m.invoke(func), throwables, ((boolean) true));
         if (SetSequence.fromSet(throwables).isEmpty()) {
           String whatExpected = ((expectedRetType == null) ? "some value" : "" + expectedRetType);
           {

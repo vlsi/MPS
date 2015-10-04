@@ -21,7 +21,7 @@ public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends A
   public check_DefaultSuperConstructorThrowables_NonTypesystemRule() {
   }
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ConstructorDeclaration__BehaviorDescriptor.containsImplicitSuperConstructorCall_id6d19RW5IPof.invoke(constructorDeclaration)) {
+    if ((boolean) ConstructorDeclaration__BehaviorDescriptor.containsImplicitSuperConstructorCall_id6d19RW5IPof.invoke(constructorDeclaration)) {
       SNode superConstructor = ConstructorDeclaration__BehaviorDescriptor.getSuperDefaultConstructor_id6d19RW5J1tP.invoke(constructorDeclaration);
       if (superConstructor != null) {
         Set<SNode> throwables = SetSequence.fromSet(new HashSet<SNode>());

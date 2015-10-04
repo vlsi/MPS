@@ -55,14 +55,14 @@ public class ThisExpressionToLocal extends KeyMapImpl {
       SNode operation = SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
       if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"))) {
         SNode fieldRef = SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"));
-        if (FieldReferenceOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(fieldRef)) {
+        if ((boolean) FieldReferenceOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(fieldRef)) {
           FieldReferenceOperation__BehaviorDescriptor.convertToLocal_id4APqwMfCtHb.invoke(fieldRef);
           return;
         }
       }
       if (SNodeOperations.isInstanceOf(operation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
         SNode methodCall = SNodeOperations.cast(operation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
-        if (InstanceMethodCallOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(methodCall)) {
+        if ((boolean) InstanceMethodCallOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(methodCall)) {
           InstanceMethodCallOperation__BehaviorDescriptor.convertToLocal_id4APqwMfCtHI.invoke(methodCall);
           return;
         }

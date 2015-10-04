@@ -12,29 +12,29 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class Tokens__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> firstToken_id17WpDCYRWCz = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("firstToken").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("17WpDCYRWCz").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> lastToken_id17WpDCYLyrY = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("lastToken").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("17WpDCYLyrY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> withoutLastToken_id5ll4uk6512$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("withoutLastToken").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5ll4uk6512$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> firstToken_id17WpDCYRWCz = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("firstToken").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("17WpDCYRWCz").registry(REGISTRY).build();
+  public static final SMethod<String> lastToken_id17WpDCYLyrY = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("lastToken").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("17WpDCYLyrY").registry(REGISTRY).build();
+  public static final SMethod<String> withoutLastToken_id5ll4uk6512$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("withoutLastToken").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5ll4uk6512$").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(firstToken_id17WpDCYRWCz, lastToken_id17WpDCYLyrY, withoutLastToken_id5ll4uk6512$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String firstToken_id17WpDCYRWCz(@NotNull SNode __thisNode__) {
+  /*package*/ static String firstToken_id17WpDCYRWCz(@NotNull SNode __thisNode__) {
     if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens")) == null) {
       return null;
     }
@@ -46,7 +46,7 @@ public final class Tokens__BehaviorDescriptor extends BaseBHDescriptor {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens")).substring(0, firstDot);
     }
   }
-  private static String lastToken_id17WpDCYLyrY(@NotNull SNode __thisNode__) {
+  /*package*/ static String lastToken_id17WpDCYLyrY(@NotNull SNode __thisNode__) {
     if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens")) == null) {
       return null;
     }
@@ -58,7 +58,7 @@ public final class Tokens__BehaviorDescriptor extends BaseBHDescriptor {
       return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens")).substring(lastDot + 1);
     }
   }
-  private static String withoutLastToken_id5ll4uk6512$(@NotNull SNode __thisNode__) {
+  /*package*/ static String withoutLastToken_id5ll4uk6512$(@NotNull SNode __thisNode__) {
     if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens")) == null) {
       return null;
     }
@@ -76,30 +76,30 @@ public final class Tokens__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) firstToken_id17WpDCYRWCz(node);
+        return (T) ((String) firstToken_id17WpDCYRWCz(node));
       case 1:
-        return (T) lastToken_id17WpDCYLyrY(node);
+        return (T) ((String) lastToken_id17WpDCYLyrY(node));
       case 2:
-        return (T) withoutLastToken_id5ll4uk6512$(node);
+        return (T) ((String) withoutLastToken_id5ll4uk6512$(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

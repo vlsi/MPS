@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
@@ -28,57 +27,58 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getCellModelKind_idhHfCaJf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getCellModelKind").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHfCaJf").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getCellId_idhHbewHT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getCellId").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHbewHT").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(TemplateQueryContext.class)));
-  public static final SMethod<String> getDefaultCellId_id3VYF6qfIQs_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultCellId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("3VYF6qfIQs_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getUniqueCellIdPrefix_id7c58AbNRrel = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getUniqueCellIdPrefix").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("7c58AbNRrel").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  /*package*/ static final SMethod<String> getAbbreviation_id7c58AbNSIrP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAbbreviation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7c58AbNSIrP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<String> getFactoryMethodName_idhHfE2BD = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFactoryMethodName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHfE2BD").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(TemplateQueryContext.class)));
-  public static final SMethod<SNode> getParent_idhJF64sU = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF64sU").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isSelectable_idhJF6SX1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSelectable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF6SX1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Void> setSelectable_idi4bRWUe = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setSelectable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i4bRWUe").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Boolean.TYPE)));
-  /*package*/ static final SMethod<Color> getColor_idhPjC$St = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("hPjC$St").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<String> getStyle_id6H7j4iO1E_a = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getStyle").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6H7j4iO1E_a").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Color> getForegroundColor_idhL6TA5F = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getForegroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL6TA5F").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Color> getBackgroundColor_idhL7rNfN = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getBackgroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL7rNfN").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Color> getTextBackgroundColor_idhL7BhMP = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getTextBackgroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL7BhMP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isUnderlined_idhLmqR8u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isUnderlined").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLmqR8u").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isStrikeOut_idhNnL8J1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStrikeOut").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hNnL8J1").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> getFontSize_idhLmaQwP = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getFontSize").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLmaQwP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> getFontStyle_idhLcv3Z9 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getFontStyle").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLcv3Z9").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getOpeningTag_idhKxXtpm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningTag").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxXtpm").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getClosingTag_idhKxXx_K = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClosingTag").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxXx_K").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getOpeningText_idhKxU$w9 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxU$w9").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getClosingText_idhKxUEwj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClosingText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxUEwj").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getOpeningPrefix_idhKxW98J = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningPrefix").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxW98J").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Integer> getDefaultFontStyle_idhL_r0Mx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getDefaultFontStyle").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("hL_r0Mx").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isCellIdInitialized_idhTuDsSD = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCellIdInitialized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTuDsSD").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> getBooleanStyleValue_idi0pNf1r = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("getBooleanStyleValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pNf1r").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), Boolean.TYPE)));
-  public static final SMethod<Boolean> isNewLine_idi0pLPAc = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isNewLine").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pLPAc").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isOnNewLine_idi0pUMOG = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isOnNewLine").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pUMOG").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isIndented_idi0pN94$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isIndented").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pN94$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isNewLineChildren_idi0pNGlC = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isNewLineChildren").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pNGlC").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getParentCollectionCell_id7XYaZQUjT8u = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParentCollectionCell").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XYaZQUjT8u").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getCellModelKind_idhHfCaJf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getCellModelKind").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHfCaJf").registry(REGISTRY).build();
+  public static final SMethod<String> getCellId_idhHbewHT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getCellId").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHbewHT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(TemplateQueryContext.class, ""));
+  public static final SMethod<String> getDefaultCellId_id3VYF6qfIQs_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDefaultCellId").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("3VYF6qfIQs_").registry(REGISTRY).build();
+  public static final SMethod<String> getUniqueCellIdPrefix_id7c58AbNRrel = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getUniqueCellIdPrefix").modifiers(SModifiersImpl.create(0, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("7c58AbNRrel").registry(REGISTRY).build();
+  /*package*/ static final SMethod<String> getAbbreviation_id7c58AbNSIrP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAbbreviation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7c58AbNSIrP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getFactoryMethodName_idhHfE2BD = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFactoryMethodName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHfE2BD").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(TemplateQueryContext.class, ""));
+  public static final SMethod<SNode> getParent_idhJF64sU = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF64sU").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isSelectable_idhJF6SX1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isSelectable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF6SX1").registry(REGISTRY).build();
+  public static final SMethod<Void> setSelectable_idi4bRWUe = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setSelectable").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i4bRWUe").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
+  /*package*/ static final SMethod<Color> getColor_idhPjC$St = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("hPjC$St").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getStyle_id6H7j4iO1E_a = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getStyle").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6H7j4iO1E_a").registry(REGISTRY).build();
+  public static final SMethod<Color> getForegroundColor_idhL6TA5F = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getForegroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL6TA5F").registry(REGISTRY).build();
+  public static final SMethod<Color> getBackgroundColor_idhL7rNfN = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getBackgroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL7rNfN").registry(REGISTRY).build();
+  public static final SMethod<Color> getTextBackgroundColor_idhL7BhMP = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getTextBackgroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL7BhMP").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isUnderlined_idhLmqR8u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isUnderlined").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLmqR8u").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isStrikeOut_idhNnL8J1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStrikeOut").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hNnL8J1").registry(REGISTRY).build();
+  public static final SMethod<Integer> getFontSize_idhLmaQwP = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getFontSize").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLmaQwP").registry(REGISTRY).build();
+  public static final SMethod<Integer> getFontStyle_idhLcv3Z9 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getFontStyle").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLcv3Z9").registry(REGISTRY).build();
+  public static final SMethod<String> getOpeningTag_idhKxXtpm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningTag").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxXtpm").registry(REGISTRY).build();
+  public static final SMethod<String> getClosingTag_idhKxXx_K = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClosingTag").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxXx_K").registry(REGISTRY).build();
+  public static final SMethod<String> getOpeningText_idhKxU$w9 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxU$w9").registry(REGISTRY).build();
+  public static final SMethod<String> getClosingText_idhKxUEwj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getClosingText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxUEwj").registry(REGISTRY).build();
+  public static final SMethod<String> getOpeningPrefix_idhKxW98J = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningPrefix").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxW98J").registry(REGISTRY).build();
+  public static final SMethod<Integer> getDefaultFontStyle_idhL_r0Mx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getDefaultFontStyle").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("hL_r0Mx").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isCellIdInitialized_idhTuDsSD = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isCellIdInitialized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hTuDsSD").registry(REGISTRY).build();
+  public static final SMethod<Boolean> getBooleanStyleValue_idi0pNf1r = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("getBooleanStyleValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pNf1r").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
+  public static final SMethod<Boolean> isNewLine_idi0pLPAc = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isNewLine").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pLPAc").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isOnNewLine_idi0pUMOG = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isOnNewLine").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pUMOG").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isIndented_idi0pN94$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isIndented").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pN94$").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isNewLineChildren_idi0pNGlC = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isNewLineChildren").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0pNGlC").registry(REGISTRY).build();
+  public static final SMethod<SNode> getParentCollectionCell_id7XYaZQUjT8u = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParentCollectionCell").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XYaZQUjT8u").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCellModelKind_idhHfCaJf, getCellId_idhHbewHT, getDefaultCellId_id3VYF6qfIQs_, getUniqueCellIdPrefix_id7c58AbNRrel, getAbbreviation_id7c58AbNSIrP, getFactoryMethodName_idhHfE2BD, getParent_idhJF64sU, isSelectable_idhJF6SX1, setSelectable_idi4bRWUe, getColor_idhPjC$St, getStyle_id6H7j4iO1E_a, getForegroundColor_idhL6TA5F, getBackgroundColor_idhL7rNfN, getTextBackgroundColor_idhL7BhMP, isUnderlined_idhLmqR8u, isStrikeOut_idhNnL8J1, getFontSize_idhLmaQwP, getFontStyle_idhLcv3Z9, getOpeningTag_idhKxXtpm, getClosingTag_idhKxXx_K, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getOpeningPrefix_idhKxW98J, getDefaultFontStyle_idhL_r0Mx, isCellIdInitialized_idhTuDsSD, getBooleanStyleValue_idi0pNf1r, isNewLine_idi0pLPAc, isOnNewLine_idi0pUMOG, isIndented_idi0pN94$, isNewLineChildren_idi0pNGlC, getParentCollectionCell_id7XYaZQUjT8u);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getCellModelKind_idhHfCaJf(@NotNull SNode __thisNode__) {
+  /*package*/ static String getCellModelKind_idhHfCaJf(@NotNull SNode __thisNode__) {
     String result = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     if (result.startsWith("CellModel_")) {
       result = result.substring("CellModel_".length());
     }
     return result;
   }
-  private static String getCellId_idhHbewHT(@NotNull SNode __thisNode__, TemplateQueryContext gc) {
+  /*package*/ static String getCellId_idhHbewHT(@NotNull SNode __thisNode__, TemplateQueryContext gc) {
     if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x3c0028bb846af6c6L, "id")) != null && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x3c0028bb846af6c6L, "id")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x3c0028bb846af6c6L, "id")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
@@ -88,10 +88,10 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return gc.createUniqueName(EditorCellModel__BehaviorDescriptor.getCellModelKind_idhHfCaJf.invoke(__thisNode__) + "_", __thisNode__);
   }
-  private static String getDefaultCellId_id3VYF6qfIQs_(@NotNull SNode __thisNode__) {
+  /*package*/ static String getDefaultCellId_id3VYF6qfIQs_(@NotNull SNode __thisNode__) {
     return null;
   }
-  private static String getUniqueCellIdPrefix_id7c58AbNRrel(@NotNull SNode __thisNode__) {
+  /*package*/ static String getUniqueCellIdPrefix_id7c58AbNRrel(@NotNull SNode __thisNode__) {
     SNode containingNode = SNodeOperations.getContainingRoot(__thisNode__);
     if (SNodeOperations.isInstanceOf(containingNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
       return "";
@@ -101,7 +101,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return containingNode.getNodeId().toString();
   }
-  private static String getAbbreviation_id7c58AbNSIrP(@NotNull SNode __thisNode__, SNode editorComponent) {
+  /*package*/ static String getAbbreviation_id7c58AbNSIrP(@NotNull SNode __thisNode__, SNode editorComponent) {
     String name = SPropertyOperations.getString(editorComponent, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < name.length(); i++) {
@@ -113,20 +113,20 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return sb.toString();
   }
-  private static String getFactoryMethodName_idhHfE2BD(@NotNull SNode __thisNode__, TemplateQueryContext cg) {
+  /*package*/ static String getFactoryMethodName_idhHfE2BD(@NotNull SNode __thisNode__, TemplateQueryContext cg) {
     return cg.createUniqueName("create" + EditorCellModel__BehaviorDescriptor.getCellModelKind_idhHfCaJf.invoke(__thisNode__) + "_", __thisNode__);
   }
-  private static SNode getParent_idhJF64sU(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getParent_idhJF64sU(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, 0x132a500f473d9055L, "parentStyleClass"));
   }
-  private static Boolean isSelectable_idhJF6SX1(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isSelectable_idhJF6SX1(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
     if ((firstItem == null)) {
       return true;
     }
     return SPropertyOperations.getBoolean(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"));
   }
-  private static void setSelectable_idi4bRWUe(@NotNull SNode __thisNode__, boolean newSelectable) {
+  /*package*/ static void setSelectable_idi4bRWUe(@NotNull SNode __thisNode__, boolean newSelectable) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"));
     if ((firstItem == null)) {
       firstItem = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem")));
@@ -134,12 +134,12 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     }
     SPropertyOperations.set(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"), "" + (newSelectable));
   }
-  private static Color getColor_idhPjC$St(@NotNull SNode __thisNode__, SNode firstItem) {
+  /*package*/ static Color getColor_idhPjC$St(@NotNull SNode __thisNode__, SNode firstItem) {
     if ((firstItem == null)) {
       return null;
     }
     if ((SLinkOperations.getTarget(firstItem, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2d5fabL, "query")) != null)) {
-      if (!(IQueryFunction_Color__BehaviorDescriptor.isFunction_idhPjjBbV.invoke(SLinkOperations.getTarget(firstItem, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2d5fabL, "query"))))) {
+      if (!((boolean) IQueryFunction_Color__BehaviorDescriptor.isFunction_idhPjjBbV.invoke(SLinkOperations.getTarget(firstItem, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2d5fabL, "query"))))) {
         try {
           return new Color(Integer.parseInt(IQueryFunction_Color__BehaviorDescriptor.getRGBValue_idhPj_Kt2.invoke(SLinkOperations.getTarget(firstItem, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2d5fabL, "query"))), 16));
         } catch (NumberFormatException nfe) {
@@ -159,7 +159,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
       return null;
     }
   }
-  private static String getStyle_id6H7j4iO1E_a(@NotNull SNode __thisNode__) {
+  /*package*/ static String getStyle_id6H7j4iO1E_a(@NotNull SNode __thisNode__) {
     // TODO: apply seted style to cell in editor 
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem"));
     if (item == null) {
@@ -167,61 +167,61 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(item, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68c707bf7L, 0x399cb6c68c747ad3L, "key")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
   }
-  private static Color getForegroundColor_idhL6TA5F(@NotNull SNode __thisNode__) {
+  /*package*/ static Color getForegroundColor_idhL6TA5F(@NotNull SNode __thisNode__) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"));
     return EditorCellModel__BehaviorDescriptor.getColor_idhPjC$St.invoke(__thisNode__, item);
   }
-  private static Color getBackgroundColor_idhL7rNfN(@NotNull SNode __thisNode__) {
+  /*package*/ static Color getBackgroundColor_idhL7rNfN(@NotNull SNode __thisNode__) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b3924ccL, "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b3924ccL, "jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem"));
     return EditorCellModel__BehaviorDescriptor.getColor_idhPjC$St.invoke(__thisNode__, item);
   }
-  private static Color getTextBackgroundColor_idhL7BhMP(@NotNull SNode __thisNode__) {
+  /*package*/ static Color getTextBackgroundColor_idhL7BhMP(@NotNull SNode __thisNode__) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"));
     return EditorCellModel__BehaviorDescriptor.getColor_idhPjC$St.invoke(__thisNode__, item);
   }
-  private static Boolean isUnderlined_idhLmqR8u(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isUnderlined_idhLmqR8u(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, "jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem"));
     if ((firstItem == null)) {
       return false;
     }
     return SPropertyOperations.hasValue(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd837d7L, 0x11abae334c9L, "underlined"), "2", "0");
   }
-  private static Boolean isStrikeOut_idhNnL8J1(@NotNull SNode __thisNode__) {
-    return EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet").getDeclarationNode(), false);
+  /*package*/ static boolean isStrikeOut_idhNnL8J1(@NotNull SNode __thisNode__) {
+    return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet").getDeclarationNode(), ((boolean) false)));
   }
-  private static Integer getFontSize_idhLmaQwP(@NotNull SNode __thisNode__) {
+  /*package*/ static int getFontSize_idhLmaQwP(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"));
     if ((firstItem == null) || !(firstItem.hasProperty("value"))) {
       return EditorSettings.getInstance().getDefaultEditorFont().getSize();
     }
     return SPropertyOperations.getInteger(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, 0x11c55be37a1L, "value"));
   }
-  private static Integer getFontStyle_idhLcv3Z9(@NotNull SNode __thisNode__) {
+  /*package*/ static int getFontStyle_idhLcv3Z9(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem").getDeclarationNode())).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"));
     if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN") == null || SPropertyOperations.hasValue(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "QUERY", "PLAIN")) {
-      return EditorCellModel__BehaviorDescriptor.getDefaultFontStyle_idhL_r0Mx.invoke(__thisNode__);
+      return ((int) EditorCellModel__BehaviorDescriptor.getDefaultFontStyle_idhL_r0Mx.invoke(__thisNode__));
     }
     Class<MPSFonts> classFonts = MPSFonts.class;
     try {
       return (Integer) classFonts.getField(SPropertyOperations.getString_def(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN")).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
-      return EditorCellModel__BehaviorDescriptor.getDefaultFontStyle_idhL_r0Mx.invoke(__thisNode__);
+      return ((int) EditorCellModel__BehaviorDescriptor.getDefaultFontStyle_idhL_r0Mx.invoke(__thisNode__));
     }
   }
-  private static String getOpeningTag_idhKxXtpm(@NotNull SNode __thisNode__) {
+  /*package*/ static String getOpeningTag_idhKxXtpm(@NotNull SNode __thisNode__) {
     return EditorCellModel__BehaviorDescriptor.getOpeningPrefix_idhKxW98J.invoke(__thisNode__) + EditorCellModel__BehaviorDescriptor.getOpeningText_idhKxU$w9.invoke(__thisNode__);
   }
-  private static String getClosingTag_idhKxXx_K(@NotNull SNode __thisNode__) {
+  /*package*/ static String getClosingTag_idhKxXx_K(@NotNull SNode __thisNode__) {
     return EditorCellModel__BehaviorDescriptor.getClosingText_idhKxUEwj.invoke(__thisNode__);
   }
-  private static String getOpeningText_idhKxU$w9(@NotNull SNode __thisNode__) {
+  /*package*/ static String getOpeningText_idhKxU$w9(@NotNull SNode __thisNode__) {
     return "";
   }
-  private static String getClosingText_idhKxUEwj(@NotNull SNode __thisNode__) {
+  /*package*/ static String getClosingText_idhKxUEwj(@NotNull SNode __thisNode__) {
     return "";
   }
-  private static String getOpeningPrefix_idhKxW98J(@NotNull SNode __thisNode__) {
+  /*package*/ static String getOpeningPrefix_idhKxW98J(@NotNull SNode __thisNode__) {
     String result = "";
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x10a19696199L, "renderingCondition")) != null)) {
       result += "?";
@@ -247,32 +247,32 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return result;
   }
-  private static Integer getDefaultFontStyle_idhL_r0Mx(@NotNull SNode __thisNode__) {
+  /*package*/ static int getDefaultFontStyle_idhL_r0Mx(@NotNull SNode __thisNode__) {
     return MPSFonts.PLAIN;
   }
-  private static Boolean isCellIdInitialized_idhTuDsSD(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isCellIdInitialized_idhTuDsSD(@NotNull SNode __thisNode__) {
     return false;
   }
-  private static Boolean getBooleanStyleValue_idi0pNf1r(@NotNull SNode __thisNode__, SNode styleItem, boolean defaultValue) {
+  /*package*/ static boolean getBooleanStyleValue_idi0pNf1r(@NotNull SNode __thisNode__, SNode styleItem, boolean defaultValue) {
     SNode item = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, styleItem)).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"));
     if ((item == null)) {
       return defaultValue;
     }
     return SPropertyOperations.getBoolean(item, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x1143bd161dbL, "flag"));
   }
-  private static Boolean isNewLine_idi0pLPAc(@NotNull SNode __thisNode__) {
-    return EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem").getDeclarationNode(), false);
+  /*package*/ static boolean isNewLine_idi0pLPAc(@NotNull SNode __thisNode__) {
+    return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem").getDeclarationNode(), ((boolean) false)));
   }
-  private static Boolean isOnNewLine_idi0pUMOG(@NotNull SNode __thisNode__) {
-    return EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem").getDeclarationNode(), false);
+  /*package*/ static boolean isOnNewLine_idi0pUMOG(@NotNull SNode __thisNode__) {
+    return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem").getDeclarationNode(), ((boolean) false)));
   }
-  private static Boolean isIndented_idi0pN94$(@NotNull SNode __thisNode__) {
-    return EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem").getDeclarationNode(), false);
+  /*package*/ static boolean isIndented_idi0pN94$(@NotNull SNode __thisNode__) {
+    return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem").getDeclarationNode(), ((boolean) false)));
   }
-  private static Boolean isNewLineChildren_idi0pNGlC(@NotNull SNode __thisNode__) {
-    return EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem").getDeclarationNode(), false);
+  /*package*/ static boolean isNewLineChildren_idi0pNGlC(@NotNull SNode __thisNode__) {
+    return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem").getDeclarationNode(), ((boolean) false)));
   }
-  private static SNode getParentCollectionCell_id7XYaZQUjT8u(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getParentCollectionCell_id7XYaZQUjT8u(@NotNull SNode __thisNode__) {
     return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"));
   }
 
@@ -281,87 +281,87 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getCellModelKind_idhHfCaJf(node);
+        return (T) ((String) getCellModelKind_idhHfCaJf(node));
       case 1:
-        return (T) getCellId_idhHbewHT(node, (TemplateQueryContext) parameters[0]);
+        return (T) ((String) getCellId_idhHbewHT(node, (TemplateQueryContext) parameters[0]));
       case 2:
-        return (T) getDefaultCellId_id3VYF6qfIQs_(node);
+        return (T) ((String) getDefaultCellId_id3VYF6qfIQs_(node));
       case 3:
-        return (T) getUniqueCellIdPrefix_id7c58AbNRrel(node);
+        return (T) ((String) getUniqueCellIdPrefix_id7c58AbNRrel(node));
       case 4:
-        return (T) getAbbreviation_id7c58AbNSIrP(node, (SNode) parameters[0]);
+        return (T) ((String) getAbbreviation_id7c58AbNSIrP(node, (SNode) parameters[0]));
       case 5:
-        return (T) getFactoryMethodName_idhHfE2BD(node, (TemplateQueryContext) parameters[0]);
+        return (T) ((String) getFactoryMethodName_idhHfE2BD(node, (TemplateQueryContext) parameters[0]));
       case 6:
-        return (T) getParent_idhJF64sU(node);
+        return (T) ((SNode) getParent_idhJF64sU(node));
       case 7:
-        return (T) isSelectable_idhJF6SX1(node);
+        return (T) ((Boolean) isSelectable_idhJF6SX1(node));
       case 8:
-        setSelectable_idi4bRWUe(node, (Boolean) parameters[0]);
+        setSelectable_idi4bRWUe(node, ((boolean) (Boolean) parameters[0]));
         return null;
       case 9:
-        return (T) getColor_idhPjC$St(node, (SNode) parameters[0]);
+        return (T) ((Color) getColor_idhPjC$St(node, (SNode) parameters[0]));
       case 10:
-        return (T) getStyle_id6H7j4iO1E_a(node);
+        return (T) ((String) getStyle_id6H7j4iO1E_a(node));
       case 11:
-        return (T) getForegroundColor_idhL6TA5F(node);
+        return (T) ((Color) getForegroundColor_idhL6TA5F(node));
       case 12:
-        return (T) getBackgroundColor_idhL7rNfN(node);
+        return (T) ((Color) getBackgroundColor_idhL7rNfN(node));
       case 13:
-        return (T) getTextBackgroundColor_idhL7BhMP(node);
+        return (T) ((Color) getTextBackgroundColor_idhL7BhMP(node));
       case 14:
-        return (T) isUnderlined_idhLmqR8u(node);
+        return (T) ((Boolean) isUnderlined_idhLmqR8u(node));
       case 15:
-        return (T) isStrikeOut_idhNnL8J1(node);
+        return (T) ((Boolean) isStrikeOut_idhNnL8J1(node));
       case 16:
-        return (T) getFontSize_idhLmaQwP(node);
+        return (T) ((Integer) getFontSize_idhLmaQwP(node));
       case 17:
-        return (T) getFontStyle_idhLcv3Z9(node);
+        return (T) ((Integer) getFontStyle_idhLcv3Z9(node));
       case 18:
-        return (T) getOpeningTag_idhKxXtpm(node);
+        return (T) ((String) getOpeningTag_idhKxXtpm(node));
       case 19:
-        return (T) getClosingTag_idhKxXx_K(node);
+        return (T) ((String) getClosingTag_idhKxXx_K(node));
       case 20:
-        return (T) getOpeningText_idhKxU$w9(node);
+        return (T) ((String) getOpeningText_idhKxU$w9(node));
       case 21:
-        return (T) getClosingText_idhKxUEwj(node);
+        return (T) ((String) getClosingText_idhKxUEwj(node));
       case 22:
-        return (T) getOpeningPrefix_idhKxW98J(node);
+        return (T) ((String) getOpeningPrefix_idhKxW98J(node));
       case 23:
-        return (T) getDefaultFontStyle_idhL_r0Mx(node);
+        return (T) ((Integer) getDefaultFontStyle_idhL_r0Mx(node));
       case 24:
-        return (T) isCellIdInitialized_idhTuDsSD(node);
+        return (T) ((Boolean) isCellIdInitialized_idhTuDsSD(node));
       case 25:
-        return (T) getBooleanStyleValue_idi0pNf1r(node, (SNode) parameters[0], (Boolean) parameters[1]);
+        return (T) ((Boolean) getBooleanStyleValue_idi0pNf1r(node, (SNode) parameters[0], ((boolean) (Boolean) parameters[1])));
       case 26:
-        return (T) isNewLine_idi0pLPAc(node);
+        return (T) ((Boolean) isNewLine_idi0pLPAc(node));
       case 27:
-        return (T) isOnNewLine_idi0pUMOG(node);
+        return (T) ((Boolean) isOnNewLine_idi0pUMOG(node));
       case 28:
-        return (T) isIndented_idi0pN94$(node);
+        return (T) ((Boolean) isIndented_idi0pN94$(node));
       case 29:
-        return (T) isNewLineChildren_idi0pNGlC(node);
+        return (T) ((Boolean) isNewLineChildren_idi0pNGlC(node));
       case 30:
-        return (T) getParentCollectionCell_id7XYaZQUjT8u(node);
+        return (T) ((SNode) getParentCollectionCell_id7XYaZQUjT8u(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

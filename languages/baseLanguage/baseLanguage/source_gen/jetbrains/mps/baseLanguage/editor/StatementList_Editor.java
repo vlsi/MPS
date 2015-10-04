@@ -42,7 +42,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_u338ov_a1a(EditorContext editorContext, SNode node) {
-    return !(StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(node));
+    return !((boolean) StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(node));
   }
   private EditorCell createRefNodeList_u338ov_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new StatementList_Editor.statementListHandler_u338ov_a0(node, "statement", editorContext);
@@ -103,6 +103,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean _StyleParameter_QueryFunction_u338ov_a1a0(EditorContext editorContext, SNode node) {
-    return !(StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(node));
+    return !((boolean) StatementList__BehaviorDescriptor.isCompact_idi0zxBt8.invoke(node));
   }
 }

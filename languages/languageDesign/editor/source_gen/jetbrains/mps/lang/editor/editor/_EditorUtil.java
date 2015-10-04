@@ -8,7 +8,7 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
 
 public class _EditorUtil {
   public static Color grayIfNotSelectable(SNode cellModel) {
-    if (!(EditorCellModel__BehaviorDescriptor.isSelectable_idhJF6SX1.invoke(cellModel))) {
+    if (!((boolean) EditorCellModel__BehaviorDescriptor.isSelectable_idhJF6SX1.invoke(cellModel))) {
       return new Color(230, 230, 230);
     }
     return null;

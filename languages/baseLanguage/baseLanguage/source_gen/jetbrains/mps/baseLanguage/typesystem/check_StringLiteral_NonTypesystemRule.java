@@ -18,7 +18,7 @@ public class check_StringLiteral_NonTypesystemRule extends AbstractNonTypesystem
   public check_StringLiteral_NonTypesystemRule() {
   }
   public void applyRule(final SNode stringLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(StringLiteral__BehaviorDescriptor.isCorrect_idhLEXzwL.invoke(stringLiteral))) {
+    if (!((boolean) StringLiteral__BehaviorDescriptor.isCorrect_idhLEXzwL.invoke(stringLiteral))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(stringLiteral, "Incorrect string literal", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1221566486911", null, errorTarget);

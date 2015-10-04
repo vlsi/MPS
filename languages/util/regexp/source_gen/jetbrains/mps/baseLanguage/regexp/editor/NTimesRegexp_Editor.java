@@ -58,7 +58,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_yzyesl_a0a(SNode node, EditorContext editorContext) {
-    return UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
+    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createRefNode_yzyesl_b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new NTimesRegexp_Editor.regexpSingleRoleHandler_yzyesl_b0(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"), editorContext);
@@ -104,7 +104,7 @@ public class NTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_yzyesl_a2a(SNode node, EditorContext editorContext) {
-    return UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
+    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createConstant_yzyesl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");

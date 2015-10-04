@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -22,32 +21,33 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class StyleAttributeDeclaration__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getModuleName_id3t4KfBFPS7O = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getModuleName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3t4KfBFPS7O").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getDefaultValue_id6EcLR7UbKOp = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDefaultValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EcLR7UbKOp").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getType_id6EcLR7UbLta = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EcLR7UbLta").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getClassifierType_id5eGiGGHenb_ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassifierType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5eGiGGHenb_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getModuleName_id3t4KfBFPS7O = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getModuleName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3t4KfBFPS7O").registry(REGISTRY).build();
+  public static final SMethod<SNode> getDefaultValue_id6EcLR7UbKOp = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getDefaultValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EcLR7UbKOp").registry(REGISTRY).build();
+  public static final SMethod<SNode> getType_id6EcLR7UbLta = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6EcLR7UbLta").registry(REGISTRY).build();
+  public static final SMethod<SNode> getClassifierType_id5eGiGGHenb_ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getClassifierType").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5eGiGGHenb_").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getModuleName_id3t4KfBFPS7O, getDefaultValue_id6EcLR7UbKOp, getType_id6EcLR7UbLta, getClassifierType_id5eGiGGHenb_);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getModuleName_id3t4KfBFPS7O(@NotNull SNode __thisNode__) {
+  /*package*/ static String getModuleName_id3t4KfBFPS7O(@NotNull SNode __thisNode__) {
     return SNodeOperations.getModel(__thisNode__).getModule().getModuleName();
   }
-  private static SNode getDefaultValue_id6EcLR7UbKOp(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getDefaultValue_id6EcLR7UbKOp(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, 0x3744c0f9ea545afbL, "defaultValue"));
   }
-  private static SNode getType_id6EcLR7UbLta(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getType_id6EcLR7UbLta(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, 0x3744c0f9ea53826eL, "valueType"));
   }
-  private static SNode getClassifierType_id5eGiGGHenb_(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getClassifierType_id5eGiGGHenb_(@NotNull SNode __thisNode__) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(StyleAttributeDeclaration__BehaviorDescriptor.getType_id6EcLR7UbLta.invoke(__thisNode__), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")), true);
   }
 
@@ -56,32 +56,32 @@ public final class StyleAttributeDeclaration__BehaviorDescriptor extends BaseBHD
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getModuleName_id3t4KfBFPS7O(node);
+        return (T) ((String) getModuleName_id3t4KfBFPS7O(node));
       case 1:
-        return (T) getDefaultValue_id6EcLR7UbKOp(node);
+        return (T) ((SNode) getDefaultValue_id6EcLR7UbKOp(node));
       case 2:
-        return (T) getType_id6EcLR7UbLta(node);
+        return (T) ((SNode) getType_id6EcLR7UbLta(node));
       case 3:
-        return (T) getClassifierType_id5eGiGGHenb_(node);
+        return (T) ((SNode) getClassifierType_id5eGiGGHenb_(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

@@ -24,6 +24,6 @@ public class QueriesGenerated {
     return "_context";
   }
   public static boolean ifMacro_Condition_1199879109301(final IfMacroContext _context) {
-    return !(ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
+    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
   }
 }

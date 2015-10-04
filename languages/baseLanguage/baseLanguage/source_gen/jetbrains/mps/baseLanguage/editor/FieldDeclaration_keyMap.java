@@ -61,7 +61,7 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
     }
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
-      return (classConcept != null) && !(FieldDeclaration__BehaviorDescriptor.hasGetter_idhEwIcYw.invoke(node, classConcept));
+      return (classConcept != null) && !((boolean) FieldDeclaration__BehaviorDescriptor.hasGetter_idhEwIcYw.invoke(node, classConcept));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode g;
@@ -133,7 +133,7 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
     }
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false);
-      return (classConcept != null) && !(FieldDeclaration__BehaviorDescriptor.hasSetter_idhEwIcZv.invoke(node, classConcept));
+      return (classConcept != null) && !((boolean) FieldDeclaration__BehaviorDescriptor.hasSetter_idhEwIcZv.invoke(node, classConcept));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode s;

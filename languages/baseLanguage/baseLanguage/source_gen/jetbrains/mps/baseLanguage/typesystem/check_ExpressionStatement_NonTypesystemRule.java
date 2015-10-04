@@ -20,7 +20,7 @@ public class check_ExpressionStatement_NonTypesystemRule extends AbstractNonType
   public check_ExpressionStatement_NonTypesystemRule() {
   }
   public void applyRule(final SNode expressionStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Expression__BehaviorDescriptor.isLegalAsStatement_idi26MfYG.invoke(SLinkOperations.getTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))) || ExpressionStatement__BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(expressionStatement))) {
+    if (!((boolean) Expression__BehaviorDescriptor.isLegalAsStatement_idi26MfYG.invoke(SLinkOperations.getTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))) || (boolean) ExpressionStatement__BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(expressionStatement))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expressionStatement, "Not a statement", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239212949442", null, errorTarget);
     }

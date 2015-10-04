@@ -32,7 +32,7 @@ public final class H__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static Object foo6_id186XXh$CxOf(@NotNull SNode __thisNode__) {
-    return D__BehaviorDescriptor.foo6_id186XXh$CxOf.invokeSpecial(__thisNode__);
+    return ((Object) D__BehaviorDescriptor.foo6_id186XXh$CxOf.invokeSpecial(__thisNode__));
   }
 
   /*package*/ H__BehaviorDescriptor() {

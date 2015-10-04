@@ -33,10 +33,10 @@ public final class J__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String foo_idyOqIWcnDrn(@NotNull SNode __thisNode__) {
-    return I2__BehaviorDescriptor.foo_idyOqIWcnDrn.invokeSpecial(__thisNode__);
+    return ((String) I2__BehaviorDescriptor.foo_idyOqIWcnDrn.invokeSpecial(__thisNode__));
   }
   /*package*/ static String bar_id43RsG_ymtGN(@NotNull SNode __thisNode__) {
-    return I__BehaviorDescriptor.bar_id43RsG_ymtGN.invokeSpecial(__thisNode__);
+    return ((String) I__BehaviorDescriptor.bar_id43RsG_ymtGN.invokeSpecial(__thisNode__));
   }
 
   /*package*/ J__BehaviorDescriptor() {

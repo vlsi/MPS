@@ -25,7 +25,7 @@ public class check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesyste
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(validator, "Validator function is not used when no search scope defined", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "2990203945683059246", null, errorTarget);
       }
-    } else if (!(ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isNodeSequenceReturned_id2_ZlElkqf_i.invoke(factory))) {
+    } else if (!((boolean) ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor.isNodeSequenceReturned_id2_ZlElkqf_i.invoke(factory))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(validator, "Validator function is not used when ISearchScope interface returned as search scope", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "522233044824080428", null, errorTarget);

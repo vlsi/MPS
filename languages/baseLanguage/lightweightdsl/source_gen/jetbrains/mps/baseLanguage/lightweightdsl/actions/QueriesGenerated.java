@@ -118,7 +118,7 @@ public class QueriesGenerated {
                 return ((SNode) DSLClassMember__BehaviorDescriptor.create_id7ay_HjIOVVe.invoke((item)));
               }
               public String getMatchingText(String pattern) {
-                return AbstractConceptDeclaration__BehaviorDescriptor.getPresentation_id280s3ZNTXNS.invoke(SLinkOperations.getTarget((item), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
+                return (String) AbstractConceptDeclaration__BehaviorDescriptor.getPresentation_id280s3ZNTXNS.invoke(SLinkOperations.getTarget((item), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
