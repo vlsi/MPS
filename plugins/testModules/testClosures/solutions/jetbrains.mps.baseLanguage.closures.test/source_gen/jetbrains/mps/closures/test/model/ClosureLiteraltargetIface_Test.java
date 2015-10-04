@@ -49,7 +49,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_d9e2q8_c0a3a1());
     }
     public TemplateQueryContext getContext() {
-      return (TemplateQueryContext) new MockTemplateQueryContext();
+      return (TemplateQueryContext) ((TemplateQueryContext) new MockTemplateQueryContext());
     }
     public void assertLiteralTarget(TemplateQueryContext gencontext, SNode literal, SNode expected) {
       SNode target = (SNode) Values.LITERAL_TARGET.get(gencontext, literal);
