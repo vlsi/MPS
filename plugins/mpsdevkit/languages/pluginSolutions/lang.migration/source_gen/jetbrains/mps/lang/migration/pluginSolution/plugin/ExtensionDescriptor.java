@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.migration.pluginSolution.MoveNodesContributor")};
-  private Extension[] extensions = new Extension[]{new LoggableMigrationStepBuilder.LoggableMigrationStepBuilder_extension(), new LocalMigrationStepBuilder.LocalMigrationStepBuilder_extension(), new MoveConceptContributor.MoveConceptContributor_extension()};
+  private Extension[] extensions = new Extension[]{new LoggableMigrationStepBuilder.LoggableMigrationStepBuilder_extension(), new LocalReferencesMigrationStepBuilder.LocalMigrationStepBuilder_extension(), new LocalInstancesMigrationStepBuilder.LocalInstancesMigrationStepBuilder_extension(), new MoveConceptContributor.MoveConceptContributor_extension()};
   public ExtensionDescriptor() {
   }
   @Override

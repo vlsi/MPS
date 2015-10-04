@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.Iterator;
 
-public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
+public class LocalReferencesMigrationStepBuilder implements MoveRefactoringContributor {
   private SearchScope mySearchScope;
   private SRepository myRepository;
   private List<MoveNodePart> myParts;
@@ -37,14 +37,14 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
     public MoveRefactoringContributor.MoveNodesBuilderFactory get() {
       return new MoveRefactoringContributor.MoveNodesBuilderFactory() {
         public MoveRefactoringContributor createContributor(MoveContext context) {
-          return new LocalMigrationStepBuilder(context.getSearchScope());
+          return new LocalReferencesMigrationStepBuilder(context.getSearchScope());
         }
       };
     }
   }
 
 
-  public LocalMigrationStepBuilder(SearchScope searchScope) {
+  public LocalReferencesMigrationStepBuilder(SearchScope searchScope) {
     mySearchScope = searchScope;
   }
 
@@ -63,7 +63,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       myRepository = Sequence.fromIterable(seq).first();
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SRepository>() {
         public boolean accept(SRepository it) {
-          return eq_f4ilh2_a0a0a0a0a0a2a1a41(it, myRepository);
+          return eq_t9enxm_a0a0a0a0a0a2a1a41(it, myRepository);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same repository.");
@@ -111,7 +111,7 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       });
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SRepository>() {
         public boolean accept(SRepository it) {
-          return eq_f4ilh2_a0a0a0a0a0a1a2a61(it, myRepository);
+          return eq_t9enxm_a0a0a0a0a0a1a2a61(it, myRepository);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same repository.");
@@ -162,10 +162,10 @@ public class LocalMigrationStepBuilder implements MoveRefactoringContributor {
       }
     }
   }
-  private static boolean eq_f4ilh2_a0a0a0a0a0a2a1a41(Object a, Object b) {
+  private static boolean eq_t9enxm_a0a0a0a0a0a2a1a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_f4ilh2_a0a0a0a0a0a1a2a61(Object a, Object b) {
+  private static boolean eq_t9enxm_a0a0a0a0a0a1a2a61(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

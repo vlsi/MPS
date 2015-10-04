@@ -6,10 +6,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public interface RefactoringPart {
   public Iterable<SNodeReference> getAffectedNodes(SearchScope searchScope, SRepository repository);
   public void execute(SModule module);
-  public void execute(Iterable<SNode> nodes);
 }

@@ -17,11 +17,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -73,14 +75,9 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
         throw new IllegalArgumentException("All nodes should be from the same module.");
       }
     }
-    for (final SNode from : ListSequence.fromList(nodes)) {
-      final SNode moveNodeItem = createMoveNode_t528rj_a0a0d0i(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(from)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(null), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")));
+    for (SNode from : ListSequence.fromList(nodes)) {
+      SNode moveNodeItem = createMoveNode_t528rj_a0a0d0i(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(from)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(null), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")));
       ListSequence.fromList(myMoveNodeItems).addElement(moveNodeItem);
-      Sequence.fromIterable(new ExtensionPoint<MoveNodesContributor>("jetbrains.mps.lang.migration.pluginSolution.MoveNodesContributor").getObjects()).visitAll(new IVisitor<MoveNodesContributor>() {
-        public void visit(MoveNodesContributor it) {
-          it.adjustMoveNodesItem(moveNodeItem, SNodeOperations.getModel(from).getModule().getRepository());
-        }
-      });
     }
   }
   public SearchResults<SNode> getAffectedNodes() {
@@ -113,11 +110,18 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       Iterator<SNode> to_it = ListSequence.fromList(nodes).iterator();
       Iterator<SNode> moveNodeItem_it = ListSequence.fromList(myMoveNodeItems).iterator();
       SNode to_var;
-      SNode moveNodeItem_var;
+      final Wrappers._T<SNode> moveNodeItem_var = new Wrappers._T<SNode>();
       while (to_it.hasNext() && moveNodeItem_it.hasNext()) {
         to_var = to_it.next();
-        moveNodeItem_var = moveNodeItem_it.next();
-        SLinkOperations.setTarget(moveNodeItem_var, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"), NodeReferenceUtil.makeReflection(to_var));
+        moveNodeItem_var.value = moveNodeItem_it.next();
+        SLinkOperations.setTarget(moveNodeItem_var.value, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"), NodeReferenceUtil.makeReflection(to_var));
+
+
+        Sequence.fromIterable(new ExtensionPoint<MoveNodesContributor>("jetbrains.mps.lang.migration.pluginSolution.MoveNodesContributor").getObjects()).visitAll(new IVisitor<MoveNodesContributor>() {
+          public void visit(MoveNodesContributor it) {
+            ListSequence.fromList(SLinkOperations.getChildren(moveNodeItem_var.value, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x2b3f57492c165c59L, "specialization"))).addSequence(Sequence.fromIterable(it.getMigrationSpecializations(AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(SLinkOperations.getTarget(moveNodeItem_var.value, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), mySourceModule.getRepository()))));
+          }
+        });
       }
     }
   }

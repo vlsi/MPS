@@ -24,14 +24,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
@@ -77,8 +79,10 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
   public void apply(final MPSProject project, final List<SNode> nodesToMove) {
 
     final Wrappers._T<SModel> currentModel = new Wrappers._T<SModel>();
+    final Wrappers._T<SContainmentLink> role = new Wrappers._T<SContainmentLink>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        role.value = ListSequence.fromList(nodesToMove).first().getContainmentLink();
         currentModel.value = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
       }
     });
@@ -99,7 +103,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             return;
           }
         }
-        if (!(newLocation.isValid(project, nodesToMove))) {
+        if (!(newLocation.isValid(project.getRepository(), nodesToMove, role.value))) {
           return;
         }
 
@@ -128,9 +132,20 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         }
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
           public void invoke(Set<SNode> included) {
-            newLocation.insertNodes(nodesToMove);
+            final Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+            List<SNode> copied = CopyUtil.copyAndPreserveId(nodesToMove, copyMap);
+            ListSequence.fromList(nodesToMove).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode it) {
+                SNodeOperations.detachNode(it);
+              }
+            });
+            newLocation.insertNodes(copied, role.value);
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
-              builder.isMoved(nodesToMoveWithDescendants);
+              builder.isMoved(ListSequence.fromList(nodesToMoveWithDescendants).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return MapSequence.fromMap(copyMap).get(it);
+                }
+              }).toListSequence());
             }
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               builder.commit();

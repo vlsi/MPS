@@ -83,7 +83,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" file="RefactoringPart.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
