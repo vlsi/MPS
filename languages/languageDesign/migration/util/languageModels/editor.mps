@@ -8,6 +8,7 @@
   <imports>
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" implicit="true" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" implicit="true" />
     <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" implicit="true" />
@@ -300,6 +301,9 @@
       <node concept="3F0ifn" id="4uVwhQyAgga" role="3EZMnx">
         <property role="3F0ifm" value="refactoring step" />
       </node>
+      <node concept="3F0A7n" id="2mdzW6dQMMF" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
       <node concept="3F0ifn" id="4uVwhQyAggh" role="3EZMnx">
         <property role="3F0ifm" value="from version" />
       </node>
@@ -315,6 +319,31 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3EZMnI" id="2mdzW6dU2WN" role="3EZMnx">
+        <node concept="VPM3Z" id="2mdzW6dU2WR" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="2mdzW6dU2WT" role="3EZMnx">
+          <property role="3F0ifm" value="execute after" />
+          <node concept="ljvvj" id="2mdzW6dU2WV" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="2mdzW6dU2Uz" role="3EZMnx">
+          <ref role="1NtTu8" to="gqi5:4uVwhQyPCRg" />
+          <node concept="l2Vlx" id="2mdzW6dU2U_" role="2czzBx" />
+          <node concept="ljvvj" id="2mdzW6dU2V3" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="2mdzW6dU2Vc" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="2mdzW6dU2WW" role="2iSdaV" />
+        <node concept="lj46D" id="2mdzW6dU2Xm" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="3F2HdR" id="4uVwhQyAggs" role="3EZMnx">
         <ref role="1NtTu8" to="gqi5:6szrkDodHvN" />
         <node concept="l2Vlx" id="4uVwhQyAggt" role="2czzBx" />
@@ -324,7 +353,7 @@
         <node concept="lj46D" id="4uVwhQyAggv" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
-        <node concept="ljvvj" id="4uVwhQyAggw" role="3F10Kt">
+        <node concept="ljvvj" id="2mdzW6dU2UZ" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
@@ -332,6 +361,19 @@
         <property role="3F0ifm" value="}" />
         <node concept="3mYdg7" id="4uVwhQyAggy" role="3F10Kt">
           <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2mdzW6dUkfT">
+    <property role="3GE5qa" value="refactoring" />
+    <ref role="1XX52x" to="gqi5:4uVwhQyPCRd" resolve="RefactoringOrderDependency" />
+    <node concept="1iCGBv" id="2mdzW6dUkfV" role="2wV5jI">
+      <ref role="1NtTu8" to="gqi5:4uVwhQyPCRe" />
+      <node concept="1sVBvm" id="2mdzW6dUkfX" role="1sWHZn">
+        <node concept="3F0A7n" id="2mdzW6dUkg4" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
     </node>

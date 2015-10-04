@@ -107,7 +107,6 @@ public class MoveConcepts extends MoveNodesDefault {
         targetModel.value = targetModelRef.resolve(project.getRepository());
         targetLanguage.value = (Language) targetModel.value.getModule();
         aspectsMap.value = MoveConceptUtil.getAspectNodes(sourceLanguage, conceptsToMove);
-
       }
     });
 
