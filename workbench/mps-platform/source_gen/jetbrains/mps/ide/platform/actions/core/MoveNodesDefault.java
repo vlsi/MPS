@@ -27,8 +27,9 @@ import java.util.Set;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -133,12 +134,32 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
           public void invoke(Set<SNode> included) {
             final Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-            List<SNode> copied = CopyUtil.copyAndPreserveId(nodesToMove, copyMap);
-            ListSequence.fromList(nodesToMove).visitAll(new IVisitor<SNode>() {
-              public void visit(SNode it) {
-                SNodeOperations.detachNode(it);
+            List<Boolean> shouldKeepOldNodes = ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(nodesToMoveWithDescendants).count()));
+            for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
+              List<Boolean> builderRequires = builder.shouldKeepOldNodes(ListSequence.fromList(nodesToMoveWithDescendants).select(new ISelector<SNode, Boolean>() {
+                public Boolean select(SNode it) {
+                  return ListSequence.fromList(nodesToMove).contains(it);
+                }
+              }).toListSequence());
+              for (int i = 0; i < ListSequence.fromList(shouldKeepOldNodes).count(); i++) {
+                ListSequence.fromList(shouldKeepOldNodes).setElement(i, ListSequence.fromList(shouldKeepOldNodes).getElement(i) || (ListSequence.fromList(builderRequires).getElement(i)));
               }
-            });
+            }
+            List<SNode> copied = CopyUtil.copyAndPreserveId(nodesToMove, copyMap);
+
+            {
+              Iterator<SNode> oldNode_it = ListSequence.fromList(nodesToMove).iterator();
+              Iterator<Boolean> shoudKeep_it = ListSequence.fromList(shouldKeepOldNodes).iterator();
+              SNode oldNode_var;
+              boolean shoudKeep_var;
+              while (oldNode_it.hasNext() && shoudKeep_it.hasNext()) {
+                oldNode_var = oldNode_it.next();
+                shoudKeep_var = shoudKeep_it.next();
+                if (!(shoudKeep_var)) {
+                  SNodeOperations.detachNode(oldNode_var);
+                }
+              }
+            }
             newLocation.insertNodes(copied, role.value);
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               builder.isMoved(ListSequence.fromList(nodesToMoveWithDescendants).select(new ISelector<SNode, SNode>() {

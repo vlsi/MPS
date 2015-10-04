@@ -38,6 +38,7 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LocalInstancesMigrationStepBuilder" file="LocalInstancesMigrationStepBuilder.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -69,6 +70,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LocalReferencesMigrationStepBuilder" file="LocalReferencesMigrationStepBuilder.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -96,6 +98,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.LoggableMigrationStepBuilder" file="LoggableMigrationStepBuilder.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -104,7 +107,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -114,6 +116,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.MoveNodeSpecialization_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.util.NodeReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

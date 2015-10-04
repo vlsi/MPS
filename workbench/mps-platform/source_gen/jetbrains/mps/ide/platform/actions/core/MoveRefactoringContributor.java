@@ -10,6 +10,7 @@ public interface MoveRefactoringContributor {
   public String getDescription();
   public void willBeMoved(List<SNode> n);
   public SearchResults<SNode> getAffectedNodes();
+  public List<Boolean> shouldKeepOldNodes(List<Boolean> movingAsChild);
   public void isMoved(List<SNode> n);
   public void commit();
 

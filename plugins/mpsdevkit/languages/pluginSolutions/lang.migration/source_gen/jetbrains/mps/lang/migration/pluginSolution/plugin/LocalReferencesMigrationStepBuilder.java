@@ -98,6 +98,9 @@ public class LocalReferencesMigrationStepBuilder implements MoveRefactoringContr
     }).toListSequence());
     return results;
   }
+  public List<Boolean> shouldKeepOldNodes(List<Boolean> movingAsChild) {
+    return ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(movingAsChild).count()));
+  }
   public void isMoved(List<SNode> nodes) {
     if (myParts == null) {
       throw new IllegalStateException("isMoved() should be called after willBeMoved()");
@@ -111,7 +114,7 @@ public class LocalReferencesMigrationStepBuilder implements MoveRefactoringContr
       });
       if (!(Sequence.fromIterable(seq).all(new IWhereFilter<SRepository>() {
         public boolean accept(SRepository it) {
-          return eq_t9enxm_a0a0a0a0a0a1a2a61(it, myRepository);
+          return eq_t9enxm_a0a0a0a0a0a1a2a71(it, myRepository);
         }
       }))) {
         throw new IllegalArgumentException("All nodes should be from the same repository.");
@@ -165,7 +168,7 @@ public class LocalReferencesMigrationStepBuilder implements MoveRefactoringContr
   private static boolean eq_t9enxm_a0a0a0a0a0a2a1a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_t9enxm_a0a0a0a0a0a1a2a61(Object a, Object b) {
+  private static boolean eq_t9enxm_a0a0a0a0a0a1a2a71(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
