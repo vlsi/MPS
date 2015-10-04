@@ -191,6 +191,10 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       public void run() {
         project.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
+            if (callBack != null) {
+              callBack.run();
+            }
+
             List<Boolean> shouldKeepOldNodes = ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(nodesToMoveWithDescendants.value).count()));
             for (SNode i : ListSequence.fromList(nodesToMoveWithDescendants.value)) {
               ListSequence.fromList(shouldKeepOldNodes).addElement(false);
@@ -252,9 +256,6 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             }
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               builder.commit();
-            }
-            if (callBack != null) {
-              callBack.run();
             }
           }
         });
