@@ -66,7 +66,7 @@ public class MoveConceptUtil {
     }).toListSequence();
   }
 
-  public static void setExtendsDependencies(Iterable<SNode> conceptsToMove, SModel sourceModel, Language sourceLanguage, Language targetLanguage) {
+  public static void setExtendsDependencies(Iterable<SNode> conceptsToMove, SModel sourceModel, Language sourceLanguage, final Language targetLanguage) {
     Iterable<SNode> conceptsToRest = ListSequence.fromList(SModelOperations.roots(sourceModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).subtract(Sequence.fromIterable(conceptsToMove));
     if (Sequence.fromIterable(conceptsToRest).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -75,7 +75,11 @@ public class MoveConceptUtil {
     }).intersect(Sequence.fromIterable(conceptsToMove)).isNotEmpty()) {
       sourceLanguage.addExtendedLanguage(targetLanguage.getModuleReference());
     }
-    for (SModuleReference ext : ListSequence.fromList(MoveConceptUtil.calculateExtendsDependencies(conceptsToMove))) {
+    for (SModuleReference ext : ListSequence.fromList(MoveConceptUtil.calculateExtendsDependencies(conceptsToMove)).where(new IWhereFilter<SModuleReference>() {
+      public boolean accept(SModuleReference it) {
+        return neq_ce40do_a0a0a0a0a0c0h(targetLanguage.getModuleReference(), it);
+      }
+    })) {
       targetLanguage.addExtendedLanguage(ext);
     }
   }
@@ -85,5 +89,8 @@ public class MoveConceptUtil {
       return checkedDotOperand.getModuleReference();
     }
     return null;
+  }
+  private static boolean neq_ce40do_a0a0a0a0a0c0h(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }
