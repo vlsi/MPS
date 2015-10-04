@@ -10,12 +10,20 @@ public enum Result {
   success("success", "SUCCESS"),
   failure("failure", "FAILURE");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  Result(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<Result> getConstants() {
     List<Result> list = ListSequence.fromList(new LinkedList<Result>());
@@ -37,13 +45,5 @@ public enum Result {
       return Result.failure;
     }
     return Result.getDefault();
-  }
-  private String myValue;
-  Result(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

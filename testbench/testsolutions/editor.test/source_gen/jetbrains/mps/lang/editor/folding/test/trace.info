@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/6240706158489921622">
+    <file name="CellFoldedByDefault_Test.java">
+      <node id="6240706158489921622" at="15,59,16,115" concept="1" />
+      <node id="6240706158489921622" at="16,115,17,114" concept="1" />
+      <node id="6240706158489921622" at="24,51,25,63" concept="1" />
+      <node id="6240706158490135510" at="25,63,26,74" concept="1" />
+      <node id="6240706158490135873" at="26,74,27,77" concept="1" />
+      <node id="6240706158490135890" at="27,77,28,77" concept="1" />
+      <node id="6240706158490135908" at="28,77,29,77" concept="1" />
+      <node id="6240706158490135899" at="29,77,30,0" concept="3" />
+      <node id="6240706158490135884" at="30,0,31,0" concept="3" />
+      <node id="6240706158489921622" at="12,0,14,0" concept="0" trace="CellFoldedByDefault_Test#()V" />
+      <node id="6240706158489921622" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="6240706158489921622" at="14,0,19,0" concept="2" trace="test_CellFoldedByDefault#()V" />
+      <node id="6240706158489921622" at="23,0,33,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6240706158489921622" at="12,37,12,37" />
+      <scope id="6240706158489921622" at="21,23,21,23" />
+      <scope id="6240706158489921622" at="12,0,14,0" />
+      <scope id="6240706158489921622" at="15,59,17,114" />
+      <scope id="6240706158489921622" at="21,0,23,0" />
+      <scope id="6240706158489921622" at="14,0,19,0" />
+      <scope id="6240706158489921622" at="24,51,31,0" />
+      <scope id="6240706158489921622" at="23,0,33,0" />
+      <unit id="6240706158489921622" at="19,0,34,0" name="jetbrains.mps.lang.editor.folding.test.CellFoldedByDefault_Test$TestBody" />
+      <unit id="6240706158489921622" at="10,0,35,0" name="jetbrains.mps.lang.editor.folding.test.CellFoldedByDefault_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/866632705892191817">
+    <file name="CellConditionallyCollapsed_Test.java">
+      <node id="866632705892191817" at="15,66,16,115" concept="1" />
+      <node id="866632705892191817" at="16,115,17,121" concept="1" />
+      <node id="866632705892191817" at="24,51,25,61" concept="1" />
+      <node id="866632705892345591" at="25,61,26,74" concept="1" />
+      <node id="866632705892345593" at="26,74,27,77" concept="1" />
+      <node id="866632705892345595" at="27,77,28,77" concept="1" />
+      <node id="866632705892345597" at="28,77,29,77" concept="1" />
+      <node id="866632705892191817" at="12,0,14,0" concept="0" trace="CellConditionallyCollapsed_Test#()V" />
+      <node id="866632705892191817" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="866632705892191817" at="14,0,19,0" concept="2" trace="test_CellConditionallyCollapsed#()V" />
+      <node id="866632705892191817" at="23,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="866632705892191817" at="12,44,12,44" />
+      <scope id="866632705892191817" at="21,23,21,23" />
+      <scope id="866632705892191817" at="12,0,14,0" />
+      <scope id="866632705892191817" at="15,66,17,121" />
+      <scope id="866632705892191817" at="21,0,23,0" />
+      <scope id="866632705892191817" at="14,0,19,0" />
+      <scope id="866632705892191817" at="24,51,29,77" />
+      <scope id="866632705892191817" at="23,0,31,0" />
+      <unit id="866632705892191817" at="19,0,32,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test$TestBody" />
+      <unit id="866632705892191817" at="10,0,33,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/866632705892345818">
+    <file name="CellConditionallyUncollapsed_Test.java">
+      <node id="866632705892345818" at="15,68,16,115" concept="1" />
+      <node id="866632705892345818" at="16,115,17,123" concept="1" />
+      <node id="866632705892345818" at="24,51,25,61" concept="1" />
+      <node id="866632705892345825" at="25,61,26,74" concept="1" />
+      <node id="866632705892345827" at="26,74,27,77" concept="1" />
+      <node id="866632705892345829" at="27,77,28,77" concept="1" />
+      <node id="866632705892345831" at="28,77,29,77" concept="1" />
+      <node id="866632705892345818" at="12,0,14,0" concept="0" trace="CellConditionallyUncollapsed_Test#()V" />
+      <node id="866632705892345818" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="866632705892345818" at="14,0,19,0" concept="2" trace="test_CellConditionallyUncollapsed#()V" />
+      <node id="866632705892345818" at="23,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="866632705892345818" at="12,46,12,46" />
+      <scope id="866632705892345818" at="21,23,21,23" />
+      <scope id="866632705892345818" at="12,0,14,0" />
+      <scope id="866632705892345818" at="15,68,17,123" />
+      <scope id="866632705892345818" at="21,0,23,0" />
+      <scope id="866632705892345818" at="14,0,19,0" />
+      <scope id="866632705892345818" at="24,51,29,77" />
+      <scope id="866632705892345818" at="23,0,31,0" />
+      <unit id="866632705892345818" at="19,0,32,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyUncollapsed_Test$TestBody" />
+      <unit id="866632705892345818" at="10,0,33,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyUncollapsed_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/866632705892346111">
+    <file name="CellChangeCollapsedCondition_Test.java">
+      <node id="866632705892346111" at="15,68,16,115" concept="1" />
+      <node id="866632705892346111" at="16,115,17,123" concept="1" />
+      <node id="866632705892346111" at="24,51,25,61" concept="1" />
+      <node id="866632705892346896" at="25,61,26,31" concept="1" />
+      <node id="866632705892348303" at="26,31,27,76" concept="1" />
+      <node id="866632705892349153" at="27,76,28,76" concept="1" />
+      <node id="866632705892349172" at="28,76,29,76" concept="1" />
+      <node id="866632705892349182" at="29,76,30,76" concept="1" />
+      <node id="866632705892349194" at="30,76,31,76" concept="1" />
+      <node id="866632705892349208" at="31,76,32,76" concept="1" />
+      <node id="866632705892349224" at="32,76,33,76" concept="1" />
+      <node id="866632705892349242" at="33,76,34,76" concept="1" />
+      <node id="866632705892349262" at="34,76,35,76" concept="1" />
+      <node id="866632705892349165" at="35,76,36,0" concept="3" />
+      <node id="866632705892346111" at="12,0,14,0" concept="0" trace="CellChangeCollapsedCondition_Test#()V" />
+      <node id="866632705892346111" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="866632705892346111" at="14,0,19,0" concept="2" trace="test_CellChangeCollapsedCondition#()V" />
+      <node id="866632705892346111" at="23,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="866632705892346111" at="12,46,12,46" />
+      <scope id="866632705892346111" at="21,23,21,23" />
+      <scope id="866632705892346111" at="12,0,14,0" />
+      <scope id="866632705892346111" at="15,68,17,123" />
+      <scope id="866632705892346111" at="21,0,23,0" />
+      <scope id="866632705892346111" at="14,0,19,0" />
+      <scope id="866632705892346111" at="24,51,36,0" />
+      <scope id="866632705892346111" at="23,0,38,0" />
+      <unit id="866632705892346111" at="19,0,39,0" name="jetbrains.mps.lang.editor.folding.test.CellChangeCollapsedCondition_Test$TestBody" />
+      <unit id="866632705892346111" at="10,0,40,0" name="jetbrains.mps.lang.editor.folding.test.CellChangeCollapsedCondition_Test" />
+    </file>
+  </root>
+</debug-info>
+

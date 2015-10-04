@@ -534,6 +534,12 @@
     <node concept="PrWs8" id="2deFRo6cC4H" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
+    <node concept="PrWs8" id="54ZfFHb0Nw6" role="PzmwI">
+      <ref role="PrY4T" to="tpee:htgVS9_" resolve="IStatementListContainer" />
+    </node>
+    <node concept="PrWs8" id="54ZfFHb0Nwm" role="PzmwI">
+      <ref role="PrY4T" to="tpee:i2fhoOR" resolve="IMethodLike" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hSLIFSi">
     <property role="TrG5h" value="AnonymousCellAnnotation" />

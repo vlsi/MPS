@@ -29,12 +29,12 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
-import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -195,13 +195,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException {
-    TemplateDeclaration templateDeclarationInstance = loadTemplateDeclaration(templateDeclaration, templateNode, context, arguments);
-    return ((TemplateDeclarationWeavingAware) templateDeclarationInstance).weave(this, context, outputContextNode);
+  public Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull final TemplateContext context, @NotNull final SNode outputContextNode, Object... arguments) throws GenerationException {
+    WeaveContextImpl weaveContext = new WeaveContextImpl(outputContextNode, context);
+    return prepareWeave(weaveContext, templateNode).weaveTemplate(templateDeclaration, arguments);
   }
 
 
-  private TemplateDeclaration loadTemplateDeclaration(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) {
+  /*package*/ TemplateDeclaration loadTemplateDeclaration(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) {
     TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
     TemplateDeclaration templateDeclarationInstance = templateModel == null ? null : templateModel.loadTemplate(templateDeclaration, arguments);
     if (templateModel == null || templateDeclarationInstance == null) {
@@ -279,13 +279,18 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       return;
     }
     final SContainmentLink role = ((ConceptMetaInfoConverter) contextParentNode.getConcept()).convertAggregation(childRole);
-    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave);
+    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave, null);
   }
 
   @NotNull
   @Override
   public NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
-    return new NodeWeaveSupport(context, templateNode, generator);
+    return prepareWeave(new WeaveContextImpl(context.getInput()/*fake non-null node, do not care as this method would cease soon*/, context), templateNode);
+  }
+
+  @Override
+  public NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode) {
+    return new NodeWeaveSupport(context, templateNode, this);
   }
 
   // Internal API, perhaps, shall be part of ExecutionEnvironmentInternal iface

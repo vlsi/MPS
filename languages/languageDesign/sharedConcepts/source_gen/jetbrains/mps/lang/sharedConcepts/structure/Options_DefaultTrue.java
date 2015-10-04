@@ -10,12 +10,20 @@ public enum Options_DefaultTrue {
   default_("default", null),
   true_("true", "true");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  Options_DefaultTrue(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<Options_DefaultTrue> getConstants() {
     List<Options_DefaultTrue> list = ListSequence.fromList(new LinkedList<Options_DefaultTrue>());
@@ -37,13 +45,5 @@ public enum Options_DefaultTrue {
       return Options_DefaultTrue.true_;
     }
     return Options_DefaultTrue.getDefault();
-  }
-  private String myValue;
-  Options_DefaultTrue(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

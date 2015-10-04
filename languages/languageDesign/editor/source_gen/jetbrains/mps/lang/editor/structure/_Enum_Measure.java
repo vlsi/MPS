@@ -10,12 +10,20 @@ public enum _Enum_Measure {
   pixels("pixels", "PIXELS"),
   spaces("spaces", "SPACES");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  _Enum_Measure(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<_Enum_Measure> getConstants() {
     List<_Enum_Measure> list = ListSequence.fromList(new LinkedList<_Enum_Measure>());
@@ -37,13 +45,5 @@ public enum _Enum_Measure {
       return _Enum_Measure.spaces;
     }
     return _Enum_Measure.getDefault();
-  }
-  private String myValue;
-  _Enum_Measure(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

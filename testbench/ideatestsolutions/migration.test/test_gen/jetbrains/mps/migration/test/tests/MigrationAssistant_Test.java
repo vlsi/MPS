@@ -11,7 +11,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -33,7 +32,7 @@ public class MigrationAssistant_Test extends TestCase {
 
     final Wrappers._T<List<SProperty>> properties = new Wrappers._T<List<SProperty>>();
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<? extends SModule> modules = project.getModules();
         Solution migratingSolution = Sequence.fromIterable(modules).ofType(Solution.class).first();
@@ -50,7 +49,7 @@ public class MigrationAssistant_Test extends TestCase {
 
     final Wrappers._T<String> value0 = new Wrappers._T<String>();
     final Wrappers._T<String> value1 = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         value0.value = root.value.getProperty(ListSequence.fromList(properties.value).getElement(0));
         value1.value = root.value.getProperty(ListSequence.fromList(properties.value).getElement(1));

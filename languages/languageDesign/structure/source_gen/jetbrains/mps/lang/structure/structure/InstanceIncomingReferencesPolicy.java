@@ -11,12 +11,20 @@ public enum InstanceIncomingReferencesPolicy {
   local("same root only", "local"),
   forbidden("forbidden", "forbidden");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  InstanceIncomingReferencesPolicy(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<InstanceIncomingReferencesPolicy> getConstants() {
     List<InstanceIncomingReferencesPolicy> list = ListSequence.fromList(new LinkedList<InstanceIncomingReferencesPolicy>());
@@ -42,13 +50,5 @@ public enum InstanceIncomingReferencesPolicy {
       return InstanceIncomingReferencesPolicy.forbidden;
     }
     return InstanceIncomingReferencesPolicy.getDefault();
-  }
-  private String myValue;
-  InstanceIncomingReferencesPolicy(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -25,7 +25,7 @@ public class ClosuresBase_Test extends TestCase {
     }
     Assert.assertEquals(expectedList, testList);
   }
-  public void assertResultsEqual(_FunctionTypes._return_P0_E0<? extends Iterable<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {
+  public void assertResultsEqual2(_FunctionTypes._return_P0_E0<? extends Iterable<Integer>> expected, _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> test) {
     Iterator<Integer> expIt = expected.invoke().iterator();
     Iterator<Integer> testIt = expected.invoke().iterator();
     while (expIt.hasNext() && testIt.hasNext()) {

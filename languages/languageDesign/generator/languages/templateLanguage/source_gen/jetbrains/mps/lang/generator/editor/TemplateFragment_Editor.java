@@ -176,6 +176,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_73o0fl_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_73o0fl_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_73o0fl_c2a(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_73o0fl_a2a(EditorContext editorContext, SNode node) {
@@ -271,6 +272,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_73o0fl_a1c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -302,6 +304,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       if (editorCell.getRole() == null) {
         editorCell.setRole("contextNodeQuery");
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.READ_ONLY, 0, true);
+      editorCell.getStyle().putAll(style);
     }
 
 
@@ -317,5 +322,43 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       return "<main context node>";
     }
 
+  }
+  private EditorCell createCollection_73o0fl_c2a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_73o0fl_c2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_73o0fl_a2c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_73o0fl_b2c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_73o0fl_c2c0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_73o0fl_a2c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_73o0fl_a2c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_73o0fl_b2c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_73o0fl_b2c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_73o0fl_c2c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Do not use fragment's context query. They will be removed in the next release");
+    editorCell.setCellId("Constant_73o0fl_c2c0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.apply_Comment(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }

@@ -14,7 +14,6 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="mps-make" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="modelchecker" />
@@ -32,6 +31,6 @@
     <orderEntry type="module" module-name="console" />
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="migrationAssistant" />
   </component>
 </module>
-

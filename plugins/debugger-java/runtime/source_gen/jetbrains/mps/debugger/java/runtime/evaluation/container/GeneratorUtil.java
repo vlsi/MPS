@@ -17,7 +17,6 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.FResource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -49,27 +48,24 @@ public class GeneratorUtil {
         final String desiredSourceUnitName = className + ".java";
         if (successful) {
           JavaCompiler javaCompiler = new JavaCompiler();
-          for (IResource res : Sequence.fromIterable(result.output())) {
-            if (res instanceof FResource) {
-              FResource fres = ((FResource) res);
-              Map<String, Object> contents = fres.contents();
-              for (String unitName : MapSequence.fromMap(contents).keySet()) {
-                if (!(unitName.endsWith(".java"))) {
-                  continue;
-                }
-                Object textGenOutcome = MapSequence.fromMap(contents).get(unitName);
-                if (textGenOutcome instanceof TextUnit) {
-                  TextUnit tu = (TextUnit) textGenOutcome;
-                  source = new String(tu.getBytes(), tu.getEncoding());
-                } else {
-                  // FIXME fallback, shall not happen with textGenToMemory using new j.m.text API 
-                  source = String.valueOf(textGenOutcome);
-                }
-                javaCompiler.addSource(fres.packageName() + '.' + unitName.substring(0, unitName.length() - 5), source);
-                if (unitName.equals(desiredSourceUnitName)) {
-                  // FIXME WTF? why unit name is treated as source, and do we really need to keep source at all? 
-                  source = String.valueOf(unitName);
-                }
+          for (FResource res : Sequence.fromIterable(result.output()).ofType(FResource.class)) {
+            Map<String, Object> contents = res.contents();
+            for (String unitName : MapSequence.fromMap(contents).keySet()) {
+              if (!(unitName.endsWith(".java"))) {
+                continue;
+              }
+              Object textGenOutcome = MapSequence.fromMap(contents).get(unitName);
+              if (textGenOutcome instanceof TextUnit) {
+                TextUnit tu = (TextUnit) textGenOutcome;
+                source = new String(tu.getBytes(), tu.getEncoding());
+              } else {
+                // FIXME fallback, shall not happen with textGenToMemory using new j.m.text API 
+                source = String.valueOf(textGenOutcome);
+              }
+              javaCompiler.addSource(res.packageName() + '.' + unitName.substring(0, unitName.length() - 5), source);
+              if (unitName.equals(desiredSourceUnitName)) {
+                // FIXME WTF? why unit name is treated as source, and do we really need to keep source at all? 
+                source = String.valueOf(unitName);
               }
             }
           }

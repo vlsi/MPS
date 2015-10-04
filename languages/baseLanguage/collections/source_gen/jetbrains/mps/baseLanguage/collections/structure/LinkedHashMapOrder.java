@@ -10,12 +10,20 @@ public enum LinkedHashMapOrder {
   insertion_order("insertion_order", false),
   access_order("access_order", true);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final boolean myValue;
+  LinkedHashMapOrder(String name, boolean value) {
+    myName = name;
+    myValue = value;
+  }
+  public boolean getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Boolean.toString(myValue);
   }
   public static List<LinkedHashMapOrder> getConstants() {
     List<LinkedHashMapOrder> list = ListSequence.fromList(new LinkedList<LinkedHashMapOrder>());
@@ -37,13 +45,5 @@ public enum LinkedHashMapOrder {
       return LinkedHashMapOrder.access_order;
     }
     return LinkedHashMapOrder.getDefault();
-  }
-  private boolean myValue;
-  LinkedHashMapOrder(String name, boolean value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public boolean getValue() {
-    return this.myValue;
   }
 }

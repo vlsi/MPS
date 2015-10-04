@@ -12,12 +12,20 @@ public enum PredefinedCellID {
   FIRST_EDITABLE("FIRST_EDITABLE", "firstEditable"),
   LAST_EDITABLE("LAST_EDITABLE", "lastEditable");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  PredefinedCellID(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<PredefinedCellID> getConstants() {
     List<PredefinedCellID> list = ListSequence.fromList(new LinkedList<PredefinedCellID>());
@@ -47,13 +55,5 @@ public enum PredefinedCellID {
       return PredefinedCellID.LAST_EDITABLE;
     }
     return PredefinedCellID.getDefault();
-  }
-  private String myValue;
-  PredefinedCellID(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

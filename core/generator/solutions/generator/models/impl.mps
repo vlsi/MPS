@@ -4017,6 +4017,56 @@
         <ref role="ehGHo" to="tpf8:hfgB$Qy" resolve="Weaving_MappingRule_ContextNodeQuery" />
       </node>
     </node>
+    <node concept="2YIFZL" id="2h9GiJ3xD6o" role="jymVt">
+      <property role="TrG5h" value="getWeaveRule_AnchorQuery" />
+      <node concept="3Tm1VV" id="2h9GiJ3xD6p" role="1B3o_S" />
+      <node concept="3clFbS" id="2h9GiJ3xD6q" role="3clF47">
+        <node concept="3clFbF" id="2h9GiJ3xD6r" role="3cqZAp">
+          <node concept="2OqwBi" id="2h9GiJ3xD6s" role="3clFbG">
+            <node concept="37vLTw" id="2h9GiJ3xD6t" role="2Oq$k0">
+              <ref role="3cqZAo" node="2h9GiJ3xD6v" resolve="rule" />
+            </node>
+            <node concept="3TrEf2" id="2h9GiJ3xEIZ" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:SFyHGUIP7S" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2h9GiJ3xD6v" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3Tqbb2" id="2h9GiJ3xD6w" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:gZ0QclN" resolve="Weaving_MappingRule" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2h9GiJ3xD6x" role="3clF45">
+        <ref role="ehGHo" to="tpf8:SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="2h9GiJ3yhnE" role="jymVt">
+      <property role="TrG5h" value="getWeaveMacro_AnchorQuery" />
+      <node concept="3Tm1VV" id="2h9GiJ3yhnF" role="1B3o_S" />
+      <node concept="3clFbS" id="2h9GiJ3yhnG" role="3clF47">
+        <node concept="3clFbF" id="2h9GiJ3yhnH" role="3cqZAp">
+          <node concept="2OqwBi" id="2h9GiJ3yhnI" role="3clFbG">
+            <node concept="37vLTw" id="2h9GiJ3yhnJ" role="2Oq$k0">
+              <ref role="3cqZAo" node="2h9GiJ3yhnL" resolve="macro" />
+            </node>
+            <node concept="3TrEf2" id="2h9GiJ3ykYn" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:2h9GiJ3xGad" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2h9GiJ3yhnL" role="3clF46">
+        <property role="TrG5h" value="macro" />
+        <node concept="3Tqbb2" id="2h9GiJ3yhnM" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:30c0HY8gznj" resolve="WeaveMacro" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2h9GiJ3yhnN" role="3clF45">
+        <ref role="ehGHo" to="tpf8:SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+      </node>
+    </node>
     <node concept="2YIFZL" id="7QeCZOGPwWp" role="jymVt">
       <property role="TrG5h" value="getWeaving_Consequence" />
       <node concept="3Tm1VV" id="7QeCZOGPwWq" role="1B3o_S" />

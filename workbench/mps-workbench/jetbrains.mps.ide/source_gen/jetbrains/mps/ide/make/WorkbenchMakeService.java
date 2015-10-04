@@ -196,13 +196,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     String scrName = ((this.getSession().isCleanMake() ? "Rebuild" : "Make"));
     IMessageHandler mh = this.getSession().getMessageHandler();
-    if (mh == null || mh == IMessageHandler.NULL_HANDLER) {
-      // FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH. 
-      // This code is left here in 3.2 for compatibility reasons. Legacy MakeSession constuctors might be still in use 
-      // along with IMakeService, assuming null for default 'Make' view. After 3.2, once legacy constructors are gone, 
-      // remove this code altogether (rely on notnull for session.getMessageHandler() 
-      mh = new DefaultMakeMessageHandler(getSession().getProject());
-    }
     mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {

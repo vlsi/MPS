@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.WeavingAnchorContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
@@ -91,6 +92,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
   @NotNull
   @Override
+  public WeaveAnchorQuery getWeaveAnchorQuery(@NotNull SNode rule) {
+    return new Defaults();
+  }
+
+  @NotNull
+  @Override
   public ScriptCodeBlock getScriptCodeBlock(@NotNull SNode script) {
     return new Defaults();
   }
@@ -138,7 +145,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
-      IfMacroCondition, InlineSwitchCaseCondition {
+      IfMacroCondition, InlineSwitchCaseCondition, WeaveAnchorQuery {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -207,6 +214,13 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
       // here comes the logic that used to live in DefaultQueryExecutionContext
       context.showErrorMessage(null, "condition required for case in inline switch");
       return false;
+    }
+
+    @Override
+    @Nullable
+    public SNode anchorNode(WeavingAnchorContext ctx) throws GenerationFailureException {
+      // null is legitimate value, indicates 'just append'
+      return null;
     }
   }
 

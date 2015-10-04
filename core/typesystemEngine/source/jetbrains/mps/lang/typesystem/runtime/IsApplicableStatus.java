@@ -21,19 +21,43 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
  * Cyril.Konopko, 29.09.2010
  */
 public class IsApplicableStatus {
-  private boolean myIsApplicable;
+
+  private static Probe ALWAYS_TRUE = new Probe() {
+    @Override
+    public boolean eval() {
+      return true;
+    }
+  };
+
+  private static Probe ALWAYS_FALSE = new Probe() {
+    @Override
+    public boolean eval() {
+      return false;
+    }
+  };
+
+  private Probe myIsApplicable;
   private GeneratedMatchingPattern myPattern;
 
   public IsApplicableStatus(boolean isApplicable, GeneratedMatchingPattern pattern) {
+    myIsApplicable = isApplicable ? ALWAYS_TRUE : ALWAYS_FALSE;
+    myPattern = pattern;
+  }
+
+  public IsApplicableStatus(Probe isApplicable, GeneratedMatchingPattern pattern) {
     myIsApplicable = isApplicable;
     myPattern = pattern;
   }
 
   public boolean isApplicable() {
-    return myIsApplicable;
+    return myIsApplicable.eval();
   }
 
   public GeneratedMatchingPattern getPattern() {
     return myPattern;
+  }
+
+  public interface Probe {
+    boolean eval();
   }
 }

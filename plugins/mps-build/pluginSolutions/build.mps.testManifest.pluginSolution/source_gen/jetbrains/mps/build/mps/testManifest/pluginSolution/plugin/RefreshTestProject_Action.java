@@ -23,10 +23,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.ui.Messages;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.mps.util.PathConverter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.build.mps.util.VisibleModules;
@@ -111,6 +114,7 @@ public class RefreshTestProject_Action extends BaseAction {
   }
   private boolean doExecute(ProgressIndicator proInd, final AnActionEvent event) {
     final Wrappers._T<SModel> target = new Wrappers._T<SModel>();
+    final Wrappers._boolean ok = new Wrappers._boolean(true);
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // shamelessly copypasted from the smodel lang's generator 
@@ -120,8 +124,15 @@ public class RefreshTestProject_Action extends BaseAction {
           targetName += "@" + SPropertyOperations.getString(targetRef, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"));
         }
         target.value = SModelRepository.getInstance().getModelDescriptor(targetName);
+        if (target.value == null) {
+          Messages.showErrorDialog(event.getData(CommonDataKeys.PROJECT), "Not found target model: " + targetName, "Model Not Found");
+          ok.value = false;
+        }
       }
     });
+    if (!(ok.value)) {
+      return false;
+    }
 
     final List<SNode> manifests = new ArrayList<SNode>();
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -141,8 +152,20 @@ public class RefreshTestProject_Action extends BaseAction {
           public void run() {
             TestModuleBuildProjectTemplate template = new TestModuleBuildProjectTemplate(event.getData(MPSCommonDataKeys.MPS_PROJECT), target.value);
 
-            SNode bproj = template.createBuildProject(event.getData(MPSCommonDataKeys.NODE), manifests);
+            final SNode bproj = template.createBuildProject(event.getData(MPSCommonDataKeys.NODE), manifests);
             SPropertyOperations.set(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "generated");
+
+            SNode existing = ListSequence.fromList(SModelOperations.roots(target.value, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))).findFirst(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0i0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(bproj, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              }
+            });
+            if ((existing != null)) {
+              SNodeOperations.replaceWithAnother(existing, bproj);
+            } else {
+              SModelOperations.addRootNode(target.value, bproj);
+            }
+
             PathConverter pathConverter = new PathConverter(bproj);
 
             List<SNode> modules = ListSequence.fromList(SNodeOperations.getNodeDescendants(bproj, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SAbstractConcept[]{})).toListSequence();
@@ -165,7 +188,7 @@ public class RefreshTestProject_Action extends BaseAction {
       }
     });
 
-    return true;
+    return ok.value;
   }
   private void displayInfo(String info, final AnActionEvent event) {
     IdeFrame frame = WindowManager.getInstance().getIdeFrame(event.getData(CommonDataKeys.PROJECT));
@@ -176,5 +199,8 @@ public class RefreshTestProject_Action extends BaseAction {
   protected static Logger LOG = LogManager.getLogger(RefreshTestProject_Action.class);
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
+  }
+  private static boolean eq_tlmhfo_a0a0a0a0a0a5a0a0a0a1a0a0a0i0h(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

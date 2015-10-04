@@ -8,6 +8,7 @@
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -325,8 +326,40 @@
   </node>
   <node concept="24kQdi" id="6xuWmJ1tgUt">
     <ref role="1XX52x" to="tgbt:6xuWmJ1tgUs" resolve="StandalonePluginDescriptor" />
-    <node concept="3F0ifn" id="6xuWmJ1tgUv" role="2wV5jI">
-      <property role="3F0ifm" value="standalone descriptor" />
+    <node concept="3EZMnI" id="5WVtmyUzYFB" role="2wV5jI">
+      <node concept="2iRkQZ" id="5WVtmyUzYFC" role="2iSdaV" />
+      <node concept="3F0ifn" id="6xuWmJ1tgUv" role="3EZMnx">
+        <property role="3F0ifm" value="standalone descriptor" />
+      </node>
+      <node concept="3EZMnI" id="5WVtmyUzYFK" role="3EZMnx">
+        <node concept="3F0ifn" id="5WVtmyUzYGa" role="3EZMnx" />
+        <node concept="3F0ifn" id="5WVtmyU$09Y" role="3EZMnx">
+          <property role="3F0ifm" value="Generate initializer config" />
+        </node>
+        <node concept="3F0A7n" id="5WVtmyUzYGh" role="3EZMnx">
+          <ref role="1NtTu8" to="tgbt:5WVtmyUzYGf" resolve="needInitConfig" />
+        </node>
+        <node concept="VPM3Z" id="5WVtmyUzYFM" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2iRfu4" id="5WVtmyUzYFP" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="5WVtmyUzYGu" role="3EZMnx">
+        <node concept="3F0ifn" id="5WVtmyUzYGv" role="3EZMnx" />
+        <node concept="3F0ifn" id="5WVtmyU$0bI" role="3EZMnx" />
+        <node concept="3F0ifn" id="5WVtmyUzYH6" role="3EZMnx">
+          <property role="3F0ifm" value="When true, generates a configuration file to get application and project components started from modules with MPS-controlled class loaders (generally, compileInMPS==true)" />
+          <ref role="1k5W1q" to="tpco:3VARyd8XcQs" resolve="Comment" />
+          <node concept="VPM3Z" id="5WVtmyU$01D" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5WVtmyUzYH1" role="3EZMnx" />
+        <node concept="VPM3Z" id="5WVtmyUzYGy" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2iRfu4" id="5WVtmyUzYGz" role="2iSdaV" />
+      </node>
     </node>
   </node>
 </model>

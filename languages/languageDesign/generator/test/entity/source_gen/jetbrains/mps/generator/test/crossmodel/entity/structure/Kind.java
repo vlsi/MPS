@@ -10,12 +10,20 @@ public enum Kind {
   _1("ONE", 1),
   _2("TWO", 2);
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final int myValue;
+  Kind(String name, int value) {
+    myName = name;
+    myValue = value;
+  }
+  public int getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return "" + this.myValue;
+    return Integer.toString(myValue);
   }
   public static List<Kind> getConstants() {
     List<Kind> list = ListSequence.fromList(new LinkedList<Kind>());
@@ -37,13 +45,5 @@ public enum Kind {
       return Kind._2;
     }
     return Kind.getDefault();
-  }
-  private int myValue;
-  Kind(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public int getValue() {
-    return this.myValue;
   }
 }

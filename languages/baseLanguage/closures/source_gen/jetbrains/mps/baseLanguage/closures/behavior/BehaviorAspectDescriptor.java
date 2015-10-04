@@ -26,13 +26,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myControlAbstractionDeclaration__BehaviorDescriptor = new ControlAbstractionDeclaration__BehaviorDescriptor();
   private final BHDescriptor myUnrestrictedFunctionType__BehaviorDescriptor = new UnrestrictedFunctionType__BehaviorDescriptor();
   private final BHDescriptor myCompactInvokeFunctionExpression__BehaviorDescriptor = new CompactInvokeFunctionExpression__BehaviorDescriptor();
+  private final BHDescriptor myClosureLiteralType__BehaviorDescriptor = new ClosureLiteralType__BehaviorDescriptor();
   private final BHDescriptor myFunctionMethodDeclaration__BehaviorDescriptor = new FunctionMethodDeclaration__BehaviorDescriptor();
   private final BHDescriptor myAbstractFunctionType__BehaviorDescriptor = new AbstractFunctionType__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[16];
+    myConceptBehaviorIds = new long[17];
     myConceptBehaviorIds[0] = 0x1174a4d19ffL;
     myConceptBehaviorIds[1] = 0x1174a964795L;
     myConceptBehaviorIds[2] = 0x1174bed3125L;
@@ -47,8 +48,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[11] = 0x11e49dc8097L;
     myConceptBehaviorIds[12] = 0x11e505b9d83L;
     myConceptBehaviorIds[13] = 0x11fb8425aa8L;
-    myConceptBehaviorIds[14] = 0x42d79e63a78a7784L;
-    myConceptBehaviorIds[15] = 0x4de23a15f719357dL;
+    myConceptBehaviorIds[14] = 0xe8770ba07b68051L;
+    myConceptBehaviorIds[15] = 0x42d79e63a78a7784L;
+    myConceptBehaviorIds[16] = 0x4de23a15f719357dL;
   }
 
   @Deprecated
@@ -91,8 +93,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 13:
         return myCompactInvokeFunctionExpression__BehaviorDescriptor;
       case 14:
-        return myFunctionMethodDeclaration__BehaviorDescriptor;
+        return myClosureLiteralType__BehaviorDescriptor;
       case 15:
+        return myFunctionMethodDeclaration__BehaviorDescriptor;
+      case 16:
         return myAbstractFunctionType__BehaviorDescriptor;
       default:
         return null;

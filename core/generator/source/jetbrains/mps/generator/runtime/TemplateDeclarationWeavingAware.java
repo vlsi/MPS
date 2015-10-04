@@ -15,14 +15,21 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 
 /**
+ * @deprecated use {@link TemplateDeclaration#weave(jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext, NodeWeaveFacility)} instead
+ * Parameters of this method are insufficient, and the whole idea of templates being weaved behave different than regular apply is flawed
+ * (let alone only generated templates could be weaved from generated generators, as interpreted TemplateDeclaration didn't support this iface).
+ *
  * Evgeny Gryaznov, 12/9/10
  */
+@Deprecated
+@ToRemove(version = 3.3)
 public interface TemplateDeclarationWeavingAware extends TemplateDeclaration {
 
   Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment,

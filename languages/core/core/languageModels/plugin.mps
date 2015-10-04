@@ -2365,6 +2365,39 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3clFbH" id="7G8hLbKzyXy" role="3cqZAp" />
+                    <node concept="ElOAg" id="7G8hLbKzxMY" role="3cqZAp">
+                      <node concept="2ShNRf" id="7G8hLbKzxMZ" role="ElOA9">
+                        <node concept="1pGfFk" id="7G8hLbKzxN0" role="2ShVmc">
+                          <ref role="37wK5l" node="2Op6w9TzkSm" resolve="TextGenOutcomeResource" />
+                          <node concept="2OqwBi" id="7G8hLbKzzP6" role="37wK5m">
+                            <node concept="37vLTw" id="7G8hLbKzzNT" role="2Oq$k0">
+                              <ref role="3cqZAo" node="BfgvEri8LS" resolve="tgr" />
+                            </node>
+                            <node concept="liA8E" id="7G8hLbKz$5b" role="2OqNvi">
+                              <ref role="37wK5l" to="ao3:~TextGenResult.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="7G8hLbKz$pB" role="37wK5m">
+                            <node concept="2OqwBi" id="7G8hLbKz$mE" role="2Oq$k0">
+                              <node concept="37vLTw" id="7G8hLbKz$lp" role="2Oq$k0">
+                                <ref role="3cqZAo" node="BfgvEri8LS" resolve="tgr" />
+                              </node>
+                              <node concept="liA8E" id="7G8hLbKz$of" role="2OqNvi">
+                                <ref role="37wK5l" to="ao3:~TextGenResult.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="7G8hLbKz$rI" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="7G8hLbKzxN7" role="37wK5m">
+                            <ref role="3cqZAo" node="BfgvEri8LS" resolve="tgr" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbH" id="7G8hLbKzx13" role="3cqZAp" />
                     <node concept="1DcWWT" id="BfgvEric$r" role="3cqZAp">
                       <node concept="3clFbS" id="BfgvEric$x" role="2LFqv$">
                         <node concept="3clFbJ" id="BfgvEriDCS" role="3cqZAp">
@@ -2402,9 +2435,9 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3SKdUt" id="7A08csWd6gF" role="3cqZAp">
-                          <node concept="3SKdUq" id="7A08csWd6ql" role="3SKWNk">
-                            <property role="3SKdUp" value="FIXME could output TextUnits directly" />
+                        <node concept="3SKdUt" id="7G8hLbKz_YA" role="3cqZAp">
+                          <node concept="3SKdUq" id="7G8hLbKzAkp" role="3SKWNk">
+                            <property role="3SKdUp" value="compatibility code until all uses of FResource from TextGen are removed" />
                           </node>
                         </node>
                         <node concept="3cpWs8" id="BfgvEridzQ" role="3cqZAp">

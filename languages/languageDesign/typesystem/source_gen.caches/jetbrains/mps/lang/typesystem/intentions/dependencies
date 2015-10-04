@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" file="ConvertInferenceRuleToNonTypesystemRule_Intention.java">
+  <dependency className="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToCheckingRule_Intention" file="ConvertInferenceRuleToCheckingRule_Intention.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -74,7 +74,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToCheckingRule_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention" />

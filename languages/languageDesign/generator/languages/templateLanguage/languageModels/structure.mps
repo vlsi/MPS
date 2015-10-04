@@ -18,7 +18,10 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -307,6 +310,10 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="contextNodeQuery" />
       <ref role="20lvS9" node="hf2c0UL" resolve="TemplateFragment_ContextNodeQuery" />
+      <node concept="asaX9" id="6t_vhrz0Pv" role="lGtFl">
+        <property role="YLQ7P" value="https://youtrack.jetbrains.com/issue/MPS-22695" />
+        <property role="YLPcu" value="MPS 3.3" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="gcjVnq8">
@@ -650,6 +657,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="hfgB$Qy" resolve="Weaving_MappingRule_ContextNodeQuery" />
     </node>
+    <node concept="1TJgyj" id="SFyHGUIP7S" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="anchorQuery" />
+      <ref role="20lvS9" node="SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+    </node>
     <node concept="PrWs8" id="W$jG3B1LbI" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
@@ -933,6 +945,10 @@
     <property role="34LRSv" value="template fragment context node" />
     <property role="1pbfSe" value="1037037628" />
     <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
+    <node concept="asaX9" id="6t_vhrz0CF" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="https://youtrack.jetbrains.com/issue/MPS-22695" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hf2cCeX">
     <property role="R5$K7" value="false" />
@@ -1524,6 +1540,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="gZJmXo3" resolve="SourceSubstituteMacro_SourceNodesQuery" />
     </node>
+    <node concept="1TJgyj" id="2h9GiJ3xGad" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="anchorQuery" />
+      <ref role="20lvS9" node="SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4mp7qFmCXde">
     <property role="R5$K7" value="false" />
@@ -1876,6 +1897,14 @@
   <node concept="PlHQZ" id="6pv6r6HKtLr">
     <property role="TrG5h" value="PersistGeneration" />
     <property role="1pbfSe" value="337704460" />
+  </node>
+  <node concept="1TIwiD" id="SFyHGUI$GV">
+    <property role="1pbfSe" value="1223022102" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="WeavingAnchorQuery" />
+    <property role="34LRSv" value="weaving anchor node " />
+    <property role="R4oN_" value="controls exact location in parent where child is weaved to" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
 </model>
 

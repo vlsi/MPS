@@ -421,9 +421,6 @@
         <child id="9126048691955220774" name="parameters" index="28jJR8" />
         <child id="9126048691955220762" name="path" index="28jJRO" />
       </concept>
-      <concept id="9126048691954557131" name="jetbrains.mps.build.structure.BuildLayout_Comment" flags="ng" index="28u9K_">
-        <property id="9126048691954700811" name="text" index="28hIV_" />
-      </concept>
       <concept id="2755237150521975431" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithString" flags="ng" index="aVJcg">
         <child id="2755237150521975437" name="value" index="aVJcq" />
       </concept>
@@ -13396,12 +13393,6 @@
                                 <ref role="3cqZAo" node="2OJWaFGOVoi" resolve="plugin" />
                               </node>
                             </node>
-                          </node>
-                          <node concept="28u9K_" id="5rNMDvYzelm" role="39821P">
-                            <property role="28hIV_" value="optional plugins" />
-                          </node>
-                          <node concept="3_I8Xc" id="6EN03E8w8cN" role="39821P">
-                            <ref role="3_I8Xa" to="ffeo:6EN03E8p5Ic" resolve="mps-make" />
                           </node>
                           <node concept="3_J27D" id="2OJWaFGOVpS" role="Nbhlr">
                             <node concept="3Mxwew" id="2OJWaFGOVpT" role="3MwsjC">

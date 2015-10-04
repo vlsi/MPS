@@ -2451,11 +2451,11 @@
       <scope id="5997054828945109577" at="1640,0,1762,0" />
       <scope id="3376587159404838384" at="1052,60,1207,7" />
       <scope id="3376587159404838381" at="1052,0,1209,0" />
-      <unit id="1229019407427" at="1210,32,1214,5" name="jetbrains.mps.closures.test.YieldClosures_Test$23" />
-      <unit id="1229019599661" at="1222,32,1226,5" name="jetbrains.mps.closures.test.YieldClosures_Test$25" />
-      <unit id="1229019522320" at="1279,32,1283,5" name="jetbrains.mps.closures.test.YieldClosures_Test$27" />
-      <unit id="1229019676418" at="1336,32,1340,5" name="jetbrains.mps.closures.test.YieldClosures_Test$29" />
-      <unit id="1229019752400" at="1408,32,1412,5" name="jetbrains.mps.closures.test.YieldClosures_Test$31" />
+      <unit id="1229019407427" at="1210,33,1214,5" name="jetbrains.mps.closures.test.YieldClosures_Test$23" />
+      <unit id="1229019599661" at="1222,33,1226,5" name="jetbrains.mps.closures.test.YieldClosures_Test$25" />
+      <unit id="1229019522320" at="1279,33,1283,5" name="jetbrains.mps.closures.test.YieldClosures_Test$27" />
+      <unit id="1229019676418" at="1336,33,1340,5" name="jetbrains.mps.closures.test.YieldClosures_Test$29" />
+      <unit id="1229019752400" at="1408,33,1412,5" name="jetbrains.mps.closures.test.YieldClosures_Test$31" />
       <unit id="1243500570601919093" at="2034,42,2038,5" name="jetbrains.mps.closures.test.YieldClosures_Test$42" />
       <unit id="1229019456122" at="1214,11,1219,5" name="jetbrains.mps.closures.test.YieldClosures_Test$24" />
       <unit id="1201534543801" at="346,32,355,5" name="jetbrains.mps.closures.test.YieldClosures_Test$7" />
@@ -2554,7 +2554,7 @@
       <node id="1201439728654" at="21,34,22,77" concept="13" />
       <node id="1201439728660" at="23,37,24,52" concept="7" />
       <node id="1201439728668" at="25,5,26,48" concept="7" />
-      <node id="1201774417953" at="28,166,29,59" concept="13" />
+      <node id="1201774417953" at="28,167,29,59" concept="13" />
       <node id="1201774437156" at="29,59,30,60" concept="13" />
       <node id="1201774462914" at="31,49,32,55" concept="7" />
       <node id="1201774479989" at="33,5,34,40" concept="7" />
@@ -2564,7 +2564,7 @@
       <node id="1201439728658" at="22,77,25,5" concept="10" />
       <node id="1201774444118" at="30,60,33,5" concept="23" />
       <node id="1201439728642" at="19,0,28,0" concept="12" trace="assertResultsEqual#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)V" />
-      <node id="1201774367922" at="28,0,37,0" concept="12" trace="assertResultsEqual#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)V" />
+      <node id="1201774367922" at="28,0,37,0" concept="12" trace="assertResultsEqual2#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)V" />
       <scope id="7084823572004219842" at="17,30,17,30" />
       <scope id="1202152060840" at="14,44,15,86" />
       <scope id="1201439728659" at="23,37,24,52" />
@@ -2578,7 +2578,7 @@
         <var name="expectedList" id="1201439728647" />
         <var name="testList" id="1201439728655" />
       </scope>
-      <scope id="1201774367925" at="28,166,35,41">
+      <scope id="1201774367925" at="28,167,35,41">
         <var name="expIt" id="1201774417954" />
         <var name="testIt" id="1201774437157" />
       </scope>
@@ -3002,7 +3002,7 @@
       <node id="1201774158169" at="80,27,80,27" concept="1" />
       <node id="1201774171139" at="112,27,112,27" concept="1" />
       <node id="1227876789545" at="166,27,166,27" concept="1" />
-      <node id="1201777442242" at="210,27,210,27" concept="1" />
+      <node id="1201777442242" at="211,27,211,27" concept="1" />
       <node id="1201774030453" at="15,54,16,74" concept="13" />
       <node id="1201774062274" at="16,74,17,74" concept="13" />
       <node id="1201774075868" at="17,74,18,16" concept="7" />
@@ -3057,29 +3057,30 @@
       <node id="1227876789545" at="167,38,168,28" concept="2" />
       <node id="1227876789544" at="169,28,170,37" concept="2" />
       <node id="1227876789544" at="172,31,173,29" concept="14" />
-      <node id="1202855398407" at="181,41,182,19" concept="14" />
-      <node id="1201777442241" at="189,0,190,0" concept="8" trace="__CP__" />
-      <node id="1201777442241" at="195,28,196,54" concept="0" />
-      <node id="1201777442241" at="196,54,197,35" concept="14" />
-      <node id="1201777447184" at="198,27,199,38" concept="7" />
-      <node id="1201777447184" at="199,38,200,36" concept="7" />
-      <node id="1201777447184" at="200,36,201,34" concept="14" />
-      <node id="1201777451248" at="202,27,203,38" concept="7" />
-      <node id="1201777451248" at="203,38,204,36" concept="7" />
-      <node id="1201777451248" at="204,36,205,34" concept="14" />
-      <node id="1201777453699" at="206,27,207,38" concept="7" />
-      <node id="1201777453699" at="207,38,208,36" concept="7" />
-      <node id="1201777453699" at="208,36,209,34" concept="14" />
-      <node id="1201777442242" at="210,27,211,38" concept="7" />
-      <node id="1201777442242" at="211,38,212,28" concept="2" />
-      <node id="1201777442241" at="213,28,214,37" concept="2" />
-      <node id="1201777442241" at="216,31,217,29" concept="14" />
+      <node id="8320417386115921118" at="179,7,180,0" concept="16" />
+      <node id="1202855398407" at="182,41,183,19" concept="14" />
+      <node id="1201777442241" at="190,0,191,0" concept="8" trace="__CP__" />
+      <node id="1201777442241" at="196,28,197,54" concept="0" />
+      <node id="1201777442241" at="197,54,198,35" concept="14" />
+      <node id="1201777447184" at="199,27,200,38" concept="7" />
+      <node id="1201777447184" at="200,38,201,36" concept="7" />
+      <node id="1201777447184" at="201,36,202,34" concept="14" />
+      <node id="1201777451248" at="203,27,204,38" concept="7" />
+      <node id="1201777451248" at="204,38,205,36" concept="7" />
+      <node id="1201777451248" at="205,36,206,34" concept="14" />
+      <node id="1201777453699" at="207,27,208,38" concept="7" />
+      <node id="1201777453699" at="208,38,209,36" concept="7" />
+      <node id="1201777453699" at="209,36,210,34" concept="14" />
+      <node id="1201777442242" at="211,27,212,38" concept="7" />
+      <node id="1201777442242" at="212,38,213,28" concept="2" />
+      <node id="1201777442241" at="214,28,215,37" concept="2" />
+      <node id="1201777442241" at="217,31,218,29" concept="14" />
       <node id="1201777622004" at="129,0,131,0" concept="12" trace="invoke#(Ljava/lang/Iterable;)V" />
       <node id="1201777671676" at="133,0,135,0" concept="12" trace="invoke#(Ljava/lang/Iterable;)V" />
-      <node id="7084823572004219857" at="225,0,227,0" concept="4" trace="SequenceFunctionTypes_Test#()V" />
+      <node id="7084823572004219857" at="226,0,228,0" concept="4" trace="SequenceFunctionTypes_Test#()V" />
       <node id="1201774088258" at="53,0,56,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
       <node id="1201774129160" at="58,0,61,0" concept="12" trace="invoke#()Ljetbrains/mps/internal/collections/runtime/IListSequence;" />
-      <node id="1201774552987" at="181,0,184,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
+      <node id="1201774552987" at="182,0,185,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
       <node id="1201777602411" at="127,54,131,6" concept="13" />
       <node id="1201777651898" at="131,6,135,6" concept="13" />
       <node id="1201774086807" at="51,7,56,6" concept="7" />
@@ -3095,7 +3096,7 @@
       <node id="1201774158168" at="68,0,89,0" concept="12" trace="moveToNext#()Z" />
       <node id="1201774171138" at="100,0,121,0" concept="12" trace="moveToNext#()Z" />
       <node id="1227876789544" at="148,20,171,19" concept="19" />
-      <node id="1201777442241" at="192,20,215,19" concept="19" />
+      <node id="1201777442241" at="193,20,216,19" concept="19" />
       <node id="1227876790689" at="23,47,47,14" concept="14" />
       <node id="1201774158168" at="65,47,89,14" concept="14" />
       <node id="1201774171138" at="97,47,121,14" concept="14" />
@@ -3103,12 +3104,12 @@
       <node id="1201774158168" at="65,0,91,0" concept="12" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1201774171138" at="97,0,123,0" concept="12" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1227876789544" at="146,46,172,31" concept="6" />
-      <node id="1201777442241" at="190,46,216,31" concept="6" />
+      <node id="1201777442241" at="191,46,217,31" concept="6" />
       <node id="1227876790689" at="21,43,49,10" concept="14" />
       <node id="1201774158168" at="63,41,91,10" concept="14" />
       <node id="1201774171138" at="95,41,123,10" concept="14" />
       <node id="1227876789544" at="146,0,175,0" concept="12" trace="moveToNext#()Z" />
-      <node id="1201777442241" at="190,0,219,0" concept="12" trace="moveToNext#()Z" />
+      <node id="1201777442241" at="191,0,220,0" concept="12" trace="moveToNext#()Z" />
       <node id="1227876790689" at="21,0,51,0" concept="12" trace="iterable#()Ljava/lang/Iterable;" />
       <node id="1201774158168" at="63,0,93,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
       <node id="1201774171138" at="95,0,125,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
@@ -3116,16 +3117,16 @@
       <node id="1201774156827" at="61,6,93,6" concept="7" />
       <node id="1201774168374" at="93,6,125,6" concept="7" />
       <node id="1227876789544" at="143,47,175,14" concept="14" />
-      <node id="1201777442241" at="187,47,219,14" concept="14" />
+      <node id="1201777442241" at="188,47,220,14" concept="14" />
       <node id="1227876789544" at="143,0,177,0" concept="12" trace="iterator#()Ljava/util/Iterator;" />
-      <node id="1201777442241" at="187,0,221,0" concept="12" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="1201777442241" at="188,0,222,0" concept="12" trace="iterator#()Ljava/util/Iterator;" />
       <node id="1227876789544" at="141,43,177,10" concept="14" />
-      <node id="1201777442241" at="185,41,221,10" concept="14" />
+      <node id="1201777442241" at="186,41,222,10" concept="14" />
       <node id="1227876789544" at="141,0,179,0" concept="12" trace="iterable#()Ljava/lang/Iterable;" />
-      <node id="1201777442241" at="185,0,223,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
+      <node id="1201777442241" at="186,0,224,0" concept="12" trace="invoke#()Ljava/lang/Iterable;" />
       <node id="1202855390183" at="139,61,179,7" concept="13" />
-      <node id="1201774551790" at="179,7,223,7" concept="7" />
-      <node id="1201774519240" at="139,0,225,0" concept="12" trace="test_resultsReturnSequence#()V" />
+      <node id="1201774551790" at="180,0,224,7" concept="7" />
+      <node id="1201774519240" at="139,0,226,0" concept="12" trace="test_resultsReturnSequence#()V" />
       <node id="1201773936855" at="15,0,127,0" concept="12" trace="test_returnSequence#()V" />
       <scope id="1227876790690" at="38,27,38,27" />
       <scope id="1201774158169" at="80,27,80,27" />
@@ -3133,16 +3134,16 @@
       <scope id="1201777622005" at="129,47,129,47" />
       <scope id="1201777671677" at="133,47,133,47" />
       <scope id="1227876789545" at="166,27,166,27" />
-      <scope id="1201777442242" at="210,27,210,27" />
-      <scope id="7084823572004219859" at="225,39,225,39" />
+      <scope id="1201777442242" at="211,27,211,27" />
+      <scope id="7084823572004219859" at="226,39,226,39" />
       <scope id="1227876790689" at="41,28,42,37" />
       <scope id="1201774088259" at="53,41,54,19" />
       <scope id="1201774129161" at="58,46,59,91" />
       <scope id="1201774158168" at="83,28,84,37" />
       <scope id="1201774171138" at="115,28,116,37" />
       <scope id="1227876789544" at="169,28,170,37" />
-      <scope id="1201774552988" at="181,41,182,19" />
-      <scope id="1201777442241" at="213,28,214,37" />
+      <scope id="1201774552988" at="182,41,183,19" />
+      <scope id="1201777442241" at="214,28,215,37" />
       <scope id="1227876790689" at="31,28,33,35" />
       <scope id="1227876790690" at="38,27,40,28" />
       <scope id="1201774158168" at="73,28,75,35" />
@@ -3157,9 +3158,9 @@
       </scope>
       <scope id="1227876789544" at="151,28,153,35" />
       <scope id="1227876789545" at="166,27,168,28" />
-      <scope id="1201777442241" at="195,28,197,35" />
-      <scope id="1201777442242" at="210,27,212,28" />
-      <scope id="7084823572004219857" at="225,0,227,0" />
+      <scope id="1201777442241" at="196,28,198,35" />
+      <scope id="1201777442242" at="211,27,213,28" />
+      <scope id="7084823572004219857" at="226,0,228,0" />
       <scope id="1227876818984" at="34,27,37,34" />
       <scope id="1201774088258" at="53,0,56,0" />
       <scope id="1201774129160" at="58,0,61,0" />
@@ -3168,10 +3169,10 @@
       <scope id="1227876818561" at="154,27,157,34" />
       <scope id="1227876818810" at="158,27,161,34" />
       <scope id="1227876819149" at="162,27,165,34" />
-      <scope id="1201774552987" at="181,0,184,0" />
-      <scope id="1201777447184" at="198,27,201,34" />
-      <scope id="1201777451248" at="202,27,205,34" />
-      <scope id="1201777453699" at="206,27,209,34" />
+      <scope id="1201774552987" at="182,0,185,0" />
+      <scope id="1201777447184" at="199,27,202,34" />
+      <scope id="1201777451248" at="203,27,206,34" />
+      <scope id="1201777453699" at="207,27,210,34" />
       <scope id="1201777592835" at="127,54,137,16">
         <var name="fun1" id="1201777602412" />
         <var name="fun2" id="1201777651899" />
@@ -3187,7 +3188,7 @@
       <scope id="1201774158168" at="68,0,89,0" />
       <scope id="1201774171138" at="100,0,121,0" />
       <scope id="1227876789544" at="148,20,171,19" />
-      <scope id="1201777442241" at="192,20,215,19" />
+      <scope id="1201777442241" at="193,20,216,19" />
       <scope id="1227876790689" at="23,47,47,14" />
       <scope id="1201774158168" at="65,47,89,14" />
       <scope id="1201774171138" at="97,47,121,14" />
@@ -3195,27 +3196,27 @@
       <scope id="1201774158168" at="65,0,91,0" />
       <scope id="1201774171138" at="97,0,123,0" />
       <scope id="1227876789544" at="146,46,173,29" />
-      <scope id="1201777442241" at="190,46,217,29" />
+      <scope id="1201777442241" at="191,46,218,29" />
       <scope id="1227876790689" at="21,43,49,10" />
       <scope id="1201774158168" at="63,41,91,10" />
       <scope id="1201774171138" at="95,41,123,10" />
       <scope id="1227876789544" at="146,0,175,0" />
-      <scope id="1201777442241" at="190,0,219,0" />
+      <scope id="1201777442241" at="191,0,220,0" />
       <scope id="1227876790689" at="21,0,51,0" />
       <scope id="1201774158168" at="63,0,93,0" />
       <scope id="1201774171138" at="95,0,125,0" />
       <scope id="1227876789544" at="143,47,175,14" />
-      <scope id="1201777442241" at="187,47,219,14" />
+      <scope id="1201777442241" at="188,47,220,14" />
       <scope id="1227876789544" at="143,0,177,0" />
-      <scope id="1201777442241" at="187,0,221,0" />
+      <scope id="1201777442241" at="188,0,222,0" />
       <scope id="1227876789544" at="141,43,177,10" />
-      <scope id="1201777442241" at="185,41,221,10" />
+      <scope id="1201777442241" at="186,41,222,10" />
       <scope id="1227876789544" at="141,0,179,0" />
-      <scope id="1201777442241" at="185,0,223,0" />
-      <scope id="1201774519242" at="139,61,223,7">
+      <scope id="1201777442241" at="186,0,224,0" />
+      <scope id="1201774519242" at="139,61,224,7">
         <var name="seq" id="1202855390184" />
       </scope>
-      <scope id="1201774519240" at="139,0,225,0" />
+      <scope id="1201774519240" at="139,0,226,0" />
       <scope id="1201773936857" at="15,54,125,6">
         <var name="fun1" id="1201774030454" />
         <var name="fun2" id="1201774062275" />
@@ -3226,7 +3227,7 @@
       <unit id="1201777671676" at="132,69,135,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$7" />
       <unit id="1201774088258" at="52,15,56,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$2" />
       <unit id="1201774129160" at="57,15,61,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$3" />
-      <unit id="1201774552987" at="180,32,184,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
+      <unit id="1201774552987" at="181,33,185,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
       <unit id="1227876790689" at="24,23,47,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$3" />
       <unit id="1201774158168" at="66,23,89,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$6" />
       <unit id="1201774171138" at="98,23,121,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$7" />
@@ -3237,12 +3238,12 @@
       <unit id="1201774158168" at="62,15,93,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$4" />
       <unit id="1201774171138" at="94,15,125,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$5" />
       <unit id="1227876789544" at="144,23,175,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10" />
-      <unit id="1201777442241" at="188,23,219,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$12" />
+      <unit id="1201777442241" at="189,23,220,13" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$12" />
       <unit id="1227876789544" at="142,19,177,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$9" />
-      <unit id="1201777442241" at="186,19,221,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$11" />
+      <unit id="1201777442241" at="187,19,222,9" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$11" />
       <unit id="1227876789544" at="140,59,179,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$8" />
-      <unit id="1201777442241" at="184,11,223,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10" />
-      <unit id="1201773926206" at="14,0,228,0" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test" />
+      <unit id="1201777442241" at="185,11,224,5" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test$10" />
+      <unit id="1201773926206" at="14,0,229,0" name="jetbrains.mps.closures.test.SequenceFunctionTypes_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903b3(jetbrains.mps.closures.test@tests)/1201777863134">
@@ -4833,7 +4834,7 @@
       <unit id="5902225204490685016" at="91,11,122,5" name="jetbrains.mps.closures.test.WhileBreak_Test$2" />
       <unit id="5902225204490684995" at="15,23,87,13" name="jetbrains.mps.closures.test.WhileBreak_Test$3" />
       <unit id="5902225204490684995" at="13,19,89,9" name="jetbrains.mps.closures.test.WhileBreak_Test$2" />
-      <unit id="5902225204490684995" at="11,32,91,5" name="jetbrains.mps.closures.test.WhileBreak_Test$1" />
+      <unit id="5902225204490684995" at="11,33,91,5" name="jetbrains.mps.closures.test.WhileBreak_Test$1" />
       <unit id="5902225204490666277" at="9,0,127,0" name="jetbrains.mps.closures.test.WhileBreak_Test" />
     </file>
   </root>

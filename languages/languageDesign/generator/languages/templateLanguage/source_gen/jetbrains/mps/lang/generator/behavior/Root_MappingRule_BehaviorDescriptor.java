@@ -11,14 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class Root_MappingRule_BehaviorDescriptor extends BaseMappingRule_BehaviorDescriptor implements ImplementationPart_BehaviorDescriptor {
+public class Root_MappingRule_BehaviorDescriptor implements ImplementationPart_BehaviorDescriptor {
   public SNode virtual_getTemplateType_1213877498511(SNode __thisNode__) {
     return null;
-  }
-
-  @Override
-  public String getConceptFqName() {
-    return "jetbrains.mps.lang.generator.structure.Root_MappingRule";
   }
 
 }

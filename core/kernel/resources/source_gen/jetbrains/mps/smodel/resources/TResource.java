@@ -33,10 +33,10 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
     return this._2();
   }
   public SModule _1(SModule module) {
-    return tuple._0();
+    return tuple._0(module);
   }
   public SModel _2(SModel modelDescriptor) {
-    return tuple._1();
+    return tuple._1(modelDescriptor);
   }
   public SModule _1() {
     return tuple._0();

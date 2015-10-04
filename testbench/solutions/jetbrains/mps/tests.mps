@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -74,6 +74,7 @@
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
     <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
+    <import index="hcvu" ref="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -415,6 +416,18 @@
     </node>
     <node concept="lpD6D" id="2qEq7FDszd8" role="lpD6w">
       <ref role="lpD7u" to="65l5:4ECnMeMhxat" resolve="UndoTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="K6TtETsJsD" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:K6TtETsIzZ" resolve="CellChangeCollapsedCondition" />
+    </node>
+    <node concept="lpD6D" id="K6TtETsJuK" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:K6TtETs8T9" resolve="CellConditionallyCollapsed" />
+    </node>
+    <node concept="lpD6D" id="K6TtETsJwT" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:K6TtETsIvq" resolve="CellConditionallyUncollapsed" />
+    </node>
+    <node concept="lpD6D" id="6PT0agmOgRi" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:5qrsiYWoAxm" resolve="CellFoldedByDefault" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
@@ -1151,6 +1164,9 @@
     </node>
     <node concept="lpD6D" id="ROe8AA1GAV" role="lpD6w">
       <ref role="lpD7u" to="tpej:ROe8A_SmDX" resolve="CaseInsensitiveDuplicatedClassifierName" />
+    </node>
+    <node concept="lpD6D" id="6gZBjbXXKgP" role="lpD6w">
+      <ref role="lpD7u" to="tpej:6gZBjbXWPp4" resolve="CharAssignmentConversion" />
     </node>
     <node concept="lpD6D" id="2TdQhrRQmKZ" role="lpD6w">
       <ref role="lpD7u" to="tpej:2jmlBNW7vIq" resolve="ClassifierNameUniqueness" />
@@ -3209,6 +3225,27 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3dp" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6sm8I7pq1p_" resolve="SelectionOfWrappedCell" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrT9Ky" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT97b" resolve="SplitSingleLineComment1" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrT9W_" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT9Bb" resolve="SplitSingleLineComment2" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrTa8D" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT9CP" resolve="SplitSingleLineComment3" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrTakI" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT9Dr" resolve="SplitSingleLineComment4" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrTawO" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT9EM" resolve="SplitSingleLineComment5" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrTaGV" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT9Hz" resolve="SplitSingleLineComment6" />
+    </node>
+    <node concept="lpD6D" id="20QUXkrTaT3" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:20QUXkrT9Ja" resolve="SplitSingleLineComment7" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3dD" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6FEZUgeDi7b" resolve="TestAutoresolve" />

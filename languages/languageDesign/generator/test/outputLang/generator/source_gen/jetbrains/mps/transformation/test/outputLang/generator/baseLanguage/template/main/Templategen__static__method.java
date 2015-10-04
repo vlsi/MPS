@@ -4,14 +4,13 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
-import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.impl.reference.RefResolver;
@@ -20,13 +19,14 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
-public class Templategen__static__method extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
+public class Templategen__static__method extends TemplateDeclarationBase {
   public Templategen__static__method() {
   }
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980718989");
   }
-  protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+    final TemplateExecutionEnvironment environment = context.getEnvironment();
     TemplateContext context1 = context.subContext("testlabel");
     final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
     try {
@@ -93,7 +93,7 @@ public class Templategen__static__method extends TemplateDeclarationBase impleme
                     final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
                       environment.nodeCopied(context1, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905150327964");
-                      environment.resolveInTemplateLater(tnode10, "variableDeclaration", templateNode_tq9j2a_c0a1a1a1a1a2a1a1a1a3a2a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
+                      environment.resolveInTemplateLater(tnode10, "variableDeclaration", templateNode_tq9j2a_c0a1a1a1a1a2a1a1a1a3a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
                     } finally {
                     }
                     if (tnode10 != null) {
@@ -139,7 +139,7 @@ public class Templategen__static__method extends TemplateDeclarationBase impleme
                     final SNode tnode14 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                     try {
                       environment.nodeCopied(context1, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905151613299");
-                      environment.resolveInTemplateLater(tnode14, "variableDeclaration", templateNode_tq9j2a_c0a1a1a1a1a1a1a2a1a3a2a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
+                      environment.resolveInTemplateLater(tnode14, "variableDeclaration", templateNode_tq9j2a_c0a1a1a1a1a1a1a2a1a3a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
                     } finally {
                     }
                     if (tnode14 != null) {
@@ -151,7 +151,7 @@ public class Templategen__static__method extends TemplateDeclarationBase impleme
                     final SNode tnode15 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                     try {
                       environment.nodeCopied(context1, tnode15, "tpl/r:00000000-0000-4000-0000-011c89590606/4923130412071517799");
-                      environment.resolveInTemplateLater(tnode15, "baseMethodDeclaration", templateNode_tq9j2a_c0a1a1a2a1a1a1a2a1a3a2a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041", "fact", context1);
+                      environment.resolveInTemplateLater(tnode15, "baseMethodDeclaration", templateNode_tq9j2a_c0a1a1a2a1a1a1a2a1a3a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041", "fact", context1);
                       {
                         final SNode tnode16 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"));
                         try {
@@ -172,7 +172,7 @@ public class Templategen__static__method extends TemplateDeclarationBase impleme
                             final SNode tnode18 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                             try {
                               environment.nodeCopied(context1, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/3021153905151738388");
-                              environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_tq9j2a_c0a1a1a2a1a2a1a2a1a1a1a2a1a3a2a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
+                              environment.resolveInTemplateLater(tnode18, "variableDeclaration", templateNode_tq9j2a_c0a1a1a2a1a2a1a2a1a1a1a2a1a3a3a2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048", "e", context1);
                             } finally {
                             }
                             if (tnode18 != null) {
@@ -254,7 +254,8 @@ public class Templategen__static__method extends TemplateDeclarationBase impleme
     environment.registerLabel(context.getInput(), tnode2, "testlabel");
     return tnode2;
   }
-  protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart1(@NotNull final TemplateContext context) throws GenerationException {
+    final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode22 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
     try {
       environment.nodeCopied(context, tnode22, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987354");
@@ -335,22 +336,24 @@ public class Templategen__static__method extends TemplateDeclarationBase impleme
     }
     return tnode22;
   }
+  @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context));
+    return TemplateUtil.asList(applyPart0(context), applyPart1(context));
   }
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
-    SNode tnodepart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3392060900980724070");
-    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
-    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart0);
-    SNode tnodepart1 = applyPart1(environment, context);
-    SNodeReference weaveTf1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987358");
-    NodeWeaveFacility weaveSupport1 = environment.weaveNode(context, weaveTf1);
-    weaveSupport1.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart1);
+
+  @Override
+  public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
+    final TemplateContext templateContext = weaveContext.getTemplateContext();
+    SNode tnodepart0 = applyPart0(templateContext);
+    SNode contextNode0 = weaveContext.getContextNode();
+    weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart0, weaveContext.getAnchorNode(contextNode0, tnodepart0));
+    SNode tnodepart1 = applyPart1(templateContext);
+    SNode contextNode1 = weaveContext.getContextNode();
+    weaveSupport.weave(contextNode1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart1, weaveContext.getAnchorNode(contextNode1, tnodepart1));
     return TemplateUtil.asList(tnodepart0, tnodepart1);
   }
-  private static SNodePointer templateNode_tq9j2a_c0a1a1a1a1a2a1a1a1a3a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905150327964");
-  private static SNodePointer templateNode_tq9j2a_c0a1a1a1a1a1a1a2a1a3a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905151613299");
-  private static SNodePointer templateNode_tq9j2a_c0a1a1a2a1a1a1a2a1a3a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4923130412071517799");
-  private static SNodePointer templateNode_tq9j2a_c0a1a1a2a1a2a1a2a1a1a1a2a1a3a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905151738388");
+  private static SNodePointer templateNode_tq9j2a_c0a1a1a1a1a2a1a1a1a3a3a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905150327964");
+  private static SNodePointer templateNode_tq9j2a_c0a1a1a1a1a1a1a2a1a3a3a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905151613299");
+  private static SNodePointer templateNode_tq9j2a_c0a1a1a2a1a1a1a2a1a3a3a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4923130412071517799");
+  private static SNodePointer templateNode_tq9j2a_c0a1a1a2a1a2a1a2a1a1a1a2a1a3a3a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3021153905151738388");
 }

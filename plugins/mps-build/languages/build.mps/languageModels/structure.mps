@@ -5,9 +5,9 @@
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
+    <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
-    <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -457,11 +457,25 @@
       <property role="TrG5h" value="stripImplementation" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="2T92ovrftgd" role="1TKVEl">
+      <property role="TrG5h" value="customContent" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="3LQl9buGBDP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="jarLocations" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="3LQl9buGqe4" resolve="BuildMpsLayout_ModuleXml_CustomJarLocation" />
+    </node>
+    <node concept="1TJgyj" id="2T92ovrfst9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="deployedJar" />
+      <ref role="20lvS9" node="2T92ovrft9i" resolve="BuildMpsLayout_ModuleJarContent" />
+    </node>
+    <node concept="1TJgyj" id="2T92ovrftgg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="sourceJar" />
+      <ref role="20lvS9" node="2T92ovrft9i" resolve="BuildMpsLayout_ModuleJarContent" />
     </node>
     <node concept="1TJgyj" id="16hzwWwASfD" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -1143,6 +1157,13 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="2T92ovrft9i">
+    <property role="1pbfSe" value="159833049" />
+    <property role="3GE5qa" value="Layout" />
+    <property role="TrG5h" value="BuildMpsLayout_ModuleJarContent" />
+    <property role="R4oN_" value="Control/augment content of mps module jar (either deployment or source)" />
+    <ref role="1TJDcQ" to="3ior:2xHpXR_cEa4" resolve="BuildLayout_TransparentContainer" />
   </node>
 </model>
 

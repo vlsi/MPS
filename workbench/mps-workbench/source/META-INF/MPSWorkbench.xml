@@ -6,5 +6,10 @@
     <component>
       <implementation-class>jetbrains.mps.repository.RepositoryInitializingComponent</implementation-class>
     </component>
+
+    <component>
+      <interface-class>jetbrains.mps.make.IMakeService</interface-class>
+      <implementation-class>jetbrains.mps.ide.make.WorkbenchMakeService</implementation-class>
+    </component>
   </application-components>
 </components>

@@ -50,10 +50,10 @@ public class ExtendedNamedTuples {
       return this._3();
     }
     public String _2(String id) {
-      return tuple._0();
+      return tuple._0(id);
     }
     public Double _3(Double size) {
-      return tuple._1();
+      return tuple._1(size);
     }
     public String _2() {
       return tuple._0();
@@ -88,7 +88,7 @@ public class ExtendedNamedTuples {
       return this._4();
     }
     public String _4(String field) {
-      return tuple._0();
+      return tuple._0(field);
     }
     public String _4() {
       return tuple._0();

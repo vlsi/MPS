@@ -1207,7 +1207,7 @@ __switch__:
     });
   }
   public void test_yieldAllLast() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
@@ -1219,7 +1219,7 @@ __switch__:
     });
   }
   public void test_yieldAll() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
@@ -1276,7 +1276,7 @@ __switch__:
     });
   }
   public void test_yieldYieldAll() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
       }
@@ -1333,7 +1333,7 @@ __switch__:
     });
   }
   public void test_yieldAllYieldAll() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
       }
@@ -1405,7 +1405,7 @@ __switch__:
     });
   }
   public void test_yieldAllInCycle() throws Exception {
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
+    this.assertResultsEqual2(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4);
       }

@@ -144,6 +144,11 @@
       <property role="20kJfa" value="supercedesFun" />
       <ref role="20lvS9" node="6lCixFI9ig3" resolve="SupersedeConceptFunction" />
     </node>
+    <node concept="1TJgyj" id="6qi8GzL_bYz" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="applicableFun" />
+      <ref role="20lvS9" node="6qi8GzL_1PZ" resolve="IsApplicableConceptFunction" />
+    </node>
     <node concept="PrWs8" id="3SW4jvYrbIJ" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
@@ -884,7 +889,7 @@
     <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/nontypesystem.png" />
     <property role="TrG5h" value="NonTypesystemRule" />
-    <property role="34LRSv" value="Non-Typesystem Rule" />
+    <property role="34LRSv" value="Checking Rule" />
     <property role="3GE5qa" value="definition.rule" />
     <property role="1pbfSe" value="1213456912" />
     <ref role="1TJDcQ" node="hp8hY$D" resolve="AbstractCheckingRule" />
@@ -2029,13 +2034,6 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
-    <node concept="1TJgyj" id="2EOQLmJ9HZ$" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="code" />
-      <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="2EOQLmJ9gll" resolve="SubstituteTypeRuleFunction" />
-      <node concept="asaX9" id="4x8Jh$mQC7I" role="lGtFl" />
-    </node>
     <node concept="PrWs8" id="5zzawu2JakF" role="PzmwI">
       <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
     </node>
@@ -2068,20 +2066,11 @@
     <property role="1pbfSe" value="1401777693" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
-  <node concept="1TIwiD" id="2EOQLmJ9gll">
+  <node concept="1TIwiD" id="6qi8GzL_1PZ">
     <property role="3GE5qa" value="definition.conceptFunction" />
-    <property role="TrG5h" value="SubstituteTypeRuleFunction" />
-    <property role="1pbfSe" value="640032662" />
+    <property role="TrG5h" value="IsApplicableConceptFunction" />
+    <property role="1pbfSe" value="1478901831" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
-    <node concept="asaX9" id="4x8Jh$mQ$5M" role="lGtFl" />
-  </node>
-  <node concept="1TIwiD" id="2EOQLmJ9owp">
-    <property role="3GE5qa" value="definition.conceptFunction" />
-    <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
-    <property role="34LRSv" value="originalNode" />
-    <property role="1pbfSe" value="639999186" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="asaX9" id="4x8Jh$mQ$5O" role="lGtFl" />
   </node>
 </model>
 

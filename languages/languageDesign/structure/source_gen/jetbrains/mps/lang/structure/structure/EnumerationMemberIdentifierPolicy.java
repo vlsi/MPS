@@ -11,12 +11,20 @@ public enum EnumerationMemberIdentifierPolicy {
   derive_from_internal_value("derive from internal value", "derive_from_internal_value"),
   custom("custom", "custom");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  EnumerationMemberIdentifierPolicy(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
     List<EnumerationMemberIdentifierPolicy> list = ListSequence.fromList(new LinkedList<EnumerationMemberIdentifierPolicy>());
@@ -42,13 +50,5 @@ public enum EnumerationMemberIdentifierPolicy {
       return EnumerationMemberIdentifierPolicy.custom;
     }
     return EnumerationMemberIdentifierPolicy.getDefault();
-  }
-  private String myValue;
-  EnumerationMemberIdentifierPolicy(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

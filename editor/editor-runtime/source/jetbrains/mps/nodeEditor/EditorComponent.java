@@ -163,6 +163,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.ScrollBarUI;
 import javax.swing.plaf.basic.BasicScrollBarUI;
+import javax.swing.text.DefaultEditorKit;
 import java.awt.Adjustable;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -725,6 +726,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             repaint(editorCell);
           }
         }
+      }
+    });
+
+    enablePasteFromHistory();
+  }
+
+  private void enablePasteFromHistory() {
+    // Registering DefaultEditorKit.pasteAction in the action map enables 'Paste from History'
+    getActionMap().put(DefaultEditorKit.pasteAction, new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        performPaste();
       }
     });
   }
@@ -3092,34 +3105,42 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private class MyPasteProvider implements PasteProvider {
     @Override
     public void performPaste(@NotNull final DataContext dataContext) {
-      getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
-        @Override
-        protected void doExecute() {
-          if (isInvalid() || !isPastePossible(dataContext)) {
-            return;
-          }
-          jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-          if (selectedCell != null) {
-            myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
-          } else {
-            getSelectionManager().getSelection().executeAction(jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
-          }
-        }
-      });
+      EditorComponent.this.performPaste();
     }
 
     @Override
     public boolean isPastePossible(@NotNull DataContext dataContext) {
-      return !(isDisposed() ||
-          isInvalidLightweight() ||
-          ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
-          getSelectionManager().getSelection() == null);
+      return EditorComponent.this.isPastePossible();
     }
 
     @Override
     public boolean isPasteEnabled(@NotNull DataContext dataContext) {
       return true;
     }
+  }
+
+  private void performPaste() {
+    getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
+      @Override
+      protected void doExecute() {
+        if (isInvalid() || !isPastePossible()) {
+          return;
+        }
+        jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
+        if (selectedCell != null) {
+          myActionHandler.executeAction(selectedCell, jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
+        } else {
+          getSelectionManager().getSelection().executeAction(jetbrains.mps.openapi.editor.cells.CellActionType.PASTE);
+        }
+      }
+    });
+  }
+
+  private boolean isPastePossible() {
+    return !(isDisposed() ||
+        isInvalidLightweight() ||
+        ReadOnlyUtil.isSelectionReadOnlyInEditor(EditorComponent.this) ||
+        getSelectionManager().getSelection() == null);
   }
 
   /**

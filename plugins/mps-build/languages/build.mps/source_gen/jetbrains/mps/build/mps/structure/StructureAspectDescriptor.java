@@ -17,7 +17,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuildMPSPlugin = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMPSPlugin", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L)).super_("jetbrains.mps.build.structure.BuildPlugin").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL)).parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c3f3e2c1ce9819eL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L)).alias("mps", "adds MPS capabilities (packaging, generation) to the project").create();
   /*package*/ final ConceptDescriptor myConceptBuildMpsAspect = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsAspect", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5a408fb8c80220a9L)).super_("jetbrains.mps.build.structure.BuildAspect").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL)).parents("jetbrains.mps.build.structure.BuildAspect").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60dd541dL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6503355885715353788L, "bootstrap"), new ConceptDescriptorBuilder.Prop(1787667533297081791L, "testGeneration"), new ConceptDescriptorBuilder.Prop(5002485985633856504L, "excludes"), new ConceptDescriptorBuilder.Prop(7981469545489178349L, "generationMaxHeapSizeInMb"), new ConceptDescriptorBuilder.Prop(353547257300482730L, "generationMaxPermSizeInMb")).properties("bootstrap", "testGeneration", "excludes", "generationMaxHeapSizeInMb", "generationMaxPermSizeInMb").alias("mps settings", "").create();
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_FolderWithSources = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x1d38569c566c8c91L)).super_("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources").super_(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L)).parents("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.structure.BuildLayout_InJarNode").parentIds(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L)).alias("folder with sources of", "MPS module").create();
-  /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_ModuleJars = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L)).super_("jetbrains.mps.build.structure.BuildLayout_Node").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).parents("jetbrains.mps.build.structure.BuildLayout_Node").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7918752904810477378L, "stripImplementation")).properties("stripImplementation").referenceDescriptors(new ConceptDescriptorBuilder.Ref(1265949165890536425L, "module", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL), false)).references("module").childDescriptors(new ConceptDescriptorBuilder.Link(4356762679305730677L, "jarLocations", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L), true, true, false)).children(new String[]{"jarLocations"}, new boolean[]{true}).alias("module", "").create();
+  /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_ModuleJarContent = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJarContent", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L)).super_("jetbrains.mps.build.structure.BuildLayout_TransparentContainer").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde532a284L)).parents("jetbrains.mps.build.structure.BuildLayout_TransparentContainer").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x286d67dde532a284L)).alias("", "Control/augment content of mps module jar (either deployment or source)").create();
+  /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_ModuleJars = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L)).super_("jetbrains.mps.build.structure.BuildLayout_Node").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).parents("jetbrains.mps.build.structure.BuildLayout_Node").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7918752904810477378L, "stripImplementation"), new ConceptDescriptorBuilder.Prop(3335207478148060173L, "customContent")).properties("stripImplementation", "customContent").referenceDescriptors(new ConceptDescriptorBuilder.Ref(1265949165890536425L, "module", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL), false)).references("module").childDescriptors(new ConceptDescriptorBuilder.Link(4356762679305730677L, "jarLocations", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L), true, true, false), new ConceptDescriptorBuilder.Link(3335207478148056905L, "deployedJar", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L), true, false, false), new ConceptDescriptorBuilder.Link(3335207478148060176L, "sourceJar", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L), true, false, false)).children(new String[]{"jarLocations", "deployedJar", "sourceJar"}, new boolean[]{true, false, false}).alias("module", "").create();
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_ModuleSources = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L)).super_("jetbrains.mps.build.structure.BuildLayout_Node").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).parents("jetbrains.mps.build.structure.BuildLayout_Node", "jetbrains.mps.build.structure.BuildLayout_InJarNode").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4643216374596270214L, "modelsOnly"), new ConceptDescriptorBuilder.Prop(7918752904808503599L, "stripImplementation")).properties("modelsOnly", "stripImplementation").referenceDescriptors(new ConceptDescriptorBuilder.Ref(1692280246134781713L, "module", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL), false)).references("module").alias("sources of", "").create();
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_ModuleXml = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L)).super_("jetbrains.mps.build.structure.BuildLayout_Node").super_(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).parents("jetbrains.mps.build.structure.BuildLayout_Node").parentIds(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(7655580649838764661L, "module", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL), false)).references("module").childDescriptors(new ConceptDescriptorBuilder.Link(4356762679305686649L, "jarLocations", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L), true, true, false), new ConceptDescriptorBuilder.Link(506537499308757750L, "sourcesJarLocation", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L), true, false, false)).children(new String[]{"jarLocations", "sourcesJarLocation"}, new boolean[]{true, false}).alias("module descriptor of", "").create();
   /*package*/ final ConceptDescriptor myConceptBuildMpsLayout_ModuleXml_CustomJarLocation = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4356762679305675654L, "packagedLocation")).properties("packagedLocation").childDescriptors(new ConceptDescriptorBuilder.Link(4356762679305675653L, "path", MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL), false, false, false)).children(new String[]{"path"}, new boolean[]{false}).create();
@@ -68,13 +69,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBuildLayout_ToBinaryCopyProcessor, myConceptBuildMPSPlugin, myConceptBuildMpsAspect, myConceptBuildMpsLayout_FolderWithSources, myConceptBuildMpsLayout_ModuleJars, myConceptBuildMpsLayout_ModuleSources, myConceptBuildMpsLayout_ModuleXml, myConceptBuildMpsLayout_ModuleXml_CustomJarLocation, myConceptBuildMpsLayout_Plugin, myConceptBuildMpsLayout_PluginDescriptor, myConceptBuildMps_AbstractModule, myConceptBuildMps_Branding, myConceptBuildMps_BrandingCompany, myConceptBuildMps_BrandingHelp, myConceptBuildMps_BrandingStats, myConceptBuildMps_BrandingUpdateSite, myConceptBuildMps_DevKit, myConceptBuildMps_DevKitExport, myConceptBuildMps_DevKitExportLanguage, myConceptBuildMps_DevKitExportSolution, myConceptBuildMps_DevKitRef, myConceptBuildMps_ExtractedModuleDependency, myConceptBuildMps_Generator, myConceptBuildMps_GeneratorOptions, myConceptBuildMps_Group, myConceptBuildMps_IdeaPlugin, myConceptBuildMps_IdeaPluginContent, myConceptBuildMps_IdeaPluginDependency, myConceptBuildMps_IdeaPluginGroup, myConceptBuildMps_IdeaPluginGroupCustomModule, myConceptBuildMps_IdeaPluginModule, myConceptBuildMps_IdeaPluginVendor, myConceptBuildMps_Language, myConceptBuildMps_Module, myConceptBuildMps_ModuleDependency, myConceptBuildMps_ModuleDependencyExtendLanguage, myConceptBuildMps_ModuleDependencyJar, myConceptBuildMps_ModuleDependencyOnDevKit, myConceptBuildMps_ModuleDependencyOnJavaModule, myConceptBuildMps_ModuleDependencyOnModule, myConceptBuildMps_ModuleDependencyUseLanguage, myConceptBuildMps_ModuleJarRuntime, myConceptBuildMps_ModuleJavaSource, myConceptBuildMps_ModuleModelRoot, myConceptBuildMps_ModuleRuntime, myConceptBuildMps_ModuleSolutionRuntime, myConceptBuildMps_ModuleSource, myConceptBuildMps_ModuleTestSource, myConceptBuildMps_Solution, myConceptGeneratorInternal_BuildMps_Module, myConceptGeneratorInternal_BuildSourcePath, myConceptGeneratorInternal_String);
+    return Arrays.asList(myConceptBuildLayout_ToBinaryCopyProcessor, myConceptBuildMPSPlugin, myConceptBuildMpsAspect, myConceptBuildMpsLayout_FolderWithSources, myConceptBuildMpsLayout_ModuleJarContent, myConceptBuildMpsLayout_ModuleJars, myConceptBuildMpsLayout_ModuleSources, myConceptBuildMpsLayout_ModuleXml, myConceptBuildMpsLayout_ModuleXml_CustomJarLocation, myConceptBuildMpsLayout_Plugin, myConceptBuildMpsLayout_PluginDescriptor, myConceptBuildMps_AbstractModule, myConceptBuildMps_Branding, myConceptBuildMps_BrandingCompany, myConceptBuildMps_BrandingHelp, myConceptBuildMps_BrandingStats, myConceptBuildMps_BrandingUpdateSite, myConceptBuildMps_DevKit, myConceptBuildMps_DevKitExport, myConceptBuildMps_DevKitExportLanguage, myConceptBuildMps_DevKitExportSolution, myConceptBuildMps_DevKitRef, myConceptBuildMps_ExtractedModuleDependency, myConceptBuildMps_Generator, myConceptBuildMps_GeneratorOptions, myConceptBuildMps_Group, myConceptBuildMps_IdeaPlugin, myConceptBuildMps_IdeaPluginContent, myConceptBuildMps_IdeaPluginDependency, myConceptBuildMps_IdeaPluginGroup, myConceptBuildMps_IdeaPluginGroupCustomModule, myConceptBuildMps_IdeaPluginModule, myConceptBuildMps_IdeaPluginVendor, myConceptBuildMps_Language, myConceptBuildMps_Module, myConceptBuildMps_ModuleDependency, myConceptBuildMps_ModuleDependencyExtendLanguage, myConceptBuildMps_ModuleDependencyJar, myConceptBuildMps_ModuleDependencyOnDevKit, myConceptBuildMps_ModuleDependencyOnJavaModule, myConceptBuildMps_ModuleDependencyOnModule, myConceptBuildMps_ModuleDependencyUseLanguage, myConceptBuildMps_ModuleJarRuntime, myConceptBuildMps_ModuleJavaSource, myConceptBuildMps_ModuleModelRoot, myConceptBuildMps_ModuleRuntime, myConceptBuildMps_ModuleSolutionRuntime, myConceptBuildMps_ModuleSource, myConceptBuildMps_ModuleTestSource, myConceptBuildMps_Solution, myConceptGeneratorInternal_BuildMps_Module, myConceptGeneratorInternal_BuildSourcePath, myConceptGeneratorInternal_String);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ec, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fc, conceptFqName)) {
       case 0:
         return myConceptBuildLayout_ToBinaryCopyProcessor;
       case 1:
@@ -84,104 +85,106 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 3:
         return myConceptBuildMpsLayout_FolderWithSources;
       case 4:
-        return myConceptBuildMpsLayout_ModuleJars;
+        return myConceptBuildMpsLayout_ModuleJarContent;
       case 5:
-        return myConceptBuildMpsLayout_ModuleSources;
+        return myConceptBuildMpsLayout_ModuleJars;
       case 6:
-        return myConceptBuildMpsLayout_ModuleXml;
+        return myConceptBuildMpsLayout_ModuleSources;
       case 7:
-        return myConceptBuildMpsLayout_ModuleXml_CustomJarLocation;
+        return myConceptBuildMpsLayout_ModuleXml;
       case 8:
-        return myConceptBuildMpsLayout_Plugin;
+        return myConceptBuildMpsLayout_ModuleXml_CustomJarLocation;
       case 9:
-        return myConceptBuildMpsLayout_PluginDescriptor;
+        return myConceptBuildMpsLayout_Plugin;
       case 10:
-        return myConceptBuildMps_AbstractModule;
+        return myConceptBuildMpsLayout_PluginDescriptor;
       case 11:
-        return myConceptBuildMps_Branding;
+        return myConceptBuildMps_AbstractModule;
       case 12:
-        return myConceptBuildMps_BrandingCompany;
+        return myConceptBuildMps_Branding;
       case 13:
-        return myConceptBuildMps_BrandingHelp;
+        return myConceptBuildMps_BrandingCompany;
       case 14:
-        return myConceptBuildMps_BrandingStats;
+        return myConceptBuildMps_BrandingHelp;
       case 15:
-        return myConceptBuildMps_BrandingUpdateSite;
+        return myConceptBuildMps_BrandingStats;
       case 16:
-        return myConceptBuildMps_DevKit;
+        return myConceptBuildMps_BrandingUpdateSite;
       case 17:
-        return myConceptBuildMps_DevKitExport;
+        return myConceptBuildMps_DevKit;
       case 18:
-        return myConceptBuildMps_DevKitExportLanguage;
+        return myConceptBuildMps_DevKitExport;
       case 19:
-        return myConceptBuildMps_DevKitExportSolution;
+        return myConceptBuildMps_DevKitExportLanguage;
       case 20:
-        return myConceptBuildMps_DevKitRef;
+        return myConceptBuildMps_DevKitExportSolution;
       case 21:
-        return myConceptBuildMps_ExtractedModuleDependency;
+        return myConceptBuildMps_DevKitRef;
       case 22:
-        return myConceptBuildMps_Generator;
+        return myConceptBuildMps_ExtractedModuleDependency;
       case 23:
-        return myConceptBuildMps_GeneratorOptions;
+        return myConceptBuildMps_Generator;
       case 24:
-        return myConceptBuildMps_Group;
+        return myConceptBuildMps_GeneratorOptions;
       case 25:
-        return myConceptBuildMps_IdeaPlugin;
+        return myConceptBuildMps_Group;
       case 26:
-        return myConceptBuildMps_IdeaPluginContent;
+        return myConceptBuildMps_IdeaPlugin;
       case 27:
-        return myConceptBuildMps_IdeaPluginDependency;
+        return myConceptBuildMps_IdeaPluginContent;
       case 28:
-        return myConceptBuildMps_IdeaPluginGroup;
+        return myConceptBuildMps_IdeaPluginDependency;
       case 29:
-        return myConceptBuildMps_IdeaPluginGroupCustomModule;
+        return myConceptBuildMps_IdeaPluginGroup;
       case 30:
-        return myConceptBuildMps_IdeaPluginModule;
+        return myConceptBuildMps_IdeaPluginGroupCustomModule;
       case 31:
-        return myConceptBuildMps_IdeaPluginVendor;
+        return myConceptBuildMps_IdeaPluginModule;
       case 32:
-        return myConceptBuildMps_Language;
+        return myConceptBuildMps_IdeaPluginVendor;
       case 33:
-        return myConceptBuildMps_Module;
+        return myConceptBuildMps_Language;
       case 34:
-        return myConceptBuildMps_ModuleDependency;
+        return myConceptBuildMps_Module;
       case 35:
-        return myConceptBuildMps_ModuleDependencyExtendLanguage;
+        return myConceptBuildMps_ModuleDependency;
       case 36:
-        return myConceptBuildMps_ModuleDependencyJar;
+        return myConceptBuildMps_ModuleDependencyExtendLanguage;
       case 37:
-        return myConceptBuildMps_ModuleDependencyOnDevKit;
+        return myConceptBuildMps_ModuleDependencyJar;
       case 38:
-        return myConceptBuildMps_ModuleDependencyOnJavaModule;
+        return myConceptBuildMps_ModuleDependencyOnDevKit;
       case 39:
-        return myConceptBuildMps_ModuleDependencyOnModule;
+        return myConceptBuildMps_ModuleDependencyOnJavaModule;
       case 40:
-        return myConceptBuildMps_ModuleDependencyUseLanguage;
+        return myConceptBuildMps_ModuleDependencyOnModule;
       case 41:
-        return myConceptBuildMps_ModuleJarRuntime;
+        return myConceptBuildMps_ModuleDependencyUseLanguage;
       case 42:
-        return myConceptBuildMps_ModuleJavaSource;
+        return myConceptBuildMps_ModuleJarRuntime;
       case 43:
-        return myConceptBuildMps_ModuleModelRoot;
+        return myConceptBuildMps_ModuleJavaSource;
       case 44:
-        return myConceptBuildMps_ModuleRuntime;
+        return myConceptBuildMps_ModuleModelRoot;
       case 45:
-        return myConceptBuildMps_ModuleSolutionRuntime;
+        return myConceptBuildMps_ModuleRuntime;
       case 46:
-        return myConceptBuildMps_ModuleSource;
+        return myConceptBuildMps_ModuleSolutionRuntime;
       case 47:
-        return myConceptBuildMps_ModuleTestSource;
+        return myConceptBuildMps_ModuleSource;
       case 48:
-        return myConceptBuildMps_Solution;
+        return myConceptBuildMps_ModuleTestSource;
       case 49:
-        return myConceptGeneratorInternal_BuildMps_Module;
+        return myConceptBuildMps_Solution;
       case 50:
-        return myConceptGeneratorInternal_BuildSourcePath;
+        return myConceptGeneratorInternal_BuildMps_Module;
       case 51:
+        return myConceptGeneratorInternal_BuildSourcePath;
+      case 52:
         return myConceptGeneratorInternal_String;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ec = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingStats", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
+  private static String[] stringSwitchCases_1htk8d_a0a0fc = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJarContent", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingStats", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_Module", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
 }
