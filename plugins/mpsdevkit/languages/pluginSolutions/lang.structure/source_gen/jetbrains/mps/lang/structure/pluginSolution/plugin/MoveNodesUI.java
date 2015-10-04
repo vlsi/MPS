@@ -22,7 +22,9 @@ public interface MoveNodesUI {
   public void showErrorDialog(MPSProject project, String text, String header);
   public void showWarningDialog(MPSProject project, String text, String header);
   public SNode askTargetConcept(MPSProject project, SNode conceptFeature, String featureKind);
+  @Deprecated
   public MoveNodesUI.WhetherWriteMigration askAboutMigration(MPSProject project);
+  @Deprecated
   public void showRefactoringViewAndRefactorSelected(MPSProject project, SearchResults<SNode> usagesToShow, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header);
 
 

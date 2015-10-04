@@ -97,7 +97,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     if (newLocation == null) {
       return;
     }
-    doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, newLocation)));
+    doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, newLocation)), null);
   }
 
   public static class ToMoveItem extends MultiTuple._2<List<SNode>, NodeLocation> {
@@ -121,7 +121,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     }
   }
 
-  public void doMove(final MPSProject project, final List<ToMoveItem> toMove) {
+  public static void doMove(final MPSProject project, final List<ToMoveItem> toMove, final Runnable callBack) {
 
     final List<SContainmentLink> roles = ListSequence.fromList(new ArrayList<SContainmentLink>(ListSequence.fromList(toMove).count()));
 
@@ -159,12 +159,12 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     }).toListSequence());
 
-    final List<SNode> nodesToMoveWithDescendants;
+    final Wrappers._T<List<SNode>> nodesToMoveWithDescendants = new Wrappers._T<List<SNode>>();
     final Wrappers._T<SearchResults<SNode>> searchResults = new Wrappers._T<SearchResults<SNode>>();
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        nodesToMoveWithDescendants = ListSequence.fromList(toMove).translate(new ITranslator2<ToMoveItem, SNode>() {
+        nodesToMoveWithDescendants.value = ListSequence.fromList(toMove).translate(new ITranslator2<ToMoveItem, SNode>() {
           public Iterable<SNode> translate(ToMoveItem it) {
             return it.nodes();
           }
@@ -174,7 +174,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           }
         }).toListSequence();
         for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
-          builder.willBeMoved(nodesToMoveWithDescendants);
+          builder.willBeMoved(nodesToMoveWithDescendants.value);
         }
         searchResults.value = new SearchResults<SNode>();
         for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
@@ -187,9 +187,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       public void run() {
         project.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            List<Boolean> shouldKeepOldNodes = ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(nodesToMoveWithDescendants).count()));
+            List<Boolean> shouldKeepOldNodes = ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(nodesToMoveWithDescendants.value).count()));
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
-              List<Boolean> builderRequires = builder.shouldKeepOldNodes(ListSequence.fromList(nodesToMoveWithDescendants).select(new ISelector<SNode, Boolean>() {
+              List<Boolean> builderRequires = builder.shouldKeepOldNodes(ListSequence.fromList(nodesToMoveWithDescendants.value).select(new ISelector<SNode, Boolean>() {
                 public Boolean select(SNode it) {
                   return ListSequence.fromList(toMove).translate(new ITranslator2<ToMoveItem, SNode>() {
                     public Iterable<SNode> translate(ToMoveItem it) {
@@ -241,7 +241,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
               }
             }
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
-              builder.isMoved(ListSequence.fromList(nodesToMoveWithDescendants).select(new ISelector<SNode, SNode>() {
+              builder.isMoved(ListSequence.fromList(nodesToMoveWithDescendants.value).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode it) {
                   return MapSequence.fromMap(copyMap).get(it);
                 }
@@ -249,6 +249,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             }
             for (MoveRefactoringContributor builder : ListSequence.fromList(selectedBuilders)) {
               builder.commit();
+            }
+            if (callBack != null) {
+              callBack.run();
             }
           }
         });

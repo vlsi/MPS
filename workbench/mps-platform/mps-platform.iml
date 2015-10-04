@@ -35,5 +35,6 @@
     <orderEntry type="module" module-name="platform" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>

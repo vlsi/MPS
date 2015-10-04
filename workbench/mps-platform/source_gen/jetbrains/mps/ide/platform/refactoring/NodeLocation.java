@@ -15,6 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public interface NodeLocation {
   public boolean isValid(SRepository repository, List<SNode> nodesToMove, @Nullable SContainmentLink role);
@@ -66,5 +68,29 @@ public interface NodeLocation {
       }
     }
   }
-
+  public static class NodeLocationRootWithAspectModelCreation implements NodeLocation {
+    private Language myLanguage;
+    private LanguageAspect myAspect;
+    public NodeLocationRootWithAspectModelCreation(Language languageModule, LanguageAspect aspect) {
+      myLanguage = languageModule;
+      myAspect = aspect;
+    }
+    public boolean isValid(SRepository repository, List<SNode> nodesToMove, SContainmentLink role) {
+      return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+        }
+      });
+    }
+    public void insertNodes(List<SNode> nodesToMove, SContainmentLink role) {
+      SModel model = myAspect.getOrCreate(myLanguage);
+      for (SNode node : ListSequence.fromList(nodesToMove)) {
+        SModel oldModel = node.getModel();
+        if (oldModel != null) {
+          oldModel.removeRootNode(node);
+        }
+        model.addRootNode(node);
+      }
+    }
+  }
 }
