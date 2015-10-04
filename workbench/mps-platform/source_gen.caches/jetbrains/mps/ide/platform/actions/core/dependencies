@@ -17,6 +17,7 @@
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault" file="MoveNodesDefault.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -31,15 +32,19 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContextImpl" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault.ToMoveItem" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveRefactoringContributor" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringViewUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.SelectContributorsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
@@ -107,6 +112,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.RefactoringViewUtil" file="RefactoringViewUtil.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -125,7 +131,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
   </dependency>

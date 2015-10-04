@@ -99,7 +99,11 @@ public class LocalReferencesMigrationStepBuilder implements MoveRefactoringContr
     return results;
   }
   public List<Boolean> shouldKeepOldNodes(List<Boolean> movingAsChild) {
-    return ListSequence.fromList(new ArrayList<Boolean>(ListSequence.fromList(movingAsChild).count()));
+    return ListSequence.fromList(movingAsChild).select(new ISelector<Boolean, Boolean>() {
+      public Boolean select(Boolean it) {
+        return false;
+      }
+    }).toListSequence();
   }
   public void isMoved(List<SNode> nodes) {
     if (myParts == null) {
