@@ -28,8 +28,6 @@ import BHL7.behavior.K__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.Collections;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -468,12 +466,10 @@ public class BHTest_Test extends TestCase {
     Assert.assertTrue(Sequence.fromIterable(seq).isEmpty());
   }
   public void test_seqConcept() throws Exception {
-    Iterable<SNode> nodeSeq = Sequence.fromIterable(Collections.<SNode>emptyList());
-    Iterable<SAbstractConcept> conceptSeq = Sequence.fromIterable(nodeSeq).select(new ISelector<SNode, SConcept>() {
-      public SConcept select(SNode it) {
-        return SNodeOperations.getConcept(it);
-      }
-    });
+    // fix 
+    // <node> 
+    // <node> 
+    // <node> 
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
@@ -852,6 +848,11 @@ public class BHTest_Test extends TestCase {
   private static SNode createA_a2wy8c_a0a0vc0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), null, null, false);
+    return n1;
+  }
+  private static SNode createA_a2wy8c_a0a0a0b0wc0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24cbL, "BHL1.structure.A"), null, null, false);
     return n1;
   }
 }

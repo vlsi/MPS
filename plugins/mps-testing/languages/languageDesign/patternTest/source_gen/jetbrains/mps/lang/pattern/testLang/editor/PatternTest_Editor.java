@@ -498,7 +498,7 @@ public class PatternTest_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_kasahx_b0a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
+        return (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {

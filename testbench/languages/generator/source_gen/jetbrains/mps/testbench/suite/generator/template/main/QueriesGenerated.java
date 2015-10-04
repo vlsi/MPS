@@ -40,9 +40,9 @@ public class QueriesGenerated {
     return _context.getTemplateValue() + "_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Iterable<SNode> sourceNodesQuery_2956932267233365615(final SourceSubstituteMacroNodesContext _context) {
-    return ModuleSuite__BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
+    return (Iterable<SNode>) ModuleSuite__BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_4089647634161018289(final SourceSubstituteMacroNodesContext _context) {
-    return ModuleSuite__BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
+    return (Iterable<SNode>) ModuleSuite__BehaviorDescriptor.getNotMutedTests_id7tF7F0nXrAX.invoke(_context.getNode());
   }
 }

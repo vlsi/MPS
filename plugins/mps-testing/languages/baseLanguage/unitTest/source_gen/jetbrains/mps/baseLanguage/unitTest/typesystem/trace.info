@@ -138,7 +138,7 @@
   <root nodeRef="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)/8797237962361650880">
     <file name="CheckUtils.java">
       <node id="8797237962361651658" at="19,71,20,76" concept="5" />
-      <node id="8797237962361653930" at="21,170,22,94" concept="6" />
+      <node id="8797237962361653930" at="21,190,22,94" concept="6" />
       <node id="8797237962361654516" at="23,12,24,18" concept="6" />
       <node id="825821767789062653" at="29,50,30,27" concept="7" />
       <node id="825821767789062619" at="30,27,31,18" concept="6" />
@@ -167,7 +167,7 @@
       <node id="8797237962361707494" at="34,76,43,5" concept="3" />
       <node id="825821767789047256" at="28,0,45,0" concept="9" trace="fixPluginKindForMPSTestCase#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="8797237962361650885" at="16,24,16,24" />
-      <scope id="8797237962361651673" at="21,170,22,94" />
+      <scope id="8797237962361651673" at="21,190,22,94" />
       <scope id="8797237962361654495" at="23,12,24,18" />
       <scope id="8797237962361651660" at="46,36,47,43" />
       <scope id="825821767789064099" at="52,36,53,43" />

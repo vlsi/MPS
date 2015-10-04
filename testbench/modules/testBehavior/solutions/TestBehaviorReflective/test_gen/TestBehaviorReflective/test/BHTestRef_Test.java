@@ -17,8 +17,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -447,15 +445,6 @@ public class BHTestRef_Test extends TestCase {
     }.invoke();
     Assert.assertSame(true, boolMethod2);
   }
-  public void test_seqMethodCall() throws Exception {
-    final SNode nodeA = createA_cc8y9n_a0a0vc0();
-    Iterable<Boolean> seq = Sequence.fromIterable(((Iterable<Boolean>) BHReflection.invoke(nodeA, SMethodTrimmedId.create("seqMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "2eC$PxWCGmD")))).select(new ISelector<Boolean, Boolean>() {
-      public Boolean select(Boolean it) {
-        return ((boolean) (Boolean) BHReflection.invoke(nodeA, SMethodTrimmedId.create("boolMethod1", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "2eC$PxWCtoT")));
-      }
-    });
-    Assert.assertTrue(Sequence.fromIterable(seq).isEmpty());
-  }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     myProject = env.openProject(new File(BHTestRef_Test.PROJECT_PATH));
@@ -826,11 +815,6 @@ public class BHTestRef_Test extends TestCase {
     return n1;
   }
   private static SNode createA_cc8y9n_a0a0uc0() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), null, null, false);
-    return n1;
-  }
-  private static SNode createA_cc8y9n_a0a0vc0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), null, null, false);
     return n1;

@@ -14,7 +14,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
@@ -23,25 +22,26 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class NodesTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getTestSet_idhGB2z8L = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGB2z8L").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isMpsStartRequired_id2RMg39tmiFh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isMpsStartRequired").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RMg39tmiFh").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getTestMethods_id1RfJDyhAUar = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1RfJDyhAUar").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isIntentionApplicable_idhHDM9no = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isIntentionApplicable").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHDM9no").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<String> getTestBodyName_idhOw0ICJ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestBodyName").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hOw0ICJ").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> needsWriteAction_id5vTxdEzuQjU = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("needsWriteAction").modifiers(SModifiersImpl.create(2, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5vTxdEzuQjU").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<List<SNode>> getTestSet_idhGB2z8L = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGB2z8L").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isMpsStartRequired_id2RMg39tmiFh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isMpsStartRequired").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RMg39tmiFh").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getTestMethods_id1RfJDyhAUar = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1RfJDyhAUar").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isIntentionApplicable_idhHDM9no = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isIntentionApplicable").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hHDM9no").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> getTestBodyName_idhOw0ICJ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestBodyName").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hOw0ICJ").registry(REGISTRY).build();
+  public static final SMethod<Boolean> needsWriteAction_id5vTxdEzuQjU = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("needsWriteAction").modifiers(SModifiersImpl.create(2, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5vTxdEzuQjU").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTestSet_idhGB2z8L, isMpsStartRequired_id2RMg39tmiFh, getTestMethods_id1RfJDyhAUar, isIntentionApplicable_idhHDM9no, getTestBodyName_idhOw0ICJ, needsWriteAction_id5vTxdEzuQjU);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static List<SNode> getTestSet_idhGB2z8L(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getTestSet_idhGB2z8L(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b78c499b5L, "testMethods")))) {
       ListSequence.fromList(result).addElement(method);
@@ -51,20 +51,20 @@ public final class NodesTestCase__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return result;
   }
-  private static Boolean isMpsStartRequired_id2RMg39tmiFh(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isMpsStartRequired_id2RMg39tmiFh(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static List<SNode> getTestMethods_id1RfJDyhAUar(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getTestMethods_id1RfJDyhAUar(@NotNull SNode __thisNode__) {
     return ListSequence.fromList(((List<SNode>) SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b78c499b5L, "testMethods")))).union(ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"), false, new SAbstractConcept[]{}))).toListSequence();
   }
-  private static Boolean isIntentionApplicable_idhHDM9no(@NotNull SAbstractConcept __thisConcept__, SNode node) {
+  /*package*/ static boolean isIntentionApplicable_idhHDM9no(@NotNull SAbstractConcept __thisConcept__, SNode node) {
     SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(node, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
     return test != null;
   }
-  private static String getTestBodyName_idhOw0ICJ(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static String getTestBodyName_idhOw0ICJ(@NotNull SAbstractConcept __thisConcept__) {
     return "TestBody";
   }
-  private static Boolean needsWriteAction_id5vTxdEzuQjU(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean needsWriteAction_id5vTxdEzuQjU(@NotNull SNode __thisNode__) {
     return !(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction")));
   }
 
@@ -73,41 +73,41 @@ public final class NodesTestCase__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getTestSet_idhGB2z8L(node);
+        return (T) ((List<SNode>) getTestSet_idhGB2z8L(node));
       case 1:
-        return (T) isMpsStartRequired_id2RMg39tmiFh(node);
+        return (T) ((Boolean) isMpsStartRequired_id2RMg39tmiFh(node));
       case 2:
-        return (T) getTestMethods_id1RfJDyhAUar(node);
+        return (T) ((List<SNode>) getTestMethods_id1RfJDyhAUar(node));
       case 5:
-        return (T) needsWriteAction_id5vTxdEzuQjU(node);
+        return (T) ((Boolean) needsWriteAction_id5vTxdEzuQjU(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 3:
-        return (T) isIntentionApplicable_idhHDM9no(concept, (SNode) parameters[0]);
+        return (T) ((Boolean) isIntentionApplicable_idhHDM9no(concept, (SNode) parameters[0]));
       case 4:
-        return (T) getTestBodyName_idhOw0ICJ(concept);
+        return (T) ((String) getTestBodyName_idhOw0ICJ(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

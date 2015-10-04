@@ -126,7 +126,7 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_95jom2_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return IGeneratorParameter__BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(node);
+        return (String) IGeneratorParameter__BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(node);
       }
       public void setText(String s) {
       }

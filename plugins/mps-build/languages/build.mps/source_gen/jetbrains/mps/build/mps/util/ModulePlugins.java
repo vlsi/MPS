@@ -37,7 +37,7 @@ public class ModulePlugins {
       for (SNode plugin : ListSequence.fromList(projectPlugins)) {
         if (ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bbeaL, "content"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BuildMps_IdeaPluginContent__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(it, module);
+            return (boolean) BuildMps_IdeaPluginContent__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(it, module);
           }
         }) != null) {
           ListSequence.fromList(initialPlugins).addElement(plugin);

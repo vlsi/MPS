@@ -169,7 +169,7 @@ public class CollectTests_Action extends BaseAction {
                     for (final SNode tref : tests) {
                       if (!(ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).any(new IWhereFilter<SNode>() {
                         public boolean accept(SNode it) {
-                          return ITestRef__BehaviorDescriptor.isSame_id1ouvi_ymQH.invoke(it, tref);
+                          return (boolean) ITestRef__BehaviorDescriptor.isSame_id1ouvi_ymQH.invoke(it, tref);
                         }
                       }))) {
                         ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).addElement(SNodeOperations.cast(tref, MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef")));

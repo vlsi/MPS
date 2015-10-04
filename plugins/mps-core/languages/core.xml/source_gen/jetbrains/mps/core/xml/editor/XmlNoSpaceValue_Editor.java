@@ -42,7 +42,7 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_gu0qdg_a1a0(EditorContext editorContext, SNode node) {
-    return !(XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
   }
   private EditorCell createConstant_gu0qdg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no space");
@@ -66,6 +66,6 @@ public class XmlNoSpaceValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_gu0qdg_a1c0(EditorContext editorContext, SNode node) {
-    return !(XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
   }
 }

@@ -51,7 +51,7 @@ public class ShowMetaLevel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    int metaLevel = BaseConcept__BehaviorDescriptor.getMetaLevel_id3t0v3yFOD1A.invoke(event.getData(MPSCommonDataKeys.NODE));
+    int metaLevel = (int) BaseConcept__BehaviorDescriptor.getMetaLevel_id3t0v3yFOD1A.invoke(event.getData(MPSCommonDataKeys.NODE));
     JOptionPane.showMessageDialog(event.getData(PlatformDataKeys.CONTEXT_COMPONENT), metaLevel);
   }
 }

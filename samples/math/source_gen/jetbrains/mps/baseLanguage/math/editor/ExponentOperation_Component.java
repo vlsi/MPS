@@ -92,7 +92,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_spngij_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -135,7 +135,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       return this.getMatchingText_internal((SNode) parameterObject);
     }
     public String getMatchingText_internal(SNode parameterObject) {
-      return ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept(parameterObject));
+      return (String) ExponentialOperation__BehaviorDescriptor.getOperationSymbol_id1653mnvAgnB.invoke(SNodeOperations.asSConcept(parameterObject));
     }
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((SNode) parameterObject);

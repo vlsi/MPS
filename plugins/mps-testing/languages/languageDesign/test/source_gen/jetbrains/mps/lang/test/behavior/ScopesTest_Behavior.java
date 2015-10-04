@@ -4,13 +4,7 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
 /**
  * Will be removed after 3.3
@@ -19,20 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 @Deprecated
 public class ScopesTest_Behavior {
   public static SReference call_getCheckingReference_5449224527592367549(SNode __thisNode__) {
-    if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference")) == null) {
-      return ((SNode) SNodeOperations.getParent(__thisNode__)).getReferences().iterator().next();
-    }
-    for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(__thisNode__)))) {
-      if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"))) {
-        return (jetbrains.mps.smodel.SReference) reference;
-      }
-    }
-    return null;
+    return ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX(__thisNode__);
   }
   public static boolean call_isSimple_5449224527592395483(SAbstractConcept __thisConcept__, SNode node) {
-    return Sequence.fromIterable(SNodeOperations.getReferences(node)).count() == 1;
+    return ScopesTest__BehaviorDescriptor.isSimple_id4IvydoGvpbr(__thisConcept__, node);
   }
   public static boolean call_isApplicable_5449224527592368025(SAbstractConcept __thisConcept__, SNode node) {
-    return Sequence.fromIterable(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"))) == null) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")));
+    return ScopesTest__BehaviorDescriptor.isApplicable_id4IvydoGviup(__thisConcept__, node);
   }
 }

@@ -12,12 +12,8 @@ import java.io.File;
 import org.apache.log4j.Level;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-<<<<<<< HEAD
 import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest__BehaviorDescriptor;
-=======
-import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
->>>>>>> origin/master
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;

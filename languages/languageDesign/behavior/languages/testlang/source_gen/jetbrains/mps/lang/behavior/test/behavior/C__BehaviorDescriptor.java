@@ -12,58 +12,58 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e6873L, "jetbrains.mps.lang.behavior.test.structure.C");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> abstractVirtualMethod_id46FlynTbIB0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("abstractVirtualMethod").modifiers(SModifiersImpl.create(10, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46FlynTbIB0").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.TYPE)));
-  public static final SMethod<String> virtualAbstractFromInterfaceConcept_id46FlynTbALM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("virtualAbstractFromInterfaceConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46FlynTbALM").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.TYPE)));
-  public static final SMethod<Void> doInvokeAll_id46FlynTbVzB = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("doInvokeAll").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46FlynTbVzB").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> abstractVirtualMethod_id46FlynTbIB0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("abstractVirtualMethod").modifiers(SModifiersImpl.create(10, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46FlynTbIB0").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<String> virtualAbstractFromInterfaceConcept_id46FlynTbALM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("virtualAbstractFromInterfaceConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46FlynTbALM").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Void> doInvokeAll_id46FlynTbVzB = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("doInvokeAll").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("46FlynTbVzB").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(abstractVirtualMethod_id46FlynTbIB0, virtualAbstractFromInterfaceConcept_id46FlynTbALM, doInvokeAll_id46FlynTbVzB);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String abstractVirtualMethod_id46FlynTbIB0(@NotNull SNode __thisNode__, int x) {
+  /*package*/ static String abstractVirtualMethod_id46FlynTbIB0(@NotNull SNode __thisNode__, int x) {
     return "C";
   }
-  private static String virtualAbstractFromInterfaceConcept_id46FlynTbALM(@NotNull SNode __thisNode__, int dummy) {
+  /*package*/ static String virtualAbstractFromInterfaceConcept_id46FlynTbALM(@NotNull SNode __thisNode__, int dummy) {
     return "C";
   }
-  private static void doInvokeAll_id46FlynTbVzB(@NotNull SNode __thisNode__) {
-    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invokeSpecial(__thisNode__, 0);
-    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invokeSpecial(__thisNode__, "", 0);
-    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invokeSpecial(__thisNode__, "from B", 0);
-    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invokeSpecial(__thisNode__, "from A", 0);
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invokeSpecial(__thisNode__, "from B", 0);
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invokeSpecial(__thisNode__, "from A", 0);
+  /*package*/ static void doInvokeAll_id46FlynTbVzB(@NotNull SNode __thisNode__) {
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invokeSpecial(__thisNode__, ((int) 0));
+    A__BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invokeSpecial(__thisNode__, "", ((int) 0));
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invokeSpecial(__thisNode__, "from B", ((int) 0));
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invokeSpecial(__thisNode__, "from A", ((int) 0));
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invokeSpecial(__thisNode__, "from B", ((int) 0));
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invokeSpecial(__thisNode__, "from A", ((int) 0));
     // 
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
-    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", ((int) 0));
+    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", ((int) 0));
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", ((int) 0));
+    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", ((int) 0));
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", ((int) 0));
+    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", ((int) 0));
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", ((int) 0));
+    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", ((int) 0));
     // 
-    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
-    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, ((int) 0));
+    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, ((int) 0));
     // staticAbstractVirtualMethod() 
     // staticVirtualAbstractFromInterfaceConcept() FIXME possible to declare static abstract virtual method in iface, 
     // implement it here (override), but impossible to invoke 
     // 
-    I__BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, 0);
-    I__BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, 0);
+    I__BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, ((int) 0));
+    I__BehaviorDescriptor.virtualAbstractFromInterfaceConcept_id46FlynTbALM.invoke(__thisNode__, ((int) 0));
     I__BehaviorDescriptor.virtualFromInterfaceConcept_id46FlynTbB2v.invoke(__thisNode__, "");
     I__BehaviorDescriptor.virtualFromInterfaceConcept_id46FlynTbB2v.invoke(__thisNode__, "");
   }
@@ -73,21 +73,21 @@ public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) abstractVirtualMethod_id46FlynTbIB0(node, (Integer) parameters[0]);
+        return (T) ((String) abstractVirtualMethod_id46FlynTbIB0(node, ((int) (Integer) parameters[0])));
       case 1:
-        return (T) virtualAbstractFromInterfaceConcept_id46FlynTbALM(node, (Integer) parameters[0]);
+        return (T) ((String) virtualAbstractFromInterfaceConcept_id46FlynTbALM(node, ((int) (Integer) parameters[0])));
       case 2:
         doInvokeAll_id46FlynTbVzB(node);
         return null;
@@ -97,7 +97,7 @@ public final class C__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

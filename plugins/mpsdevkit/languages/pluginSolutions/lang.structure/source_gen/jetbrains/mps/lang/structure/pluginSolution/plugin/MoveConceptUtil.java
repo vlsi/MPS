@@ -66,7 +66,7 @@ public class MoveConceptUtil {
   public static List<SModuleReference> calculateExtendsDependencies(Iterable<SNode> conceptsToMove) {
     Iterable<SNode> targExtends = Sequence.fromIterable(conceptsToMove).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(it);
+        return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(it);
       }
     }).subtract(Sequence.fromIterable(conceptsToMove));
     return Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModel>() {
@@ -148,7 +148,7 @@ public class MoveConceptUtil {
     Iterable<SNode> conceptsToRest = ListSequence.fromList(SModelOperations.roots(sourceModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).subtract(Sequence.fromIterable(conceptsToMove));
     if (Sequence.fromIterable(conceptsToRest).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(it);
+        return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(it);
       }
     }).intersect(Sequence.fromIterable(conceptsToMove)).isNotEmpty()) {
       sourceLanguage.addExtendedLanguage(targetLanguage.getModuleReference());

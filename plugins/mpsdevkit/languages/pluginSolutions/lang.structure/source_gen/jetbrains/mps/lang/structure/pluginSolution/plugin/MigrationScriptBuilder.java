@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.lang.migration.behavior.MigrationScript__BehaviorDescriptor;
 
 public class MigrationScriptBuilder {
 

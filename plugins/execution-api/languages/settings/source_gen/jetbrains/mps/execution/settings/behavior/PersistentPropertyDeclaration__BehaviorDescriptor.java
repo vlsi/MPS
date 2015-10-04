@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -24,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -32,44 +32,44 @@ public final class PersistentPropertyDeclaration__BehaviorDescriptor extends Bas
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isTemplate_idO$iR4J$g8G = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isTemplate").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g8G").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getAccessorName_idO$iR4J$g8R = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAccessorName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g8R").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isInitializable_idhEwJfMK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInitializable").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJfMK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getTypeFqName_idO$iR4J$g9n = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTypeFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g9n").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getTypeEditorFqName_idO$iR4J$g9_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTypeEditorFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g9_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  /*package*/ static final SMethod<SNode> getTemplate_idO$iR4J$gak = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTemplate").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("O$iR4J$gak").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> addMyPrefix_id5uxO0H8rOhC = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("addMyPrefix").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5uxO0H8rOhC").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
-  /*package*/ static final SMethod<String> removeMyPrefixInternal_idO$iR4J$g9N = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("removeMyPrefixInternal").modifiers(SModifiersImpl.create(1, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("O$iR4J$g9N").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
-  public static final SMethod<String> removeMyPrefix_idO$iR4J$g8k = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("removeMyPrefix").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g8k").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(String.class)));
+  public static final SMethod<Boolean> isTemplate_idO$iR4J$g8G = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isTemplate").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g8G").registry(REGISTRY).build();
+  public static final SMethod<String> getAccessorName_idO$iR4J$g8R = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAccessorName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g8R").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isInitializable_idhEwJfMK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInitializable").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJfMK").registry(REGISTRY).build();
+  public static final SMethod<String> getTypeFqName_idO$iR4J$g9n = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTypeFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g9n").registry(REGISTRY).build();
+  public static final SMethod<String> getTypeEditorFqName_idO$iR4J$g9_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTypeEditorFqName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g9_").registry(REGISTRY).build();
+  /*package*/ static final SMethod<SNode> getTemplate_idO$iR4J$gak = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTemplate").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("O$iR4J$gak").registry(REGISTRY).build();
+  public static final SMethod<String> addMyPrefix_id5uxO0H8rOhC = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("addMyPrefix").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5uxO0H8rOhC").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  /*package*/ static final SMethod<String> removeMyPrefixInternal_idO$iR4J$g9N = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("removeMyPrefixInternal").modifiers(SModifiersImpl.create(1, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("O$iR4J$g9N").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<String> removeMyPrefix_idO$iR4J$g8k = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("removeMyPrefix").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("O$iR4J$g8k").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isTemplate_idO$iR4J$g8G, getAccessorName_idO$iR4J$g8R, isInitializable_idhEwJfMK, getTypeFqName_idO$iR4J$g9n, getTypeEditorFqName_idO$iR4J$g9_, getTemplate_idO$iR4J$gak, addMyPrefix_id5uxO0H8rOhC, removeMyPrefixInternal_idO$iR4J$g9N, removeMyPrefix_idO$iR4J$g8k);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean isTemplate_idO$iR4J$g8G(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isTemplate_idO$iR4J$g8G(@NotNull SNode __thisNode__) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), createTemplatePersistentConfigurationType_ex141d_b0a0a0());
   }
-  private static String getAccessorName_idO$iR4J$g8R(@NotNull SNode __thisNode__) {
+  /*package*/ static String getAccessorName_idO$iR4J$g8R(@NotNull SNode __thisNode__) {
     String name = PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
-  private static Boolean isInitializable_idhEwJfMK(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isInitializable_idhEwJfMK(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static String getTypeFqName_idO$iR4J$g9n(@NotNull SNode __thisNode__) {
+  /*package*/ static String getTypeFqName_idO$iR4J$g9n(@NotNull SNode __thisNode__) {
     SNode template = PersistentPropertyDeclaration__BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
-    return IGeneratedToClass__BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(template);
+    return (String) IGeneratedToClass__BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(template);
   }
-  private static String getTypeEditorFqName_idO$iR4J$g9_(@NotNull SNode __thisNode__) {
+  /*package*/ static String getTypeEditorFqName_idO$iR4J$g9_(@NotNull SNode __thisNode__) {
     SNode template = PersistentPropertyDeclaration__BehaviorDescriptor.getTemplate_idO$iR4J$gak.invoke(__thisNode__);
-    return PersistentConfiguration__BehaviorDescriptor.getFullEditorName_idO$iR4J$g2V.invoke(template);
+    return (String) PersistentConfiguration__BehaviorDescriptor.getFullEditorName_idO$iR4J$g2V.invoke(template);
   }
-  private static SNode getTemplate_idO$iR4J$gak(@NotNull SNode __thisNode__) {
-    assert PersistentPropertyDeclaration__BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(__thisNode__);
+  /*package*/ static SNode getTemplate_idO$iR4J$gak(@NotNull SNode __thisNode__) {
+    assert ((boolean) PersistentPropertyDeclaration__BehaviorDescriptor.isTemplate_idO$iR4J$g8G.invoke(__thisNode__));
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")), true), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration"));
   }
-  private static String addMyPrefix_id5uxO0H8rOhC(@NotNull SAbstractConcept __thisConcept__, String name) {
+  /*package*/ static String addMyPrefix_id5uxO0H8rOhC(@NotNull SAbstractConcept __thisConcept__, String name) {
     String prefix = "my";
     if (name.length() > 2) {
       if (!(name.startsWith(prefix))) {
@@ -80,14 +80,14 @@ public final class PersistentPropertyDeclaration__BehaviorDescriptor extends Bas
     }
     return name;
   }
-  private static String removeMyPrefixInternal_idO$iR4J$g9N(@NotNull SAbstractConcept __thisConcept__, String name) {
+  /*package*/ static String removeMyPrefixInternal_idO$iR4J$g9N(@NotNull SAbstractConcept __thisConcept__, String name) {
     String prefix = "my";
     if (name.startsWith(prefix) && name.length() > 2) {
       name = name.substring(prefix.length());
     }
     return name;
   }
-  private static String removeMyPrefix_idO$iR4J$g8k(@NotNull SAbstractConcept __thisConcept__, String name) {
+  /*package*/ static String removeMyPrefix_idO$iR4J$g8k(@NotNull SAbstractConcept __thisConcept__, String name) {
     name = PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefixInternal_idO$iR4J$g9N.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), name);
     return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
@@ -97,47 +97,47 @@ public final class PersistentPropertyDeclaration__BehaviorDescriptor extends Bas
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) isTemplate_idO$iR4J$g8G(node);
+        return (T) ((Boolean) isTemplate_idO$iR4J$g8G(node));
       case 1:
-        return (T) getAccessorName_idO$iR4J$g8R(node);
+        return (T) ((String) getAccessorName_idO$iR4J$g8R(node));
       case 2:
-        return (T) isInitializable_idhEwJfMK(node);
+        return (T) ((Boolean) isInitializable_idhEwJfMK(node));
       case 3:
-        return (T) getTypeFqName_idO$iR4J$g9n(node);
+        return (T) ((String) getTypeFqName_idO$iR4J$g9n(node));
       case 4:
-        return (T) getTypeEditorFqName_idO$iR4J$g9_(node);
+        return (T) ((String) getTypeEditorFqName_idO$iR4J$g9_(node));
       case 5:
-        return (T) getTemplate_idO$iR4J$gak(node);
+        return (T) ((SNode) getTemplate_idO$iR4J$gak(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 6:
-        return (T) addMyPrefix_id5uxO0H8rOhC(concept, (String) parameters[0]);
+        return (T) ((String) addMyPrefix_id5uxO0H8rOhC(concept, (String) parameters[0]));
       case 7:
-        return (T) removeMyPrefixInternal_idO$iR4J$g9N(concept, (String) parameters[0]);
+        return (T) ((String) removeMyPrefixInternal_idO$iR4J$g9N(concept, (String) parameters[0]));
       case 8:
-        return (T) removeMyPrefix_idO$iR4J$g8k(concept, (String) parameters[0]);
+        return (T) ((String) removeMyPrefix_idO$iR4J$g8k(concept, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

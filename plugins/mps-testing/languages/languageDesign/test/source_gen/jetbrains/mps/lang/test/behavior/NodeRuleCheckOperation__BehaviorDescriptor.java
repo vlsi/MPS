@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.errors.IErrorReporter;
 import java.util.List;
 import java.util.Arrays;
@@ -21,20 +20,21 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class NodeRuleCheckOperation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3bc62fcd9b027d04L, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> hasExpectedRuleMessage_id4CT6QR8SJl8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasExpectedRuleMessage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4CT6QR8SJl8").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<Iterable<IErrorReporter>>) ((Class) Object.class))));
+  public static final SMethod<Boolean> hasExpectedRuleMessage_id4CT6QR8SJl8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasExpectedRuleMessage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4CT6QR8SJl8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Iterable<IErrorReporter>>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(hasExpectedRuleMessage_id4CT6QR8SJl8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean hasExpectedRuleMessage_id4CT6QR8SJl8(@NotNull SNode __thisNode__, Iterable<IErrorReporter> errorReporters) {
+  /*package*/ static boolean hasExpectedRuleMessage_id4CT6QR8SJl8(@NotNull SNode __thisNode__, Iterable<IErrorReporter> errorReporters) {
     if (Sequence.fromIterable(errorReporters).isEmpty()) {
       return false;
     }
@@ -56,26 +56,26 @@ public final class NodeRuleCheckOperation__BehaviorDescriptor extends BaseBHDesc
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) hasExpectedRuleMessage_id4CT6QR8SJl8(node, (Iterable<IErrorReporter>) parameters[0]);
+        return (T) ((Boolean) hasExpectedRuleMessage_id4CT6QR8SJl8(node, (Iterable<IErrorReporter>) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

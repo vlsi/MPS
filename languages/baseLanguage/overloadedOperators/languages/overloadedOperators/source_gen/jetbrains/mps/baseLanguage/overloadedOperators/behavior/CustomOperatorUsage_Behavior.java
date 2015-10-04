@@ -6,11 +6,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 /**
  * Will be removed after 3.3
@@ -19,11 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Deprecated
 public class CustomOperatorUsage_Behavior {
   public static List<SNode> call_getVisibleCustomOperators_1141736782992984505(SAbstractConcept __thisConcept__, SModel model) {
-    List<SNode> result = new ArrayList<SNode>();
-    List<SNode> containers = SModelOperations.rootsIncludingImported(model, MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c413011207L, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
-    for (SNode container : containers) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x6b6f5c413011207L, 0x2764eda929cc329cL, "customOperators"))));
-    }
-    return result;
+    return CustomOperatorUsage__BehaviorDescriptor.getVisibleCustomOperators_idZogSShiOAT(__thisConcept__, model);
   }
 }

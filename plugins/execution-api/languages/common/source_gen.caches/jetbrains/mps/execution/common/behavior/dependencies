@@ -17,16 +17,7 @@
   <dependency className="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" file="IGeneratedToClass_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0b0f" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0d0f" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0f0f" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.util.NodeNameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -52,7 +43,6 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SParameterImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
@@ -68,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.util.NodeNameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
@@ -91,27 +82,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass__BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.regexp.runtime.Replacer" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0b0f" file="_Replacer_tq53pp_a0a0b0f.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.regex.Matcher" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.regexp.runtime.Replacer" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0d0f" file="_Replacer_tq53pp_a0a0d0f.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.regex.Matcher" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.regexp.runtime.Replacer" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0f0f" file="_Replacer_tq53pp_a0a0f0f.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.regex.Matcher" />
-    <classNode dependClassName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.regexp.runtime.Replacer" />
   </dependency>
 </dependenciesRoot>

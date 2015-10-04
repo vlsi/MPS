@@ -27,7 +27,7 @@ public class IRuleReference_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_w39r7n_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return IRuleReference__BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(node);
+        return (String) IRuleReference__BehaviorDescriptor.getName_id6EW1JnOFUIS.invoke(node);
       }
       public void setText(String s) {
       }

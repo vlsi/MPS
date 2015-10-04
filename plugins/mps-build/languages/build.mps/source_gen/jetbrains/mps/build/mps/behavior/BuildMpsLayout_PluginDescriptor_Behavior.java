@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 @Deprecated
 public class BuildMpsLayout_PluginDescriptor_Behavior {
   public static String call_pluginXml_978600701690250198(SAbstractConcept __thisConcept__) {
-    return "plugin.xml";
+    return BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm(__thisConcept__);
   }
 }

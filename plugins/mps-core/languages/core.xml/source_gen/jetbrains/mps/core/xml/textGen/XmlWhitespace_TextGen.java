@@ -15,11 +15,11 @@ public class XmlWhitespace_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    boolean needNewLine = XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(ctx.getPrimaryInput());
+    boolean needNewLine = (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(ctx.getPrimaryInput());
     if (!(needNewLine)) {
       SNode left = SNodeOperations.getPrevSibling(ctx.getPrimaryInput());
       if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
-        needNewLine = XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement")));
+        needNewLine = (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement")));
       }
     }
     if (needNewLine) {

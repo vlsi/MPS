@@ -28,14 +28,14 @@
       <node id="2078093584693144862" at="29,0,30,0" concept="6" trace="REGISTRY" />
       <node id="2078093584693144862" at="31,0,32,0" concept="6" trace="getPresentation_idhEwIMiw" />
       <node id="2078093584693144862" at="33,0,34,0" concept="6" trace="BH_METHODS" />
-      <node id="2078093584693186290" at="38,80,39,475" concept="5" />
+      <node id="2078093584693186290" at="38,84,39,475" concept="5" />
       <node id="2078093584693144862" at="42,49,43,20" concept="8" />
-      <node id="2078093584693144862" at="47,108,48,21" concept="1" />
-      <node id="2078093584693144862" at="52,113,53,49" concept="4" />
+      <node id="2078093584693144862" at="47,114,48,21" concept="1" />
+      <node id="2078093584693144862" at="52,114,53,49" concept="4" />
       <node id="2078093584693144862" at="54,26,55,56" concept="10" />
-      <node id="2078093584693144862" at="58,13,59,51" concept="5" />
+      <node id="2078093584693144862" at="58,13,59,62" concept="5" />
       <node id="2078093584693144862" at="60,14,61,58" concept="10" />
-      <node id="2078093584693144862" at="66,127,67,49" concept="4" />
+      <node id="2078093584693144862" at="66,128,67,49" concept="4" />
       <node id="2078093584693144862" at="68,26,69,56" concept="10" />
       <node id="2078093584693144862" at="72,14,73,58" concept="10" />
       <node id="2078093584693144862" at="79,48,80,22" concept="5" />
@@ -53,11 +53,11 @@
       <node id="2078093584693144862" at="65,0,76,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="2078093584693144862" at="51,0,64,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="2078093584693144862" at="35,63,35,63" />
-      <scope id="2078093584693144862" at="38,80,39,475" />
+      <scope id="2078093584693184952" at="38,84,39,475" />
       <scope id="2078093584693144862" at="42,49,43,20" />
-      <scope id="2078093584693144862" at="47,108,48,21" />
+      <scope id="2078093584693144862" at="47,114,48,21" />
       <scope id="2078093584693144862" at="54,26,55,56" />
-      <scope id="2078093584693144862" at="58,13,59,51" />
+      <scope id="2078093584693144862" at="58,13,59,62" />
       <scope id="2078093584693144862" at="60,14,61,58" />
       <scope id="2078093584693144862" at="68,26,69,56" />
       <scope id="2078093584693144862" at="72,14,73,58" />
@@ -71,16 +71,16 @@
       </scope>
       <scope id="2078093584693144862" at="42,0,45,0" />
       <scope id="2078093584693144862" at="46,0,50,0">
-        <var name="array" id="2078093584693144862" />
         <var name="constructor" id="2078093584693144862" />
         <var name="node" id="2078093584693144862" />
+        <var name="parameters" id="2078093584693144862" />
       </scope>
       <scope id="2078093584693144862" at="77,0,82,0" />
       <scope id="2078093584693144862" at="83,0,88,0" />
-      <scope id="2078093584693144862" at="66,127,74,5">
+      <scope id="2078093584693144862" at="66,128,74,5">
         <var name="methodIndex" id="2078093584693144862" />
       </scope>
-      <scope id="2078093584693144862" at="52,113,62,5">
+      <scope id="2078093584693144862" at="52,114,62,5">
         <var name="methodIndex" id="2078093584693144862" />
       </scope>
       <scope id="2078093584693144862" at="65,0,76,0">

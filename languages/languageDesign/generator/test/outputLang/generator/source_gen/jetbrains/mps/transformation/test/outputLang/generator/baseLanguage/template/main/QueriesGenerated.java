@@ -69,7 +69,7 @@ public class QueriesGenerated {
     return "var" + ((Integer) _context.getVariable("i"));
   }
   public static Object propertyMacro_GetPropertyValue_5857536350883039219(final PropertyMacroContext _context) {
-    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("node")));
+    return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(((SNode) _context.getVariable("node")));
   }
   public static Object propertyMacro_GetPropertyValue_3571912445009937377(final PropertyMacroContext _context) {
     return _context.getNode().getConcept().getQualifiedName();

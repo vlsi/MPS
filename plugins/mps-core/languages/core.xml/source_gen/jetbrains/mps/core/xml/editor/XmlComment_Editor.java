@@ -50,7 +50,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_5fx40y_a0a0(EditorContext editorContext, SNode node) {
-    return !(XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node));
+    return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node));
   }
   private EditorCell createAlternation_5fx40y_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
@@ -186,6 +186,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_5fx40y_a0c0(EditorContext editorContext, SNode node) {
-    return !(XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node));
+    return !((boolean) XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node));
   }
 }

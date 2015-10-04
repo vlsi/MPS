@@ -44,9 +44,9 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_2bpkx8_a0a(EditorContext editorContext, SNode node) {
-    return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_2bpkx8_a1a(EditorContext editorContext, SNode node) {
-    return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node) && XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node) && (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
   }
 }

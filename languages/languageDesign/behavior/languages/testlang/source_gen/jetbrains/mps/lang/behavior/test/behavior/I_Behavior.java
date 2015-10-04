@@ -11,6 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class I_Behavior {
   public static String call_nonVirtualFromInterfaceConcept_4731970554577186854(SNode __thisNode__, String in, int dummy) {
-    return in;
+    return I__BehaviorDescriptor.nonVirtualFromInterfaceConcept_id46FlynTbB0A(__thisNode__, in, dummy);
   }
 }

@@ -43,7 +43,7 @@ public final class AddScopeTestAnnotation_Intention extends IntentionDescriptorB
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
-    return ScopesTest__BehaviorDescriptor.isApplicable_id4IvydoGviup.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest").getDeclarationNode()), node);
+    return (boolean) ScopesTest__BehaviorDescriptor.isApplicable_id4IvydoGviup.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest").getDeclarationNode()), node);
   }
   @Override
   public boolean isSurroundWith() {
@@ -67,7 +67,7 @@ public final class AddScopeTestAnnotation_Intention extends IntentionDescriptorB
       SNode newAnnotation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")));
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")), newAnnotation);
 
-      if (ScopesTest__BehaviorDescriptor.isSimple_id4IvydoGvpbr.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest").getDeclarationNode()), node)) {
+      if ((boolean) ScopesTest__BehaviorDescriptor.isSimple_id4IvydoGvpbr.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest").getDeclarationNode()), node)) {
         SLinkOperations.setTarget(newAnnotation, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"), ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX.invoke(newAnnotation).getTargetNode());
         Scope scope = ModelConstraints.getScope(ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX.invoke(newAnnotation));
 

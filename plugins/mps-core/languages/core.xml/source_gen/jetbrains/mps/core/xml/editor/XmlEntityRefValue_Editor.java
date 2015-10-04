@@ -52,7 +52,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_poez2y_a1a0(EditorContext editorContext, SNode node) {
-    return !(XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
   }
   private EditorCell createProperty_poez2y_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -94,6 +94,6 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_poez2y_a1c0(EditorContext editorContext, SNode node) {
-    return !(XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
   }
 }

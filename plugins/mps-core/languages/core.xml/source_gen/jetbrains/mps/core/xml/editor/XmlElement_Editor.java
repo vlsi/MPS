@@ -207,7 +207,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext) {
-    return XmlElement__BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(node);
+    return (boolean) XmlElement__BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(node);
   }
   private EditorCell createCollection_vc3gub_a0a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

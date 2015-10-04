@@ -15,7 +15,7 @@ public class XmlAttribute_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    if (XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(ctx.getPrimaryInput())) {
+    if ((boolean) XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(ctx.getPrimaryInput())) {
       tgs.newLine();
       tgs.indent();
       tgs.append("\t");

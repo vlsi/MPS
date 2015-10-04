@@ -6,20 +6,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 /**
  * Will be removed after 3.3
@@ -28,30 +14,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 @Deprecated
 public class TestModuleManifest_Behavior {
   public static List<Tuples._3<String, String, String>> call_languagesToInclude_3298469228705308574(SNode __thisNode__, Project project) {
-    SLanguageHierarchy hierarchy = new SLanguageHierarchy(SModelOperations.getAllLanguageImports(SNodeOperations.getModel(__thisNode__)));
-
-    List<Tuples._3<String, String, String>> result = ListSequence.fromList(new ArrayList<Tuples._3<String, String, String>>());
-    for (SNode ref : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876882L, 0x7d031e6cb9be480L, "language"))) {
-      SLanguage sLanguage = MetaAdapterFactory.getLanguage(SLanguageId.deserialize(SPropertyOperations.getString(ref, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId"))), SPropertyOperations.getString(ref, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af2L, "name")));
-
-      SModule sModule = sLanguage.getSourceModule();
-      if (sModule != null && project.isProjectModule(sModule) && sModule instanceof AbstractModule) {
-        IFile descriptorIFile = ((AbstractModule) sModule).getDescriptorFile();
-        ListSequence.fromList(result).addElement(MultiTuple.<String,String,String>from(sLanguage.getQualifiedName(), descriptorIFile.getPath(), sLanguage.getSourceModule().getModuleId().toString()));
-      }
-    }
-
-    return result;
+    return TestModuleManifest__BehaviorDescriptor.languagesToInclude_id2R6x4AnylYu(__thisNode__, project);
   }
   public static List<Tuples._3<String, String, String>> call_testModulesToInclude_8645252814069066668(SNode __thisNode__, Project project) {
-
-    List<Tuples._3<String, String, String>> result = ListSequence.fromList(new ArrayList<Tuples._3<String, String, String>>());
-    SModule sModule = SNodeOperations.getModel(__thisNode__).getModule();
-    if (sModule != null && project.isProjectModule(sModule) && sModule instanceof AbstractModule) {
-      IFile descriptorIFile = ((AbstractModule) sModule).getDescriptorFile();
-      ListSequence.fromList(result).addElement(MultiTuple.<String,String,String>from(sModule.getModuleReference().getModuleName(), descriptorIFile.getPath(), sModule.getModuleId().toString()));
-    }
-
-    return result;
+    return TestModuleManifest__BehaviorDescriptor.testModulesToInclude_id7vU6U5026IG(__thisNode__, project);
   }
 }

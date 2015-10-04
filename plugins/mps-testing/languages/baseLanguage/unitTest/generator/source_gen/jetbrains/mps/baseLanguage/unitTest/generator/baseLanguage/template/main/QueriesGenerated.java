@@ -130,10 +130,10 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"));
   }
   public static Iterable<SNode> sourceNodesQuery_1711796806179938519(final SourceSubstituteMacroNodesContext _context) {
-    return Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(_context.getNode());
+    return (Iterable<SNode>) Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1711796806179939504(final SourceSubstituteMacroNodesContext _context) {
-    return ClassConcept__BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(_context.getNode());
+    return (Iterable<SNode>) ClassConcept__BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1171932074411(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, 0x110dc94e924L, "testMethodList")), MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc95061dL, 0x110dc95061eL, "testMethod"));

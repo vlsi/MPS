@@ -4,12 +4,6 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
  * Will be removed after 3.3
@@ -18,19 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 @Deprecated
 public class TestInfo_Behavior {
   public static boolean call_reOpenProject_1031873601093419509(SAbstractConcept __thisConcept__, SModel model) {
-    List<SNode> infos = SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"));
-    if (ListSequence.fromList(infos).isEmpty()) {
-      return false;
-    }
-    SNode testInfo = ListSequence.fromList(infos).first();
-    return SPropertyOperations.getBoolean(testInfo, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, 0xe51f392b64685d9L, "reOpenProject"));
+    return TestInfo__BehaviorDescriptor.reOpenProject_idThWTaQhG7P(__thisConcept__, model);
   }
   public static String call_getProjectPath_5097124989038916375(SAbstractConcept __thisConcept__, SModel model) {
-    List<SNode> infos = SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"));
-    if (ListSequence.fromList(infos).isEmpty()) {
-      return null;
-    }
-    SNode testInfo = ListSequence.fromList(infos).first();
-    return SPropertyOperations.getString(testInfo, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, 0x46bca02bfb6e730bL, "projectPath"));
+    return TestInfo__BehaviorDescriptor.getProjectPath_id4qWC2JVrBcn(__thisConcept__, model);
   }
 }

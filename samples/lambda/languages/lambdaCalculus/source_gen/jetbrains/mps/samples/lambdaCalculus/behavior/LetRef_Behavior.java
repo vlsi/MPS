@@ -4,12 +4,6 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 /**
  * Will be removed after 3.3
@@ -18,16 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 @Deprecated
 public class LetRef_Behavior {
   public static List<SNode> call_getAllReferences_926857988255581402(SNode __thisNode__) {
-    List<SNode> result = new ArrayList<SNode>();
-    SNode node = __thisNode__;
-    while (SNodeOperations.getParent(node) != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression")))) {
-      node = SNodeOperations.getParent(node);
-    }
-    for (SNode letRef : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edc7216cL, "jetbrains.mps.samples.lambdaCalculus.structure.LetRef"), false, new SAbstractConcept[]{})) {
-      if (SLinkOperations.getTarget(letRef, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable")) == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable"))) {
-        ListSequence.fromList(result).addElement(letRef);
-      }
-    }
-    return result;
+    return LetRef__BehaviorDescriptor.getAllReferences_idNsR6RVdgjq(__thisNode__);
   }
 }

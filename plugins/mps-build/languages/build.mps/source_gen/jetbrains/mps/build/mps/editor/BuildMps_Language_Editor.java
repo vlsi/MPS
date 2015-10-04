@@ -104,7 +104,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ucemm3_a2a(SNode node, EditorContext editorContext) {
-    return !(BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node));
+    return !((boolean) BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node));
   }
   private EditorCell createConstant_ucemm3_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
@@ -218,7 +218,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ucemm3_a4a(SNode node, EditorContext editorContext) {
-    return !(BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node));
+    return !((boolean) BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node));
   }
   private EditorCell createConstant_ucemm3_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
@@ -445,7 +445,7 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ucemm3_a0a(SNode node, EditorContext editorContext) {
-    return BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node);
+    return (boolean) BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node);
   }
   private EditorCell createCollection_ucemm3_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

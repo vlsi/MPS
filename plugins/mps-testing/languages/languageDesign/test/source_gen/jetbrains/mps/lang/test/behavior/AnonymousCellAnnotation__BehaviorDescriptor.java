@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
@@ -30,23 +29,24 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> setupSelection_id5rZKa_fUiYP = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setupSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rZKa_fUiYP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(NodeEditorComponent.class, (Class<SNode>) ((Class) Object.class), (Class<Map<SNode, SNode>>) ((Class) Object.class))));
-  public static final SMethod<Integer> getCaretPosition_id5rZKa_fUlry = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getCaretPosition").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rZKa_fUlry").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(EditorCell_Label.class)));
-  /*package*/ static final SMethod<Void> setupCaretAndSelection_id7TYU6fNl1yz = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setupCaretAndSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7TYU6fNl1yz").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(EditorCell.class)));
-  /*package*/ static final SMethod<EditorComponent> setupInspector_id4VoD2D0CSEA = new SMethodBuilder<EditorComponent>(new SJavaCompoundTypeImpl(EditorComponent.class)).name("setupInspector").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("4VoD2D0CSEA").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), NodeEditorComponent.class)));
+  public static final SMethod<Void> setupSelection_id5rZKa_fUiYP = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setupSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rZKa_fUiYP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(NodeEditorComponent.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> getCaretPosition_id5rZKa_fUlry = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getCaretPosition").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5rZKa_fUlry").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(EditorCell_Label.class, ""));
+  /*package*/ static final SMethod<Void> setupCaretAndSelection_id7TYU6fNl1yz = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setupCaretAndSelection").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7TYU6fNl1yz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(EditorCell.class, ""));
+  /*package*/ static final SMethod<EditorComponent> setupInspector_id4VoD2D0CSEA = new SMethodBuilder<EditorComponent>(new SJavaCompoundTypeImpl(EditorComponent.class)).name("setupInspector").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("4VoD2D0CSEA").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(NodeEditorComponent.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(setupSelection_id5rZKa_fUiYP, getCaretPosition_id5rZKa_fUlry, setupCaretAndSelection_id7TYU6fNl1yz, setupInspector_id4VoD2D0CSEA);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void setupSelection_id5rZKa_fUiYP(@NotNull final SNode __thisNode__, final NodeEditorComponent nodeEditorComponent, final SNode node, final Map<SNode, SNode> map) {
+  /*package*/ static void setupSelection_id5rZKa_fUiYP(@NotNull final SNode __thisNode__, final NodeEditorComponent nodeEditorComponent, final SNode node, final Map<SNode, SNode> map) {
     final Wrappers._T<EditorComponent> editorComponent = new Wrappers._T<EditorComponent>(nodeEditorComponent);
     final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -73,22 +73,22 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
       }
     });
   }
-  private static Integer getCaretPosition_id5rZKa_fUlry(@NotNull SNode __thisNode__, EditorCell_Label label) {
+  /*package*/ static int getCaretPosition_id5rZKa_fUlry(@NotNull SNode __thisNode__, EditorCell_Label label) {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e3fde6f41L, "isLastPosition"))) {
       return label.getText().length();
     } else {
       return SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e31babe14L, "caretPosition"));
     }
   }
-  private static void setupCaretAndSelection_id7TYU6fNl1yz(@NotNull SNode __thisNode__, EditorCell cellWithId) {
+  /*package*/ static void setupCaretAndSelection_id7TYU6fNl1yz(@NotNull SNode __thisNode__, EditorCell cellWithId) {
     if (cellWithId instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cellWithId;
-      label.setCaretPosition(AnonymousCellAnnotation__BehaviorDescriptor.getCaretPosition_id5rZKa_fUlry.invoke(__thisNode__, label));
+      label.setCaretPosition(((int) AnonymousCellAnnotation__BehaviorDescriptor.getCaretPosition_id5rZKa_fUlry.invoke(__thisNode__, label)));
       label.setSelectionStart(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc33L, "selectionStart")));
       label.setSelectionEnd(SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x56ffc0a94fe5fc35L, "selectionEnd")));
     }
   }
-  private static EditorComponent setupInspector_id4VoD2D0CSEA(@NotNull SNode __thisNode__, SNode node, NodeEditorComponent nodeEditorComponent) {
+  /*package*/ static EditorComponent setupInspector_id4VoD2D0CSEA(@NotNull SNode __thisNode__, SNode node, NodeEditorComponent nodeEditorComponent) {
     SNode nodeToSelect = node;
     while (nodeToSelect != null && nodeEditorComponent.findNodeCell(nodeToSelect) == null) {
       nodeToSelect = SNodeOperations.getParent(nodeToSelect);
@@ -102,12 +102,12 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -117,19 +117,19 @@ public final class AnonymousCellAnnotation__BehaviorDescriptor extends BaseBHDes
         setupSelection_id5rZKa_fUiYP(node, (NodeEditorComponent) parameters[0], (SNode) parameters[1], (Map<SNode, SNode>) parameters[2]);
         return null;
       case 1:
-        return (T) getCaretPosition_id5rZKa_fUlry(node, (EditorCell_Label) parameters[0]);
+        return (T) ((Integer) getCaretPosition_id5rZKa_fUlry(node, (EditorCell_Label) parameters[0]));
       case 2:
         setupCaretAndSelection_id7TYU6fNl1yz(node, (EditorCell) parameters[0]);
         return null;
       case 3:
-        return (T) setupInspector_id4VoD2D0CSEA(node, (SNode) parameters[0], (NodeEditorComponent) parameters[1]);
+        return (T) ((EditorComponent) setupInspector_id4VoD2D0CSEA(node, (SNode) parameters[0], (NodeEditorComponent) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

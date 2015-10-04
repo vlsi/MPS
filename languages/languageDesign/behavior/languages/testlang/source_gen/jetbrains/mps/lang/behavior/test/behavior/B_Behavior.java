@@ -11,25 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class B_Behavior {
   public static String call_nonVirtualMethod_4731970554577218075(SNode __thisNode__, String in, int dummy) {
-    return "B";
+    return B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr(__thisNode__, in, dummy);
   }
   public static void call_doInvokeAll_4731970554577222218(SNode __thisNode__) {
-    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
-    B__BehaviorDescriptor.abstractVirtualMethod_id46FlynTbIB0.invoke(__thisNode__, 0);
-    // 
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    B__BehaviorDescriptor.virtualMethod_id46FlynTbICa.invoke(__thisNode__, "from B", 0);
-    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    A__BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "from A", 0);
-    // 
-    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    B__BehaviorDescriptor.nonVirtualMethod_id46FlynTbICr.invoke(__thisNode__, "from B", 0);
-    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
-    A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "from A", 0);
-    // 
-    A__BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "from A", 0);
-    // 
-    // FIXME it's possible to declare static virtual abstract method, but impossible to call it 
-    // staticAbstractVirtualMethod() 
+    B__BehaviorDescriptor.doInvokeAll_id46FlynTbJDa(__thisNode__);
   }
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -22,22 +21,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class MathSymbol__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> getVisibleIndices_idhZx_LLY = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("getVisibleIndices").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hZx_LLY").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class), (Class<List<SNode>>) ((Class) Object.class))));
-  public static final SMethod<List<SNode>> getEmptyIndexList_idi0Okz4g = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getEmptyIndexList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0Okz4g").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getOpName_id1653mnvAgoA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpName").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgoA").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Void> getVisibleIndices_idhZx_LLY = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("getVisibleIndices").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hZx_LLY").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getEmptyIndexList_idi0Okz4g = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getEmptyIndexList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i0Okz4g").registry(REGISTRY).build();
+  public static final SMethod<String> getOpName_id1653mnvAgoA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpName").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgoA").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisibleIndices_idhZx_LLY, getEmptyIndexList_idi0Okz4g, getOpName_id1653mnvAgoA);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static void getVisibleIndices_idhZx_LLY(@NotNull SNode __thisNode__, SNode sender, List<SNode> indices) {
+  /*package*/ static void getVisibleIndices_idhZx_LLY(@NotNull SNode __thisNode__, SNode sender, List<SNode> indices) {
     SNode sI = SNodeOperations.getNodeAncestor(sender, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea76c7e0L, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex"), true, false);
     if (sI != SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var"))) {
       ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var")));
@@ -47,10 +47,10 @@ public final class MathSymbol__BehaviorDescriptor extends BaseBHDescriptor {
       MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, __thisNode__, indices);
     }
   }
-  private static List<SNode> getEmptyIndexList_idi0Okz4g(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getEmptyIndexList_idi0Okz4g(@NotNull SNode __thisNode__) {
     return new ArrayList<SNode>();
   }
-  private static String getOpName_id1653mnvAgoA(@NotNull SAbstractConcept __thisConcept__) {
+  /*package*/ static String getOpName_id1653mnvAgoA(@NotNull SAbstractConcept __thisConcept__) {
     return null;
   }
 
@@ -59,12 +59,12 @@ public final class MathSymbol__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
@@ -74,21 +74,21 @@ public final class MathSymbol__BehaviorDescriptor extends BaseBHDescriptor {
         getVisibleIndices_idhZx_LLY(node, (SNode) parameters[0], (List<SNode>) parameters[1]);
         return null;
       case 1:
-        return (T) getEmptyIndexList_idi0Okz4g(node);
+        return (T) ((List<SNode>) getEmptyIndexList_idi0Okz4g(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 2:
-        return (T) getOpName_id1653mnvAgoA(concept);
+        return (T) ((String) getOpName_id1653mnvAgoA(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

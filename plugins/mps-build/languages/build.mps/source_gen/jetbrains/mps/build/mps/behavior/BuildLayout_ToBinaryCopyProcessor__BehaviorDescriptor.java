@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.Map;
 import java.util.List;
 import java.util.Arrays;
@@ -21,25 +20,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Collections;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x127671bd5d8bb460L, "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getTaskName_id19QsrPtc4wK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTaskName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("19QsrPtc4wK").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Map<String, String>> getTaskArguments_id6R_3WZ31H2E = new SMethodBuilder<Map<String, String>>(new SJavaCompoundTypeImpl(Map.class)).name("getTaskArguments").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6R_3WZ31H2E").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<String> getTaskName_id19QsrPtc4wK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTaskName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("19QsrPtc4wK").registry(REGISTRY).build();
+  public static final SMethod<Map<String, String>> getTaskArguments_id6R_3WZ31H2E = new SMethodBuilder<Map<String, String>>(new SJavaCompoundTypeImpl(Map.class)).name("getTaskArguments").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6R_3WZ31H2E").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTaskName_id19QsrPtc4wK, getTaskArguments_id6R_3WZ31H2E);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getTaskName_id19QsrPtc4wK(@NotNull SNode __thisNode__) {
+  /*package*/ static String getTaskName_id19QsrPtc4wK(@NotNull SNode __thisNode__) {
     // Note: task is declared in generator/weave_Tasks 
     return "copyModels";
   }
-  private static Map<String, String> getTaskArguments_id6R_3WZ31H2E(@NotNull SNode __thisNode__) {
+  /*package*/ static Map<String, String> getTaskArguments_id6R_3WZ31H2E(@NotNull SNode __thisNode__) {
     if (SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x127671bd5d8bb460L, 0x6de50fcfc2febc8aL, "stripImplementation"))) {
       return Collections.singletonMap("stripImplementation", "true");
     }
@@ -51,28 +51,28 @@ public final class BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor extends
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getTaskName_id19QsrPtc4wK(node);
+        return (T) ((String) getTaskName_id19QsrPtc4wK(node));
       case 1:
-        return (T) getTaskArguments_id6R_3WZ31H2E(node);
+        return (T) ((Map<String, String>) getTaskArguments_id6R_3WZ31H2E(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

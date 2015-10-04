@@ -8,50 +8,11 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescript
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-<<<<<<< HEAD
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
-=======
-import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
-import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
-import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
-import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
-import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SReference;
-
-public final class EditorTestCase_BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase");
-  private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
-
-  public static final SMethod<List<SNode>> getTestSet_idhGB2z8L = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGB2z8L").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<String> getTestName_idhGBohAB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBohAB").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getTestCase_idhGBgWVd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTestCase").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBgWVd").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getTestMethods_id1RfJDyhAUar = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getTestMethods").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1RfJDyhAUar").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> suppress_id2WmWrdnSpX7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("suppress").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2WmWrdnSpX7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses((Class<SNode>) ((Class) Object.class))));
-  public static final SMethod<Boolean> isMpsStartRequired_id2RMg39tmiFh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isMpsStartRequired").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RMg39tmiFh").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getExpectedRetType_idi2fhBNC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedRetType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i2fhBNC").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<SNode> getBody_idi2fhZ_m = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getBody").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i2fhZ_m").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getThrowableTypes_id5op8ooRkkc7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getThrowableTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5op8ooRkkc7").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTestSet_idhGB2z8L, getTestName_idhGBohAB, getTestCase_idhGBgWVd, getTestMethods_id1RfJDyhAUar, suppress_id2WmWrdnSpX7, isMpsStartRequired_id2RMg39tmiFh, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getThrowableTypes_id5op8ooRkkc7);
-
-  private static void ___init___(@NotNull SNode __thisNode__) {
-  }
->>>>>>> origin/master
 
 /**
  * Will be removed after 3.3
@@ -59,14 +20,23 @@ public final class EditorTestCase_BehaviorDescriptor extends BaseBHDescriptor {
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
+public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor {
   public boolean virtual_canRunInProcess_6436735966448788391(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
+  public SNode virtual_getBody_1239354440022(SNode __thisNode__) {
+    return null;
   }
   public String virtual_getClassName_1216136193905(SNode __thisNode__) {
     return null;
   }
+  public SNode virtual_getExpectedRetType_1239354342632(SNode __thisNode__) {
+    return null;
+  }
   public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
+  }
+  public SNode virtual_getLastStatement_1239354409446(SNode __thisNode__) {
     return null;
   }
   public String virtual_getSimpleClassName_1229278847513(SNode __thisNode__) {
@@ -78,64 +48,29 @@ public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   public List<SNode> virtual_getTestMethods_2148145109766218395(SNode __thisNode__) {
     return null;
   }
-<<<<<<< HEAD
   public String virtual_getTestName_1216136419751(SNode __thisNode__) {
     return null;
-=======
-  @Nullable
-  private static SNode getExpectedRetType_idi2fhBNC(@NotNull SNode __thisNode__) {
-    return null;
-  }
-  private static SNode getBody_idi2fhZ_m(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314cad13L, "code"));
-  }
-  private static List<SNode> getThrowableTypes_id5op8ooRkkc7(@NotNull SNode __thisNode__) {
-    List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(_quotation_createNode_jcmzdd_a0a1a8());
-    return result;
-  }
-
-  /*package*/ EditorTestCase_BehaviorDescriptor() {
-    super(REGISTRY);
->>>>>>> origin/master
   }
   public List<SNode> virtual_getTestSet_1216130724401(SNode __thisNode__) {
     return null;
   }
-<<<<<<< HEAD
+  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode __thisNode__) {
+    return null;
+  }
+  public boolean virtual_implicitThrows_4989157187872658723(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
+  public boolean virtual_isClosure_3262277503800835439(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
+  public boolean virtual_isExecuteSynchronous_1230212745736(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
-=======
-
-  @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
-    int methodIndex = BH_METHODS.indexOf(method);
-    if (methodIndex < 0) {
-      throw new BHMethodNotFoundException(this, method);
-    }
-    switch (methodIndex) {
-      case 0:
-        return (T) getTestSet_idhGB2z8L(node);
-      case 1:
-        return (T) getTestName_idhGBohAB(node);
-      case 2:
-        return (T) getTestCase_idhGBgWVd(node);
-      case 3:
-        return (T) getTestMethods_id1RfJDyhAUar(node);
-      case 4:
-        return (T) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]);
-      case 5:
-        return (T) isMpsStartRequired_id2RMg39tmiFh(node);
-      case 6:
-        return (T) getExpectedRetType_idi2fhBNC(node);
-      case 7:
-        return (T) getBody_idi2fhZ_m(node);
-      case 8:
-        return (T) getThrowableTypes_id5op8ooRkkc7(node);
-      default:
-        throw new BHMethodNotFoundException(this, method);
-    }
->>>>>>> origin/master
+  }
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
   public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode child) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
@@ -146,19 +81,4 @@ public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescr
     return "jetbrains.mps.lang.test.structure.EditorTestCase";
   }
 
-<<<<<<< HEAD
-=======
-  @NotNull
-  @Override
-  public SAbstractConcept getConcept() {
-    return CONCEPT;
-  }
-  private static SNode _quotation_createNode_jcmzdd_a0a1a8() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()"), facade.createNodeId("~Exception")));
-    return quotedNode_1;
-  }
->>>>>>> origin/master
 }

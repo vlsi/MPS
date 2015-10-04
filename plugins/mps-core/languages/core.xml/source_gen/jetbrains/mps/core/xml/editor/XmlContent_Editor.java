@@ -44,7 +44,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_91idit_a0a0(EditorContext editorContext, SNode node) {
-    return XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
   }
   private EditorCell createConstant_91idit_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -57,6 +57,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext) {
-    return XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
+    return (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
   }
 }

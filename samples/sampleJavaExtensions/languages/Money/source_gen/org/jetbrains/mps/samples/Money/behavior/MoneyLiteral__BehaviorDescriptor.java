@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -24,26 +23,27 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class MoneyLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<String> getVariableExpectedName_idhEwJgm_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVariableExpectedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgm_").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  /*package*/ static final SMethod<String> convertAmountAdvanced_idx3u75dl$Hd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("convertAmountAdvanced").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("x3u75dl$Hd").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Integer.TYPE)));
+  public static final SMethod<String> getVariableExpectedName_idhEwJgm_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVariableExpectedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJgm_").registry(REGISTRY).build();
+  /*package*/ static final SMethod<String> convertAmountAdvanced_idx3u75dl$Hd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("convertAmountAdvanced").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("x3u75dl$Hd").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariableExpectedName_idhEwJgm_, convertAmountAdvanced_idx3u75dl$Hd);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static String getVariableExpectedName_idhEwJgm_(@NotNull SNode __thisNode__) {
-    String text = MoneyLiteral__BehaviorDescriptor.convertAmountAdvanced_idx3u75dl$Hd.invoke(__thisNode__, SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x4b9a2fe559135183L, "amount")));
+  /*package*/ static String getVariableExpectedName_idhEwJgm_(@NotNull SNode __thisNode__) {
+    String text = MoneyLiteral__BehaviorDescriptor.convertAmountAdvanced_idx3u75dl$Hd.invoke(__thisNode__, ((int) SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x4b9a2fe559135183L, "amount"))));
     text += NameUtil.pluralize(NameUtil.capitalize(NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, 0x3210b276d14435a8L, "unit")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))));
     return text;
   }
-  private static String convertAmountAdvanced_idx3u75dl$Hd(@NotNull SNode __thisNode__, final int amount) {
+  /*package*/ static String convertAmountAdvanced_idx3u75dl$Hd(@NotNull SNode __thisNode__, final int amount) {
     Map<Integer, String> smallConversion = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10).withValues("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
     Map<Integer, String> mediumConversion = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 11, 12, 13, 14, 15, 16, 17, 18, 19).withValues("eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen");
     Map<Integer, String> tensConversion = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 20, 30, 40, 50, 60, 70, 80, 90).withValues("twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety");
@@ -70,28 +70,28 @@ public final class MoneyLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getVariableExpectedName_idhEwJgm_(node);
+        return (T) ((String) getVariableExpectedName_idhEwJgm_(node));
       case 1:
-        return (T) convertAmountAdvanced_idx3u75dl$Hd(node, (Integer) parameters[0]);
+        return (T) ((String) convertAmountAdvanced_idx3u75dl$Hd(node, ((int) (Integer) parameters[0])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

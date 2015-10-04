@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -22,23 +21,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class LambdaExpression__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getOuterApplication_id18EhrW3IG0h = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getOuterApplication").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("18EhrW3IG0h").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasParameterRefs_id6qD99pUaonP = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasParameterRefs").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6qD99pUaonP").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isInFull_id6nQdzuslK0D = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInFull").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6nQdzuslK0D").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<List<SNode>> getOuterVariables_id4zrttnsimEk = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOuterVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4zrttnsimEk").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<SNode> getOuterApplication_id18EhrW3IG0h = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getOuterApplication").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("18EhrW3IG0h").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasParameterRefs_id6qD99pUaonP = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasParameterRefs").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6qD99pUaonP").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isInFull_id6nQdzuslK0D = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isInFull").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6nQdzuslK0D").registry(REGISTRY).build();
+  public static final SMethod<List<SNode>> getOuterVariables_id4zrttnsimEk = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOuterVariables").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4zrttnsimEk").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOuterApplication_id18EhrW3IG0h, hasParameterRefs_id6qD99pUaonP, isInFull_id6nQdzuslK0D, getOuterVariables_id4zrttnsimEk);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static SNode getOuterApplication_id18EhrW3IG0h(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode getOuterApplication_id18EhrW3IG0h(@NotNull SNode __thisNode__) {
     if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")), MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de0L, "function")) == __thisNode__)) && SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"))) {
       return SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"));
 
@@ -47,7 +47,7 @@ public final class LambdaExpression__BehaviorDescriptor extends BaseBHDescriptor
     }
     return null;
   }
-  private static Boolean hasParameterRefs_id6qD99pUaonP(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasParameterRefs_id6qD99pUaonP(@NotNull SNode __thisNode__) {
     SNode node = __thisNode__;
     node = SNodeOperations.getParent(node);
     while (node != null && !((SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")) && !(ListSequence.fromList(VariableOwner__BehaviorDescriptor.getVariables_id7M_MU5__$7C.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496a4fL, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner")))).contains(SNodeOperations.as(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))))) {
@@ -59,16 +59,16 @@ public final class LambdaExpression__BehaviorDescriptor extends BaseBHDescriptor
     if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")))) {
       return false;
     }
-    return LambdaExpression__BehaviorDescriptor.isInFull_id6nQdzuslK0D.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
+    return (boolean) LambdaExpression__BehaviorDescriptor.isInFull_id6nQdzuslK0D.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ec98e9L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")));
   }
-  private static Boolean isInFull_id6nQdzuslK0D(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isInFull_id6nQdzuslK0D(@NotNull SNode __thisNode__) {
     SNode appl = LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__);
     if (null == appl) {
       return false;
     }
-    return LambdaApplication__BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__));
+    return (boolean) LambdaApplication__BehaviorDescriptor.isFullApplication_id18EhrW3IFXQ.invoke(LambdaExpression__BehaviorDescriptor.getOuterApplication_id18EhrW3IG0h.invoke(__thisNode__));
   }
-  private static List<SNode> getOuterVariables_id4zrttnsimEk(@NotNull SNode __thisNode__) {
+  /*package*/ static List<SNode> getOuterVariables_id4zrttnsimEk(@NotNull SNode __thisNode__) {
     List<SNode> allVar = SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"), false, new SAbstractConcept[]{});
     List<SNode> allRef = SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"), false, new SAbstractConcept[]{});
     List<SNode> result = new ArrayList<SNode>();
@@ -85,32 +85,32 @@ public final class LambdaExpression__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) getOuterApplication_id18EhrW3IG0h(node);
+        return (T) ((SNode) getOuterApplication_id18EhrW3IG0h(node));
       case 1:
-        return (T) hasParameterRefs_id6qD99pUaonP(node);
+        return (T) ((Boolean) hasParameterRefs_id6qD99pUaonP(node));
       case 2:
-        return (T) isInFull_id6nQdzuslK0D(node);
+        return (T) ((Boolean) isInFull_id6nQdzuslK0D(node));
       case 3:
-        return (T) getOuterVariables_id4zrttnsimEk(node);
+        return (T) ((List<SNode>) getOuterVariables_id4zrttnsimEk(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

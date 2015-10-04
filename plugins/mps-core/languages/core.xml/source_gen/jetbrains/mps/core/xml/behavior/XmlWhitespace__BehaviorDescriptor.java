@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -20,25 +19,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class XmlWhitespace__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> onNewLine_id1Qs9WekVZ9$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("onNewLine").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ9$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> hasNewLineAfter_id1Qs9WekVZ9E = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasNewLineAfter").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ9E").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isOneLineBlock_id1Qs9WekVZ7e = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isOneLineBlock").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ7e").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isTextLike_id1Qs9WekVZ9O = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isTextLike").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ9O").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isLastPositionAllowed_id1Qs9WekVZ8v = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLastPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ8v").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<Boolean> isFirstPositionAllowed_id1Qs9WekVZ7m = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFirstPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ7m").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<Boolean> onNewLine_id1Qs9WekVZ9$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("onNewLine").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ9$").registry(REGISTRY).build();
+  public static final SMethod<Boolean> hasNewLineAfter_id1Qs9WekVZ9E = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasNewLineAfter").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ9E").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isOneLineBlock_id1Qs9WekVZ7e = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isOneLineBlock").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ7e").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isTextLike_id1Qs9WekVZ9O = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isTextLike").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ9O").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isLastPositionAllowed_id1Qs9WekVZ8v = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isLastPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ8v").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isFirstPositionAllowed_id1Qs9WekVZ7m = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFirstPositionAllowed").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Qs9WekVZ7m").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(onNewLine_id1Qs9WekVZ9$, hasNewLineAfter_id1Qs9WekVZ9E, isOneLineBlock_id1Qs9WekVZ7e, isTextLike_id1Qs9WekVZ9O, isLastPositionAllowed_id1Qs9WekVZ8v, isFirstPositionAllowed_id1Qs9WekVZ7m);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static Boolean onNewLine_id1Qs9WekVZ9$(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean onNewLine_id1Qs9WekVZ9$(@NotNull SNode __thisNode__) {
     SNode left = SNodeOperations.getPrevSibling(__thisNode__);
     if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"))) {
       SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3bd0e5L, "jetbrains.mps.core.xml.structure.XmlPrologElement"));
@@ -46,22 +46,22 @@ public final class XmlWhitespace__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return false;
   }
-  private static Boolean hasNewLineAfter_id1Qs9WekVZ9E(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean hasNewLineAfter_id1Qs9WekVZ9E(@NotNull SNode __thisNode__) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) != null)) {
-      return !(XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(__thisNode__));
+      return !(((boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(__thisNode__)));
     }
     return false;
   }
-  private static Boolean isOneLineBlock_id1Qs9WekVZ7e(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isOneLineBlock_id1Qs9WekVZ7e(@NotNull SNode __thisNode__) {
     return false;
   }
-  private static Boolean isTextLike_id1Qs9WekVZ9O(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isTextLike_id1Qs9WekVZ9O(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static Boolean isLastPositionAllowed_id1Qs9WekVZ8v(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isLastPositionAllowed_id1Qs9WekVZ8v(@NotNull SNode __thisNode__) {
     return true;
   }
-  private static Boolean isFirstPositionAllowed_id1Qs9WekVZ7m(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean isFirstPositionAllowed_id1Qs9WekVZ7m(@NotNull SNode __thisNode__) {
     return true;
   }
 
@@ -70,36 +70,36 @@ public final class XmlWhitespace__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) onNewLine_id1Qs9WekVZ9$(node);
+        return (T) ((Boolean) onNewLine_id1Qs9WekVZ9$(node));
       case 1:
-        return (T) hasNewLineAfter_id1Qs9WekVZ9E(node);
+        return (T) ((Boolean) hasNewLineAfter_id1Qs9WekVZ9E(node));
       case 2:
-        return (T) isOneLineBlock_id1Qs9WekVZ7e(node);
+        return (T) ((Boolean) isOneLineBlock_id1Qs9WekVZ7e(node));
       case 3:
-        return (T) isTextLike_id1Qs9WekVZ9O(node);
+        return (T) ((Boolean) isTextLike_id1Qs9WekVZ9O(node));
       case 4:
-        return (T) isLastPositionAllowed_id1Qs9WekVZ8v(node);
+        return (T) ((Boolean) isLastPositionAllowed_id1Qs9WekVZ8v(node));
       case 5:
-        return (T) isFirstPositionAllowed_id1Qs9WekVZ7m(node);
+        return (T) ((Boolean) isFirstPositionAllowed_id1Qs9WekVZ7m(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

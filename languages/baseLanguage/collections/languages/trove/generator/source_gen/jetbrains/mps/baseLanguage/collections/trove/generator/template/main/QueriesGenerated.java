@@ -51,73 +51,73 @@ public class QueriesGenerated {
     return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(_context.getNode()) + "Value";
   }
   public static SNode sourceNodeQuery_5499565529811356535(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356518(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356589(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356603(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356612(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356623(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356632(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356641(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356649(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356665(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356657(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356673(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356681(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811382416(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811382365(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811356693(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_4737294400113015493(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811382391(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811713176(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811713189(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811713202(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811713225(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static SNode sourceNodeQuery_5499565529811713240(final SourceSubstituteMacroNodeContext _context) {
-    return Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
+    return (SNode) Type__BehaviorDescriptor.getBoxedType_idhEwIzNC.invoke(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_5499565529811382514(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_x583g4_a0a0a13(), _quotation_createNode_x583g4_b0a0a13(), _quotation_createNode_x583g4_c0a0a13(), _quotation_createNode_x583g4_d0a0a13(), _quotation_createNode_x583g4_e0a0a13(), _quotation_createNode_x583g4_f0a0a13());

@@ -49,7 +49,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_1uorir_a0(SNode node, EditorContext editorContext) {
-    return XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(node);
+    return (boolean) XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(node);
   }
   private EditorCell createCollection_1uorir_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

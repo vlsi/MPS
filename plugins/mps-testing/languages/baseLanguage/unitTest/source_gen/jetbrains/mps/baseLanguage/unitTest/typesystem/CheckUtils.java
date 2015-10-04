@@ -18,7 +18,7 @@ public class CheckUtils {
 
   public static boolean checkPluginKindForMPSTestCase(SNode testCase) {
     SModule module = check_c4dr2s_a0a0c(SNodeOperations.getModel(testCase));
-    if (ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testCase) || ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(testCase)) {
+    if ((boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(testCase) || (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(testCase)) {
       return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
     } else {
       return true;

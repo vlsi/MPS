@@ -14,7 +14,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
 import jetbrains.mps.project.Project;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -33,21 +32,22 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
 public final class TestModuleManifest__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc6844997876882L, "jetbrains.mps.build.mps.testManifest.structure.TestModuleManifest");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<Tuples._3<String, String, String>>> languagesToInclude_id2R6x4AnylYu = new SMethodBuilder<List<Tuples._3<String, String, String>>>(new SJavaCompoundTypeImpl((Class<List<Tuples._3<String, String, String>>>) ((Class) Object.class))).name("languagesToInclude").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2R6x4AnylYu").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Project.class)));
-  public static final SMethod<List<Tuples._3<String, String, String>>> testModulesToInclude_id7vU6U5026IG = new SMethodBuilder<List<Tuples._3<String, String, String>>>(new SJavaCompoundTypeImpl((Class<List<Tuples._3<String, String, String>>>) ((Class) Object.class))).name("testModulesToInclude").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7vU6U5026IG").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(Project.class)));
+  public static final SMethod<List<Tuples._3<String, String, String>>> languagesToInclude_id2R6x4AnylYu = new SMethodBuilder<List<Tuples._3<String, String, String>>>(new SJavaCompoundTypeImpl((Class<List<Tuples._3<String, String, String>>>) ((Class) Object.class))).name("languagesToInclude").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2R6x4AnylYu").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
+  public static final SMethod<List<Tuples._3<String, String, String>>> testModulesToInclude_id7vU6U5026IG = new SMethodBuilder<List<Tuples._3<String, String, String>>>(new SJavaCompoundTypeImpl((Class<List<Tuples._3<String, String, String>>>) ((Class) Object.class))).name("testModulesToInclude").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7vU6U5026IG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(languagesToInclude_id2R6x4AnylYu, testModulesToInclude_id7vU6U5026IG);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static List<Tuples._3<String, String, String>> languagesToInclude_id2R6x4AnylYu(@NotNull SNode __thisNode__, Project project) {
+  /*package*/ static List<Tuples._3<String, String, String>> languagesToInclude_id2R6x4AnylYu(@NotNull SNode __thisNode__, Project project) {
     SLanguageHierarchy hierarchy = new SLanguageHierarchy(SModelOperations.getAllLanguageImports(SNodeOperations.getModel(__thisNode__)));
 
     List<Tuples._3<String, String, String>> result = ListSequence.fromList(new ArrayList<Tuples._3<String, String, String>>());
@@ -63,7 +63,7 @@ public final class TestModuleManifest__BehaviorDescriptor extends BaseBHDescript
 
     return result;
   }
-  private static List<Tuples._3<String, String, String>> testModulesToInclude_id7vU6U5026IG(@NotNull SNode __thisNode__, Project project) {
+  /*package*/ static List<Tuples._3<String, String, String>> testModulesToInclude_id7vU6U5026IG(@NotNull SNode __thisNode__, Project project) {
 
     List<Tuples._3<String, String, String>> result = ListSequence.fromList(new ArrayList<Tuples._3<String, String, String>>());
     SModule sModule = SNodeOperations.getModel(__thisNode__).getModule();
@@ -80,28 +80,28 @@ public final class TestModuleManifest__BehaviorDescriptor extends BaseBHDescript
   }
 
   @Override
-  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @NotNull Object[] array) {
+  protected void initNode(@NotNull SNode node, @NotNull SConstructor constructor, @Nullable Object[] parameters) {
     ___init___(node);
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SNode node, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
       case 0:
-        return (T) languagesToInclude_id2R6x4AnylYu(node, (Project) parameters[0]);
+        return (T) ((List<Tuples._3<String, String, String>>) languagesToInclude_id2R6x4AnylYu(node, (Project) parameters[0]));
       case 1:
-        return (T) testModulesToInclude_id7vU6U5026IG(node, (Project) parameters[0]);
+        return (T) ((List<Tuples._3<String, String, String>>) testModulesToInclude_id7vU6U5026IG(node, (Project) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
   }
 
   @Override
-  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @NotNull Object[] parameters) {
+  protected <T> T invokeSpecial0(@NotNull SAbstractConcept concept, @NotNull SMethod<T> method, @Nullable Object[] parameters) {
     int methodIndex = BH_METHODS.indexOf(method);
     if (methodIndex < 0) {
       throw new BHMethodNotFoundException(this, method);

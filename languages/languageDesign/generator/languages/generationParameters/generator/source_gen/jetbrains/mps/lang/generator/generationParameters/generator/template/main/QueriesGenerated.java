@@ -11,6 +11,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Generated
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3064182000795632408(final PropertyMacroContext _context) {
-    return IGeneratorParameter__BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x2a86294b8491c07cL, 0x2a86294b8491c0c3L, "parameter")));
+    return (String) IGeneratorParameter__BehaviorDescriptor.getUniqueId_id$79JWCe2bn.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x2a86294b8491c07cL, 0x2a86294b8491c0c3L, "parameter")));
   }
 }

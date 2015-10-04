@@ -22,19 +22,14 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -50,9 +45,6 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_aqxvre_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_aqxvre_b0(editorContext, node));
-    if (renderingCondition_aqxvre_a2a(node, editorContext)) {
-      editorCell.addEditorCell(this.createCollection_aqxvre_c0(editorContext, node));
-    }
     return editorCell;
   }
   private EditorCell createComponent_aqxvre_a0(EditorContext editorContext, SNode node) {
@@ -82,9 +74,6 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("module");
     }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -122,150 +111,6 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-  private EditorCell createCollection_aqxvre_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_aqxvre_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setFoldable(true);
-    editorCell.setFoldedCell(this.createConstant_aqxvre_a2a_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_aqxvre_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_aqxvre_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_aqxvre_c2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_aqxvre_d2a(editorContext, node));
-    return editorCell;
-  }
-  private static boolean renderingCondition_aqxvre_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd40dL, "customContent"));
-  }
-  private EditorCell createConstant_aqxvre_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Extras for deployment jar:");
-    editorCell.setCellId("Constant_aqxvre_a2a");
-    Style style = new StyleImpl();
-    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_aqxvre_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_aqxvre_b2a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNode_aqxvre_a1c0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createRefNode_aqxvre_a1c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new BuildMpsLayout_ModuleJars_Editor.deployedJarSingleRoleHandler_aqxvre_a1c0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dc749L, "deployedJar"), editorContext);
-    return provider.createCell();
-  }
-  private class deployedJarSingleRoleHandler_aqxvre_a1c0 extends SingleRoleCellProvider {
-    public deployedJarSingleRoleHandler_aqxvre_a1c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
-    }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
-      installCellInfo(child, editorCell);
-      return editorCell;
-    }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("deployedJar");
-      }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-      editorCell.getStyle().putAll(style);
-    }
-
-
-    @Override
-    protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_deployedJar");
-      installCellInfo(null, editorCell);
-      return editorCell;
-    }
-
-    protected String getNoTargetText() {
-      return "no extra stuff";
-    }
-
-  }
-  private EditorCell createConstant_aqxvre_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Extras for jar with sources:");
-    editorCell.setCellId("Constant_aqxvre_c2a");
-    Style style = new StyleImpl();
-    workflowStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_aqxvre_d2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_aqxvre_d2a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNode_aqxvre_a3c0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createRefNode_aqxvre_a3c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new BuildMpsLayout_ModuleJars_Editor.sourceJarSingleRoleHandler_aqxvre_a3c0(node, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd410L, "sourceJar"), editorContext);
-    return provider.createCell();
-  }
-  private class sourceJarSingleRoleHandler_aqxvre_a3c0 extends SingleRoleCellProvider {
-    public sourceJarSingleRoleHandler_aqxvre_a3c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
-    }
-    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createChildCell(editorContext, child);
-      installCellInfo(child, editorCell);
-      return editorCell;
-    }
-    public void installCellInfo(SNode child, EditorCell editorCell) {
-      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("sourceJar");
-      }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-      editorCell.getStyle().putAll(style);
-    }
-
-
-    @Override
-    protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_sourceJar");
-      installCellInfo(null, editorCell);
-      return editorCell;
-    }
-
-    protected String getNoTargetText() {
-      return "no extra stuff";
-    }
-
-  }
-  private EditorCell createConstant_aqxvre_a2a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extra content...");
-    editorCell.setCellId("Constant_aqxvre_a2a_0");
-    Style style = new StyleImpl();
-    buildStyles_StyleSheet.apply_comment(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
   private EditorCell createCollection_aqxvre_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aqxvre_a_0");
@@ -275,8 +120,6 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_aqxvre_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aqxvre_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_aqxvre_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_aqxvre_e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_aqxvre_f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_aqxvre_a0(EditorContext editorContext, SNode node) {
@@ -360,37 +203,6 @@ public class BuildMpsLayout_ModuleJars_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_stripImplementation");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createConstant_aqxvre_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Custom jar contents:");
-    editorCell.setCellId("Constant_aqxvre_e0");
-    Style style = new StyleImpl();
-    buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_aqxvre_f0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("customContent");
-    provider.setNoTargetText("<no customContent>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_customContent");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

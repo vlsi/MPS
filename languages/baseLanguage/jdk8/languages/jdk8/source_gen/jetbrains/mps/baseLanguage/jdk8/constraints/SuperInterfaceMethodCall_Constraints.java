@@ -98,7 +98,7 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
               SNode classifierType = Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(superClassifier);
               MethodsScope scope = new MethodsScope(classifierType, Sequence.fromIterable(Members.visibleInstanceMethods(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return !(BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it));
+                  return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it));
                 }
               }));
               return scope;

@@ -48,7 +48,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext) {
-    return XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(node);
+    return (boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(node);
   }
   private EditorCell createProperty_qyzwn3_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -118,6 +118,6 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qyzwn3_a1a(SNode node, EditorContext editorContext) {
-    return XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(node);
+    return (boolean) XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(node);
   }
 }

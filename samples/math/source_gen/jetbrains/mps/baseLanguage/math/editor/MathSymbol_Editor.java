@@ -123,7 +123,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_b0ego6_b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -292,7 +292,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_b0ego6_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }

@@ -44,7 +44,7 @@ public class XmlElement_TextGen extends TextGenDescriptorBase {
       return;
     }
     tgs.append(">");
-    if (XmlElement__BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(ctx.getPrimaryInput())) {
+    if ((boolean) XmlElement__BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(ctx.getPrimaryInput())) {
       tgs.newLine();
       ctx.getBuffer().area().increaseIndent();
       tgs.indent();

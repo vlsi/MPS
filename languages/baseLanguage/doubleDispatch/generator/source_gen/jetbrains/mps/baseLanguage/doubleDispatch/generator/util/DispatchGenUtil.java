@@ -44,7 +44,7 @@ public class DispatchGenUtil {
       classesToConsider = Sequence.<SNode>singleton(parentClass);
       methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
         public Iterable<SNode> invoke(SNode cls) {
-          return ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+          return (Iterable<SNode>) ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         }
       };
 
@@ -52,7 +52,7 @@ public class DispatchGenUtil {
       classesToConsider = DispatchUtil.ancestors(SNodeOperations.cast(parentClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), true);
       methods = new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
         public Iterable<SNode> invoke(SNode cls) {
-          return Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+          return (Iterable<SNode>) Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(SNodeOperations.cast(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         }
       };
     }

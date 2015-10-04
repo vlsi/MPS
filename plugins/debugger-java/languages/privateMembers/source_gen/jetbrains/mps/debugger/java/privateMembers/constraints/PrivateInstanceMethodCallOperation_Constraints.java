@@ -69,7 +69,7 @@ public class PrivateInstanceMethodCallOperation_Constraints extends BaseConstrai
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return !(IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, classifierType, _context.getContextNode()));
+                  return !((boolean) IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, classifierType, _context.getContextNode()));
                 }
               });
               return new NamedElementsScope(privateMethods);

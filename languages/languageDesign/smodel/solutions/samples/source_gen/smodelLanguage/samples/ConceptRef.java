@@ -33,7 +33,7 @@ public class ConceptRef {
   }
 
   public void concept_conceptProperties(SNode exprConcept) {
-    boolean b = Expression__BehaviorDescriptor.lvalue_id1653mnvAgpj.invoke(SNodeOperations.asSConcept(exprConcept));
+    boolean b = (boolean) Expression__BehaviorDescriptor.lvalue_id1653mnvAgpj.invoke(SNodeOperations.asSConcept(exprConcept));
   }
 
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {

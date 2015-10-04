@@ -12,6 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 @Deprecated
 public class MovingAverage_Behavior {
   public static Iterable<BigDecimal> call_calculate_4001135958235925008(SNode __thisNode__) {
-    return null;
+    return MovingAverage__BehaviorDescriptor.calculate_id3u6SZi0GsCg(__thisNode__);
   }
 }

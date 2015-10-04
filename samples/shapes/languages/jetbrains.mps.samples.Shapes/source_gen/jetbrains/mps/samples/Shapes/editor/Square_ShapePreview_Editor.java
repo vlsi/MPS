@@ -146,7 +146,7 @@ public class Square_ShapePreview_Editor extends DefaultNodeEditor {
         super.paintComponent(graphics);
         SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invoke(node, graphics, 10, 10);
+            Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invoke(node, graphics, ((int) 10), ((int) 10));
           }
         });
       }

@@ -346,7 +346,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_58c6e4_b0a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
+        return (boolean) ITestCase__BehaviorDescriptor.canRunInProcess_id5_jSk8paieB.invoke(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {
@@ -403,7 +403,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_58c6e4_b1a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return NodesTestCase__BehaviorDescriptor.needsWriteAction_id5vTxdEzuQjU.invoke(node) + "";
+        return (boolean) NodesTestCase__BehaviorDescriptor.needsWriteAction_id5vTxdEzuQjU.invoke(node) + "";
       }
       public void setText(String text) {
         if (text.equals("true")) {

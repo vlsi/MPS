@@ -135,7 +135,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
             public boolean accept(SNode cann) {
               return SLinkOperations.getTarget(cann, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation")) == ignoreAnn;
             }
-          })) && Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(cls, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0e0b4(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+          })) && (boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(cls, SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0e0b4(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
         }
       }).toListSequence();
       ListSequence.fromList(nodes).visitAll(new IVisitor<SNode>() {

@@ -49,12 +49,12 @@ public class TestCollector {
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode cls) {
-        return INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(cls);
+        return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(cls);
       }
     });
   }
   private boolean isJunit38Test(SNode maybetest) {
-    boolean isdesc = Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(maybetest, getTestCaseClass(maybetest));
+    boolean isdesc = (boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(maybetest, getTestCaseClass(maybetest));
     boolean hasann = hasAnnotation(maybetest, getIgnoreAnnotation(maybetest), getMPSLaunchAnnotation(maybetest));
     return isdesc && !(hasann) && hasJUnit38TestMethods(maybetest);
   }

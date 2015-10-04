@@ -85,12 +85,12 @@ public class XmlSignature {
         // ignore 
       } else if (SNodeOperations.isInstanceOf(val, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"))) {
         SNode tv = SNodeOperations.cast(val, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
-        if (XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(tv)) {
+        if ((boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(tv)) {
           sb.append("\n");
         }
         sb.append(SPropertyOperations.getString(tv, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text")));
-        if (XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(tv)) {
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(tv), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")) && XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(SNodeOperations.cast(SNodeOperations.getNextSibling(tv), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")))) {
+        if ((boolean) XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(tv)) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(tv), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")) && (boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(SNodeOperations.cast(SNodeOperations.getNextSibling(tv), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")))) {
             return;
           }
           sb.append("\n");
