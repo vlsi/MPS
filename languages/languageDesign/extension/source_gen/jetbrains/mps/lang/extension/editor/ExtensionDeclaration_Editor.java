@@ -17,10 +17,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -57,11 +57,13 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i2dquw_a0");
     editorCell.addEditorCell(this.createConstant_i2dquw_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_i2dquw_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_i2dquw_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_i2dquw_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_i2dquw_d0a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_i2dquw_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Extension of");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Extension");
     editorCell.setCellId("Constant_i2dquw_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
@@ -71,12 +73,37 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_i2dquw_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_i2dquw_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createConstant_i2dquw_c0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "of");
+    editorCell.setCellId("Constant_i2dquw_c0a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefCell_i2dquw_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionDeclaration_Editor._Inline_i2dquw_a1a0());
+    provider.setAuxiliaryCellProvider(new ExtensionDeclaration_Editor._Inline_i2dquw_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -91,17 +118,17 @@ public class ExtensionDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  public static class _Inline_i2dquw_a1a0 extends InlineCellProvider {
-    public _Inline_i2dquw_a1a0() {
+  public static class _Inline_i2dquw_a3a0 extends InlineCellProvider {
+    public _Inline_i2dquw_a3a0() {
       super();
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_i2dquw_a0b0a(editorContext, node);
+      return this.createProperty_i2dquw_a0d0a(editorContext, node);
     }
-    private EditorCell createProperty_i2dquw_a0b0a(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_i2dquw_a0d0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("extensionName");
       provider.setNoTargetText("<no extensionName>");
