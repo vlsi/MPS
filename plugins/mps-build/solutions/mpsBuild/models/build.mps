@@ -13154,6 +13154,12 @@
           <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
         </node>
       </node>
+      <node concept="1SiIV0" id="4EGyYGcBc0W" role="3bR37C">
+        <node concept="3bR9La" id="4EGyYGcBc0X" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="568PkTlOK6f" resolve="jetbrains.mps.core.properties" />
+        </node>
+      </node>
     </node>
     <node concept="2G$12M" id="2eDSGe9d1q0" role="3989C9">
       <property role="TrG5h" value="workbench" />
