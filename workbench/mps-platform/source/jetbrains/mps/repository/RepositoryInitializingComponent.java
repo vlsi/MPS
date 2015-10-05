@@ -52,11 +52,8 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
     myBootstrapLibraryContributor = new BootstrapLibraryContributor();
     myWorkbenchLibraryContributor = new WorkbenchLibraryContributor();
     myPluginLibraryContributor = new PluginLibraryContributor();
-    List<LibraryContributor> contributors = Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor);
+    final List<LibraryContributor> contributors = Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor);
 
-    for (LibraryContributor contributor : contributors) {
-      myLibraryInitializer.addContributor(contributor);
-    }
     final Application application = ApplicationManager.getApplication();
     application.invokeLater(new Runnable() {
       @Override
@@ -64,7 +61,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
         application.runWriteAction(new Runnable() {
           @Override
           public void run() {
-            myLibraryInitializer.update(true);
+            myLibraryInitializer.loadRefreshed(contributors);
           }
         });
       }
