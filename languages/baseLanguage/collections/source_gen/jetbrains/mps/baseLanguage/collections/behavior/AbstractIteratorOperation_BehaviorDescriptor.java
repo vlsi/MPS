@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -14,7 +15,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public abstract class AbstractIteratorOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
+public abstract class AbstractIteratorOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public String virtual_getVariableExpectedName_1213877410087(SNode __thisNode__) {
     return null;
   }
