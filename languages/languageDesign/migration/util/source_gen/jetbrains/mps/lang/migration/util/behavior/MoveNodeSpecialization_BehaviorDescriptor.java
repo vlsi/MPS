@@ -29,19 +29,23 @@ public final class MoveNodeSpecialization_BehaviorDescriptor extends BaseBHDescr
 
   public static final SMethod<SNode> getFrom_id1NHZk5hj1Zl = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getFrom").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1NHZk5hj1Zl").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(SRepository.class)));
   public static final SMethod<SNode> getTo_id1NHZk5hj1ls = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTo").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1NHZk5hj1ls").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(SRepository.class)));
+  public static final SMethod<SNode> getMyMoveNodeItem_id4yRsQKnq58F = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getMyMoveNodeItem").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4yRsQKnq58F").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Boolean> shouldKeepOldNode_id1NHZk5hi$oq = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("shouldKeepOldNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1NHZk5hi$oq").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Void> doDeprecateOldNode_id1NHZk5hiKRu = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("doDeprecateOldNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1NHZk5hiKRu").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses(SRepository.class)));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getFrom_id1NHZk5hj1Zl, getTo_id1NHZk5hj1ls, shouldKeepOldNode_id1NHZk5hi$oq, doDeprecateOldNode_id1NHZk5hiKRu);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getFrom_id1NHZk5hj1Zl, getTo_id1NHZk5hj1ls, getMyMoveNodeItem_id4yRsQKnq58F, shouldKeepOldNode_id1NHZk5hi$oq, doDeprecateOldNode_id1NHZk5hiKRu);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   private static SNode getFrom_id1NHZk5hj1Zl(@NotNull SNode __thisNode__, SRepository repository) {
-    return check_cflqrt_a0a0(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.util.structure.MoveNode")), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), repository);
+    return check_cflqrt_a0a0(SLinkOperations.getTarget(MoveNodeSpecialization_BehaviorDescriptor.getMyMoveNodeItem_id4yRsQKnq58F.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode")), repository);
   }
   private static SNode getTo_id1NHZk5hj1ls(@NotNull SNode __thisNode__, SRepository repository) {
-    return check_cflqrt_a0a1(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.util.structure.MoveNode")), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode")), repository);
+    return check_cflqrt_a0a1(SLinkOperations.getTarget(MoveNodeSpecialization_BehaviorDescriptor.getMyMoveNodeItem_id4yRsQKnq58F.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode")), repository);
+  }
+  private static SNode getMyMoveNodeItem_id4yRsQKnq58F(@NotNull SNode __thisNode__) {
+    return SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.util.structure.MoveNode"));
   }
   private static Boolean shouldKeepOldNode_id1NHZk5hi$oq(@NotNull SNode __thisNode__) {
     return false;
@@ -70,8 +74,10 @@ public final class MoveNodeSpecialization_BehaviorDescriptor extends BaseBHDescr
       case 1:
         return (T) getTo_id1NHZk5hj1ls(node, (SRepository) parameters[0]);
       case 2:
-        return (T) shouldKeepOldNode_id1NHZk5hi$oq(node);
+        return (T) getMyMoveNodeItem_id4yRsQKnq58F(node);
       case 3:
+        return (T) shouldKeepOldNode_id1NHZk5hi$oq(node);
+      case 4:
         doDeprecateOldNode_id1NHZk5hiKRu(node, (SRepository) parameters[0]);
         return null;
       default:

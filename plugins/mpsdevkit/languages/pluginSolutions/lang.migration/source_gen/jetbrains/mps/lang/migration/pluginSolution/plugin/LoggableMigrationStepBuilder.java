@@ -30,6 +30,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -174,6 +178,23 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
 
       SModel sourceModuleMigrationModel = LanguageAspect.MIGRATION.getOrCreate(sourceModule);
       SModelInternal sm = (SModelInternal) (SModel) sourceModuleMigrationModel;
+      for (SModelReference reference : ListSequence.fromList(SNodeOperations.getNodeDescendants(sourceModuleRefactoringStep, null, true, new SAbstractConcept[]{})).translate(new ITranslator2<SNode, SReference>() {
+        public Iterable<SReference> translate(SNode it) {
+          return SNodeOperations.getReferences(it);
+        }
+      }).select(new ISelector<SReference, SModelReference>() {
+        public SModelReference select(SReference it) {
+          return it.getTargetSModelReference();
+        }
+      }).distinct()) {
+        if (!(ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), sm.importedModels())).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
+          public SModelReference select(jetbrains.mps.smodel.SModel.ImportElement it) {
+            return it.getModelReference();
+          }
+        }).contains(reference))) {
+          sm.addModelImport(reference, true);
+        }
+      }
       sm.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x9882f4ad195546feL, 0x826994189e5dbbf2L), "jetbrains.mps.lang.migration.util"));
       SModelOperations.addRootNode(sourceModuleMigrationModel, sourceModuleRefactoringStep);
       sourceModule.setModuleVersion(sourceModuleVersion + 1);
@@ -181,7 +202,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       SNode targetModuleRefactoringStep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.RefactoringStep")));
       SPropertyOperations.set(targetModuleRefactoringStep, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MoveNodes_" + String.valueOf(targetModuleVersion));
       SPropertyOperations.set(targetModuleRefactoringStep, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion"), "" + (targetModuleVersion));
-      ListSequence.fromList(SLinkOperations.getChildren(targetModuleRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).addElement(createRefactoringOrderDependency_t528rj_a0a02a4a31(sourceModuleRefactoringStep));
+      ListSequence.fromList(SLinkOperations.getChildren(targetModuleRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).addElement(createRefactoringOrderDependency_t528rj_a0a12a4a31(sourceModuleRefactoringStep));
 
       SModel targetModuleMigrationModel = LanguageAspect.MIGRATION.getOrCreate(targetModule);
       SModelInternal tm = (SModelInternal) (SModel) targetModuleMigrationModel;
@@ -203,7 +224,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
     }
     return n1;
   }
-  private static SNode createRefactoringOrderDependency_t528rj_a0a02a4a31(Object p0) {
+  private static SNode createRefactoringOrderDependency_t528rj_a0a12a4a31(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, "jetbrains.mps.lang.migration.util.structure.RefactoringOrderDependency"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring"), (SNode) p0);
