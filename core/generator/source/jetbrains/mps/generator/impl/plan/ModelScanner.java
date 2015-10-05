@@ -19,8 +19,10 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -109,20 +111,19 @@ public final class ModelScanner {
   private void scanScriptsForChangeOperations(FastNodeFinder fnf) {
     NodeScanner refScanner = new NodeScanner();
     for (SConcept modelChangeOperation : RuleUtil.getModelChangeOperations()) {
-      // Though it's possible to be quite specific and to look for particular instantiated concepts referenced
-      // from within change operation, present approach is to find scripts with change operations and process
-      // references to concept declarations in bulk.
+      // We try to be as specific as possible and to look for particular instantiated concepts referenced from within change operation
       //
-      // MappingScripts are root nodes
-      HashSet<SNode> roots = new HashSet<SNode>();
       for (SNode op : fnf.getNodes(modelChangeOperation, true)) {
-        roots.add(op.getContainingRoot());
-      }
-      for (SNode rootWithChangeOps : roots) {
-        if (!RuleUtil.concept_MappingScript.equals(rootWithChangeOps.getConcept())) {
+        // MappingScripts are root nodes
+        SNode rootWithChangeOp = op.getContainingRoot();
+        if (!RuleUtil.concept_MappingScript.equals(rootWithChangeOp.getConcept())) {
           continue;
         }
-        refScanner.scanReferences(rootWithChangeOps);
+        if (RuleUtil.getMappingScript_IsPreProcess(rootWithChangeOp) && !RuleUtil.getMappingScript_ModifiesModel(rootWithChangeOp)) {
+          continue;
+        }
+        // post-processing or pre-processing script that modifies model
+        refScanner.scanReferences(op);
       }
     }
     myTargetLanguages.addAll(refScanner.getUsedLanguages());
@@ -140,7 +141,7 @@ public final class ModelScanner {
    */
   private static final class NodeScanner {
     private final Condition<SNode> myCondition;
-    private final Set<SConcept> myConceptsInUse = new HashSet<SConcept>();
+    private final Set<SAbstractConcept> myConceptsInUse = new HashSet<SAbstractConcept>();
     private Set<SLanguage> myLanguagesInUse;
 
     public NodeScanner() {
@@ -171,14 +172,17 @@ public final class ModelScanner {
       for (Iterator<SNode> it = getNodeIterator(node); it.hasNext(); ) {
         SNode n = it.next();
         for (SReference r : n.getReferences()) {
+          // we could have checked here r.getLink().getTargetConcept().isSubConceptOf(SNodeUtil.concept_AbstractConceptDeclaration)
+          // to filter out 'meta' links, but does it pay off? We need target node anyway to figure out particular concept
           final SNode tn = r.getTargetNode();
           if (tn == null) {
             continue;
           }
           SConcept targetNodeConcept = tn.getConcept();
-          if (SNodeUtil.concept_AbstractConceptDeclaration.equals(targetNodeConcept) || SNodeUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
-            // n points with r to a concept node tn
-            myConceptsInUse.add(targetNodeConcept);
+          if (SNodeUtil.concept_InterfaceConceptDeclaration.equals(targetNodeConcept) || SNodeUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
+            // n points with r to a concept node tn, shall record concept represented by tn as used
+            // e.g. nlist<Expression>, SNodeListType#elementConcept:AbstractConceptDeclaration, tn would be ConceptDeclaration "Expression"
+            myConceptsInUse.add(MetaAdapterByDeclaration.getConcept(tn));
           }
         }
       }
@@ -193,7 +197,7 @@ public final class ModelScanner {
     public Set<SLanguage> getUsedLanguages() {
       if(myLanguagesInUse == null) {
         final HashSet<SLanguage> usedLanguages = new HashSet<SLanguage>(myConceptsInUse.size());
-        for (SConcept conceptInUse : myConceptsInUse) {
+        for (SAbstractConcept conceptInUse : myConceptsInUse) {
           final SLanguage language = conceptInUse.getLanguage();
           usedLanguages.add(language);
         }
@@ -205,6 +209,7 @@ public final class ModelScanner {
 
 
   // walk hierarchy of nodes, excluding template macros
+  // FIXME there are certain macros which templateNode we don't need to look at (e.g. COPY-SRC)
   private static class MacroFilter implements Condition<SNode> {
 
     @Override
