@@ -32,6 +32,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
@@ -208,7 +209,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     @Override
     protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
-      return aspectDescriptor.getEditors(conceptDescriptor);
+      try {
+        return aspectDescriptor.getEditors(conceptDescriptor);
+      } catch (RuntimeException e) {
+        LOG.error("Exception while loading editor", e);
+        return new ArrayList<ConceptEditor>();
+      }
     }
   }
 
@@ -222,7 +228,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     @Override
     protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
-      return aspectDescriptor.getEditorComponents(conceptDescriptor, myEditorComponentId);
+      try {
+        return aspectDescriptor.getEditorComponents(conceptDescriptor, myEditorComponentId);
+      } catch (RuntimeException e) {
+        LOG.error("Exception while loading editor component", e);
+        return new ArrayList<ConceptEditorComponent>();
+      }
     }
   }
 

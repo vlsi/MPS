@@ -113,6 +113,9 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   private List<T> collectApplicableEditors(ConceptDescriptor conceptDescriptor) {
     List<T> result = new ArrayList<T>();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
+    if (languageRuntime == null) {
+      return result;
+    }
     EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
     if (aspectDescriptor != null) {
       for (T conceptEditor : getEditors(aspectDescriptor, conceptDescriptor)) {
