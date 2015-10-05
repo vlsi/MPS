@@ -7203,5 +7203,34 @@
       </node>
     </node>
   </node>
+  <node concept="312cEu" id="60oBoEdcnR">
+    <property role="TrG5h" value="MigrationTask" />
+    <property role="1sVAO0" value="true" />
+    <property role="1EXbeo" value="false" />
+    <node concept="3Tm1VV" id="60oBoEdcnS" role="1B3o_S" />
+    <node concept="3uibUv" id="60oBoEdkcl" role="1zkMxy">
+      <ref role="3uigEE" node="3ufQioQQti6" resolve="MpsLoadTask" />
+    </node>
+    <node concept="3clFbW" id="60oBoEdcop" role="jymVt">
+      <node concept="3Tm1VV" id="60oBoEdcoq" role="1B3o_S" />
+      <node concept="3cqZAl" id="60oBoEdcor" role="3clF45" />
+      <node concept="3clFbS" id="60oBoEdcos" role="3clF47" />
+    </node>
+    <node concept="2tJIrI" id="60oBoEdxLi" role="jymVt" />
+    <node concept="3clFb_" id="60oBoEdc_r" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getWorkerClass" />
+      <property role="DiZV1" value="false" />
+      <node concept="17QB3L" id="60oBoEdc_s" role="3clF45" />
+      <node concept="3Tmbuc" id="60oBoEdc_t" role="1B3o_S" />
+      <node concept="3clFbS" id="60oBoEdc_u" role="3clF47">
+        <node concept="3clFbF" id="60oBoEdzlx" role="3cqZAp">
+          <node concept="Xl_RD" id="5reM9ACTkmr" role="3clFbG">
+            <property role="Xl_RC" value="jetbrains.mps.tool.builder.MigrationWorker" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

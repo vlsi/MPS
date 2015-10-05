@@ -20,6 +20,18 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/108194650710656503">
+    <file name="MigrationTask.java">
+      <node id="108194650710750561" at="10,37,11,56" concept="11" />
+      <node id="108194650710656537" at="7,0,9,0" concept="2" trace="MigrationTask#()V" />
+      <node id="108194650710657371" at="10,0,13,0" concept="9" trace="getWorkerClass#()Ljava/lang/String;" />
+      <scope id="108194650710656540" at="7,26,7,26" />
+      <scope id="108194650710657374" at="10,37,11,56" />
+      <scope id="108194650710656537" at="7,0,9,0" />
+      <scope id="108194650710657371" at="10,0,13,0" />
+      <unit id="108194650710656503" at="6,0,14,0" name="jetbrains.mps.build.ant.MigrationTask" />
+    </file>
+  </root>
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/3449270742160220910">
     <file name="ExcludeNested.java">
       <node id="3449270742160233220" at="15,0,16,0" concept="5" trace="excluded" />
