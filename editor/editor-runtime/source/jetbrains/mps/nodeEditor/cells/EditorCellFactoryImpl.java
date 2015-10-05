@@ -81,7 +81,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
     set.add(excludedEditor);
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor, Collections.<Class<? extends  BaseConceptEditor>>unmodifiableSet(set));
+    ConceptEditor editor = getConceptEditor(node, Collections.<Class<? extends BaseConceptEditor>>unmodifiableSet(set), conceptDescriptor);
     EditorCell editorCell = createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
     set.remove(excludedEditor);
     if (set.isEmpty()) {
@@ -95,8 +95,16 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
+    ConceptEditor editor = getConceptEditor(node, new HashSet<Class<? extends BaseConceptEditor>>(), conceptDescriptor);
     return createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
+  }
+
+  private ConceptEditor getConceptEditor(SNode node, Set<Class<? extends BaseConceptEditor>> set, ConceptDescriptor conceptDescriptor) {
+    ConceptEditor editor = null;
+    if (!myEditorContext.getEditorComponent().getUpdater().shouldShowDefaultEditor(node.getReference())) {
+      editor = myConceptEditorRegistry.getEditor(conceptDescriptor, set);
+    }
+    return editor;
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, ConceptDescriptor conceptDescriptor, ConceptEditor editor) {

@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -72,6 +73,8 @@ public class UpdaterImpl implements Updater, CommandContext {
   private boolean myDisposed;
   private int myCommandLevel = 0;
   private String[] myInitialHints;
+  private Set<SNodeReference> myDefaultEditorNodes = new HashSet<SNodeReference>();
+
 
   public UpdaterImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -177,6 +180,20 @@ public class UpdaterImpl implements Updater, CommandContext {
     String[] result = new String[myInitialHints.length];
     System.arraycopy(myInitialHints, 0, result, 0, myInitialHints.length);
     return result;
+  }
+
+  @Override
+  public boolean setShowDefaultEditor(SNodeReference node, boolean defaultEditor) {
+    return defaultEditor ? myDefaultEditorNodes.add(node) : myDefaultEditorNodes.remove(node);
+  }
+
+  @Override
+  public boolean shouldShowDefaultEditor(SNodeReference node) {
+    return myDefaultEditorNodes.contains(node);
+  }
+
+  public void clearDefaultEditorNodes() {
+    myDefaultEditorNodes.clear();
   }
 
   private void fireCellSynchronized(EditorCell cell) {

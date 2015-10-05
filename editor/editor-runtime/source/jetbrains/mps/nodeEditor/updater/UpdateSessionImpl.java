@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
@@ -38,7 +37,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -64,6 +62,7 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
+  private Set<SNodeReference> myDefaultEditorNodes = new HashSet<SNodeReference>();
 
   private Deque<ReferencedNodeContext> myContextStack = new LinkedList<ReferencedNodeContext>();
 

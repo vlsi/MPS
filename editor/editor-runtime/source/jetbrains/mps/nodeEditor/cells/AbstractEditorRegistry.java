@@ -55,9 +55,9 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     myCellFactory = cellFactory;
   }
   T getEditor(ConceptDescriptor conceptDescriptor) {
-    return getEditor(conceptDescriptor, new ArrayList<Class<? extends BaseConceptEditor>>());
+    return getEditor(conceptDescriptor, new HashSet<Class<? extends BaseConceptEditor>>());
   }
-  T getEditor(ConceptDescriptor conceptDescriptor, Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
+  T getEditor(ConceptDescriptor conceptDescriptor, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
     Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
     queue.add(conceptDescriptor);

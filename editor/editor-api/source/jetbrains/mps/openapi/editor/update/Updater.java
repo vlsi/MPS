@@ -16,6 +16,8 @@
 package jetbrains.mps.openapi.editor.update;
 
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * User: shatalin
@@ -82,4 +84,8 @@ public interface Updater {
    */
   @Nullable
   String[] getInitialEditorHints();
+
+  boolean setShowDefaultEditor(SNodeReference node, boolean defaultEditor);
+
+  boolean shouldShowDefaultEditor(SNodeReference node);
 }
