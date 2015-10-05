@@ -70,6 +70,7 @@
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationComponent" />
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.smodel.query.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.query.QueryExecutionContext" />
@@ -110,7 +111,7 @@
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.smodel.query.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.query.QueryExecutionContext" />
@@ -138,6 +139,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.query.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.query.QueryExecutionContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -175,6 +177,7 @@
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationComponent" />
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.smodel.query.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.query.QueryExecutionContext" />

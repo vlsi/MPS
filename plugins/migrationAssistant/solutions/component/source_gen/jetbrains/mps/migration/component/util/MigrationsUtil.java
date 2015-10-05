@@ -10,16 +10,19 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.lang.migration.runtime.base.MigrationUnitReference;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringStepReference;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.AbstractModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -37,7 +40,7 @@ public class MigrationsUtil {
     return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly()));
   }
 
-  public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
+  public static boolean isLanguageMigrationNeeded(SLanguage language, int importVersion, SModule module) {
     int currentVersion = language.getLanguageVersion();
 
     // broken language 
@@ -57,8 +60,28 @@ public class MigrationsUtil {
     }
     return importVersion < currentVersion;
   }
-  public static Iterable<MigrationScriptReference> getNextStepScripts(SModule module) {
-    List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
+  public static boolean isDependencyMigrationNeeded(SModule depencency, int importVersion, SModule module) {
+    int currentVersion = ((AbstractModule) depencency).getModuleVersion();
+
+    // broken language 
+    if (currentVersion == -1) {
+      return false;
+    }
+
+    // if we don't have version, it's simply 0 
+    if (importVersion == -1) {
+      importVersion = 0;
+    }
+    if (importVersion > currentVersion) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Module " + module + " depends on version " + importVersion + " of module " + depencency + " which is higher than available version (" + currentVersion + ")");
+      }
+      return false;
+    }
+    return importVersion < currentVersion;
+  }
+  public static Iterable<MigrationUnitReference> getNextStepScripts(SModule module) {
+    List<MigrationUnitReference> result = ListSequence.fromList(new ArrayList<MigrationUnitReference>());
     for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
       int currentLangVersion = lang.getLanguageVersion();
       int ver = module.getUsedLanguageVersion(lang);
@@ -68,6 +91,20 @@ public class MigrationsUtil {
 
       if (ver < currentLangVersion) {
         ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
+      }
+    }
+    List<SModule> visible = ListSequence.fromList(new ArrayList<SModule>());
+    ListSequence.fromList(visible).addElement(module);
+    ListSequence.fromList(visible).addSequence(CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE)));
+    for (SModule dep : ListSequence.fromList(visible)) {
+      int currentDepVersion = ((AbstractModule) dep).getModuleVersion();
+      int ver = ((AbstractModule) module).getDependencyVersion(dep);
+
+      ver = Math.max(ver, 0);
+      currentDepVersion = Math.max(currentDepVersion, 0);
+
+      if (ver < currentDepVersion) {
+        ListSequence.fromList(result).addElement(new RefactoringStepReference(dep.getModuleReference(), ver));
       }
     }
     return result;

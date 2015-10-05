@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.migration.DependencyScriptApplied" file="DependencyScriptApplied.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringStep" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" file="HeadlessMigrationExecutor.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
@@ -15,6 +21,12 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.IStartupMigrationExecutor" file="IStartupMigrationExecutor.java" />
+  <dependency className="jetbrains.mps.ide.migration.LanguageScriptApplied" file="LanguageScriptApplied.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationAssistantWizard" file="MigrationAssistantWizard.java">
     <classNode dependClassName="com.intellij.ide.wizard.AbstractWizardStepEx" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -136,15 +148,9 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.LanguageScriptApplied" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.ScriptApplied" file="ScriptApplied.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
 </dependenciesRoot>
 

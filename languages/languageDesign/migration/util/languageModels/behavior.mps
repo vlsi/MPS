@@ -553,6 +553,19 @@
       <node concept="3clFbS" id="4uVwhQyFpOg" role="3clF47" />
       <node concept="10P_77" id="4uVwhQyFpOq" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="4yRsQKnslQA" role="13h7CS">
+      <property role="TrG5h" value="getImplementation" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="4yRsQKnslQB" role="1B3o_S" />
+      <node concept="3clFbS" id="4yRsQKnslQC" role="3clF47">
+        <node concept="3clFbF" id="4yRsQKnsmHM" role="3cqZAp">
+          <node concept="10Nm6u" id="4yRsQKnsmHL" role="3clFbG" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="4yRsQKnslRc" role="3clF45">
+        <ref role="3uigEE" to="6f4m:4uVwhQyPtVd" resolve="RefactoringStep" />
+      </node>
+    </node>
     <node concept="13hLZK" id="4uVwhQyFcnj" role="13h7CW">
       <node concept="3clFbS" id="4uVwhQyFcnk" role="2VODD2" />
     </node>
@@ -648,7 +661,8 @@
     </node>
     <node concept="13i0hz" id="4uVwhQyPCSH" role="13h7CS">
       <property role="TrG5h" value="getImplementation" />
-      <node concept="3Tm1VV" id="4uVwhQyPCSI" role="1B3o_S" />
+      <property role="2Ki8OM" value="false" />
+      <ref role="13i0hy" node="4yRsQKnslQA" resolve="getImplementation" />
       <node concept="3clFbS" id="4uVwhQyPCSJ" role="3clF47">
         <node concept="3cpWs6" id="4uVwhQyPD3d" role="3cqZAp">
           <node concept="2ShNRf" id="4uVwhQyPP1D" role="3cqZAk">
@@ -728,9 +742,10 @@
           </node>
         </node>
       </node>
-      <node concept="3uibUv" id="4uVwhQyPD0i" role="3clF45">
+      <node concept="3uibUv" id="4yRsQKnsmJA" role="3clF45">
         <ref role="3uigEE" to="6f4m:4uVwhQyPtVd" resolve="RefactoringStep" />
       </node>
+      <node concept="3Tm1VV" id="4yRsQKnsmJB" role="1B3o_S" />
     </node>
   </node>
   <node concept="13h7C7" id="4uVwhQyQ01E">

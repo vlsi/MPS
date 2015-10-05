@@ -276,6 +276,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void save() {
     assertCanChange();
     validateLanguageVersions();
+    validateDependencyVersions();
     myChanged = false;
   }
 
@@ -990,8 +991,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return res;
   }
 
-  public int getDependencyVersion(SModuleReference dependency) {
-    Integer res = getModuleDescriptor().getDependencyVersions().get(dependency);
+  public int getDependencyVersion(SModule dependency) {
+    Integer res = getModuleDescriptor().getDependencyVersions().get(dependency.getModuleReference());
     if (res == null) {
       LOG.error(
           "getDependencyVersion can't find a version for module " + dependency.getModuleName() +

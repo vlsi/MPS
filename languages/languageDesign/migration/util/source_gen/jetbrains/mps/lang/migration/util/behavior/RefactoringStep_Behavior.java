@@ -5,15 +5,6 @@ package jetbrains.mps.lang.migration.util.behavior;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringStepReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringStep;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringStepImpl;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 
 /**
  * will be removed after 3.3
@@ -23,24 +14,5 @@ import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 public class RefactoringStep_Behavior {
   public static RefactoringStepReference call_getDescriptor_5168866961623837055(SNode __thisNode__) {
     return new RefactoringStepReference(SNodeOperations.getModel(__thisNode__).getModule().getModuleReference(), IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(__thisNode__));
-  }
-  public static RefactoringStep call_getImplementation_5168866961623780909(SNode __thisNode__) {
-    return new RefactoringStepImpl(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), RefactoringStep_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(__thisNode__), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(final SNode it) {
-        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring")) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(final SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring"));
-      }
-    }).select(new ISelector<SNode, RefactoringStepReference>() {
-      public RefactoringStepReference select(SNode it) {
-        return RefactoringStep_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(it);
-      }
-    }), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).select(new ISelector<SNode, RefactoringPart>() {
-      public RefactoringPart select(SNode it) {
-        return RefactoringPart_BehaviorDescriptor.getImplementation_id4uVwhQyQ01H.invoke(it);
-      }
-    }));
   }
 }

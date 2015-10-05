@@ -37,9 +37,9 @@ public final class RefactoringStep_BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> fromVersion_id4uVwhQyFcnl = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("fromVersion").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFcnl").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<Boolean> isVersionSet_id4uVwhQyFpOe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isVersionSet").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyFpOe").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
   public static final SMethod<RefactoringStepReference> getDescriptor_id4uVwhQyPQ_Z = new SMethodBuilder<RefactoringStepReference>(new SJavaCompoundTypeImpl(RefactoringStepReference.class)).name("getDescriptor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPQ_Z").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<RefactoringStep> getImplementation_id4uVwhQyPCSH = new SMethodBuilder<RefactoringStep>(new SJavaCompoundTypeImpl(RefactoringStep.class)).name("getImplementation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPCSH").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<RefactoringStep> getImplementation_id4yRsQKnslQA = new SMethodBuilder<RefactoringStep>(new SJavaCompoundTypeImpl(RefactoringStep.class)).name("getImplementation").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4yRsQKnslQA").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe, getDescriptor_id4uVwhQyPQ_Z, getImplementation_id4uVwhQyPCSH);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(fromVersion_id4uVwhQyFcnl, isVersionSet_id4uVwhQyFpOe, getDescriptor_id4uVwhQyPQ_Z, getImplementation_id4yRsQKnslQA);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -53,7 +53,7 @@ public final class RefactoringStep_BehaviorDescriptor extends BaseBHDescriptor {
   private static RefactoringStepReference getDescriptor_id4uVwhQyPQ_Z(@NotNull SNode __thisNode__) {
     return new RefactoringStepReference(SNodeOperations.getModel(__thisNode__).getModule().getModuleReference(), IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(__thisNode__));
   }
-  private static RefactoringStep getImplementation_id4uVwhQyPCSH(@NotNull SNode __thisNode__) {
+  private static RefactoringStep getImplementation_id4yRsQKnslQA(@NotNull SNode __thisNode__) {
     return new RefactoringStepImpl(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), RefactoringStep_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(__thisNode__), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring")) != null);
@@ -96,7 +96,7 @@ public final class RefactoringStep_BehaviorDescriptor extends BaseBHDescriptor {
       case 2:
         return (T) getDescriptor_id4uVwhQyPQ_Z(node);
       case 3:
-        return (T) getImplementation_id4uVwhQyPCSH(node);
+        return (T) getImplementation_id4yRsQKnslQA(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

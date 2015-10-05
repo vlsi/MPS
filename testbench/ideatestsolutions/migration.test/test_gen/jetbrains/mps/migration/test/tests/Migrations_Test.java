@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Collections;
 import junit.framework.Assert;
 import jetbrains.mps.migration.component.util.MigrationComponent;
-import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.ide.migration.LanguageScriptApplied;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -60,8 +60,8 @@ public class Migrations_Test extends TestCase {
 
 
 
-    Assert.assertTrue(MigrationComponent.areDepsSatisfied(new ScriptApplied(scriptA0, singleModule)));
-    Assert.assertFalse(MigrationComponent.areDepsSatisfied(new ScriptApplied(scriptB0, singleModule)));
+    Assert.assertTrue(MigrationComponent.areDepsSatisfied(new LanguageScriptApplied(scriptA0, singleModule)));
+    Assert.assertFalse(MigrationComponent.areDepsSatisfied(new LanguageScriptApplied(scriptB0, singleModule)));
 
 
     List<SModule> dep1 = ListSequence.fromList(new ArrayList<SModule>());
@@ -71,10 +71,10 @@ public class Migrations_Test extends TestCase {
     ListSequence.fromList(dep1).addElement(cyclicModule2);
     ListSequence.fromList(dep2).addElement(cyclicModule1);
 
-    Assert.assertTrue(MigrationComponent.areDepsSatisfied(new ScriptApplied(scriptB0, cyclicModule1)));
-    Assert.assertTrue(MigrationComponent.areDepsSatisfied(new ScriptApplied(scriptB0, cyclicModule2)));
-    Assert.assertFalse(MigrationComponent.areDepsSatisfied(new ScriptApplied(scriptA1, cyclicModule1)));
-    Assert.assertFalse(MigrationComponent.areDepsSatisfied(new ScriptApplied(scriptA1, cyclicModule2)));
+    Assert.assertTrue(MigrationComponent.areDepsSatisfied(new LanguageScriptApplied(scriptB0, cyclicModule1)));
+    Assert.assertTrue(MigrationComponent.areDepsSatisfied(new LanguageScriptApplied(scriptB0, cyclicModule2)));
+    Assert.assertFalse(MigrationComponent.areDepsSatisfied(new LanguageScriptApplied(scriptA1, cyclicModule1)));
+    Assert.assertFalse(MigrationComponent.areDepsSatisfied(new LanguageScriptApplied(scriptA1, cyclicModule2)));
 
   }
   /*package*/ static class MockModule extends AbstractModule {

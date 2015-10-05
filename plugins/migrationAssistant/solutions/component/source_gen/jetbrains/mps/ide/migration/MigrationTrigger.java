@@ -180,6 +180,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         it.validateLanguageVersions();
+        it.validateDependencyVersions();
       }
     });
   }

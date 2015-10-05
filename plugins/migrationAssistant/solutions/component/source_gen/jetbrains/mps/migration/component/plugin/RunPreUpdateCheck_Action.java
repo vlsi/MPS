@@ -72,7 +72,7 @@ public class RunPreUpdateCheck_Action extends BaseAction {
 
     final MigrationComponent mc = ((MigrationComponent) event.getData(CommonDataKeys.PROJECT).getComponent(MigrationManager.class));
     {
-      final SearchScope scope = CommandUtil.createScope(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+      final SearchScope scope = CommandUtil.createScope(((jetbrains.mps.project.Project) event.getData(MPSCommonDataKeys.MPS_PROJECT)));
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -126,7 +126,7 @@ __switch__:
                           this.__CP__ = 2;
                           break;
                         case 4:
-                          this._7_script = mc.fetchScript(new MigrationScriptReference(it, _2_ver), true);
+                          this._7_script = mc.fetchLanguageScript(new MigrationScriptReference(it, _2_ver), true);
                           this.__CP__ = 8;
                           break;
                         case 9:

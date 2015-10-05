@@ -37,7 +37,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.LanguageScriptApplied" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

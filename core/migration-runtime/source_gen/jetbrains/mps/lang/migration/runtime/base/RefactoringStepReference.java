@@ -4,7 +4,7 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class RefactoringStepReference {
+public class RefactoringStepReference implements MigrationUnitReference {
   private final SModuleReference module;
   private final int fromVersion;
   public RefactoringStepReference(SModuleReference module, int fromVersion) {

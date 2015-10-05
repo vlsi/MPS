@@ -2038,6 +2038,9 @@
         <node concept="17QB3L" id="2RG318eWq24" role="1tU5fm" />
       </node>
     </node>
+    <node concept="3uibUv" id="4yRsQKntGne" role="EKbjA">
+      <ref role="3uigEE" node="4yRsQKntBpt" resolve="MigrationUnitReference" />
+    </node>
   </node>
   <node concept="312cEu" id="4uVwhQyQ2vB">
     <property role="TrG5h" value="MoveNodePart" />
@@ -2825,6 +2828,9 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="3uibUv" id="4yRsQKntBLP" role="EKbjA">
+      <ref role="3uigEE" node="4yRsQKntBpt" resolve="MigrationUnitReference" />
+    </node>
   </node>
   <node concept="312cEu" id="4uVwhQyPD4s">
     <property role="TrG5h" value="RefactoringStepImpl" />
@@ -3193,6 +3199,10 @@
     <node concept="16euLQ" id="193i4_4XStO" role="16eVyc">
       <property role="TrG5h" value="T" />
     </node>
+  </node>
+  <node concept="3HP615" id="4yRsQKntBpt">
+    <property role="TrG5h" value="MigrationUnitReference" />
+    <node concept="3Tm1VV" id="4yRsQKntBpu" role="1B3o_S" />
   </node>
 </model>
 

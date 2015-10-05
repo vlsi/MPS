@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public class ResolveConflictDialog extends DialogWrapper {
-  public ResolveConflictDialog(Iterable<ScriptApplied> conflicts, boolean project) {
+  public ResolveConflictDialog(Iterable<LanguageScriptApplied> conflicts, boolean project) {
     super(project);
   }
   @Nullable
@@ -15,7 +15,7 @@ public class ResolveConflictDialog extends DialogWrapper {
   protected JComponent createCenterPanel() {
     return null;
   }
-  public ScriptApplied getResult() {
+  public LanguageScriptApplied getResult() {
     return null;
   }
 }

@@ -409,6 +409,11 @@
       <unit id="5168866961623885799" at="21,0,100,0" name="jetbrains.mps.lang.migration.runtime.base.MoveNodePart" />
     </file>
   </root>
+  <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/5239783599556163165">
+    <file name="MigrationUnitReference.java">
+      <unit id="5239783599556163165" at="6,0,8,0" name="jetbrains.mps.lang.migration.runtime.base.MigrationUnitReference" />
+    </file>
+  </root>
   <root nodeRef="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)/7153805464405087853">
     <file name="MigrationScriptBase.java">
       <node id="6816167251982668451" at="22,0,23,0" concept="3" trace="myDC" />
