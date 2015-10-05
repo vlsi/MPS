@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -29,8 +30,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MoveConcepts extends MoveNodesDefault {
 
@@ -67,8 +66,6 @@ public class MoveConcepts extends MoveNodesDefault {
     final SModel sourceModel = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
     final Language sourceLanguage = Language.getLanguageFor(sourceModel);
 
-    MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getInstance();
-
     final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -80,7 +77,7 @@ public class MoveConcepts extends MoveNodesDefault {
       }
     });
     if (hasGenerator.value) {
-      moveNodesUI.showWarningDialog(project, "Generator fragments will not be moved.", "Move concepts");
+      Messages.showWarningDialog(project.getProject(), "Generator fragments will not be moved.", "Move concepts");
     }
 
     final Wrappers._T<List<SModelReference>> structureModels = new Wrappers._T<List<SModelReference>>();
@@ -125,14 +122,6 @@ public class MoveConcepts extends MoveNodesDefault {
         MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage.value);
       }
     });
-
-
   }
 
-  private static SNode _quotation_createNode_u6ijv2_a0a5a0a0a5() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L, "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration"), null, null, false);
-    return quotedNode_1;
-  }
 }
