@@ -47,6 +47,7 @@ public class ModuleDescriptor {
   private Collection<SModuleReference> myUsedLanguages;
   private Collection<SModuleReference> myUsedDevkits;
   private final Map<SLanguage, Integer> myLanguageVersions;
+  private final Map<SModuleReference, Integer> myDependencyVersions;
   private Collection<String> myAdditionalJavaStubPaths;
   private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
@@ -54,6 +55,7 @@ public class ModuleDescriptor {
   private Throwable myLoadException;
   private boolean myUseTransientOutput;
   private boolean myHasLanguageVersions = true;
+  private boolean myHasDependencyVersions = true;
 
   public ModuleDescriptor() {
     myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
@@ -62,6 +64,7 @@ public class ModuleDescriptor {
     myUsedLanguages = new LinkedHashSet<SModuleReference>();
     myUsedDevkits = new LinkedHashSet<SModuleReference>();
     myLanguageVersions = new LinkedHashMap<SLanguage, Integer>();
+    myDependencyVersions = new LinkedHashMap<SModuleReference, Integer>();
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
@@ -116,6 +119,10 @@ public class ModuleDescriptor {
 
   public Map<SLanguage, Integer> getLanguageVersions() {
     return myLanguageVersions;
+  }
+
+  public Map<SModuleReference, Integer> getDependencyVersions() {
+    return myDependencyVersions;
   }
 
   public Collection<SModuleReference> getUsedDevkits() {
@@ -274,8 +281,16 @@ public class ModuleDescriptor {
     myHasLanguageVersions = hasLanguageVersions;
   }
 
+  public void setHasDependencyVersions(boolean hasDependencyVersions) {
+    myHasDependencyVersions = hasDependencyVersions;
+  }
+
   public boolean hasLanguageVersions() {
     return myHasLanguageVersions;
+  }
+
+  public boolean hasDependencyVersions() {
+    return myHasDependencyVersions;
   }
 
   public int getVersion() {
