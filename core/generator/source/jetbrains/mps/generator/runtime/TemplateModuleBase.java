@@ -85,8 +85,10 @@ public abstract class TemplateModuleBase implements TemplateModule {
 
   @Override
   @ToRemove(version = 3.2)
-  public Set<SLanguage> getTargetLanguages() {
+  public Collection<SLanguage> getTargetLanguages() {
     HashSet<SLanguage> rv = new HashSet<SLanguage>();
+    // once I fix templates for generated generators to generate this method instead of getUsedLanguages(),
+    // I shall pull getUsedLanguages implementation from interpreted module here (for transition period)
     for (String l : getUsedLanguages()) {
       rv.add(MetaAdapterFactoryByName.getLanguage(l));
     }
