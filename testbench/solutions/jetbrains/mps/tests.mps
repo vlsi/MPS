@@ -429,6 +429,21 @@
     <node concept="lpD6D" id="6PT0agmOgRi" role="lpD6w">
       <ref role="lpD7u" to="hcvu:5qrsiYWoAxm" resolve="CellFoldedByDefault" />
     </node>
+    <node concept="lpD6D" id="2SNGFF9uGcU" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:6sr4TWiFz6z" resolve="CollapseRecursively" />
+    </node>
+    <node concept="lpD6D" id="2SNGFF9uGf9" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:7_fNqT3Rvni" resolve="CollapseRecursivelyCheckChildren" />
+    </node>
+    <node concept="lpD6D" id="2SNGFF9uGhq" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:7_fNqT3RxgU" resolve="CollapseRecursivelyCheckSibling" />
+    </node>
+    <node concept="lpD6D" id="2SNGFF9uGjH" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:7t4yoSLBitN" resolve="ExpandRecursively" />
+    </node>
+    <node concept="lpD6D" id="2SNGFF9uGm2" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:7_fNqT3Rwsz" resolve="ExpandRecursivelyCheckSibling" />
+    </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
     </node>
