@@ -9,6 +9,10 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.Arrays;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -16,42 +20,51 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Generator extends TemplateModuleBase {
   public static String MODULE_REF = "de2f9603-575d-4d84-b063-776b6d27a0b9(jetbrains.mps.transformation.test.outputLang#1209603905948)";
-  private Language sourceLanguage;
+  private final Language sourceLanguage;
   private final Collection<TemplateModel> models;
-  private Collection<String> usedLanguages;
+
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl"));
-    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.transformation.test.outputLang");
   }
   @Override
   public String getAlias() {
     return "jetbrains.mps.transformation.test.outputLang/self";
   }
+
   @Override
   public Collection<TemplateModel> getModels() {
     return models;
   }
+
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
     return null;
   }
+
   @Override
   public SModuleReference getReference() {
     return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
   }
+
   @Override
-  public Collection<String> getUsedLanguages() {
-    return usedLanguages;
+  public Collection<SLanguage> getTargetLanguages() {
+    SLanguage[] rv = new SLanguage[2];
+    rv[0] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
+    rv[1] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x157a9668bf58417bL, 0x893e53d86388dc56L), "jetbrains.mps.transformation.test.outputLang");
+    return Arrays.asList(rv);
   }
+
   @Override
   public LanguageRuntime getSourceLanguage() {
     return sourceLanguage;
   }
+
   @Override
   public Collection<String> getReferencedModules() {
     return null;
   }
+
   private TemplateModel getTemplateModel(String modelName) {
     ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getReference());
     Class<TemplateModel> clazz = null;
