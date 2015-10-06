@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.generator.runtime;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -71,6 +70,16 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
   @Override
+  @ToRemove(version = 3.3)
+  public Collection<String> getUsedLanguages() {
+    Set<String> languages = new HashSet<String>();
+    for (SLanguage l : getTargetLanguages()) {
+      languages.add(l.getQualifiedName());
+    }
+    return languages;
+  }
+
+  @Override
   @ToRemove(version = 3.2)
   public Collection<TemplateModule> getEmployedGenerators() {
     // Generators didn't support dependencies other than 'extends'
@@ -84,7 +93,7 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
   @Override
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.3)
   public Collection<SLanguage> getTargetLanguages() {
     HashSet<SLanguage> rv = new HashSet<SLanguage>();
     // once I fix templates for generated generators to generate this method instead of getUsedLanguages(),

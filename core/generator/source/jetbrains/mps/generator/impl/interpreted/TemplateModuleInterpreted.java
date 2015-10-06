@@ -96,16 +96,6 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   }
 
   @Override
-  @ToRemove(version = 3.3)
-  public Collection<String> getUsedLanguages() {
-    Set<String> languages = new HashSet<String>();
-    for (SLanguage l : getTargetLanguages()) {
-      languages.add(l.getQualifiedName());
-    }
-    return languages;
-  }
-
-  @Override
   public String getAlias() {
     return generator.getAlias();
   }
