@@ -4,11 +4,13 @@ package jetbrains.mps.tool.builder;
 
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import org.apache.log4j.Logger;
 import java.util.Map;
 import java.io.File;
 import java.util.List;
-import jetbrains.mps.core.tool.environment.util.FileMPSProject;
-import jetbrains.mps.migration.component.util.MigrationComponent;
 
 public class MigrationWorker extends MpsWorker {
   public MigrationWorker(Script whatToDo) {
@@ -18,14 +20,15 @@ public class MigrationWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
-  protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
+  protected void migrate(Project project, MigrationManager m) {
+    // todo 
   }
 
-  protected void showStatistic() {
-  }
-
-  protected void migrate(Project project) {
-
+  @Override
+  protected Environment createEnvironment() {
+    Environment env = IdeaEnvironment.getOrCreate(MpsWorker.createEnvConfig(myWhatToDo));
+    Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
+    return env;
   }
 
   @Override
@@ -34,20 +37,25 @@ public class MigrationWorker extends MpsWorker {
 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
-      FileMPSProject p = new FileMPSProject(file);
-      p.init(new FileMPSProject.ProjectDescriptor(file));
-      p.projectOpened();
+      Project p = myEnvironment.openProject(file);
       info("Loaded project " + p);
-      if (!(p.getComponent(MigrationComponent.class).isMigrationRequired())) {
+      MigrationManager m = p.getComponent(MigrationManager.class);
+      if (!(m.isMigrationRequired())) {
         MigrationWorker.this.info("Nothing to migrate");
       } else {
         myEnvironment.flushAllEvents();
-        migrate(p);
+        migrate(p, m);
         myEnvironment.flushAllEvents();
       }
-      p.projectClosed();
+      myEnvironment.closeProject(p);
     }
 
     dispose();
+  }
+
+  protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
+  }
+
+  protected void showStatistic() {
   }
 }

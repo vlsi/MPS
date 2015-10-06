@@ -20,10 +20,12 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.FileMPSProject" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.MpsWorker" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.MpsWorker" file="MpsWorker.java">
