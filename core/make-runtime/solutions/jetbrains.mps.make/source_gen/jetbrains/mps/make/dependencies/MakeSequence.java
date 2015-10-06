@@ -6,7 +6,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.MakeSession;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -17,7 +17,7 @@ public class MakeSequence {
   private final IScript myDefaultScript;
   private final MakeSession myMakeSession;
 
-  public MakeSequence(Iterable<? extends IResource> inputRes, @Nullable IScript defaultScript, @Nullable MakeSession makeSession) {
+  public MakeSequence(Iterable<? extends IResource> inputRes, @Nullable IScript defaultScript, @NotNull MakeSession makeSession) {
     myInputRes = inputRes;
     myDefaultScript = defaultScript;
     myMakeSession = makeSession;
@@ -25,9 +25,9 @@ public class MakeSequence {
   }
 
   private void prepareClusters() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myMakeSession.getProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        ModulesClusterizer clusterizer = new ModulesClusterizer();
+        ModulesClusterizer clusterizer = new ModulesClusterizer(myMakeSession);
         myClusters = clusterizer.clusterize(myInputRes);
       }
     });
@@ -38,14 +38,8 @@ public class MakeSequence {
       cluster.setScript(myDefaultScript);
     } else {
       ScriptBuilder builder = cluster.createScriptBuilder();
-      cluster.setScript((myMakeSession == null ? builder.toScript() : myMakeSession.toScript(builder)));
+      cluster.setScript(myMakeSession.toScript(builder));
     }
-  }
-
-  @Deprecated
-  public Iterable<Cluster> getClusters() {
-    // this method is for transition period only, and will be removed afterwards 
-    return myClusters;
   }
 
   public int steps() {

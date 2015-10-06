@@ -73,11 +73,7 @@ public abstract class TemplateModuleBase implements TemplateModule {
   @Override
   @ToRemove(version = 3.3)
   public Collection<String> getUsedLanguages() {
-    Set<String> languages = new HashSet<String>();
-    for (SLanguage l : getTargetLanguages()) {
-      languages.add(l.getQualifiedName());
-    }
-    return languages;
+    return Collections.emptyList();
   }
 
   @Override
