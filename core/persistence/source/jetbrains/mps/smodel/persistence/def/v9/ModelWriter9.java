@@ -199,7 +199,7 @@ public class ModelWriter9 implements IModelWriter {
 //    Would be nice to re-use existing code, but don't have openapi.SModel here, unfortunately
 //    ModelDependencyScanner depScan = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(false);
 //    depScan.walk(sourceModel);
-    HashSet<SModelReference> crossModelRefs = new HashSet<SModelReference>();
+    Set<SModelReference> crossModelRefs = new LinkedHashSet<SModelReference>();
     for (SNode r : model.getRootNodes()) {
       for (SNode n : SNodeUtil.getDescendants(r)) {
         for (SReference ref : n.getReferences()) {
