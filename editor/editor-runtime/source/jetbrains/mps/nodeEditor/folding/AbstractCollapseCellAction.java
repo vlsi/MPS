@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,35 +16,49 @@
 package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class CellAction_UnfoldAll extends AbstractCellAction {
+/**
+ * User: shatalin
+ * Date: 05/10/15
+ */
+public abstract class AbstractCollapseCellAction extends AbstractCellAction {
+  protected boolean myDoCollapse;
+
+  public AbstractCollapseCellAction(boolean doCollapse) {
+    super(false);
+    myDoCollapse = doCollapse;
+  }
+
   @Override
   public boolean canExecute(EditorContext context) {
-    return context.getEditorComponent().getRootCell() instanceof EditorCell_Collection;
+    return getAnchorCell(context.getSelectedCell(), context) != null;
   }
 
   @Override
   public void execute(EditorContext context) {
-    EditorComponent component = context.getEditorComponent();
     Queue<EditorCell_Collection> cellsToProcess = new LinkedList<EditorCell_Collection>();
-    cellsToProcess.add((EditorCell_Collection) component.getRootCell());
+    cellsToProcess.offer(getAnchorCell(context.getSelectedCell(), context));
     while (!cellsToProcess.isEmpty()) {
       EditorCell_Collection nextCollection = cellsToProcess.poll();
-      if (nextCollection.isFolded()) {
+      if (myDoCollapse) {
+        offerChildCollections(cellsToProcess, nextCollection);
+        nextCollection.fold();
+      } else {
         nextCollection.unfold();
-      }
-      for (EditorCell childCell : nextCollection.getCells()) {
-        if (childCell instanceof EditorCell_Collection) {
-          cellsToProcess.add((EditorCell_Collection) childCell);
-        }
+        offerChildCollections(cellsToProcess, nextCollection);
       }
     }
   }
+
+  @Nullable
+  protected abstract EditorCell_Collection getAnchorCell(EditorCell selectedCell, EditorContext editorContext);
+
+  protected abstract void offerChildCollections(Queue<EditorCell_Collection> queue, EditorCell_Collection collectionCell);
 }
