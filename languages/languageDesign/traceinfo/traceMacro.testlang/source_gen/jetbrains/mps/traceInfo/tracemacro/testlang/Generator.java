@@ -7,28 +7,24 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Arrays;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.Arrays;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Generator extends TemplateModuleBase {
   public static String MODULE_REF = "791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)";
   private final Language sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
-  private final Collection<TemplateModel> models;
   private final Collection<String> referencedGenerators;
+  private Collection<TemplateModel> models;
 
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)", TemplateUtil.createRefNormal("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "*")), TemplateUtil.createRefExternal("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)", TemplateUtil.createRefLocal())));
-    models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl"));
     referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage.collections/jetbrains.mps.baseLanguage.collections#1151699677197");
   }
   @Override
@@ -38,6 +34,9 @@ public class Generator extends TemplateModuleBase {
 
   @Override
   public Collection<TemplateModel> getModels() {
+    if (models == null) {
+      models = Arrays.asList(loadModel("jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl"));
+    }
     return models;
   }
 
@@ -67,27 +66,5 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<String> getReferencedModules() {
     return referencedGenerators;
-  }
-
-  private TemplateModel getTemplateModel(String modelName) {
-    ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getReference());
-    Class<TemplateModel> clazz = null;
-    if (module != null && module.willLoad()) {
-      try {
-        clazz = (Class<TemplateModel>) module.getClass(modelName);
-      } catch (ClassNotFoundException e) {
-        throw new IllegalStateException("Class not found for model " + modelName, e);
-      }
-    }
-    if (clazz == null) {
-      throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
-    }
-    try {
-      return clazz.getConstructor(TemplateModule.class).newInstance(this);
-    } catch (RuntimeException ex) {
-      throw ex;
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
   }
 }

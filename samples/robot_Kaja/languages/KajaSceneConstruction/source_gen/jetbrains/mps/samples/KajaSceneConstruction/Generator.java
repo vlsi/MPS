@@ -7,27 +7,23 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Arrays;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.Arrays;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Generator extends TemplateModuleBase {
   public static String MODULE_REF = "b4e19835-6919-44a5-8b70-73791426c235(jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026)";
   private final Language sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
-  private final Collection<TemplateModel> models;
+  private Collection<TemplateModel> models;
 
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyTogetherRule(TemplateUtil.createRefExternal("b4e19835-6919-44a5-8b70-73791426c235(jetbrains.mps.samples.KajaSceneConstruction#3210697320273563026)", TemplateUtil.createRefLocal()), TemplateUtil.createRefExternal("e104ec4c-a001-4f8f-b6bf-654f6a062891(jetbrains.mps.samples.Kaja#3265739055509559144)", TemplateUtil.createRefLocal())));
-    models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.TemplateModelImpl"));
   }
   @Override
   public String getAlias() {
@@ -36,6 +32,9 @@ public class Generator extends TemplateModuleBase {
 
   @Override
   public Collection<TemplateModel> getModels() {
+    if (models == null) {
+      models = Arrays.asList(loadModel("jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.TemplateModelImpl"));
+    }
     return models;
   }
 
@@ -64,27 +63,5 @@ public class Generator extends TemplateModuleBase {
   @Override
   public Collection<String> getReferencedModules() {
     return null;
-  }
-
-  private TemplateModel getTemplateModel(String modelName) {
-    ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getReference());
-    Class<TemplateModel> clazz = null;
-    if (module != null && module.willLoad()) {
-      try {
-        clazz = (Class<TemplateModel>) module.getClass(modelName);
-      } catch (ClassNotFoundException e) {
-        throw new IllegalStateException("Class not found for model " + modelName, e);
-      }
-    }
-    if (clazz == null) {
-      throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
-    }
-    try {
-      return clazz.getConstructor(TemplateModule.class).newInstance(this);
-    } catch (RuntimeException ex) {
-      throw ex;
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
   }
 }
