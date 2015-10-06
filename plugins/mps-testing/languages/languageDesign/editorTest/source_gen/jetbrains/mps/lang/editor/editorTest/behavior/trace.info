@@ -36,6 +36,9 @@
     <file name="CollapsedConditionally_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.CollapsedConditionally_BehaviorDescriptor" />
     </file>
+    <file name="CollapsibleConcept_BehaviorDescriptor.java">
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.editor.editorTest.behavior.CollapsibleConcept_BehaviorDescriptor" />
+    </file>
     <file name="Composition_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.Composition_BehaviorDescriptor" />
     </file>
