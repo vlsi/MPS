@@ -12,23 +12,23 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myFunctionType_BehaviorDescriptor = new FunctionType_BehaviorDescriptor();
-  private final BHDescriptor myInvokeFunctionExpression_BehaviorDescriptor = new InvokeFunctionExpression_BehaviorDescriptor();
-  private final BHDescriptor myClosureLiteral_BehaviorDescriptor = new ClosureLiteral_BehaviorDescriptor();
-  private final BHDescriptor myInvokeExpression_BehaviorDescriptor = new InvokeExpression_BehaviorDescriptor();
-  private final BHDescriptor myYieldStatement_BehaviorDescriptor = new YieldStatement_BehaviorDescriptor();
-  private final BHDescriptor myUnboundClosureParameterDeclaration_BehaviorDescriptor = new UnboundClosureParameterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myInvokeFunctionOperation_BehaviorDescriptor = new InvokeFunctionOperation_BehaviorDescriptor();
-  private final BHDescriptor myYieldAllStatement_BehaviorDescriptor = new YieldAllStatement_BehaviorDescriptor();
-  private final BHDescriptor myUnrestrictedClosureLiteral_BehaviorDescriptor = new UnrestrictedClosureLiteral_BehaviorDescriptor();
-  private final BHDescriptor myClosureControlStatement_BehaviorDescriptor = new ClosureControlStatement_BehaviorDescriptor();
-  private final BHDescriptor myControlAbstractionContainer_BehaviorDescriptor = new ControlAbstractionContainer_BehaviorDescriptor();
-  private final BHDescriptor myControlAbstractionDeclaration_BehaviorDescriptor = new ControlAbstractionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myUnrestrictedFunctionType_BehaviorDescriptor = new UnrestrictedFunctionType_BehaviorDescriptor();
-  private final BHDescriptor myCompactInvokeFunctionExpression_BehaviorDescriptor = new CompactInvokeFunctionExpression_BehaviorDescriptor();
-  private final BHDescriptor myClosureLiteralType_BehaviorDescriptor = new ClosureLiteralType_BehaviorDescriptor();
-  private final BHDescriptor myFunctionMethodDeclaration_BehaviorDescriptor = new FunctionMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myAbstractFunctionType_BehaviorDescriptor = new AbstractFunctionType_BehaviorDescriptor();
+  private final BHDescriptor myFunctionType__BehaviorDescriptor = new FunctionType__BehaviorDescriptor();
+  private final BHDescriptor myInvokeFunctionExpression__BehaviorDescriptor = new InvokeFunctionExpression__BehaviorDescriptor();
+  private final BHDescriptor myClosureLiteral__BehaviorDescriptor = new ClosureLiteral__BehaviorDescriptor();
+  private final BHDescriptor myInvokeExpression__BehaviorDescriptor = new InvokeExpression__BehaviorDescriptor();
+  private final BHDescriptor myYieldStatement__BehaviorDescriptor = new YieldStatement__BehaviorDescriptor();
+  private final BHDescriptor myUnboundClosureParameterDeclaration__BehaviorDescriptor = new UnboundClosureParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myInvokeFunctionOperation__BehaviorDescriptor = new InvokeFunctionOperation__BehaviorDescriptor();
+  private final BHDescriptor myYieldAllStatement__BehaviorDescriptor = new YieldAllStatement__BehaviorDescriptor();
+  private final BHDescriptor myUnrestrictedClosureLiteral__BehaviorDescriptor = new UnrestrictedClosureLiteral__BehaviorDescriptor();
+  private final BHDescriptor myClosureControlStatement__BehaviorDescriptor = new ClosureControlStatement__BehaviorDescriptor();
+  private final BHDescriptor myControlAbstractionContainer__BehaviorDescriptor = new ControlAbstractionContainer__BehaviorDescriptor();
+  private final BHDescriptor myControlAbstractionDeclaration__BehaviorDescriptor = new ControlAbstractionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myUnrestrictedFunctionType__BehaviorDescriptor = new UnrestrictedFunctionType__BehaviorDescriptor();
+  private final BHDescriptor myCompactInvokeFunctionExpression__BehaviorDescriptor = new CompactInvokeFunctionExpression__BehaviorDescriptor();
+  private final BHDescriptor myClosureLiteralType__BehaviorDescriptor = new ClosureLiteralType__BehaviorDescriptor();
+  private final BHDescriptor myFunctionMethodDeclaration__BehaviorDescriptor = new FunctionMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myAbstractFunctionType__BehaviorDescriptor = new AbstractFunctionType__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -65,39 +65,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myFunctionType_BehaviorDescriptor;
+        return myFunctionType__BehaviorDescriptor;
       case 1:
-        return myInvokeFunctionExpression_BehaviorDescriptor;
+        return myInvokeFunctionExpression__BehaviorDescriptor;
       case 2:
-        return myClosureLiteral_BehaviorDescriptor;
+        return myClosureLiteral__BehaviorDescriptor;
       case 3:
-        return myInvokeExpression_BehaviorDescriptor;
+        return myInvokeExpression__BehaviorDescriptor;
       case 4:
-        return myYieldStatement_BehaviorDescriptor;
+        return myYieldStatement__BehaviorDescriptor;
       case 5:
-        return myUnboundClosureParameterDeclaration_BehaviorDescriptor;
+        return myUnboundClosureParameterDeclaration__BehaviorDescriptor;
       case 6:
-        return myInvokeFunctionOperation_BehaviorDescriptor;
+        return myInvokeFunctionOperation__BehaviorDescriptor;
       case 7:
-        return myYieldAllStatement_BehaviorDescriptor;
+        return myYieldAllStatement__BehaviorDescriptor;
       case 8:
-        return myUnrestrictedClosureLiteral_BehaviorDescriptor;
+        return myUnrestrictedClosureLiteral__BehaviorDescriptor;
       case 9:
-        return myClosureControlStatement_BehaviorDescriptor;
+        return myClosureControlStatement__BehaviorDescriptor;
       case 10:
-        return myControlAbstractionContainer_BehaviorDescriptor;
+        return myControlAbstractionContainer__BehaviorDescriptor;
       case 11:
-        return myControlAbstractionDeclaration_BehaviorDescriptor;
+        return myControlAbstractionDeclaration__BehaviorDescriptor;
       case 12:
-        return myUnrestrictedFunctionType_BehaviorDescriptor;
+        return myUnrestrictedFunctionType__BehaviorDescriptor;
       case 13:
-        return myCompactInvokeFunctionExpression_BehaviorDescriptor;
+        return myCompactInvokeFunctionExpression__BehaviorDescriptor;
       case 14:
-        return myClosureLiteralType_BehaviorDescriptor;
+        return myClosureLiteralType__BehaviorDescriptor;
       case 15:
-        return myFunctionMethodDeclaration_BehaviorDescriptor;
+        return myFunctionMethodDeclaration__BehaviorDescriptor;
       case 16:
-        return myAbstractFunctionType_BehaviorDescriptor;
+        return myAbstractFunctionType__BehaviorDescriptor;
       default:
         return null;
     }

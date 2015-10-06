@@ -5,24 +5,14 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import java.util.LinkedList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class IGenericType_Behavior {
   public static void call_walkDescendants_8203593308483669984(SNode __thisNode__, SNode node, _FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super Queue<SNode>> walker) {
-    Queue<SNode> queue = QueueSequence.fromQueueWithValues(new LinkedList<SNode>(), SNodeOperations.getChildren(node));
-    while (QueueSequence.fromQueue(queue).isNotEmpty()) {
-      SNode child = QueueSequence.fromQueue(queue).removeFirstElement();
-      if (walker.invoke(child, queue)) {
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(child)));
-      }
-    }
+    IGenericType__BehaviorDescriptor.walkDescendants_id77p1ap9WcZw(__thisNode__, node, walker);
   }
 }

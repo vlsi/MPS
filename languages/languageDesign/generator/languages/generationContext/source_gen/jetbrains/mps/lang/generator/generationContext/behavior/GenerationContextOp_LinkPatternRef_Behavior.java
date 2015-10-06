@@ -4,8 +4,8 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class GenerationContextOp_LinkPatternRef_Behavior {

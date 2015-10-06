@@ -12,16 +12,16 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myHelpProvider_BehaviorDescriptor = new HelpProvider_BehaviorDescriptor();
-  private final BHDescriptor myNodesExpression_BehaviorDescriptor = new NodesExpression_BehaviorDescriptor();
-  private final BHDescriptor myQueryExpression_BehaviorDescriptor = new QueryExpression_BehaviorDescriptor();
-  private final BHDescriptor myOperationHelpProvider_BehaviorDescriptor = new OperationHelpProvider_BehaviorDescriptor();
-  private final BHDescriptor myReferencesExpression_BehaviorDescriptor = new ReferencesExpression_BehaviorDescriptor();
-  private final BHDescriptor myModelsExpression_BehaviorDescriptor = new ModelsExpression_BehaviorDescriptor();
-  private final BHDescriptor myModulesExpression_BehaviorDescriptor = new ModulesExpression_BehaviorDescriptor();
-  private final BHDescriptor myExpressionHelpProvider_BehaviorDescriptor = new ExpressionHelpProvider_BehaviorDescriptor();
-  private final BHDescriptor myInstancesExpression_BehaviorDescriptor = new InstancesExpression_BehaviorDescriptor();
-  private final BHDescriptor myUsagesExpression_BehaviorDescriptor = new UsagesExpression_BehaviorDescriptor();
+  private final BHDescriptor myHelpProvider__BehaviorDescriptor = new HelpProvider__BehaviorDescriptor();
+  private final BHDescriptor myNodesExpression__BehaviorDescriptor = new NodesExpression__BehaviorDescriptor();
+  private final BHDescriptor myQueryExpression__BehaviorDescriptor = new QueryExpression__BehaviorDescriptor();
+  private final BHDescriptor myOperationHelpProvider__BehaviorDescriptor = new OperationHelpProvider__BehaviorDescriptor();
+  private final BHDescriptor myReferencesExpression__BehaviorDescriptor = new ReferencesExpression__BehaviorDescriptor();
+  private final BHDescriptor myModelsExpression__BehaviorDescriptor = new ModelsExpression__BehaviorDescriptor();
+  private final BHDescriptor myModulesExpression__BehaviorDescriptor = new ModulesExpression__BehaviorDescriptor();
+  private final BHDescriptor myExpressionHelpProvider__BehaviorDescriptor = new ExpressionHelpProvider__BehaviorDescriptor();
+  private final BHDescriptor myInstancesExpression__BehaviorDescriptor = new InstancesExpression__BehaviorDescriptor();
+  private final BHDescriptor myUsagesExpression__BehaviorDescriptor = new UsagesExpression__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -51,25 +51,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myHelpProvider_BehaviorDescriptor;
+        return myHelpProvider__BehaviorDescriptor;
       case 1:
-        return myNodesExpression_BehaviorDescriptor;
+        return myNodesExpression__BehaviorDescriptor;
       case 2:
-        return myQueryExpression_BehaviorDescriptor;
+        return myQueryExpression__BehaviorDescriptor;
       case 3:
-        return myOperationHelpProvider_BehaviorDescriptor;
+        return myOperationHelpProvider__BehaviorDescriptor;
       case 4:
-        return myReferencesExpression_BehaviorDescriptor;
+        return myReferencesExpression__BehaviorDescriptor;
       case 5:
-        return myModelsExpression_BehaviorDescriptor;
+        return myModelsExpression__BehaviorDescriptor;
       case 6:
-        return myModulesExpression_BehaviorDescriptor;
+        return myModulesExpression__BehaviorDescriptor;
       case 7:
-        return myExpressionHelpProvider_BehaviorDescriptor;
+        return myExpressionHelpProvider__BehaviorDescriptor;
       case 8:
-        return myInstancesExpression_BehaviorDescriptor;
+        return myInstancesExpression__BehaviorDescriptor;
       case 9:
-        return myUsagesExpression_BehaviorDescriptor;
+        return myUsagesExpression__BehaviorDescriptor;
       default:
         return null;
     }

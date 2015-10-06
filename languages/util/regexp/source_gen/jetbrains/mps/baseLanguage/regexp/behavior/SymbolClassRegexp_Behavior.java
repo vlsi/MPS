@@ -6,16 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class SymbolClassRegexp_Behavior {
   public static String call_partsToString_1222857748873(SNode __thisNode__, List<SNode> parts) {
-    StringBuilder result = new StringBuilder();
-    for (SNode part : parts) {
-      result.append(SymbolClassRegexpAndPart_BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(part));
-    }
-    return result.toString();
+    return SymbolClassRegexp__BehaviorDescriptor.partsToString_idhMS0769(__thisNode__, parts);
   }
 }

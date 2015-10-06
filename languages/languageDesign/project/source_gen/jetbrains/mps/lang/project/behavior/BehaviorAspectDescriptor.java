@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myModuleReference_BehaviorDescriptor = new ModuleReference_BehaviorDescriptor();
-  private final BHDescriptor myMappingConfigRefBase_BehaviorDescriptor = new MappingConfigRefBase_BehaviorDescriptor();
-  private final BHDescriptor myMappingConfigRefSet_BehaviorDescriptor = new MappingConfigRefSet_BehaviorDescriptor();
-  private final BHDescriptor myMappingConfigNormalRef_BehaviorDescriptor = new MappingConfigNormalRef_BehaviorDescriptor();
-  private final BHDescriptor myMappingConfigExternalRef_BehaviorDescriptor = new MappingConfigExternalRef_BehaviorDescriptor();
-  private final BHDescriptor myModule_BehaviorDescriptor = new Module_BehaviorDescriptor();
-  private final BHDescriptor myGenerator_BehaviorDescriptor = new Generator_BehaviorDescriptor();
-  private final BHDescriptor myModelReference_BehaviorDescriptor = new ModelReference_BehaviorDescriptor();
+  private final BHDescriptor myModuleReference__BehaviorDescriptor = new ModuleReference__BehaviorDescriptor();
+  private final BHDescriptor myMappingConfigRefBase__BehaviorDescriptor = new MappingConfigRefBase__BehaviorDescriptor();
+  private final BHDescriptor myMappingConfigRefSet__BehaviorDescriptor = new MappingConfigRefSet__BehaviorDescriptor();
+  private final BHDescriptor myMappingConfigNormalRef__BehaviorDescriptor = new MappingConfigNormalRef__BehaviorDescriptor();
+  private final BHDescriptor myMappingConfigExternalRef__BehaviorDescriptor = new MappingConfigExternalRef__BehaviorDescriptor();
+  private final BHDescriptor myModule__BehaviorDescriptor = new Module__BehaviorDescriptor();
+  private final BHDescriptor myGenerator__BehaviorDescriptor = new Generator__BehaviorDescriptor();
+  private final BHDescriptor myModelReference__BehaviorDescriptor = new ModelReference__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myModuleReference_BehaviorDescriptor;
+        return myModuleReference__BehaviorDescriptor;
       case 1:
-        return myMappingConfigRefBase_BehaviorDescriptor;
+        return myMappingConfigRefBase__BehaviorDescriptor;
       case 2:
-        return myMappingConfigRefSet_BehaviorDescriptor;
+        return myMappingConfigRefSet__BehaviorDescriptor;
       case 3:
-        return myMappingConfigNormalRef_BehaviorDescriptor;
+        return myMappingConfigNormalRef__BehaviorDescriptor;
       case 4:
-        return myMappingConfigExternalRef_BehaviorDescriptor;
+        return myMappingConfigExternalRef__BehaviorDescriptor;
       case 5:
-        return myModule_BehaviorDescriptor;
+        return myModule__BehaviorDescriptor;
       case 6:
-        return myGenerator_BehaviorDescriptor;
+        return myGenerator__BehaviorDescriptor;
       case 7:
-        return myModelReference_BehaviorDescriptor;
+        return myModelReference__BehaviorDescriptor;
       default:
         return null;
     }

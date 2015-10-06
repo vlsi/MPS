@@ -7,25 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class PastedNodeReference_Behavior {
   public static String call_getText_6888400917983823151(SAbstractConcept __thisConcept__, SNode targetNode) {
-    return PastedNodeReference_BehaviorDescriptor.getText_id25MaZwhj0R7.invoke(__thisConcept__, check_mc1kik_a0a0a1(targetNode));
+    return PastedNodeReference__BehaviorDescriptor.getText_id5Yox2dUTCkJ(__thisConcept__, targetNode);
   }
   public static String call_getText_2410037095038717383(SAbstractConcept __thisConcept__, SNodeId targetNodeId) {
-    if (targetNodeId == null) {
-      return "(deleted node)";
-    }
-    int id = targetNodeId.hashCode();
-    return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
-  }
-  private static SNodeId check_mc1kik_a0a0a1(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNodeId();
-    }
-    return null;
+    return PastedNodeReference__BehaviorDescriptor.getText_id25MaZwhj0R7(__thisConcept__, targetNodeId);
   }
 }

@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myNodeWithPorts_BehaviorDescriptor = new NodeWithPorts_BehaviorDescriptor();
-  private final BHDescriptor myNodeWithSize_BehaviorDescriptor = new NodeWithSize_BehaviorDescriptor();
+  private final BHDescriptor myNodeWithPorts__BehaviorDescriptor = new NodeWithPorts__BehaviorDescriptor();
+  private final BHDescriptor myNodeWithSize__BehaviorDescriptor = new NodeWithSize__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -35,9 +35,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myNodeWithPorts_BehaviorDescriptor;
+        return myNodeWithPorts__BehaviorDescriptor;
       case 1:
-        return myNodeWithSize_BehaviorDescriptor;
+        return myNodeWithSize__BehaviorDescriptor;
       default:
         return null;
     }

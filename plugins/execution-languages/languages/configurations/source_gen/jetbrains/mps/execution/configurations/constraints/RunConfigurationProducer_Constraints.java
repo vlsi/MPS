@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer_BehaviorDescriptor;
+import jetbrains.mps.execution.configurations.behavior.RunConfigurationProducer__BehaviorDescriptor;
 
 public class RunConfigurationProducer_Constraints extends BaseConstraintsDescriptor {
   public RunConfigurationProducer_Constraints() {
@@ -27,7 +27,7 @@ public class RunConfigurationProducer_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return RunConfigurationProducer_BehaviorDescriptor.getDisplayedName_id3MnZbusxbtz.invoke(node);
+        return (String) RunConfigurationProducer__BehaviorDescriptor.getDisplayedName_id3MnZbusxbtz.invoke(node);
       }
     });
     return properties;

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +18,7 @@ public class check_StringLiteralRegexp_NonTypesystemRule extends AbstractNonType
   public check_StringLiteralRegexp_NonTypesystemRule() {
   }
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Regexp_BehaviorDescriptor.isValid_id48bMILtL4il.invoke(literal))) {
+    if (!((boolean) Regexp__BehaviorDescriptor.isValid_id48bMILtL4il.invoke(literal))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(literal, "Incorrect regexp string literal", "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "8330008649152998035", null, errorTarget);

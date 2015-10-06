@@ -12,54 +12,54 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myListType_BehaviorDescriptor = new ListType_BehaviorDescriptor();
-  private final BHDescriptor mySequenceType_BehaviorDescriptor = new SequenceType_BehaviorDescriptor();
-  private final BHDescriptor mySequenceOperation_BehaviorDescriptor = new SequenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myForEachStatement_BehaviorDescriptor = new ForEachStatement_BehaviorDescriptor();
-  private final BHDescriptor myForEachVariableReference_BehaviorDescriptor = new ForEachVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myListCreatorWithInit_BehaviorDescriptor = new ListCreatorWithInit_BehaviorDescriptor();
-  private final BHDescriptor mySortDirection_BehaviorDescriptor = new SortDirection_BehaviorDescriptor();
-  private final BHDescriptor myConcatOperation_BehaviorDescriptor = new ConcatOperation_BehaviorDescriptor();
-  private final BHDescriptor myMapType_BehaviorDescriptor = new MapType_BehaviorDescriptor();
-  private final BHDescriptor myHashMapCreator_BehaviorDescriptor = new HashMapCreator_BehaviorDescriptor();
-  private final BHDescriptor myMapElement_BehaviorDescriptor = new MapElement_BehaviorDescriptor();
-  private final BHDescriptor myMapOperation_BehaviorDescriptor = new MapOperation_BehaviorDescriptor();
-  private final BHDescriptor myWhereOperation_BehaviorDescriptor = new WhereOperation_BehaviorDescriptor();
-  private final BHDescriptor mySortOperation_BehaviorDescriptor = new SortOperation_BehaviorDescriptor();
-  private final BHDescriptor mySkipStatement_BehaviorDescriptor = new SkipStatement_BehaviorDescriptor();
-  private final BHDescriptor myListElementAccessExpression_BehaviorDescriptor = new ListElementAccessExpression_BehaviorDescriptor();
-  private final BHDescriptor mySetType_BehaviorDescriptor = new SetType_BehaviorDescriptor();
-  private final BHDescriptor myHashSetCreator_BehaviorDescriptor = new HashSetCreator_BehaviorDescriptor();
-  private final BHDescriptor myLinkedListCreator_BehaviorDescriptor = new LinkedListCreator_BehaviorDescriptor();
-  private final BHDescriptor myIteratorType_BehaviorDescriptor = new IteratorType_BehaviorDescriptor();
-  private final BHDescriptor myEnumeratorType_BehaviorDescriptor = new EnumeratorType_BehaviorDescriptor();
-  private final BHDescriptor myAbstractContainerCreator_BehaviorDescriptor = new AbstractContainerCreator_BehaviorDescriptor();
-  private final BHDescriptor myAllConstant_BehaviorDescriptor = new AllConstant_BehaviorDescriptor();
-  private final BHDescriptor myLinkedHashMapCreator_BehaviorDescriptor = new LinkedHashMapCreator_BehaviorDescriptor();
-  private final BHDescriptor myLinkedHashSetCreator_BehaviorDescriptor = new LinkedHashSetCreator_BehaviorDescriptor();
-  private final BHDescriptor mySortedMapType_BehaviorDescriptor = new SortedMapType_BehaviorDescriptor();
-  private final BHDescriptor myTreeMapCreator_BehaviorDescriptor = new TreeMapCreator_BehaviorDescriptor();
-  private final BHDescriptor mySortedSetType_BehaviorDescriptor = new SortedSetType_BehaviorDescriptor();
-  private final BHDescriptor myTreeSetCreator_BehaviorDescriptor = new TreeSetCreator_BehaviorDescriptor();
-  private final BHDescriptor myMappingType_BehaviorDescriptor = new MappingType_BehaviorDescriptor();
-  private final BHDescriptor myValueAccessOperation_BehaviorDescriptor = new ValueAccessOperation_BehaviorDescriptor();
-  private final BHDescriptor myCustomContainerCreator_BehaviorDescriptor = new CustomContainerCreator_BehaviorDescriptor();
-  private final BHDescriptor myCustomMapCreator_BehaviorDescriptor = new CustomMapCreator_BehaviorDescriptor();
-  private final BHDescriptor myIContainerOperation_BehaviorDescriptor = new IContainerOperation_BehaviorDescriptor();
-  private final BHDescriptor myIListOperation_BehaviorDescriptor = new IListOperation_BehaviorDescriptor();
-  private final BHDescriptor myDequeType_BehaviorDescriptor = new DequeType_BehaviorDescriptor();
-  private final BHDescriptor myPriorityQueueCreator_BehaviorDescriptor = new PriorityQueueCreator_BehaviorDescriptor();
-  private final BHDescriptor myQueueType_BehaviorDescriptor = new QueueType_BehaviorDescriptor();
-  private final BHDescriptor myAbstractContainerType_BehaviorDescriptor = new AbstractContainerType_BehaviorDescriptor();
-  private final BHDescriptor myIApplicableToNothing_BehaviorDescriptor = new IApplicableToNothing_BehaviorDescriptor();
-  private final BHDescriptor myIApplicableToCollection_BehaviorDescriptor = new IApplicableToCollection_BehaviorDescriptor();
-  private final BHDescriptor myIApplicableToList_BehaviorDescriptor = new IApplicableToList_BehaviorDescriptor();
-  private final BHDescriptor myIApplicableToDeque_BehaviorDescriptor = new IApplicableToDeque_BehaviorDescriptor();
-  private final BHDescriptor myIApplicableToQueue_BehaviorDescriptor = new IApplicableToQueue_BehaviorDescriptor();
-  private final BHDescriptor myIApplicableToStack_BehaviorDescriptor = new IApplicableToStack_BehaviorDescriptor();
-  private final BHDescriptor myStackType_BehaviorDescriptor = new StackType_BehaviorDescriptor();
-  private final BHDescriptor myCollectionType_BehaviorDescriptor = new CollectionType_BehaviorDescriptor();
-  private final BHDescriptor myMultiForEachStatement_BehaviorDescriptor = new MultiForEachStatement_BehaviorDescriptor();
+  private final BHDescriptor myListType__BehaviorDescriptor = new ListType__BehaviorDescriptor();
+  private final BHDescriptor mySequenceType__BehaviorDescriptor = new SequenceType__BehaviorDescriptor();
+  private final BHDescriptor mySequenceOperation__BehaviorDescriptor = new SequenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myForEachStatement__BehaviorDescriptor = new ForEachStatement__BehaviorDescriptor();
+  private final BHDescriptor myForEachVariableReference__BehaviorDescriptor = new ForEachVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myListCreatorWithInit__BehaviorDescriptor = new ListCreatorWithInit__BehaviorDescriptor();
+  private final BHDescriptor mySortDirection__BehaviorDescriptor = new SortDirection__BehaviorDescriptor();
+  private final BHDescriptor myConcatOperation__BehaviorDescriptor = new ConcatOperation__BehaviorDescriptor();
+  private final BHDescriptor myMapType__BehaviorDescriptor = new MapType__BehaviorDescriptor();
+  private final BHDescriptor myHashMapCreator__BehaviorDescriptor = new HashMapCreator__BehaviorDescriptor();
+  private final BHDescriptor myMapElement__BehaviorDescriptor = new MapElement__BehaviorDescriptor();
+  private final BHDescriptor myMapOperation__BehaviorDescriptor = new MapOperation__BehaviorDescriptor();
+  private final BHDescriptor myWhereOperation__BehaviorDescriptor = new WhereOperation__BehaviorDescriptor();
+  private final BHDescriptor mySortOperation__BehaviorDescriptor = new SortOperation__BehaviorDescriptor();
+  private final BHDescriptor mySkipStatement__BehaviorDescriptor = new SkipStatement__BehaviorDescriptor();
+  private final BHDescriptor myListElementAccessExpression__BehaviorDescriptor = new ListElementAccessExpression__BehaviorDescriptor();
+  private final BHDescriptor mySetType__BehaviorDescriptor = new SetType__BehaviorDescriptor();
+  private final BHDescriptor myHashSetCreator__BehaviorDescriptor = new HashSetCreator__BehaviorDescriptor();
+  private final BHDescriptor myLinkedListCreator__BehaviorDescriptor = new LinkedListCreator__BehaviorDescriptor();
+  private final BHDescriptor myIteratorType__BehaviorDescriptor = new IteratorType__BehaviorDescriptor();
+  private final BHDescriptor myEnumeratorType__BehaviorDescriptor = new EnumeratorType__BehaviorDescriptor();
+  private final BHDescriptor myAbstractContainerCreator__BehaviorDescriptor = new AbstractContainerCreator__BehaviorDescriptor();
+  private final BHDescriptor myAllConstant__BehaviorDescriptor = new AllConstant__BehaviorDescriptor();
+  private final BHDescriptor myLinkedHashMapCreator__BehaviorDescriptor = new LinkedHashMapCreator__BehaviorDescriptor();
+  private final BHDescriptor myLinkedHashSetCreator__BehaviorDescriptor = new LinkedHashSetCreator__BehaviorDescriptor();
+  private final BHDescriptor mySortedMapType__BehaviorDescriptor = new SortedMapType__BehaviorDescriptor();
+  private final BHDescriptor myTreeMapCreator__BehaviorDescriptor = new TreeMapCreator__BehaviorDescriptor();
+  private final BHDescriptor mySortedSetType__BehaviorDescriptor = new SortedSetType__BehaviorDescriptor();
+  private final BHDescriptor myTreeSetCreator__BehaviorDescriptor = new TreeSetCreator__BehaviorDescriptor();
+  private final BHDescriptor myMappingType__BehaviorDescriptor = new MappingType__BehaviorDescriptor();
+  private final BHDescriptor myValueAccessOperation__BehaviorDescriptor = new ValueAccessOperation__BehaviorDescriptor();
+  private final BHDescriptor myCustomContainerCreator__BehaviorDescriptor = new CustomContainerCreator__BehaviorDescriptor();
+  private final BHDescriptor myCustomMapCreator__BehaviorDescriptor = new CustomMapCreator__BehaviorDescriptor();
+  private final BHDescriptor myIContainerOperation__BehaviorDescriptor = new IContainerOperation__BehaviorDescriptor();
+  private final BHDescriptor myIListOperation__BehaviorDescriptor = new IListOperation__BehaviorDescriptor();
+  private final BHDescriptor myDequeType__BehaviorDescriptor = new DequeType__BehaviorDescriptor();
+  private final BHDescriptor myPriorityQueueCreator__BehaviorDescriptor = new PriorityQueueCreator__BehaviorDescriptor();
+  private final BHDescriptor myQueueType__BehaviorDescriptor = new QueueType__BehaviorDescriptor();
+  private final BHDescriptor myAbstractContainerType__BehaviorDescriptor = new AbstractContainerType__BehaviorDescriptor();
+  private final BHDescriptor myIApplicableToNothing__BehaviorDescriptor = new IApplicableToNothing__BehaviorDescriptor();
+  private final BHDescriptor myIApplicableToCollection__BehaviorDescriptor = new IApplicableToCollection__BehaviorDescriptor();
+  private final BHDescriptor myIApplicableToList__BehaviorDescriptor = new IApplicableToList__BehaviorDescriptor();
+  private final BHDescriptor myIApplicableToDeque__BehaviorDescriptor = new IApplicableToDeque__BehaviorDescriptor();
+  private final BHDescriptor myIApplicableToQueue__BehaviorDescriptor = new IApplicableToQueue__BehaviorDescriptor();
+  private final BHDescriptor myIApplicableToStack__BehaviorDescriptor = new IApplicableToStack__BehaviorDescriptor();
+  private final BHDescriptor myStackType__BehaviorDescriptor = new StackType__BehaviorDescriptor();
+  private final BHDescriptor myCollectionType__BehaviorDescriptor = new CollectionType__BehaviorDescriptor();
+  private final BHDescriptor myMultiForEachStatement__BehaviorDescriptor = new MultiForEachStatement__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -127,101 +127,101 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myListType_BehaviorDescriptor;
+        return myListType__BehaviorDescriptor;
       case 1:
-        return mySequenceType_BehaviorDescriptor;
+        return mySequenceType__BehaviorDescriptor;
       case 2:
-        return mySequenceOperation_BehaviorDescriptor;
+        return mySequenceOperation__BehaviorDescriptor;
       case 3:
-        return myForEachStatement_BehaviorDescriptor;
+        return myForEachStatement__BehaviorDescriptor;
       case 4:
-        return myForEachVariableReference_BehaviorDescriptor;
+        return myForEachVariableReference__BehaviorDescriptor;
       case 5:
-        return myListCreatorWithInit_BehaviorDescriptor;
+        return myListCreatorWithInit__BehaviorDescriptor;
       case 6:
-        return mySortDirection_BehaviorDescriptor;
+        return mySortDirection__BehaviorDescriptor;
       case 7:
-        return myConcatOperation_BehaviorDescriptor;
+        return myConcatOperation__BehaviorDescriptor;
       case 8:
-        return myMapType_BehaviorDescriptor;
+        return myMapType__BehaviorDescriptor;
       case 9:
-        return myHashMapCreator_BehaviorDescriptor;
+        return myHashMapCreator__BehaviorDescriptor;
       case 10:
-        return myMapElement_BehaviorDescriptor;
+        return myMapElement__BehaviorDescriptor;
       case 11:
-        return myMapOperation_BehaviorDescriptor;
+        return myMapOperation__BehaviorDescriptor;
       case 12:
-        return myWhereOperation_BehaviorDescriptor;
+        return myWhereOperation__BehaviorDescriptor;
       case 13:
-        return mySortOperation_BehaviorDescriptor;
+        return mySortOperation__BehaviorDescriptor;
       case 14:
-        return mySkipStatement_BehaviorDescriptor;
+        return mySkipStatement__BehaviorDescriptor;
       case 15:
-        return myListElementAccessExpression_BehaviorDescriptor;
+        return myListElementAccessExpression__BehaviorDescriptor;
       case 16:
-        return mySetType_BehaviorDescriptor;
+        return mySetType__BehaviorDescriptor;
       case 17:
-        return myHashSetCreator_BehaviorDescriptor;
+        return myHashSetCreator__BehaviorDescriptor;
       case 18:
-        return myLinkedListCreator_BehaviorDescriptor;
+        return myLinkedListCreator__BehaviorDescriptor;
       case 19:
-        return myIteratorType_BehaviorDescriptor;
+        return myIteratorType__BehaviorDescriptor;
       case 20:
-        return myEnumeratorType_BehaviorDescriptor;
+        return myEnumeratorType__BehaviorDescriptor;
       case 21:
-        return myAbstractContainerCreator_BehaviorDescriptor;
+        return myAbstractContainerCreator__BehaviorDescriptor;
       case 22:
-        return myAllConstant_BehaviorDescriptor;
+        return myAllConstant__BehaviorDescriptor;
       case 23:
-        return myLinkedHashMapCreator_BehaviorDescriptor;
+        return myLinkedHashMapCreator__BehaviorDescriptor;
       case 24:
-        return myLinkedHashSetCreator_BehaviorDescriptor;
+        return myLinkedHashSetCreator__BehaviorDescriptor;
       case 25:
-        return mySortedMapType_BehaviorDescriptor;
+        return mySortedMapType__BehaviorDescriptor;
       case 26:
-        return myTreeMapCreator_BehaviorDescriptor;
+        return myTreeMapCreator__BehaviorDescriptor;
       case 27:
-        return mySortedSetType_BehaviorDescriptor;
+        return mySortedSetType__BehaviorDescriptor;
       case 28:
-        return myTreeSetCreator_BehaviorDescriptor;
+        return myTreeSetCreator__BehaviorDescriptor;
       case 29:
-        return myMappingType_BehaviorDescriptor;
+        return myMappingType__BehaviorDescriptor;
       case 30:
-        return myValueAccessOperation_BehaviorDescriptor;
+        return myValueAccessOperation__BehaviorDescriptor;
       case 31:
-        return myCustomContainerCreator_BehaviorDescriptor;
+        return myCustomContainerCreator__BehaviorDescriptor;
       case 32:
-        return myCustomMapCreator_BehaviorDescriptor;
+        return myCustomMapCreator__BehaviorDescriptor;
       case 33:
-        return myIContainerOperation_BehaviorDescriptor;
+        return myIContainerOperation__BehaviorDescriptor;
       case 34:
-        return myIListOperation_BehaviorDescriptor;
+        return myIListOperation__BehaviorDescriptor;
       case 35:
-        return myDequeType_BehaviorDescriptor;
+        return myDequeType__BehaviorDescriptor;
       case 36:
-        return myPriorityQueueCreator_BehaviorDescriptor;
+        return myPriorityQueueCreator__BehaviorDescriptor;
       case 37:
-        return myQueueType_BehaviorDescriptor;
+        return myQueueType__BehaviorDescriptor;
       case 38:
-        return myAbstractContainerType_BehaviorDescriptor;
+        return myAbstractContainerType__BehaviorDescriptor;
       case 39:
-        return myIApplicableToNothing_BehaviorDescriptor;
+        return myIApplicableToNothing__BehaviorDescriptor;
       case 40:
-        return myIApplicableToCollection_BehaviorDescriptor;
+        return myIApplicableToCollection__BehaviorDescriptor;
       case 41:
-        return myIApplicableToList_BehaviorDescriptor;
+        return myIApplicableToList__BehaviorDescriptor;
       case 42:
-        return myIApplicableToDeque_BehaviorDescriptor;
+        return myIApplicableToDeque__BehaviorDescriptor;
       case 43:
-        return myIApplicableToQueue_BehaviorDescriptor;
+        return myIApplicableToQueue__BehaviorDescriptor;
       case 44:
-        return myIApplicableToStack_BehaviorDescriptor;
+        return myIApplicableToStack__BehaviorDescriptor;
       case 45:
-        return myStackType_BehaviorDescriptor;
+        return myStackType__BehaviorDescriptor;
       case 46:
-        return myCollectionType_BehaviorDescriptor;
+        return myCollectionType__BehaviorDescriptor;
       case 47:
-        return myMultiForEachStatement_BehaviorDescriptor;
+        return myMultiForEachStatement__BehaviorDescriptor;
       default:
         return null;
     }

@@ -159,6 +159,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -430,9 +433,16 @@
       <node concept="3clFbS" id="6eup$H2Z7lP" role="3clF47">
         <node concept="3clFbF" id="6eup$H2Z7lW" role="3cqZAp">
           <node concept="10QFUN" id="6eup$H2Z7m0" role="3clFbG">
-            <node concept="2ShNRf" id="6eup$H2Z7m1" role="10QFUP">
-              <node concept="1pGfFk" id="6eup$H2Z7m2" role="2ShVmc">
-                <ref role="37wK5l" node="6eup$H2YsqY" resolve="MockTemplateQueryContext" />
+            <node concept="1eOMI4" id="3t0KN6KgFF1" role="10QFUP">
+              <node concept="10QFUN" id="3t0KN6KgFEY" role="1eOMHV">
+                <node concept="3uibUv" id="3t0KN6KgFFL" role="10QFUM">
+                  <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                </node>
+                <node concept="2ShNRf" id="3t0KN6KgFF3" role="10QFUP">
+                  <node concept="1pGfFk" id="3t0KN6KgFF4" role="2ShVmc">
+                    <ref role="37wK5l" node="6eup$H2YsqY" resolve="MockTemplateQueryContext" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="1iwH7U" id="6eup$H2Z7m3" role="10QFUM" />
@@ -786,9 +796,16 @@
       <node concept="3clFbS" id="5xREo5PH8yo" role="3clF47">
         <node concept="3clFbF" id="5xREo5PH8yp" role="3cqZAp">
           <node concept="10QFUN" id="5xREo5PH8yq" role="3clFbG">
-            <node concept="2ShNRf" id="5xREo5PH8yr" role="10QFUP">
-              <node concept="1pGfFk" id="5xREo5PH8ys" role="2ShVmc">
-                <ref role="37wK5l" node="6eup$H2YsqY" resolve="MockTemplateQueryContext" />
+            <node concept="1eOMI4" id="3t0KN6KgFcC" role="10QFUP">
+              <node concept="10QFUN" id="3t0KN6KgFc_" role="1eOMHV">
+                <node concept="3uibUv" id="3t0KN6KgFdo" role="10QFUM">
+                  <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
+                </node>
+                <node concept="2ShNRf" id="3t0KN6KgFcE" role="10QFUP">
+                  <node concept="1pGfFk" id="3t0KN6KgFcF" role="2ShVmc">
+                    <ref role="37wK5l" node="6eup$H2YsqY" resolve="MockTemplateQueryContext" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="1iwH7U" id="5xREo5PH8yt" role="10QFUM" />
@@ -1046,6 +1063,9 @@
                   </node>
                   <node concept="3xLA65" id="5xREo5PH8$y" role="lGtFl">
                     <property role="TrG5h" value="literal" />
+                  </node>
+                  <node concept="7CXmI" id="3t0KN6KgLzn" role="lGtFl">
+                    <node concept="1TM$A" id="3t0KN6KgLzo" role="7EUXB" />
                   </node>
                 </node>
                 <node concept="1Bd96e" id="5xREo5PH8AF" role="2OqNvi" />

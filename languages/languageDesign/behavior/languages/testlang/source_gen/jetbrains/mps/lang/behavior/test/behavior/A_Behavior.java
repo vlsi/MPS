@@ -6,29 +6,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class A_Behavior {
   public static String call_nonVirtualMethod_4731970554577184968(SNode __thisNode__, String in, int dummy) {
-    return "A";
+    return A__BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8(__thisNode__, in, dummy);
   }
   public static String call_staticMethod_4731970554577185180(SAbstractConcept __thisConcept__, String in, int dummy) {
-    return in;
+    return A__BehaviorDescriptor.staticMethod_id46FlynTbAAs(__thisConcept__, in, dummy);
   }
   public static void call_doInvokeAll_4731970554577188128(SNode __thisNode__) {
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.nonVirtualMethod_id46FlynTbAz8.invoke(__thisNode__, "", 0);
-    // 
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.virtualMethod_id46FlynTbAzL.invoke(__thisNode__, "", 0);
-    // 
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
-    A_BehaviorDescriptor.finalVirtualMethod_id46FlynTbB7_.invoke(__thisNode__, "", 0);
-    // 
-    A_BehaviorDescriptor.staticMethod_id46FlynTbAAs.invoke(__thisNode__.getConcept(), "", 0);
-    // 
-    A_BehaviorDescriptor.staticVirtualMethod_id46FlynTbAGG.invoke(__thisNode__.getConcept(), "", 0);
+    A__BehaviorDescriptor.doInvokeAll_id46FlynTbBkw(__thisNode__);
   }
 }

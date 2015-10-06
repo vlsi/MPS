@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.HasAnnotation__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -39,14 +39,14 @@ public final class AddAnnotation_Intention extends IntentionDescriptorBase imple
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).isNotEmpty()) {
       return false;
     }
-    if (!(HasAnnotation_BehaviorDescriptor.canBeAnnotated_idhWp4PwP.invoke(node))) {
+    if (!((boolean) HasAnnotation__BehaviorDescriptor.canBeAnnotated_idhWp4PwP.invoke(node))) {
       return false;
     }
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == node) {
       return true;
     }
-    return ListSequence.fromList(HasAnnotation_BehaviorDescriptor.getChildrenToDisplayIntention_id3vsDNFqJVhw.invoke(node)).contains(selectedNode);
+    return ListSequence.fromList(HasAnnotation__BehaviorDescriptor.getChildrenToDisplayIntention_id3vsDNFqJVhw.invoke(node)).contains(selectedNode);
   }
   @Override
   public boolean isSurroundWith() {

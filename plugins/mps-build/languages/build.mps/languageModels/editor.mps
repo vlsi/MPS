@@ -32,6 +32,7 @@
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
+      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
@@ -2035,31 +2036,54 @@
       </node>
     </node>
     <node concept="3EZMnI" id="3LQl9buGsTU" role="6VMZX">
-      <node concept="3F0ifn" id="3LQl9buGsU5" role="3EZMnx">
+      <node concept="3EZMnI" id="s7_iJZIwpW" role="3EZMnx">
+        <node concept="VPM3Z" id="s7_iJZIwpY" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="s7_iJZIwqx" role="3EZMnx">
+          <property role="3F0ifm" value="sources jar location:" />
+          <ref role="1k5W1q" to="ot6o:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="2iRfu4" id="s7_iJZIwq1" role="2iSdaV" />
+        <node concept="3EZMnI" id="s7_iJZIwsM" role="3EZMnx">
+          <node concept="VPM3Z" id="s7_iJZIwsO" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="3F0ifn" id="s7_iJZIwsQ" role="3EZMnx" />
+          <node concept="l2Vlx" id="s7_iJZIwsR" role="2iSdaV" />
+        </node>
+        <node concept="3F1sOY" id="s7_iJZIwru" role="3EZMnx">
+          <ref role="1NtTu8" to="kdzh:s7_iJZHDbQ" />
+        </node>
+        <node concept="ljvvj" id="s7_iJZIwsH" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="s7_iJZHIsE" role="3EZMnx">
         <property role="3F0ifm" value="jar locations:" />
         <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-        <node concept="ljvvj" id="3LQl9buGsU6" role="3F10Kt">
+        <node concept="ljvvj" id="s7_iJZHIsF" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="s7_iJZHIsQ" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:3LQl9buGsTT" />
+        <node concept="l2Vlx" id="s7_iJZHIsR" role="2czzBx" />
+        <node concept="3F0ifn" id="s7_iJZHIsS" role="2czzBI">
+          <property role="3F0ifm" value="" />
+          <property role="ilYzB" value="&lt;&lt; default relative locations for all jars &gt;&gt;" />
+          <node concept="VPxyj" id="s7_iJZHIsT" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="pj6Ft" id="s7_iJZHIsU" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="s7_iJZHIsV" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="l2Vlx" id="3LQl9buGsTV" role="2iSdaV" />
-      <node concept="3F2HdR" id="3LQl9buGsTW" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:3LQl9buGsTT" />
-        <node concept="l2Vlx" id="3LQl9buGsTX" role="2czzBx" />
-        <node concept="3F0ifn" id="3LQl9buGsTZ" role="2czzBI">
-          <property role="3F0ifm" value="" />
-          <property role="ilYzB" value="&lt;&lt; default relative locations for all jars &gt;&gt;" />
-          <node concept="VPxyj" id="3LQl9buGsU0" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="pj6Ft" id="3LQl9buGsU1" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="lj46D" id="3LQl9buGsU3" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
     </node>
   </node>
   <node concept="1h_SRR" id="41K1b4v5Bzs">

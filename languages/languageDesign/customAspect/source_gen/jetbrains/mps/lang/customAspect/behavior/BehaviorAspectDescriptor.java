@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myLanguageAspectDescriptor_BehaviorDescriptor = new LanguageAspectDescriptor_BehaviorDescriptor();
-  private final BHDescriptor mySimpleLanguageAspectDescriptor_BehaviorDescriptor = new SimpleLanguageAspectDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myGenerationDescriptor_ByInterface_BehaviorDescriptor = new GenerationDescriptor_ByInterface_BehaviorDescriptor();
-  private final BHDescriptor myIAspectConcept_BehaviorDescriptor = new IAspectConcept_BehaviorDescriptor();
+  private final BHDescriptor myLanguageAspectDescriptor__BehaviorDescriptor = new LanguageAspectDescriptor__BehaviorDescriptor();
+  private final BHDescriptor mySimpleLanguageAspectDescriptor__BehaviorDescriptor = new SimpleLanguageAspectDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myGenerationDescriptor_ByInterface__BehaviorDescriptor = new GenerationDescriptor_ByInterface__BehaviorDescriptor();
+  private final BHDescriptor myIAspectConcept__BehaviorDescriptor = new IAspectConcept__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -39,13 +39,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myLanguageAspectDescriptor_BehaviorDescriptor;
+        return myLanguageAspectDescriptor__BehaviorDescriptor;
       case 1:
-        return mySimpleLanguageAspectDescriptor_BehaviorDescriptor;
+        return mySimpleLanguageAspectDescriptor__BehaviorDescriptor;
       case 2:
-        return myGenerationDescriptor_ByInterface_BehaviorDescriptor;
+        return myGenerationDescriptor_ByInterface__BehaviorDescriptor;
       case 3:
-        return myIAspectConcept_BehaviorDescriptor;
+        return myIAspectConcept__BehaviorDescriptor;
       default:
         return null;
     }

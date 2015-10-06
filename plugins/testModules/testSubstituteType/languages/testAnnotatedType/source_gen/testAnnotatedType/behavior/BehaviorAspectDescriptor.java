@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myPrimDoubleType_BehaviorDescriptor = new PrimDoubleType_BehaviorDescriptor();
-  private final BHDescriptor myPrimType_BehaviorDescriptor = new PrimType_BehaviorDescriptor();
-  private final BHDescriptor myPresenceCondition_BehaviorDescriptor = new PresenceCondition_BehaviorDescriptor();
+  private final BHDescriptor myPrimDoubleType__BehaviorDescriptor = new PrimDoubleType__BehaviorDescriptor();
+  private final BHDescriptor myPrimType__BehaviorDescriptor = new PrimType__BehaviorDescriptor();
+  private final BHDescriptor myPresenceCondition__BehaviorDescriptor = new PresenceCondition__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myPrimDoubleType_BehaviorDescriptor;
+        return myPrimDoubleType__BehaviorDescriptor;
       case 1:
-        return myPrimType_BehaviorDescriptor;
+        return myPrimType__BehaviorDescriptor;
       case 2:
-        return myPresenceCondition_BehaviorDescriptor;
+        return myPresenceCondition__BehaviorDescriptor;
       default:
         return null;
     }

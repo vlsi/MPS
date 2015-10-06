@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myCurrentStockPrice_BehaviorDescriptor = new CurrentStockPrice_BehaviorDescriptor();
-  private final BHDescriptor myStockSymbol_BehaviorDescriptor = new StockSymbol_BehaviorDescriptor();
-  private final BHDescriptor myMovingAverage_BehaviorDescriptor = new MovingAverage_BehaviorDescriptor();
-  private final BHDescriptor myMoneyLiteral_BehaviorDescriptor = new MoneyLiteral_BehaviorDescriptor();
-  private final BHDescriptor myMoneyType_BehaviorDescriptor = new MoneyType_BehaviorDescriptor();
+  private final BHDescriptor myCurrentStockPrice__BehaviorDescriptor = new CurrentStockPrice__BehaviorDescriptor();
+  private final BHDescriptor myStockSymbol__BehaviorDescriptor = new StockSymbol__BehaviorDescriptor();
+  private final BHDescriptor myMovingAverage__BehaviorDescriptor = new MovingAverage__BehaviorDescriptor();
+  private final BHDescriptor myMoneyLiteral__BehaviorDescriptor = new MoneyLiteral__BehaviorDescriptor();
+  private final BHDescriptor myMoneyType__BehaviorDescriptor = new MoneyType__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -41,15 +41,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myCurrentStockPrice_BehaviorDescriptor;
+        return myCurrentStockPrice__BehaviorDescriptor;
       case 1:
-        return myStockSymbol_BehaviorDescriptor;
+        return myStockSymbol__BehaviorDescriptor;
       case 2:
-        return myMovingAverage_BehaviorDescriptor;
+        return myMovingAverage__BehaviorDescriptor;
       case 3:
-        return myMoneyLiteral_BehaviorDescriptor;
+        return myMoneyLiteral__BehaviorDescriptor;
       case 4:
-        return myMoneyType_BehaviorDescriptor;
+        return myMoneyType__BehaviorDescriptor;
       default:
         return null;
     }

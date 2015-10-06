@@ -11,7 +11,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.baseLanguage.javadoc.editor.DocTagHelper;
@@ -34,7 +34,7 @@ public final class OrganizeTags_Intention extends IntentionDescriptorBase implem
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

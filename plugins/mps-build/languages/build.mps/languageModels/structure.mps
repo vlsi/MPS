@@ -506,6 +506,11 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="3LQl9buGqe4" resolve="BuildMpsLayout_ModuleXml_CustomJarLocation" />
     </node>
+    <node concept="1TJgyj" id="s7_iJZHDbQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="sourcesJarLocation" />
+      <ref role="20lvS9" node="QkG2t1bKw$" resolve="GeneratorInternal_String" />
+    </node>
     <node concept="1TJgyj" id="6CY5wCYZA9P" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="module" />

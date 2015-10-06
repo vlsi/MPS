@@ -37,7 +37,7 @@ public class MpsScopesUtil {
       if (!(SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")))) {
         ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
       } else {
-        ListSequence.fromList(result).addElement(((((Boolean) BHReflection.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), SMethodTrimmedId.create("isStatic", null, "7MS72Gc8avw"))) ? "static " : "")) + getSignature(member, classifier));
+        ListSequence.fromList(result).addElement(((((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), SMethodTrimmedId.create("isStatic", null, "7MS72Gc8avw"))) ? "static " : "")) + getSignature(member, classifier));
       }
     }
     return result;

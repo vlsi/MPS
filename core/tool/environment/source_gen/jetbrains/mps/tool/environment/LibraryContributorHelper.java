@@ -9,7 +9,7 @@ import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.LinkedHashSet;
 import java.io.File;
 import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
-import jetbrains.mps.core.tool.environment.util.PathManager;
+import jetbrains.mps.util.PathManager;
 import java.util.Collections;
 import java.util.List;
 import java.net.URL;
@@ -38,7 +38,7 @@ import java.util.LinkedHashMap;
       UrlClassLoader pluginCL = null;
       if (libFolder.exists() && libFolder.isDirectory()) {
         pluginCL = createPluginClassLoader(libFolder);
-        for (File jar : libFolder.listFiles(PathManager.JARS)) {
+        for (File jar : libFolder.listFiles(PathManager.JAR_FILE_FILTER)) {
           paths.add(new LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
         }
       }
@@ -52,7 +52,7 @@ import java.util.LinkedHashMap;
 
   private static UrlClassLoader createPluginClassLoader(File lib) {
     List<URL> urls = new ArrayList<URL>();
-    File[] files = lib.listFiles(PathManager.JARS);
+    File[] files = lib.listFiles(PathManager.JAR_FILE_FILTER);
     if (files == null) {
       return null;
     }

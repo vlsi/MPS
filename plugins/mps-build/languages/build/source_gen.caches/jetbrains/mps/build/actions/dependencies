@@ -32,10 +32,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildStringContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />

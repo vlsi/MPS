@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -22,12 +22,12 @@ public class DispatchArgsHierarchy_NonTypesystemRule extends AbstractNonTypesyst
   public DispatchArgsHierarchy_NonTypesystemRule() {
   }
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Iterable<SNode> instMethods = Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classConcept)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> instMethods = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classConcept)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return DispatchUtil.isReadyMethod(it);
       }
     });
-    Iterable<SNode> statMethods = Sequence.fromIterable(Classifier_BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classConcept)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> statMethods = Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(classConcept)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return DispatchUtil.isReadyMethod(it);
       }

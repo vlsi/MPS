@@ -12,24 +12,24 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myAutoInitDSLClass_BehaviorDescriptor = new AutoInitDSLClass_BehaviorDescriptor();
-  private final BHDescriptor myMethodInstance_BehaviorDescriptor = new MethodInstance_BehaviorDescriptor();
-  private final BHDescriptor myDependentTypeDescriptor_BehaviorDescriptor = new DependentTypeDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myDSLDescriptor_BehaviorDescriptor = new DSLDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myParameterDescriptor_BehaviorDescriptor = new ParameterDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myMethodDescriptor_BehaviorDescriptor = new MethodDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myDependentTypeInstance_BehaviorDescriptor = new DependentTypeInstance_BehaviorDescriptor();
-  private final BHDescriptor myEmptyMemberDescriptor_BehaviorDescriptor = new EmptyMemberDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myMemberPlaceholder_BehaviorDescriptor = new MemberPlaceholder_BehaviorDescriptor();
-  private final BHDescriptor myPropertyInstance_BehaviorDescriptor = new PropertyInstance_BehaviorDescriptor();
-  private final BHDescriptor myMemberInstance_BehaviorDescriptor = new MemberInstance_BehaviorDescriptor();
-  private final BHDescriptor myStringPropertyInstance_BehaviorDescriptor = new StringPropertyInstance_BehaviorDescriptor();
-  private final BHDescriptor myBooleanPropertyInstance_BehaviorDescriptor = new BooleanPropertyInstance_BehaviorDescriptor();
-  private final BHDescriptor myIntegerPropertyInstance_BehaviorDescriptor = new IntegerPropertyInstance_BehaviorDescriptor();
-  private final BHDescriptor myPropertyDescriptor_BehaviorDescriptor = new PropertyDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myDSLClassMember_BehaviorDescriptor = new DSLClassMember_BehaviorDescriptor();
-  private final BHDescriptor myPlaceholderModifier_BehaviorDescriptor = new PlaceholderModifier_BehaviorDescriptor();
-  private final BHDescriptor myCustomMemberDescriptor_BehaviorDescriptor = new CustomMemberDescriptor_BehaviorDescriptor();
+  private final BHDescriptor myAutoInitDSLClass__BehaviorDescriptor = new AutoInitDSLClass__BehaviorDescriptor();
+  private final BHDescriptor myMethodInstance__BehaviorDescriptor = new MethodInstance__BehaviorDescriptor();
+  private final BHDescriptor myDependentTypeDescriptor__BehaviorDescriptor = new DependentTypeDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myDSLDescriptor__BehaviorDescriptor = new DSLDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myParameterDescriptor__BehaviorDescriptor = new ParameterDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myMethodDescriptor__BehaviorDescriptor = new MethodDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myDependentTypeInstance__BehaviorDescriptor = new DependentTypeInstance__BehaviorDescriptor();
+  private final BHDescriptor myEmptyMemberDescriptor__BehaviorDescriptor = new EmptyMemberDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myMemberPlaceholder__BehaviorDescriptor = new MemberPlaceholder__BehaviorDescriptor();
+  private final BHDescriptor myPropertyInstance__BehaviorDescriptor = new PropertyInstance__BehaviorDescriptor();
+  private final BHDescriptor myMemberInstance__BehaviorDescriptor = new MemberInstance__BehaviorDescriptor();
+  private final BHDescriptor myStringPropertyInstance__BehaviorDescriptor = new StringPropertyInstance__BehaviorDescriptor();
+  private final BHDescriptor myBooleanPropertyInstance__BehaviorDescriptor = new BooleanPropertyInstance__BehaviorDescriptor();
+  private final BHDescriptor myIntegerPropertyInstance__BehaviorDescriptor = new IntegerPropertyInstance__BehaviorDescriptor();
+  private final BHDescriptor myPropertyDescriptor__BehaviorDescriptor = new PropertyDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myDSLClassMember__BehaviorDescriptor = new DSLClassMember__BehaviorDescriptor();
+  private final BHDescriptor myPlaceholderModifier__BehaviorDescriptor = new PlaceholderModifier__BehaviorDescriptor();
+  private final BHDescriptor myCustomMemberDescriptor__BehaviorDescriptor = new CustomMemberDescriptor__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -67,41 +67,41 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myAutoInitDSLClass_BehaviorDescriptor;
+        return myAutoInitDSLClass__BehaviorDescriptor;
       case 1:
-        return myMethodInstance_BehaviorDescriptor;
+        return myMethodInstance__BehaviorDescriptor;
       case 2:
-        return myDependentTypeDescriptor_BehaviorDescriptor;
+        return myDependentTypeDescriptor__BehaviorDescriptor;
       case 3:
-        return myDSLDescriptor_BehaviorDescriptor;
+        return myDSLDescriptor__BehaviorDescriptor;
       case 4:
-        return myParameterDescriptor_BehaviorDescriptor;
+        return myParameterDescriptor__BehaviorDescriptor;
       case 5:
-        return myMethodDescriptor_BehaviorDescriptor;
+        return myMethodDescriptor__BehaviorDescriptor;
       case 6:
-        return myDependentTypeInstance_BehaviorDescriptor;
+        return myDependentTypeInstance__BehaviorDescriptor;
       case 7:
-        return myEmptyMemberDescriptor_BehaviorDescriptor;
+        return myEmptyMemberDescriptor__BehaviorDescriptor;
       case 8:
-        return myMemberPlaceholder_BehaviorDescriptor;
+        return myMemberPlaceholder__BehaviorDescriptor;
       case 9:
-        return myPropertyInstance_BehaviorDescriptor;
+        return myPropertyInstance__BehaviorDescriptor;
       case 10:
-        return myMemberInstance_BehaviorDescriptor;
+        return myMemberInstance__BehaviorDescriptor;
       case 11:
-        return myStringPropertyInstance_BehaviorDescriptor;
+        return myStringPropertyInstance__BehaviorDescriptor;
       case 12:
-        return myBooleanPropertyInstance_BehaviorDescriptor;
+        return myBooleanPropertyInstance__BehaviorDescriptor;
       case 13:
-        return myIntegerPropertyInstance_BehaviorDescriptor;
+        return myIntegerPropertyInstance__BehaviorDescriptor;
       case 14:
-        return myPropertyDescriptor_BehaviorDescriptor;
+        return myPropertyDescriptor__BehaviorDescriptor;
       case 15:
-        return myDSLClassMember_BehaviorDescriptor;
+        return myDSLClassMember__BehaviorDescriptor;
       case 16:
-        return myPlaceholderModifier_BehaviorDescriptor;
+        return myPlaceholderModifier__BehaviorDescriptor;
       case 17:
-        return myCustomMemberDescriptor_BehaviorDescriptor;
+        return myCustomMemberDescriptor__BehaviorDescriptor;
       default:
         return null;
     }

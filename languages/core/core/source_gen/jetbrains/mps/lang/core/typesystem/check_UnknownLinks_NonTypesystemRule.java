@@ -17,10 +17,10 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -49,7 +49,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
 
-    for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+    for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SReferenceLink link = reference.getLink();
       if (((SReferenceLinkAdapter) link).getReferenceDescriptor() == null) {
         {

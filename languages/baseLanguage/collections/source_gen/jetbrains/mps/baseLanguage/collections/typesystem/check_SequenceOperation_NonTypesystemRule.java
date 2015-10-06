@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -24,11 +24,11 @@ public class check_SequenceOperation_NonTypesystemRule extends AbstractNonTypesy
   public check_SequenceOperation_NonTypesystemRule() {
   }
   public void applyRule(final SNode so, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final SNode opType = TypeChecker.getInstance().getTypeOf(IOperation_BehaviorDescriptor.getOperand_idhEwIP$m.invoke(so));
+    final SNode opType = TypeChecker.getInstance().getTypeOf(IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(so));
     if (SNodeOperations.isInstanceOf(so, MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"))) {
       // casting twice to avoid "not comparable" type error 
       SNode conceptNode = SNodeOperations.getConceptDeclaration(so);
-      if (!(SetSequence.fromSet((IApplicableToNothing_BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept((SNode) conceptNode)))).any(new IWhereFilter<SNode>() {
+      if (!(SetSequence.fromSet((IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept((SNode) conceptNode)))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return TypeChecker.getInstance().getSubtypingManager().isSubtype(opType, it, false);
         }

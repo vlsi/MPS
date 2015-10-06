@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.migration.behavior.TransformStatement_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.behavior.TransformStatement__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class TransformStatement {
   public static class NodeFactory_1901572971594206036 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).addElement(_quotation_createNode_md2x8h_a0a0a0a(TransformStatement_BehaviorDescriptor.getPatternConcept_id4SSaNAQl5wN.invoke(SNodeOperations.as(enclosingNode, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement")))));
+      ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).addElement(_quotation_createNode_md2x8h_a0a0a0a(TransformStatement__BehaviorDescriptor.getPatternConcept_id4SSaNAQl5wN.invoke(SNodeOperations.as(enclosingNode, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement")))));
       SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0xc5cbfc0eeac457bL, "forceMultiLine"), "" + (true));
     }
     private static SNode _quotation_createNode_md2x8h_a0a0a0a(Object parameter_1) {

@@ -12,13 +12,13 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myAsPattern_BehaviorDescriptor = new AsPattern_BehaviorDescriptor();
-  private final BHDescriptor myPattern_BehaviorDescriptor = new Pattern_BehaviorDescriptor();
-  private final BHDescriptor myPatternExpression_BehaviorDescriptor = new PatternExpression_BehaviorDescriptor();
-  private final BHDescriptor myPatternVariableDeclaration_BehaviorDescriptor = new PatternVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myPropertyPatternVariableDeclaration_BehaviorDescriptor = new PropertyPatternVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myLinkPatternVariableDeclaration_BehaviorDescriptor = new LinkPatternVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myActionStatement_BehaviorDescriptor = new ActionStatement_BehaviorDescriptor();
+  private final BHDescriptor myAsPattern__BehaviorDescriptor = new AsPattern__BehaviorDescriptor();
+  private final BHDescriptor myPattern__BehaviorDescriptor = new Pattern__BehaviorDescriptor();
+  private final BHDescriptor myPatternExpression__BehaviorDescriptor = new PatternExpression__BehaviorDescriptor();
+  private final BHDescriptor myPatternVariableDeclaration__BehaviorDescriptor = new PatternVariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myPropertyPatternVariableDeclaration__BehaviorDescriptor = new PropertyPatternVariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myLinkPatternVariableDeclaration__BehaviorDescriptor = new LinkPatternVariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myActionStatement__BehaviorDescriptor = new ActionStatement__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -45,19 +45,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myAsPattern_BehaviorDescriptor;
+        return myAsPattern__BehaviorDescriptor;
       case 1:
-        return myPattern_BehaviorDescriptor;
+        return myPattern__BehaviorDescriptor;
       case 2:
-        return myPatternExpression_BehaviorDescriptor;
+        return myPatternExpression__BehaviorDescriptor;
       case 3:
-        return myPatternVariableDeclaration_BehaviorDescriptor;
+        return myPatternVariableDeclaration__BehaviorDescriptor;
       case 4:
-        return myPropertyPatternVariableDeclaration_BehaviorDescriptor;
+        return myPropertyPatternVariableDeclaration__BehaviorDescriptor;
       case 5:
-        return myLinkPatternVariableDeclaration_BehaviorDescriptor;
+        return myLinkPatternVariableDeclaration__BehaviorDescriptor;
       case 6:
-        return myActionStatement_BehaviorDescriptor;
+        return myActionStatement__BehaviorDescriptor;
       default:
         return null;
     }

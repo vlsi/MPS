@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.awt.Component;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import javax.swing.JOptionPane;
 
 public class ShowMetaLevel_Action extends BaseAction {
@@ -51,7 +51,7 @@ public class ShowMetaLevel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    int metaLevel = BaseConcept_BehaviorDescriptor.getMetaLevel_id3t0v3yFOD1A.invoke(event.getData(MPSCommonDataKeys.NODE));
+    int metaLevel = (int) BaseConcept__BehaviorDescriptor.getMetaLevel_id3t0v3yFOD1A.invoke(event.getData(MPSCommonDataKeys.NODE));
     JOptionPane.showMessageDialog(event.getData(PlatformDataKeys.CONTEXT_COMPONENT), metaLevel);
   }
 }

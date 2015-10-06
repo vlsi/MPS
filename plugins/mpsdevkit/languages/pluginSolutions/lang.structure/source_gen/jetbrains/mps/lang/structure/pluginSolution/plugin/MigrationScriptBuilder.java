@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.behavior.MigrationScript__BehaviorDescriptor;
 
 public class MigrationScriptBuilder {
 
@@ -54,7 +54,7 @@ public class MigrationScriptBuilder {
   }
 
   public SNode getExecuteMethod() {
-    return MigrationScript_BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030"));
+    return MigrationScript__BehaviorDescriptor.getMethod_id6d7r2Fq2j7f.invoke(myScript, SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030"));
   }
 
   public SNode getExecuteMethodModuleParameter() {

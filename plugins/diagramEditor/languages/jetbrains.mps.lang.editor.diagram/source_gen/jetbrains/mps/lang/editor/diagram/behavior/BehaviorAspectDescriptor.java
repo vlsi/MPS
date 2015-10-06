@@ -12,18 +12,18 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myCellModel_DiagramPort_BehaviorDescriptor = new CellModel_DiagramPort_BehaviorDescriptor();
-  private final BHDescriptor myDiagramConnectorCreationHandler_BehaviorDescriptor = new DiagramConnectorCreationHandler_BehaviorDescriptor();
-  private final BHDescriptor myDiagramConnectorCanCreateHandler_BehaviorDescriptor = new DiagramConnectorCanCreateHandler_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_DiagramNode_BehaviorDescriptor = new CellModel_DiagramNode_BehaviorDescriptor();
-  private final BHDescriptor myAbstractFigureReference_BehaviorDescriptor = new AbstractFigureReference_BehaviorDescriptor();
-  private final BHDescriptor myExternalFigureReference_BehaviorDescriptor = new ExternalFigureReference_BehaviorDescriptor();
-  private final BHDescriptor myFigureParameterMapping_BehaviorDescriptor = new FigureParameterMapping_BehaviorDescriptor();
-  private final BHDescriptor myAbstractDiagramCreation_BehaviorDescriptor = new AbstractDiagramCreation_BehaviorDescriptor();
-  private final BHDescriptor myAttributedFigureReference_BehaviorDescriptor = new AttributedFigureReference_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_Diagram_BehaviorDescriptor = new CellModel_Diagram_BehaviorDescriptor();
-  private final BHDescriptor myCellModel_DiagramConnector_BehaviorDescriptor = new CellModel_DiagramConnector_BehaviorDescriptor();
-  private final BHDescriptor myDiagramElementCreationHandler_BehaviorDescriptor = new DiagramElementCreationHandler_BehaviorDescriptor();
+  private final BHDescriptor myCellModel_DiagramPort__BehaviorDescriptor = new CellModel_DiagramPort__BehaviorDescriptor();
+  private final BHDescriptor myDiagramConnectorCreationHandler__BehaviorDescriptor = new DiagramConnectorCreationHandler__BehaviorDescriptor();
+  private final BHDescriptor myDiagramConnectorCanCreateHandler__BehaviorDescriptor = new DiagramConnectorCanCreateHandler__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_DiagramNode__BehaviorDescriptor = new CellModel_DiagramNode__BehaviorDescriptor();
+  private final BHDescriptor myAbstractFigureReference__BehaviorDescriptor = new AbstractFigureReference__BehaviorDescriptor();
+  private final BHDescriptor myExternalFigureReference__BehaviorDescriptor = new ExternalFigureReference__BehaviorDescriptor();
+  private final BHDescriptor myFigureParameterMapping__BehaviorDescriptor = new FigureParameterMapping__BehaviorDescriptor();
+  private final BHDescriptor myAbstractDiagramCreation__BehaviorDescriptor = new AbstractDiagramCreation__BehaviorDescriptor();
+  private final BHDescriptor myAttributedFigureReference__BehaviorDescriptor = new AttributedFigureReference__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_Diagram__BehaviorDescriptor = new CellModel_Diagram__BehaviorDescriptor();
+  private final BHDescriptor myCellModel_DiagramConnector__BehaviorDescriptor = new CellModel_DiagramConnector__BehaviorDescriptor();
+  private final BHDescriptor myDiagramElementCreationHandler__BehaviorDescriptor = new DiagramElementCreationHandler__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -55,29 +55,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myCellModel_DiagramPort_BehaviorDescriptor;
+        return myCellModel_DiagramPort__BehaviorDescriptor;
       case 1:
-        return myDiagramConnectorCreationHandler_BehaviorDescriptor;
+        return myDiagramConnectorCreationHandler__BehaviorDescriptor;
       case 2:
-        return myDiagramConnectorCanCreateHandler_BehaviorDescriptor;
+        return myDiagramConnectorCanCreateHandler__BehaviorDescriptor;
       case 3:
-        return myCellModel_DiagramNode_BehaviorDescriptor;
+        return myCellModel_DiagramNode__BehaviorDescriptor;
       case 4:
-        return myAbstractFigureReference_BehaviorDescriptor;
+        return myAbstractFigureReference__BehaviorDescriptor;
       case 5:
-        return myExternalFigureReference_BehaviorDescriptor;
+        return myExternalFigureReference__BehaviorDescriptor;
       case 6:
-        return myFigureParameterMapping_BehaviorDescriptor;
+        return myFigureParameterMapping__BehaviorDescriptor;
       case 7:
-        return myAbstractDiagramCreation_BehaviorDescriptor;
+        return myAbstractDiagramCreation__BehaviorDescriptor;
       case 8:
-        return myAttributedFigureReference_BehaviorDescriptor;
+        return myAttributedFigureReference__BehaviorDescriptor;
       case 9:
-        return myCellModel_Diagram_BehaviorDescriptor;
+        return myCellModel_Diagram__BehaviorDescriptor;
       case 10:
-        return myCellModel_DiagramConnector_BehaviorDescriptor;
+        return myCellModel_DiagramConnector__BehaviorDescriptor;
       case 11:
-        return myDiagramElementCreationHandler_BehaviorDescriptor;
+        return myDiagramElementCreationHandler__BehaviorDescriptor;
       default:
         return null;
     }

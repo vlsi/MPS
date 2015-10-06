@@ -28,17 +28,17 @@ public final class CrossModelUtil {
     return rv;
   }
   public SModel newProxyModel(TransientModelsModule module, SNode exportEntry) {
-    return ((SModel) BHReflection.invoke(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel")), SMethodTrimmedId.create("create", null, "7PoJpZpSECB"), module));
+    return ((SModel) (SModel) BHReflection.invoke(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel")), SMethodTrimmedId.create("create", null, "7PoJpZpSECB"), module));
   }
   public SNode newProxyNode(SNode exportEntry, SModel proxyModel) {
     // we record actual concept of output node, and use it instead of ExportLabel.outputKind, which 
     // will be still there for label validation/code completion purposes 
-    return ((SNode) BHReflection.invoke(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode")), SMethodTrimmedId.create("instantiate", null, "7PoJpZpHuTR"), proxyModel));
+    return ((SNode) (SNode) BHReflection.invoke(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode")), SMethodTrimmedId.create("instantiate", null, "7PoJpZpHuTR"), proxyModel));
   }
   public List<SNode> find(SModel exports, final String exportLabelName, final SNode inputNode) {
     return ListSequence.fromList(SModelOperations.nodes(exports, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ((Boolean) BHReflection.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode")), SMethodTrimmedId.create("match", null, "1si_nSrb46O"), inputNode));
+        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ((boolean) (Boolean) BHReflection.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode")), SMethodTrimmedId.create("match", null, "1si_nSrb46O"), inputNode));
       }
     }).toListSequence();
   }

@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.console.ideCommands.behavior.ModelReference_BehaviorDescriptor;
+import jetbrains.mps.console.ideCommands.behavior.ModelReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,7 +21,7 @@ public class check_ShowGenPlan_NonTypesystemRule extends AbstractNonTypesystemRu
   public check_ShowGenPlan_NonTypesystemRule() {
   }
   public void applyRule(final SNode showGenPlan, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SModel model = ModelReference_BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(showGenPlan, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), SNodeOperations.getModel(showGenPlan).getRepository());
+    SModel model = ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2.invoke(SLinkOperations.getTarget(showGenPlan, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), SNodeOperations.getModel(showGenPlan).getRepository());
     if (model != null) {
       if (!(jetbrains.mps.util.SNodeOperations.isGeneratable(model))) {
         MessageTarget errorTarget = new NodeMessageTarget();

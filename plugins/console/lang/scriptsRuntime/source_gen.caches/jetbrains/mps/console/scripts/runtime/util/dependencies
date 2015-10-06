@@ -9,7 +9,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.console.tool.BaseConsoleTab" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleContext" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />

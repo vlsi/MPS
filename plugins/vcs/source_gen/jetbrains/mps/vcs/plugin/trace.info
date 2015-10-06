@@ -160,7 +160,7 @@
       <unit id="8230098746512809350" at="112,79,116,7" name="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action$2" />
       <unit id="8230098746512809368" at="116,20,120,7" name="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action$3" />
       <unit id="8230098746512809382" at="120,19,124,7" name="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action$4" />
-      <unit id="1278784516769382579" at="84,98,92,5" name="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action$1" />
+      <unit id="1278784516769382579" at="84,108,92,5" name="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action$1" />
       <unit id="1156564534683188476" at="34,0,130,0" name="jetbrains.mps.vcs.plugin.MakeOrRebuildModelsFromChangeList_Action" />
     </file>
   </root>

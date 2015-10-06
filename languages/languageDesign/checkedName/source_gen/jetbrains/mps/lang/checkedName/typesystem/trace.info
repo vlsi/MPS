@@ -20,8 +20,8 @@
     <file name="FixNamingPolicy_QuickFix.java">
       <node id="1628770029971140613" at="16,37,17,136" concept="10" />
       <node id="5003188907305524502" at="19,44,20,31" concept="8" />
-      <node id="1628770029971140620" at="23,168,24,331" concept="3" />
-      <node id="1628770029971140637" at="26,179,27,79" concept="7" />
+      <node id="1628770029971140620" at="23,169,24,331" concept="3" />
+      <node id="1628770029971140637" at="26,180,27,79" concept="7" />
       <node id="1628770029971140648" at="27,79,28,64" concept="7" />
       <node id="1628770029971140653" at="28,64,29,74" concept="3" />
       <node id="1628770029971140613" at="16,0,19,0" concept="1" trace="FixNamingPolicy_QuickFix#()V" />
@@ -31,7 +31,7 @@
       <node id="1628770029971140613" at="22,0,32,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1628770029971140613" at="16,37,17,136" />
       <scope id="1628770029971140669" at="19,44,20,31" />
-      <scope id="1628770029971140619" at="23,168,24,331" />
+      <scope id="1628770029971140619" at="23,169,24,331" />
       <scope id="1628770029971140613" at="16,0,19,0" />
       <scope id="1628770029971140613" at="19,0,22,0">
         <var name="node" id="1628770029971140613" />
@@ -39,7 +39,7 @@
       <scope id="1628770029971140618" at="22,35,25,5">
         <var name="s" id="1628770029971140633" />
       </scope>
-      <scope id="1628770029971140636" at="26,179,29,74">
+      <scope id="1628770029971140636" at="26,180,29,74">
         <var name="newValue" id="1628770029971140649" />
         <var name="value" id="1628770029971140638" />
       </scope>
@@ -130,7 +130,7 @@
       <node id="4844813484172611479" at="84,68,85,102" concept="8" />
       <node id="4844813484172611479" at="87,30,88,17" concept="8" />
       <node id="4844813484172611479" at="23,0,25,0" concept="1" trace="check_NamingPolicy_NonTypesystemRule#()V" />
-      <node id="4844813484172611523" at="51,119,54,7" concept="5" />
+      <node id="4844813484172611523" at="51,120,54,7" concept="5" />
       <node id="4844813484172611479" at="81,0,84,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="4844813484172611479" at="84,0,87,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4844813484172611479" at="87,0,90,0" concept="6" trace="overrides#()Z" />
@@ -142,7 +142,7 @@
       <node id="4844813484172611508" at="38,9,48,9" concept="0" />
       <node id="4844813484172611544" at="56,97,66,9" concept="0" />
       <node id="4844813484172611556" at="66,9,77,9" concept="0" />
-      <node id="4844813484172611489" at="27,108,49,7" concept="5" />
+      <node id="4844813484172611489" at="27,109,49,7" concept="5" />
       <node id="4844813484172611487" at="26,137,50,5" concept="4" />
       <node id="4844813484172611531" at="54,7,78,7" concept="5" />
       <node id="4844813484172611521" at="50,5,79,5" concept="4" />
@@ -189,14 +189,14 @@
       <scope id="4844813484172611495" at="28,197,48,9">
         <var name="myWarning" id="4844813484172611497" />
       </scope>
-      <scope id="4844813484172611488" at="27,108,49,7" />
+      <scope id="4844813484172611488" at="27,109,49,7" />
       <scope id="4844813484172611537" at="55,60,77,9">
         <var name="myWarning" id="4844813484172611539" />
       </scope>
       <scope id="4844813484172611487" at="26,137,50,5">
         <var name="s" id="4844813484172611519" />
       </scope>
-      <scope id="4844813484172611522" at="51,119,78,7" />
+      <scope id="4844813484172611522" at="51,120,78,7" />
       <scope id="4844813484172611521" at="50,5,79,5">
         <var name="p" id="4844813484172611578" />
       </scope>

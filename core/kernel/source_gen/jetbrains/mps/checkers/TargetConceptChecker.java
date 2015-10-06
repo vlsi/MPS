@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class TargetConceptChecker extends AbstractConstraintsChecker {
@@ -34,7 +33,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       }
     }
 
-    for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+    for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SNode link = SLinkOperations.findLinkDeclaration(reference);
       if (link == null || !(SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference"))) {
         continue;

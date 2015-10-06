@@ -42,7 +42,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     if (SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
       DefaultReferenceSubstituteInfoActionsFactory.LOG.error("only reference links are allowed here", myLinkDeclaration);
     }
-    if (!(((Boolean) BHReflection.invoke(genuineLinkDeclaration, SMethodTrimmedId.create("isSingular", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAt"))))) {
+    if (!(((boolean) (Boolean) BHReflection.invoke(genuineLinkDeclaration, SMethodTrimmedId.create("isSingular", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAt"))))) {
       DefaultReferenceSubstituteInfoActionsFactory.LOG.error("cardinalities 1 or 0..1 are allowed here", myLinkDeclaration);
     }
     myCurrentReferent = SLinkOperations.getTargetNode(SNodeOperations.getReference(sourceNode, myLinkDeclaration));

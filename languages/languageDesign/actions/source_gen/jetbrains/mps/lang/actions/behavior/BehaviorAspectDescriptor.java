@@ -12,77 +12,77 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myNodeSubstituteActions_BehaviorDescriptor = new NodeSubstituteActions_BehaviorDescriptor();
-  private final BHDescriptor myNodeSubstituteActionsBuilder_BehaviorDescriptor = new NodeSubstituteActionsBuilder_BehaviorDescriptor();
-  private final BHDescriptor mySideTransformHintSubstituteActionsBuilder_BehaviorDescriptor = new SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor();
-  private final BHDescriptor mySideTransformHintSubstituteActions_BehaviorDescriptor = new SideTransformHintSubstituteActions_BehaviorDescriptor();
-  private final BHDescriptor myNodeSubstitutePreconditionFunction_BehaviorDescriptor = new NodeSubstitutePreconditionFunction_BehaviorDescriptor();
-  private final BHDescriptor mySideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor = new SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor();
-  private final BHDescriptor myNodeFactories_BehaviorDescriptor = new NodeFactories_BehaviorDescriptor();
-  private final BHDescriptor myNodeFactory_BehaviorDescriptor = new NodeFactory_BehaviorDescriptor();
-  private final BHDescriptor myNodeSetupFunction_BehaviorDescriptor = new NodeSetupFunction_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_CanSubstitute_BehaviorDescriptor = new QueryFunction_CanSubstitute_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_pattern_BehaviorDescriptor = new ConceptFunctionParameter_pattern_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Substitute_Handler_BehaviorDescriptor = new QueryFunction_Substitute_Handler_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SubstituteString_BehaviorDescriptor = new QueryFunction_SubstituteString_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_parameterObject_BehaviorDescriptor = new ConceptFunctionParameter_parameterObject_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SubstituteWrapper_BehaviorDescriptor = new QueryFunction_SubstituteWrapper_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_RemoveBy_Condition_BehaviorDescriptor = new QueryFunction_RemoveBy_Condition_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SideTransform_String_BehaviorDescriptor = new QueryFunction_SideTransform_String_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SideTransform_Handler_BehaviorDescriptor = new QueryFunction_SideTransform_Handler_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor = new QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor = new QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor = new QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SideTransform_NodeQuery_BehaviorDescriptor = new QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor();
-  private final BHDescriptor mySubstituteNodeBuilderVariableReference_BehaviorDescriptor = new SubstituteNodeBuilderVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Substitute_CommonInitializer_BehaviorDescriptor = new QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SubstituteVariableInitializer_BehaviorDescriptor = new QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor = new QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor();
-  private final BHDescriptor myRemoveSTByConditionPart_BehaviorDescriptor = new RemoveSTByConditionPart_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor = new QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_childSetter_BehaviorDescriptor = new ConceptFunctionParameter_childSetter_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_Icon_BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_Icon_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SubstituteIcon_BehaviorDescriptor = new QueryFunction_SubstituteIcon_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_SideTransform_Icon_BehaviorDescriptor = new QueryFunction_SideTransform_Icon_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_STVariableInitializer_BehaviorDescriptor = new QueryFunction_STVariableInitializer_BehaviorDescriptor();
-  private final BHDescriptor mySideTransformVariableReference_BehaviorDescriptor = new SideTransformVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ST_CommonInitializer_BehaviorDescriptor = new QueryFunction_ST_CommonInitializer_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ReturnSmallPart_BehaviorDescriptor = new QueryFunction_ReturnSmallPart_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_strictly_BehaviorDescriptor = new ConceptFunctionParameter_strictly_BehaviorDescriptor();
-  private final BHDescriptor myPasteWrappers_BehaviorDescriptor = new PasteWrappers_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor = new ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_PasteWrapper_BehaviorDescriptor = new QueryFunction_PasteWrapper_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_ActionType_BehaviorDescriptor = new QueryFunction_ActionType_BehaviorDescriptor();
-  private final BHDescriptor mySmartActionParameterReference_BehaviorDescriptor = new SmartActionParameterReference_BehaviorDescriptor();
-  private final BHDescriptor myIsSmartActionApplicableFunction_BehaviorDescriptor = new IsSmartActionApplicableFunction_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_OperationContext_BehaviorDescriptor = new ConceptFunctionParameter_OperationContext_BehaviorDescriptor();
-  private final BHDescriptor myGetActionUIFunction_BehaviorDescriptor = new GetActionUIFunction_BehaviorDescriptor();
-  private final BHDescriptor myExecuteSmartActionFunction_BehaviorDescriptor = new ExecuteSmartActionFunction_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_Substitute_SelectionHandler_BehaviorDescriptor = new QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_createdNode_BehaviorDescriptor = new ConceptFunctionParameter_createdNode_BehaviorDescriptor();
-  private final BHDescriptor myPastePostProcessor_BehaviorDescriptor = new PastePostProcessor_BehaviorDescriptor();
-  private final BHDescriptor myNF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor = new NF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor = new NF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor();
-  private final BHDescriptor myNF_Node_ReplaceWithNewOperation_BehaviorDescriptor = new NF_Node_ReplaceWithNewOperation_BehaviorDescriptor();
-  private final BHDescriptor myNF_Link_SetNewChildOperation_BehaviorDescriptor = new NF_Link_SetNewChildOperation_BehaviorDescriptor();
-  private final BHDescriptor myNF_LinkList_AddNewChildOperation_BehaviorDescriptor = new NF_LinkList_AddNewChildOperation_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_targetNode_BehaviorDescriptor = new ConceptFunctionParameter_targetNode_BehaviorDescriptor();
-  private final BHDescriptor myNF_Model_CreateNewNodeOperation_BehaviorDescriptor = new NF_Model_CreateNewNodeOperation_BehaviorDescriptor();
-  private final BHDescriptor myNF_Model_CreateNewRootNodeOperation_BehaviorDescriptor = new NF_Model_CreateNewRootNodeOperation_BehaviorDescriptor();
-  private final BHDescriptor myNodeSetupFunction_SampleNode_BehaviorDescriptor = new NodeSetupFunction_SampleNode_BehaviorDescriptor();
-  private final BHDescriptor myNodeSetupFunction_EnclosingNode_BehaviorDescriptor = new NodeSetupFunction_EnclosingNode_BehaviorDescriptor();
-  private final BHDescriptor myCopyPreProcessor_BehaviorDescriptor = new CopyPreProcessor_BehaviorDescriptor();
-  private final BHDescriptor myCopyPreProcessFunction_BehaviorDescriptor = new CopyPreProcessFunction_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_nodeToCopyPreProcess_BehaviorDescriptor = new ConceptFunctionParameter_nodeToCopyPreProcess_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor = new ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor();
-  private final BHDescriptor myCopyPasteHandlers_BehaviorDescriptor = new CopyPasteHandlers_BehaviorDescriptor();
-  private final BHDescriptor myPastePostProcessFunction_BehaviorDescriptor = new PastePostProcessFunction_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor = new ConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor();
-  private final BHDescriptor myQueryFunction_IconNode_BehaviorDescriptor = new QueryFunction_IconNode_BehaviorDescriptor();
-  private final BHDescriptor myNF_Concept_NewInstance_BehaviorDescriptor = new NF_Concept_NewInstance_BehaviorDescriptor();
+  private final BHDescriptor myNodeSubstituteActions__BehaviorDescriptor = new NodeSubstituteActions__BehaviorDescriptor();
+  private final BHDescriptor myNodeSubstituteActionsBuilder__BehaviorDescriptor = new NodeSubstituteActionsBuilder__BehaviorDescriptor();
+  private final BHDescriptor mySideTransformHintSubstituteActionsBuilder__BehaviorDescriptor = new SideTransformHintSubstituteActionsBuilder__BehaviorDescriptor();
+  private final BHDescriptor mySideTransformHintSubstituteActions__BehaviorDescriptor = new SideTransformHintSubstituteActions__BehaviorDescriptor();
+  private final BHDescriptor myNodeSubstitutePreconditionFunction__BehaviorDescriptor = new NodeSubstitutePreconditionFunction__BehaviorDescriptor();
+  private final BHDescriptor mySideTransformHintSubstitutePreconditionFunction__BehaviorDescriptor = new SideTransformHintSubstitutePreconditionFunction__BehaviorDescriptor();
+  private final BHDescriptor myNodeFactories__BehaviorDescriptor = new NodeFactories__BehaviorDescriptor();
+  private final BHDescriptor myNodeFactory__BehaviorDescriptor = new NodeFactory__BehaviorDescriptor();
+  private final BHDescriptor myNodeSetupFunction__BehaviorDescriptor = new NodeSetupFunction__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_CanSubstitute__BehaviorDescriptor = new QueryFunction_CanSubstitute__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_pattern__BehaviorDescriptor = new ConceptFunctionParameter_pattern__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Substitute_Handler__BehaviorDescriptor = new QueryFunction_Substitute_Handler__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SubstituteString__BehaviorDescriptor = new QueryFunction_SubstituteString__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_parameterObject__BehaviorDescriptor = new ConceptFunctionParameter_parameterObject__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_String__BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_String__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_Handler__BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_Handler__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SubstituteWrapper__BehaviorDescriptor = new QueryFunction_SubstituteWrapper__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_RemoveBy_Condition__BehaviorDescriptor = new QueryFunction_RemoveBy_Condition__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SideTransform_String__BehaviorDescriptor = new QueryFunction_SideTransform_String__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SideTransform_Handler__BehaviorDescriptor = new QueryFunction_SideTransform_Handler__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParameterizedSideTransform_Query__BehaviorDescriptor = new QueryFunction_ParameterizedSideTransform_Query__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParameterizedSideTransform_Handler__BehaviorDescriptor = new QueryFunction_ParameterizedSideTransform_Handler__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SideTransform_ConceptHandler__BehaviorDescriptor = new QueryFunction_SideTransform_ConceptHandler__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SideTransform_NodeQuery__BehaviorDescriptor = new QueryFunction_SideTransform_NodeQuery__BehaviorDescriptor();
+  private final BHDescriptor mySubstituteNodeBuilderVariableReference__BehaviorDescriptor = new SubstituteNodeBuilderVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Substitute_CommonInitializer__BehaviorDescriptor = new QueryFunction_Substitute_CommonInitializer__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SubstituteVariableInitializer__BehaviorDescriptor = new QueryFunction_SubstituteVariableInitializer__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ST_RemoveBy_Condition__BehaviorDescriptor = new QueryFunction_ST_RemoveBy_Condition__BehaviorDescriptor();
+  private final BHDescriptor myRemoveSTByConditionPart__BehaviorDescriptor = new RemoveSTByConditionPart__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_GenericSubstituteMenuPart__BehaviorDescriptor = new QueryFunction_GenericSubstituteMenuPart__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_childSetter__BehaviorDescriptor = new ConceptFunctionParameter_childSetter__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ParameterizedSubstitute_Icon__BehaviorDescriptor = new QueryFunction_ParameterizedSubstitute_Icon__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SubstituteIcon__BehaviorDescriptor = new QueryFunction_SubstituteIcon__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_SideTransform_Icon__BehaviorDescriptor = new QueryFunction_SideTransform_Icon__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_STVariableInitializer__BehaviorDescriptor = new QueryFunction_STVariableInitializer__BehaviorDescriptor();
+  private final BHDescriptor mySideTransformVariableReference__BehaviorDescriptor = new SideTransformVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ST_CommonInitializer__BehaviorDescriptor = new QueryFunction_ST_CommonInitializer__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ReturnSmallPart__BehaviorDescriptor = new QueryFunction_ReturnSmallPart__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_strictly__BehaviorDescriptor = new ConceptFunctionParameter_strictly__BehaviorDescriptor();
+  private final BHDescriptor myPasteWrappers__BehaviorDescriptor = new PasteWrappers__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor = new ConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_PasteWrapper__BehaviorDescriptor = new QueryFunction_PasteWrapper__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ActionType__BehaviorDescriptor = new QueryFunction_ActionType__BehaviorDescriptor();
+  private final BHDescriptor mySmartActionParameterReference__BehaviorDescriptor = new SmartActionParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myIsSmartActionApplicableFunction__BehaviorDescriptor = new IsSmartActionApplicableFunction__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_OperationContext__BehaviorDescriptor = new ConceptFunctionParameter_OperationContext__BehaviorDescriptor();
+  private final BHDescriptor myGetActionUIFunction__BehaviorDescriptor = new GetActionUIFunction__BehaviorDescriptor();
+  private final BHDescriptor myExecuteSmartActionFunction__BehaviorDescriptor = new ExecuteSmartActionFunction__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_Substitute_SelectionHandler__BehaviorDescriptor = new QueryFunction_Substitute_SelectionHandler__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_createdNode__BehaviorDescriptor = new ConceptFunctionParameter_createdNode__BehaviorDescriptor();
+  private final BHDescriptor myPastePostProcessor__BehaviorDescriptor = new PastePostProcessor__BehaviorDescriptor();
+  private final BHDescriptor myNF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor = new NF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor = new NF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor();
+  private final BHDescriptor myNF_Node_ReplaceWithNewOperation__BehaviorDescriptor = new NF_Node_ReplaceWithNewOperation__BehaviorDescriptor();
+  private final BHDescriptor myNF_Link_SetNewChildOperation__BehaviorDescriptor = new NF_Link_SetNewChildOperation__BehaviorDescriptor();
+  private final BHDescriptor myNF_LinkList_AddNewChildOperation__BehaviorDescriptor = new NF_LinkList_AddNewChildOperation__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_targetNode__BehaviorDescriptor = new ConceptFunctionParameter_targetNode__BehaviorDescriptor();
+  private final BHDescriptor myNF_Model_CreateNewNodeOperation__BehaviorDescriptor = new NF_Model_CreateNewNodeOperation__BehaviorDescriptor();
+  private final BHDescriptor myNF_Model_CreateNewRootNodeOperation__BehaviorDescriptor = new NF_Model_CreateNewRootNodeOperation__BehaviorDescriptor();
+  private final BHDescriptor myNodeSetupFunction_SampleNode__BehaviorDescriptor = new NodeSetupFunction_SampleNode__BehaviorDescriptor();
+  private final BHDescriptor myNodeSetupFunction_EnclosingNode__BehaviorDescriptor = new NodeSetupFunction_EnclosingNode__BehaviorDescriptor();
+  private final BHDescriptor myCopyPreProcessor__BehaviorDescriptor = new CopyPreProcessor__BehaviorDescriptor();
+  private final BHDescriptor myCopyPreProcessFunction__BehaviorDescriptor = new CopyPreProcessFunction__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor = new ConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor = new ConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor();
+  private final BHDescriptor myCopyPasteHandlers__BehaviorDescriptor = new CopyPasteHandlers__BehaviorDescriptor();
+  private final BHDescriptor myPastePostProcessFunction__BehaviorDescriptor = new PastePostProcessFunction__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor = new ConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_IconNode__BehaviorDescriptor = new QueryFunction_IconNode__BehaviorDescriptor();
+  private final BHDescriptor myNF_Concept_NewInstance__BehaviorDescriptor = new NF_Concept_NewInstance__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -173,147 +173,147 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myNodeSubstituteActions_BehaviorDescriptor;
+        return myNodeSubstituteActions__BehaviorDescriptor;
       case 1:
-        return myNodeSubstituteActionsBuilder_BehaviorDescriptor;
+        return myNodeSubstituteActionsBuilder__BehaviorDescriptor;
       case 2:
-        return mySideTransformHintSubstituteActionsBuilder_BehaviorDescriptor;
+        return mySideTransformHintSubstituteActionsBuilder__BehaviorDescriptor;
       case 3:
-        return mySideTransformHintSubstituteActions_BehaviorDescriptor;
+        return mySideTransformHintSubstituteActions__BehaviorDescriptor;
       case 4:
-        return myNodeSubstitutePreconditionFunction_BehaviorDescriptor;
+        return myNodeSubstitutePreconditionFunction__BehaviorDescriptor;
       case 5:
-        return mySideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor;
+        return mySideTransformHintSubstitutePreconditionFunction__BehaviorDescriptor;
       case 6:
-        return myNodeFactories_BehaviorDescriptor;
+        return myNodeFactories__BehaviorDescriptor;
       case 7:
-        return myNodeFactory_BehaviorDescriptor;
+        return myNodeFactory__BehaviorDescriptor;
       case 8:
-        return myNodeSetupFunction_BehaviorDescriptor;
+        return myNodeSetupFunction__BehaviorDescriptor;
       case 9:
-        return myQueryFunction_CanSubstitute_BehaviorDescriptor;
+        return myQueryFunction_CanSubstitute__BehaviorDescriptor;
       case 10:
-        return myConceptFunctionParameter_pattern_BehaviorDescriptor;
+        return myConceptFunctionParameter_pattern__BehaviorDescriptor;
       case 11:
-        return myQueryFunction_Substitute_Handler_BehaviorDescriptor;
+        return myQueryFunction_Substitute_Handler__BehaviorDescriptor;
       case 12:
-        return myQueryFunction_SubstituteString_BehaviorDescriptor;
+        return myQueryFunction_SubstituteString__BehaviorDescriptor;
       case 13:
-        return myConceptFunctionParameter_parameterObject_BehaviorDescriptor;
+        return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
       case 14:
-        return myQueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor;
+        return myQueryFunction_ParameterizedSubstitute_Query__BehaviorDescriptor;
       case 15:
-        return myQueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor;
+        return myQueryFunction_ParameterizedSubstitute_String__BehaviorDescriptor;
       case 16:
-        return myQueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor;
+        return myQueryFunction_ParameterizedSubstitute_Handler__BehaviorDescriptor;
       case 17:
-        return myQueryFunction_SubstituteWrapper_BehaviorDescriptor;
+        return myQueryFunction_SubstituteWrapper__BehaviorDescriptor;
       case 18:
-        return myQueryFunction_RemoveBy_Condition_BehaviorDescriptor;
+        return myQueryFunction_RemoveBy_Condition__BehaviorDescriptor;
       case 19:
-        return myQueryFunction_SideTransform_String_BehaviorDescriptor;
+        return myQueryFunction_SideTransform_String__BehaviorDescriptor;
       case 20:
-        return myQueryFunction_SideTransform_Handler_BehaviorDescriptor;
+        return myQueryFunction_SideTransform_Handler__BehaviorDescriptor;
       case 21:
-        return myQueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor;
+        return myQueryFunction_ParameterizedSideTransform_Query__BehaviorDescriptor;
       case 22:
-        return myQueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor;
+        return myQueryFunction_ParameterizedSideTransform_Handler__BehaviorDescriptor;
       case 23:
-        return myQueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor;
+        return myQueryFunction_SideTransform_ConceptHandler__BehaviorDescriptor;
       case 24:
-        return myQueryFunction_SideTransform_NodeQuery_BehaviorDescriptor;
+        return myQueryFunction_SideTransform_NodeQuery__BehaviorDescriptor;
       case 25:
-        return mySubstituteNodeBuilderVariableReference_BehaviorDescriptor;
+        return mySubstituteNodeBuilderVariableReference__BehaviorDescriptor;
       case 26:
-        return myQueryFunction_Substitute_CommonInitializer_BehaviorDescriptor;
+        return myQueryFunction_Substitute_CommonInitializer__BehaviorDescriptor;
       case 27:
-        return myQueryFunction_SubstituteVariableInitializer_BehaviorDescriptor;
+        return myQueryFunction_SubstituteVariableInitializer__BehaviorDescriptor;
       case 28:
-        return myQueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor;
+        return myQueryFunction_ST_RemoveBy_Condition__BehaviorDescriptor;
       case 29:
-        return myRemoveSTByConditionPart_BehaviorDescriptor;
+        return myRemoveSTByConditionPart__BehaviorDescriptor;
       case 30:
-        return myQueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor;
+        return myQueryFunction_GenericSubstituteMenuPart__BehaviorDescriptor;
       case 31:
-        return myConceptFunctionParameter_childSetter_BehaviorDescriptor;
+        return myConceptFunctionParameter_childSetter__BehaviorDescriptor;
       case 32:
-        return myQueryFunction_ParameterizedSubstitute_Icon_BehaviorDescriptor;
+        return myQueryFunction_ParameterizedSubstitute_Icon__BehaviorDescriptor;
       case 33:
-        return myQueryFunction_SubstituteIcon_BehaviorDescriptor;
+        return myQueryFunction_SubstituteIcon__BehaviorDescriptor;
       case 34:
-        return myQueryFunction_SideTransform_Icon_BehaviorDescriptor;
+        return myQueryFunction_SideTransform_Icon__BehaviorDescriptor;
       case 35:
-        return myQueryFunction_STVariableInitializer_BehaviorDescriptor;
+        return myQueryFunction_STVariableInitializer__BehaviorDescriptor;
       case 36:
-        return mySideTransformVariableReference_BehaviorDescriptor;
+        return mySideTransformVariableReference__BehaviorDescriptor;
       case 37:
-        return myQueryFunction_ST_CommonInitializer_BehaviorDescriptor;
+        return myQueryFunction_ST_CommonInitializer__BehaviorDescriptor;
       case 38:
-        return myQueryFunction_ReturnSmallPart_BehaviorDescriptor;
+        return myQueryFunction_ReturnSmallPart__BehaviorDescriptor;
       case 39:
-        return myConceptFunctionParameter_strictly_BehaviorDescriptor;
+        return myConceptFunctionParameter_strictly__BehaviorDescriptor;
       case 40:
-        return myPasteWrappers_BehaviorDescriptor;
+        return myPasteWrappers__BehaviorDescriptor;
       case 41:
-        return myConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor;
+        return myConceptFunctionParameter_nodeToPasteWrap__BehaviorDescriptor;
       case 42:
-        return myQueryFunction_PasteWrapper_BehaviorDescriptor;
+        return myQueryFunction_PasteWrapper__BehaviorDescriptor;
       case 43:
-        return myQueryFunction_ActionType_BehaviorDescriptor;
+        return myQueryFunction_ActionType__BehaviorDescriptor;
       case 44:
-        return mySmartActionParameterReference_BehaviorDescriptor;
+        return mySmartActionParameterReference__BehaviorDescriptor;
       case 45:
-        return myIsSmartActionApplicableFunction_BehaviorDescriptor;
+        return myIsSmartActionApplicableFunction__BehaviorDescriptor;
       case 46:
-        return myConceptFunctionParameter_OperationContext_BehaviorDescriptor;
+        return myConceptFunctionParameter_OperationContext__BehaviorDescriptor;
       case 47:
-        return myGetActionUIFunction_BehaviorDescriptor;
+        return myGetActionUIFunction__BehaviorDescriptor;
       case 48:
-        return myExecuteSmartActionFunction_BehaviorDescriptor;
+        return myExecuteSmartActionFunction__BehaviorDescriptor;
       case 49:
-        return myQueryFunction_Substitute_SelectionHandler_BehaviorDescriptor;
+        return myQueryFunction_Substitute_SelectionHandler__BehaviorDescriptor;
       case 50:
-        return myConceptFunctionParameter_createdNode_BehaviorDescriptor;
+        return myConceptFunctionParameter_createdNode__BehaviorDescriptor;
       case 51:
-        return myPastePostProcessor_BehaviorDescriptor;
+        return myPastePostProcessor__BehaviorDescriptor;
       case 52:
-        return myNF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor;
+        return myNF_Node_InsertNewNextSiblingOperation__BehaviorDescriptor;
       case 53:
-        return myNF_Node_InsertNewPrevSiblingOperation_BehaviorDescriptor;
+        return myNF_Node_InsertNewPrevSiblingOperation__BehaviorDescriptor;
       case 54:
-        return myNF_Node_ReplaceWithNewOperation_BehaviorDescriptor;
+        return myNF_Node_ReplaceWithNewOperation__BehaviorDescriptor;
       case 55:
-        return myNF_Link_SetNewChildOperation_BehaviorDescriptor;
+        return myNF_Link_SetNewChildOperation__BehaviorDescriptor;
       case 56:
-        return myNF_LinkList_AddNewChildOperation_BehaviorDescriptor;
+        return myNF_LinkList_AddNewChildOperation__BehaviorDescriptor;
       case 57:
-        return myConceptFunctionParameter_targetNode_BehaviorDescriptor;
+        return myConceptFunctionParameter_targetNode__BehaviorDescriptor;
       case 58:
-        return myNF_Model_CreateNewNodeOperation_BehaviorDescriptor;
+        return myNF_Model_CreateNewNodeOperation__BehaviorDescriptor;
       case 59:
-        return myNF_Model_CreateNewRootNodeOperation_BehaviorDescriptor;
+        return myNF_Model_CreateNewRootNodeOperation__BehaviorDescriptor;
       case 60:
-        return myNodeSetupFunction_SampleNode_BehaviorDescriptor;
+        return myNodeSetupFunction_SampleNode__BehaviorDescriptor;
       case 61:
-        return myNodeSetupFunction_EnclosingNode_BehaviorDescriptor;
+        return myNodeSetupFunction_EnclosingNode__BehaviorDescriptor;
       case 62:
-        return myCopyPreProcessor_BehaviorDescriptor;
+        return myCopyPreProcessor__BehaviorDescriptor;
       case 63:
-        return myCopyPreProcessFunction_BehaviorDescriptor;
+        return myCopyPreProcessFunction__BehaviorDescriptor;
       case 64:
-        return myConceptFunctionParameter_nodeToCopyPreProcess_BehaviorDescriptor;
+        return myConceptFunctionParameter_nodeToCopyPreProcess__BehaviorDescriptor;
       case 65:
-        return myConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor;
+        return myConceptFunctionParameter_nodeToCopyPreProcessOriginal__BehaviorDescriptor;
       case 66:
-        return myCopyPasteHandlers_BehaviorDescriptor;
+        return myCopyPasteHandlers__BehaviorDescriptor;
       case 67:
-        return myPastePostProcessFunction_BehaviorDescriptor;
+        return myPastePostProcessFunction__BehaviorDescriptor;
       case 68:
-        return myConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor;
+        return myConceptFunctionParameter_nodeToPastePostProcess__BehaviorDescriptor;
       case 69:
-        return myQueryFunction_IconNode_BehaviorDescriptor;
+        return myQueryFunction_IconNode__BehaviorDescriptor;
       case 70:
-        return myNF_Concept_NewInstance_BehaviorDescriptor;
+        return myNF_Concept_NewInstance__BehaviorDescriptor;
       default:
         return null;
     }

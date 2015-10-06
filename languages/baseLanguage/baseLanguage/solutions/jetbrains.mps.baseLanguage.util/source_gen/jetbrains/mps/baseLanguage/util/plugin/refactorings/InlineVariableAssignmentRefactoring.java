@@ -70,7 +70,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     if (SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false) == null) {
       return body;
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) && !(((Boolean) BHReflection.invoke(SNodeOperations.cast(SNodeOperations.getParent(body), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")), SMethodTrimmedId.create("isExecuteSynchronous", null, "hTIpcC8"))))) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(body), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) && !(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(SNodeOperations.getParent(body), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")), SMethodTrimmedId.create("isExecuteSynchronous", null, "hTIpcC8"))))) {
       return body;
     }
     return findStatementList(body);

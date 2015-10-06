@@ -58,7 +58,7 @@ public class Java_Producer {
     }
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      if (!(((Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
+      if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
         return null;
       }
       SNode classifier = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
@@ -83,7 +83,7 @@ public class Java_Producer {
     }
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      if (!(((Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))))) {
+      if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))))) {
         return null;
       }
       String name = (SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) ? SPropertyOperations.getString(SNodeOperations.cast(source, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : ((String) BHReflection.invoke(source, SMethodTrimmedId.create("getUnitName", null, "431DWIovi3n"))));

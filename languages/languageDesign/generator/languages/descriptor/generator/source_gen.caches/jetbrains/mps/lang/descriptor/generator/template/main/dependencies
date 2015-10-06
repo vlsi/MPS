@@ -44,7 +44,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.ModelContentUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
@@ -65,9 +65,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl" />
     <classNode dependClassName="jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils" />
-    <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModelReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModuleReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModelReference__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.project.behavior.ModuleReference__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.project.behavior.Module__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />

@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_BehaviorDescriptor;
-import jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor;
+import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor;
+import jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.build.mps.util.ModuleFinder;
@@ -63,13 +63,13 @@ public class QueriesGenerated {
     return "-XX:MaxPermSize=" + size + "m";
   }
   public static Object propertyMacro_GetPropertyValue_6102524510012313449(final PropertyMacroContext _context) {
-    return BuildMps_AbstractModule_BehaviorDescriptor.getModuleReference_id41K1b4v5ZCB.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")));
+    return (String) BuildMps_AbstractModule__BehaviorDescriptor.getModuleReference_id41K1b4v5ZCB.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")));
   }
   public static Object propertyMacro_GetPropertyValue_6102524510012566133(final PropertyMacroContext _context) {
-    return BuildSolutionRunnerAspect_BehaviorDescriptor.getFQClassName_id1aYLt$9eyUg.invoke(_context.getNode());
+    return (String) BuildSolutionRunnerAspect__BehaviorDescriptor.getFQClassName_id1aYLt$9eyUg.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_7415565752189735701(final PropertyMacroContext _context) {
-    return BuildSolutionRunnerAspect_BehaviorDescriptor.getMethodName_id1aYLt$9dX0a.invoke(_context.getNode());
+    return (String) BuildSolutionRunnerAspect__BehaviorDescriptor.getMethodName_id1aYLt$9dX0a.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4173297143639165102(final PropertyMacroContext _context) {
     return "run." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

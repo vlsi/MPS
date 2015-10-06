@@ -18,7 +18,7 @@
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817158574">
     <file name="CellUtil.java">
       <node id="1182113674817443094" at="18,76,19,199" concept="8" />
-      <node id="1182113674817443208" at="20,310,21,60" concept="3" />
+      <node id="1182113674817443208" at="20,330,21,60" concept="3" />
       <node id="1182113674817443376" at="25,219,26,45" concept="3" />
       <node id="1182113674817443390" at="27,5,28,16" concept="9" />
       <node id="3425632322555590179" at="33,71,34,173" concept="9" />
@@ -31,7 +31,7 @@
       <node id="1182113674817443063" at="18,0,24,0" concept="12" trace="setupIDeprecatableStyles#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="1182113674817443333" at="24,0,30,0" concept="12" trace="getNodeToDelete#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1182113674817158579" at="16,21,16,21" />
-      <scope id="1182113674817443074" at="20,310,21,60" />
+      <scope id="1182113674817443074" at="20,330,21,60" />
       <scope id="1182113674817443368" at="25,219,26,45" />
       <scope id="3425632322555590174" at="33,71,34,173" />
       <scope id="3425632322555626902" at="36,70,37,170" />

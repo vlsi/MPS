@@ -81,7 +81,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final MPSProject project = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-    List<IResource> resources = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<IListSequence<IResource>>() {
+    List<? extends IResource> resources = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<IListSequence<IResource>>() {
       public IListSequence<IResource> compute() {
         List<SModel> models = MakeOrRebuildModelsFromChangeList_Action.this.getModels2Build(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY), event);
         if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {

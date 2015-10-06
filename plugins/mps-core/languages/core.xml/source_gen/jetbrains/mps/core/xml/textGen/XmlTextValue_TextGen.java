@@ -5,7 +5,7 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
-import jetbrains.mps.core.xml.behavior.XmlValuePart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlValuePart__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -14,14 +14,14 @@ public class XmlTextValue_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    if (XmlValuePart_BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(ctx.getPrimaryInput())) {
+    if ((boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(ctx.getPrimaryInput())) {
       tgs.newLine();
       tgs.indent();
       tgs.append("\t\t");
     }
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text")));
-    if (XmlValuePart_BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(ctx.getPrimaryInput())) {
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")) && XmlValuePart_BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(SNodeOperations.cast(SNodeOperations.getNextSibling(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")))) {
+    if ((boolean) XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(ctx.getPrimaryInput())) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")) && (boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(SNodeOperations.cast(SNodeOperations.getNextSibling(ctx.getPrimaryInput()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")))) {
         return;
       }
       tgs.newLine();

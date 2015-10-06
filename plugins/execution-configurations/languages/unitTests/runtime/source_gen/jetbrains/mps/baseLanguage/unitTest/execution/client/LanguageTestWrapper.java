@@ -80,7 +80,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     if (node == null) {
       return super.getTestRunParameters();
     }
-    if (((Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
+    if (((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isMpsStartRequired", null, "2RMg39tmiFh")))) {
       Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
       return MultiTuple.<String,List<String>,List<String>>from("jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor", ListSequence.fromList(new JvmArgs().getDefaultJvmArgs()).union(SetSequence.fromSet(userMacroNames).select(new ISelector<String, String>() {
         public String select(String key) {

@@ -17,7 +17,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -58,7 +58,7 @@ public class XmlText_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_crdhdg_a0a0(EditorContext editorContext, SNode node) {
-    return XmlPart_BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
   }
   public static class ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0() {
@@ -78,6 +78,6 @@ public class XmlText_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_crdhdg_a1a(SNode node, EditorContext editorContext) {
-    return XmlPart_BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
+    return (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
   }
 }

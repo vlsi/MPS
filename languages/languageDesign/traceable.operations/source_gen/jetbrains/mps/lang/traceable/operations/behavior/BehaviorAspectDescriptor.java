@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myNode_CopyWithTraceOperation_BehaviorDescriptor = new Node_CopyWithTraceOperation_BehaviorDescriptor();
+  private final BHDescriptor myNode_CopyWithTraceOperation__BehaviorDescriptor = new Node_CopyWithTraceOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -33,7 +33,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myNode_CopyWithTraceOperation_BehaviorDescriptor;
+        return myNode_CopyWithTraceOperation__BehaviorDescriptor;
       default:
         return null;
     }

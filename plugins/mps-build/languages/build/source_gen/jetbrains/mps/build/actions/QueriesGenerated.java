@@ -13,8 +13,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor;
-import jetbrains.mps.build.behavior.BuildRelativePath_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildCompositePath__BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -36,14 +36,14 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildStringContainer__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.build.behavior.BuildSourcePath_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -57,7 +57,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<String> queryResult = new Computable<Iterable<String>>() {
           public Iterable<String> compute() {
-            return BuildCompositePath_BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(_context.getCurrentTargetNode(), BuildRelativePath_BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
+            return (List<String>) BuildCompositePath__BehaviorDescriptor.getHeadSuggestions_id4jjtc7X04td.invoke(_context.getCurrentTargetNode(), BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(SNodeOperations.getNodeAncestor(_context.getCurrentTargetNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"), false, false), Context.defaultContext()));
           }
         }.compute();
         if (queryResult != null) {
@@ -197,7 +197,7 @@ public class QueriesGenerated {
               if (_matcher_0.find()) {
                 SNode container = (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) ? SNodeOperations.getParent(_context.getParentNode()) : _context.getParentNode());
                 if (SNodeOperations.isInstanceOf(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer"))) {
-                  if (BuildStringContainer_BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(SNodeOperations.cast(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer")), pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) ? _context.getParentNode().getRoleInParent() : _context.getCurrentTargetNode().getRoleInParent()))) {
+                  if ((boolean) BuildStringContainer__BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(SNodeOperations.cast(container, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a3953bbb4L, "jetbrains.mps.build.structure.BuildStringContainer")), pattern, (SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL, "jetbrains.mps.build.structure.BuildString")) ? _context.getParentNode().getRoleInParent() : _context.getCurrentTargetNode().getRoleInParent()))) {
                     return pattern;
                   }
                 } else if (!(pattern.contains("$"))) {
@@ -524,9 +524,9 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildSourcePath_2725562405081831808(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    String localPath = BuildSourcePath_BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(_context.getSourceNode(), Context.defaultContext());
+    String localPath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(_context.getSourceNode(), Context.defaultContext());
     if ((localPath == null || localPath.length() == 0)) {
-      localPath = BuildSourcePath_BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(_context.getSourceNode());
+      localPath = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(_context.getSourceNode());
       if ((localPath == null || localPath.length() == 0)) {
         return false;
       }

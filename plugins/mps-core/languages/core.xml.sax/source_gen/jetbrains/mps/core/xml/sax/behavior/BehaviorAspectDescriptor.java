@@ -12,21 +12,21 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myXMLSAXAttributeHandler_BehaviorDescriptor = new XMLSAXAttributeHandler_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXChildHandler_BehaviorDescriptor = new XMLSAXChildHandler_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXChildRule_BehaviorDescriptor = new XMLSAXChildRule_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXFieldReference_BehaviorDescriptor = new XMLSAXFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXHandlerFunction_BehaviorDescriptor = new XMLSAXHandlerFunction_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXNodeCreator_BehaviorDescriptor = new XMLSAXNodeCreator_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXNodeRule_BehaviorDescriptor = new XMLSAXNodeRule_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXNodeValidator_BehaviorDescriptor = new XMLSAXNodeValidator_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXParser_BehaviorDescriptor = new XMLSAXParser_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXTextHandler_BehaviorDescriptor = new XMLSAXTextHandler_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXAttributeHandler_value_BehaviorDescriptor = new XMLSAXAttributeHandler_value_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXTextHandler_value_BehaviorDescriptor = new XMLSAXTextHandler_value_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXDefaultChildHandler_BehaviorDescriptor = new XMLSAXDefaultChildHandler_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXDefaultChildHandler_tagName_BehaviorDescriptor = new XMLSAXDefaultChildHandler_tagName_BehaviorDescriptor();
-  private final BHDescriptor myXMLSAXChildRuleCondition_BehaviorDescriptor = new XMLSAXChildRuleCondition_BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXAttributeHandler__BehaviorDescriptor = new XMLSAXAttributeHandler__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXChildHandler__BehaviorDescriptor = new XMLSAXChildHandler__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXChildRule__BehaviorDescriptor = new XMLSAXChildRule__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXFieldReference__BehaviorDescriptor = new XMLSAXFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXHandlerFunction__BehaviorDescriptor = new XMLSAXHandlerFunction__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXNodeCreator__BehaviorDescriptor = new XMLSAXNodeCreator__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXNodeRule__BehaviorDescriptor = new XMLSAXNodeRule__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXNodeValidator__BehaviorDescriptor = new XMLSAXNodeValidator__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXParser__BehaviorDescriptor = new XMLSAXParser__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXTextHandler__BehaviorDescriptor = new XMLSAXTextHandler__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXAttributeHandler_value__BehaviorDescriptor = new XMLSAXAttributeHandler_value__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXTextHandler_value__BehaviorDescriptor = new XMLSAXTextHandler_value__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXDefaultChildHandler__BehaviorDescriptor = new XMLSAXDefaultChildHandler__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor = new XMLSAXDefaultChildHandler_tagName__BehaviorDescriptor();
+  private final BHDescriptor myXMLSAXChildRuleCondition__BehaviorDescriptor = new XMLSAXChildRuleCondition__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -61,35 +61,35 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myXMLSAXAttributeHandler_BehaviorDescriptor;
+        return myXMLSAXAttributeHandler__BehaviorDescriptor;
       case 1:
-        return myXMLSAXChildHandler_BehaviorDescriptor;
+        return myXMLSAXChildHandler__BehaviorDescriptor;
       case 2:
-        return myXMLSAXChildRule_BehaviorDescriptor;
+        return myXMLSAXChildRule__BehaviorDescriptor;
       case 3:
-        return myXMLSAXFieldReference_BehaviorDescriptor;
+        return myXMLSAXFieldReference__BehaviorDescriptor;
       case 4:
-        return myXMLSAXHandlerFunction_BehaviorDescriptor;
+        return myXMLSAXHandlerFunction__BehaviorDescriptor;
       case 5:
-        return myXMLSAXNodeCreator_BehaviorDescriptor;
+        return myXMLSAXNodeCreator__BehaviorDescriptor;
       case 6:
-        return myXMLSAXNodeRule_BehaviorDescriptor;
+        return myXMLSAXNodeRule__BehaviorDescriptor;
       case 7:
-        return myXMLSAXNodeValidator_BehaviorDescriptor;
+        return myXMLSAXNodeValidator__BehaviorDescriptor;
       case 8:
-        return myXMLSAXParser_BehaviorDescriptor;
+        return myXMLSAXParser__BehaviorDescriptor;
       case 9:
-        return myXMLSAXTextHandler_BehaviorDescriptor;
+        return myXMLSAXTextHandler__BehaviorDescriptor;
       case 10:
-        return myXMLSAXAttributeHandler_value_BehaviorDescriptor;
+        return myXMLSAXAttributeHandler_value__BehaviorDescriptor;
       case 11:
-        return myXMLSAXTextHandler_value_BehaviorDescriptor;
+        return myXMLSAXTextHandler_value__BehaviorDescriptor;
       case 12:
-        return myXMLSAXDefaultChildHandler_BehaviorDescriptor;
+        return myXMLSAXDefaultChildHandler__BehaviorDescriptor;
       case 13:
-        return myXMLSAXDefaultChildHandler_tagName_BehaviorDescriptor;
+        return myXMLSAXDefaultChildHandler_tagName__BehaviorDescriptor;
       case 14:
-        return myXMLSAXChildRuleCondition_BehaviorDescriptor;
+        return myXMLSAXChildRuleCondition__BehaviorDescriptor;
       default:
         return null;
     }

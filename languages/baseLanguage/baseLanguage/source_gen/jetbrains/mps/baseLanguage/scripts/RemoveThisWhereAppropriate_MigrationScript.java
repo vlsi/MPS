@@ -7,9 +7,9 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.StaticMethodCall__BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -35,11 +35,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return FieldReferenceOperation_BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(node);
+        return (boolean) FieldReferenceOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        FieldReferenceOperation_BehaviorDescriptor.convertToLocal_id4APqwMfCtHb.invoke(node);
+        FieldReferenceOperation__BehaviorDescriptor.convertToLocal_id4APqwMfCtHb.invoke(node);
       }
       @Override
       public boolean isShowAsIntention() {
@@ -64,11 +64,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return InstanceMethodCallOperation_BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(node);
+        return (boolean) InstanceMethodCallOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        InstanceMethodCallOperation_BehaviorDescriptor.convertToLocal_id4APqwMfCtHI.invoke(node);
+        InstanceMethodCallOperation__BehaviorDescriptor.convertToLocal_id4APqwMfCtHI.invoke(node);
       }
       @Override
       public boolean isShowAsIntention() {
@@ -93,11 +93,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return StaticMethodCall_BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node);
+        return (boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        StaticMethodCall_BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
+        StaticMethodCall__BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
       }
       @Override
       public boolean isShowAsIntention() {

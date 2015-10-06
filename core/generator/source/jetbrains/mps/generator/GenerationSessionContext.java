@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -204,13 +203,12 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return myExportsSession;
   }
 
-  private static String nodeUniqueId(SNode node) {
-    StringBuilder sb = new StringBuilder();
+  private static void appendNodeUniqueId(SNode node, StringBuilder sb) {
     SNode parent = node.getParent();
 
     boolean sym = true;
     while (parent != null) {
-      int index = IterableUtil.asList(parent.getChildren(node.getRoleInParent())).indexOf(node);
+      int index = IterableUtil.asList(parent.getChildren(node.getContainmentLink())).indexOf(node);
       if (index == 0) {
         sb.append(sym ? 'a' : '0');
       }
@@ -223,7 +221,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
       node = parent;
       parent = node.getParent();
     }
-    return sb.toString();
   }
 
 
@@ -269,9 +266,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     } // if(contextNode != null)
 
     if (inputNode != null) {
-      final String nid = nodeUniqueId(inputNode);
       uniqueNameBuffer.append('_');
-      uniqueNameBuffer.append(nid);
+      appendNodeUniqueId(inputNode, uniqueNameBuffer);
     }
 
     final boolean suffixAdded = roughName.length() < uniqueNameBuffer.length();
@@ -279,17 +275,20 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
     final Set<String> usedNames = getUsedNames(contextNode);
 
-    if (!suffixAdded || usedNames.contains(uniqueName)) {
-      uniqueNameBuffer.append('_');
-      final int trimPos = uniqueNameBuffer.length();
-      for (int count = 0; ; count++) {
-        uniqueNameBuffer.append(count);
-        uniqueName = uniqueNameBuffer.toString();
-        if (!usedNames.contains(uniqueName)) break;
-        uniqueNameBuffer.setLength(trimPos);
-      }
+    if (suffixAdded && usedNames.add(uniqueName)) {
+      return uniqueName;
     }
-    usedNames.add(uniqueName);
+    // assumption: !suffixAdded || usedNames.contains(uniqueName);
+    uniqueNameBuffer.append('_');
+    final int trimPos = uniqueNameBuffer.length();
+    for (int count = 0; ; count++) {
+      uniqueNameBuffer.append(count);
+      uniqueName = uniqueNameBuffer.toString();
+      if (usedNames.add(uniqueName)) {
+        break;
+      }
+      uniqueNameBuffer.setLength(trimPos);
+    }
     return uniqueName;
   }
 

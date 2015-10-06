@@ -4,24 +4,20 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class NodesTestCase_Behavior {
   public static boolean call_isIntentionApplicable_1217250498008(SAbstractConcept __thisConcept__, SNode node) {
-    SNode test = SNodeOperations.getNodeAncestorWhereConceptInList(node, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase")}, true, false);
-    return test != null;
+    return NodesTestCase__BehaviorDescriptor.isIntentionApplicable_idhHDM9no(__thisConcept__, node);
   }
   public static String call_getTestBodyName_1224602741295(SAbstractConcept __thisConcept__) {
-    return "TestBody";
+    return NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ(__thisConcept__);
   }
   public static boolean call_needsWriteAction_6339244025081193722(SNode __thisNode__) {
-    return !(SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x57f984daa37add4aL, "needsNoWriteAction")));
+    return NodesTestCase__BehaviorDescriptor.needsWriteAction_id5vTxdEzuQjU(__thisNode__);
   }
 }

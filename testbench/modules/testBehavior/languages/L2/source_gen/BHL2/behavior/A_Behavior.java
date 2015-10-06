@@ -5,12 +5,15 @@ package BHL2.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class A_Behavior {
   public static Object call_nonVirtual_8715627930483250634(SNode __thisNode__) {
-    return A_BehaviorDescriptor.foo_id6EMTxOPT5LT.invoke(__thisNode__);
+    return A__BehaviorDescriptor.nonVirtual_id7zO8mNAVlna(__thisNode__);
+  }
+  public static void call_testCommentGeneration_1418658182973994702(SNode __thisNode__) {
+    A__BehaviorDescriptor.testCommentGeneration_id1eK5xBtRrre(__thisNode__);
   }
 }

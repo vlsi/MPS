@@ -5,16 +5,12 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class ConceptEditorDeclaration_Behavior {
   public static void call_createDefaultEditor_2970389781192937380(SNode __thisNode__, boolean multiline) {
-    if (multiline) {
-      new DefaultEditorBuilder(__thisNode__).buildStatementLike();
-    } else {
-      new DefaultEditorBuilder(__thisNode__).buildExpressionLike();
-    }
+    ConceptEditorDeclaration__BehaviorDescriptor.createDefaultEditor_id2$SWsiCt8Y$(__thisNode__, multiline);
   }
 }

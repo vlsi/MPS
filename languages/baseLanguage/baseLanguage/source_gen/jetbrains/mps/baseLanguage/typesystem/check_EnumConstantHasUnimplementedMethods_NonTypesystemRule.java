@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,7 +23,7 @@ public class check_EnumConstantHasUnimplementedMethods_NonTypesystemRule extends
     if ((SNodeOperations.getParent(enumConstant) == null)) {
       return;
     }
-    if (ListSequence.fromList(IMemberContainer_BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(enumConstant)).isNotEmpty()) {
+    if (ListSequence.fromList(IMemberContainer__BehaviorDescriptor.getMethodsToImplement_id4GM03FJm5q2.invoke(enumConstant)).isNotEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(enumConstant, "Enum constant has unimplemented methods (press Ctrl/Cmd+I to see)", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1962660292848979057", null, errorTarget);

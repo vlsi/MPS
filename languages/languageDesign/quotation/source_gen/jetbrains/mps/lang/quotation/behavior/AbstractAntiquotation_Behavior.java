@@ -4,32 +4,14 @@ package jetbrains.mps.lang.quotation.behavior;
 
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor;
-import jetbrains.mps.scope.EmptyScope;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class AbstractAntiquotation_Behavior {
   public static Scope call_getScope_7939206742749757475(SNode __thisNode__, SNode kind) {
-    SNode node = __thisNode__;
-    int metaLevelChange = 0;
-    while ((node != null)) {
-      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"))) {
-        metaLevelChange += IMetaLevelChanger_BehaviorDescriptor.getMetaLevelChange_idbc0iGlxcsE.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2cc012b1584bd3aL, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")));
-      }
-      if (metaLevelChange == 0) {
-        break;
-      }
-      node = Scope.parent(node);
-    }
-    if ((node == null)) {
-      return new EmptyScope();
-    }
-    return Scope.getScope(Scope.parent(node), node, kind);
+    return AbstractAntiquotation__BehaviorDescriptor.getScope_id6SHIBw3Z40z(__thisNode__, kind);
   }
 }

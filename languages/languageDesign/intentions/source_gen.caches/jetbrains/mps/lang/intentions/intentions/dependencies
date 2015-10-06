@@ -5,7 +5,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.intentions.BaseNodeTransformer" />
     <classNode dependClassName="jetbrains.mps.editor.intentions.NodeTransformer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />

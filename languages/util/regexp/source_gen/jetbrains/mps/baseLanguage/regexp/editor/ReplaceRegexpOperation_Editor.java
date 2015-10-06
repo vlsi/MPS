@@ -32,11 +32,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__BehaviorDescriptor;
 
 public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -497,7 +497,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ldr481_w0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (Regexp_BehaviorDescriptor.isValid_id48bMILtL4il.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))) ? "/" + Regexp_BehaviorDescriptor.toString_idhEwIUjb.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))) + "/" : "<invalid>");
+        return ((boolean) Regexp__BehaviorDescriptor.isValid_id48bMILtL4il.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))) ? "/" + Regexp__BehaviorDescriptor.toString_idhEwIUjb.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c1923d18aL, 0x34ae970c1924ee3bL, "search"))) + "/" : "<invalid>");
       }
       public void setText(String s) {
       }
@@ -522,7 +522,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ldr481_y0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return "\"" + ReplaceRegexpOperation_BehaviorDescriptor.getReplacementString_id3iI_KKp9qzv.invoke(node) + "\"";
+        return "\"" + ReplaceRegexpOperation__BehaviorDescriptor.getReplacementString_id3iI_KKp9qzv.invoke(node) + "\"";
       }
       public void setText(String s) {
       }

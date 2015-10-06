@@ -15,11 +15,11 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
-import jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
+import jetbrains.mps.lang.editor.table.behavior.CellModel_HierarchycalTable__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -43,9 +43,9 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getAggregationLinkDeclarations_idhEwILLp.invoke(CellModel_HierarchycalTable_BehaviorDescriptor.getContainingConceptDeclaration_id5p3TFWLvETA.invoke(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getAggregationLinkDeclarations_idhEwILLp.invoke(CellModel_HierarchycalTable__BehaviorDescriptor.getContainingConceptDeclaration_id5p3TFWLvETA.invoke(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
+                return !((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
               }
             }).toListSequence();
           }
@@ -67,9 +67,9 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getAggregationLinkDeclarations_idhEwILLp.invoke(CellModel_HierarchycalTable_BehaviorDescriptor.getContainingConceptDeclaration_id5p3TFWLvETA.invoke(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getAggregationLinkDeclarations_idhEwILLp.invoke(CellModel_HierarchycalTable__BehaviorDescriptor.getContainingConceptDeclaration_id5p3TFWLvETA.invoke(_context.getReferenceNode()))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
+                return !((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
               }
             });
           }
@@ -94,9 +94,9 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
             if ((SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L, "rowsLinkDeclaration")) == null)) {
               return null;
             }
-            return ListSequence.fromList(AbstractConceptDeclaration_BehaviorDescriptor.getAggregationLinkDeclarations_idhEwILLp.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L, "rowsLinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")))).where(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getAggregationLinkDeclarations_idhEwILLp.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), MetaAdapterFactory.getReferenceLink(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, 0x5643e6bf317e9d12L, "rowsLinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(LinkDeclaration_BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
+                return !((boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(it));
               }
             });
           }

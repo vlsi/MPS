@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myGetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor = new GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myGetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor = new GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myCanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor = new CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myHighLevelCustomViewer_BehaviorDescriptor = new HighLevelCustomViewer_BehaviorDescriptor();
-  private final BHDescriptor myToProcessMethod_BehaviorDescriptor = new ToProcessMethod_BehaviorDescriptor();
-  private final BHDescriptor myWatchableListType_BehaviorDescriptor = new WatchableListType_BehaviorDescriptor();
+  private final BHDescriptor myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor = new GetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor = new GetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor = new CanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myHighLevelCustomViewer__BehaviorDescriptor = new HighLevelCustomViewer__BehaviorDescriptor();
+  private final BHDescriptor myToProcessMethod__BehaviorDescriptor = new ToProcessMethod__BehaviorDescriptor();
+  private final BHDescriptor myWatchableListType__BehaviorDescriptor = new WatchableListType__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -43,17 +43,17 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myGetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor;
+        return myGetHighLevelValuePresentation_ConceptFunction__BehaviorDescriptor;
       case 1:
-        return myGetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor;
+        return myGetHighLevelWatchablesBlock_ConceptFunction__BehaviorDescriptor;
       case 2:
-        return myCanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor;
+        return myCanWrapHighLevelValue_ConceptFunction__BehaviorDescriptor;
       case 3:
-        return myHighLevelCustomViewer_BehaviorDescriptor;
+        return myHighLevelCustomViewer__BehaviorDescriptor;
       case 4:
-        return myToProcessMethod_BehaviorDescriptor;
+        return myToProcessMethod__BehaviorDescriptor;
       case 5:
-        return myWatchableListType_BehaviorDescriptor;
+        return myWatchableListType__BehaviorDescriptor;
       default:
         return null;
     }

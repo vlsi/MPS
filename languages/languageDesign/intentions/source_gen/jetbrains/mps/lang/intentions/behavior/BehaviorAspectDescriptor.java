@@ -12,18 +12,18 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myIntentionDeclaration_BehaviorDescriptor = new IntentionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDescriptionBlock_BehaviorDescriptor = new DescriptionBlock_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableBlock_BehaviorDescriptor = new IsApplicableBlock_BehaviorDescriptor();
-  private final BHDescriptor myExecuteBlock_BehaviorDescriptor = new ExecuteBlock_BehaviorDescriptor();
-  private final BHDescriptor myQueryBlock_BehaviorDescriptor = new QueryBlock_BehaviorDescriptor();
-  private final BHDescriptor myParameterizedIntentionDeclaration_BehaviorDescriptor = new ParameterizedIntentionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myParameterizedDescriptionBlock_BehaviorDescriptor = new ParameterizedDescriptionBlock_BehaviorDescriptor();
-  private final BHDescriptor myParameterizedExecuteBlock_BehaviorDescriptor = new ParameterizedExecuteBlock_BehaviorDescriptor();
-  private final BHDescriptor myBaseIntentionDeclaration_BehaviorDescriptor = new BaseIntentionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myChildFilterFunction_BehaviorDescriptor = new ChildFilterFunction_BehaviorDescriptor();
-  private final BHDescriptor myParameter_BehaviorDescriptor = new Parameter_BehaviorDescriptor();
-  private final BHDescriptor myIntention_BehaviorDescriptor = new Intention_BehaviorDescriptor();
+  private final BHDescriptor myIntentionDeclaration__BehaviorDescriptor = new IntentionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDescriptionBlock__BehaviorDescriptor = new DescriptionBlock__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableBlock__BehaviorDescriptor = new IsApplicableBlock__BehaviorDescriptor();
+  private final BHDescriptor myExecuteBlock__BehaviorDescriptor = new ExecuteBlock__BehaviorDescriptor();
+  private final BHDescriptor myQueryBlock__BehaviorDescriptor = new QueryBlock__BehaviorDescriptor();
+  private final BHDescriptor myParameterizedIntentionDeclaration__BehaviorDescriptor = new ParameterizedIntentionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myParameterizedDescriptionBlock__BehaviorDescriptor = new ParameterizedDescriptionBlock__BehaviorDescriptor();
+  private final BHDescriptor myParameterizedExecuteBlock__BehaviorDescriptor = new ParameterizedExecuteBlock__BehaviorDescriptor();
+  private final BHDescriptor myBaseIntentionDeclaration__BehaviorDescriptor = new BaseIntentionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myChildFilterFunction__BehaviorDescriptor = new ChildFilterFunction__BehaviorDescriptor();
+  private final BHDescriptor myParameter__BehaviorDescriptor = new Parameter__BehaviorDescriptor();
+  private final BHDescriptor myIntention__BehaviorDescriptor = new Intention__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -55,29 +55,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myIntentionDeclaration_BehaviorDescriptor;
+        return myIntentionDeclaration__BehaviorDescriptor;
       case 1:
-        return myDescriptionBlock_BehaviorDescriptor;
+        return myDescriptionBlock__BehaviorDescriptor;
       case 2:
-        return myIsApplicableBlock_BehaviorDescriptor;
+        return myIsApplicableBlock__BehaviorDescriptor;
       case 3:
-        return myExecuteBlock_BehaviorDescriptor;
+        return myExecuteBlock__BehaviorDescriptor;
       case 4:
-        return myQueryBlock_BehaviorDescriptor;
+        return myQueryBlock__BehaviorDescriptor;
       case 5:
-        return myParameterizedIntentionDeclaration_BehaviorDescriptor;
+        return myParameterizedIntentionDeclaration__BehaviorDescriptor;
       case 6:
-        return myParameterizedDescriptionBlock_BehaviorDescriptor;
+        return myParameterizedDescriptionBlock__BehaviorDescriptor;
       case 7:
-        return myParameterizedExecuteBlock_BehaviorDescriptor;
+        return myParameterizedExecuteBlock__BehaviorDescriptor;
       case 8:
-        return myBaseIntentionDeclaration_BehaviorDescriptor;
+        return myBaseIntentionDeclaration__BehaviorDescriptor;
       case 9:
-        return myChildFilterFunction_BehaviorDescriptor;
+        return myChildFilterFunction__BehaviorDescriptor;
       case 10:
-        return myParameter_BehaviorDescriptor;
+        return myParameter__BehaviorDescriptor;
       case 11:
-        return myIntention_BehaviorDescriptor;
+        return myIntention__BehaviorDescriptor;
       default:
         return null;
     }

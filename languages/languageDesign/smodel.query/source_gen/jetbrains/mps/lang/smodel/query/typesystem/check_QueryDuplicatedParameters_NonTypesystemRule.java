@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,13 +26,13 @@ public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractN
   }
   public void applyRule(final SNode queryParameterList, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final Iterable<SNode> parameters = SLinkOperations.getChildren(queryParameterList, MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, 0x3bc6442176a262a6L, "parameter"));
-    Iterable<SConcept> parameterConcepts = Sequence.fromIterable(parameters).select(new ISelector<SNode, SConcept>() {
-      public SConcept select(SNode it) {
-        return SNodeOperations.getConcept(it);
+    Iterable<SNode> parameterConcepts = Sequence.fromIterable(parameters).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.getConceptDeclaration(it);
       }
     }).distinct();
-    Iterable<? extends Iterable<SNode>> groupedByConcepts = Sequence.fromIterable(parameterConcepts).select(new ISelector<SConcept, ISequence<SNode>>() {
-      public ISequence<SNode> select(final SConcept c) {
+    Iterable<? extends Iterable<SNode>> groupedByConcepts = Sequence.fromIterable(parameterConcepts).select(new ISelector<SNode, ISequence<SNode>>() {
+      public ISequence<SNode> select(final SNode c) {
         return Sequence.fromIterable(parameters).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode p) {
             return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(p)), SNodeOperations.asSConcept(c));

@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.core.xml.behavior.XmlElement_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlElement__BehaviorDescriptor;
 
 public class XmlElement_TextGen extends TextGenDescriptorBase {
   @Override
@@ -44,7 +44,7 @@ public class XmlElement_TextGen extends TextGenDescriptorBase {
       return;
     }
     tgs.append(">");
-    if (XmlElement_BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(ctx.getPrimaryInput())) {
+    if ((boolean) XmlElement__BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(ctx.getPrimaryInput())) {
       tgs.newLine();
       ctx.getBuffer().area().increaseIndent();
       tgs.indent();

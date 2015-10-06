@@ -74,4 +74,19 @@ public final class SMethodBuilder<T> {
     myRegistry = registry;
     return this;
   }
+
+  public int a() {
+    return 1;
+  }
+  public <T1> T1 foo(T1 t) {
+    return (T1) ((Integer) a());
+  }
+
+  public static SParameter createVarArgPrm(Class<?> aClass, String name) {
+    return new SVarArgParameter(new SJavaCompoundTypeImpl(aClass), name);
+  }
+
+  public static SParameter createJavaParameter(Class<?> aClass, String name) {
+    return new SParameterImpl(new SJavaCompoundTypeImpl(aClass), name);
+  }
 }

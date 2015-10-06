@@ -4,26 +4,14 @@ package org.jetbrains.mps.samples.Money.behavior;
 
 import org.jetbrains.mps.samples.money.runtime.Money;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.math.BigDecimal;
-import org.jetbrains.mps.samples.money.runtime.StockPriceDownloader;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class CurrentStockPrice_Behavior {
   public static Money call_getCurrentPrice_4001135958233293105(SNode __thisNode__) {
-    if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, 0x3786e3f480b0926aL, "symbol")) == null)) {
-      return new Money(BigDecimal.ZERO, "USD");
-    }
-    Money currentPrice = StockPriceDownloader.getInstance().getCurrentPrice(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, 0x3786e3f480b0926aL, "symbol")), MetaAdapterFactory.getProperty(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL, 0x3786e3f480afac5bL, "symbol")));
-    if (currentPrice == null) {
-      return new Money(BigDecimal.ZERO, "USD");
-    }
-    return currentPrice;
+    return CurrentStockPrice__BehaviorDescriptor.getCurrentPrice_id3u6SZi0yq4L(__thisNode__);
   }
 }

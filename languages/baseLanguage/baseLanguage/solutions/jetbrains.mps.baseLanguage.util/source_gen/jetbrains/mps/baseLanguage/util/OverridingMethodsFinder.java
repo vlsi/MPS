@@ -140,7 +140,7 @@ public class OverridingMethodsFinder {
       List<SNode> overridingMethods = new ArrayList<SNode>();
       for (SNode overridingMethod : SetSequence.fromSet(similarMethods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ((Boolean) BHReflection.invoke(classifierMethod, SMethodTrimmedId.create("hasSameSignature", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "hEwIB0z"), it));
+          return ((boolean) (Boolean) BHReflection.invoke(classifierMethod, SMethodTrimmedId.create("hasSameSignature", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "hEwIB0z"), it));
         }
       })) {
         SetSequence.fromSet(safeGet(this.myOverridingToOverridenMethodsMap, overridingMethod)).addElement(MultiTuple.<SNode,SNode>from(classifierMethod, superClassifier));

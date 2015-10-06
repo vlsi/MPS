@@ -20,7 +20,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_BehaviorDescriptor;
+import jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -185,14 +185,14 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_g7zihj_a1c0(SNode node, EditorContext editorContext) {
-    return !(RunConfigurationExecutor_BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(node));
+    return !((boolean) RunConfigurationExecutor__BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(node));
   }
   private EditorCell createComponent_g7zihj_c2a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.configurations.editor.SimpleCanRunAndDebug");
     return editorCell;
   }
   private static boolean renderingCondition_g7zihj_a2c0(SNode node, EditorContext editorContext) {
-    return RunConfigurationExecutor_BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(node);
+    return (boolean) RunConfigurationExecutor__BehaviorDescriptor.isSimple_id5pE1_aqYZtD.invoke(node);
   }
   private EditorCell createConstant_g7zihj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");

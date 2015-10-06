@@ -12,22 +12,22 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myCommandType_BehaviorDescriptor = new CommandType_BehaviorDescriptor();
-  private final BHDescriptor myExplicitCommandParameterDeclaration_BehaviorDescriptor = new ExplicitCommandParameterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCommandMethod_BehaviorDescriptor = new CommandMethod_BehaviorDescriptor();
-  private final BHDescriptor myCommandDeclaration_BehaviorDescriptor = new CommandDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCommandBuilderExpression_BehaviorDescriptor = new CommandBuilderExpression_BehaviorDescriptor();
-  private final BHDescriptor myBuilderBlockStatement_BehaviorDescriptor = new BuilderBlockStatement_BehaviorDescriptor();
-  private final BHDescriptor myBuilderParameter_BehaviorDescriptor = new BuilderParameter_BehaviorDescriptor();
-  private final BHDescriptor myReportExecutionError_BehaviorDescriptor = new ReportExecutionError_BehaviorDescriptor();
-  private final BHDescriptor myReportErrorStatement_BehaviorDescriptor = new ReportErrorStatement_BehaviorDescriptor();
-  private final BHDescriptor myRedirectOutputExpression_BehaviorDescriptor = new RedirectOutputExpression_BehaviorDescriptor();
-  private final BHDescriptor myCommandPartLengthOperation_BehaviorDescriptor = new CommandPartLengthOperation_BehaviorDescriptor();
-  private final BHDescriptor myNewProcessBuilderExpression_BehaviorDescriptor = new NewProcessBuilderExpression_BehaviorDescriptor();
-  private final BHDescriptor myExecuteCommandPart_BehaviorDescriptor = new ExecuteCommandPart_BehaviorDescriptor();
-  private final BHDescriptor myCommandParameterDeclaration_BehaviorDescriptor = new CommandParameterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCommandPartToListOperation_BehaviorDescriptor = new CommandPartToListOperation_BehaviorDescriptor();
-  private final BHDescriptor myDebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor = new DebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor();
+  private final BHDescriptor myCommandType__BehaviorDescriptor = new CommandType__BehaviorDescriptor();
+  private final BHDescriptor myExplicitCommandParameterDeclaration__BehaviorDescriptor = new ExplicitCommandParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCommandMethod__BehaviorDescriptor = new CommandMethod__BehaviorDescriptor();
+  private final BHDescriptor myCommandDeclaration__BehaviorDescriptor = new CommandDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCommandBuilderExpression__BehaviorDescriptor = new CommandBuilderExpression__BehaviorDescriptor();
+  private final BHDescriptor myBuilderBlockStatement__BehaviorDescriptor = new BuilderBlockStatement__BehaviorDescriptor();
+  private final BHDescriptor myBuilderParameter__BehaviorDescriptor = new BuilderParameter__BehaviorDescriptor();
+  private final BHDescriptor myReportExecutionError__BehaviorDescriptor = new ReportExecutionError__BehaviorDescriptor();
+  private final BHDescriptor myReportErrorStatement__BehaviorDescriptor = new ReportErrorStatement__BehaviorDescriptor();
+  private final BHDescriptor myRedirectOutputExpression__BehaviorDescriptor = new RedirectOutputExpression__BehaviorDescriptor();
+  private final BHDescriptor myCommandPartLengthOperation__BehaviorDescriptor = new CommandPartLengthOperation__BehaviorDescriptor();
+  private final BHDescriptor myNewProcessBuilderExpression__BehaviorDescriptor = new NewProcessBuilderExpression__BehaviorDescriptor();
+  private final BHDescriptor myExecuteCommandPart__BehaviorDescriptor = new ExecuteCommandPart__BehaviorDescriptor();
+  private final BHDescriptor myCommandParameterDeclaration__BehaviorDescriptor = new CommandParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCommandPartToListOperation__BehaviorDescriptor = new CommandPartToListOperation__BehaviorDescriptor();
+  private final BHDescriptor myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor = new DebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -63,37 +63,37 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myCommandType_BehaviorDescriptor;
+        return myCommandType__BehaviorDescriptor;
       case 1:
-        return myExplicitCommandParameterDeclaration_BehaviorDescriptor;
+        return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
       case 2:
-        return myCommandMethod_BehaviorDescriptor;
+        return myCommandMethod__BehaviorDescriptor;
       case 3:
-        return myCommandDeclaration_BehaviorDescriptor;
+        return myCommandDeclaration__BehaviorDescriptor;
       case 4:
-        return myCommandBuilderExpression_BehaviorDescriptor;
+        return myCommandBuilderExpression__BehaviorDescriptor;
       case 5:
-        return myBuilderBlockStatement_BehaviorDescriptor;
+        return myBuilderBlockStatement__BehaviorDescriptor;
       case 6:
-        return myBuilderParameter_BehaviorDescriptor;
+        return myBuilderParameter__BehaviorDescriptor;
       case 7:
-        return myReportExecutionError_BehaviorDescriptor;
+        return myReportExecutionError__BehaviorDescriptor;
       case 8:
-        return myReportErrorStatement_BehaviorDescriptor;
+        return myReportErrorStatement__BehaviorDescriptor;
       case 9:
-        return myRedirectOutputExpression_BehaviorDescriptor;
+        return myRedirectOutputExpression__BehaviorDescriptor;
       case 10:
-        return myCommandPartLengthOperation_BehaviorDescriptor;
+        return myCommandPartLengthOperation__BehaviorDescriptor;
       case 11:
-        return myNewProcessBuilderExpression_BehaviorDescriptor;
+        return myNewProcessBuilderExpression__BehaviorDescriptor;
       case 12:
-        return myExecuteCommandPart_BehaviorDescriptor;
+        return myExecuteCommandPart__BehaviorDescriptor;
       case 13:
-        return myCommandParameterDeclaration_BehaviorDescriptor;
+        return myCommandParameterDeclaration__BehaviorDescriptor;
       case 14:
-        return myCommandPartToListOperation_BehaviorDescriptor;
+        return myCommandPartToListOperation__BehaviorDescriptor;
       case 15:
-        return myDebuggerSettingsCommandParameterDeclaration_BehaviorDescriptor;
+        return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
       default:
         return null;
     }

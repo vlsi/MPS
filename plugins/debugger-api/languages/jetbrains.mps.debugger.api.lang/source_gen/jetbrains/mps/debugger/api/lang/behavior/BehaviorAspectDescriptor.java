@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myDebuggerReference_BehaviorDescriptor = new DebuggerReference_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Debug_Project_BehaviorDescriptor = new ConceptFunctionParameter_Debug_Project_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_DebuggableNode_BehaviorDescriptor = new ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor = new ConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunction_CreateBreakpoint_BehaviorDescriptor = new ConceptFunction_CreateBreakpoint_BehaviorDescriptor();
-  private final BHDescriptor myGetDebuggerSettings_Function_BehaviorDescriptor = new GetDebuggerSettings_Function_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunction_IsApplicableToConcept_BehaviorDescriptor = new ConceptFunction_IsApplicableToConcept_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Concept_BehaviorDescriptor = new ConceptFunctionParameter_Concept_BehaviorDescriptor();
+  private final BHDescriptor myDebuggerReference__BehaviorDescriptor = new DebuggerReference__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Debug_Project__BehaviorDescriptor = new ConceptFunctionParameter_Debug_Project__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor = new ConceptFunctionParameter_DebuggableNode__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor = new ConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunction_CreateBreakpoint__BehaviorDescriptor = new ConceptFunction_CreateBreakpoint__BehaviorDescriptor();
+  private final BHDescriptor myGetDebuggerSettings_Function__BehaviorDescriptor = new GetDebuggerSettings_Function__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunction_IsApplicableToConcept__BehaviorDescriptor = new ConceptFunction_IsApplicableToConcept__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Concept__BehaviorDescriptor = new ConceptFunctionParameter_Concept__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myDebuggerReference_BehaviorDescriptor;
+        return myDebuggerReference__BehaviorDescriptor;
       case 1:
-        return myConceptFunctionParameter_Debug_Project_BehaviorDescriptor;
+        return myConceptFunctionParameter_Debug_Project__BehaviorDescriptor;
       case 2:
-        return myConceptFunctionParameter_DebuggableNode_BehaviorDescriptor;
+        return myConceptFunctionParameter_DebuggableNode__BehaviorDescriptor;
       case 3:
-        return myConceptFunction_IsApplicableBreakpoint_BehaviorDescriptor;
+        return myConceptFunction_IsApplicableBreakpoint__BehaviorDescriptor;
       case 4:
-        return myConceptFunction_CreateBreakpoint_BehaviorDescriptor;
+        return myConceptFunction_CreateBreakpoint__BehaviorDescriptor;
       case 5:
-        return myGetDebuggerSettings_Function_BehaviorDescriptor;
+        return myGetDebuggerSettings_Function__BehaviorDescriptor;
       case 6:
-        return myConceptFunction_IsApplicableToConcept_BehaviorDescriptor;
+        return myConceptFunction_IsApplicableToConcept__BehaviorDescriptor;
       case 7:
-        return myConceptFunctionParameter_Concept_BehaviorDescriptor;
+        return myConceptFunctionParameter_Concept__BehaviorDescriptor;
       default:
         return null;
     }

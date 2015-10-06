@@ -12,63 +12,63 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myApplicableNodeCondition_BehaviorDescriptor = new ApplicableNodeCondition_BehaviorDescriptor();
-  private final BHDescriptor myConceptReference_BehaviorDescriptor = new ConceptReference_BehaviorDescriptor();
-  private final BHDescriptor myPatternCondition_BehaviorDescriptor = new PatternCondition_BehaviorDescriptor();
-  private final BHDescriptor myInferenceRule_BehaviorDescriptor = new InferenceRule_BehaviorDescriptor();
-  private final BHDescriptor myAbstractRule_BehaviorDescriptor = new AbstractRule_BehaviorDescriptor();
-  private final BHDescriptor myApplicableNodeReference_BehaviorDescriptor = new ApplicableNodeReference_BehaviorDescriptor();
-  private final BHDescriptor myTypeOfExpression_BehaviorDescriptor = new TypeOfExpression_BehaviorDescriptor();
-  private final BHDescriptor myTypeVarReference_BehaviorDescriptor = new TypeVarReference_BehaviorDescriptor();
-  private final BHDescriptor myAbstractSubtypingRule_BehaviorDescriptor = new AbstractSubtypingRule_BehaviorDescriptor();
-  private final BHDescriptor mySubtypingRule_BehaviorDescriptor = new SubtypingRule_BehaviorDescriptor();
-  private final BHDescriptor myReportErrorStatement_BehaviorDescriptor = new ReportErrorStatement_BehaviorDescriptor();
-  private final BHDescriptor myNode_TypeOperation_BehaviorDescriptor = new Node_TypeOperation_BehaviorDescriptor();
-  private final BHDescriptor myMultipleForeachLoop_BehaviorDescriptor = new MultipleForeachLoop_BehaviorDescriptor();
-  private final BHDescriptor myJoinType_BehaviorDescriptor = new JoinType_BehaviorDescriptor();
-  private final BHDescriptor myRuntimeErrorType_BehaviorDescriptor = new RuntimeErrorType_BehaviorDescriptor();
-  private final BHDescriptor myRuntimeTypeVariable_BehaviorDescriptor = new RuntimeTypeVariable_BehaviorDescriptor();
-  private final BHDescriptor myMeetType_BehaviorDescriptor = new MeetType_BehaviorDescriptor();
-  private final BHDescriptor myComparisonRule_BehaviorDescriptor = new ComparisonRule_BehaviorDescriptor();
-  private final BHDescriptor myNonTypesystemRule_BehaviorDescriptor = new NonTypesystemRule_BehaviorDescriptor();
-  private final BHDescriptor myInequationReplacementRule_BehaviorDescriptor = new InequationReplacementRule_BehaviorDescriptor();
-  private final BHDescriptor myWhenConcreteVariableDeclaration_BehaviorDescriptor = new WhenConcreteVariableDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myWhenConcreteVariableReference_BehaviorDescriptor = new WhenConcreteVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myWarningStatement_BehaviorDescriptor = new WarningStatement_BehaviorDescriptor();
-  private final BHDescriptor myTypesystemIntentionArgument_BehaviorDescriptor = new TypesystemIntentionArgument_BehaviorDescriptor();
-  private final BHDescriptor myAbstractInequationStatement_BehaviorDescriptor = new AbstractInequationStatement_BehaviorDescriptor();
-  private final BHDescriptor myQuickFixExecuteBlock_BehaviorDescriptor = new QuickFixExecuteBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_node_BehaviorDescriptor = new ConceptFunctionParameter_node_BehaviorDescriptor();
-  private final BHDescriptor myQuickFixDescriptionBlock_BehaviorDescriptor = new QuickFixDescriptionBlock_BehaviorDescriptor();
-  private final BHDescriptor myProcessed_BehaviorDescriptor = new Processed_BehaviorDescriptor();
-  private final BHDescriptor myInfoStatement_BehaviorDescriptor = new InfoStatement_BehaviorDescriptor();
-  private final BHDescriptor myMessageStatement_BehaviorDescriptor = new MessageStatement_BehaviorDescriptor();
-  private final BHDescriptor myVariableConverterItem_ApplicableBlock_BehaviorDescriptor = new VariableConverterItem_ApplicableBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_var_BehaviorDescriptor = new ConceptFunctionParameter_var_BehaviorDescriptor();
-  private final BHDescriptor myVariableConverterItem_ConvertBlock_BehaviorDescriptor = new VariableConverterItem_ConvertBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Role_BehaviorDescriptor = new ConceptFunctionParameter_Role_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_isAggregation_BehaviorDescriptor = new ConceptFunctionParameter_isAggregation_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_ContextNode_BehaviorDescriptor = new ConceptFunctionParameter_ContextNode_BehaviorDescriptor();
-  private final BHDescriptor myOverloadedOperatorTypeFunction_BehaviorDescriptor = new OverloadedOperatorTypeFunction_BehaviorDescriptor();
-  private final BHDescriptor myLeftOperandType_parameter_BehaviorDescriptor = new LeftOperandType_parameter_BehaviorDescriptor();
-  private final BHDescriptor myOperation_parameter_BehaviorDescriptor = new Operation_parameter_BehaviorDescriptor();
-  private final BHDescriptor myRightOperandType_parameter_BehaviorDescriptor = new RightOperandType_parameter_BehaviorDescriptor();
-  private final BHDescriptor myMeetContainer_BehaviorDescriptor = new MeetContainer_BehaviorDescriptor();
-  private final BHDescriptor myJoinContainer_BehaviorDescriptor = new JoinContainer_BehaviorDescriptor();
-  private final BHDescriptor myDefaultGroupReference_BehaviorDescriptor = new DefaultGroupReference_BehaviorDescriptor();
-  private final BHDescriptor myOverridesConceptFunction_BehaviorDescriptor = new OverridesConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myOriginalNodeId_BehaviorDescriptor = new OriginalNodeId_BehaviorDescriptor();
-  private final BHDescriptor myIsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor = new IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myQuickFixSetSelectionBlock_BehaviorDescriptor = new QuickFixSetSelectionBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_EditorContext_BehaviorDescriptor = new ConceptFunctionParameter_EditorContext_BehaviorDescriptor();
-  private final BHDescriptor myIRuleWithTwoNodes_BehaviorDescriptor = new IRuleWithTwoNodes_BehaviorDescriptor();
-  private final BHDescriptor myOverloadedOpIsApplicableFunction_BehaviorDescriptor = new OverloadedOpIsApplicableFunction_BehaviorDescriptor();
-  private final BHDescriptor myNode_InferTypeOperation_BehaviorDescriptor = new Node_InferTypeOperation_BehaviorDescriptor();
-  private final BHDescriptor mySubstituteTypeRule_BehaviorDescriptor = new SubstituteTypeRule_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Selection_BehaviorDescriptor = new ConceptFunctionParameter_Selection_BehaviorDescriptor();
-  private final BHDescriptor mySupersedeConceptFunction_BehaviorDescriptor = new SupersedeConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableConceptFunction_BehaviorDescriptor = new IsApplicableConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myQuickFixFieldReference_BehaviorDescriptor = new QuickFixFieldReference_BehaviorDescriptor();
+  private final BHDescriptor myApplicableNodeCondition__BehaviorDescriptor = new ApplicableNodeCondition__BehaviorDescriptor();
+  private final BHDescriptor myConceptReference__BehaviorDescriptor = new ConceptReference__BehaviorDescriptor();
+  private final BHDescriptor myPatternCondition__BehaviorDescriptor = new PatternCondition__BehaviorDescriptor();
+  private final BHDescriptor myInferenceRule__BehaviorDescriptor = new InferenceRule__BehaviorDescriptor();
+  private final BHDescriptor myAbstractRule__BehaviorDescriptor = new AbstractRule__BehaviorDescriptor();
+  private final BHDescriptor myApplicableNodeReference__BehaviorDescriptor = new ApplicableNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myTypeOfExpression__BehaviorDescriptor = new TypeOfExpression__BehaviorDescriptor();
+  private final BHDescriptor myTypeVarReference__BehaviorDescriptor = new TypeVarReference__BehaviorDescriptor();
+  private final BHDescriptor myAbstractSubtypingRule__BehaviorDescriptor = new AbstractSubtypingRule__BehaviorDescriptor();
+  private final BHDescriptor mySubtypingRule__BehaviorDescriptor = new SubtypingRule__BehaviorDescriptor();
+  private final BHDescriptor myReportErrorStatement__BehaviorDescriptor = new ReportErrorStatement__BehaviorDescriptor();
+  private final BHDescriptor myNode_TypeOperation__BehaviorDescriptor = new Node_TypeOperation__BehaviorDescriptor();
+  private final BHDescriptor myMultipleForeachLoop__BehaviorDescriptor = new MultipleForeachLoop__BehaviorDescriptor();
+  private final BHDescriptor myJoinType__BehaviorDescriptor = new JoinType__BehaviorDescriptor();
+  private final BHDescriptor myRuntimeErrorType__BehaviorDescriptor = new RuntimeErrorType__BehaviorDescriptor();
+  private final BHDescriptor myRuntimeTypeVariable__BehaviorDescriptor = new RuntimeTypeVariable__BehaviorDescriptor();
+  private final BHDescriptor myMeetType__BehaviorDescriptor = new MeetType__BehaviorDescriptor();
+  private final BHDescriptor myComparisonRule__BehaviorDescriptor = new ComparisonRule__BehaviorDescriptor();
+  private final BHDescriptor myNonTypesystemRule__BehaviorDescriptor = new NonTypesystemRule__BehaviorDescriptor();
+  private final BHDescriptor myInequationReplacementRule__BehaviorDescriptor = new InequationReplacementRule__BehaviorDescriptor();
+  private final BHDescriptor myWhenConcreteVariableDeclaration__BehaviorDescriptor = new WhenConcreteVariableDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myWhenConcreteVariableReference__BehaviorDescriptor = new WhenConcreteVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myWarningStatement__BehaviorDescriptor = new WarningStatement__BehaviorDescriptor();
+  private final BHDescriptor myTypesystemIntentionArgument__BehaviorDescriptor = new TypesystemIntentionArgument__BehaviorDescriptor();
+  private final BHDescriptor myAbstractInequationStatement__BehaviorDescriptor = new AbstractInequationStatement__BehaviorDescriptor();
+  private final BHDescriptor myQuickFixExecuteBlock__BehaviorDescriptor = new QuickFixExecuteBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_node__BehaviorDescriptor = new ConceptFunctionParameter_node__BehaviorDescriptor();
+  private final BHDescriptor myQuickFixDescriptionBlock__BehaviorDescriptor = new QuickFixDescriptionBlock__BehaviorDescriptor();
+  private final BHDescriptor myProcessed__BehaviorDescriptor = new Processed__BehaviorDescriptor();
+  private final BHDescriptor myInfoStatement__BehaviorDescriptor = new InfoStatement__BehaviorDescriptor();
+  private final BHDescriptor myMessageStatement__BehaviorDescriptor = new MessageStatement__BehaviorDescriptor();
+  private final BHDescriptor myVariableConverterItem_ApplicableBlock__BehaviorDescriptor = new VariableConverterItem_ApplicableBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_var__BehaviorDescriptor = new ConceptFunctionParameter_var__BehaviorDescriptor();
+  private final BHDescriptor myVariableConverterItem_ConvertBlock__BehaviorDescriptor = new VariableConverterItem_ConvertBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Role__BehaviorDescriptor = new ConceptFunctionParameter_Role__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_isAggregation__BehaviorDescriptor = new ConceptFunctionParameter_isAggregation__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_ContextNode__BehaviorDescriptor = new ConceptFunctionParameter_ContextNode__BehaviorDescriptor();
+  private final BHDescriptor myOverloadedOperatorTypeFunction__BehaviorDescriptor = new OverloadedOperatorTypeFunction__BehaviorDescriptor();
+  private final BHDescriptor myLeftOperandType_parameter__BehaviorDescriptor = new LeftOperandType_parameter__BehaviorDescriptor();
+  private final BHDescriptor myOperation_parameter__BehaviorDescriptor = new Operation_parameter__BehaviorDescriptor();
+  private final BHDescriptor myRightOperandType_parameter__BehaviorDescriptor = new RightOperandType_parameter__BehaviorDescriptor();
+  private final BHDescriptor myMeetContainer__BehaviorDescriptor = new MeetContainer__BehaviorDescriptor();
+  private final BHDescriptor myJoinContainer__BehaviorDescriptor = new JoinContainer__BehaviorDescriptor();
+  private final BHDescriptor myDefaultGroupReference__BehaviorDescriptor = new DefaultGroupReference__BehaviorDescriptor();
+  private final BHDescriptor myOverridesConceptFunction__BehaviorDescriptor = new OverridesConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myOriginalNodeId__BehaviorDescriptor = new OriginalNodeId__BehaviorDescriptor();
+  private final BHDescriptor myIsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor = new IsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myQuickFixSetSelectionBlock__BehaviorDescriptor = new QuickFixSetSelectionBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_EditorContext__BehaviorDescriptor = new ConceptFunctionParameter_EditorContext__BehaviorDescriptor();
+  private final BHDescriptor myIRuleWithTwoNodes__BehaviorDescriptor = new IRuleWithTwoNodes__BehaviorDescriptor();
+  private final BHDescriptor myOverloadedOpIsApplicableFunction__BehaviorDescriptor = new OverloadedOpIsApplicableFunction__BehaviorDescriptor();
+  private final BHDescriptor myNode_InferTypeOperation__BehaviorDescriptor = new Node_InferTypeOperation__BehaviorDescriptor();
+  private final BHDescriptor mySubstituteTypeRule__BehaviorDescriptor = new SubstituteTypeRule__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Selection__BehaviorDescriptor = new ConceptFunctionParameter_Selection__BehaviorDescriptor();
+  private final BHDescriptor mySupersedeConceptFunction__BehaviorDescriptor = new SupersedeConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableConceptFunction__BehaviorDescriptor = new IsApplicableConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myQuickFixFieldReference__BehaviorDescriptor = new QuickFixFieldReference__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -145,119 +145,119 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myApplicableNodeCondition_BehaviorDescriptor;
+        return myApplicableNodeCondition__BehaviorDescriptor;
       case 1:
-        return myConceptReference_BehaviorDescriptor;
+        return myConceptReference__BehaviorDescriptor;
       case 2:
-        return myPatternCondition_BehaviorDescriptor;
+        return myPatternCondition__BehaviorDescriptor;
       case 3:
-        return myInferenceRule_BehaviorDescriptor;
+        return myInferenceRule__BehaviorDescriptor;
       case 4:
-        return myAbstractRule_BehaviorDescriptor;
+        return myAbstractRule__BehaviorDescriptor;
       case 5:
-        return myApplicableNodeReference_BehaviorDescriptor;
+        return myApplicableNodeReference__BehaviorDescriptor;
       case 6:
-        return myTypeOfExpression_BehaviorDescriptor;
+        return myTypeOfExpression__BehaviorDescriptor;
       case 7:
-        return myTypeVarReference_BehaviorDescriptor;
+        return myTypeVarReference__BehaviorDescriptor;
       case 8:
-        return myAbstractSubtypingRule_BehaviorDescriptor;
+        return myAbstractSubtypingRule__BehaviorDescriptor;
       case 9:
-        return mySubtypingRule_BehaviorDescriptor;
+        return mySubtypingRule__BehaviorDescriptor;
       case 10:
-        return myReportErrorStatement_BehaviorDescriptor;
+        return myReportErrorStatement__BehaviorDescriptor;
       case 11:
-        return myNode_TypeOperation_BehaviorDescriptor;
+        return myNode_TypeOperation__BehaviorDescriptor;
       case 12:
-        return myMultipleForeachLoop_BehaviorDescriptor;
+        return myMultipleForeachLoop__BehaviorDescriptor;
       case 13:
-        return myJoinType_BehaviorDescriptor;
+        return myJoinType__BehaviorDescriptor;
       case 14:
-        return myRuntimeErrorType_BehaviorDescriptor;
+        return myRuntimeErrorType__BehaviorDescriptor;
       case 15:
-        return myRuntimeTypeVariable_BehaviorDescriptor;
+        return myRuntimeTypeVariable__BehaviorDescriptor;
       case 16:
-        return myMeetType_BehaviorDescriptor;
+        return myMeetType__BehaviorDescriptor;
       case 17:
-        return myComparisonRule_BehaviorDescriptor;
+        return myComparisonRule__BehaviorDescriptor;
       case 18:
-        return myNonTypesystemRule_BehaviorDescriptor;
+        return myNonTypesystemRule__BehaviorDescriptor;
       case 19:
-        return myInequationReplacementRule_BehaviorDescriptor;
+        return myInequationReplacementRule__BehaviorDescriptor;
       case 20:
-        return myWhenConcreteVariableDeclaration_BehaviorDescriptor;
+        return myWhenConcreteVariableDeclaration__BehaviorDescriptor;
       case 21:
-        return myWhenConcreteVariableReference_BehaviorDescriptor;
+        return myWhenConcreteVariableReference__BehaviorDescriptor;
       case 22:
-        return myWarningStatement_BehaviorDescriptor;
+        return myWarningStatement__BehaviorDescriptor;
       case 23:
-        return myTypesystemIntentionArgument_BehaviorDescriptor;
+        return myTypesystemIntentionArgument__BehaviorDescriptor;
       case 24:
-        return myAbstractInequationStatement_BehaviorDescriptor;
+        return myAbstractInequationStatement__BehaviorDescriptor;
       case 25:
-        return myQuickFixExecuteBlock_BehaviorDescriptor;
+        return myQuickFixExecuteBlock__BehaviorDescriptor;
       case 26:
-        return myConceptFunctionParameter_node_BehaviorDescriptor;
+        return myConceptFunctionParameter_node__BehaviorDescriptor;
       case 27:
-        return myQuickFixDescriptionBlock_BehaviorDescriptor;
+        return myQuickFixDescriptionBlock__BehaviorDescriptor;
       case 28:
-        return myProcessed_BehaviorDescriptor;
+        return myProcessed__BehaviorDescriptor;
       case 29:
-        return myInfoStatement_BehaviorDescriptor;
+        return myInfoStatement__BehaviorDescriptor;
       case 30:
-        return myMessageStatement_BehaviorDescriptor;
+        return myMessageStatement__BehaviorDescriptor;
       case 31:
-        return myVariableConverterItem_ApplicableBlock_BehaviorDescriptor;
+        return myVariableConverterItem_ApplicableBlock__BehaviorDescriptor;
       case 32:
-        return myConceptFunctionParameter_var_BehaviorDescriptor;
+        return myConceptFunctionParameter_var__BehaviorDescriptor;
       case 33:
-        return myVariableConverterItem_ConvertBlock_BehaviorDescriptor;
+        return myVariableConverterItem_ConvertBlock__BehaviorDescriptor;
       case 34:
-        return myConceptFunctionParameter_Role_BehaviorDescriptor;
+        return myConceptFunctionParameter_Role__BehaviorDescriptor;
       case 35:
-        return myConceptFunctionParameter_isAggregation_BehaviorDescriptor;
+        return myConceptFunctionParameter_isAggregation__BehaviorDescriptor;
       case 36:
-        return myConceptFunctionParameter_ContextNode_BehaviorDescriptor;
+        return myConceptFunctionParameter_ContextNode__BehaviorDescriptor;
       case 37:
-        return myOverloadedOperatorTypeFunction_BehaviorDescriptor;
+        return myOverloadedOperatorTypeFunction__BehaviorDescriptor;
       case 38:
-        return myLeftOperandType_parameter_BehaviorDescriptor;
+        return myLeftOperandType_parameter__BehaviorDescriptor;
       case 39:
-        return myOperation_parameter_BehaviorDescriptor;
+        return myOperation_parameter__BehaviorDescriptor;
       case 40:
-        return myRightOperandType_parameter_BehaviorDescriptor;
+        return myRightOperandType_parameter__BehaviorDescriptor;
       case 41:
-        return myMeetContainer_BehaviorDescriptor;
+        return myMeetContainer__BehaviorDescriptor;
       case 42:
-        return myJoinContainer_BehaviorDescriptor;
+        return myJoinContainer__BehaviorDescriptor;
       case 43:
-        return myDefaultGroupReference_BehaviorDescriptor;
+        return myDefaultGroupReference__BehaviorDescriptor;
       case 44:
-        return myOverridesConceptFunction_BehaviorDescriptor;
+        return myOverridesConceptFunction__BehaviorDescriptor;
       case 45:
-        return myOriginalNodeId_BehaviorDescriptor;
+        return myOriginalNodeId__BehaviorDescriptor;
       case 46:
-        return myIsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor;
+        return myIsReplacementRuleApplicable_ConceptFunction__BehaviorDescriptor;
       case 47:
-        return myQuickFixSetSelectionBlock_BehaviorDescriptor;
+        return myQuickFixSetSelectionBlock__BehaviorDescriptor;
       case 48:
-        return myConceptFunctionParameter_EditorContext_BehaviorDescriptor;
+        return myConceptFunctionParameter_EditorContext__BehaviorDescriptor;
       case 49:
-        return myIRuleWithTwoNodes_BehaviorDescriptor;
+        return myIRuleWithTwoNodes__BehaviorDescriptor;
       case 50:
-        return myOverloadedOpIsApplicableFunction_BehaviorDescriptor;
+        return myOverloadedOpIsApplicableFunction__BehaviorDescriptor;
       case 51:
-        return myNode_InferTypeOperation_BehaviorDescriptor;
+        return myNode_InferTypeOperation__BehaviorDescriptor;
       case 52:
-        return mySubstituteTypeRule_BehaviorDescriptor;
+        return mySubstituteTypeRule__BehaviorDescriptor;
       case 53:
-        return myConceptFunctionParameter_Selection_BehaviorDescriptor;
+        return myConceptFunctionParameter_Selection__BehaviorDescriptor;
       case 54:
-        return mySupersedeConceptFunction_BehaviorDescriptor;
+        return mySupersedeConceptFunction__BehaviorDescriptor;
       case 55:
-        return myIsApplicableConceptFunction_BehaviorDescriptor;
+        return myIsApplicableConceptFunction__BehaviorDescriptor;
       case 56:
-        return myQuickFixFieldReference_BehaviorDescriptor;
+        return myQuickFixFieldReference__BehaviorDescriptor;
       default:
         return null;
     }

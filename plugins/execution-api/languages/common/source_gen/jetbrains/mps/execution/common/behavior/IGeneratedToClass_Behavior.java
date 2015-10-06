@@ -4,55 +4,30 @@ package jetbrains.mps.execution.common.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
-import java.util.regex.Pattern;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class IGeneratedToClass_Behavior {
   public static String call_getValidClassName_2572811016744662265(SNode __thisNode__, @NonNls String name) {
-    return IGeneratedToClass_BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name);
+    return IGeneratedToClass__BehaviorDescriptor.getValidClassName_id2eOtvO7hJjT(__thisNode__, name);
   }
   public static String call_getGeneratedClassName_946964771156905516(SNode __thisNode__, String name) {
-    if ((name == null || name.length() == 0)) {
-      return null;
-    }
-    return IGeneratedToClass_BehaviorDescriptor.getValidClassName_id2eOtvO7hJjT.invoke(__thisNode__, name) + "_" + IGeneratedToClass_BehaviorDescriptor.getSuffix_idO$iR4JBsSb.invoke(__thisNode__);
+    return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSG(__thisNode__, name);
   }
   public static String call_getNamespace_2256484787298834694(SNode __thisNode__) {
-    return NodeNameUtil.getNamespace(INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(__thisNode__));
+    return IGeneratedToClass__BehaviorDescriptor.getNamespace_id1XgDflG1h$6(__thisNode__);
   }
   public static String call_replaceProhibitedSymbol_946964771156905390(SAbstractConcept __thisConcept__, String name, String symbol) {
-    String result = name;
-    while (result.contains(symbol)) {
-      int index = result.indexOf(symbol);
-      result = result.replace(symbol, "");
-      result = IGeneratedToClass_BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), result, index);
-    }
-    return result;
+    return IGeneratedToClass__BehaviorDescriptor.replaceProhibitedSymbol_idO$iR4JBsQI(__thisConcept__, name, symbol);
   }
   public static String call_makeUpperCase_946964771156905431(SAbstractConcept __thisConcept__, @NonNls String string, int index) {
-    assert index >= 0 && index < string.length();
-    return string.substring(0, index) + string.substring(index, index + 1).toUpperCase() + ((index + 1 < string.length() ? string.substring(index + 1) : ""));
+    return IGeneratedToClass__BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn(__thisConcept__, string, index);
   }
   public static String call_getValidClassName_3754131050835940481(SAbstractConcept __thisConcept__, @NonNls String name) {
-    // in between 
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a1a5, new _Replacer_tq53pp_a0a0b0f(null, null));
-    // in the end 
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a3a5, new _Replacer_tq53pp_a0a0d0f(null, null));
-    // in the beggining 
-    name = RegexpOperations.replace(name, REGEXP_tq53pp_b0a5a5, new _Replacer_tq53pp_a0a0f0f(null, null));
-    return IGeneratedToClass_BehaviorDescriptor.makeUpperCase_idO$iR4JBsRn.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), name, 0);
+    return IGeneratedToClass__BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1(__thisConcept__, name);
   }
-  private static Pattern REGEXP_tq53pp_b0a1a5 = Pattern.compile("(\\w)\\W+(\\w)", 0);
-  private static Pattern REGEXP_tq53pp_b0a3a5 = Pattern.compile("(.)\\W+$", 0);
-  private static Pattern REGEXP_tq53pp_b0a5a5 = Pattern.compile("^\\W+(\\w)", 0);
 }

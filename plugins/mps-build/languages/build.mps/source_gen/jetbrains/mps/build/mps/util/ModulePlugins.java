@@ -15,10 +15,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent_BehaviorDescriptor;
+import jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent__BehaviorDescriptor;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.build.behavior.BuildLayout_PathElement_BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 
 public class ModulePlugins {
   private static final String KEY = "modulePluginDependency";
@@ -37,7 +37,7 @@ public class ModulePlugins {
       for (SNode plugin : ListSequence.fromList(projectPlugins)) {
         if (ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bbeaL, "content"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BuildMps_IdeaPluginContent_BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(it, module);
+            return (boolean) BuildMps_IdeaPluginContent__BehaviorDescriptor.exports_id5FtnUVJQES1.invoke(it, module);
           }
         }) != null) {
           ListSequence.fromList(initialPlugins).addElement(plugin);
@@ -69,7 +69,7 @@ public class ModulePlugins {
         if ((layoutNode == null)) {
           return null;
         }
-        String val = BuildLayout_PathElement_BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, it);
+        String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, it);
         if (val == null) {
           return null;
         }

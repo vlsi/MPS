@@ -34,7 +34,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.typesystem.typeof_AsBuilderStatement_InferenceRule" file="typeof_AsBuilderStatement_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -60,7 +60,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.typesystem.typeof_BuilderCreator_InferenceRule" file="typeof_BuilderCreator_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -72,7 +72,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.typesystem.typeof_ResultExpression_InferenceRule" file="typeof_ResultExpression_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -130,7 +130,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.typesystem.typeof_SimpleBuilderParentExpression_InferenceRule" file="typeof_SimpleBuilderParentExpression_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -154,7 +154,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.typesystem.typeof_SimpleBuilderPropertyParent_InferenceRule" file="typeof_SimpleBuilderPropertyParent_InferenceRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

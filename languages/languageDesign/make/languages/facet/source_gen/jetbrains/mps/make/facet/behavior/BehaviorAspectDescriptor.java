@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myForeignParametersComponentExpression_BehaviorDescriptor = new ForeignParametersComponentExpression_BehaviorDescriptor();
-  private final BHDescriptor myIFacet_BehaviorDescriptor = new IFacet_BehaviorDescriptor();
-  private final BHDescriptor myFacetDeclaration_BehaviorDescriptor = new FacetDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myTargetDeclaration_BehaviorDescriptor = new TargetDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myFacetReferenceExpression_BehaviorDescriptor = new FacetReferenceExpression_BehaviorDescriptor();
-  private final BHDescriptor myParametersDeclaration_BehaviorDescriptor = new ParametersDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myLocalParametersComponentExpression_BehaviorDescriptor = new LocalParametersComponentExpression_BehaviorDescriptor();
-  private final BHDescriptor myTargetReferenceExpression_BehaviorDescriptor = new TargetReferenceExpression_BehaviorDescriptor();
+  private final BHDescriptor myForeignParametersComponentExpression__BehaviorDescriptor = new ForeignParametersComponentExpression__BehaviorDescriptor();
+  private final BHDescriptor myIFacet__BehaviorDescriptor = new IFacet__BehaviorDescriptor();
+  private final BHDescriptor myFacetDeclaration__BehaviorDescriptor = new FacetDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myTargetDeclaration__BehaviorDescriptor = new TargetDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myFacetReferenceExpression__BehaviorDescriptor = new FacetReferenceExpression__BehaviorDescriptor();
+  private final BHDescriptor myParametersDeclaration__BehaviorDescriptor = new ParametersDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myLocalParametersComponentExpression__BehaviorDescriptor = new LocalParametersComponentExpression__BehaviorDescriptor();
+  private final BHDescriptor myTargetReferenceExpression__BehaviorDescriptor = new TargetReferenceExpression__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myForeignParametersComponentExpression_BehaviorDescriptor;
+        return myForeignParametersComponentExpression__BehaviorDescriptor;
       case 1:
-        return myIFacet_BehaviorDescriptor;
+        return myIFacet__BehaviorDescriptor;
       case 2:
-        return myFacetDeclaration_BehaviorDescriptor;
+        return myFacetDeclaration__BehaviorDescriptor;
       case 3:
-        return myTargetDeclaration_BehaviorDescriptor;
+        return myTargetDeclaration__BehaviorDescriptor;
       case 4:
-        return myFacetReferenceExpression_BehaviorDescriptor;
+        return myFacetReferenceExpression__BehaviorDescriptor;
       case 5:
-        return myParametersDeclaration_BehaviorDescriptor;
+        return myParametersDeclaration__BehaviorDescriptor;
       case 6:
-        return myLocalParametersComponentExpression_BehaviorDescriptor;
+        return myLocalParametersComponentExpression__BehaviorDescriptor;
       case 7:
-        return myTargetReferenceExpression_BehaviorDescriptor;
+        return myTargetReferenceExpression__BehaviorDescriptor;
       default:
         return null;
     }

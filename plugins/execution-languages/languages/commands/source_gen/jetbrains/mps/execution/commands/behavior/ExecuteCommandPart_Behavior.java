@@ -4,42 +4,23 @@ package jetbrains.mps.execution.commands.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class ExecuteCommandPart_Behavior {
   public static List<SNode> call_getParameters_6129022259108621180(SNode __thisNode__) {
-    if (CommandDeclaration_BehaviorDescriptor.isDebuggable_idJzCdmU6yOQ.invoke(ExecuteCommandPart_BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(__thisNode__))) {
-      return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, 0x550ea9458ea107adL, "parameterDeclaration"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"));
-        }
-      }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x75aadb0d4e6223baL, "debuggerParameter"))))).toListSequence();
-    }
-    return SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL, 0x550ea9458ea107adL, "parameterDeclaration"));
+    return ExecuteCommandPart__BehaviorDescriptor.getParameters_id5keEkmeCqHW(__thisNode__);
   }
   public static List<SNode> call_getRequiredParameters_6129022259108621289(SNode __thisNode__) {
-    return ListSequence.fromList(ExecuteCommandPart_BehaviorDescriptor.getParameters_id5keEkmeCqHW.invoke(__thisNode__)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return CommandParameterDeclaration_BehaviorDescriptor.isRequired_id7c4O8d8q0tV.invoke(it);
-      }
-    }).toListSequence();
+    return ExecuteCommandPart__BehaviorDescriptor.getRequiredParameters_id5keEkmeCqJD(__thisNode__);
   }
   public static SNode call_getCommandDeclaration_6129022259108621200(SNode __thisNode__) {
-    return SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), false, false);
+    return ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg(__thisNode__);
   }
   public static String call_getSuffix_3754131050835940463(SNode __thisNode__) {
-    return "_" + IGeneratedToClass_BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), __thisNode__.getNodeId().toString());
+    return ExecuteCommandPart__BehaviorDescriptor.getSuffix_id3gpm$NHlLhJ(__thisNode__);
   }
 }

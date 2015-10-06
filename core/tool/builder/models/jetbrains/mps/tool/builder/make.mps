@@ -3138,8 +3138,8 @@
                               <node concept="liA8E" id="2hWPXztVlqS" role="2OqNvi">
                                 <ref role="37wK5l" to="guwi:~File.listFiles(java.io.FilenameFilter):java.io.File[]" resolve="listFiles" />
                                 <node concept="10M0yZ" id="2hWPXztVlqT" role="37wK5m">
-                                  <ref role="3cqZAo" to="v9gs:4937uxYQn8r" resolve="JARS" />
-                                  <ref role="1PxDUh" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+                                  <ref role="3cqZAo" to="18ew:~PathManager.JAR_FILE_FILTER" resolve="JAR_FILE_FILTER" />
+                                  <ref role="1PxDUh" to="18ew:~PathManager" resolve="PathManager" />
                                 </node>
                               </node>
                             </node>

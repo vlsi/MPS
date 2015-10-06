@@ -26,11 +26,11 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -212,10 +212,10 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean _StyleParameter_QueryFunction_q2jz9e_a0d0(EditorContext editorContext, SNode node) {
-    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_q2jz9e_a1d0(EditorContext editorContext, SNode node) {
-    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   private EditorCell createCollection_q2jz9e_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -246,7 +246,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_q2jz9e_a4a(SNode node, EditorContext editorContext) {
-    return !(BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
+    return !((boolean) BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
   }
   private EditorCell createConstant_q2jz9e_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -535,7 +535,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_q2jz9e_a6e0(SNode node, EditorContext editorContext) {
-    return IDeprecatable_BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")));
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")));
   }
   private EditorCell createConstant_q2jz9e_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
@@ -550,7 +550,7 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_q2jz9e_a1f0(EditorContext editorContext, SNode node) {
-    return BaseDocComment_BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node) || !(BaseDocComment_BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node) || !((boolean) BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
   }
   private EditorCell createAttributedNodeCell_q2jz9e_g0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);

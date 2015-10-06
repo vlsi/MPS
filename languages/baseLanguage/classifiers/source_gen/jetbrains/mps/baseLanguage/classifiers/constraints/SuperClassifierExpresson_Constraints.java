@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescriptor {
@@ -37,11 +37,11 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     if (!(inClassifier)) {
       return false;
     }
-    SNode classifier = IClassifier_BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), parentNode);
+    SNode classifier = IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), parentNode);
     if (classifier == null) {
       return false;
     }
-    boolean hasSuper = IClassifier_BehaviorDescriptor.createSuperType_idhHOGPWW.invoke(classifier) != null;
+    boolean hasSuper = IClassifier__BehaviorDescriptor.createSuperType_idhHOGPWW.invoke(classifier) != null;
     if (!(hasSuper)) {
       return false;
     }

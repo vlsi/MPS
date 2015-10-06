@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myFigureParameter_BehaviorDescriptor = new FigureParameter_BehaviorDescriptor();
-  private final BHDescriptor myFigureParameterAttributeMethod_BehaviorDescriptor = new FigureParameterAttributeMethod_BehaviorDescriptor();
-  private final BHDescriptor myFigureParameterAttributeField_BehaviorDescriptor = new FigureParameterAttributeField_BehaviorDescriptor();
-  private final BHDescriptor myExternalViewFigure_BehaviorDescriptor = new ExternalViewFigure_BehaviorDescriptor();
-  private final BHDescriptor myExternalViewFigureParameter_BehaviorDescriptor = new ExternalViewFigureParameter_BehaviorDescriptor();
-  private final BHDescriptor myFigureAttribute_BehaviorDescriptor = new FigureAttribute_BehaviorDescriptor();
-  private final BHDescriptor myFigureParameterAttribute_BehaviorDescriptor = new FigureParameterAttribute_BehaviorDescriptor();
-  private final BHDescriptor myFigureParameterAttributeViewProperty_BehaviorDescriptor = new FigureParameterAttributeViewProperty_BehaviorDescriptor();
+  private final BHDescriptor myFigureParameter__BehaviorDescriptor = new FigureParameter__BehaviorDescriptor();
+  private final BHDescriptor myFigureParameterAttributeMethod__BehaviorDescriptor = new FigureParameterAttributeMethod__BehaviorDescriptor();
+  private final BHDescriptor myFigureParameterAttributeField__BehaviorDescriptor = new FigureParameterAttributeField__BehaviorDescriptor();
+  private final BHDescriptor myExternalViewFigure__BehaviorDescriptor = new ExternalViewFigure__BehaviorDescriptor();
+  private final BHDescriptor myExternalViewFigureParameter__BehaviorDescriptor = new ExternalViewFigureParameter__BehaviorDescriptor();
+  private final BHDescriptor myFigureAttribute__BehaviorDescriptor = new FigureAttribute__BehaviorDescriptor();
+  private final BHDescriptor myFigureParameterAttribute__BehaviorDescriptor = new FigureParameterAttribute__BehaviorDescriptor();
+  private final BHDescriptor myFigureParameterAttributeViewProperty__BehaviorDescriptor = new FigureParameterAttributeViewProperty__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myFigureParameter_BehaviorDescriptor;
+        return myFigureParameter__BehaviorDescriptor;
       case 1:
-        return myFigureParameterAttributeMethod_BehaviorDescriptor;
+        return myFigureParameterAttributeMethod__BehaviorDescriptor;
       case 2:
-        return myFigureParameterAttributeField_BehaviorDescriptor;
+        return myFigureParameterAttributeField__BehaviorDescriptor;
       case 3:
-        return myExternalViewFigure_BehaviorDescriptor;
+        return myExternalViewFigure__BehaviorDescriptor;
       case 4:
-        return myExternalViewFigureParameter_BehaviorDescriptor;
+        return myExternalViewFigureParameter__BehaviorDescriptor;
       case 5:
-        return myFigureAttribute_BehaviorDescriptor;
+        return myFigureAttribute__BehaviorDescriptor;
       case 6:
-        return myFigureParameterAttribute_BehaviorDescriptor;
+        return myFigureParameterAttribute__BehaviorDescriptor;
       case 7:
-        return myFigureParameterAttributeViewProperty_BehaviorDescriptor;
+        return myFigureParameterAttributeViewProperty__BehaviorDescriptor;
       default:
         return null;
     }

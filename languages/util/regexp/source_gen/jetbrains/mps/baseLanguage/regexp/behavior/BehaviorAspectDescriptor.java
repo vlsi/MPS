@@ -12,33 +12,33 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myRegexp_BehaviorDescriptor = new Regexp_BehaviorDescriptor();
-  private final BHDescriptor myStringLiteralRegexp_BehaviorDescriptor = new StringLiteralRegexp_BehaviorDescriptor();
-  private final BHDescriptor myOrRegexp_BehaviorDescriptor = new OrRegexp_BehaviorDescriptor();
-  private final BHDescriptor mySeqRegexp_BehaviorDescriptor = new SeqRegexp_BehaviorDescriptor();
-  private final BHDescriptor myUnaryRegexp_BehaviorDescriptor = new UnaryRegexp_BehaviorDescriptor();
-  private final BHDescriptor myParensRegexp_BehaviorDescriptor = new ParensRegexp_BehaviorDescriptor();
-  private final BHDescriptor mySymbolClassRegexp_BehaviorDescriptor = new SymbolClassRegexp_BehaviorDescriptor();
-  private final BHDescriptor myPredefinedSymbolClassRegexp_BehaviorDescriptor = new PredefinedSymbolClassRegexp_BehaviorDescriptor();
-  private final BHDescriptor mySymbolClassPart_BehaviorDescriptor = new SymbolClassPart_BehaviorDescriptor();
-  private final BHDescriptor myCharacterSymbolClassPart_BehaviorDescriptor = new CharacterSymbolClassPart_BehaviorDescriptor();
-  private final BHDescriptor myIntervalSymbolClassPart_BehaviorDescriptor = new IntervalSymbolClassPart_BehaviorDescriptor();
-  private final BHDescriptor myPredefinedSymbolClassSymbolClassPart_BehaviorDescriptor = new PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor();
-  private final BHDescriptor myMatchParensRegexp_BehaviorDescriptor = new MatchParensRegexp_BehaviorDescriptor();
-  private final BHDescriptor myReplaceBlock_BehaviorDescriptor = new ReplaceBlock_BehaviorDescriptor();
-  private final BHDescriptor myRegexpDeclarationReferenceRegexp_BehaviorDescriptor = new RegexpDeclarationReferenceRegexp_BehaviorDescriptor();
-  private final BHDescriptor myNTimesRegexp_BehaviorDescriptor = new NTimesRegexp_BehaviorDescriptor();
-  private final BHDescriptor myAtLeastNTimesRegexp_BehaviorDescriptor = new AtLeastNTimesRegexp_BehaviorDescriptor();
-  private final BHDescriptor myFromNToMTimesRegexp_BehaviorDescriptor = new FromNToMTimesRegexp_BehaviorDescriptor();
-  private final BHDescriptor myLookRegexp_BehaviorDescriptor = new LookRegexp_BehaviorDescriptor();
-  private final BHDescriptor myMatchVariableReferenceRegexp_BehaviorDescriptor = new MatchVariableReferenceRegexp_BehaviorDescriptor();
-  private final BHDescriptor myUnicodeCharacterRegexp_BehaviorDescriptor = new UnicodeCharacterRegexp_BehaviorDescriptor();
-  private final BHDescriptor myIntersectionSymbolClassPart_BehaviorDescriptor = new IntersectionSymbolClassPart_BehaviorDescriptor();
-  private final BHDescriptor mySymbolClassRegexpAndPart_BehaviorDescriptor = new SymbolClassRegexpAndPart_BehaviorDescriptor();
-  private final BHDescriptor myReplaceRegexpOperation_BehaviorDescriptor = new ReplaceRegexpOperation_BehaviorDescriptor();
-  private final BHDescriptor myLiteralReplacement_BehaviorDescriptor = new LiteralReplacement_BehaviorDescriptor();
-  private final BHDescriptor myMatchVariableReferenceReplacement_BehaviorDescriptor = new MatchVariableReferenceReplacement_BehaviorDescriptor();
-  private final BHDescriptor myReplacement_BehaviorDescriptor = new Replacement_BehaviorDescriptor();
+  private final BHDescriptor myRegexp__BehaviorDescriptor = new Regexp__BehaviorDescriptor();
+  private final BHDescriptor myStringLiteralRegexp__BehaviorDescriptor = new StringLiteralRegexp__BehaviorDescriptor();
+  private final BHDescriptor myOrRegexp__BehaviorDescriptor = new OrRegexp__BehaviorDescriptor();
+  private final BHDescriptor mySeqRegexp__BehaviorDescriptor = new SeqRegexp__BehaviorDescriptor();
+  private final BHDescriptor myUnaryRegexp__BehaviorDescriptor = new UnaryRegexp__BehaviorDescriptor();
+  private final BHDescriptor myParensRegexp__BehaviorDescriptor = new ParensRegexp__BehaviorDescriptor();
+  private final BHDescriptor mySymbolClassRegexp__BehaviorDescriptor = new SymbolClassRegexp__BehaviorDescriptor();
+  private final BHDescriptor myPredefinedSymbolClassRegexp__BehaviorDescriptor = new PredefinedSymbolClassRegexp__BehaviorDescriptor();
+  private final BHDescriptor mySymbolClassPart__BehaviorDescriptor = new SymbolClassPart__BehaviorDescriptor();
+  private final BHDescriptor myCharacterSymbolClassPart__BehaviorDescriptor = new CharacterSymbolClassPart__BehaviorDescriptor();
+  private final BHDescriptor myIntervalSymbolClassPart__BehaviorDescriptor = new IntervalSymbolClassPart__BehaviorDescriptor();
+  private final BHDescriptor myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor = new PredefinedSymbolClassSymbolClassPart__BehaviorDescriptor();
+  private final BHDescriptor myMatchParensRegexp__BehaviorDescriptor = new MatchParensRegexp__BehaviorDescriptor();
+  private final BHDescriptor myReplaceBlock__BehaviorDescriptor = new ReplaceBlock__BehaviorDescriptor();
+  private final BHDescriptor myRegexpDeclarationReferenceRegexp__BehaviorDescriptor = new RegexpDeclarationReferenceRegexp__BehaviorDescriptor();
+  private final BHDescriptor myNTimesRegexp__BehaviorDescriptor = new NTimesRegexp__BehaviorDescriptor();
+  private final BHDescriptor myAtLeastNTimesRegexp__BehaviorDescriptor = new AtLeastNTimesRegexp__BehaviorDescriptor();
+  private final BHDescriptor myFromNToMTimesRegexp__BehaviorDescriptor = new FromNToMTimesRegexp__BehaviorDescriptor();
+  private final BHDescriptor myLookRegexp__BehaviorDescriptor = new LookRegexp__BehaviorDescriptor();
+  private final BHDescriptor myMatchVariableReferenceRegexp__BehaviorDescriptor = new MatchVariableReferenceRegexp__BehaviorDescriptor();
+  private final BHDescriptor myUnicodeCharacterRegexp__BehaviorDescriptor = new UnicodeCharacterRegexp__BehaviorDescriptor();
+  private final BHDescriptor myIntersectionSymbolClassPart__BehaviorDescriptor = new IntersectionSymbolClassPart__BehaviorDescriptor();
+  private final BHDescriptor mySymbolClassRegexpAndPart__BehaviorDescriptor = new SymbolClassRegexpAndPart__BehaviorDescriptor();
+  private final BHDescriptor myReplaceRegexpOperation__BehaviorDescriptor = new ReplaceRegexpOperation__BehaviorDescriptor();
+  private final BHDescriptor myLiteralReplacement__BehaviorDescriptor = new LiteralReplacement__BehaviorDescriptor();
+  private final BHDescriptor myMatchVariableReferenceReplacement__BehaviorDescriptor = new MatchVariableReferenceReplacement__BehaviorDescriptor();
+  private final BHDescriptor myReplacement__BehaviorDescriptor = new Replacement__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -85,59 +85,59 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myRegexp_BehaviorDescriptor;
+        return myRegexp__BehaviorDescriptor;
       case 1:
-        return myStringLiteralRegexp_BehaviorDescriptor;
+        return myStringLiteralRegexp__BehaviorDescriptor;
       case 2:
-        return myOrRegexp_BehaviorDescriptor;
+        return myOrRegexp__BehaviorDescriptor;
       case 3:
-        return mySeqRegexp_BehaviorDescriptor;
+        return mySeqRegexp__BehaviorDescriptor;
       case 4:
-        return myUnaryRegexp_BehaviorDescriptor;
+        return myUnaryRegexp__BehaviorDescriptor;
       case 5:
-        return myParensRegexp_BehaviorDescriptor;
+        return myParensRegexp__BehaviorDescriptor;
       case 6:
-        return mySymbolClassRegexp_BehaviorDescriptor;
+        return mySymbolClassRegexp__BehaviorDescriptor;
       case 7:
-        return myPredefinedSymbolClassRegexp_BehaviorDescriptor;
+        return myPredefinedSymbolClassRegexp__BehaviorDescriptor;
       case 8:
-        return mySymbolClassPart_BehaviorDescriptor;
+        return mySymbolClassPart__BehaviorDescriptor;
       case 9:
-        return myCharacterSymbolClassPart_BehaviorDescriptor;
+        return myCharacterSymbolClassPart__BehaviorDescriptor;
       case 10:
-        return myIntervalSymbolClassPart_BehaviorDescriptor;
+        return myIntervalSymbolClassPart__BehaviorDescriptor;
       case 11:
-        return myPredefinedSymbolClassSymbolClassPart_BehaviorDescriptor;
+        return myPredefinedSymbolClassSymbolClassPart__BehaviorDescriptor;
       case 12:
-        return myMatchParensRegexp_BehaviorDescriptor;
+        return myMatchParensRegexp__BehaviorDescriptor;
       case 13:
-        return myReplaceBlock_BehaviorDescriptor;
+        return myReplaceBlock__BehaviorDescriptor;
       case 14:
-        return myRegexpDeclarationReferenceRegexp_BehaviorDescriptor;
+        return myRegexpDeclarationReferenceRegexp__BehaviorDescriptor;
       case 15:
-        return myNTimesRegexp_BehaviorDescriptor;
+        return myNTimesRegexp__BehaviorDescriptor;
       case 16:
-        return myAtLeastNTimesRegexp_BehaviorDescriptor;
+        return myAtLeastNTimesRegexp__BehaviorDescriptor;
       case 17:
-        return myFromNToMTimesRegexp_BehaviorDescriptor;
+        return myFromNToMTimesRegexp__BehaviorDescriptor;
       case 18:
-        return myLookRegexp_BehaviorDescriptor;
+        return myLookRegexp__BehaviorDescriptor;
       case 19:
-        return myMatchVariableReferenceRegexp_BehaviorDescriptor;
+        return myMatchVariableReferenceRegexp__BehaviorDescriptor;
       case 20:
-        return myUnicodeCharacterRegexp_BehaviorDescriptor;
+        return myUnicodeCharacterRegexp__BehaviorDescriptor;
       case 21:
-        return myIntersectionSymbolClassPart_BehaviorDescriptor;
+        return myIntersectionSymbolClassPart__BehaviorDescriptor;
       case 22:
-        return mySymbolClassRegexpAndPart_BehaviorDescriptor;
+        return mySymbolClassRegexpAndPart__BehaviorDescriptor;
       case 23:
-        return myReplaceRegexpOperation_BehaviorDescriptor;
+        return myReplaceRegexpOperation__BehaviorDescriptor;
       case 24:
-        return myLiteralReplacement_BehaviorDescriptor;
+        return myLiteralReplacement__BehaviorDescriptor;
       case 25:
-        return myMatchVariableReferenceReplacement_BehaviorDescriptor;
+        return myMatchVariableReferenceReplacement__BehaviorDescriptor;
       case 26:
-        return myReplacement_BehaviorDescriptor;
+        return myReplacement__BehaviorDescriptor;
       default:
         return null;
     }

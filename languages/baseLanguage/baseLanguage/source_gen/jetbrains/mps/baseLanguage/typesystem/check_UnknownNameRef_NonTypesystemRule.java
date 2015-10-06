@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,7 +26,7 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
       return;
     }
 
-    if (IYetUnresolved_BehaviorDescriptor.evaluateSubst_id73E7sj5sxxG.invoke(unkName) != null) {
+    if (IYetUnresolved__BehaviorDescriptor.evaluateSubst_id73E7sj5sxxG.invoke(unkName) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Resolved qualified name reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8504030010050377272", null, errorTarget);

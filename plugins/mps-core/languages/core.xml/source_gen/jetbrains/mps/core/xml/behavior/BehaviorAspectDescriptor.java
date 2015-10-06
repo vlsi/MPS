@@ -12,27 +12,27 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myXmlText_BehaviorDescriptor = new XmlText_BehaviorDescriptor();
-  private final BHDescriptor myXmlEntityRef_BehaviorDescriptor = new XmlEntityRef_BehaviorDescriptor();
-  private final BHDescriptor myXmlPart_BehaviorDescriptor = new XmlPart_BehaviorDescriptor();
-  private final BHDescriptor myXmlBasePrologElement_BehaviorDescriptor = new XmlBasePrologElement_BehaviorDescriptor();
-  private final BHDescriptor myXmlDoctypeDeclaration_BehaviorDescriptor = new XmlDoctypeDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myXmlCharRef_BehaviorDescriptor = new XmlCharRef_BehaviorDescriptor();
-  private final BHDescriptor myXmlDeclaration_BehaviorDescriptor = new XmlDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myXmlContent_BehaviorDescriptor = new XmlContent_BehaviorDescriptor();
-  private final BHDescriptor myXmlBaseElement_BehaviorDescriptor = new XmlBaseElement_BehaviorDescriptor();
-  private final BHDescriptor myXmlProlog_BehaviorDescriptor = new XmlProlog_BehaviorDescriptor();
-  private final BHDescriptor myXmlProcessingInstruction_BehaviorDescriptor = new XmlProcessingInstruction_BehaviorDescriptor();
-  private final BHDescriptor myXmlComment_BehaviorDescriptor = new XmlComment_BehaviorDescriptor();
-  private final BHDescriptor myXmlCDATA_BehaviorDescriptor = new XmlCDATA_BehaviorDescriptor();
-  private final BHDescriptor myXmlElement_BehaviorDescriptor = new XmlElement_BehaviorDescriptor();
-  private final BHDescriptor myXmlBaseAttribute_BehaviorDescriptor = new XmlBaseAttribute_BehaviorDescriptor();
-  private final BHDescriptor myXmlAttribute_BehaviorDescriptor = new XmlAttribute_BehaviorDescriptor();
-  private final BHDescriptor myXmlFile_BehaviorDescriptor = new XmlFile_BehaviorDescriptor();
-  private final BHDescriptor myXmlValuePart_BehaviorDescriptor = new XmlValuePart_BehaviorDescriptor();
-  private final BHDescriptor myXmlTextValue_BehaviorDescriptor = new XmlTextValue_BehaviorDescriptor();
-  private final BHDescriptor myXmlPrologElement_BehaviorDescriptor = new XmlPrologElement_BehaviorDescriptor();
-  private final BHDescriptor myXmlWhitespace_BehaviorDescriptor = new XmlWhitespace_BehaviorDescriptor();
+  private final BHDescriptor myXmlText__BehaviorDescriptor = new XmlText__BehaviorDescriptor();
+  private final BHDescriptor myXmlEntityRef__BehaviorDescriptor = new XmlEntityRef__BehaviorDescriptor();
+  private final BHDescriptor myXmlPart__BehaviorDescriptor = new XmlPart__BehaviorDescriptor();
+  private final BHDescriptor myXmlBasePrologElement__BehaviorDescriptor = new XmlBasePrologElement__BehaviorDescriptor();
+  private final BHDescriptor myXmlDoctypeDeclaration__BehaviorDescriptor = new XmlDoctypeDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myXmlCharRef__BehaviorDescriptor = new XmlCharRef__BehaviorDescriptor();
+  private final BHDescriptor myXmlDeclaration__BehaviorDescriptor = new XmlDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myXmlContent__BehaviorDescriptor = new XmlContent__BehaviorDescriptor();
+  private final BHDescriptor myXmlBaseElement__BehaviorDescriptor = new XmlBaseElement__BehaviorDescriptor();
+  private final BHDescriptor myXmlProlog__BehaviorDescriptor = new XmlProlog__BehaviorDescriptor();
+  private final BHDescriptor myXmlProcessingInstruction__BehaviorDescriptor = new XmlProcessingInstruction__BehaviorDescriptor();
+  private final BHDescriptor myXmlComment__BehaviorDescriptor = new XmlComment__BehaviorDescriptor();
+  private final BHDescriptor myXmlCDATA__BehaviorDescriptor = new XmlCDATA__BehaviorDescriptor();
+  private final BHDescriptor myXmlElement__BehaviorDescriptor = new XmlElement__BehaviorDescriptor();
+  private final BHDescriptor myXmlBaseAttribute__BehaviorDescriptor = new XmlBaseAttribute__BehaviorDescriptor();
+  private final BHDescriptor myXmlAttribute__BehaviorDescriptor = new XmlAttribute__BehaviorDescriptor();
+  private final BHDescriptor myXmlFile__BehaviorDescriptor = new XmlFile__BehaviorDescriptor();
+  private final BHDescriptor myXmlValuePart__BehaviorDescriptor = new XmlValuePart__BehaviorDescriptor();
+  private final BHDescriptor myXmlTextValue__BehaviorDescriptor = new XmlTextValue__BehaviorDescriptor();
+  private final BHDescriptor myXmlPrologElement__BehaviorDescriptor = new XmlPrologElement__BehaviorDescriptor();
+  private final BHDescriptor myXmlWhitespace__BehaviorDescriptor = new XmlWhitespace__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -73,47 +73,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myXmlText_BehaviorDescriptor;
+        return myXmlText__BehaviorDescriptor;
       case 1:
-        return myXmlEntityRef_BehaviorDescriptor;
+        return myXmlEntityRef__BehaviorDescriptor;
       case 2:
-        return myXmlPart_BehaviorDescriptor;
+        return myXmlPart__BehaviorDescriptor;
       case 3:
-        return myXmlBasePrologElement_BehaviorDescriptor;
+        return myXmlBasePrologElement__BehaviorDescriptor;
       case 4:
-        return myXmlDoctypeDeclaration_BehaviorDescriptor;
+        return myXmlDoctypeDeclaration__BehaviorDescriptor;
       case 5:
-        return myXmlCharRef_BehaviorDescriptor;
+        return myXmlCharRef__BehaviorDescriptor;
       case 6:
-        return myXmlDeclaration_BehaviorDescriptor;
+        return myXmlDeclaration__BehaviorDescriptor;
       case 7:
-        return myXmlContent_BehaviorDescriptor;
+        return myXmlContent__BehaviorDescriptor;
       case 8:
-        return myXmlBaseElement_BehaviorDescriptor;
+        return myXmlBaseElement__BehaviorDescriptor;
       case 9:
-        return myXmlProlog_BehaviorDescriptor;
+        return myXmlProlog__BehaviorDescriptor;
       case 10:
-        return myXmlProcessingInstruction_BehaviorDescriptor;
+        return myXmlProcessingInstruction__BehaviorDescriptor;
       case 11:
-        return myXmlComment_BehaviorDescriptor;
+        return myXmlComment__BehaviorDescriptor;
       case 12:
-        return myXmlCDATA_BehaviorDescriptor;
+        return myXmlCDATA__BehaviorDescriptor;
       case 13:
-        return myXmlElement_BehaviorDescriptor;
+        return myXmlElement__BehaviorDescriptor;
       case 14:
-        return myXmlBaseAttribute_BehaviorDescriptor;
+        return myXmlBaseAttribute__BehaviorDescriptor;
       case 15:
-        return myXmlAttribute_BehaviorDescriptor;
+        return myXmlAttribute__BehaviorDescriptor;
       case 16:
-        return myXmlFile_BehaviorDescriptor;
+        return myXmlFile__BehaviorDescriptor;
       case 17:
-        return myXmlValuePart_BehaviorDescriptor;
+        return myXmlValuePart__BehaviorDescriptor;
       case 18:
-        return myXmlTextValue_BehaviorDescriptor;
+        return myXmlTextValue__BehaviorDescriptor;
       case 19:
-        return myXmlPrologElement_BehaviorDescriptor;
+        return myXmlPrologElement__BehaviorDescriptor;
       case 20:
-        return myXmlWhitespace_BehaviorDescriptor;
+        return myXmlWhitespace__BehaviorDescriptor;
       default:
         return null;
     }

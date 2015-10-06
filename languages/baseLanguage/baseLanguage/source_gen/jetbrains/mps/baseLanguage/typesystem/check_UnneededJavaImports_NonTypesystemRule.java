@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.behavior.Tokens_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Tokens__BehaviorDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -50,7 +50,7 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        MapSequence.fromMap(importsByName).put(Tokens_BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(it), it);
+        MapSequence.fromMap(importsByName).put(Tokens__BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(it), it);
 
       }
     });

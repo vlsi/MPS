@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleLiteral__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -55,7 +55,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ulpguu_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return NamedTupleLiteral_BehaviorDescriptor.getLeftBracket_id1653mnvAgvE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) NamedTupleLiteral__BehaviorDescriptor.getLeftBracket_id1653mnvAgvE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -135,7 +135,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ulpguu_c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return NamedTupleLiteral_BehaviorDescriptor.getRightBracket_id1653mnvAgsr.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) NamedTupleLiteral__BehaviorDescriptor.getRightBracket_id1653mnvAgsr.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }

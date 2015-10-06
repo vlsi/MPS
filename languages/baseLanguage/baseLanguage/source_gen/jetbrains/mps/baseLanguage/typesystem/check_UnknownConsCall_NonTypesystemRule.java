@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.IYetUnresolved_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +19,7 @@ public class check_UnknownConsCall_NonTypesystemRule extends AbstractNonTypesyst
   public check_UnknownConsCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (IYetUnresolved_BehaviorDescriptor.evaluateSubst_id73E7sj5sxxG.invoke(call) != null) {
+    if (IYetUnresolved__BehaviorDescriptor.evaluateSubst_id73E7sj5sxxG.invoke(call) != null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(call, "Resolved constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9100188248702475686", null, errorTarget);

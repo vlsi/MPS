@@ -12,40 +12,40 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myNodePropertyConstraint_BehaviorDescriptor = new NodePropertyConstraint_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_PropertyGetter_BehaviorDescriptor = new ConstraintFunction_PropertyGetter_BehaviorDescriptor();
-  private final BHDescriptor myConstraintsFunctionParameter_node_BehaviorDescriptor = new ConstraintsFunctionParameter_node_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor();
-  private final BHDescriptor myNodeReferentConstraint_BehaviorDescriptor = new NodeReferentConstraint_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor();
-  private final BHDescriptor myConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor = new ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_PropertySetter_BehaviorDescriptor = new ConstraintFunction_PropertySetter_BehaviorDescriptor();
-  private final BHDescriptor myNodeDefaultSearchScope_BehaviorDescriptor = new NodeDefaultSearchScope_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_ReferentSetHandler_BehaviorDescriptor = new ConstraintFunction_ReferentSetHandler_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeAChild_BehaviorDescriptor = new ConstraintFunction_CanBeAChild_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_parentNode_BehaviorDescriptor = new ConstraintFunctionParameter_parentNode_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeAParent_BehaviorDescriptor = new ConstraintFunction_CanBeAParent_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_childConcept_BehaviorDescriptor = new ConstraintFunctionParameter_childConcept_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_link_BehaviorDescriptor = new ConstraintFunctionParameter_link_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_PropertyValidator_BehaviorDescriptor = new ConstraintFunction_PropertyValidator_BehaviorDescriptor();
-  private final BHDescriptor myConceptConstraints_BehaviorDescriptor = new ConceptConstraints_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeARoot_BehaviorDescriptor = new ConstraintFunction_CanBeARoot_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_containingLink_BehaviorDescriptor = new ConstraintFunctionParameter_containingLink_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_checkedNode_BehaviorDescriptor = new ConstraintFunctionParameter_checkedNode_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_GetAlternativeIcon_BehaviorDescriptor = new ConstraintFunction_GetAlternativeIcon_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_inEditor_BehaviorDescriptor = new ConstraintFunctionParameter_inEditor_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_contextRole_BehaviorDescriptor = new ConstraintFunctionParameter_contextRole_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_exists_BehaviorDescriptor = new ConstraintFunctionParameter_exists_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_position_BehaviorDescriptor = new ConstraintFunctionParameter_position_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor = new ConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_childNode_BehaviorDescriptor = new ConstraintFunctionParameter_childNode_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_visible_BehaviorDescriptor = new ConstraintFunctionParameter_visible_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_smartReference_BehaviorDescriptor = new ConstraintFunctionParameter_smartReference_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunction_CanBeAnAncestor_BehaviorDescriptor = new ConstraintFunction_CanBeAnAncestor_BehaviorDescriptor();
-  private final BHDescriptor myConstraintFunctionParameter_contextNode_BehaviorDescriptor = new ConstraintFunctionParameter_contextNode_BehaviorDescriptor();
+  private final BHDescriptor myNodePropertyConstraint__BehaviorDescriptor = new NodePropertyConstraint__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_PropertyGetter__BehaviorDescriptor = new ConstraintFunction_PropertyGetter__BehaviorDescriptor();
+  private final BHDescriptor myConstraintsFunctionParameter_node__BehaviorDescriptor = new ConstraintsFunctionParameter_node__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor();
+  private final BHDescriptor myNodeReferentConstraint__BehaviorDescriptor = new NodeReferentConstraint__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor();
+  private final BHDescriptor myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor = new ConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_PropertySetter__BehaviorDescriptor = new ConstraintFunction_PropertySetter__BehaviorDescriptor();
+  private final BHDescriptor myNodeDefaultSearchScope__BehaviorDescriptor = new NodeDefaultSearchScope__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_ReferentSetHandler__BehaviorDescriptor = new ConstraintFunction_ReferentSetHandler__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAChild__BehaviorDescriptor = new ConstraintFunction_CanBeAChild__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_parentNode__BehaviorDescriptor = new ConstraintFunctionParameter_parentNode__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAParent__BehaviorDescriptor = new ConstraintFunction_CanBeAParent__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_childConcept__BehaviorDescriptor = new ConstraintFunctionParameter_childConcept__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_link__BehaviorDescriptor = new ConstraintFunctionParameter_link__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_PropertyValidator__BehaviorDescriptor = new ConstraintFunction_PropertyValidator__BehaviorDescriptor();
+  private final BHDescriptor myConceptConstraints__BehaviorDescriptor = new ConceptConstraints__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeARoot__BehaviorDescriptor = new ConstraintFunction_CanBeARoot__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_containingLink__BehaviorDescriptor = new ConstraintFunctionParameter_containingLink__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_checkedNode__BehaviorDescriptor = new ConstraintFunctionParameter_checkedNode__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor = new ConstraintFunction_GetAlternativeIcon__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_inEditor__BehaviorDescriptor = new ConstraintFunctionParameter_inEditor__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_contextRole__BehaviorDescriptor = new ConstraintFunctionParameter_contextRole__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_exists__BehaviorDescriptor = new ConstraintFunctionParameter_exists__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_position__BehaviorDescriptor = new ConstraintFunctionParameter_position__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor = new ConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor = new ConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_childNode__BehaviorDescriptor = new ConstraintFunctionParameter_childNode__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_visible__BehaviorDescriptor = new ConstraintFunctionParameter_visible__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_smartReference__BehaviorDescriptor = new ConstraintFunctionParameter_smartReference__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor = new ConstraintFunction_CanBeAnAncestor__BehaviorDescriptor();
+  private final BHDescriptor myConstraintFunctionParameter_contextNode__BehaviorDescriptor = new ConstraintFunctionParameter_contextNode__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -99,73 +99,73 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myNodePropertyConstraint_BehaviorDescriptor;
+        return myNodePropertyConstraint__BehaviorDescriptor;
       case 1:
-        return myConstraintFunction_PropertyGetter_BehaviorDescriptor;
+        return myConstraintFunction_PropertyGetter__BehaviorDescriptor;
       case 2:
-        return myConstraintsFunctionParameter_node_BehaviorDescriptor;
+        return myConstraintsFunctionParameter_node__BehaviorDescriptor;
       case 3:
-        return myConstraintFunction_ReferentSearchScope_Factory_BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Factory__BehaviorDescriptor;
       case 4:
-        return myNodeReferentConstraint_BehaviorDescriptor;
+        return myNodeReferentConstraint__BehaviorDescriptor;
       case 5:
-        return myConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_AbstractBase__BehaviorDescriptor;
       case 6:
-        return myConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor;
+        return myConceptParameter_ReferentSearchScope_enclosingNode__BehaviorDescriptor;
       case 7:
-        return myConstraintFunction_PropertySetter_BehaviorDescriptor;
+        return myConstraintFunction_PropertySetter__BehaviorDescriptor;
       case 8:
-        return myNodeDefaultSearchScope_BehaviorDescriptor;
+        return myNodeDefaultSearchScope__BehaviorDescriptor;
       case 9:
-        return myConstraintFunction_ReferentSetHandler_BehaviorDescriptor;
+        return myConstraintFunction_ReferentSetHandler__BehaviorDescriptor;
       case 10:
-        return myConstraintFunction_CanBeAChild_BehaviorDescriptor;
+        return myConstraintFunction_CanBeAChild__BehaviorDescriptor;
       case 11:
-        return myConstraintFunctionParameter_parentNode_BehaviorDescriptor;
+        return myConstraintFunctionParameter_parentNode__BehaviorDescriptor;
       case 12:
-        return myConstraintFunction_CanBeAParent_BehaviorDescriptor;
+        return myConstraintFunction_CanBeAParent__BehaviorDescriptor;
       case 13:
-        return myConstraintFunctionParameter_childConcept_BehaviorDescriptor;
+        return myConstraintFunctionParameter_childConcept__BehaviorDescriptor;
       case 14:
-        return myConstraintFunctionParameter_link_BehaviorDescriptor;
+        return myConstraintFunctionParameter_link__BehaviorDescriptor;
       case 15:
-        return myConstraintFunction_PropertyValidator_BehaviorDescriptor;
+        return myConstraintFunction_PropertyValidator__BehaviorDescriptor;
       case 16:
-        return myConceptConstraints_BehaviorDescriptor;
+        return myConceptConstraints__BehaviorDescriptor;
       case 17:
-        return myConstraintFunction_CanBeARoot_BehaviorDescriptor;
+        return myConstraintFunction_CanBeARoot__BehaviorDescriptor;
       case 18:
-        return myConstraintFunctionParameter_containingLink_BehaviorDescriptor;
+        return myConstraintFunctionParameter_containingLink__BehaviorDescriptor;
       case 19:
-        return myConstraintFunctionParameter_checkedNode_BehaviorDescriptor;
+        return myConstraintFunctionParameter_checkedNode__BehaviorDescriptor;
       case 20:
-        return myConstraintFunction_ReferentSearchScope_Validator_BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Validator__BehaviorDescriptor;
       case 21:
-        return myConstraintFunction_GetAlternativeIcon_BehaviorDescriptor;
+        return myConstraintFunction_GetAlternativeIcon__BehaviorDescriptor;
       case 22:
-        return myConstraintFunction_ReferentSearchScope_Presentation_BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Presentation__BehaviorDescriptor;
       case 23:
-        return myConstraintFunctionParameter_inEditor_BehaviorDescriptor;
+        return myConstraintFunctionParameter_inEditor__BehaviorDescriptor;
       case 24:
-        return myConstraintFunctionParameter_contextRole_BehaviorDescriptor;
+        return myConstraintFunctionParameter_contextRole__BehaviorDescriptor;
       case 25:
-        return myConstraintFunctionParameter_exists_BehaviorDescriptor;
+        return myConstraintFunctionParameter_exists__BehaviorDescriptor;
       case 26:
-        return myConstraintFunctionParameter_position_BehaviorDescriptor;
+        return myConstraintFunctionParameter_position__BehaviorDescriptor;
       case 27:
-        return myConstraintFunction_RefSetHandlerKeepsReference_BehaviorDescriptor;
+        return myConstraintFunction_RefSetHandlerKeepsReference__BehaviorDescriptor;
       case 28:
-        return myConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor;
+        return myConstraintFunction_ReferentSearchScope_Scope__BehaviorDescriptor;
       case 29:
-        return myConstraintFunctionParameter_childNode_BehaviorDescriptor;
+        return myConstraintFunctionParameter_childNode__BehaviorDescriptor;
       case 30:
-        return myConstraintFunctionParameter_visible_BehaviorDescriptor;
+        return myConstraintFunctionParameter_visible__BehaviorDescriptor;
       case 31:
-        return myConstraintFunctionParameter_smartReference_BehaviorDescriptor;
+        return myConstraintFunctionParameter_smartReference__BehaviorDescriptor;
       case 32:
-        return myConstraintFunction_CanBeAnAncestor_BehaviorDescriptor;
+        return myConstraintFunction_CanBeAnAncestor__BehaviorDescriptor;
       case 33:
-        return myConstraintFunctionParameter_contextNode_BehaviorDescriptor;
+        return myConstraintFunctionParameter_contextNode__BehaviorDescriptor;
       default:
         return null;
     }

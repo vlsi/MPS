@@ -8,7 +8,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.ElsifClause_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ElsifClause__BehaviorDescriptor;
 
 public class ElsifClause_DataFlow extends DataFlowBuilder {
   public ElsifClause_DataFlow() {
@@ -19,7 +19,7 @@ public class ElsifClause_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
-        _context.getBuilder().emitJump(_context.getBuilder().after(ElsifClause_BehaviorDescriptor.getIfStatement_idhEwIDu9.invoke(_context.getNode())), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1217865542485");
+        _context.getBuilder().emitJump(_context.getBuilder().after(ElsifClause__BehaviorDescriptor.getIfStatement_idhEwIDu9.invoke(_context.getNode())), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1217865542485");
       }
     });
   }

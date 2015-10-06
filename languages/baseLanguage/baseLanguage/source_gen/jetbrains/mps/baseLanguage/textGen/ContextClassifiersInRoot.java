@@ -11,9 +11,9 @@ import org.apache.log4j.Level;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.HashMap;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -104,8 +104,8 @@ public class ContextClassifiersInRoot {
     Map<String, String> nestedClassifiers = new HashMap<String, String>();
 
     // todo: classifiers with same names in different supertypes? 
-    for (SNode superClassifier : Classifier_BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
-      for (SNode nestedClassifier : Classifier_BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(superClassifier)) {
+    for (SNode superClassifier : Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+      for (SNode nestedClassifier : Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(superClassifier)) {
         addClassifierToBindingMap(nestedClassifiers, nestedClassifier);
       }
     }
@@ -114,7 +114,7 @@ public class ContextClassifiersInRoot {
   }
   private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
     String simpleName = SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-    String fqName = INamedConcept_BehaviorDescriptor.getFqName_idhEwIO9y.invoke(classifier);
+    String fqName = INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(classifier);
 
     if (!(bindings.containsKey(simpleName))) {
       bindings.put(simpleName, fqName);

@@ -8,15 +8,43 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
-import jetbrains.mps.ide.make.TextPreviewUtil;
+import jetbrains.mps.make.MakeSession;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.concurrent.Future;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.make.TextPreviewFile;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import java.util.ArrayList;
+import jetbrains.mps.lang.core.plugin.TextGenOutcomeResource;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.text.TextUnit;
+import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.OpenFileDescriptor;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,7 +63,7 @@ public class TextPreviewModel_Action extends BaseAction {
       return false;
     }
     SModel md = TextPreviewModel_Action.this.modelToGenerate(event);
-    return md != null && SNodeOperations.isGeneratable(md);
+    return md != null && GenerationFacade.canGenerate(md);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -48,6 +76,12 @@ public class TextPreviewModel_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
       if (p == null) {
         return false;
       }
@@ -68,9 +102,80 @@ public class TextPreviewModel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    MakeSession session = new MakeSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), new DefaultMakeMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT)), true);
+    final DefaultMakeMessageHandler msgHandler = new DefaultMakeMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    msgHandler.clear();
+    MakeSession session = new MakeSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), msgHandler, true);
+    final SNodeReference contextNode = (event.getData(MPSCommonDataKeys.NODE) == null ? null : event.getData(MPSCommonDataKeys.NODE).getReference());
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(event), event.getData(MPSCommonDataKeys.NODE));
+      IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
+      SModel model = TextPreviewModel_Action.this.modelToGenerate(event);
+      final SModelReference model2generateRef = model.getReference();
+      final Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), scr);
+      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+        public void run() {
+          try {
+            final IResult result = future.get();
+            final List<TextPreviewFile> previewFiles = new ModelAccessHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess()).runReadAction(new Computable<List<TextPreviewFile>>() {
+              public List<TextPreviewFile> compute() {
+                ArrayList<TextPreviewFile> rv = new ArrayList<TextPreviewFile>();
+                for (TextGenOutcomeResource tgr : Sequence.fromIterable(result.output()).ofType(TextGenOutcomeResource.class)) {
+                  // XXX don't see too much value in modelName, shall drop? 
+                  String modelName = NameUtil.compactNamespace(tgr.getModel().getModelName());
+                  final SRepository repo = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
+                  SNode cn = (contextNode == null ? null : contextNode.resolve(repo));
+                  List<SNode> ancestors = (cn == null ? new ArrayList<SNode>() : SNodeOperations.getNodeAncestors(cn, null, true));
+                  for (TextUnit tu : tgr.getTextGenResult().getUnits()) {
+                    if (cn != null) {
+                      SNode originalStart = TracingUtil.getInputNode(tu.getStartNode(), repo);
+                      if (originalStart != null && !(ListSequence.fromList(ancestors).contains(originalStart))) {
+                        continue;
+                      }
+                    }
+                    rv.add(new TextPreviewFile(tu, modelName));
+                  }
+                }
+                return rv;
+              }
+            });
+
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                if (previewFiles.isEmpty()) {
+                  StringBuilder message = new StringBuilder();
+                  message.append("Model processed:");
+                  message.append(model2generateRef);
+                  message.append("\n");
+                  if (contextNode != null) {
+                    message.append("Context node:");
+                    message.append(contextNode);
+                    message.append("\n");
+                  }
+                  if (result.isSucessful()) {
+                    message.append("Text generation completed successfully\n");
+                  } else {
+                    message.append("Text generation completed with errors\n");
+                  }
+                  if (contextNode != null) {
+                    message.append("None of generated text units reference context node");
+                  } else {
+                    message.append("There were no text units generated.");
+                  }
+                  previewFiles.add(new TextPreviewFile("TextGen", message.toString(), model2generateRef.getModelName()));
+                }
+                Project p = event.getData(CommonDataKeys.PROJECT);
+                FileEditorManager fem = FileEditorManager.getInstance(p);
+                for (TextPreviewFile f : ListSequence.fromList(previewFiles)) {
+                  fem.openTextEditor(new OpenFileDescriptor(p, f), true);
+                }
+              }
+            });
+            // to update tree to reveal transient models. is it still necessary? 
+            ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT)).rebuild();
+          } catch (Exception e) {
+            msgHandler.handle(new Message(MessageKind.ERROR, "TextPreviewModel", e.toString()).setException(e));
+          }
+        }
+      });
     }
   }
   private SModel modelToGenerate(final AnActionEvent event) {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.constraints;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
@@ -17,7 +17,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,7 +30,7 @@ public class DataParameterKeysScope extends Scope {
   }
 
   private Iterable<SNode> getAllStaticFields() {
-    return ActionDataParameterDeclaration_BehaviorDescriptor.getDataKeys_id1BC2tkUXZ6F.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")), myModel);
+    return (Iterable<SNode>) ActionDataParameterDeclaration__BehaviorDescriptor.getDataKeys_id1BC2tkUXZ6F.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")), myModel);
   }
 
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
@@ -80,7 +80,7 @@ public class DataParameterKeysScope extends Scope {
     if (!(allIModels.contains(SNodeOperations.getModel(staticField)))) {
       return false;
     }
-    return Classifier_BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SNodeOperations.as(SNodeOperations.getContainingRoot(staticField), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SLinkOperations.getTarget(_quotation_createNode_d9tb28_a0a0g0n(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
+    return (boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(SNodeOperations.as(SNodeOperations.getContainingRoot(staticField), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SLinkOperations.getTarget(_quotation_createNode_d9tb28_a0a0g0n(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
   }
   private static SNode _quotation_createNode_d9tb28_a0a0g0n() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

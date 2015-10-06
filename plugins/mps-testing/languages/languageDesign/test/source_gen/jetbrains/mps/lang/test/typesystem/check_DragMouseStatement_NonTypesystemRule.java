@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.test.behavior.DragMouseStatement_BehaviorDescriptor;
+import jetbrains.mps.lang.test.behavior.DragMouseStatement__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +18,7 @@ public class check_DragMouseStatement_NonTypesystemRule extends AbstractNonTypes
   public check_DragMouseStatement_NonTypesystemRule() {
   }
   public void applyRule(final SNode dragMouseStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (DragMouseStatement_BehaviorDescriptor.getPressMouseStatement_id3CVcUJxN49_.invoke(dragMouseStatement) == null) {
+    if (DragMouseStatement__BehaviorDescriptor.getPressMouseStatement_id3CVcUJxN49_.invoke(dragMouseStatement) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(dragMouseStatement, "Drag Mouse statement should be located inside Press Mouse statement", "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "4196004291146540914", null, errorTarget);

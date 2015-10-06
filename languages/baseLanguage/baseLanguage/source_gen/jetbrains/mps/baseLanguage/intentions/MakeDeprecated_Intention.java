@@ -13,8 +13,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -47,7 +47,7 @@ public final class MakeDeprecated_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (IDeprecatable_BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
+      if ((boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
         return "Remove Deprecation";
       } else {
         return "Deprecate";
@@ -55,11 +55,11 @@ public final class MakeDeprecated_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (IDeprecatable_BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
-        IBLDeprecatable_BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invoke(node);
+      if ((boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
+        IBLDeprecatable__BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invoke(node);
       } else {
         ModuleDependencyUtils.addDependencyOnJavaDocIfMissing(SNodeOperations.getModel(node));
-        IBLDeprecatable_BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(node);
+        IBLDeprecatable__BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(node);
       }
     }
     @Override

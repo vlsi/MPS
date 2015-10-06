@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="DummyBlock_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" />
+    </file>
+    <file name="ManyStatements_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

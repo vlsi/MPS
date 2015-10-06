@@ -14,11 +14,11 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
 
 public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptFunctionParameter_NonTypesystemRule() {
@@ -32,12 +32,12 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       }
     } else {
       final SAbstractConcept parameterConcept = SNodeOperations.getConcept(parameter);
-      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction_BehaviorDescriptor.getParameters_idhEwIGRM.invoke(conceptFunction)).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(conceptFunction)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(parameterConcept), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)));
         }
       });
-      if (Sequence.fromIterable(seq).isEmpty() && ConceptFunctionParameter_BehaviorDescriptor.needConceptFunction_idhZKliUO.invoke(parameter)) {
+      if (Sequence.fromIterable(seq).isEmpty() && (boolean) ConceptFunctionParameter__BehaviorDescriptor.needConceptFunction_idhZKliUO.invoke(parameter)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "not applicable in this context", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313958459", null, errorTarget);

@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myMoneyLiteral_BehaviorDescriptor = new MoneyLiteral_BehaviorDescriptor();
-  private final BHDescriptor myMoneyType_BehaviorDescriptor = new MoneyType_BehaviorDescriptor();
-  private final BHDescriptor myMoneyCreator_BehaviorDescriptor = new MoneyCreator_BehaviorDescriptor();
-  private final BHDescriptor myMoneyGetCurrencyMethodCall_BehaviorDescriptor = new MoneyGetCurrencyMethodCall_BehaviorDescriptor();
+  private final BHDescriptor myMoneyLiteral__BehaviorDescriptor = new MoneyLiteral__BehaviorDescriptor();
+  private final BHDescriptor myMoneyType__BehaviorDescriptor = new MoneyType__BehaviorDescriptor();
+  private final BHDescriptor myMoneyCreator__BehaviorDescriptor = new MoneyCreator__BehaviorDescriptor();
+  private final BHDescriptor myMoneyGetCurrencyMethodCall__BehaviorDescriptor = new MoneyGetCurrencyMethodCall__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -39,13 +39,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myMoneyLiteral_BehaviorDescriptor;
+        return myMoneyLiteral__BehaviorDescriptor;
       case 1:
-        return myMoneyType_BehaviorDescriptor;
+        return myMoneyType__BehaviorDescriptor;
       case 2:
-        return myMoneyCreator_BehaviorDescriptor;
+        return myMoneyCreator__BehaviorDescriptor;
       case 3:
-        return myMoneyGetCurrencyMethodCall_BehaviorDescriptor;
+        return myMoneyGetCurrencyMethodCall__BehaviorDescriptor;
       default:
         return null;
     }

@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.ScriptKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.baseLanguage.math.behavior.MathSymbol_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.math.behavior.MathSymbol__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -123,7 +123,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_b0ego6_b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return MathSymbol_BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -292,7 +292,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_b0ego6_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return MathSymbol_BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
+        return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }

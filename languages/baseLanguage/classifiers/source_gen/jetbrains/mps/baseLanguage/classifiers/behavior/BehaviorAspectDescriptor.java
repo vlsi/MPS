@@ -12,17 +12,17 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myIClassifier_BehaviorDescriptor = new IClassifier_BehaviorDescriptor();
-  private final BHDescriptor myIMember_BehaviorDescriptor = new IMember_BehaviorDescriptor();
-  private final BHDescriptor myIClassifierPart_BehaviorDescriptor = new IClassifierPart_BehaviorDescriptor();
-  private final BHDescriptor myThisClassifierExpression_BehaviorDescriptor = new ThisClassifierExpression_BehaviorDescriptor();
-  private final BHDescriptor myBaseClassifierType_BehaviorDescriptor = new BaseClassifierType_BehaviorDescriptor();
-  private final BHDescriptor myDefaultClassifierType_BehaviorDescriptor = new DefaultClassifierType_BehaviorDescriptor();
-  private final BHDescriptor myIMemberOperation_BehaviorDescriptor = new IMemberOperation_BehaviorDescriptor();
-  private final BHDescriptor myDefaultClassifierMethodDeclaration_BehaviorDescriptor = new DefaultClassifierMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDefaultClassifierFieldDeclaration_BehaviorDescriptor = new DefaultClassifierFieldDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDefaultClassifierFieldAccessOperation_BehaviorDescriptor = new DefaultClassifierFieldAccessOperation_BehaviorDescriptor();
-  private final BHDescriptor mySuperClassifierExpresson_BehaviorDescriptor = new SuperClassifierExpresson_BehaviorDescriptor();
+  private final BHDescriptor myIClassifier__BehaviorDescriptor = new IClassifier__BehaviorDescriptor();
+  private final BHDescriptor myIMember__BehaviorDescriptor = new IMember__BehaviorDescriptor();
+  private final BHDescriptor myIClassifierPart__BehaviorDescriptor = new IClassifierPart__BehaviorDescriptor();
+  private final BHDescriptor myThisClassifierExpression__BehaviorDescriptor = new ThisClassifierExpression__BehaviorDescriptor();
+  private final BHDescriptor myBaseClassifierType__BehaviorDescriptor = new BaseClassifierType__BehaviorDescriptor();
+  private final BHDescriptor myDefaultClassifierType__BehaviorDescriptor = new DefaultClassifierType__BehaviorDescriptor();
+  private final BHDescriptor myIMemberOperation__BehaviorDescriptor = new IMemberOperation__BehaviorDescriptor();
+  private final BHDescriptor myDefaultClassifierMethodDeclaration__BehaviorDescriptor = new DefaultClassifierMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDefaultClassifierFieldDeclaration__BehaviorDescriptor = new DefaultClassifierFieldDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDefaultClassifierFieldAccessOperation__BehaviorDescriptor = new DefaultClassifierFieldAccessOperation__BehaviorDescriptor();
+  private final BHDescriptor mySuperClassifierExpresson__BehaviorDescriptor = new SuperClassifierExpresson__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -53,27 +53,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myIClassifier_BehaviorDescriptor;
+        return myIClassifier__BehaviorDescriptor;
       case 1:
-        return myIMember_BehaviorDescriptor;
+        return myIMember__BehaviorDescriptor;
       case 2:
-        return myIClassifierPart_BehaviorDescriptor;
+        return myIClassifierPart__BehaviorDescriptor;
       case 3:
-        return myThisClassifierExpression_BehaviorDescriptor;
+        return myThisClassifierExpression__BehaviorDescriptor;
       case 4:
-        return myBaseClassifierType_BehaviorDescriptor;
+        return myBaseClassifierType__BehaviorDescriptor;
       case 5:
-        return myDefaultClassifierType_BehaviorDescriptor;
+        return myDefaultClassifierType__BehaviorDescriptor;
       case 6:
-        return myIMemberOperation_BehaviorDescriptor;
+        return myIMemberOperation__BehaviorDescriptor;
       case 7:
-        return myDefaultClassifierMethodDeclaration_BehaviorDescriptor;
+        return myDefaultClassifierMethodDeclaration__BehaviorDescriptor;
       case 8:
-        return myDefaultClassifierFieldDeclaration_BehaviorDescriptor;
+        return myDefaultClassifierFieldDeclaration__BehaviorDescriptor;
       case 9:
-        return myDefaultClassifierFieldAccessOperation_BehaviorDescriptor;
+        return myDefaultClassifierFieldAccessOperation__BehaviorDescriptor;
       case 10:
-        return mySuperClassifierExpresson_BehaviorDescriptor;
+        return mySuperClassifierExpresson__BehaviorDescriptor;
       default:
         return null;
     }

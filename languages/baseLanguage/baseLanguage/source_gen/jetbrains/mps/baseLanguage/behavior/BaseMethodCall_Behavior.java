@@ -4,22 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class BaseMethodCall_Behavior {
-  public static Object[] call_getActualArguments_1213877339153(SNode __thisNode__, final SModule module) {
-    return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
-      public Object select(SNode it) {
-        return Expression_BehaviorDescriptor.eval_idhEwJgmp.invoke(it, module);
-      }
-    }).toGenericArray(Object.class);
+  public static Object[] call_getActualArguments_1213877339153(SNode __thisNode__, SModule module) {
+    return BaseMethodCall__BehaviorDescriptor.getActualArguments_idhEwI$gh(__thisNode__, module);
   }
 }

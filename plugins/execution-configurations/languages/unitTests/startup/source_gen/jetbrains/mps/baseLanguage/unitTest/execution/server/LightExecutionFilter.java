@@ -25,17 +25,17 @@ public class LightExecutionFilter implements Filter {
         if (!(SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b08a01119L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable")))) {
           result[0] = new Filter.FilterException("The test concept must be an instance on ITestable concept. Test " + testNodeWrapper.getName() + " is ignored.");
         }
-        if (((Boolean) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo").getDeclarationNode()), SMethodTrimmedId.create("reOpenProject", MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"), "ThWTaQhG7P"), SNodeOperations.getModel(rootNode)))) {
+        if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo").getDeclarationNode()), SMethodTrimmedId.create("reOpenProject", MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"), "ThWTaQhG7P"), SNodeOperations.getModel(rootNode)))) {
           result[0] = new Filter.FilterException("The project properties given in the TestInfo file is impossible to set in-process. Test " + testNodeWrapper.getName() + " is ignored.");
         }
         if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-          if (!(((Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
+          if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
             result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
           }
         }
         // cannot run (in-process) test methods from TestCase, which is not executable in the same process 
         if (SNodeOperations.isInstanceOf(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-          if (!(((Boolean) BHReflection.invoke(SNodeOperations.cast(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
+          if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(rootNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
             result[0] = new Filter.FilterException("The test is set not to be executed in-process. Test " + testNodeWrapper.getName() + " is ignored.");
           }
         }
