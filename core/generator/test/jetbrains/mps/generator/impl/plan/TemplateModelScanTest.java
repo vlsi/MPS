@@ -31,7 +31,6 @@ import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -71,8 +70,24 @@ public class TemplateModelScanTest {
         "r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)",
         "r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)",
         "r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)",
-
     };
+    /*
+    final String[] templateModels2Test = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<String[]>() {
+      @Override
+      public String[] compute() {
+        ArrayList<String> rv = new ArrayList<String>();
+        for (SModule m : mpsProject.getModulesWithGenerators()) {
+          if (m instanceof Generator) {
+            for (SModel tm : ((Generator) m).getOwnTemplateModels()) {
+              rv.add(tm.getReference().toString());
+            }
+          }
+        }
+        return rv.toArray(new String[rv.size()]);
+      }
+    });
+    System.out.println("Total template models:" + templateModels2Test.length);
+    */
     try {
       final TemplateModelScanner[] s1 = new TemplateModelScanner[templateModels2Test.length];
       final ModelScanner[] s2 = new ModelScanner[templateModels2Test.length];
@@ -90,6 +105,7 @@ public class TemplateModelScanTest {
             final long stop1 = System.nanoTime();
             s2[i] = new ModelScanner();
             s2[i].scan(m);
+//            s2[i].scanInLegacyMode(m);
             final long end = System.nanoTime();
             s1Dur[i] = stop1 - start;
             s2Dur[i] = end - stop1;

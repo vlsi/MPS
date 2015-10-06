@@ -16,10 +16,12 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.RuleUtil;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -62,6 +64,29 @@ public final class ModelScanner {
     return myQueryLanguages;
   }
 
+  /**
+   * Compatibility code, do not use.
+   * Legacy TemplateModelScanner used to add j.m.lang.generator to query languages if there's at least one node in template model,
+   * likely to force generation of QueriesGenerated. Shall check if everything is ok if QueriesGenerated is missing,
+   * but templates/rules are present (e.g. there might be an MC with a drop rule that doesn't require any query).
+   * Also shall check generated generators case, if they are ok (i.e. TemplateModel or whatever else needed get generated)
+   *
+   * Another trick TemplateModelScanner used to do is to drop lang.generator from target languages, likely as a quick-n-dirty
+   * way not to fail in case there are errors in the scanner. Generally, lang.generator shall not pop up in target languages,
+   * provided there are no errors in the TMS implementation, and we are not targeting template language.
+   *
+   * Drop once there's no use of this method.
+   */
+  @ToRemove(version = 0)
+  public ModelScanner scanInLegacyMode(SModel model) {
+    scan(model);
+
+    if (model.getRootNodes().iterator().hasNext()) {
+      myQueryLanguages.add(BootstrapLanguages.getGeneratorLang());
+    }
+    return this;
+  }
+
   public ModelScanner scan(SModel model) {
 //    assert SModelStereotype.isGeneratorModel(model);
     FastNodeFinder fnf = FastNodeFinderManager.get(model);
@@ -88,6 +113,11 @@ public final class ModelScanner {
 
     // MappingScript_CodeBlock is subclass of TemplateQueryBase
     processQueryNodes(fnf.getNodes(RuleUtil.concept_TemplateQueryBase, true));
+    //
+    // if we use patterns (e.g, in pattern reduction rule), add appropriate language then
+    if (!fnf.getNodes(RuleUtil.concept_PatternExpression, true).isEmpty()) {
+      myQueryLanguages.add(RuleUtil.getPatternLanguage());
+    }
     return this;
   }
 
