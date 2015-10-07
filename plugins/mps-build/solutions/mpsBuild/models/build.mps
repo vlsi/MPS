@@ -9732,11 +9732,6 @@
             </node>
           </node>
         </node>
-        <node concept="1yeLz9" id="6JpuGiQxyyw" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.lang.migration.util#7417095922908537044" />
-          <property role="3LESm3" value="7cccd7ab-9ecd-44ec-87ef-9caf1c150e83" />
-          <property role="2GAjPV" value="false" />
-        </node>
         <node concept="1E0d5M" id="6JpuGiQxyz1" role="1E1XAP">
           <ref role="1E0d5P" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
         </node>
@@ -19780,11 +19775,6 @@
             </node>
           </node>
         </node>
-      </node>
-      <node concept="1yeLz9" id="27DL58Tz06X" role="1TViLv">
-        <property role="TrG5h" value="jetbrains.mps.vcs.mergehints#7313573869697832621" />
-        <property role="3LESm3" value="d80ca598-a981-465d-8e11-8c5532ebbad9" />
-        <property role="2GAjPV" value="false" />
       </node>
     </node>
     <node concept="398rNT" id="1lMM4owFq60" role="1l3spd">

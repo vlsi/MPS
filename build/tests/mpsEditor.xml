@@ -152,26 +152,15 @@
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testDefaultEditor.jar" />
     </jar>
-    <jar destfile="${build.layout}/languages/testDefaultEditor-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testDefaultEditor#938834323431407324" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels">
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/testDefaultEditor-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testDefaultEditor-languages-testDefaultEditor-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/testMoveElements.jar" />
@@ -203,26 +192,15 @@
       <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testMoveElements.jar" />
     </jar>
-    <jar destfile="${build.layout}/languages/testMoveElements-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testMoveElements#7465696304914465848" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-languageModels">
       <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/testMoveElements-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/testMoveElements.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testMoveElements-languages-testMoveElements-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/testSpaceCompletion.jar" />
@@ -254,26 +232,15 @@
       <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testSpaceCompletion.jar" />
     </jar>
-    <jar destfile="${build.layout}/languages/testSpaceCompletion-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testSpaceCompletion-languages-testSpaceCompletion-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testSpaceCompletion-languages-testSpaceCompletion-languageModels">
       <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/testSpaceCompletion-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/testSpaceCompletion.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testSpaceCompletion-languages-testSpaceCompletion-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testSpaceCompletion-languages-testSpaceCompletion-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.multiple.testLanguage.jar" />
@@ -605,7 +572,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.actions.testLanguage, java.compile.jetbrains.mps.lang.editor.tableTests, java.compile.testDefaultEditor, java.compile.testDefaultEditor#938834323431407324, java.compile.testMoveElements, java.compile.testMoveElements#7465696304914465848, java.compile.testSpaceCompletion, java.compile.testSpaceCompletion#3586175963764950873, java.compile.jetbrains.mps.lang.editor.styleTests, java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.table.tests, java.compile.jetbrains.mps.lang.actions.test, java.compile.jetbrains.mps.baseLanguage.test, java.compile.jetbrains.mps.lang.editor.multiple.tests, java.compile.jetbrains.mps.lang.editor.tests" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.lang.actions.testLanguage, java.compile.jetbrains.mps.lang.editor.tableTests, java.compile.testDefaultEditor, java.compile.testMoveElements, java.compile.testSpaceCompletion, java.compile.jetbrains.mps.lang.editor.styleTests, java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.table.tests, java.compile.jetbrains.mps.lang.actions.test, java.compile.jetbrains.mps.baseLanguage.test, java.compile.jetbrains.mps.lang.editor.multiple.tests, java.compile.jetbrains.mps.lang.editor.tests" />
   
   <target name="processResources" />
   
@@ -867,48 +834,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.testDefaultEditor#938834323431407324" depends="java.compile.testDefaultEditor, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testDefaultEditor#938834323431407324" />
-    <javac2 destdir="${build.tmp}/java/out/testDefaultEditor#938834323431407324" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testDefaultEditor" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testDefaultEditor#938834323431407324">
-      <fileset dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.testMoveElements" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testMoveElements" />
@@ -954,52 +879,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.testMoveElements#7465696304914465848" depends="java.compile.testMoveElements, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testMoveElements#7465696304914465848" />
-    <javac2 destdir="${build.tmp}/java/out/testMoveElements#7465696304914465848" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testMoveElements" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testMoveElements#7465696304914465848">
-      <fileset dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.testSpaceCompletion" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSpaceCompletion" />
@@ -1042,52 +921,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/testSpaceCompletion">
       <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.testSpaceCompletion#3586175963764950873" depends="java.compile.testSpaceCompletion, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873" />
-    <javac2 destdir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testSpaceCompletion" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873">
-      <fileset dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1683,14 +1516,11 @@
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" />
     <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
     <delete dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
     <delete dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/bl.test/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/editor.test/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/bl.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/actions.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/editor.table.test/test_gen" />
