@@ -547,7 +547,6 @@
       <ref role="30HIoZ" to="sroc:4NbWtCFCvTH" resolve="Bean" />
       <ref role="3lhOvi" node="3EgJbItDhZl" resolve="BeanClass" />
     </node>
-    <node concept="n94m4" id="58Wq7fcwtZE" role="lGtFl" />
   </node>
 </model>
 

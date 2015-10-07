@@ -48,12 +48,14 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -65,6 +67,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -120,14 +123,24 @@ class GenerationSession {
     // create a plan
     GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
     ttrace.push("analyzing dependencies", false);
-    Collection<String> additionalLanguages =
-        parametersProvider instanceof GenerationParametersProviderEx
-            ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
-            : null;
     ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
-    myGenerationPlan = customPlan != null
-        ? new GenerationPlan(myOriginalInputModel, customPlan)
-        : new GenerationPlan(myOriginalInputModel, additionalLanguages);
+    if (customPlan != null) {
+      myGenerationPlan = new GenerationPlan(myOriginalInputModel, customPlan);
+    } else {
+      Collection<String> additionalLanguages =
+          parametersProvider instanceof GenerationParametersProviderEx
+              ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
+              : null;
+
+      List<SLanguage> extraLanguages = null;
+      if (additionalLanguages != null && !additionalLanguages.isEmpty()) {
+        extraLanguages = new ArrayList<SLanguage>(additionalLanguages.size());
+        for (String l : additionalLanguages) {
+          extraLanguages.add(MetaAdapterFactoryByName.getLanguage(l));
+        }
+      }
+      myGenerationPlan = new GenerationPlan(myOriginalInputModel, extraLanguages);
+    }
     if (!checkGenerationPlan(myGenerationPlan)) {
       if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
@@ -647,11 +660,16 @@ class GenerationSession {
   }
 
   private void printGenerationStepData(SModel inputModel) {
-    List<String> references = new ArrayList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel));
-    Collections.sort(references);
+    List<SLanguage> references = new ArrayList<SLanguage>(ModelContentUtil.getUsedLanguages(inputModel));
+    Collections.sort(references, new Comparator<SLanguage>() {
+      @Override
+      public int compare(SLanguage l1, SLanguage l2) {
+        return l1.getQualifiedName().compareTo(l2.getQualifiedName());
+      }
+    });
     myLogger.info("languages used:");
-    for (String reference : references) {
-      myLogger.info("    " + reference);
+    for (SLanguage lang : references) {
+      myLogger.info("    " + lang);
     }
     printMappingConfigurations("apply mapping configurations:", myGenerationPlan.getMappingConfigurations(myMajorStep));
   }

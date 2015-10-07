@@ -286,6 +286,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
@@ -303,6 +306,10 @@
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
@@ -2088,6 +2095,25 @@
       </node>
       <node concept="35c_gC" id="6pv6r6HKFjO" role="33vP2m">
         <ref role="35c_gD" to="tpf8:6pv6r6HKtLr" resolve="PersistGeneration" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4ywU$oxdg2L" role="jymVt" />
+    <node concept="Wx3nA" id="4ywU$oxdc7Z" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="concept_PatternExpression" />
+      <node concept="3Tm1VV" id="4ywU$oxdc80" role="1B3o_S" />
+      <node concept="3uibUv" id="4ywU$oxdc81" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="4ywU$oxdc82" role="33vP2m">
+        <ref role="35c_gD" to="tp3t:gyDMOuh" resolve="PatternExpression" />
+      </node>
+      <node concept="z59LJ" id="4ywU$oxdgZN" role="lGtFl">
+        <node concept="TZ5HA" id="4ywU$oxdgZO" role="TZ5H$">
+          <node concept="1dT_AC" id="4ywU$oxdgZP" role="1dT_Ay">
+            <property role="1dT_AB" value="expression from lang.pattern we utilize e.g. in PatternRules (perhaps, somewhere else, too?)" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4Eh_7JwtesV" role="jymVt" />
@@ -5145,6 +5171,26 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="6xQoLnhytc6" role="1B3o_S" />
+    </node>
+    <node concept="2YIFZL" id="4ywU$oxd5K4" role="jymVt">
+      <property role="TrG5h" value="getPatternLanguage" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="4ywU$oxd5K7" role="3clF47">
+        <node concept="3cpWs6" id="4ywU$oxd6GP" role="3cqZAp">
+          <node concept="pHN19" id="4ywU$oxd6Oh" role="3cqZAk">
+            <node concept="2V$Bhx" id="4ywU$oxd6OH" role="2V$M_3">
+              <property role="2V$B1T" value="d4615e3b-d671-4ba9-af01-2b78369b0ba7" />
+              <property role="2V$B1Q" value="jetbrains.mps.lang.pattern" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4ywU$oxd4Sq" role="1B3o_S" />
+      <node concept="3uibUv" id="4ywU$oxd5K2" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="7f3ulFtx2Ai">

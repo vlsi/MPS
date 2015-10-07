@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,9 +23,12 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
@@ -52,11 +55,11 @@ public class GenerationPlan {
   private TemplateSwitchGraph myTemplateSwitchGraph;
 
   public GenerationPlan(@NotNull SModel inputModel) {
-    this(inputModel, (Collection<String>) null);
+    this(inputModel, (Collection<SLanguage>) null);
   }
 
-  public GenerationPlan(@NotNull SModel inputModel, Collection<String> additionalLanguages) {
-    myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
+  public GenerationPlan(@NotNull SModel inputModel, @Nullable Collection<SLanguage> additionalLanguages) {
+    myInputName = NameUtil.getModelLongName(inputModel);
     try {
       EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
 
@@ -70,12 +73,12 @@ public class GenerationPlan {
       initTemplateModels();
     } catch (Throwable t) {
       LOG.error(null, t);
-      throw new RuntimeException("Couldn't compute generation steps for model '" + jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel) + "'", t);
+      throw new RuntimeException("Couldn't compute generation steps for model '" + myInputName + "'", t);
     }
   }
 
   public GenerationPlan(@NotNull SModel inputModel, @NotNull ModelGenerationPlan plan) {
-    myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
+    myInputName = NameUtil.getModelLongName(inputModel);
     myGenerators = new HashSet<TemplateModule>();
     myPlan = plan.getSteps();
     for (List<TemplateMappingConfiguration> step : myPlan) {

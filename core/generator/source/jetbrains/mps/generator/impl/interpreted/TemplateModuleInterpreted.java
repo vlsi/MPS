@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -96,15 +96,6 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   }
 
   @Override
-  public Collection<String> getUsedLanguages() {
-    Set<String> languages = new HashSet<String>();
-    for (SModel templateModel : generator.getOwnTemplateModels()) {
-      languages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(templateModel));
-    }
-    return languages;
-  }
-
-  @Override
   public String getAlias() {
     return generator.getAlias();
   }
@@ -137,8 +128,12 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   }
 
   @Override
-  public Set<SLanguage> getTargetLanguages() {
-    return super.getTargetLanguages();
+  public Collection<SLanguage> getTargetLanguages() {
+    ModelScanner ms = new ModelScanner();
+    for (SModel m : generator.getOwnTemplateModels()) {
+      ms.scan(m);
+    }
+    return ms.getTargetLanguages();
   }
 
   private Collection<Pair<SDependencyScope, TemplateModule>> getReferencedGenerators() {

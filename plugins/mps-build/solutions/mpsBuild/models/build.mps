@@ -6702,11 +6702,6 @@
         <property role="TrG5h" value="jetbrains.mps.baseLanguage.jdk8" />
         <property role="3LESm3" value="fdcdc48f-bfd8-4831-aa76-5abac2ffa010" />
         <property role="2GAjPV" value="false" />
-        <node concept="1yeLz9" id="7iiyGQ7dLQM" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.baseLanguage.jdk8#1719162360409737186" />
-          <property role="3LESm3" value="297397fa-e9d7-48f3-8e06-e90e2a1e0498" />
-          <property role="2GAjPV" value="false" />
-        </node>
         <node concept="1SiIV0" id="7iiyGQ7dLQP" role="3bR37C">
           <node concept="1Busua" id="7iiyGQ7dLQQ" role="1SiIV1">
             <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />

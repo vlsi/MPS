@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -34,8 +36,9 @@ public final class PatternTest__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getTestCase_idhGBgWVd = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTestCase").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBgWVd").registry(REGISTRY).build();
   public static final SMethod<String> getTestName_idhGBohAB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTestName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGBohAB").registry(REGISTRY).build();
   public static final SMethod<Boolean> isMpsStartRequired_id2RMg39tmiFh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isMpsStartRequired").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2RMg39tmiFh").registry(REGISTRY).build();
+  public static final SMethod<Boolean> suppress_id2WmWrdnSpX7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("suppress").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2WmWrdnSpX7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPatternTestName_idlS$o0er$H8, getTestSet_idhGB2z8L, getClassName_idhGBnqtL, getTestMethods_id1RfJDyhAUar, getTestCase_idhGBgWVd, getTestName_idhGBohAB, isMpsStartRequired_id2RMg39tmiFh);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPatternTestName_idlS$o0er$H8, getTestSet_idhGB2z8L, getClassName_idhGBnqtL, getTestMethods_id1RfJDyhAUar, getTestCase_idhGBgWVd, getTestName_idhGBohAB, isMpsStartRequired_id2RMg39tmiFh, suppress_id2WmWrdnSpX7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -64,6 +67,10 @@ public final class PatternTest__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean isMpsStartRequired_id2RMg39tmiFh(@NotNull SNode __thisNode__) {
     return true;
+  }
+  /*package*/ static boolean suppress_id2WmWrdnSpX7(@NotNull SNode __thisNode__, SNode child) {
+    // any child under nodeToMatch is of no interest for us 
+    return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb09L, "nodeToMatch")) != null) && ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNodeAncestors(child, null, true)).contains(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb08L, 0x78d6da5e3799eb09L, "nodeToMatch")));
   }
 
   /*package*/ PatternTest__BehaviorDescriptor() {
@@ -96,6 +103,8 @@ public final class PatternTest__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((String) getTestName_idhGBohAB(node));
       case 6:
         return (T) ((Boolean) isMpsStartRequired_id2RMg39tmiFh(node));
+      case 7:
+        return (T) ((Boolean) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -1668,7 +1668,7 @@
     <property role="TrG5h" value="MarshalFunction" />
     <property role="3GE5qa" value="crossmodel" />
     <property role="1pbfSe" value="245104387" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
   <node concept="1TIwiD" id="21N1KFSD2Ix">
     <property role="TrG5h" value="GeneratorInternal_ReferenceDescriptor" />
@@ -1761,7 +1761,7 @@
     <property role="TrG5h" value="UnmarshalFunction" />
     <property role="3GE5qa" value="crossmodel" />
     <property role="1pbfSe" value="245110948" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
   <node concept="1TIwiD" id="7PoJpZpMbzb">
     <property role="3GE5qa" value="crossmodel.vault" />

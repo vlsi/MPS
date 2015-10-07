@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,30 +18,28 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import jetbrains.mps.library.contributor.LibDescriptor;
 
 /**
  * Internal consistency check of module dependencies between different layers of MPS hierarchy:
@@ -49,7 +47,9 @@ import jetbrains.mps.library.contributor.LibDescriptor;
  */
 public class ProjectMPSDependenciesTest extends CoreMpsTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
-  private boolean myFailed = false;
+
+  @Rule
+  public final ErrorCollector myErrors = new ErrorCollector();
 
   @BeforeClass
   public static void beforeTest() {
@@ -60,15 +60,14 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   public void depsAreValid() {
     LOG.info("ADDING CORE CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(getCorePaths());
-    checkDeps();
+    checkDeps("CORE");
     LOG.info("ADDING WORKBENCH CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
-    checkDeps();
+    checkDeps("WORKBENCH");
     LOG.info("ADDING PLUGINS CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(Collections.singletonList(PathManager.getPreInstalledPluginsPath()));
     LOG.info("FINISHED : currently " + getModulesCount() + " modules");
-    checkDeps();
-    Assert.assertFalse("Some dependencies are invalid", myFailed);
+    checkDeps("PLUGIN");
   }
 
   private int getModulesCount() {
@@ -99,7 +98,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
     LibraryInitializer.getInstance().load(Collections.singletonList(contributor));
   }
 
-  private void checkDeps() {
+  private void checkDeps(final String levelIndicator) {
     final ModulesWatcher modulesWatcher = getModulesWatcher();
     final SRepository repository = getRepository();
     repository.getModelAccess().runWriteAction(new Runnable() {
@@ -107,7 +106,8 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
       public void run() {
         for (SModuleReference module : modulesWatcher.getAllModules()) {
           if (modulesWatcher.isModuleInvalid(module, true)) {
-            myFailed = true;
+            final String msg = String.format("Invalid dependencies (%s) for module %s", levelIndicator, module.getModuleName());
+            myErrors.addError(new AssertionError(msg));
           }
         }
       }

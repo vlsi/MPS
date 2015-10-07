@@ -39,7 +39,6 @@
         <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" fqName="jetbrains.mps.lang.sharedConcepts" version="0" />
         <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="2" />
         <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
-        <language id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" fqName="jetbrains.mps.transformation.test.inputLang" version="0" />
         <language id="157a9668-bf58-417b-893e-53d86388dc56" fqName="jetbrains.mps.transformation.test.outputLang" version="0" />
       </languageVersions>
       <mapping-priorities />

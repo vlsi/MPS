@@ -7,6 +7,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
+public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public boolean virtual_canRunInProcess_6436735966448788391(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
@@ -43,6 +44,9 @@ public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescript
     return null;
   }
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
+  }
+  public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode child) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
 

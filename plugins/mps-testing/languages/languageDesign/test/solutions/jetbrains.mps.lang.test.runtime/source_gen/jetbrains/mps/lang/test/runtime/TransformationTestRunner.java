@@ -58,7 +58,7 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   private void startMps() {
-    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withDefaultPlugins());
     clearSystemClipboard();
     readSystemMacro();
   }

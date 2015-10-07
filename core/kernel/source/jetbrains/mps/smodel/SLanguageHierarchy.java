@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -34,10 +35,18 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public class SLanguageHierarchy {
+  private final LanguageRegistry myRegistry;
   private final Collection<SLanguage> myLanguages;
 
-  public SLanguageHierarchy(@NotNull Collection<SLanguage> languages) {
+  public SLanguageHierarchy(@NotNull LanguageRegistry languageRegistry, @NotNull Collection<SLanguage> languages) {
+    myRegistry = languageRegistry;
     myLanguages = languages;
+  }
+
+  @Deprecated
+  @ToRemove(version = 0)
+  public SLanguageHierarchy(@NotNull Collection<SLanguage> languages) {
+    this(LanguageRegistry.getInstance(), languages);
   }
 
   public Collection<SLanguage> getInitial() {
@@ -53,7 +62,7 @@ public class SLanguageHierarchy {
     while (!queue.isEmpty()) {
       SLanguage l = queue.removeFirst();
       if (rv.add(l)) {
-        final LanguageRuntime rt = LanguageRegistry.getInstance().getLanguage(l);
+        final LanguageRuntime rt = myRegistry.getLanguage(l);
         if (rt == null) {
           continue;
         }
@@ -72,7 +81,7 @@ public class SLanguageHierarchy {
     while (!queue.isEmpty()) {
       SLanguage l = queue.removeFirst();
       if (rv.add(l)) {
-        final LanguageRuntime rt = LanguageRegistry.getInstance().getLanguage(l);
+        final LanguageRuntime rt = myRegistry.getLanguage(l);
         if (rt == null) {
           continue;
         }

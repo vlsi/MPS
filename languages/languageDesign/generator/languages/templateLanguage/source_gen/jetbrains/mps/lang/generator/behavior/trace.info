@@ -169,7 +169,7 @@
       <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_BehaviorDescriptor" />
     </file>
     <file name="MarshalFunction_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" />
     </file>
     <file name="ModelIdentity_BehaviorDescriptor.java">
       <unit at="14,0,18,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_BehaviorDescriptor" />
@@ -307,7 +307,7 @@
       <unit at="15,0,30,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_BehaviorDescriptor" />
     </file>
     <file name="UnmarshalFunction_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_BehaviorDescriptor" />
     </file>
     <file name="VarMacro_BehaviorDescriptor.java">
       <unit at="15,0,33,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_BehaviorDescriptor" />

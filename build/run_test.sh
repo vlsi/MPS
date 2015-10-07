@@ -16,4 +16,4 @@ else
 fi
 
 #mkdir $mps_home/help
-ant -f $mps_home/build/test.xml -Dbuild.number=MPS-0 -Dversion=SNAPSHOT
+ant -f $mps_home/build/test.xml -Dbuild.number=MPS-141.2500
