@@ -27,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @see SAbstractConceptAdapter
+ */
 public abstract class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
   protected SConceptAdapter(String fqName) {
     super(fqName);
