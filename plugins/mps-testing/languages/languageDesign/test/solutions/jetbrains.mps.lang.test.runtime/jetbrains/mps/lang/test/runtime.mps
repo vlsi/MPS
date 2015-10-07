@@ -4566,9 +4566,14 @@
             <node concept="2YIFZM" id="5A5jZryZOBe" role="37vLTx">
               <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
               <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-              <node concept="2YIFZM" id="5A5jZryZOER" role="37wK5m">
-                <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+              <node concept="2OqwBi" id="74F5dZ_1Zp0" role="37wK5m">
+                <node concept="2YIFZM" id="5A5jZryZOER" role="2Oq$k0">
+                  <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
+                  <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                </node>
+                <node concept="liA8E" id="74F5dZ_1Zsh" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:5UWB9tiBhc" resolve="withDefaultPlugins" />
+                </node>
               </node>
             </node>
           </node>
