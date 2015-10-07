@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,8 +30,9 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
     List<SNode> containers = SNodeOperations.getNodeAncestors(localMethodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode classConcept : containers) {
-      List<SNode> classifiers = new ClassifierAndSuperClassifiersScope(classConcept).getClassifiers();
-      for (SNode classifier : classifiers) {
+      Set<SNode> extendedClassifiers = ClassifierScopeUtils.getExtendedClassifiers(classConcept);
+
+      for (SNode classifier : extendedClassifiers) {
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);
       }
     }
