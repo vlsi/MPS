@@ -59,15 +59,15 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing editor");
     }
-    final Throwable[] throwable = new Throwable[1];
+    final Throwable[] ts = new Throwable[1];
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
         public void run() {
           try {
             BaseEditorTestBody.this.doInitEditor(before, after);
-          } catch (Throwable e) {
-            throwable[0] = e;
+          } catch (Throwable t) {
+            ts[0] = t;
           }
         }
       });
@@ -76,8 +76,8 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     } catch (InvocationTargetException e) {
       throw new RuntimeException(e);
     }
-    if (throwable[0] != null) {
-      throw new RuntimeException("Throwable while initializing the editor ", throwable[0]);
+    if (ts[0] != null) {
+      throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
     return this.myEditor;
   }
@@ -155,29 +155,45 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       this.checkAssertion();
       dispose();
     } finally {
+      final Throwable[] ts = new Throwable[1];
       myProject.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
-          UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
-          MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(BaseEditorTestBody.this.myBefore);
-          undoManager.clearUndoRedoQueueInTests(file);
+          try {
+            UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+            MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(BaseEditorTestBody.this.myBefore);
+            undoManager.clearUndoRedoQueueInTests(file);
+          } catch (Throwable t) {
+            ts[0] = t;
+          }
         }
       });
+      if (ts[0] != null) {
+        throw new RuntimeException("Failure during editor test execution", ts[0]);
+      }
     }
   }
 
   public abstract void testMethodImpl() throws Exception;
 
   private void dispose() throws InterruptedException, InvocationTargetException {
+    final Throwable[] ts = new Throwable[1];
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         myProject.getModelAccess().runWriteAction(new Runnable() {
           public void run() {
-            myFileNodeEditor.dispose();
-            myFileNodeEditor = null;
+            try {
+              myFileNodeEditor.dispose();
+              myFileNodeEditor = null;
+            } catch (Throwable t) {
+              ts[0] = t;
+            }
           }
         });
       }
     });
+    if (ts[0] != null) {
+      throw new RuntimeException("Failure during test disposal", ts[0]);
+    }
   }
 
   private MPSFileNodeEditor openEditor() {
@@ -211,23 +227,31 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   protected void invokeIntention(final String name, final SNode node) throws InterruptedException, InvocationTargetException {
+    final Throwable[] ts = new Throwable[1];
     runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            myEditor.getEditorContext().select(node);
-            IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-            query.setCurrentNodeOnly(true);
-            Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myEditor.getEditorContext());
-            for (Pair<IntentionExecutable, SNode> intention : intentions) {
-              if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
-                intention.o1.execute(intention.o2, myEditor.getEditorContext());
+            try {
+              myEditor.getEditorContext().select(node);
+              IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+              query.setCurrentNodeOnly(true);
+              Collection<Pair<IntentionExecutable, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, myEditor.getEditorContext());
+              for (Pair<IntentionExecutable, SNode> intention : intentions) {
+                if (intention.o1.getDescriptor().getPersistentStateKey().equals(name)) {
+                  intention.o1.execute(intention.o2, myEditor.getEditorContext());
+                }
               }
+            } catch (Throwable t) {
+              ts[0] = t;
             }
           }
         });
       }
     });
+    if (ts[0] != null) {
+      throw new RuntimeException("Failure during intention invoke", ts[0]);
+    }
   }
 
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
@@ -260,11 +284,19 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         return myFileNodeEditor;
       }
     });
+    final Throwable[] ts = new Throwable[1];
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
-        runnable.run();
+        try {
+          runnable.run();
+        } catch (Throwable t) {
+          ts[0] = t;
+        }
       }
     });
+    if (ts[0] != null) {
+      throw new RuntimeException("Failure during editor test execution", ts[0]);
+    }
     flushEDTEvents();
     // some actions (Copy/Paste) are running one more command later 
     flushEDTEvents();
