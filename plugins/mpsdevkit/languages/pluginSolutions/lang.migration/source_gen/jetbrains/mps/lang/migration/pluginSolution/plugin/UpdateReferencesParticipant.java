@@ -4,6 +4,7 @@ package jetbrains.mps.lang.migration.pluginSolution.plugin;
 
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant.NamedNodeReference;
+import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -28,6 +29,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference> {
+
+  public static class UpdateReferencesParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public UpdateReferencesParticipant_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new UpdateReferencesParticipant();
+    }
+  }
 
   public static class NamedNodeReference extends MultiTuple._2<SNodeReference, String> {
     public NamedNodeReference() {
@@ -82,7 +92,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
       } else {
         usages = Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return eq_k8iioh_a0a0a0a0a0a0a0a4a0a7(it.getTargetNodeReference(), initialState.reference());
+            return eq_k8iioh_a0a0a0a0a0a0a0a4a0a9(it.getTargetNodeReference(), initialState.reference());
           }
         }).toListSequence();
       }
@@ -128,7 +138,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public NamedNodeReference deserializeFinalState(SNode serialized) {
     return new NamedNodeReference(AbstractNodeReference_BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
   }
-  private static boolean eq_k8iioh_a0a0a0a0a0a0a0a4a0a7(Object a, Object b) {
+  private static boolean eq_k8iioh_a0a0a0a0a0a0a0a4a0a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -62,7 +62,7 @@ public class SelectOptionsDialog extends RefactoringDialog {
   @Override
   protected void doRefactoringAction() {
     mySelected = ListSequence.fromList(new ArrayList<Integer>());
-    for (int i = 0; i < ListSequence.fromList(myCheckBoxes).count();) {
+    for (int i = 0; i < ListSequence.fromList(myCheckBoxes).count(); i++) {
       if (ListSequence.fromList(myCheckBoxes).getElement(i).isSelected()) {
         ListSequence.fromList(mySelected).addElement(i);
       }
