@@ -151,7 +151,9 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
+        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
+      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -6027,7 +6029,10 @@
       </node>
       <node concept="_YKpA" id="2SJclOrOZMm" role="3clF45">
         <node concept="3uibUv" id="2SJclOrOZMn" role="_ZDj9">
-          <ref role="3uigEE" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+          <ref role="3uigEE" to="lfzw:FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+          <node concept="2pR195" id="FLkVtyQwoh" role="11_B2D">
+            <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+          </node>
           <node concept="2pR195" id="2SJclOrQQWC" role="11_B2D">
             <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
           </node>
@@ -6237,7 +6242,10 @@
                           <node concept="3cpWsn" id="FLkVtyt2nV" role="3cpWs9">
                             <property role="TrG5h" value="change" />
                             <node concept="3uibUv" id="FLkVtyt2nT" role="1tU5fm">
-                              <ref role="3uigEE" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+                              <ref role="3uigEE" to="lfzw:FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                              <node concept="2pR195" id="FLkVtyQpvK" role="11_B2D">
+                                <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+                              </node>
                               <node concept="2pR195" id="FLkVtyt2ne" role="11_B2D">
                                 <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
                               </node>
@@ -6247,7 +6255,28 @@
                                 <node concept="1Y3b0j" id="FLkVtyt2nY" role="YeSDq">
                                   <property role="2bfB8j" value="true" />
                                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                                  <ref role="1Y3XeK" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+                                  <ref role="1Y3XeK" to="lfzw:FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                                  <node concept="3clFb_" id="FLkVtyQt7w" role="jymVt">
+                                    <property role="1EzhhJ" value="false" />
+                                    <property role="TrG5h" value="getParticipant" />
+                                    <node concept="3uibUv" id="FLkVtyQt7L" role="3clF45">
+                                      <ref role="3uigEE" to="lfzw:3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
+                                      <node concept="2pR195" id="FLkVtyQt7M" role="11_B2D">
+                                        <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+                                      </node>
+                                      <node concept="2pR195" id="FLkVtyQt7N" role="11_B2D">
+                                        <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+                                      </node>
+                                    </node>
+                                    <node concept="3Tm1VV" id="FLkVtyQt7y" role="1B3o_S" />
+                                    <node concept="3clFbS" id="FLkVtyQt7O" role="3clF47">
+                                      <node concept="3clFbF" id="FLkVtyQuIm" role="3cqZAp">
+                                        <node concept="Xjq3P" id="FLkVtyQuIl" role="3clFbG">
+                                          <ref role="1HBi2w" node="2SJclOrOQfV" resolve="UpdateReferencesParticipant" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                   <node concept="3Tm1VV" id="FLkVtyt2nZ" role="1B3o_S" />
                                   <node concept="3clFb_" id="FLkVtyt2o0" role="jymVt">
                                     <property role="1EzhhJ" value="false" />
@@ -6387,6 +6416,9 @@
                                         </node>
                                       </node>
                                     </node>
+                                  </node>
+                                  <node concept="2pR195" id="FLkVtyQrg2" role="2Ghqu4">
+                                    <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
                                   </node>
                                   <node concept="2pR195" id="FLkVtyt2oQ" role="2Ghqu4">
                                     <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />

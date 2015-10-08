@@ -20,13 +20,13 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -122,21 +122,14 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     }
   }
 
-  public static <I, F> List<MoveNodesDefault.ChangeWrapper<I, F>> getChangesFromModel(final MoveNodeRefactoringParticipant<I, F> participant, SNode nodeToMove, Project project) {
+  public static <I, F> List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<I, F>> getChangesFromModel(MoveNodeRefactoringParticipant<I, F> participant, SNode nodeToMove, Project project) {
     I initialDataObject = participant.getDataCollector().beforeMove(nodeToMove);
-    return ListSequence.fromList(participant.getChanges(initialDataObject, project.getRepository(), project.getScope())).select(new ISelector<RefactoringParticipant.Change<F>, MoveNodesDefault.ChangeWrapper<I, F>>() {
-      public MoveNodesDefault.ChangeWrapper<I, F> select(RefactoringParticipant.Change<F> change) {
-        MoveNodesDefault.ChangeWrapper<I, F> wrapper = new MoveNodesDefault.ChangeWrapper<I, F>();
-        wrapper.myChange = change;
-        wrapper.myParticipant = participant;
-        return wrapper;
-      }
-    }).toListSequence();
+    return participant.getChanges(initialDataObject, project.getRepository(), project.getScope());
   }
 
-  public static <I, F> void confirmChangeFromModel(MoveNodesDefault.ChangeWrapper<I, F> changeWrapper, SNode movedNode, Project project, RefactoringSession refactoringSession) {
-    F finalDataObject = changeWrapper.myParticipant.getDataCollector().afterMove(movedNode);
-    changeWrapper.myChange.confirm(finalDataObject, project.getRepository(), refactoringSession);
+  public static <I, F> void confirmChangeFromModel(RefactoringParticipant.Change<I, F, MoveNodeRefactoringParticipant<I, F>> change, SNode movedNode, Project project, RefactoringSession refactoringSession) {
+    F finalDataObject = change.getParticipant().getDataCollector().afterMove(movedNode);
+    change.confirm(finalDataObject, project.getRepository(), refactoringSession);
   }
 
   @NotNull
@@ -148,10 +141,6 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     return node;
   }
 
-  public static class ChangeWrapper<I, F> {
-    public RefactoringParticipant.Change<F> myChange;
-    public MoveNodeRefactoringParticipant<I, F> myParticipant;
-  }
 
   public static void doMove(final MPSProject project, final Map<SNodeReference, NodeLocation> moveMap, final Runnable callBack) {
 
@@ -166,41 +155,41 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
 
-    Map<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> changes = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>>());
+    Map<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> changes = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>>());
     for (MoveNodeRefactoringParticipant<?, ?> participant : Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).toListSequence()) {
-      Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>> participantChanges = MapSequence.fromMap(new HashMap<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>());
+      Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>> participantChanges = MapSequence.fromMap(new HashMap<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>());
       MapSequence.fromMap(changes).put(participant, participantChanges);
       for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
         MapSequence.fromMap(participantChanges).put(nodeRef, getChangesFromModel(participant, resolveNode(nodeRef, project), project));
       }
     }
 
-    List<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>>> changesAsList = MapSequence.fromMap(changes).where(new IWhereFilter<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>>>() {
-      public boolean accept(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> it) {
+    List<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>>> changesAsList = MapSequence.fromMap(changes).where(new IWhereFilter<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>>>() {
+      public boolean accept(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> it) {
         return MapSequence.fromMap(it.value()).isNotEmpty();
       }
     }).toListSequence();
-    List<Integer> selectedOptions = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(changesAsList).select(new ISelector<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>>, String>() {
-      public String select(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> it) {
+    List<Integer> selectedOptions = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(changesAsList).select(new ISelector<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>>, String>() {
+      public String select(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> it) {
         return it.key().getDescription();
       }
     }).toListSequence(), "Select Participants");
 
-    final Map<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> selectedChanges = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>>());
+    final Map<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> selectedChanges = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>>());
     for (int i : selectedOptions) {
-      IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> mapping = ListSequence.fromList(changesAsList).getElement(i);
+      IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> mapping = ListSequence.fromList(changesAsList).getElement(i);
       MapSequence.fromMap(selectedChanges).put(mapping.key(), mapping.value());
     }
 
     SearchResults searchResults = new SearchResults();
     final Map<SNodeReference, Boolean> shouldKeep = MapSequence.fromMap(new HashMap<SNodeReference, Boolean>());
 
-    for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
-      for (IMapping<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
+    for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
+      for (IMapping<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
         MapSequence.fromMap(shouldKeep).put(nodeChanges.key(), false);
-        for (MoveNodesDefault.ChangeWrapper<?, ?> change : ListSequence.fromList(nodeChanges.value())) {
-          MapSequence.fromMap(shouldKeep).putValue(nodeChanges.key(), MapSequence.fromMap(shouldKeep).get(nodeChanges.key()) || (change.myChange.needsToPreserveOldNode()));
-          searchResults.add(change.myChange.getSearchResult());
+        for (MoveNodeRefactoringParticipant.MoveNodeChange<?, ?> change : ListSequence.fromList(nodeChanges.value())) {
+          MapSequence.fromMap(shouldKeep).putValue(nodeChanges.key(), MapSequence.fromMap(shouldKeep).get(nodeChanges.key()) || (change.needsToPreserveOldNode()));
+          searchResults.add(change.getSearchResult());
         }
       }
     }
@@ -226,9 +215,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
 
         RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
 
-        for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
-          for (IMapping<SNodeReference, List<? extends MoveNodesDefault.ChangeWrapper<?, ?>>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
-            for (MoveNodesDefault.ChangeWrapper<?, ?> change : ListSequence.fromList(nodeChanges.value())) {
+        for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
+          for (IMapping<SNodeReference, List<? extends MoveNodeRefactoringParticipant.MoveNodeChange<?, ?>>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
+            for (MoveNodeRefactoringParticipant.MoveNodeChange<?, ?> change : ListSequence.fromList(nodeChanges.value())) {
               confirmChangeFromModel(change, MapSequence.fromMap(nodesToMove).get(nodeChanges.key()), project, refactoringSession);
             }
           }

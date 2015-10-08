@@ -8,14 +8,15 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
+public interface RefactoringParticipant<InitialDataObject, FinalDataObject, RP extends RefactoringParticipant<InitialDataObject, FinalDataObject, RP>> {
 
   public String getId();
   public String getDescription();
 
-  public List<RefactoringParticipant.Change<FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, SearchScope searchScope);
+  public List<? extends RefactoringParticipant.Change<InitialDataObject, FinalDataObject, RP>> getChanges(InitialDataObject initialState, SRepository repository, SearchScope searchScope);
 
-  public static interface Change<FinalDataObject> {
+  public static interface Change<InitialDataObject, FinalDataObject, RP extends RefactoringParticipant<InitialDataObject, FinalDataObject, RP>> {
+    public RP getParticipant();
     public SearchResult getSearchResult();
     public boolean needsToPreserveOldNode();
     public void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);

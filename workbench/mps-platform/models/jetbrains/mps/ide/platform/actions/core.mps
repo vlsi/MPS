@@ -134,7 +134,6 @@
       </concept>
       <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
         <reference id="2820489544401957798" name="classifier" index="HV5vE" />
-        <child id="2820489544402271667" name="typeParameter" index="HU9BZ" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -196,7 +195,9 @@
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
-      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ" />
+      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
+        <child id="1214996921760" name="bound" index="3ztrMU" />
+      </concept>
       <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
         <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
       </concept>
@@ -1984,107 +1985,32 @@
           </node>
         </node>
         <node concept="3clFbF" id="FLkVtyHVpz" role="3cqZAp">
-          <node concept="2OqwBi" id="FLkVtyHSmN" role="3clFbG">
-            <node concept="2OqwBi" id="FLkVtyHECS" role="2Oq$k0">
-              <node concept="2OqwBi" id="FLkVtyy6ED" role="2Oq$k0">
-                <node concept="37vLTw" id="FLkVtyy6uh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="FLkVtyy3qb" resolve="participant" />
+          <node concept="2OqwBi" id="FLkVtyy6ED" role="3clFbG">
+            <node concept="37vLTw" id="FLkVtyy6uh" role="2Oq$k0">
+              <ref role="3cqZAo" node="FLkVtyy3qb" resolve="participant" />
+            </node>
+            <node concept="liA8E" id="FLkVtyy6OG" role="2OqNvi">
+              <ref role="37wK5l" node="FLkVtyPpcs" resolve="getChanges" />
+              <node concept="37vLTw" id="FLkVtyyd9J" role="37wK5m">
+                <ref role="3cqZAo" node="FLkVtyyd9C" resolve="initialDataObject" />
+              </node>
+              <node concept="2OqwBi" id="FLkVtyy7XA" role="37wK5m">
+                <node concept="37vLTw" id="FLkVtyy7Jr" role="2Oq$k0">
+                  <ref role="3cqZAo" node="FLkVtyy78u" resolve="project" />
                 </node>
-                <node concept="liA8E" id="FLkVtyy6OG" role="2OqNvi">
-                  <ref role="37wK5l" node="3KqYwoBIKej" resolve="getChanges" />
-                  <node concept="37vLTw" id="FLkVtyyd9J" role="37wK5m">
-                    <ref role="3cqZAo" node="FLkVtyyd9C" resolve="initialDataObject" />
-                  </node>
-                  <node concept="2OqwBi" id="FLkVtyy7XA" role="37wK5m">
-                    <node concept="37vLTw" id="FLkVtyy7Jr" role="2Oq$k0">
-                      <ref role="3cqZAo" node="FLkVtyy78u" resolve="project" />
-                    </node>
-                    <node concept="liA8E" id="FLkVtyy86Q" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="FLkVtyy8Ln" role="37wK5m">
-                    <node concept="37vLTw" id="FLkVtyy8yS" role="2Oq$k0">
-                      <ref role="3cqZAo" node="FLkVtyy78u" resolve="project" />
-                    </node>
-                    <node concept="liA8E" id="FLkVtyy8UV" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c4:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
-                    </node>
-                  </node>
+                <node concept="liA8E" id="FLkVtyy86Q" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                 </node>
               </node>
-              <node concept="3$u5V9" id="FLkVtyHF7E" role="2OqNvi">
-                <node concept="1bVj0M" id="FLkVtyHF7G" role="23t8la">
-                  <node concept="3clFbS" id="FLkVtyHF7H" role="1bW5cS">
-                    <node concept="3cpWs8" id="FLkVtyHFu2" role="3cqZAp">
-                      <node concept="3cpWsn" id="FLkVtyHFu3" role="3cpWs9">
-                        <property role="TrG5h" value="wrapper" />
-                        <node concept="3uibUv" id="FLkVtyHFtV" role="1tU5fm">
-                          <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                          <node concept="16syzq" id="FLkVtyHFu0" role="11_B2D">
-                            <ref role="16sUi3" node="FLkVtyy3BY" resolve="I" />
-                          </node>
-                          <node concept="16syzq" id="FLkVtyHFu1" role="11_B2D">
-                            <ref role="16sUi3" node="FLkVtyy3Ei" resolve="F" />
-                          </node>
-                        </node>
-                        <node concept="2ShNRf" id="FLkVtyHFu4" role="33vP2m">
-                          <node concept="HV5vD" id="FLkVtyHFu5" role="2ShVmc">
-                            <ref role="HV5vE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                            <node concept="16syzq" id="FLkVtyHFu6" role="HU9BZ">
-                              <ref role="16sUi3" node="FLkVtyy3BY" resolve="I" />
-                            </node>
-                            <node concept="16syzq" id="FLkVtyHFu7" role="HU9BZ">
-                              <ref role="16sUi3" node="FLkVtyy3Ei" resolve="F" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="FLkVtyHFfp" role="3cqZAp">
-                      <node concept="37vLTI" id="FLkVtyHGeh" role="3clFbG">
-                        <node concept="37vLTw" id="FLkVtyHGyH" role="37vLTx">
-                          <ref role="3cqZAo" node="FLkVtyHF7I" resolve="change" />
-                        </node>
-                        <node concept="2OqwBi" id="FLkVtyHFR8" role="37vLTJ">
-                          <node concept="37vLTw" id="FLkVtyHFu8" role="2Oq$k0">
-                            <ref role="3cqZAo" node="FLkVtyHFu3" resolve="wrapper" />
-                          </node>
-                          <node concept="2OwXpG" id="FLkVtyHG0z" role="2OqNvi">
-                            <ref role="2Oxat5" node="FLkVtyHu58" resolve="myChange" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="FLkVtyHHEg" role="3cqZAp">
-                      <node concept="37vLTI" id="FLkVtyHIGc" role="3clFbG">
-                        <node concept="37vLTw" id="FLkVtyHJcN" role="37vLTx">
-                          <ref role="3cqZAo" node="FLkVtyy3qb" resolve="participant" />
-                        </node>
-                        <node concept="2OqwBi" id="FLkVtyHI0f" role="37vLTJ">
-                          <node concept="37vLTw" id="FLkVtyHHEe" role="2Oq$k0">
-                            <ref role="3cqZAo" node="FLkVtyHFu3" resolve="wrapper" />
-                          </node>
-                          <node concept="2OwXpG" id="FLkVtyHIrp" role="2OqNvi">
-                            <ref role="2Oxat5" node="FLkVtyHv4l" resolve="myParticipant" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3cpWs6" id="FLkVtyHP3S" role="3cqZAp">
-                      <node concept="37vLTw" id="FLkVtyHPz3" role="3cqZAk">
-                        <ref role="3cqZAo" node="FLkVtyHFu3" resolve="wrapper" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="Rh6nW" id="FLkVtyHF7I" role="1bW2Oz">
-                    <property role="TrG5h" value="change" />
-                    <node concept="2jxLKc" id="FLkVtyHF7J" role="1tU5fm" />
-                  </node>
+              <node concept="2OqwBi" id="FLkVtyy8Ln" role="37wK5m">
+                <node concept="37vLTw" id="FLkVtyy8yS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="FLkVtyy78u" resolve="project" />
+                </node>
+                <node concept="liA8E" id="FLkVtyy8UV" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c4:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
                 </node>
               </node>
             </node>
-            <node concept="ANE8D" id="FLkVtyHSJ$" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -2095,13 +2021,15 @@
         <property role="TrG5h" value="F" />
       </node>
       <node concept="_YKpA" id="FLkVtyyaoA" role="3clF45">
-        <node concept="3uibUv" id="FLkVtyy9rF" role="_ZDj9">
-          <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-          <node concept="16syzq" id="FLkVtyHx2s" role="11_B2D">
-            <ref role="16sUi3" node="FLkVtyy3BY" resolve="I" />
-          </node>
-          <node concept="16syzq" id="FLkVtyHyb5" role="11_B2D">
-            <ref role="16sUi3" node="FLkVtyy3Ei" resolve="F" />
+        <node concept="3qUE_q" id="FLkVtyP$Eg" role="_ZDj9">
+          <node concept="3uibUv" id="FLkVtyKvqF" role="3qUE_r">
+            <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+            <node concept="16syzq" id="FLkVtyKEUY" role="11_B2D">
+              <ref role="16sUi3" node="FLkVtyy3BY" resolve="I" />
+            </node>
+            <node concept="16syzq" id="FLkVtyKHtS" role="11_B2D">
+              <ref role="16sUi3" node="FLkVtyy3Ei" resolve="F" />
+            </node>
           </node>
         </node>
       </node>
@@ -2110,14 +2038,23 @@
     <node concept="2YIFZL" id="FLkVtyHWQy" role="jymVt">
       <property role="TrG5h" value="confirmChangeFromModel" />
       <node concept="37vLTG" id="FLkVtyI0zn" role="3clF46">
-        <property role="TrG5h" value="changeWrapper" />
+        <property role="TrG5h" value="change" />
         <node concept="3uibUv" id="FLkVtyHWRz" role="1tU5fm">
-          <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
+          <ref role="3uigEE" node="3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
           <node concept="16syzq" id="FLkVtyHWR$" role="11_B2D">
             <ref role="16sUi3" node="FLkVtyHWRw" resolve="I" />
           </node>
           <node concept="16syzq" id="FLkVtyHWR_" role="11_B2D">
             <ref role="16sUi3" node="FLkVtyHWRx" resolve="F" />
+          </node>
+          <node concept="3uibUv" id="FLkVtyKT7X" role="11_B2D">
+            <ref role="3uigEE" node="3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
+            <node concept="16syzq" id="FLkVtyKTW2" role="11_B2D">
+              <ref role="16sUi3" node="FLkVtyHWRw" resolve="I" />
+            </node>
+            <node concept="16syzq" id="FLkVtyKUBR" role="11_B2D">
+              <ref role="16sUi3" node="FLkVtyHWRx" resolve="F" />
+            </node>
           </node>
         </node>
       </node>
@@ -2147,12 +2084,12 @@
             </node>
             <node concept="2OqwBi" id="FLkVtyHWQK" role="33vP2m">
               <node concept="2OqwBi" id="FLkVtyHWQL" role="2Oq$k0">
-                <node concept="2OqwBi" id="FLkVtyI2po" role="2Oq$k0">
+                <node concept="2OqwBi" id="FLkVtyKWXc" role="2Oq$k0">
                   <node concept="37vLTw" id="FLkVtyI27s" role="2Oq$k0">
-                    <ref role="3cqZAo" node="FLkVtyI0zn" resolve="changeWrapper" />
+                    <ref role="3cqZAo" node="FLkVtyI0zn" resolve="change" />
                   </node>
-                  <node concept="2OwXpG" id="FLkVtyI2yA" role="2OqNvi">
-                    <ref role="2Oxat5" node="FLkVtyHv4l" resolve="myParticipant" />
+                  <node concept="liA8E" id="FLkVtyKX32" role="2OqNvi">
+                    <ref role="37wK5l" node="FLkVtyKn7q" resolve="getParticipant" />
                   </node>
                 </node>
                 <node concept="liA8E" id="FLkVtyHWQN" role="2OqNvi">
@@ -2170,13 +2107,8 @@
         </node>
         <node concept="3clFbF" id="FLkVtyHWQQ" role="3cqZAp">
           <node concept="2OqwBi" id="FLkVtyIe8o" role="3clFbG">
-            <node concept="2OqwBi" id="FLkVtyId7L" role="2Oq$k0">
-              <node concept="37vLTw" id="FLkVtyId7M" role="2Oq$k0">
-                <ref role="3cqZAo" node="FLkVtyI0zn" resolve="changeWrapper" />
-              </node>
-              <node concept="2OwXpG" id="FLkVtyIdZ8" role="2OqNvi">
-                <ref role="2Oxat5" node="FLkVtyHu58" resolve="myChange" />
-              </node>
+            <node concept="37vLTw" id="FLkVtyId7M" role="2Oq$k0">
+              <ref role="3cqZAo" node="FLkVtyI0zn" resolve="change" />
             </node>
             <node concept="liA8E" id="FLkVtyIeiR" role="2OqNvi">
               <ref role="37wK5l" node="3KqYwoBILhQ" resolve="confirm" />
@@ -2289,40 +2221,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="FLkVtyxZGI" role="jymVt" />
-    <node concept="312cEu" id="FLkVtyHrBU" role="jymVt">
-      <property role="2bfB8j" value="false" />
-      <property role="TrG5h" value="ChangeWrapper" />
-      <node concept="312cEg" id="FLkVtyHu58" role="jymVt">
-        <property role="TrG5h" value="myChange" />
-        <node concept="3Tm1VV" id="FLkVtyHvNY" role="1B3o_S" />
-        <node concept="3uibUv" id="FLkVtyHufN" role="1tU5fm">
-          <ref role="3uigEE" node="3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
-          <node concept="16syzq" id="FLkVtyHuDg" role="11_B2D">
-            <ref role="16sUi3" node="FLkVtyHsfe" resolve="F" />
-          </node>
-        </node>
-      </node>
-      <node concept="312cEg" id="FLkVtyHv4l" role="jymVt">
-        <property role="TrG5h" value="myParticipant" />
-        <node concept="3Tm1VV" id="FLkVtyHvNL" role="1B3o_S" />
-        <node concept="3uibUv" id="FLkVtyHv4n" role="1tU5fm">
-          <ref role="3uigEE" node="3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
-          <node concept="16syzq" id="FLkVtyHvMD" role="11_B2D">
-            <ref role="16sUi3" node="FLkVtyHscQ" resolve="I" />
-          </node>
-          <node concept="16syzq" id="FLkVtyHv4o" role="11_B2D">
-            <ref role="16sUi3" node="FLkVtyHsfe" resolve="F" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="FLkVtyHrBV" role="1B3o_S" />
-      <node concept="16euLQ" id="FLkVtyHscQ" role="16eVyc">
-        <property role="TrG5h" value="I" />
-      </node>
-      <node concept="16euLQ" id="FLkVtyHsfe" role="16eVyc">
-        <property role="TrG5h" value="F" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="FLkVtyHr9q" role="jymVt" />
     <node concept="2YIFZL" id="3BJTP_NtTqN" role="jymVt">
       <property role="TrG5h" value="doMove" />
@@ -2417,11 +2315,11 @@
               </node>
               <node concept="3rvAFt" id="FLkVtywiuj" role="3rvSg0">
                 <node concept="_YKpA" id="FLkVtywMuV" role="3rvSg0">
-                  <node concept="3qUE_q" id="FLkVtyJrmy" role="_ZDj9">
-                    <node concept="3uibUv" id="FLkVtyItL4" role="3qUE_r">
-                      <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                      <node concept="3qTvmN" id="FLkVtyItL5" role="11_B2D" />
-                      <node concept="3qTvmN" id="FLkVtyItL6" role="11_B2D" />
+                  <node concept="3qUE_q" id="FLkVtyPUvp" role="_ZDj9">
+                    <node concept="3uibUv" id="FLkVtyPQzc" role="3qUE_r">
+                      <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                      <node concept="3qTvmN" id="FLkVtyPQzd" role="11_B2D" />
+                      <node concept="3qTvmN" id="FLkVtyPQze" role="11_B2D" />
                     </node>
                   </node>
                 </node>
@@ -2439,12 +2337,12 @@
                   <node concept="3uibUv" id="FLkVtyxtwV" role="3rvQeY">
                     <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                   </node>
-                  <node concept="_YKpA" id="FLkVtyJubm" role="3rvSg0">
-                    <node concept="3qUE_q" id="FLkVtyJubn" role="_ZDj9">
-                      <node concept="3uibUv" id="FLkVtyJubo" role="3qUE_r">
-                        <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                        <node concept="3qTvmN" id="FLkVtyJubp" role="11_B2D" />
-                        <node concept="3qTvmN" id="FLkVtyJubq" role="11_B2D" />
+                  <node concept="_YKpA" id="FLkVtyNDLh" role="3rvSg0">
+                    <node concept="3qUE_q" id="FLkVtyPYnn" role="_ZDj9">
+                      <node concept="3uibUv" id="FLkVtyPYno" role="3qUE_r">
+                        <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                        <node concept="3qTvmN" id="FLkVtyPYnp" role="11_B2D" />
+                        <node concept="3qTvmN" id="FLkVtyPYnq" role="11_B2D" />
                       </node>
                     </node>
                   </node>
@@ -2465,12 +2363,12 @@
                   <node concept="3uibUv" id="FLkVtyxvvf" role="3rvQeY">
                     <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                   </node>
-                  <node concept="_YKpA" id="FLkVtyJvFY" role="3rvSg0">
-                    <node concept="3qUE_q" id="FLkVtyJvFZ" role="_ZDj9">
-                      <node concept="3uibUv" id="FLkVtyJvG0" role="3qUE_r">
-                        <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                        <node concept="3qTvmN" id="FLkVtyJvG1" role="11_B2D" />
-                        <node concept="3qTvmN" id="FLkVtyJvG2" role="11_B2D" />
+                  <node concept="_YKpA" id="FLkVtyOAzb" role="3rvSg0">
+                    <node concept="3qUE_q" id="FLkVtyQ0o5" role="_ZDj9">
+                      <node concept="3uibUv" id="FLkVtyQ0o6" role="3qUE_r">
+                        <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                        <node concept="3qTvmN" id="FLkVtyQ0o7" role="11_B2D" />
+                        <node concept="3qTvmN" id="FLkVtyQ0o8" role="11_B2D" />
                       </node>
                     </node>
                   </node>
@@ -2480,12 +2378,12 @@
                     <node concept="3uibUv" id="FLkVtyxz8z" role="3rHrn6">
                       <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                     </node>
-                    <node concept="_YKpA" id="FLkVtyJwOF" role="3rHtpV">
-                      <node concept="3qUE_q" id="FLkVtyJwOG" role="_ZDj9">
-                        <node concept="3uibUv" id="FLkVtyJwOH" role="3qUE_r">
-                          <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                          <node concept="3qTvmN" id="FLkVtyJwOI" role="11_B2D" />
-                          <node concept="3qTvmN" id="FLkVtyJwOJ" role="11_B2D" />
+                    <node concept="_YKpA" id="FLkVtyOz7n" role="3rHtpV">
+                      <node concept="3qUE_q" id="FLkVtyQ1Uy" role="_ZDj9">
+                        <node concept="3uibUv" id="FLkVtyQ1Uz" role="3qUE_r">
+                          <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                          <node concept="3qTvmN" id="FLkVtyQ1U$" role="11_B2D" />
+                          <node concept="3qTvmN" id="FLkVtyQ1U_" role="11_B2D" />
                         </node>
                       </node>
                     </node>
@@ -2575,12 +2473,12 @@
                   <node concept="3uibUv" id="FLkVtyz9rk" role="3rvQeY">
                     <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                   </node>
-                  <node concept="_YKpA" id="FLkVtyJxWx" role="3rvSg0">
-                    <node concept="3qUE_q" id="FLkVtyJxWy" role="_ZDj9">
-                      <node concept="3uibUv" id="FLkVtyJxWz" role="3qUE_r">
-                        <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                        <node concept="3qTvmN" id="FLkVtyJxW$" role="11_B2D" />
-                        <node concept="3qTvmN" id="FLkVtyJxW_" role="11_B2D" />
+                  <node concept="_YKpA" id="FLkVtyODWL" role="3rvSg0">
+                    <node concept="3qUE_q" id="FLkVtyQ3sb" role="_ZDj9">
+                      <node concept="3uibUv" id="FLkVtyQ3sc" role="3qUE_r">
+                        <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                        <node concept="3qTvmN" id="FLkVtyQ3sd" role="11_B2D" />
+                        <node concept="3qTvmN" id="FLkVtyQ3se" role="11_B2D" />
                       </node>
                     </node>
                   </node>
@@ -2684,12 +2582,12 @@
                 <node concept="3uibUv" id="FLkVtyz$Pm" role="3rvQeY">
                   <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                 </node>
-                <node concept="_YKpA" id="FLkVtyJ$Ys" role="3rvSg0">
-                  <node concept="3qUE_q" id="FLkVtyJ$Yt" role="_ZDj9">
-                    <node concept="3uibUv" id="FLkVtyJ$Yu" role="3qUE_r">
-                      <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                      <node concept="3qTvmN" id="FLkVtyJ$Yv" role="11_B2D" />
-                      <node concept="3qTvmN" id="FLkVtyJ$Yw" role="11_B2D" />
+                <node concept="_YKpA" id="FLkVtyOHTc" role="3rvSg0">
+                  <node concept="3qUE_q" id="FLkVtyQ8Fg" role="_ZDj9">
+                    <node concept="3uibUv" id="FLkVtyQ8Fh" role="3qUE_r">
+                      <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                      <node concept="3qTvmN" id="FLkVtyQ8Fi" role="11_B2D" />
+                      <node concept="3qTvmN" id="FLkVtyQ8Fj" role="11_B2D" />
                     </node>
                   </node>
                 </node>
@@ -2704,12 +2602,12 @@
                   <node concept="3uibUv" id="FLkVtyz$Pt" role="3rvQeY">
                     <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                   </node>
-                  <node concept="_YKpA" id="FLkVtyJAHy" role="3rvSg0">
-                    <node concept="3qUE_q" id="FLkVtyJAHz" role="_ZDj9">
-                      <node concept="3uibUv" id="FLkVtyJAH$" role="3qUE_r">
-                        <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                        <node concept="3qTvmN" id="FLkVtyJAH_" role="11_B2D" />
-                        <node concept="3qTvmN" id="FLkVtyJAHA" role="11_B2D" />
+                  <node concept="_YKpA" id="FLkVtyONdV" role="3rvSg0">
+                    <node concept="3qUE_q" id="FLkVtyQ6Ga" role="_ZDj9">
+                      <node concept="3uibUv" id="FLkVtyQ6Gb" role="3qUE_r">
+                        <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                        <node concept="3qTvmN" id="FLkVtyQ6Gc" role="11_B2D" />
+                        <node concept="3qTvmN" id="FLkVtyQ6Gd" role="11_B2D" />
                       </node>
                     </node>
                   </node>
@@ -2734,12 +2632,12 @@
                     <node concept="3uibUv" id="FLkVtyzPTe" role="3rvQeY">
                       <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                     </node>
-                    <node concept="_YKpA" id="FLkVtyJCoK" role="3rvSg0">
-                      <node concept="3qUE_q" id="FLkVtyJCoL" role="_ZDj9">
-                        <node concept="3uibUv" id="FLkVtyJCoM" role="3qUE_r">
-                          <ref role="3uigEE" node="FLkVtyHrBU" resolve="MoveNodesDefault.ChangeWrapper" />
-                          <node concept="3qTvmN" id="FLkVtyJCoN" role="11_B2D" />
-                          <node concept="3qTvmN" id="FLkVtyJCoO" role="11_B2D" />
+                    <node concept="_YKpA" id="FLkVtyOSpt" role="3rvSg0">
+                      <node concept="3qUE_q" id="FLkVtyQ5gl" role="_ZDj9">
+                        <node concept="3uibUv" id="FLkVtyQ5gm" role="3qUE_r">
+                          <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+                          <node concept="3qTvmN" id="FLkVtyQ5gn" role="11_B2D" />
+                          <node concept="3qTvmN" id="FLkVtyQ5go" role="11_B2D" />
                         </node>
                       </node>
                     </node>
@@ -2863,13 +2761,8 @@
                           </node>
                         </node>
                         <node concept="2OqwBi" id="FLkVty_fSe" role="37vLTx">
-                          <node concept="2OqwBi" id="FLkVtyI_XD" role="2Oq$k0">
-                            <node concept="2GrUjf" id="FLkVty_eOp" role="2Oq$k0">
-                              <ref role="2Gs0qQ" node="FLkVty$t8Z" resolve="change" />
-                            </node>
-                            <node concept="2OwXpG" id="FLkVtyIAWA" role="2OqNvi">
-                              <ref role="2Oxat5" node="FLkVtyHu58" resolve="myChange" />
-                            </node>
+                          <node concept="2GrUjf" id="FLkVty_eOp" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="FLkVty$t8Z" resolve="change" />
                           </node>
                           <node concept="liA8E" id="FLkVty_gNY" role="2OqNvi">
                             <ref role="37wK5l" node="3KqYwoBIUcc" resolve="needsToPreserveOldNode" />
@@ -2885,13 +2778,8 @@
                         <node concept="liA8E" id="FLkVty$veu" role="2OqNvi">
                           <ref role="37wK5l" to="g4jo:73Fgxppsozx" resolve="add" />
                           <node concept="2OqwBi" id="FLkVty$vFo" role="37wK5m">
-                            <node concept="2OqwBi" id="FLkVtyIGNm" role="2Oq$k0">
-                              <node concept="2GrUjf" id="FLkVty$vxr" role="2Oq$k0">
-                                <ref role="2Gs0qQ" node="FLkVty$t8Z" resolve="change" />
-                              </node>
-                              <node concept="2OwXpG" id="FLkVtyIJI7" role="2OqNvi">
-                                <ref role="2Oxat5" node="FLkVtyHu58" resolve="myChange" />
-                              </node>
+                            <node concept="2GrUjf" id="FLkVty$vxr" role="2Oq$k0">
+                              <ref role="2Gs0qQ" node="FLkVty$t8Z" resolve="change" />
                             </node>
                             <node concept="liA8E" id="FLkVty$wA6" role="2OqNvi">
                               <ref role="37wK5l" node="3KqYwoBIMaY" resolve="getSearchResult" />
@@ -4345,10 +4233,18 @@
         </node>
       </node>
       <node concept="_YKpA" id="3KqYwoBIKjT" role="3clF45">
-        <node concept="3uibUv" id="3KqYwoBIKzU" role="_ZDj9">
-          <ref role="3uigEE" node="3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
-          <node concept="16syzq" id="2SJclOrQQ2H" role="11_B2D">
-            <ref role="16sUi3" node="3KqYwoBIHZz" resolve="FinalDataObject" />
+        <node concept="3qUE_q" id="FLkVtyPrgX" role="_ZDj9">
+          <node concept="3uibUv" id="3KqYwoBIKzU" role="3qUE_r">
+            <ref role="3uigEE" node="3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+            <node concept="16syzq" id="FLkVtyKolE" role="11_B2D">
+              <ref role="16sUi3" node="3KqYwoBIHZv" resolve="InitialDataObject" />
+            </node>
+            <node concept="16syzq" id="FLkVtyKobk" role="11_B2D">
+              <ref role="16sUi3" node="3KqYwoBIHZz" resolve="FinalDataObject" />
+            </node>
+            <node concept="16syzq" id="FLkVtyKpaY" role="11_B2D">
+              <ref role="16sUi3" node="FLkVtyKomJ" resolve="RP" />
+            </node>
           </node>
         </node>
       </node>
@@ -4359,6 +4255,15 @@
     <node concept="3HP615" id="3KqYwoBIKuf" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="Change" />
+      <node concept="3clFb_" id="FLkVtyKn7q" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="getParticipant" />
+        <node concept="16syzq" id="FLkVtyKnQc" role="3clF45">
+          <ref role="16sUi3" node="FLkVtyKniO" resolve="RP" />
+        </node>
+        <node concept="3Tm1VV" id="FLkVtyKn7t" role="1B3o_S" />
+        <node concept="3clFbS" id="FLkVtyKn7u" role="3clF47" />
+      </node>
       <node concept="3clFb_" id="3KqYwoBIMaY" role="jymVt">
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="getSearchResult" />
@@ -4383,8 +4288,8 @@
         <node concept="3clFbS" id="3KqYwoBILhU" role="3clF47" />
         <node concept="37vLTG" id="3KqYwoBILH5" role="3clF46">
           <property role="TrG5h" value="finalState" />
-          <node concept="16syzq" id="3KqYwoBILH4" role="1tU5fm">
-            <ref role="16sUi3" node="3KqYwoBILoW" resolve="FinalDataObject" />
+          <node concept="16syzq" id="FLkVtyM$an" role="1tU5fm">
+            <ref role="16sUi3" node="FLkVtyKmRp" resolve="FinalDataObject" />
           </node>
         </node>
         <node concept="37vLTG" id="2SJclOrRrqW" role="3clF46">
@@ -4402,7 +4307,25 @@
       </node>
       <node concept="3Tm1VV" id="3KqYwoBIKug" role="1B3o_S" />
       <node concept="16euLQ" id="3KqYwoBILoW" role="16eVyc">
+        <property role="TrG5h" value="InitialDataObject" />
+      </node>
+      <node concept="16euLQ" id="FLkVtyKmRp" role="16eVyc">
         <property role="TrG5h" value="FinalDataObject" />
+      </node>
+      <node concept="16euLQ" id="FLkVtyKniO" role="16eVyc">
+        <property role="TrG5h" value="RP" />
+        <node concept="3uibUv" id="FLkVtyKnqO" role="3ztrMU">
+          <ref role="3uigEE" node="3KqYwoBIxpF" resolve="RefactoringParticipant" />
+          <node concept="16syzq" id="FLkVtyKnBM" role="11_B2D">
+            <ref role="16sUi3" node="3KqYwoBILoW" resolve="InitialDataObject" />
+          </node>
+          <node concept="16syzq" id="FLkVtyKnIk" role="11_B2D">
+            <ref role="16sUi3" node="FLkVtyKmRp" resolve="FinalDataObject" />
+          </node>
+          <node concept="16syzq" id="FLkVtyKpoF" role="11_B2D">
+            <ref role="16sUi3" node="FLkVtyKniO" resolve="RP" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="3KqYwoBIIPc" role="jymVt" />
@@ -4465,6 +4388,21 @@
     </node>
     <node concept="16euLQ" id="3KqYwoBIHZz" role="16eVyc">
       <property role="TrG5h" value="FinalDataObject" />
+    </node>
+    <node concept="16euLQ" id="FLkVtyKomJ" role="16eVyc">
+      <property role="TrG5h" value="RP" />
+      <node concept="3uibUv" id="FLkVtyKowp" role="3ztrMU">
+        <ref role="3uigEE" node="3KqYwoBIxpF" resolve="RefactoringParticipant" />
+        <node concept="16syzq" id="FLkVtyKoK4" role="11_B2D">
+          <ref role="16sUi3" node="3KqYwoBIHZv" resolve="InitialDataObject" />
+        </node>
+        <node concept="16syzq" id="FLkVtyKoPV" role="11_B2D">
+          <ref role="16sUi3" node="3KqYwoBIHZz" resolve="FinalDataObject" />
+        </node>
+        <node concept="16syzq" id="FLkVtyKp0w" role="11_B2D">
+          <ref role="16sUi3" node="FLkVtyKomJ" resolve="RP" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="3HP615" id="3KqYwoBJ0xf">
@@ -4620,6 +4558,77 @@
       <node concept="3Tm1VV" id="3KqYwoBJi4G" role="1B3o_S" />
       <node concept="3clFbS" id="3KqYwoBJi4H" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="FLkVtyPnJS" role="jymVt" />
+    <node concept="3HP615" id="FLkVtyPnKJ" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="MoveNodeChange" />
+      <node concept="3Tm1VV" id="FLkVtyPnL6" role="1B3o_S" />
+      <node concept="16euLQ" id="FLkVtyPnL7" role="16eVyc">
+        <property role="TrG5h" value="InitialDataObject" />
+      </node>
+      <node concept="16euLQ" id="FLkVtyPnL8" role="16eVyc">
+        <property role="TrG5h" value="FinalDataObject" />
+      </node>
+      <node concept="3uibUv" id="FLkVtyPnWe" role="3HQHJm">
+        <ref role="3uigEE" node="3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
+        <node concept="16syzq" id="FLkVtyPo8E" role="11_B2D">
+          <ref role="16sUi3" node="FLkVtyPnL7" resolve="InitialDataObject" />
+        </node>
+        <node concept="16syzq" id="FLkVtyPohY" role="11_B2D">
+          <ref role="16sUi3" node="FLkVtyPnL8" resolve="FinalDataObject" />
+        </node>
+        <node concept="3uibUv" id="FLkVtyPorF" role="11_B2D">
+          <ref role="3uigEE" node="3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
+          <node concept="16syzq" id="FLkVtyPoCF" role="11_B2D">
+            <ref role="16sUi3" node="FLkVtyPnL7" resolve="InitialDataObject" />
+          </node>
+          <node concept="16syzq" id="FLkVtyPoJd" role="11_B2D">
+            <ref role="16sUi3" node="FLkVtyPnL8" resolve="FinalDataObject" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="FLkVtyPp3q" role="jymVt" />
+    <node concept="3clFb_" id="FLkVtyPpcs" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="getChanges" />
+      <node concept="37vLTG" id="FLkVtyPpq2" role="3clF46">
+        <property role="TrG5h" value="initialState" />
+        <node concept="16syzq" id="FLkVtyPpq3" role="1tU5fm">
+          <ref role="16sUi3" node="3KqYwoBJhhH" resolve="InitialDataObject" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="FLkVtyPpq4" role="3clF46">
+        <property role="TrG5h" value="repository" />
+        <node concept="3uibUv" id="FLkVtyPpq5" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="FLkVtyPpq6" role="3clF46">
+        <property role="TrG5h" value="searchScope" />
+        <node concept="3uibUv" id="FLkVtyPpq7" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="FLkVtyPpcv" role="1B3o_S" />
+      <node concept="3clFbS" id="FLkVtyPpcw" role="3clF47" />
+      <node concept="_YKpA" id="FLkVtyPp$e" role="3clF45">
+        <node concept="3qUE_q" id="FLkVtyPrB5" role="_ZDj9">
+          <node concept="3uibUv" id="FLkVtyPq_O" role="3qUE_r">
+            <ref role="3uigEE" node="FLkVtyPnKJ" resolve="MoveNodeRefactoringParticipant.MoveNodeChange" />
+            <node concept="16syzq" id="FLkVtyPqNV" role="11_B2D">
+              <ref role="16sUi3" node="3KqYwoBJhhH" resolve="InitialDataObject" />
+            </node>
+            <node concept="16syzq" id="FLkVtyPqXO" role="11_B2D">
+              <ref role="16sUi3" node="3KqYwoBJhhL" resolve="FinalDataObject" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="FLkVtyQo7s" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3KqYwoBJi4Y" role="jymVt" />
     <node concept="3Tm1VV" id="3KqYwoBJhhz" role="1B3o_S" />
     <node concept="16euLQ" id="3KqYwoBJhhH" role="16eVyc">
@@ -4636,6 +4645,15 @@
       <node concept="16syzq" id="3KqYwoBJhwR" role="11_B2D">
         <ref role="16sUi3" node="3KqYwoBJhhL" resolve="FinalDataObject" />
       </node>
+      <node concept="3uibUv" id="FLkVtyKpva" role="11_B2D">
+        <ref role="3uigEE" node="3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
+        <node concept="16syzq" id="FLkVtyKpJH" role="11_B2D">
+          <ref role="16sUi3" node="3KqYwoBJhhH" resolve="InitialDataObject" />
+        </node>
+        <node concept="16syzq" id="FLkVtyKpQ8" role="11_B2D">
+          <ref role="16sUi3" node="3KqYwoBJhhL" resolve="FinalDataObject" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="vrV6u" id="3KqYwoBJieG">
@@ -4643,7 +4661,7 @@
     <node concept="3uibUv" id="3KqYwoBJihY" role="luc8K">
       <ref role="3uigEE" node="3KqYwoBJhhy" resolve="MoveNodeRefactoringParticipant" />
       <node concept="3qTvmN" id="FLkVtyGx09" role="11_B2D" />
-      <node concept="3qTvmN" id="FLkVtyGx6V" role="11_B2D" />
+      <node concept="3qTvmN" id="FLkVtyKuWn" role="11_B2D" />
     </node>
   </node>
   <node concept="312cEu" id="FLkVtyCNd2">
