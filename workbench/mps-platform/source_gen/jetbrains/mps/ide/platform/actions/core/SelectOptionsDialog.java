@@ -14,18 +14,17 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
-import java.util.Iterator;
 
-public class SelectContributorsDialog extends RefactoringDialog {
+public class SelectOptionsDialog extends RefactoringDialog {
 
-  private List<MoveRefactoringContributor> myContributors;
+  private List<String> myOptions;
   private List<JCheckBox> myCheckBoxes = ListSequence.fromList(new ArrayList<JCheckBox>());
-  private List<MoveRefactoringContributor> myResult;
-  public SelectContributorsDialog(Project project, List<MoveRefactoringContributor> contributors) {
+  private List<Integer> mySelected;
+  public SelectOptionsDialog(Project project, List<String> options, String title) {
     super(project, true);
-    myContributors = contributors;
+    myOptions = options;
     init();
-    setTitle("Select Contributors");
+    setTitle(title);
   }
   @Override
   protected JComponent createCenterPanel() {
@@ -45,7 +44,7 @@ public class SelectContributorsDialog extends RefactoringDialog {
 
     }
 
-    for (MoveRefactoringContributor contributor : ListSequence.fromList(myContributors)) {
+    for (String option : myOptions) {
       GridBagConstraints c = new GridBagConstraints();
       c.fill = GridBagConstraints.BOTH;
       c.insets = new Insets(3, 3, 3, 3);
@@ -54,7 +53,7 @@ public class SelectContributorsDialog extends RefactoringDialog {
       c.weightx = 1;
       c.weighty = 1;
 
-      JCheckBox checkBox = new JCheckBox(contributor.getDescription(), true);
+      JCheckBox checkBox = new JCheckBox(option, true);
       ListSequence.fromList(myCheckBoxes).addElement(checkBox);
       panel.add(checkBox, c);
     }
@@ -62,26 +61,18 @@ public class SelectContributorsDialog extends RefactoringDialog {
   }
   @Override
   protected void doRefactoringAction() {
-    myResult = ListSequence.fromList(new ArrayList<MoveRefactoringContributor>());
-    {
-      Iterator<MoveRefactoringContributor> contributor_it = ListSequence.fromList(myContributors).iterator();
-      Iterator<JCheckBox> checkBox_it = ListSequence.fromList(myCheckBoxes).iterator();
-      MoveRefactoringContributor contributor_var;
-      JCheckBox checkBox_var;
-      while (contributor_it.hasNext() && checkBox_it.hasNext()) {
-        contributor_var = contributor_it.next();
-        checkBox_var = checkBox_it.next();
-        if (checkBox_var.isSelected()) {
-          ListSequence.fromList(myResult).addElement(contributor_var);
-        }
+    mySelected = ListSequence.fromList(new ArrayList<Integer>());
+    for (int i = 0; i < ListSequence.fromList(myCheckBoxes).count();) {
+      if (ListSequence.fromList(myCheckBoxes).getElement(i).isSelected()) {
+        ListSequence.fromList(mySelected).addElement(i);
       }
     }
     super.doRefactoringAction();
   }
-  public static List<MoveRefactoringContributor> selectContributors(Project project, List<MoveRefactoringContributor> contributors) {
-    SelectContributorsDialog dialog = new SelectContributorsDialog(project, contributors);
+  public static List<Integer> selectOptions(Project project, List<String> options, String title) {
+    SelectOptionsDialog dialog = new SelectOptionsDialog(project, options, title);
     dialog.show();
-    return dialog.myResult;
+    return dialog.mySelected;
   }
 
 }
