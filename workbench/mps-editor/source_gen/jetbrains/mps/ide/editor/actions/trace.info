@@ -2500,9 +2500,9 @@
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/6780031141857355173">
-    <file name="ShowDefaultEditor_Action.java">
+    <file name="ShowReflectiveEditor_Action.java">
       <node id="6780031141857355173" at="22,0,23,0" concept="12" trace="ICON" />
-      <node id="6780031141857355173" at="23,37,24,43" concept="14" />
+      <node id="6780031141857355173" at="23,40,24,43" concept="14" />
       <node id="6780031141857355173" at="24,43,25,35" concept="3" />
       <node id="6780031141857355173" at="25,35,26,41" concept="3" />
       <node id="6780031141857355173" at="29,32,30,16" concept="9" />
@@ -2543,9 +2543,9 @@
       <node id="6780031141857355173" at="28,0,32,0" concept="7" trace="isDumbAware#()Z" />
       <node id="6780031141857355173" at="32,0,36,0" concept="7" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="6780031141857355173" at="36,0,40,0" concept="7" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="6780031141857355173" at="23,0,28,0" concept="2" trace="ShowDefaultEditor_Action#()V" />
+      <node id="6780031141857355173" at="23,0,28,0" concept="2" trace="ShowReflectiveEditor_Action#()V" />
       <node id="1461779516731275286" at="78,119,84,5" concept="6" />
-      <node id="4092672719106876128" at="86,0,92,0" concept="13" trace="check_254os8_a0a0a#(Ljava/util/Collection;)Z" />
+      <node id="4092672719106876128" at="86,0,92,0" concept="13" trace="check_1wtole_a0a0a#(Ljava/util/Collection;)Z" />
       <node id="6780031141857355173" at="44,5,51,5" concept="0" />
       <node id="6780031141857355173" at="51,5,61,5" concept="0" />
       <node id="6780031141857355173" at="64,0,86,0" concept="7" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
@@ -2561,7 +2561,7 @@
       <scope id="1461779516731275304" at="82,12,83,146" />
       <scope id="4092672719106876128" at="87,36,88,114" />
       <scope id="1461779516731275287" at="79,29,81,67" />
-      <scope id="6780031141857355173" at="23,37,26,41" />
+      <scope id="6780031141857355173" at="23,40,26,41" />
       <scope id="6780031141857355173" at="28,0,32,0" />
       <scope id="6780031141857355173" at="32,0,36,0">
         <var name="_params" id="6780031141857355173" />
@@ -2599,7 +2599,7 @@
         <var name="_params" id="6780031141857355173" />
         <var name="event" id="6780031141857355173" />
       </scope>
-      <unit id="6780031141857355173" at="21,0,93,0" name="jetbrains.mps.ide.editor.actions.ShowDefaultEditor_Action" />
+      <unit id="6780031141857355173" at="21,0,93,0" name="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" />
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/6893431717880288043">

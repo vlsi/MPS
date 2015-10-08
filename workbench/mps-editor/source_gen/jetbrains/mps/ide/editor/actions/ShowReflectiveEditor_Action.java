@@ -18,9 +18,9 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import java.util.Collection;
 
-public class ShowDefaultEditor_Action extends BaseAction {
+public class ShowReflectiveEditor_Action extends BaseAction {
   private static final Icon ICON = null;
-  public ShowDefaultEditor_Action() {
+  public ShowReflectiveEditor_Action() {
     super("Show Default Editor", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
@@ -31,7 +31,7 @@ public class ShowDefaultEditor_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(check_254os8_a0a0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference())));
+    return !(check_1wtole_a0a0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference())));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -83,7 +83,7 @@ public class ShowDefaultEditor_Action extends BaseAction {
       SelectionUtil.selectCell(editorContext, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), SelectionManager.FIRST_EDITABLE_CELL);
     }
   }
-  private static boolean check_254os8_a0a0a(Collection<String> checkedDotOperand) {
+  private static boolean check_1wtole_a0a0a(Collection<String> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
     }

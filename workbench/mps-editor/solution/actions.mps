@@ -10951,7 +10951,7 @@
     </node>
     <node concept="ftmFs" id="5SnwAr0vZP_" role="ftER_">
       <node concept="tCFHf" id="302gCSEbSCj" role="ftvYc">
-        <ref role="tCJdB" node="5SnwAr0vAm_" resolve="ShowDefaultEditor" />
+        <ref role="tCJdB" node="5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       </node>
       <node concept="tCFHf" id="14LA8YdF_UB" role="ftvYc">
         <ref role="tCJdB" node="1XfowaweGRd" resolve="ShowRegularEditor" />
@@ -10960,7 +10960,7 @@
   </node>
   <node concept="sE7Ow" id="5SnwAr0vAm_">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
-    <property role="TrG5h" value="ShowDefaultEditor" />
+    <property role="TrG5h" value="ShowReflectiveEditor" />
     <property role="2uzpH1" value="Show Default Editor" />
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3zc62tOilIE" role="1NuT2Z">
