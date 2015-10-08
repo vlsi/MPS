@@ -34,6 +34,7 @@
         <child id="5944657839000877563" name="hints" index="2ABdcP" />
       </concept>
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
+        <property id="168363875802087287" name="showInUI" index="2gpH_U" />
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
       <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_NextEditor" flags="ng" index="B$lHz">
@@ -430,9 +431,14 @@
       <property role="TrG5h" value="comment" />
       <property role="2BUmq6" value="comment" />
     </node>
+    <node concept="2BsEeg" id="3YRgRgnTV5p" role="2ABdcP">
+      <property role="2gpH_U" value="true" />
+      <property role="2BUmq6" value="reflectiveEditor" />
+      <property role="TrG5h" value="reflectiveEditor" />
+    </node>
   </node>
   <node concept="24kQdi" id="2ETBKOyksop">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing" />
     <ref role="1XX52x" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="3EZMnI" id="43t9AOLcZPi" role="2wV5jI">
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
@@ -449,7 +455,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="5FzO4t9jA_b">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing" />
     <property role="TrG5h" value="BaseCommentAttribute_Actions" />
     <ref role="1h_SK9" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="1hA7zw" id="6cD7K5bTsay" role="1h_SK8">

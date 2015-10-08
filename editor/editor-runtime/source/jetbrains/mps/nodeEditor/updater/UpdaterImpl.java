@@ -40,9 +40,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -73,8 +73,7 @@ public class UpdaterImpl implements Updater, CommandContext {
   private boolean myDisposed;
   private int myCommandLevel = 0;
   private String[] myInitialHints;
-  private Set<SNodeReference> myDefaultEditorNodes = new HashSet<SNodeReference>();
-
+  private Map<SNodeReference, Collection<String>> myEditorHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
 
   public UpdaterImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -183,17 +182,32 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   @Override
-  public boolean setShowDefaultEditor(SNodeReference node, boolean defaultEditor) {
-    return defaultEditor ? myDefaultEditorNodes.add(node) : myDefaultEditorNodes.remove(node);
+  public void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints) {
+    Collection<String> currentHints = myEditorHintsForNodeMap.get(nodeReference);
+    if (currentHints == null) {
+      currentHints = new ArrayList<String>();
+      Collections.addAll(currentHints, hints);
+      myEditorHintsForNodeMap.put(nodeReference, currentHints);
+    } else {
+      Collections.addAll(currentHints, hints);
+    }
+
   }
 
   @Override
-  public boolean shouldShowDefaultEditor(SNodeReference node) {
-    return myDefaultEditorNodes.contains(node);
+  public void removeExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints) {
+    Collection<String> currentHints = myEditorHintsForNodeMap.get(nodeReference);
+    if (currentHints != null) {
+      for (String hint : hints) {
+        currentHints.remove(hint);
+      }
+    }
+
   }
 
-  public void clearDefaultEditorNodes() {
-    myDefaultEditorNodes.clear();
+  @Override
+  public Collection<String> getExplicitEditorHintsForNode(SNodeReference nodeReference) {
+    return myEditorHintsForNodeMap.get(nodeReference);
   }
 
   private void fireCellSynchronized(EditorCell cell) {
@@ -213,6 +227,7 @@ public class UpdaterImpl implements Updater, CommandContext {
         new UpdateSessionImpl(node, events, this, myBigCellsMap, myRelatedNodes, myRelatedRefTargets, myCleanDependentCells, myDirtyDependentCells,
             myExistenceDependentCells);
     result.setInitialEditorHints(myInitialHints);
+    result.setEditorHintsForNodeMap(myEditorHintsForNodeMap);
     return result;
   }
 

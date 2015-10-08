@@ -385,7 +385,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3Rc6kd0K$RF">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing" />
     <property role="TrG5h" value="BaseCommentAttribute" />
     <property role="1pbfSe" value="2123261742" />
     <ref role="1TJDcQ" node="BpxLfMhSxq" resolve="ChildAttribute" />

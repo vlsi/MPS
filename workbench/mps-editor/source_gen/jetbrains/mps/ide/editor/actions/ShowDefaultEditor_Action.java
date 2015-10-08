@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import java.util.Collection;
 
 public class ShowDefaultEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -27,7 +27,7 @@ public class ShowDefaultEditor_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().shouldShowDefaultEditor(((SNode) MapSequence.fromMap(_params).get("node")).getReference()));
+    return !(check_254os8_a0a0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference())));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -59,8 +59,13 @@ public class ShowDefaultEditor_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().setShowDefaultEditor(((SNode) MapSequence.fromMap(_params).get("node")).getReference(), true);
+    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().addExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
     ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).rebuildEditorContent();
-    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().setSelection(((SNode) MapSequence.fromMap(_params).get("node")), SelectionManager.FIRST_EDITABLE_CELL);
+  }
+  private static boolean check_254os8_a0a0a(Collection<String> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
+    }
+    return false;
   }
 }

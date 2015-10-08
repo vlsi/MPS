@@ -36,7 +36,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
+import java.util.Collection;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -62,7 +64,7 @@ public class UpdateSessionImpl implements UpdateSession {
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myCleanDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myDirtyDependentCells;
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells;
-  private Set<SNodeReference> myDefaultEditorNodes = new HashSet<SNodeReference>();
+  private Map<SNodeReference, Collection<String>> myHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
 
   private Deque<ReferencedNodeContext> myContextStack = new LinkedList<ReferencedNodeContext>();
 
@@ -136,6 +138,10 @@ public class UpdateSessionImpl implements UpdateSession {
     editorContext.getCellFactory().pushCellContext();
     try {
       editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
+      String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
+      if (explicitHintsForNode != null) {
+        editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+      }
       return EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), currentContext,
           editorContext.isInspector());
     } finally {
@@ -162,13 +168,33 @@ public class UpdateSessionImpl implements UpdateSession {
     return state.getEnabledHints().toArray(EMPTY_HINTS_ARRAY);
   }
 
+  @Nullable
+  private String[] getExplicitHintsForNode(SNode node) {
+    if (myHintsForNodeMap == null || !myHintsForNodeMap.containsKey(node.getReference())) {
+      return null;
+    }
+    Collection<String> hints = myHintsForNodeMap.get(node.getReference());
+    return hints.toArray(new String[hints.size()]);
+  }
+  void setEditorHintsForNodeMap(Map<SNodeReference, Collection<String>> hintsForNodeMap) {
+    myHintsForNodeMap = hintsForNodeMap;
+  }
+
   @Override
   public EditorCell updateChildNodeCell(SNode node) {
     ReferencedNodeContext currentContext = myContextStack.peek().sameContextButAnotherNode(node);
     myContextStack.push(currentContext);
     try {
       EditorContext editorContext = getUpdater().getEditorContext();
+      String[] explicitHintsForNode = getExplicitHintsForNode(node);
+      if (explicitHintsForNode != null) {
+        editorContext.getCellFactory().pushCellContext();
+        editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+      }
       EditorCell nodeCell = EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), currentContext);
+      if (explicitHintsForNode != null) {
+        editorContext.getCellFactory().popCellContext();
+      }
       return nodeCell;
     } finally {
       myContextStack.pop();

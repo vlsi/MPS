@@ -19,6 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
+
 /**
  * User: shatalin
  * Date: 03/09/14
@@ -85,7 +87,9 @@ public interface Updater {
   @Nullable
   String[] getInitialEditorHints();
 
-  boolean setShowDefaultEditor(SNodeReference node, boolean defaultEditor);
+  void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
 
-  boolean shouldShowDefaultEditor(SNodeReference node);
+  void removeExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
+
+  Collection<String> getExplicitEditorHintsForNode(SNodeReference node);
 }

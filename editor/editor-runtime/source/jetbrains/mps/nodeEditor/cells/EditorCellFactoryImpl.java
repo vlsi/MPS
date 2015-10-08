@@ -61,6 +61,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
+  public static final String PUSH_DEFAULT_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
@@ -81,34 +82,23 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       myUsedEditors.put(node, set);
     }
     set.add(excludedEditor);
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = getConceptEditor(node, Collections.<Class<? extends BaseConceptEditor>>unmodifiableSet(set), conceptDescriptor);
-    EditorCell editorCell = createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
+    EditorCell editorCell = createEditorCell_internal(node, isInspector, Collections.<Class<? extends BaseConceptEditor>>unmodifiableSet(set));
     set.remove(excludedEditor);
     if (set.isEmpty()) {
       myUsedEditors.remove(node);
     }
     return editorCell;
-
-
   }
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
+    return createEditorCell_internal(node, isInspector, new HashSet<Class<? extends BaseConceptEditor>>());
+  }
+
+  private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends BaseConceptEditor>> excludedEditors) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditor editor = getConceptEditor(node, new HashSet<Class<? extends BaseConceptEditor>>(), conceptDescriptor);
-    return createEditorCell_internal(node, isInspector, conceptDescriptor, editor);
-  }
-
-  private ConceptEditor getConceptEditor(SNode node, Set<Class<? extends BaseConceptEditor>> set, ConceptDescriptor conceptDescriptor) {
-    ConceptEditor editor = null;
-    if (!myEditorContext.getEditorComponent().getUpdater().shouldShowDefaultEditor(node.getReference())) {
-      editor = myConceptEditorRegistry.getEditor(conceptDescriptor, set);
-    }
-    return editor;
-  }
-
-  private EditorCell createEditorCell_internal(SNode node, boolean isInspector, ConceptDescriptor conceptDescriptor, ConceptEditor editor) {
+    boolean isPushDefaultEditorHintInContext = getCellContext().getHints().contains(PUSH_DEFAULT_EDITOR_HINT);
+    ConceptEditor editor = isPushDefaultEditorHintInContext ? null : myConceptEditorRegistry.getEditor(conceptDescriptor, excludedEditors);
     EditorCell result = null;
     if (editor != null) {
       try {
@@ -126,7 +116,14 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     if (result == null) {
       editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() :
           AbstractDefaultEditor.createEditor(node, conceptDescriptor);
+      if (isPushDefaultEditorHintInContext) {
+        pushCellContext();
+        removeCellContextHints(PUSH_DEFAULT_EDITOR_HINT);
+      }
       result = createCell(node, isInspector, editor);
+      if (isPushDefaultEditorHintInContext) {
+        popCellContext();
+      }
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
 
