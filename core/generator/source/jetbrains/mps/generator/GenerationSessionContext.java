@@ -20,7 +20,6 @@ import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -53,7 +52,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   private final GenControllerContext myEnvironment;
   private final TransientModelsModule myTransientModule;
-  private final GenerationPlan myGenerationPlan;
+  private final ModelGenerationPlan myGenerationPlan;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
   private final QueryProviderCache myQueryProviders;
@@ -106,7 +105,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   // copy cons
-  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan) {
+  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull ModelGenerationPlan generationPlan) {
     myEnvironment = prevContext.myEnvironment;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
@@ -302,7 +301,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
 
-  public GenerationPlan getGenerationPlan() {
+  public ModelGenerationPlan getGenerationPlan() {
     return myGenerationPlan;
   }
 

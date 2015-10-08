@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -33,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -57,11 +57,8 @@ public class RuleManager {
   private final FastRuleFinder<TemplateReductionRule> myReductionRuleFinder;
   private final FastRuleFinder<TemplateDropRootRule> myDropRuleFinder;
 
-  public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations, IGeneratorLogger logger) {
-    myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
-    if (myTemplateSwitchGraph == null) {
-      throw new IllegalStateException("switch graph is not initialized");
-    }
+  public RuleManager(List<TemplateMappingConfiguration> configurations, Collection<TemplateModel> templateModels, IGeneratorLogger logger) throws GenerationFailureException {
+    myTemplateSwitchGraph = new TemplateSwitchGraph(templateModels);
 
     myCreateRootRules = new FlattenIterable<TemplateCreateRootRule>(configurations.size());
     myRoot_MappingRules = new FlattenIterable<TemplateRootMappingRule>(configurations.size());
@@ -103,7 +100,7 @@ public class RuleManager {
     myPostScripts = new ScriptManager(postScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(postScripts));
 
     myModelMap = new HashMap<SModelReference, TemplateModel>();
-    for (TemplateModel m : plan.getTemplateModels()) {
+    for (TemplateModel m : templateModels) {
       myModelMap.put(m.getSModelReference(), m);
     }
   }
@@ -119,7 +116,7 @@ public class RuleManager {
   }
 
   @NotNull
-  public FlattenIterable<TemplateWeavingRule> getWeaving_MappingRules() {
+  public Iterable<TemplateWeavingRule> getWeaving_MappingRules() {
     return myWeaving_MappingRules;
   }
 

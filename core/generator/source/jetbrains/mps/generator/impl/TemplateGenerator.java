@@ -54,6 +54,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -63,6 +64,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -599,6 +601,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   RuleManager getRuleManager() {
     return myRuleManager;
+  }
+
+  boolean isCountedLanguage(SLanguage language) {
+    return getGeneratorSessionContext().getGenerationPlan().coversLanguage(language);
   }
 
   GeneratorQueryProvider.Source getQuerySource() {

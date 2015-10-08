@@ -16,13 +16,10 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
-import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -35,31 +32,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 
 /**
  * Evgeny Gryaznov, Jan 18, 2010
  */
-public class GenerationPlan {
+public class GenerationPlan implements ModelGenerationPlan {
 
   private static final Logger LOG = LogManager.getLogger(GenerationPlan.class);
 
   private final Collection<TemplateModule> myGenerators;
-  private Collection<TemplateModel> myTemplateModels;
+  private final Collection<TemplateModel> myTemplateModels;
 
-  //  private Set<Language> myLanguages = new HashSet<Language>();
   private final List<List<TemplateMappingConfiguration>> myPlan;
   private final PriorityConflicts myConflictingPriorityRules;
-  private final String myInputName;
-  private TemplateSwitchGraph myTemplateSwitchGraph;
 
   public GenerationPlan(@NotNull SModel inputModel) {
-    this(inputModel, (Collection<SLanguage>) null);
+    this(inputModel, null);
   }
 
   public GenerationPlan(@NotNull SModel inputModel, @Nullable Collection<SLanguage> additionalLanguages) {
-    myInputName = NameUtil.getModelLongName(inputModel);
     try {
       EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
 
@@ -70,49 +62,34 @@ public class GenerationPlan {
         myPlan.add(Collections.<TemplateMappingConfiguration>emptyList());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
-      initTemplateModels();
+      myTemplateModels = new ArrayList<TemplateModel>();
+      for (TemplateModule module : myGenerators) {
+        myTemplateModels.addAll(module.getModels());
+      }
     } catch (Throwable t) {
-      LOG.error(null, t);
-      throw new RuntimeException("Couldn't compute generation steps for model '" + myInputName + "'", t);
+      String msg = String.format("Couldn't compute generation steps for model '%s;", NameUtil.getModelLongName(inputModel));
+      LOG.error(msg, t);
+      throw new RuntimeException(msg, t);
     }
   }
 
-  public GenerationPlan(@NotNull SModel inputModel, @NotNull ModelGenerationPlan plan) {
-    myInputName = NameUtil.getModelLongName(inputModel);
-    myGenerators = new HashSet<TemplateModule>();
-    myPlan = plan.getSteps();
-    for (List<TemplateMappingConfiguration> step : myPlan) {
-      for (TemplateMappingConfiguration templateMappingConfiguration : step) {
-        myGenerators.add(templateMappingConfiguration.getModel().getModule());
-      }
-    }
-    myConflictingPriorityRules = new PriorityConflicts(myGenerators);
-    initTemplateModels();
-    if (myPlan.isEmpty()) {
-      myPlan.add(new ArrayList<TemplateMappingConfiguration>());
-    }
+  @Override
+  @Deprecated
+  public List<List<TemplateMappingConfiguration>> getSteps() {
+    return myPlan;
+  }
+
+  @Override
+  public List<Step> getSteps_() {
+    return Collections.emptyList();
   }
 
   public Collection<TemplateModule> getGenerators() {
     return myGenerators;
   }
 
-  private void initTemplateModels() {
-    myTemplateModels = new ArrayList<TemplateModel>();
-    for (TemplateModule module : myGenerators) {
-      myTemplateModels.addAll(module.getModels());
-    }
-  }
-
-  public int getStepCount() {
-    return myPlan.size();
-  }
-
-  public List<TemplateMappingConfiguration> getMappingConfigurations(int step) {
-    return myPlan.get(step);
-  }
-
-  public boolean isCountedLanguage(Language language) {
+  @Override
+  public boolean coversLanguage(SLanguage language) {
 //    return myLanguages.contains(language);
 
     //
@@ -149,47 +126,5 @@ public class GenerationPlan {
     ArrayList<Kind> deemedConflict = new ArrayList<Kind>(Arrays.asList(Kind.values()));
     deemedConflict.remove(Kind.Invalid);
     return deemedConflict;
-  }
-
-  public String getSignature() {
-    StringBuilder sb = new StringBuilder();
-    sb.append(myInputName);
-    sb.append(", ");
-    sb.append(myPlan.size());
-    sb.append(" steps\n");
-    int i = 0;
-    for (List<TemplateMappingConfiguration> step : myPlan) {
-      sb.append('[');
-      sb.append(i++);
-      sb.append(']');
-      sb.append('\n');
-      List<String> res = new ArrayList<String>(step.size());
-      for (TemplateMappingConfiguration mconfig : step) {
-        res.add(toString(mconfig));
-      }
-      Collections.sort(res);
-      for (String s : res) {
-        sb.append(s);
-        sb.append('\n');
-      }
-    }
-    return sb.toString();
-  }
-
-  private static String toString(TemplateMappingConfiguration mappingConfig) {
-    TemplateModel model = mappingConfig.getModel();
-    return model.getLongName() + "#" + mappingConfig.getName();
-  }
-
-  public TemplateSwitchGraph getTemplateSwitchGraph() {
-    return myTemplateSwitchGraph;
-  }
-
-  public void createSwitchGraph() throws GenerationFailureException {
-    myTemplateSwitchGraph = new TemplateSwitchGraph(myTemplateModels);
-  }
-
-  public Collection<TemplateModel> getTemplateModels() {
-    return myTemplateModels;
   }
 }

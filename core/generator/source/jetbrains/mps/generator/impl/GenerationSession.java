@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
@@ -38,6 +39,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -83,7 +85,7 @@ class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
   private final Project myProject;
-  private GenerationPlan myGenerationPlan;
+  private ModelGenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
   private MPSAppenderBase myLoggingHandler;
@@ -123,10 +125,8 @@ class GenerationSession {
     // create a plan
     GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
     ttrace.push("analyzing dependencies", false);
-    ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
-    if (customPlan != null) {
-      myGenerationPlan = new GenerationPlan(myOriginalInputModel, customPlan);
-    } else {
+    myGenerationPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
+    if (myGenerationPlan == null) {
       Collection<String> additionalLanguages =
           parametersProvider instanceof GenerationParametersProviderEx
               ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
@@ -139,18 +139,18 @@ class GenerationSession {
           extraLanguages.add(MetaAdapterFactoryByName.getLanguage(l));
         }
       }
-      myGenerationPlan = new GenerationPlan(myOriginalInputModel, extraLanguages);
-    }
-    if (!checkGenerationPlan(myGenerationPlan)) {
-      if (myGenerationOptions.isStrictMode()) {
+      GenerationPlan gp;
+      myGenerationPlan = gp = new GenerationPlan(myOriginalInputModel, extraLanguages);
+      if (!checkGenerationPlan(gp) && myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
       }
     }
+    warnIfGenerateSelf(myGenerationPlan);
 
-    monitor.start("", 1 + myGenerationPlan.getStepCount());
+    monitor.start("", 1 + myGenerationPlan.getSteps().size());
     try {
       // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
-      IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), myGenerationPlan, ttrace);
+      IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
       IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myProject,
           myGenerationOptions, cacheHelper, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
@@ -192,7 +192,7 @@ class GenerationSession {
 
       boolean success = false;
 
-      myIntermediateCache = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), myGenerationPlan, ttrace);
+      myIntermediateCache = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
       myIntermediateCache.createNew(myOriginalInputModel);
       ttrace.pop();
       try {
@@ -218,10 +218,10 @@ class GenerationSession {
         SModel currOutput = null;
 
         ttrace.push("steps", false);
-        myGenerationPlan.createSwitchGraph();
 
-        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
-          final List<TemplateMappingConfiguration> mappingConfigurations = myGenerationPlan.getMappingConfigurations(myMajorStep);
+        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
+          Transform planStep = new Transform(myGenerationPlan.getSteps().get(myMajorStep));
+          final List<TemplateMappingConfiguration> mappingConfigurations = planStep.getTransformations();
           if (mappingConfigurations.size() >= 1) {
             final TemplateMappingConfiguration first = mappingConfigurations.get(0);
             String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
@@ -231,7 +231,7 @@ class GenerationSession {
           if (myLogger.needsInfo()) {
             myLogger.info("executing step " + (myMajorStep + 1));
           }
-          currOutput = executeMajorStep(monitor.subTask(1), currInputModel);
+          currOutput = executeMajorStep(monitor.subTask(1), currInputModel, planStep);
           monitor.advance(0);
           if (currOutput == null || myLogger.getErrorCount() > 0) {
             break;
@@ -287,19 +287,14 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
-    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(
-        myGenerationPlan.getMappingConfigurations(myMajorStep));
-    if (mappingConfigurations.isEmpty()) {
-      if (inputModel.getRootNodes().iterator().hasNext()) {
-        myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
-      }
-      return inputModel;
-    }
+    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(planStep.getTransformations());
+
     if (myLogger.needsInfo()) {
-      printGenerationStepData(inputModel);
+      printUsedLanguages(inputModel);
+      printMappingConfigurations("apply mapping configurations:", mappingConfigurations);
     }
 
     // -- replace context
@@ -319,12 +314,15 @@ class GenerationSession {
     mappingConfigurations.removeAll(drop);
     if (mappingConfigurations.isEmpty()) {
       // no applicable configurations found
+      if (inputModel.getRootNodes().iterator().hasNext()) {
+        myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
+      }
       return inputModel;
     }
 
     // -- prepare generator
     Collections.sort(mappingConfigurations, new MapCfgComparator());
-    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
+    RuleManager ruleManager = new RuleManager(mappingConfigurations, planStep.getTemplateModels(), myLogger);
 
     try {
       myStepArguments = new StepArguments(ruleManager, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger));
@@ -631,7 +629,10 @@ class GenerationSession {
     mySessionContext.getModule().removeModel(model);
   }
 
-  private boolean checkGenerationPlan(GenerationPlan generationPlan) {
+  private void warnIfGenerateSelf(ModelGenerationPlan generationPlan) {
+    // XXX why not to warn if I generate a model written in a language using this language's generator
+    // (i.e. intention aspect in lang.intention with lang.intention's generator). Is it generally ok (it is for intention,
+    // but e.g. for behaviors if they are used in generator it might not be the case)
     if (myOriginalInputModel.getModule() instanceof Generator && SModelStereotype.isGeneratorModel(myOriginalInputModel)) {
       SModuleReference me = myOriginalInputModel.getModule().getModuleReference();
       for (TemplateModule t : generationPlan.getGenerators()) {
@@ -641,6 +642,9 @@ class GenerationSession {
         }
       }
     }
+  }
+
+  private boolean checkGenerationPlan(GenerationPlan generationPlan) {
     if (generationPlan.hasConflictingPriorityRules()) {
       myLogger.error("Conflicting mapping priority rules encountered:");
       for (Conflict c : generationPlan.getConflicts()) {
@@ -659,7 +663,7 @@ class GenerationSession {
     return true;
   }
 
-  private void printGenerationStepData(SModel inputModel) {
+  private void printUsedLanguages(SModel inputModel) {
     List<SLanguage> references = new ArrayList<SLanguage>(ModelContentUtil.getUsedLanguages(inputModel));
     Collections.sort(references, new Comparator<SLanguage>() {
       @Override
@@ -671,7 +675,6 @@ class GenerationSession {
     for (SLanguage lang : references) {
       myLogger.info("    " + lang);
     }
-    printMappingConfigurations("apply mapping configurations:", myGenerationPlan.getMappingConfigurations(myMajorStep));
   }
 
   private void printMappingConfigurations(String title, List<TemplateMappingConfiguration> mc) {
