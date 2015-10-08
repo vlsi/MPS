@@ -12,6 +12,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import java.util.Collection;
 
 public class ShowRegularEditor_Action extends BaseAction {
@@ -59,8 +63,24 @@ public class ShowRegularEditor_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
+    EditorCell selectedCell = editorContext.getSelectedCell();
+    if (selectedCell == null) {
+      return;
+    }
+    int x = selectedCell.getX();
+    int y = selectedCell.getY();
+    int caretX = selectedCell.getCaretX();
     ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().removeExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
     ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).rebuildEditorContent();
+    editorContext.flushEvents();
+    EditorCell targetCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findCellWeak(x, y);
+    if (targetCell != null) {
+      targetCell.setCaretX(caretX);
+      editorContext.getSelectionManager().setSelection(targetCell);
+    } else {
+      SelectionUtil.selectCell(editorContext, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), SelectionManager.FIRST_EDITABLE_CELL);
+    }
   }
   private static boolean check_o6tdl2_a0a0(Collection<String> checkedDotOperand) {
     if (null != checkedDotOperand) {

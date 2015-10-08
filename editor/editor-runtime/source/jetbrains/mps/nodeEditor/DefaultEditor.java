@@ -223,7 +223,9 @@ public class DefaultEditor extends AbstractDefaultEditor {
         cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, referenceLink.getRoleName()));
         cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, referenceLink.getRoleName()));
         cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
-        cell.setCellId("reference_" + referenceLink.getRoleName());
+        if (cell.getCellId() == null) {
+          cell.setCellId("reference_" + referenceLink.getRoleName());
+        }
         //todo attributes
         addCellWithRole(IterableUtils.first(AttributeOperations.getLinkAttributes(mySNode, referenceLink)), AttributeKind.Reference.class, cell);
       }

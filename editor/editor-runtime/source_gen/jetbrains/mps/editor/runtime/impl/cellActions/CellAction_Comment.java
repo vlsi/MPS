@@ -11,10 +11,8 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 
@@ -38,7 +36,7 @@ public class CellAction_Comment extends AbstractCellAction {
     if (selectedCell == null) {
       return;
     }
-    final String cellId = selectedCell.getCellId();
+    String cellId = selectedCell.getCellId();
     SNode actualSelectedNode = selectedCell.getSNode();
     boolean isLabel = selectedCell instanceof EditorCell_Label;
     int startPosition = (isLabel ? ((EditorCell_Label) selectedCell).getSelectionStart() : -1);
@@ -46,22 +44,14 @@ public class CellAction_Comment extends AbstractCellAction {
     SNode nodeToSelect = CommentUtil.commentOut(myNode);
     editorContext.flushEvents();
     if (cellId != null) {
-      EditorCell newNodeCell = editorContext.getEditorComponent().findNodeCell(actualSelectedNode);
-      if (newNodeCell != null) {
-        EditorCell cellToSelect = CellFinderUtil.findChildByCondition(newNodeCell, new Condition<EditorCell>() {
-          public boolean met(EditorCell cell) {
-            return eq_9lx3n0_a0a0a0a1a0a0b0j0h(cell.getCellId(), cellId);
-          }
-        }, true, true);
-        if (cellToSelect != null) {
-          if (isLabel) {
-            editorContext.getSelectionManager().setSelection(actualSelectedNode, cellId, startPosition, endPosition);
-          } else {
-            editorContext.getSelectionManager().setSelection(actualSelectedNode, cellId);
-          }
-
-          return;
-        }
+      SelectionManager selectionManager = editorContext.getSelectionManager();
+      if (isLabel) {
+        selectionManager.setSelection(actualSelectedNode, cellId, startPosition, endPosition);
+      } else {
+        selectionManager.setSelection(actualSelectedNode, cellId);
+      }
+      if (selectionManager.getSelection() != null) {
+        return;
       }
     }
     SelectionUtil.selectCell(editorContext, nodeToSelect, SelectionManager.LAST_EDITABLE_CELL);
@@ -81,7 +71,4 @@ public class CellAction_Comment extends AbstractCellAction {
     }
   }
 
-  private static boolean eq_9lx3n0_a0a0a0a1a0a0b0j0h(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }
