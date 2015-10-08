@@ -20,8 +20,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="mps.MPS.Core_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
