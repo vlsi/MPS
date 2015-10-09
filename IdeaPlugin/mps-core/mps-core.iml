@@ -28,9 +28,14 @@
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-common" exported="" />
-    <orderEntry type="library" name="mps.MPS.Platform" level="project" />
-    <orderEntry type="library" name="mps.MPS.Editor" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
-    <orderEntry type="library" scope="TEST" name="mps.jetbrains.mps.lang.test.runtime" level="project" />
+    <orderEntry type="library" exported="" name="mps-platform" level="project" />
+    <orderEntry type="library" exported="" name="mps-editor-api" level="project" />
+    <orderEntry type="library" exported="" name="mps-editor" level="project" />
+    <orderEntry type="library" name="mps-icons" level="project" />
+    <orderEntry type="library" exported="" name="mps-behavior-api" level="project" />
+    <orderEntry type="library" exported="" name="mps-behavior-runtime" level="project" />
+    <orderEntry type="library" scope="TEST" name="lang.test.util" level="project" />
+    <orderEntry type="library" scope="TEST" name="lang.test.matcher" level="project" />
+    <orderEntry type="library" scope="TEST" name="lang.test.runtime" level="project" />
   </component>
 </module>
