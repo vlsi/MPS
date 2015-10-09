@@ -50,7 +50,7 @@
     </component>
     <component>
       <interface-class>jetbrains.mps.ide.migration.MigrationManager</interface-class>
-      <implementation-class>jetbrains.mps.migration.component.util.MigrationComponent</implementation-class>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationComponent</implementation-class>
     </component>
   </project-components>
 

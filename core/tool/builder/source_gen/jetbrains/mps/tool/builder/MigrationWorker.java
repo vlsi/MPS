@@ -5,12 +5,23 @@ package jetbrains.mps.tool.builder;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import java.util.List;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.apache.log4j.Logger;
 import java.util.Map;
 import java.io.File;
-import java.util.List;
 
 public class MigrationWorker extends MpsWorker {
   public MigrationWorker(Script whatToDo) {
@@ -20,8 +31,73 @@ public class MigrationWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
-  protected void migrate(Project project, MigrationManager m) {
-    // todo 
+  protected void migrate(final Project project, MigrationManager m) throws Exception {
+    while (true) {
+      // we don't know which options are "better" so we "select" no one 
+      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<String, Object>()), true);
+      if (step == null) {
+        break;
+      }
+      if (!(step.execute())) {
+        throw new Exception("Problem on executing cleanup migrations");
+      }
+    }
+
+    List<Tuples._3<SModule, SLanguage, Integer>> missingMigrations = m.getMissingMigrations();
+    if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
+      throw new Exception("Some migrations are missing");
+    }
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
+        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+          public void invoke(Double fraction) {
+          }
+        })) {
+          throw new Exception("Pre-check failed");
+        }
+      }
+    });
+
+    while (true) {
+      MigrationManager.MigrationStep step = m.nextProjectStep(MapSequence.fromMap(new HashMap<String, Object>()), false);
+      if (step == null) {
+        break;
+      }
+      if (!(step.execute())) {
+        throw new Exception("Problem on executing project migrations");
+      }
+    }
+
+    while (true) {
+      MigrationManager.MigrationStep step = m.nextLanguageStep();
+      if (step == null) {
+        break;
+      }
+      if (!(step.execute())) {
+        throw new Exception("Problem on executing language migrations");
+      }
+    }
+
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        MPSModuleRepository.getInstance().saveAll();
+      }
+    });
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
+        int moduleNum = 0;
+        if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
+          public void invoke(Double fraction) {
+          }
+        })) {
+          throw new Exception("Post-check failed");
+        }
+      }
+    });
   }
 
   @Override
@@ -44,7 +120,11 @@ public class MigrationWorker extends MpsWorker {
         MigrationWorker.this.info("Nothing to migrate");
       } else {
         myEnvironment.flushAllEvents();
-        migrate(p, m);
+        try {
+          migrate(p, m);
+        } catch (Exception e) {
+          error(e.getMessage());
+        }
         myEnvironment.flushAllEvents();
       }
       myEnvironment.closeProject(p);
