@@ -54,7 +54,6 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -64,7 +63,6 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -95,7 +93,7 @@ import java.util.Set;
 public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean myChanged = false;
-  private final RuleManager myRuleManager;
+  private final GenPlanActiveStep myPlanStep;
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
   /**
@@ -131,12 +129,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   static final class StepArguments {
     public final DependenciesBuilder dependenciesBuilder;
-    public final RuleManager ruleManager;
+    public final GenPlanActiveStep planStep;
     public final GenerationTrace genTrace;
     public final GeneratorMappings mappingLabels;
-    public StepArguments(RuleManager ruleManager, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
+    public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
       this.dependenciesBuilder = dependenciesBuilder;
-      this.ruleManager = ruleManager;
+      this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
     }
@@ -144,7 +142,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments stepArgs) {
     super(operationContext, inputModel, outputModel, stepArgs.mappingLabels);
-    myRuleManager = stepArgs.ruleManager;
+    myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen(); // FIXME use GenerationOptions instead!
@@ -286,7 +284,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
+        for (TemplateCreateRootRule rule : getRuleManager().getCreateRootRules()) {
           TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext, new ReductionTrack(getBlockedReductionsData()));
           applyCreateRoot(rule, environment);
         }
@@ -298,7 +296,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // root mapping rules
     ttrace.push("root mappings", false);
     ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
-    for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
+    for (TemplateRootMappingRule rule : getRuleManager().getRoot_MappingRules()) {
       checkMonitorCanceled();
       applyRootRule(rule, rootsConsumed);
     }
@@ -426,7 +424,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       copyProcessor = new PartialCopyFacility(env, myDeltaBuilder);
     }
     // check if can drop
-    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules(inputRootNode))) {
+    if (copyProcessor.checkDropRules(inputRootNode, getRuleManager().getDropRootRules(inputRootNode))) {
       setChanged();
       return;
     }
@@ -599,12 +597,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myDelayedChanges;
   }
 
-  RuleManager getRuleManager() {
-    return myRuleManager;
+  final GenPlanActiveStep getGenerationPlan() {
+    return myPlanStep;
   }
 
-  boolean isCountedLanguage(SLanguage language) {
-    return getGeneratorSessionContext().getGenerationPlan().coversLanguage(language);
+  final RuleManager getRuleManager() {
+    return myPlanStep.getRuleManager();
   }
 
   GeneratorQueryProvider.Source getQuerySource() {
@@ -612,7 +610,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
-    return myRuleManager.getSwitch(switch_);
+    return getRuleManager().getSwitch(switch_);
   }
 
   @Override
@@ -927,7 +925,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             } else {
               String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
               getLogger().error(inputNode.getReference(),
-                  String.format(msg, inputReference.getRole(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
+                  String.format(msg, inputReference.getLink().getName(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
             }
             continue;
           }
@@ -943,7 +941,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
           new PostponedReference(inputReference.getLink(), outputNode, refInfo).registerWith(myEnv.getGenerator());
         } else if (refTarget.getModel() != null) {
-          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
+          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getLink(), refTarget);
         } else {
           reportBrokenRef(inputNode, inputReference);
         }

@@ -46,7 +46,7 @@ public class ChildAdopter {
     HashMap<SLanguage, SNode> langToReport = new HashMap<SLanguage, SNode>();
     for (SNode node : nodes) {
       SLanguage lang = node.getConcept().getLanguage();
-      if (!myGenerator.isCountedLanguage(lang)) {
+      if (!myGenerator.getGenerationPlan().isCountedLanguage(lang)) {
         LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(lang);
         if (lr != null && !lr.getGenerators().isEmpty()) {
           langToReport.put(lang, node);

@@ -207,7 +207,6 @@ class GenerationSession {
         // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
         // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
         // and we'll need to switch to 'transient' (generator) model here anyway
-        mySessionContext = new GenerationSessionContext(mySessionContext, myGenerationPlan);
         SModel currInputModel = createTransientModel("0");
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
@@ -322,10 +321,10 @@ class GenerationSession {
 
     // -- prepare generator
     Collections.sort(mappingConfigurations, new MapCfgComparator());
-    RuleManager ruleManager = new RuleManager(mappingConfigurations, planStep.getTemplateModels(), myLogger);
+    GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(ruleManager, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger));
+      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger));
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
@@ -486,7 +485,7 @@ class GenerationSession {
   }
 
   private SModel preProcessModel(SModel currentInputModel) throws GenerationFailureException {
-    final RuleManager ruleManager = myStepArguments.ruleManager;
+    final RuleManager ruleManager = myStepArguments.planStep.getRuleManager();
     if (ruleManager.getPreProcessScripts().isEmpty()) {
       return currentInputModel;
     }
@@ -536,7 +535,7 @@ class GenerationSession {
   }
 
   private SModel postProcessModel(SModel currentModel) throws GenerationFailureException {
-    final RuleManager ruleManager = myStepArguments.ruleManager;
+    final RuleManager ruleManager = myStepArguments.planStep.getRuleManager();
     if (ruleManager.getPostProcessScripts().isEmpty()) {
       return currentModel;
     }

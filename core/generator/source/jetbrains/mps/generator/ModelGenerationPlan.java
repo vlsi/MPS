@@ -83,6 +83,7 @@ public interface ModelGenerationPlan {
       return Arrays.asList(myMapCfg);
     }
 
+    // Do I need this?
     public List<TemplateModel> getTemplateModels() {
       ArrayList<TemplateModel> rv = new ArrayList<TemplateModel>(myMapCfg.length);
       // generally, there are very few distinct template models per step, don't care about performance here
