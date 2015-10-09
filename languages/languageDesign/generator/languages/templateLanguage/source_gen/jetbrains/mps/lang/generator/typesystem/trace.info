@@ -1535,7 +1535,7 @@
       <node id="490483628479871428" at="42,7,43,13" concept="12" />
       <node id="238835255324861148" at="45,240,46,232" concept="11" />
       <node id="238835255325001302" at="46,232,47,226" concept="11" />
-      <node id="490483628479914943" at="48,319,49,88" concept="13" />
+      <node id="490483628479914943" at="48,329,49,88" concept="13" />
       <node id="490483628479871387" at="50,9,51,62" concept="11" />
       <node id="490483628479871387" at="51,62,52,58" concept="5" />
       <node id="490483628479871387" at="52,58,53,612" concept="11" />
@@ -1552,11 +1552,13 @@
       <node id="490483628479831889" at="78,68,79,102" concept="1" />
       <node id="490483628479831889" at="78,68,79,102" concept="12" />
       <node id="490483628479831889" at="81,30,82,17" concept="12" />
+      <node id="4266574115114494439" at="84,65,85,51" concept="12" />
       <node id="490483628479831889" at="24,0,26,0" concept="3" trace="check_TemplateSwitch_NonTypesystemRule#()V" />
       <node id="490483628479832864" at="26,127,29,5" concept="9" />
       <node id="490483628479831889" at="75,0,78,0" concept="10" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="490483628479831889" at="78,0,81,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="490483628479831889" at="81,0,84,0" concept="10" trace="overrides#()Z" />
+      <node id="4266574115114494439" at="84,0,87,0" concept="15" trace="neq_cl1ui4_a0c0f0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="490483628479870596" at="37,280,41,9" concept="1" />
       <node id="490483628479871387" at="53,612,57,11" concept="1" />
       <node id="490483628479944799" at="66,304,70,11" concept="1" />
@@ -1573,6 +1575,7 @@
       <scope id="490483628479831889" at="75,50,76,156" />
       <scope id="490483628479831889" at="78,68,79,102" />
       <scope id="490483628479831889" at="81,30,82,17" />
+      <scope id="4266574115114494439" at="84,65,85,51" />
       <scope id="490483628479831889" at="24,0,26,0" />
       <scope id="490483628479870596" at="38,9,40,71">
         <var name="intentionProvider" id="490483628479870596" />
@@ -1588,6 +1591,10 @@
         <var name="argument" id="490483628479831889" />
       </scope>
       <scope id="490483628479831889" at="81,0,84,0" />
+      <scope id="4266574115114494439" at="84,0,87,0">
+        <var name="a" id="4266574115114494439" />
+        <var name="b" id="4266574115114494439" />
+      </scope>
       <scope id="490483628479870596" at="34,7,41,9">
         <var name="_reporter_2309309498" id="490483628479870596" />
         <var name="errorTarget" id="490483628479870596" />
@@ -1602,7 +1609,7 @@
       </scope>
       <scope id="490483628479936199" at="62,397,71,9" />
       <scope id="5858775738866037441" at="33,425,43,13" />
-      <scope id="238835255325011787" at="48,319,58,9" />
+      <scope id="238835255325011787" at="48,329,58,9" />
       <scope id="5858775738866226211" at="45,240,72,7">
         <var name="p1" id="238835255324861151" />
         <var name="p2" id="238835255325001303" />
@@ -1618,7 +1625,7 @@
         <var name="templateSwitch" id="490483628479831889" />
         <var name="typeCheckingContext" id="490483628479831889" />
       </scope>
-      <unit id="490483628479831889" at="23,0,85,0" name="jetbrains.mps.lang.generator.typesystem.check_TemplateSwitch_NonTypesystemRule" />
+      <unit id="490483628479831889" at="23,0,88,0" name="jetbrains.mps.lang.generator.typesystem.check_TemplateSwitch_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)/490483628479980277">
