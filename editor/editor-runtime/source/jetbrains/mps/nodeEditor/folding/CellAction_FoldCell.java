@@ -45,7 +45,7 @@ public class CellAction_FoldCell extends AbstractCellAction {
     return CellFinderUtil.findParent(editorCell, new Condition<EditorCell_Collection>() {
       @Override
       public boolean met(EditorCell_Collection object) {
-        return object.isFoldable() && !object.isFolded();
+        return object.isFoldable() && !object.isCollapsed();
       }
     });
   }

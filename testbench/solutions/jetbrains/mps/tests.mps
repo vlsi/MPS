@@ -417,9 +417,6 @@
     <node concept="lpD6D" id="2qEq7FDszd8" role="lpD6w">
       <ref role="lpD7u" to="65l5:4ECnMeMhxat" resolve="UndoTypingInTransactionalPropertyCell" />
     </node>
-    <node concept="lpD6D" id="K6TtETsJsD" role="lpD6w">
-      <ref role="lpD7u" to="hcvu:K6TtETsIzZ" resolve="CellChangeCollapsedCondition" />
-    </node>
     <node concept="lpD6D" id="K6TtETsJuK" role="lpD6w">
       <ref role="lpD7u" to="hcvu:K6TtETs8T9" resolve="CellConditionallyCollapsed" />
     </node>
@@ -428,6 +425,12 @@
     </node>
     <node concept="lpD6D" id="6PT0agmOgRi" role="lpD6w">
       <ref role="lpD7u" to="hcvu:5qrsiYWoAxm" resolve="CellFoldedByDefault" />
+    </node>
+    <node concept="lpD6D" id="K6TtETsJsD" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:K6TtETsIzZ" resolve="ChangeCollapseCondition_ExpandCell" />
+    </node>
+    <node concept="lpD6D" id="3jzt7MeEPkm" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:9Jk7l7Zu4l" resolve="ChangeCollapseCondition_ManuallyExpandedCell" />
     </node>
     <node concept="lpD6D" id="2SNGFF9uGcU" role="lpD6w">
       <ref role="lpD7u" to="hcvu:6sr4TWiFz6z" resolve="CollapseRecursively" />
@@ -443,6 +446,9 @@
     </node>
     <node concept="lpD6D" id="2SNGFF9uGm2" role="lpD6w">
       <ref role="lpD7u" to="hcvu:7_fNqT3Rwsz" resolve="ExpandRecursivelyCheckSibling" />
+    </node>
+    <node concept="lpD6D" id="3jzt7MeEPmJ" role="lpD6w">
+      <ref role="lpD7u" to="hcvu:9Jk7l7ZQgT" resolve="ManuallyExpandedCell_UnrelatedModelChange" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />

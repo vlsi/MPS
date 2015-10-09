@@ -45,7 +45,7 @@ public class CellAction_UnfoldCell extends AbstractCellAction {
     return CellFinderUtil.findParent(editorCell, new Condition<EditorCell_Collection>() {
       @Override
       public boolean met(EditorCell_Collection object) {
-        return object.isFolded();
+        return object.isCollapsed();
       }
     });
   }

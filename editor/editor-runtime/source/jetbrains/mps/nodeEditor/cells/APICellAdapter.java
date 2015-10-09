@@ -123,7 +123,7 @@ public class APICellAdapter {
 
   public static boolean isUnderFolded(EditorCell cell) {
     for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
-      if (parent.isFolded()) return true;
+      if (parent.isCollapsed()) return true;
     }
     return false;
   }

@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class CellChangeCollapsedCondition_Test extends BaseTransformationTest {
-  public CellChangeCollapsedCondition_Test() {
+public class ChangeCollapseCondition_ExpandCell_Test extends BaseTransformationTest {
+  public ChangeCollapseCondition_ExpandCell_Test() {
   }
   @Test
-  public void test_CellChangeCollapsedCondition() throws Throwable {
+  public void test_ChangeCollapseCondition_ExpandCell() throws Throwable {
     this.initTest("${mps_home}", "r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)");
-    this.runTest("jetbrains.mps.lang.editor.folding.test.CellChangeCollapsedCondition_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ExpandCell_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {

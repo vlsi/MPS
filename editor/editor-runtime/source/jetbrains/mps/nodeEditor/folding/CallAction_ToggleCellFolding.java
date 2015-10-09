@@ -39,7 +39,7 @@ public class CallAction_ToggleCellFolding extends AbstractCellAction {
   @Override
   public void execute(EditorContext context) {
     EditorCell_Collection targetCell = findCell(context.getSelectedCell());
-    if (targetCell.isFolded()) {
+    if (targetCell.isCollapsed()) {
       targetCell.unfold();
     } else {
       targetCell.fold();
@@ -53,7 +53,7 @@ public class CallAction_ToggleCellFolding extends AbstractCellAction {
     return CellFinderUtil.findParent(editorCell, new Condition<EditorCell_Collection>() {
       @Override
       public boolean met(EditorCell_Collection object) {
-        return object.isFolded() || object.isFoldable();
+        return object.isCollapsed() || object.isFoldable();
       }
     });
   }

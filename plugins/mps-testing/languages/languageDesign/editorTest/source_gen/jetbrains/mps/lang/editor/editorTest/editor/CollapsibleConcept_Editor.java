@@ -106,9 +106,7 @@ public class CollapsibleConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_diczxj_a5a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_diczxj_b5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_diczxj_c5a(editorContext, node));
-    if (renderingCondition_diczxj_a5a(node, editorContext)) {
-      editorCell.fold(false);
-    }
+    editorCell.setInitiallyCollapsed(renderingCondition_diczxj_a5a(node, editorContext));
     return editorCell;
   }
   private static boolean renderingCondition_diczxj_a5a(SNode node, EditorContext editorContext) {

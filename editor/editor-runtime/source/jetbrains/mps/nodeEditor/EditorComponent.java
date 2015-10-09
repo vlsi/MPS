@@ -206,6 +206,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
@@ -235,7 +236,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
+  private Map<EditorCell, Boolean> myCollapseStates = new HashMap<EditorCell, Boolean>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private CellTracker myCellTracker = new CellTracker();
@@ -1329,23 +1330,57 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new EditorCell_Constant(getEditorContext(), getEditedNode(), getEditedNode() == null ? "<no node>" : "<node is not inside a model>");
   }
 
+  /**
+   * @deprecated since MPS 3.3 use setCollapseState()
+   */
+  @Deprecated
   public void setFolded(EditorCell cell, boolean folded) {
-    if (folded) {
-      myFoldedCells.add(cell);
+    setCollapseState(cell, folded ? Boolean.TRUE : null);
+  }
+
+  public void setCollapseState(EditorCell cell, Boolean collapsed) {
+    if (collapsed == null) {
+      resetCollapseState(cell);
     } else {
-      myFoldedCells.remove(cell);
+      myCollapseStates.put(cell, collapsed);
     }
     for (AdditionalPainter painter : getAdditionalPainters()) {
       painter.onUpdate(this);
     }
   }
 
-  public Set<EditorCell> getFoldedCells() {
-    return new HashSet<EditorCell>(myFoldedCells);
+  public void resetCollapseState(EditorCell cell) {
+    myCollapseStates.remove(cell);
   }
 
+  /**
+   * @deprecated since MPS 3.3 use getCollapseStates()
+   */
+  @Deprecated
+  public Set<EditorCell> getFoldedCells() {
+    HashSet<EditorCell> result = new HashSet<EditorCell>();
+    for (Entry<EditorCell, Boolean> foldedState : myCollapseStates.entrySet()) {
+      if (foldedState.getValue()) {
+        result.add(foldedState.getKey());
+      }
+    }
+    return result;
+  }
+
+  public List<Pair<EditorCell, Boolean>> getCollapseStates() {
+    List<Pair<EditorCell, Boolean>> result = new ArrayList<Pair<EditorCell, Boolean>>();
+    for (Entry<EditorCell, Boolean> collapseState : myCollapseStates.entrySet()) {
+      result.add(new Pair<EditorCell, Boolean>(collapseState.getKey(), collapseState.getValue()));
+    }
+    return result;
+  }
+
+  /**
+   * @deprecated since MPS 3.3 not used anymore, will be removed
+   */
+  @Deprecated
   void clearFoldedCells() {
-    myFoldedCells.clear();
+    myCollapseStates.clear();
   }
 
   public void setBracesEnabled(EditorCell cell, boolean enabled) {

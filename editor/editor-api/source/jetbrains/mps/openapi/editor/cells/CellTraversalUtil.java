@@ -74,18 +74,17 @@ public class CellTraversalUtil {
   /**
    * Compares two cells.
    * Cell which is first is the editor is lesser.
-   *
-   * <p>
+   * <p/>
+   * <p/>
    * Comparing cells must have common parent.
    * Check getCommonParent(firstCell, secondCell) != null
    *
-   * @param firstCell a first cell to be compared.
+   * @param firstCell  a first cell to be compared.
    * @param secondCell a second cell to be compared.
-   * @return  -1, zero, or 1 as the first cell
-   *		is less than, equal to, or greater than the second cell.
-   *
+   * @return -1, zero, or 1 as the first cell
+   * is less than, equal to, or greater than the second cell.
    * @throws java.lang.IllegalArgumentException if the first cell and
-   *         the second cell don't have common parent.
+   *                                            the second cell don't have common parent.
    */
   public static int compare(@NotNull EditorCell firstCell, @NotNull EditorCell secondCell) {
     if (firstCell.equals(secondCell)) {
@@ -202,9 +201,10 @@ public class CellTraversalUtil {
   public static boolean isAncestorOrEquals(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
     return ancestor.equals(child) || isAncestor(ancestor, child);
   }
+
   public static EditorCell_Collection getFoldedParent(@NotNull EditorCell cell) {
     for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
-      if (parent.isFolded()) {
+      if (parent.isCollapsed()) {
         return parent;
       }
     }

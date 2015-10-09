@@ -216,7 +216,7 @@ public class MPSEditorOpener {
 
   private void unfoldAllParentCells(EditorCell cell) {
     while (cell != null) {
-      if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).isFolded()) {
+      if (cell instanceof EditorCell_Collection && ((EditorCell_Collection) cell).isCollapsed()) {
         ((EditorCell_Collection) cell).unfold();
       }
       cell = cell.getParent();
