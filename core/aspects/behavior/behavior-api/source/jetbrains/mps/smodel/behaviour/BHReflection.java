@@ -38,7 +38,10 @@ public final class BHReflection {
     return constructor.newNode(model, parameters);
   }
 
-  public static Object invoke(@NotNull SNode node, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invoke(@Nullable SNode node, @NotNull SMethodId methodId, Object... parameters) {
+    if (node == null) {
+      return null;
+    }
     SConcept concept = node.getConcept();
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
@@ -48,7 +51,10 @@ public final class BHReflection {
     return method.invoke(node, parameters);
   }
 
-  public static Object invoke(@NotNull SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+  public static Object invoke(@Nullable SAbstractConcept concept, @NotNull SMethodId methodId, Object... parameters) {
+    if (concept == null) {
+      return null;
+    }
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
@@ -61,6 +67,9 @@ public final class BHReflection {
    * invokes a method specifically in the concreteConcept behavior.
    */
   public static Object invokeSpecial(@Nullable SNode node, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    if (node == null) {
+      return null;
+    }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
@@ -70,6 +79,9 @@ public final class BHReflection {
   }
 
   public static Object invokeSpecial(@Nullable SAbstractConcept concept, @NotNull SAbstractConcept concreteConcept, @NotNull SMethodId methodId, Object... parameters) {
+    if (concept == null) {
+      return null;
+    }
     BHDescriptor bhDescriptor = getBHDescriptor(concreteConcept);
     SMethod<?> method = bhDescriptor.getMethod(methodId);
     if (method == null) {
