@@ -569,10 +569,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return;
         }
         jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-        if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
-            selectedCell instanceof EditorCell_Label) {
-          ((EditorCell_Label) selectedCell).selectWordOrAll();
-          repaintExternalComponent();
+        boolean inSelectedCell = myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell;
+        if (inSelectedCell) {
+          Selection selection = getSelectionManager().getSelection();
+          if (selection.canExecuteAction(CellActionType.CLICK)) {
+            selection.executeAction(CellActionType.CLICK);
+          } else if (e.getClickCount() == 2 && selectedCell instanceof EditorCell_Label) {
+            ((EditorCell_Label) selectedCell).selectWordOrAll();
+            repaintExternalComponent();
+          }
         }
       }
 
