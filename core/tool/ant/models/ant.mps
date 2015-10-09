@@ -7216,6 +7216,41 @@
       <node concept="3cqZAl" id="60oBoEdcor" role="3clF45" />
       <node concept="3clFbS" id="60oBoEdcos" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="75eqTYkrI0w" role="jymVt" />
+    <node concept="3clFb_" id="75eqTYkrAbA" role="jymVt">
+      <property role="TrG5h" value="setProject" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="75eqTYkrAbB" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="75eqTYkrAbC" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="75eqTYkrAbD" role="3clF47">
+        <node concept="3clFbF" id="75eqTYkrAbE" role="3cqZAp">
+          <node concept="2OqwBi" id="75eqTYkrHVB" role="3clFbG">
+            <node concept="37vLTw" id="75eqTYkrHVA" role="2Oq$k0">
+              <ref role="3cqZAo" node="3ufQioQQtje" resolve="myWhatToDo" />
+            </node>
+            <node concept="liA8E" id="75eqTYkrHVC" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:KL8Aql8eqX" resolve="addProjectFile" />
+              <node concept="2ShNRf" id="75eqTYkrHVD" role="37wK5m">
+                <node concept="1pGfFk" id="75eqTYkrHVO" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="37vLTw" id="75eqTYkrAbH" role="37wK5m">
+                    <ref role="3cqZAo" node="75eqTYkrAbB" resolve="project" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="75eqTYkrAbI" role="1B3o_S" />
+      <node concept="3cqZAl" id="75eqTYkrAbJ" role="3clF45" />
+    </node>
     <node concept="2tJIrI" id="60oBoEdxLi" role="jymVt" />
     <node concept="3clFb_" id="60oBoEdc_r" role="jymVt">
       <property role="1EzhhJ" value="false" />
