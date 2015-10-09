@@ -3619,6 +3619,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="236SrjKnykS" role="3cqZAp" />
+        <node concept="3SKdUt" id="ZqkXIVTEHe" role="3cqZAp">
+          <node concept="3SKdUq" id="ZqkXIVTEYt" role="3SKWNk">
+            <property role="3SKdUp" value="empty collection is fine, it's up to make service to report there's nothing to do (odd, but fine for now. Action could have do that instead)" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="7tZeFupJF6E" role="3cqZAp">
           <node concept="3cpWsn" id="7tZeFupJF6F" role="3cpWs9">
             <property role="TrG5h" value="inputRes" />
@@ -3733,13 +3738,7 @@
                       </node>
                     </node>
                     <node concept="3cpWs6" id="6xMoDGgBp87" role="3cqZAp">
-                      <node concept="2ShNRf" id="6xMoDGgBpZ2" role="3cqZAk">
-                        <node concept="Tc6Ow" id="6xMoDGgBwWo" role="2ShVmc">
-                          <node concept="3uibUv" id="6xMoDGgB_pS" role="HW$YZ">
-                            <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
-                          </node>
-                        </node>
-                      </node>
+                      <node concept="10Nm6u" id="ZqkXIVTCkn" role="3cqZAk" />
                     </node>
                   </node>
                 </node>
@@ -3757,11 +3756,11 @@
           <node concept="3clFbS" id="6xMoDGgBAAM" role="3clFbx">
             <node concept="3cpWs6" id="6xMoDGgBDnx" role="3cqZAp" />
           </node>
-          <node concept="2OqwBi" id="6xMoDGgBBHs" role="3clFbw">
-            <node concept="37vLTw" id="6xMoDGgBB2k" role="2Oq$k0">
+          <node concept="3clFbC" id="ZqkXIVTE03" role="3clFbw">
+            <node concept="10Nm6u" id="ZqkXIVTEhp" role="3uHU7w" />
+            <node concept="37vLTw" id="6xMoDGgBB2k" role="3uHU7B">
               <ref role="3cqZAo" node="7tZeFupJF6F" resolve="inputRes" />
             </node>
-            <node concept="1v1jN8" id="6xMoDGgBDbh" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbH" id="1AfPmE4tJSb" role="3cqZAp" />
