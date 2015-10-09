@@ -198,6 +198,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -4783,6 +4784,9 @@
         <node concept="3uibUv" id="3etVqSRKzUa" role="1tU5fm">
           <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
         </node>
+        <node concept="2AHcQZ" id="3GPUCPFi8jY" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="3etVqSRKzUb" role="jymVt">
@@ -4950,6 +4954,7 @@
         <node concept="17QB3L" id="3etVqSRKzVi" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3GPUCPFitLv" role="jymVt" />
     <node concept="2YIFZL" id="3etVqSRKzVj" role="jymVt">
       <property role="TrG5h" value="getSearchResultForModule" />
       <node concept="3uibUv" id="3etVqSRKzVk" role="3clF45">
@@ -4969,11 +4974,47 @@
             <node concept="2ShNRf" id="3etVqSRKzVr" role="33vP2m">
               <node concept="1pGfFk" id="3etVqSRKzVs" role="2ShVmc">
                 <ref role="37wK5l" node="3etVqSRKzXm" resolve="ModelCheckerIssue.ModuleIssue" />
-                <node concept="37vLTw" id="2BHiRxgm$9N" role="37wK5m">
-                  <ref role="3cqZAo" node="3etVqSRKzVN" resolve="message" />
+                <node concept="3cpWs3" id="3GPUCPFis4P" role="37wK5m">
+                  <node concept="3cpWs3" id="3GPUCPFis4Q" role="3uHU7B">
+                    <node concept="2OqwBi" id="3GPUCPFisoP" role="3uHU7B">
+                      <node concept="37vLTw" id="3GPUCPFishl" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3etVqSRKzVL" resolve="module" />
+                      </node>
+                      <node concept="liA8E" id="3GPUCPFiswp" role="2OqNvi">
+                        <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="3GPUCPFis4S" role="3uHU7w">
+                      <property role="Xl_RC" value=": " />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="3GPUCPFis4T" role="3uHU7w">
+                    <node concept="37vLTw" id="3GPUCPFis4U" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3GPUCPFirCv" resolve="vp" />
+                    </node>
+                    <node concept="liA8E" id="3GPUCPFis4V" role="2OqNvi">
+                      <ref role="37wK5l" to="6if8:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="37vLTw" id="2BHiRxgm9Hz" role="37wK5m">
-                  <ref role="3cqZAo" node="3etVqSRKzVP" resolve="fix" />
+                <node concept="3K4zz7" id="3GPUCPFisHU" role="37wK5m">
+                  <node concept="10Nm6u" id="3GPUCPFisHV" role="3K4GZi" />
+                  <node concept="2ShNRf" id="3GPUCPFisHW" role="3K4E3e">
+                    <node concept="1pGfFk" id="3GPUCPFisHX" role="2ShVmc">
+                      <ref role="37wK5l" node="3GPUCPFi75z" resolve="ModelCheckerIssue.ValidationFixAdapter" />
+                      <node concept="37vLTw" id="3GPUCPFisHY" role="37wK5m">
+                        <ref role="3cqZAo" node="3GPUCPFirCv" resolve="vp" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="3GPUCPFisHZ" role="3K4Cdx">
+                    <node concept="37vLTw" id="3GPUCPFisI0" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3GPUCPFirCv" resolve="vp" />
+                    </node>
+                    <node concept="liA8E" id="3GPUCPFisI1" role="2OqNvi">
+                      <ref role="37wK5l" to="6if8:~ValidationProblem.canFix():boolean" resolve="canFix" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -5002,8 +5043,11 @@
                   <node concept="37vLTw" id="2BHiRxeooLq" role="37wK5m">
                     <ref role="3cqZAo" node="3etVqSRKzT_" resolve="CATEGORY_KIND_SEVERITY" />
                   </node>
-                  <node concept="37vLTw" id="2BHiRxgmuZD" role="37wK5m">
-                    <ref role="3cqZAo" node="3etVqSRKzVR" resolve="severity" />
+                  <node concept="1rXfSq" id="3GPUCPFisV3" role="37wK5m">
+                    <ref role="37wK5l" node="3GPUCPFioPI" resolve="toCheckerSeverity" />
+                    <node concept="37vLTw" id="3GPUCPFit4V" role="37wK5m">
+                      <ref role="3cqZAo" node="3GPUCPFirCv" resolve="vp" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5032,96 +5076,113 @@
           <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
-      <node concept="37vLTG" id="3etVqSRKzVN" role="3clF46">
-        <property role="TrG5h" value="message" />
-        <node concept="17QB3L" id="3etVqSRKzVO" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="3etVqSRKzVP" role="3clF46">
-        <property role="TrG5h" value="fix" />
-        <node concept="3uibUv" id="3etVqSRKzVQ" role="1tU5fm">
-          <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
+      <node concept="37vLTG" id="3GPUCPFirCv" role="3clF46">
+        <property role="TrG5h" value="vp" />
+        <node concept="3uibUv" id="3GPUCPFirLV" role="1tU5fm">
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
         </node>
-      </node>
-      <node concept="37vLTG" id="3etVqSRKzVR" role="3clF46">
-        <property role="TrG5h" value="severity" />
-        <node concept="17QB3L" id="3etVqSRKzVS" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3etVqSRKzVT" role="3clF46">
         <property role="TrG5h" value="issueType" />
         <node concept="17QB3L" id="3etVqSRKzVU" role="1tU5fm" />
       </node>
     </node>
-    <node concept="2YIFZL" id="3etVqSRKzVV" role="jymVt">
+    <node concept="2tJIrI" id="3GPUCPFhOey" role="jymVt" />
+    <node concept="2YIFZL" id="3GPUCPFhNO1" role="jymVt">
       <property role="TrG5h" value="getSearchResultForModel" />
-      <node concept="3uibUv" id="3etVqSRKzVW" role="3clF45">
+      <node concept="3uibUv" id="3GPUCPFhNO2" role="3clF45">
         <ref role="3uigEE" to="g4jo:J2bOg02GHT" resolve="SearchResult" />
-        <node concept="3uibUv" id="3etVqSRKzVX" role="11_B2D">
+        <node concept="3uibUv" id="3GPUCPFhNO3" role="11_B2D">
           <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
         </node>
       </node>
-      <node concept="3clFbS" id="3etVqSRKzVY" role="3clF47">
-        <node concept="3cpWs8" id="3etVqSRKzVZ" role="3cqZAp">
-          <node concept="3cpWsn" id="3etVqSRKzW0" role="3cpWs9">
+      <node concept="3clFbS" id="3GPUCPFhNO4" role="3clF47">
+        <node concept="3cpWs8" id="3GPUCPFhNO5" role="3cqZAp">
+          <node concept="3cpWsn" id="3GPUCPFhNO6" role="3cpWs9">
             <property role="TrG5h" value="issue" />
-            <node concept="2ShNRf" id="3etVqSRKzW1" role="33vP2m">
-              <node concept="1pGfFk" id="3etVqSRKzW2" role="2ShVmc">
+            <node concept="2ShNRf" id="3GPUCPFhNO7" role="33vP2m">
+              <node concept="1pGfFk" id="3GPUCPFhNO8" role="2ShVmc">
                 <ref role="37wK5l" node="3etVqSRKzXz" resolve="ModelCheckerIssue.ModelIssue" />
-                <node concept="37vLTw" id="4YlbRIPrmuj" role="37wK5m">
-                  <ref role="3cqZAo" node="3etVqSRKzWp" resolve="model" />
+                <node concept="37vLTw" id="3GPUCPFhNO9" role="37wK5m">
+                  <ref role="3cqZAo" node="3GPUCPFhNOw" resolve="model" />
                 </node>
-                <node concept="37vLTw" id="2BHiRxgmzrB" role="37wK5m">
-                  <ref role="3cqZAo" node="3etVqSRKzWr" resolve="message" />
+                <node concept="2OqwBi" id="3GPUCPFinDr" role="37wK5m">
+                  <node concept="37vLTw" id="3GPUCPFinxS" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3GPUCPFhNOy" resolve="vp" />
+                  </node>
+                  <node concept="liA8E" id="3GPUCPFinKv" role="2OqNvi">
+                    <ref role="37wK5l" to="6if8:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
+                  </node>
                 </node>
-                <node concept="37vLTw" id="2BHiRxgmP8P" role="37wK5m">
-                  <ref role="3cqZAo" node="3etVqSRKzWt" resolve="fix" />
+                <node concept="3K4zz7" id="3GPUCPFi97j" role="37wK5m">
+                  <node concept="10Nm6u" id="3GPUCPFimOY" role="3K4GZi" />
+                  <node concept="2ShNRf" id="3GPUCPFi9fN" role="3K4E3e">
+                    <node concept="1pGfFk" id="3GPUCPFimI5" role="2ShVmc">
+                      <ref role="37wK5l" node="3GPUCPFi75z" resolve="ModelCheckerIssue.ValidationFixAdapter" />
+                      <node concept="37vLTw" id="3GPUCPFimLu" role="37wK5m">
+                        <ref role="3cqZAo" node="3GPUCPFhNOy" resolve="vp" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="3GPUCPFi8v8" role="3K4Cdx">
+                    <node concept="37vLTw" id="3GPUCPFi8Tl" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3GPUCPFhNOy" resolve="vp" />
+                    </node>
+                    <node concept="liA8E" id="3GPUCPFi90c" role="2OqNvi">
+                      <ref role="37wK5l" to="6if8:~ValidationProblem.canFix():boolean" resolve="canFix" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
-            <node concept="3uibUv" id="3etVqSRKzW5" role="1tU5fm">
+            <node concept="3uibUv" id="3GPUCPFhNOc" role="1tU5fm">
               <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="3etVqSRKzW6" role="3cqZAp">
-          <node concept="2ShNRf" id="3etVqSRKzW7" role="3cqZAk">
-            <node concept="1pGfFk" id="3etVqSRKzW8" role="2ShVmc">
+        <node concept="3cpWs6" id="3GPUCPFhNOd" role="3cqZAp">
+          <node concept="2ShNRf" id="3GPUCPFhNOe" role="3cqZAk">
+            <node concept="1pGfFk" id="3GPUCPFhNOf" role="2ShVmc">
               <ref role="37wK5l" to="g4jo:J2bOg02GJx" resolve="SearchResult" />
-              <node concept="37vLTw" id="3GM_nagTuJh" role="37wK5m">
-                <ref role="3cqZAo" node="3etVqSRKzW0" resolve="issue" />
+              <node concept="37vLTw" id="3GPUCPFhNOg" role="37wK5m">
+                <ref role="3cqZAo" node="3GPUCPFhNO6" resolve="issue" />
               </node>
-              <node concept="37vLTw" id="2BHiRxglQ$x" role="37wK5m">
-                <ref role="3cqZAo" node="3etVqSRKzWp" resolve="model" />
+              <node concept="37vLTw" id="3GPUCPFhNOh" role="37wK5m">
+                <ref role="3cqZAo" node="3GPUCPFhNOw" resolve="model" />
               </node>
-              <node concept="2ShNRf" id="3etVqSRKzWb" role="37wK5m">
-                <node concept="1pGfFk" id="3etVqSRKzWc" role="2ShVmc">
+              <node concept="2ShNRf" id="3GPUCPFhNOi" role="37wK5m">
+                <node concept="1pGfFk" id="3GPUCPFhNOj" role="2ShVmc">
                   <ref role="37wK5l" to="18ew:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
-                  <node concept="37vLTw" id="2BHiRxeoe5h" role="37wK5m">
+                  <node concept="37vLTw" id="3GPUCPFhNOk" role="37wK5m">
                     <ref role="3cqZAo" node="3etVqSRKzT_" resolve="CATEGORY_KIND_SEVERITY" />
                   </node>
-                  <node concept="3uibUv" id="3etVqSRMGgp" role="1pMfVU">
+                  <node concept="3uibUv" id="3GPUCPFhNOl" role="1pMfVU">
                     <ref role="3uigEE" to="g4jo:J2bOg02Gm1" resolve="CategoryKind" />
                   </node>
-                  <node concept="17QB3L" id="3etVqSRKzWf" role="1pMfVU" />
-                  <node concept="37vLTw" id="2BHiRxghiIn" role="37wK5m">
-                    <ref role="3cqZAo" node="3etVqSRKzWv" resolve="severity" />
+                  <node concept="17QB3L" id="3GPUCPFhNOm" role="1pMfVU" />
+                  <node concept="1rXfSq" id="3GPUCPFipNM" role="37wK5m">
+                    <ref role="37wK5l" node="3GPUCPFioPI" resolve="toCheckerSeverity" />
+                    <node concept="37vLTw" id="3GPUCPFipWX" role="37wK5m">
+                      <ref role="3cqZAo" node="3GPUCPFhNOy" resolve="vp" />
+                    </node>
                   </node>
                 </node>
               </node>
-              <node concept="3uibUv" id="3etVqSRKzWh" role="1pMfVU">
+              <node concept="3uibUv" id="3GPUCPFhNOo" role="1pMfVU">
                 <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
               </node>
-              <node concept="2ShNRf" id="3etVqSRKzWi" role="37wK5m">
-                <node concept="1pGfFk" id="3etVqSRKzWj" role="2ShVmc">
+              <node concept="2ShNRf" id="3GPUCPFhNOp" role="37wK5m">
+                <node concept="1pGfFk" id="3GPUCPFhNOq" role="2ShVmc">
                   <ref role="37wK5l" to="18ew:~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolve="Pair" />
-                  <node concept="3uibUv" id="3etVqSRMHhf" role="1pMfVU">
+                  <node concept="3uibUv" id="3GPUCPFhNOr" role="1pMfVU">
                     <ref role="3uigEE" to="g4jo:J2bOg02Gm1" resolve="CategoryKind" />
                   </node>
-                  <node concept="17QB3L" id="3etVqSRKzWl" role="1pMfVU" />
-                  <node concept="37vLTw" id="2BHiRxeoe5k" role="37wK5m">
+                  <node concept="17QB3L" id="3GPUCPFhNOs" role="1pMfVU" />
+                  <node concept="37vLTw" id="3GPUCPFhNOt" role="37wK5m">
                     <ref role="3cqZAo" node="3etVqSRKzTH" resolve="CATEGORY_KIND_ISSUE_TYPE" />
                   </node>
-                  <node concept="37vLTw" id="2BHiRxgm64I" role="37wK5m">
-                    <ref role="3cqZAo" node="3etVqSRKzWx" resolve="issueType" />
+                  <node concept="37vLTw" id="3GPUCPFhNOu" role="37wK5m">
+                    <ref role="3cqZAo" node="3GPUCPFhNOC" resolve="issueType" />
                   </node>
                 </node>
               </node>
@@ -5129,30 +5190,66 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="3etVqSRKzWo" role="1B3o_S" />
-      <node concept="37vLTG" id="3etVqSRKzWp" role="3clF46">
+      <node concept="3Tm1VV" id="3GPUCPFhNOv" role="1B3o_S" />
+      <node concept="37vLTG" id="3GPUCPFhNOw" role="3clF46">
         <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="3etVqSRKzWq" role="1tU5fm" />
+        <node concept="H_c77" id="3GPUCPFhNOx" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="3etVqSRKzWr" role="3clF46">
-        <property role="TrG5h" value="message" />
-        <node concept="17QB3L" id="3etVqSRKzWs" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="3etVqSRKzWt" role="3clF46">
-        <property role="TrG5h" value="fix" />
-        <node concept="3uibUv" id="3etVqSRKzWu" role="1tU5fm">
-          <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
+      <node concept="37vLTG" id="3GPUCPFhNOy" role="3clF46">
+        <property role="TrG5h" value="vp" />
+        <node concept="3uibUv" id="3GPUCPFhZL$" role="1tU5fm">
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
         </node>
       </node>
-      <node concept="37vLTG" id="3etVqSRKzWv" role="3clF46">
-        <property role="TrG5h" value="severity" />
-        <node concept="17QB3L" id="3etVqSRKzWw" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="3etVqSRKzWx" role="3clF46">
+      <node concept="37vLTG" id="3GPUCPFhNOC" role="3clF46">
         <property role="TrG5h" value="issueType" />
-        <node concept="17QB3L" id="3etVqSRKzWy" role="1tU5fm" />
+        <node concept="17QB3L" id="3GPUCPFhNOD" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3GPUCPFiqa7" role="jymVt" />
+    <node concept="2YIFZL" id="3GPUCPFioPI" role="jymVt">
+      <property role="TrG5h" value="toCheckerSeverity" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3GPUCPFioPL" role="3clF47">
+        <node concept="3cpWs6" id="3GPUCPFipHI" role="3cqZAp">
+          <node concept="3K4zz7" id="3GPUCPFipHU" role="3cqZAk">
+            <node concept="3clFbC" id="3GPUCPFipHV" role="3K4Cdx">
+              <node concept="Rm8GO" id="3GPUCPFipHW" role="3uHU7w">
+                <ref role="1Px2BO" to="6if8:~ValidationProblem$Severity" resolve="ValidationProblem.Severity" />
+                <ref role="Rm8GQ" to="6if8:~ValidationProblem$Severity.ERROR" resolve="ERROR" />
+              </node>
+              <node concept="2OqwBi" id="3GPUCPFipHX" role="3uHU7B">
+                <node concept="37vLTw" id="3GPUCPFipHY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3GPUCPFipkD" resolve="vp" />
+                </node>
+                <node concept="liA8E" id="3GPUCPFipHZ" role="2OqNvi">
+                  <ref role="37wK5l" to="6if8:~ValidationProblem.getSeverity():jetbrains.mps.project.validation.ValidationProblem$Severity" resolve="getSeverity" />
+                </node>
+              </node>
+            </node>
+            <node concept="10M0yZ" id="3GPUCPFipI0" role="3K4E3e">
+              <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
+              <ref role="3cqZAo" node="3etVqSRKzLr" resolve="SEVERITY_ERROR" />
+            </node>
+            <node concept="10M0yZ" id="3GPUCPFipI1" role="3K4GZi">
+              <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
+              <ref role="3cqZAo" node="3etVqSRKzLv" resolve="SEVERITY_WARNING" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="3GPUCPFioq9" role="1B3o_S" />
+      <node concept="17QB3L" id="3GPUCPFioPG" role="3clF45" />
+      <node concept="37vLTG" id="3GPUCPFipkD" role="3clF46">
+        <property role="TrG5h" value="vp" />
+        <node concept="3uibUv" id="3GPUCPFipkC" role="1tU5fm">
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3GPUCPFhNvo" role="jymVt" />
     <node concept="312cEu" id="3etVqSRKzWz" role="jymVt">
       <property role="TrG5h" value="NodeIssue" />
       <node concept="3Tm1VV" id="3etVqSRKzW$" role="1B3o_S" />
@@ -5358,6 +5455,89 @@
       <node concept="3Tm1VV" id="3etVqSRKzXI" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="3etVqSRKzXJ" role="1B3o_S" />
+    <node concept="2tJIrI" id="3GPUCPFi0_b" role="jymVt" />
+    <node concept="312cEu" id="3GPUCPFi1IY" role="jymVt">
+      <property role="2bfB8j" value="false" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <property role="TrG5h" value="ValidationFixAdapter" />
+      <node concept="312cEg" id="3GPUCPFi7iW" role="jymVt">
+        <property role="TrG5h" value="myIssue" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="3GPUCPFi7iX" role="1B3o_S" />
+        <node concept="3uibUv" id="3GPUCPFi7iZ" role="1tU5fm">
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+        </node>
+      </node>
+      <node concept="3clFbW" id="3GPUCPFi75z" role="jymVt">
+        <node concept="3cqZAl" id="3GPUCPFi75$" role="3clF45" />
+        <node concept="3clFbS" id="3GPUCPFi75A" role="3clF47">
+          <node concept="3clFbF" id="3GPUCPFi7j0" role="3cqZAp">
+            <node concept="37vLTI" id="3GPUCPFi7j2" role="3clFbG">
+              <node concept="37vLTw" id="3GPUCPFi7vj" role="37vLTJ">
+                <ref role="3cqZAo" node="3GPUCPFi7iW" resolve="myIssue" />
+              </node>
+              <node concept="37vLTw" id="3GPUCPFi7ja" role="37vLTx">
+                <ref role="3cqZAo" node="3GPUCPFi7i8" resolve="validationIssue" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="3GPUCPFi6Sg" role="1B3o_S" />
+        <node concept="37vLTG" id="3GPUCPFi7i8" role="3clF46">
+          <property role="TrG5h" value="validationIssue" />
+          <node concept="3uibUv" id="3GPUCPFi7i7" role="1tU5fm">
+            <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+          </node>
+        </node>
+      </node>
+      <node concept="2tJIrI" id="3GPUCPFi7vD" role="jymVt" />
+      <node concept="3clFb_" id="3GPUCPFi7x4" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="doFix" />
+        <node concept="10P_77" id="3GPUCPFi7x5" role="3clF45" />
+        <node concept="3Tm1VV" id="3GPUCPFi7x6" role="1B3o_S" />
+        <node concept="3clFbS" id="3GPUCPFi7x8" role="3clF47">
+          <node concept="3clFbJ" id="3GPUCPFi7OO" role="3cqZAp">
+            <node concept="3clFbS" id="3GPUCPFi7OP" role="3clFbx">
+              <node concept="3cpWs6" id="3GPUCPFi7OQ" role="3cqZAp">
+                <node concept="3clFbT" id="3GPUCPFi7OR" role="3cqZAk">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="3GPUCPFi7OS" role="3clFbw">
+              <node concept="2OqwBi" id="3GPUCPFi7OT" role="3fr31v">
+                <node concept="37vLTw" id="3GPUCPFi84d" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3GPUCPFi7iW" resolve="myIssue" />
+                </node>
+                <node concept="liA8E" id="3GPUCPFi7OV" role="2OqNvi">
+                  <ref role="37wK5l" to="6if8:~ValidationProblem.canFix():boolean" resolve="canFix" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="3GPUCPFi7OW" role="3cqZAp">
+            <node concept="2OqwBi" id="3GPUCPFi7OX" role="3clFbG">
+              <node concept="37vLTw" id="3GPUCPFi8iC" role="2Oq$k0">
+                <ref role="3cqZAo" node="3GPUCPFi7iW" resolve="myIssue" />
+              </node>
+              <node concept="liA8E" id="3GPUCPFi7OZ" role="2OqNvi">
+                <ref role="37wK5l" to="6if8:~ValidationProblem.fix():void" resolve="fix" />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="3GPUCPFi7P0" role="3cqZAp">
+            <node concept="3clFbT" id="3GPUCPFi7P1" role="3cqZAk">
+              <property role="3clFbU" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="3GPUCPFi5Gg" role="EKbjA">
+        <ref role="3uigEE" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="3etVqSRK$2L">
     <property role="TrG5h" value="ModelPropertiesChecker" />
@@ -5449,73 +5629,12 @@
                           <node concept="TSZUe" id="2sSkv2aFh0_" role="2OqNvi">
                             <node concept="2YIFZM" id="2sSkv2aFh0A" role="25WWJ7">
                               <ref role="1Pybhc" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
-                              <ref role="37wK5l" node="3etVqSRKzVV" resolve="getSearchResultForModel" />
+                              <ref role="37wK5l" node="3GPUCPFhNO1" resolve="getSearchResultForModel" />
                               <node concept="37vLTw" id="2sSkv2aFh0B" role="37wK5m">
                                 <ref role="3cqZAo" node="3etVqSRK$4M" resolve="model" />
                               </node>
-                              <node concept="2OqwBi" id="2sSkv2aFh0C" role="37wK5m">
-                                <node concept="37vLTw" id="2sSkv2aFh0D" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="2sSkv2aFh0v" resolve="problem" />
-                                </node>
-                                <node concept="liA8E" id="2sSkv2aFh0E" role="2OqNvi">
-                                  <ref role="37wK5l" to="6if8:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
-                                </node>
-                              </node>
-                              <node concept="2ShNRf" id="2sSkv2aFh0F" role="37wK5m">
-                                <node concept="YeOm9" id="2sSkv2aFh0G" role="2ShVmc">
-                                  <node concept="1Y3b0j" id="2sSkv2aFh0H" role="YeSDq">
-                                    <property role="2bfB8j" value="true" />
-                                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                                    <ref role="1Y3XeK" node="3etVqSRTqNj" resolve="IModelCheckerFix" />
-                                    <node concept="3Tm1VV" id="2sSkv2aFh0I" role="1B3o_S" />
-                                    <node concept="3clFb_" id="2sSkv2aFh0J" role="jymVt">
-                                      <property role="1EzhhJ" value="false" />
-                                      <property role="TrG5h" value="doFix" />
-                                      <node concept="10P_77" id="2sSkv2aFh0K" role="3clF45" />
-                                      <node concept="3Tm1VV" id="2sSkv2aFh0L" role="1B3o_S" />
-                                      <node concept="3clFbS" id="2sSkv2aFh0M" role="3clF47">
-                                        <node concept="3clFbJ" id="2sSkv2aFh0N" role="3cqZAp">
-                                          <node concept="3clFbS" id="2sSkv2aFh0O" role="3clFbx">
-                                            <node concept="3cpWs6" id="2sSkv2aFh0P" role="3cqZAp">
-                                              <node concept="3clFbT" id="2sSkv2aFh0Q" role="3cqZAk">
-                                                <property role="3clFbU" value="false" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                          <node concept="3fqX7Q" id="2sSkv2aFh0R" role="3clFbw">
-                                            <node concept="2OqwBi" id="2sSkv2aFh0S" role="3fr31v">
-                                              <node concept="37vLTw" id="2sSkv2aFh0T" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="2sSkv2aFh0v" resolve="problem" />
-                                              </node>
-                                              <node concept="liA8E" id="2sSkv2aFh0U" role="2OqNvi">
-                                                <ref role="37wK5l" to="6if8:~ValidationProblem.canFix():boolean" resolve="canFix" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3clFbF" id="2sSkv2aFh0V" role="3cqZAp">
-                                          <node concept="2OqwBi" id="2sSkv2aFh0W" role="3clFbG">
-                                            <node concept="37vLTw" id="2sSkv2aFh0X" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="2sSkv2aFh0v" resolve="problem" />
-                                            </node>
-                                            <node concept="liA8E" id="2sSkv2aFh0Y" role="2OqNvi">
-                                              <ref role="37wK5l" to="6if8:~ValidationProblem.fix():void" resolve="fix" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3cpWs6" id="2sSkv2aFh0Z" role="3cqZAp">
-                                          <node concept="3clFbT" id="2sSkv2aFh10" role="3cqZAk">
-                                            <property role="3clFbU" value="true" />
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="10M0yZ" id="2sSkv2aFh11" role="37wK5m">
-                                <ref role="3cqZAo" node="3etVqSRKzLr" resolve="SEVERITY_ERROR" />
-                                <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
+                              <node concept="37vLTw" id="3GPUCPFir1Q" role="37wK5m">
+                                <ref role="3cqZAo" node="2sSkv2aFh0v" resolve="problem" />
                               </node>
                               <node concept="Xl_RD" id="2sSkv2aFh12" role="37wK5m">
                                 <property role="Xl_RC" value="Model properties" />
@@ -9221,6 +9340,7 @@
     <property role="3GE5qa" value="Model Checker" />
     <node concept="312cEg" id="3etVqSRT$D8" role="jymVt">
       <property role="TrG5h" value="myResults" />
+      <property role="3TUv4t" value="true" />
       <node concept="2ShNRf" id="3etVqSRT$D9" role="33vP2m">
         <node concept="1pGfFk" id="3etVqSRT$Da" role="2ShVmc">
           <ref role="37wK5l" to="9erk:~SearchResults.&lt;init&gt;()" resolve="SearchResults" />
@@ -9314,36 +9434,6 @@
                     </node>
                   </node>
                   <node concept="3clFbS" id="55QDKWLAHXG" role="1bW5cS">
-                    <node concept="3cpWs8" id="55QDKWLAICh" role="3cqZAp">
-                      <node concept="3cpWsn" id="55QDKWLAICi" role="3cpWs9">
-                        <property role="TrG5h" value="severity" />
-                        <node concept="17QB3L" id="55QDKWLAICf" role="1tU5fm" />
-                        <node concept="3K4zz7" id="55QDKWLAKTL" role="33vP2m">
-                          <node concept="3clFbC" id="55QDKWLAK3F" role="3K4Cdx">
-                            <node concept="Rm8GO" id="55QDKWLAKCr" role="3uHU7w">
-                              <ref role="Rm8GQ" to="6if8:~ValidationProblem$Severity.ERROR" resolve="ERROR" />
-                              <ref role="1Px2BO" to="6if8:~ValidationProblem$Severity" resolve="ValidationProblem.Severity" />
-                            </node>
-                            <node concept="2OqwBi" id="55QDKWLAJ$y" role="3uHU7B">
-                              <node concept="37vLTw" id="55QDKWLAJr$" role="2Oq$k0">
-                                <ref role="3cqZAo" node="55QDKWLAI0j" resolve="vp" />
-                              </node>
-                              <node concept="liA8E" id="55QDKWLAJM5" role="2OqNvi">
-                                <ref role="37wK5l" to="6if8:~ValidationProblem.getSeverity():jetbrains.mps.project.validation.ValidationProblem$Severity" resolve="getSeverity" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="10M0yZ" id="55QDKWLAICj" role="3K4E3e">
-                            <ref role="3cqZAo" node="3etVqSRKzLr" resolve="SEVERITY_ERROR" />
-                            <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
-                          </node>
-                          <node concept="10M0yZ" id="55QDKWLALbi" role="3K4GZi">
-                            <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
-                            <ref role="3cqZAo" node="3etVqSRKzLv" resolve="SEVERITY_WARNING" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="6DZtr6RqZh3" role="3cqZAp">
                       <node concept="2OqwBi" id="6DZtr6RqZh4" role="3clFbG">
                         <node concept="liA8E" id="6DZtr6RqZh5" role="2OqNvi">
@@ -9354,64 +9444,8 @@
                             <node concept="37vLTw" id="6DZtr6RqZh7" role="37wK5m">
                               <ref role="3cqZAo" node="3etVqSRT$F5" resolve="module" />
                             </node>
-                            <node concept="3cpWs3" id="6DZtr6RqZh8" role="37wK5m">
-                              <node concept="3cpWs3" id="6DZtr6RqZh9" role="3uHU7B">
-                                <node concept="37vLTw" id="6DZtr6RqZha" role="3uHU7B">
-                                  <ref role="3cqZAo" node="3Oer08gdW5M" resolve="moduleName" />
-                                </node>
-                                <node concept="Xl_RD" id="6DZtr6RqZhb" role="3uHU7w">
-                                  <property role="Xl_RC" value=": " />
-                                </node>
-                              </node>
-                              <node concept="2OqwBi" id="55QDKWLALB7" role="3uHU7w">
-                                <node concept="37vLTw" id="55QDKWLALu_" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="55QDKWLAI0j" resolve="vp" />
-                                </node>
-                                <node concept="liA8E" id="55QDKWLALT5" role="2OqNvi">
-                                  <ref role="37wK5l" to="6if8:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="1bVj0M" id="55QDKWLATjV" role="37wK5m">
-                              <node concept="3clFbS" id="55QDKWLATjY" role="1bW5cS">
-                                <node concept="3clFbJ" id="55QDKWLATx2" role="3cqZAp">
-                                  <node concept="3clFbS" id="55QDKWLATx3" role="3clFbx">
-                                    <node concept="3cpWs6" id="55QDKWLAUsN" role="3cqZAp">
-                                      <node concept="3clFbT" id="55QDKWLAUL6" role="3cqZAk">
-                                        <property role="3clFbU" value="false" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3fqX7Q" id="55QDKWLAUhX" role="3clFbw">
-                                    <node concept="2OqwBi" id="55QDKWLAUhZ" role="3fr31v">
-                                      <node concept="37vLTw" id="55QDKWLAUi0" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="55QDKWLAI0j" resolve="vp" />
-                                      </node>
-                                      <node concept="liA8E" id="55QDKWLAUi1" role="2OqNvi">
-                                        <ref role="37wK5l" to="6if8:~ValidationProblem.canFix():boolean" resolve="canFix" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3clFbF" id="55QDKWLAV5S" role="3cqZAp">
-                                  <node concept="2OqwBi" id="55QDKWLAVhZ" role="3clFbG">
-                                    <node concept="37vLTw" id="55QDKWLAV5Q" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="55QDKWLAI0j" resolve="vp" />
-                                    </node>
-                                    <node concept="liA8E" id="55QDKWLAVAm" role="2OqNvi">
-                                      <ref role="37wK5l" to="6if8:~ValidationProblem.fix():void" resolve="fix" />
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3cpWs6" id="55QDKWLAW6L" role="3cqZAp">
-                                  <node concept="3clFbT" id="55QDKWLAWyc" role="3cqZAk">
-                                    <property role="3clFbU" value="true" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="55QDKWLAICk" role="37wK5m">
-                              <ref role="3cqZAo" node="55QDKWLAICi" resolve="severity" />
+                            <node concept="37vLTw" id="3GPUCPFiwnP" role="37wK5m">
+                              <ref role="3cqZAo" node="55QDKWLAI0j" resolve="vp" />
                             </node>
                             <node concept="Xl_RD" id="6DZtr6RqZhf" role="37wK5m">
                               <property role="Xl_RC" value="module properties" />
