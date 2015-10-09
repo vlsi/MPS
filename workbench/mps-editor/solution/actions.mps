@@ -6397,6 +6397,9 @@
       <node concept="10WQ6h" id="7skRrSNFQqB" role="ftvYc">
         <property role="TrG5h" value="hints" />
       </node>
+      <node concept="10WQ6h" id="7hTob70Ru0K" role="ftvYc">
+        <property role="TrG5h" value="reflective" />
+      </node>
       <node concept="2a7GMi" id="5GGM$_u4hh$" role="ftvYc" />
       <node concept="10WQ6h" id="6S3xhs4vzRz" role="ftvYc">
         <property role="TrG5h" value="diagram" />
@@ -10947,7 +10950,8 @@
     <property role="TrG5h" value="DefaultEditorGroup" />
     <property role="3OnEW4" value="true" />
     <node concept="tT9cl" id="5SnwAr0vYpf" role="2f5YQi">
-      <ref role="tU$_T" node="5YEoTZrFokU" resolve="ActionsAsIntentions" />
+      <ref role="tU$_T" node="1xsN4xJX8VI" resolve="EditorPopup" />
+      <ref role="2f8Tey" node="7hTob70Ru0K" resolve="reflective" />
     </node>
     <node concept="ftmFs" id="5SnwAr0vZP_" role="ftER_">
       <node concept="tCFHf" id="302gCSEbSCj" role="ftvYc">
@@ -10961,7 +10965,7 @@
   <node concept="sE7Ow" id="5SnwAr0vAm_">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
     <property role="TrG5h" value="ShowReflectiveEditor" />
-    <property role="2uzpH1" value="Show Default Editor" />
+    <property role="2uzpH1" value="Show Reflective Editor" />
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3zc62tOilIE" role="1NuT2Z">
       <property role="TrG5h" value="node" />

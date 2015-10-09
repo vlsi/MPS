@@ -21,7 +21,7 @@ import java.util.Collection;
 public class ShowReflectiveEditor_Action extends BaseAction {
   private static final Icon ICON = null;
   public ShowReflectiveEditor_Action() {
-    super("Show Default Editor", "", ICON);
+    super("Show Reflective Editor", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

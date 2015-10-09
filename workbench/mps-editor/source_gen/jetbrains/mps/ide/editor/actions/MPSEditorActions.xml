@@ -210,6 +210,7 @@
     <group id="EditorPopup_ActionGrouprefactoring" />
     <group id="EditorPopup_ActionGroupvcs" />
     <group id="EditorPopup_ActionGrouphints" />
+    <group id="EditorPopup_ActionGroupreflective" />
     <group id="EditorPopup_ActionGroupdiagram" />
     <group id="GoToEditorPopupAddition_ActionGroupother" />
     <group id="GoToEditorPopupAddition_ActionGrouprefs" />
@@ -289,6 +290,7 @@
       <reference ref="EditorPopup_ActionGroupvcs" />
       <separator />
       <reference ref="EditorPopup_ActionGrouphints" />
+      <reference ref="EditorPopup_ActionGroupreflective" />
       <separator />
       <reference ref="EditorPopup_ActionGroupdiagram" />
     </group>
@@ -330,7 +332,7 @@
     <group id="jetbrains.mps.ide.editor.actions.DefaultEditorGroup_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" />
-      <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup" anchor="last" />
+      <add-to-group group-id="EditorPopup_ActionGroupreflective" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />

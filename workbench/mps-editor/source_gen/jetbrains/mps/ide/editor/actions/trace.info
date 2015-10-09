@@ -241,7 +241,7 @@
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3205778618063801970">
     <file name="MPSEditorActions.xml">
-      <unit id="3205778618063801970" at="1,0,340,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
+      <unit id="3205778618063801970" at="1,0,342,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3207605520775490121">
@@ -2502,8 +2502,8 @@
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/6780031141857355173">
     <file name="ShowReflectiveEditor_Action.java">
       <node id="6780031141857355173" at="22,0,23,0" concept="12" trace="ICON" />
-      <node id="6780031141857355173" at="23,40,24,43" concept="14" />
-      <node id="6780031141857355173" at="24,43,25,35" concept="3" />
+      <node id="6780031141857355173" at="23,40,24,46" concept="14" />
+      <node id="6780031141857355173" at="24,46,25,35" concept="3" />
       <node id="6780031141857355173" at="25,35,26,41" concept="3" />
       <node id="6780031141857355173" at="29,32,30,16" concept="9" />
       <node id="6780031141857383730" at="33,87,34,216" concept="9" />
