@@ -13,6 +13,6 @@ public abstract class MigrationTask extends MpsLoadTask {
   }
 
   protected String getWorkerClass() {
-    return "jetbrains.mps.tool.builder.MigrationWorker";
+    return "jetbrains.mps.build.migration.MigrationWorker";
   }
 }

@@ -7261,7 +7261,7 @@
       <node concept="3clFbS" id="60oBoEdc_u" role="3clF47">
         <node concept="3clFbF" id="60oBoEdzlx" role="3cqZAp">
           <node concept="Xl_RD" id="5reM9ACTkmr" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.tool.builder.MigrationWorker" />
+            <property role="Xl_RC" value="jetbrains.mps.build.migration.MigrationWorker" />
           </node>
         </node>
       </node>
