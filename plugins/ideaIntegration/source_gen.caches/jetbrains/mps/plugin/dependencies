@@ -37,10 +37,10 @@
     <classNode extendsClassName="jetbrains.mps.ide.navigation.NavigationProvider" />
   </dependency>
   <dependency className="jetbrains.mps.plugin.MPSPlugin" file="MPSPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.components.ComponentsPackage" />
     <classNode dependClassName="com.intellij.openapi.components.StorageScheme" />
     <classNode dependClassName="com.intellij.openapi.components.impl.stores.IProjectStore" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ex.ProjectEx" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />

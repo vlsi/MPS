@@ -37,9 +37,8 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.LocalChangeList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.changes.EmptyChangelistBuilder;
 import com.intellij.openapi.vcs.changes.Change;
+import com.intellij.openapi.vcs.changes.EmptyChangelistBuilder;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import com.intellij.openapi.vcs.VcsKey;
 import com.intellij.openapi.vcs.changes.ContentRevision;
@@ -181,14 +180,13 @@ public class MPSVcsManager implements ProjectComponent {
     public void editName(String oldName, String newName) {
     }
     @Override
+    public void moveChanges(String toList, Collection<Change> changes) {
+    }
+    @Override
     public void setListsToDisappear(Collection<String> names) {
     }
     @Override
     public FileStatus getStatus(VirtualFile virtualFile) {
-      return FileStatus.NOT_CHANGED;
-    }
-    @Nullable
-    public FileStatus getStatus(@NotNull FilePath path) {
       return FileStatus.NOT_CHANGED;
     }
   }

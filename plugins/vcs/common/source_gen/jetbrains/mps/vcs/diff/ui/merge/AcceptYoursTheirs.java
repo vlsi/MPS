@@ -9,9 +9,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public class AcceptYoursTheirs extends BaseAction implements DumbAware {
-  private MergeModelsPanel myMergeModelsDialog;
+  private MergeModelsDialog myMergeModelsDialog;
   private boolean myAcceptMine;
-  private AcceptYoursTheirs(MergeModelsPanel mergeModelsDialog, boolean acceptMine) {
+  private AcceptYoursTheirs(MergeModelsDialog mergeModelsDialog, boolean acceptMine) {
     super("Accept " + ((acceptMine ? "Yours" : "Theirs")), null, EmptyIcon.create(1));
     myMergeModelsDialog = mergeModelsDialog;
     myAcceptMine = acceptMine;
@@ -29,10 +29,10 @@ public class AcceptYoursTheirs extends BaseAction implements DumbAware {
   public boolean displayTextInToolbar() {
     return true;
   }
-  public static AcceptYoursTheirs yoursInstance(MergeModelsPanel mergeModelsDialog) {
+  public static AcceptYoursTheirs yoursInstance(MergeModelsDialog mergeModelsDialog) {
     return new AcceptYoursTheirs(mergeModelsDialog, true);
   }
-  public static AcceptYoursTheirs theirsInstance(MergeModelsPanel mergeModelsDialog) {
+  public static AcceptYoursTheirs theirsInstance(MergeModelsDialog mergeModelsDialog) {
     return new AcceptYoursTheirs(mergeModelsDialog, false);
   }
 }

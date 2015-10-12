@@ -8,7 +8,7 @@
       <excluded location="jmock-2.5.1/jmock-legacy-2.5.1.jar" />
     </modelRoot>
     <modelRoot contentPath="${mps_home}/lib" type="java_classes">
-      <sourceRoot location="junit-4.12.jar" />
+      <sourceRoot location="junit-4.11.jar" />
     </modelRoot>
   </models>
   <facets>
@@ -23,7 +23,7 @@
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/objenesis-1.0.jar" />
-    <stubModelEntry path="${mps_home}/lib/junit-4.12.jar" />
+    <stubModelEntry path="${mps_home}/lib/junit-4.11.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

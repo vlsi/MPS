@@ -110,17 +110,17 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
   }
 
   @Override
-  public VirtualFile createChildFile(Object requestor, VirtualFile vDir, String fileName) throws IOException {
+  protected VirtualFile createChildFile(Object requestor, VirtualFile vDir, String fileName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public VirtualFile createChildDirectory(Object requestor, VirtualFile vDir, String dirName) throws IOException {
+  protected VirtualFile createChildDirectory(Object requestor, VirtualFile vDir, String dirName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public VirtualFile copyFile(Object requestor, VirtualFile virtualFile, VirtualFile newParent, String copyName) throws IOException {
+  protected VirtualFile copyFile(Object requestor, VirtualFile virtualFile, VirtualFile newParent, String copyName) throws IOException {
     throw new UnsupportedOperationException();
   }
 }

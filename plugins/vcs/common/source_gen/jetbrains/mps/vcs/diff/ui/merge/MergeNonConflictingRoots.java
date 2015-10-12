@@ -8,9 +8,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public class MergeNonConflictingRoots extends BaseAction implements DumbAware {
-  private MergeModelsPanel myDialog;
-  public MergeNonConflictingRoots(MergeModelsPanel dialog) {
-    super("Automatically Merge Non-Conflicting Roots", null, MergeModelsPanel.APPLY_NON_CONFLICTS);
+  private MergeModelsDialog myDialog;
+  public MergeNonConflictingRoots(MergeModelsDialog dialog) {
+    super("Automatically Merge Non-Conflicting Roots", null, MergeModelsDialog.APPLY_NON_CONFLICTS);
     myDialog = dialog;
     setDisableOnNoProject(false);
   }

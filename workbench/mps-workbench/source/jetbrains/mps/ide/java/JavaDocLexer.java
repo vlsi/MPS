@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.ide.java;
 
-import com.intellij.lexer.MergingLexerAdapter;
+import com.intellij.lexer.DocCommentLexer;
 
-public class JavaDocLexer extends MergingLexerAdapter {
+public class JavaDocLexer extends DocCommentLexer {
 
   public JavaDocLexer() {
-    super(new JavaLexer(), new JavaDocTokenTypes().spaceCommentsTokenSet());
+    super(new JavaDocTokenTypes(), true);
   }
 }

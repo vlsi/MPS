@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.fileEditor;
 import com.intellij.ide.actions.ShowFilePathAction;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.fileEditor.impl.EditorEmptyTextPainter;
+import com.intellij.openapi.fileEditor.impl.EditorsSplitters;
 import com.intellij.openapi.util.Couple;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.ui.Gray;
@@ -25,15 +26,15 @@ import com.intellij.ui.JBColor;
 import com.intellij.util.PairFunction;
 import com.intellij.util.ui.GraphicsUtil;
 import com.intellij.util.ui.UIUtil;
+import com.intellij.util.ui.UIUtil.TextPainter;
 
-import javax.swing.JComponent;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
 public class MPSEditorEmptyTextPainter extends EditorEmptyTextPainter {
 
   @Override
-  public void paintEmptyText(final JComponent splitters, Graphics g) {
+  public void paintEmptyText(final EditorsSplitters splitters, Graphics g) {
     boolean isDarkBackground = UIUtil.isUnderDarcula();
     UIUtil.applyRenderingHints(g);
     GraphicsUtil.setupAntialiasing(g, true, false);
@@ -58,7 +59,7 @@ public class MPSEditorEmptyTextPainter extends EditorEmptyTextPainter {
   }
 
   @Override
-  protected void advertiseActions(JComponent splitters, UIUtil.TextPainter painter) {
+  protected void advertiseActions(EditorsSplitters splitters, TextPainter painter) {
     //Change list of actions
     appendToolWindow(painter, "Open Project View", ToolWindowId.PROJECT_VIEW, splitters);
     appendAction(painter, "Open root node by name", getActionShortcutText("jetbrains.mps.ide.actions.GoToRootNode_Action"));

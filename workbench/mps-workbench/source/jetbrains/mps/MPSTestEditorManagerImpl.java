@@ -102,6 +102,12 @@ public class MPSTestEditorManagerImpl extends TestEditorManagerImpl {
     final EditorHistoryManager editorHistoryManager = EditorHistoryManager.getInstance(getProject());
     for (int i = 0; i < editors.length; i++) {
       final FileEditor editor = editors[i];
+      if (editor instanceof TextEditor) {
+        // hack!!!
+        // This code prevents "jumping" on next repaint.
+        ((EditorEx) ((TextEditor) editor).getEditor()).stopOptimizedScrolling();
+      }
+
       final FileEditorProvider provider = providers[i];//getProvider(editor);
 
       // Restore editor state

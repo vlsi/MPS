@@ -23,7 +23,6 @@ import com.intellij.debugger.impl.DebuggerContextImpl;
 import com.intellij.debugger.impl.DebuggerContextListener;
 import com.intellij.debugger.impl.DebuggerManagerListener;
 import com.intellij.debugger.impl.DebuggerSession;
-import com.intellij.debugger.impl.DebuggerSession.Event;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.Executor;
 import com.intellij.execution.ui.RunContentDescriptor;
@@ -119,8 +118,8 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
 
   private class MyDebuggerContextListener implements DebuggerContextListener {
     @Override
-    public void changeEvent(@NotNull DebuggerContextImpl newContext, Event event) {
-      if (event != Event.REFRESH_VIEWS_ONLY && event != Event.THREADS_REFRESH) {
+    public void changeEvent(DebuggerContextImpl newContext, int event) {
+      if (event != DebuggerSession.EVENT_REFRESH_VIEWS_ONLY && event != DebuggerSession.EVENT_THREADS_REFRESH) {
         reAttachPainter(newContext.getDebuggerSession(), true);
       }
     }

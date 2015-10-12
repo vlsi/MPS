@@ -1,7 +1,7 @@
 <component xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/idea-plugin/*)"/>
-  <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/idea-plugin/*)"/>
+  <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/component/*)"/>
+  <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
   <xi:include href="/idea/MPSLangActions.xml" xpointer="xpointer(/component/*)"/>
 
   <actions>

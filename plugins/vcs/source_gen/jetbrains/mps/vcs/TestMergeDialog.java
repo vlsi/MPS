@@ -25,6 +25,20 @@ import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
+import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
+import com.intellij.openapi.diff.DiffContent;
+import java.lang.reflect.Field;
+import com.intellij.idea.IdeaTestApplication;
+import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
+import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -89,6 +103,51 @@ public class TestMergeDialog {
       return;
     }
     final String finalResultFile = resultFile;
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
+          public MergeModelsDialog compute() {
+            return new MergeModelsDialog(new MergeTemporaryModel(models[0], true), new MergeTemporaryModel(models[1], true), new MergeTemporaryModel(models[2], true), new SimpleDiffRequest(TestMergeDialog.ourProject, (DiffContent[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+          }
+        });
+        try {
+          Field field = dialog.getClass().getDeclaredField("myMergeTree");
+          field.setAccessible(true);
+          IdeaTestApplication.getInstance(null).setDataProvider((DiffModelTree) field.get(dialog));
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+
+        ISaveMergedModel saver = new ISaveMergedModel() {
+          public boolean save(MergeModelsDialog dialog, final org.jetbrains.mps.openapi.model.SModel resultModel) {
+            if (resultModel != null) {
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
+                  if (!(iFile.exists())) {
+                    iFile.createNewFile();
+                  }
+                  try {
+                    PersistenceFacade.getInstance().getDefaultModelFactory().save(resultModel, new FileDataSource(iFile));
+                  } catch (Exception ex) {
+                    if (LOG.isEnabledFor(Level.ERROR)) {
+                      LOG.error("Cannot save model.", ex);
+                    }
+                  }
+                }
+              });
+            }
+            return true;
+          }
+        };
+
+        dialog.setSaver(saver);
+        dialog.show();
+
+        Disposer.dispose(TestMergeDialog.myParentDisposable);
+        System.exit(0);
+      }
+    });
   }
   protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 }

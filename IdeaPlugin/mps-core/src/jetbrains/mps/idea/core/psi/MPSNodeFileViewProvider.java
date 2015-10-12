@@ -18,7 +18,6 @@ package jetbrains.mps.idea.core.psi;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -210,12 +209,6 @@ public class MPSNodeFileViewProvider implements FileViewProvider {
     PsiFile psi = getPsi(getBaseLanguage());
     assert psi != null;
     return psi;
-  }
-
-  @NotNull
-  @Override
-  public FileType getFileType() {
-    return myNodeFile.getFileType();
   }
 
   @Nullable

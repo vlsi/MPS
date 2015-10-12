@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
+import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
@@ -127,10 +128,9 @@ public class EditorTests extends DataMPSFixtureTestCase {
     if (thrown[0] != null) throw thrown[0];
 
     Project prj = myModule.getProject();
-    //TODO: see commit 543037363dfc71abd442f8963c60bfcbb066fcfb and 6f76d0b27dad6b10b908eebb158d8a8e81f7fbe4 in IDEA to decide how to handle this
-    /*if (prj instanceof ProjectImpl) {
-      ((ProjectImpl)prj).setTemporarilyDisposed(true);
-    }*/
+    if (prj instanceof ComponentManagerImpl) {
+      ((ComponentManagerImpl) prj).setTemporarilyDisposed(true);
+    }
   }
 
 
