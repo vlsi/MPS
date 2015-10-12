@@ -4,7 +4,7 @@
   <typedef name="jvmargs" classname="jetbrains.mps.build.ant.JvmArgs" />
   <typedef name="macro" classname="jetbrains.mps.build.ant.Macro" />
 
-  <taskdef name="migrateProject" classname="jetbrains.mps.build.ant.MigrationTask" />
+  <taskdef name="migrate" classname="jetbrains.mps.build.ant.MigrationTask" />
 
   <!--used only in generated build scripts-->
   <taskdef name="generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" />

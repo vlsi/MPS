@@ -4,7 +4,7 @@ package jetbrains.mps.build.ant;
 
 import java.io.File;
 
-public abstract class MigrationTask extends MpsLoadTask {
+public class MigrationTask extends MpsLoadTask {
   public MigrationTask() {
   }
 
