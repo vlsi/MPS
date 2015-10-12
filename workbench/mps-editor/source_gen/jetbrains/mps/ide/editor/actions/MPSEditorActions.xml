@@ -329,7 +329,7 @@
       <reference ref="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
       <add-to-group group-id="EditorPopup_ActionGrouphints" anchor="last" />
     </group>
-    <group id="jetbrains.mps.ide.editor.actions.DefaultEditorGroup_ActionGroup">
+    <group id="jetbrains.mps.ide.editor.actions.ReflectiveEditorGroup_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" />
       <add-to-group group-id="EditorPopup_ActionGroupreflective" anchor="last" />
