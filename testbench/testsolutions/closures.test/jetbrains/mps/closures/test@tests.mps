@@ -7,7 +7,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang()" />
@@ -3380,7 +3380,7 @@
             <node concept="2OqwBi" id="hSBgRNW" role="3clFbG">
               <node concept="Xjq3P" id="hSBgRGn" role="2Oq$k0" />
               <node concept="liA8E" id="hSBgXHE" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="hSBgYh3" role="37wK5m">
                   <node concept="3clFbS" id="hSBgYh4" role="1bW5cS">
                     <node concept="3clFbF" id="hSBgZur" role="3cqZAp">
@@ -3439,7 +3439,7 @@
             <node concept="2OqwBi" id="hSBhHcE" role="3clFbG">
               <node concept="Xjq3P" id="hSBhHcF" role="2Oq$k0" />
               <node concept="liA8E" id="hSBhHcG" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="hSBhHcH" role="37wK5m">
                   <node concept="3clFbS" id="hSBhHcI" role="1bW5cS">
                     <node concept="3clFbF" id="hSBhHcJ" role="3cqZAp">
@@ -3498,7 +3498,7 @@
             <node concept="2OqwBi" id="hSBhqkd" role="3clFbG">
               <node concept="Xjq3P" id="hSBhqke" role="2Oq$k0" />
               <node concept="liA8E" id="hSBhqkf" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="hSBhqkg" role="37wK5m">
                   <node concept="3clFbS" id="hSBhqkh" role="1bW5cS">
                     <node concept="3clFbF" id="hSBhqki" role="3cqZAp">
@@ -3554,7 +3554,7 @@
             <node concept="2OqwBi" id="hSBhZVZ" role="3clFbG">
               <node concept="Xjq3P" id="hSBhZW0" role="2Oq$k0" />
               <node concept="liA8E" id="hSBhZW1" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="hSBhZW2" role="37wK5m">
                   <node concept="3clFbS" id="hSBhZW3" role="1bW5cS">
                     <node concept="3clFbF" id="hSBhZW4" role="3cqZAp">
@@ -3621,7 +3621,7 @@
             <node concept="2OqwBi" id="hSBiivd" role="3clFbG">
               <node concept="Xjq3P" id="hSBiive" role="2Oq$k0" />
               <node concept="liA8E" id="hSBiivf" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="hSBiivg" role="37wK5m">
                   <node concept="3clFbS" id="hSBiivh" role="1bW5cS">
                     <node concept="3clFbF" id="hSBiivi" role="3cqZAp">
@@ -5346,7 +5346,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="hvflpiM" role="3MN40a">
-      <property role="TrG5h" value="assertResultsEqual" />
+      <property role="TrG5h" value="assertResultsEqual2" />
       <node concept="3cqZAl" id="hvflpiN" role="3clF45" />
       <node concept="3Tm1VV" id="hvflpiO" role="1B3o_S" />
       <node concept="3clFbS" id="hvflpiP" role="3clF47">
@@ -6912,11 +6912,12 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbH" id="7dS3StUr7ju" role="3cqZAp" />
           <node concept="3clFbF" id="hvfm6bI" role="3cqZAp">
             <node concept="2OqwBi" id="hA2fm7j" role="3clFbG">
               <node concept="Xjq3P" id="hvfm6bK" role="2Oq$k0" />
               <node concept="liA8E" id="hA2fm7k" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="hvfm6ur" role="37wK5m">
                   <node concept="3clFbS" id="hvfm6us" role="1bW5cS">
                     <node concept="3clFbF" id="hwfLcK7" role="3cqZAp">
@@ -10686,7 +10687,7 @@
           <node concept="3clFbF" id="57CUCPq1$D0" role="3cqZAp">
             <node concept="2OqwBi" id="57CUCPq1$D1" role="3clFbG">
               <node concept="liA8E" id="57CUCPq1$D2" role="2OqNvi">
-                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual" />
+                <ref role="37wK5l" node="hvflpiM" resolve="assertResultsEqual2" />
                 <node concept="1bVj0M" id="57CUCPq1$D3" role="37wK5m">
                   <node concept="3clFbS" id="57CUCPq1$D4" role="1bW5cS">
                     <node concept="3cpWs8" id="57CUCPq1$D5" role="3cqZAp">

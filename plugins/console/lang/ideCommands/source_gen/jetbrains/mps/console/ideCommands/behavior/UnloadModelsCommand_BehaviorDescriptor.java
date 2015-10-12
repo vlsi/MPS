@@ -8,14 +8,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class UnloadModelsCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public UnloadModelsCommand_BehaviorDescriptor() {
+  public void virtual_doExecute_3321948346081469500(SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
   }
-  public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
-    UnloadModelsCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand";
   }
+
 }

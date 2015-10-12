@@ -24,11 +24,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.console.base.behavior.PastedNodeReference_Behavior;
+import jetbrains.mps.console.base.behavior.PastedNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor;
 
 public class PastedNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -112,7 +112,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_7k9x8q_a0b0a(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return PastedNodeReference_Behavior.call_getText_6888400917983823151(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference")), node);
+          return (String) PastedNodeReference__BehaviorDescriptor.getText_id5Yox2dUTCkJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL, "jetbrains.mps.console.base.structure.PastedNodeReference")), node);
         }
         public void setText(String s) {
         }
@@ -146,7 +146,7 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
+        return (String) INodeWithReference__BehaviorDescriptor.getTextWhenBroken_idigjXyuNrou.invoke(node);
       }
       public void setText(String s) {
       }

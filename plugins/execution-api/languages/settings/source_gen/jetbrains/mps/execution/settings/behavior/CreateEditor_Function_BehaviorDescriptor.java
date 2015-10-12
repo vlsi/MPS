@@ -4,24 +4,31 @@ package jetbrains.mps.execution.settings.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CreateEditor_Function_BehaviorDescriptor extends EditorOperationDeclaration_BehaviorDescriptor {
-  public CreateEditor_Function_BehaviorDescriptor() {
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return CreateEditor_Function_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  public SNode virtual_getJavaMethod_946964771156066991(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getJavaMethod_946964771156066991(SNode thisNode) {
-    return CreateEditor_Function_Behavior.virtual_getJavaMethod_946964771156066991(thisNode);
+  public SNode virtual_getPublicJavaMethod_203908296139519011(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
-    return CreateEditor_Function_Behavior.virtual_getPublicJavaMethod_203908296139519011(thisNode);
+  public boolean virtual_showName_1262430001741498082(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
-    return CreateEditor_Function_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.CreateEditor_Function";
   }
+
 }

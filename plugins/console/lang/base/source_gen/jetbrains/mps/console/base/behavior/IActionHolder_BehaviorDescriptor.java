@@ -5,6 +5,12 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IActionHolder_BehaviorDescriptor {
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project);
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode);

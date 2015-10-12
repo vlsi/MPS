@@ -50,7 +50,8 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
 import java.util.Deque;
@@ -648,13 +649,13 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
-      if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
+    for (SNode singleNameImport : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(javaImports, SMethodTrimmedId.create("staticSingleName", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), "4ykJ8Y6iJRa"))))) {
+      if (!(enumConstName.equals(((String) BHReflection.invoke(singleNameImport, SMethodTrimmedId.create("lastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "17WpDCYLyrY")))))) {
         continue;
       }
 
-      String enumClassCandidateName = BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_withoutLastToken_6148840541591441572", new Object[]{});
-      SNode enumClassCandidate = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, enumClassCandidateName});
+      String enumClassCandidateName = ((String) BHReflection.invoke(singleNameImport, SMethodTrimmedId.create("withoutLastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "5ll4uk6512$")));
+      SNode enumClassCandidate = ((SNode) BHReflection.invoke(gateway, SMethodTrimmedId.create("findClass", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "4ykJ8Y83bdr"), varRef, enumClassCandidateName));
       if ((enumClassCandidate == null)) {
         // seems like there is no need to continue 
         // we had import of the form: import static <class>.<ourName> 
@@ -670,8 +671,8 @@ public class JavaToMpsConverter {
       }
     }
 
-    for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
-      SNode claz = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), gateway, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", "call_findClass_5230012391932867419", new Object[]{varRef, SPropertyOperations.getString(onDemandImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"))});
+    for (SNode onDemandImport : Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(javaImports, SMethodTrimmedId.create("staticOnDemand", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"), "4ykJ8Y6iCVz"))))) {
+      SNode claz = ((SNode) BHReflection.invoke(gateway, SMethodTrimmedId.create("findClass", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"), "4ykJ8Y83bdr"), varRef, SPropertyOperations.getString(onDemandImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens"))));
       if ((claz == null)) {
         continue;
       }
@@ -818,7 +819,7 @@ public class JavaToMpsConverter {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        MapSequence.fromMap(importsByName).put(BehaviorReflection.invokeNonVirtual(String.class, it, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{}), it);
+        MapSequence.fromMap(importsByName).put(((String) BHReflection.invoke(it, SMethodTrimmedId.create("lastToken", MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, "jetbrains.mps.baseLanguage.structure.Tokens"), "17WpDCYLyrY"))), it);
 
       }
     });
@@ -871,7 +872,7 @@ public class JavaToMpsConverter {
     final List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")))));
+      ListSequence.fromList(refs).addSequence(ListSequence.fromList(SNodeOperations.getReferences(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")))));
       ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(it)));
@@ -1007,7 +1008,7 @@ public class JavaToMpsConverter {
   public static Iterable<SReference> deepReferences(SNode node) {
 
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
-    ListSequence.fromList(refs).addSequence(Sequence.fromIterable(SNodeOperations.getReferences(node)));
+    ListSequence.fromList(refs).addSequence(ListSequence.fromList(SNodeOperations.getReferences(node)));
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       ListSequence.fromList(refs).addSequence(Sequence.fromIterable(deepReferences(child)));
     }

@@ -62,6 +62,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     return ld.isOptional();
   }
 
+  @NotNull
   @Override
   public SAbstractConcept getContainingConcept() {
     return getOwner();

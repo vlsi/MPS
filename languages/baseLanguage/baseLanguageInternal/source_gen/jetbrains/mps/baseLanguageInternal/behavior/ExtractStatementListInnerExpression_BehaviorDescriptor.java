@@ -5,16 +5,21 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ExtractStatementListInnerExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor {
-  public ExtractStatementListInnerExpression_BehaviorDescriptor() {
+  public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
-    return ILocalVariableElement_Behavior.virtual_getLocalVariableDeclaration_1238803857389(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression";
   }
+
 }

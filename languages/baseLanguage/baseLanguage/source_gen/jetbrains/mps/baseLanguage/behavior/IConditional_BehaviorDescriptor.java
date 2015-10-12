@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IConditional_BehaviorDescriptor {
   public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value);
 }

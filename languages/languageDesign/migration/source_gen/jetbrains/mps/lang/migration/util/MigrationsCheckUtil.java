@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.LinkedList;
-import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
+import jetbrains.mps.lang.migration.behavior.MigrationScript__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -49,7 +49,7 @@ public class MigrationsCheckUtil {
     return hasCycles(migrationScript, ListSequence.fromList(new LinkedList<SNode>()));
   }
   private static Iterable<SNode> allScriptDependencies(final SNode script) {
-    Iterable<SNode> result = Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(script)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = Sequence.fromIterable(MigrationScript__BehaviorDescriptor.getRequiredData_id7s$_UJMVosT.invoke(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, 0x4f6b4ac0cd6d4af5L, "script")) != null);
       }
@@ -57,7 +57,7 @@ public class MigrationsCheckUtil {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, 0x4f6b4ac0cd6d4af5L, "script"));
       }
-    }).concat(Sequence.fromIterable(MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(script)).where(new IWhereFilter<SNode>() {
+    }).concat(Sequence.fromIterable(MigrationScript__BehaviorDescriptor.getExecuteAfter_id2bWK$jI6RRp.invoke(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script")) != null);
       }

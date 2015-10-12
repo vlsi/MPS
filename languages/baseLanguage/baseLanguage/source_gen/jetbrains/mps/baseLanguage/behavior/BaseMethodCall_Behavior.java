@@ -4,43 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.NameUtil;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class BaseMethodCall_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static Object[] call_getActualArguments_1213877339153(SNode thisNode, final SModule module) {
-    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).select(new ISelector<SNode, Object>() {
-      public Object select(SNode it) {
-        return BehaviorReflection.invokeVirtual(Object.class, it, "virtual_eval_1213877519769", new Object[]{module});
-      }
-    }).toGenericArray(Object.class);
-  }
-  public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
-    String variableExpectedName = null;
-    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) != null)) {
-      String name = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      if (name.startsWith("get")) {
-        variableExpectedName = name.substring(3);
-      } else
-      if (name.startsWith("is")) {
-        variableExpectedName = name.substring(2);
-      } else {
-        variableExpectedName = name;
-      }
-    }
-    return NameUtil.decapitalize(variableExpectedName);
-  }
-  public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
-    return true;
-  }
-  public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
+  public static Object[] call_getActualArguments_1213877339153(SNode __thisNode__, SModule module) {
+    return BaseMethodCall__BehaviorDescriptor.getActualArguments_idhEwI$gh(__thisNode__, module);
   }
 }

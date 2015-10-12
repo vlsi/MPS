@@ -6,25 +6,31 @@ import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractLoopStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainer_BehaviorDescriptor, IContainsStatementList_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
-  public AbstractLoopStatement_BehaviorDescriptor() {
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
   }
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return AbstractLoopStatement_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  public Scope virtual_getScope_7722139651431880752(SNode __thisNode__, SNode kind, String role, int index) {
+    return null;
   }
-  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
+  public boolean virtual_isStatementListCompact_1237546693016(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
-    return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
+  public boolean virtual_isStatementListCompactable_1237546012856(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return IContainsStatementList_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement";
   }
+
 }

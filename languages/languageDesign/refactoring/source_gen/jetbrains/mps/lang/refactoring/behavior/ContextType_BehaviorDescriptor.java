@@ -4,11 +4,17 @@ package jetbrains.mps.lang.refactoring.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ContextType_BehaviorDescriptor extends Type_BehaviorDescriptor {
-  public ContextType_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.ContextType";
   }
+
 }

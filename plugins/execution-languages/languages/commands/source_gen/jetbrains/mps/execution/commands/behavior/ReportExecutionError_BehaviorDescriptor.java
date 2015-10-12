@@ -4,14 +4,20 @@ package jetbrains.mps.execution.commands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReportExecutionError_BehaviorDescriptor extends ReportErrorStatement_BehaviorDescriptor {
-  public ReportExecutionError_BehaviorDescriptor() {
+  public SNode virtual_getException_856705193941282181(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getException_856705193941282181(SNode thisNode) {
-    return ReportExecutionError_Behavior.virtual_getException_856705193941282181(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ReportExecutionError";
   }
+
 }

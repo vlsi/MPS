@@ -69,7 +69,7 @@ public class ResolveUtil {
       if (index < ListSequence.fromList(params).count()) {
         SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
       } else {
-        SNodeOperations.replaceWithAnother(varRef, TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))));
+        SNodeOperations.replaceWithAnother(varRef, TypeVariableDeclaration__BehaviorDescriptor.getConcreteUpperBound_id3LgQEacCviw.invoke(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"))));
       }
     }
     return result;

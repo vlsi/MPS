@@ -18,9 +18,9 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.baseLanguage.behavior.StatementList__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
@@ -112,7 +112,7 @@ public class VariableReferenceUtil {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(program);
     if (uninitializedReads.contains(contextReference)) {
       final boolean onlyInstanceInitializers = VariableReferenceUtil.isReferredFromThisInvocation(currentBody, contextReference);
-      if (isInitializedInPrecedingInitializersOrConstructors(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody), field, onlyInstanceInitializers)) {
+      if (isInitializedInPrecedingInitializersOrConstructors(StatementList__BehaviorDescriptor.getFirstStatement_id4GU1DgEHJ2u.invoke(currentBody), field, onlyInstanceInitializers)) {
         return;
       }
       if (SPropertyOperations.getBoolean(field, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"))) {
@@ -129,7 +129,7 @@ public class VariableReferenceUtil {
     }
   }
   private static boolean isReferredFromThisInvocation(SNode currentBody, SNode contextReference) {
-    return SNodeOperations.isInstanceOf(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) && ListSequence.fromList(SNodeOperations.getNodeAncestors(contextReference, null, false)).contains(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody));
+    return SNodeOperations.isInstanceOf(StatementList__BehaviorDescriptor.getFirstStatement_id4GU1DgEHJ2u.invoke(currentBody), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) && ListSequence.fromList(SNodeOperations.getNodeAncestors(contextReference, null, false)).contains(StatementList__BehaviorDescriptor.getFirstStatement_id4GU1DgEHJ2u.invoke(currentBody));
   }
 
   private static boolean isInitializedInPrecedingInitializersOrConstructors(SNode firstStatement, SNode field) {
@@ -144,7 +144,7 @@ public class VariableReferenceUtil {
       SNode myInitializer = SNodeOperations.getNodeAncestor(firstStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false);
       final int myIndexInClass = ((myInitializer != null) ? SNodeOperations.getIndexInParent(myInitializer) : Integer.MAX_VALUE);
 
-      Iterable<SNode> initializers = Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(SNodeOperations.cast(SNodeOperations.getParent(field), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> initializers = Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(SNodeOperations.cast(SNodeOperations.getParent(field), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer")) && SNodeOperations.getIndexInParent(it) < myIndexInClass;
         }

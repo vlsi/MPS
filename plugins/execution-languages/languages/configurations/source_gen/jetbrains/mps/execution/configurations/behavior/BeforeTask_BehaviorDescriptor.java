@@ -6,38 +6,40 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_BehaviorDescriptor;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior;
-import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BeforeTask_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStructureDeprecatable_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor {
-  public BeforeTask_BehaviorDescriptor() {
+  public String virtual_getBaseName_4366236229294148974(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getFullName_946964771156905503(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFullName_946964771156905503(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
+  public String virtual_getGeneratedClassName_946964771156905488(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
-    return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
+  public String virtual_getMessage_1225207468592(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getMessage_1225207468592(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  public String virtual_getSuffix_946964771156905483(SNode __thisNode__) {
+    return null;
   }
-  @NonNls
-  public String virtual_getSuffix_946964771156905483(SNode thisNode) {
-    return BeforeTask_Behavior.virtual_getSuffix_946964771156905483(thisNode);
+  public boolean virtual_isDeprecated_1224609060727(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.configurations.structure.BeforeTask";
   }
+
 }

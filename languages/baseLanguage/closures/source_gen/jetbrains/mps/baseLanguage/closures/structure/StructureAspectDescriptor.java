@@ -17,6 +17,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptClosureArgReference = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x5620d42a452422c7L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).childDescriptors(new ConceptDescriptorBuilder.Link(6206193564530254610L, "original", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L), false, false, false)).children(new String[]{"original"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptClosureControlStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1229629839560L, "controlMethod", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL), false)).references("controlMethod").childDescriptors(new ConceptDescriptorBuilder.Link(1232476496647L, "controlClosure", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49d1841dL), false, false, false), new ConceptDescriptorBuilder.Link(1229629947873L, "actualParameter", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, true, false)).children(new String[]{"controlClosure", "actualParameter"}, new boolean[]{false, true}).staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptClosureLiteral = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IFinalWrapper", "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11750ef8265L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4dfebb23d6d75dcaL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7c8556154508e980L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(890797661671409019L, "forceMultiLine")).properties("forceMultiLine").childDescriptors(new ConceptDescriptorBuilder.Link(1199569906740L, "parameter", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L), true, true, false), new ConceptDescriptorBuilder.Link(1199569916463L, "body", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false)).children(new String[]{"parameter", "body"}, new boolean[]{true, false}).alias("{ => <body> }", "closure literal").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptClosureLiteralType = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L)).super_("jetbrains.mps.baseLanguage.closures.structure.FunctionType").super_(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL)).parents("jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.baseLanguage.structure.IInternalType").parentIds(MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118cd59904dL)).create();
   /*package*/ final ConceptDescriptor myConceptCompactInvokeFunctionExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).childDescriptors(new ConceptDescriptorBuilder.Link(1235746996653L, "function", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false), new ConceptDescriptorBuilder.Link(1235747002942L, "parameter", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, true, false)).children(new String[]{"function", "parameter"}, new boolean[]{false, true}).alias("", "invoke function").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptControlAbstractionContainer = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49db3870L)).super_("jetbrains.mps.baseLanguage.structure.Classifier").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L)).parents("jetbrains.mps.baseLanguage.structure.Classifier", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).childDescriptors(new ConceptDescriptorBuilder.Link(1229600801065L, "controlAbstraction", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L), true, true, false)).children(new String[]{"controlAbstraction"}, new boolean[]{true}).create();
   /*package*/ final ConceptDescriptor myConceptControlAbstractionDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49dc8097L)).super_("jetbrains.mps.baseLanguage.structure.GenericDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL)).parents("jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.HasAnnotation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL)).childDescriptors(new ConceptDescriptorBuilder.Link(1229600064117L, "parameter", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L), true, true, false), new ConceptDescriptorBuilder.Link(1229600049315L, "body", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L), false, false, false)).children(new String[]{"parameter", "body"}, new boolean[]{true, false}).create();
@@ -36,13 +37,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractFunctionType, myConceptClosureArgReference, myConceptClosureControlStatement, myConceptClosureLiteral, myConceptCompactInvokeFunctionExpression, myConceptControlAbstractionContainer, myConceptControlAbstractionDeclaration, myConceptControlClosureLiteral, myConceptFunctionMethodDeclaration, myConceptFunctionType, myConceptInvokeExpression, myConceptInvokeFunctionExpression, myConceptInvokeFunctionOperation, myConceptPairOfInts, myConceptStringPropertyHolder, myConceptUnboundClosureParameterDeclaration, myConceptUnrestrictedClosureLiteral, myConceptUnrestrictedFunctionType, myConceptYieldAllStatement, myConceptYieldStatement);
+    return Arrays.asList(myConceptAbstractFunctionType, myConceptClosureArgReference, myConceptClosureControlStatement, myConceptClosureLiteral, myConceptClosureLiteralType, myConceptCompactInvokeFunctionExpression, myConceptControlAbstractionContainer, myConceptControlAbstractionDeclaration, myConceptControlClosureLiteral, myConceptFunctionMethodDeclaration, myConceptFunctionType, myConceptInvokeExpression, myConceptInvokeFunctionExpression, myConceptInvokeFunctionOperation, myConceptPairOfInts, myConceptStringPropertyHolder, myConceptUnboundClosureParameterDeclaration, myConceptUnrestrictedClosureLiteral, myConceptUnrestrictedFunctionType, myConceptYieldAllStatement, myConceptYieldStatement);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0y, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0z, conceptFqName)) {
       case 0:
         return myConceptAbstractFunctionType;
       case 1:
@@ -52,40 +53,42 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 3:
         return myConceptClosureLiteral;
       case 4:
-        return myConceptCompactInvokeFunctionExpression;
+        return myConceptClosureLiteralType;
       case 5:
-        return myConceptControlAbstractionContainer;
+        return myConceptCompactInvokeFunctionExpression;
       case 6:
-        return myConceptControlAbstractionDeclaration;
+        return myConceptControlAbstractionContainer;
       case 7:
-        return myConceptControlClosureLiteral;
+        return myConceptControlAbstractionDeclaration;
       case 8:
-        return myConceptFunctionMethodDeclaration;
+        return myConceptControlClosureLiteral;
       case 9:
-        return myConceptFunctionType;
+        return myConceptFunctionMethodDeclaration;
       case 10:
-        return myConceptInvokeExpression;
+        return myConceptFunctionType;
       case 11:
-        return myConceptInvokeFunctionExpression;
+        return myConceptInvokeExpression;
       case 12:
-        return myConceptInvokeFunctionOperation;
+        return myConceptInvokeFunctionExpression;
       case 13:
-        return myConceptPairOfInts;
+        return myConceptInvokeFunctionOperation;
       case 14:
-        return myConceptStringPropertyHolder;
+        return myConceptPairOfInts;
       case 15:
-        return myConceptUnboundClosureParameterDeclaration;
+        return myConceptStringPropertyHolder;
       case 16:
-        return myConceptUnrestrictedClosureLiteral;
+        return myConceptUnboundClosureParameterDeclaration;
       case 17:
-        return myConceptUnrestrictedFunctionType;
+        return myConceptUnrestrictedClosureLiteral;
       case 18:
-        return myConceptYieldAllStatement;
+        return myConceptUnrestrictedFunctionType;
       case 19:
+        return myConceptYieldAllStatement;
+      case 20:
         return myConceptYieldStatement;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0y = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.PairOfInts", "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
+  private static String[] stringSwitchCases_1htk8d_a0a0z = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.ClosureArgReference", "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.PairOfInts", "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"};
 }

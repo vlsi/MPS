@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -96,7 +97,7 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        return ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }
@@ -104,7 +105,7 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }

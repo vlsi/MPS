@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -4780,6 +4780,60 @@
     <node concept="1YaCAy" id="6lCixFIb3ow" role="1YuTPh">
       <property role="TrG5h" value="sce" />
       <ref role="1YaFvo" to="tpd4:6lCixFI9ig3" resolve="SupersedeConceptFunction" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6qi8GzL_bQU">
+    <property role="TrG5h" value="check_ApplicableConceptFunction" />
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <node concept="3clFbS" id="6qi8GzL_bQV" role="18ibNy">
+      <node concept="3cpWs8" id="6qi8GzL_bR4" role="3cqZAp">
+        <node concept="3cpWsn" id="6qi8GzL_bR5" role="3cpWs9">
+          <property role="TrG5h" value="infRule" />
+          <node concept="3Tqbb2" id="6qi8GzL_bR6" role="1tU5fm">
+            <ref role="ehGHo" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+          </node>
+          <node concept="2OqwBi" id="6qi8GzL_bR7" role="33vP2m">
+            <node concept="1YBJjd" id="6qi8GzL_bR8" role="2Oq$k0">
+              <ref role="1YBMHb" node="6qi8GzL_bQX" resolve="acf" />
+            </node>
+            <node concept="2Xjw5R" id="6qi8GzL_bR9" role="2OqNvi">
+              <node concept="1xMEDy" id="6qi8GzL_bRa" role="1xVPHs">
+                <node concept="chp4Y" id="6qi8GzL_bRb" role="ri$Ld">
+                  <ref role="cht4Q" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Mj0R9" id="6qi8GzL_bRc" role="3cqZAp">
+        <node concept="Xl_RD" id="6qi8GzL_bRd" role="2MkJ7o">
+          <property role="Xl_RC" value="not applicable in this context" />
+        </node>
+        <node concept="1YBJjd" id="6qi8GzL_bRe" role="2OEOjV">
+          <ref role="1YBMHb" node="6qi8GzL_bQX" resolve="acf" />
+        </node>
+        <node concept="1Wc70l" id="6qi8GzL_bRf" role="2MkoU_">
+          <node concept="2OqwBi" id="6qi8GzL_bRg" role="3uHU7B">
+            <node concept="37vLTw" id="6qi8GzL_bRh" role="2Oq$k0">
+              <ref role="3cqZAo" node="6qi8GzL_bR5" resolve="infRule" />
+            </node>
+            <node concept="3x8VRR" id="6qi8GzL_bRi" role="2OqNvi" />
+          </node>
+          <node concept="2OqwBi" id="6qi8GzL_bRj" role="3uHU7w">
+            <node concept="37vLTw" id="6qi8GzL_bRk" role="2Oq$k0">
+              <ref role="3cqZAo" node="6qi8GzL_bR5" resolve="infRule" />
+            </node>
+            <node concept="2qgKlT" id="6qi8GzL_bRl" role="2OqNvi">
+              <ref role="37wK5l" to="tpdd:6lCixFI9vx1" resolve="isAttributeRule" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6qi8GzL_bQX" role="1YuTPh">
+      <property role="TrG5h" value="acf" />
+      <ref role="1YaFvo" to="tpd4:6qi8GzL_1PZ" resolve="ApplicableConceptFunction" />
     </node>
   </node>
 </model>

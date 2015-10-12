@@ -5,7 +5,7 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.core.xml.behavior.XmlBaseAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -15,7 +15,7 @@ public class XmlAttribute_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, ctx.getPrimaryInput(), "virtual_isMultiline_3080189811177259788", new Object[]{})) {
+    if ((boolean) XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(ctx.getPrimaryInput())) {
       tgs.newLine();
       tgs.indent();
       tgs.append("\t");

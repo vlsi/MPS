@@ -4,14 +4,20 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CustomContainerCreator_BehaviorDescriptor extends AbstractContainerCreator_BehaviorDescriptor {
-  public CustomContainerCreator_BehaviorDescriptor() {
+  public SNode virtual_createType_1237722437229(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createType_1237722437229(SNode thisNode) {
-    return CustomContainerCreator_Behavior.virtual_createType_1237722437229(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator";
   }
+
 }

@@ -5,14 +5,20 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodCall_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EvaluatorsSuperMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
-  public EvaluatorsSuperMethodCall_BehaviorDescriptor() {
+  public SNode virtual_getInstanceType_8008512149545154471(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
-    return EvaluatorsSuperMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall";
   }
+
 }

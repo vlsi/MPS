@@ -4,17 +4,23 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildLayout_AbstractContainer_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_Container_BehaviorDescriptor {
-  public BuildLayout_AbstractContainer_BehaviorDescriptor() {
+  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
-    return BuildLayout_AbstractContainer_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
+  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
-    return BuildLayout_AbstractContainer_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_AbstractContainer";
   }
+
 }

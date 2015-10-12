@@ -11,12 +11,20 @@ public enum BuildLayout_TarCompression {
   gzip("gzip", "gzip"),
   bzip2("bzip2", "bzip2");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  BuildLayout_TarCompression(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<BuildLayout_TarCompression> getConstants() {
     List<BuildLayout_TarCompression> list = ListSequence.fromList(new LinkedList<BuildLayout_TarCompression>());
@@ -42,13 +50,5 @@ public enum BuildLayout_TarCompression {
       return BuildLayout_TarCompression.bzip2;
     }
     return BuildLayout_TarCompression.getDefault();
-  }
-  private String myValue;
-  BuildLayout_TarCompression(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -27,7 +28,7 @@ public class PresentationUtil {
       return getExpressionPresentation(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))) + suffix;
     }
 
-    return BehaviorReflection.invokeVirtual(String.class, lastStatement, "virtual_getPresentation_1213877396640", new Object[]{}) + suffix;
+    return ((String) BHReflection.invoke(lastStatement, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) + suffix;
   }
   public static String getExpressionPresentation(@Nullable SNode expression) {
     if (expression == null) {
@@ -51,14 +52,14 @@ public class PresentationUtil {
     }
 
     if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
-      return "new " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), "virtual_getPresentation_1213877396640", new Object[]{});
+      return "new " + ((String) BHReflection.invoke(SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
     }
 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)), "virtual_constant_1262430001741498050", new Object[]{})) {
-      return BehaviorReflection.invokeVirtual(Object.class, expression, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(expression).getModule()}) + "";
+    if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)), SMethodTrimmedId.create("constant", null, "1653mnvAgr2")))) {
+      return ((Object) BHReflection.invoke(expression, SMethodTrimmedId.create("getCompileTimeConstantValue", null, "i1LP2xI"), SNodeOperations.getModel(expression).getModule())) + "";
     }
 
-    return BehaviorReflection.invokeVirtual(String.class, expression, "virtual_getPresentation_1213877396640", new Object[]{});
+    return ((String) BHReflection.invoke(expression, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
   }
   public static String getOperationPresentation(@Nullable SNode operation) {
     if (operation == null) {
@@ -74,7 +75,7 @@ public class PresentationUtil {
         }
       }) + ")";
     }
-    return BehaviorReflection.invokeVirtual(String.class, operation, "virtual_getPresentation_1213877396640", new Object[]{});
+    return ((String) BHReflection.invoke(operation, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

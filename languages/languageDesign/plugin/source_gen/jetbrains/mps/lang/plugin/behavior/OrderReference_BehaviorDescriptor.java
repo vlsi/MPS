@@ -4,18 +4,25 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OrderReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements OrderConstraints_BehaviorDescriptor {
-  public OrderReference_BehaviorDescriptor() {
+  public SNode virtual_getOrder_3038738109029048953(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
-    return OrderReference_Behavior.virtual_getOrder_3038738109029048953(thisNode);
+  public boolean virtual_presents_1499919975383879508(SNode __thisNode__, SNode tab) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab) {
-    return OrderReference_Behavior.virtual_presents_1499919975383879508(thisNode, tab);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.OrderReference";
   }
+
 }

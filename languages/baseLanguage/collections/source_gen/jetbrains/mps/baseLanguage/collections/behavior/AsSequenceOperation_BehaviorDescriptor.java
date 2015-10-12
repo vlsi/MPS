@@ -4,12 +4,19 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.AbstractOperation_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
-public class AsSequenceOperation_BehaviorDescriptor extends AbstractOperation_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
-  public AsSequenceOperation_BehaviorDescriptor() {
-  }
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
+public class AsSequenceOperation_BehaviorDescriptor extends AbstractOperation_BehaviorDescriptor implements IOperation_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation";
   }
+
 }

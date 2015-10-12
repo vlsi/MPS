@@ -4,10 +4,13 @@ package jetbrains.mps.lang.customAspect.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class SimpleLanguageAspectDescriptor_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getGenerator_7905571935049090392(SNode thisNode) {
-    return null;
+  public static SNode call_getGenerator_7905571935049090392(SNode __thisNode__) {
+    return SimpleLanguageAspectDescriptor__BehaviorDescriptor.getGenerator_id6QQeWCmTwlo(__thisNode__);
   }
 }

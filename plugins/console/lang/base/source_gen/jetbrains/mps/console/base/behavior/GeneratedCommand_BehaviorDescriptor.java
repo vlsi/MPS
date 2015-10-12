@@ -6,14 +6,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class GeneratedCommand_BehaviorDescriptor extends Command_BehaviorDescriptor {
-  public GeneratedCommand_BehaviorDescriptor() {
+  public void virtual_execute_6854397602732226506(SNode __thisNode__, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
   }
-  public void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
-    GeneratedCommand_Behavior.virtual_execute_6854397602732226506(thisNode, context, console, beforeCallback, afterCallback);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.GeneratedCommand";
   }
+
 }

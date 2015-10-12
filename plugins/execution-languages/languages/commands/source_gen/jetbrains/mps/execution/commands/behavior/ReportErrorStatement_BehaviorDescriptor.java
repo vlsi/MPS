@@ -5,19 +5,25 @@ package jetbrains.mps.execution.commands.behavior;
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class ReportErrorStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
-  public ReportErrorStatement_BehaviorDescriptor() {
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    ReportErrorStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  public boolean virtual_isGuardClauseStatement_1237547327995(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
-    return ReportErrorStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ReportErrorStatement";
   }
-  public abstract SNode virtual_getException_856705193941282181(SNode thisNode);
+
+  public abstract SNode virtual_getException_856705193941282181(SNode __thisNode__);
 }

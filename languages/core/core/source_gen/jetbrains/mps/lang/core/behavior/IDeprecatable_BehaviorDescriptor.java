@@ -4,6 +4,12 @@ package jetbrains.mps.lang.core.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IDeprecatable_BehaviorDescriptor {
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode);
   public String virtual_getMessage_1225207468592(SNode thisNode);

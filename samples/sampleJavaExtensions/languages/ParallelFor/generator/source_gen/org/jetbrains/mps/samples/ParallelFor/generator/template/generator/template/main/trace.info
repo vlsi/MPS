@@ -25,9 +25,9 @@
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369584138">
     <file name="QueriesGenerated.java">
       <node id="3130664751519218280" at="26,110,27,385" concept="3" />
-      <node id="4697196167065973044" at="29,110,30,272" concept="3" />
+      <node id="4697196167065973044" at="29,110,30,281" concept="3" />
       <scope id="8923957828369629275" at="26,110,27,385" />
-      <scope id="4697196167065973043" at="29,110,30,272" />
+      <scope id="4697196167065973043" at="29,110,30,281" />
     </file>
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369584139">
@@ -74,7 +74,7 @@
       </scope>
       <scope id="633195941006880943" at="41,111,46,341" />
       <scope id="5337045848190669726" at="90,120,95,7" />
-      <unit id="5337045848190861070" at="91,284,95,5" name="org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main.QueriesGenerated$1" />
+      <unit id="5337045848190861070" at="91,303,95,5" name="org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main.QueriesGenerated$1" />
     </file>
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369629354">

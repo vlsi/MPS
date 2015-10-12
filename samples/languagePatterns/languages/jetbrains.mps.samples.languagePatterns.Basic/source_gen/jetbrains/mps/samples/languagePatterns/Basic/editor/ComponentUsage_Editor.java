@@ -17,7 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.samples.languagePatterns.Basic.behavior.Component_Behavior;
+import jetbrains.mps.samples.languagePatterns.Basic.behavior.Component__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -90,7 +90,7 @@ public class ComponentUsage_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_iuxdpw_a0c0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return Component_Behavior.call_fullName_5681697064999291992(node);
+          return (String) Component__BehaviorDescriptor.fullName_id4Vpsm2KEoLo.invoke(node);
         }
         public void setText(String s) {
         }

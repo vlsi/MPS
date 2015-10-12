@@ -5,14 +5,20 @@ package jetbrains.mps.lang.structure.behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptDeclaration_BehaviorDescriptor extends AbstractConceptDeclaration_BehaviorDescriptor {
-  public ConceptDeclaration_BehaviorDescriptor() {
+  public List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    return ConceptDeclaration_Behavior.virtual_getImmediateSuperconcepts_1222430305282(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
+
 }

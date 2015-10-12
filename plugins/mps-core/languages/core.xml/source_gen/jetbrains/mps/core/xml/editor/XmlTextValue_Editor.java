@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.core.xml.behavior.XmlValuePart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -48,7 +48,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_3080189811177340422", new Object[]{});
+    return (boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(node);
   }
   private EditorCell createProperty_qyzwn3_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -118,6 +118,6 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qyzwn3_a1a(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{});
+    return (boolean) XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(node);
   }
 }

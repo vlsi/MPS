@@ -4,6 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IQueryFunction_Color_BehaviorDescriptor {
   public boolean virtual_isFunction_1225463329531(SNode thisNode);
   public String virtual_getRGBValue_1225468086082(SNode thisNode);

@@ -4,11 +4,17 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class RequiredModifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements MemberModifier_BehaviorDescriptor {
-  public RequiredModifier_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.lightweightdsl.structure.RequiredModifier";
   }
+
 }

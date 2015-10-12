@@ -4,35 +4,14 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class BuildFolderMacro_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String call_evaluate_4959435991187146982(SNode thisNode, Context context) {
-    String key = "usedMacro";
-    Set<String> usedMacro = context.<Set<String>>get(key);
-    if (usedMacro == null) {
-      usedMacro = SetSequence.fromSet(new HashSet<String>());
-      context.put(key, usedMacro);
-    }
-    if (SetSequence.fromSet(usedMacro).contains(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-      // cycle 
-      return null;
-    }
-    SetSequence.fromSet(usedMacro).addElement(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    try {
-      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, 0x668c6cfbafadf0eaL, "defaultPath")), "virtual_getLocalPath_5481553824944787364", new Object[]{context});
-    } finally {
-      SetSequence.fromSet(usedMacro).removeElement(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    }
-
-
+  public static String call_evaluate_4959435991187146982(SNode __thisNode__, Context context) {
+    return BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA(__thisNode__, context);
   }
 }

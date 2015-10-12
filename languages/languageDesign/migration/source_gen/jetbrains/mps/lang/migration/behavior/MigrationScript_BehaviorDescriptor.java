@@ -6,17 +6,23 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MigrationScript_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements AutoInitDSLClass_BehaviorDescriptor {
-  public MigrationScript_BehaviorDescriptor() {
+  public SNode virtual_getDescriptor_1055884086724995485(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {
-    return MigrationScript_Behavior.virtual_getDescriptor_1055884086724995485(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return MigrationScript_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.migration.structure.MigrationScript";
   }
+
 }

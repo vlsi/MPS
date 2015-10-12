@@ -1,81 +1,324 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,54,0" name="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="MoneyCreator_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
     </file>
     <file name="MoneyGetAmountMethodCall_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyIsZeroMethodCall_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
+      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyLiteral_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
     </file>
     <file name="MoneyMethodCall_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyType_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
+      <unit at="13,0,25,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877266178">
     <file name="MoneyLiteral_Behavior.java">
-      <node id="1213877266178" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877266180" at="8,43,8,43" />
-      <scope id="1213877266178" at="8,0,10,0">
-        <var name="thisNode" id="1213877266178" />
+      <unit id="1213877266178" at="10,0,13,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
+    </file>
+    <file name="MoneyLiteral__BehaviorDescriptor.java">
+      <node id="1213877266178" at="20,0,21,0" concept="6" trace="CONCEPT" />
+      <node id="1213877266178" at="21,0,22,0" concept="6" trace="REGISTRY" />
+      <node id="1213877266178" at="24,0,25,0" concept="6" trace="BH_METHODS" />
+      <node id="1213877266178" at="30,50,31,20" concept="8" />
+      <node id="1213877266178" at="35,114,36,21" concept="1" />
+      <node id="1213877266178" at="40,114,41,49" concept="4" />
+      <node id="1213877266178" at="42,26,43,56" concept="10" />
+      <node id="1213877266178" at="46,14,47,58" concept="10" />
+      <node id="1213877266178" at="52,128,53,49" concept="4" />
+      <node id="1213877266178" at="54,26,55,56" concept="10" />
+      <node id="1213877266178" at="58,14,59,58" concept="10" />
+      <node id="1213877266178" at="65,48,66,22" concept="5" />
+      <node id="1213877266178" at="71,40,72,19" concept="5" />
+      <node id="1213877266178" at="26,0,28,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877266178" at="30,0,33,0" concept="0" trace="MoneyLiteral__BehaviorDescriptor#()V" />
+      <node id="1213877266178" at="41,49,44,5" concept="2" />
+      <node id="1213877266178" at="53,49,56,5" concept="2" />
+      <node id="1213877266178" at="34,0,38,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1213877266178" at="44,5,48,5" concept="9" />
+      <node id="1213877266178" at="56,5,60,5" concept="9" />
+      <node id="1213877266178" at="63,0,68,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1213877266178" at="69,0,74,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1213877266178" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1213877266178" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1213877266178" at="26,63,26,63" />
+      <scope id="1213877266178" at="30,50,31,20" />
+      <scope id="1213877266178" at="35,114,36,21" />
+      <scope id="1213877266178" at="42,26,43,56" />
+      <scope id="1213877266178" at="46,14,47,58" />
+      <scope id="1213877266178" at="54,26,55,56" />
+      <scope id="1213877266178" at="58,14,59,58" />
+      <scope id="1213877266178" at="65,48,66,22" />
+      <scope id="1213877266178" at="71,40,72,19" />
+      <scope id="1213877266178" at="26,0,28,0">
+        <var name="__thisNode__" id="1213877266178" />
       </scope>
-      <unit id="1213877266178" at="7,0,11,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
+      <scope id="1213877266178" at="30,0,33,0" />
+      <scope id="1213877266178" at="34,0,38,0">
+        <var name="constructor" id="1213877266178" />
+        <var name="node" id="1213877266178" />
+        <var name="parameters" id="1213877266178" />
+      </scope>
+      <scope id="1213877266178" at="63,0,68,0" />
+      <scope id="1213877266178" at="69,0,74,0" />
+      <scope id="1213877266178" at="40,114,48,5">
+        <var name="methodIndex" id="1213877266178" />
+      </scope>
+      <scope id="1213877266178" at="52,128,60,5">
+        <var name="methodIndex" id="1213877266178" />
+      </scope>
+      <scope id="1213877266178" at="39,0,50,0">
+        <var name="method" id="1213877266178" />
+        <var name="node" id="1213877266178" />
+        <var name="parameters" id="1213877266178" />
+      </scope>
+      <scope id="1213877266178" at="51,0,62,0">
+        <var name="concept" id="1213877266178" />
+        <var name="method" id="1213877266178" />
+        <var name="parameters" id="1213877266178" />
+      </scope>
+      <unit id="1213877266178" at="19,0,75,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877287607">
     <file name="MoneyType_Behavior.java">
-      <node id="1213877287612" at="13,80,14,236" concept="0" />
-      <node id="1213877287618" at="14,236,15,19" concept="1" />
-      <node id="1213877287607" at="11,0,13,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877287607" at="13,0,17,0" concept="2" trace="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1213877287609" at="11,43,11,43" />
-      <scope id="1213877287607" at="11,0,13,0">
-        <var name="thisNode" id="1213877287607" />
+      <unit id="1213877287607" at="10,0,13,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
+    </file>
+    <file name="MoneyType__BehaviorDescriptor.java">
+      <node id="1213877287607" at="26,0,27,0" concept="6" trace="CONCEPT" />
+      <node id="1213877287607" at="27,0,28,0" concept="6" trace="REGISTRY" />
+      <node id="1213877287607" at="29,0,30,0" concept="6" trace="getAbstractCreator_idhEwIzNW" />
+      <node id="1213877287607" at="31,0,32,0" concept="6" trace="BH_METHODS" />
+      <node id="1213877287612" at="36,86,37,236" concept="4" />
+      <node id="1213877287618" at="37,236,38,19" concept="5" />
+      <node id="1213877287607" at="41,47,42,20" concept="8" />
+      <node id="1213877287607" at="46,114,47,21" concept="1" />
+      <node id="1213877287607" at="51,114,52,49" concept="4" />
+      <node id="1213877287607" at="53,26,54,56" concept="10" />
+      <node id="1213877287607" at="57,13,58,64" concept="5" />
+      <node id="1213877287607" at="59,14,60,58" concept="10" />
+      <node id="1213877287607" at="65,128,66,49" concept="4" />
+      <node id="1213877287607" at="67,26,68,56" concept="10" />
+      <node id="1213877287607" at="71,14,72,58" concept="10" />
+      <node id="1213877287607" at="78,48,79,22" concept="5" />
+      <node id="1213877287607" at="84,40,85,19" concept="5" />
+      <node id="1213877287607" at="33,0,35,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877287607" at="41,0,44,0" concept="0" trace="MoneyType__BehaviorDescriptor#()V" />
+      <node id="1213877287607" at="52,49,55,5" concept="2" />
+      <node id="1213877287607" at="66,49,69,5" concept="2" />
+      <node id="1213877287607" at="36,0,40,0" concept="7" trace="getAbstractCreator_idhEwIzNW#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877287607" at="45,0,49,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1213877287607" at="69,5,73,5" concept="9" />
+      <node id="1213877287607" at="76,0,81,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1213877287607" at="82,0,87,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1213877287607" at="55,5,61,5" concept="9" />
+      <node id="1213877287607" at="64,0,75,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1213877287607" at="50,0,63,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1213877287607" at="33,63,33,63" />
+      <scope id="1213877287607" at="41,47,42,20" />
+      <scope id="1213877287607" at="46,114,47,21" />
+      <scope id="1213877287607" at="53,26,54,56" />
+      <scope id="1213877287607" at="57,13,58,64" />
+      <scope id="1213877287607" at="59,14,60,58" />
+      <scope id="1213877287607" at="67,26,68,56" />
+      <scope id="1213877287607" at="71,14,72,58" />
+      <scope id="1213877287607" at="78,48,79,22" />
+      <scope id="1213877287607" at="84,40,85,19" />
+      <scope id="1213877287607" at="33,0,35,0">
+        <var name="__thisNode__" id="1213877287607" />
       </scope>
-      <scope id="1213877287611" at="13,80,15,19">
+      <scope id="1213877287611" at="36,86,38,19">
         <var name="creator" id="1213877287613" />
       </scope>
-      <scope id="1213877287607" at="13,0,17,0">
-        <var name="thisNode" id="1213877287607" />
+      <scope id="1213877287607" at="41,0,44,0" />
+      <scope id="1213877287607" at="36,0,40,0">
+        <var name="__thisNode__" id="1213877287607" />
       </scope>
-      <unit id="1213877287607" at="10,0,18,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
+      <scope id="1213877287607" at="45,0,49,0">
+        <var name="constructor" id="1213877287607" />
+        <var name="node" id="1213877287607" />
+        <var name="parameters" id="1213877287607" />
+      </scope>
+      <scope id="1213877287607" at="76,0,81,0" />
+      <scope id="1213877287607" at="82,0,87,0" />
+      <scope id="1213877287607" at="65,128,73,5">
+        <var name="methodIndex" id="1213877287607" />
+      </scope>
+      <scope id="1213877287607" at="51,114,61,5">
+        <var name="methodIndex" id="1213877287607" />
+      </scope>
+      <scope id="1213877287607" at="64,0,75,0">
+        <var name="concept" id="1213877287607" />
+        <var name="method" id="1213877287607" />
+        <var name="parameters" id="1213877287607" />
+      </scope>
+      <scope id="1213877287607" at="50,0,63,0">
+        <var name="method" id="1213877287607" />
+        <var name="node" id="1213877287607" />
+        <var name="parameters" id="1213877287607" />
+      </scope>
+      <unit id="1213877287607" at="25,0,88,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877300004">
     <file name="MoneyGetCurrencyMethodCall_Behavior.java">
-      <node id="1213877300004" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877300006" at="8,43,8,43" />
-      <scope id="1213877300004" at="8,0,10,0">
-        <var name="thisNode" id="1213877300004" />
+      <unit id="1213877300004" at="10,0,13,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_Behavior" />
+    </file>
+    <file name="MoneyGetCurrencyMethodCall__BehaviorDescriptor.java">
+      <node id="1213877300004" at="20,0,21,0" concept="6" trace="CONCEPT" />
+      <node id="1213877300004" at="21,0,22,0" concept="6" trace="REGISTRY" />
+      <node id="1213877300004" at="24,0,25,0" concept="6" trace="BH_METHODS" />
+      <node id="1213877300004" at="30,64,31,20" concept="8" />
+      <node id="1213877300004" at="35,114,36,21" concept="1" />
+      <node id="1213877300004" at="40,114,41,49" concept="4" />
+      <node id="1213877300004" at="42,26,43,56" concept="10" />
+      <node id="1213877300004" at="46,14,47,58" concept="10" />
+      <node id="1213877300004" at="52,128,53,49" concept="4" />
+      <node id="1213877300004" at="54,26,55,56" concept="10" />
+      <node id="1213877300004" at="58,14,59,58" concept="10" />
+      <node id="1213877300004" at="65,48,66,22" concept="5" />
+      <node id="1213877300004" at="71,40,72,19" concept="5" />
+      <node id="1213877300004" at="26,0,28,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877300004" at="30,0,33,0" concept="0" trace="MoneyGetCurrencyMethodCall__BehaviorDescriptor#()V" />
+      <node id="1213877300004" at="41,49,44,5" concept="2" />
+      <node id="1213877300004" at="53,49,56,5" concept="2" />
+      <node id="1213877300004" at="34,0,38,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1213877300004" at="44,5,48,5" concept="9" />
+      <node id="1213877300004" at="56,5,60,5" concept="9" />
+      <node id="1213877300004" at="63,0,68,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1213877300004" at="69,0,74,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1213877300004" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1213877300004" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1213877300004" at="26,63,26,63" />
+      <scope id="1213877300004" at="30,64,31,20" />
+      <scope id="1213877300004" at="35,114,36,21" />
+      <scope id="1213877300004" at="42,26,43,56" />
+      <scope id="1213877300004" at="46,14,47,58" />
+      <scope id="1213877300004" at="54,26,55,56" />
+      <scope id="1213877300004" at="58,14,59,58" />
+      <scope id="1213877300004" at="65,48,66,22" />
+      <scope id="1213877300004" at="71,40,72,19" />
+      <scope id="1213877300004" at="26,0,28,0">
+        <var name="__thisNode__" id="1213877300004" />
       </scope>
-      <unit id="1213877300004" at="7,0,11,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_Behavior" />
+      <scope id="1213877300004" at="30,0,33,0" />
+      <scope id="1213877300004" at="34,0,38,0">
+        <var name="constructor" id="1213877300004" />
+        <var name="node" id="1213877300004" />
+        <var name="parameters" id="1213877300004" />
+      </scope>
+      <scope id="1213877300004" at="63,0,68,0" />
+      <scope id="1213877300004" at="69,0,74,0" />
+      <scope id="1213877300004" at="40,114,48,5">
+        <var name="methodIndex" id="1213877300004" />
+      </scope>
+      <scope id="1213877300004" at="52,128,60,5">
+        <var name="methodIndex" id="1213877300004" />
+      </scope>
+      <scope id="1213877300004" at="39,0,50,0">
+        <var name="method" id="1213877300004" />
+        <var name="node" id="1213877300004" />
+        <var name="parameters" id="1213877300004" />
+      </scope>
+      <scope id="1213877300004" at="51,0,62,0">
+        <var name="concept" id="1213877300004" />
+        <var name="method" id="1213877300004" />
+        <var name="parameters" id="1213877300004" />
+      </scope>
+      <unit id="1213877300004" at="19,0,75,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877315451">
     <file name="MoneyCreator_Behavior.java">
-      <node id="1213877315451" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1213877315453" at="8,43,8,43" />
-      <scope id="1213877315451" at="8,0,10,0">
-        <var name="thisNode" id="1213877315451" />
+      <unit id="1213877315451" at="10,0,13,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_Behavior" />
+    </file>
+    <file name="MoneyCreator__BehaviorDescriptor.java">
+      <node id="1213877315451" at="20,0,21,0" concept="6" trace="CONCEPT" />
+      <node id="1213877315451" at="21,0,22,0" concept="6" trace="REGISTRY" />
+      <node id="1213877315451" at="24,0,25,0" concept="6" trace="BH_METHODS" />
+      <node id="1213877315451" at="30,50,31,20" concept="8" />
+      <node id="1213877315451" at="35,114,36,21" concept="1" />
+      <node id="1213877315451" at="40,114,41,49" concept="4" />
+      <node id="1213877315451" at="42,26,43,56" concept="10" />
+      <node id="1213877315451" at="46,14,47,58" concept="10" />
+      <node id="1213877315451" at="52,128,53,49" concept="4" />
+      <node id="1213877315451" at="54,26,55,56" concept="10" />
+      <node id="1213877315451" at="58,14,59,58" concept="10" />
+      <node id="1213877315451" at="65,48,66,22" concept="5" />
+      <node id="1213877315451" at="71,40,72,19" concept="5" />
+      <node id="1213877315451" at="26,0,28,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877315451" at="30,0,33,0" concept="0" trace="MoneyCreator__BehaviorDescriptor#()V" />
+      <node id="1213877315451" at="41,49,44,5" concept="2" />
+      <node id="1213877315451" at="53,49,56,5" concept="2" />
+      <node id="1213877315451" at="34,0,38,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1213877315451" at="44,5,48,5" concept="9" />
+      <node id="1213877315451" at="56,5,60,5" concept="9" />
+      <node id="1213877315451" at="63,0,68,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1213877315451" at="69,0,74,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1213877315451" at="39,0,50,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1213877315451" at="51,0,62,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1213877315451" at="26,63,26,63" />
+      <scope id="1213877315451" at="30,50,31,20" />
+      <scope id="1213877315451" at="35,114,36,21" />
+      <scope id="1213877315451" at="42,26,43,56" />
+      <scope id="1213877315451" at="46,14,47,58" />
+      <scope id="1213877315451" at="54,26,55,56" />
+      <scope id="1213877315451" at="58,14,59,58" />
+      <scope id="1213877315451" at="65,48,66,22" />
+      <scope id="1213877315451" at="71,40,72,19" />
+      <scope id="1213877315451" at="26,0,28,0">
+        <var name="__thisNode__" id="1213877315451" />
       </scope>
-      <unit id="1213877315451" at="7,0,11,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_Behavior" />
+      <scope id="1213877315451" at="30,0,33,0" />
+      <scope id="1213877315451" at="34,0,38,0">
+        <var name="constructor" id="1213877315451" />
+        <var name="node" id="1213877315451" />
+        <var name="parameters" id="1213877315451" />
+      </scope>
+      <scope id="1213877315451" at="63,0,68,0" />
+      <scope id="1213877315451" at="69,0,74,0" />
+      <scope id="1213877315451" at="40,114,48,5">
+        <var name="methodIndex" id="1213877315451" />
+      </scope>
+      <scope id="1213877315451" at="52,128,60,5">
+        <var name="methodIndex" id="1213877315451" />
+      </scope>
+      <scope id="1213877315451" at="39,0,50,0">
+        <var name="method" id="1213877315451" />
+        <var name="node" id="1213877315451" />
+        <var name="parameters" id="1213877315451" />
+      </scope>
+      <scope id="1213877315451" at="51,0,62,0">
+        <var name="concept" id="1213877315451" />
+        <var name="method" id="1213877315451" />
+        <var name="parameters" id="1213877315451" />
+      </scope>
+      <unit id="1213877315451" at="19,0,75,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

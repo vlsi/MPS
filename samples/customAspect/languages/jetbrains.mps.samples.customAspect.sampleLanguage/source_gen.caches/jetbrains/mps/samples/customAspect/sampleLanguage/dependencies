@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.customAspect.sampleLanguage.DocumentationDescriptor" file="DocumentationDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode extendsClassName="jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.samples.customAspect.sampleLanguage.Language" file="Language.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
@@ -12,7 +7,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
-    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.sampleLanguage.constraints.ConstraintsAspectDescriptor" />

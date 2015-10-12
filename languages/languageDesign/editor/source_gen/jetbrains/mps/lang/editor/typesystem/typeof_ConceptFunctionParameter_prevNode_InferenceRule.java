@@ -7,9 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior;
+import jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,7 +22,7 @@ public class typeof_ConceptFunctionParameter_prevNode_InferenceRule extends Abst
   public typeof_ConceptFunctionParameter_prevNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode refNodeListCellModel = QueryFunction_StyleParameter_Behavior.call_getContainingCellModelRefNodeList_4310268853340642392(SNodeOperations.as(ConceptFunctionParameter_Behavior.call_findConceptFunction_1213877522934(node), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter")));
+    SNode refNodeListCellModel = QueryFunction_StyleParameter__BehaviorDescriptor.getContainingCellModelRefNodeList_id3Jh9EXLN9Lo.invoke(SNodeOperations.as(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(node), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter")));
     if (refNodeListCellModel != null) {
       {
         SNode _nodeToCheck_1029348928467 = node;

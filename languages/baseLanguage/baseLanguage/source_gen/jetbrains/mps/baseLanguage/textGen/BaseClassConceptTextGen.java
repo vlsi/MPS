@@ -6,17 +6,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class BaseClassConceptTextGen {
   public static void membersWithBrackets(SNode classifier, boolean newLineOnEmptyMembers, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    if (Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).isNotEmpty() || newLineOnEmptyMembers) {
+    if (Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)).isNotEmpty() || newLineOnEmptyMembers) {
       tgs.append("{");
       tgs.newLine();
       ctx.getBuffer().area().increaseIndent();
@@ -32,11 +32,11 @@ public abstract class BaseClassConceptTextGen {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     // just for first element 
     boolean isWrappedElementBefore = true;
-    SNode lastMember = Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(classifier)).last();
-    for (SNode member : Classifier_Behavior.call_members_1465982738252129704(classifier)) {
+    SNode lastMember = Sequence.fromIterable(Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)).last();
+    for (SNode member : Classifier__BehaviorDescriptor.members_id1hodSy8nQmC.invoke(classifier)) {
       if (SNodeOperations.isInstanceOf(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-        boolean needsLineBefore = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineBefore_641490355014296733", new Object[]{});
-        boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
+        boolean needsLineBefore = (boolean) ClassifierMember__BehaviorDescriptor.needsEmptyLineBefore_idzB21h1tQit.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
+        boolean needsLineAfter = (boolean) ClassifierMember__BehaviorDescriptor.needsEmptyLineAfter_idzB21h1tQNm.invoke(SNodeOperations.cast(member, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
         BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), ctx);
         tgs.appendNode(member);
         BaseLanguageTextGen.newLine(needsLineAfter && !((lastMember == member)), ctx);
@@ -64,8 +64,8 @@ public abstract class BaseClassConceptTextGen {
   }
   public static void innerClassifiers(SNode concept, final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    SNode last = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)).last();
-    for (SNode classifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)) {
+    SNode last = Sequence.fromIterable(Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(concept)).last();
+    for (SNode classifier : Classifier__BehaviorDescriptor.nestedClassifiers_id4_LVZ3pBjGQ.invoke(concept)) {
       tgs.appendNode(classifier);
       if (!(classifier.equals(last))) {
         tgs.newLine();

@@ -5,11 +5,17 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PropertyMacro_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public PropertyMacro_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.PropertyMacro";
   }
+
 }

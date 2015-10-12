@@ -4,20 +4,26 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StringType_BehaviorDescriptor extends Type_BehaviorDescriptor {
-  public StringType_BehaviorDescriptor() {
+  public SNode virtual_getErasure_702942408396803226(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return StringType_Behavior.virtual_getErasure_702942408396803226(thisNode);
+  public SNode virtual_getJavaType_1213877337345(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
-    return StringType_Behavior.virtual_getJavaType_1213877337345(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return StringType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StringType";
   }
+
 }

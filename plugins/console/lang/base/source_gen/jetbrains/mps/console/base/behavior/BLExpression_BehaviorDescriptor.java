@@ -5,17 +5,23 @@ package jetbrains.mps.console.base.behavior;
 import jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BLExpression_BehaviorDescriptor extends GeneratedCommand_BehaviorDescriptor implements IWrapper_BehaviorDescriptor {
-  public BLExpression_BehaviorDescriptor() {
+  public String virtual_getShortDisplayString_7006261637493126103(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getShortDisplayString_7006261637493126103(SConcept thisConcept) {
-    return BLExpression_Behavior.virtual_getShortDisplayString_7006261637493126103(thisConcept);
+  public String virtual_getShortHelp_473081947982699339(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return BLExpression_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.BLExpression";
   }
+
 }

@@ -6,7 +6,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="7a2w" ref="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.kernel/jetbrains.mps.util.xml)" />
@@ -10635,47 +10635,6 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="2Z_9FKYxgP$" role="3cqZAp" />
-                      <node concept="2Gpval" id="2Z_9FKYxgPA" role="3cqZAp">
-                        <node concept="2GrKxI" id="2Z_9FKYxgPB" role="2Gsz3X">
-                          <property role="TrG5h" value="b" />
-                        </node>
-                        <node concept="3clFbS" id="2Z_9FKYxgPD" role="2LFqv$">
-                          <node concept="3clFbF" id="2Z_9FKYxgPK" role="3cqZAp">
-                            <node concept="2OqwBi" id="2Z_9FKYxgPR" role="3clFbG">
-                              <node concept="2OqwBi" id="2Z_9FKYxgPM" role="2Oq$k0">
-                                <node concept="1bf8Ab" id="2Z_9FKYxgPL" role="2Oq$k0" />
-                                <node concept="liA8E" id="2Z_9FKYxgPQ" role="2OqNvi">
-                                  <ref role="37wK5l" to="w0gx:~DeploymentDescriptor.getRuntimeJars():java.util.List" resolve="getRuntimeJars" />
-                                </node>
-                              </node>
-                              <node concept="liA8E" id="2Z_9FKYxgPV" role="2OqNvi">
-                                <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                                <node concept="2OqwBi" id="2Z_9FKYxgPX" role="37wK5m">
-                                  <node concept="2GrUjf" id="2Z_9FKYxgPW" role="2Oq$k0">
-                                    <ref role="2Gs0qQ" node="2Z_9FKYxgPB" resolve="b" />
-                                  </node>
-                                  <node concept="liA8E" id="1Tieq1imcTj" role="2OqNvi">
-                                    <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                                    <node concept="Xl_RD" id="1Tieq1imcTk" role="37wK5m">
-                                      <property role="Xl_RC" value="jar" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2YIFZM" id="1Tieq1imcTe" role="2GsD0m">
-                          <ref role="37wK5l" to="7a2w:4eI2K_IuevB" resolve="children" />
-                          <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
-                          <node concept="37vLTw" id="1Tieq1imcTo" role="37wK5m">
-                            <ref role="3cqZAo" node="59iL5sJt5P5" resolve="rootElement" />
-                          </node>
-                          <node concept="Xl_RD" id="1Tieq1imcTf" role="37wK5m">
-                            <property role="Xl_RC" value="runtime" />
-                          </node>
-                        </node>
-                      </node>
                       <node concept="2Gpval" id="2Z_9FKYxgQ3" role="3cqZAp">
                         <node concept="2GrKxI" id="2Z_9FKYxgQ4" role="2Gsz3X">
                           <property role="TrG5h" value="b" />

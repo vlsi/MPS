@@ -5,18 +5,25 @@ package jetbrains.mps.lang.textGen.behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OperationDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
-  public OperationDeclaration_BehaviorDescriptor() {
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return OperationDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public boolean virtual_isReturnsVoid_1234359555698(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
-    return OperationDeclaration_Behavior.virtual_isReturnsVoid_1234359555698(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.OperationDeclaration";
   }
+
 }

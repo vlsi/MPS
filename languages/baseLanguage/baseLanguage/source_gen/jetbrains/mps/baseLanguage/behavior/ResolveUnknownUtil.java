@@ -318,7 +318,7 @@ public class ResolveUnknownUtil {
       return null;
     }
 
-    String name = Tokens_Behavior.call_firstToken_1296023605441710627(x);
+    String name = Tokens__BehaviorDescriptor.firstToken_id17WpDCYRWCz.invoke(x);
 
     if (Sequence.fromIterable(scope.getAvailableElements(name)).isNotEmpty()) {
       // it's a variable 
@@ -381,7 +381,7 @@ public class ResolveUnknownUtil {
   }
   public static SNode findConstructor(SNode claz, List<SNode> args) {
     SNode result;
-    Iterable<SNode> conss = ClassConcept_Behavior.call_constructors_5292274854859503373(claz);
+    Iterable<SNode> conss = ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(claz);
     if (Sequence.fromIterable(conss).isEmpty()) {
       result = null;
     } else if (Sequence.fromIterable(conss).count() == 1) {

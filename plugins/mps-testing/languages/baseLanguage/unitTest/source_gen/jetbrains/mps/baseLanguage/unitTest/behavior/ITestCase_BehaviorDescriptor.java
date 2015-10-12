@@ -6,6 +6,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface ITestCase_BehaviorDescriptor extends ITestable_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public List<SNode> virtual_getTestSet_1216130724401(SNode thisNode);
   public String virtual_getClassName_1216136193905(SNode thisNode);

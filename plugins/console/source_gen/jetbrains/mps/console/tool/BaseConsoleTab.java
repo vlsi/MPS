@@ -63,7 +63,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Scanner;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -77,7 +76,8 @@ import java.awt.event.MouseEvent;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -314,7 +314,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       if (!(importedLanguages.contains(usedLanguage))) {
         modelInternal.addLanguage(usedLanguage);
       }
-      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
+      for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(subNode))) {
         SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
         if (usedModel != null && !(modelInternal.importedModels().contains(usedModel))) {
           modelInternal.addModelImport(usedModel.getReference(), false);
@@ -435,7 +435,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         }
       }
     });
-    BehaviorReflection.invokeVirtual(Void.class, SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")), "virtual_execute_6854397602732226506", new Object[]{getConsoleContext(), getConsoleStream(), new Runnable() {
+    BHReflection.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command")), SMethodTrimmedId.create("execute", null, "5WvH$QO9bva"), getConsoleContext(), getConsoleStream(), new Runnable() {
       public void run() {
         getProject().getModelAccess().executeCommand(new Runnable() {
           public void run() {
@@ -454,7 +454,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
           }
         });
       }
-    }});
+    });
   }
 
   public void selectNode(final SNode nodeToSelect) {

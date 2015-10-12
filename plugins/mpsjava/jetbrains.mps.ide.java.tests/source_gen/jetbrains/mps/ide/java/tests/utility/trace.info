@@ -226,9 +226,9 @@
       <node id="8083368042256456192" at="362,66,363,241" concept="4" />
       <node id="7030568040400251426" at="367,94,368,53" concept="8" />
       <node id="7030568040400251655" at="368,53,369,54" concept="8" />
-      <node id="7030568040400251661" at="369,54,370,134" concept="4" />
-      <node id="7030568040400251711" at="370,134,371,136" concept="4" />
-      <node id="7030568040400251760" at="371,136,372,0" concept="11" />
+      <node id="7030568040400251661" at="369,54,370,141" concept="4" />
+      <node id="7030568040400251711" at="370,141,371,143" concept="4" />
+      <node id="7030568040400251760" at="371,143,372,0" concept="11" />
       <node id="7030568040400251768" at="372,0,373,86" concept="8" />
       <node id="7030568040400251783" at="374,65,375,209" concept="4" />
       <node id="7030568040400251913" at="376,5,377,0" concept="11" />
@@ -774,7 +774,7 @@
       <unit id="7149447565294020275" at="65,317,69,5" name="jetbrains.mps.ide.java.tests.utility.NodePatcher$1" />
       <unit id="7149447565294020331" at="73,461,77,7" name="jetbrains.mps.ide.java.tests.utility.NodePatcher$2" />
       <unit id="7149447565294020343" at="77,147,81,7" name="jetbrains.mps.ide.java.tests.utility.NodePatcher$3" />
-      <unit id="7030568040400429332" at="99,147,103,5" name="jetbrains.mps.ide.java.tests.utility.NodePatcher$4" />
+      <unit id="7030568040400429332" at="99,154,103,5" name="jetbrains.mps.ide.java.tests.utility.NodePatcher$4" />
       <unit id="7303989191346994322" at="104,205,108,5" name="jetbrains.mps.ide.java.tests.utility.NodePatcher$5" />
       <unit id="8083368042256395971" at="26,0,126,0" name="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
     </file>

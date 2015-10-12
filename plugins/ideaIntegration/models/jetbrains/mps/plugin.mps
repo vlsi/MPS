@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
     <import index="iqmz" ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)" />
@@ -419,9 +419,6 @@
         <node concept="3cpWs8" id="3T639SbDhq9" role="3cqZAp">
           <node concept="3cpWsn" id="3T639SbDhqa" role="3cpWs9">
             <property role="TrG5h" value="projectStore" />
-            <node concept="3uibUv" id="3T639SbDhqb" role="1tU5fm">
-              <ref role="3uigEE" to="dz3k:~IProjectStore" resolve="IProjectStore" />
-            </node>
             <node concept="10QFUN" id="7C$AW5VBCDz" role="33vP2m">
               <node concept="3uibUv" id="7C$AW5VBCUZ" role="10QFUM">
                 <ref role="3uigEE" to="dz3k:~IProjectStore" resolve="IProjectStore" />
@@ -433,6 +430,9 @@
                   <ref role="3cqZAo" node="7vbFQ4bPXuL" resolve="project" />
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="3T639SbDhqb" role="1tU5fm">
+              <ref role="3uigEE" to="dz3k:~IProjectStore" resolve="IProjectStore" />
             </node>
           </node>
         </node>

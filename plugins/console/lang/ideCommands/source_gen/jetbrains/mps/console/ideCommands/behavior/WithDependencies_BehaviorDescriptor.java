@@ -4,11 +4,17 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import jetbrains.mps.lang.smodel.query.behavior.QueryParameter_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class WithDependencies_BehaviorDescriptor extends QueryParameter_BehaviorDescriptor {
-  public WithDependencies_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.WithDependencies";
   }
+
 }

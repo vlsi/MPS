@@ -4,14 +4,20 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptReference_BehaviorDescriptor extends ApplicableNodeCondition_BehaviorDescriptor {
-  public ConceptReference_BehaviorDescriptor() {
+  public SNode virtual_getApplicableConcept_1213877307633(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getApplicableConcept_1213877307633(SNode thisNode) {
-    return ConceptReference_Behavior.virtual_getApplicableConcept_1213877307633(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ConceptReference";
   }
+
 }

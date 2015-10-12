@@ -5,24 +5,31 @@ package jetbrains.mps.lang.behavior.behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements IVisible_BehaviorDescriptor {
-  public ConceptMethodDeclaration_BehaviorDescriptor() {
+  public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
-    return ConceptMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  public SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    return ConceptMethodDeclaration_Behavior.virtual_getNearestOverriddenMethod_5358895268254685434(thisNode);
+  public boolean virtual_isAbstract_1232982539764(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isAbstract_1232982539764(SNode thisNode) {
-    return ConceptMethodDeclaration_Behavior.virtual_isAbstract_1232982539764(thisNode);
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
-    return ConceptMethodDeclaration_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
+
 }

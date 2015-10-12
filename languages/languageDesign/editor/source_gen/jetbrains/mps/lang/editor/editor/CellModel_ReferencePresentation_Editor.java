@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -42,7 +42,7 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_jf7bj_a0a(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
+    return EditorCellModel__BehaviorDescriptor.getOpeningTag_idhKxXtpm.invoke(node).length() > 0;
   }
   private EditorCell createComponent_jf7bj_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
@@ -56,7 +56,7 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_jf7bj_a2a(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
+    return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(node).length() > 0;
   }
   private EditorCell createComponent_jf7bj_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");

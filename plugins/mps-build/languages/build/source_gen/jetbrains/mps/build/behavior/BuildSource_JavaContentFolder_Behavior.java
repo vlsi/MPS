@@ -4,16 +4,14 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class BuildSource_JavaContentFolder_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static String call_getAntPath_2389279258816946193(SNode thisNode, Context context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc52L, 0x668c6cfbafacdc53L, "basePath")), "virtual_getAntPath_8563603456895173701", new Object[]{context}) + "/" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L, 0x263ae7d4319546c7L, "relativePath"));
+  public static String call_getAntPath_2389279258816946193(SNode __thisNode__, Context context) {
+    return BuildSource_JavaContentFolder__BehaviorDescriptor.getAntPath_id24CrdeMZy0h(__thisNode__, context);
   }
 }

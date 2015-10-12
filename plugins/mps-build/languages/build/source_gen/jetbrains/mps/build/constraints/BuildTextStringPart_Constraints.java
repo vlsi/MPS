@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildTextStringPart__BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildStringContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
@@ -43,9 +43,9 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "text";
         {
-          SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
+          SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node);
           if (container != null) {
-            return BehaviorReflection.invokeVirtual(Boolean.TYPE, container, "virtual_isValidPart_9184644532456897464", new Object[]{(SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRoleInParent()});
+            return (boolean) BuildStringContainer__BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(container, (SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRoleInParent());
           }
           return !((SPropertyOperations.getString(propertyValue)).contains("$"));
         }

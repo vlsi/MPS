@@ -5,11 +5,11 @@ package smodelLanguage.samples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 
 public class LinkRef {
   public void test1() {
     SNode link = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
-    boolean singular = BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{});
+    boolean singular = (boolean) LinkDeclaration__BehaviorDescriptor.isSingular_idhEwIfAt.invoke(link);
   }
 }

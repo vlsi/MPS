@@ -11,7 +11,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 public class CompactInvokeFunctionExpression_parameters implements ParametersInformation<SNode> {
   public CompactInvokeFunctionExpression_parameters() {
@@ -20,7 +20,7 @@ public class CompactInvokeFunctionExpression_parameters implements ParametersInf
     return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, 0x11fb842c1adL, "function"))), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
-    styledText.append(BehaviorReflection.invokeVirtual(String.class, parameterObject, "virtual_getPresentation_1213877396640", new Object[]{}));
+    styledText.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(parameterObject));
   }
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return true;

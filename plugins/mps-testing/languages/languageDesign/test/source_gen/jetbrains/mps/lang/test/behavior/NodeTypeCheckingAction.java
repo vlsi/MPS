@@ -14,7 +14,7 @@ public abstract class NodeTypeCheckingAction implements ITypechecking.Action {
   }
 
   public SNode getNodeToCheck() {
-    return NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
+    return NodeCheckOperation__BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
   }
 
   public abstract void checkOperation(TypeCheckingContext context);

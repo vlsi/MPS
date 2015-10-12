@@ -4,15 +4,22 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ListenBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public ListenBlock_BehaviorDescriptor() {
+  public boolean virtual_showName_1262430001741498082(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
-    return ListenBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ListenBlock";
   }
+
 }

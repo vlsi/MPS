@@ -16,8 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 
 public class ConceptFunction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -48,7 +47,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
             }
             collection.addEditorCell(new EditorCell_Constant(context, node, ""));
             collection.addEditorCell(new EditorCell_Constant(context, node, "Parameter help:"));
-            for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
+            for (SNode cfp : ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(node)) {
               String alias = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
               String description = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
               if (description == null) {

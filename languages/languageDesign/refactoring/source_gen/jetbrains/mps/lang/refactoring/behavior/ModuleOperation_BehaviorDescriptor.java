@@ -4,14 +4,20 @@ package jetbrains.mps.lang.refactoring.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ModuleOperation_BehaviorDescriptor extends ContextMemberOperation_BehaviorDescriptor {
-  public ModuleOperation_BehaviorDescriptor() {
+  public SNode virtual_createType_7012097027058652452(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createType_7012097027058652452(SNode thisNode) {
-    return ModuleOperation_Behavior.virtual_createType_7012097027058652452(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.ModuleOperation";
   }
+
 }

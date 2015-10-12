@@ -12,7 +12,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -52,7 +53,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
       SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
       if ((concept != null)) {
-        return BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{});
+        return ((String) BHReflection.invoke(concept, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
       }
     }
     return super.getText(node);
@@ -79,7 +80,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
-    for (SNode c : BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", "call_getAllSuperBehaviors_1818770337282950280", new Object[]{})) {
+    for (SNode c : ((List<SNode>) BHReflection.invoke(baseClass, SMethodTrimmedId.create("getAllSuperBehaviors", MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "1$X$vL9L8i8")))) {
       MapSequence.fromMap(containerIndex).put(c, i++);
     }
     return Sequence.fromIterable(methods).sort(new Comparator<SNode>() {

@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement__BehaviorDescriptor;
 
 public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
   public SurroundExceptionWithTryCatch_QuickFix() {
@@ -52,7 +52,7 @@ public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
 
 
     if (parentTryStatement != null) {
-      clauses.removeAll(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), parentTryStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{}));
+      clauses.removeAll(ITryCatchStatement__BehaviorDescriptor.getCatchClauses_id3eptmOG0XgA.invoke(parentTryStatement));
       if (SNodeOperations.isInstanceOf(parentTryStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"))) {
         ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(parentTryStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).addSequence(ListSequence.fromList(clauses));
       } else if (SNodeOperations.isInstanceOf(parentTryStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"))) {

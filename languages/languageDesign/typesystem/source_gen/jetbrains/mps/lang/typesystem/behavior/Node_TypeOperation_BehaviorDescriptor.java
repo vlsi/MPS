@@ -5,18 +5,25 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Node_TypeOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public Node_TypeOperation_BehaviorDescriptor() {
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
-    return Node_TypeOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
-    return Node_TypeOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation";
   }
+
 }

@@ -13,7 +13,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -21,7 +22,7 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 public final class MakeDeprecated_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeDeprecated_Intention() {
-    super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1223648378225"));
+    super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1223648378225"));
   }
   @Override
   public String getPresentation() {
@@ -46,7 +47,7 @@ public final class MakeDeprecated_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
+      if ((boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
         return "Remove Deprecation";
       } else {
         return "Deprecate";
@@ -54,11 +55,11 @@ public final class MakeDeprecated_Intention extends IntentionDescriptorBase impl
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
-        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
+      if ((boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node)) {
+        IBLDeprecatable__BehaviorDescriptor.unmarkDeprecated_id6Va_BJex$aE.invoke(node);
       } else {
         ModuleDependencyUtils.addDependencyOnJavaDocIfMissing(SNodeOperations.getModel(node));
-        BehaviorReflection.invokeVirtual(Void.class, node, "virtual_markDeprecated_7983358747957651026", new Object[]{});
+        IBLDeprecatable__BehaviorDescriptor.markDeprecated_id6Va_BJexupi.invoke(node);
       }
     }
     @Override

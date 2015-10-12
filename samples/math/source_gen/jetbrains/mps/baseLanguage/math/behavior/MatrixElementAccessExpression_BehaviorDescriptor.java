@@ -5,15 +5,22 @@ package jetbrains.mps.baseLanguage.math.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MatrixElementAccessExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public MatrixElementAccessExpression_BehaviorDescriptor() {
+  public boolean virtual_lvalue_1262430001741497939(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
-    return MatrixElementAccessExpression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression";
   }
+
 }

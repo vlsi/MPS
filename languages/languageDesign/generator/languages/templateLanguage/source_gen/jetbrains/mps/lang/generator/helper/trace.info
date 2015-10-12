@@ -53,7 +53,7 @@
       <node id="1216154409479" at="115,5,116,66" concept="5" />
       <node id="1216154409484" at="116,66,117,459" concept="5" />
       <node id="7714691473529654887" at="117,459,118,88" concept="5" />
-      <node id="7714691473529599484" at="119,31,120,99" concept="1" />
+      <node id="7714691473529599484" at="119,31,120,106" concept="1" />
       <node id="1216154430093" at="121,5,122,25" concept="6" />
       <node id="1216154550413" at="124,70,125,58" concept="5" />
       <node id="1216154550418" at="125,58,126,69" concept="5" />
@@ -61,7 +61,7 @@
       <node id="1216154550428" at="129,66,130,57" concept="1" />
       <node id="1216154550441" at="132,5,133,462" concept="5" />
       <node id="7714691473530003608" at="133,462,134,76" concept="5" />
-      <node id="7714691473530005265" at="135,41,136,101" concept="1" />
+      <node id="7714691473530005265" at="135,41,136,108" concept="1" />
       <node id="1216154588251" at="137,5,138,26" concept="6" />
       <node id="1227876797782" at="142,39,143,247" concept="6" />
       <node id="1205859683728" at="145,7,146,59" concept="6" />
@@ -143,9 +143,9 @@
       <scope id="1216154257884" at="102,267,103,62" />
       <scope id="1216154257902" at="104,12,105,281" />
       <scope id="1216154409459" at="112,58,113,49" />
-      <scope id="7714691473529655990" at="119,31,120,99" />
+      <scope id="7714691473529655990" at="119,31,120,106" />
       <scope id="1216154550427" at="129,66,130,57" />
-      <scope id="7714691473530004436" at="135,41,136,101" />
+      <scope id="7714691473530004436" at="135,41,136,108" />
       <scope id="1227876797781" at="142,39,143,247" />
       <scope id="1227876799930" at="152,39,153,50" />
       <scope id="1227876791163" at="158,37,159,41" />
@@ -267,7 +267,7 @@
     <file name="QueriesUtil.java">
       <node id="1178670295328" at="15,72,16,577" concept="5" />
       <node id="1178670323505" at="17,199,18,352" concept="6" />
-      <node id="1258575286550861907" at="20,214,21,284" concept="6" />
+      <node id="1258575286550861907" at="20,214,21,291" concept="6" />
       <node id="1178670348235" at="23,196,24,350" concept="6" />
       <node id="7376433222636453069" at="25,5,26,20" concept="7" />
       <node id="1178670506571" at="26,20,27,295" concept="5" />
@@ -300,7 +300,7 @@
       <node id="1178670165537" at="15,0,30,0" concept="9" trace="getApplicableConcept_fromEnvironment#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1178667968416" at="30,0,64,0" concept="9" trace="getQueryFunction_fromSourceSubstituteMacro#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1178670301352" at="17,199,18,352" />
-      <scope id="1258575286550861895" at="20,214,21,284" />
+      <scope id="1258575286550861895" at="20,214,21,291" />
       <scope id="1178670348234" at="23,196,24,350" />
       <scope id="1178668081226" at="31,24,32,18" />
       <scope id="1178668204450" at="34,189,35,343" />

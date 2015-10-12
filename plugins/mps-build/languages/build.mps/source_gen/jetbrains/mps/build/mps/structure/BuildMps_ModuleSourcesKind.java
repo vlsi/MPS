@@ -11,12 +11,20 @@ public enum BuildMps_ModuleSourcesKind {
   sources_and_tests("sources and tests", "sources and tests"),
   tests("tests", "tests");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  BuildMps_ModuleSourcesKind(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<BuildMps_ModuleSourcesKind> getConstants() {
     List<BuildMps_ModuleSourcesKind> list = ListSequence.fromList(new LinkedList<BuildMps_ModuleSourcesKind>());
@@ -42,13 +50,5 @@ public enum BuildMps_ModuleSourcesKind {
       return BuildMps_ModuleSourcesKind.tests;
     }
     return BuildMps_ModuleSourcesKind.getDefault();
-  }
-  private String myValue;
-  BuildMps_ModuleSourcesKind(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

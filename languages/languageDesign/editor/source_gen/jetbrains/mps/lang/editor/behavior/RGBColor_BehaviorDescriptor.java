@@ -4,18 +4,25 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class RGBColor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IQueryFunction_Color_BehaviorDescriptor {
-  public RGBColor_BehaviorDescriptor() {
+  public String virtual_getRGBValue_1225468086082(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getRGBValue_1225468086082(SNode thisNode) {
-    return RGBColor_Behavior.virtual_getRGBValue_1225468086082(thisNode);
+  public boolean virtual_isFunction_1225463329531(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isFunction_1225463329531(SNode thisNode) {
-    return RGBColor_Behavior.virtual_isFunction_1225463329531(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.RGBColor";
   }
+
 }

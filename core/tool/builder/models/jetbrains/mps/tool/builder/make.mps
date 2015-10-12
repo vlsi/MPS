@@ -8,7 +8,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="jo3e" ref="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" />
@@ -3138,8 +3138,8 @@
                               <node concept="liA8E" id="2hWPXztVlqS" role="2OqNvi">
                                 <ref role="37wK5l" to="guwi:~File.listFiles(java.io.FilenameFilter):java.io.File[]" resolve="listFiles" />
                                 <node concept="10M0yZ" id="2hWPXztVlqT" role="37wK5m">
-                                  <ref role="3cqZAo" to="v9gs:4937uxYQn8r" resolve="JARS" />
-                                  <ref role="1PxDUh" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+                                  <ref role="3cqZAo" to="18ew:~PathManager.JAR_FILE_FILTER" resolve="JAR_FILE_FILTER" />
+                                  <ref role="1PxDUh" to="18ew:~PathManager" resolve="PathManager" />
                                 </node>
                               </node>
                             </node>

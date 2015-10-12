@@ -24,42 +24,50 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 4:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ClassReference_Editor()));
       case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Composition_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CollapsedByDefault_Editor()));
       case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DelTestChildContainer_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CollapsedConditionally_Editor()));
       case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CollapsibleConcept_Editor()));
       case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Composition_Editor()));
       case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DelTestChildContainer_Editor()));
       case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FoldingContainer_Editor()));
       case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IBaseTestBlock_Editor()));
       case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor()));
       case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor()));
       case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor()));
       case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor()));
       case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StubBlock_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor()));
       case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor()));
       case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor()));
       case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor()));
       case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TestBlockList_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StubBlock_Editor()));
       case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor()));
       case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor()));
       case 23:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor()));
+      case 24:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TestBlockList_Editor()));
+      case 25:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor()));
+      case 26:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor()));
+      case 27:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor()));
       default:
     }
@@ -71,5 +79,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault", "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally", "jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer", "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
 }

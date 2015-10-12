@@ -4,11 +4,17 @@ package jetbrains.mps.samples.attribute.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class HandlerAsChild_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor {
-  public HandlerAsChild_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.attribute.structure.HandlerAsChild";
   }
+
 }

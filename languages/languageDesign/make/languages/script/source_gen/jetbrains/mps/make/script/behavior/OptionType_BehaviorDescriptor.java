@@ -5,23 +5,28 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OptionType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IWillBeClassifier_BehaviorDescriptor {
-  public OptionType_BehaviorDescriptor() {
+  public SNode virtual_baseClassifier_4125795553993767872(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
-    return IWillBeClassifier_Behavior.virtual_baseClassifier_4125795553993767872(thisNode);
+  public String virtual_classifierName_4609636120081351397(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return OptionType_Behavior.virtual_classifierName_4609636120081351397(thisNode);
+  public SNode virtual_resolve_4609636120081469956(SNode __thisNode__, SModel targetModel) {
+    return null;
   }
-  public SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
-    return IWillBeClassifier_Behavior.virtual_resolve_4609636120081469956(thisNode, targetModel);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.OptionType";
   }
+
 }

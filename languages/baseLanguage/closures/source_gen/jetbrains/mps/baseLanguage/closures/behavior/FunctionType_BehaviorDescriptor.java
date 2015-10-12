@@ -6,50 +6,54 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class FunctionType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
-  public FunctionType_BehaviorDescriptor() {
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode __thisNode__, Map<SNode, SNode> substitutions) {
   }
-  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  public SNode virtual_eraseGenerics_5089784887112634594(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
-    return IGenericType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode __thisNode__, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  public SNode virtual_expandGenerics_4107091686347199582(SNode __thisNode__, Map<SNode, SNode> substitutions) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  public SNode virtual_expandGenerics_4122274986016348613(SNode __thisNode__, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  public SNode virtual_getClassExpression_1213877337357(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public SNode virtual_getResultType_1230475757059(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getResultType_1230475757059(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getResultType_1230475757059(thisNode);
+  public String virtual_getRuntimeClassName_1230472987259(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getRuntimeClassName_1230472987259(thisNode);
+  public String virtual_getRuntimeSignature_1213877404927(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getRuntimeSignature_1213877404927(thisNode);
+  public SNode virtual_getTerminateType_1232032188607(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getTerminateType_1232032188607(thisNode);
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode __thisNode__) {
+    return null;
   }
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return FunctionType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
+
 }

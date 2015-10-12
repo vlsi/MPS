@@ -12,7 +12,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class Data_Flow_TabDescriptor extends RelationDescriptor {
@@ -53,7 +54,7 @@ public class Data_Flow_TabDescriptor extends RelationDescriptor {
     return true;
   }
   public SNode getNode(SNode node) {
-    List<SNode> nodes = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.DATA_FLOW});
+    List<SNode> nodes = ((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.DATA_FLOW));
     return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
   }
   public List<SNode> getConcepts(final SNode node) {

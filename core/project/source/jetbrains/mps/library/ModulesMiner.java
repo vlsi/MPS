@@ -16,10 +16,12 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.io.DescriptorIO;
+import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
+import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -34,6 +36,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,16 +51,19 @@ import java.util.Set;
 /**
  * Detects modules in a folder.
  * Methods of this class are not thread-safe, do not share instances of this class between threads.
+ *
+ * NB: we will go inside the jar if it either has a 'modules' folder (with modules (!)) or has a module.xml file in the META-INF folder
  */
 public final class ModulesMiner {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModulesMiner.class));
-  public static final String META_INF = "META-INF";
-  public static final String MODULE_XML = "module.xml";
-  public static final String META_INF_MODULE_XML = META_INF + "/" + MODULE_XML;
-  public static final String JAR_SEPARATOR = "!/";
-  public static final String SLASH_META_INF_MODULE_XML = JAR_SEPARATOR + META_INF_MODULE_XML;
+  private static final Logger LOG = LogManager.getLogger(ModulesMiner.class);
   public static final String JAR = ".jar";
+  public static final String META_INF = "META-INF";
+  public static final String JAR_SEPARATOR = "!/";
+  public static final String MODULE_XML = "module.xml";
   public static final String MODULES_DIR = "modules";
+  public static final String META_INF_MODULE_XML = META_INF + "/" + MODULE_XML; // deployment descriptor resides at abc-lang.jar!/META-INF/module.xml
+  public static final String SLASH_META_INF_MODULE_XML = JAR_SEPARATOR + META_INF_MODULE_XML;
+  private static final String SOURCES_MODULE_DIR = "module"; // source descriptor (if packaged) resides at the abc-lang-src.jar!/module/abc-lang.msd
 
   // excludes is going to be updated from #processExcludes, ensure it can be changed.
   private final Set<IFile> myExcludes = new HashSet<IFile>();
@@ -105,7 +111,6 @@ public final class ModulesMiner {
   @Deprecated
   @ToRemove(version = 3.3)
   public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
-    // I assume invocations of this method
     if (excludes != null) {
       myExcludes.addAll(excludes);
     }
@@ -119,8 +124,9 @@ public final class ModulesMiner {
   }
 
   private boolean needProcess(IFile file) {
-    return !FileSystem.getInstance().isFileIgnored(file.getName()) && !myExcludes.contains(file);
+    return !getFileSystem().isFileIgnored(file.getName()) && !myExcludes.contains(file);
   }
+
 
   private void readModuleDescriptors(IFile file) {
     if (!needProcess(file)) {
@@ -140,59 +146,68 @@ public final class ModulesMiner {
     }
 
     if (IFileUtils.isJarFile(file)) {
-      IFile jarRoot = IFileUtils.stepIntoJar(file);
-      readModuleDescriptorsFromFolder(jarRoot);
+      readModuleDescriptorsFromFolder(file);
     } else {
-      if (!isModuleFile(file)) {
-        return;
-      }
-      ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file);
-      if (moduleDescriptor != null) {
-        myOutcome.add(new ModuleHandle(file, moduleDescriptor));
+      if (isSourceModuleFile(file)) {
+        ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file);
+        if (moduleDescriptor != null) {
+          myOutcome.add(new ModuleHandle(file, moduleDescriptor));
+        }
       }
     }
   }
 
+  // if this is a jar dir, we need to go to modules sub dir or check for META-INF/module.xml
+  // if this is just good old plain directory, we check every file in it
   private void readModuleDescriptorsFromFolder(IFile file) {
     if (!needProcess(file)) return;
 
-    // if this is a jar dir, we need to go to modules sub dir or check for META-INF/module.xml
-    // if this is just good old plain directory, we check every file in it
-
-    if (file.getPath().endsWith(JAR + JAR_SEPARATOR)) {
-
+    if (IFileUtils.isJarFile(file)) { // ends with .jar
+      readModuleDescriptorsFromFolder(IFileUtils.stepIntoJar(file));
+    } else if (file.getPath().endsWith(JAR_SEPARATOR)) { // ends with .jar/!
       IFile moduleXml = file.getDescendant(META_INF).getDescendant(MODULE_XML);
       if (moduleXml.exists() && !moduleXml.isDirectory()) {
-        ModuleDescriptor moduleDescriptor = loadModuleDescriptor(moduleXml);
+        ModuleDescriptor moduleDescriptor = loadDeploymentDescriptor(moduleXml);
         if (moduleDescriptor != null) {
           myOutcome.add(new ModuleHandle(moduleXml, moduleDescriptor));
         }
       } else {
         IFile dirInJar = file.getDescendant(MODULES_DIR);
         if (dirInJar.exists() && dirInJar.isDirectory()) {
-          readModuleDescriptorsFromFolder(dirInJar);
+          readModuleDescriptorsFromFolder0(dirInJar, Location.INSIDE_THE_JAR);
         }
       }
-
     } else {
+      readModuleDescriptorsFromFolder0(file, Location.OUTSIDE_THE_JAR);
+    }
+  }
 
-      // first, we read from files
-      // this way all modules roots, sources/classes folders are in excludes and we do not even go into them
-      List<IFile> children = file.getChildren();
-      ArrayList<IFile> folders = new ArrayList<IFile>();
-      for (IFile child : children) {
-        if (!child.isDirectory()) {
-          readModuleDescriptorsFromFile(child);
-        } else {
-          folders.add(child);
-        }
+  /**
+   * insideTheJar == Location.INSIDE_THE_JAR whether ModulesMiner is inside some jar already
+   * first, we read from files
+   * this way all modules roots, sources/classes folders are in excludes and we do not even go into them
+   */
+  private void readModuleDescriptorsFromFolder0(IFile file, Location insideTheJar) {
+    if (insideTheJar == Location.INSIDE_THE_JAR) {
+      assert file.getPath().contains(JAR + JAR_SEPARATOR + MODULES_DIR); // note: we must be scanning for modules in the 'modules' directory
+    }
+    List<IFile> children = file.getChildren();
+    ArrayList<IFile> folders = new ArrayList<IFile>();
+    for (IFile child : children) {
+      if (!child.isDirectory()) {
+        readModuleDescriptorsFromFile(child);
+      } else {
+        folders.add(child);
       }
+    }
 
-      // now read from folders
-      for (IFile child : folders) {
+    // now read from folders
+    for (IFile child : folders) {
+      if (insideTheJar == Location.INSIDE_THE_JAR) {
+        readModuleDescriptorsFromFolder0(child, Location.INSIDE_THE_JAR);
+      } else {
         readModuleDescriptorsFromFolder(child);
       }
-
     }
   }
 
@@ -215,42 +230,60 @@ public final class ModulesMiner {
   @Deprecated
   @ToRemove(version = 3.3)
   public ModuleDescriptor loadModuleDescriptor(IFile file) {
+    String filePath = file.getPath();
+    if (filePath.endsWith(SLASH_META_INF_MODULE_XML)) {
+      return loadDeploymentDescriptor(file);
+    } else {
+      return loadSourceModuleDescriptor(file);
+    }
+  }
+
+  private ModuleDescriptor loadSourceModuleDescriptor(IFile file) {
     try {
-      String filePath = file.getPath();
-      if (filePath.endsWith(SLASH_META_INF_MODULE_XML)) {
-        DeploymentDescriptor deploymentDescriptor = DeploymentDescriptorPersistence.loadDeploymentDescriptor(file);
-        ModuleDescriptor result = null;
-        IFile realDescriptorFile = getRealDescriptorFile(filePath, deploymentDescriptor);
-        if (realDescriptorFile != null) {
-          result = loadModuleDescriptor(realDescriptorFile);
-        }
-        // TODO create module without sources
-        if (result != null) {
-          result.setDeploymentDescriptor(deploymentDescriptor);
-          // TODO fix stubs
-        }
-        return result;
-      } else {
-        return DescriptorIOFacade.getInstance().fromFileType(file).readFromFile(file);
-      }
-    } catch (Exception t) {
+      DescriptorIO<? extends ModuleDescriptor> descriptorIO = DescriptorIOFacade.getInstance().fromFileType(file);
+      return descriptorIO.readFromFile(file);
+    } catch (DescriptorIOException t) {
       LOG.error("Fail to load module from descriptor " + file.getPath(), t);
+      return null;
+    } catch (Exception e) {
+      LOG.error("Unknown error while trying to load source module descriptor " + file.getPath(), e);
+      return null;
+    }
+  }
+
+  /**
+   * loads deployment descriptor and try to load the corresponding source module descriptor
+   */
+  private ModuleDescriptor loadDeploymentDescriptor(IFile file) {
+    try {
+      DeploymentDescriptor deploymentDescriptor = DeploymentDescriptorPersistence.loadDeploymentDescriptor(file);
+      ModuleDescriptor result = null;
+      IFile sourceDescriptorFile = getSourceDescriptorFile(file.getPath(), deploymentDescriptor);
+      if (sourceDescriptorFile != null) {
+        result = loadSourceModuleDescriptor(sourceDescriptorFile);
+      }
+      // TODO create module without sources
+      if (result != null) {
+        result.setDeploymentDescriptor(deploymentDescriptor);
+        // TODO fix stubs
+      }
+      return result;
+    } catch (ModuleReadException e) {
+      LOG.error("Exception while loading a deployment descriptor from the path " + file.getPath(), e);
+      return null;
+    } catch (Exception e) {
+      LOG.error("Unknown error while loading a deployment descriptor from the path " + file.getPath(), e);
       return null;
     }
   }
 
   // read a module file and update excludes set with output locations (classes, generated sources) of the module
   private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile) {
-    try {
-      ModuleDescriptor descriptor = loadModuleDescriptor(descriptorFile);
-      if (descriptor != null) {
-        processExcludes(descriptorFile, descriptor);
-      }
-      return descriptor;
-    } catch (Exception t) {
-      LOG.error("Fail to load module from descriptor " + descriptorFile.getPath(), t);
+    ModuleDescriptor descriptor = loadModuleDescriptor(descriptorFile);
+    if (descriptor != null) {
+      processExcludes(descriptorFile, descriptor);
     }
-    return null;
+    return descriptor;
   }
 
   private void processExcludes(@NotNull IFile descriptorFile, ModuleDescriptor descriptor) {
@@ -266,11 +299,11 @@ public final class ModulesMiner {
     excludeClassesGen(descriptorFile, descriptor);
 
     for (String p : descriptor.getSourcePaths()) {
-      myExcludes.add(FileSystem.getInstance().getFileByPath(p));
+      myExcludes.add(getFileSystem().getFileByPath(p));
     }
 
     for (String entry : descriptor.getAdditionalJavaStubPaths()) {
-      myExcludes.add(FileSystem.getInstance().getFileByPath(entry));
+      myExcludes.add(getFileSystem().getFileByPath(entry));
     }
 
     if (descriptor instanceof LanguageDescriptor) {
@@ -285,7 +318,7 @@ public final class ModulesMiner {
       myExcludes.add(sourceDir);
       // todo: why?
       if (!sourceDir.isReadOnly()) {
-        myExcludes.add(FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
+        myExcludes.add(getFileSystem().getFileByPath(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
       }
     }
   }
@@ -304,20 +337,28 @@ public final class ModulesMiner {
     }
   }
 
-  static boolean isModuleFile(IFile file) {
+  static boolean isSourceModuleFile(IFile file) {
     return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
   }
 
+  /**
+   * @param deploymentFile -- the path to deployment descriptor
+   */
   @Nullable
-  public static IFile getRealDescriptorFile(String filePath, DeploymentDescriptor deploymentDescriptor) {
+  public static IFile getSourceDescriptorFile(@NotNull String deploymentFile, @NotNull DeploymentDescriptor deploymentDescriptor) {
     if (deploymentDescriptor.getSourcesJar() != null) {
-      IFile moduleJar = FileSystem.getInstance().getFileByPath(filePath.substring(0, filePath.length() - SLASH_META_INF_MODULE_XML.length()));
+      IFile moduleJar = FileSystem.getInstance().getFileByPath(deploymentFile.substring(0, deploymentFile.length() - SLASH_META_INF_MODULE_XML.length()));
       IFile sourcesJar = moduleJar.getParent().getDescendant(deploymentDescriptor.getSourcesJar());
       if (sourcesJar.exists() && deploymentDescriptor.getDescriptorFile() != null) {
-        return FileSystem.getInstance().getFileByPath(sourcesJar.getPath() + "!/module/" + deploymentDescriptor.getDescriptorFile());
+        return FileSystem.getInstance().getFileByPath(sourcesJar.getPath() + JAR_SEPARATOR + SOURCES_MODULE_DIR + "/" + deploymentDescriptor.getDescriptorFile());
       }
     }
     return null;
+  }
+
+  @NotNull
+  private static FileSystem getFileSystem() {
+    return FileSystem.getInstance();
   }
 
   public void saveHandle(@NotNull ModuleHandle handle, ModelOutputStream stream) throws IOException {
@@ -350,7 +391,7 @@ public final class ModulesMiner {
       throw new IOException("broken stream: invalid descriptor type");
     }
     descriptor.load(stream);
-    return new ModuleHandle(FileSystem.getInstance().getFileByPath(file), descriptor);
+    return new ModuleHandle(getFileSystem().getFileByPath(file), descriptor);
   }
 
   public static class ModuleHandle {
@@ -376,5 +417,10 @@ public final class ModulesMiner {
     public String toString() {
       return descriptor.getNamespace();
     }
+  }
+
+  private enum Location {
+    INSIDE_THE_JAR,
+    OUTSIDE_THE_JAR;
   }
 }

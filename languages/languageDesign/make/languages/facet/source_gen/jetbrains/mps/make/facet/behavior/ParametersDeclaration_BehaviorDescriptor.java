@@ -5,17 +5,23 @@ package jetbrains.mps.make.facet.behavior;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ParametersDeclaration_BehaviorDescriptor extends NamedTupleDeclaration_BehaviorDescriptor {
-  public ParametersDeclaration_BehaviorDescriptor() {
+  public String virtual_getLeftBracket_1262430001741497804(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getLeftBracket_1262430001741497804(SConcept thisConcept) {
-    return ParametersDeclaration_Behavior.virtual_getLeftBracket_1262430001741497804(thisConcept);
+  public String virtual_getRightBracket_1262430001741498115(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getRightBracket_1262430001741498115(SConcept thisConcept) {
-    return ParametersDeclaration_Behavior.virtual_getRightBracket_1262430001741498115(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.facet.structure.ParametersDeclaration";
   }
+
 }

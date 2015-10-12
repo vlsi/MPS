@@ -4,11 +4,17 @@ package jetbrains.mps.samples.complex.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.PrimitiveType_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ComplexType_BehaviorDescriptor extends PrimitiveType_BehaviorDescriptor {
-  public ComplexType_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.ComplexType";
   }
+
 }

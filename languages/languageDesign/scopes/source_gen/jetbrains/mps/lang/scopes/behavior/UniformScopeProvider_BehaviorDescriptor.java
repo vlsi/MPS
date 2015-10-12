@@ -7,6 +7,12 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.scopes.runtime.ScopeProviderContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface UniformScopeProvider_BehaviorDescriptor extends ScopeProvider_BehaviorDescriptor {
   public Scope virtual_getScope_2995585510566823862(SNode thisNode, SNode kind, ScopeProviderContext context);
 }

@@ -6,14 +6,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildSource_JavaLibraryExternalJar_BehaviorDescriptor extends BuildSource_JavaCP_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
-  public BuildSource_JavaLibraryExternalJar_BehaviorDescriptor() {
+  public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BuildSource_JavaLibraryExternalJar_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar";
   }
+
 }

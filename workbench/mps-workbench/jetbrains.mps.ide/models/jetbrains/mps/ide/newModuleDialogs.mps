@@ -2,9 +2,9 @@
 <model ref="r:8bdc9cf5-28de-48ab-8b85-36b2d96bc635(jetbrains.mps.ide.newModuleDialogs)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -356,6 +356,19 @@
                     <node concept="3K4zz7" id="3sOM1a1bh5g" role="37wK5m">
                       <node concept="1eOMI4" id="577ABRc4mKf" role="3K4E3e">
                         <node concept="3K4zz7" id="577ABRc4smG" role="1eOMHV">
+                          <node concept="3fqX7Q" id="7C$AW5VA7jZ" role="3K4Cdx">
+                            <node concept="2YIFZM" id="7C$AW5VA7k1" role="3fr31v">
+                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                              <node concept="2YIFZM" id="7C$AW5VA7k2" role="37wK5m">
+                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                                <node concept="37vLTw" id="7C$AW5VA7k3" role="37wK5m">
+                                  <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="2OqwBi" id="577ABRc4mKg" role="3K4E3e">
                             <node concept="2OqwBi" id="577ABRc4mKh" role="2Oq$k0">
                               <node concept="2OqwBi" id="577ABRc4mKi" role="2Oq$k0">
@@ -385,19 +398,6 @@
                             </node>
                             <node concept="liA8E" id="577ABRc52NP" role="2OqNvi">
                               <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                            </node>
-                          </node>
-                          <node concept="3fqX7Q" id="7C$AW5VA7jZ" role="3K4Cdx">
-                            <node concept="2YIFZM" id="7C$AW5VA7k1" role="3fr31v">
-                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
-                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                              <node concept="2YIFZM" id="7C$AW5VA7k2" role="37wK5m">
-                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                <node concept="37vLTw" id="7C$AW5VA7k3" role="37wK5m">
-                                  <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
-                                </node>
-                              </node>
                             </node>
                           </node>
                         </node>
@@ -855,6 +855,19 @@
                     <node concept="3K4zz7" id="577ABRc5zSY" role="37wK5m">
                       <node concept="1eOMI4" id="577ABRc5zSZ" role="3K4E3e">
                         <node concept="3K4zz7" id="577ABRc5zT0" role="1eOMHV">
+                          <node concept="3fqX7Q" id="7C$AW5VA7uw" role="3K4Cdx">
+                            <node concept="2YIFZM" id="7C$AW5VA7ux" role="3fr31v">
+                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                              <node concept="2YIFZM" id="7C$AW5VA7uy" role="37wK5m">
+                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                <node concept="37vLTw" id="7C$AW5VA7uz" role="37wK5m">
+                                  <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="2OqwBi" id="577ABRc5zTb" role="3K4E3e">
                             <node concept="2OqwBi" id="577ABRc5zTc" role="2Oq$k0">
                               <node concept="2OqwBi" id="577ABRc5zTd" role="2Oq$k0">
@@ -884,19 +897,6 @@
                             </node>
                             <node concept="liA8E" id="577ABRc5zTm" role="2OqNvi">
                               <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
-                            </node>
-                          </node>
-                          <node concept="3fqX7Q" id="7C$AW5VA7uw" role="3K4Cdx">
-                            <node concept="2YIFZM" id="7C$AW5VA7ux" role="3fr31v">
-                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
-                              <node concept="2YIFZM" id="7C$AW5VA7uy" role="37wK5m">
-                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                <node concept="37vLTw" id="7C$AW5VA7uz" role="37wK5m">
-                                  <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
-                                </node>
-                              </node>
                             </node>
                           </node>
                         </node>

@@ -6,26 +6,30 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor {
-  public BuildLayout_BehaviorDescriptor() {
+  public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }
-  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    BuildLayout_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
-    return BuildLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode __thisNode__, Context context) {
+    return null;
   }
-  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return BuildLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
+  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
-    return BuildLayout_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
+  public void virtual_unpack_7128123785277710736(SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
   }
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    BuildLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout";
   }
+
 }

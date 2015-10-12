@@ -5,14 +5,19 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SynchronizedStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
-  public SynchronizedStatement_BehaviorDescriptor() {
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    SynchronizedStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.SynchronizedStatement";
   }
+
 }

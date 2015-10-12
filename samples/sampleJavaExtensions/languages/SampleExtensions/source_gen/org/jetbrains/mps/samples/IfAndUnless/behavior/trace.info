@@ -1,73 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,28,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,50,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="FalseFlow_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" />
+      <unit at="12,0,24,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" />
     </file>
     <file name="Flow_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
     </file>
     <file name="MyIfStatement_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" />
     </file>
     <file name="TrueFlow_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" />
+      <unit at="12,0,24,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" />
     </file>
     <file name="UnlessStatement_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741498059">
     <file name="Flow_Behavior.java">
-      <node id="1262430001741498055" at="11,91,12,32" concept="0" />
-      <node id="1262430001741498059" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741498059" at="11,0,14,0" concept="1" trace="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="1262430001741498061" at="9,43,9,43" />
-      <scope id="1262430001741498058" at="11,91,12,32" />
-      <scope id="1262430001741498059" at="9,0,11,0">
-        <var name="thisNode" id="1262430001741498059" />
+      <unit id="1262430001741498059" at="10,0,13,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" />
+    </file>
+    <file name="Flow__BehaviorDescriptor.java">
+      <node id="1262430001741498059" at="24,0,25,0" concept="6" trace="CONCEPT" />
+      <node id="1262430001741498059" at="25,0,26,0" concept="6" trace="REGISTRY" />
+      <node id="1262430001741498059" at="27,0,28,0" concept="6" trace="getTitle_id1653mnvAgr8" />
+      <node id="1262430001741498059" at="29,0,30,0" concept="6" trace="BH_METHODS" />
+      <node id="1262430001741498055" at="34,95,35,32" concept="5" />
+      <node id="1262430001741498059" at="38,42,39,20" concept="8" />
+      <node id="1262430001741498059" at="43,114,44,21" concept="1" />
+      <node id="1262430001741498059" at="48,114,49,49" concept="4" />
+      <node id="1262430001741498059" at="50,26,51,56" concept="10" />
+      <node id="1262430001741498059" at="54,14,55,58" concept="10" />
+      <node id="1262430001741498059" at="60,128,61,49" concept="4" />
+      <node id="1262430001741498059" at="62,26,63,56" concept="10" />
+      <node id="1262430001741498059" at="66,13,67,62" concept="5" />
+      <node id="1262430001741498059" at="68,14,69,58" concept="10" />
+      <node id="1262430001741498059" at="75,48,76,22" concept="5" />
+      <node id="1262430001741498059" at="81,40,82,19" concept="5" />
+      <node id="1262430001741498059" at="31,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741498059" at="34,0,37,0" concept="7" trace="getTitle_id1653mnvAgr8#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="1262430001741498059" at="38,0,41,0" concept="0" trace="Flow__BehaviorDescriptor#()V" />
+      <node id="1262430001741498059" at="49,49,52,5" concept="2" />
+      <node id="1262430001741498059" at="61,49,64,5" concept="2" />
+      <node id="1262430001741498059" at="42,0,46,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1262430001741498059" at="52,5,56,5" concept="9" />
+      <node id="1262430001741498059" at="73,0,78,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1262430001741498059" at="79,0,84,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1262430001741498059" at="64,5,70,5" concept="9" />
+      <node id="1262430001741498059" at="47,0,58,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1262430001741498059" at="59,0,72,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1262430001741498059" at="31,63,31,63" />
+      <scope id="1262430001741498058" at="34,95,35,32" />
+      <scope id="1262430001741498059" at="38,42,39,20" />
+      <scope id="1262430001741498059" at="43,114,44,21" />
+      <scope id="1262430001741498059" at="50,26,51,56" />
+      <scope id="1262430001741498059" at="54,14,55,58" />
+      <scope id="1262430001741498059" at="62,26,63,56" />
+      <scope id="1262430001741498059" at="66,13,67,62" />
+      <scope id="1262430001741498059" at="68,14,69,58" />
+      <scope id="1262430001741498059" at="75,48,76,22" />
+      <scope id="1262430001741498059" at="81,40,82,19" />
+      <scope id="1262430001741498059" at="31,0,33,0">
+        <var name="__thisNode__" id="1262430001741498059" />
       </scope>
-      <scope id="1262430001741498059" at="11,0,14,0">
-        <var name="thisConcept" id="1262430001741498059" />
+      <scope id="1262430001741498059" at="34,0,37,0">
+        <var name="__thisConcept__" id="1262430001741498059" />
       </scope>
-      <unit id="1262430001741498059" at="8,0,15,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" />
+      <scope id="1262430001741498059" at="38,0,41,0" />
+      <scope id="1262430001741498059" at="42,0,46,0">
+        <var name="constructor" id="1262430001741498059" />
+        <var name="node" id="1262430001741498059" />
+        <var name="parameters" id="1262430001741498059" />
+      </scope>
+      <scope id="1262430001741498059" at="73,0,78,0" />
+      <scope id="1262430001741498059" at="79,0,84,0" />
+      <scope id="1262430001741498059" at="48,114,56,5">
+        <var name="methodIndex" id="1262430001741498059" />
+      </scope>
+      <scope id="1262430001741498059" at="60,128,70,5">
+        <var name="methodIndex" id="1262430001741498059" />
+      </scope>
+      <scope id="1262430001741498059" at="47,0,58,0">
+        <var name="method" id="1262430001741498059" />
+        <var name="node" id="1262430001741498059" />
+        <var name="parameters" id="1262430001741498059" />
+      </scope>
+      <scope id="1262430001741498059" at="59,0,72,0">
+        <var name="concept" id="1262430001741498059" />
+        <var name="method" id="1262430001741498059" />
+        <var name="parameters" id="1262430001741498059" />
+      </scope>
+      <unit id="1262430001741498059" at="23,0,85,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741702961">
     <file name="TrueFlow_Behavior.java">
-      <node id="1262430001741702960" at="11,91,12,16" concept="0" />
-      <node id="1262430001741702961" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741702961" at="11,0,14,0" concept="1" trace="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="1262430001741702963" at="9,43,9,43" />
-      <scope id="1262430001741702958" at="11,91,12,16" />
-      <scope id="1262430001741702961" at="9,0,11,0">
-        <var name="thisNode" id="1262430001741702961" />
+      <unit id="1262430001741702961" at="10,0,13,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
+    </file>
+    <file name="TrueFlow__BehaviorDescriptor.java">
+      <node id="1262430001741702961" at="24,0,25,0" concept="6" trace="CONCEPT" />
+      <node id="1262430001741702961" at="25,0,26,0" concept="6" trace="REGISTRY" />
+      <node id="1262430001741702961" at="27,0,28,0" concept="6" trace="getTitle_id1653mnvAgr8" />
+      <node id="1262430001741702961" at="29,0,30,0" concept="6" trace="BH_METHODS" />
+      <node id="1262430001741702960" at="34,95,35,16" concept="5" />
+      <node id="1262430001741702961" at="38,46,39,20" concept="8" />
+      <node id="1262430001741702961" at="43,114,44,21" concept="1" />
+      <node id="1262430001741702961" at="48,114,49,49" concept="4" />
+      <node id="1262430001741702961" at="50,26,51,56" concept="10" />
+      <node id="1262430001741702961" at="54,14,55,58" concept="10" />
+      <node id="1262430001741702961" at="60,128,61,49" concept="4" />
+      <node id="1262430001741702961" at="62,26,63,56" concept="10" />
+      <node id="1262430001741702961" at="66,13,67,62" concept="5" />
+      <node id="1262430001741702961" at="68,14,69,58" concept="10" />
+      <node id="1262430001741702961" at="75,48,76,22" concept="5" />
+      <node id="1262430001741702961" at="81,40,82,19" concept="5" />
+      <node id="1262430001741702961" at="31,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741702961" at="34,0,37,0" concept="7" trace="getTitle_id1653mnvAgr8#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="1262430001741702961" at="38,0,41,0" concept="0" trace="TrueFlow__BehaviorDescriptor#()V" />
+      <node id="1262430001741702961" at="49,49,52,5" concept="2" />
+      <node id="1262430001741702961" at="61,49,64,5" concept="2" />
+      <node id="1262430001741702961" at="42,0,46,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1262430001741702961" at="52,5,56,5" concept="9" />
+      <node id="1262430001741702961" at="73,0,78,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1262430001741702961" at="79,0,84,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1262430001741702961" at="64,5,70,5" concept="9" />
+      <node id="1262430001741702961" at="47,0,58,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1262430001741702961" at="59,0,72,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1262430001741702961" at="31,63,31,63" />
+      <scope id="1262430001741702958" at="34,95,35,16" />
+      <scope id="1262430001741702961" at="38,46,39,20" />
+      <scope id="1262430001741702961" at="43,114,44,21" />
+      <scope id="1262430001741702961" at="50,26,51,56" />
+      <scope id="1262430001741702961" at="54,14,55,58" />
+      <scope id="1262430001741702961" at="62,26,63,56" />
+      <scope id="1262430001741702961" at="66,13,67,62" />
+      <scope id="1262430001741702961" at="68,14,69,58" />
+      <scope id="1262430001741702961" at="75,48,76,22" />
+      <scope id="1262430001741702961" at="81,40,82,19" />
+      <scope id="1262430001741702961" at="31,0,33,0">
+        <var name="__thisNode__" id="1262430001741702961" />
       </scope>
-      <scope id="1262430001741702961" at="11,0,14,0">
-        <var name="thisConcept" id="1262430001741702961" />
+      <scope id="1262430001741702961" at="34,0,37,0">
+        <var name="__thisConcept__" id="1262430001741702961" />
       </scope>
-      <unit id="1262430001741702961" at="8,0,15,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
+      <scope id="1262430001741702961" at="38,0,41,0" />
+      <scope id="1262430001741702961" at="42,0,46,0">
+        <var name="constructor" id="1262430001741702961" />
+        <var name="node" id="1262430001741702961" />
+        <var name="parameters" id="1262430001741702961" />
+      </scope>
+      <scope id="1262430001741702961" at="73,0,78,0" />
+      <scope id="1262430001741702961" at="79,0,84,0" />
+      <scope id="1262430001741702961" at="48,114,56,5">
+        <var name="methodIndex" id="1262430001741702961" />
+      </scope>
+      <scope id="1262430001741702961" at="60,128,70,5">
+        <var name="methodIndex" id="1262430001741702961" />
+      </scope>
+      <scope id="1262430001741702961" at="47,0,58,0">
+        <var name="method" id="1262430001741702961" />
+        <var name="node" id="1262430001741702961" />
+        <var name="parameters" id="1262430001741702961" />
+      </scope>
+      <scope id="1262430001741702961" at="59,0,72,0">
+        <var name="concept" id="1262430001741702961" />
+        <var name="method" id="1262430001741702961" />
+        <var name="parameters" id="1262430001741702961" />
+      </scope>
+      <unit id="1262430001741702961" at="23,0,85,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741703052">
     <file name="FalseFlow_Behavior.java">
-      <node id="1262430001741703051" at="11,91,12,23" concept="0" />
-      <node id="1262430001741703052" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741703052" at="11,0,14,0" concept="1" trace="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <scope id="1262430001741703054" at="9,43,9,43" />
-      <scope id="1262430001741703049" at="11,91,12,23" />
-      <scope id="1262430001741703052" at="9,0,11,0">
-        <var name="thisNode" id="1262430001741703052" />
+      <unit id="1262430001741703052" at="10,0,13,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" />
+    </file>
+    <file name="FalseFlow__BehaviorDescriptor.java">
+      <node id="1262430001741703052" at="24,0,25,0" concept="6" trace="CONCEPT" />
+      <node id="1262430001741703052" at="25,0,26,0" concept="6" trace="REGISTRY" />
+      <node id="1262430001741703052" at="27,0,28,0" concept="6" trace="getTitle_id1653mnvAgr8" />
+      <node id="1262430001741703052" at="29,0,30,0" concept="6" trace="BH_METHODS" />
+      <node id="1262430001741703051" at="34,95,35,23" concept="5" />
+      <node id="1262430001741703052" at="38,47,39,20" concept="8" />
+      <node id="1262430001741703052" at="43,114,44,21" concept="1" />
+      <node id="1262430001741703052" at="48,114,49,49" concept="4" />
+      <node id="1262430001741703052" at="50,26,51,56" concept="10" />
+      <node id="1262430001741703052" at="54,14,55,58" concept="10" />
+      <node id="1262430001741703052" at="60,128,61,49" concept="4" />
+      <node id="1262430001741703052" at="62,26,63,56" concept="10" />
+      <node id="1262430001741703052" at="66,13,67,62" concept="5" />
+      <node id="1262430001741703052" at="68,14,69,58" concept="10" />
+      <node id="1262430001741703052" at="75,48,76,22" concept="5" />
+      <node id="1262430001741703052" at="81,40,82,19" concept="5" />
+      <node id="1262430001741703052" at="31,0,33,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741703052" at="34,0,37,0" concept="7" trace="getTitle_id1653mnvAgr8#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="1262430001741703052" at="38,0,41,0" concept="0" trace="FalseFlow__BehaviorDescriptor#()V" />
+      <node id="1262430001741703052" at="49,49,52,5" concept="2" />
+      <node id="1262430001741703052" at="61,49,64,5" concept="2" />
+      <node id="1262430001741703052" at="42,0,46,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="1262430001741703052" at="52,5,56,5" concept="9" />
+      <node id="1262430001741703052" at="73,0,78,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="1262430001741703052" at="79,0,84,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1262430001741703052" at="64,5,70,5" concept="9" />
+      <node id="1262430001741703052" at="47,0,58,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="1262430001741703052" at="59,0,72,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="1262430001741703052" at="31,63,31,63" />
+      <scope id="1262430001741703049" at="34,95,35,23" />
+      <scope id="1262430001741703052" at="38,47,39,20" />
+      <scope id="1262430001741703052" at="43,114,44,21" />
+      <scope id="1262430001741703052" at="50,26,51,56" />
+      <scope id="1262430001741703052" at="54,14,55,58" />
+      <scope id="1262430001741703052" at="62,26,63,56" />
+      <scope id="1262430001741703052" at="66,13,67,62" />
+      <scope id="1262430001741703052" at="68,14,69,58" />
+      <scope id="1262430001741703052" at="75,48,76,22" />
+      <scope id="1262430001741703052" at="81,40,82,19" />
+      <scope id="1262430001741703052" at="31,0,33,0">
+        <var name="__thisNode__" id="1262430001741703052" />
       </scope>
-      <scope id="1262430001741703052" at="11,0,14,0">
-        <var name="thisConcept" id="1262430001741703052" />
+      <scope id="1262430001741703052" at="34,0,37,0">
+        <var name="__thisConcept__" id="1262430001741703052" />
       </scope>
-      <unit id="1262430001741703052" at="8,0,15,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" />
+      <scope id="1262430001741703052" at="38,0,41,0" />
+      <scope id="1262430001741703052" at="42,0,46,0">
+        <var name="constructor" id="1262430001741703052" />
+        <var name="node" id="1262430001741703052" />
+        <var name="parameters" id="1262430001741703052" />
+      </scope>
+      <scope id="1262430001741703052" at="73,0,78,0" />
+      <scope id="1262430001741703052" at="79,0,84,0" />
+      <scope id="1262430001741703052" at="48,114,56,5">
+        <var name="methodIndex" id="1262430001741703052" />
+      </scope>
+      <scope id="1262430001741703052" at="60,128,70,5">
+        <var name="methodIndex" id="1262430001741703052" />
+      </scope>
+      <scope id="1262430001741703052" at="47,0,58,0">
+        <var name="method" id="1262430001741703052" />
+        <var name="node" id="1262430001741703052" />
+        <var name="parameters" id="1262430001741703052" />
+      </scope>
+      <scope id="1262430001741703052" at="59,0,72,0">
+        <var name="concept" id="1262430001741703052" />
+        <var name="method" id="1262430001741703052" />
+        <var name="parameters" id="1262430001741703052" />
+      </scope>
+      <unit id="1262430001741703052" at="23,0,85,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

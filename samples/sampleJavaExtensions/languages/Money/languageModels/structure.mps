@@ -2,8 +2,8 @@
 <model ref="r:cd29712f-cf1b-4f19-90a2-4ce86af0d5f6(org.jetbrains.mps.samples.Money.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <use id="662a9f2b-5802-4d16-9558-72c65c7a681e" name="org.jetbrains.mps.samples.Money" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,6 +17,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -54,6 +55,7 @@
     <property role="TrG5h" value="MoneyLiteral" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="money" />
+    <property role="1pbfSe" value="1532133097" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="4IqbYlp4P63" role="1TKVEl">
       <property role="TrG5h" value="amount" />
@@ -72,6 +74,7 @@
     <property role="TrG5h" value="MoneyType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="Money" />
+    <property role="1pbfSe" value="1532133041" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
   <node concept="1TIwiD" id="4IqbYlp4WcT">
@@ -80,6 +83,7 @@
     <property role="TrG5h" value="GetAmount" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="amount" />
+    <property role="1pbfSe" value="1532103906" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="4IqbYlp4WcU" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
@@ -91,6 +95,7 @@
     <property role="TrG5h" value="GetCurrency" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="currency" />
+    <property role="1pbfSe" value="1410060852" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1zoS8cVcJ6M" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
@@ -102,6 +107,7 @@
     <property role="TrG5h" value="ConvertTo" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="convert to" />
+    <property role="1pbfSe" value="1410138397" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="1zoS8cVd3hv" role="1TKVEl">
       <property role="TrG5h" value="targetCurrency" />
@@ -114,6 +120,7 @@
   <node concept="1TIwiD" id="38gGBrhh3mm">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="CurrencyDefTable" />
+    <property role="1pbfSe" value="55896076" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="38gGBrhh3ms" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -124,6 +131,7 @@
   </node>
   <node concept="1TIwiD" id="38gGBrhh3mn">
     <property role="TrG5h" value="CurrencyUnit" />
+    <property role="1pbfSe" value="55896077" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="38gGBrhh3mo" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -133,6 +141,7 @@
     <property role="TrG5h" value="CurrentStockPrice" />
     <property role="34LRSv" value="current stock price" />
     <property role="3GE5qa" value="stock" />
+    <property role="1pbfSe" value="1206878793" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="3u6SZi0G99E" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -145,6 +154,7 @@
     <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="StockSymbol" />
     <property role="34LRSv" value="symbol" />
+    <property role="1pbfSe" value="1204775554" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3u6SZi0FULr" role="1TKVEl">
       <property role="TrG5h" value="symbol" />
@@ -155,6 +165,7 @@
     <property role="3GE5qa" value="stock" />
     <property role="TrG5h" value="MovingAverage" />
     <property role="34LRSv" value="moving average" />
+    <property role="1pbfSe" value="1204247154" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="3u6SZi0Gsrg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

@@ -5,14 +5,20 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EnumerationDataTypeDeclaration_BehaviorDescriptor extends DataTypeDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor {
-  public EnumerationDataTypeDeclaration_BehaviorDescriptor() {
+  public SNode virtual_toBaseLanguageType_1213877229718(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return EnumerationDataTypeDeclaration_Behavior.virtual_toBaseLanguageType_1213877229718(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration";
   }
+
 }

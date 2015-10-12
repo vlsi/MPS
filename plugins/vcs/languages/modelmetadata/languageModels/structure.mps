@@ -2,7 +2,7 @@
 <model ref="r:d1664c60-f6de-4b25-a874-54417df516ea(jetbrains.mps.ide.vcs.modelmetadata.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -10,6 +10,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -40,6 +41,7 @@
   <node concept="1TIwiD" id="7gTJ_yqjx5H">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="Model" />
+    <property role="1pbfSe" value="243781573" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="444ZSQ068oQ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -83,6 +85,7 @@
   </node>
   <node concept="1TIwiD" id="3B8MzHTEEZu">
     <property role="TrG5h" value="ModelReference" />
+    <property role="1pbfSe" value="1284277735" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3B8MzHTEEZv" role="1TKVEl">
       <property role="TrG5h" value="stringValue" />
@@ -91,6 +94,7 @@
   </node>
   <node concept="1TIwiD" id="3B8MzHTEEZx">
     <property role="TrG5h" value="ModuleReference" />
+    <property role="1pbfSe" value="1284277732" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3B8MzHTEEZy" role="1TKVEl">
       <property role="TrG5h" value="stringValue" />

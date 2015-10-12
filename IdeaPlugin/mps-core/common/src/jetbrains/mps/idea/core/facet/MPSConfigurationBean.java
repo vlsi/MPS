@@ -21,9 +21,11 @@ import com.intellij.util.xmlb.annotations.AbstractCollection;
 import com.intellij.util.xmlb.annotations.Attribute;
 import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.util.xmlb.annotations.Transient;
+import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.ModuleId;
@@ -75,6 +77,8 @@ public class MPSConfigurationBean {
       myDescriptor = new SolutionDescriptor();
       myDescriptor.setId(ModuleId.fromString(myState.UUID));
       myDescriptor.setOutputPath(myState.generatorOutputPath);
+      myDescriptor.setCompileInMPS(false);
+      myDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
       if (myState.usedLanguages != null) {
         Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
         for (String usedLanguage : myState.usedLanguages) {

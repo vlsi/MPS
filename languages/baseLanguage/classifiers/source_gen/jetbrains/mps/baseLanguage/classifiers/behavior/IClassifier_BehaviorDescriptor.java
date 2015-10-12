@@ -7,6 +7,12 @@ import jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_BehaviorDescr
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IClassifier_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor, IExtractMethodAvailable_BehaviorDescriptor {
   public SNode virtual_createType_1213877527970(SNode thisNode);
   public SNode virtual_createSuperType_1217433657148(SNode thisNode);

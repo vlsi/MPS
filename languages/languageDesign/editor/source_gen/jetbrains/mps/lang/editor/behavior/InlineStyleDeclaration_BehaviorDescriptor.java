@@ -5,14 +5,20 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class InlineStyleDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ICellStyle_BehaviorDescriptor {
-  public InlineStyleDeclaration_BehaviorDescriptor() {
+  public SNode virtual_getParent_1219419981626(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getParent_1219419981626(SNode thisNode) {
-    return IStyleContainer_Behavior.virtual_getParent_1219419981626(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.InlineStyleDeclaration";
   }
+
 }

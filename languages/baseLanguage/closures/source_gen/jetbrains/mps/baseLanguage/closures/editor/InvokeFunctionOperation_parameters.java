@@ -8,19 +8,19 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 public class InvokeFunctionOperation_parameters implements ParametersInformation<SNode> {
   public InvokeFunctionOperation_parameters() {
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(node)), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
+    return Sequence.<SNode>singleton(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(node)), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")));
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
-    styledText.append(BehaviorReflection.invokeVirtual(String.class, parameterObject, "virtual_getPresentation_1213877396640", new Object[]{}));
+    styledText.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(parameterObject));
   }
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return true;

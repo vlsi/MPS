@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
 
 @Generated
 public class QueriesGenerated {
@@ -24,6 +24,6 @@ public class QueriesGenerated {
     return "_context";
   }
   public static boolean ifMacro_Condition_1199879109301(final IfMacroContext _context) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_getFromParameterObject_1213877522908", new Object[]{}));
+    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
   }
 }

@@ -4,14 +4,20 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NodeRefExpression_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor {
-  public NodeRefExpression_BehaviorDescriptor() {
+  public SNode virtual_getTargetNode_3575813534625153815(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
-    return NodeRefExpression_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.NodeRefExpression";
   }
+
 }

@@ -62,6 +62,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.smodel.ModelUndoTest.class,
     jetbrains.mps.text.TextAreaTest.class,
     jetbrains.mps.text.TextBufferTest.class,
+    jetbrains.mps.generator.impl.plan.TemplateModelScanTest.class,
     jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
     jetbrains.mps.environment.MpsEnvironmentTest.class,
     jetbrains.mps.repo.RepoListenerTest.class,

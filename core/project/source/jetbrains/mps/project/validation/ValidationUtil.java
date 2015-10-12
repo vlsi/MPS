@@ -17,7 +17,7 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -47,6 +47,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -170,7 +171,7 @@ public class ValidationUtil {
     if (model instanceof InvalidSModel) {
       Iterable<SModel.Problem> problems = model.getProblems();
       if (!problems.iterator().hasNext()) {
-        if (!processor.process(new ValidationProblem(Severity.ERROR, "Couldn't read model"))) return;
+        processor.process(new ValidationProblem(Severity.ERROR, "Couldn't read model"));
         return;
       }
 
@@ -192,7 +193,7 @@ public class ValidationUtil {
     }
 
     if (repository == null) {
-      if (!processor.process(new ValidationProblem(Severity.WARNING, "Model is detached from a repository, could not process further"))) return;
+      processor.process(new ValidationProblem(Severity.WARNING, "Model is detached from a repository, could not process further"));
       return;
     }
 
@@ -201,10 +202,14 @@ public class ValidationUtil {
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
       if (module.resolveInDependencies(reference.getModelId()) == null) {
         String msg = "Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName());
-        if (!processor.process(new MissingModelError(model, msg, reference))) return;
+        if (!processor.process(new MissingModelError(model, msg, reference))) {
+          return;
+        }
       }
       if (reference.equals(modelToValidateRef)) {
-        if (!processor.process(new ImportSelfWarning(model, reference))) return;
+        if (!processor.process(new ImportSelfWarning(model, reference))) {
+          return;
+        }
       }
     }
 
@@ -213,14 +218,22 @@ public class ValidationUtil {
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
     for (final SModuleReference lang : langsToCheck) {
       if (repository.getModule(lang.getModuleId()) == null) {
-        if (!processor.process(new MissingImportedLanguageError(model, lang))) return;
+        if (!processor.process(new MissingImportedLanguageError(model, lang))) {
+          return;
+        }
       }
     }
 
     for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
       if (repository.getModule(devKit.getModuleId()) == null) {
-        if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()))) return;
+        if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find devkit: " + devKit.getModuleName()))) {
+          return;
+        }
       }
+    }
+
+    if (SModelStereotype.isGeneratorModel(model)) {
+      checkGeneratorModel(model, null, processor);
     }
   }
 
@@ -335,7 +348,7 @@ public class ValidationUtil {
       if (!processor.process(new ValidationProblem(Severity.ERROR, "Can't find generator dependency: " + gen.getModuleName()))) return;
     }
 
-    Set<String> usedLanguages = new HashSet<String>();
+    Set<SLanguage> usedLanguages = new HashSet<SLanguage>();
     ModelDependencyScanner depScan = new ModelDependencyScanner();
     depScan.crossModelReferences(true).usedLanguages(false);
     // dependencies check is meaningless if we didn't collect cross-generator references.
@@ -350,15 +363,21 @@ public class ValidationUtil {
         anyGeneratorModelNotLoaded |= SModelStereotype.isGeneratorModel(model);
         continue;
       }
-      if (SModelStereotype.isGeneratorModel(model)) {
-        usedLanguages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(model));
+      if (SModelStereotype.isGeneratorModel(model) && !checkGeneratorModel(model, usedLanguages, processor)) {
+        return;
       }
       depScan.walk(model);
     }
     if (!warnMissingTargetLangRuntime(generator, usedLanguages, processor)) return;
 
     if (!anyGeneratorModelNotLoaded) {
-      warnStrictGeneratorDependencies(generator, depScan, processor);
+      if (!warnStrictGeneratorDependencies(generator, depScan, processor)) {
+        return;
+      }
+      if (generator.getOwnTemplateModels().isEmpty()) {
+        // quickFix possible, remove module
+        processor.process(new ValidationProblem(Severity.WARNING, "No template models in the generator, generator is no-op"));
+      }
     }
   }
 
@@ -392,7 +411,7 @@ public class ValidationUtil {
   }
 
   //returns true to continue analysing, false to stop
-  private static boolean warnMissingTargetLangRuntime(Generator generator, Set<String> usedLanguages, Processor<ValidationProblem> processor) {
+  private static boolean warnMissingTargetLangRuntime(Generator generator, Set<SLanguage> usedLanguages, Processor<ValidationProblem> processor) {
     Language sourceLanguage = generator.getSourceLanguage();
     usedLanguages.remove(sourceLanguage.getModuleName());
     if (usedLanguages.isEmpty()) return true;
@@ -402,13 +421,18 @@ public class ValidationUtil {
       compileTimeDeps.add(d.getModuleReference());
     }
 
-    for (String lang : usedLanguages) {
-      Language language = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
-      if (language == null || language.getRuntimeModulesReferences().isEmpty()) continue;
+    for (SLanguage lang : usedLanguages) {
+      Collection<SModuleReference> langRuntimes = IterableUtil.asCollection(lang.getLanguageRuntimes());
+      if (langRuntimes.isEmpty()) {
+        continue;
+      }
       // language we generate into (target) has runtime, check we've got appropriate dependency
-      if (compileTimeDeps.containsAll(language.getRuntimeModulesReferences())) continue;
+      if (compileTimeDeps.containsAll(langRuntimes)) {
+        continue;
+      }
 
-      if (!processor.process(new ValidationProblem(Severity.WARNING, String.format("%s shall specify language %s as generation target", sourceLanguage, lang))))
+      String m = String.format("%s shall specify language %s as generation target to include its runtime modules into compilation", sourceLanguage, lang);
+      if (!processor.process(new ValidationProblem(Severity.WARNING, m)))
         return false;
     }
     return true;
@@ -459,6 +483,21 @@ public class ValidationUtil {
       if (!processor.process(new ValidationProblem(Severity.ERROR, "Contains dependency on generator: " + dependency.getTargetModule().getModuleName())))
         return false;
       ;
+    }
+    return true;
+  }
+
+
+  // pre: SModelStereotype.isGeneratorModel(model) == true
+  private static boolean checkGeneratorModel(SModel model, @Nullable Collection<SLanguage> usedLanguages, Processor<ValidationProblem> processor) {
+    ModelScanner ms = new ModelScanner().scan(model);
+    if (usedLanguages != null) {
+      usedLanguages.addAll(ms.getTargetLanguages());
+    }
+    if (ms.getTargetLanguages().isEmpty() && ms.getQueryLanguages().isEmpty()) {
+      String m = String.format("Generator Model %s got no target nor query language. Is it empty?", model.getModelName());
+      // quickFix possible, remove model
+      return processor.process(new ValidationProblem(Severity.WARNING, m));
     }
     return true;
   }

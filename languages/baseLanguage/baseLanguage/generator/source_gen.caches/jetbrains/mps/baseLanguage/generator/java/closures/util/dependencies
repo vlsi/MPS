@@ -53,7 +53,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresMappingId" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.generator.java.closures.util.ClosuresUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />

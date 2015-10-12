@@ -42,15 +42,13 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.make.script.ScriptBuilder;
-import jetbrains.mps.make.facet.IFacet;
-import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
@@ -196,13 +194,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     String scrName = ((this.getSession().isCleanMake() ? "Rebuild" : "Make"));
     IMessageHandler mh = this.getSession().getMessageHandler();
-    if (mh == null || mh == IMessageHandler.NULL_HANDLER) {
-      // FIXME using null for MH to indicate we shall use MessagesViewTool is bad approach. Instead, IDE make action shall supply correct MH. 
-      // This code is left here in 3.2 for compatibility reasons. Legacy MakeSession constuctors might be still in use 
-      // along with IMakeService, assuming null for default 'Make' view. After 3.2, once legacy constructors are gone, 
-      // remove this code altogether (rely on notnull for session.getMessageHandler() 
-      mh = new DefaultMakeMessageHandler(getSession().getProject());
-    }
     mh.clear();
 
     if (Sequence.fromIterable(inputRes).isEmpty()) {
@@ -284,9 +275,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       frame.getStatusBar().setInfo(info);
     }
   }
-  public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
-  }
+
   private class Controller extends IScriptController.Stub {
     private final ProgressMonitorProgressStrategy pmps;
     private final IScriptController delegateScrCtr;

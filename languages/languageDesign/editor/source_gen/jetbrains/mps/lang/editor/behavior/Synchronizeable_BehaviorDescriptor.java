@@ -4,6 +4,12 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface Synchronizeable_BehaviorDescriptor {
   public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode);
   public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode);

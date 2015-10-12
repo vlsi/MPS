@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IOperation_BehaviorDescriptor {
   public boolean virtual_isLValue_1213877410080(SNode thisNode);
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode);

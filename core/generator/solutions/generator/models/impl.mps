@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -286,6 +286,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
+        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
@@ -303,6 +306,10 @@
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
@@ -2088,6 +2095,25 @@
       </node>
       <node concept="35c_gC" id="6pv6r6HKFjO" role="33vP2m">
         <ref role="35c_gD" to="tpf8:6pv6r6HKtLr" resolve="PersistGeneration" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4ywU$oxdg2L" role="jymVt" />
+    <node concept="Wx3nA" id="4ywU$oxdc7Z" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="concept_PatternExpression" />
+      <node concept="3Tm1VV" id="4ywU$oxdc80" role="1B3o_S" />
+      <node concept="3uibUv" id="4ywU$oxdc81" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="4ywU$oxdc82" role="33vP2m">
+        <ref role="35c_gD" to="tp3t:gyDMOuh" resolve="PatternExpression" />
+      </node>
+      <node concept="z59LJ" id="4ywU$oxdgZN" role="lGtFl">
+        <node concept="TZ5HA" id="4ywU$oxdgZO" role="TZ5H$">
+          <node concept="1dT_AC" id="4ywU$oxdgZP" role="1dT_Ay">
+            <property role="1dT_AB" value="expression from lang.pattern we utilize e.g. in PatternRules (perhaps, somewhere else, too?)" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="4Eh_7JwtesV" role="jymVt" />
@@ -4017,6 +4043,56 @@
         <ref role="ehGHo" to="tpf8:hfgB$Qy" resolve="Weaving_MappingRule_ContextNodeQuery" />
       </node>
     </node>
+    <node concept="2YIFZL" id="2h9GiJ3xD6o" role="jymVt">
+      <property role="TrG5h" value="getWeaveRule_AnchorQuery" />
+      <node concept="3Tm1VV" id="2h9GiJ3xD6p" role="1B3o_S" />
+      <node concept="3clFbS" id="2h9GiJ3xD6q" role="3clF47">
+        <node concept="3clFbF" id="2h9GiJ3xD6r" role="3cqZAp">
+          <node concept="2OqwBi" id="2h9GiJ3xD6s" role="3clFbG">
+            <node concept="37vLTw" id="2h9GiJ3xD6t" role="2Oq$k0">
+              <ref role="3cqZAo" node="2h9GiJ3xD6v" resolve="rule" />
+            </node>
+            <node concept="3TrEf2" id="2h9GiJ3xEIZ" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:SFyHGUIP7S" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2h9GiJ3xD6v" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3Tqbb2" id="2h9GiJ3xD6w" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:gZ0QclN" resolve="Weaving_MappingRule" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2h9GiJ3xD6x" role="3clF45">
+        <ref role="ehGHo" to="tpf8:SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="2h9GiJ3yhnE" role="jymVt">
+      <property role="TrG5h" value="getWeaveMacro_AnchorQuery" />
+      <node concept="3Tm1VV" id="2h9GiJ3yhnF" role="1B3o_S" />
+      <node concept="3clFbS" id="2h9GiJ3yhnG" role="3clF47">
+        <node concept="3clFbF" id="2h9GiJ3yhnH" role="3cqZAp">
+          <node concept="2OqwBi" id="2h9GiJ3yhnI" role="3clFbG">
+            <node concept="37vLTw" id="2h9GiJ3yhnJ" role="2Oq$k0">
+              <ref role="3cqZAo" node="2h9GiJ3yhnL" resolve="macro" />
+            </node>
+            <node concept="3TrEf2" id="2h9GiJ3ykYn" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:2h9GiJ3xGad" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2h9GiJ3yhnL" role="3clF46">
+        <property role="TrG5h" value="macro" />
+        <node concept="3Tqbb2" id="2h9GiJ3yhnM" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:30c0HY8gznj" resolve="WeaveMacro" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2h9GiJ3yhnN" role="3clF45">
+        <ref role="ehGHo" to="tpf8:SFyHGUI$GV" resolve="WeavingAnchorQuery" />
+      </node>
+    </node>
     <node concept="2YIFZL" id="7QeCZOGPwWp" role="jymVt">
       <property role="TrG5h" value="getWeaving_Consequence" />
       <node concept="3Tm1VV" id="7QeCZOGPwWq" role="1B3o_S" />
@@ -5095,6 +5171,26 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="6xQoLnhytc6" role="1B3o_S" />
+    </node>
+    <node concept="2YIFZL" id="4ywU$oxd5K4" role="jymVt">
+      <property role="TrG5h" value="getPatternLanguage" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="4ywU$oxd5K7" role="3clF47">
+        <node concept="3cpWs6" id="4ywU$oxd6GP" role="3cqZAp">
+          <node concept="pHN19" id="4ywU$oxd6Oh" role="3cqZAk">
+            <node concept="2V$Bhx" id="4ywU$oxd6OH" role="2V$M_3">
+              <property role="2V$B1T" value="d4615e3b-d671-4ba9-af01-2b78369b0ba7" />
+              <property role="2V$B1Q" value="jetbrains.mps.lang.pattern" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4ywU$oxd4Sq" role="1B3o_S" />
+      <node concept="3uibUv" id="4ywU$oxd5K2" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="7f3ulFtx2Ai">

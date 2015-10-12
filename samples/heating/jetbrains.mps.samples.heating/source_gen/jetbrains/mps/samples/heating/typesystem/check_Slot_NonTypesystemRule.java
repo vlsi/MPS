@@ -15,7 +15,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.samples.heating.behavior.Slot_Behavior;
+import jetbrains.mps.samples.heating.behavior.Slot__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -54,7 +54,7 @@ public class check_Slot_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
         }
       }
     }
-    SNode customizedSlot = Slot_Behavior.call_getCustomizedSlot_935069066463578518(slot);
+    SNode customizedSlot = Slot__BehaviorDescriptor.getCustomizedSlot_idNU25Mr18Am.invoke(slot);
     if ((customizedSlot != null) && SPropertyOperations.getInteger(SLinkOperations.getTarget(customizedSlot, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature")) == SPropertyOperations.getInteger(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

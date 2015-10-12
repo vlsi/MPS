@@ -164,8 +164,6 @@ public class ConceptDescendantsCache implements CoreComponent {
    * @return non-empty set of descendant concepts including the one supplied.
    */
   public Set<SAbstractConcept> getDescendants(SAbstractConcept concept) {
-    myModuleRepository.getModelAccess().checkReadAccess();
-
     synchronized (myNotProcessedRuntimes) {
       if (!myNotProcessedRuntimes.isEmpty()) {
         loadConcepts(myNotProcessedRuntimes);

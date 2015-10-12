@@ -15,7 +15,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.ProjectStrategy;
-import jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy;
+import jetbrains.mps.testbench.junit.runners.AntProjectStrategy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -48,7 +48,7 @@ public class BaseCheckModulesTest {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
 
     ourStatistic = new CheckingTestStatistic();
-    ProjectStrategy strategy = new FromProjectPathProjectStrategy();
+    ProjectStrategy strategy = new AntProjectStrategy();
     ourContextProject = env.createProject(strategy);
   }
 

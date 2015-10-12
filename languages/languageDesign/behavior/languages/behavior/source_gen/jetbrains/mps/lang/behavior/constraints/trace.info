@@ -99,7 +99,7 @@
       <node id="1225194475747" at="54,325,55,371" concept="2" />
       <node id="1225194475678" at="59,44,60,20" concept="7" />
       <node id="1225194475682" at="67,142,68,397" concept="6" />
-      <node id="1225194475691" at="68,397,69,123" concept="6" />
+      <node id="1225194475691" at="68,397,69,132" concept="6" />
       <node id="7448639082793552063" at="71,47,72,192" concept="7" />
       <node id="1225194475678" at="77,63,78,58" concept="7" />
       <node id="1225194475678" at="82,7,83,22" concept="7" />
@@ -112,7 +112,7 @@
       <node id="1225194475678" at="41,0,45,0" concept="5" trace="validate#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1225194475678" at="58,0,62,0" concept="5" trace="hasOwnScopeProvider#()Z" />
       <node id="1225194475678" at="76,0,80,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1225194475698" at="69,123,74,15" concept="7" />
+      <node id="1225194475698" at="69,132,74,15" concept="7" />
       <node id="1225194475702" at="46,119,56,9" concept="4" />
       <node id="1225194475678" at="66,0,76,0" concept="5" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="1225194475678" at="45,0,58,0" concept="5" trace="onReferenceSet#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -359,7 +359,7 @@
       <node id="4448822002454417524" at="57,142,58,262" concept="6" />
       <node id="4448822002454416250" at="58,262,59,0" concept="8" />
       <node id="4448822002454452529" at="60,221,61,399" concept="6" />
-      <node id="4448822002454452552" at="61,399,62,141" concept="7" />
+      <node id="4448822002454452552" at="61,399,62,150" concept="7" />
       <node id="4448822002454452549" at="63,20,64,26" concept="7" />
       <node id="6496299201655529040" at="68,63,69,58" concept="7" />
       <node id="6496299201655529040" at="73,7,74,22" concept="7" />
@@ -387,7 +387,7 @@
       <scope id="4448822002454452546" at="63,20,64,26" />
       <scope id="6496299201655529040" at="68,63,69,58" />
       <scope id="6496299201655590932" at="76,148,77,222" />
-      <scope id="4448822002454417543" at="60,221,62,141">
+      <scope id="4448822002454417543" at="60,221,62,150">
         <var name="concept" id="4448822002454452530" />
       </scope>
       <scope id="6496299201655529040" at="27,0,30,0" />

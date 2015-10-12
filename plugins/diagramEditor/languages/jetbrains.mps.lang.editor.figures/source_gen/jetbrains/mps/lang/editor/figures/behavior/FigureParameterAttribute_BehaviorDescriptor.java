@@ -5,12 +5,18 @@ package jetbrains.mps.lang.editor.figures.behavior;
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class FigureParameterAttribute_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements FigureParameter_BehaviorDescriptor {
-  public FigureParameterAttribute_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute";
   }
-  public abstract SNode virtual_getParameterMember_5422656561931910498(SNode thisNode);
+
+  public abstract SNode virtual_getParameterMember_5422656561931910498(SNode __thisNode__);
 }

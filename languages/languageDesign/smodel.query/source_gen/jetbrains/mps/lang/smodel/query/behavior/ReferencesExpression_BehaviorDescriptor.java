@@ -5,14 +5,20 @@ package jetbrains.mps.lang.smodel.query.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReferencesExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
-  public ReferencesExpression_BehaviorDescriptor() {
+  public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept __thisConcept__) {
+    return null;
   }
-  public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
-    return ReferencesExpression_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.query.structure.ReferencesExpression";
   }
+
 }

@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior;
+import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -33,9 +33,9 @@ public class check_BuildSolutionRunnerAspect_NonTypesystemRule extends AbstractN
   public check_BuildSolutionRunnerAspect_NonTypesystemRule() {
   }
   public void applyRule(final SNode buildSolutionRunner, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final String className = BehaviorReflection.invokeVirtual(String.class, buildSolutionRunner, "virtual_getClassName_1350734474210951475", new Object[]{});
-    final String methodName = BehaviorReflection.invokeVirtual(String.class, buildSolutionRunner, "virtual_getMethodName_1350734474210955274", new Object[]{});
-    SModuleReference moduleReference = ModuleReference.parseReference(BuildMps_AbstractModule_Behavior.call_getModuleReference_4643216374596368935(SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))));
+    final String className = BuildSolutionRunnerAspect__BehaviorDescriptor.getClassName_id1aYLt$9dW4N.invoke(buildSolutionRunner);
+    final String methodName = BuildSolutionRunnerAspect__BehaviorDescriptor.getMethodName_id1aYLt$9dX0a.invoke(buildSolutionRunner);
+    SModuleReference moduleReference = ModuleReference.parseReference(BuildMps_AbstractModule__BehaviorDescriptor.getModuleReference_id41K1b4v5ZCB.invoke(SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))));
     SModule module = GlobalScope.getInstance().resolve(moduleReference);
     if (module != null) {
       for (SModel m : module.getModels()) {
@@ -48,7 +48,7 @@ public class check_BuildSolutionRunnerAspect_NonTypesystemRule extends AbstractN
           if ((classToRun == null)) {
             continue;
           }
-          SNode methodToRun = Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(classToRun)).findFirst(new IWhereFilter<SNode>() {
+          SNode methodToRun = Sequence.fromIterable(ClassConcept__BehaviorDescriptor.staticMethods_id4_LVZ3pCeXr.invoke(classToRun)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(methodName) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isEmpty();
             }

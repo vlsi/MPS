@@ -4,15 +4,22 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PrivateInstanceMethodCallOperation_BehaviorDescriptor extends InstanceMethodCallOperation_BehaviorDescriptor {
-  public PrivateInstanceMethodCallOperation_BehaviorDescriptor() {
+  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
-    return PrivateInstanceMethodCallOperation_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation";
   }
+
 }

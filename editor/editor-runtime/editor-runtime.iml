@@ -30,6 +30,8 @@
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="behavior-api" />
+    <orderEntry type="module" module-name="behavior-runtime" />
+    <orderEntry type="module" module-name="behavior-legacy-api" />
   </component>
 </module>
-

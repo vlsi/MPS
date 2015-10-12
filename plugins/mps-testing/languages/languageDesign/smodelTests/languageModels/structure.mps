@@ -2,7 +2,7 @@
 <model ref="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -10,6 +10,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -35,6 +36,7 @@
   </registry>
   <node concept="1TIwiD" id="ftl0ImzDYZ">
     <property role="TrG5h" value="Child" />
+    <property role="1pbfSe" value="1704201270" />
     <node concept="1TJgyj" id="ftl0ImzDZ0" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="grandChild_0_1" />
@@ -64,10 +66,12 @@
   </node>
   <node concept="1TIwiD" id="ftl0ImzDZ4">
     <property role="TrG5h" value="GrandChild" />
+    <property role="1pbfSe" value="1704201265" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="ftl0ImzDZ5">
     <property role="TrG5h" value="Root" />
+    <property role="1pbfSe" value="1704201264" />
     <node concept="1TJgyj" id="ftl0ImzDZ6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="child_0_n" />
@@ -95,6 +99,7 @@
   </node>
   <node concept="1TIwiD" id="1U0BydTaHd">
     <property role="TrG5h" value="ChildSubConcept" />
+    <property role="1pbfSe" value="1906397755" />
     <ref role="1TJDcQ" node="ftl0ImzDYZ" resolve="Child" />
     <node concept="1TJgyj" id="1U0BydTaHe" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -105,6 +110,7 @@
   </node>
   <node concept="1TIwiD" id="7Ac3mvq__F6">
     <property role="TrG5h" value="ReferenceContainer" />
+    <property role="1pbfSe" value="1411541037" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Ac3mvq__F7" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -128,6 +134,7 @@
   </node>
   <node concept="1TIwiD" id="2urHzIcEbvY">
     <property role="TrG5h" value="ReferenceContainerSubConcept" />
+    <property role="1pbfSe" value="1270583751" />
     <ref role="1TJDcQ" node="7Ac3mvq__F6" resolve="ReferenceContainer" />
     <node concept="1TJgyj" id="2urHzIcEbw0" role="1TKVEi">
       <property role="20lmBu" value="reference" />

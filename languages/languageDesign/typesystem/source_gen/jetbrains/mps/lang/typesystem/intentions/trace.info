@@ -18,18 +18,18 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)/1195490883262">
-    <file name="ConvertInferenceRuleToNonTypesystemRule_Intention.java">
+    <file name="ConvertInferenceRuleToCheckingRule_Intention.java">
       <node id="1195490883262" at="27,0,28,0" concept="3" trace="myCachedExecutable" />
-      <node id="1195490883262" at="28,62,29,304" concept="11" />
-      <node id="1195490883262" at="32,35,33,53" concept="8" />
+      <node id="1195490883262" at="28,57,29,304" concept="11" />
+      <node id="1195490883262" at="32,35,33,48" concept="8" />
       <node id="1195490883262" at="37,53,38,19" concept="8" />
       <node id="1195490883262" at="39,5,40,16" concept="8" />
       <node id="1195491639092" at="42,91,43,907" concept="7" />
       <node id="1195491701530" at="43,907,44,235" concept="8" />
       <node id="1195490883262" at="47,35,48,17" concept="8" />
-      <node id="1195490883262" at="51,37,52,155" concept="2" />
+      <node id="1195490883262" at="51,37,52,150" concept="2" />
       <node id="1195490883262" at="53,5,54,30" concept="8" />
-      <node id="1195491061285" at="60,87,61,46" concept="8" />
+      <node id="1195491061285" at="60,87,61,40" concept="8" />
       <node id="1195491745931" at="64,78,65,303" concept="7" />
       <node id="1195491895679" at="65,303,66,332" concept="2" />
       <node id="1195491933492" at="66,332,67,314" concept="2" />
@@ -38,9 +38,9 @@
       <node id="1195493336061" at="71,360,72,367" concept="2" />
       <node id="1195492055823" at="74,7,75,39" concept="2" />
       <node id="1071422968910417425" at="75,39,76,174" concept="2" />
-      <node id="1195490883262" at="79,48,80,68" concept="8" />
+      <node id="1195490883262" at="79,48,80,63" concept="8" />
       <node id="1195490883262" at="57,0,59,0" concept="1" trace="IntentionImplementation#()V" />
-      <node id="1195490883262" at="28,0,31,0" concept="1" trace="ConvertInferenceRuleToNonTypesystemRule_Intention#()V" />
+      <node id="1195490883262" at="28,0,31,0" concept="1" trace="ConvertInferenceRuleToCheckingRule_Intention#()V" />
       <node id="1195490883262" at="36,84,39,5" concept="5" />
       <node id="1195490883262" at="50,99,53,5" concept="5" />
       <node id="1195493308935" at="70,436,73,9" concept="5" />
@@ -54,14 +54,14 @@
       <node id="1195490883262" at="35,0,42,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1195490883262" at="63,0,78,0" concept="6" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="1195490883262" at="57,38,57,38" />
-      <scope id="1195490883262" at="28,62,29,304" />
-      <scope id="1195490883262" at="32,35,33,53" />
+      <scope id="1195490883262" at="28,57,29,304" />
+      <scope id="1195490883262" at="32,35,33,48" />
       <scope id="1195490883262" at="37,53,38,19" />
       <scope id="1195490883262" at="47,35,48,17" />
-      <scope id="1195490883262" at="51,37,52,155" />
-      <scope id="1195490883264" at="60,87,61,46" />
+      <scope id="1195490883262" at="51,37,52,150" />
+      <scope id="1195490883264" at="60,87,61,40" />
       <scope id="1195493308936" at="71,360,72,367" />
-      <scope id="1195490883262" at="79,48,80,68" />
+      <scope id="1195490883262" at="79,48,80,63" />
       <scope id="1195490883266" at="42,91,44,235">
         <var name="descendants" id="1195491639093" />
       </scope>
@@ -99,8 +99,8 @@
         <var name="editorContext" id="1195490883262" />
         <var name="node" id="1195490883262" />
       </scope>
-      <unit id="1195490883262" at="56,0,83,0" name="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention$IntentionImplementation" />
-      <unit id="1195490883262" at="26,0,84,0" name="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
+      <unit id="1195490883262" at="56,0,83,0" name="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToCheckingRule_Intention$IntentionImplementation" />
+      <unit id="1195490883262" at="26,0,84,0" name="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToCheckingRule_Intention" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)/3302086321380606109">

@@ -16,6 +16,8 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
+ * Represents a simple data type: can be either a {@link org.jetbrains.mps.openapi.language.SPrimitiveDataType}
+ * or a {@link org.jetbrains.mps.openapi.language.SEnumeration}
  * Data types need to be able to save to and load from strings.
  */
 public interface SDataType {

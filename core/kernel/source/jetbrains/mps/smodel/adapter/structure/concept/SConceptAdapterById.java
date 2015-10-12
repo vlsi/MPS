@@ -91,7 +91,7 @@ public final class SConceptAdapterById extends SConceptAdapter implements SConce
   }
 
   @Override
-  protected SNode findInModel(SModel strucModel) {
-    return strucModel.getNode(new Regular(myConceptId.getIdValue()));
+  protected SNode findInModel(SModel structureModel) {
+    return structureModel.getNode(new Regular(myConceptId.getIdValue()));
   }
 }

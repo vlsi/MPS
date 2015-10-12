@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.io.File;
 import org.apache.log4j.Level;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest_Behavior;
+import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -35,6 +35,9 @@ public class TestModuleBuildProjectTemplate {
     this.target = target;
   }
 
+  /**
+   * Creates a new test build project but does not add it to the model.
+   */
   public SNode createBuildProject(SNode conf, List<SNode> tmms) {
     List<SNode> languageElements;
     List<SNode> testsElements;
@@ -42,7 +45,7 @@ public class TestModuleBuildProjectTemplate {
 
     SNode root = _quotation_createNode_gglig1_a0e0d(SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-test-languages", (languageElements = createLanguageElements(tmms)), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "-tests", (testsElements = createTestElements(tmms)), createLanguageFolderElements(languageElements), createTestFolderElements(testsElements), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml", (testGroup = createTestModuleGroup()), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(conf, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
 
-    return SModelOperations.addRootNode(target, updateReferences(root, testGroup));
+    return updateReferences(root, testGroup);
   }
 
   private List<SNode> createLanguageElements(List<SNode> tmms) {
@@ -56,7 +59,7 @@ public class TestModuleBuildProjectTemplate {
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode testManifest : tmms) {
-      List<Tuples._3<String, String, String>> triples = TestModuleManifest_Behavior.call_languagesToInclude_3298469228705308574(testManifest, project);
+      List<Tuples._3<String, String, String>> triples = TestModuleManifest__BehaviorDescriptor.languagesToInclude_id2R6x4AnylYu.invoke(testManifest, project);
 
       for (Tuples._3<String, String, String> t : triples) {
         SNode la = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")));
@@ -90,7 +93,7 @@ public class TestModuleBuildProjectTemplate {
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode testManifest : tmms) {
-      List<Tuples._3<String, String, String>> triples = TestModuleManifest_Behavior.call_testModulesToInclude_8645252814069066668(testManifest, project);
+      List<Tuples._3<String, String, String>> triples = TestModuleManifest__BehaviorDescriptor.testModulesToInclude_id7vU6U5026IG.invoke(testManifest, project);
       for (Tuples._3<String, String, String> t : triples) {
         SNode sol = SModelOperations.createNewNode(target, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
         SPropertyOperations.set(sol, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), t._0());

@@ -4,18 +4,25 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
-  public IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor() {
+  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode __thisNode__) {
+    return null;
   }
-  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
-    return IndentLayoutWrapAnchorStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
+  public boolean virtual_isApplicableTo_1214304723440(SNode __thisNode__, SNode cellModel) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
-    return IndentLayoutWrapAnchorStyleClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem";
   }
+
 }

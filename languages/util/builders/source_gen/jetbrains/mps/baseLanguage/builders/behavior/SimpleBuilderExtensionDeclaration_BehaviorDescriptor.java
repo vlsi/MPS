@@ -4,14 +4,20 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SimpleBuilderExtensionDeclaration_BehaviorDescriptor extends BaseSimpleBuilderDeclaration_BehaviorDescriptor {
-  public SimpleBuilderExtensionDeclaration_BehaviorDescriptor() {
+  public SNode virtual_getContextDeclaration_6254726786820551255(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getContextDeclaration_6254726786820551255(SNode thisNode) {
-    return SimpleBuilderExtensionDeclaration_Behavior.virtual_getContextDeclaration_6254726786820551255(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration";
   }
+
 }

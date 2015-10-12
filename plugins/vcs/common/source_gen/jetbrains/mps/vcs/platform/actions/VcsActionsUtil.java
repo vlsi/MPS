@@ -41,14 +41,6 @@ import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelFileTracker;
-import java.util.ArrayList;
-import com.intellij.ide.plugins.IdeaPluginDescriptor;
-import com.intellij.ide.plugins.PluginManager;
-import com.intellij.openapi.extensions.PluginId;
-import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -184,29 +176,6 @@ __switch__:
         return getUnversionedFilesForModule(project, m);
       }
     }).toListSequence();
-  }
-  public static List<SModel> getModels(@Nullable VirtualFile[] virtualFiles) {
-    if (virtualFiles != null) {
-      return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
-        public boolean accept(VirtualFile vf) {
-          return vf.isInLocalFileSystem() && vf.exists() && !(vf.isDirectory());
-        }
-      }).select(new ISelector<VirtualFile, SModel>() {
-        public SModel select(VirtualFile vf) {
-          return ((SModel) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
-        }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel m) {
-          return m != null;
-        }
-      }).toListSequence();
-    } else {
-      return ListSequence.fromList(new ArrayList<SModel>());
-    }
-  }
-  public static boolean isMakePluginInstalled() {
-    IdeaPluginDescriptor p = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.ide.make"));
-    return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
   protected static Logger LOG = LogManager.getLogger(VcsActionsUtil.class);
 }

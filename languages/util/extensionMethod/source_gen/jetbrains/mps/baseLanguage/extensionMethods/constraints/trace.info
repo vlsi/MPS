@@ -29,7 +29,7 @@
       <node id="6235310215814037976" at="78,17,79,87" concept="6" />
       <node id="6235310215814089093" at="82,52,83,239" concept="5" />
       <node id="6235310215814089101" at="83,239,84,376" concept="5" />
-      <node id="6235310215814089114" at="84,376,85,454" concept="6" />
+      <node id="6235310215814089114" at="84,376,85,390" concept="6" />
       <node id="6235310215814022068" at="87,14,88,0" concept="7" />
       <node id="6235310215814022067" at="88,0,89,0" concept="7" />
       <node id="6235310215814022066" at="89,0,90,0" concept="7" />
@@ -38,10 +38,10 @@
       <node id="1550313277221324861" at="101,0,102,0" concept="8" trace="breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1" />
       <node id="1550313277221324861" at="38,0,41,0" concept="0" trace="ExtensionMethodCall_Constraints#()V" />
       <node id="6235310215814037907" at="63,238,66,23" concept="3" />
-      <node id="6235310215814037942" at="72,478,75,23" concept="3" />
+      <node id="6235310215814037942" at="72,407,75,23" concept="3" />
       <node id="1550313277221324861" at="45,0,49,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="1550313277221324861" at="92,0,96,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="6235310215814037901" at="62,471,67,21" concept="2" />
+      <node id="6235310215814037901" at="62,400,67,21" concept="2" />
       <node id="6235310215814037940" at="71,236,76,21" concept="3" />
       <node id="6235310215814037988" at="81,0,87,0" concept="4" trace="isInScope#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6235310215814037899" at="61,290,68,19" concept="3" />
@@ -62,15 +62,15 @@
       <scope id="1550313277221324861" at="93,63,94,58" />
       <scope id="1550313277221324861" at="38,0,41,0" />
       <scope id="6235310215814037906" at="63,238,66,23" />
-      <scope id="6235310215814037941" at="72,478,75,23" />
-      <scope id="6235310215814037993" at="82,52,85,454">
+      <scope id="6235310215814037941" at="72,407,75,23" />
+      <scope id="6235310215814037993" at="82,52,85,390">
         <var name="extMethod" id="6235310215814089094" />
         <var name="operand" id="6235310215814089102" />
       </scope>
       <scope id="1550313277221324861" at="45,0,49,0" />
       <scope id="1550313277221324861" at="92,0,96,0" />
-      <scope id="6235310215814037900" at="62,471,67,21" />
-      <scope id="6235310215814037901" at="62,471,67,21">
+      <scope id="6235310215814037900" at="62,400,67,21" />
+      <scope id="6235310215814037901" at="62,400,67,21">
         <var name="method" id="6235310215814037902" />
       </scope>
       <scope id="6235310215814037939" at="71,236,76,21" />
@@ -336,12 +336,12 @@
       <node id="7685333756920187171" at="57,44,58,20" concept="6" />
       <node id="7517860079983420349" at="65,142,66,56" concept="5" />
       <node id="7517860079983420357" at="67,253,68,28" concept="6" />
-      <node id="7517860079983420366" at="69,13,70,360" concept="5" />
+      <node id="7517860079983420366" at="69,13,70,367" concept="5" />
       <node id="7517860079983420378" at="71,37,72,28" concept="6" />
       <node id="7517860079983420387" at="73,13,74,0" concept="7" />
       <node id="7517860079983420388" at="74,0,75,75" concept="5" />
-      <node id="5500967171012052573" at="76,40,77,244" concept="5" />
-      <node id="5500967171012052608" at="77,244,78,0" concept="7" />
+      <node id="5500967171012052573" at="76,40,77,178" concept="5" />
+      <node id="5500967171012052608" at="77,178,78,0" concept="7" />
       <node id="7517860079983420406" at="80,214,81,67" concept="1" />
       <node id="7517860079983420429" at="84,44,85,207" concept="1" />
       <node id="5500967171012052609" at="86,15,87,0" concept="7" />
@@ -355,7 +355,7 @@
       <node id="7685333756920187171" at="35,0,38,0" concept="0" trace="LocalExtendedMethodCall_Constraints#()V" />
       <node id="7685333756920187171" at="45,0,48,5" concept="3" />
       <node id="7517860079983420355" at="66,56,69,13" concept="3" />
-      <node id="7517860079983420376" at="70,360,73,13" concept="3" />
+      <node id="7517860079983420376" at="70,367,73,13" concept="3" />
       <node id="7517860079983420404" at="79,44,82,17" concept="3" />
       <node id="7517860079983420425" at="83,15,86,15" concept="2" />
       <node id="7685333756920187171" at="101,0,104,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />

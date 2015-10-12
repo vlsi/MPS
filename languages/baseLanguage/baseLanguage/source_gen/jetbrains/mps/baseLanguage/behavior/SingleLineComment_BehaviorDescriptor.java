@@ -6,22 +6,26 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SingleLineComment_BehaviorDescriptor extends Statement_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
-  public SingleLineComment_BehaviorDescriptor() {
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    SingleLineComment_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
   }
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return SingleLineComment_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  public Scope virtual_getScope_7722139651431880752(SNode __thisNode__, SNode kind, String role, int index) {
+    return null;
   }
-  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.SingleLineComment";
   }
+
 }

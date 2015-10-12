@@ -8,7 +8,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -65,7 +66,7 @@ public abstract class Scope {
     SNode prev = fromChild;
     while (curr != null) {
       if (SNodeOperations.isInstanceOf(curr, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
-        Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(curr, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_3734116213129936182", new Object[]{kind, prev});
+        Scope scope = ((Scope) BHReflection.invoke(SNodeOperations.cast(curr, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), SMethodTrimmedId.create("getScope", null, "3fifI_xCJOQ"), kind, prev));
         if (scope != null) {
           return scope;
         }
@@ -80,7 +81,7 @@ public abstract class Scope {
    */
   public static Scope getScope(SNode node, String role, int index, SNode kind) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider"))) {
-      Scope scope = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), "virtual_getScope_7722139651431880752", new Object[]{kind, role, index});
+      Scope scope = ((Scope) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L, "jetbrains.mps.lang.core.structure.ScopeProvider")), SMethodTrimmedId.create("getScope", null, "6GEzh_Hz_wK"), kind, role, ((int) index)));
       if (scope != null) {
         return scope;
       }

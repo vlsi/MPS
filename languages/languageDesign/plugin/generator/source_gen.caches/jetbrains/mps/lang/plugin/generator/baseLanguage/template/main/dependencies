@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
-    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -9,8 +8,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
@@ -25,19 +24,21 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EditorTab_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Order_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionGroupDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.EditorTab__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.GroupAnchor__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.OrderConstraints__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.Order__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PluginDependency__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.generator.util.PluginNameUtils" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -46,7 +47,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />

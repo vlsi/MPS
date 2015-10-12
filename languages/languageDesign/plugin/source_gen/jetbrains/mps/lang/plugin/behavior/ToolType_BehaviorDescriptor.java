@@ -6,17 +6,23 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_Behavi
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ToolType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
-  public ToolType_BehaviorDescriptor() {
+  public SNode virtual_getClassExpression_1213877337357(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return ToolType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public List<SNode> virtual_getMembers_1213877402148(SNode __thisNode__, SNode contextNode) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return ToolType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ToolType";
   }
+
 }

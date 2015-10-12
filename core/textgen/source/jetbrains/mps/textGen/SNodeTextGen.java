@@ -18,6 +18,7 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
+import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
@@ -35,11 +36,22 @@ import java.util.List;
 @Deprecated
 @ToRemove(version = 3.3)
 public abstract class SNodeTextGen {
+  private TextGenTransitionContext myContext;
   private TextGenBuffer myBuffer;
   private SNode mySNode;
 
   public void setBuffer(TextGenBuffer buffer) {
-    myBuffer = buffer;
+    // it's our code to parameterize this instance, how come this method got invoked?
+    throw new IllegalStateException();
+  }
+
+  public void setContext(TextGenContext ctx) {
+    myContext = (TextGenTransitionContext) ctx;
+    myBuffer = myContext.getLegacyBuffer();
+  }
+
+  /*package*/ TextGenTransitionContext getContext() {
+    return myContext;
   }
 
   public final TextGenBuffer getBuffer() {
@@ -98,7 +110,7 @@ public abstract class SNodeTextGen {
       return;
     }
 
-    TextGen.getTextGenForNode(node).generateText(new TextGenTransitionContext(node, myBuffer));
+    myContext.generateText(node);
   }
 
   public void indentBuffer() {

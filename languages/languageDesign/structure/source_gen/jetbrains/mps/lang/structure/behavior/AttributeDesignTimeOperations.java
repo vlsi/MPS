@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior;
+import jetbrains.mps.lang.smodel.behavior.AttributeAccess__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.structure.constraints.ConceptsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,7 +24,7 @@ import java.util.LinkedHashSet;
 public class AttributeDesignTimeOperations {
   public static Iterable<SNode> getApplicableAttributes(SNode accessNode, final SNode attributeType) {
     // todo: should be node<ACD> 
-    final SNode nodeConcept = SLinkOperations.getTarget(AttributeAccess_Behavior.call_getAttributeContainerType_6960953357954139822(accessNode), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
+    final SNode nodeConcept = SLinkOperations.getTarget(AttributeAccess__BehaviorDescriptor.getAttributeContainerType_id62qhzb6UOqI.invoke(accessNode), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
     if ((nodeConcept == null)) {
       return null;
     }
@@ -42,7 +42,7 @@ public class AttributeDesignTimeOperations {
         // todo: why not getAttributeRole? 
         return isNotEmptyString(SPropertyOperations.getString(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L, "jetbrains.mps.lang.structure.structure.AttributeInfo"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x29889a701b928195L, 0x694f83d1440b01c7L, "role"))) && Sequence.fromIterable(getApplicableConcepts(it)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(SNodeOperations.asNode(nodeConcept), it);
+            return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SNodeOperations.asNode(nodeConcept), it);
           }
         });
       }

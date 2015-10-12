@@ -7,18 +7,24 @@ import jetbrains.mps.build.behavior.BuildExternalDependency_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildMps_Module_BehaviorDescriptor extends BuildMps_AbstractModule_BehaviorDescriptor implements BuildSource_CompilablePart_BehaviorDescriptor, BuildExternalDependency_BehaviorDescriptor {
-  public BuildMps_Module_BehaviorDescriptor() {
+  public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BuildMps_Module_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
+  public boolean virtual_isCompilable_7454762407073969360(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isCompilable_7454762407073969360(SNode thisNode) {
-    return BuildMps_Module_Behavior.virtual_isCompilable_7454762407073969360(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_Module";
   }
+
 }

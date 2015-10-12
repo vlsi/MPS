@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.behavior.SEnumOperation_Behavior;
+import jetbrains.mps.lang.smodel.behavior.SEnumOperation__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -22,7 +22,7 @@ public class typeof_SEnum_MemberOperation_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = operation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333198027", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333198029", true), (SNode) _quotation_createNode_8lo25x_a0a0b(SEnumOperation_Behavior.call_getEnum_1240931322043(operation)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333198029", true), (SNode) _quotation_createNode_8lo25x_a0a0b(SEnumOperation__BehaviorDescriptor.getEnum_idi3HhkyV.invoke(operation)), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {

@@ -53,7 +53,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ClassLoadersHolder {
   private static final Logger LOG = LogManager.getLogger(ClassLoadersHolder.class);
 
-  private static final List<String> INTERNAL_EXCLUDES = Arrays.asList("jetbrains.mps.samples.xmlPersistence");
+  private static final List<String> INTERNAL_EXCLUDES = Arrays.asList("jetbrains.mps.samples.xmlPersistence", "TestBehaviorReflective");
 
   private final ModelAccess myModelAccess;
   private final ModulesWatcher myModulesWatcher;

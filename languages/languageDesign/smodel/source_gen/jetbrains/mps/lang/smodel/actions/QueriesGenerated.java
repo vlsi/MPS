@@ -14,16 +14,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.behavior.ILinkAccess__BehaviorDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +35,7 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_Behavior;
+import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -49,7 +50,7 @@ public class QueriesGenerated {
         SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
         SNode linkAccess = SNodeOperations.as(operation, MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x37d97a5712d396cbL, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
         result.myLinkAccess = linkAccess;
-        if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
+        if ((linkAccess != null) && (boolean) ILinkAccess__BehaviorDescriptor.isSingularCardinality_id3vpu_siOTrf.invoke(linkAccess)) {
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")), true) != null) {
             result.myLinkToConcept = true;
           }
@@ -88,7 +89,7 @@ public class QueriesGenerated {
           SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
           SNode linkAccess = SNodeOperations.as(operation, MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x37d97a5712d396cbL, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
           result.myLinkAccess = linkAccess;
-          if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
+          if ((linkAccess != null) && (boolean) ILinkAccess__BehaviorDescriptor.isSingularCardinality_id3vpu_siOTrf.invoke(linkAccess)) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -131,39 +132,39 @@ public class QueriesGenerated {
             if (SNodeOperations.isInstanceOf(leftOperation, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"))) {
               SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(leftOperation, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, "jetbrains.mps.lang.smodel.structure.SPropertyAccess")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f96cca6fL, 0x108f9727bcdL, "property")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
               if (SNodeOperations.isInstanceOf(dataType, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"))) {
-                return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToEnumProperty_1262430001741498259", new Object[]{}));
+                return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToEnumProperty_id1653mnvAguj.invoke(SNodeOperations.asSConcept(parameterOp)));
               } else {
-                return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToSimpleProperty_1262430001741498100", new Object[]{}));
+                return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToSimpleProperty_id1653mnvAgrO.invoke(SNodeOperations.asSConcept(parameterOp)));
               }
             }
           }
           // ========== 
           SNode linkAccess = appTypesInfo.myLinkAccess;
           if (linkAccess != null) {
-            if (BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
+            if ((boolean) ILinkAccess__BehaviorDescriptor.isSingularCardinality_id3vpu_siOTrf.invoke(linkAccess)) {
               // some ops are only applicable to 'link to concept' 
-              if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToConcept_1262430001741498358", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToNode_1262430001741498076", new Object[]{}))) {
-                return !((BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToLink_1262430001741498352", new Object[]{}) && appTypesInfo.myLinkToConcept));
+              if ((boolean) SNodeOperation__BehaviorDescriptor.applicableToConcept_id1653mnvAgvQ.invoke(SNodeOperations.asSConcept(parameterOp)) && !((boolean) SNodeOperation__BehaviorDescriptor.applicableToNode_id1653mnvAgrs.invoke(SNodeOperations.asSConcept(parameterOp)))) {
+                return !(((boolean) SNodeOperation__BehaviorDescriptor.applicableToLink_id1653mnvAgvK.invoke(SNodeOperations.asSConcept(parameterOp)) && appTypesInfo.myLinkToConcept));
               }
-              return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToLink_1262430001741498352", new Object[]{}));
+              return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToLink_id1653mnvAgvK.invoke(SNodeOperations.asSConcept(parameterOp)));
             }
-            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToLinkList_1262430001741498382", new Object[]{}));
+            return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToLinkList_id1653mnvAgwe.invoke(SNodeOperations.asSConcept(parameterOp)));
           }
           // is concept ? 
           if (appTypesInfo.myToConcept) {
-            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToConcept_1262430001741498358", new Object[]{}));
+            return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToConcept_id1653mnvAgvQ.invoke(SNodeOperations.asSConcept(parameterOp)));
           }
           // is sconcept ? 
           if (appTypesInfo.myToSConcept) {
-            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToSConcept_8828148184963745087", new Object[]{}));
+            return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToSConcept_id7E3Sw0HhwkZ.invoke(SNodeOperations.asSConcept(parameterOp)));
           }
           // is node ? 
           if (appTypesInfo.myToNode) {
-            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToNode_1262430001741498076", new Object[]{}));
+            return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToNode_id1653mnvAgrs.invoke(SNodeOperations.asSConcept(parameterOp)));
           }
           // is smodel ? 
           if (appTypesInfo.myToModel) {
-            return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(parameterOp), "virtual_applicableToModel_1262430001741492322", new Object[]{}));
+            return !((boolean) SNodeOperation__BehaviorDescriptor.applicableToModel_id1653mnvAf1y.invoke(SNodeOperations.asSConcept(parameterOp)));
           }
           return true;
         }
@@ -184,7 +185,7 @@ public class QueriesGenerated {
           SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
           SNode linkAccess = SNodeOperations.as(operation, MetaAdapterFactory.getInterfaceConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x37d97a5712d396cbL, "jetbrains.mps.lang.smodel.structure.ILinkAccess"));
           result.myLinkAccess = linkAccess;
-          if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
+          if ((linkAccess != null) && (boolean) ILinkAccess__BehaviorDescriptor.isSingularCardinality_id3vpu_siOTrf.invoke(linkAccess)) {
             if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType")), true) != null) {
               result.myLinkToConcept = true;
             }
@@ -217,7 +218,7 @@ public class QueriesGenerated {
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode concept) {
           SNode linkAccess = appTypesInfo.myLinkAccess;
-          if (linkAccess != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isAggregation_4024382256428848854", new Object[]{}))) {
+          if (linkAccess != null && !((boolean) ILinkAccess__BehaviorDescriptor.isAggregation_id3vpu_siOTrm.invoke(linkAccess))) {
             //  some operations are only applicable to aggregation links 
             if (SConceptOperations.isExactly(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x109233dbca1L, "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation"))) {
               return true;
@@ -239,7 +240,7 @@ public class QueriesGenerated {
     {
       Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
-          return ((List<SNode>) BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation")))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{}));
+          return ((List<SNode>) SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"))))));
         }
       }.compute();
       if (queryResult != null) {
@@ -304,7 +305,7 @@ public class QueriesGenerated {
             IMatchingPattern pattern_e0a0a = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
             SNode coercedNode_e0a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, pattern_e0a0a);
             if (coercedNode_e0a0a != null) {
-              return !(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(SLinkOperations.getTarget(coercedNode_e0a0a, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135")));
+              return !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SLinkOperations.getTarget(coercedNode_e0a0a, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135")));
             } else {
               return false;
             }
@@ -372,7 +373,7 @@ public class QueriesGenerated {
     if (alreadyHasParms) {
       return false;
     }
-    return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode())), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode())))).isNotEmpty();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1179535189125(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -522,7 +523,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractNodeRefExpression_2087237500460546067(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return Sequence.fromIterable(AbstractNodeRefExpression_Behavior.call_getPossibleTargetNodes_5207260697408415741(_context.getSourceNode())).isNotEmpty();
+    return Sequence.fromIterable(AbstractNodeRefExpression__BehaviorDescriptor.getPossibleTargetNodes_id4x3U0fpSqvX.invoke(_context.getSourceNode())).isNotEmpty();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_BootstrapAwareMetaObject_2565258849285250269(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

@@ -23,7 +23,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -105,7 +106,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   private void tryToImport(final SNode evaluatorNode, List<SNodeReference> nodesToImport) {
     BaseLanguagesImportHelper helper = new EvaluationWithContextContainer.MyBaseLanguagesImportHelper(evaluatorNode);
-    helper.tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
+    helper.tryToImport(((SNode) BHReflection.invoke(evaluatorNode, SMethodTrimmedId.create("getCode", null, "hASWOEj0jB"))), nodesToImport);
   }
   @Override
   protected SNode createEvaluatorNode() {
@@ -205,7 +206,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       SModel model = stub;
       SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_v5yv3u_a0a0a0a0a0a0b0d0o(BehaviorReflection.invokeVirtual(String.class, it, "virtual_getUnitName_5067982036267369911", new Object[]{}), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          return eq_v5yv3u_a0a0a0a0a0a0b0d0o(((String) BHReflection.invoke(it, SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       });
       if (node != null) {
@@ -219,7 +220,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     Set<SNode> instances = findUsages.findInstances(new ModelsScope(getCandidateNonStubModels(unitName)), Collections.singleton(concept), false, new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}).equals(unitName);
+        return SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && ((String) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))).equals(unitName);
       }
     }), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"));
   }

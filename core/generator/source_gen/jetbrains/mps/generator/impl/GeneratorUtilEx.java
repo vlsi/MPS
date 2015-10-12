@@ -6,7 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public final class GeneratorUtilEx {
     return (v == null ? defaultValue : v);
   }
   public static String getPatternVariableName(SNode ref) {
-    return BehaviorReflection.invokeVirtual(String.class, ref, "virtual_getVariableName_2902001550281937661", new Object[]{});
+    return ((String) BHReflection.invoke(ref, SMethodTrimmedId.create("getVariableName", null, "2x5YKzmc1bX")));
   }
   public static List<SNode> getTemplateFragments(@NotNull SNode template) {
     List<SNode> templateFragments = new ArrayList<SNode>();

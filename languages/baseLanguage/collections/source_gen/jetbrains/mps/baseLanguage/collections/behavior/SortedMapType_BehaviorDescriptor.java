@@ -6,17 +6,23 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SortedMapType_BehaviorDescriptor extends MapType_BehaviorDescriptor {
-  public SortedMapType_BehaviorDescriptor() {
+  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode __thisNode__, SModel targetModel) {
+    return null;
   }
-  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
-    return SortedMapType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
+  public SNode virtual_getClassExpression_1213877337357(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return SortedMapType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortedMapType";
   }
+
 }

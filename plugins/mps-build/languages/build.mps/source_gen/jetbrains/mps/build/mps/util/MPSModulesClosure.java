@@ -19,7 +19,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import java.util.Iterator;
 import java.util.HashSet;
-import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
+import jetbrains.mps.build.mps.behavior.BuildMps_Generator__BehaviorDescriptor;
 import java.util.List;
 
 public class MPSModulesClosure {
@@ -261,7 +261,7 @@ public class MPSModulesClosure {
       // Instead introduce a dependency from generator's source language 
       SetSequence.fromSet(extraLangs).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(deps, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(it);
+          return (SNode) BuildMps_Generator__BehaviorDescriptor.getSourceLanguage_id7YI57w6ZMdZ.invoke(it);
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

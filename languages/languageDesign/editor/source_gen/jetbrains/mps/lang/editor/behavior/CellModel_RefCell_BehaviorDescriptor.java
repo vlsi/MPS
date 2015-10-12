@@ -4,27 +4,34 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CellModel_RefCell_BehaviorDescriptor extends CellModel_WithRole_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
-  public CellModel_RefCell_BehaviorDescriptor() {
+  public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getClosingText_1220339738643(SNode thisNode) {
-    return CellModel_RefCell_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  public String virtual_getDefaultCellId_4539255030934103845(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
-    return CellModel_RefCell_Behavior.virtual_getDefaultCellId_4539255030934103845(thisNode);
+  public String virtual_getOpeningText_1220339714057(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_RefCell_Behavior.virtual_getOpeningText_1220339714057(thisNode);
+  public String virtual_getRoleForCell_1216377898846(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getRoleForCell_1216377898846(SNode thisNode) {
-    return CellModel_RefCell_Behavior.virtual_getRoleForCell_1216377898846(thisNode);
+  public boolean virtual_isCellIdInitialized_1229948571177(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
-    return CellModel_RefCell_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_RefCell";
   }
+
 }

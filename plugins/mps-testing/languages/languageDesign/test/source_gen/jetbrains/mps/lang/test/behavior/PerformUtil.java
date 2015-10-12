@@ -9,7 +9,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import junit.framework.Assert;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
@@ -17,24 +16,24 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 
 public class PerformUtil {
   public static void checkNodeHasError(SNode operation) {
-    final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
+    final SNode nodeToCheck = NodeCheckOperation__BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(nodeToCheck));
     final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(nodeToCheck, MessageStatus.ERROR);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected error message";
 
-    Assert.assertTrue(errorString, BehaviorReflection.invokeVirtual(Boolean.TYPE, operation, "virtual_hasExpectedRuleMessage_5348336190814877000", new Object[]{errorReporters}));
+    Assert.assertTrue(errorString, (boolean) IChecksRules__BehaviorDescriptor.hasExpectedRuleMessage_id4CT6QR8SJl8.invoke(operation, errorReporters));
   }
 
 
   public static void checkNodeHasWarning(SNode operation) {
-    final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
+    final SNode nodeToCheck = NodeCheckOperation__BehaviorDescriptor.getAnnotatedNode_id2xExIeabVv_.invoke(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(nodeToCheck));
     final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(nodeToCheck, MessageStatus.WARNING);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected warning message";
 
-    Assert.assertTrue(errorString, BehaviorReflection.invokeVirtual(Boolean.TYPE, operation, "virtual_hasExpectedRuleMessage_5348336190814877000", new Object[]{errorReporters}));
+    Assert.assertTrue(errorString, (boolean) IChecksRules__BehaviorDescriptor.hasExpectedRuleMessage_id4CT6QR8SJl8.invoke(operation, errorReporters));
   }
 
   public static void checkNodeWithTypeCheckingAction(final SNode node, ITypechecking.Action checkingAction) {

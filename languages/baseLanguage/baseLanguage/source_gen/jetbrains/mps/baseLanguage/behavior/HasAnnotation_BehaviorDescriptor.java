@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface HasAnnotation_BehaviorDescriptor {
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode);
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode);

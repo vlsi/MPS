@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 public class AnnotationInstanceParameterInformationQuery implements ParametersInformation<SNode> {
   public AnnotationInstanceParameterInformationQuery() {
@@ -40,7 +40,7 @@ public class AnnotationInstanceParameterInformationQuery implements ParametersIn
         styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(annotationMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")) != null) {
-        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(annotationMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), "virtual_getPresentation_1213877396640", new Object[]{}));
+        styledText.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(annotationMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"))));
       } else {
         styledText.append("???");
       }

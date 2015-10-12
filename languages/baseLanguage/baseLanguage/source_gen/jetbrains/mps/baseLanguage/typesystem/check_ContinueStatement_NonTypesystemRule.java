@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.ContinueStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ContinueStatement__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +18,7 @@ public class check_ContinueStatement_NonTypesystemRule extends AbstractNonTypesy
   public check_ContinueStatement_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((ContinueStatement_Behavior.call_getLoop_1213877346346(nodeToCheck) != null))) {
+    if (!((ContinueStatement__BehaviorDescriptor.getLoop_idhEwIA0E.invoke(nodeToCheck) != null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "No loop", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2049165965125008261", null, errorTarget);
     }

@@ -40,7 +40,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -80,6 +80,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -92,6 +95,7 @@
   <node concept="2S6QgY" id="hP3IgzJ">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="MakeAbstract" />
+    <property role="3GE5qa" value="" />
     <ref role="2ZfgGC" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="2S6ZIM" id="hP3IgzK" role="2ZfVej">
       <node concept="3clFbS" id="hP3IgzL" role="2VODD2">
@@ -185,6 +189,7 @@
   <node concept="2S6QgY" id="hP3Ig$q">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="MakeVirtual" />
+    <property role="3GE5qa" value="" />
     <ref role="2ZfgGC" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="2S6ZIM" id="hP3Ig$r" role="2ZfVej">
       <node concept="3clFbS" id="hP3Ig$s" role="2VODD2">
@@ -277,6 +282,7 @@
     <property role="2ZfUl3" value="true" />
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="RemoveTVD" />
+    <property role="3GE5qa" value="" />
     <ref role="2ZfgGC" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="2S6ZIM" id="5MInrmV8q7X" role="2ZfVej">
       <node concept="3clFbS" id="5MInrmV8q7Y" role="2VODD2">
@@ -321,6 +327,7 @@
   <node concept="2S6QgY" id="47BD7OhGGWE">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="MakeStatic" />
+    <property role="3GE5qa" value="" />
     <ref role="2ZfgGC" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
     <node concept="2S6ZIM" id="47BD7OhGGWF" role="2ZfVej">
       <node concept="3clFbS" id="47BD7OhGGWG" role="2VODD2">

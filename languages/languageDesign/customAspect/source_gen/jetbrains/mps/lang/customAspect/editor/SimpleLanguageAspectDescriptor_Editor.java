@@ -123,7 +123,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_rpszz1_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "aspect model name:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "aspect name:");
     editorCell.setCellId("Constant_rpszz1_a0b1a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -155,7 +155,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_rpszz1_a1b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main language:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main languages:");
     editorCell.setCellId("Constant_rpszz1_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;

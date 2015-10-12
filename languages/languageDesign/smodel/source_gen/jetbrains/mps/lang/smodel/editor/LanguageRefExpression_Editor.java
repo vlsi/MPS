@@ -33,7 +33,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LanguageRefExpression_Editor extends DefaultNodeEditor {
@@ -114,7 +114,7 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     }
     public void handleAction_impl(SLanguage parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode lid = SModelOperations.createNewNode(model, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId")));
-      BehaviorReflection.invokeVirtual(Void.class, lid, "virtual_setLanguage_3542851458883438752", new Object[]{parameterObject});
+      LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lid, parameterObject);
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), lid);
     }
     public boolean isReferentPresentation() {

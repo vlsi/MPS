@@ -4,30 +4,37 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EnumClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor {
-  public EnumClass_BehaviorDescriptor() {
+  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
-    return EnumClass_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
+  public List<SNode> virtual_getMembers_1213877531970(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    return EnumClass_Behavior.virtual_getMembers_1213877531970(thisNode);
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
-    return EnumClass_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
-    return EnumClass_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
+  public SNode virtual_getSuperclass_1240936569950(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return EnumClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
+  public boolean virtual_hasStaticMemebers_1214840444586(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return EnumClass_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EnumClass";
   }
+
 }

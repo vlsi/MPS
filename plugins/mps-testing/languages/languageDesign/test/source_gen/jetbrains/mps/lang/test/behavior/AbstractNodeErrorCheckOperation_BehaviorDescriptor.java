@@ -4,20 +4,25 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractNodeErrorCheckOperation_BehaviorDescriptor extends NodeRuleCheckOperation_BehaviorDescriptor {
-  public AbstractNodeErrorCheckOperation_BehaviorDescriptor() {
+  public String virtual_getDefaultName_8578280453511146306(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
-    return AbstractNodeErrorCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
+  public SNode virtual_getReferencedRuleNode_2893471348147987869(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
-    return AbstractNodeErrorCheckOperation_Behavior.virtual_getReferencedRuleNode_2893471348147987869(thisNode);
+  public void virtual_perform_245688835340859348(SNode __thisNode__, SNode node) {
   }
-  public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
-    AbstractNodeErrorCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.AbstractNodeErrorCheckOperation";
   }
+
 }

@@ -4,21 +4,28 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TestCaseRef_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestRef_BehaviorDescriptor {
-  public TestCaseRef_BehaviorDescriptor() {
+  public String virtual_fqClassName_2956932267233324537(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_fqClassName_2956932267233324537(SNode thisNode) {
-    return TestCaseRef_Behavior.virtual_fqClassName_2956932267233324537(thisNode);
+  public boolean virtual_isSame_24903889606765997(SNode __thisNode__, SNode testRef) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isSame_24903889606765997(SNode thisNode, SNode testRef) {
-    return TestCaseRef_Behavior.virtual_isSame_24903889606765997(thisNode, testRef);
+  public Iterable<String> virtual_testNames_4089647634160960707(SNode __thisNode__) {
+    return null;
   }
-  public Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
-    return TestCaseRef_Behavior.virtual_testNames_4089647634160960707(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.testbench.suite.structure.TestCaseRef";
   }
+
 }

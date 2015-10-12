@@ -6,22 +6,28 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor;
 import jetbrains.mps.execution.util.behavior.IMainClass_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.execution.util.behavior.IMainClass_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Pipeline_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements AutoInitDSLClass_BehaviorDescriptor, IMainClass_BehaviorDescriptor {
-  public Pipeline_BehaviorDescriptor() {
+  public SNode virtual_getDescriptor_1055884086724995485(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {
-    return Pipeline_Behavior.virtual_getDescriptor_1055884086724995485(thisNode);
+  public String virtual_getUnitName_4666195181811081431(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getUnitName_4666195181811081431(SNode thisNode) {
-    return IMainClass_Behavior.virtual_getUnitName_4666195181811081431(thisNode);
+  public boolean virtual_isNodeRunnable_4666195181811081448(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return IMainClass_Behavior.virtual_isNodeRunnable_4666195181811081448(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.SwingBuilder.structure.Pipeline";
   }
+
 }

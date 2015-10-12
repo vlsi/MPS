@@ -4,18 +4,25 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.lang.smodel.behavior.Concept_NewInstance_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NF_Concept_NewInstance_BehaviorDescriptor extends Concept_NewInstance_BehaviorDescriptor {
-  public NF_Concept_NewInstance_BehaviorDescriptor() {
+  public boolean virtual_applicableToConcept_1262430001741498358(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
-    return NF_Concept_NewInstance_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
-    return NF_Concept_NewInstance_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance";
   }
+
 }

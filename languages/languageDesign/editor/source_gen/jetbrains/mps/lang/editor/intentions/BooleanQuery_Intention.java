@@ -11,7 +11,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -36,7 +36,7 @@ public final class BooleanQuery_Intention extends IntentionDescriptorBase implem
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
+    return (boolean) BooleanStyleSheetItem__BehaviorDescriptor.useQuery_idhNn$rq2.invoke(node);
   }
   @Override
   public boolean isSurroundWith() {

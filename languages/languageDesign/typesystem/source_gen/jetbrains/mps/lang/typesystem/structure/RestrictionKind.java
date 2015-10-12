@@ -10,12 +10,20 @@ public enum RestrictionKind {
   equals(":==:", "equals"),
   subtype(":<=:", "subtype");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  RestrictionKind(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<RestrictionKind> getConstants() {
     List<RestrictionKind> list = ListSequence.fromList(new LinkedList<RestrictionKind>());
@@ -37,13 +45,5 @@ public enum RestrictionKind {
       return RestrictionKind.subtype;
     }
     return RestrictionKind.getDefault();
-  }
-  private String myValue;
-  RestrictionKind(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

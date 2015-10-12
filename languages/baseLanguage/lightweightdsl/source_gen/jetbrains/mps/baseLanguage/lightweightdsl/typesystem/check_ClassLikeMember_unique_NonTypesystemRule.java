@@ -11,9 +11,8 @@ import jetbrains.mps.baseLanguage.lightweightdsl.util.DSLDescriptorUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember_Behavior;
+import jetbrains.mps.baseLanguage.lightweightdsl.behavior.DSLClassMember__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -28,9 +27,9 @@ public class check_ClassLikeMember_unique_NonTypesystemRule extends AbstractNonT
     }
 
     for (SNode memberDescriptor : ListSequence.fromList(SLinkOperations.getChildren(DSLDescriptorUtil.getDescriptor(classLike), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")))) {
-      if (!(DSLClassMember_Behavior.call_isMultiple_2141245758541890151(memberDescriptor))) {
-        if (Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_find_2603987804376013077", new Object[]{classLike})).count() > 1) {
-          for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_find_2603987804376013077", new Object[]{classLike}))) {
+      if (!((boolean) DSLClassMember__BehaviorDescriptor.isMultiple_id1QReUKIGS9B.invoke(memberDescriptor))) {
+        if (Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(memberDescriptor, classLike)).count() > 1) {
+          for (SNode member : Sequence.fromIterable(DSLClassMember__BehaviorDescriptor.find_id2gzehMfi1$l.invoke(memberDescriptor, classLike))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
               IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Duplicated member '" + memberDescriptor + "'", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.typesystem)", "2603987804377054178", null, errorTarget);

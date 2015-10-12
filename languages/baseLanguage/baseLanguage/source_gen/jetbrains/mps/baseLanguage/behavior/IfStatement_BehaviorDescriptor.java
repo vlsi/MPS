@@ -6,24 +6,30 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor, IConditional_BehaviorDescriptor {
-  public IfStatement_BehaviorDescriptor() {
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    IfStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode __thisNode__, @NotNull SNode child, boolean value) {
+    return null;
   }
-  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return IfStatement_Behavior.virtual_getNextProgramPoint_4235809288648213009(thisNode, child, value);
+  public boolean virtual_isStatementListCompact_1237546693016(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
-    return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);
+  public boolean virtual_isStatementListCompactable_1237546012856(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return IfStatement_Behavior.virtual_isStatementListCompactable_1237546012856(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
+
 }

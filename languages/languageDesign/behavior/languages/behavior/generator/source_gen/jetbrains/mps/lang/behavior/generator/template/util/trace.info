@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root nodeRef="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/7082824793308696454">
+    <file name="MethodNameHelper.java">
+      <node id="66188535716407265" at="16,0,17,0" concept="2" trace="myMethodDecl" />
+      <node id="66188535716408472" at="18,54,19,30" concept="1" />
+      <node id="1540166288377306430" at="23,38,24,57" concept="6" />
+      <node id="1540166288377365872" at="28,36,29,172" concept="6" />
+      <node id="1540166288377325134" at="33,34,34,39" concept="5" />
+      <node id="1540166288377326362" at="34,39,35,58" concept="6" />
+      <node id="1540166288377322729" at="38,33,39,36" concept="5" />
+      <node id="1540166288377322735" at="40,109,41,110" concept="1" />
+      <node id="1540166288377322746" at="42,5,43,22" concept="6" />
+      <node id="7082824793308708548" at="18,0,21,0" concept="0" trace="MethodNameHelper#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1540166288377322733" at="39,36,42,5" concept="3" />
+      <node id="7082824793308696498" at="22,0,26,0" concept="4" trace="getGeneratedString#()Ljava/lang/String;" />
+      <node id="1540166288377365897" at="27,0,31,0" concept="4" trace="getGeneratedName#()Ljava/lang/String;" />
+      <node id="1540166288377303469" at="32,0,37,0" concept="4" trace="getGeneratedId#()Ljava/lang/String;" />
+      <node id="1540166288377322750" at="38,0,45,0" concept="4" trace="getBaseMethod#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7082824793308708552" at="18,54,19,30" />
+      <scope id="7082824793308696506" at="23,38,24,57" />
+      <scope id="1540166288377365854" at="28,36,29,172" />
+      <scope id="1540166288377322734" at="40,109,41,110" />
+      <scope id="1540166288377303472" at="33,34,35,58">
+        <var name="baseMethod" id="1540166288377325135" />
+      </scope>
+      <scope id="7082824793308708548" at="18,0,21,0">
+        <var name="methodDecl" id="1540166288377303867" />
+      </scope>
+      <scope id="7082824793308696498" at="22,0,26,0" />
+      <scope id="1540166288377365897" at="27,0,31,0" />
+      <scope id="1540166288377303469" at="32,0,37,0" />
+      <scope id="1540166288377322726" at="38,33,43,22">
+        <var name="baseMethod" id="1540166288377322730" />
+      </scope>
+      <scope id="1540166288377322750" at="38,0,45,0" />
+      <unit id="7082824793308696454" at="15,0,46,0" name="jetbrains.mps.lang.behavior.generator.template.util.MethodNameHelper" />
+    </file>
+  </root>
+  <root nodeRef="r:9e83cf56-72a5-4ab3-ab14-b980b399f4ca(jetbrains.mps.lang.behavior.generator.template.util)/7385785963573351755">
+    <file name="Constants.java">
+      <node id="7385785963573351814" at="7,0,8,0" concept="7" trace="BEHAVIOR_DESCRIPTOR_SUFFIX" />
+      <node id="8560627202334408404" at="8,0,9,0" concept="7" trace="BEHAVIOR_ASPECT_DESCRIPTOR_SUFFIX" />
+      <node id="2284925377906205048" at="9,0,10,0" concept="7" trace="THIS_NODE_VARIABLE_NAME" />
+      <node id="6862765979525328480" at="10,0,11,0" concept="7" trace="THIS_CONCEPT_VARIABLE_NAME" />
+      <node id="2284925377907518140" at="11,0,12,0" concept="7" trace="INVOKE_METHOD_NAME" />
+      <node id="525520458130291250" at="12,0,13,0" concept="7" trace="INVOKE_SPECIAL_METHOD_NAME" />
+      <node id="2391302010127658196" at="13,0,14,0" concept="7" trace="INVOKE_REFLECTIVE_METHOD_NAME" />
+      <unit id="7385785963573351755" at="6,0,15,0" name="jetbrains.mps.lang.behavior.generator.template.util.Constants" />
+    </file>
+  </root>
+</debug-info>
+

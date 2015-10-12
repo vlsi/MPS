@@ -5,19 +5,26 @@ package jetbrains.mps.lang.constraints.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConstraintFunctionParameter_childConcept_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ConstraintFunctionParameter_childConcept_BehaviorDescriptor() {
+  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
-    return ConstraintFunctionParameter_childConcept_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
+  public SNode virtual_getType_2443692612523876968(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
-    return ConstraintFunctionParameter_childConcept_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept";
   }
+
 }

@@ -32,10 +32,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.testbench.suite.behavior.IModuleRef__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.testbench.suite.behavior.ITestRef__BehaviorDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -152,7 +153,7 @@ public class CollectTests_Action extends BaseAction {
                       public void run() {
                         suite.value = ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))).findFirst(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{}).equals(module.getModuleReference());
+                            return IModuleRef__BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x11c3fc56a6d1cc88L, "moduleRef"))).equals(module.getModuleReference());
                           }
                         });
                       }
@@ -168,7 +169,7 @@ public class CollectTests_Action extends BaseAction {
                     for (final SNode tref : tests) {
                       if (!(ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).any(new IWhereFilter<SNode>() {
                         public boolean accept(SNode it) {
-                          return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isSame_24903889606765997", new Object[]{tref});
+                          return (boolean) ITestRef__BehaviorDescriptor.isSame_id1ouvi_ymQH.invoke(it, tref);
                         }
                       }))) {
                         ListSequence.fromList(SLinkOperations.getChildren(suite.value, MetaAdapterFactory.getContainmentLink(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, 0x3e81ed1e2be77cbeL, "testRef"))).addElement(SNodeOperations.cast(tref, MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef")));

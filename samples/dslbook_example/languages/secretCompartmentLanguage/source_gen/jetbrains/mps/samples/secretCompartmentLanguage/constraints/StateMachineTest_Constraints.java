@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_Behavior;
+import jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest__BehaviorDescriptor;
 
 public class StateMachineTest_Constraints extends BaseConstraintsDescriptor {
   public StateMachineTest_Constraints() {
@@ -27,7 +27,7 @@ public class StateMachineTest_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return StateMachineTest_Behavior.call_getStateMachineName_1197251245696(node) + " State Machine Test";
+        return StateMachineTest__BehaviorDescriptor.getStateMachineName_idhr1J3q0.invoke(node) + " State Machine Test";
       }
     });
     return properties;

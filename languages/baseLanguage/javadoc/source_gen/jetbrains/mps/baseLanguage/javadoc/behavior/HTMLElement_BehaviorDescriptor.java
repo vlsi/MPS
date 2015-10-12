@@ -5,14 +5,20 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class HTMLElement_BehaviorDescriptor extends CommentLinePart_BehaviorDescriptor {
-  public HTMLElement_BehaviorDescriptor() {
+  public NodeCaretPair virtual_smartDelete_9042833497008205283(SNode __thisNode__, boolean isBeginning) {
+    return null;
   }
-  public NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
-    return HTMLElement_Behavior.virtual_smartDelete_9042833497008205283(thisNode, isBeginning);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement";
   }
+
 }

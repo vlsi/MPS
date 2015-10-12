@@ -10,12 +10,10 @@ import javax.swing.Icon;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -28,14 +26,14 @@ public class IntentionActionsProviderImpl implements IntentionActionsProvider {
 
     AnAction[] actions = {new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
       @Override
-      protected void doExecute(final AnActionEvent e, Map<String, Object> params) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+      protected void doExecute(AnActionEvent e, Map<String, Object> params) {
+        final Project mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
+        mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
           public void run() {
-            Project mpsProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);
             SNodeReference nodeRef = intention.getDescriptor().getIntentionNodeReference();
-            SNode intentionNode = (nodeRef == null ? null : nodeRef.resolve(MPSModuleRepository.getInstance()));
+            SNode intentionNode = (nodeRef == null ? null : nodeRef.resolve(mpsProject.getRepository()));
             if (intentionNode == null) {
-              Messages.showErrorDialog(ProjectHelper.toIdeaProject(mpsProject), "Could not find declaration for " + intention.getClass().getSimpleName() + " intention (" + intention.getClass().getName() + ")", "Intention Declaration");
+              Messages.showErrorDialog(ProjectHelper.toIdeaProject(mpsProject), String.format("Could not find declaration for %s intention (%s)", intention.getClass().getSimpleName(), intention.getClass().getName()), "Intention Declaration");
             } else {
               NavigationSupport.getInstance().openNode(mpsProject, intentionNode, true, true);
               NavigationSupport.getInstance().selectInTree(mpsProject, intentionNode, false);

@@ -5,17 +5,23 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class AttributedFigureReference_BehaviorDescriptor extends AbstractFigureReference_BehaviorDescriptor {
-  public AttributedFigureReference_BehaviorDescriptor() {
+  public List<String> virtual_getFigureParameterNames_1491555030356445722(SNode __thisNode__) {
+    return null;
   }
-  public List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
-    return AttributedFigureReference_Behavior.virtual_getFigureParameterNames_1491555030356445722(thisNode);
+  public SNode virtual_getFigureParameter_1491555030357120840(SNode __thisNode__, String name) {
+    return null;
   }
-  public SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, String name) {
-    return AttributedFigureReference_Behavior.virtual_getFigureParameter_1491555030357120840(thisNode, name);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference";
   }
+
 }

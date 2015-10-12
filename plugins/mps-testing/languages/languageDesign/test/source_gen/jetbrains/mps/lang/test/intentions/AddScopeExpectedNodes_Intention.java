@@ -16,7 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.lang.test.behavior.ScopesTest_Behavior;
+import jetbrains.mps.lang.test.behavior.ScopesTest__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -60,7 +60,7 @@ public final class AddScopeExpectedNodes_Intention extends IntentionDescriptorBa
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(node));
+      Scope scope = ModelConstraints.getScope(ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX.invoke(node));
       for (SNode avaliable : scope.getAvailableElements(null)) {
         SNode expectedNode = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x32ba5b0ec25fe9f3L, "jetbrains.mps.lang.test.structure.ScopesExpectedNode")));
         SLinkOperations.setTarget(expectedNode, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x32ba5b0ec25fe9f3L, 0x383e5e55de89bc1fL, "ref"), avaliable);

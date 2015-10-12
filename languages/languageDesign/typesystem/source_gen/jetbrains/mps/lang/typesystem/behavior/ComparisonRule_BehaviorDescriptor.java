@@ -4,14 +4,20 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ComparisonRule_BehaviorDescriptor extends AbstractSubtypingRule_BehaviorDescriptor implements IRuleWithTwoNodes_BehaviorDescriptor {
-  public ComparisonRule_BehaviorDescriptor() {
+  public SNode virtual_getSecondNodeCondition_4484478261143583672(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode) {
-    return ComparisonRule_Behavior.virtual_getSecondNodeCondition_4484478261143583672(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ComparisonRule";
   }
+
 }

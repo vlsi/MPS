@@ -5,6 +5,12 @@ package jetbrains.mps.console.ideCommands.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface INodeSetReference_BehaviorDescriptor {
   public Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context);
 }

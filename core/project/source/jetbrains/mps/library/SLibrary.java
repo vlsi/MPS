@@ -105,7 +105,7 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
     boolean changed = false;
     for (IFile f : event.getCreated()) {
-      if (ModulesMiner.isModuleFile(f)) {
+      if (ModulesMiner.isSourceModuleFile(f)) {
         changed = true;
         break;
       }

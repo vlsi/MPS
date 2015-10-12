@@ -5,14 +5,20 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractComponent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public AbstractComponent_BehaviorDescriptor() {
+  public SNode virtual_getConceptDeclaration_7055725856388417603(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    return AbstractComponent_Behavior.virtual_getConceptDeclaration_7055725856388417603(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AbstractComponent";
   }
+
 }

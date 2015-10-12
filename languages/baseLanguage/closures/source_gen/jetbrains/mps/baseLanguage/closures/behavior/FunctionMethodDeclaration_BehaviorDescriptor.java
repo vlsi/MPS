@@ -4,15 +4,22 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class FunctionMethodDeclaration_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
-  public FunctionMethodDeclaration_BehaviorDescriptor() {
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
-    return FunctionMethodDeclaration_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration";
   }
+
 }

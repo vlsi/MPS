@@ -4,11 +4,17 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ClassifierType_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class InternalClassifierType_BehaviorDescriptor extends ClassifierType_BehaviorDescriptor {
-  public InternalClassifierType_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
   }
+
 }

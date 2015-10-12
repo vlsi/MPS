@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.DynamicReference;
 import java.util.Set;
@@ -33,12 +33,12 @@ public class SNodeCompare {
   private static boolean nodeReferencesEquals(SNode a, SNode b) {
     final Map<SReferenceLink, SReference> aMap = MapSequence.fromMap(new HashMap<SReferenceLink, SReference>());
     final Map<SReferenceLink, SReference> bMap = MapSequence.fromMap(new HashMap<SReferenceLink, SReference>());
-    Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) a)).visitAll(new IVisitor<SReference>() {
+    ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) a)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
         MapSequence.fromMap(aMap).put(ref.getLink(), ref);
       }
     });
-    Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) b)).visitAll(new IVisitor<SReference>() {
+    ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getReferences((SNode) b)).visitAll(new IVisitor<SReference>() {
       public void visit(SReference ref) {
         MapSequence.fromMap(bMap).put(ref.getLink(), ref);
       }

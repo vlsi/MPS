@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IWillBeClassifier_BehaviorDescriptor {
   public String virtual_classifierName_4609636120081351397(SNode thisNode);
   public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode);

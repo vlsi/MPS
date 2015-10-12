@@ -5,18 +5,25 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PrivateFieldReferenceOperation_BehaviorDescriptor extends FieldReferenceOperation_BehaviorDescriptor {
-  public PrivateFieldReferenceOperation_BehaviorDescriptor() {
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return PrivateFieldReferenceOperation_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public boolean virtual_lvalue_1262430001741498364(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
-    return PrivateFieldReferenceOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation";
   }
+
 }

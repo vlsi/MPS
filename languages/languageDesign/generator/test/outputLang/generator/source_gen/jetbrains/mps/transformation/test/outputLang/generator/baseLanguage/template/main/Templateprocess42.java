@@ -4,7 +4,6 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
-import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -12,9 +11,9 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -25,7 +24,7 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
-public class Templateprocess42 extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
+public class Templateprocess42 extends TemplateDeclarationBase {
   private SNode myNode;
   public Templateprocess42(SNode node) {
     this.myNode = node;
@@ -38,7 +37,8 @@ public class Templateprocess42 extends TemplateDeclarationBase implements Templa
     MapSequence.fromMap(result).put("node", myNode);
     return result;
   }
-  protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+    final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"));
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039171");
@@ -66,7 +66,7 @@ public class Templateprocess42 extends TemplateDeclarationBase implements Templa
                 final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                 try {
                   environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5857536350883039201");
-                  SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(new PropertyMacroContext(context, null, propertyMacro_nofsa1_c0a0c0b0b0b0b0b0b0c0b0e))));
+                  SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5857536350883039219(new PropertyMacroContext(context, null, propertyMacro_nofsa1_c0a0c0b0b0b0b0b0b0c0c0e))));
                 } finally {
                 }
                 if (tnode5 != null) {
@@ -104,17 +104,19 @@ public class Templateprocess42 extends TemplateDeclarationBase implements Templa
     }
     return tnode1;
   }
+  @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
-    return TemplateUtil.singletonList(applyPart0(environment, contextWithParams));
+    return TemplateUtil.singletonList(applyPart0(contextWithParams));
   }
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
-    TemplateContext contextWithParams = context.subContext(getParametersAsMap());
-    SNode tnodepart0 = applyPart0(environment, contextWithParams);
-    SNodeReference weaveTf0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039207");
-    NodeWeaveFacility weaveSupport0 = environment.weaveNode(contextWithParams, weaveTf0);
-    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), tnodepart0);
+
+  @Override
+  public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
+    final TemplateContext templateContext = weaveContext.getTemplateContext().subContext(getParametersAsMap());
+    SNode tnodepart0 = applyPart0(templateContext);
+    SNode contextNode0 = weaveContext.getContextNode();
+    weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), tnodepart0, weaveContext.getAnchorNode(contextNode0, tnodepart0));
     return TemplateUtil.singletonList(tnodepart0);
   }
-  private static SNodePointer propertyMacro_nofsa1_c0a0c0b0b0b0b0b0b0c0b0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039218");
+  private static SNodePointer propertyMacro_nofsa1_c0a0c0b0b0b0b0b0b0c0c0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883039218");
 }

@@ -21,7 +21,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorActionUtils {
   public EditorActionUtils() {
@@ -184,7 +186,7 @@ public class EditorActionUtils {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode linkDeclaration = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkDeclaration(((SNode) cell.getSNode()));
-        result[0] = linkDeclaration != null && BehaviorReflection.invokeNonVirtual(Boolean.TYPE, linkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{});
+        result[0] = linkDeclaration != null && ((boolean) (Boolean) BHReflection.invoke(linkDeclaration, SMethodTrimmedId.create("isSingular", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAt")));
       }
     });
     return result[0];

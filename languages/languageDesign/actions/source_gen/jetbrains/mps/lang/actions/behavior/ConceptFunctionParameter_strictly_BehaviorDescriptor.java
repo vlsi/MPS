@@ -5,15 +5,22 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptFunctionParameter_strictly_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ConceptFunctionParameter_strictly_BehaviorDescriptor() {
+  public boolean virtual_isParameterObjectUsed_1213877522926(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return ConceptFunctionParameter_strictly_Behavior.virtual_isParameterObjectUsed_1213877522926(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly";
   }
+
 }

@@ -4,11 +4,17 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import jetbrains.mps.lang.pattern.behavior.ActionStatement_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EmitInstruction_BehaviorDescriptor extends ActionStatement_BehaviorDescriptor {
-  public EmitInstruction_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction";
   }
+
 }

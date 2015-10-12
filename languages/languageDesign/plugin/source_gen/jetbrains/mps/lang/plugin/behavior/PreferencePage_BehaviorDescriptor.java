@@ -6,31 +6,35 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import java.util.List;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.checkedName.PropertyReference;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PreferencePage_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor {
-  public PreferencePage_BehaviorDescriptor() {
+  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
+  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantsToCheck_4844813484172611413(thisNode);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode __thisNode__) {
+    return null;
   }
-  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
+  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode __thisNode__) {
+    return null;
   }
-  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
-    return PreferencePage_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PreferencePage";
   }
+
 }

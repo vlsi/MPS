@@ -100,7 +100,13 @@ public class VCSPersistenceSupport {
 
   @Nullable
   private static IModelPersistence getPersistence(int version) {
-    assert version >= 4 : "unsupported version requested " + version;
+    // Assert here was replaced with LOG.error before 3.3 as we've found a couple  
+    // places where this incompatibility with older version introduced new bugs 
+    // Actually, these places must be fixed (see e.g. MPS-22503). Still, we  
+    // leave error here till 3.4 or later to minimize the number of real issues [MM] 
+    if (version < 4) {
+      LOG.error("unsupported version requested " + version, new Throwable());
+    }
 
     if (version == 4) {
       return new ModelPersistence4();

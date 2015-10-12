@@ -4,18 +4,25 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class CommandParameterDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
-  public CommandParameterDeclaration_BehaviorDescriptor() {
+  public boolean virtual_generateField_8478830098674441876(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_generateField_8478830098674441876(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.virtual_generateField_8478830098674441876(thisNode);
+  public boolean virtual_isRequired_8287978476542625659(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isRequired_8287978476542625659(SNode thisNode) {
-    return CommandParameterDeclaration_Behavior.virtual_isRequired_8287978476542625659(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration";
   }
+
 }

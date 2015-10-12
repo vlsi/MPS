@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.Pair;
 import org.jdom.Attribute;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,10 +41,10 @@ import java.util.Comparator;
 import java.util.List;
 
 class Memento {
-  private static final Comparator<EditorCell> FOLDED_CELLS_COMPARATOR = new Comparator<EditorCell>() {
+  private static final Comparator<Pair<EditorCell, Boolean>> COLLAPSED_STATES_COMPARATOR = new Comparator<Pair<EditorCell, Boolean>>() {
     @Override
-    public int compare(EditorCell c1, EditorCell c2) {
-      return getDepth(c2) - getDepth(c1);
+    public int compare(Pair<EditorCell, Boolean> p1, Pair<EditorCell, Boolean> p2) {
+      return getDepth(p2.o1) - getDepth(p1.o1);
     }
 
     private int getDepth(EditorCell cell) {
@@ -58,7 +59,7 @@ class Memento {
 
   private List<SelectionInfo> mySelectionStack = new ArrayList<SelectionInfo>();
   private List<CellInfo> myCollectionsWithEnabledBraces = new ArrayList<CellInfo>();
-  private List<CellInfo> myFolded = new ArrayList<CellInfo>();
+  private List<Pair<CellInfo, Boolean>> myCollapseStates = new ArrayList<Pair<CellInfo, Boolean>>();
 
   private List<ErrorMarker> myErrors = new ArrayList<ErrorMarker>();
   private Point myViewPosition;
@@ -76,10 +77,10 @@ class Memento {
         myEditedNodeReference = editedNode.getReference();
       }
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
-      ArrayList<EditorCell> foldedCells = new ArrayList<EditorCell>(nodeEditor.getFoldedCells());
-      Collections.sort(foldedCells, FOLDED_CELLS_COMPARATOR);
-      for (EditorCell foldedCell : foldedCells) {
-        myFolded.add(foldedCell.getCellInfo());
+      List<Pair<EditorCell, Boolean>> collapseStates = nodeEditor.getCollapseStates();
+      Collections.sort(collapseStates, COLLAPSED_STATES_COMPARATOR);
+      for (Pair<EditorCell, Boolean> collapseState : collapseStates) {
+        myCollapseStates.add(new Pair<CellInfo, Boolean>(collapseState.o1.getCellInfo(), collapseState.o2));
       }
       for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
         myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
@@ -116,9 +117,7 @@ class Memento {
       editor.getUpdater().flushModelEvents();
     }
 
-    editor.clearFoldedCells();
     editor.clearBracesEnabledCells();
-
     editor.getUpdater().flushModelEvents();
 
     // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
@@ -131,11 +130,11 @@ class Memento {
         ((EditorCell_Collection) collection).enableBraces();
       }
     }
-    for (CellInfo collectionInfo : myFolded) {
+    for (Pair<CellInfo, Boolean> collapseState : myCollapseStates) {
       needsRelayout = true;
-      EditorCell collection = collectionInfo.findCell(editor);
+      EditorCell collection = collapseState.o1.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
-      ((EditorCell_Collection) collection).fold(true);
+      ((EditorCell_Collection) collection).toggleCollapsed(collapseState.o2);
     }
 
     if (needsRelayout) {
@@ -167,8 +166,9 @@ class Memento {
     if (object instanceof Memento) {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-          EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myErrors, m.myErrors) && EqualUtil.equals(myViewPosition, m.myViewPosition) &&
-          Arrays.equals(myEnabledHints, m.myEnabledHints) && EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
+          EqualUtil.equals(myCollapseStates, m.myCollapseStates) && EqualUtil.equals(myErrors, m.myErrors) &&
+          EqualUtil.equals(myViewPosition, m.myViewPosition) && Arrays.equals(myEnabledHints, m.myEnabledHints) &&
+          EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
         return true;
       }
     }
@@ -183,7 +183,7 @@ class Memento {
     return "Editor Memento[\n" +
         "  selectedStack = " + mySelectionStack + "\n" +
         "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +
-        "  foldedCells = " + myFolded + "\n" +
+        "  collapsedCells = " + myCollapseStates + "\n" +
         "  enabledHints = " + Arrays.toString(myEnabledHints) + "\n" +
         "  editedNodeReference = " + myEditedNodeReference + "\n" +
         "]\n";
@@ -191,8 +191,10 @@ class Memento {
 
   private static final String SELECTION_STACK = "selectionStack";
   private static final String STACK_ELEMENT = "stackElement";
-  private static final String FOLDED = "folded";
-  private static final String FOLDED_ELEMENT = "foldedElement";
+  private static final String COLLAPSED = "collapsed";
+  private static final String COLLAPSED_ELEMENT = "collapsedElement";
+  private static final String CELL_ID_ELEMENT = "cellIdElement";
+  private static final String COLLAPSED_VALUE = "isCollapsed";
   private static final String VIEW_POSITION_X = "viewPositionX";
   private static final String VIEW_POSITION_Y = "viewPositionY";
   private static final String ENABLED_HINTS = "enabledHints";
@@ -221,19 +223,22 @@ class Memento {
     }
 
     boolean success = true;
-    Element folded = new Element(FOLDED);
-    for (CellInfo cellInfo : myFolded) {
-      if (cellInfo instanceof DefaultCellInfo) {
-        Element foldedElement = new Element(FOLDED_ELEMENT);
-        ((DefaultCellInfo) cellInfo).saveTo(foldedElement);
-        folded.addContent(foldedElement);
+    Element collapsed = new Element(COLLAPSED);
+    for (Pair<CellInfo, Boolean> collapsedState : myCollapseStates) {
+      if (collapsedState.o1 instanceof DefaultCellInfo) {
+        Element collapsedElement = new Element(COLLAPSED_ELEMENT);
+        collapsedElement.setAttribute(COLLAPSED_VALUE, collapsedState.o2.toString());
+        Element cellId = new Element(CELL_ID_ELEMENT);
+        ((DefaultCellInfo) collapsedState.o1).saveTo(cellId);
+        collapsedElement.addContent(cellId);
+        collapsed.addContent(collapsedElement);
       } else {
         success = false;
         break;
       }
     }
     if (success) {
-      e.addContent(folded);
+      e.addContent(collapsed);
     }
     e.setAttribute(VIEW_POSITION_X, String.valueOf(myViewPosition.x));
     e.setAttribute(VIEW_POSITION_Y, String.valueOf(myViewPosition.y));
@@ -268,11 +273,12 @@ class Memento {
       memento.myErrors.addAll(ErrorMarker.loadMarkers(errorMarkers));
     }
 
-    Element folded = e.getChild(FOLDED);
-    if (folded != null) {
-      List children = folded.getChildren(FOLDED_ELEMENT);
-      for (Object o : children) {
-        memento.myFolded.add(DefaultCellInfo.loadFrom((Element) o));
+    Element collapsed = e.getChild(COLLAPSED);
+    if (collapsed != null) {
+      List<Element> children = collapsed.getChildren(COLLAPSED_ELEMENT);
+      for (Element collapsedElement : children) {
+        memento.myCollapseStates.add(new Pair<CellInfo, Boolean>(DefaultCellInfo.loadFrom(collapsedElement.getChild(CELL_ID_ELEMENT)),
+            Boolean.valueOf(collapsedElement.getAttributeValue(COLLAPSED_VALUE))));
       }
     }
     try {

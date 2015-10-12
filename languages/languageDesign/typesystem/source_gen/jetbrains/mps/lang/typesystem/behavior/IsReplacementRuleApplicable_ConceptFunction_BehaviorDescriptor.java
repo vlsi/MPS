@@ -5,14 +5,20 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor() {
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return IsReplacementRuleApplicable_ConceptFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction";
   }
+
 }

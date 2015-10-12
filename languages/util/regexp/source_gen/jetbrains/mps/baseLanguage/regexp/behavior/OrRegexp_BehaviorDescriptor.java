@@ -4,18 +4,25 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OrRegexp_BehaviorDescriptor extends BinaryRegexp_BehaviorDescriptor {
-  public OrRegexp_BehaviorDescriptor() {
+  public String virtual_getString_1222432436326(SNode __thisNode__, List<SNode> vars) {
+    return null;
   }
-  public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return OrRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
+  public boolean virtual_needParentheses_1353467374623880338(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
-    return OrRegexp_Behavior.virtual_needParentheses_1353467374623880338(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp";
   }
+
 }

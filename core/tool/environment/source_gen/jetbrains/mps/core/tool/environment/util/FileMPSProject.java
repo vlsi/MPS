@@ -15,7 +15,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Collections;
@@ -58,6 +57,10 @@ public class FileMPSProject extends Project {
     super.projectClosed();
   }
 
+  /**
+   * 
+   * @deprecated 
+   */
   @Deprecated
   @Override
   public <T> T getComponent(Class<T> cls) {
@@ -117,7 +120,7 @@ public class FileMPSProject extends Project {
       return;
     }
     assert !(isDisposed());
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         readModules(myDescriptor);
@@ -141,12 +144,17 @@ public class FileMPSProject extends Project {
   public static class ProjectDescriptor {
     private String name;
     private List<Path> myModulePaths = new ArrayList<Path>();
+
     public ProjectDescriptor(File project) {
       load(project);
     }
+
     private void load(File project) {
       if (project == null) {
         return;
+      }
+      if (!(project.exists())) {
+        throw new IllegalArgumentException("The project file '" + project + "' does not exist");
       }
       if (project.isDirectory()) {
         load(project, new File(project, ".mps/modules.xml"));
@@ -154,9 +162,13 @@ public class FileMPSProject extends Project {
         load(project, project);
       }
     }
+
     private void load(File project, File modulesFile) {
       if (modulesFile == null) {
         return;
+      }
+      if (!(modulesFile.exists())) {
+        throw new IllegalArgumentException("The modules file '" + modulesFile + "' does not exist");
       }
       Document document = null;
       try {
@@ -180,10 +192,11 @@ public class FileMPSProject extends Project {
         load(project, projectElement);
       }
     }
+
     private void load(File project, Element modulesXml) {
-      FileMPSProject.ProjectDescriptor result_dkknya_a0a5ab = this;
-      final String result_dkknya_a0a0a5ab = project.getName();
-      result_dkknya_a0a5ab.setName(result_dkknya_a0a0a5ab);
+      FileMPSProject.ProjectDescriptor result_dkknya_a0a9ab = this;
+      final String result_dkknya_a0a0a9ab = project.getName();
+      result_dkknya_a0a9ab.setName(result_dkknya_a0a0a9ab);
 
       if (modulesXml == null) {
         return;
@@ -196,24 +209,28 @@ public class FileMPSProject extends Project {
       ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(modulesXml, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
-        Path result_dkknya_a1a9a0a5ab = modulePath;
+        Path result_dkknya_a1a9a0a9ab = modulePath;
         // todo: replace - wtf? @see ProjectDescriptorPersistence#saveProjectDescriptorToElement 
-        final String result_dkknya_a1a1a9a0a5ab = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(project.getPath())).expandPath(moduleElement.getAttributeValue("path").replace("$PROJECT_DIR$", "${project}"));
-        result_dkknya_a1a9a0a5ab.setPath(result_dkknya_a1a1a9a0a5ab);
-        final String result_dkknya_a2a1a9a0a5ab = moduleElement.getAttributeValue("folder");
-        result_dkknya_a1a9a0a5ab.setMPSFolder(result_dkknya_a2a1a9a0a5ab);
-        result_dkknya_a0a5ab.addModule(modulePath);
+        final String result_dkknya_a1a1a9a0a9ab = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(project.getPath())).expandPath(moduleElement.getAttributeValue("path").replace("$PROJECT_DIR$", "${project}"));
+        result_dkknya_a1a9a0a9ab.setPath(result_dkknya_a1a1a9a0a9ab);
+        final String result_dkknya_a2a1a9a0a9ab = moduleElement.getAttributeValue("folder");
+        result_dkknya_a1a9a0a9ab.setMPSFolder(result_dkknya_a2a1a9a0a9ab);
+        result_dkknya_a0a9ab.addModule(modulePath);
       }
     }
+
     public void setName(String name) {
       this.name = name;
     }
+
     public String getName() {
       return name;
     }
+
     public List<Path> getModules() {
       return Collections.unmodifiableList(myModulePaths);
     }
+
     public void addModule(Path p) {
       myModulePaths.add(p);
     }

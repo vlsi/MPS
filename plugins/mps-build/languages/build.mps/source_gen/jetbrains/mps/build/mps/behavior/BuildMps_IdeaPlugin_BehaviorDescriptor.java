@@ -5,28 +5,31 @@ package jetbrains.mps.build.mps.behavior;
 import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
-import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
-  public BuildMps_IdeaPlugin_BehaviorDescriptor() {
+  public Color virtual_getColorForTextPart_6083230236994422116(SNode __thisNode__, @NonNls String role) {
+    return null;
   }
-  @Nullable
-  public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
-    return BuildStringContainer_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public boolean virtual_isValidPart_9184644532456897464(SNode __thisNode__, String propertyValue, String role) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
-    return BuildMps_IdeaPlugin_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin";
   }
+
 }

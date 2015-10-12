@@ -332,7 +332,7 @@
             <property role="VOm3f" value="false" />
           </node>
           <node concept="3F0ifn" id="2Y$EcRKMt3g" role="3EZMnx">
-            <property role="3F0ifm" value="aspect model name:" />
+            <property role="3F0ifm" value="aspect name:" />
           </node>
           <node concept="3F0A7n" id="5KGdJjE3gcL" role="3EZMnx">
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -344,7 +344,7 @@
             <property role="VOm3f" value="false" />
           </node>
           <node concept="3F0ifn" id="2Y$EcRKMt3s" role="3EZMnx">
-            <property role="3F0ifm" value="main language:" />
+            <property role="3F0ifm" value="main languages:" />
           </node>
           <node concept="3F2HdR" id="5LFbgO_wI61" role="3EZMnx">
             <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2k" />

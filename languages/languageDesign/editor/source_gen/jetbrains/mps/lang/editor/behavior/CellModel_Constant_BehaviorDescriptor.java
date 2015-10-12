@@ -4,21 +4,28 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CellModel_Constant_BehaviorDescriptor extends CellModel_AbstractLabel_BehaviorDescriptor implements Synchronizeable_BehaviorDescriptor, ImplementationWithStubPart_BehaviorDescriptor {
-  public CellModel_Constant_BehaviorDescriptor() {
+  public boolean virtual_canBeSynchronized_4052492221165595783(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {
-    return CellModel_Constant_Behavior.virtual_canBeSynchronized_4052492221165595783(thisNode);
+  public int virtual_getDefaultFontStyle_1221472292001(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
-  public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
-    return CellModel_Constant_Behavior.virtual_getDefaultFontStyle_1221472292001(thisNode);
+  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_shellBeSynchronized_4500758155551546553(SNode thisNode) {
-    return CellModel_Constant_Behavior.virtual_shellBeSynchronized_4500758155551546553(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Constant";
   }
+
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameter__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -16,7 +16,7 @@ public class typeof_FigureParameter_InferenceRule extends AbstractInferenceRule_
   public typeof_FigureParameter_InferenceRule() {
   }
   public void applyRule(final SNode figureParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = Utils.getFirstGenericParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameter, "virtual_getParameterType_342110547581236128", new Object[]{}));
+    SNode type = Utils.getFirstGenericParameterType(FigureParameter__BehaviorDescriptor.getParameterType_idiZqVFYvBew.invoke(figureParameter));
     if (type != null) {
       {
         SNode _nodeToCheck_1029348928467 = figureParameter;

@@ -2,13 +2,14 @@
 <model ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="wsw7" ref="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -270,6 +271,154 @@
     <node concept="3uibUv" id="w2yda4eznF" role="EKbjA">
       <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
       <node concept="3uibUv" id="w2yda4eznZ" role="11_B2D">
+        <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="3efgZvcM9UJ">
+    <property role="3GE5qa" value="" />
+    <property role="TrG5h" value="ManualSuppressedOnlyProcessorDecorator" />
+    <node concept="312cEg" id="3efgZvcM9UK" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myProcessor" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="3efgZvcM9UL" role="1B3o_S" />
+      <node concept="3uibUv" id="3efgZvcM9UM" role="1tU5fm">
+        <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
+        <node concept="3uibUv" id="3efgZvcM9UN" role="11_B2D">
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3efgZvcM9UO" role="jymVt" />
+    <node concept="3clFbW" id="3efgZvcM9UP" role="jymVt">
+      <node concept="3cqZAl" id="3efgZvcM9UQ" role="3clF45" />
+      <node concept="3Tm1VV" id="3efgZvcM9UR" role="1B3o_S" />
+      <node concept="3clFbS" id="3efgZvcM9US" role="3clF47">
+        <node concept="3clFbF" id="3efgZvcM9UT" role="3cqZAp">
+          <node concept="37vLTI" id="3efgZvcM9UU" role="3clFbG">
+            <node concept="37vLTw" id="3efgZvcM9UV" role="37vLTJ">
+              <ref role="3cqZAo" node="3efgZvcM9UK" resolve="myProcessor" />
+            </node>
+            <node concept="37vLTw" id="3efgZvcM9UW" role="37vLTx">
+              <ref role="3cqZAo" node="3efgZvcM9UX" resolve="processor" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3efgZvcM9UX" role="3clF46">
+        <property role="TrG5h" value="processor" />
+        <node concept="3uibUv" id="3efgZvcM9UY" role="1tU5fm">
+          <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
+          <node concept="3uibUv" id="3efgZvcM9UZ" role="11_B2D">
+            <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3efgZvcM9V0" role="jymVt" />
+    <node concept="3clFb_" id="3efgZvcM9V1" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="process" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="3efgZvcM9V2" role="1B3o_S" />
+      <node concept="10P_77" id="3efgZvcM9V3" role="3clF45" />
+      <node concept="37vLTG" id="3efgZvcM9V4" role="3clF46">
+        <property role="TrG5h" value="problem" />
+        <node concept="3uibUv" id="3efgZvcM9V5" role="1tU5fm">
+          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="3efgZvcM9V6" role="3clF47">
+        <node concept="3clFbJ" id="3efgZvcM9V7" role="3cqZAp">
+          <property role="TyiWK" value="false" />
+          <property role="TyiWL" value="true" />
+          <node concept="3clFbS" id="3efgZvcM9V8" role="3clFbx">
+            <node concept="3cpWs6" id="3efgZvcM9V9" role="3cqZAp">
+              <node concept="2OqwBi" id="3efgZvcM9Va" role="3cqZAk">
+                <node concept="37vLTw" id="3efgZvcM9Vb" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3efgZvcM9UK" resolve="myProcessor" />
+                </node>
+                <node concept="liA8E" id="3efgZvcM9Vc" role="2OqNvi">
+                  <ref role="37wK5l" to="yyf4:~Processor.process(java.lang.Object):boolean" resolve="process" />
+                  <node concept="37vLTw" id="3efgZvcM9Vd" role="37wK5m">
+                    <ref role="3cqZAo" node="3efgZvcM9V4" resolve="problem" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="3efgZvcM9Ve" role="3clFbw">
+            <node concept="1eOMI4" id="3efgZvcM9Vf" role="3fr31v">
+              <node concept="2ZW3vV" id="3efgZvcM9Vg" role="1eOMHV">
+                <node concept="3uibUv" id="3efgZvcM9Vh" role="2ZW6by">
+                  <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                </node>
+                <node concept="37vLTw" id="3efgZvcM9Vi" role="2ZW6bz">
+                  <ref role="3cqZAo" node="3efgZvcM9V4" resolve="problem" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="3efgZvcM9Vj" role="3cqZAp">
+          <node concept="3cpWsn" id="3efgZvcM9Vk" role="3cpWs9">
+            <property role="TrG5h" value="node" />
+            <node concept="3Tqbb2" id="3efgZvcM9Vl" role="1tU5fm" />
+            <node concept="2OqwBi" id="3efgZvcM9Vm" role="33vP2m">
+              <node concept="1eOMI4" id="3efgZvcM9Vn" role="2Oq$k0">
+                <node concept="10QFUN" id="3efgZvcM9Vo" role="1eOMHV">
+                  <node concept="37vLTw" id="3efgZvcM9Vp" role="10QFUP">
+                    <ref role="3cqZAo" node="3efgZvcM9V4" resolve="problem" />
+                  </node>
+                  <node concept="3uibUv" id="3efgZvcM9Vq" role="10QFUM">
+                    <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3efgZvcM9Vr" role="2OqNvi">
+                <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3efgZvcMh7O" role="3cqZAp">
+          <node concept="3clFbS" id="3efgZvcMh7Q" role="3clFbx">
+            <node concept="3cpWs6" id="3efgZvcMkvh" role="3cqZAp">
+              <node concept="3clFbT" id="3efgZvcMkzD" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="3efgZvcMj08" role="3clFbw">
+            <ref role="37wK5l" to="wsw7:3efgZvcMhmD" resolve="manuallySuppressed" />
+            <ref role="1Pybhc" to="wsw7:5TGjZPCODxZ" resolve="ErrorReportUtil" />
+            <node concept="37vLTw" id="3efgZvcMj0I" role="37wK5m">
+              <ref role="3cqZAo" node="3efgZvcM9Vk" resolve="node" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3efgZvcM9Vz" role="3cqZAp">
+          <node concept="2OqwBi" id="3efgZvcM9V$" role="3cqZAk">
+            <node concept="37vLTw" id="3efgZvcM9V_" role="2Oq$k0">
+              <ref role="3cqZAo" node="3efgZvcM9UK" resolve="myProcessor" />
+            </node>
+            <node concept="liA8E" id="3efgZvcM9VA" role="2OqNvi">
+              <ref role="37wK5l" to="yyf4:~Processor.process(java.lang.Object):boolean" resolve="process" />
+              <node concept="37vLTw" id="3efgZvcM9VB" role="37wK5m">
+                <ref role="3cqZAo" node="3efgZvcM9V4" resolve="problem" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="3efgZvcM9VC" role="1B3o_S" />
+    <node concept="3uibUv" id="3efgZvcM9VD" role="EKbjA">
+      <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
+      <node concept="3uibUv" id="3efgZvcM9VE" role="11_B2D">
         <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
       </node>
     </node>

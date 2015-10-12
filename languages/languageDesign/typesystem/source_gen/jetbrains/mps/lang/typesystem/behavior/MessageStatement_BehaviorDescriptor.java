@@ -4,6 +4,12 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface MessageStatement_BehaviorDescriptor {
   public void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode);
   public String virtual_getName_1597542831856389237(SNode thisNode);

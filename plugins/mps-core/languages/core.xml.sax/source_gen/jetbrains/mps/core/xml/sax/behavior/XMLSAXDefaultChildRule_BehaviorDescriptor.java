@@ -6,19 +6,24 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class XMLSAXDefaultChildRule_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
-  public XMLSAXDefaultChildRule_BehaviorDescriptor() {
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
   }
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return ScopeProvider_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  public Scope virtual_getScope_7722139651431880752(SNode __thisNode__, SNode kind, String role, int index) {
+    return null;
   }
-  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildRule";
   }
+
 }

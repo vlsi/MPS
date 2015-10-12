@@ -4,14 +4,20 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_War_BehaviorDescriptor extends BuildLayout_Jar_BehaviorDescriptor {
-  public BuildLayout_War_BehaviorDescriptor() {
+  public String virtual_getExpectedExtension_6967233722066020217(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getExpectedExtension_6967233722066020217(SNode thisNode) {
-    return BuildLayout_War_Behavior.virtual_getExpectedExtension_6967233722066020217(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_War";
   }
+
 }

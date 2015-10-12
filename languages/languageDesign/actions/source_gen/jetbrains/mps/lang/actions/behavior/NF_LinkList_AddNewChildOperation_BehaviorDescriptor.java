@@ -4,15 +4,22 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.lang.smodel.behavior.LinkList_AddNewChildOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NF_LinkList_AddNewChildOperation_BehaviorDescriptor extends LinkList_AddNewChildOperation_BehaviorDescriptor {
-  public NF_LinkList_AddNewChildOperation_BehaviorDescriptor() {
+  public boolean virtual_applicableToLinkList_1262430001741498382(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
-    return NF_LinkList_AddNewChildOperation_Behavior.virtual_applicableToLinkList_1262430001741498382(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation";
   }
+
 }

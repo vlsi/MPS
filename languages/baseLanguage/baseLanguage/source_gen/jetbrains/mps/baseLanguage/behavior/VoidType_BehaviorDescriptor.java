@@ -4,17 +4,23 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class VoidType_BehaviorDescriptor extends PrimitiveType_BehaviorDescriptor {
-  public VoidType_BehaviorDescriptor() {
+  public SNode virtual_getBoxedType_1213877337320(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
-    return VoidType_Behavior.virtual_getBoxedType_1213877337320(thisNode);
+  public String virtual_jniSignature_8847328628797633411(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
-    return VoidType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.VoidType";
   }
+
 }

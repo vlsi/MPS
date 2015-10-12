@@ -31,6 +31,10 @@ import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+/**
+ * This class represents a jar file abstraction
+ * It stores cache with all subdirectories and all entries
+ */
 class JarFileData extends AbstractJarFileData {
   private static Logger LOG = LogManager.getLogger(JarFileData.class);
 

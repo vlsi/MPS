@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.LinkedHashSet;
-import jetbrains.mps.build.mps.behavior.BuildMps_DevKit_Behavior;
+import jetbrains.mps.build.mps.behavior.BuildMps_DevKit__BehaviorDescriptor;
 
 public class MPSModulesPartitioner {
   private final SNode project;
@@ -149,7 +149,7 @@ public class MPSModulesPartitioner {
             return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL, 0x4780308f5d2313bL, "devkit"));
           }
         });
-        for (SNode q : Sequence.fromIterable(BuildMps_DevKit_Behavior.call_getExportedModules_7391870795496918763(devkit)).concat(Sequence.fromIterable(extended))) {
+        for (SNode q : Sequence.fromIterable(BuildMps_DevKit__BehaviorDescriptor.getExportedModules_id6qlcPcvboVF.invoke(devkit)).concat(Sequence.fromIterable(extended))) {
           MPSModulesPartitioner.Node node = map.get(q);
           if (node != null) {
             SetSequence.fromSet(dependencyNodes).addElement(node);

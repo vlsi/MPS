@@ -5,17 +5,23 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CellModel_ModelAccess_BehaviorDescriptor extends CellModel_AbstractLabel_BehaviorDescriptor implements ImplementationWithStubPart_BehaviorDescriptor {
-  public CellModel_ModelAccess_BehaviorDescriptor() {
+  public String virtual_getClosingText_1220339738643(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getClosingText_1220339738643(SNode thisNode) {
-    return CellModel_ModelAccess_Behavior.virtual_getClosingText_1220339738643(thisNode);
+  public String virtual_getOpeningText_1220339714057(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
-    return CellModel_ModelAccess_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess";
   }
+
 }

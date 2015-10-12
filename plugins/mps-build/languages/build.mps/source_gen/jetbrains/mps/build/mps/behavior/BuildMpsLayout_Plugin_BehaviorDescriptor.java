@@ -6,40 +6,44 @@ import jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescri
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMpsLayout_Plugin_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor {
-  public BuildMpsLayout_Plugin_BehaviorDescriptor() {
+  public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }
-  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    BuildMpsLayout_Plugin_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  public boolean virtual_exports_6547494638219603457(SNode __thisNode__, Object artifactId) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
-    return BuildMpsLayout_Plugin_Behavior.virtual_exports_6547494638219603457(thisNode, artifactId);
+  public String virtual_getApproximateName_5610619299014531547(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
-    return BuildMpsLayout_Plugin_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode __thisNode__, Context context) {
+    return null;
   }
-  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return BuildMpsLayout_Plugin_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public boolean virtual_isFolder_1368030936106753980(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
-    return BuildMpsLayout_Plugin_Behavior.virtual_isFolder_1368030936106753980(thisNode);
+  public String virtual_location_7117056644539862594(SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
+    return null;
   }
-  public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
-    return BuildMpsLayout_Plugin_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
+  public void virtual_unpack_7128123785277710736(SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
   }
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    BuildMpsLayout_Plugin_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin";
   }
+
 }

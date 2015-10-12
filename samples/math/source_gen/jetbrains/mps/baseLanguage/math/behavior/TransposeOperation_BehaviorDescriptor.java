@@ -4,14 +4,20 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TransposeOperation_BehaviorDescriptor extends MatrixExponentialOperation_BehaviorDescriptor {
-  public TransposeOperation_BehaviorDescriptor() {
+  public String virtual_getOperationSymbol_1262430001741497831(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getOperationSymbol_1262430001741497831(SConcept thisConcept) {
-    return TransposeOperation_Behavior.virtual_getOperationSymbol_1262430001741497831(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.TransposeOperation";
   }
+
 }

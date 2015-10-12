@@ -5,34 +5,39 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements DSLClassMember_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
-  public CustomMemberDescriptor_BehaviorDescriptor() {
+  public SNode virtual_createForClass_6478870542308635887(SNode __thisNode__, SNode cls) {
+    return null;
   }
-  public SNode virtual_createForClass_6478870542308635887(SNode thisNode, SNode cls) {
-    return DSLClassMember_Behavior.virtual_createForClass_6478870542308635887(thisNode, cls);
+  public SNode virtual_create_8260330507834998478(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_create_8260330507834998478(SNode thisNode) {
-    return CustomMemberDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
+  public Iterable<SNode> virtual_findPlaceholders_6909536935410952255(SNode __thisNode__, SNode cls) {
+    return null;
   }
-  public Iterable<SNode> virtual_findPlaceholders_6909536935410952255(SNode thisNode, SNode cls) {
-    return DSLClassMember_Behavior.virtual_findPlaceholders_6909536935410952255(thisNode, cls);
+  public Iterable<SNode> virtual_find_2603987804376013077(SNode __thisNode__, SNode cls) {
+    return null;
   }
-  public Iterable<SNode> virtual_find_2603987804376013077(SNode thisNode, SNode cls) {
-    return CustomMemberDescriptor_Behavior.virtual_find_2603987804376013077(thisNode, cls);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getMatchingText_2736582054146581585(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
-    return CustomMemberDescriptor_Behavior.virtual_getMatchingText_2736582054146581585(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return CustomMemberDescriptor_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.lightweightdsl.structure.CustomMemberDescriptor";
   }
+
 }

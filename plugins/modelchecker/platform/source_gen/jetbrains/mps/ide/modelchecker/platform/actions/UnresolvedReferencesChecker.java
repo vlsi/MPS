@@ -11,9 +11,9 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -40,12 +39,12 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     }
     monitor.start("unresolved references", 1);
 
-    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
+    for (SNode node : Sequence.fromIterable(SNodeUtil.getDescendants(model))) {
       if (monitor.isCanceled()) {
         break;
       }
       // Check for unresolved references 
-      for (final SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+      for (final SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref.getLink())) != null)) {
           continue;
         }
@@ -60,7 +59,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         if (mref == null) {
           continue;
         }
-        SModel m = mref.resolve(MPSModuleRepository.getInstance());
+        SModel m = mref.resolve(myProject.getRepository());
         if (m == null) {
           continue;
         }
@@ -71,7 +70,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         SpecificChecker.addIssue(results, node, "Target module " + m.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
           public boolean doFix() {
             // check once again as this is executed somewhen in future 
-            SModel m2 = mref.resolve(MPSModuleRepository.getInstance());
+            SModel m2 = mref.resolve(myProject.getRepository());
             if (m2 == null) {
               return false;
             }

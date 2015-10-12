@@ -8,7 +8,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -45,7 +46,7 @@ public class AttributeOperations {
         LOG.error(Sequence.fromIterable(list).count() + " nodes match single value attribute. The first found node returned as the value.");
       }
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("  node=" + node.getReference() + "; attribute=" + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(list).first())), "virtual_getRole_1262430001741497900", new Object[]{}) + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
+        LOG.error("  node=" + node.getReference() + "; attribute=" + ((String) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(list).first())), SMethodTrimmedId.create("getRole", null, "1653mnvAgoG"))) + " (" + Sequence.fromIterable(list).first().getNodeId() + ")");
       }
     }
     return Sequence.fromIterable(list).first();
@@ -86,7 +87,7 @@ public class AttributeOperations {
           LOG.error(Sequence.fromIterable(oldlist).count() + " nodes match signle value attribute during attribute replacing. Only the first found node replaced.");
         }
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("  node=" + node.getReference() + "; attribute=" + BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first())), "virtual_getRole_1262430001741497900", new Object[]{}) + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
+          LOG.error("  node=" + node.getReference() + "; attribute=" + ((String) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(Sequence.fromIterable(oldlist).first())), SMethodTrimmedId.create("getRole", null, "1653mnvAgoG"))) + " (" + Sequence.fromIterable(oldlist).first().getNodeId() + ")");
         }
       }
       SNodeOperations.replaceWithAnother(Sequence.fromIterable(oldlist).first(), value);
@@ -204,7 +205,7 @@ public class AttributeOperations {
   public static Iterable<SNode> getPropertyAttributes(SNode node, final SProperty property) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0ab(BehaviorReflection.invokeNonVirtual(SProperty.class, it, "jetbrains.mps.lang.core.structure.PropertyAttribute", "call_getProperty_1341860900488756504", new Object[]{}), property);
+        return eq_b2vkxw_a0a0a0a0a0a0ab(((SProperty) BHReflection.invoke(it, SMethodTrimmedId.create("getProperty", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "1avfQ4BBzOo"))), property);
       }
     });
   }
@@ -220,21 +221,21 @@ public class AttributeOperations {
   public static Iterable<SNode> getLinkAttributes(SNode node, final SReferenceLink link) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0cb(BehaviorReflection.invokeNonVirtual(SReferenceLink.class, it, "jetbrains.mps.lang.core.structure.LinkAttribute", "call_getLink_1341860900489573894", new Object[]{}), link);
+        return eq_b2vkxw_a0a0a0a0a0a0cb(((SReferenceLink) BHReflection.invoke(it, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"), "1avfQ4BEFo6"))), link);
       }
     });
   }
   public static Iterable<SNode> getChildAttributes(SNode node, final SContainmentLink link) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute")), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0db(BehaviorReflection.invokeNonVirtual(SContainmentLink.class, it, "jetbrains.mps.lang.core.structure.ChildAttribute", "call_getLink_709746936026609871", new Object[]{}), link);
+        return eq_b2vkxw_a0a0a0a0a0a0db(((SContainmentLink) BHReflection.invoke(it, SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))), link);
       }
     });
   }
   public static Iterable<SNode> getChildNodesAndAttributes(SNode parent, final SContainmentLink link) {
     return ListSequence.fromList(SNodeOperations.getChildren(parent)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0a03(it.getContainmentLink(), link) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")) && eq_b2vkxw_a0a0a0a0a0a0a0eb(BehaviorReflection.invokeNonVirtual(SContainmentLink.class, SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), "jetbrains.mps.lang.core.structure.ChildAttribute", "call_getLink_709746936026609871", new Object[]{}), link);
+        return eq_b2vkxw_a0a0a0a0a0a0a03(it.getContainmentLink(), link) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")) && eq_b2vkxw_a0a0a0a0a0a0a0eb(((SContainmentLink) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute")), SMethodTrimmedId.create("getLink", MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"), "BpxLfMirzf"))), link);
       }
     });
   }

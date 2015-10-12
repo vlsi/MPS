@@ -24,15 +24,18 @@ import com.intellij.openapi.roots.RootProvider;
 import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.module.SDependencyImpl;
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -123,6 +126,8 @@ public abstract class StubSolutionIdea extends StubSolution {
     SolutionDescriptor sd = new SolutionDescriptor();
     sd.setNamespace(name);
     sd.setId(ModuleId.foreign(name));
+    sd.setCompileInMPS(false);
+    sd.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
     addModelRoots(sd, roots);
     return sd;
   }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.library;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -28,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -46,7 +49,19 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   @Override
   public void initComponent() {
-    myLibraryInitializer.load(Collections.<LibraryContributor>singletonList(this));
+    final List<LibraryContributor> contributorsToLoad = Collections.<LibraryContributor>singletonList(this);
+    final Application application = ApplicationManager.getApplication();
+    application.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        application.runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            myLibraryInitializer.loadRefreshed(contributorsToLoad);
+          }
+        });
+      }
+    });
   }
 
   @Override

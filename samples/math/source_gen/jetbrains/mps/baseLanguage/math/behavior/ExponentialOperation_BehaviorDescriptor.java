@@ -8,17 +8,23 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class ExponentialOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ExponentialOperation_BehaviorDescriptor() {
+  public List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept thisConcept) {
-    return ExponentialOperation_Behavior.virtual_getAllowedSubstituends_3044950653914716992(thisConcept);
+  public String virtual_getOperationSymbol_1262430001741497831(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getOperationSymbol_1262430001741497831(SConcept thisConcept) {
-    return ExponentialOperation_Behavior.virtual_getOperationSymbol_1262430001741497831(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation";
   }
+
 }

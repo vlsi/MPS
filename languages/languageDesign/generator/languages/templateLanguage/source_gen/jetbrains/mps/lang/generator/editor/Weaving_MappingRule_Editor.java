@@ -271,6 +271,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gkr2rl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gkr2rl_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_gkr2rl_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gkr2rl_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_gkr2rl_a0(EditorContext editorContext, SNode node) {
@@ -296,5 +298,80 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_gkr2rl_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.MappingRuleCommonFields");
     return editorCell;
+  }
+  private EditorCell createConstant_gkr2rl_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_gkr2rl_d0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_gkr2rl_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_gkr2rl_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_gkr2rl_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gkr2rl_b4a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gkr2rl_c4a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_gkr2rl_a4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_gkr2rl_a4a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_gkr2rl_b4a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_gkr2rl_b4a");
+    editorCell.addEditorCell(this.createConstant_gkr2rl_a1e0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_gkr2rl_a1e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "anchor");
+    editorCell.setCellId("Constant_gkr2rl_a1e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_gkr2rl_c4a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_gkr2rl_c4a");
+    editorCell.addEditorCell(this.createRefNode_gkr2rl_a2e0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createRefNode_gkr2rl_a2e0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new Weaving_MappingRule_Editor.anchorQuerySingleRoleHandler_gkr2rl_a2e0(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, 0xe2b8adb3abb51f8L, "anchorQuery"), editorContext);
+    return provider.createCell();
+  }
+  private class anchorQuerySingleRoleHandler_gkr2rl_a2e0 extends SingleRoleCellProvider {
+    public anchorQuerySingleRoleHandler_gkr2rl_a2e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("anchorQuery");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_anchorQuery");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<no anchorQuery>";
+    }
+
   }
 }

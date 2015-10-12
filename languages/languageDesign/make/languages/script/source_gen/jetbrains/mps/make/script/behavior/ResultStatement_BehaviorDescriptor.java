@@ -5,15 +5,22 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ResultStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ResultStatement_BehaviorDescriptor() {
+  public boolean virtual_isGuardClauseStatement_1237547327995(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
-    return ResultStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.ResultStatement";
   }
+
 }

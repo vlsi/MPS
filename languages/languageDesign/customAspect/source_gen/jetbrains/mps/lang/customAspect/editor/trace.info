@@ -162,8 +162,8 @@
       <node id="3542851458883492504" at="81,92,82,52" concept="6" />
       <node id="3542851458883492487" at="84,148,85,104" concept="2" />
       <node id="3542851458883500531" at="87,153,88,241" concept="5" />
-      <node id="3542851458883500985" at="88,241,89,130" concept="2" />
-      <node id="3542851458883494896" at="89,130,90,180" concept="2" />
+      <node id="3542851458883500985" at="88,241,89,98" concept="2" />
+      <node id="3542851458883494896" at="89,98,90,180" concept="2" />
       <node id="3542851458883492487" at="92,45,93,19" concept="6" />
       <node id="3542851458883492487" at="78,0,80,0" concept="1" trace="LanguageReference_generic_cellMenu_uxcxn0_a0a0#()V" />
       <node id="3433054418424680588" at="32,0,35,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -338,8 +338,8 @@
       <node id="3433054418424680617" at="121,84,122,84" concept="0" />
       <node id="3433054418424680617" at="121,84,122,84" concept="2" />
       <node id="3433054418424680617" at="122,84,123,22" concept="6" />
-      <node id="3433054418424680656" at="125,91,126,104" concept="5" />
-      <node id="3433054418424680656" at="126,104,127,50" concept="2" />
+      <node id="3433054418424680656" at="125,91,126,98" concept="5" />
+      <node id="3433054418424680656" at="126,98,127,50" concept="2" />
       <node id="3433054418424680656" at="127,50,128,34" concept="2" />
       <node id="3433054418424680656" at="128,34,129,22" concept="6" />
       <node id="6641743975991280433" at="131,91,132,82" concept="5" />
@@ -364,8 +364,8 @@
       <node id="3433054418424680617" at="153,84,154,87" concept="0" />
       <node id="3433054418424680617" at="153,84,154,87" concept="2" />
       <node id="3433054418424680617" at="154,87,155,22" concept="6" />
-      <node id="3433054418424680668" at="157,91,158,100" concept="5" />
-      <node id="3433054418424680668" at="158,100,159,50" concept="2" />
+      <node id="3433054418424680668" at="157,91,158,101" concept="5" />
+      <node id="3433054418424680668" at="158,101,159,50" concept="2" />
       <node id="3433054418424680668" at="159,50,160,34" concept="2" />
       <node id="3433054418424680668" at="160,34,161,22" concept="6" />
       <node id="3433054418424680617" at="163,94,164,154" concept="5" />

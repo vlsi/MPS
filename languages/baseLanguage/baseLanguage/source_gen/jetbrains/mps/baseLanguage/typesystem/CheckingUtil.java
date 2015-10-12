@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -64,7 +64,7 @@ public class CheckingUtil {
     }
     SNode classifier = SNodeOperations.getNodeAncestor(fieldDecl, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
     List<SNode> allFields = new ArrayList<SNode>();
-    ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(classifier))).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(SNodeOperations.as(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))));
+    ListSequence.fromList(allFields).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.staticFields_id4_LVZ3pBr7M.invoke(classifier))).addSequence(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.fields_id4_LVZ3pC27C.invoke(SNodeOperations.as(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")))));
     return ListSequence.fromList(allFields).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != fieldDecl && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), name);
@@ -73,20 +73,25 @@ public class CheckingUtil {
   }
 
   public static boolean isValidByteOrShortExpression(SNode expectedType, SNode expr) {
-    if (!(SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"))) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, expr, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
+    if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"))) {
+      return SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f0ad8bde4L, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && (!(SPropertyOperations.getString(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")).startsWith("\\u")) || !(SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"))));
+    }
+
+    if (!(SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129778b846L, "jetbrains.mps.baseLanguage.structure.IntegerLiteral"))) || !((boolean) Expression__BehaviorDescriptor.isCompileTimeConstant_idi1LOPRp.invoke(expr))) {
       return false;
     }
     try {
-      Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{check_36hle6_a0a0a0b0k(expr.getModel())});
+      Object compileTimeConstantValue = Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expr, check_36hle6_a0a0a0d0k(expr.getModel()));
       if (compileTimeConstantValue == null || !(compileTimeConstantValue instanceof Integer)) {
         return false;
       }
+
 
       // Beware, an Integer constant is not a guarantee that the expr is of type IntegerType. 
       // This must be checked in the caller rules. 
       int value = ((Integer) compileTimeConstantValue).intValue();
 
-      return (SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType")) && value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) || SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType")) && value >= Short.MIN_VALUE && value <= Short.MAX_VALUE;
+      return (SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType")) && value >= Byte.MIN_VALUE && value <= Byte.MAX_VALUE) || SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType")) && value >= Short.MIN_VALUE && value <= Short.MAX_VALUE || SNodeOperations.isInstanceOf(expectedType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d4f826L, "jetbrains.mps.baseLanguage.structure.CharType")) && value >= Character.MIN_VALUE && value <= Character.MAX_VALUE;
     } catch (IllegalStateException e) {
       // the process of retrieving compile-time constants is flaky ATM 
       // e.g. StaticFieldReference pointing to a stub model may fail 
@@ -103,7 +108,7 @@ public class CheckingUtil {
     }
   }
   protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
-  private static SModule check_36hle6_a0a0a0b0k(SModel checkedDotOperand) {
+  private static SModule check_36hle6_a0a0a0d0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

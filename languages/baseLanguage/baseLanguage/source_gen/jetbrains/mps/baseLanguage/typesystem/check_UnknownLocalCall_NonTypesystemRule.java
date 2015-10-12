@@ -7,8 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,7 +19,7 @@ public class check_UnknownLocalCall_NonTypesystemRule extends AbstractNonTypesys
   public check_UnknownLocalCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode unkCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unkCall, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
+    if (IYetUnresolved__BehaviorDescriptor.evaluateSubst_id73E7sj5sxxG.invoke(unkCall) != null) {
       // success 
       {
         MessageTarget errorTarget = new NodeMessageTarget();

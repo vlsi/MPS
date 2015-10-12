@@ -4,11 +4,17 @@ package jetbrains.mps.build.mps.runner.behavior;
 
 import jetbrains.mps.build.behavior.BuildPlugin_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildSolutionRunnerPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor {
-  public BuildSolutionRunnerPlugin_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerPlugin";
   }
+
 }

@@ -5,14 +5,20 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DoWhileStatement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor implements IConditional_BehaviorDescriptor {
-  public DoWhileStatement_BehaviorDescriptor() {
+  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode __thisNode__, @NotNull SNode child, boolean value) {
+    return null;
   }
-  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return DoWhileStatement_Behavior.virtual_getNextProgramPoint_4235809288648213009(thisNode, child, value);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
   }
+
 }

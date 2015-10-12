@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/175447375139954965">
+    <file name="ChangeCollapseCondition_ManuallyExpandedCell_Test.java">
+      <node id="175447375139954965" at="15,84,16,115" concept="1" />
+      <node id="175447375139954965" at="16,115,17,139" concept="1" />
+      <node id="175447375139954965" at="24,51,25,61" concept="1" />
+      <node id="175447375139955550" at="25,61,26,74" concept="1" />
+      <node id="175447375139956103" at="26,74,27,74" concept="1" />
+      <node id="175447375139956160" at="27,74,28,74" concept="1" />
+      <node id="175447375139956189" at="28,74,29,74" concept="1" />
+      <node id="175447375139956220" at="29,74,30,74" concept="1" />
+      <node id="175447375139956253" at="30,74,31,74" concept="1" />
+      <node id="175447375139956288" at="31,74,32,74" concept="1" />
+      <node id="175447375140051796" at="32,74,33,77" concept="1" />
+      <node id="175447375139954970" at="33,77,34,31" concept="1" />
+      <node id="175447375139956345" at="34,31,35,76" concept="1" />
+      <node id="175447375139954965" at="12,0,14,0" concept="0" trace="ChangeCollapseCondition_ManuallyExpandedCell_Test#()V" />
+      <node id="175447375139954965" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="175447375139954965" at="14,0,19,0" concept="2" trace="test_ChangeCollapseCondition_ManuallyExpandedCell#()V" />
+      <node id="175447375139954965" at="23,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="175447375139954965" at="12,62,12,62" />
+      <scope id="175447375139954965" at="21,23,21,23" />
+      <scope id="175447375139954965" at="12,0,14,0" />
+      <scope id="175447375139954965" at="15,84,17,139" />
+      <scope id="175447375139954965" at="21,0,23,0" />
+      <scope id="175447375139954965" at="14,0,19,0" />
+      <scope id="175447375139954965" at="24,51,35,76" />
+      <scope id="175447375139954965" at="23,0,37,0" />
+      <unit id="175447375139954965" at="19,0,38,0" name="jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ManuallyExpandedCell_Test$TestBody" />
+      <unit id="175447375139954965" at="10,0,39,0" name="jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ManuallyExpandedCell_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/175447375140054073">
+    <file name="ManuallyExpandedCell_UnrelatedModelChange_Test.java">
+      <node id="175447375140054073" at="15,81,16,115" concept="1" />
+      <node id="175447375140054073" at="16,115,17,136" concept="1" />
+      <node id="175447375140054073" at="24,51,25,61" concept="1" />
+      <node id="175447375140054078" at="25,61,26,74" concept="1" />
+      <node id="175447375140054080" at="26,74,27,74" concept="1" />
+      <node id="175447375140054082" at="27,74,28,74" concept="1" />
+      <node id="175447375140054084" at="28,74,29,74" concept="1" />
+      <node id="175447375140054134" at="29,74,30,74" concept="1" />
+      <node id="175447375140054685" at="30,74,31,76" concept="1" />
+      <node id="175447375140054707" at="31,76,32,76" concept="1" />
+      <node id="175447375140054726" at="32,76,33,76" concept="1" />
+      <node id="175447375140054747" at="33,76,34,76" concept="1" />
+      <node id="175447375140054073" at="12,0,14,0" concept="0" trace="ManuallyExpandedCell_UnrelatedModelChange_Test#()V" />
+      <node id="175447375140054073" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="175447375140054073" at="14,0,19,0" concept="2" trace="test_ManuallyExpandedCell_UnrelatedModelChange#()V" />
+      <node id="175447375140054073" at="23,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="175447375140054073" at="12,59,12,59" />
+      <scope id="175447375140054073" at="21,23,21,23" />
+      <scope id="175447375140054073" at="12,0,14,0" />
+      <scope id="175447375140054073" at="15,81,17,136" />
+      <scope id="175447375140054073" at="21,0,23,0" />
+      <scope id="175447375140054073" at="14,0,19,0" />
+      <scope id="175447375140054073" at="24,51,34,76" />
+      <scope id="175447375140054073" at="23,0,36,0" />
+      <unit id="175447375140054073" at="19,0,37,0" name="jetbrains.mps.lang.editor.folding.test.ManuallyExpandedCell_UnrelatedModelChange_Test$TestBody" />
+      <unit id="175447375140054073" at="10,0,38,0" name="jetbrains.mps.lang.editor.folding.test.ManuallyExpandedCell_UnrelatedModelChange_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/6240706158489921622">
+    <file name="CellFoldedByDefault_Test.java">
+      <node id="6240706158489921622" at="15,59,16,115" concept="1" />
+      <node id="6240706158489921622" at="16,115,17,114" concept="1" />
+      <node id="6240706158489921622" at="24,51,25,63" concept="1" />
+      <node id="6240706158490135510" at="25,63,26,74" concept="1" />
+      <node id="6240706158490135873" at="26,74,27,77" concept="1" />
+      <node id="6240706158490135890" at="27,77,28,77" concept="1" />
+      <node id="6240706158490135908" at="28,77,29,77" concept="1" />
+      <node id="6240706158490135899" at="29,77,30,0" concept="3" />
+      <node id="6240706158490135884" at="30,0,31,0" concept="3" />
+      <node id="6240706158489921622" at="12,0,14,0" concept="0" trace="CellFoldedByDefault_Test#()V" />
+      <node id="6240706158489921622" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="6240706158489921622" at="14,0,19,0" concept="2" trace="test_CellFoldedByDefault#()V" />
+      <node id="6240706158489921622" at="23,0,33,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6240706158489921622" at="12,37,12,37" />
+      <scope id="6240706158489921622" at="21,23,21,23" />
+      <scope id="6240706158489921622" at="12,0,14,0" />
+      <scope id="6240706158489921622" at="15,59,17,114" />
+      <scope id="6240706158489921622" at="21,0,23,0" />
+      <scope id="6240706158489921622" at="14,0,19,0" />
+      <scope id="6240706158489921622" at="24,51,31,0" />
+      <scope id="6240706158489921622" at="23,0,33,0" />
+      <unit id="6240706158489921622" at="19,0,34,0" name="jetbrains.mps.lang.editor.folding.test.CellFoldedByDefault_Test$TestBody" />
+      <unit id="6240706158489921622" at="10,0,35,0" name="jetbrains.mps.lang.editor.folding.test.CellFoldedByDefault_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/7429553584211898787">
+    <file name="CollapseRecursively_Test.java">
+      <node id="7429553584211898787" at="15,59,16,115" concept="1" />
+      <node id="7429553584211898787" at="16,115,17,114" concept="1" />
+      <node id="7429553584211898787" at="24,51,25,63" concept="1" />
+      <node id="7429553584211922806" at="25,63,26,87" concept="1" />
+      <node id="7429553584211898787" at="12,0,14,0" concept="0" trace="CollapseRecursively_Test#()V" />
+      <node id="7429553584211898787" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="7429553584211898787" at="14,0,19,0" concept="2" trace="test_CollapseRecursively#()V" />
+      <node id="7429553584211898787" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7429553584211898787" at="12,37,12,37" />
+      <scope id="7429553584211898787" at="21,23,21,23" />
+      <scope id="7429553584211898787" at="12,0,14,0" />
+      <scope id="7429553584211898787" at="15,59,17,114" />
+      <scope id="7429553584211898787" at="21,0,23,0" />
+      <scope id="7429553584211898787" at="24,51,26,87" />
+      <scope id="7429553584211898787" at="14,0,19,0" />
+      <scope id="7429553584211898787" at="23,0,28,0" />
+      <unit id="7429553584211898787" at="19,0,29,0" name="jetbrains.mps.lang.editor.folding.test.CollapseRecursively_Test$TestBody" />
+      <unit id="7429553584211898787" at="10,0,30,0" name="jetbrains.mps.lang.editor.folding.test.CollapseRecursively_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/8594145232740493171">
+    <file name="ExpandRecursively_Test.java">
+      <node id="8594145232740493171" at="15,57,16,115" concept="1" />
+      <node id="8594145232740493171" at="16,115,17,112" concept="1" />
+      <node id="8594145232740493171" at="24,51,25,63" concept="1" />
+      <node id="8594145232740493189" at="25,63,26,85" concept="1" />
+      <node id="8741431550096046762" at="26,85,27,76" concept="1" />
+      <node id="8741431550096046779" at="27,76,28,76" concept="1" />
+      <node id="8741431550096046797" at="28,76,29,76" concept="1" />
+      <node id="8741431550096046821" at="29,76,30,76" concept="1" />
+      <node id="8594145232740493171" at="12,0,14,0" concept="0" trace="ExpandRecursively_Test#()V" />
+      <node id="8594145232740493171" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8594145232740493171" at="14,0,19,0" concept="2" trace="test_ExpandRecursively#()V" />
+      <node id="8594145232740493171" at="23,0,32,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8594145232740493171" at="12,35,12,35" />
+      <scope id="8594145232740493171" at="21,23,21,23" />
+      <scope id="8594145232740493171" at="12,0,14,0" />
+      <scope id="8594145232740493171" at="15,57,17,112" />
+      <scope id="8594145232740493171" at="21,0,23,0" />
+      <scope id="8594145232740493171" at="14,0,19,0" />
+      <scope id="8594145232740493171" at="24,51,30,76" />
+      <scope id="8594145232740493171" at="23,0,32,0" />
+      <unit id="8594145232740493171" at="19,0,33,0" name="jetbrains.mps.lang.editor.folding.test.ExpandRecursively_Test$TestBody" />
+      <unit id="8594145232740493171" at="10,0,34,0" name="jetbrains.mps.lang.editor.folding.test.ExpandRecursively_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/866632705892191817">
+    <file name="CellConditionallyCollapsed_Test.java">
+      <node id="866632705892191817" at="15,66,16,115" concept="1" />
+      <node id="866632705892191817" at="16,115,17,121" concept="1" />
+      <node id="866632705892191817" at="24,51,25,61" concept="1" />
+      <node id="866632705892345591" at="25,61,26,74" concept="1" />
+      <node id="866632705892345593" at="26,74,27,77" concept="1" />
+      <node id="866632705892345595" at="27,77,28,77" concept="1" />
+      <node id="866632705892345597" at="28,77,29,77" concept="1" />
+      <node id="866632705892191817" at="12,0,14,0" concept="0" trace="CellConditionallyCollapsed_Test#()V" />
+      <node id="866632705892191817" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="866632705892191817" at="14,0,19,0" concept="2" trace="test_CellConditionallyCollapsed#()V" />
+      <node id="866632705892191817" at="23,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="866632705892191817" at="12,44,12,44" />
+      <scope id="866632705892191817" at="21,23,21,23" />
+      <scope id="866632705892191817" at="12,0,14,0" />
+      <scope id="866632705892191817" at="15,66,17,121" />
+      <scope id="866632705892191817" at="21,0,23,0" />
+      <scope id="866632705892191817" at="14,0,19,0" />
+      <scope id="866632705892191817" at="24,51,29,77" />
+      <scope id="866632705892191817" at="23,0,31,0" />
+      <unit id="866632705892191817" at="19,0,32,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test$TestBody" />
+      <unit id="866632705892191817" at="10,0,33,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyCollapsed_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/866632705892345818">
+    <file name="CellConditionallyUncollapsed_Test.java">
+      <node id="866632705892345818" at="15,68,16,115" concept="1" />
+      <node id="866632705892345818" at="16,115,17,123" concept="1" />
+      <node id="866632705892345818" at="24,51,25,61" concept="1" />
+      <node id="866632705892345825" at="25,61,26,74" concept="1" />
+      <node id="866632705892345827" at="26,74,27,77" concept="1" />
+      <node id="866632705892345829" at="27,77,28,77" concept="1" />
+      <node id="866632705892345831" at="28,77,29,77" concept="1" />
+      <node id="866632705892345818" at="12,0,14,0" concept="0" trace="CellConditionallyUncollapsed_Test#()V" />
+      <node id="866632705892345818" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="866632705892345818" at="14,0,19,0" concept="2" trace="test_CellConditionallyUncollapsed#()V" />
+      <node id="866632705892345818" at="23,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="866632705892345818" at="12,46,12,46" />
+      <scope id="866632705892345818" at="21,23,21,23" />
+      <scope id="866632705892345818" at="12,0,14,0" />
+      <scope id="866632705892345818" at="15,68,17,123" />
+      <scope id="866632705892345818" at="21,0,23,0" />
+      <scope id="866632705892345818" at="14,0,19,0" />
+      <scope id="866632705892345818" at="24,51,29,77" />
+      <scope id="866632705892345818" at="23,0,31,0" />
+      <unit id="866632705892345818" at="19,0,32,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyUncollapsed_Test$TestBody" />
+      <unit id="866632705892345818" at="10,0,33,0" name="jetbrains.mps.lang.editor.folding.test.CellConditionallyUncollapsed_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/866632705892346111">
+    <file name="ChangeCollapseCondition_ExpandCell_Test.java">
+      <node id="866632705892346111" at="15,74,16,115" concept="1" />
+      <node id="866632705892346111" at="16,115,17,129" concept="1" />
+      <node id="866632705892346111" at="24,51,25,61" concept="1" />
+      <node id="866632705892346896" at="25,61,26,31" concept="1" />
+      <node id="866632705892348303" at="26,31,27,76" concept="1" />
+      <node id="866632705892349153" at="27,76,28,76" concept="1" />
+      <node id="866632705892349172" at="28,76,29,76" concept="1" />
+      <node id="866632705892349182" at="29,76,30,76" concept="1" />
+      <node id="866632705892349194" at="30,76,31,76" concept="1" />
+      <node id="866632705892349208" at="31,76,32,76" concept="1" />
+      <node id="866632705892349224" at="32,76,33,76" concept="1" />
+      <node id="866632705892349242" at="33,76,34,76" concept="1" />
+      <node id="866632705892349262" at="34,76,35,76" concept="1" />
+      <node id="866632705892349165" at="35,76,36,0" concept="3" />
+      <node id="866632705892346111" at="12,0,14,0" concept="0" trace="ChangeCollapseCondition_ExpandCell_Test#()V" />
+      <node id="866632705892346111" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="866632705892346111" at="14,0,19,0" concept="2" trace="test_ChangeCollapseCondition_ExpandCell#()V" />
+      <node id="866632705892346111" at="23,0,38,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="866632705892346111" at="12,52,12,52" />
+      <scope id="866632705892346111" at="21,23,21,23" />
+      <scope id="866632705892346111" at="12,0,14,0" />
+      <scope id="866632705892346111" at="15,74,17,129" />
+      <scope id="866632705892346111" at="21,0,23,0" />
+      <scope id="866632705892346111" at="14,0,19,0" />
+      <scope id="866632705892346111" at="24,51,36,0" />
+      <scope id="866632705892346111" at="23,0,38,0" />
+      <unit id="866632705892346111" at="19,0,39,0" name="jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ExpandCell_Test$TestBody" />
+      <unit id="866632705892346111" at="10,0,40,0" name="jetbrains.mps.lang.editor.folding.test.ChangeCollapseCondition_ExpandCell_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/8741431550096045522">
+    <file name="CollapseRecursivelyCheckChildren_Test.java">
+      <node id="8741431550096045522" at="15,72,16,115" concept="1" />
+      <node id="8741431550096045522" at="16,115,17,127" concept="1" />
+      <node id="8741431550096045522" at="24,51,25,63" concept="1" />
+      <node id="8741431550096045539" at="25,63,26,87" concept="1" />
+      <node id="8741431550096048010" at="26,87,27,71" concept="1" />
+      <node id="8741431550096048551" at="27,71,28,76" concept="1" />
+      <node id="8741431550096049096" at="28,76,29,74" concept="1" />
+      <node id="8741431550096049123" at="29,74,30,76" concept="1" />
+      <node id="8741431550096049149" at="30,76,31,76" concept="1" />
+      <node id="8741431550096049165" at="31,76,32,71" concept="1" />
+      <node id="8741431550096049167" at="32,71,33,76" concept="1" />
+      <node id="8741431550096045522" at="12,0,14,0" concept="0" trace="CollapseRecursivelyCheckChildren_Test#()V" />
+      <node id="8741431550096045522" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8741431550096045522" at="14,0,19,0" concept="2" trace="test_CollapseRecursivelyCheckChildren#()V" />
+      <node id="8741431550096045522" at="23,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8741431550096045522" at="12,50,12,50" />
+      <scope id="8741431550096045522" at="21,23,21,23" />
+      <scope id="8741431550096045522" at="12,0,14,0" />
+      <scope id="8741431550096045522" at="15,72,17,127" />
+      <scope id="8741431550096045522" at="21,0,23,0" />
+      <scope id="8741431550096045522" at="14,0,19,0" />
+      <scope id="8741431550096045522" at="24,51,33,76" />
+      <scope id="8741431550096045522" at="23,0,35,0" />
+      <unit id="8741431550096045522" at="19,0,36,0" name="jetbrains.mps.lang.editor.folding.test.CollapseRecursivelyCheckChildren_Test$TestBody" />
+      <unit id="8741431550096045522" at="10,0,37,0" name="jetbrains.mps.lang.editor.folding.test.CollapseRecursivelyCheckChildren_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/8741431550096049955">
+    <file name="ExpandRecursivelyCheckSibling_Test.java">
+      <node id="8741431550096049955" at="15,69,16,115" concept="1" />
+      <node id="8741431550096049955" at="16,115,17,124" concept="1" />
+      <node id="8741431550096049955" at="24,51,25,63" concept="1" />
+      <node id="8741431550096049965" at="25,63,26,85" concept="1" />
+      <node id="8741431550096049967" at="26,85,27,76" concept="1" />
+      <node id="8741431550096049969" at="27,76,28,76" concept="1" />
+      <node id="8741431550096049971" at="28,76,29,76" concept="1" />
+      <node id="8741431550096049973" at="29,76,30,76" concept="1" />
+      <node id="8741431550096050013" at="30,76,31,76" concept="1" />
+      <node id="8741431550096050028" at="31,76,32,76" concept="1" />
+      <node id="8741431550096050045" at="32,76,33,76" concept="1" />
+      <node id="8741431550096050064" at="33,76,34,76" concept="1" />
+      <node id="8741431550096050085" at="34,76,35,76" concept="1" />
+      <node id="8741431550096050108" at="35,76,36,76" concept="1" />
+      <node id="8741431550096050133" at="36,76,37,76" concept="1" />
+      <node id="8741431550096051577" at="37,76,38,71" concept="1" />
+      <node id="8741431550096049955" at="12,0,14,0" concept="0" trace="ExpandRecursivelyCheckSibling_Test#()V" />
+      <node id="8741431550096049955" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8741431550096049955" at="14,0,19,0" concept="2" trace="test_ExpandRecursivelyCheckSibling#()V" />
+      <node id="8741431550096049955" at="23,0,40,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8741431550096049955" at="12,47,12,47" />
+      <scope id="8741431550096049955" at="21,23,21,23" />
+      <scope id="8741431550096049955" at="12,0,14,0" />
+      <scope id="8741431550096049955" at="15,69,17,124" />
+      <scope id="8741431550096049955" at="21,0,23,0" />
+      <scope id="8741431550096049955" at="14,0,19,0" />
+      <scope id="8741431550096049955" at="24,51,38,71" />
+      <scope id="8741431550096049955" at="23,0,40,0" />
+      <unit id="8741431550096049955" at="19,0,41,0" name="jetbrains.mps.lang.editor.folding.test.ExpandRecursivelyCheckSibling_Test$TestBody" />
+      <unit id="8741431550096049955" at="10,0,42,0" name="jetbrains.mps.lang.editor.folding.test.ExpandRecursivelyCheckSibling_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)/8741431550096053306">
+    <file name="CollapseRecursivelyCheckSibling_Test.java">
+      <node id="8741431550096053306" at="15,71,16,115" concept="1" />
+      <node id="8741431550096053306" at="16,115,17,126" concept="1" />
+      <node id="8741431550096053306" at="24,51,25,63" concept="1" />
+      <node id="8741431550096053324" at="25,63,26,87" concept="1" />
+      <node id="8741431550096053856" at="26,87,27,76" concept="1" />
+      <node id="8741431550096053867" at="27,76,28,76" concept="1" />
+      <node id="8741431550096053875" at="28,76,29,76" concept="1" />
+      <node id="8741431550096053885" at="29,76,30,76" concept="1" />
+      <node id="8741431550096053306" at="12,0,14,0" concept="0" trace="CollapseRecursivelyCheckSibling_Test#()V" />
+      <node id="8741431550096053306" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="8741431550096053306" at="14,0,19,0" concept="2" trace="test_CollapseRecursivelyCheckSibling#()V" />
+      <node id="8741431550096053306" at="23,0,32,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="8741431550096053306" at="12,49,12,49" />
+      <scope id="8741431550096053306" at="21,23,21,23" />
+      <scope id="8741431550096053306" at="12,0,14,0" />
+      <scope id="8741431550096053306" at="15,71,17,126" />
+      <scope id="8741431550096053306" at="21,0,23,0" />
+      <scope id="8741431550096053306" at="14,0,19,0" />
+      <scope id="8741431550096053306" at="24,51,30,76" />
+      <scope id="8741431550096053306" at="23,0,32,0" />
+      <unit id="8741431550096053306" at="19,0,33,0" name="jetbrains.mps.lang.editor.folding.test.CollapseRecursivelyCheckSibling_Test$TestBody" />
+      <unit id="8741431550096053306" at="10,0,34,0" name="jetbrains.mps.lang.editor.folding.test.CollapseRecursivelyCheckSibling_Test" />
+    </file>
+  </root>
+</debug-info>
+

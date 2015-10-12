@@ -23,15 +23,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
 
     ValidationUtil.validateModel(model, new Processor<ValidationProblem>() {
       public boolean process(final ValidationProblem problem) {
-        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, problem.getMessage(), new IModelCheckerFix() {
-          public boolean doFix() {
-            if (!(problem.canFix())) {
-              return false;
-            }
-            problem.fix();
-            return true;
-          }
-        }, ModelChecker.SEVERITY_ERROR, "Model properties"));
+        ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForModel(model, problem, "Model properties"));
         return true;
       }
     });

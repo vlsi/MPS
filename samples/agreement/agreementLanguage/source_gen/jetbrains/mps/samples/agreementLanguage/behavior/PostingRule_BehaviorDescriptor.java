@@ -4,11 +4,17 @@ package jetbrains.mps.samples.agreementLanguage.behavior;
 
 import jetbrains.mps.samples.formulaLanguage.behavior.Formula_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PostingRule_BehaviorDescriptor extends Formula_BehaviorDescriptor {
-  public PostingRule_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.PostingRule";
   }
+
 }

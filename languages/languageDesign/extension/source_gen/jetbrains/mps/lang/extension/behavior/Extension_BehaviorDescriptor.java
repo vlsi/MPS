@@ -7,14 +7,20 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.AutoInitDSLClass_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Extension_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, AutoInitDSLClass_BehaviorDescriptor {
-  public Extension_BehaviorDescriptor() {
+  public SNode virtual_getDescriptor_1055884086724995485(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {
-    return Extension_Behavior.virtual_getDescriptor_1055884086724995485(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.extension.structure.Extension";
   }
+
 }

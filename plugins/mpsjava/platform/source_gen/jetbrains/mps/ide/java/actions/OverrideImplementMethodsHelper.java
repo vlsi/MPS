@@ -10,7 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -47,7 +48,7 @@ public class OverrideImplementMethodsHelper {
     int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ? ListSequence.fromList(SLinkOperations.getChildren(myClassConcept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).indexOf(myContextMember) + 1 : -1);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode baseMethod : baseMethods) {
-      SNode method = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "call_getMethodToImplement_69709522611978987", new Object[]{myClassConcept});
+      SNode method = ((SNode) BHReflection.invoke(baseMethod, SMethodTrimmedId.create("getMethodToImplement", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "3RE744JWbF"), myClassConcept));
       SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList")), null));
       if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
         SPropertyOperations.set(SNodeOperations.cast(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract"), "" + (false));
@@ -99,7 +100,7 @@ public class OverrideImplementMethodsHelper {
     if (SNodeOperations.isInstanceOf(baseMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       SNode defaultExpr;
       if (isInterfaceMethod) {
-        defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(baseMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
+        defaultExpr = ((SNode) BHReflection.invoke(SLinkOperations.getTarget(baseMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), SMethodTrimmedId.create("createDefaultTypeExpression", null, "2UvJdVpqUA4")));
       } else {
         defaultExpr = _quotation_createNode_tfz3o4_a0a0a1a6a8(baseMethod, Sequence.fromIterable(paramList).toListSequence());
       }
@@ -144,7 +145,7 @@ public class OverrideImplementMethodsHelper {
       SNode variable = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
       SNode nodeType = SLinkOperations.getTarget(variable, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
       if (nodeType != null) {
-        String name = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), nodeType, "virtual_getVariableSuffixes_1213877337304", new Object[]{})).first();
+        String name = ListSequence.fromList(((List<String>) BHReflection.invoke(nodeType, SMethodTrimmedId.create("getVariableSuffixes", null, "hEwIzNo")))).first();
         if (IdentifierConstraintsUtil.isJavaReserved(name)) {
           name = "a" + NameUtil.capitalize(NameUtil.toValidIdentifier(name));
         }
@@ -156,8 +157,8 @@ public class OverrideImplementMethodsHelper {
         } else {
           MapSequence.fromMap(usedNames).put(name, 0);
         }
-        String prefix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getPrefix_3012473318495495520", new Object[]{myProject});
-        String suffix = BehaviorReflection.invokeVirtual(String.class, variable, "virtual_getSuffix_3012473318495499856", new Object[]{myProject});
+        String prefix = ((String) BHReflection.invoke(variable, SMethodTrimmedId.create("getPrefix", null, "2Bet8mWh2lw"), myProject));
+        String suffix = ((String) BHReflection.invoke(variable, SMethodTrimmedId.create("getSuffix", null, "2Bet8mWh3pg"), myProject));
         String mainName = ((prefix == null || prefix.length() == 0) ? name : NameUtil.capitalize(name));
         SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), prefix + mainName + suffix);
       }

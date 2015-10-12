@@ -67,7 +67,7 @@ class FoldingButton {
       EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
       myIsHidden = CellTraversalUtil.getFoldedParent(collectionCell) != null;
       if (!myIsHidden) {
-        myIsFolded = collectionCell.isFolded();
+        myIsFolded = collectionCell.isCollapsed();
         EditorCell firstLeafCell = CellTraversalUtil.getFirstLeaf(collectionCell);
         myY1 = firstLeafCell != null ? firstLeafCell.getBaseline() - HEIGHT : collectionCell.getBaseline() - HEIGHT;
         EditorCell lastLeafCell = CellTraversalUtil.getLastLeaf(collectionCell);
@@ -141,7 +141,7 @@ class FoldingButton {
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       if (CellTraversalUtil.getFoldedParent(collection) != null) return;
-      if (collection.isFolded()) {
+      if (collection.isCollapsed()) {
         collection.unfold();
       } else {
         if (isOnBottomButton(y)) {

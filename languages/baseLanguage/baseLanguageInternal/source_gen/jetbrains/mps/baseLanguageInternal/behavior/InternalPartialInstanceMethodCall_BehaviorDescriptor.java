@@ -5,32 +5,38 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class InternalPartialInstanceMethodCall_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
-  public InternalPartialInstanceMethodCall_BehaviorDescriptor() {
+  public String virtual_getVariableExpectedName_1213877410087(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
-    return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
+  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
-    return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
+  public boolean virtual_isLValue_1213877410080(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isLValue_1213877410080(SNode thisNode) {
-    return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+  public boolean virtual_legalAsStatement_1262430001741498032(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
-    return InternalPartialInstanceMethodCall_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
+  public boolean virtual_lvalue_1262430001741498364(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
-    return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
+  public boolean virtual_operandCanBeNull_323410281720656291(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
-    return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall";
   }
+
 }

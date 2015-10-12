@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.ide.editor;
 
 import com.intellij.openapi.components.ProjectComponent;
@@ -22,7 +21,6 @@ import jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.typesystem.checking.NonTypesystemEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import org.jetbrains.annotations.NotNull;
@@ -73,8 +71,7 @@ public class MPSValidationComponent implements ProjectComponent {
         addChecker(new TypesEditorChecker());
         addChecker(new NonTypesystemEditorChecker());
         addChecker(new AutoResolver());
-        // FIXME replace with projectRepo once it's capable to send events
-        final SRepository repositoryToTrack4Changes = /*myProject.getRepository()*/ MPSModuleRepository.getInstance();
+        final SRepository repositoryToTrack4Changes = myProject.getRepository();
         addChecker(new LanguageEditorChecker(repositoryToTrack4Changes));
         addChecker(new SuppressErrorsChecker());
         addChecker(new ModelProblemsChecker(repositoryToTrack4Changes));

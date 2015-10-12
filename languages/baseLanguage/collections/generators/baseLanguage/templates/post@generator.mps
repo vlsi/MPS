@@ -6,8 +6,8 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -16,8 +16,8 @@
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -314,43 +314,20 @@
                               <node concept="3Tqbb2" id="16t6kMkZM0g" role="1tU5fm">
                                 <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
                               </node>
-                              <node concept="2YIFZM" id="16t6kMkZM0h" role="33vP2m">
-                                <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                              <node concept="2YIFZM" id="U7sbC7DF9n" role="33vP2m">
+                                <ref role="37wK5l" to="tp2g:U7sbC7D0_V" resolve="clearBounds" />
                                 <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
-                                <node concept="2OqwBi" id="16t6kMkZM0i" role="37wK5m">
-                                  <node concept="1YBJjd" id="16t6kMkZM0j" role="2Oq$k0">
-                                    <ref role="1YBMHb" node="16t6kMkZLZV" resolve="sequenceType" />
-                                  </node>
-                                  <node concept="3TrEf2" id="16t6kMkZM0k" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tp2q:gKA3Ige" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbJ" id="16t6kMkZM0l" role="3cqZAp">
-                            <node concept="3clFbS" id="16t6kMkZM0m" role="3clFbx">
-                              <node concept="3cpWs6" id="16t6kMkZM0n" role="3cqZAp">
-                                <node concept="2OqwBi" id="16t6kMkZM0o" role="3cqZAk">
-                                  <node concept="1PxgMI" id="16t6kMkZM0p" role="2Oq$k0">
-                                    <ref role="1PxNhF" to="tpee:h3qUExa" resolve="UpperBoundType" />
-                                    <node concept="37vLTw" id="3GM_nagTx0X" role="1PxMeX">
-                                      <ref role="3cqZAo" node="16t6kMkZM0f" resolve="ct" />
+                                <node concept="2YIFZM" id="16t6kMkZM0h" role="37wK5m">
+                                  <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                                  <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                                  <node concept="2OqwBi" id="16t6kMkZM0i" role="37wK5m">
+                                    <node concept="1YBJjd" id="16t6kMkZM0j" role="2Oq$k0">
+                                      <ref role="1YBMHb" node="16t6kMkZLZV" resolve="sequenceType" />
+                                    </node>
+                                    <node concept="3TrEf2" id="16t6kMkZM0k" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="tp2q:gKA3Ige" />
                                     </node>
                                   </node>
-                                  <node concept="3TrEf2" id="16t6kMkZM0r" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="tpee:h3qUExb" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="2OqwBi" id="16t6kMkZM0s" role="3clFbw">
-                              <node concept="37vLTw" id="3GM_nagTyH4" role="2Oq$k0">
-                                <ref role="3cqZAo" node="16t6kMkZM0f" resolve="ct" />
-                              </node>
-                              <node concept="1mIQ4w" id="16t6kMkZM0u" role="2OqNvi">
-                                <node concept="chp4Y" id="16t6kMkZM0v" role="cj9EA">
-                                  <ref role="cht4Q" to="tpee:h3qUExa" resolve="UpperBoundType" />
                                 </node>
                               </node>
                             </node>
@@ -1337,15 +1314,19 @@
                                 <node concept="3Tqbb2" id="16t6kMkZM4V" role="1tU5fm">
                                   <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
                                 </node>
-                                <node concept="2YIFZM" id="16t6kMkZM4W" role="33vP2m">
-                                  <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                                <node concept="2YIFZM" id="U7sbC7DLm4" role="33vP2m">
+                                  <ref role="37wK5l" to="tp2g:U7sbC7D0_V" resolve="clearBounds" />
                                   <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
-                                  <node concept="2OqwBi" id="16t6kMkZM4X" role="37wK5m">
-                                    <node concept="1YBJjd" id="16t6kMkZM4Y" role="2Oq$k0">
-                                      <ref role="1YBMHb" node="16t6kMkZM4A" resolve="sequenceType" />
-                                    </node>
-                                    <node concept="3TrEf2" id="16t6kMkZM4Z" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="tp2q:gKA3Ige" />
+                                  <node concept="2YIFZM" id="U7sbC7DLm5" role="37wK5m">
+                                    <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                                    <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                                    <node concept="2OqwBi" id="U7sbC7DLm6" role="37wK5m">
+                                      <node concept="1YBJjd" id="U7sbC7DLm7" role="2Oq$k0">
+                                        <ref role="1YBMHb" node="16t6kMkZM4A" resolve="sequenceType" />
+                                      </node>
+                                      <node concept="3TrEf2" id="U7sbC7DLm8" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="tp2q:gKA3Ige" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>

@@ -28,7 +28,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.testbench.junit.runners.DelegatingRunner;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 /**
  * Currently used for ant tests
@@ -106,7 +107,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
         for (SModule module : Sequence.fromIterable(myContextProject.getModules())) {
           for (SModel model : Sequence.fromIterable(module.getModels())) {
             for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
-              result.add(new DelegatingRunner(myContextProject, builder, module.getModuleReference(), BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{})));
+              result.add(new DelegatingRunner(myContextProject, builder, module.getModuleReference(), ((String) BHReflection.invoke(testCase, SMethodTrimmedId.create("getClassName", null, "hGBnqtL")))));
             }
           }
         }

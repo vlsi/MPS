@@ -5,15 +5,22 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptFunctionParameter_parameterObject_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ConceptFunctionParameter_parameterObject_BehaviorDescriptor() {
+  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
-    return ConceptFunctionParameter_parameterObject_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject";
   }
+
 }

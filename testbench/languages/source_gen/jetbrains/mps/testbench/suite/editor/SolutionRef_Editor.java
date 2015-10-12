@@ -19,8 +19,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.testbench.suite.behavior.IModuleRef__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -57,7 +56,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ns5ajd_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(SModuleReference.class, node, "virtual_moduleReference_1280144168199513544", new Object[]{}).getModuleName();
+        return IModuleRef__BehaviorDescriptor.moduleReference_id173Z5qAOun8.invoke(node).getModuleName();
       }
       public void setText(String s) {
       }

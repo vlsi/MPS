@@ -22,7 +22,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.Collections;
@@ -87,7 +88,7 @@ public class ChildSubstituteActionsUtil {
   }
   public static List<SubstituteAction> invokeActionFactory(SNode builder, SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
 
-    String methodName = BehaviorReflection.invokeNonVirtual(String.class, builder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220278926652", new Object[]{});
+    String methodName = ((String) BHReflection.invoke(builder, SMethodTrimmedId.create("getBuilderQueryMethodName", MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), "hKuiFOW")));
     try {
       return (List<SubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept, childSetter), SNodeOperations.getModel(builder));
     } catch (Throwable t) {
@@ -152,7 +153,7 @@ public class ChildSubstituteActionsUtil {
 
     SNode precondition = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x10ccb7fcf83L, "precondition"));
     if (precondition != null) {
-      String methodName = BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "call_getPreconditionQueryMethodName_1220278671791", new Object[]{});
+      String methodName = ((String) BHReflection.invoke(actionsBuilder, SMethodTrimmedId.create("getPreconditionQueryMethodName", MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"), "hKuhHAJ")));
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, context, new NodeSubstitutePreconditionContext(parentNode, concept, currentTarget, link, wrapped), SNodeOperations.getModel(actionsBuilder));
       } catch (Exception e) {

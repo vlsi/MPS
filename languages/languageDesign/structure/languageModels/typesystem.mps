@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -24,6 +24,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <import index="twe9" ref="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3280,6 +3281,149 @@
         <node concept="3clFbF" id="1gmd4rN_D11" role="3cqZAp">
           <node concept="Xl_RD" id="1gmd4rN_D10" role="3clFbG">
             <property role="Xl_RC" value="Enable Derive from Internal Values" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="18kY7G" id="1o9qxtfa_BN">
+    <property role="TrG5h" value="check_AbstractConceptDeclaration_Id" />
+    <node concept="3clFbS" id="1o9qxtfa_BO" role="18ibNy">
+      <node concept="3clFbJ" id="1o9qxtfa_CH" role="3cqZAp">
+        <node concept="3clFbS" id="1o9qxtfa_CI" role="3clFbx">
+          <node concept="2MkqsV" id="1o9qxtfaAuy" role="3cqZAp">
+            <node concept="3Cnw8n" id="1o9qxtfbeWt" role="2OEOjU">
+              <ref role="QpYPw" node="1o9qxtfaNHN" resolve="GenerateConceptId" />
+              <node concept="3CnSsL" id="1o9qxtfbf0V" role="3Coj4f">
+                <ref role="QkamJ" node="1o9qxtfaNI0" resolve="c" />
+                <node concept="1YBJjd" id="1o9qxtfbf18" role="3CoRuB">
+                  <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                </node>
+              </node>
+            </node>
+            <node concept="1YBJjd" id="1o9qxtfaAuI" role="2OEOjV">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+            <node concept="3cpWs3" id="1o9qxtfaLrp" role="2MkJ7o">
+              <node concept="3cpWs3" id="1o9qxtfaLgF" role="3uHU7B">
+                <node concept="Xl_RD" id="1o9qxtfaLgL" role="3uHU7B">
+                  <property role="Xl_RC" value="Concept id is not defined.\n" />
+                </node>
+                <node concept="Xl_RD" id="1o9qxtfaLrv" role="3uHU7w">
+                  <property role="Xl_RC" value="Please run \&quot;add concept ids\&quot; migration or invoke Migrations-&gt;3.3-&gt;Add Concept Ids.\n" />
+                </node>
+              </node>
+              <node concept="Xl_RD" id="1o9qxtfaLrx" role="3uHU7w">
+                <property role="Xl_RC" value="If this concept was created manually, invoke the \&quot;Generate ID\&quot; intention on it" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbC" id="1o9qxtfaAsM" role="3clFbw">
+          <node concept="3cmrfG" id="1o9qxtfaAtL" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="1o9qxtfa_Gx" role="3uHU7B">
+            <node concept="1YBJjd" id="1o9qxtfa_CW" role="2Oq$k0">
+              <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+            </node>
+            <node concept="3TrcHB" id="1o9qxtfa_Nl" role="2OqNvi">
+              <ref role="3TsBF5" to="tpce:1o9qxtf9pgp" resolve="conceptId" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eNFk2" id="1gycv4KNCrH" role="3eNLev">
+          <node concept="3clFbS" id="1gycv4KNCrJ" role="3eOfB_">
+            <node concept="2MkqsV" id="2tHJeLFfMsW" role="3cqZAp">
+              <node concept="3Cnw8n" id="2tHJeLFfMsX" role="2OEOjU">
+                <ref role="QpYPw" node="1o9qxtfaNHN" resolve="GenerateConceptId" />
+                <node concept="3CnSsL" id="2tHJeLFfMsY" role="3Coj4f">
+                  <ref role="QkamJ" node="1o9qxtfaNI0" resolve="c" />
+                  <node concept="1YBJjd" id="2tHJeLFfMsZ" role="3CoRuB">
+                    <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+                  </node>
+                </node>
+              </node>
+              <node concept="1YBJjd" id="2tHJeLFfMt0" role="2OEOjV">
+                <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+              </node>
+              <node concept="3cpWs3" id="2tHJeLFfMt1" role="2MkJ7o">
+                <node concept="Xl_RD" id="2tHJeLFfMt3" role="3uHU7B">
+                  <property role="Xl_RC" value="Concept id is not equal to expected.\n" />
+                </node>
+                <node concept="Xl_RD" id="2tHJeLFfMt5" role="3uHU7w">
+                  <property role="Xl_RC" value="Fix this by applying \&quot;Generate ID\&quot; intention" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="2tHJeLFfMos" role="3eO9$A">
+            <node concept="2YIFZM" id="2tHJeLFfMrc" role="3uHU7w">
+              <ref role="1Pybhc" to="twe9:1o9qxtfbpaa" resolve="ConceptIdUtil" />
+              <ref role="37wK5l" to="twe9:3n1E57I3ZSW" resolve="getNewId" />
+              <node concept="1YBJjd" id="2tHJeLFfMs2" role="37wK5m">
+                <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2tHJeLFfLwF" role="3uHU7B">
+              <node concept="1YBJjd" id="2tHJeLFfLt6" role="2Oq$k0">
+                <ref role="1YBMHb" node="1o9qxtfa_BQ" resolve="acd" />
+              </node>
+              <node concept="3TrcHB" id="2tHJeLFfLJ2" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:1o9qxtf9pgp" resolve="conceptId" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1o9qxtfa_BQ" role="1YuTPh">
+      <property role="TrG5h" value="acd" />
+      <ref role="1YaFvo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="1o9qxtfaNHN">
+    <property role="TrG5h" value="GenerateConceptId" />
+    <node concept="Q6JDH" id="1o9qxtfaNI0" role="Q6Id_">
+      <property role="TrG5h" value="c" />
+      <node concept="3Tqbb2" id="1o9qxtfaNI9" role="Q6QK4">
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      </node>
+    </node>
+    <node concept="Q5ZZ6" id="1o9qxtfaNHO" role="Q6x$H">
+      <node concept="3clFbS" id="1o9qxtfaNHP" role="2VODD2">
+        <node concept="3clFbF" id="1o9qxtfaOok" role="3cqZAp">
+          <node concept="37vLTI" id="1o9qxtfaPc9" role="3clFbG">
+            <node concept="2OqwBi" id="1o9qxtfaOrh" role="37vLTJ">
+              <node concept="QwW4i" id="1o9qxtfaOoi" role="2Oq$k0">
+                <ref role="QwW4h" node="1o9qxtfaNI0" resolve="c" />
+              </node>
+              <node concept="3TrcHB" id="1o9qxtfaOye" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:1o9qxtf9pgp" resolve="conceptId" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="1o9qxtfbqmJ" role="37vLTx">
+              <ref role="37wK5l" to="twe9:1o9qxtfbpgW" resolve="generate" />
+              <ref role="1Pybhc" to="twe9:1o9qxtfbpaa" resolve="ConceptIdUtil" />
+              <node concept="QwW4i" id="1o9qxtfc_6o" role="37wK5m">
+                <ref role="QwW4h" node="1o9qxtfaNI0" resolve="c" />
+              </node>
+              <node concept="2OqwBi" id="1o9qxtfbN2Q" role="37wK5m">
+                <node concept="QwW4i" id="1o9qxtfbqo7" role="2Oq$k0">
+                  <ref role="QwW4h" node="1o9qxtfaNI0" resolve="c" />
+                </node>
+                <node concept="I4A8Y" id="1o9qxtfbNh7" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="1o9qxtfaNIi" role="QzAvj">
+      <node concept="3clFbS" id="1o9qxtfaNIj" role="2VODD2">
+        <node concept="3clFbF" id="1o9qxtfaNNp" role="3cqZAp">
+          <node concept="Xl_RD" id="1o9qxtfaNNo" role="3clFbG">
+            <property role="Xl_RC" value="Generate ID" />
           </node>
         </node>
       </node>

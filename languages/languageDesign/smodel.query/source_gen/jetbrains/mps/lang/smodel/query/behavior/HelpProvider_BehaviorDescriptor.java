@@ -4,6 +4,12 @@ package jetbrains.mps.lang.smodel.query.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface HelpProvider_BehaviorDescriptor {
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept);
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept);

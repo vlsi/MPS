@@ -46,7 +46,8 @@ import java.util.TreeMap;
 import static org.junit.Assert.fail;
 
 public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
-  private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]"));
+  private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]",
+      "TestBehaviorReflective [solution]"));
 
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
   private Project project;

@@ -5,14 +5,20 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class LambdaAbstraction_BehaviorDescriptor extends LambdaExpression_BehaviorDescriptor implements VariableOwner_BehaviorDescriptor {
-  public LambdaAbstraction_BehaviorDescriptor() {
+  public List<SNode> virtual_getVariables_8981808925914841576(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
-    return LambdaAbstraction_Behavior.virtual_getVariables_8981808925914841576(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction";
   }
+
 }

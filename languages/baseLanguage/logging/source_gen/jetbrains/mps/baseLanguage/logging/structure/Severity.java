@@ -14,12 +14,20 @@ public enum Severity {
   info("info", "info"),
   trace("trace", "trace");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  Severity(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<Severity> getConstants() {
     List<Severity> list = ListSequence.fromList(new LinkedList<Severity>());
@@ -57,13 +65,5 @@ public enum Severity {
       return Severity.trace;
     }
     return Severity.getDefault();
-  }
-  private String myValue;
-  Severity(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -5,6 +5,12 @@ package jetbrains.mps.lang.core.behavior;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface ScopeProvider_BehaviorDescriptor {
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child);
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index);

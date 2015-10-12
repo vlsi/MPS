@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.query.behavior.QueryExpression__BehaviorDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class QueryParameter_Constraints extends BaseConstraintsDescriptor {
@@ -37,7 +37,7 @@ public class QueryParameter_Constraints extends BaseConstraintsDescriptor {
     if (neq_2bkn6k_a0a0d(SNodeOperations.getContainingLinkDeclaration(parentNode), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, 0x3bc644217616e548L, "parameter")))) {
       return false;
     }
-    return Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.asSConcept(SNodeOperations.getConcept(SNodeOperations.cast(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression")))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains((SNode) childConcept);
+    return Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(SNodeOperations.cast(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression")))))).contains((SNode) childConcept);
   }
   private static boolean neq_2bkn6k_a0a0d(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

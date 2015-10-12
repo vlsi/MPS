@@ -4,18 +4,25 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StrikeOutStyleSheet_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
-  public StrikeOutStyleSheet_BehaviorDescriptor() {
+  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode __thisNode__) {
+    return null;
   }
-  public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
-    return StrikeOutStyleSheet_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
+  public boolean virtual_useQuery_1223387362946(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_useQuery_1223387362946(SNode thisNode) {
-    return StrikeOutStyleSheet_Behavior.virtual_useQuery_1223387362946(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet";
   }
+
 }

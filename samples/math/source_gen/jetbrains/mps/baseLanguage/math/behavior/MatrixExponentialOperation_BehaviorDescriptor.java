@@ -6,14 +6,20 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class MatrixExponentialOperation_BehaviorDescriptor extends ExponentialOperation_BehaviorDescriptor {
-  public MatrixExponentialOperation_BehaviorDescriptor() {
+  public List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept thisConcept) {
-    return MatrixExponentialOperation_Behavior.virtual_getAllowedSubstituends_3044950653914716992(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation";
   }
+
 }

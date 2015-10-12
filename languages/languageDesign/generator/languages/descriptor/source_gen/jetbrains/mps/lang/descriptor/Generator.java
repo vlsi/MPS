@@ -5,72 +5,64 @@ package jetbrains.mps.lang.descriptor;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Arrays;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Generator extends TemplateModuleBase {
   public static String MODULE_REF = "3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)";
-  private Language sourceLanguage;
-  private final Collection<TemplateModel> models;
-  private Collection<String> usedLanguages;
+  private final Language sourceLanguage;
+  private Collection<TemplateModel> models;
+
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
-    models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl"));
-    usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguageInternal", "jetbrains.mps.lang.descriptor", "jetbrains.mps.lang.project");
   }
   @Override
   public String getAlias() {
     return "jetbrains.mps.lang.descriptor/main";
   }
+
   @Override
   public Collection<TemplateModel> getModels() {
+    if (models == null) {
+      models = Arrays.asList(loadModel("jetbrains.mps.lang.descriptor.generator.template.main.TemplateModelImpl"));
+    }
     return models;
   }
+
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
     return null;
   }
+
   @Override
   public SModuleReference getReference() {
     return PersistenceFacade.getInstance().createModuleReference(MODULE_REF);
   }
+
   @Override
-  public Collection<String> getUsedLanguages() {
-    return usedLanguages;
+  public Collection<SLanguage> getTargetLanguages() {
+    SLanguage[] rv = new SLanguage[5];
+    rv[0] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage");
+    rv[1] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L), "jetbrains.mps.baseLanguageInternal");
+    rv[2] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf4ad079dbc714ffbL, 0x96009328705cf998L), "jetbrains.mps.lang.descriptor");
+    rv[3] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project");
+    rv[4] = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L), "jetbrains.mps.lang.smodel");
+    return Arrays.asList(rv);
   }
+
   @Override
   public LanguageRuntime getSourceLanguage() {
     return sourceLanguage;
   }
+
   @Override
   public Collection<String> getReferencedModules() {
     return null;
-  }
-  private TemplateModel getTemplateModel(String modelName) {
-    ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getReference());
-    Class<TemplateModel> clazz = null;
-    if (module != null && module.willLoad()) {
-      try {
-        clazz = (Class<TemplateModel>) module.getClass(modelName);
-      } catch (ClassNotFoundException e) {
-        throw new IllegalStateException("Class not found for model " + modelName, e);
-      }
-    }
-    if (clazz == null) {
-      throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
-    }
-    try {
-      return clazz.getConstructor(TemplateModule.class).newInstance(this);
-    } catch (RuntimeException ex) {
-      throw ex;
-    } catch (Exception ex) {
-      throw new RuntimeException(ex);
-    }
   }
 }

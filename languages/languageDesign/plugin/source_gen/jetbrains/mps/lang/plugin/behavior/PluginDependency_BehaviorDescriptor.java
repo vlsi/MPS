@@ -6,12 +6,18 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class PluginDependency_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ImplementationPart_BehaviorDescriptor {
-  public PluginDependency_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PluginDependency";
   }
-  public abstract String virtual_getPluginId_5864553086652219131(SNode thisNode);
+
+  public abstract String virtual_getPluginId_5864553086652219131(SNode __thisNode__);
 }

@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.build.behavior.BuildProject_Behavior;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -197,7 +197,7 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_vny568_b0g0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(node, Context.defaultContext());
+        String basePath = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(node, Context.defaultContext());
         return (basePath == null ? "<not available>" : basePath);
       }
       public void setText(String s) {
@@ -694,11 +694,11 @@ public class BuildProject_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_vny568_b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext());
+        String scriptsPath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(node, Context.defaultContext());
         if (scriptsPath != null && scriptsPath.endsWith("/")) {
           scriptsPath = scriptsPath.substring(0, scriptsPath.length() - 1);
         }
-        return (scriptsPath == null ? "<not available>" : scriptsPath + "/" + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node));
+        return (scriptsPath == null ? "<not available>" : scriptsPath + "/" + BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(node));
 
       }
       public void setText(String s) {

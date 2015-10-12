@@ -21,18 +21,17 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
   <dependency className="testAnnotatedType.typesystem.substituteType_SubstituteAnnotation_SubstituteTypeRule" file="substituteType_SubstituteAnnotation_SubstituteTypeRule.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeSubstitution" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="testAnnotatedType.behavior.PresenceCondition_Behavior" />
+    <classNode dependClassName="testAnnotatedType.behavior.PresenceCondition__BehaviorDescriptor" />
+    <classNode dependClassName="testAnnotatedType.behavior.PrimType__BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractSubstituteType_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime" />
   </dependency>

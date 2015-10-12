@@ -7,8 +7,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="bfxj" ref="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" />
@@ -2626,19 +2626,13 @@
         </node>
         <node concept="3clFbJ" id="1OS8OtPz6y9" role="3cqZAp">
           <node concept="3clFbS" id="1OS8OtPz6ya" role="3clFbx">
-            <node concept="3SKdUt" id="tk8S9S$k90" role="3cqZAp">
-              <node concept="3SKdUq" id="tk8S9S$kaU" role="3SKWNk">
-                <property role="3SKdUp" value="FIXME shall use getProjectRepository(), however could not until its getModules() would return meaningful set of modules" />
-              </node>
-            </node>
             <node concept="3clFbF" id="tk8S9S$fIa" role="3cqZAp">
               <node concept="2OqwBi" id="tk8S9S$jNq" role="3clFbG">
                 <node concept="2ShNRf" id="tk8S9S$fI6" role="2Oq$k0">
                   <node concept="1pGfFk" id="tk8S9S$jMv" role="2ShVmc">
                     <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
-                    <node concept="2YIFZM" id="tk8S9S$k5s" role="37wK5m">
-                      <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                      <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                    <node concept="1rXfSq" id="7CX_2aIME$O" role="37wK5m">
+                      <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
                     </node>
                     <node concept="37vLTw" id="tk8S9S$jYe" role="37wK5m">
                       <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />
@@ -2748,9 +2742,8 @@
                 <node concept="2ShNRf" id="tk8S9S$mG2" role="2Oq$k0">
                   <node concept="1pGfFk" id="tk8S9S$mG3" role="2ShVmc">
                     <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
-                    <node concept="2YIFZM" id="tk8S9S$mG4" role="37wK5m">
-                      <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                      <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                    <node concept="1rXfSq" id="7CX_2aIMECy" role="37wK5m">
+                      <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
                     </node>
                     <node concept="37vLTw" id="tk8S9S$mG5" role="37wK5m">
                       <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />

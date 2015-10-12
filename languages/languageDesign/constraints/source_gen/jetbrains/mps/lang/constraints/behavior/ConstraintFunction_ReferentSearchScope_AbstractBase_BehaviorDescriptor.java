@@ -6,18 +6,25 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor() {
+  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    return ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
+  public boolean virtual_usesParameterObjectFor_1213877374432(SNode __thisNode__, SNode parameter) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return ConstraintFunction_ReferentSearchScope_AbstractBase_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase";
   }
+
 }

@@ -5,18 +5,24 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_ImportContent_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor, BuildLayout_FileSet_BehaviorDescriptor {
-  public BuildLayout_ImportContent_BehaviorDescriptor() {
+  public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BuildLayout_ImportContent_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
+  public boolean virtual_isImplicit_1330375798085107777(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
-    return BuildLayout_ImportContent_Behavior.virtual_isImplicit_1330375798085107777(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_ImportContent";
   }
+
 }

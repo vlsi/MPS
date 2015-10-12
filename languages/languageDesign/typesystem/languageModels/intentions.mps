@@ -7,8 +7,8 @@
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -285,14 +285,14 @@
     </language>
   </registry>
   <node concept="2S6QgY" id="hpoNNqY">
-    <property role="TrG5h" value="ConvertInferenceRuleToNonTypesystemRule" />
+    <property role="TrG5h" value="ConvertInferenceRuleToCheckingRule" />
     <property role="3GE5qa" value="definition.rule" />
     <ref role="2ZfgGC" to="tpd4:h5YbPVU" resolve="InferenceRule" />
     <node concept="2S6ZIM" id="hpoNNqZ" role="2ZfVej">
       <node concept="3clFbS" id="hpoNNr0" role="2VODD2">
         <node concept="3cpWs6" id="hpoOuS_" role="3cqZAp">
           <node concept="Xl_RD" id="hpoOvaV" role="3cqZAk">
-            <property role="Xl_RC" value="Convert to Non-Typesystem Rule" />
+            <property role="Xl_RC" value="Convert to Checking Rule" />
           </node>
         </node>
       </node>

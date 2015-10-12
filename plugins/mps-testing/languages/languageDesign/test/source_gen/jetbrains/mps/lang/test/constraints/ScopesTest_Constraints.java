@@ -20,10 +20,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
@@ -54,7 +53,7 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
               @Override
               public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                 List<SNode> nodes = new ArrayList<SNode>();
-                for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")))))) {
+                for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest")))))) {
                   ListSequence.fromList(nodes).addElement(SLinkOperations.getTargetNode(reference));
                 }
                 return nodes;

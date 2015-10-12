@@ -5,14 +5,20 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class UnknownRuleReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IRuleReference_BehaviorDescriptor {
-  public UnknownRuleReference_BehaviorDescriptor() {
+  public String virtual_getName_7691029917083872184(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getName_7691029917083872184(SNode thisNode) {
-    return UnknownRuleReference_Behavior.virtual_getName_7691029917083872184(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.UnknownRuleReference";
   }
+
 }

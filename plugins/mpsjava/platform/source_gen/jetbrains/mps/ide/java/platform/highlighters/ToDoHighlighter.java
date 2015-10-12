@@ -14,7 +14,8 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
@@ -26,12 +27,12 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
     for (SNode remark : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), false, new SAbstractConcept[]{})) {
-      if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, remark, "jetbrains.mps.baseLanguage.structure.RemarkStatement", "call_isTodo_1213877427548", new Object[]{})) {
+      if (((boolean) (Boolean) BHReflection.invoke(remark, SMethodTrimmedId.create("isTodo", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, "jetbrains.mps.baseLanguage.structure.RemarkStatement"), "hEwITPs")))) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value")), this));
       }
     }
     for (SNode textCommentPart : SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), false, new SAbstractConcept[]{})) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, textCommentPart, "virtual_isToDo_7236590470026152831", new Object[]{})) {
+      if (((boolean) (Boolean) BHReflection.invoke(textCommentPart, SMethodTrimmedId.create("isToDo", null, "6hHyb3YSGHZ")))) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, 0x57d533a7af15ed3eL, "text")), this));
       }
     }

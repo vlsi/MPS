@@ -6,7 +6,7 @@ import jetbrains.mps.datatransfer.CopyPreProcessor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.VariableDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPreProcessor {
@@ -15,6 +15,6 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPreProcessor
   }
   public void preProcesNode(SNode copy, SNode original) {
     // todo: remove after MPS 3.0 
-    SNodeOperations.replaceWithAnother(copy, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(copy, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), "virtual_getQualifiedReference_4598334504606213641", new Object[]{}));
+    SNodeOperations.replaceWithAnother(copy, VariableDeclaration__BehaviorDescriptor.getQualifiedReference_id3Zg$dTLuqo9.invoke(SLinkOperations.getTarget(copy, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"))));
   }
 }

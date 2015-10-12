@@ -5,24 +5,31 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class Regexp_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public Regexp_BehaviorDescriptor() {
+  public String virtual_getString_1222432436326(SNode __thisNode__, List<SNode> vars) {
+    return null;
   }
-  public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return Regexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
+  public boolean virtual_isValid_4759120547781297301(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    return Regexp_Behavior.virtual_isValid_4759120547781297301(thisNode);
+  public boolean virtual_needParentheses_1353467374623880338(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
-    return Regexp_Behavior.virtual_needParentheses_1353467374623880338(thisNode);
+  public String virtual_toString_1213877429451(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_toString_1213877429451(SNode thisNode) {
-    return Regexp_Behavior.virtual_toString_1213877429451(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.Regexp";
   }
+
 }

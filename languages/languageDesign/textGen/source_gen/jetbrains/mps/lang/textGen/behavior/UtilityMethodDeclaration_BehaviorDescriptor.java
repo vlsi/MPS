@@ -4,11 +4,17 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class UtilityMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor {
-  public UtilityMethodDeclaration_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration";
   }
+
 }

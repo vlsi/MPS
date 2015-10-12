@@ -10,12 +10,20 @@ public enum SelectPosition {
   before("before", "before"),
   after("after", "after");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  SelectPosition(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<SelectPosition> getConstants() {
     List<SelectPosition> list = ListSequence.fromList(new LinkedList<SelectPosition>());
@@ -37,13 +45,5 @@ public enum SelectPosition {
       return SelectPosition.after;
     }
     return SelectPosition.getDefault();
-  }
-  private String myValue;
-  SelectPosition(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

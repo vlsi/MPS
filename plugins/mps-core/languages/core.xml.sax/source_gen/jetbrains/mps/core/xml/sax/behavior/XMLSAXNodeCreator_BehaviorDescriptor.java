@@ -7,24 +7,31 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class XMLSAXNodeCreator_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public XMLSAXNodeCreator_BehaviorDescriptor() {
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return XMLSAXNodeCreator_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
   }
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return XMLSAXNodeCreator_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return XMLSAXNodeCreator_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
+  public boolean virtual_showName_1262430001741498082(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
-    return XMLSAXNodeCreator_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator";
   }
+
 }

@@ -22,11 +22,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.scopes.MethodsScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.constraints.ConstraintsUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -94,10 +95,10 @@ public class SuperInterfaceMethodCall_Constraints extends BaseConstraintsDescrip
               if (superClassifier == null) {
                 return new EmptyScope();
               }
-              SNode classifierType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), superClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
+              SNode classifierType = Classifier__BehaviorDescriptor.getThisType_id2RtWPFZ12w7.invoke(superClassifier);
               MethodsScope scope = new MethodsScope(classifierType, Sequence.fromIterable(Members.visibleInstanceMethods(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isAbstract_1232982539764", new Object[]{}));
+                  return !((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(it));
                 }
               }));
               return scope;

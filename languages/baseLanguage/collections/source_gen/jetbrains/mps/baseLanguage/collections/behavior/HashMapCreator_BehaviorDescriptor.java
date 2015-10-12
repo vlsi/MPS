@@ -4,15 +4,22 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class HashMapCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
-  public HashMapCreator_BehaviorDescriptor() {
+  public boolean virtual_hasInitSize_1262430001741497996(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
-    return HashMapCreator_Behavior.virtual_hasInitSize_1262430001741497996(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
   }
+
 }

@@ -5,19 +5,22 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class IdeaInitializerDescriptor_Behavior {
-  public static void init(SNode thisNode) {
+  public static String call_getGeneratedFileName_4015626213814045644(SNode __thisNode__) {
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratedFileName_id3uUnGg98wJc(__thisNode__);
   }
-  public static String call_getGeneratedFileName_4015626213814045644(SNode thisNode) {
-    return IdeaInitializerDescriptor_Behavior.call_getGeneratedFileShortName_4015626213814118717(thisNode) + "." + IdeaInitializerDescriptor_Behavior.call_getGeneratesFileExtension_4015626213814118724(thisNode);
+  public static String call_getGeneratedFileShortName_4015626213814118717(SNode __thisNode__) {
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratedFileShortName_id3uUnGg98M$X(__thisNode__);
   }
-  public static String call_getGeneratedFileShortName_4015626213814118717(SNode thisNode) {
-    return "plugin";
+  public static String call_getGeneratesFileExtension_4015626213814118724(SNode __thisNode__) {
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratesFileExtension_id3uUnGg98M_4(__thisNode__);
   }
-  public static String call_getGeneratesFileExtension_4015626213814118724(SNode thisNode) {
-    return "xml";
-  }
-  public static String call_getLibrariesResourceName_7967031338862798704(SAbstractConcept thisConcept) {
-    return "libraries";
+  public static String call_getLibrariesResourceName_7967031338862798704(SAbstractConcept __thisConcept__) {
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getLibrariesResourceName_id6Ug_cEzkAtK(__thisConcept__);
   }
 }

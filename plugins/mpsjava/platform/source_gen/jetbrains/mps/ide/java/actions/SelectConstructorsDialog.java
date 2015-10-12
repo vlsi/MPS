@@ -4,21 +4,21 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.ide.util.GroupedNodesChooser;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class SelectConstructorsDialog extends GroupedNodesChooser {
-  public SelectConstructorsDialog(SNodeReference[] ctors, Project project) {
-    super(ctors, false, true, ProjectHelper.toIdeaProject(project));
+  public SelectConstructorsDialog(SNodeReference[] ctors, MPSProject mpsProject) {
+    super(ctors, false, true, mpsProject.getProject());
   }
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), "virtual_getFqName_1213877404258", new Object[]{});
+      return ((String) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     }
     return super.getText(node);
   }

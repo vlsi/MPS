@@ -7,14 +7,20 @@ import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_BehaviorDes
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ExtractStatementListExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ILocalVariableElementList_BehaviorDescriptor {
-  public ExtractStatementListExpression_BehaviorDescriptor() {
+  public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return ExtractStatementListExpression_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression";
   }
+
 }

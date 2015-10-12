@@ -5,6 +5,12 @@ package jetbrains.mps.lang.traceable.behavior;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface TraceableConcept_BehaviorDescriptor {
   @Nullable
   public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode);

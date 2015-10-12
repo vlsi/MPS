@@ -5,18 +5,25 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TrivialNodeId_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements NodeIdentity_BehaviorDescriptor {
-  public TrivialNodeId_BehaviorDescriptor() {
+  public SNode virtual_instantiate_9032177546941558391(SNode __thisNode__, SModel model) {
+    return null;
   }
-  public SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model) {
-    return TrivialNodeId_Behavior.virtual_instantiate_9032177546941558391(thisNode, model);
+  public boolean virtual_match_1662555581307437492(SNode __thisNode__, SNode n) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_match_1662555581307437492(SNode thisNode, SNode n) {
-    return TrivialNodeId_Behavior.virtual_match_1662555581307437492(thisNode, n);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TrivialNodeId";
   }
+
 }

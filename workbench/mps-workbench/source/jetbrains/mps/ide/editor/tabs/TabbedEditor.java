@@ -44,7 +44,6 @@ import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -73,7 +72,6 @@ public class TabbedEditor extends BaseNodeEditor {
   private final MyNameListener myNameListener = new MyNameListener();
   private final SNodeReference myBaseNode;
   private final Set<RelationDescriptor> myPossibleTabs;
-  private final Project myProject;
   private final ShadowAction myNextTabAction, myPrevTabAction;
   private final AnAction myAddAction;
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
@@ -107,7 +105,6 @@ public class TabbedEditor extends BaseNodeEditor {
     super(mpsProject);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
-    myProject = mpsProject;
 
     myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
 
@@ -142,7 +139,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myTabsPanel.add(btn, BorderLayout.WEST);
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    myRepoChangeListener.subscribeTo(MPSModuleRepository.getInstance()); // FIXME ProjectRepository.getModules still gives empty set
+    myRepoChangeListener.subscribeTo(myProject.getRepository());
     myFileStatusListener.attach(myProject);
   }
 
@@ -193,7 +190,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myRepoChangeListener.unsubscribeFrom(MPSModuleRepository.getInstance());
+        myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
         myNameListener.detach();
       }
     });

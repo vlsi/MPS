@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.build.behavior.BuildProject_Behavior;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -61,11 +61,11 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = SNodeOperations.cast(myRunConfiguration.getNode().getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-        String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(node, Context.defaultContext());
+        String scriptsPath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(node, Context.defaultContext());
         if (scriptsPath != null) {
           file.value = FileSystem.getInstance().getFileByPath(scriptsPath);
           // todo 
-          file.value = file.value.getDescendant(BuildProject_Behavior.call_getOutputFileName_4915877860351551360(node));
+          file.value = file.value.getDescendant(BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(node));
           // todo select task 
           mainTaskName.value = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNode("r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)", "7306485738221408315"), MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da114724ce92L, 0x6565da114724ce94L, "parts"))).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {

@@ -84,18 +84,30 @@ public final class TextGenBuffer {
     selectPart(DEFAULT);
   }
 
+  /**
+   * INTENDED FOR TRANSITION PERIOD ONLY, DO NOT USE
+   */
+  TextGenBuffer(boolean fakePositionSupport, TextBuffer buffer) {
+    myFakePositionSupport = fakePositionSupport;
+    myChunkFactory = null; // it's unexpected for clients of this TextGenBuffer (merely user object holder) to ask #getBufferText(int)
+    myBuffer = buffer;
+  }
+
   /*package*/ BufferSnapshot getTextSnapshot() {
     if (getTopBufferLength() > 0) {
       // FIXME newlines to separate top from bottom done right, instead of this hack
       selectPart(TOP);
-      // mimin two newlines added in getText()
+      // mimic two newlines added in getText()
       myBuffer.area().newLine().newLine();
       selectPart(DEFAULT);
     }
     return myBuffer.snapshot(myBuffer.newLayout());
   }
 
-  // though this is implementation-specific method, technically we need it public to access from the package with new API
+
+  /*
+   * FIXME shall be package-local, but there's no other way to access TextBuffer (or TextGenContext) in BL.ImportsContext
+   */
   public TextBuffer getRealBuffer() {
     return myBuffer;
   }

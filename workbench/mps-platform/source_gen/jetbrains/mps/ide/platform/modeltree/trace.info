@@ -14,138 +14,138 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
   <root nodeRef="r:e180cc3d-e9f2-4c0c-91b4-6730d80d9b23(jetbrains.mps.ide.platform.modeltree)/4288082098349207686">
     <file name="ModelTreeBuilder.java">
-      <node id="4288082098349207687" at="24,0,25,0" concept="2" trace="myTree" />
-      <node id="4288082098349207909" at="25,39,26,18" concept="1" />
-      <node id="4288082098349207913" at="26,18,27,42" concept="1" />
-      <node id="4288082098349207927" at="30,54,31,61" concept="7" />
-      <node id="4288082098349207937" at="32,44,33,62" concept="7" />
-      <node id="4288082098349207946" at="34,44,35,35" concept="1" />
-      <node id="4288082098349207949" at="35,35,36,42" concept="1" />
-      <node id="4288082098349207968" at="43,0,44,0" concept="6" trace="initTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
-      <node id="4288082098349207980" at="44,74,45,79" concept="1" />
-      <node id="4288082098349207696" at="47,71,48,64" concept="7" />
-      <node id="4288082098349207702" at="48,64,49,86" concept="7" />
-      <node id="4288082098349207710" at="50,86,51,84" concept="1" />
-      <node id="4288082098349207725" at="52,5,53,98" concept="7" />
-      <node id="4288082098349207734" at="53,98,54,31" concept="1" />
-      <node id="4288082098349207740" at="54,31,55,16" concept="8" />
-      <node id="4288082098349207748" at="57,63,58,107" concept="8" />
-      <node id="4288082098349207766" at="60,71,61,89" concept="8" />
-      <node id="4288082098349207784" at="65,40,66,293" concept="8" />
-      <node id="4288082098349207809" at="70,129,71,50" concept="7" />
-      <node id="4288082098349207817" at="73,54,74,81" concept="7" />
-      <node id="4288082098349207825" at="75,38,76,54" concept="1" />
-      <node id="4288082098349207830" at="76,54,77,46" concept="1" />
-      <node id="4288082098349207838" at="78,9,79,41" concept="1" />
-      <node id="4288082098349207851" at="81,5,82,38" concept="1" />
-      <node id="4288082098349207862" at="85,89,86,48" concept="7" />
-      <node id="4288082098349207870" at="87,47,88,61" concept="7" />
-      <node id="4288082098349207879" at="89,51,90,26" concept="8" />
-      <node id="4288082098349207898" at="93,5,94,16" concept="8" />
-      <node id="4288082098349207962" at="40,0,43,0" concept="6" trace="treeCollapsed#(Ljavax/swing/event/TreeExpansionEvent;)V" />
-      <node id="4288082098349207974" at="44,0,47,0" concept="6" trace="notifyNodeStructureChanged#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
-      <node id="4288082098349207708" at="49,86,52,5" concept="5" />
-      <node id="4288082098349207742" at="57,0,60,0" concept="9" trace="createSNodeTreeNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-      <node id="4288082098349207760" at="60,0,63,0" concept="9" trace="createFolderTreeNode#(Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-      <node id="4288082098349207782" at="65,0,68,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4288082098349207877" at="88,61,91,9" concept="5" />
-      <node id="4288082098349207905" at="25,0,29,0" concept="0" trace="ModelTreeBuilder#(Ljavax/swing/JTree;)V" />
-      <node id="4288082098349207944" at="33,62,37,7" concept="5" />
-      <node id="4288082098349207823" at="74,81,78,9" concept="5" />
-      <node id="4288082098349207778" at="63,71,68,13" concept="8" />
-      <node id="4288082098349207868" at="86,48,92,7" concept="5" />
-      <node id="4288082098349207935" at="31,61,38,5" concept="5" />
-      <node id="4288082098349207772" at="63,0,70,0" concept="9" trace="sortChildNodes#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-      <node id="4288082098349207815" at="72,66,80,7" concept="4" />
-      <node id="4288082098349207860" at="84,99,93,5" concept="3" />
-      <node id="4288082098349207690" at="47,0,57,0" concept="9" trace="createSModelTreeNode#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-      <node id="4288082098349207813" at="71,50,81,5" concept="5" />
-      <node id="4288082098349207921" at="29,0,40,0" concept="6" trace="treeExpanded#(Ljavax/swing/event/TreeExpansionEvent;)V" />
-      <node id="4288082098349207856" at="84,0,96,0" concept="9" trace="findChildNodeByText#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
-      <node id="4288082098349207799" at="70,0,84,0" concept="9" trace="insertChildSNodeTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)V" />
-      <scope id="4288082098349207967" at="41,55,41,55" />
-      <scope id="4288082098349207968" at="43,0,44,0">
+      <node id="4288082098349207687" at="25,0,26,0" concept="2" trace="myTree" />
+      <node id="4288082098349207909" at="26,39,27,18" concept="1" />
+      <node id="4288082098349207913" at="27,18,28,42" concept="1" />
+      <node id="4288082098349207927" at="31,54,32,61" concept="7" />
+      <node id="4288082098349207937" at="33,44,34,62" concept="7" />
+      <node id="4288082098349207946" at="35,44,36,35" concept="1" />
+      <node id="4288082098349207949" at="36,35,37,42" concept="1" />
+      <node id="4288082098349207968" at="44,0,45,0" concept="6" trace="initTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
+      <node id="4288082098349207980" at="45,74,46,79" concept="1" />
+      <node id="4288082098349207696" at="48,71,49,64" concept="7" />
+      <node id="4288082098349207702" at="49,64,50,86" concept="7" />
+      <node id="4288082098349207710" at="51,86,52,84" concept="1" />
+      <node id="4288082098349207725" at="53,5,54,98" concept="7" />
+      <node id="4288082098349207734" at="54,98,55,31" concept="1" />
+      <node id="4288082098349207740" at="55,31,56,16" concept="8" />
+      <node id="4288082098349207748" at="58,63,59,107" concept="8" />
+      <node id="4288082098349207766" at="61,71,62,89" concept="8" />
+      <node id="4288082098349207784" at="66,40,67,281" concept="8" />
+      <node id="4288082098349207809" at="71,129,72,50" concept="7" />
+      <node id="4288082098349207817" at="74,54,75,81" concept="7" />
+      <node id="4288082098349207825" at="76,38,77,54" concept="1" />
+      <node id="4288082098349207830" at="77,54,78,46" concept="1" />
+      <node id="4288082098349207838" at="79,9,80,41" concept="1" />
+      <node id="4288082098349207851" at="82,5,83,38" concept="1" />
+      <node id="4288082098349207862" at="86,89,87,48" concept="7" />
+      <node id="4288082098349207870" at="88,47,89,61" concept="7" />
+      <node id="4288082098349207879" at="90,51,91,26" concept="8" />
+      <node id="4288082098349207898" at="94,5,95,16" concept="8" />
+      <node id="4288082098349207962" at="41,0,44,0" concept="6" trace="treeCollapsed#(Ljavax/swing/event/TreeExpansionEvent;)V" />
+      <node id="4288082098349207974" at="45,0,48,0" concept="6" trace="notifyNodeStructureChanged#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;)V" />
+      <node id="4288082098349207708" at="50,86,53,5" concept="5" />
+      <node id="4288082098349207742" at="58,0,61,0" concept="9" trace="createSNodeTreeNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+      <node id="4288082098349207760" at="61,0,64,0" concept="9" trace="createFolderTreeNode#(Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+      <node id="4288082098349207782" at="66,0,69,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4288082098349207877" at="89,61,92,9" concept="5" />
+      <node id="4288082098349207905" at="26,0,30,0" concept="0" trace="ModelTreeBuilder#(Ljavax/swing/JTree;)V" />
+      <node id="4288082098349207944" at="34,62,38,7" concept="5" />
+      <node id="4288082098349207823" at="75,81,79,9" concept="5" />
+      <node id="4288082098349207778" at="64,71,69,13" concept="8" />
+      <node id="4288082098349207868" at="87,48,93,7" concept="5" />
+      <node id="4288082098349207935" at="32,61,39,5" concept="5" />
+      <node id="4288082098349207772" at="64,0,71,0" concept="9" trace="sortChildNodes#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <node id="4288082098349207815" at="73,66,81,7" concept="4" />
+      <node id="4288082098349207860" at="85,99,94,5" concept="3" />
+      <node id="4288082098349207690" at="48,0,58,0" concept="9" trace="createSModelTreeNode#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+      <node id="4288082098349207813" at="72,50,82,5" concept="5" />
+      <node id="4288082098349207921" at="30,0,41,0" concept="6" trace="treeExpanded#(Ljavax/swing/event/TreeExpansionEvent;)V" />
+      <node id="4288082098349207856" at="85,0,97,0" concept="9" trace="findChildNodeByText#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;" />
+      <node id="4288082098349207799" at="71,0,85,0" concept="9" trace="insertChildSNodeTreeNode#(Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljetbrains/mps/ide/platform/modeltree/ModelTreeNode;Ljava/lang/String;)V" />
+      <scope id="4288082098349207967" at="42,55,42,55" />
+      <scope id="4288082098349207968" at="44,0,45,0">
         <var name="node" id="4288082098349207969" />
       </scope>
-      <scope id="4288082098349207979" at="44,74,45,79" />
-      <scope id="4288082098349207709" at="50,86,51,84" />
-      <scope id="4288082098349207747" at="57,63,58,107" />
-      <scope id="4288082098349207765" at="60,71,61,89" />
-      <scope id="4288082098349207783" at="65,40,66,293" />
-      <scope id="4288082098349207878" at="89,51,90,26" />
-      <scope id="4288082098349207908" at="25,39,27,42" />
-      <scope id="4288082098349207945" at="34,44,36,42" />
-      <scope id="4288082098349207824" at="75,38,77,46" />
-      <scope id="4288082098349207962" at="40,0,43,0">
+      <scope id="4288082098349207979" at="45,74,46,79" />
+      <scope id="4288082098349207709" at="51,86,52,84" />
+      <scope id="4288082098349207747" at="58,63,59,107" />
+      <scope id="4288082098349207765" at="61,71,62,89" />
+      <scope id="4288082098349207783" at="66,40,67,281" />
+      <scope id="4288082098349207878" at="90,51,91,26" />
+      <scope id="4288082098349207908" at="26,39,28,42" />
+      <scope id="4288082098349207945" at="35,44,37,42" />
+      <scope id="4288082098349207824" at="76,38,78,46" />
+      <scope id="4288082098349207962" at="41,0,44,0">
         <var name="event" id="4288082098349207965" />
       </scope>
-      <scope id="4288082098349207974" at="44,0,47,0">
+      <scope id="4288082098349207974" at="45,0,48,0">
         <var name="modelTreeNode" id="4288082098349207975" />
       </scope>
-      <scope id="4288082098349207742" at="57,0,60,0">
+      <scope id="4288082098349207742" at="58,0,61,0">
         <var name="node" id="4288082098349207743" />
       </scope>
-      <scope id="4288082098349207760" at="60,0,63,0">
+      <scope id="4288082098349207760" at="61,0,64,0">
         <var name="folderName" id="4288082098349207761" />
       </scope>
-      <scope id="4288082098349207782" at="65,0,68,0">
+      <scope id="4288082098349207782" at="66,0,69,0">
         <var name="node" id="4288082098349207782" />
       </scope>
-      <scope id="4288082098349207905" at="25,0,29,0">
+      <scope id="4288082098349207905" at="26,0,30,0">
         <var name="tree" id="4288082098349207918" />
       </scope>
-      <scope id="4288082098349207869" at="87,47,91,9">
+      <scope id="4288082098349207869" at="88,47,92,9">
         <var name="treeNode" id="4288082098349207871" />
       </scope>
-      <scope id="4288082098349207936" at="32,44,37,7">
+      <scope id="4288082098349207936" at="33,44,38,7">
         <var name="expandedNode" id="4288082098349207938" />
       </scope>
-      <scope id="4288082098349207777" at="63,71,68,13" />
-      <scope id="4288082098349207816" at="73,54,79,41">
+      <scope id="4288082098349207777" at="64,71,69,13" />
+      <scope id="4288082098349207816" at="74,54,80,41">
         <var name="packageTreeNode" id="4288082098349207818" />
       </scope>
-      <scope id="4288082098349207772" at="63,0,70,0">
+      <scope id="4288082098349207772" at="64,0,71,0">
         <var name="nodes" id="4288082098349207773" />
       </scope>
-      <scope id="4288082098349207861" at="85,89,92,7">
+      <scope id="4288082098349207861" at="86,89,93,7">
         <var name="nextChild" id="4288082098349207863" />
       </scope>
-      <scope id="4288082098349207926" at="30,54,38,5">
+      <scope id="4288082098349207926" at="31,54,39,5">
         <var name="lastNode" id="4288082098349207928" />
       </scope>
-      <scope id="4288082098349207695" at="47,71,55,16">
+      <scope id="4288082098349207695" at="48,71,56,16">
         <var name="label" id="4288082098349207703" />
         <var name="node" id="4288082098349207726" />
         <var name="sModelReference" id="4288082098349207697" />
       </scope>
-      <scope id="4288082098349207814" at="72,66,80,7" />
-      <scope id="4288082098349207815" at="72,66,80,7">
+      <scope id="4288082098349207814" at="73,66,81,7" />
+      <scope id="4288082098349207815" at="73,66,81,7">
         <var name="sub" id="4288082098349207842" />
       </scope>
-      <scope id="4288082098349207860" at="84,99,93,5">
+      <scope id="4288082098349207860" at="85,99,94,5">
         <var name="children" id="4288082098349207890" />
       </scope>
-      <scope id="4288082098349207690" at="47,0,57,0">
+      <scope id="4288082098349207690" at="48,0,58,0">
         <var name="descriptor" id="4288082098349207691" />
       </scope>
-      <scope id="4288082098349207859" at="84,99,94,16" />
-      <scope id="4288082098349207921" at="29,0,40,0">
+      <scope id="4288082098349207859" at="85,99,95,16" />
+      <scope id="4288082098349207921" at="30,0,41,0">
         <var name="event" id="4288082098349207924" />
       </scope>
-      <scope id="4288082098349207808" at="70,129,82,38">
+      <scope id="4288082098349207808" at="71,129,83,38">
         <var name="parentTreeNode" id="4288082098349207810" />
       </scope>
-      <scope id="4288082098349207856" at="84,0,96,0">
+      <scope id="4288082098349207856" at="85,0,97,0">
         <var name="childName" id="4288082098349207902" />
         <var name="parentTreeNode" id="4288082098349207900" />
       </scope>
-      <scope id="4288082098349207799" at="70,0,84,0">
+      <scope id="4288082098349207799" at="71,0,85,0">
         <var name="sModelTreeNode" id="4288082098349207800" />
         <var name="sNodeTreeNode" id="4288082098349207802" />
         <var name="virtualPackage" id="4288082098349207804" />
       </scope>
-      <unit id="4288082098349207782" at="64,49,68,5" name="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder$1" />
-      <unit id="4288082098349207686" at="23,0,97,0" name="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" />
+      <unit id="4288082098349207782" at="65,49,69,5" name="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder$1" />
+      <unit id="4288082098349207686" at="24,0,98,0" name="jetbrains.mps.ide.platform.modeltree.ModelTreeBuilder" />
     </file>
   </root>
   <root nodeRef="r:e180cc3d-e9f2-4c0c-91b4-6730d80d9b23(jetbrains.mps.ide.platform.modeltree)/4288082098349207990">

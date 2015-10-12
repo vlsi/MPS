@@ -9,7 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.generator.TransientModelsModule;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,25 +20,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public final class CrossModelUtil {
   public SNode newEntry(ExportLabelContext labelContext, SNode exportLabel, SModel exports, SModel outputModel) {
     SNode rv = SModelOperations.createNewNode(exports, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry")));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity")), "call_create_9032177546942789358", new Object[]{exports, outputModel}));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getInput()}));
-    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode"), BehaviorReflection.invokeNonVirtualStatic((Class<SNode>) ((Class) Object.class), SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), "call_create_9032177546941796951", new Object[]{exports, labelContext.getOutput()}));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9c8b6d3L, "jetbrains.mps.lang.generator.structure.ModelIdentity"), "7PoJpZpMbrI"), exports, outputModel)));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), exports, labelContext.getInput())));
+    SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), exports, labelContext.getOutput())));
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b6302cL, "dataKeeper"), labelContext.getKeeper());
     SLinkOperations.setTarget(rv, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label"), exportLabel);
     return rv;
   }
   public SModel newProxyModel(TransientModelsModule module, SNode exportEntry) {
-    return BehaviorReflection.invokeVirtual((Class<SModel>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel")), "virtual_create_9032177546944490023", new Object[]{module});
+    return ((SModel) (SModel) BHReflection.invoke(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9c8ecccL, "outputModel")), SMethodTrimmedId.create("create", null, "7PoJpZpSECB"), module));
   }
   public SNode newProxyNode(SNode exportEntry, SModel proxyModel) {
     // we record actual concept of output node, and use it instead of ExportLabel.outputKind, which 
     // will be still there for label validation/code completion purposes 
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode")), "virtual_instantiate_9032177546941558391", new Object[]{proxyModel});
+    return ((SNode) (SNode) BHReflection.invoke(SLinkOperations.getTarget(exportEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63029L, "outputNode")), SMethodTrimmedId.create("instantiate", null, "7PoJpZpHuTR"), proxyModel));
   }
   public List<SNode> find(SModel exports, final String exportLabelName, final SNode inputNode) {
     return ListSequence.fromList(SModelOperations.nodes(exports, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, "jetbrains.mps.lang.generator.structure.ExportEntry"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode")), "virtual_match_1662555581307437492", new Object[]{inputNode});
+        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b71703L, "label")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ((boolean) (Boolean) BHReflection.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b3d34dL, 0x7d58bd9fd9b63027L, "inputNode")), SMethodTrimmedId.create("match", null, "1si_nSrb46O"), inputNode));
       }
     }).toListSequence();
   }

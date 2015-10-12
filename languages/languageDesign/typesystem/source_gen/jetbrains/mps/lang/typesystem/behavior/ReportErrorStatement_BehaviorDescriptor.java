@@ -5,17 +5,22 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReportErrorStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageStatement_BehaviorDescriptor {
-  public ReportErrorStatement_BehaviorDescriptor() {
+  public void virtual_attachNewMessageAnnotation_8489045168661849665(SNode __thisNode__) {
   }
-  public void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
-    ReportErrorStatement_Behavior.virtual_attachNewMessageAnnotation_8489045168661849665(thisNode);
+  public String virtual_getName_1597542831856389237(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getName_1597542831856389237(SNode thisNode) {
-    return ReportErrorStatement_Behavior.virtual_getName_1597542831856389237(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
   }
+
 }

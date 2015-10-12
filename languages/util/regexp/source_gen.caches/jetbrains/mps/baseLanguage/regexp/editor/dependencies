@@ -5,7 +5,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions" />
@@ -225,7 +225,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions" />
@@ -252,11 +252,10 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_Editor" file="InlineRegexpExpression_Editor.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS" />
@@ -283,7 +282,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -683,7 +681,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions" />
@@ -752,7 +750,7 @@
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_Editor" file="OrRegexp_Editor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Left_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.BinaryRegexp_Right_Actions" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
@@ -956,12 +954,11 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.RegexpDeclaration_Editor" file="RegexpDeclaration_Editor.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
@@ -985,7 +982,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1073,12 +1069,11 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_Editor" file="ReplaceRegexpOperation_Editor.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.Regexp__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM" />
@@ -1112,7 +1107,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1283,7 +1277,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpSequenceByEnter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.editor.UnaryRegexp_Regexp_actions" />

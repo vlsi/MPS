@@ -6,17 +6,23 @@ import jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_BehaviorDescriptor
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor extends BuildLayout_CopyProcessor_BehaviorDescriptor {
-  public BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor() {
+  public Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode __thisNode__) {
+    return null;
   }
-  public Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode thisNode) {
-    return BuildLayout_ToBinaryCopyProcessor_Behavior.virtual_getTaskArguments_7918752904805535914(thisNode);
+  public String virtual_getTaskName_1330375798060763184(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getTaskName_1330375798060763184(SNode thisNode) {
-    return BuildLayout_ToBinaryCopyProcessor_Behavior.virtual_getTaskName_1330375798060763184(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor";
   }
+
 }

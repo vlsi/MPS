@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Collection;
 import java.util.Collections;
 
-public class MigrationRefactoringAdapter extends BaseIntentionFactory {
+public class MigrationRefactoringAdapter extends OldBaseIntentionFactory {
   private final AbstractMigrationRefactoring myRefactoring;
   private final SNodeReference myIntentionNodeReference;
   private final String myPresentation;

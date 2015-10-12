@@ -6,6 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface BuildLayout_PathElement_BehaviorDescriptor {
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts);
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb);

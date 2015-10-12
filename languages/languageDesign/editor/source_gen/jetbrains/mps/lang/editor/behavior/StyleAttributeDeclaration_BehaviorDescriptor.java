@@ -5,22 +5,27 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StyleAttributeDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetItem_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
-  public StyleAttributeDeclaration_BehaviorDescriptor() {
+  public SNode virtual_getDefaultValue_7677730757102472473(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDefaultValue_7677730757102472473(SNode thisNode) {
-    return StyleAttributeDeclaration_Behavior.virtual_getDefaultValue_7677730757102472473(thisNode);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public SNode virtual_getType_7677730757102475082(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getType_7677730757102475082(SNode thisNode) {
-    return StyleAttributeDeclaration_Behavior.virtual_getType_7677730757102475082(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration";
   }
+
 }

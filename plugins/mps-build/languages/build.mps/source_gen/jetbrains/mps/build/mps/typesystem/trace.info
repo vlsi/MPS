@@ -239,7 +239,7 @@
       <node id="7444640161798946838" at="38,22,39,0" concept="10" />
       <node id="7444640161798949733" at="39,0,40,66" concept="7" />
       <node id="7444640161798949456" at="40,66,41,0" concept="10" />
-      <node id="2531699772406302696" at="41,0,42,123" concept="7" />
+      <node id="2531699772406302696" at="41,0,42,130" concept="7" />
       <node id="2531699772406302731" at="44,7,45,60" concept="7" />
       <node id="2531699772406302731" at="45,60,46,252" concept="7" />
       <node id="2531699772406302745" at="47,7,48,13" concept="8" />
@@ -268,7 +268,7 @@
       <node id="2531699772406302326" at="87,0,90,0" concept="6" trace="overrides#()Z" />
       <node id="2531699772406302731" at="43,59,47,7" concept="0" />
       <node id="2531699772406302922" at="72,233,76,11" concept="0" />
-      <node id="3189788309732166659" at="42,123,49,5" concept="5" />
+      <node id="3189788309732166659" at="42,130,49,5" concept="5" />
       <node id="2531699772406302895" at="59,0,66,0" concept="6" trace="report#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Exception;)V" />
       <node id="2531699772406302922" at="69,34,77,9" concept="0" />
       <node id="7444640161799126891" at="57,57,66,8" concept="7" />
@@ -392,7 +392,7 @@
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/4278635856200804509">
     <file name="check_BuildMps_ModuleJarRuntime_NonTypesystemRule.java">
-      <node id="1258644073389052168" at="21,121,22,303" concept="7" />
+      <node id="1258644073389052168" at="21,121,22,266" concept="7" />
       <node id="1258644073389052213" at="24,7,25,60" concept="7" />
       <node id="1258644073389052213" at="25,60,26,247" concept="7" />
       <node id="4278635856200804509" at="30,50,31,166" concept="8" />
@@ -404,7 +404,7 @@
       <node id="4278635856200804509" at="33,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4278635856200804509" at="36,0,39,0" concept="6" trace="overrides#()Z" />
       <node id="1258644073389052213" at="23,76,27,7" concept="0" />
-      <node id="1258644073389052178" at="22,303,28,5" concept="5" />
+      <node id="1258644073389052178" at="22,266,28,5" concept="5" />
       <node id="4278635856200804509" at="21,0,30,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4278635856200804509" at="19,62,19,62" />
       <scope id="4278635856200804509" at="30,50,31,166" />
@@ -434,7 +434,7 @@
   </root>
   <root nodeRef="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)/4278635856200826398">
     <file name="check_BuildMps_ModuleDependencyJar_NonTypesystemRule.java">
-      <node id="4278635856200826401" at="21,121,22,303" concept="7" />
+      <node id="4278635856200826401" at="21,121,22,266" concept="7" />
       <node id="4278635856200826411" at="24,7,25,60" concept="7" />
       <node id="4278635856200826411" at="25,60,26,247" concept="7" />
       <node id="4278635856200826398" at="30,50,31,169" concept="8" />
@@ -446,7 +446,7 @@
       <node id="4278635856200826398" at="33,0,36,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4278635856200826398" at="36,0,39,0" concept="6" trace="overrides#()Z" />
       <node id="4278635856200826411" at="23,76,27,7" concept="0" />
-      <node id="4278635856200826409" at="22,303,28,5" concept="5" />
+      <node id="4278635856200826409" at="22,266,28,5" concept="5" />
       <node id="4278635856200826398" at="21,0,30,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4278635856200826398" at="19,65,19,65" />
       <scope id="4278635856200826398" at="30,50,31,169" />

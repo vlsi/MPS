@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,13 @@
 package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.typesystem.runtime.*;
+import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
@@ -30,9 +31,11 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -196,16 +199,12 @@ public class SubTypingManagerNew extends SubtypingManager {
     return new HashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(typesList, null));
   }
 
-  public static Iterable<Language> collectLanguagesRecursively(SNode... type) {
-    Collection<Language> langs = new ArrayList<Language>();
-
-    for (SNode node : type) {
-      for(SNode desc: SNodeUtil.getDescendants(node, null, true)) {
-        langs.add(jetbrains.mps.util.SNodeOperations.getLanguage(desc));
-      }
+  public static Collection<SLanguage> collectLanguagesRecursively(SNode... type) {
+    ModelDependencyScanner scan = new ModelDependencyScanner().crossModelReferences(false);
+    for (SNode t : type) {
+      scan.walk(SNodeUtil.getDescendants(t));
     }
-
-    return langs;
+    return scan.getUsedLanguages();
   }
 
 

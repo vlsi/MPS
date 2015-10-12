@@ -139,6 +139,8 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
@@ -187,6 +189,8 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />

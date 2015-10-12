@@ -19,9 +19,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 
@@ -56,7 +56,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
           }
         }
         if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null)) {
-          if (BehaviorReflection.invokeNonVirtual(Boolean.TYPE, concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_isSubconceptOf_8134325418312549386", new Object[]{SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468")})) {
+          if (((boolean) (Boolean) BHReflection.invoke(concept, SMethodTrimmedId.create("isSubconceptOf", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "73yVtVlWOga"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468")))) {
             SpecificChecker.addIssue(results, concept, "INamedConcept inheritors are usually referenceable", ModelChecker.SEVERITY_WARNING, "non-referenceable named concept", null);
           }
         }
@@ -68,7 +68,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
         break;
       }
       // Check for unresolved references 
-      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
+      for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref.getLink())) != null)) {
           continue;
         }

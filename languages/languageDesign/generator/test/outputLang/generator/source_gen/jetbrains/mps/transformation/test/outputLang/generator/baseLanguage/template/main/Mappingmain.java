@@ -36,6 +36,8 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.impl.WeaveContextImpl;
 
 @Generated
 public class Mappingmain extends MapConfigBase implements TemplateMappingConfiguration {
@@ -619,21 +621,24 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_3571912445009978241(new WeavingMappingRuleContext(context, getRuleNode()));
     }
+    @NotNull
+    @Override
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_3571912445009918066(new WeavingMappingRuleContext(context, getRuleNode()));
     }
+    @Override
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a3v));
-      for (SNode itnode1 : weaveEachList1) {
-        if (itnode1 == null) {
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_3571912445009918069(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068")));
+      for (SNode itnode : weaveEachList1) {
+        if (itnode == null) {
           continue;
         }
-        TemplateContext context1 = context.subContext(null, itnode1);
-        Collection<SNode> innerResult1 = new Templateweave__Statement().weave(environment, context1, outputContextNode);
-
-        if (innerResult1 != null) {
-          tlist1.addAll(innerResult1);
+        TemplateContext innerContext = context.subContext(itnode);
+        NodeWeaveFacility.WeaveContext weaveContext = new WeaveContextImpl(outputContextNode, innerContext, WeavingRule0.this);
+        Collection<SNode> innerResult = environment.prepareWeave(weaveContext, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068")).weaveTemplate(new Templateweave__Statement());
+        if (innerResult != null) {
+          tlist1.addAll(innerResult);
         }
       }
       return tlist1 != null && !(tlist1.isEmpty());
@@ -652,5 +657,4 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
   private static SNodePointer templArgCall_417xrn_b0a0a0a0a0e0b51 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4816349095291000367");
   private static SNodePointer propertyMacro_417xrn_c0a0c0b0b0b0b0c0b0b0f0b61 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913945866");
   private static SNodePointer templateSwitchNodeNoInput_417xrn_a0a0c0f0b91 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
-  private static SNodePointer weavingConseq_417xrn_b0a0a1a3v = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068");
 }

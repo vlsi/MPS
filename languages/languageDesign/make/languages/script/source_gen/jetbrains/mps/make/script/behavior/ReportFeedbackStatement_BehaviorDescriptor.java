@@ -5,11 +5,17 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReportFeedbackStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ReportFeedbackStatement_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.ReportFeedbackStatement";
   }
+
 }

@@ -5,21 +5,28 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class AndExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor implements IConditional_BehaviorDescriptor {
-  public AndExpression_BehaviorDescriptor() {
+  public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode __thisNode__, Object leftValue, Object rightValue) {
+    return null;
   }
-  public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode thisNode, Object leftValue, Object rightValue) {
-    return AndExpression_Behavior.virtual_calculateCompileTimeConstantValue_1587718783752756055(thisNode, leftValue, rightValue);
+  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode __thisNode__, @NotNull SNode child, boolean value) {
+    return null;
   }
-  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return AndExpression_Behavior.virtual_getNextProgramPoint_4235809288648213009(thisNode, child, value);
+  public int virtual_getPriority_1262430001741497858(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
-  public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
-    return AndExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AndExpression";
   }
+
 }

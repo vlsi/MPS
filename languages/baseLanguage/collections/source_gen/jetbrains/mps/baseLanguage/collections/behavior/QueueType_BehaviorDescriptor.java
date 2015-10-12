@@ -4,37 +4,42 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class QueueType_BehaviorDescriptor extends AbstractContainerType_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
-  public QueueType_BehaviorDescriptor() {
+  public boolean virtual_canBeCoerced_6321644624958501287(SNode __thisNode__, String conceptFqName) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
-    return QueueType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode __thisNode__, Map<SNode, SNode> substitutions) {
   }
-  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    IGenericType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  public SNode virtual_eraseGenerics_5089784887112634594(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
-    return IGenericType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode __thisNode__, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  public SNode virtual_expandGenerics_4107091686347199582(SNode __thisNode__, Map<SNode, SNode> substitutions) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  public SNode virtual_expandGenerics_4122274986016348613(SNode __thisNode__, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode __thisNode__, SModel targetModel) {
+    return null;
   }
-  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
-    return QueueType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.QueueType";
   }
+
 }

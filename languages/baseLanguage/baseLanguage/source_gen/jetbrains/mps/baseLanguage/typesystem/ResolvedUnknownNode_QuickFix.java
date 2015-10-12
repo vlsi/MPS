@@ -6,7 +6,7 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IYetUnresolved__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ResolvedUnknownNode_QuickFix extends QuickFix_Runtime {
@@ -14,7 +14,7 @@ public class ResolvedUnknownNode_QuickFix extends QuickFix_Runtime {
     super(new SNodePointer("r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3059273017711351113"));
   }
   public void execute(SNode node) {
-    _FunctionTypes._return_P0_E0<? extends SNode> nodeBuilder = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), ((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+    _FunctionTypes._return_P0_E0<? extends SNode> nodeBuilder = IYetUnresolved__BehaviorDescriptor.evaluateSubst_id73E7sj5sxxG.invoke(((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]));
     if (nodeBuilder != null) {
       SNode theRightNode = nodeBuilder.invoke();
       SNodeOperations.replaceWithAnother(((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), theRightNode);

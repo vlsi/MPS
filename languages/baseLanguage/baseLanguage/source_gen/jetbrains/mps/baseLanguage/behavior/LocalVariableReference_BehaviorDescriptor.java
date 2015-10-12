@@ -4,15 +4,22 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class LocalVariableReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public LocalVariableReference_BehaviorDescriptor() {
+  public boolean virtual_lvalue_1262430001741497939(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
-    return LocalVariableReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalVariableReference";
   }
+
 }

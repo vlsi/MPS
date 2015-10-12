@@ -2,9 +2,9 @@
 <model ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -18,6 +18,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -56,6 +57,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodePropertyConstraint" />
     <property role="34LRSv" value="property {&lt;{applicableProperty}&gt;}" />
+    <property role="1pbfSe" value="710847315" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gGEom_V" role="1TKVEi">
       <property role="20kJfa" value="applicableProperty" />
@@ -86,6 +88,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="getter" />
+    <property role="1pbfSe" value="711522668" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="gGEsrNs">
@@ -96,6 +99,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="node" />
+    <property role="1pbfSe" value="712097255" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvANN$" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -109,6 +113,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="search scope (deprecated)" />
+    <property role="1pbfSe" value="1927912574" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node concept="PrWs8" id="7ipADkTf7eF" role="PzmwI">
       <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
@@ -119,6 +124,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodeReferentConstraint" />
     <property role="34LRSv" value="link {&lt;{applicableLink}&gt;}" />
+    <property role="1pbfSe" value="1930908645" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gHN5VAa" role="1TKVEi">
       <property role="20kJfa" value="applicableLink" />
@@ -158,6 +164,7 @@
     <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
+    <property role="1pbfSe" value="2116741185" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="gI1POib">
@@ -168,6 +175,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="enclosingNode" />
+    <property role="1pbfSe" value="2116598378" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB2xP" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -181,6 +189,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="setter" />
+    <property role="1pbfSe" value="1908732981" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="gREP7xi">
@@ -188,6 +197,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodeDefaultSearchScope" />
     <property role="34LRSv" value="default search scope" />
+    <property role="1pbfSe" value="355174049" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="gREP$uN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -219,6 +229,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="'referent set' event handler" />
+    <property role="1pbfSe" value="735768432" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="gVkakXD">
@@ -229,6 +240,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="referenceNode" />
+    <property role="1pbfSe" value="735489929" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvANux" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -242,6 +254,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="newReferentNode" />
+    <property role="1pbfSe" value="733496792" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6zX" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -255,6 +268,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="oldReferentNode" />
+    <property role="1pbfSe" value="733442819" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB2AQ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -267,6 +281,7 @@
     <property role="TrG5h" value="ConstraintFunction_CanBeAChild" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
+    <property role="1pbfSe" value="398688978" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hwnLn5r">
@@ -277,6 +292,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="parentNode" />
+    <property role="1pbfSe" value="398815859" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB2sD" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -289,6 +305,7 @@
     <property role="TrG5h" value="ConstraintFunction_CanBeAParent" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
+    <property role="1pbfSe" value="410250856" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hwotxKp">
@@ -298,6 +315,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="childConcept" />
+    <property role="1pbfSe" value="410393905" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB5Zj" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -310,6 +328,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="link" />
+    <property role="1pbfSe" value="418761708" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6$E" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -323,6 +342,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="linkTarget" />
+    <property role="1pbfSe" value="1121441673" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB5YZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -336,6 +356,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="propertyValue" />
+    <property role="1pbfSe" value="2087319226" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
   <node concept="1TIwiD" id="hCQB0kv">
@@ -346,6 +367,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="validator" />
+    <property role="1pbfSe" value="916194873" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hDM2fEI">
@@ -355,6 +377,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/constraints.png" />
     <property role="TrG5h" value="ConceptConstraints" />
     <property role="34LRSv" value="Concept Constraints" />
+    <property role="1pbfSe" value="1913191368" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hDM2mAQ" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -421,6 +444,7 @@
     <property role="TrG5h" value="ConstraintFunction_CanBeARoot" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
+    <property role="1pbfSe" value="1275658024" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="3oQug8hqyBc">
@@ -431,6 +455,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="parameterNode" />
+    <property role="1pbfSe" value="1201709774" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB2Ui" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -444,6 +469,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="search scope item presentation" />
+    <property role="1pbfSe" value="1201716675" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
   </node>
   <node concept="1TIwiD" id="5RKjesl2qRO">
@@ -453,6 +479,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="visible" />
+    <property role="1pbfSe" value="1928985307" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOTo" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -465,6 +492,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="smartReference" />
+    <property role="1pbfSe" value="1928985316" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAORl" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -477,6 +505,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="inEditor" />
+    <property role="1pbfSe" value="1057040709" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvANN8" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -486,12 +515,14 @@
     <property role="TrG5h" value="ConstraintFunction_GetAlternativeIcon" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
+    <property role="1pbfSe" value="954013346" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="6O3HjXnmTq5">
     <property role="TrG5h" value="ConstraintFunction_CanBeAnAncestor" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
+    <property role="1pbfSe" value="1000387644" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="31gaXo4G$ca">
@@ -502,6 +533,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="reference validity" />
+    <property role="1pbfSe" value="889351904" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
   </node>
   <node concept="1TIwiD" id="2_ZlElkqgaC">
@@ -512,6 +544,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="checkedNode" />
+    <property role="1pbfSe" value="2112379213" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB2B6" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -525,6 +558,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="keeps reference" />
+    <property role="1pbfSe" value="727042623" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="2_nwIgTMkmr">
@@ -534,6 +568,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="containingLink" />
+    <property role="1pbfSe" value="1663092863" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAmr0" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -541,6 +576,7 @@
   </node>
   <node concept="PlHQZ" id="7ipADkTf7eE">
     <property role="TrG5h" value="NodeScopeFactory" />
+    <property role="1pbfSe" value="1378480577" />
   </node>
   <node concept="1TIwiD" id="7ipADkTf7eM">
     <property role="R5$K7" value="false" />
@@ -548,6 +584,7 @@
     <property role="R4oN_" value="scope provided by parent elements" />
     <property role="TrG5h" value="InheritedNodeScopeFactory" />
     <property role="34LRSv" value="inherited" />
+    <property role="1pbfSe" value="1378480569" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7ipADkTf7eN" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -567,6 +604,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="contextNode" />
+    <property role="1pbfSe" value="1680532402" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAmA3" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -580,6 +618,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="contextRole" />
+    <property role="1pbfSe" value="1525451055" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6Dy" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -593,6 +632,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="exists" />
+    <property role="1pbfSe" value="1525451048" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAlHn" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -606,6 +646,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="position" />
+    <property role="1pbfSe" value="1525451041" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOOJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -619,6 +660,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="34LRSv" value="reference scope" />
+    <property role="1pbfSe" value="1541678611" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node concept="PrWs8" id="4V7sGwd7bdc" role="PzmwI">
       <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
@@ -631,6 +673,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="childNode" />
+    <property role="1pbfSe" value="1309880494" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOH6" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />

@@ -17,6 +17,9 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import org.jetbrains.mps.openapi.language.SDataType;
 
+/**
+ * Fixme implementation of SAbstractType methods
+ */
 public class SDataTypeAdapter implements SDataType {
   public SDataTypeAdapter() {
   }

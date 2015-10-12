@@ -22,6 +22,8 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", new ContainsOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", new ContainsValueOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", new DowncastExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation", new FoldLeftOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.FoldRightOperation", new FoldRightOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", new ForEachStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", new ForEachVariable_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", new ForEachVariableReference_DataFlow());

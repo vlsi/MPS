@@ -4,22 +4,28 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import com.intellij.openapi.project.Project;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NodeReferencePresentation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INodeWithReference_BehaviorDescriptor {
-  public NodeReferencePresentation_BehaviorDescriptor() {
+  public boolean virtual_canExecute_3282455643657932881(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return INodeWithReference_Behavior.virtual_canExecute_3282455643657932881(thisNode);
+  public void virtual_execute_8517397753922085153(SNode __thisNode__, Project project) {
   }
-  public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
-    INodeWithReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
+  public String virtual_getTextWhenBroken_328850564593858078(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    return INodeWithReference_Behavior.virtual_getTextWhenBroken_328850564593858078(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.NodeReferencePresentation";
   }
+
 }

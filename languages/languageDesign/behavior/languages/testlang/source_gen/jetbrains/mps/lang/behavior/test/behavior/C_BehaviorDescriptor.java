@@ -4,20 +4,26 @@ package jetbrains.mps.lang.behavior.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class C_BehaviorDescriptor extends B_BehaviorDescriptor implements I_BehaviorDescriptor {
-  public C_BehaviorDescriptor() {
+  public String virtual_abstractVirtualMethod_4731970554577217984(SNode __thisNode__, int x) {
+    return null;
   }
-  public String virtual_abstractVirtualMethod_4731970554577217984(SNode thisNode, int x) {
-    return C_Behavior.virtual_abstractVirtualMethod_4731970554577217984(thisNode, x);
+  public String virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(SNode __thisNode__, int dummy) {
+    return null;
   }
-  public String virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(SNode thisNode, int dummy) {
-    return C_Behavior.virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(thisNode, dummy);
+  public String virtual_virtualFromInterfaceConcept_4731970554577186975(SNode __thisNode__, String in) {
+    return null;
   }
-  public String virtual_virtualFromInterfaceConcept_4731970554577186975(SNode thisNode, String in) {
-    return I_Behavior.virtual_virtualFromInterfaceConcept_4731970554577186975(thisNode, in);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.test.structure.C";
   }
+
 }

@@ -1,72 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.lang.checkedName.behavior.BehaviorAspectDescriptor" />
+      <unit at="14,0,42,0" name="jetbrains.mps.lang.checkedName.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ICheckedNamePolicy_BehaviorDescriptor.java">
-      <unit at="9,0,15,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
+      <unit at="14,0,21,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor" />
     </file>
     <file name="PropertyRefExpression_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefExpression_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefExpression_BehaviorDescriptor" />
     </file>
     <file name="PropertyRefType_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefType_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.checkedName.behavior.PropertyRefType_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:82ee0621-a317-4778-9ea5-72584de35a48(jetbrains.mps.lang.checkedName.behavior)/4844813484172611410">
     <file name="ICheckedNamePolicy_Behavior.java">
-      <node id="4844813484172611417" at="15,95,16,48" concept="2" />
-      <node id="4844813484172611423" at="16,48,17,166" concept="2" />
-      <node id="4844813484172611429" at="18,22,19,52" concept="0" />
-      <node id="4844813484172611437" at="20,5,21,18" concept="3" />
-      <node id="4844813484172611443" at="23,88,24,16" concept="3" />
-      <node id="4844813484172611448" at="26,106,27,95" concept="2" />
-      <node id="4844813484172611455" at="27,95,28,193" concept="2" />
-      <node id="4844813484172611461" at="29,27,30,57" concept="0" />
-      <node id="4844813484172611469" at="31,5,32,18" concept="3" />
-      <node id="4844813484172611477" at="34,98,35,16" concept="3" />
-      <node id="4844813484172611410" at="13,0,15,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4844813484172611427" at="17,166,20,5" concept="1" />
-      <node id="4844813484172611410" at="23,0,26,0" concept="4" trace="virtual_getDescendantToCheck_4844813484172611439#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4844813484172611459" at="28,193,31,5" concept="1" />
-      <node id="4844813484172611410" at="34,0,37,0" concept="4" trace="virtual_getPropertyToCheck_4844813484172611473#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
-      <node id="4844813484172611410" at="15,0,23,0" concept="4" trace="virtual_getDescendantsToCheck_4844813484172611413#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="4844813484172611410" at="26,0,34,0" concept="4" trace="virtual_getPropertiesToCheck_4844813484172611445#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <scope id="4844813484172611412" at="13,43,13,43" />
-      <scope id="4844813484172611428" at="18,22,19,52" />
-      <scope id="4844813484172611442" at="23,88,24,16" />
-      <scope id="4844813484172611460" at="29,27,30,57" />
-      <scope id="4844813484172611476" at="34,98,35,16" />
-      <scope id="4844813484172611410" at="13,0,15,0">
-        <var name="thisNode" id="4844813484172611410" />
+      <unit id="4844813484172611410" at="10,0,13,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" />
+    </file>
+    <file name="ICheckedNamePolicy__BehaviorDescriptor.java">
+      <node id="4844813484172611410" at="27,0,28,0" concept="6" trace="CONCEPT" />
+      <node id="4844813484172611410" at="28,0,29,0" concept="6" trace="REGISTRY" />
+      <node id="4844813484172611410" at="30,0,31,0" concept="6" trace="getDescendantsToCheck_id4cWf37B8oXl" />
+      <node id="4844813484172611410" at="31,0,32,0" concept="6" trace="getDescendantToCheck_id4cWf37B8oXJ" />
+      <node id="4844813484172611410" at="32,0,33,0" concept="6" trace="getPropertiesToCheck_id4cWf37B8oXP" />
+      <node id="4844813484172611410" at="33,0,34,0" concept="6" trace="getPropertyToCheck_id4cWf37B8oYh" />
+      <node id="4844813484172611410" at="35,0,36,0" concept="6" trace="BH_METHODS" />
+      <node id="4844813484172611417" at="40,99,41,48" concept="4" />
+      <node id="4844813484172611423" at="41,48,42,111" concept="4" />
+      <node id="4844813484172611429" at="43,22,44,52" concept="1" />
+      <node id="4844813484172611437" at="45,5,46,18" concept="5" />
+      <node id="4844813484172611443" at="48,92,49,16" concept="5" />
+      <node id="4844813484172611448" at="51,110,52,95" concept="4" />
+      <node id="4844813484172611455" at="52,95,53,126" concept="4" />
+      <node id="4844813484172611461" at="54,27,55,57" concept="1" />
+      <node id="4844813484172611469" at="56,5,57,18" concept="5" />
+      <node id="4844813484172611477" at="59,102,60,16" concept="5" />
+      <node id="4844813484172611410" at="63,56,64,20" concept="8" />
+      <node id="4844813484172611410" at="68,114,69,21" concept="1" />
+      <node id="4844813484172611410" at="73,114,74,49" concept="4" />
+      <node id="4844813484172611410" at="75,26,76,56" concept="10" />
+      <node id="4844813484172611410" at="79,13,80,77" concept="5" />
+      <node id="4844813484172611410" at="81,13,82,70" concept="5" />
+      <node id="4844813484172611410" at="83,13,84,88" concept="5" />
+      <node id="4844813484172611410" at="85,13,86,80" concept="5" />
+      <node id="4844813484172611410" at="87,14,88,58" concept="10" />
+      <node id="4844813484172611410" at="93,128,94,49" concept="4" />
+      <node id="4844813484172611410" at="95,26,96,56" concept="10" />
+      <node id="4844813484172611410" at="99,14,100,58" concept="10" />
+      <node id="4844813484172611410" at="106,48,107,22" concept="5" />
+      <node id="4844813484172611410" at="112,40,113,19" concept="5" />
+      <node id="4844813484172611410" at="37,0,39,0" concept="7" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4844813484172611427" at="42,111,45,5" concept="2" />
+      <node id="4844813484172611410" at="48,0,51,0" concept="7" trace="getDescendantToCheck_id4cWf37B8oXJ#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4844813484172611459" at="53,126,56,5" concept="2" />
+      <node id="4844813484172611410" at="59,0,62,0" concept="7" trace="getPropertyToCheck_id4cWf37B8oYh#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/checkedName/PropertyReference;" />
+      <node id="4844813484172611410" at="63,0,66,0" concept="0" trace="ICheckedNamePolicy__BehaviorDescriptor#()V" />
+      <node id="4844813484172611410" at="74,49,77,5" concept="2" />
+      <node id="4844813484172611410" at="94,49,97,5" concept="2" />
+      <node id="4844813484172611410" at="67,0,71,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
+      <node id="4844813484172611410" at="97,5,101,5" concept="9" />
+      <node id="4844813484172611410" at="104,0,109,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
+      <node id="4844813484172611410" at="110,0,115,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="4844813484172611410" at="40,0,48,0" concept="7" trace="getDescendantsToCheck_id4cWf37B8oXl#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="4844813484172611410" at="51,0,59,0" concept="7" trace="getPropertiesToCheck_id4cWf37B8oXP#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="4844813484172611410" at="92,0,103,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <node id="4844813484172611410" at="77,5,89,5" concept="9" />
+      <node id="4844813484172611410" at="72,0,91,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
+      <scope id="4844813484172611410" at="37,63,37,63" />
+      <scope id="4844813484172611428" at="43,22,44,52" />
+      <scope id="4844813484172611442" at="48,92,49,16" />
+      <scope id="4844813484172611460" at="54,27,55,57" />
+      <scope id="4844813484172611476" at="59,102,60,16" />
+      <scope id="4844813484172611410" at="63,56,64,20" />
+      <scope id="4844813484172611410" at="68,114,69,21" />
+      <scope id="4844813484172611410" at="75,26,76,56" />
+      <scope id="4844813484172611410" at="79,13,80,77" />
+      <scope id="4844813484172611410" at="81,13,82,70" />
+      <scope id="4844813484172611410" at="83,13,84,88" />
+      <scope id="4844813484172611410" at="85,13,86,80" />
+      <scope id="4844813484172611410" at="87,14,88,58" />
+      <scope id="4844813484172611410" at="95,26,96,56" />
+      <scope id="4844813484172611410" at="99,14,100,58" />
+      <scope id="4844813484172611410" at="106,48,107,22" />
+      <scope id="4844813484172611410" at="112,40,113,19" />
+      <scope id="4844813484172611410" at="37,0,39,0">
+        <var name="__thisNode__" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611410" at="23,0,26,0">
-        <var name="thisNode" id="4844813484172611410" />
+      <scope id="4844813484172611410" at="48,0,51,0">
+        <var name="__thisNode__" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611410" at="34,0,37,0">
-        <var name="thisNode" id="4844813484172611410" />
+      <scope id="4844813484172611410" at="59,0,62,0">
+        <var name="__thisNode__" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611416" at="15,95,21,18">
+      <scope id="4844813484172611410" at="63,0,66,0" />
+      <scope id="4844813484172611410" at="67,0,71,0">
+        <var name="constructor" id="4844813484172611410" />
+        <var name="node" id="4844813484172611410" />
+        <var name="parameters" id="4844813484172611410" />
+      </scope>
+      <scope id="4844813484172611410" at="104,0,109,0" />
+      <scope id="4844813484172611410" at="110,0,115,0" />
+      <scope id="4844813484172611416" at="40,99,46,18">
         <var name="dsc" id="4844813484172611424" />
         <var name="result" id="4844813484172611418" />
       </scope>
-      <scope id="4844813484172611447" at="26,106,32,18">
+      <scope id="4844813484172611447" at="51,110,57,18">
         <var name="property" id="4844813484172611456" />
         <var name="result" id="4844813484172611449" />
       </scope>
-      <scope id="4844813484172611410" at="15,0,23,0">
-        <var name="thisNode" id="4844813484172611410" />
+      <scope id="4844813484172611410" at="40,0,48,0">
+        <var name="__thisNode__" id="4844813484172611410" />
       </scope>
-      <scope id="4844813484172611410" at="26,0,34,0">
-        <var name="thisNode" id="4844813484172611410" />
+      <scope id="4844813484172611410" at="51,0,59,0">
+        <var name="__thisNode__" id="4844813484172611410" />
       </scope>
-      <unit id="4844813484172611410" at="12,0,38,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior" />
+      <scope id="4844813484172611410" at="93,128,101,5">
+        <var name="methodIndex" id="4844813484172611410" />
+      </scope>
+      <scope id="4844813484172611410" at="92,0,103,0">
+        <var name="concept" id="4844813484172611410" />
+        <var name="method" id="4844813484172611410" />
+        <var name="parameters" id="4844813484172611410" />
+      </scope>
+      <scope id="4844813484172611410" at="73,114,89,5">
+        <var name="methodIndex" id="4844813484172611410" />
+      </scope>
+      <scope id="4844813484172611410" at="72,0,91,0">
+        <var name="method" id="4844813484172611410" />
+        <var name="node" id="4844813484172611410" />
+        <var name="parameters" id="4844813484172611410" />
+      </scope>
+      <unit id="4844813484172611410" at="26,0,116,0" name="jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy__BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

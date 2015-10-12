@@ -7,6 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IMember_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
   public SNode virtual_getVisiblity_1213877352965(SNode thisNode);
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode);

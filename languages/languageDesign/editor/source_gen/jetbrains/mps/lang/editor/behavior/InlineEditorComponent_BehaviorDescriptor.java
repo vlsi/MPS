@@ -4,14 +4,20 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class InlineEditorComponent_BehaviorDescriptor extends BaseEditorComponent_BehaviorDescriptor {
-  public InlineEditorComponent_BehaviorDescriptor() {
+  public SNode virtual_getConceptDeclaration_7055725856388417603(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    return InlineEditorComponent_Behavior.virtual_getConceptDeclaration_7055725856388417603(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.InlineEditorComponent";
   }
+
 }

@@ -75,7 +75,7 @@ public interface TemplateModule extends GeneratorRuntime {
    * Languages this generator might produce. Exact set of languages used in generator outcome depends on actual execution and
    * is always a subset of this set.
    */
-  Set<SLanguage> getTargetLanguages();
+  Collection<SLanguage> getTargetLanguages();
 
   String getAlias();
 }

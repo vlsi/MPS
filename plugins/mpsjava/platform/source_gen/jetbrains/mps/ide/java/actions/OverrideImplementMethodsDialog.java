@@ -10,7 +10,8 @@ import com.intellij.ui.NonFocusableCheckBox;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodePointer;
 
 public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
@@ -53,7 +53,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), "virtual_getFqName_1213877404258", new Object[]{});
+      return ((String) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     }
     return super.getText(node);
   }
@@ -113,15 +113,15 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   }
 
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
-    return sortMethods(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{}), methods);
+    return sortMethods(((List<SNode>) BHReflection.invoke(baseClass, SMethodTrimmedId.create("getAllSuperClassifiers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "4fAeKISQjDi"))), methods);
   }
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
-    return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {
-      public SNodePointer select(SNode it) {
-        return new SNodePointer(it);
+    return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodeReference>() {
+      public SNodeReference select(SNode it) {
+        return SNodeOperations.getPointer(it);
       }
-    }).toGenericArray(SNodePointer.class);
+    }).toGenericArray(SNodeReference.class);
   }
   private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

@@ -5,19 +5,25 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class CommentPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ISuppressErrors_BehaviorDescriptor {
-  public CommentPart_BehaviorDescriptor() {
+  public boolean virtual_isToDo_7236590470026152831(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
-    return CommentPart_Behavior.virtual_isToDo_7236590470026152831(thisNode);
+  public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode child) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.CommentPart";
   }
+
 }

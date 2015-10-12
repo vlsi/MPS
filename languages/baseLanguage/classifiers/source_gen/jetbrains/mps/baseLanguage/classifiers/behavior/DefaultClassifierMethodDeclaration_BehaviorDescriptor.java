@@ -5,39 +5,46 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import javax.swing.Icon;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DefaultClassifierMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor, IVisible_BehaviorDescriptor {
-  public DefaultClassifierMethodDeclaration_BehaviorDescriptor() {
+  public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
-    return DefaultClassifierMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  public boolean virtual_canBeReferent_8179323502814657526(SNode __thisNode__, SNode referentConcept) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept) {
-    return IMember_Behavior.virtual_canBeReferent_8179323502814657526(thisNode, referentConcept);
+  public boolean virtual_canOperationBeChild_4593153787954614840(SNode __thisNode__, SNode parentNode) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canOperationBeChild_4593153787954614840(SNode thisNode, SNode parentNode) {
-    return IMember_Behavior.virtual_canOperationBeChild_4593153787954614840(thisNode, parentNode);
+  public SNode virtual_createOperation_1213877353000(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createOperation_1213877353000(SNode thisNode) {
-    return IMember_Behavior.virtual_createOperation_1213877353000(thisNode);
+  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode __thisNode__) {
+    return null;
   }
-  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return DefaultClassifierMethodDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
+  public SNode virtual_getOperationConcept_1213877352972(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    return IMember_Behavior.virtual_getOperationConcept_1213877352972(thisNode);
+  public List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept thisConcept) {
-    return DefaultClassifierMethodDeclaration_Behavior.virtual_getOperationConcept_3044950653914717125(thisConcept);
+  public SNode virtual_getVisiblity_1213877352965(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
-    return DefaultClassifierMethodDeclaration_Behavior.virtual_getVisiblity_1213877352965(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
   }
+
 }

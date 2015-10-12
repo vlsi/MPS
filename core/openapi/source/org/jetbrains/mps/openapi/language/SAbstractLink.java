@@ -31,6 +31,7 @@ public interface SAbstractLink extends SConceptFeature {
    * @deprecated use {@link #getOwner()} instead
    */
   // ToRemove(version = 3.3)
+  @NotNull
   SAbstractConcept getContainingConcept();
 
   /**

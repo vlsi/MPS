@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
+import jetbrains.mps.core.xml.behavior.XmlElement__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -207,7 +207,7 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext) {
-    return XmlElement_Behavior.call_isMultiline_8886258982030574875(node);
+    return (boolean) XmlElement__BehaviorDescriptor.isMultiline_id7HilnpQ3Ckr.invoke(node);
   }
   private EditorCell createCollection_vc3gub_a0a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

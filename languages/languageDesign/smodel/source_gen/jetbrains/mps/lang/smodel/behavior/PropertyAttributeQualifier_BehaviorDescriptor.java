@@ -4,14 +4,20 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PropertyAttributeQualifier_BehaviorDescriptor extends AttributeQualifier_BehaviorDescriptor {
-  public PropertyAttributeQualifier_BehaviorDescriptor() {
+  public SNode virtual_getTargetConcept_6407023681583066586(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
-    return PropertyAttributeQualifier_Behavior.virtual_getTargetConcept_6407023681583066586(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier";
   }
+
 }

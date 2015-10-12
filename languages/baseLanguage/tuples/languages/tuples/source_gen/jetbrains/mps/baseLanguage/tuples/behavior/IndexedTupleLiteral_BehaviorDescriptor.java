@@ -5,21 +5,28 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IndexedTupleLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
-  public IndexedTupleLiteral_BehaviorDescriptor() {
+  public String virtual_getLeftBracket_1262430001741497798(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getLeftBracket_1262430001741497798(SConcept thisConcept) {
-    return IndexedTupleLiteral_Behavior.virtual_getLeftBracket_1262430001741497798(thisConcept);
+  public String virtual_getRightBracket_1262430001741498223(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getRightBracket_1262430001741498223(SConcept thisConcept) {
-    return IndexedTupleLiteral_Behavior.virtual_getRightBracket_1262430001741498223(thisConcept);
+  public boolean virtual_isLValue_1213877519786(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isLValue_1213877519786(SNode thisNode) {
-    return IndexedTupleLiteral_Behavior.virtual_isLValue_1213877519786(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral";
   }
+
 }

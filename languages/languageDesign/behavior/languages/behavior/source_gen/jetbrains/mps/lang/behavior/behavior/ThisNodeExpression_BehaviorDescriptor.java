@@ -5,11 +5,17 @@ package jetbrains.mps.lang.behavior.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IThisExpression_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ThisNodeExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IThisExpression_BehaviorDescriptor {
-  public ThisNodeExpression_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.structure.ThisNodeExpression";
   }
+
 }

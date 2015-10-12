@@ -13,14 +13,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -84,7 +84,7 @@ public abstract class ExtractMethodRefactoring {
   private void correctThrowsList(SNode method) {
     List<SNode> throwables = new ArrayList<SNode>();
     for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")))) {
-      ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(BehaviorReflection.invokeNonVirtual((Class<Set<SNode>>) ((Class) Object.class), statement, "jetbrains.mps.baseLanguage.structure.Statement", "call_uncaughtThrowables_5412515780383108857", new Object[]{false})));
+      ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(((Set<SNode>) BHReflection.invoke(statement, SMethodTrimmedId.create("uncaughtThrowables", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), "4Gt7ANIVAVT"), ((boolean) false)))));
     }
     ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -111,7 +111,7 @@ public abstract class ExtractMethodRefactoring {
       SNode newDeclaration = _quotation_createNode_jq3ovj_a0a0c0l(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))), SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first(), _quotation_createNode_jq3ovj_a0a1a2a11(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
-        SNodeOperations.replaceWithAnother(reference, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), newDeclaration, "virtual_createReference_1213877517482", new Object[]{}));
+        SNodeOperations.replaceWithAnother(reference, ((SNode) BHReflection.invoke(newDeclaration, SMethodTrimmedId.create("createReference", null, "hEwJfME"))));
       }
     }
   }
@@ -162,14 +162,14 @@ public abstract class ExtractMethodRefactoring {
     for (SNode node : ListSequence.fromList(nodes)) {
       for (SNode reference : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), false, new SAbstractConcept[]{}))) {
         if (MoveRefactoringUtils.isReference(reference)) {
-          SNode target = Sequence.fromIterable(SNodeOperations.getReferences(reference)).first().getTargetNode();
+          SNode target = ListSequence.fromList(SNodeOperations.getReferences(reference)).first().getTargetNode();
           if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(target)) {
             MapSequence.fromMap(mapping).put(reference, MapSequence.fromMap(variableDeclarationToParameter).get(target));
           }
         }
       }
       for (SNode parameter : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d486a1d9eL, "jetbrains.mps.baseLanguage.structure.IParameter"), false, new SAbstractConcept[]{}))) {
-        SNode declaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parameter, "virtual_getDeclaration_1225282371351", new Object[]{});
+        SNode declaration = ((SNode) BHReflection.invoke(parameter, SMethodTrimmedId.create("getDeclaration", null, "hP8xjWn")));
         if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(declaration)) {
           MapSequence.fromMap(mapping).put(parameter, MapSequence.fromMap(variableDeclarationToParameter).get(declaration));
         }
@@ -178,7 +178,7 @@ public abstract class ExtractMethodRefactoring {
     return mapping;
   }
   protected SNode createReference(SNode variable) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), variable, "virtual_createReference_1213877517482", new Object[]{});
+    return ((SNode) BHReflection.invoke(variable, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
   }
   protected List<SNode> createCallParameters() {
     List<SNode> result = new ArrayList<SNode>();
@@ -205,7 +205,7 @@ public abstract class ExtractMethodRefactoring {
       this.myStaticContainer = new ClassStaticContainerProcessor(node);
     } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c8f444674L, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"))) {
       SNode staticContainer = SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c8f444674L, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"));
-      this.myStaticContainer = BehaviorReflection.invokeVirtual(IStaticContainerProcessor.class, staticContainer, "virtual_getStaticContainerProcessor_1222174378300", new Object[]{node});
+      this.myStaticContainer = ((IStaticContainerProcessor) BHReflection.invoke(staticContainer, SMethodTrimmedId.create("getStaticContainerProcessor", null, "hMfhg$W"), node));
     } else {
       throw new IllegalArgumentException();
     }

@@ -6,18 +6,25 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ControlAbstractionContainer_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public ControlAbstractionContainer_BehaviorDescriptor() {
+  public List<SNode> virtual_getMembers_1213877531970(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    return ControlAbstractionContainer_Behavior.virtual_getMembers_1213877531970(thisNode);
+  public boolean virtual_hasStaticMemebers_1214840444586(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return ControlAbstractionContainer_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer";
   }
+
 }

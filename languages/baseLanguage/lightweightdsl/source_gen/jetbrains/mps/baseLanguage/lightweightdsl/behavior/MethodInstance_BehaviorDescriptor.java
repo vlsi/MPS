@@ -6,17 +6,23 @@ import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDes
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MethodInstance_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements MemberInstance_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public MethodInstance_BehaviorDescriptor() {
+  public SNode virtual_getDeclaration_9097849371503884215(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
-    return MethodInstance_Behavior.virtual_getDeclaration_9097849371503884215(thisNode);
+  public SNode virtual_getExpectedRetType_1239354342632(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return MethodInstance_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance";
   }
+
 }

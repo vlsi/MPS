@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -8758,7 +8758,7 @@
             <node concept="1YBJjd" id="59YAasRt5P6" role="2Oq$k0">
               <ref role="1YBMHb" node="59YAasRt5P5" resolve="switchStatement" />
             </node>
-            <node concept="3TrEf2" id="59YAasRt5P8" role="2OqNvi">
+            <node concept="3TrEf2" id="6r9lTJu86Sr" role="2OqNvi">
               <ref role="3Tt5mk" to="tp25:59YAasRsvgK" />
             </node>
           </node>

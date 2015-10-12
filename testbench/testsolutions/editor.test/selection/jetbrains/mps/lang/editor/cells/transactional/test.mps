@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
@@ -49,6 +49,9 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
       </concept>
@@ -67,6 +70,7 @@
     <property role="3YCmrE" value="Undoing uncommited text typing into TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="4ECnMeMhxaC" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJyyBW" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -78,6 +82,7 @@
     </node>
     <node concept="1TIwiD" id="1xCYTpJyAMG" role="LiZbd">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJyAMK" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -106,6 +111,7 @@
     <property role="3YCmrE" value="Undoing commited changes of TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="1xCYTpJzm$3" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJzm$4" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -117,6 +123,7 @@
     </node>
     <node concept="1TIwiD" id="1xCYTpJzm$5" role="LiZbd">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJzm$6" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -147,6 +154,7 @@
     <property role="3YCmrE" value="Undoing uncommited invalid text typing into TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="1xCYTpJDKMy" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJDLsC" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -158,6 +166,7 @@
     </node>
     <node concept="1TIwiD" id="1xCYTpJDLt4" role="LiZbd">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJDLt8" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -183,6 +192,7 @@
     <property role="3YCmrE" value="Undoing commited invalid text typing into TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="1xCYTpJDNNh" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJDNNi" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -194,6 +204,7 @@
     </node>
     <node concept="1TIwiD" id="1xCYTpJDNNj" role="LiZbd">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="1xCYTpJDQl4" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -230,6 +241,7 @@
     <property role="3YCmrE" value="Redoing uncommited text typing into TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="59gag9wlcDS" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="59gag9wlcDT" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -241,6 +253,7 @@
     </node>
     <node concept="1TIwiD" id="59gag9wlcDU" role="LiZbd">
       <property role="TrG5h" value="Samtmpstrple" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="59gag9wlyub" role="lGtFl">
         <property role="LIFWa" value="9" />
@@ -272,6 +285,7 @@
     <property role="3YCmrE" value="Redoing uncommited invalid text typing into TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="2qEq7FDsqex" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="2qEq7FDsqey" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -283,6 +297,7 @@
     </node>
     <node concept="1TIwiD" id="2qEq7FDsqez" role="LiZbd">
       <property role="TrG5h" value="Sam123ple" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="2qEq7FDsqvH" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -344,6 +359,7 @@
     <property role="3YCmrE" value="Redoing commited changes of TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="2qEq7FDsttm" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="2qEq7FDsttn" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -355,6 +371,7 @@
     </node>
     <node concept="1TIwiD" id="2qEq7FDstto" role="LiZbd">
       <property role="TrG5h" value="Samtmpstrple" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="2qEq7FDstzL" role="lGtFl">
         <property role="ZRATv" value="true" />
@@ -390,6 +407,7 @@
     <property role="3YCmrE" value="Redoing commited invalid text typing into TransactionalPropertyCell (Name of ConceptDeclaration node)" />
     <node concept="1TIwiD" id="2qEq7FDsvZ$" role="LiRBU">
       <property role="TrG5h" value="Sample" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="2qEq7FDsvZ_" role="lGtFl">
         <property role="LIFWa" value="3" />
@@ -401,6 +419,7 @@
     </node>
     <node concept="1TIwiD" id="2qEq7FDsvZA" role="LiZbd">
       <property role="TrG5h" value="Sam123ple" />
+      <property role="1pbfSe" value="1" />
       <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
       <node concept="LIFWc" id="2qEq7FDswh5" role="lGtFl">
         <property role="ZRATv" value="true" />

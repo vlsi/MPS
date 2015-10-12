@@ -27,7 +27,8 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Set;
@@ -195,7 +196,7 @@ public class Java_Command {
       } else {
         return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
           public boolean met(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
           }
         });
       }

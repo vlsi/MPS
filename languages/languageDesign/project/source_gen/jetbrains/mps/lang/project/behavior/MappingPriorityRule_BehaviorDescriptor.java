@@ -4,11 +4,17 @@ package jetbrains.mps.lang.project.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MappingPriorityRule_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public MappingPriorityRule_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.project.structure.MappingPriorityRule";
   }
+
 }

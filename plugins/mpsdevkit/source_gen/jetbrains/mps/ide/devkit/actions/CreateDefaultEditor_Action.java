@@ -15,7 +15,8 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,7 +49,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
     QueueSequence.fromQueue(toCheck).addLastElement(conceptDeclaration);
     while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
       SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
-      List<SNode> aspects = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), acd, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspectCollection_1567570417158062208", new Object[]{LanguageAspect.EDITOR});
+      List<SNode> aspects = ((List<SNode>) BHReflection.invoke(acd, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.EDITOR));
       if (!(SConceptOperations.isExactly(SNodeOperations.asSConcept(acd), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
           return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
@@ -56,7 +57,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
       })) {
         return false;
       }
-      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), acd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})));
+      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(((List<SNode>) BHReflection.invoke(acd, SMethodTrimmedId.create("getImmediateSuperconcepts", null, "hMuxyK2")))));
     }
     return true;
   }
@@ -96,12 +97,12 @@ public class CreateDefaultEditor_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
     SNode editorDeclaration = SNodeOperations.cast(ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, conceptDeclaration, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration").getDeclarationNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
-    assert BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
-    assert eq_e50aup_a0d0g(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), conceptDeclaration);
+    assert ((SNode) BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("getConceptDeclaration", null, "67EYkym$wx3"))) != null;
+    assert eq_e50aup_a0d0g(((SNode) BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("getConceptDeclaration", null, "67EYkym$wx3"))), conceptDeclaration);
     if (SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")) != null) {
       SPropertyOperations.set(editorDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
     }
-    BehaviorReflection.invokeNonVirtual(Void.class, editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "call_createDefaultEditor_2970389781192937380", new Object[]{false});
+    BHReflection.invoke(editorDeclaration, SMethodTrimmedId.create("createDefaultEditor", MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "2$SWsiCt8Y$"), ((boolean) false));
     ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
   }
   private static boolean eq_e50aup_a0d0g(Object a, Object b) {

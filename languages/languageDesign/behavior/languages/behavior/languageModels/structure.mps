@@ -18,6 +18,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -58,8 +59,9 @@
     <property role="R5$K2" value="false" />
     <property role="MwhBj" value="${language_descriptor}/icons/behavior.png" />
     <property role="TrG5h" value="ConceptBehavior" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="Concept Behavior" />
+    <property role="1pbfSe" value="1128561719" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="hP3h7Gr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -93,12 +95,14 @@
   <node concept="1TIwiD" id="hP3hLVH">
     <property role="TrG5h" value="ConceptConstructorDeclaration" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
+    <property role="1pbfSe" value="1128734730" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="hP3i0lY">
     <property role="TrG5h" value="ConceptMethodDeclaration" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
+    <property role="1pbfSe" value="1128793755" />
     <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     <node concept="1TJgyj" id="hP3i0lZ" role="1TKVEi">
       <property role="20kJfa" value="overriddenMethod" />
@@ -131,8 +135,9 @@
     <property role="R4oN_" value="super node" />
     <property role="TrG5h" value="SuperNodeExpression" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="super" />
+    <property role="1pbfSe" value="1128949365" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4Aab3e74B10" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -146,8 +151,9 @@
     <property role="R4oN_" value="this node" />
     <property role="TrG5h" value="ThisNodeExpression" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
     <property role="34LRSv" value="this" />
+    <property role="1pbfSe" value="1129012478" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="hP3iPJ_" role="PzmwI">
       <ref role="PrY4T" to="tpee:hOwrSQh" resolve="IThisExpression" />
@@ -156,7 +162,8 @@
   <node concept="1TIwiD" id="5CBvrhXldvx">
     <property role="TrG5h" value="LocalBehaviorMethodCall" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="Behavior" />
+    <property role="3GE5qa" value="" />
+    <property role="1pbfSe" value="679717483" />
     <ref role="1TJDcQ" to="tpee:fz7wK6G" resolve="BaseMethodCall" />
     <node concept="1TJgyj" id="5CBvrhXldvy" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -168,6 +175,7 @@
   </node>
   <node concept="1TIwiD" id="zUeTq_2vS9">
     <property role="TrG5h" value="InternalConceptDeclarationReference" />
+    <property role="1pbfSe" value="1375454817" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="zUeTq_2vSa" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -182,6 +190,7 @@
   <node concept="1TIwiD" id="zUeTq_2vSb">
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="InternalConceptDeclarationsHolder" />
+    <property role="1pbfSe" value="1375454815" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="zUeTq_2vSc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

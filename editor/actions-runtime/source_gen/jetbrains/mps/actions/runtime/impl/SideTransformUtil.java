@@ -33,7 +33,8 @@ import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -121,7 +122,7 @@ public class SideTransformUtil {
     SNode precondition = SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x10cd4e11b18L, "precondition"));
     if (precondition != null) {
       try {
-        return (Boolean) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getPreconditionQueryMethodName_1220279571415", new Object[]{}), context, new SideTransformPreconditionContext(node), SNodeOperations.getModel(actionsBuilder));
+        return (Boolean) QueryMethodGenerated.invoke(((String) BHReflection.invoke(actionsBuilder, SMethodTrimmedId.create("getPreconditionQueryMethodName", MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), "hKul9fn"))), context, new SideTransformPreconditionContext(node), SNodeOperations.getModel(actionsBuilder));
       } catch (Exception e) {
         LOG.error(null, e);
       }
@@ -131,14 +132,14 @@ public class SideTransformUtil {
   }
   private static void invokeRemoveByCondition(SNode removeByCondition, Iterator<SubstituteAction> actions, SNode node, IOperationContext context) {
     try {
-      QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, removeByCondition, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "call_getQueryMethodName_1220279474449", new Object[]{}), context, new RemoveSideTransformActionByConditionContext(actions, node), SNodeOperations.getModel(removeByCondition));
+      QueryMethodGenerated.invoke(((String) BHReflection.invoke(removeByCondition, SMethodTrimmedId.create("getQueryMethodName", MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), "hKukL$h"))), context, new RemoveSideTransformActionByConditionContext(actions, node), SNodeOperations.getModel(removeByCondition));
     } catch (Exception e) {
       LOG.error(null, e);
     }
   }
   private static List<SubstituteAction> invokeActionBuilder(SNode actionsBuilder, SNode node, CellSide cellSide, IOperationContext context) {
     try {
-      return (List<SubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));
+      return (List<SubstituteAction>) QueryMethodGenerated.invoke(((String) BHReflection.invoke(actionsBuilder, SMethodTrimmedId.create("getBuilderQueryMethodName", MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), "hKujR2X"))), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));
     } catch (Exception e) {
       LOG.error(null, e);
       return Collections.emptyList();

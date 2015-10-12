@@ -6,19 +6,25 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class InvokeFunctionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDeprecatable_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public InvokeFunctionExpression_BehaviorDescriptor() {
+  public String virtual_getMessage_1225207468592(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getMessage_1225207468592(SNode thisNode) {
-    return IDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  public boolean virtual_isDeprecated_1224609060727(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return InvokeFunctionExpression_Behavior.virtual_isDeprecated_1224609060727(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression";
   }
+
 }

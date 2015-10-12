@@ -6,20 +6,26 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class A_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public A_BehaviorDescriptor() {
+  public String virtual_finalVirtualMethod_4731970554577187301(SNode __thisNode__, String in, int dummy) {
+    return null;
   }
-  public String virtual_finalVirtualMethod_4731970554577187301(SNode thisNode, String in, int dummy) {
-    return A_Behavior.virtual_finalVirtualMethod_4731970554577187301(thisNode, in, dummy);
+  public String virtual_staticVirtualMethod_4731970554577185580(SConcept __thisConcept__, String in, int dummy) {
+    return null;
   }
-  public String virtual_staticVirtualMethod_4731970554577185580(SConcept thisConcept, String in, int dummy) {
-    return A_Behavior.virtual_staticVirtualMethod_4731970554577185580(thisConcept, in, dummy);
+  public String virtual_virtualMethod_4731970554577185009(SNode __thisNode__, String in, int dummy) {
+    return null;
   }
-  public String virtual_virtualMethod_4731970554577185009(SNode thisNode, String in, int dummy) {
-    return A_Behavior.virtual_virtualMethod_4731970554577185009(thisNode, in, dummy);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.behavior.test.structure.A";
   }
+
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 
 public class add_PropertyAttribute_id_QuickFix extends QuickFix_Runtime {
   public add_PropertyAttribute_id_QuickFix() {
@@ -18,6 +18,6 @@ public class add_PropertyAttribute_id_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     SNode propertyAttribute = SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
-    PropertyAttribute_Behavior.call_setProperty_7714691473529670203(propertyAttribute, PropertyAttribute_Behavior.call_getProperty_1341860900488756504(propertyAttribute));
+    PropertyAttribute__BehaviorDescriptor.setProperty_id6Gg5Klvu8CV.invoke(propertyAttribute, PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(propertyAttribute));
   }
 }

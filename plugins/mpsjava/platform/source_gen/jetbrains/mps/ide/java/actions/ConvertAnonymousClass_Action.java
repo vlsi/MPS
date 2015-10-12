@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.platform.refactoring.StringChooserDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -87,8 +86,7 @@ public class ConvertAnonymousClass_Action extends BaseAction {
     modelAccess.runReadInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-        if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+        if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()))) {
           return;
         }
         RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass", Arrays.asList("name"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

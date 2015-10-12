@@ -6,18 +6,25 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NodeSetupFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public NodeSetupFunction_BehaviorDescriptor() {
+  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    return NodeSetupFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
+  public boolean virtual_usesParameterObject_1262430001741497984(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
-    return NodeSetupFunction_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeSetupFunction";
   }
+
 }

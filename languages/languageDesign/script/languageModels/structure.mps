@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -25,6 +25,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -65,6 +66,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/migrationScript.png" />
     <property role="TrG5h" value="MigrationScript" />
     <property role="34LRSv" value="Language Migration Script" />
+    <property role="1pbfSe" value="636028991" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="h8_YvH9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -106,6 +108,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MigrationScriptPart_Instance" />
     <property role="34LRSv" value="concept instances updater" />
+    <property role="1pbfSe" value="636811669" />
     <ref role="1TJDcQ" node="62XPXDPd3S5" resolve="MigrationScriptPart" />
     <node concept="1TJgyi" id="h8_XHd9" role="1TKVEl">
       <property role="TrG5h" value="description" />
@@ -139,6 +142,7 @@
     <property role="TrG5h" value="MigrationScriptPart_Instance_Predicate" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="instance predicate" />
+    <property role="1pbfSe" value="637022510" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="h8_YI7L">
@@ -147,6 +151,7 @@
     <property role="TrG5h" value="MigrationScriptPart_node" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="node" />
+    <property role="1pbfSe" value="637199107" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6BY" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -158,6 +163,7 @@
     <property role="TrG5h" value="MigrationScriptPart_Instance_Updater" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="instance predicate" />
+    <property role="1pbfSe" value="637453134" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="AxPO7" id="4AbjR7I215g">
@@ -177,6 +183,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="FactoryMigrationScriptPart" />
     <property role="34LRSv" value="factory migration script part" />
+    <property role="1pbfSe" value="1601841491" />
     <ref role="1TJDcQ" node="62XPXDPd3S5" resolve="MigrationScriptPart" />
     <node concept="1TJgyj" id="2ggmC1WtnKJ" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -190,12 +197,14 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="WhitespaceMigrationScriptPart" />
     <property role="34LRSv" value="whitespace" />
+    <property role="1pbfSe" value="1601761090" />
     <ref role="1TJDcQ" node="62XPXDPd3S5" resolve="MigrationScriptPart" />
   </node>
   <node concept="1TIwiD" id="62XPXDPd3S5">
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="MigrationScriptPart" />
+    <property role="1pbfSe" value="705554977" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2deFRo6ilRF" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
@@ -206,6 +215,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CommentMigrationScriptPart" />
     <property role="34LRSv" value="//" />
+    <property role="1pbfSe" value="1800198890" />
     <ref role="1TJDcQ" node="62XPXDPd3S5" resolve="MigrationScriptPart" />
     <node concept="1TJgyi" id="5Ls_1gSlD43" role="1TKVEl">
       <property role="TrG5h" value="text" />
@@ -218,6 +228,7 @@
     <property role="TrG5h" value="ExtractInterfaceMigration" />
     <property role="3GE5qa" value="api" />
     <property role="34LRSv" value="extract interface" />
+    <property role="1pbfSe" value="1800157011" />
     <ref role="1TJDcQ" node="62XPXDPd3S5" resolve="MigrationScriptPart" />
     <node concept="1TJgyj" id="4HFrnGEow_Z" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -248,6 +259,7 @@
     <property role="TrG5h" value="PullUpMethod" />
     <property role="3GE5qa" value="api" />
     <property role="34LRSv" value="pull up method" />
+    <property role="1pbfSe" value="1596644940" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="49356IxH1a1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -266,11 +278,13 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="AbstractClassifierSpecification" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="1976373173" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4HFrnGEoSOz">
     <property role="TrG5h" value="DirectClassifierSpecification" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="1976498846" />
     <ref role="1TJDcQ" node="4HFrnGEoq8U" resolve="AbstractClassifierSpecification" />
     <node concept="1TJgyj" id="4HFrnGEoSTt" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -282,6 +296,7 @@
   <node concept="1TIwiD" id="4HFrnGEoSRr">
     <property role="TrG5h" value="FQNameClassifierSpecification" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="1976499030" />
     <ref role="1TJDcQ" node="4HFrnGEoq8U" resolve="AbstractClassifierSpecification" />
     <node concept="1TJgyi" id="4HFrnGEqXX2" role="1TKVEl">
       <property role="TrG5h" value="classifierFQName" />
@@ -299,6 +314,7 @@
   <node concept="1TIwiD" id="49356IxH1bz">
     <property role="TrG5h" value="FQNameMethodSpecification" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="470341810" />
     <ref role="1TJDcQ" node="49356IxH6Mt" resolve="AbstractMethodSpecification" />
     <node concept="1TJgyi" id="1ZdZFkoOJSD" role="1TKVEl">
       <property role="TrG5h" value="snodeId" />
@@ -310,11 +326,13 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractMethodSpecification" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="470318840" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="1ZdZFkoL3m3">
     <property role="TrG5h" value="DirectMethodSpecification" />
     <property role="3GE5qa" value="api" />
+    <property role="1pbfSe" value="949105720" />
     <ref role="1TJDcQ" node="49356IxH6Mt" resolve="AbstractMethodSpecification" />
     <node concept="1TJgyj" id="1ZdZFkoL3Lp" role="1TKVEi">
       <property role="20lmBu" value="reference" />

@@ -10,16 +10,16 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JOptionPane;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.persistence.def.v9.IdEncoder;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToNodeById_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,7 +39,7 @@ public class GoToNodeById_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -52,15 +52,8 @@ public class GoToNodeById_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
-      MapSequence.fromMap(_params).put("CONTEXT_MODEL", p);
+      MapSequence.fromMap(_params).put("contextModel", p);
       if (p == null) {
         return false;
       }
@@ -69,34 +62,32 @@ public class GoToNodeById_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL"))), JOptionPane.QUESTION_MESSAGE);
+    String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + NameUtil.getModelLongName(((SModel) MapSequence.fromMap(_params).get("contextModel"))), JOptionPane.QUESTION_MESSAGE);
     if (value == null) {
       return;
     }
-    value = ((value == null ? null : value.trim()));
-    final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(jetbrains.mps.smodel.SNodeId.fromString(value));
+    final String trimmedValue = ((value == null ? null : value.trim()));
+    final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>(PersistenceFacade.getInstance().createNodeId(trimmedValue));
     if (id.value == null) {
       // try new nodeId presentation format 
       try {
-        id.value = new IdEncoder().parseNodeId(value);
+        id.value = new IdEncoder().parseNodeId(trimmedValue);
       } catch (IdEncoder.EncodingException e) {
       }
     }
     if (id.value == null) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + trimmedValue);
       return;
     }
-    final String trimmedValue = value;
 
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node;
-        node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id.value);
+        SNode node = ((SModel) MapSequence.fromMap(_params).get("contextModel")).getNode(id.value);
         if (node == null) {
           JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
           return;
         }
-        NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), node, true, true);
+        new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).shallFocus(true).shallSelect(true).open(node.getReference());
       }
     });
   }

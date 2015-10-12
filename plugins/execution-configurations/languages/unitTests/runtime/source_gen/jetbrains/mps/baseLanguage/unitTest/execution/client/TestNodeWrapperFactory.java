@@ -9,8 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +28,7 @@ public enum TestNodeWrapperFactory {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")) && SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110dc94e923L, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
         return null;
       }
-      if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getTestMethods_2148145109766218395", new Object[]{})).count() == 0) {
+      if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).count() == 0) {
         return null;
       }
       return new LanguageTestWrapper(node);
@@ -64,10 +65,10 @@ public enum TestNodeWrapperFactory {
           return false;
         }
         SNode ancestor = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, ancestor, "virtual_checkLoops_3980490811621705344", new Object[]{}))) {
+        if (!(((boolean) (Boolean) BHReflection.invoke(ancestor, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
           return false;
         }
-        while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(BehaviorReflection.invokeVirtual(String.class, ancestor, "virtual_getFqName_1213877404258", new Object[]{}).equals(TestCase.class.getCanonicalName()))) {
+        while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(((String) BHReflection.invoke(ancestor, SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))).equals(TestCase.class.getCanonicalName()))) {
           ancestor = check_kl7j79_a0a0d0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")));
         }
         return ancestor != null;

@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleType__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -25,10 +25,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -86,7 +87,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getLeftBracket_1262430001741497792", new Object[]{});
+        return (String) NamedTupleType__BehaviorDescriptor.getLeftBracket_id1653mnvAgn0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -137,7 +138,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         public String getText() {
           StringBuilder sb = new StringBuilder();
           String sep = "";
-          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
+          for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component"));
             }
@@ -165,7 +166,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_c0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), "virtual_getRightBracket_1262430001741497990", new Object[]{});
+        return (String) NamedTupleType__BehaviorDescriptor.getRightBracket_id1653mnvAgq6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)));
       }
       public void setText(String s) {
       }
@@ -197,7 +198,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_2ojjgh_a1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
+        return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
       }
       public void setText(String s) {
       }
@@ -481,13 +482,13 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_2ojjgh_a0b1a(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
+          return IterableUtils.join(ListSequence.fromList(NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke(node)).reversedList().translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(SNode ntd) {
               return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, 0x12099b7fca9L, "component"));
             }
           }).select(new ISelector<SNode, String>() {
             public String select(SNode c) {
-              return ((SPropertyOperations.getBoolean(c, MetaAdapterFactory.getProperty(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x120cda6c3beL, "final")) ? "final " : "")) + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(c, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type")), "virtual_getPresentation_1213877396640", new Object[]{}) + " " + SPropertyOperations.getString(c, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ";";
+              return ((SPropertyOperations.getBoolean(c, MetaAdapterFactory.getProperty(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x120cda6c3beL, "final")) ? "final " : "")) + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(c, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type"))) + " " + SPropertyOperations.getString(c, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ";";
             }
           }), "\n");
         }

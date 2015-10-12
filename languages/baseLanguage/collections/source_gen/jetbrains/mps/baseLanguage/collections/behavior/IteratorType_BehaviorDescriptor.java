@@ -5,24 +5,31 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IteratorType_BehaviorDescriptor extends Type_BehaviorDescriptor {
-  public IteratorType_BehaviorDescriptor() {
+  public SNode virtual_getClassExpression_1213877337357(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return IteratorType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return IteratorType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode __thisNode__) {
+    return null;
   }
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return IteratorType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
+  public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
-    return IteratorType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.IteratorType";
   }
+
 }

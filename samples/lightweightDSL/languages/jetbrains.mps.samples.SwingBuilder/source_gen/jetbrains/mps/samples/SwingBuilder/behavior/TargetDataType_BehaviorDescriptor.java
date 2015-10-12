@@ -6,42 +6,47 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.lightweightdsl.behavior.MemberInstance_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TargetDataType_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, MemberInstance_BehaviorDescriptor {
-  public TargetDataType_BehaviorDescriptor() {
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
-    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+  public SNode virtual_getDeclaration_9097849371503884215(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
-    return TargetDataType_Behavior.virtual_getDeclaration_9097849371503884215(thisNode);
+  public boolean virtual_isStatic_7405920559687241224(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  public boolean virtual_isStatic_8986964027630462944(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  public boolean virtual_isVisible_6145907390641297352(SNode __thisNode__, SNode contextClassifierType, SNode contextNode) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  public boolean virtual_isVisible_8083692786967482069(SNode __thisNode__, SNode contextClassifier, SNode contextNode) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
+  public void virtual_populateMember_7405920559687254644(SNode __thisNode__, MembersPopulatingContext context, SNode classifier) {
   }
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.SwingBuilder.structure.TargetDataType";
   }
+
 }

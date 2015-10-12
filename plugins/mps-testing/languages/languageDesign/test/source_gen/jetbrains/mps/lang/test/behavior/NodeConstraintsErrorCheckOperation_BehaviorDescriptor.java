@@ -4,21 +4,27 @@ package jetbrains.mps.lang.test.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NodeConstraintsErrorCheckOperation_BehaviorDescriptor extends AbstractNodeErrorCheckOperation_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public NodeConstraintsErrorCheckOperation_BehaviorDescriptor() {
+  public void virtual_attachReference_2893471348147987863(SNode __thisNode__, SNode reference) {
   }
-  public void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
-    NodeConstraintsErrorCheckOperation_Behavior.virtual_attachReference_2893471348147987863(thisNode, reference);
+  public boolean virtual_canAttachReference_2893471348147804024(SNode __thisNode__, SNode reference) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference) {
-    return NodeConstraintsErrorCheckOperation_Behavior.virtual_canAttachReference_2893471348147804024(thisNode, reference);
+  public SNode virtual_getReference_8333855927540237654(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getReference_8333855927540237654(SNode thisNode) {
-    return NodeConstraintsErrorCheckOperation_Behavior.virtual_getReference_8333855927540237654(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeConstraintsErrorCheckOperation";
   }
+
 }

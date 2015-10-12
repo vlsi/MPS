@@ -4,6 +4,12 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IReferenceAttachable_BehaviorDescriptor {
   public boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference);
   public void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference);

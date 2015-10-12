@@ -4,6 +4,12 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface ILinkAccessQualifierContainer_BehaviorDescriptor {
   public Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode);
 }

@@ -35,6 +35,8 @@ import java.util.Iterator;
  * FIXME functionality of this class shall get exposed from SConcept API
  * (likely, in addition to public iterator not to limit to single iteration approach, i.e. depth or breadth first).
  * @author Artem Tikhomirov
+ *
+ * XXX How come its name is DepthFirst when it is clearly breadth first (for interfaces at least)?
  */
 public class DepthFirstConceptIterator implements Iterable<SAbstractConcept>, Iterator<SAbstractConcept> {
   private final SAbstractConcept myStart;

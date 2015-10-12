@@ -20,6 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
@@ -97,20 +98,36 @@ public class TextGen {
     }
   }
 
-  public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
-    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
-    buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
+  public static TextGenBuffer newUserObjectHolder(SNode node, boolean withDebugInfo, TextBuffer trueBuffer) {
+    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, trueBuffer);
+    populateTextGenCompatibilityObjects(buffer, node);
+    return buffer;
+  }
+
+  private static void populateTextGenCompatibilityObjects(TextGenBuffer buffer, SNode node) {
+    // BL-specific object, BL shall manage itself
+    buffer.putUserObject(PACKAGE_NAME, NameUtil.getModelLongName(node.getModel()));
+    // shall get replaced with TextUnit#getStartNode()
     buffer.putUserObject(ROOT_NODE, node);
     buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
+  }
+
+  public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
+    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
+    populateTextGenCompatibilityObjects(buffer, node);
+
+    TextGenTransitionContext tgContext = new TextGenTransitionContext(node, buffer, buffer.getRealBuffer());
+
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
       tic = new TraceInfoCollector();
-      TraceInfoGenerationUtil.setTraceInfoCollector(buffer, tic);
+      // TODO TraceInfoCollector may be part of TextGenTransitionContext, but I shall deal with that along with DEPENDENCY/EXTENDS set
+      TraceInfoGenerationUtil.setTraceInfoCollector(tgContext, tic);
     } else {
       tic = null;
     }
 
-    appendNodeText(buffer, node);
+    new TextGenSupport(tgContext).appendNode(node);
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
@@ -155,19 +172,9 @@ public class TextGen {
     ourEnabledNodeAttributes = enable;
   }
 
-  private static void appendNodeText(TextGenBuffer buffer, SNode node) {
-    if (node == null) {
-      buffer.append("???");
-      return;
-    }
-
-    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer));
-    tgs.appendNode(node);
-  }
-
   // helper stuff
   @NotNull
-  /*package*/ static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
+  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
     return TextGenRegistry.getInstance().getTextGenDescriptor(node);
   }
 

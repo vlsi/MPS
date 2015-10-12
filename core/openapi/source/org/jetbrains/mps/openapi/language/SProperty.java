@@ -24,21 +24,12 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public interface SProperty extends SConceptFeature {
   /**
-   * Return the concept that contains the declaration of this property.
-   * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
-   * exactly the concept from which you've obtained this property.
-   * @deprecated use {@link #getOwner()}
-   */
-  @Deprecated
-  // ToRemove(version = 3.3)
-  SAbstractConcept getContainingConcept();
-
-  /**
    * Returns a name of this property
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
    * Although this method is identical to {@link SConceptFeature#getName()}, it is left here until we find a way to migrate references to
    * this method in MPS models from <code>SProperty.getName</code> to <code>SConceptFeature.getName</code>
    */
+  @Override
   @NotNull
   String getName();
 
@@ -48,6 +39,10 @@ public interface SProperty extends SConceptFeature {
   @Nullable
   SNode getDeclarationNode();
 
+  /**
+   * @return {@link SDataType} of the given SProperty
+   */
+//  @NotNull
   SDataType getType();
 
   /**

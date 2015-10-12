@@ -27,11 +27,10 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
@@ -218,10 +217,10 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean _StyleParameter_QueryFunction_ls0i5e_a0d0a(EditorContext editorContext, SNode node) {
-    return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node);
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_ls0i5e_a1d0a(EditorContext editorContext, SNode node) {
-    return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node);
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node);
   }
   private EditorCell createCollection_ls0i5e_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -258,7 +257,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ls0i5e_a4a0(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+    return !((boolean) BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
   }
   private EditorCell createConstant_ls0i5e_a4a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -594,7 +593,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_ls0i5e_a7e0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"));
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")));
   }
   private EditorCell createRefNode_ls0i5e_i4a0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new MethodDocComment_Editor.returnSingleRoleHandler_ls0i5e_i4a0(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, 0x514c0f6870509198L, "return"), editorContext);
@@ -651,7 +650,7 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_ls0i5e_a1f0a(EditorContext editorContext, SNode node) {
-    return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+    return (boolean) BaseDocComment__BehaviorDescriptor.hasTags_id4iGwz$GSfd_.invoke(node) || !((boolean) BaseDocComment__BehaviorDescriptor.isTagSectionEmpty_id7lVCwDcz6WN.invoke(node));
   }
   private EditorCell createConstant_ls0i5e_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**...*/");

@@ -7,7 +7,8 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.traceable.behavior.TraceableConcept__BehaviorDescriptor;
 
 public class Statement_TextGen extends TextGenDescriptorBase {
   @Override
@@ -16,13 +17,13 @@ public class Statement_TextGen extends TextGenDescriptorBase {
     tgs.createPositionInfo();
     if (SNodeOperations.getConcept(ctx.getPrimaryInput()) != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")) {
       tgs.append("/* error: statement w/o textGen:");
-      tgs.append(BehaviorReflection.invokeVirtual(String.class, ctx.getPrimaryInput(), "virtual_getPresentation_1213877396640", new Object[]{}));
+      tgs.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(ctx.getPrimaryInput()));
       tgs.append(" */");
     } else {
       tgs.newLine();
     }
     if (tgs.needPositions()) {
-      tgs.fillPositionInfo(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));
+      tgs.fillPositionInfo(TraceableConcept__BehaviorDescriptor.getTraceableProperty_id4pl5GY7LKmH.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept"))));
     }
   }
 }

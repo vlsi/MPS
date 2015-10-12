@@ -5,14 +5,20 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class UnrestrictedClosureLiteral_BehaviorDescriptor extends ClosureLiteral_BehaviorDescriptor {
-  public UnrestrictedClosureLiteral_BehaviorDescriptor() {
+  public SNode virtual_getType_1229718192182(SNode __thisNode__, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
+    return null;
   }
-  public SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return UnrestrictedClosureLiteral_Behavior.virtual_getType_1229718192182(thisNode, paramTypes, resultType, returnType, termType, throwsTypes);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral";
   }
+
 }

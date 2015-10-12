@@ -8,12 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.List;
+import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -25,12 +24,12 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
   public check_IMemberOperation_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode operandType = TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck));
+    SNode operandType = TypeChecker.getInstance().getTypeOf(IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(nodeToCheck));
     {
       IMatchingPattern pattern_hm5x7h_b0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
       SNode coercedNode_hm5x7h_b0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_hm5x7h_b0);
       if (coercedNode_hm5x7h_b0 != null) {
-        if (!(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), coercedNode_hm5x7h_b0, "virtual_getMembers_1213877402148", new Object[]{nodeToCheck})).contains(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"))))) {
+        if (!(ListSequence.fromList(BaseClassifierType__BehaviorDescriptor.getMembers_idhEwINC$.invoke(coercedNode_hm5x7h_b0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member"))))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Declaration is out of scope", "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205921883388", null, errorTarget);

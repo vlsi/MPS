@@ -16,7 +16,8 @@ import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -114,24 +115,24 @@ public final class SNodeUtil {
   }
   public static String getPresentation(SNode node) {
     try {
-      return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
+      return ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
     } catch (Throwable t) {
       return node.getName();
     }
   }
   public static String getDetailedPresentation(SNode node) {
-    return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getDetailedPresentation_2354269628709769373", new Object[]{});
+    return ((String) (String) BHReflection.invoke(node, SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
   }
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isDefaultSubstitutable(SNode node) {
-    return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_isDefaultSubstitutable_7429110134803670673", new Object[]{});
+    return ((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isDefaultSubstitutable", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "6spw4TQeyqh")));
   }
   public static boolean isDefaultSubstitutable(SAbstractConcept concept) {
     return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static int getMetaLevel(SNode node) {
-    return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{});
+    return ((int) (Integer) BHReflection.invoke(node, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
   }
   public static String getConceptDeclarationAlias(SNode conceptDeclaration) {
     return SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"));

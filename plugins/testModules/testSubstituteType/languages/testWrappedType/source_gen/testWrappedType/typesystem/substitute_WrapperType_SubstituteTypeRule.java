@@ -8,6 +8,7 @@ import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -15,11 +16,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class substitute_WrapperType_SubstituteTypeRule extends AbstractSubstituteType_Runtime implements SubstituteType_Runtime {
   public substitute_WrapperType_SubstituteTypeRule() {
   }
-  public TypeSubstitution substitution(SNode wrapperType, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new TypeSubstitution(originalType, newNode(wrapperType, originalType, typeCheckingContext, status), "r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)", "7323318266641941989");
-  }
-  public SNode newNode(SNode wrapperType, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return SLinkOperations.getTarget(wrapperType, MetaAdapterFactory.getContainmentLink(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL, 0x116157dc0d8c52bdL, "wrapped"));
+  public TypeSubstitution substitution(final SNode wrapperType, SNode originalType, final TypeCheckingContext typeCheckingContext, final IsApplicableStatus status) {
+    return new TypeSubstitution(originalType, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        return SLinkOperations.getTarget(wrapperType, MetaAdapterFactory.getContainmentLink(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL, 0x116157dc0d8c52bdL, "wrapped"));
+      }
+    }.invoke(), "r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)", "7323318266641941989");
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL, "testWrappedType.structure.WrapperType");

@@ -2,7 +2,7 @@
 <model ref="r:7336929d-3d95-43d0-b2df-fd38af21ae45(jetbrains.mps.lang.pattern.testLang.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
@@ -13,6 +13,7 @@
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -39,6 +40,7 @@
   <node concept="1TIwiD" id="7zmQ_SRAuG8">
     <property role="TrG5h" value="PatternTest" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1334786714" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7zmQ_SRAuG9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -88,9 +90,13 @@
     <node concept="PrWs8" id="2deFRo6cC5B" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
+    <node concept="PrWs8" id="7_1vIxGlwnE" role="PzmwI">
+      <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7zmQ_SRAuGe">
     <property role="TrG5h" value="VariableValue" />
+    <property role="1pbfSe" value="1334786708" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3f8gaaJnmTD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -107,6 +113,7 @@
   </node>
   <node concept="1TIwiD" id="7zmQ_SRAuGh">
     <property role="TrG5h" value="TestVariableReference" />
+    <property role="1pbfSe" value="1334786705" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7zmQ_SRAuGi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -117,6 +124,7 @@
   </node>
   <node concept="1TIwiD" id="1mO8VfSNYIS">
     <property role="TrG5h" value="TestPropertyVariableReference" />
+    <property role="1pbfSe" value="243535723" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSNYIY" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -127,6 +135,7 @@
   </node>
   <node concept="1TIwiD" id="1mO8VfSO4aQ">
     <property role="TrG5h" value="PropertyValue" />
+    <property role="1pbfSe" value="243557993" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSO4aR" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -143,6 +152,7 @@
   </node>
   <node concept="1TIwiD" id="1mO8VfSO65a">
     <property role="TrG5h" value="ListValue" />
+    <property role="1pbfSe" value="243565821" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSO65c" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -159,6 +169,7 @@
   </node>
   <node concept="1TIwiD" id="1mO8VfSO65b">
     <property role="TrG5h" value="TestListReference" />
+    <property role="1pbfSe" value="243565822" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1mO8VfSO68w" role="1TKVEi">
       <property role="20lmBu" value="reference" />

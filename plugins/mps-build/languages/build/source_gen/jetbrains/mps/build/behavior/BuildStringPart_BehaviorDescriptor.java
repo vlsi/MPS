@@ -5,29 +5,35 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.build.util.MacroHelper;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildStringPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public BuildStringPart_BehaviorDescriptor() {
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getText_4380385936562037054(SNode __thisNode__, MacroHelper helper) {
+    return null;
   }
-  public String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
-    return BuildStringPart_Behavior.virtual_getText_4380385936562037054(thisNode, helper);
+  public boolean virtual_isFirstPositionAllowed_624440001685459414(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
-    return BuildStringPart_Behavior.virtual_isFirstPositionAllowed_624440001685459414(thisNode);
+  public boolean virtual_isLastPositionAllowed_624440001685490925(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
-    return BuildStringPart_Behavior.virtual_isLastPositionAllowed_624440001685490925(thisNode);
+  public boolean virtual_punctuationLeft_5096397858823356723(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_punctuationLeft_5096397858823356723(SNode thisNode) {
-    return BuildStringPart_Behavior.virtual_punctuationLeft_5096397858823356723(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildStringPart";
   }
+
 }

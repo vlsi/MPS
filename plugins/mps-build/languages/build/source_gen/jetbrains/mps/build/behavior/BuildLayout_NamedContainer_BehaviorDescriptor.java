@@ -5,39 +5,42 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
-import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildSource_SingleFolder_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
-  public BuildLayout_NamedContainer_BehaviorDescriptor() {
+  public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }
-  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    BuildLayout_NamedContainer_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  public String virtual_getApproximateName_5610619299014531547(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
-    return BuildLayout_NamedContainer_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode __thisNode__, Context context) {
+    return null;
   }
-  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return BuildLayout_NamedContainer_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
+  public Color virtual_getColorForTextPart_6083230236994422116(SNode __thisNode__, @NonNls String role) {
+    return null;
   }
-  @Nullable
-  public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
-    return BuildStringContainer_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public boolean virtual_hasInputDir_1262430001741498038(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_hasInputDir_1262430001741498038(SConcept thisConcept) {
-    return BuildLayout_NamedContainer_Behavior.virtual_hasInputDir_1262430001741498038(thisConcept);
+  public boolean virtual_isValidPart_9184644532456897464(SNode __thisNode__, String propertyValue, String role) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
-    return BuildLayout_NamedContainer_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_NamedContainer";
   }
+
 }

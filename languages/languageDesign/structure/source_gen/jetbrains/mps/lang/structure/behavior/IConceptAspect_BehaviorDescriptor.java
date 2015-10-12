@@ -7,6 +7,12 @@ import java.util.List;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IConceptAspect_BehaviorDescriptor {
   public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode);
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode);

@@ -6,19 +6,24 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PropertiesFile_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
-  public PropertiesFile_BehaviorDescriptor() {
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getUnitName_5067982036267369911(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getUnitName_5067982036267369911(SNode thisNode) {
-    return PropertiesFile_Behavior.virtual_getUnitName_5067982036267369911(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.properties.structure.PropertiesFile";
   }
+
 }

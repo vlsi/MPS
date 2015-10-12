@@ -53,19 +53,16 @@ public class DeploymentDescriptorPersistence {
             }
           }
 
-          for (Element b : Sequence.fromIterable(XmlUtil.children(rootElement, "runtime"))) {
-            result_wu2j1h_a0a0d0c0b.getRuntimeJars().add(b.getAttributeValue("jar"));
-          }
           for (Element b : Sequence.fromIterable(XmlUtil.children(rootElement, "library"))) {
             result_wu2j1h_a0a0d0c0b.getLibraries().add(b.getAttributeValue("jar"));
           }
 
           Element sources = XmlUtil.first(rootElement, "sources");
           if (sources != null) {
-            final String result_wu2j1h_a0a11a0a0d0c0b = sources.getAttributeValue("jar");
-            result_wu2j1h_a0a0d0c0b.setSourcesJar(result_wu2j1h_a0a11a0a0d0c0b);
-            final String result_wu2j1h_a1a11a0a0d0c0b = sources.getAttributeValue("descriptor");
-            result_wu2j1h_a0a0d0c0b.setDescriptorFile(result_wu2j1h_a1a11a0a0d0c0b);
+            final String result_wu2j1h_a0a01a0a0d0c0b = sources.getAttributeValue("jar");
+            result_wu2j1h_a0a0d0c0b.setSourcesJar(result_wu2j1h_a0a01a0a0d0c0b);
+            final String result_wu2j1h_a1a01a0a0d0c0b = sources.getAttributeValue("descriptor");
+            result_wu2j1h_a0a0d0c0b.setDescriptorFile(result_wu2j1h_a1a01a0a0d0c0b);
           }
 
           return result_wu2j1h_a0a0d0c0b;

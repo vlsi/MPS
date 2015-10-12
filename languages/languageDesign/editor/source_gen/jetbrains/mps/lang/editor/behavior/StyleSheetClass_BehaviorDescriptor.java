@@ -5,19 +5,24 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StyleSheetClass_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public StyleSheetClass_BehaviorDescriptor() {
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public SNode virtual_getParent_1219419981626(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getParent_1219419981626(SNode thisNode) {
-    return StyleSheetClass_Behavior.virtual_getParent_1219419981626(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleSheetClass";
   }
+
 }

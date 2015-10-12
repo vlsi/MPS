@@ -4,21 +4,28 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class LocalMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
-  public LocalMethodCall_BehaviorDescriptor() {
+  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode __thisNode__, String methodName) {
+    return null;
   }
-  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return LocalMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
+  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
-    return LocalMethodCall_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
+  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
-    return LocalMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
   }
+
 }

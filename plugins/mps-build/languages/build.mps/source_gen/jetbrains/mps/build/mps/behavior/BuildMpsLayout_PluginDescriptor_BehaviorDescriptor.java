@@ -4,26 +4,31 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMpsLayout_PluginDescriptor_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
-  public BuildMpsLayout_PluginDescriptor_BehaviorDescriptor() {
+  public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }
-  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    BuildMpsLayout_PluginDescriptor_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  public boolean virtual_exports_6547494638219603457(SNode __thisNode__, Object artifactId) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
-    return BuildMpsLayout_PluginDescriptor_Behavior.virtual_exports_6547494638219603457(thisNode, artifactId);
+  public String virtual_location_7117056644539862594(SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
+    return null;
   }
-  public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
-    return BuildMpsLayout_PluginDescriptor_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
+  public void virtual_unpack_7128123785277710736(SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
   }
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    BuildMpsLayout_PluginDescriptor_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor";
   }
+
 }

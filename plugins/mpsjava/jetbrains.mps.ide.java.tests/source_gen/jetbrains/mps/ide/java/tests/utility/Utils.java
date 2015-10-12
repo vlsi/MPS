@@ -51,7 +51,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 
 public class Utils {
   public Utils() {
@@ -367,8 +367,8 @@ public class Utils {
   public static void buildMethodsNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     List<SNode> leftMethods = new ArrayList<SNode>();
     List<SNode> rightMethods = new ArrayList<SNode>();
-    ListSequence.fromList(leftMethods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(left)));
-    ListSequence.fromList(rightMethods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(right)));
+    ListSequence.fromList(leftMethods).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(left)));
+    ListSequence.fromList(rightMethods).addSequence(Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(right)));
 
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightMthd : ListSequence.fromList(rightMethods)) {

@@ -13,9 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -77,7 +77,7 @@ public final class MacroIntentionsUtil {
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.asNode(sourceNode))) {
+    for (SNode child : AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(SNodeOperations.asNode(sourceNode))) {
       if (inCollection) {
         if (SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..n", "0..1") || SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1")) {
           ListSequence.fromList(result).addElement(child);
@@ -97,7 +97,7 @@ public final class MacroIntentionsUtil {
     // Here I escape only '_' as it's unlikely to see '&' in metamodel-level names, 
     // although correct (but impossible now) solution would be to change the way actions for intentions are created 
     // (i.e. without mnemonics processing). 
-    return BehaviorReflection.invokeVirtual(String.class, intentionParam, "virtual_getPresentation_1213877396640", new Object[]{}).replaceAll("_{1}", "__");
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(intentionParam).replaceAll("_{1}", "__");
   }
   public static void copyVirtualPackage(SNode to, SNode from) {
     SPropertyOperations.set(to, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(SNodeOperations.getContainingRoot(from), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));

@@ -4,16 +4,23 @@ package jetbrains.mps.build.mps.tests.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildMpsLayout_TestModules_Content_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public BuildMpsLayout_TestModules_Content_BehaviorDescriptor() {
+  public boolean virtual_contains_4560297596904469640(SNode __thisNode__, SNode module) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
-    return BuildMpsLayout_TestModules_Content_Behavior.virtual_contains_4560297596904469640(thisNode, module);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content";
   }
-  public abstract Iterable<SNode> virtual_getModules_4560297596904469651(SNode thisNode);
+
+  public abstract Iterable<SNode> virtual_getModules_4560297596904469651(SNode __thisNode__);
 }

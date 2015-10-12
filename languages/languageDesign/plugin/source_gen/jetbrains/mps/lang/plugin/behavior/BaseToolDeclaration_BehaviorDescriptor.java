@@ -6,51 +6,54 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.checkedName.PropertyReference;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BaseToolDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClassifier_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor {
-  public BaseToolDeclaration_BehaviorDescriptor() {
+  public SNode virtual_createSuperType_1217433657148(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
-    return BaseToolDeclaration_Behavior.virtual_createSuperType_1217433657148(thisNode);
+  public SNode virtual_createType_1213877527970(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createType_1213877527970(SNode thisNode) {
-    return BaseToolDeclaration_Behavior.virtual_createType_1213877527970(thisNode);
+  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantToCheck_4844813484172611439(thisNode);
+  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getDescendantsToCheck_4844813484172611413(thisNode);
+  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode __thisNode__, List<SNode> nodesToRefactor) {
+    return null;
   }
-  public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
-    return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public List<SNode> virtual_getMembers_1213877528020(SNode __thisNode__, SNode contextNode) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
-    return IClassifier_Behavior.virtual_getMembers_1213877528020(thisNode, contextNode);
+  public List<SNode> virtual_getMembers_1213877528124(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
-    return IClassifier_Behavior.virtual_getMembers_1213877528124(thisNode);
+  public List<SNode> virtual_getParts_1213877527988(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
-    return IClassifier_Behavior.virtual_getParts_1213877527988(thisNode);
+  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode __thisNode__) {
+    return null;
   }
-  public List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
-    return ICheckedNamePolicy_Behavior.virtual_getPropertiesToCheck_4844813484172611445(thisNode);
+  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode __thisNode__) {
+    return null;
   }
-  public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
-    return BaseToolDeclaration_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration";
   }
+
 }

@@ -10,8 +10,9 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfProjectPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
@@ -38,7 +39,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />

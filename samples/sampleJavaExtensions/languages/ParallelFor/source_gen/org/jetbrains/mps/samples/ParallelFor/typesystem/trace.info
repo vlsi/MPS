@@ -462,7 +462,7 @@
   </root>
   <root nodeRef="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)/4697196167065890753">
     <file name="NoBreakInsideParallelFor_NonTypesystemRule.java">
-      <node id="4697196167065941784" at="26,39,27,85" concept="6" />
+      <node id="4697196167065941784" at="26,39,27,94" concept="6" />
       <node id="4697196167065941903" at="31,9,32,62" concept="5" />
       <node id="4697196167065941903" at="32,62,33,301" concept="5" />
       <node id="4697196167065890753" at="38,50,39,167" concept="6" />
@@ -479,7 +479,7 @@
       <node id="4697196167065890757" at="24,124,36,7" concept="2" />
       <node id="4697196167065890753" at="24,0,38,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4697196167065890753" at="22,55,22,55" />
-      <scope id="4697196167065941781" at="26,39,27,85" />
+      <scope id="4697196167065941781" at="26,39,27,94" />
       <scope id="4697196167065890753" at="38,50,39,167" />
       <scope id="4697196167065890753" at="41,68,42,102" />
       <scope id="4697196167065890753" at="44,30,45,17" />

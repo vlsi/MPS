@@ -26,7 +26,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -145,7 +145,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      IFile file = FileSystem.getInstance().getFileByPath(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
+      IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(node, Context.defaultContext()));
       if (!(file.exists())) {
         return ListSequence.fromList(new ArrayList<String>());
       }

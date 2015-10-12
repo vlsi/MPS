@@ -7,14 +7,20 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CopyPreProcessFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public CopyPreProcessFunction_BehaviorDescriptor() {
+  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    return CopyPreProcessFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction";
   }
+
 }

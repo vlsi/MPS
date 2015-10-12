@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.InternalFlag;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -35,9 +37,7 @@ public class PathManager {
   private static final String FILE = "file";
   private static final String JAR = "jar";
   private static final String JAR_DELIMITER = "!";
-  private static final String MPS_DASH = "mps-";
   private static final String DOT_JAR = ".jar";
-  private static final String MODULES_PREFIX = "!/modules";
 
   private static final String PROTOCOL_DELIMITER = ":";
   private static final String PLUGINS_PATH = "plugins";
@@ -45,10 +45,10 @@ public class PathManager {
   private static String ourHomePath;
   private static String ourIdeaPath;
 
-  private static final FilenameFilter MPS_JARS = new FilenameFilter() {
+  public static final FilenameFilter JAR_FILE_FILTER = new FilenameFilter() {
     @Override
     public boolean accept(File dir, String name) {
-      return name.startsWith(MPS_DASH) && name.endsWith(DOT_JAR);
+      return name.endsWith(DOT_JAR);
     }
   };
 
@@ -74,7 +74,6 @@ public class PathManager {
         root = root.getParentFile();
       }
     }
-
 
     ourHomePath = root.getAbsolutePath();
     if (ourHomePath.equals("/")) {
@@ -125,32 +124,29 @@ public class PathManager {
   }
 
   public static Collection<String> getBootstrapPaths() {
-    Collection<String> paths = getBootstrapPathsIfPackaged();
-    if (paths != null) return paths;
-    else {
-      paths = new ArrayList<String>(2);
+    Collection<String> paths = getBootstrapPathsFromLibFolder();
+    if (new File(getCorePath()).exists()) {
       paths.add(getCorePath());
+    }
+    if (new File(getEditorPath()).exists()) {
       paths.add(getEditorPath());
-      return Collections.unmodifiableCollection(paths);
     }
+    return Collections.unmodifiableCollection(paths);
   }
 
-  @Nullable
-  private static Collection<String> getBootstrapPathsIfPackaged() {
-    File libDir = new File(getPackagedLibPath());
+  @NotNull
+  private static Collection<String> getBootstrapPathsFromLibFolder() {
+    List<String> paths = new ArrayList<String>();
+    File libDir = new File(getLibPath());
     if (libDir.exists() && libDir.isDirectory()) {
-      List<String> paths = new ArrayList<String>();
-      for (File jar : libDir.listFiles(MPS_JARS)) {
-        paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
-      }
-      if (paths.size() > 0) {
-        return Collections.unmodifiableCollection(paths);
+      for (File jar : libDir.listFiles(JAR_FILE_FILTER)) {
+        paths.add(jar.getAbsolutePath());
       }
     }
-    return null;
+    return paths;
   }
 
-  private static String getPackagedLibPath() {
+  private static String getLibPath() {
     return getHomePath() + File.separator + "lib";
   }
 

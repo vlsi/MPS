@@ -14,7 +14,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class TodoFinder implements IFinder {
@@ -26,7 +27,7 @@ public class TodoFinder implements IFinder {
     Set<SNode> textCommentParts = FindUsagesFacade.getInstance().findInstances(query.getScope(), s, false, new EmptyProgressMonitor());
     SearchResults<SNode> results = new SearchResults<SNode>();
     for (SNode node : SNodeOperations.ofConcept(textCommentParts, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3dL, "jetbrains.mps.baseLanguage.structure.TextCommentPart"))) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isToDo_7236590470026152831", new Object[]{})) {
+      if (((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isToDo", null, "6hHyb3YSGHZ")))) {
         results.getSearchResults().add(new SearchResult<SNode>(node, "TODO items"));
       }
     }

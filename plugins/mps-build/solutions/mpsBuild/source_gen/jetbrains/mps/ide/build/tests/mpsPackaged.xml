@@ -54,6 +54,8 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="testPackagedLanguage.test-src.jar" descriptor="testPackagedLanguage.test.msd" />
@@ -85,6 +87,9 @@
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -98,26 +103,15 @@
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testPackagedLanguage.jar" />
     </jar>
-    <jar destfile="${build.layout}/testPackagedLanguage-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testPackagedLanguage#6919151941181557458" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-languageModels">
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/testPackagedLanguage-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-languageModels" prefix="module/languageModels" />
     </jar>
     <copy todir="${build.layout}">
@@ -137,7 +131,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.testPackagedLanguage, java.compile.testPackagedLanguage#6919151941181557458, java.compile.testPackagedLanguage.test" />
+  <target name="compileJava" depends="java.compile.testPackagedLanguage, java.compile.testPackagedLanguage.test" />
   
   <target name="processResources" />
   
@@ -204,6 +198,8 @@
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.script.jar" />
       <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
+      <library file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+      <library file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
       <library file="${artifacts.mps}/lib/mps-closures.jar" />
       <library file="${artifacts.mps}/lib/mps-collections.jar" />
       <library file="${artifacts.mps}/lib/mps-core.jar" />
@@ -219,7 +215,6 @@
         <module file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" />
         <module file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/testPackagedLanguage.test.msd" />
       </chunk>
-      <chunk />
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
@@ -245,6 +240,8 @@
         <path location="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
@@ -276,53 +273,14 @@
     </copy>
   </target>
   
-  <target name="java.compile.testPackagedLanguage#6919151941181557458" depends="java.compile.testPackagedLanguage, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testPackagedLanguage#6919151941181557458" />
-    <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage#6919151941181557458" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testPackagedLanguage" />
-        <fileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/lib/dummy.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testPackagedLanguage#6919151941181557458">
-      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.testPackagedLanguage.test" depends="java.compile.testPackagedLanguage, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/testPackagedLanguage.test" />
     <javac2 destdir="${build.tmp}/java/out/testPackagedLanguage.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen/" />
       <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
@@ -419,6 +377,8 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-behavior-api.jar" />
+      <pathelement location="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-closures.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-collections.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-core.jar" />
@@ -435,7 +395,6 @@
     <path id="mps.plugins.path" />
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path id="mps.tests.path">
-      <pathelement location="${build.layout}/testPackagedLanguage-generator.jar" />
       <pathelement location="${build.layout}/testPackagedLanguage.jar" />
       <pathelement location="${build.layout}/testPackagedLanguage.test.jar" />
     </path>
@@ -464,7 +423,6 @@
   
   <target name="cleanSources">
     <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen" />
     <delete dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/test_gen" />
   </target>
 </project>

@@ -4,6 +4,12 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface OrderConstraints_BehaviorDescriptor {
   public SNode virtual_getOrder_3038738109029048953(SNode thisNode);
   public boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab);

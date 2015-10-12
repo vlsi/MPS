@@ -8,15 +8,15 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.ReturnStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ReturnStatement__BehaviorDescriptor;
 
 public class ReturnStatement_DataFlow extends DataFlowBuilder {
   public ReturnStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression")));
-    if (ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode()) != null) {
-      _context.getBuilder().emitJump(_context.getBuilder().after(ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode())), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1229352005756");
+    if (ReturnStatement__BehaviorDescriptor.getReturnJumpTarget_idhSV4OYy.invoke(_context.getNode()) != null) {
+      _context.getBuilder().emitJump(_context.getBuilder().after(ReturnStatement__BehaviorDescriptor.getReturnJumpTarget_idhSV4OYy.invoke(_context.getNode())), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1229352005756");
     } else {
       _context.getBuilder().emitRet("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1229351994644");
     }

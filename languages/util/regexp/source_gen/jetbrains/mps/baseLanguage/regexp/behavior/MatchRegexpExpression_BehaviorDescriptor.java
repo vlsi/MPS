@@ -5,11 +5,17 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MatchRegexpExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements RegexpUsingConstruction_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public MatchRegexpExpression_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression";
   }
+
 }

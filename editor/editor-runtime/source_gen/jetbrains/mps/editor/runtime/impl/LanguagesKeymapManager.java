@@ -27,7 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
 import java.util.Collections;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
@@ -115,7 +116,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private Class<KeyMap> findKeyMapClassByDeclaration(SNode declaration) {
-    String fqName = BehaviorReflection.invokeVirtual(String.class, declaration, "virtual_getFqName_1213877404258", new Object[]{});
+    String fqName = ((String) BHReflection.invoke(declaration, SMethodTrimmedId.create("getFqName", null, "hEwIO9y")));
     String namespace = NameUtil.namespaceFromLongName(fqName);
     assert namespace.endsWith(".editor");
     String languageNamespace = namespace.substring(0, namespace.length() - ".editor".length());

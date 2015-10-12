@@ -24,16 +24,17 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.collections.behavior.HashMapCreator__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -172,40 +173,56 @@ public class QueriesGenerated {
     }.compute();
     final Iterable<SNode> subconceptOfSortedSetOp = new Computable<Iterable<SNode>>() {
       public Iterable<SNode> compute() {
-        return ConceptNodeUtil.subconceptsOf(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4baf9d4L, "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation").getDeclarationNode(), operationContext.getProject());
+        return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4baf9d4L, "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation").getDeclarationNode(), new ModuleRepositoryFacade(operationContext.getProject().getRepository()).getModelByName("jetbrains.mps.baseLanguage.collections.structure"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))));
+          }
+        });
       }
     }.compute();
     final Iterable<SNode> subconceptOfSetOp = new Computable<Iterable<SNode>>() {
       public Iterable<SNode> compute() {
-        return ConceptNodeUtil.subconceptsOf(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d95148c3eL, "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation").getDeclarationNode(), operationContext.getProject());
+        return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d95148c3eL, "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation").getDeclarationNode(), new ModuleRepositoryFacade(operationContext.getProject().getRepository()).getModelByName("jetbrains.mps.baseLanguage.collections.structure"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))));
+          }
+        });
       }
     }.compute();
     final Iterable<SNode> subconceptOfMapOp = new Computable<Iterable<SNode>>() {
       public Iterable<SNode> compute() {
-        return ConceptNodeUtil.subconceptsOf(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117aea47a16L, "jetbrains.mps.baseLanguage.collections.structure.MapOperation").getDeclarationNode(), operationContext.getProject());
+        return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117aea47a16L, "jetbrains.mps.baseLanguage.collections.structure.MapOperation").getDeclarationNode(), new ModuleRepositoryFacade(operationContext.getProject().getRepository()).getModelByName("jetbrains.mps.baseLanguage.collections.structure"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))));
+          }
+        });
       }
     }.compute();
     final Iterable<SNode> subconceptOfSortedMapOp = new Computable<Iterable<SNode>>() {
       public Iterable<SNode> compute() {
-        return ConceptNodeUtil.subconceptsOf(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4060180L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation").getDeclarationNode(), operationContext.getProject());
+        return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4060180L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation").getDeclarationNode(), new ModuleRepositoryFacade(operationContext.getProject().getRepository()).getModelByName("jetbrains.mps.baseLanguage.collections.structure"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))));
+          }
+        });
       }
     }.compute();
-    final Iterable<SNode> subconceptOfIAN = new Computable<Iterable<SNode>>() {
+    final Iterable<SNode> subconceptOfIATN = new Computable<Iterable<SNode>>() {
       public Iterable<SNode> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing").getDeclarationNode(), new ModuleRepositoryFacade(operationContext.getProject().getRepository()).getModelByName("jetbrains.mps.baseLanguage.collections.structure"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")))) && SetSequence.fromSet(IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SNodeOperations.asSConcept(it))).any(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return TypeChecker.getInstance().getSubtypingManager().isSubtype(it, opndType, false);
-              }
-            });
+            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))));
           }
         });
       }
     }.compute();
     final Iterable<SNode> subconceptOfSeqOp = new Computable<Iterable<SNode>>() {
       public Iterable<SNode> compute() {
-        return ConceptNodeUtil.subconceptsOf(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation").getDeclarationNode(), operationContext.getProject());
+        return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation").getDeclarationNode(), new ModuleRepositoryFacade(operationContext.getProject().getRepository()).getModelByName("jetbrains.mps.baseLanguage.collections.structure"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return !((SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")) || SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))));
+          }
+        });
       }
     }.compute();
     {
@@ -224,8 +241,17 @@ public class QueriesGenerated {
           if (TypeChecker.getInstance().getRuntimeSupport().coerce_(opndType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType")), false) != null) {
             ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfMapOp));
           }
-          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfIAN));
-          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSeqOp).subtract(Sequence.fromIterable(subconceptOfSortedSetOp)).subtract(Sequence.fromIterable(subconceptOfSetOp)).subtract(Sequence.fromIterable(subconceptOfSortedMapOp)).subtract(Sequence.fromIterable(subconceptOfMapOp)));
+          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfIATN).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SetSequence.fromSet(IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(it))).any(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return TypeChecker.getInstance().getSubtypingManager().isSubtype(opndType, it, false);
+                }
+              });
+            }
+          }));
+          ListSequence.fromList(allApplicable).addSequence(Sequence.fromIterable(subconceptOfSeqOp).subtract(Sequence.fromIterable(subconceptOfSortedSetOp)).subtract(Sequence.fromIterable(subconceptOfSetOp)).subtract(Sequence.fromIterable(subconceptOfSortedMapOp)).subtract(Sequence.fromIterable(subconceptOfMapOp)).subtract(Sequence.fromIterable(subconceptOfIATN)));
+
           return (Iterable<SNode>) ListSequence.fromList(allApplicable).distinct();
         }
       }.compute();
@@ -454,7 +480,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1237731265768(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getSourceNode(), "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ((SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x15ae66cec05cb2eaL, "initSize")) == null) || !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode())), "virtual_hasInitSize_1262430001741498238", new Object[]{}))) && ListSequence.fromList(SLinkOperations.getChildren(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isEmpty() && (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202e9082e6L, "copyFrom")) == null);
+    return (boolean) AbstractContainerCreator__BehaviorDescriptor.canHaveParameter_id1XyaNs207wP.invoke(_context.getSourceNode()) && ((SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x15ae66cec05cb2eaL, "initSize")) == null) || !((boolean) AbstractContainerCreator__BehaviorDescriptor.hasInitSize_id1653mnvAgtY.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))))) && ListSequence.fromList(SLinkOperations.getChildren(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isEmpty() && (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202e9082e6L, "copyFrom")) == null);
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_HashMapCreator_1240226447248(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -538,7 +564,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1562299158921287173(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x15ae66cec05cb2eaL, "initSize")) == null) && BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode())), "virtual_hasInitSize_1262430001741498238", new Object[]{}) && ListSequence.fromList(SLinkOperations.getChildren(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isEmpty() && (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202e9082e6L, "copyFrom")) == null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x15ae66cec05cb2eaL, "initSize")) == null) && (boolean) AbstractContainerCreator__BehaviorDescriptor.hasInitSize_id1653mnvAgtY.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))) && ListSequence.fromList(SLinkOperations.getChildren(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isEmpty() && (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202e9082e6L, "copyFrom")) == null);
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_HashMapCreator_1562299158921333140(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -567,7 +593,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1562299158921333141(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x118f24c9eb0L, "initializer")) == null) && (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x15ae66cec0613b7fL, "initSize")) == null) && BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode())), "virtual_hasInitSize_1262430001741497996", new Object[]{});
+    return (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x118f24c9eb0L, "initializer")) == null) && (SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116dbb34f2dL, 0x15ae66cec0613b7fL, "initSize")) == null) && (boolean) HashMapCreator__BehaviorDescriptor.hasInitSize_id1653mnvAgqc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(_context.getSourceNode())));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractContainerCreator_1279588871814823468(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

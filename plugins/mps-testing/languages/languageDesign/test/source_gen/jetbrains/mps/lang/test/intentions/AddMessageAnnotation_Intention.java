@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.typesystem.behavior.MessageStatement__BehaviorDescriptor;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -58,7 +58,7 @@ public final class AddMessageAnnotation_Intention extends IntentionDescriptorBas
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachNewMessageAnnotation_8489045168661849665", new Object[]{});
+      MessageStatement__BehaviorDescriptor.attachNewMessageAnnotation_id7nf9pEwlup1.invoke(node);
       SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L, "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"))), SelectionManager.FIRST_EDITABLE_CELL);
     }
     @Override

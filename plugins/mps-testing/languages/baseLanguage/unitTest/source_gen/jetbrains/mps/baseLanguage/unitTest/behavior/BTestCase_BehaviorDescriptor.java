@@ -5,38 +5,44 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BTestCase_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements ITestCase_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
-  public BTestCase_BehaviorDescriptor() {
+  public boolean virtual_canRunInProcess_6436735966448788391(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canRunInProcess_6436735966448788391(SNode thisNode) {
-    return BTestCase_Behavior.virtual_canRunInProcess_6436735966448788391(thisNode);
+  public String virtual_getClassName_1216136193905(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getClassName_1216136193905(SNode thisNode) {
-    return BTestCase_Behavior.virtual_getClassName_1216136193905(thisNode);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public List<SNode> virtual_getMembers_1213877531970(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
-    return BTestCase_Behavior.virtual_getMembers_1213877531970(thisNode);
+  public String virtual_getSimpleClassName_1229278847513(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
-    return BTestCase_Behavior.virtual_getSimpleClassName_1229278847513(thisNode);
+  public List<SNode> virtual_getTestMethods_2148145109766218395(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return BTestCase_Behavior.virtual_getTestMethods_2148145109766218395(thisNode);
+  public List<SNode> virtual_getTestSet_1216130724401(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
-    return BTestCase_Behavior.virtual_getTestSet_1216130724401(thisNode);
+  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return BTestCase_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase";
   }
+
 }

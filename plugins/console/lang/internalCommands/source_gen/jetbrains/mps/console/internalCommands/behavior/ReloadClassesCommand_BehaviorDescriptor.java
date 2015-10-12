@@ -8,17 +8,22 @@ import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReloadClassesCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor {
-  public ReloadClassesCommand_BehaviorDescriptor() {
+  public void virtual_doExecute_3321948346081469500(SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
   }
-  public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
-    ReloadClassesCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
+  public String virtual_getShortHelp_473081947982699339(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return ReloadClassesCommand_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand";
   }
+
 }

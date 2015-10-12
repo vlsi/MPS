@@ -6,6 +6,12 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefacto
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IExtractMethodAvailable_BehaviorDescriptor {
   public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract);
 }

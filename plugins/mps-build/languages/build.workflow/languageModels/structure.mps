@@ -2,7 +2,7 @@
 <model ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -14,6 +14,7 @@
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -48,6 +49,7 @@
     <property role="19KtqR" value="true" />
     <property role="TrG5h" value="BwfProject" />
     <property role="34LRSv" value="build workflow project" />
+    <property role="1pbfSe" value="1010092023" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6pYRYgn8fkY" role="1TKVEl">
       <property role="TrG5h" value="temporaryFolder" />
@@ -80,6 +82,7 @@
     <property role="TrG5h" value="BwfTask" />
     <property role="3GE5qa" value="Tasks" />
     <property role="34LRSv" value="task" />
+    <property role="1pbfSe" value="1010092021" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="2pKPpytmGTu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -104,6 +107,7 @@
     <property role="TrG5h" value="BwfSubTask" />
     <property role="3GE5qa" value="Tasks" />
     <property role="34LRSv" value="subtask" />
+    <property role="1pbfSe" value="1010092019" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2pKPpytmOC1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -137,11 +141,13 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BwfProjectPart" />
     <property role="3GE5qa" value="Structure" />
+    <property role="1pbfSe" value="1010092001" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2pKPpytmGTm">
     <property role="TrG5h" value="BwfTaskDependency" />
     <property role="3GE5qa" value="Tasks" />
+    <property role="1pbfSe" value="1010064402" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2pKPpytmGTn" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -153,6 +159,7 @@
   <node concept="1TIwiD" id="2pKPpytmOAS">
     <property role="TrG5h" value="BwfSubTaskDependency" />
     <property role="3GE5qa" value="Tasks" />
+    <property role="1pbfSe" value="1010032816" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2pKPpytmOAT" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -165,12 +172,14 @@
     <property role="TrG5h" value="BwfStatement" />
     <property role="3GE5qa" value="Tasks" />
     <property role="34LRSv" value="&lt;empty&gt;" />
+    <property role="1pbfSe" value="1010032717" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="2pKPpytnshB">
     <property role="TrG5h" value="BwfAntStatement" />
     <property role="3GE5qa" value="Tasks" />
     <property role="34LRSv" value="ant" />
+    <property role="1pbfSe" value="1009870337" />
     <ref role="1TJDcQ" node="2pKPpytmOCr" resolve="BwfStatement" />
     <node concept="1TJgyj" id="2pKPpytnshC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -183,6 +192,7 @@
     <property role="TrG5h" value="BwfJavaModule" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="compile java module" />
+    <property role="1pbfSe" value="271835489" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyi" id="6pYRYgn7MYR" role="1TKVEl">
       <property role="TrG5h" value="outputFolder" />
@@ -257,6 +267,7 @@
   <node concept="1TIwiD" id="47XTuiHNzz4">
     <property role="TrG5h" value="BwfJavaModuleReference" />
     <property role="3GE5qa" value="Structure" />
+    <property role="1pbfSe" value="271835480" />
     <ref role="1TJDcQ" node="5KZfyKsVu1I" resolve="BwfJavaDependency" />
     <node concept="1TJgyj" id="47XTuiHNzz5" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -269,6 +280,7 @@
     <property role="TrG5h" value="BwfTaskPart" />
     <property role="3GE5qa" value="Tasks" />
     <property role="34LRSv" value="task part" />
+    <property role="1pbfSe" value="875417473" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="3rV3sBXcG6U" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -296,6 +308,7 @@
     <property role="TrG5h" value="BwfMacro" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="macro" />
+    <property role="1pbfSe" value="1705646596" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyi" id="5YNybgUC_Pa" role="1TKVEl">
       <property role="TrG5h" value="defaultValue" />
@@ -321,6 +334,7 @@
     <property role="TrG5h" value="BwfJavaDescriptor" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="java descriptor" />
+    <property role="1pbfSe" value="1400274582" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
   </node>
   <node concept="1TIwiD" id="6l_Qx579cUi">
@@ -328,6 +342,7 @@
     <property role="TrG5h" value="BwfTaskLibrary" />
     <property role="3GE5qa" value="Libraries" />
     <property role="34LRSv" value="build tasks library" />
+    <property role="1pbfSe" value="1400199005" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6l_Qx579cUk" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -348,6 +363,7 @@
   <node concept="1TIwiD" id="6l_Qx579wkR">
     <property role="TrG5h" value="BwfTaskLibraryDependency" />
     <property role="3GE5qa" value="Libraries" />
+    <property role="1pbfSe" value="1400119480" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6l_Qx579wkS" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -360,6 +376,7 @@
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="BwfJavaDependency" />
     <property role="3GE5qa" value="Structure" />
+    <property role="1pbfSe" value="2033000090" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5KZfyKsVu1R">
@@ -367,6 +384,7 @@
     <property role="TrG5h" value="BwfJavaClassPath" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="cp" />
+    <property role="1pbfSe" value="2033000099" />
     <ref role="1TJDcQ" node="5KZfyKsVu1I" resolve="BwfJavaDependency" />
     <node concept="1TJgyj" id="6S1jmf0x7ox" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -379,6 +397,7 @@
     <property role="TrG5h" value="BwfPathDeclaration" />
     <property role="3GE5qa" value="Types" />
     <property role="34LRSv" value="path" />
+    <property role="1pbfSe" value="2033093180" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="5KZfyKsVPd7" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -394,6 +413,7 @@
     <property role="TrG5h" value="BwfPathReference" />
     <property role="3GE5qa" value="Types" />
     <property role="34LRSv" value="&lt;pathref &lt;{target}&gt;&gt;" />
+    <property role="1pbfSe" value="2033093195" />
     <ref role="1TJDcQ" to="iuxj:5M4a$b5ikxH" resolve="XmlBaseElement" />
     <node concept="1TJgyj" id="5KZfyKsVOKw" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -405,6 +425,7 @@
   <node concept="1TIwiD" id="6S1jmf0vFOr">
     <property role="TrG5h" value="BwfFileSet" />
     <property role="3GE5qa" value="Structure" />
+    <property role="1pbfSe" value="780143230" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="6S1jmf0vFOs" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -415,6 +436,7 @@
   </node>
   <node concept="1TIwiD" id="7cjNyAE9VFW">
     <property role="TrG5h" value="BwfDependency" />
+    <property role="1pbfSe" value="490440997" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7cjNyAE9VG8" role="1TKVEl">
       <property role="TrG5h" value="path" />
@@ -425,6 +447,7 @@
     <property role="TrG5h" value="BwfMacroListImport" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="import macros" />
+    <property role="1pbfSe" value="980762608" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyi" id="5DY7s5F3a9g" role="1TKVEl">
       <property role="TrG5h" value="prefix" />
@@ -439,6 +462,7 @@
     <property role="TrG5h" value="BwfAntTaskDeclaration" />
     <property role="3GE5qa" value="Types" />
     <property role="34LRSv" value="ant taskdef" />
+    <property role="1pbfSe" value="274339732" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="1Mjrj7j4BGZ" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -458,6 +482,7 @@
     <property role="TrG5h" value="BwfJavaLibrary" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="java library" />
+    <property role="1pbfSe" value="1337393153" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="827fHdHec9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -473,6 +498,7 @@
     <property role="TrG5h" value="BwfJavaLibraryReference" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="library" />
+    <property role="1pbfSe" value="1337554630" />
     <ref role="1TJDcQ" node="5KZfyKsVu1I" resolve="BwfJavaDependency" />
     <node concept="1TJgyj" id="827fHdHPBc" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -485,6 +511,7 @@
     <property role="TrG5h" value="BwfCustomMacro" />
     <property role="3GE5qa" value="Structure" />
     <property role="34LRSv" value="custom macro" />
+    <property role="1pbfSe" value="373028762" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="d_WKSiPwif" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -497,6 +524,7 @@
     <property role="TrG5h" value="BwfAntTaskBundleDeclaration" />
     <property role="3GE5qa" value="Types" />
     <property role="34LRSv" value="ant task bundle" />
+    <property role="1pbfSe" value="47892976" />
     <ref role="1TJDcQ" node="2pKPpytmAa7" resolve="BwfProjectPart" />
     <node concept="1TJgyj" id="2coTtJvKugw" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -513,6 +541,7 @@
     <property role="TrG5h" value="BwfProjectPartStatement" />
     <property role="3GE5qa" value="Tasks" />
     <property role="34LRSv" value="project part" />
+    <property role="1pbfSe" value="47856054" />
     <ref role="1TJDcQ" node="2pKPpytmOCr" resolve="BwfStatement" />
     <node concept="1TJgyj" id="2coTtJvKlft" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

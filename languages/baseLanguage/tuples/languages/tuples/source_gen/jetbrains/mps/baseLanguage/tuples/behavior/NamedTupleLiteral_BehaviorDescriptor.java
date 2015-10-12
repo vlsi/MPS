@@ -5,17 +5,23 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NamedTupleLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
-  public NamedTupleLiteral_BehaviorDescriptor() {
+  public String virtual_getLeftBracket_1262430001741498346(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getLeftBracket_1262430001741498346(SConcept thisConcept) {
-    return NamedTupleLiteral_Behavior.virtual_getLeftBracket_1262430001741498346(thisConcept);
+  public String virtual_getRightBracket_1262430001741498139(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getRightBracket_1262430001741498139(SConcept thisConcept) {
-    return NamedTupleLiteral_Behavior.virtual_getRightBracket_1262430001741498139(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral";
   }
+
 }

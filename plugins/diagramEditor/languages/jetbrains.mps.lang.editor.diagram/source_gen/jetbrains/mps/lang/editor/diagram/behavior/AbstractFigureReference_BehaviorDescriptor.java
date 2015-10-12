@@ -6,13 +6,19 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractFigureReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public AbstractFigureReference_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.AbstractFigureReference";
   }
-  public abstract List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode);
-  public abstract SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, String name);
+
+  public abstract List<String> virtual_getFigureParameterNames_1491555030356445722(SNode __thisNode__);
+  public abstract SNode virtual_getFigureParameter_1491555030357120840(SNode __thisNode__, String name);
 }

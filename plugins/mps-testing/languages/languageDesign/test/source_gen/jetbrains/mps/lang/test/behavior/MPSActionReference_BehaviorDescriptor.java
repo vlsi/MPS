@@ -4,14 +4,20 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MPSActionReference_BehaviorDescriptor extends ActionReference_BehaviorDescriptor {
-  public MPSActionReference_BehaviorDescriptor() {
+  public String virtual_getActionId_1101347953350122762(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getActionId_1101347953350122762(SNode thisNode) {
-    return MPSActionReference_Behavior.virtual_getActionId_1101347953350122762(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.MPSActionReference";
   }
+
 }

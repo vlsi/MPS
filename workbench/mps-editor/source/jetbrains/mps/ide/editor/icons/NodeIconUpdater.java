@@ -51,15 +51,13 @@ public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBa
     // XXX there's little sense to have own RepositoryChangeTracker in each component like this, we shall
     // rather share one. Therefore, I explicitly add/remove listeners here.
     myChangeTracker.addListener(this);
-    // FIXME use project repository once it dispatches module events
-    new RepoListenerRegistrar(/*myMPSProject.getRepository()*/MPSModuleRepository.getInstance(), myChangeTracker).attach();
+    new RepoListenerRegistrar(myMPSProject.getRepository(), myChangeTracker).attach();
   }
 
   @Override
   public void projectClosed() {
     myChangeTracker.removeListener(this);
-    // FIXME use project repository once it dispatches module events
-    new RepoListenerRegistrar(/*myMPSProject.getRepository()*/MPSModuleRepository.getInstance(), myChangeTracker).detach();
+    new RepoListenerRegistrar(myMPSProject.getRepository(), myChangeTracker).detach();
   }
 
   public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, MPSNodesVirtualFileSystem nodeVFS) {

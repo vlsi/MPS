@@ -32,7 +32,8 @@ import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -319,7 +320,7 @@ public class JavaParser {
       for (SNode unk : ListSequence.fromList(unknowns)) {
 
         final SNode unkNode = unk;
-        final _FunctionTypes._return_P0_E0<? extends SNode> subst = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unk, "virtual_evaluateSubst_8136348407761606764", new Object[]{});
+        final _FunctionTypes._return_P0_E0<? extends SNode> subst = ((_FunctionTypes._return_P0_E0<? extends SNode>) BHReflection.invoke(unk, SMethodTrimmedId.create("evaluateSubst", null, "73E7sj5sxxG")));
         if (subst == null) {
           continue;
         }

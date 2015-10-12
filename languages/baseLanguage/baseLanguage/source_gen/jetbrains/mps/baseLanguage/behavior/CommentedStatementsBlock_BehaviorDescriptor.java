@@ -6,22 +6,27 @@ import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import java.util.List;
-import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CommentedStatementsBlock_BehaviorDescriptor extends Statement_BehaviorDescriptor implements ILocalVariableElementList_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
-  public CommentedStatementsBlock_BehaviorDescriptor() {
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    CommentedStatementsBlock_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return CommentedStatementsBlock_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
+  public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode child) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
   }
+
 }

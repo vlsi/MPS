@@ -9,10 +9,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.build.behavior.BuildTextStringPart_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.awt.Color;
+import jetbrains.mps.build.behavior.BuildTextStringPart__BehaviorDescriptor;
+import jetbrains.mps.build.behavior.BuildStringContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.behavior.BuildStringPart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -20,6 +20,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.EditorManager;
+import java.awt.Color;
 
 public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -42,7 +43,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext) {
-    return (BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node) != null) && BehaviorReflection.invokeVirtual(Color.class, BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node), "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()}) != null;
+    return (BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node) != null) && BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node), SNodeOperations.getParent(node).getRoleInParent()) != null;
   }
   private EditorCell createAlternation_zen9g6_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
@@ -56,7 +57,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zen9g6_a0a(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_punctuationLeft_5096397858823356723", new Object[]{});
+    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
   }
   private EditorCell createProperty_zen9g6_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -81,9 +82,9 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_zen9g6_a1a0a(EditorContext editorContext, SNode node) {
-    SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
+    SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node);
     if ((container != null)) {
-      Color colorForTextPart = BehaviorReflection.invokeVirtual(Color.class, container, "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()});
+      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(node).getRoleInParent());
       if (colorForTextPart != null) {
         return colorForTextPart;
       }
@@ -112,9 +113,9 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_zen9g6_a0a0a(EditorContext editorContext, SNode node) {
-    SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
+    SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node);
     if ((container != null)) {
-      Color colorForTextPart = BehaviorReflection.invokeVirtual(Color.class, container, "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()});
+      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(node).getRoleInParent());
       if (colorForTextPart != null) {
         return colorForTextPart;
       }
@@ -133,7 +134,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_zen9g6_a0a_0(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_punctuationLeft_5096397858823356723", new Object[]{});
+    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
   }
   private EditorCell createProperty_zen9g6_a0a_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);

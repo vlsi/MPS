@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.editor.runtime.cells.CellIdManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PropertyMacroActions {
@@ -30,7 +30,7 @@ public class PropertyMacroActions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNodeOperations.deleteNode(node);
-      SelectionUtil.selectCell(editorContext, attributedNode, "*" + CellIdManager.createPropertyId(SPropertyOperations.getString(SNodeOperations.as(PropertyAttribute_Behavior.call_getProperty_1341860900488756504(node).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+      SelectionUtil.selectCell(editorContext, attributedNode, "*" + CellIdManager.createPropertyId(SPropertyOperations.getString(SNodeOperations.as(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(node).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
     }
   }
   public static class PropertyMacroActions_BACKSPACE extends AbstractCellAction {
@@ -44,7 +44,7 @@ public class PropertyMacroActions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNodeOperations.deleteNode(node);
-      SelectionUtil.selectCell(editorContext, attributedNode, "*" + CellIdManager.createPropertyId(SPropertyOperations.getString(SNodeOperations.as(PropertyAttribute_Behavior.call_getProperty_1341860900488756504(node).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+      SelectionUtil.selectCell(editorContext, attributedNode, "*" + CellIdManager.createPropertyId(SPropertyOperations.getString(SNodeOperations.as(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(node).getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
     }
   }
 }

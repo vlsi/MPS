@@ -4,14 +4,20 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BigProdExpression_BehaviorDescriptor extends ArithmSymbol_BehaviorDescriptor {
-  public BigProdExpression_BehaviorDescriptor() {
+  public String virtual_getOpName_1262430001741497894(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getOpName_1262430001741497894(SConcept thisConcept) {
-    return BigProdExpression_Behavior.virtual_getOpName_1262430001741497894(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.BigProdExpression";
   }
+
 }

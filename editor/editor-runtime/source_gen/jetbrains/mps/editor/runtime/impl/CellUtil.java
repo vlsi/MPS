@@ -6,7 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -16,7 +17,7 @@ public class CellUtil {
   }
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
     SNode deprecatable = SNodeOperations.as(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL, "jetbrains.mps.lang.core.structure.IDeprecatable"));
-    if (deprecatable != null && (BehaviorReflection.invokeVirtual(Boolean.TYPE, deprecatable, "virtual_isDeprecated_1224609060727", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(deprecatable)), "virtual_isDeprecated_1224609060727", new Object[]{}))) {
+    if (deprecatable != null && (((boolean) (Boolean) BHReflection.invoke(deprecatable, SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR"))) || ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(deprecatable)), SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR"))))) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
   }

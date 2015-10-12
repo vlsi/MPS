@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ElsifClause__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -68,7 +68,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       // todo: this is quite a hackish stuff but we need it 
       // todo: but we need it since we can't enable/disable 
       // todo: menu items by condition 
-      SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(node);
+      SNode ifStatement = ElsifClause__BehaviorDescriptor.getIfStatement_idhEwIDu9.invoke(node);
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")) == null)) {
         ListSequence.fromList(result).addElement("else");
@@ -81,7 +81,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if ("else".equals(parameterObject)) {
-        ElsifClause_Behavior.call_convertToElseClause_1217846674032(node);
+        ElsifClause__BehaviorDescriptor.convertToElseClause_idhIdko9K.invoke(node);
       }
     }
     public boolean isReferentPresentation() {

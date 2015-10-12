@@ -6,16 +6,22 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StubOperationDeclaration_BehaviorDescriptor extends OperationDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, IStubForAnotherConcept_BehaviorDescriptor {
-  public StubOperationDeclaration_BehaviorDescriptor() {
+  public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode child) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration";
   }
+
 }

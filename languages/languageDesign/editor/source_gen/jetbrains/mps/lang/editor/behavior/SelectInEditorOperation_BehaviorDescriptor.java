@@ -5,27 +5,33 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SelectInEditorOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
-  public SelectInEditorOperation_BehaviorDescriptor() {
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
-    return SelectInEditorOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
-    return SelectInEditorOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
   }
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return SelectInEditorOperation_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  public Scope virtual_getScope_7722139651431880752(SNode __thisNode__, SNode kind, String role, int index) {
+    return null;
   }
-  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.SelectInEditorOperation";
   }
+
 }

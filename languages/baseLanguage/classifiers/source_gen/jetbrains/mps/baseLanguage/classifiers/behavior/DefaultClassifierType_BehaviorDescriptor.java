@@ -5,14 +5,20 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DefaultClassifierType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
-  public DefaultClassifierType_BehaviorDescriptor() {
+  public List<SNode> virtual_getMembers_1213877402148(SNode __thisNode__, SNode contextNode) {
+    return null;
   }
-  public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
-    return DefaultClassifierType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType";
   }
+
 }

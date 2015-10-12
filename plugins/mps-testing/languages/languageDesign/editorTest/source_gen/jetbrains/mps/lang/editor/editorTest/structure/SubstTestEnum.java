@@ -11,12 +11,20 @@ public enum SubstTestEnum {
   v2("v2", "v2"),
   v3("v3", "v3");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  SubstTestEnum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<SubstTestEnum> getConstants() {
     List<SubstTestEnum> list = ListSequence.fromList(new LinkedList<SubstTestEnum>());
@@ -42,13 +50,5 @@ public enum SubstTestEnum {
       return SubstTestEnum.v3;
     }
     return SubstTestEnum.getDefault();
-  }
-  private String myValue;
-  SubstTestEnum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

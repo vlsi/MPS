@@ -24,9 +24,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -64,13 +64,13 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
                 return new EmptyScope();
               }
 
-              Iterable<SNode> privateFields = (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(classifierType)).where(new IWhereFilter<SNode>() {
+              Iterable<SNode> privateFields = (Iterable<SNode>) Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(classifierType)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVisible_6145907390641297352", new Object[]{classifierType, _context.getContextNode()}));
+                  return !((boolean) IClassifierMember__BehaviorDescriptor.isVisible_id5laDzmpBPv8.invoke(it, classifierType, _context.getContextNode()));
                 }
               });
               return new NamedElementsScope(privateFields);

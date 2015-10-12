@@ -74,5 +74,6 @@
     <orderEntry type="library" name="mps.MPS.Platform_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.closures_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.tuples.runtime_auto" level="project" />
+    <orderEntry type="library" name="mps.jetbrains.mps.lang.behavior" level="project" />
   </component>
 </module>

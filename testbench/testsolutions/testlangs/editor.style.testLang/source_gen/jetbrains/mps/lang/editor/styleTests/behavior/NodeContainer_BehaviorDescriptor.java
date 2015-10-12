@@ -4,11 +4,17 @@ package jetbrains.mps.lang.editor.styleTests.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class NodeContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public NodeContainer_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer";
   }
+
 }

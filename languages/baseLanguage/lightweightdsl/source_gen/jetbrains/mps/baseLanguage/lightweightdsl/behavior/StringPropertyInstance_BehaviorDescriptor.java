@@ -4,14 +4,20 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StringPropertyInstance_BehaviorDescriptor extends PropertyInstance_BehaviorDescriptor {
-  public StringPropertyInstance_BehaviorDescriptor() {
+  public SNode virtual_getValueExpression_3855110916777030624(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getValueExpression_3855110916777030624(SNode thisNode) {
-    return StringPropertyInstance_Behavior.virtual_getValueExpression_3855110916777030624(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.lightweightdsl.structure.StringPropertyInstance";
   }
+
 }

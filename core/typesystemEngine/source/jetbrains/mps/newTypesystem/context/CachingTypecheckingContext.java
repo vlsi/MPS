@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@ package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
 

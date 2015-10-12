@@ -4,14 +4,20 @@ package jetbrains.mps.execution.settings.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PersistentConfigurationTemplate_BehaviorDescriptor extends PersistentConfiguration_BehaviorDescriptor {
-  public PersistentConfigurationTemplate_BehaviorDescriptor() {
+  public SNode virtual_createType_1213877527970(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createType_1213877527970(SNode thisNode) {
-    return PersistentConfigurationTemplate_Behavior.virtual_createType_1213877527970(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate";
   }
+
 }

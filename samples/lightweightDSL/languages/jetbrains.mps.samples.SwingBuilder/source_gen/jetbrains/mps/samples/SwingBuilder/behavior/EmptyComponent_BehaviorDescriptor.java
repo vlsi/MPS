@@ -4,11 +4,17 @@ package jetbrains.mps.samples.SwingBuilder.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EmptyComponent_BehaviorDescriptor extends Component_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public EmptyComponent_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.SwingBuilder.structure.EmptyComponent";
   }
+
 }

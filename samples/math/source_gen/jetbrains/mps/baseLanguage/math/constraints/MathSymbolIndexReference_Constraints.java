@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
-import jetbrains.mps.baseLanguage.math.behavior.MathSymbol_Behavior;
+import jetbrains.mps.baseLanguage.math.behavior.MathSymbol__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -41,8 +41,8 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode ms = SNodeOperations.getNodeAncestor(_context.getEnclosingNode(), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), true, false);
-            List<SNode> msi = MathSymbol_Behavior.call_getEmptyIndexList_1237828382992(ms);
-            MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, _context.getEnclosingNode(), msi);
+            List<SNode> msi = MathSymbol__BehaviorDescriptor.getEmptyIndexList_idi0Okz4g.invoke(ms);
+            MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY.invoke(ms, _context.getEnclosingNode(), msi);
             return msi;
           }
           @Override

@@ -5,14 +5,19 @@ package jetbrains.mps.lang.resources.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IconResource_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Resource_BehaviorDescriptor {
-  public IconResource_BehaviorDescriptor() {
+  public void virtual_generate_8974276187400030152(SNode __thisNode__) {
   }
-  public void virtual_generate_8974276187400030152(SNode thisNode) {
-    IconResource_Behavior.virtual_generate_8974276187400030152(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.resources.structure.IconResource";
   }
+
 }

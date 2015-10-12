@@ -13,12 +13,11 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -36,7 +35,7 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
     QueueSequence.fromQueue(toCheck).addLastElement(conceptDeclaration);
     while (QueueSequence.fromQueue(toCheck).isNotEmpty()) {
       SNode acd = QueueSequence.fromQueue(toCheck).removeFirstElement();
-      List<SNode> aspects = AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_1567570417158062208(acd, LanguageAspect.EDITOR);
+      List<SNode> aspects = AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id1n18fON7w20.invoke(acd, LanguageAspect.EDITOR);
       if (!((acd == SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"))) && ListSequence.fromList(aspects).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode a) {
           return SNodeOperations.isInstanceOf(a, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
@@ -44,7 +43,7 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
       })) {
         return;
       }
-      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), acd, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})));
+      QueueSequence.fromQueue(toCheck).addSequence(ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(acd)));
     }
     {
       MessageTarget errorTarget = new NodeMessageTarget();

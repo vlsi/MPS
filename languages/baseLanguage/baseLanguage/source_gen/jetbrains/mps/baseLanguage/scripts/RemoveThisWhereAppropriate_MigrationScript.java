@@ -7,9 +7,9 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
-import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
-import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
+import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.StaticMethodCall__BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -35,11 +35,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return FieldReferenceOperation_Behavior.call_canBeConvertedToLocal_5311267937735160942(node);
+        return (boolean) FieldReferenceOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfC3hI.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        FieldReferenceOperation_Behavior.call_convertToLocal_5311267937735269195(node);
+        FieldReferenceOperation__BehaviorDescriptor.convertToLocal_id4APqwMfCtHb.invoke(node);
       }
       @Override
       public boolean isShowAsIntention() {
@@ -64,11 +64,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return InstanceMethodCallOperation_Behavior.call_canBeConvertedToLocal_5311267937735225328(node);
+        return (boolean) InstanceMethodCallOperation__BehaviorDescriptor.canBeConvertedToLocal_id4APqwMfCiZK.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        InstanceMethodCallOperation_Behavior.call_convertToLocal_5311267937735269230(node);
+        InstanceMethodCallOperation__BehaviorDescriptor.convertToLocal_id4APqwMfCtHI.invoke(node);
       }
       @Override
       public boolean isShowAsIntention() {
@@ -93,11 +93,11 @@ public final class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrat
         if (node == null) {
           return false;
         }
-        return StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node);
+        return (boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node);
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        StaticMethodCall_Behavior.call_convertToLocal_3299924278393509387(node);
+        StaticMethodCall__BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
       }
       @Override
       public boolean isShowAsIntention() {

@@ -6,17 +6,23 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SEnumMemberType_BehaviorDescriptor extends Type_BehaviorDescriptor {
-  public SEnumMemberType_BehaviorDescriptor() {
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SEnumMemberType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode __thisNode__) {
+    return null;
   }
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return SEnumMemberType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SEnumMemberType";
   }
+
 }

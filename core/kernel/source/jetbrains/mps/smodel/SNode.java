@@ -41,6 +41,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static jetbrains.mps.util.SNodeOperations.getDebugText;
 
@@ -955,6 +956,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   private SProperty convertToProp(String name) {
     return ((ConceptMetaInfoConverter) myConcept).convertProperty(name);
+  }
+
+  private static final class AlreadyConstructedException extends RuntimeException {
+    public AlreadyConstructedException(@NotNull SNode node) {
+      super("The node " + node + " has already been constructed.");
+    }
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {

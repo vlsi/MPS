@@ -6,27 +6,31 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ExpectedOption_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IExpected_BehaviorDescriptor, INamedConcept_BehaviorDescriptor, IWillBeClassifier_BehaviorDescriptor {
-  public ExpectedOption_BehaviorDescriptor() {
+  public SNode virtual_baseClassifier_4125795553993767872(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
-    return IWillBeClassifier_Behavior.virtual_baseClassifier_4125795553993767872(thisNode);
+  public String virtual_classifierName_4609636120081351397(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return ExpectedOption_Behavior.virtual_classifierName_4609636120081351397(thisNode);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public SNode virtual_resolve_4609636120081469956(SNode __thisNode__, SModel targetModel) {
+    return null;
   }
-  public SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
-    return IWillBeClassifier_Behavior.virtual_resolve_4609636120081469956(thisNode, targetModel);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.ExpectedOption";
   }
+
 }

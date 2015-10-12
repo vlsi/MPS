@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -50,7 +51,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   }
   @Override
   public void replaceNode(SNode node, SNode declaration) {
-    SNode reference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), declaration, "virtual_createReference_1213877517482", new Object[]{});
+    SNode reference = ((SNode) BHReflection.invoke(declaration, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
     SNodeOperations.replaceWithAnother(node, reference);
     this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
   }

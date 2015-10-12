@@ -2,7 +2,7 @@
 <model ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -15,6 +15,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -50,6 +51,7 @@
   </registry>
   <node concept="1TIwiD" id="7Mb2akaesqV">
     <property role="TrG5h" value="IconResource" />
+    <property role="1pbfSe" value="2033922208" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="63hNSM1YIC9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -64,6 +66,7 @@
     <property role="19KtqR" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/iconResourceBundle.png" />
     <property role="TrG5h" value="IconResourceBundle" />
+    <property role="1pbfSe" value="2033922206" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Mb2akaesqY" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -77,6 +80,7 @@
   </node>
   <node concept="1TIwiD" id="7Mb2akaesr0">
     <property role="TrG5h" value="IconResourceDeclaration" />
+    <property role="1pbfSe" value="2033922203" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7Mb2akaesr1" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -94,6 +98,7 @@
     <property role="TrG5h" value="IconResourceExpression" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="icon" />
+    <property role="1pbfSe" value="2033922200" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7Mb2akaesr5" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -109,6 +114,7 @@
     <property role="TrG5h" value="IconResourceReference" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="icon" />
+    <property role="1pbfSe" value="2033922196" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="7Mb2akaesr8" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -119,6 +125,7 @@
   </node>
   <node concept="PlHQZ" id="7Mb2akaesra">
     <property role="TrG5h" value="Resource" />
+    <property role="1pbfSe" value="2033922193" />
     <node concept="1TJgyi" id="7Mb2akaesrb" role="1TKVEl">
       <property role="TrG5h" value="path" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />

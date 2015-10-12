@@ -14,9 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -66,11 +64,10 @@ public class MakeFieldFinal_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-        if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+        if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()))) {
           return;
         }
         RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

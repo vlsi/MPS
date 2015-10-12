@@ -5,18 +5,14 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class NodeIdentity_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_create_9032177546941796951(SAbstractConcept thisConcept, SModel where, SNode n) {
-    SNode rv = SModelOperations.createNewNode(where, null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId")));
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64466L, "conceptId"), n.getConcept().getQualifiedName());
-    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64468L, "nodeId"), n.getNodeId().toString());
-    return rv;
+  public static SNode call_create_9032177546941796951(SAbstractConcept __thisConcept__, SModel where, SNode n) {
+    return NodeIdentity__BehaviorDescriptor.create_id7PoJpZpIp9n(__thisConcept__, where, n);
   }
 }

@@ -149,7 +149,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     threadSet.add(pair);
 
     try {
-      org.jetbrains.mps.openapi.model.SNode oldReferent = node.getReferenceTarget(referenceLink);
+      org.jetbrains.mps.openapi.model.SReference r = node.getReference(referenceLink);
+      org.jetbrains.mps.openapi.model.SNode oldReferent = r == null ? null : SReference.getTargetNodeSilently(r);
       if (descriptor.validate(node, oldReferent, target)) {
         node.setReferenceTarget(referenceLink, target);
         descriptor.onReferenceSet(node, oldReferent, target);

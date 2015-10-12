@@ -4,6 +4,12 @@ package jetbrains.mps.lang.behavior.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface I_BehaviorDescriptor {
   public String virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(SNode thisNode, int dummy);
   public String virtual_virtualFromInterfaceConcept_4731970554577186975(SNode thisNode, String in);

@@ -4,6 +4,8 @@
     <projectModules>
       <modulePath path="$PROJECT_DIR$/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/analyzers/solutions/sandbox/jetbrains.mps.lang.dataFlow.analyzers.sandbox.msd" folder="core.aspects.dataflow" />
+      <modulePath path="$PROJECT_DIR$/core/aspects/behavior/behavior-api/jetbrains.mps.lang.behavior.api.msd" folder="core.aspects.behavior" />
+      <modulePath path="$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/jetbrains.mps.lang.behavior.runtime.msd" folder="core.aspects.behavior" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="core.devkits" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" folder="core.devkits" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.language-design.devkit" folder="core.devkits" />
@@ -243,7 +245,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/baseLanguage/jetbrains.mps.baseLanguage.pluginSolution.msd" folder="core.baseLanguage" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.dataFlow/jetbrains.mps.lang.dataFlow.pluginSolution.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.generator/jetbrains.mps.lang.generator.pluginSolution.msd" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.migration/jetbrains.mps.lang.migration.pluginSolution.msd" folder="core.aspects.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.plugin/jetbrains.mps.lang.plugin.pluginSolution.msd" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.quotation/jetbrains.mps.lang.quotation.pluginSolution.msd" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.structure/jetbrains.mps.lang.structure.pluginSolution.msd" folder="core.aspects.structure" />
@@ -255,6 +256,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmake/jetbrains.mps.ide.make.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/jetbrains.mps.baseLanguage.closures.test.msd" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testAnnotatedType/testAnnotatedType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testOverridingType/testOverridingType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testWrappedType/testWrappedType.mpl" folder="tests.substituteType" />
@@ -381,6 +383,16 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/migratingSolution.msd" folder="tests.migrations" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/simpleProject.msd" folder="tests.diskMemoryConflict" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testActions/jetbrains.mps.testActions.msd" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L1/BHL1.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L2/BHL2.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L3/BHL3.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L4/BHL4.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L5/BHL5.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L6/BHL6.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/languages/L7/BHL7.mpl" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/TestBehavior/TestBehavior.msd" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/TestBehaviorReflective/TestBehaviorReflective.msd" folder="tests.testBehavior" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/UtilSolution/UtilSolution.msd" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L1/L1.mpl" folder="tests.testClassLoading" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L2/L2.mpl" folder="tests.testClassLoading" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" folder="tests" />

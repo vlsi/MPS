@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.build.behavior.BuildProject_Behavior;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
 import org.apache.log4j.Level;
@@ -85,7 +85,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        basePath.value = BuildProject_Behavior.call_getBasePath_4959435991187146924(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
+        basePath.value = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
         if (basePath.value != null && isNotEmptyString(basePath.value)) {
           projectFolder.value = FileSystem.getInstance().getFileByPath(basePath.value);
         }

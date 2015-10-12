@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.editor.Document;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.JBUI;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.MementoPersistence;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -28,8 +29,6 @@ import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -54,7 +53,7 @@ public abstract class BaseNodeEditor implements Editor {
   private EditorComponent myEditorComponent;
   private JComponent myComponent = new EditorPanel();
   private JComponent myEditorPanel = new JPanel();
-  private Project myProject;
+  protected final Project myProject;
   private JComponent myReplace = null;
   private SNodeReference myCurrentlyEditedNode = null;
   protected Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<TaskType, PrioritizedTask>();
@@ -104,12 +103,12 @@ public abstract class BaseNodeEditor implements Editor {
     executeInEDT(new PrioritizedTask(TaskType.EDIT_NODE, myType2TaskMap) {
       @Override
       public void performTask() {
-        SNode node = nodeToEdit.resolve(MPSModuleRepository.getInstance());
+        SNode node = nodeToEdit.resolve(myProject.getRepository());
         if (node == null) {
           return;
         }
         myEditorComponent.editNode(node);
-        SNode toSelect = nodeToSelect == null ? null : nodeToSelect.resolve(MPSModuleRepository.getInstance());
+        SNode toSelect = nodeToSelect == null ? null : nodeToSelect.resolve(myProject.getRepository());
         if (toSelect != null) {
           myEditorComponent.getEditorContext().selectWRTFocusPolicy(toSelect, false); // XXX findNodeCell(, true)? to reveal even folded?
         }
@@ -119,10 +118,13 @@ public abstract class BaseNodeEditor implements Editor {
   }
 
   protected void executeInEDT(PrioritizedTask task) {
-    if (ModelAccess.instance().isInEDT()) {
+    // XXX I'm not sure this is the right approach (used to be ModelAccess.isInEDT()) -
+    // callers expect model read, and check for EDT only is sort of an implicit knowledge about reads/writes.
+    // Why not runReadInEDT always?
+    if (myProject.getModelAccess().canRead() && ThreadUtils.isInEDT()) {
       task.run();
     } else {
-      ModelAccess.instance().runReadInEDT(task);
+      myProject.getModelAccess().runReadInEDT(task);
     }
   }
 

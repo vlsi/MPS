@@ -9,28 +9,32 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildSolutionRunnerAspect_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
-  public BuildSolutionRunnerAspect_BehaviorDescriptor() {
+  public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BuildSolutionRunnerAspect_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
+  public String virtual_getClassName_1350734474210951475(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getClassName_1350734474210951475(SNode thisNode) {
-    return BuildSolutionRunnerAspect_Behavior.virtual_getClassName_1350734474210951475(thisNode);
+  public String virtual_getMethodName_1350734474210955274(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getMethodName_1350734474210955274(SNode thisNode) {
-    return BuildSolutionRunnerAspect_Behavior.virtual_getMethodName_1350734474210955274(thisNode);
+  public Scope virtual_getScope_3734116213129936182(SNode __thisNode__, SNode kind, SNode child) {
+    return null;
   }
-  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return BuildSolutionRunnerAspect_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
+  public Scope virtual_getScope_7722139651431880752(SNode __thisNode__, SNode kind, String role, int index) {
+    return null;
   }
-  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerAspect";
   }
+
 }

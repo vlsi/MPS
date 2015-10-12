@@ -5,6 +5,12 @@ package jetbrains.mps.console.scripts.behavior;
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface AbstractConsoleScript_BehaviorDescriptor extends IValidIdentifier_BehaviorDescriptor {
   public Iterable<SNode> virtual_getCommands_1734392475491235554(SNode thisNode);
 }

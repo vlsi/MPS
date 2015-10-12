@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -30,7 +30,7 @@ public class _CloseTag implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_abi8e8_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node);
+        return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(node);
       }
       public void setText(String s) {
       }

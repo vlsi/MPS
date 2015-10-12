@@ -8,24 +8,26 @@ import jetbrains.mps.typesystem.inference.TypeSubstitution;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import testAnnotatedType.behavior.PresenceCondition_Behavior;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import testAnnotatedType.behavior.PresenceCondition__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import testAnnotatedType.behavior.PrimType__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class substituteType_SubstituteAnnotation_SubstituteTypeRule extends AbstractSubstituteType_Runtime implements SubstituteType_Runtime {
   public substituteType_SubstituteAnnotation_SubstituteTypeRule() {
   }
-  public TypeSubstitution substitution(SNode substituteAnnotation, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return new TypeSubstitution(originalType, newNode(substituteAnnotation, originalType, typeCheckingContext, status), "r:d9c7d7eb-2b42-4829-a0ae-81b54923bc48(testAnnotatedType.typesystem)", "7323318266641350941");
-  }
-  public SNode newNode(SNode substituteAnnotation, SNode originalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (PresenceCondition_Behavior.call_isSatisfied_6405009306797675392(SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1c4L, "condition")))) {
-      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(substituteAnnotation), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType")), "virtual_substituteWith_1470921783545443949", new Object[]{SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1baL, "substitute"))});
-    }
-    return null;
+  public TypeSubstitution substitution(final SNode substituteAnnotation, SNode originalType, final TypeCheckingContext typeCheckingContext, final IsApplicableStatus status) {
+    return new TypeSubstitution(originalType, new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        if ((boolean) PresenceCondition__BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1c4L, "condition")))) {
+          return PrimType__BehaviorDescriptor.substituteWith_id1hDKT6wB3pH.invoke(SNodeOperations.cast(SNodeOperations.getParent(substituteAnnotation), MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType")), SLinkOperations.getTarget(substituteAnnotation, MetaAdapterFactory.getContainmentLink(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, 0x58e32a0782beb1baL, "substitute")));
+        }
+        return null;
+      }
+    }.invoke(), "r:d9c7d7eb-2b42-4829-a0ae-81b54923bc48(testAnnotatedType.typesystem)", "7323318266641350941");
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, "testAnnotatedType.structure.SubstituteAnnotation");

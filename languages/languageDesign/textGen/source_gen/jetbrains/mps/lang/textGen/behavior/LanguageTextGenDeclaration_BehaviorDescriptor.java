@@ -6,17 +6,23 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class LanguageTextGenDeclaration_BehaviorDescriptor extends AbstractTextGenDeclaration_BehaviorDescriptor {
-  public LanguageTextGenDeclaration_BehaviorDescriptor() {
+  public List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SConcept thisConcept) {
-    return LanguageTextGenDeclaration_Behavior.virtual_getApplicableHiddenParameter_3044950653914717099(thisConcept);
+  public List<SNode> virtual_getAvailableOperations_1234781444746(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
-    return LanguageTextGenDeclaration_Behavior.virtual_getAvailableOperations_1234781444746(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration";
   }
+
 }

@@ -46,7 +46,7 @@ public class TestMergeDialog {
         return (T) TestMergeDialog.ourMPSProject;
       }
       if (interfaceClass == BookmarkManager.class) {
-        return (T) new BookmarkManager(TestMergeDialog.ourProject, null);
+        return (T) new BookmarkManager(TestMergeDialog.ourMPSProject, null);
       }
       return null;
     }

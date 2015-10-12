@@ -4,30 +4,17 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class MathSymbol_Behavior {
-  public static void init(SNode thisNode) {
+  public static void call_getVisibleIndices_1236440390782(SNode __thisNode__, SNode sender, List<SNode> indices) {
+    MathSymbol__BehaviorDescriptor.getVisibleIndices_idhZx_LLY(__thisNode__, sender, indices);
   }
-  public static void call_getVisibleIndices_1236440390782(SNode thisNode, SNode sender, List<SNode> indices) {
-    SNode sI = SNodeOperations.getNodeAncestor(sender, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea76c7e0L, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex"), true, false);
-    if (sI != SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var"))) {
-      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var")));
-    }
-    SNode ms = SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"), false, false);
-    if (ms != null) {
-      MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, thisNode, indices);
-    }
-  }
-  public static List<SNode> call_getEmptyIndexList_1237828382992(SNode thisNode) {
-    return new ArrayList<SNode>();
-  }
-  public static String virtual_getOpName_1262430001741497894(SAbstractConcept thisConcept) {
-    return null;
+  public static List<SNode> call_getEmptyIndexList_1237828382992(SNode __thisNode__) {
+    return MathSymbol__BehaviorDescriptor.getEmptyIndexList_idi0Okz4g(__thisNode__);
   }
 }

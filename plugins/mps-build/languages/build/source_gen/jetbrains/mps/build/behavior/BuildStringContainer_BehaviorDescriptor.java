@@ -7,6 +7,12 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
 import org.jetbrains.annotations.NonNls;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface BuildStringContainer_BehaviorDescriptor {
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role);
   @Nullable

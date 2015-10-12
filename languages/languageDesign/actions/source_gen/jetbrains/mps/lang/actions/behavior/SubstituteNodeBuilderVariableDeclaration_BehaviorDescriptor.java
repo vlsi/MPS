@@ -6,11 +6,17 @@ import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescripto
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
-  public SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration";
   }
+
 }

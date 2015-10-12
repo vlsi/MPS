@@ -19,9 +19,9 @@ package org.jetbrains.mps.openapi.language;
  * It represents primitive data types, such as int, string or boolean.
  */
 public interface SPrimitiveDataType extends SDataType {
-  public static final int STRING = 0;
-  public static final int BOOL = 1;
-  public static final int INT = 2;
+  int STRING = 0;
+  int BOOL = 1;
+  int INT = 2;
 
   int getType();
 }

@@ -15,40 +15,33 @@
  */
 package jetbrains.mps.plugins;
 
-import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
-import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.ModuleNameUtil;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
-// AlexP:
-// why so differ the way we work with ide solution? why all the hard code? TODO generify
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 public class ModulePluginContributor extends PluginContributor {
-  public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
   private static final Logger LOG = LogManager.getLogger(ModulePluginContributor.class);
-  public static final String IDE_MODULE_PROJECT_PLUGIN = Ide_ProjectPlugin.class.getName();
-  public static final String IDE_MODULE_APP_PLUGIN = Ide_ApplicationPlugin.class.getName();
   private static final String PLUGIN_STRING = ".plugin.";
   private static final String PROJECT_PLUGIN_SUFFIX = "_ProjectPlugin";
   private static final String APP_PLUGIN_SUFFIX = "_ApplicationPlugin";
 
-  public static String getProjectPluginClassName(SModule module) {
-    if (module.getModuleName().equals(IDE_MODULE_ID)) {
-      return IDE_MODULE_PROJECT_PLUGIN;
-    }
+  private static String getProjectPluginClassName(SModule module) {
     return String.format("%s%s%s%s", module.getModuleName(), PLUGIN_STRING, ModuleNameUtil.getModuleShortName(module), PROJECT_PLUGIN_SUFFIX);
   }
 
-  public static String getApplicationPluginClassName(SModule module) {
-    if (module.getModuleName().equals(IDE_MODULE_ID)) {
-      return IDE_MODULE_APP_PLUGIN;
-    }
+  private static String getApplicationPluginClassName(SModule module) {
     return String.format("%s%s%s%s", module.getModuleName(), PLUGIN_STRING, ModuleNameUtil.getModuleShortName(module), APP_PLUGIN_SUFFIX);
   }
 
@@ -66,29 +59,70 @@ public class ModulePluginContributor extends PluginContributor {
 
   @Override
   public BaseApplicationPlugin createApplicationPlugin() {
-    String pluginClassName = getApplicationPluginClassName(myModule);
-    if (pluginClassName == null) return null;
-    return (BaseApplicationPlugin) createPlugin(pluginClassName);
+    String pluginClassName;
+    Properties cfg = getComponentStartupConfiguration();
+    if (cfg == null || (pluginClassName = cfg.getProperty("init.application")) == null) {
+      // fallback to legacy, name convention approach
+      pluginClassName = getApplicationPluginClassName(myModule);
+    }
+    return pluginClassName == null ? null : createPlugin(BaseApplicationPlugin.class, pluginClassName);
   }
 
   @Override
   public BaseProjectPlugin createProjectPlugin() {
-    String pluginClassName = getProjectPluginClassName(myModule);
-    if (pluginClassName == null) return null;
-    return (BaseProjectPlugin) createPlugin(pluginClassName);
+    String pluginClassName;
+    Properties cfg = getComponentStartupConfiguration();
+    if (cfg == null || (pluginClassName = cfg.getProperty("init.project")) == null) {
+      // fallback to legacy, name convention approach
+      pluginClassName = getProjectPluginClassName(myModule);
+    }
+    return pluginClassName == null ? null : createPlugin(BaseProjectPlugin.class, pluginClassName);
   }
 
   @Nullable
-  private Object createPlugin(String className) {
+  private <T> T createPlugin(Class<T> expectedClass, String className) {
     try {
-      Class pluginClass = myModule.getOwnClass(className);
-      return pluginClass.newInstance();
+      Class<?> pluginClass = myModule.getOwnClass(className);
+      return  pluginClass.asSubclass(expectedClass).newInstance();
     } catch (ClassNotFoundException e) {
       return null;
     } catch (Throwable t) {
-      LOG.error("", t);
+      LOG.error("Failed to instantiate plugin component activator", t);
       return null;
     }
+  }
+
+  @Nullable
+  private Properties getComponentStartupConfiguration() {
+    // although getResource does look into dependencies and chances are we read configuration
+    // of another module, the fact we use loadOwnClass later prevents loading it second time.
+    // However, shall update fallback solution (try to load from config name, then try to load from fallback name)
+    // unless switch to files here
+    IFile dir = ((AbstractModule) myModule).getModuleSourceDir();
+    if (dir == null) {
+      return null;
+    }
+    IFile cfg = dir.getDescendant("startup.properties");
+    // Note, META-INF location won't work for groups of modules distributed as a single plugin, shall come up with better approach
+    if (!cfg.exists()) {
+      return null;
+    }
+    InputStream is = null;
+    try {
+      is = cfg.openInputStream();
+      Properties rv = new Properties();
+      rv.load(is);
+      return rv;
+    } catch (IOException ex) {
+      LOG.warn("Failed to read startup.properties for module " + myModule.getModuleName(), ex);
+    } finally {
+      if (is != null) {
+        try {
+          is.close();
+        } catch (IOException ignore) {}
+      }
+    }
+    return null;
   }
 
   @Override

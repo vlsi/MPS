@@ -6,19 +6,24 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DefaultGeneratorParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IGeneratorParameter_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
-  public DefaultGeneratorParameter_BehaviorDescriptor() {
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getUniqueId_650531548511609559(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getUniqueId_650531548511609559(SNode thisNode) {
-    return DefaultGeneratorParameter_Behavior.virtual_getUniqueId_650531548511609559(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter";
   }
+
 }

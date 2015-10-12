@@ -11,12 +11,20 @@ public enum EquationDirection_Enum {
   left(":=", "left"),
   right("=:", "right");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  EquationDirection_Enum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<EquationDirection_Enum> getConstants() {
     List<EquationDirection_Enum> list = ListSequence.fromList(new LinkedList<EquationDirection_Enum>());
@@ -42,13 +50,5 @@ public enum EquationDirection_Enum {
       return EquationDirection_Enum.right;
     }
     return EquationDirection_Enum.getDefault();
-  }
-  private String myValue;
-  EquationDirection_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

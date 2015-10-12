@@ -5,15 +5,22 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ReferenceMacro_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
-  public ReferenceMacro_BehaviorDescriptor() {
+  public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode node) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ReferenceMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.ReferenceMacro";
   }
+
 }

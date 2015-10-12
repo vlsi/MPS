@@ -6,42 +6,46 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class IndexedTupleType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
-  public IndexedTupleType_BehaviorDescriptor() {
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode __thisNode__, Map<SNode, SNode> substitutions) {
   }
-  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    IndexedTupleType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  public SNode virtual_eraseGenerics_5089784887112634594(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
-    return IGenericType_Behavior.virtual_eraseGenerics_5089784887112634594(thisNode);
+  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode __thisNode__, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenericDescendants_4107091686347838550(thisNode, expanded, substitutions, expTrace);
+  public SNode virtual_expandGenerics_4107091686347199582(SNode __thisNode__, Map<SNode, SNode> substitutions) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
-    return IGenericType_Behavior.virtual_expandGenerics_4107091686347199582(thisNode, substitutions);
+  public SNode virtual_expandGenerics_4122274986016348613(SNode __thisNode__, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return IGenericType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  public String virtual_getLeftBracket_1262430001741497978(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getLeftBracket_1262430001741497978(SConcept thisConcept) {
-    return IndexedTupleType_Behavior.virtual_getLeftBracket_1262430001741497978(thisConcept);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return IndexedTupleType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public String virtual_getRightBracket_1262430001741498044(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getRightBracket_1262430001741498044(SConcept thisConcept) {
-    return IndexedTupleType_Behavior.virtual_getRightBracket_1262430001741498044(thisConcept);
+  public List<String> virtual_getVariableSuffixes_1213877337304(SNode __thisNode__) {
+    return null;
   }
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
-    return IndexedTupleType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType";
   }
+
 }

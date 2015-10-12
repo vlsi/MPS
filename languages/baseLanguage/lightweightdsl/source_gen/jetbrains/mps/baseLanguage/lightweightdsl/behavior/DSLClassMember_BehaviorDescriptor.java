@@ -4,6 +4,12 @@ package jetbrains.mps.baseLanguage.lightweightdsl.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface DSLClassMember_BehaviorDescriptor {
   public SNode virtual_createForClass_6478870542308635887(SNode thisNode, SNode cls);
   public Iterable<SNode> virtual_find_2603987804376013077(SNode thisNode, SNode cls);

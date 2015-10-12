@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -231,6 +231,7 @@
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
       </concept>
@@ -594,8 +595,8 @@
       <property role="TrG5h" value="myDispose" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="3oW7HLfqDij" role="1B3o_S" />
-      <node concept="1ajhzC" id="3oW7HLfqDik" role="1tU5fm">
-        <node concept="3cqZAl" id="3oW7HLfqDil" role="1ajl9A" />
+      <node concept="9cv3F" id="7qWwyLT0LpD" role="1tU5fm">
+        <node concept="3cqZAl" id="7qWwyLT0LpE" role="1ajl9A" />
       </node>
       <node concept="2AHcQZ" id="3oW7HLfqDim" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
@@ -618,8 +619,8 @@
       </node>
       <node concept="37vLTG" id="3oW7HLfqDiu" role="3clF46">
         <property role="TrG5h" value="dispose" />
-        <node concept="1ajhzC" id="3oW7HLfqDiv" role="1tU5fm">
-          <node concept="3cqZAl" id="3oW7HLfqDiw" role="1ajl9A" />
+        <node concept="9cv3F" id="7qWwyLT0LsX" role="1tU5fm">
+          <node concept="3cqZAl" id="7qWwyLT0LsY" role="1ajl9A" />
         </node>
         <node concept="2AHcQZ" id="3oW7HLfqDix" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />

@@ -5,6 +5,12 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface NodeIdentity_BehaviorDescriptor {
   public SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model);
   public boolean virtual_match_1662555581307437492(SNode thisNode, SNode n);

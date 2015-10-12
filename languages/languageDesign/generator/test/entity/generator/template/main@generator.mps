@@ -2,11 +2,9 @@
 <model ref="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" name="jetbrains.mps.generator.test.crossmodel.entity" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="dc1cc948-6f43-4687-90cb-17dd5cb27219" name="jetbrains.mps.generator.test.crossmodel.property" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -462,7 +460,6 @@
       <ref role="30HIoZ" to="qz7j:3LKEueXEmhz" resolve="NodeA" />
       <ref role="3lhOvi" node="4vmTtDyRX4e" resolve="ABean" />
     </node>
-    <node concept="n94m4" id="4NbWtCFAzIW" role="lGtFl" />
   </node>
   <node concept="1BqwYR" id="4vmTtDyRX4e">
     <property role="TrG5h" value="ABean" />

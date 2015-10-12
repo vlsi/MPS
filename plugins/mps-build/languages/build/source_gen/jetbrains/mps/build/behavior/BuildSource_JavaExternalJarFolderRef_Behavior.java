@@ -4,19 +4,14 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.build.util.JavaExportUtil;
 
+/**
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
+ */
+@Deprecated
 public class BuildSource_JavaExternalJarFolderRef_Behavior {
-  public static void init(SNode thisNode) {
-  }
-  public static SNode call_getDependencyTarget_5610619299014531753(SNode thisNode, VisibleArtifacts artifacts) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder")))) {
-      return null;
-    }
-
-    return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder")), thisNode);
+  public static SNode call_getDependencyTarget_5610619299014531753(SNode __thisNode__, VisibleArtifacts artifacts) {
+    return BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor.getDependencyTarget_id4RsV8qJH_ED(__thisNode__, artifacts);
   }
 }

@@ -4,15 +4,22 @@ package jetbrains.mps.build.workflow.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BwfProjectPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public BwfProjectPart_BehaviorDescriptor() {
+  public int virtual_getPriority_2059109515400548718(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
-  public int virtual_getPriority_2059109515400548718(SNode thisNode) {
-    return BwfProjectPart_Behavior.virtual_getPriority_2059109515400548718(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfProjectPart";
   }
+
 }

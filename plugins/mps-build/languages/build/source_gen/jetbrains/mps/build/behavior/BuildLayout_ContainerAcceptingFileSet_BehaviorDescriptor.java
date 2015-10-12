@@ -4,6 +4,12 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor {
   public String virtual_getFileSetExtension_6408167411310575216(SNode thisNode);
   public boolean virtual_hasPrefixAttribute_6408167411310575232(SNode thisNode);

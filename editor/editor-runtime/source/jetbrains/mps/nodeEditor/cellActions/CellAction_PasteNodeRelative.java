@@ -70,7 +70,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    LOG.assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
+    LOG.assertLog(context.getRepository().getModelAccess().isCommandAction(), "This action must be performed in command");
     EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     EditorCell selectedCell = editorComponent.getSelectedCell();
     SNode anchorNode = selectedCell.getSNode();

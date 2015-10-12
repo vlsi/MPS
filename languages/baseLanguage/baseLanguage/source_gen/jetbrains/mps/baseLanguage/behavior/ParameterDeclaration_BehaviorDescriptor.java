@@ -6,27 +6,34 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ParameterDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IResolveInfo_BehaviorDescriptor, IVariableAssignment_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
-  public ParameterDeclaration_BehaviorDescriptor() {
+  public SNode virtual_createReference_1213877517482(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_createReference_1213877517482(SNode thisNode) {
-    return ParameterDeclaration_Behavior.virtual_createReference_1213877517482(thisNode);
+  public String virtual_getPrefix_3012473318495495520(SNode __thisNode__, Project project) {
+    return null;
   }
-  public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    return ParameterDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
+  public String virtual_getSuffix_3012473318495499856(SNode __thisNode__, Project project) {
+    return null;
   }
-  public String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    return ParameterDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
+  public SNode virtual_getValue_1224857430232(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getValue_1224857430232(SNode thisNode) {
-    return ParameterDeclaration_Behavior.virtual_getValue_1224857430232(thisNode);
+  public boolean virtual_isCanBeUnused_1223985713603(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
-    return ParameterDeclaration_Behavior.virtual_isCanBeUnused_1223985713603(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
   }
+
 }

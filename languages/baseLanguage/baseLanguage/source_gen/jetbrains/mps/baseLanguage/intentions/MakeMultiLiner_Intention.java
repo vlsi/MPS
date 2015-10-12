@@ -11,7 +11,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IfStatement__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
@@ -34,7 +34,7 @@ public final class MakeMultiLiner_Intention extends IntentionDescriptorBase impl
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return IfStatement_Behavior.call_isGuardIf_1237547453258(node) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e371L, "forceMultiLine")));
+    return (boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e371L, "forceMultiLine")));
   }
   @Override
   public boolean isSurroundWith() {

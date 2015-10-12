@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -25,7 +25,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_1x58an_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
+        return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(node);
       }
       public void setText(String s) {
       }
@@ -38,7 +38,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_1x58an_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;

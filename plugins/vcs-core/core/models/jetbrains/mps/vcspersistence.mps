@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
@@ -44,7 +44,6 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
-      <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
@@ -188,10 +187,6 @@
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-        <child id="1160998916832" name="message" index="1gVpfI" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -586,21 +581,58 @@
         <node concept="10Oyi0" id="4BapoMDmOcC" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="4BapoMDmOcD" role="3clF47">
-        <node concept="1gVbGN" id="4BapoMDmYnF" role="3cqZAp">
-          <node concept="2d3UOw" id="4BapoMDmYIX" role="1gVkn0">
-            <node concept="3cmrfG" id="4BapoMDmYJF" role="3uHU7w">
-              <property role="3cmrfH" value="4" />
-            </node>
-            <node concept="37vLTw" id="4BapoMDmYpN" role="3uHU7B">
-              <ref role="3cqZAo" node="4BapoMDmOcB" resolve="version" />
+        <node concept="3SKdUt" id="4jSfnmsLt$$" role="3cqZAp">
+          <node concept="3SKdUq" id="4jSfnmsLt$z" role="3SKWNk">
+            <property role="3SKdUp" value="Assert here was replaced with LOG.error before 3.3 as we've found a couple " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4jSfnmsLvsu" role="3cqZAp">
+          <node concept="3SKdUq" id="4jSfnmsLvTD" role="3SKWNk">
+            <property role="3SKdUp" value="places where this incompatibility with older version introduced new bugs" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4jSfnmsLt$A" role="3cqZAp">
+          <node concept="3SKdUq" id="4jSfnmsLt$_" role="3SKWNk">
+            <property role="3SKdUp" value="Actually, these places must be fixed (see e.g. MPS-22503). Still, we " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4jSfnmsLwq$" role="3cqZAp">
+          <node concept="3SKdUq" id="4jSfnmsLwM8" role="3SKWNk">
+            <property role="3SKdUp" value="leave error here till 3.4 or later to minimize the number of real issues [MM]" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="nQaM_ZOJyc" role="3cqZAp">
+          <node concept="3clFbS" id="nQaM_ZOJye" role="3clFbx">
+            <node concept="3clFbF" id="4jSfnmsLt$t" role="3cqZAp">
+              <node concept="2OqwBi" id="4jSfnmsLt$E" role="3clFbG">
+                <node concept="37vLTw" id="4jSfnmsLt$D" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4BapoMDjgA$" resolve="LOG" />
+                </node>
+                <node concept="liA8E" id="4jSfnmsLt$F" role="2OqNvi">
+                  <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
+                  <node concept="3cpWs3" id="4jSfnmsLt$v" role="37wK5m">
+                    <node concept="Xl_RD" id="4jSfnmsLt$w" role="3uHU7B">
+                      <property role="Xl_RC" value="unsupported version requested " />
+                    </node>
+                    <node concept="37vLTw" id="4jSfnmsLt$x" role="3uHU7w">
+                      <ref role="3cqZAo" node="4BapoMDmOcB" resolve="version" />
+                    </node>
+                  </node>
+                  <node concept="2ShNRf" id="4jSfnmsLt$G" role="37wK5m">
+                    <node concept="1pGfFk" id="4jSfnmsLt$H" role="2ShVmc">
+                      <ref role="37wK5l" to="wyt6:~Throwable.&lt;init&gt;()" resolve="Throwable" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
-          <node concept="3cpWs3" id="3q87oZ_dGmp" role="1gVpfI">
-            <node concept="37vLTw" id="3q87oZ_dGpr" role="3uHU7w">
-              <ref role="3cqZAo" node="4BapoMDmOcB" resolve="version" />
+          <node concept="3eOVzh" id="nQaM_ZOL9o" role="3clFbw">
+            <node concept="3cmrfG" id="nQaM_ZOL9C" role="3uHU7w">
+              <property role="3cmrfH" value="4" />
             </node>
-            <node concept="Xl_RD" id="3q87oZ_dGaM" role="3uHU7B">
-              <property role="Xl_RC" value="unsupported version requested " />
+            <node concept="37vLTw" id="nQaM_ZOKzI" role="3uHU7B">
+              <ref role="3cqZAo" node="4BapoMDmOcB" resolve="version" />
             </node>
           </node>
         </node>

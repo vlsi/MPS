@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 
 public class TemplateDeclarationParameterInformationQuery implements ParametersInformation<SNode> {
   public TemplateDeclarationParameterInformationQuery() {
@@ -55,7 +55,7 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
         styledText.setBold(true);
       }
       if (SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type")) != null) {
-        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type")), "virtual_getPresentation_1213877396640", new Object[]{}));
+        styledText.append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a0962e6L, 0x190d31fe6a096acfL, "type"))));
       } else {
         styledText.append("???");
       }

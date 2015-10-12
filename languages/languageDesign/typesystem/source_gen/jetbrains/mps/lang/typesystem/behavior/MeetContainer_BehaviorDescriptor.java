@@ -5,11 +5,17 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class MeetContainer_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public MeetContainer_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.MeetContainer";
   }
+
 }

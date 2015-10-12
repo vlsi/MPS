@@ -4,34 +4,41 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class ConceptFunctionParameter_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IParameter_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public ConceptFunctionParameter_BehaviorDescriptor() {
+  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
-    return ConceptFunctionParameter_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
+  public SNode virtual_getDeclaration_1225282371351(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_getDeclaration_1225282371351(thisNode);
+  public boolean virtual_getFromParameterObject_1213877522908(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_getFromParameterObject_1213877522908(thisNode);
+  public String virtual_getParameterName_1225280611056(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getParameterName_1225280611056(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_getParameterName_1225280611056(thisNode);
+  public SNode virtual_getType_2443692612523876968(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_getType_2443692612523876968(thisNode);
+  public boolean virtual_isParameterObjectUsed_1213877522926(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_isParameterObjectUsed_1213877522926(thisNode);
+  public boolean virtual_needConceptFunction_1236687728308(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
-    return ConceptFunctionParameter_Behavior.virtual_needConceptFunction_1236687728308(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
   }
+
 }

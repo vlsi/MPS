@@ -4,14 +4,20 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildInputSingleFolder_BehaviorDescriptor extends BuildInputFolderSet_BehaviorDescriptor implements BuildSource_SingleFolder_BehaviorDescriptor {
-  public BuildInputSingleFolder_BehaviorDescriptor() {
+  public String virtual_getApproximateName_5610619299014531547(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
-    return BuildInputSingleFolder_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildInputSingleFolder";
   }
+
 }

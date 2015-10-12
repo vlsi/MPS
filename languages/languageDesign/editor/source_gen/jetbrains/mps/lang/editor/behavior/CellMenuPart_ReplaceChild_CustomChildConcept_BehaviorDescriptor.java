@@ -4,11 +4,17 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class CellMenuPart_ReplaceChild_CustomChildConcept_BehaviorDescriptor extends CellMenuPart_Abstract_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public CellMenuPart_ReplaceChild_CustomChildConcept_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept";
   }
+
 }

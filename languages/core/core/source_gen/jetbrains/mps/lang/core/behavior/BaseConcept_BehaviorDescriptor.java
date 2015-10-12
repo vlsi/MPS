@@ -6,31 +6,38 @@ import jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor;
 import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BaseConcept_BehaviorDescriptor extends CompiledBehaviorDescriptor {
-  public BaseConcept_BehaviorDescriptor() {
+  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode __thisNode__) {
+    return null;
   }
-  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return BaseConcept_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
+  public String virtual_getDetailedPresentation_2354269628709769373(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
-    return BaseConcept_Behavior.virtual_getDetailedPresentation_2354269628709769373(thisNode);
+  public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode __thisNode__) {
+    return null;
   }
-  public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
-    return BaseConcept_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
+  public int virtual_getMetaLevel_3981318653438234726(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
-  public int virtual_getMetaLevel_3981318653438234726(SNode thisNode) {
-    return BaseConcept_Behavior.virtual_getMetaLevel_3981318653438234726(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return BaseConcept_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
-    return BaseConcept_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
+
 }

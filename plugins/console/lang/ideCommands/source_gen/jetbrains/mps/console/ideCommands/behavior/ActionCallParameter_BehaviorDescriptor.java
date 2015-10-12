@@ -5,12 +5,18 @@ package jetbrains.mps.console.ideCommands.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class ActionCallParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public ActionCallParameter_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ActionCallParameter";
   }
-  public abstract SNode virtual_getParameterDeclaration_5582028874769074473(SNode thisNode);
+
+  public abstract SNode virtual_getParameterDeclaration_5582028874769074473(SNode __thisNode__);
 }

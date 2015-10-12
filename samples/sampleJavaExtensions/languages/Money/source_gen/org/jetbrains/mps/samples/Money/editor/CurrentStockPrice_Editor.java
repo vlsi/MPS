@@ -19,7 +19,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice_Behavior;
+import org.jetbrains.mps.samples.Money.behavior.CurrentStockPrice__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -96,7 +96,7 @@ public class CurrentStockPrice_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_w8qb9s_e0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return CurrentStockPrice_Behavior.call_getCurrentPrice_4001135958233293105(node).toString();
+        return CurrentStockPrice__BehaviorDescriptor.getCurrentPrice_id3u6SZi0yq4L.invoke(node).toString();
       }
       public void setText(String s) {
       }

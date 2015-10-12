@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.figures.behavior.FigureParameter__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,7 +19,7 @@ public class check_FigureParameterAttributeViewProperty_NonTypesystemRule extend
   public check_FigureParameterAttributeViewProperty_NonTypesystemRule() {
   }
   public void applyRule(final SNode viewPropSpecificationAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), viewPropSpecificationAttribute, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(jetbrains.jetpad/)", "~ViewPropertySpec")))) {
+    if (!(Utils.isSupportedParameterType(FigureParameter__BehaviorDescriptor.getParameterType_idiZqVFYvBew.invoke(viewPropSpecificationAttribute), SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(jetbrains.jetpad/)", "~ViewPropertySpec")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(viewPropSpecificationAttribute, "Unsupported attributed static field type, jetbrains.jetpad.projectional.view.ViewPropertySpec expected.", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9176911587996551958", null, errorTarget);

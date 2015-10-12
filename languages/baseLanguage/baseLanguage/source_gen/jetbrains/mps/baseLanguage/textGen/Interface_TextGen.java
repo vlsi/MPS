@@ -14,7 +14,7 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.traceable.behavior.UnitConcept__BehaviorDescriptor;
 
 public class Interface_TextGen extends TextGenDescriptorBase {
   @Override
@@ -47,7 +47,7 @@ public class Interface_TextGen extends TextGenDescriptorBase {
     BaseClassConceptTextGen.membersWithBrackets(ctx.getPrimaryInput(), true, ctx);
     tgs.newLine();
     if (tgs.needPositions()) {
-      tgs.fillUnitInfo(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}));
+      tgs.fillUnitInfo(UnitConcept__BehaviorDescriptor.getUnitName_id4pl5GY7LKmR.invoke(SNodeOperations.cast(ctx.getPrimaryInput(), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))));
     }
   }
   public String getExtension(SNode node) {

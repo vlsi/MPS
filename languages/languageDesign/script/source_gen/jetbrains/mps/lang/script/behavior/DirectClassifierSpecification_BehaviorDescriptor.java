@@ -4,17 +4,23 @@ package jetbrains.mps.lang.script.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class DirectClassifierSpecification_BehaviorDescriptor extends AbstractClassifierSpecification_BehaviorDescriptor {
-  public DirectClassifierSpecification_BehaviorDescriptor() {
+  public String virtual_getClassifierFqName_5434557751112930827(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getClassifierFqName_5434557751112930827(SNode thisNode) {
-    return DirectClassifierSpecification_Behavior.virtual_getClassifierFqName_5434557751112930827(thisNode);
+  public String virtual_getSModelReference_5434557751113441014(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
-    return DirectClassifierSpecification_Behavior.virtual_getSModelReference_5434557751113441014(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.DirectClassifierSpecification";
   }
+
 }

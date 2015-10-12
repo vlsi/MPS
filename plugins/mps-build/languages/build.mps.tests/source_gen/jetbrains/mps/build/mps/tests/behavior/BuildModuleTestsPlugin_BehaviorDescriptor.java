@@ -8,17 +8,22 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildModuleTestsPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
-  public BuildModuleTestsPlugin_BehaviorDescriptor() {
+  public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BuildModuleTestsPlugin_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
+  public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode __thisNode__) {
+    return null;
   }
-  public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return BuildModuleTestsPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin";
   }
+
 }

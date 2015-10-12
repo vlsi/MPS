@@ -4,11 +4,17 @@ package jetbrains.mps.samples.xmlLiterals.behavior;
 
 import jetbrains.mps.core.xml.behavior.XmlText_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class TextMacro_BehaviorDescriptor extends XmlText_BehaviorDescriptor {
-  public TextMacro_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.xmlLiterals.structure.TextMacro";
   }
+
 }

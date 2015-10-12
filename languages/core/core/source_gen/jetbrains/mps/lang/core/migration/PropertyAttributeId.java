@@ -12,14 +12,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
-import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
+import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class PropertyAttributeId extends MigrationScriptBase {
   public String getCaption() {
     return "add id to property/link attributes";
+  }
+  @Override
+  public boolean isRerunnable() {
+    return false;
   }
   public SNode execute(SModule m) {
     Iterable<SModel> models = m.getModels();
@@ -30,7 +34,7 @@ public class PropertyAttributeId extends MigrationScriptBase {
     });
     Sequence.fromIterable(propertyAttributes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode attribute) {
-        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), ((SPropertyAdapter) PropertyAttribute_Behavior.call_getProperty_1341860900488756504(attribute)).getId().serialize());
+        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"), ((SPropertyAdapter) PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(attribute)).getId().serialize());
       }
     });
 
@@ -42,7 +46,7 @@ public class PropertyAttributeId extends MigrationScriptBase {
 
     Sequence.fromIterable(referenceAttributes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode attribute) {
-        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"), ((SReferenceLinkAdapter) LinkAttribute_Behavior.call_getLink_1341860900489573894(attribute)).getRoleId().serialize());
+        attribute.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"), ((SReferenceLinkAdapter) LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(attribute)).getRoleId().serialize());
       }
     });
     return null;

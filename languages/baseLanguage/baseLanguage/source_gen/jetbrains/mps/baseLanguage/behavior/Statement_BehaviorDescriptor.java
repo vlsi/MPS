@@ -7,27 +7,30 @@ import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Statement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ICanSuppressErrors_BehaviorDescriptor {
-  public Statement_BehaviorDescriptor() {
+  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
   }
-  public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    Statement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
+  public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
-    return ILocalVariableElement_Behavior.virtual_getLocalVariableDeclaration_1238803857389(thisNode);
+  public String virtual_getTraceableProperty_5067982036267369901(SNode __thisNode__) {
+    return null;
   }
-  @Nullable
-  public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
-    return TraceableConcept_Behavior.virtual_getTraceableProperty_5067982036267369901(thisNode);
+  public boolean virtual_isGuardClauseStatement_1237547327995(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
-    return Statement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Statement";
   }
+
 }

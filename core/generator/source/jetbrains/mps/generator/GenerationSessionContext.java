@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,14 +20,12 @@ import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -54,7 +52,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   private final GenControllerContext myEnvironment;
   private final TransientModelsModule myTransientModule;
-  private final GenerationPlan myGenerationPlan;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
   private final QueryProviderCache myQueryProviders;
@@ -97,31 +94,12 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myPerfTrace = performanceTracer;
     myLogger = logger;
     myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
-    myGenerationPlan = null;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     myExportsSession = new ExportsSessionContext(environment.getExportModels(), this);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
     myUsedNames = new ConcurrentHashMap<SNodeReference, Set<String>>();
-  }
-
-  // copy cons
-  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan) {
-    myEnvironment = prevContext.myEnvironment;
-    myTransientModule = prevContext.myTransientModule;
-    myOriginalInputModel = prevContext.myOriginalInputModel;
-    myPerfTrace = prevContext.myPerfTrace;
-    myLogger = prevContext.myLogger;
-    mySessionObjects = prevContext.mySessionObjects;
-    myUsedNames = prevContext.myUsedNames;
-    myValidation = prevContext.myValidation;
-    myQueryProviders = prevContext.myQueryProviders;
-    myGenerationPlan = generationPlan;
-    myExportsSession = prevContext.myExportsSession;
-    // the moment this copy cons is used, nothing happened, reuse
-    myStepObjects = prevContext.myStepObjects;
-    myTransientObjects = prevContext.myTransientObjects;
   }
 
   /**
@@ -136,7 +114,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
-    myGenerationPlan = prevContext.myGenerationPlan;
     myQueryProviders = prevContext.myQueryProviders;
     myExportsSession = prevContext.myExportsSession;
     // this copy cons indicate new major step, hence new empty maps
@@ -204,13 +181,12 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return myExportsSession;
   }
 
-  private static String nodeUniqueId(SNode node) {
-    StringBuilder sb = new StringBuilder();
+  private static void appendNodeUniqueId(SNode node, StringBuilder sb) {
     SNode parent = node.getParent();
 
     boolean sym = true;
     while (parent != null) {
-      int index = IterableUtil.asList(parent.getChildren(node.getRoleInParent())).indexOf(node);
+      int index = IterableUtil.asList(parent.getChildren(node.getContainmentLink())).indexOf(node);
       if (index == 0) {
         sb.append(sym ? 'a' : '0');
       }
@@ -223,7 +199,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
       node = parent;
       parent = node.getParent();
     }
-    return sb.toString();
   }
 
 
@@ -269,9 +244,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     } // if(contextNode != null)
 
     if (inputNode != null) {
-      final String nid = nodeUniqueId(inputNode);
       uniqueNameBuffer.append('_');
-      uniqueNameBuffer.append(nid);
+      appendNodeUniqueId(inputNode, uniqueNameBuffer);
     }
 
     final boolean suffixAdded = roughName.length() < uniqueNameBuffer.length();
@@ -279,17 +253,20 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
     final Set<String> usedNames = getUsedNames(contextNode);
 
-    if (!suffixAdded || usedNames.contains(uniqueName)) {
-      uniqueNameBuffer.append('_');
-      final int trimPos = uniqueNameBuffer.length();
-      for (int count = 0; ; count++) {
-        uniqueNameBuffer.append(count);
-        uniqueName = uniqueNameBuffer.toString();
-        if (!usedNames.contains(uniqueName)) break;
-        uniqueNameBuffer.setLength(trimPos);
-      }
+    if (suffixAdded && usedNames.add(uniqueName)) {
+      return uniqueName;
     }
-    usedNames.add(uniqueName);
+    // assumption: !suffixAdded || usedNames.contains(uniqueName);
+    uniqueNameBuffer.append('_');
+    final int trimPos = uniqueNameBuffer.length();
+    for (int count = 0; ; count++) {
+      uniqueNameBuffer.append(count);
+      uniqueName = uniqueNameBuffer.toString();
+      if (usedNames.add(uniqueName)) {
+        break;
+      }
+      uniqueNameBuffer.setLength(trimPos);
+    }
     return uniqueName;
   }
 
@@ -302,10 +279,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return rv == null ? myUsedNames.get(key) : rv;
   }
 
-
-  public GenerationPlan getGenerationPlan() {
-    return myGenerationPlan;
-  }
 
   public void clearCopiedRootsSet() {
     Set<SNode> set = getCopiedRoots(false);

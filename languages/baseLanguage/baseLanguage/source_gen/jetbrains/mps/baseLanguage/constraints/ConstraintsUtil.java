@@ -7,7 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 
 public class ConstraintsUtil {
   private ConstraintsUtil() {
@@ -18,7 +18,7 @@ public class ConstraintsUtil {
     }
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_8986964027630462944", new Object[]{}));
+        return !((boolean) ClassifierMember__BehaviorDescriptor.isStatic_id7MS72Gc8avw.invoke(it));
       }
     }).isNotEmpty();
   }

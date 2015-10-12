@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:e3aa7efa-3cb3-44f7-8e8b-0643a8a5ad38(jetbrains.mps.console.scripts.runtime.util)/1734392475490226499">
     <file name="ScriptsUtil.java">
-      <node id="8403006350606710878" at="30,80,31,186" concept="5" />
+      <node id="8403006350606710878" at="30,80,31,120" concept="5" />
       <node id="422748824979112365" at="33,25,34,86" concept="1" />
       <node id="422748824979107399" at="40,63,41,13" concept="6" />
       <node id="422748824979023362" at="46,29,47,62" concept="1" />
@@ -35,7 +35,7 @@
       <node id="6636597128306333884" at="72,75,75,15" concept="3" />
       <node id="7349810439589440456" at="88,0,91,0" concept="4" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6636597128306093385" at="96,0,99,0" concept="7" trace="as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="5222183305496181609" at="31,186,36,7" concept="1" />
+      <node id="5222183305496181609" at="31,120,36,7" concept="1" />
       <node id="8472149284301351823" at="44,25,49,11" concept="1" />
       <node id="6636597128306082290" at="63,176,68,17" concept="1" />
       <node id="3267115895197545353" at="71,13,76,13" concept="2" />

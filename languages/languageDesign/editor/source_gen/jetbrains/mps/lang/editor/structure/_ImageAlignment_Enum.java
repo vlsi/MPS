@@ -11,12 +11,20 @@ public enum _ImageAlignment_Enum {
   alignmentCenter("alignmentCenter", "center"),
   alignmentTile("alignmentTile", "tile");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  _ImageAlignment_Enum(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<_ImageAlignment_Enum> getConstants() {
     List<_ImageAlignment_Enum> list = ListSequence.fromList(new LinkedList<_ImageAlignment_Enum>());
@@ -42,13 +50,5 @@ public enum _ImageAlignment_Enum {
       return _ImageAlignment_Enum.alignmentTile;
     }
     return _ImageAlignment_Enum.getDefault();
-  }
-  private String myValue;
-  _ImageAlignment_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

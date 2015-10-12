@@ -5,36 +5,39 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildLayout_Container_BehaviorDescriptor, BuildLayout_PathElement_BehaviorDescriptor {
-  public BuildNamedLayout_BehaviorDescriptor() {
+  public void virtual_appendName_1368030936106665465(SNode __thisNode__, SNode parent, StringBuilder sb) {
   }
-  public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    BuildNamedLayout_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
+  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
-    return BuildNamedLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
+  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode __thisNode__, Context context) {
+    return null;
   }
-  public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
-    return BuildNamedLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
+  public String virtual_getFqName_1213877404258(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getFqName_1213877404258(SNode thisNode) {
-    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
-    return BuildNamedLayout_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
+  public String virtual_location_7117056644539862594(SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
+    return null;
   }
-  public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
-    return BuildNamedLayout_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
+  public void virtual_unpack_7128123785277710736(SNode __thisNode__, UnpackHelper helper, Iterable<Object> artifacts) {
   }
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    BuildNamedLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildNamedLayout";
   }
+
 }

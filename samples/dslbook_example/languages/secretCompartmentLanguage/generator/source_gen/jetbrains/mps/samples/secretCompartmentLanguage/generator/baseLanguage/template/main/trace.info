@@ -46,9 +46,9 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042f(jetbrains.mps.samples.secretCompartmentLanguage.generator.baseLanguage.template.main@generator)/1197251176277">
     <file name="QueriesGenerated.java">
-      <node id="1197251224707" at="46,106,47,114" concept="1" />
+      <node id="1197251224707" at="46,106,47,123" concept="1" />
       <node id="199058371937525660" at="80,119,81,186" concept="1" />
-      <scope id="1197251191970" at="46,106,47,114" />
+      <scope id="1197251191970" at="46,106,47,123" />
       <scope id="199058371937525659" at="80,119,81,186" />
     </file>
   </root>
@@ -56,11 +56,11 @@
     <file name="QueriesGenerated.java">
       <node id="199058371937525700" at="49,111,50,332" concept="1" />
       <node id="199058371937525717" at="52,111,53,181" concept="1" />
-      <node id="5891355986060738162" at="58,109,59,565" concept="1" />
+      <node id="5891355986060738162" at="58,109,59,572" concept="1" />
       <node id="199058371937526738" at="83,119,84,187" concept="1" />
       <scope id="199058371937525699" at="49,111,50,332" />
       <scope id="199058371937525716" at="52,111,53,181" />
-      <scope id="5891355986060738161" at="58,109,59,565" />
+      <scope id="5891355986060738161" at="58,109,59,572" />
       <scope id="199058371937526737" at="83,119,84,187" />
     </file>
   </root>

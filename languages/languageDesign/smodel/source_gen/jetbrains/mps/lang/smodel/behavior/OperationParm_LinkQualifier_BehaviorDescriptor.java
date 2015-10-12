@@ -5,14 +5,20 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class OperationParm_LinkQualifier_BehaviorDescriptor extends AbstractOperationParameter_BehaviorDescriptor implements ILinkAccessQualifierContainer_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public OperationParm_LinkQualifier_BehaviorDescriptor() {
+  public Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode __thisNode__) {
+    return null;
   }
-  public Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode) {
-    return OperationParm_LinkQualifier_Behavior.virtual_getLinkAccessScope_2906110183022538642(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier";
   }
+
 }

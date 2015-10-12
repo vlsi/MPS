@@ -5,17 +5,23 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildSourceProjectRelativePath_BehaviorDescriptor extends BuildRelativePath_BehaviorDescriptor {
-  public BuildSourceProjectRelativePath_BehaviorDescriptor() {
+  public String virtual_getBasePath_4959435991187140515(SNode __thisNode__, Context context) {
+    return null;
   }
-  public String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return BuildSourceProjectRelativePath_Behavior.virtual_getBasePath_4959435991187140515(thisNode, context);
+  public String virtual_getRelativePath_5481553824944787371(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
-    return BuildSourceProjectRelativePath_Behavior.virtual_getRelativePath_5481553824944787371(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSourceProjectRelativePath";
   }
+
 }

@@ -2,7 +2,7 @@
 <model ref="r:2a464ec2-aa44-4a2f-a388-e0917332ac68(jetbrains.mps.testHybridEditor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -12,6 +12,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -46,6 +47,7 @@
   <node concept="1TIwiD" id="CgolD_s2V1">
     <property role="TrG5h" value="Diagram" />
     <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1870696475" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="CgolD_s2Zo" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -78,6 +80,7 @@
   <node concept="1TIwiD" id="CgolD_s2Yo">
     <property role="TrG5h" value="Block" />
     <property role="34LRSv" value="block" />
+    <property role="1pbfSe" value="1870696690" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5szBjnyrf5B" role="1TKVEl">
       <property role="TrG5h" value="x" />
@@ -110,6 +113,7 @@
   <node concept="1TIwiD" id="CgolD_s2Yx">
     <property role="TrG5h" value="Connector" />
     <property role="MwhBj" value="${module}/icons/connector.png" />
+    <property role="1pbfSe" value="1870696699" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="CgolD_s30k" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -129,6 +133,7 @@
   </node>
   <node concept="1TIwiD" id="CgolD_s2YO">
     <property role="TrG5h" value="InputPort" />
+    <property role="1pbfSe" value="1870696718" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="33D3DgXkdZM" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -136,6 +141,7 @@
   </node>
   <node concept="1TIwiD" id="CgolD_s2YZ">
     <property role="TrG5h" value="OutputPort" />
+    <property role="1pbfSe" value="1870696729" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="33D3DgXke09" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -146,6 +152,7 @@
     <property role="TrG5h" value="MetaBlock" />
     <property role="3GE5qa" value="newBlocks" />
     <property role="MwhBj" value="${module}/icons/block.png" />
+    <property role="1pbfSe" value="216582058" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7WVujHHtGfg" role="1TKVEl">
       <property role="TrG5h" value="iconPath" />
@@ -174,6 +181,7 @@
   <node concept="1TIwiD" id="22C1ebGgfLt">
     <property role="TrG5h" value="MetaPort" />
     <property role="3GE5qa" value="newBlocks" />
+    <property role="1pbfSe" value="216596799" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="22C1ebGgfLu" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -182,6 +190,7 @@
   <node concept="1TIwiD" id="22C1ebGgZit">
     <property role="3GE5qa" value="newBlocks" />
     <property role="TrG5h" value="BlockInstance" />
+    <property role="1pbfSe" value="216791423" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="22C1ebGh0iD" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -217,6 +226,7 @@
     <property role="3GE5qa" value="newBlocks" />
     <property role="TrG5h" value="ConnectorInstance" />
     <property role="MwhBj" value="${module}/icons/connector.png" />
+    <property role="1pbfSe" value="216799736" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7WVujHHxC_2" role="1TKVEl">
       <property role="TrG5h" value="iconPath" />
@@ -238,6 +248,7 @@
   <node concept="1TIwiD" id="4_Ah5$pwyhx">
     <property role="3GE5qa" value="newBlocks" />
     <property role="TrG5h" value="ConnectorEndInstance" />
+    <property role="1pbfSe" value="1659398330" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4_Ah5$pwymW" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -254,6 +265,7 @@
   </node>
   <node concept="1TIwiD" id="hLC1huCIuc">
     <property role="TrG5h" value="BlockExt" />
+    <property role="1pbfSe" value="1662289824" />
     <ref role="1TJDcQ" node="CgolD_s2Yo" resolve="Block" />
     <node concept="1TJgyj" id="hLC1huCJnZ" role="1TKVEi">
       <property role="20lmBu" value="reference" />

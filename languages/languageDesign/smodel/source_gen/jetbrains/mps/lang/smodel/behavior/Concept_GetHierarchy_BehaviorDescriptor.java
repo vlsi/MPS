@@ -4,18 +4,25 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Concept_GetHierarchy_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
-  public Concept_GetHierarchy_BehaviorDescriptor() {
+  public boolean virtual_applicableToConcept_1262430001741498358(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
-    return Concept_GetHierarchy_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
-    return Concept_GetHierarchy_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy";
   }
+
 }

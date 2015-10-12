@@ -4,11 +4,17 @@ package org.jetbrains.mps.samples.Constants.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class GeneratedClassKeeper_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
-  public GeneratedClassKeeper_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.Constants.structure.GeneratedClassKeeper";
   }
+
 }

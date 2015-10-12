@@ -7,20 +7,26 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptFunction_CreateBreakpoint_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
-  public ConceptFunction_CreateBreakpoint_BehaviorDescriptor() {
+  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    return ConceptFunction_CreateBreakpoint_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return ConceptFunction_CreateBreakpoint_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return ConceptFunction_CreateBreakpoint_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint";
   }
+
 }

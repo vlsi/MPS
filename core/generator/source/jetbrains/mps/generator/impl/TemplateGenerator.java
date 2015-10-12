@@ -47,6 +47,7 @@ import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
+import jetbrains.mps.generator.runtime.TemplateRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
@@ -92,7 +93,7 @@ import java.util.Set;
 public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean myChanged = false;
-  private final RuleManager myRuleManager;
+  private final GenPlanActiveStep myPlanStep;
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
   /**
@@ -128,12 +129,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   static final class StepArguments {
     public final DependenciesBuilder dependenciesBuilder;
-    public final RuleManager ruleManager;
+    public final GenPlanActiveStep planStep;
     public final GenerationTrace genTrace;
     public final GeneratorMappings mappingLabels;
-    public StepArguments(RuleManager ruleManager, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
+    public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
       this.dependenciesBuilder = dependenciesBuilder;
-      this.ruleManager = ruleManager;
+      this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
     }
@@ -141,7 +142,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments stepArgs) {
     super(operationContext, inputModel, outputModel, stepArgs.mappingLabels);
-    myRuleManager = stepArgs.ruleManager;
+    myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen(); // FIXME use GenerationOptions instead!
@@ -283,7 +284,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
+        for (TemplateCreateRootRule rule : getRuleManager().getCreateRootRules()) {
           TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext, new ReductionTrack(getBlockedReductionsData()));
           applyCreateRoot(rule, environment);
         }
@@ -295,7 +296,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // root mapping rules
     ttrace.push("root mappings", false);
     ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
-    for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
+    for (TemplateRootMappingRule rule : getRuleManager().getRoot_MappingRules()) {
       checkMonitorCanceled();
       applyRootRule(rule, rootsConsumed);
     }
@@ -333,6 +334,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
+      reportDismissRuleException(ex, rule);
     } catch (TemplateProcessingFailureException ex) {
       getLogger().error(rule.getRuleNode(), String.format("couldn't create root node: %s", ex.getMessage()), ex.asProblemDescription());
     } catch (GenerationCanceledException ex) {
@@ -397,6 +399,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
+      reportDismissRuleException(e, rule);
       if (copyRootOnFailure && inputNode.getModel() != null && inputNode.getParent() == null) {
         final FullCopyFacility copyFacility = new FullCopyFacility(env);
         copyFacility.copyRootInputNode(inputNode);
@@ -421,7 +424,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       copyProcessor = new PartialCopyFacility(env, myDeltaBuilder);
     }
     // check if can drop
-    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules(inputRootNode))) {
+    if (copyProcessor.checkDropRules(inputRootNode, getRuleManager().getDropRootRules(inputRootNode))) {
       setChanged();
       return;
     }
@@ -575,12 +578,31 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myNewTrace;
   }
 
+  /*package*/ void reportDismissRuleException(@NotNull DismissTopMappingRuleException ex, @NotNull TemplateRule rule) {
+    if (!ex.isLoggingNeeded()) {
+      return;
+    }
+    SNodeReference ruleNode = rule.getRuleNode();
+    String messageText = String.format("-- rule dismissed: %s", ex.getMessage() == null ? "<no message>" : ex.getMessage());
+    if (ex.isInfo()) {
+      getLogger().info(ruleNode, messageText);
+    } else if (ex.isWarning()) {
+      getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
+    } else {
+      getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
+    }
+  }
+
   DelayedChanges getDelayedChanges() {
     return myDelayedChanges;
   }
 
-  RuleManager getRuleManager() {
-    return myRuleManager;
+  final GenPlanActiveStep getGenerationPlan() {
+    return myPlanStep;
+  }
+
+  final RuleManager getRuleManager() {
+    return myPlanStep.getRuleManager();
   }
 
   GeneratorQueryProvider.Source getQuerySource() {
@@ -588,7 +610,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
-    return myRuleManager.getSwitch(switch_);
+    return getRuleManager().getSwitch(switch_);
   }
 
   @Override
@@ -903,7 +925,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             } else {
               String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
               getLogger().error(inputNode.getReference(),
-                  String.format(msg, inputReference.getRole(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
+                  String.format(msg, inputReference.getLink().getName(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
             }
             continue;
           }
@@ -919,7 +941,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
           new PostponedReference(inputReference.getLink(), outputNode, refInfo).registerWith(myEnv.getGenerator());
         } else if (refTarget.getModel() != null) {
-          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
+          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getLink(), refTarget);
         } else {
           reportBrokenRef(inputNode, inputReference);
         }

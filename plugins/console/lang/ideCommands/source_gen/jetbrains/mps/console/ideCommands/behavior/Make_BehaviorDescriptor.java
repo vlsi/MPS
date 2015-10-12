@@ -5,17 +5,23 @@ package jetbrains.mps.console.ideCommands.behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Make_BehaviorDescriptor extends AbsractMake_BehaviorDescriptor {
-  public Make_BehaviorDescriptor() {
+  public String virtual_getHelpPage_7006261637493125297(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
-    return Make_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
+  public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept __thisConcept__) {
+    return null;
   }
-  public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
-    return Make_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.Make";
   }
+
 }

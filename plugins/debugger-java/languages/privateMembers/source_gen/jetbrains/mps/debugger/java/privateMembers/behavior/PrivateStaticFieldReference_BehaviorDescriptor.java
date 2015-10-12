@@ -5,18 +5,25 @@ package jetbrains.mps.debugger.java.privateMembers.behavior;
 import jetbrains.mps.baseLanguage.behavior.StaticFieldReference_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PrivateStaticFieldReference_BehaviorDescriptor extends StaticFieldReference_BehaviorDescriptor {
-  public PrivateStaticFieldReference_BehaviorDescriptor() {
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return PrivateStaticFieldReference_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public boolean virtual_lvalue_1262430001741497939(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
-    return PrivateStaticFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference";
   }
+
 }

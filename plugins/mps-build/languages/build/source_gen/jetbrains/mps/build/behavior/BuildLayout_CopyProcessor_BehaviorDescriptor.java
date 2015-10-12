@@ -5,13 +5,19 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class BuildLayout_CopyProcessor_BehaviorDescriptor extends BuildLayout_CopyHandler_BehaviorDescriptor {
-  public BuildLayout_CopyProcessor_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CopyProcessor";
   }
-  public abstract String virtual_getTaskName_1330375798060763184(SNode thisNode);
-  public abstract Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode thisNode);
+
+  public abstract String virtual_getTaskName_1330375798060763184(SNode __thisNode__);
+  public abstract Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode __thisNode__);
 }

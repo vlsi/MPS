@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -1208,6 +1208,34 @@
     <node concept="1YaCAy" id="17MuFa5lUdV" role="35pZ6h">
       <property role="TrG5h" value="rightICT" />
       <ref role="1YaFvo" to="tp68:h6eloLH" resolve="InternalClassifierType" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="78MdKhpRWU5">
+    <property role="TrG5h" value="typeof_InternalTypedStaticFieldReference" />
+    <node concept="3clFbS" id="78MdKhpRWU6" role="18ibNy">
+      <node concept="1Z5TYs" id="78MdKhpRYkd" role="3cqZAp">
+        <node concept="mw_s8" id="78MdKhpRYkv" role="1ZfhKB">
+          <node concept="2OqwBi" id="78MdKhpRYmE" role="mwGJk">
+            <node concept="1YBJjd" id="78MdKhpRYkt" role="2Oq$k0">
+              <ref role="1YBMHb" node="78MdKhpRWU8" resolve="node" />
+            </node>
+            <node concept="3TrEf2" id="78MdKhpRYrP" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp68:78MdKhpRXuQ" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="78MdKhpRYkg" role="1ZfhK$">
+          <node concept="1Z2H0r" id="78MdKhpRYiw" role="mwGJk">
+            <node concept="1YBJjd" id="78MdKhpRYiy" role="1Z2MuG">
+              <ref role="1YBMHb" node="78MdKhpRWU8" resolve="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="78MdKhpRWU8" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="tp68:78MdKhpRWcg" resolve="InternalTypedStaticFieldReference" />
     </node>
   </node>
 </model>

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IfStatement__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -174,7 +174,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a0a4a(EditorContext editorContext, SNode node) {
-    return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
   }
   private EditorCell createCollection_eb7h0d_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -188,10 +188,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a1b4a(EditorContext editorContext, SNode node) {
-    return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a2b4a(EditorContext editorContext, SNode node) {
-    return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
+    return !((boolean) IfStatement__BehaviorDescriptor.isGuardIf_idi0z$SHa.invoke(node));
   }
   private EditorCell createRefNode_eb7h0d_a1e0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new IfStatement_Editor.ifTrueSingleRoleHandler_eb7h0d_a1e0(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), editorContext);
@@ -319,7 +319,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public IfStatement_generic_cellMenu_eb7h0d_b0a6a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
+      IfStatement__BehaviorDescriptor.convertElseToElseIf_idhIdhuD7.invoke(node);
     }
     public String getMatchingText() {
       return "else if";

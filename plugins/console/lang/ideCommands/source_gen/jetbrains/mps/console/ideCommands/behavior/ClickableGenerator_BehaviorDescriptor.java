@@ -5,19 +5,25 @@ package jetbrains.mps.console.ideCommands.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.console.base.behavior.IClickable_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import com.intellij.openapi.project.Project;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ClickableGenerator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClickable_BehaviorDescriptor {
-  public ClickableGenerator_BehaviorDescriptor() {
+  public boolean virtual_canExecute_3282455643657932881(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
-    return ClickableGenerator_Behavior.virtual_canExecute_3282455643657932881(thisNode);
+  public void virtual_execute_8517397753922085153(SNode __thisNode__, final Project project) {
   }
-  public void virtual_execute_8517397753922085153(SNode thisNode, final Project project) {
-    ClickableGenerator_Behavior.virtual_execute_8517397753922085153(thisNode, project);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ClickableGenerator";
   }
+
 }

@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.IBinaryLike__BehaviorDescriptor;
 
 public class EditorParenthesisUtil {
   public EditorParenthesisUtil() {
@@ -94,11 +94,11 @@ public class EditorParenthesisUtil {
     }
 
     SNode parRoot = SNodeOperations.cast(root, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
-    if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}) != null) {
-      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}), rightmost);
+    if (rightmost && IBinaryLike__BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(parRoot) != null) {
+      return findRightmostOrLeftmostLeafExpression(IBinaryLike__BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(parRoot), rightmost);
     }
-    if (!(rightmost) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}) != null) {
-      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}), rightmost);
+    if (!(rightmost) && IBinaryLike__BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(parRoot) != null) {
+      return findRightmostOrLeftmostLeafExpression(IBinaryLike__BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(parRoot), rightmost);
     }
     return root;
   }

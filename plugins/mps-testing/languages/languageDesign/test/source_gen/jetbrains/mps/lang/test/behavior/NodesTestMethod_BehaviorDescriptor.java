@@ -6,21 +6,28 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescrip
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class NodesTestMethod_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor {
-  public NodesTestMethod_BehaviorDescriptor() {
+  public SNode virtual_getTestCase_1216134500045(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getTestCase_1216134500045(SNode thisNode) {
-    return NodesTestMethod_Behavior.virtual_getTestCase_1216134500045(thisNode);
+  public String virtual_getTestName_1216136419751(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getTestName_1216136419751(SNode thisNode) {
-    return NodesTestMethod_Behavior.virtual_getTestName_1216136419751(thisNode);
+  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return NodesTestMethod_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodesTestMethod";
   }
+
 }

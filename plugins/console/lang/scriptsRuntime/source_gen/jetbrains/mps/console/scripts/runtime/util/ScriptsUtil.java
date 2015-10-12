@@ -4,7 +4,7 @@ package jetbrains.mps.console.scripts.runtime.util;
 
 import jetbrains.mps.console.tool.ConsoleContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.console.scripts.behavior.AbstractConsoleScript__BehaviorDescriptor;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
@@ -28,7 +28,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 public class ScriptsUtil {
 
   public static void executeScript(final ConsoleContext context, SNode script) {
-    final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), script, "virtual_getCommands_1734392475491235554", new Object[]{});
+    final Iterable<SNode> commands = AbstractConsoleScript__BehaviorDescriptor.getCommands_id1whNchEKZry.invoke(script);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         executeCommands(context, Sequence.fromIterable(commands).toListSequence(), 0);

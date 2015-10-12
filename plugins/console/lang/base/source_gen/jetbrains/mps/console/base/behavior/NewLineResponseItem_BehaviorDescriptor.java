@@ -4,11 +4,17 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NewLineResponseItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ResponseItem_BehaviorDescriptor {
-  public NewLineResponseItem_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.NewLineResponseItem";
   }
+
 }

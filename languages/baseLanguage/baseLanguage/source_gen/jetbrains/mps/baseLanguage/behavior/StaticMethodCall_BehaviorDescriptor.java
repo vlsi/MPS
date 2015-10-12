@@ -6,20 +6,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class StaticMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
-  public StaticMethodCall_BehaviorDescriptor() {
+  public Object virtual_eval_1213877519769(SNode __thisNode__, @NotNull SModule module) {
+    return null;
   }
-  public Object virtual_eval_1213877519769(SNode thisNode, @NotNull SModule module) {
-    return StaticMethodCall_Behavior.virtual_eval_1213877519769(thisNode, module);
+  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode __thisNode__, String methodName) {
+    return null;
   }
-  public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    return StaticMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return StaticMethodCall_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
   }
+
 }

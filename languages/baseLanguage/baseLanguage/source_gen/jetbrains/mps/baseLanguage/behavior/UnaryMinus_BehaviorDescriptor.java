@@ -4,27 +4,33 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_BehaviorDescriptor {
-  public UnaryMinus_BehaviorDescriptor() {
+  public Object virtual_eval_1213877519769(SNode __thisNode__, SModule module) {
+    return null;
   }
-  public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
-    return UnaryMinus_Behavior.virtual_eval_1213877519769(thisNode, module);
+  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode __thisNode__, SModule module) {
+    return null;
   }
-  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
-    return UnaryMinus_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
+  public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
-    return UnaryMinus_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
+  public boolean virtual_isCompileTimeConstant_1238860258777(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
-    return UnaryMinus_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
+  public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode __thisNode__, SNode expr) {
   }
-  public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    UnaryMinus_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.UnaryMinus";
   }
+
 }

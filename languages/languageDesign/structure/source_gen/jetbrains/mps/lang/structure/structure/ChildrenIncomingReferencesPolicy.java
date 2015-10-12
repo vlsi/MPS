@@ -11,12 +11,20 @@ public enum ChildrenIncomingReferencesPolicy {
   local("enforce `same root only'", "local"),
   forbidden("enforce `forbidden'", "forbidden");
 
-  private String myName;
+  private final String myName;
   public String getName() {
-    return this.myName;
+    return myName;
+  }
+  private final String myValue;
+  ChildrenIncomingReferencesPolicy(String name, String value) {
+    myName = name;
+    myValue = value;
+  }
+  public String getValue() {
+    return myValue;
   }
   public String getValueAsString() {
-    return this.myValue;
+    return myValue;
   }
   public static List<ChildrenIncomingReferencesPolicy> getConstants() {
     List<ChildrenIncomingReferencesPolicy> list = ListSequence.fromList(new LinkedList<ChildrenIncomingReferencesPolicy>());
@@ -42,13 +50,5 @@ public enum ChildrenIncomingReferencesPolicy {
       return ChildrenIncomingReferencesPolicy.forbidden;
     }
     return ChildrenIncomingReferencesPolicy.getDefault();
-  }
-  private String myValue;
-  ChildrenIncomingReferencesPolicy(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
-  public String getValue() {
-    return this.myValue;
   }
 }

@@ -4,5 +4,11 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface ShortcutChange_BehaviorDescriptor extends ImplementationPart_BehaviorDescriptor {
 }

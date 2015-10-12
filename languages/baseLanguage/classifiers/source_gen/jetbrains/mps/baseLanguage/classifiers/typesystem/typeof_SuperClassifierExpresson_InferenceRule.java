@@ -7,9 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_Behavior;
+import jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,12 +20,12 @@ public class typeof_SuperClassifierExpresson_InferenceRule extends AbstractInfer
   public typeof_SuperClassifierExpresson_InferenceRule() {
   }
   public void applyRule(final SNode expresson, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode classifier = SuperClassifierExpresson_Behavior.call_getClassifier_1217434044387(expresson);
+    SNode classifier = SuperClassifierExpresson__BehaviorDescriptor.getClassifier_idhHOIkvz.invoke(expresson);
     if (classifier != null) {
       {
         SNode _nodeToCheck_1029348928467 = expresson;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001449", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001451", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_createSuperType_1217433657148", new Object[]{}), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1217434001451", true), (SNode) IClassifier__BehaviorDescriptor.createSuperType_idhHOGPWW.invoke(classifier), _info_12389875345);
       }
     } else {
       {

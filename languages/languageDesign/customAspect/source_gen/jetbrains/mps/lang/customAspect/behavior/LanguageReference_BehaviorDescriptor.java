@@ -4,11 +4,17 @@ package jetbrains.mps.lang.customAspect.behavior;
 
 import jetbrains.mps.lang.smodel.behavior.LanguageRefExpression_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class LanguageReference_BehaviorDescriptor extends LanguageRefExpression_BehaviorDescriptor {
-  public LanguageReference_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.customAspect.structure.LanguageReference";
   }
+
 }

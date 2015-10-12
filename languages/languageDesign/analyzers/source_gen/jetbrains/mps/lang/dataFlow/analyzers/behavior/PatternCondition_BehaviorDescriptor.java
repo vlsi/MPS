@@ -4,14 +4,20 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PatternCondition_BehaviorDescriptor extends ApplicableCondition_BehaviorDescriptor {
-  public PatternCondition_BehaviorDescriptor() {
+  public SNode virtual_getApplicableConcept_4413230749907681652(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
-    return PatternCondition_Behavior.virtual_getApplicableConcept_4413230749907681652(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition";
   }
+
 }

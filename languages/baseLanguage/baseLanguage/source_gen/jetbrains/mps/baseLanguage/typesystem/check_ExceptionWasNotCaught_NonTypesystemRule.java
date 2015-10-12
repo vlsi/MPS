@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -26,7 +26,7 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
   }
   public void applyRule(final SNode iTryCatchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> caughtExceptions = new ArrayList<SNode>();
-    for (SNode catchClause : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), iTryCatchStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{})) {
+    for (SNode catchClause : ITryCatchStatement__BehaviorDescriptor.getCatchClauses_id3eptmOG0XgA.invoke(iTryCatchStatement)) {
       SNode catchType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(catchType, _quotation_createNode_6gl2l4_b0a1a1a1())) {
         for (SNode caughtType : caughtExceptions) {

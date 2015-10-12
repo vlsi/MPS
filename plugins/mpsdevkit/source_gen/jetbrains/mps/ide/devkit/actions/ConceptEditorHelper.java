@@ -12,7 +12,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -28,7 +29,7 @@ public class ConceptEditorHelper {
     for (SNode root : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(root), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect")) && SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"))) {
         SNode candidate = (SNode) root;
-        if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(candidate), "virtual_canBeAppliedToNode_8911797107065640816", new Object[]{node})) {
+        if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept(candidate), SMethodTrimmedId.create("canBeAppliedToNode", null, "7IH442d05tK"), node))) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }
@@ -45,7 +46,7 @@ public class ConceptEditorHelper {
   }
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
     SNode conceptAspect = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(concept), null);
-    BehaviorReflection.invokeVirtual(Void.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Object[]{applicableNode});
+    BHReflection.invoke(conceptAspect, SMethodTrimmedId.create("setBaseConcept", null, "5r_35Ihc58c"), applicableNode);
     SModelOperations.addRootNode(model, conceptAspect);
 
     return conceptAspect;

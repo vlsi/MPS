@@ -4,11 +4,17 @@ package jetbrains.mps.lang.plugin.standalone.behavior;
 
 import jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class GetPreferencesComponentInProjectOperation_BehaviorDescriptor extends BaseProjectOperation_BehaviorDescriptor {
-  public GetPreferencesComponentInProjectOperation_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation";
   }
+
 }

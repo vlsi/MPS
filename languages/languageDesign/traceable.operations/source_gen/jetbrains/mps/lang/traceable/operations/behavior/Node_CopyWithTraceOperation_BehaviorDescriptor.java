@@ -4,18 +4,25 @@ package jetbrains.mps.lang.traceable.operations.behavior;
 
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class Node_CopyWithTraceOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
-  public Node_CopyWithTraceOperation_BehaviorDescriptor() {
+  public boolean virtual_applicableToLink_1262430001741498352(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
-    return Node_CopyWithTraceOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
+  public boolean virtual_applicableToNode_1262430001741498076(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
-    return Node_CopyWithTraceOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation";
   }
+
 }

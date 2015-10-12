@@ -5,21 +5,28 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NotEqualsExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
-  public NotEqualsExpression_BehaviorDescriptor() {
+  public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode __thisNode__, Object leftValue, Object rightValue) {
+    return null;
   }
-  public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode thisNode, Object leftValue, Object rightValue) {
-    return NotEqualsExpression_Behavior.virtual_calculateCompileTimeConstantValue_1587718783752756055(thisNode, leftValue, rightValue);
+  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode __thisNode__, SModule module) {
+    return null;
   }
-  public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
-    return NotEqualsExpression_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
+  public int virtual_getPriority_1262430001741497858(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
-  public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
-    return NotEqualsExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NotEqualsExpression";
   }
+
 }

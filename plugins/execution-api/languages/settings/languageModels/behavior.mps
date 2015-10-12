@@ -258,6 +258,10 @@
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
+      <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
+        <child id="1235573175711" name="elementType" index="2HTBi0" />
+        <child id="1235573187520" name="singletonValue" index="2HTEbv" />
+      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
@@ -1911,6 +1915,35 @@
             <property role="3clFbU" value="true" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="3$rDe45i1AW" role="13h7CS">
+      <property role="TrG5h" value="getThrowableTypes" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:5op8ooRkkc7" resolve="getThrowableTypes" />
+      <node concept="3Tm1VV" id="3$rDe45i1B3" role="1B3o_S" />
+      <node concept="3clFbS" id="3$rDe45i1B4" role="3clF47">
+        <node concept="3cpWs6" id="3$rDe45i2Ih" role="3cqZAp">
+          <node concept="2OqwBi" id="3$rDe45i4_T" role="3cqZAk">
+            <node concept="2ShNRf" id="3$rDe45i2J9" role="2Oq$k0">
+              <node concept="2HTt$P" id="3$rDe45i4hU" role="2ShVmc">
+                <node concept="3Tqbb2" id="3$rDe45i4kP" role="2HTBi0">
+                  <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+                </node>
+                <node concept="2c44tf" id="3$rDe45i4qg" role="2HTEbv">
+                  <node concept="3uibUv" id="3$rDe45i4wm" role="2c44tc">
+                    <ref role="3uigEE" to="dj99:~RuntimeConfigurationException" resolve="RuntimeConfigurationException" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="ANE8D" id="3$rDe45i4EO" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="2I9FWS" id="3$rDe45i1B5" role="3clF45">
+        <ref role="2I9WkF" to="tpee:fz3vP1H" resolve="Type" />
       </node>
     </node>
   </node>

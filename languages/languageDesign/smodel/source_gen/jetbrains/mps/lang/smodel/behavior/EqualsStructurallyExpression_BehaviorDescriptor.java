@@ -4,15 +4,22 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class EqualsStructurallyExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
-  public EqualsStructurallyExpression_BehaviorDescriptor() {
+  public int virtual_getPriority_1262430001741497858(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Integer.TYPE);
   }
-  public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
-    return EqualsStructurallyExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression";
   }
+
 }

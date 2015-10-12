@@ -20,7 +20,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.search.ISearchScope;
@@ -470,7 +471,7 @@ public class SNodeOperations {
     for (SNode attribute : AttributeOperations.getAllAttributes(oldChild)) {
       if (SNodeOperations.isInstanceOf(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))) {
         String propertyName = AttributeOperations.getPropertyName(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute")));
-        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(newChild)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{propertyName}) == null)) {
+        if ((((SNode) BHReflection.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(newChild)), SMethodTrimmedId.create("findPropertyDeclaration", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "hK3S4A1"), propertyName)) == null)) {
           // no such property in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for property '" + propertyName + "' : so such property in concept " + newChild.getConcept().getName(), newChild);
           continue;
@@ -478,7 +479,7 @@ public class SNodeOperations {
       }
       if (SNodeOperations.isInstanceOf(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))) {
         String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute")));
-        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(newChild)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
+        if ((((SNode) BHReflection.invoke(SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(newChild)), SMethodTrimmedId.create("findLinkDeclaration", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "hEwILKz"), linkRole)) == null)) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;

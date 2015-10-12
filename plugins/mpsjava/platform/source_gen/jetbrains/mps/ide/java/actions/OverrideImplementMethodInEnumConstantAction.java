@@ -11,13 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverrideImplementMethodInEnumConstantAction {
@@ -48,8 +47,8 @@ public class OverrideImplementMethodInEnumConstantAction {
     final SNodeReference[] methods = mah.runReadAction(new Computable<SNodeReference[]>() {
       @Override
       public SNodeReference[] compute() {
-        List<SNode> methodsToOverride = (myIsOverride ? BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextEnumConstant, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextEnumConstant, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
-        List<SNode> allSuperClassifiers = BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{});
+        List<SNode> methodsToOverride = (myIsOverride ? ((List<SNode>) BHReflection.invoke(contextEnumConstant, SMethodTrimmedId.create("getMethodsToOverride", null, "4GM03FJm3zL"))) : ((List<SNode>) BHReflection.invoke(contextEnumConstant, SMethodTrimmedId.create("getMethodsToImplement", null, "4GM03FJm5q2"))));
+        List<SNode> allSuperClassifiers = ((List<SNode>) BHReflection.invoke(SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), SMethodTrimmedId.create("getAllSuperClassifiers", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "4fAeKISQjDi")));
         ListSequence.fromList(allSuperClassifiers).addElement(SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
         return OverrideImplementMethodsDialog.toNodePointers(OverrideImplementMethodsDialog.sortMethods(allSuperClassifiers, methodsToOverride));
       }
@@ -73,7 +72,7 @@ public class OverrideImplementMethodInEnumConstantAction {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
-              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+              return SNodeOperations.cast(it.resolve(myProject.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
             }
           }).toListSequence();
           OverrideImplementMethodsHelper helper = new OverrideImplementMethodsInEnumHelper(myProject, SNodeOperations.cast(SNodeOperations.getParent(contextEnumConstant), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), contextEnumConstant, contextMember, dialog.isRemoveAttributes(), dialog.isInsertOverrideAnnotation(), dialog.isAddReturn());

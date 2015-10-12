@@ -4,11 +4,17 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class AbstractCheckingRule_BehaviorDescriptor extends AbstractRule_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor {
-  public AbstractCheckingRule_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule";
   }
+
 }

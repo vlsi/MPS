@@ -10,23 +10,28 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class BuildMPSPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
-  public BuildMPSPlugin_BehaviorDescriptor() {
+  public void virtual_fetchDependencies_5908258303322131137(SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
   }
-  public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BuildMPSPlugin_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
+  public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode __thisNode__) {
+    return null;
   }
-  public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return BuildMPSPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
+  public Scope virtual_getLayoutScope_1224588814561807654(SNode __thisNode__, SAbstractConcept kind) {
+    return null;
   }
-  public Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SAbstractConcept kind) {
-    return BuildMPSPlugin_Behavior.virtual_getLayoutScope_1224588814561807654(thisNode, kind);
+  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode __thisNode__, SAbstractConcept kind) {
+    return null;
   }
-  public Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SAbstractConcept kind) {
-    return BuildMPSPlugin_Behavior.virtual_getProjectStructureScope_3734116213129936182(thisNode, kind);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMPSPlugin";
   }
+
 }

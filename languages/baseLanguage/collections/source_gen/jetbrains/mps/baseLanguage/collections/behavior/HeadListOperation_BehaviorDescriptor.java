@@ -6,17 +6,23 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class HeadListOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor {
-  public HeadListOperation_BehaviorDescriptor() {
+  public SNode virtual_expectedOperandType_6368025520509018230(SNode __thisNode__, SNode elementType) {
+    return null;
   }
-  public SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
-    return IApplicableToNothing_Behavior.virtual_expectedOperandType_6368025520509018230(thisNode, elementType);
+  public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept __thisConcept__) {
+    return null;
   }
-  public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
-    return IApplicableToList_Behavior.virtual_getApplicableTypes_5994574781955586127(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HeadListOperation";
   }
+
 }

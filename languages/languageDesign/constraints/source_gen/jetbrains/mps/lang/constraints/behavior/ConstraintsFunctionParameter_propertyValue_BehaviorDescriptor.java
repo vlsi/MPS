@@ -4,11 +4,17 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
-  public ConstraintsFunctionParameter_propertyValue_BehaviorDescriptor() {
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue";
   }
+
 }

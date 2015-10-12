@@ -19,16 +19,16 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
@@ -118,7 +118,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public String getDescriptorFQName(SModule module) {
-    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript").getDeclarationNode()), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
+    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + ((String) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript").getDeclarationNode()), SMethodTrimmedId.create("getGeneratedClassName", MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), "7w5LXrJJkLe")));
   }
 
   public MigrationDescriptor getMigrationDescriptor(Language module) {
@@ -132,17 +132,17 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     MapSequence.fromMap(loadedDescriptors).clear();
   }
 
-  public MigrationScript fetchScript(MigrationScriptReference scriptReference) {
+  public MigrationScript fetchScript(MigrationScriptReference scriptReference, boolean silently) {
     SLanguage depLanguage = scriptReference.getLanguage();
     int current = scriptReference.getFromVersion();
     MigrationDescriptor md = getMigrationDescriptor((Language) depLanguage.getSourceModule());
-    if (md == null) {
+    if (md == null && !(silently)) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration descriptor for language " + depLanguage + ".");
       }
     }
     MigrationScript script = check_gd1mrb_a0e0u(md, current);
-    if (script == null) {
+    if (script == null && !(silently)) {
       if (LOG.isEnabledFor(Level.WARN)) {
         LOG.warn("Could not load migration script for language " + depLanguage + ", version " + current + ".");
       }
@@ -213,7 +213,14 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
     }).select(new ISelector<MigrationScriptReference, String>() {
       public String select(MigrationScriptReference it) {
-        return fetchScript(it).getCaption() + "  [" + NameUtil.compactNamespace(it.getLanguage().getQualifiedName()) + "]";
+        MigrationScript script = fetchScript(it, false);
+        String langNameShrinked = NameUtil.compactNamespace(it.getLanguage().getQualifiedName());
+
+        if (script == null) {
+          return "<missing script>: language:" + langNameShrinked + ", version:" + it.getFromVersion();
+        }
+
+        return script.getCaption() + "  [" + langNameShrinked + "]";
       }
     });
     return SetSequence.fromSetWithValues(new HashSet<String>(), names);
@@ -236,7 +243,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
               continue;
             }
             for (int v = ver; v < currentLangVersion; v++) {
-              if (fetchScript(new MigrationScriptReference(lang, v)) == null) {
+              if (fetchScript(new MigrationScriptReference(lang, v), false) == null) {
                 ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage,Integer>from(module, lang, v));
                 // next used language, please 
                 break;
@@ -429,7 +436,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                 if (!(MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module))) {
                   return false;
                 }
-                MigrationScript loaded = fetchScript(it);
+                MigrationScript loaded = fetchScript(it, false);
                 if (loaded == null) {
                   return false;
                 }

@@ -10,26 +10,31 @@ import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NamedTupleType_BehaviorDescriptor extends ClassifierType_BehaviorDescriptor implements IGenericType_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public NamedTupleType_BehaviorDescriptor() {
+  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode __thisNode__, Map<SNode, SNode> substitutions) {
   }
-  public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    NamedTupleType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
+  public SNode virtual_expandGenerics_4122274986016348613(SNode __thisNode__, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+    return null;
   }
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
-    return NamedTupleType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
+  public String virtual_getLeftBracket_1262430001741497792(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getLeftBracket_1262430001741497792(SConcept thisConcept) {
-    return NamedTupleType_Behavior.virtual_getLeftBracket_1262430001741497792(thisConcept);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return NamedTupleType_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public String virtual_getRightBracket_1262430001741497990(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getRightBracket_1262430001741497990(SConcept thisConcept) {
-    return NamedTupleType_Behavior.virtual_getRightBracket_1262430001741497990(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
+
 }

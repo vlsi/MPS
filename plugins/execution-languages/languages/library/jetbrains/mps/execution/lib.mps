@@ -9,8 +9,8 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -231,6 +231,7 @@
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
         <child id="1199542501692" name="parameterType" index="1ajw0F" />
@@ -788,9 +789,9 @@
     </node>
     <node concept="yHkDF" id="7byHRlLC1SL" role="yHkD$">
       <property role="TrG5h" value="myIsValid" />
-      <node concept="1ajhzC" id="7byHRlLC1SM" role="1tU5fm">
-        <node concept="10P_77" id="7byHRlLC1SN" role="1ajl9A" />
-        <node concept="3Tqbb2" id="7byHRlLC1SO" role="1ajw0F" />
+      <node concept="9cv3F" id="7qWwyLT0Z1E" role="1tU5fm">
+        <node concept="3Tqbb2" id="7qWwyLT0Z1F" role="1ajw0F" />
+        <node concept="10P_77" id="7qWwyLT0Z1G" role="1ajl9A" />
       </node>
     </node>
   </node>

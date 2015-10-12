@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelsScope;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Collection;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -18,7 +17,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 
 /*package*/ class EditorComponentDeclarationScope extends FilteringScope {
   private SNode myConceptDeclaration;
@@ -27,7 +26,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
     myConceptDeclaration = concept;
   }
   /*package*/ EditorComponentDeclarationScope(SNode editorComponent) {
-    this(SNodeOperations.getModel(editorComponent), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
+    this(SNodeOperations.getModel(editorComponent), AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(editorComponent));
   }
   private static Collection<SModel> getModels(SModel model) {
     Set<SModel> editorModels = SetSequence.fromSet(new HashSet<SModel>());
@@ -46,6 +45,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
   @Override
   public boolean isExcluded(SNode node) {
     SNode editorComponent = SNodeOperations.as(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
-    return editorComponent == null || SLinkOperations.getTarget(editorComponent, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, 0x619d955714550434L, "overridenEditorComponent")) != null || !(AbstractConceptDeclaration_Behavior.call_isSubconceptOf_8134325418312549386(SNodeOperations.asNode(myConceptDeclaration), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{})));
+    return editorComponent == null || SLinkOperations.getTarget(editorComponent, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, 0x619d955714550434L, "overridenEditorComponent")) != null || !((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SNodeOperations.asNode(myConceptDeclaration), AbstractComponent__BehaviorDescriptor.getConceptDeclaration_id67EYkym$wx3.invoke(editorComponent)));
   }
 }

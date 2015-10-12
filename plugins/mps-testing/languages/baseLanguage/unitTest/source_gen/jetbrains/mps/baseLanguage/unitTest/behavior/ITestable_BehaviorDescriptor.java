@@ -4,6 +4,12 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface ITestable_BehaviorDescriptor {
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode);
 }

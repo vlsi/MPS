@@ -5,6 +5,12 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IGeneratorParameter_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
   public String virtual_getUniqueId_650531548511609559(SNode thisNode);
 }

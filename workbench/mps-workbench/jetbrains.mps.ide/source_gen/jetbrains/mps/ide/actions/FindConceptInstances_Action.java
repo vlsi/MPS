@@ -22,7 +22,8 @@ import jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer;
 import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class FindConceptInstances_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -95,7 +96,7 @@ public class FindConceptInstances_Action extends BaseAction {
           public FindUsagesOptions getDefaultSearchOptions(String concept) {
             FindUsagesOptions findUsagesOptions = container.getDefaultSearchOptions(concept);
             findUsagesOptions.removeOption(FindersOptions.class);
-            findUsagesOptions.setOption(new FindersOptions(BehaviorReflection.invokeNonVirtual(String.class, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "call_getGeneratedClassLongName_1213877240120", new Object[]{})));
+            findUsagesOptions.setOption(new FindersOptions(((String) BHReflection.invoke(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)", "1197632773078"), SMethodTrimmedId.create("getGeneratedClassLongName", MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), "hEwIc4S")))));
             return findUsagesOptions;
           }
         };

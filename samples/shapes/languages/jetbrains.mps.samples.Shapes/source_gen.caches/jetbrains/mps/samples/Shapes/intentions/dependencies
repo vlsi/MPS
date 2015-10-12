@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior" />
+    <classNode dependClassName="jetbrains.mps.samples.Shapes.behavior.Canvas__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

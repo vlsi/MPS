@@ -6,7 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -32,7 +33,7 @@ public class InlineMethodModel {
           myCall = new MethodCallAdapter(node);
           myMethod = myCall.getMethodDeclaration();
         }
-        myMethodPresentation = BehaviorReflection.invokeVirtual(String.class, myMethod, "virtual_getPresentation_1213877396640", new Object[]{});
+        myMethodPresentation = ((String) BHReflection.invoke(myMethod, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
         myIsContainsSelfCalls = isContainsSelfCalls();
       }
     });

@@ -4,15 +4,22 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.lang.smodel.behavior.Model_CreateNewNodeOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class NF_Model_CreateNewNodeOperation_BehaviorDescriptor extends Model_CreateNewNodeOperation_BehaviorDescriptor {
-  public NF_Model_CreateNewNodeOperation_BehaviorDescriptor() {
+  public boolean virtual_applicableToModel_1262430001741492322(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
-    return NF_Model_CreateNewNodeOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation";
   }
+
 }

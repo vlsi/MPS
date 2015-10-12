@@ -5,14 +5,20 @@ package jetbrains.mps.make.script.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConceptFunctionParameter_progressMonitor_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
-  public ConceptFunctionParameter_progressMonitor_BehaviorDescriptor() {
+  public SNode virtual_getType_2443692612523876968(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getType_2443692612523876968(SNode thisNode) {
-    return ConceptFunctionParameter_progressMonitor_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor";
   }
+
 }

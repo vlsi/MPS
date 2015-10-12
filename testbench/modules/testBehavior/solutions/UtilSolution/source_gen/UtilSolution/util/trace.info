@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root nodeRef="r:d5b954f8-51a0-4e5e-8222-e5ceaabb7619(UtilSolution.util)/7688460527007450012">
+    <file name="TestResults.java">
+      <node id="7688460527007450702" at="7,0,8,0" concept="0" trace="DEFAULT_METHOD" />
+      <node id="7688460527007456584" at="9,0,10,0" concept="0" trace="POLYMORPHIC_PARENT" />
+      <node id="7688460527007456901" at="10,0,11,0" concept="0" trace="POLYMORPHIC_CHILD" />
+      <node id="7688460527007462360" at="12,0,13,0" concept="0" trace="NON_VIRTUAL_PARENT" />
+      <node id="7688460527007462600" at="13,0,14,0" concept="0" trace="NON_VIRTUAL_CHILD" />
+      <node id="7688460527007471127" at="15,0,16,0" concept="0" trace="DIAMOND_I" />
+      <node id="7688460527007471579" at="16,0,17,0" concept="0" trace="DIAMOND_I1" />
+      <node id="7688460527007471635" at="17,0,18,0" concept="0" trace="DIAMOND_I2" />
+      <node id="7688460527007471775" at="18,0,19,0" concept="0" trace="DIAMOND_C1" />
+      <node id="3845307305753198844" at="20,0,21,0" concept="0" trace="I1_DEFAULT_VALUE" />
+      <node id="3845307305753198945" at="21,0,22,0" concept="0" trace="I2_DEFAULT_VALUE" />
+      <node id="3845307305753198994" at="22,0,23,0" concept="0" trace="I3_DEFAULT_VALUE" />
+      <node id="3845307305753199047" at="23,0,24,0" concept="0" trace="C1_DEFAULT_VALUE" />
+      <node id="3845307305753249574" at="24,0,25,0" concept="0" trace="C3_DEFAULT_VALUE" />
+      <node id="6167444251392480593" at="26,0,27,0" concept="0" trace="DEFAULT_RETURN_VALUE" />
+      <node id="6123852159203117852" at="27,0,28,0" concept="0" trace="INCORRECT_RETURN_VALUE" />
+      <node id="5606797489885811760" at="28,0,29,0" concept="0" trace="DEFAULT_VOID_VALUE" />
+      <node id="1474492522700410470" at="30,0,31,0" concept="0" trace="SPECIFIED_RETURN_VALUE" />
+      <node id="1474492522700410888" at="31,0,32,0" concept="0" trace="NOT_SPECIFIED_RETURN_VALUE" />
+      <unit id="7688460527007450012" at="6,0,33,0" name="UtilSolution.util.TestResults" />
+    </file>
+  </root>
+</debug-info>
+

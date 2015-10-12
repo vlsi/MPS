@@ -5,61 +5,67 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
 import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class ConstructorDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
-  public ConstructorDeclaration_BehaviorDescriptor() {
+  public boolean virtual_canBeAnnotated_1233076312117(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept __thisConcept__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
-    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode __thisNode__) {
+    return null;
   }
-  public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
+  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode __thisNode__) {
+    return null;
   }
-  public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  public boolean virtual_isDeprecated_1224609060727(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_isDeprecated_1224609060727(thisNode);
+  public boolean virtual_isReturnsVoid_1234359555698(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_isReturnsVoid_1234359555698(thisNode);
+  public boolean virtual_isStatic_7405920559687241224(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
+  public boolean virtual_isStatic_8986964027630462944(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
+  public boolean virtual_isVisible_6145907390641297352(SNode __thisNode__, SNode contextClassifierType, SNode contextNode) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
+  public boolean virtual_isVisible_8083692786967482069(SNode __thisNode__, SNode contextClassifier, SNode contextNode) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
-    return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  public String virtual_jniSignature_8847328628797656446(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_jniSignature_8847328628797656446(SNode thisNode) {
-    return ConstructorDeclaration_Behavior.virtual_jniSignature_8847328628797656446(thisNode);
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode __thisNode__) {
+    return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
+  public void virtual_populateMember_7405920559687254644(SNode __thisNode__, MembersPopulatingContext context, SNode classifierType) {
   }
-  public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
-    ConstructorDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifierType);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration";
   }
+
 }

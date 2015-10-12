@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_Behavior;
+import jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration__BehaviorDescriptor;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
@@ -36,7 +36,7 @@ public class QueriesGenerated {
           List<SNode> langTextGenComponents = SNodeOperations.getNodeAncestors(_context.getParentNode(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false);
           SNode langTextGen = ListSequence.fromList(langTextGenComponents).first();
           if (langTextGen != null) {
-            return LanguageTextGenDeclaration_Behavior.call_getParameters_1234799367488(langTextGen);
+            return LanguageTextGenDeclaration__BehaviorDescriptor.getParameters_idhXZLLl0.invoke(langTextGen);
           } else {
             return ListSequence.fromList(new ArrayList<SNode>());
           }

@@ -4,14 +4,13 @@ package jetbrains.mps.samples.Kaja.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
-import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -20,27 +19,28 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
-public class Templatereduce__Looking extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
+public class Templatereduce__Looking extends TemplateDeclarationBase {
   public Templatereduce__Looking() {
   }
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959893177707");
   }
-  protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected SNode applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+    final TemplateExecutionEnvironment environment = context.getEnvironment();
     final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073306264");
-      environment.resolveInTemplateLater(tnode1, "baseMethodDeclaration", templateNode_pmalv5_c0a1a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/7060824959893184061", "heading", context);
+      environment.resolveInTemplateLater(tnode1, "baseMethodDeclaration", templateNode_pmalv5_c0a1a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/7060824959893184061", "heading", context);
       {
         Collection<SNode> tlist2 = null;
         {
-          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7060824959896242619(new SourceSubstituteMacroNodeContext(context, switchMacroRef_pmalv5_b0a0a0a1a2a1a2));
+          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7060824959896242619(new SourceSubstituteMacroNodeContext(context, switchMacroRef_pmalv5_b0a0a0a1a2a2a2));
           if (switchInput2 == null) {
             tlist2 = Collections.emptyList();
           } else {
             TemplateContext switchContext2;
             switchContext2 = context.subContext(null, switchInput2);
-            tlist2 = environment.trySwitch(templateSwitchNode_pmalv5_a0a0c0a1a1a2a1a2, switchContext2);
+            tlist2 = environment.trySwitch(templateSwitchNode_pmalv5_a0a0c0a1a1a2a2a2, switchContext2);
             if (tlist2 == null) {
               final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
               try {
@@ -62,17 +62,20 @@ public class Templatereduce__Looking extends TemplateDeclarationBase implements 
     }
     return tnode1;
   }
+  @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
-    return TemplateUtil.singletonList(applyPart0(environment, context));
+    return TemplateUtil.singletonList(applyPart0(context));
   }
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
-    SNode tnodepart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959893184059");
-    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
-    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnodepart0);
+
+  @Override
+  public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
+    final TemplateContext templateContext = weaveContext.getTemplateContext();
+    SNode tnodepart0 = applyPart0(templateContext);
+    SNode contextNode0 = weaveContext.getContextNode();
+    weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnodepart0, weaveContext.getAnchorNode(contextNode0, tnodepart0));
     return TemplateUtil.singletonList(tnodepart0);
   }
-  private static SNodePointer templateNode_pmalv5_c0a1a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4923130412073306264");
-  private static SNodePointer switchMacroRef_pmalv5_b0a0a0a1a2a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "2238065674976419305");
-  private static SNodePointer templateSwitchNode_pmalv5_a0a0c0a1a1a2a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896164452");
+  private static SNodePointer templateNode_pmalv5_c0a1a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4923130412073306264");
+  private static SNodePointer switchMacroRef_pmalv5_b0a0a0a1a2a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "2238065674976419305");
+  private static SNodePointer templateSwitchNode_pmalv5_a0a0c0a1a1a2a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896164452");
 }

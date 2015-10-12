@@ -5,6 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface IMethodCall_BehaviorDescriptor extends TypeDerivable_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor {
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode);
   public Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode);

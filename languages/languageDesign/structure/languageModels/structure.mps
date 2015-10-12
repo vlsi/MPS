@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -37,6 +37,7 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -79,6 +80,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/structure.png" />
     <property role="TrG5h" value="ConceptDeclaration" />
     <property role="34LRSv" value="Concept" />
+    <property role="1pbfSe" value="2042234185" />
     <ref role="1TJDcQ" node="h0PkWnZ" resolve="AbstractConceptDeclaration" />
     <node concept="1TJgyi" id="fX9Ktp8" role="1TKVEl">
       <property role="TrG5h" value="rootable" />
@@ -109,6 +111,7 @@
     <property role="R5$K2" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/link.png" />
     <property role="TrG5h" value="LinkDeclaration" />
+    <property role="1pbfSe" value="2042431843" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="50$LP2ztBgg" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
@@ -151,6 +154,7 @@
     <property role="R5$K2" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/property.png" />
     <property role="TrG5h" value="PropertyDeclaration" />
+    <property role="1pbfSe" value="2042431844" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="50$LP2ztBgn" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
@@ -169,6 +173,7 @@
   </node>
   <node concept="1TIwiD" id="fKAxPRU">
     <property role="TrG5h" value="DataTypeDeclaration" />
+    <property role="1pbfSe" value="646405878" />
     <node concept="PrWs8" id="yuXZmMPAvJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -180,6 +185,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/enum.png" />
     <property role="TrG5h" value="EnumerationDataTypeDeclaration" />
     <property role="34LRSv" value="Enum Data Type" />
+    <property role="1pbfSe" value="646405879" />
     <ref role="1TJDcQ" node="fKAxPRU" resolve="DataTypeDeclaration" />
     <node concept="1TJgyi" id="hrlZH32" role="1TKVEl">
       <property role="TrG5h" value="memberIdentifierPolicy" />
@@ -220,6 +226,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/constrainedTD.png" />
     <property role="TrG5h" value="ConstrainedDataTypeDeclaration" />
     <property role="34LRSv" value="Constrained Data Type" />
+    <property role="1pbfSe" value="646740787" />
     <ref role="1TJDcQ" node="fKAxPRU" resolve="DataTypeDeclaration" />
     <node concept="1TJgyi" id="fKFLfW2" role="1TKVEl">
       <property role="TrG5h" value="constraint" />
@@ -228,6 +235,7 @@
   </node>
   <node concept="1TIwiD" id="fKM4N6M">
     <property role="TrG5h" value="EnumerationMemberDeclaration" />
+    <property role="1pbfSe" value="840118958" />
     <node concept="1TJgyi" id="fLuS6pz" role="1TKVEl">
       <property role="TrG5h" value="internalValue" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -250,6 +258,7 @@
     <property role="R5$K2" value="true" />
     <property role="MwhBj" value="${language_descriptor}/icons/primitiveTD.png" />
     <property role="TrG5h" value="PrimitiveDataTypeDeclaration" />
+    <property role="1pbfSe" value="911400739" />
     <ref role="1TJDcQ" node="fKAxPRU" resolve="DataTypeDeclaration" />
   </node>
   <node concept="AxPO7" id="fLJekj2">
@@ -292,6 +301,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="AbstractConceptDeclaration" />
+    <property role="1pbfSe" value="894682895" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="28RKVM5GRls" role="1TKVEl">
       <property role="TrG5h" value="helpURL" />
@@ -312,6 +322,10 @@
     <node concept="1TJgyi" id="40UcGlRb7V7" role="1TKVEl">
       <property role="TrG5h" value="final" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="1o9qxtf9pgp" role="1TKVEl">
+      <property role="TrG5h" value="conceptId" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="h0TBFkr" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -342,6 +356,7 @@
     <property role="MwhBj" value="${language_descriptor}/icons/interfaceStructure.png" />
     <property role="TrG5h" value="InterfaceConceptDeclaration" />
     <property role="34LRSv" value="Interface Concept" />
+    <property role="1pbfSe" value="894885311" />
     <ref role="1TJDcQ" node="h0PkWnZ" resolve="AbstractConceptDeclaration" />
     <node concept="1TJgyj" id="h0PrDRO" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -352,6 +367,7 @@
   </node>
   <node concept="1TIwiD" id="h0PrWoo">
     <property role="TrG5h" value="InterfaceConceptReference" />
+    <property role="1pbfSe" value="896517928" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="h0PrY0D" role="1TKVEi">
       <property role="20kJfa" value="intfc" />
@@ -383,6 +399,7 @@
   <node concept="1TIwiD" id="hOasaTk">
     <property role="TrG5h" value="DeprecatedNodeAnnotation" />
     <property role="3GE5qa" value="deprecatedAnnotation" />
+    <property role="1pbfSe" value="175157105" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="hOasgxt" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -408,12 +425,14 @@
   <node concept="PlHQZ" id="hOIDzy1">
     <property role="TrG5h" value="IStructureDeprecatable" />
     <property role="3GE5qa" value="deprecatedAnnotation" />
+    <property role="1pbfSe" value="782645662" />
     <node concept="PrWs8" id="hOIDCJM" role="PrDN$">
       <ref role="PrY4T" to="tpck:hOwnYed" resolve="IDeprecatable" />
     </node>
   </node>
   <node concept="PlHQZ" id="2hxg_BDjKM4">
     <property role="TrG5h" value="IConceptAspect" />
+    <property role="1pbfSe" value="229658333" />
   </node>
   <node concept="AxPO7" id="70UXEPd7E3S">
     <property role="3lZH7k" value="custom" />
@@ -476,6 +495,7 @@
     <property role="TrG5h" value="AttributeInfo" />
     <property role="34LRSv" value="@attribute info" />
     <property role="3GE5qa" value="attribute" />
+    <property role="1pbfSe" value="1159404549" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="1TJgyi" id="6_fwX542K77" role="1TKVEl">
       <property role="TrG5h" value="role" />
@@ -505,6 +525,7 @@
   <node concept="1TIwiD" id="5g5Zgd9mvvs">
     <property role="3GE5qa" value="attribute" />
     <property role="TrG5h" value="AttributeInfo_IsMultiple" />
+    <property role="1pbfSe" value="1654655777" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5g5Zgd9myRe" role="1TKVEl">
       <property role="TrG5h" value="value" />
@@ -517,6 +538,7 @@
   <node concept="1TIwiD" id="5g5Zgd9qGH9">
     <property role="3GE5qa" value="attribute" />
     <property role="TrG5h" value="AttributeInfo_AttributedConcept" />
+    <property role="1pbfSe" value="1653553076" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5g5Zgd9qGMp" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -528,10 +550,12 @@
   <node concept="PlHQZ" id="4Xny4S7K8wS">
     <property role="TrG5h" value="ReferenceLinkDeclartionScopeKind" />
     <property role="3GE5qa" value="scope" />
+    <property role="1pbfSe" value="1461194886" />
   </node>
   <node concept="PlHQZ" id="4Xny4S7K8CL">
     <property role="3GE5qa" value="scope" />
     <property role="TrG5h" value="AggregationLinkDeclarationScopeKind" />
+    <property role="1pbfSe" value="1461195391" />
   </node>
 </model>
 

@@ -4,14 +4,20 @@ package testAnnotatedType.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class PrimDoubleType_BehaviorDescriptor extends PrimType_BehaviorDescriptor {
-  public PrimDoubleType_BehaviorDescriptor() {
+  public SNode virtual_substituteWith_1470921783545443949(SNode __thisNode__, SNode subs) {
+    return null;
   }
-  public SNode virtual_substituteWith_1470921783545443949(SNode thisNode, SNode subs) {
-    return PrimDoubleType_Behavior.virtual_substituteWith_1470921783545443949(thisNode, subs);
-  }
+
   @Override
   public String getConceptFqName() {
     return "testAnnotatedType.structure.PrimDoubleType";
   }
+
 }

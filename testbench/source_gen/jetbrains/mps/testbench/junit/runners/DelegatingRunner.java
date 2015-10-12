@@ -8,7 +8,7 @@ import org.junit.runners.model.RunnerBuilder;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.Description;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -39,8 +39,8 @@ public class DelegatingRunner extends Runner {
     return myBuilder.safeRunnerForClass(getTestClass()).getDescription();
   }
 
-  @Nullable
-  private Class getTestClass() {
+  @NotNull
+  private Class<?> getTestClass() {
     // todo: execute only MPS tests here. move all unit tests to ant task 
     final SRepository repository = myProject.getRepository();
     return new ModelAccessHelper(repository).runReadAction(new Computable<Class<?>>() {

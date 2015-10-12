@@ -5,35 +5,40 @@ package jetbrains.mps.console.base.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.smodel.query.behavior.HelpProvider_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements HelpProvider_BehaviorDescriptor {
-  public Command_BehaviorDescriptor() {
+  public String virtual_getDisplayString_6891027939994892943(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getDisplayString_6891027939994892943(SConcept thisConcept) {
-    return HelpProvider_Behavior.virtual_getDisplayString_6891027939994892943(thisConcept);
+  public String virtual_getGroup_6928665434441162387(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
-    return HelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
+  public String virtual_getHelpPage_7006261637493125297(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
-    return HelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
+  public String virtual_getKind_7006261637493126084(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getKind_7006261637493126084(SConcept thisConcept) {
-    return Command_Behavior.virtual_getKind_7006261637493126084(thisConcept);
+  public String virtual_getShortDisplayString_7006261637493126103(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getShortDisplayString_7006261637493126103(SConcept thisConcept) {
-    return HelpProvider_Behavior.virtual_getShortDisplayString_7006261637493126103(thisConcept);
+  public String virtual_getShortHelp_473081947982699339(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return HelpProvider_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.Command";
   }
-  public abstract void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback);
+
+  public abstract void virtual_execute_6854397602732226506(SNode __thisNode__, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback);
 }

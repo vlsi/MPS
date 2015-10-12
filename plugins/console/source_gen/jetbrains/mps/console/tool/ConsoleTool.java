@@ -19,7 +19,8 @@ import jetbrains.mps.plugins.tool.IComponentDisposer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import com.intellij.ui.content.Content;
 
 @State(name = "ConsoleHistory", storages = @Storage(file = StoragePathMacros.WORKSPACE_FILE)
@@ -134,7 +135,7 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
     final SRepository repo = ProjectHelper.toMPSProject(getProject()).getRepository();
     repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        tabState.title = BehaviorReflection.invokeVirtual(String.class, command, "virtual_getPresentation_1213877396640", new Object[]{});
+        tabState.title = ((String) BHReflection.invoke(command, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
       }
     });
     tabState.isHistoryTab = true;

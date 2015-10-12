@@ -5,6 +5,12 @@ package jetbrains.mps.lang.plugin.behavior;
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This interface is not involved in the actual method invocation
+ */
+@Deprecated
 public interface ActionParameter_BehaviorDescriptor extends IValidIdentifier_BehaviorDescriptor {
   public SNode virtual_getType_1171743928471337193(SNode thisNode);
   public SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode);

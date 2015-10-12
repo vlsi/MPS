@@ -4,14 +4,20 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public class RemoveGenSources_BehaviorDescriptor extends AbsractMake_BehaviorDescriptor {
-  public RemoveGenSources_BehaviorDescriptor() {
+  public String virtual_getShortHelp_473081947982699339(SConcept __thisConcept__) {
+    return null;
   }
-  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return RemoveGenSources_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.RemoveGenSources";
   }
+
 }

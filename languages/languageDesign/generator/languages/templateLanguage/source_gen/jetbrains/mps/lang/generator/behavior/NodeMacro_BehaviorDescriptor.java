@@ -5,17 +5,23 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * Will be removed after 3.3
+ * Need to support compilation of the legacy behavior descriptors before the language is rebuilt
+ * This class is not involved in the actual method invocation
+ */
+@Deprecated
 public abstract class NodeMacro_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor {
-  public NodeMacro_BehaviorDescriptor() {
+  public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode __thisNode__) {
+    return null;
   }
-  public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    return NodeMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
+  public String virtual_getPresentation_1213877396640(SNode __thisNode__) {
+    return null;
   }
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return NodeMacro_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.NodeMacro";
   }
+
 }

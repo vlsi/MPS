@@ -4,7 +4,6 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.runtime.TemplateDeclarationBase;
-import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -13,16 +12,16 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
-public class Templatereduce__InputNode extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
+public class Templatereduce__InputNode extends TemplateDeclarationBase {
   private String myText;
   private int myValue;
   private SNode myElement;
@@ -41,7 +40,8 @@ public class Templatereduce__InputNode extends TemplateDeclarationBase implement
     MapSequence.fromMap(result).put("element", myElement);
     return result;
   }
-  protected Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
+  protected Collection<SNode> applyPart0(@NotNull final TemplateContext context) throws GenerationException {
+    final TemplateExecutionEnvironment environment = context.getEnvironment();
     Collection<SNode> tlist1 = null;
     try {
       TemplateContext switchContext1;
@@ -53,7 +53,7 @@ public class Templatereduce__InputNode extends TemplateDeclarationBase implement
         switchContext1 = context.subContext(args1);
         switchContext1 = switchContext1.subContext(null, context.getInput());
       }
-      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_cmlgl2_a0a0c0b0g, switchContext1);
+      tlist1 = environment.trySwitch(templateSwitchNodeNoInput_cmlgl2_a0a0c0c0g, switchContext1);
       if (tlist1 == null) {
         final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
         try {
@@ -68,19 +68,21 @@ public class Templatereduce__InputNode extends TemplateDeclarationBase implement
     }
     return tlist1;
   }
+  @Override
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
-    return applyPart0(environment, contextWithParams);
+    return applyPart0(contextWithParams);
   }
-  public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
-    TemplateContext contextWithParams = context.subContext(getParametersAsMap());
-    Collection<SNode> tlistpart0 = applyPart0(environment, contextWithParams);
-    SNodeReference weaveTf0 = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948476841");
-    NodeWeaveFacility weaveSupport0 = environment.weaveNode(contextWithParams, weaveTf0);
+
+  @Override
+  public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
+    final TemplateContext templateContext = weaveContext.getTemplateContext().subContext(getParametersAsMap());
+    Collection<SNode> tlistpart0 = applyPart0(templateContext);
+    SNode contextNode0 = weaveContext.getContextNode();
     for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), nodeToWeave);
+      weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), nodeToWeave, weaveContext.getAnchorNode(contextNode0, nodeToWeave));
     }
     return tlistpart0;
   }
-  private static SNodePointer templateSwitchNodeNoInput_cmlgl2_a0a0c0b0g = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948523705");
+  private static SNodePointer templateSwitchNodeNoInput_cmlgl2_a0a0c0c0g = new SNodePointer("r:f37420d7-c952-44cf-aaac-346288c56298(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_TemplateCallArguments@generator)", "6736062018948523705");
 }
