@@ -1,0 +1,169 @@
+/*
+ * Copyright 2003-2015 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.generator.impl.plan;
+
+import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Transform;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateModel;
+import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.language.GeneratorRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.util.Computable;
+import org.hamcrest.CoreMatchers;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ErrorCollector;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * @author Artem Tikhomirov
+ */
+public class CheckpointModelTest {
+
+  private static Environment ourEnvironment;
+
+  @Rule
+  public final ErrorCollector myErrors = new ErrorCollector();
+
+  @BeforeClass
+  public static void setup() {
+    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().withWorkbenchPath());
+  }
+
+  @AfterClass
+  public static void tearDown() {
+    ourEnvironment.dispose();
+  }
+
+  @Test
+  public void createModelWithCheckpoints() {
+    final Project mpsProject = ourEnvironment.openProject(new File(System.getProperty("user.dir")));
+    try {
+      final LanguageRegistry lr = LanguageRegistry.getInstance(mpsProject);
+      final SModelReference mr = PersistenceFacade.getInstance().createModelReference(
+          "r:24638668-c917-4da1-8069-8ddef862314d(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)");
+      // "r:53fbbbd7-a01f-458c-a76d-a34ed2d6f25f(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)"
+      final SModel m = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModel>() {
+        @Override
+        public SModel compute() {
+          return mr.resolve(mpsProject.getRepository());
+        }
+      });
+      ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
+        @Override
+        public ModelGenerationPlan compute() {
+          SLanguage langTestProperty = MetaAdapterFactory.getLanguage(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L,
+              "jetbrains.mps.generator.test.crossmodel.property");
+          final GeneratorRuntime g1 = lr.getLanguage(langTestProperty).getGenerators().iterator().next();
+          final Transform step1 = new Transform(getGenerators(g1));
+          SLanguage langBaseLang = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
+          final GeneratorRuntime g2 = lr.getLanguage(langBaseLang).getGenerators().iterator().next();
+          final Transform step2 = new Transform(getGenerators(g2));
+          final Checkpoint cp1 = new Checkpoint("aaa");
+          return new ModelGenerationPlan() {
+            @Override
+            public List<List<TemplateMappingConfiguration>> getSteps() {
+              return Arrays.asList(step1.getTransformations(), step2.getTransformations());
+            }
+
+            @Override
+            public List<Step> getSteps_() {
+              return Arrays.asList(step1, cp1, step2);
+            }
+
+            @Override
+            public Collection<TemplateModule> getGenerators() {
+              return Arrays.asList((TemplateModule) g1, (TemplateModule) g2);
+            }
+
+            @Override
+            public boolean coversLanguage(SLanguage language) {
+              return true;
+            }
+          };
+        }
+      });
+      GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
+      final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
+      boolean result = GenerationFacade.generateModels(mpsProject, Collections.singletonList(m), null, new GenerationHandlerBase() {
+        @Override
+        public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext,
+            ProgressMonitor progressMonitor) {
+          return true;
+        }
+
+        @Override
+        public int estimateCompilationMillis() {
+          return 0;
+        }
+      }, new EmptyProgressMonitor(), null, opt, tmProvider);
+      myErrors.checkThat("Generation succeeds", result, CoreMatchers.equalTo(true));
+      TransientModelsModule transientModelsModule = tmProvider.getModule(m.getModule());
+      final String cpModelName = SModelStereotype.withStereotype(SModelStereotype.withoutStereotype(m.getModelName()), "cp-aaa");
+      SModel cpModel = null;
+      for (SModel trm : transientModelsModule.getModels()) {
+        if (cpModelName.equals(trm.getModelName())) {
+          cpModel = trm;
+          break;
+        }
+      }
+      myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
+    } finally {
+      ourEnvironment.closeProject(mpsProject);
+    }
+  }
+
+  private static List<TemplateMappingConfiguration> getGenerators(GeneratorRuntime gr) {
+    ArrayList<TemplateMappingConfiguration> rv = new ArrayList<TemplateMappingConfiguration>();
+    if (gr instanceof TemplateModule) {
+      for (TemplateModel tm : ((TemplateModule) gr).getModels()) {
+        rv.addAll(tm.getConfigurations());
+      }
+    }
+    return rv;
+  }
+}

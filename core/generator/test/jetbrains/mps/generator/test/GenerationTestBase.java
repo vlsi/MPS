@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.test;
 
 import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.TestMode;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
@@ -43,16 +41,12 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -166,8 +160,7 @@ public class GenerationTestBase {
     p.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        // FIXME once ProjectRepository implements SRepositoryExt, take one from p
-        final SRepositoryExt repo = MPSModuleRepository.getInstance();
+        final SRepositoryExt repo = (SRepositoryExt) p.getRepository();
         repo.registerModule(tm, myOwner);
       }
     });
@@ -294,7 +287,8 @@ public class GenerationTestBase {
       p.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          MPSModuleRepository.getInstance().unregisterModule(tm, myOwner);
+          SRepositoryExt repo = (SRepositoryExt) p.getRepository();
+          repo.unregisterModule(tm, myOwner);
         }
       });
     }

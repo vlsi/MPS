@@ -21,7 +21,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -30,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collection;
 import java.util.List;
@@ -168,7 +168,8 @@ public class TemplateQueryContext {
 
   public SNode getOriginalCopiedInputNode(SNode node) {
     if (node == null) return null;
-    SNode result = TracingUtil.getInputNode(node, MPSModuleRepository.getInstance());
+    SRepository repo = myGenerator.getGeneratorSessionContext().getProject().getRepository();
+    SNode result = TracingUtil.getInputNode(node, repo);
     return result != null ? result : node;
   }
 
@@ -263,7 +264,8 @@ public class TemplateQueryContext {
    */
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();
-    return tnr == null ? null : tnr.resolve(MPSModuleRepository.getInstance());
+    SRepository repo = myGenerator.getGeneratorSessionContext().getProject().getRepository();
+    return tnr == null ? null : tnr.resolve(repo);
   }
 
   /**
