@@ -35,7 +35,7 @@ public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractN
       public ISequence<SNode> select(final SNode c) {
         return Sequence.fromIterable(parameters).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode p) {
-            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(p)), SNodeOperations.asSConcept(c));
+            return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(p)), SNodeOperations.asSConcept(SNodeOperations.asSConcept(c)));
           }
         });
       }
