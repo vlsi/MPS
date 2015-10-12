@@ -7564,6 +7564,12 @@
         <node concept="Xl_RD" id="2L8_aI3fwXq" role="37wK5m">
           <property role="Xl_RC" value="mps-openapi.jar" />
         </node>
+        <node concept="Xl_RD" id="28R2LzlP213" role="37wK5m">
+          <property role="Xl_RC" value="mps-behavior-api.jar" />
+        </node>
+        <node concept="Xl_RD" id="28R2LzlP4Yu" role="37wK5m">
+          <property role="Xl_RC" value="mps-behavior-runtime.jar" />
+        </node>
       </node>
       <node concept="A3Dl8" id="7yiwGpnLbjo" role="1tU5fm">
         <node concept="17QB3L" id="7yiwGpnLbju" role="A3Ik2" />
