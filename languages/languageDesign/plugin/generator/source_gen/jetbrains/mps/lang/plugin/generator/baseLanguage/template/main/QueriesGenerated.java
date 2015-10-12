@@ -1252,6 +1252,9 @@ public class QueriesGenerated {
               _context.showErrorMessage(it, "parametrized actions are not supported");
               continue;
             }
+            if (neq_x583g4_a0c0a0c0a0a0a0a0b0bn(SModelOperations.getModuleStub(SNodeOperations.getModel(_context.getOriginalCopiedInputNode(action))), SModelOperations.getModuleStub(_context.getOriginalInputModel()))) {
+              continue;
+            }
             ListSequence.fromList(actions).addElement(action);
           } else if (SNodeOperations.isInstanceOf(el, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1188a1ecd8aL, "jetbrains.mps.lang.plugin.structure.Separator")) || SNodeOperations.isInstanceOf(el, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11840f36089L, "jetbrains.mps.lang.plugin.structure.GroupAnchor"))) {
             // ok 
@@ -1534,6 +1537,9 @@ public class QueriesGenerated {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), (String) parameter_1);
     return quotedNode_2;
+  }
+  private static boolean neq_x583g4_a0c0a0c0a0a0a0a0b0bn(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNode _quotation_createNode_x583g4_a0a0a0a1a0a253() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

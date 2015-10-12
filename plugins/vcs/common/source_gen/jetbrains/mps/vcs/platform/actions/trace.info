@@ -759,7 +759,7 @@
   </root>
   <root nodeRef="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)/8230098746512809427">
     <file name="MPSVcs.xml">
-      <unit id="8230098746512809427" at="1,0,39,13" name="jetbrains.mps.vcs.platform.actions.MPSVcs" />
+      <unit id="8230098746512809427" at="1,0,45,13" name="jetbrains.mps.vcs.platform.actions.MPSVcs" />
     </file>
   </root>
   <root nodeRef="r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)/8695149241388806063">

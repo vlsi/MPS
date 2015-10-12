@@ -1542,6 +1542,9 @@
       <node concept="2zDL_x" id="3WCIgQv3c8f" role="2zDL_s">
         <ref role="2zDL_u" node="3WCIgQv3c8a" resolve="AnnotateGroup" />
       </node>
+      <node concept="2zDL_x" id="nEmtK1ZFX2" role="2zDL_s">
+        <ref role="2zDL_u" node="nEmtK1VY8B" resolve="DiffEditorPopupGroup" />
+      </node>
     </node>
   </node>
   <node concept="tC5Ba" id="341WClvYTW8">
@@ -2644,6 +2647,25 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="tC5Ba" id="nEmtK1VY8B">
+    <property role="3GE5qa" value="Groups" />
+    <property role="TrG5h" value="DiffEditorPopupGroup" />
+    <property role="3OnEW4" value="true" />
+    <node concept="ftmFs" id="nEmtK1W19E" role="ftER_">
+      <node concept="tCFHf" id="nEmtK1W19U" role="ftvYc">
+        <ref role="tCJdB" to="ekwn:3h8YwSwZlsY" resolve="PushEditorHints" />
+      </node>
+      <node concept="tCFHf" id="nEmtK1W19H" role="ftvYc">
+        <ref role="tCJdB" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+      </node>
+      <node concept="tCFHf" id="nEmtK1W19M" role="ftvYc">
+        <ref role="tCJdB" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
+      </node>
+    </node>
+    <node concept="tT9cl" id="nEmtK1ZLj8" role="2f5YQi">
+      <ref role="tU$_T" node="3WCIgQv3c8a" resolve="AnnotateGroup" />
     </node>
   </node>
 </model>

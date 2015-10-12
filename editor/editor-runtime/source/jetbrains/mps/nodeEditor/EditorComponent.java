@@ -20,6 +20,7 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.ide.SelectInContext;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -218,6 +219,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final int SCROLL_GAP = 15;
 
   private final Object myAdditionalPaintersLock = new Object();
+
+  private String myDefaultActionGroupId = MPSActions.EDITOR_POPUP_GROUP;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -1248,7 +1251,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!myPopupMenuEnabled) {
       return;
     }
-    DefaultActionGroup baseGroup = ActionUtils.getDefaultGroup(EDITOR_POPUP_MENU_ACTIONS);
+    DefaultActionGroup baseGroup = ActionUtils.getDefaultGroup(myDefaultActionGroupId);
     if (baseGroup == null) return;
 
     baseGroup.setPopup(false);
@@ -1261,6 +1264,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
     popupMenu.show(EditorComponent.this, x, y);
+  }
+
+  protected String getDefaultPopupGroupId() {
+    return myDefaultActionGroupId;
+  }
+
+  protected void setDefaultPopupGroupId(String id) {
+    myDefaultActionGroupId = id;
   }
 
   private DefaultActionGroup getCellActionsGroup() {

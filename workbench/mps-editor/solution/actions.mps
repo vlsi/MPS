@@ -6325,7 +6325,7 @@
         <ref role="2zDL_u" node="3h8YwSwZnYQ" resolve="EditorHintsActions" />
       </node>
       <node concept="2zDL_x" id="302gCSEdGMp" role="2zDL_s">
-        <ref role="2zDL_u" node="5SnwAr0vYpd" resolve="DefaultEditorGroup" />
+        <ref role="2zDL_u" node="5SnwAr0vYpd" resolve="ReflectiveEditorGroup" />
       </node>
       <node concept="2zDLo0" id="2LXdEGef4TS" role="2zDLrY">
         <ref role="2zDLo1" node="3M9DpEEa3zr" resolve="Default" />
@@ -9479,50 +9479,13 @@
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="2OiVRCDoa2i" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="7skRrSNJT2Y" role="1NuT2Z">
-      <property role="TrG5h" value="editor" />
-      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.MPS_EDITOR" resolve="MPS_EDITOR" />
-      <node concept="1oajcY" id="7skRrSNJT2Z" role="1oa70y" />
+    <node concept="1DS2jV" id="5n7qrXOOSV" role="1NuT2Z">
+      <property role="TrG5h" value="editorComponent" />
+      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
+      <node concept="1oajcY" id="5n7qrXOOSW" role="1oa70y" />
     </node>
     <node concept="tnohg" id="3h8YwSwZlsZ" role="tncku">
       <node concept="3clFbS" id="3h8YwSwZlt0" role="2VODD2">
-        <node concept="3cpWs8" id="4iF$lWa9w89" role="3cqZAp">
-          <node concept="3cpWsn" id="4iF$lWa9w8a" role="3cpWs9">
-            <property role="TrG5h" value="component" />
-            <node concept="1eOMI4" id="7skRrSNKR9l" role="33vP2m">
-              <node concept="10QFUN" id="7skRrSNKR9m" role="1eOMHV">
-                <node concept="2OqwBi" id="7skRrSNKR9g" role="10QFUP">
-                  <node concept="liA8E" id="7skRrSNKR9h" role="2OqNvi">
-                    <ref role="37wK5l" to="cj4x:~Editor.getCurrentEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getCurrentEditorComponent" />
-                  </node>
-                  <node concept="2OqwBi" id="7skRrSNKR9i" role="2Oq$k0">
-                    <node concept="2WthIp" id="7skRrSNKR9j" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="7skRrSNKR9k" role="2OqNvi">
-                      <ref role="2WH_rO" node="7skRrSNJT2Y" resolve="editor" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3uibUv" id="7skRrSNKR9f" role="10QFUM">
-                  <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
-                </node>
-              </node>
-            </node>
-            <node concept="3uibUv" id="7skRrSNKNWE" role="1tU5fm">
-              <ref role="3uigEE" to="exr9:~EditorComponent" resolve="EditorComponent" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="4iF$lWa9Gqx" role="3cqZAp">
-          <node concept="3clFbC" id="4iF$lWa9IjZ" role="3clFbw">
-            <node concept="10Nm6u" id="4iF$lWa9Iko" role="3uHU7w" />
-            <node concept="37vLTw" id="4iF$lWa9GO8" role="3uHU7B">
-              <ref role="3cqZAo" node="4iF$lWa9w8a" resolve="component" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="4iF$lWa9Gq$" role="3clFbx">
-            <node concept="3cpWs6" id="4iF$lWa9Itf" role="3cqZAp" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="5whfvP6Ea2g" role="3cqZAp">
           <node concept="3cpWsn" id="5whfvP6Ea2h" role="3cpWs9">
             <property role="TrG5h" value="settings" />
@@ -9559,8 +9522,11 @@
                     </node>
                     <node concept="2OqwBi" id="29L0b0ULnDx" role="33vP2m">
                       <node concept="2OqwBi" id="29L0b0ULnDy" role="2Oq$k0">
-                        <node concept="37vLTw" id="29L0b0ULnDz" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4iF$lWa9w8a" resolve="component" />
+                        <node concept="2OqwBi" id="5n7qrXOQHW" role="2Oq$k0">
+                          <node concept="2WthIp" id="5n7qrXOQHZ" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="5n7qrXOQI1" role="2OqNvi">
+                            <ref role="2WH_rO" node="5n7qrXOOSV" resolve="editorComponent" />
+                          </node>
                         </node>
                         <node concept="liA8E" id="29L0b0ULnD$" role="2OqNvi">
                           <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
@@ -9638,8 +9604,11 @@
                         <node concept="37vLTw" id="5whfvP6Fd74" role="37wK5m">
                           <ref role="3cqZAo" node="5whfvP6Ea2h" resolve="settings" />
                         </node>
-                        <node concept="37vLTw" id="TdU7qA$nug" role="37wK5m">
-                          <ref role="3cqZAo" node="4iF$lWa9w8a" resolve="component" />
+                        <node concept="2OqwBi" id="5n7qrXOQP9" role="37wK5m">
+                          <node concept="2WthIp" id="5n7qrXOQPc" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="5n7qrXOQPe" role="2OqNvi">
+                            <ref role="2WH_rO" node="5n7qrXOOSV" resolve="editorComponent" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -10947,7 +10916,7 @@
   </node>
   <node concept="tC5Ba" id="5SnwAr0vYpd">
     <property role="3GE5qa" value="Menu.EditorPopup.Actions" />
-    <property role="TrG5h" value="DefaultEditorGroup" />
+    <property role="TrG5h" value="ReflectiveEditorGroup" />
     <property role="3OnEW4" value="true" />
     <node concept="tT9cl" id="5SnwAr0vYpf" role="2f5YQi">
       <ref role="tU$_T" node="1xsN4xJX8VI" resolve="EditorPopup" />
