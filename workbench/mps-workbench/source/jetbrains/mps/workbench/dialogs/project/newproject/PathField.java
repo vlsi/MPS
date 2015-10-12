@@ -101,7 +101,7 @@ public class PathField extends JPanel {
     if (oldPath != null) {
       chooser.setInitialFile(FileSystem.getInstance().getFileByPath(oldPath));
     }
-    IFile result = chooser.showDialog();
+    IFile result = chooser.showDialog(this);
     if (result != null) {
       setPath(IFileUtils.getCanonicalPath(result));
     }
