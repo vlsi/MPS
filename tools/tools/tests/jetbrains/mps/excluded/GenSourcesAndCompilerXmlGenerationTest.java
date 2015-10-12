@@ -114,7 +114,6 @@ public class GenSourcesAndCompilerXmlGenerationTest {
 
       // Models in the plugin project are generated into an excluded source_gen folder
       if (isUnder(cp, "/IdeaPlugin/mps-java/source_gen/")) continue;
-      if (isUnder(cp, "/IdeaPlugin/tests/src_gen/")) continue;
 
       Assert.assertFalse("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root", true);
     }
