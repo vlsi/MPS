@@ -28,7 +28,7 @@ public class MigrationTask extends MpsLoadTask {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
     }
     Set<File> classPath = new LinkedHashSet<File>();
-    String mpsHome = project.getProperty("artifacts.mps");
+    String mpsHome = getProject().getProperty("mps_home");
     classPath.add(new File(mpsHome + "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar"));
     for (File file : classPathRoots) {
       MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);

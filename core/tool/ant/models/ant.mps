@@ -7351,13 +7351,13 @@
             <property role="TrG5h" value="mpsHome" />
             <node concept="17QB3L" id="1oo0A63GPji" role="1tU5fm" />
             <node concept="2OqwBi" id="1oo0A63GY4l" role="33vP2m">
-              <node concept="37vLTw" id="1oo0A63GY4m" role="2Oq$k0">
-                <ref role="3cqZAo" to="gola:~ProjectComponent.project" resolve="project" />
+              <node concept="1rXfSq" id="1oo0A63GZ97" role="2Oq$k0">
+                <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
               </node>
               <node concept="liA8E" id="1oo0A63GY4n" role="2OqNvi">
                 <ref role="37wK5l" to="gola:~Project.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
                 <node concept="Xl_RD" id="1oo0A63GY4o" role="37wK5m">
-                  <property role="Xl_RC" value="artifacts.mps" />
+                  <property role="Xl_RC" value="mps_home" />
                 </node>
               </node>
             </node>
