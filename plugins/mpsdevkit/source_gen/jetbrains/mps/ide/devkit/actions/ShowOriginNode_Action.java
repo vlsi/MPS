@@ -7,14 +7,14 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.extapi.model.TransientSModel;
-import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.extapi.model.TransientSModel;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.textgen.trace.TracingUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class ShowOriginNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,8 +29,9 @@ public class ShowOriginNode_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    if ((((SNode) MapSequence.fromMap(_params).get("node")) != null) && SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))) instanceof TransientSModel) {
-      SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
+    if (SNodeOperations.getModel(event.getData(MPSCommonDataKeys.NODE)) instanceof TransientSModel) {
+      SNodeReference originRef = TracingUtil.getInput(event.getData(MPSCommonDataKeys.NODE));
+      SNode origin = (originRef == null ? null : originRef.resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()));
       // I'd like to have the action visible (although not necessarily enabled) for any transient node, hence can't use enable()/disable() 
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(origin != null);
@@ -45,14 +46,12 @@ public class ShowOriginNode_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", node);
       if (node == null) {
         return false;
       }
@@ -61,13 +60,6 @@ public class ShowOriginNode_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runWriteInEDT(new Runnable() {
-      public void run() {
-        SNode origin = TracingUtil.getInputNode(((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
-        if (origin != null) {
-          NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), origin, true, true);
-        }
-      }
-    });
+    new EditorNavigator(event.getData(MPSCommonDataKeys.MPS_PROJECT)).shallFocus(true).shallSelect(true).open(TracingUtil.getInput(event.getData(MPSCommonDataKeys.NODE)));
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,20 @@
  */
 package jetbrains.mps.ide.ui.tree;
 
-import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Comparing;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class SortUtil {
   public static List<SModel> sortModels(List<SModel> modelDescriptors) {
@@ -37,11 +41,11 @@ public class SortUtil {
     @Override
     public int compare(SModel o, SModel o1) {
       if (o == o1) return 0;
-      int result = Comparing.compare(SNodeOperations.getModelLongName(o), SNodeOperations.getModelLongName(o1));
+      int result = Comparing.compare(NameUtil.getModelLongName(o), NameUtil.getModelLongName(o1));
       if (result != 0) return result;
       String str = SModelStereotype.getStereotype(o);
       String str1 = SModelStereotype.getStereotype(o1);
-      if ((o instanceof TransientSModelDescriptor) && (o1 instanceof TransientSModelDescriptor)) {
+      if ((o instanceof TransientSModel) && (o1 instanceof TransientSModel)) {
         try {
           String[] part = str.split("_");
           String[] part1 = str1.split("_");

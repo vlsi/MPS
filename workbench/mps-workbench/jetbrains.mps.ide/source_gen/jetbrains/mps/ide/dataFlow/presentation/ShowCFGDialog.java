@@ -14,8 +14,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -76,17 +75,8 @@ public class ShowCFGDialog extends DialogWrapper {
     setTitle(title);
     init();
   }
-  private void openNode(final SNodeReference nodeReference) {
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
-      public void run() {
-        if (nodeReference != null) {
-          SNode node = nodeReference.resolve(myProject.getRepository());
-          if (node != null) {
-            NavigationSupport.getInstance().openNode(myProject, node, true, true);
-          }
-        }
-      }
-    });
+  private void openNode(SNodeReference nodeReference) {
+    new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(nodeReference);
   }
 
   public Color getBackground() {

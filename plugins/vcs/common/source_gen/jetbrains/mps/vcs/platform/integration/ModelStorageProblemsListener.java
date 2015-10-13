@@ -24,8 +24,7 @@ import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.event.HyperlinkEvent;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import com.intellij.notification.Notifications;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -145,20 +144,9 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
                 return;
               }
 
-              final SNodeReference ref = errMap.get(e.getDescription());
+              SNodeReference ref = errMap.get(e.getDescription());
               assert ref != null;
-
-              project.value.getModelAccess().runWriteInEDT(new Runnable() {
-                public void run() {
-
-                  SNode resolved = ref.resolve(project.value.getRepository());
-                  if (resolved == null) {
-                    return;
-                  }
-
-                  NavigationSupport.getInstance().openNode(project.value, resolved, true, true);
-                }
-              });
+              new EditorNavigator(project.value).shallFocus(true).shallSelect(true).open(ref);
             }
           });
           myLastModel = ref;

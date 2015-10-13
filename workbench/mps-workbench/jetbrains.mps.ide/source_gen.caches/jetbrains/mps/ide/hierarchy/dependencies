@@ -70,7 +70,7 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
