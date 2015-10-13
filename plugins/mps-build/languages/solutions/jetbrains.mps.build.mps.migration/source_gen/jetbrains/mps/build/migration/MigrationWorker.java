@@ -17,12 +17,11 @@ import com.intellij.openapi.extensions.PluginId;
 import java.lang.reflect.Method;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.tool.common.ScriptProperties;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.net.URL;
 import java.net.MalformedURLException;
@@ -111,19 +110,19 @@ public class MigrationWorker extends MpsWorker {
   }
 
   private UrlClassLoader createClassloader() {
-    String pluginsPath = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     Set<File> pluginsClasspath = SetSequence.fromSet(new LinkedHashSet<File>());
-    if (pluginsPath != null) {
-      for (String plugin : pluginsPath.split(File.pathSeparator)) {
-        File lib = new File(plugin + File.separator + "lib");
+    File pluginDir = new File(PathManager.getPreInstalledPluginsPath());
+    for (File pluginFolder : pluginDir.listFiles()) {
+      if (pluginFolder.isFile()) {
+        SetSequence.fromSet(pluginsClasspath).addElement(pluginFolder);
+      } else {
+        File lib = new File(pluginFolder + File.separator + "lib");
         if (lib.exists() && lib.isDirectory()) {
           SetSequence.fromSet(pluginsClasspath).addSequence(Sequence.fromIterable(Sequence.fromArray(lib.listFiles(PathManager.JAR_FILE_FILTER))));
         }
       }
     }
-    if ((pluginsPath == null || pluginsPath.length() == 0)) {
-      return null;
-    }
+
     return new UrlClassLoader(SetSequence.fromSet(pluginsClasspath).select(new ISelector<File, URL>() {
       public URL select(File it) {
         try {
