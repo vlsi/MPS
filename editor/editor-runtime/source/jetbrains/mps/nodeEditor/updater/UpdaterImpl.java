@@ -210,6 +210,11 @@ public class UpdaterImpl implements Updater, CommandContext {
     return myEditorHintsForNodeMap.get(nodeReference);
   }
 
+  @Override
+  public void clearExplicitHints() {
+    myEditorHintsForNodeMap.clear();
+  }
+
   private void fireCellSynchronized(EditorCell cell) {
     for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
       nextListener.cellSynchronizedWithModel(cell);

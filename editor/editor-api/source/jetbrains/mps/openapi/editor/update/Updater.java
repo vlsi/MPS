@@ -87,9 +87,31 @@ public interface Updater {
   @Nullable
   String[] getInitialEditorHints();
 
+  /**
+   * Use this method to add explicit set of editor hints for particular node.
+   * These hints will be counted when updater finds the most specific editor for the node
+   *
+   * @param nodeReference reference of the node
+   * @param hints explicit hints to add
+   */
   void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
 
+  /**
+   * Use this method to remove previously added hints for particular node
+   *
+   * @param nodeReference reference of the node
+   * @param hints explicit hints to remove
+   */
   void removeExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
 
-  Collection<String> getExplicitEditorHintsForNode(SNodeReference node);
+  /**
+   * @param nodeReference reference of the node
+   * @return explicit editor hints for given node
+   */
+  Collection<String> getExplicitEditorHintsForNode(SNodeReference nodeReference);
+
+  /**
+   * Remove all explicit editor hints
+   */
+  void clearExplicitHints();
 }

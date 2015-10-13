@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.awt.Color;
 import java.util.Collection;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -82,6 +83,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     mainCellCollection.setBig(true);
     mainCellCollection.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     addLabel(camelToLabel(myConcept.getName()));
+    addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(107, 142, 20, 100));
     if (nameProperty != null) {
       getProperties().remove(nameProperty);
       addPropertyCell(nameProperty);
