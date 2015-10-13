@@ -214,6 +214,24 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.plugin.ShowNodeDifference_Action" file="ShowNodeDifference_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.StructDifferenceDialog" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.plugin.TestMergeAction_Action" file="TestMergeAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
@@ -276,6 +294,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowDiffWithCurrRev_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowDiffererenceWithCurrentRevision_Action" />
+    <classNode dependClassName="jetbrains.mps.vcs.plugin.ShowNodeDifference_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.TestMergeAction_Action" />
     <classNode dependClassName="jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup" />
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />

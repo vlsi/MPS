@@ -115,7 +115,8 @@ public class EditorHighlighter implements EditorMessageOwner {
           if (editedNode == null || !(SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance()))) {
             return;
           }
-          messages.value = ChangeEditorMessageFactory.createMessages(editedNode.getModel(), change, EditorHighlighter.this, null, false);
+          SModel model = editedNode.getModel();
+          messages.value = ChangeEditorMessageFactory.createMessages(model, change.getChangeSet().getNewModel() != model, change, EditorHighlighter.this, null, false);
         }
       });
     }

@@ -4064,6 +4064,9 @@
                     <ref role="37wK5l" to="bmv6:3$YpntjF4sv" resolve="getResultModel" />
                   </node>
                 </node>
+                <node concept="3clFbT" id="5e4Yt6O733u" role="37wK5m">
+                  <property role="3clFbU" value="true" />
+                </node>
                 <node concept="2GrUjf" id="2jv$fqwevhf" role="37wK5m">
                   <ref role="2Gs0qQ" node="2jv$fqwevh6" resolve="change" />
                 </node>
@@ -4096,6 +4099,9 @@
                         <ref role="37wK5l" to="bmv6:3$YpntjF4sH" resolve="getMyModel" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="5e4Yt6O73wn" role="37wK5m">
+                      <property role="3clFbU" value="false" />
+                    </node>
                     <node concept="2GrUjf" id="2jv$fqwevhs" role="37wK5m">
                       <ref role="2Gs0qQ" node="2jv$fqwevh6" resolve="change" />
                     </node>
@@ -4117,6 +4123,9 @@
                         <node concept="liA8E" id="2jv$fqwevh$" role="2OqNvi">
                           <ref role="37wK5l" to="bmv6:3$YpntjF4sP" resolve="getRepositoryModel" />
                         </node>
+                      </node>
+                      <node concept="3clFbT" id="5e4Yt6O73XP" role="37wK5m">
+                        <property role="3clFbU" value="false" />
                       </node>
                       <node concept="2GrUjf" id="2jv$fqwevh_" role="37wK5m">
                         <ref role="2Gs0qQ" node="2jv$fqwevh6" resolve="change" />
@@ -4269,6 +4278,9 @@
               <node concept="37vLTw" id="2BHiRxgmaC2" role="37wK5m">
                 <ref role="3cqZAo" node="2jv$fqweviE" resolve="change" />
               </node>
+              <node concept="37vLTw" id="5e4Yt6O72Mr" role="37wK5m">
+                <ref role="3cqZAo" node="5e4Yt6O6XNs" resolve="isOldEditor" />
+              </node>
               <node concept="37vLTw" id="2BHiRxeuMvF" role="37wK5m">
                 <ref role="3cqZAo" node="2jv$fqwev70" resolve="myConflictChecker" />
               </node>
@@ -4285,6 +4297,10 @@
       <node concept="37vLTG" id="2jv$fqweviC" role="3clF46">
         <property role="TrG5h" value="model" />
         <node concept="H_c77" id="O1Kg_Y8mkZ" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="5e4Yt6O6XNs" role="3clF46">
+        <property role="TrG5h" value="isOldEditor" />
+        <node concept="10P_77" id="5e4Yt6O71Q0" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="2jv$fqweviE" role="3clF46">
         <property role="TrG5h" value="change" />

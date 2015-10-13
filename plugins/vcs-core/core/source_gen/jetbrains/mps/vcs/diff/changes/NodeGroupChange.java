@@ -47,8 +47,16 @@ public class NodeGroupChange extends ModelChange {
     return myParentNodeId;
   }
   @NotNull
+  public SNodeId getParentNodeId(boolean isNewModel) {
+    return myParentNodeId;
+  }
+  @NotNull
   public String getRole() {
     return myRole.getRoleName();
+  }
+  @NotNull
+  public SContainmentLink getRoleLink() {
+    return myRole;
   }
   public boolean isAbout(SContainmentLink link) {
     return myRole.equals(link);
@@ -73,7 +81,7 @@ public class NodeGroupChange extends ModelChange {
     // get "nonconflicting" attribute in metamodel  
     if (!(myMergeHintLoaded)) {
       myMergeHintLoaded = true;
-      SNode n = getChangeSet().getOldModel().getNode(getParentNodeId());
+      SNode n = getParent(false);
       SNode c = SNodeOperations.getConceptDeclaration(n);
       SNode linkDecl = SNodeOperations.as(myRole.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
       SNode hint = AttributeOperations.getAttribute(linkDecl, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
@@ -86,9 +94,12 @@ public class NodeGroupChange extends ModelChange {
     }
     return myMergeHint;
   }
+  private SNode getParent(boolean isNewModel) {
+    return ((isNewModel ? getChangeSet().getNewModel() : getChangeSet().getOldModel())).getNode(getParentNodeId(isNewModel));
+  }
   public void prepare() {
     if (myPreparedIdsToDelete == null) {
-      SNode parent = getChangeSet().getOldModel().getNode(myParentNodeId);
+      SNode parent = getParent(false);
       assert parent != null;
 
       List<? extends SNode> children = IterableUtil.asList(parent.getChildren(myRole));
@@ -112,7 +123,7 @@ public class NodeGroupChange extends ModelChange {
 
     // copy nodes to insert 
     List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
-    List<? extends SNode> newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNode(myParentNodeId).getChildren(myRole));
+    List<? extends SNode> newChildren = IterableUtil.asList(getParent(true).getChildren(myRole));
     for (int i = myResultBegin; i < myResultEnd; i++) {
       ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
@@ -135,7 +146,7 @@ public class NodeGroupChange extends ModelChange {
   @Nullable
   @Override
   public SNodeId getRootId() {
-    return getChangeSet().getOldModel().getNode(myParentNodeId).getContainingRoot().getNodeId();
+    return SNodeOperations.getContainingRoot(getParent(false)).getNodeId();
   }
   @NotNull
   @Override
@@ -163,10 +174,10 @@ public class NodeGroupChange extends ModelChange {
     return getDescription(true);
   }
   public String getDescription(boolean verbose) {
-    List<? extends SNode> newChildren = null;
+    List<SNode> newChildren = null;
     String newIds = null;
     if (verbose) {
-      newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNode(myParentNodeId).getChildren(myRole));
+      newChildren = IterableUtil.asList(getParent(true).getChildren(myRole));
       newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
         public String select(SNode n) {
           return "#" + n.getNodeId();
@@ -177,7 +188,7 @@ public class NodeGroupChange extends ModelChange {
     String oldStuff = (myEnd - myBegin == 1 ? getRole() : NameUtil.formatNumericalString(myEnd - myBegin, getRole()));
     String newStuff = (myResultEnd - myResultBegin == 1 ? getRole() : NameUtil.formatNumericalString(myResultEnd - myResultBegin, getRole()));
     // FIXME get rid of this dirty magic with role names "pluralization". PLEASE!!! 
-    if (eq_yjf6x2_a0a7a52(newStuff, getRole()) && eq_yjf6x2_a0a7a52_0(oldStuff, getRole())) {
+    if (eq_yjf6x2_a0a7a82(newStuff, getRole()) && eq_yjf6x2_a0a7a82_0(oldStuff, getRole())) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
       newStuff = "another " + newStuff;
@@ -207,10 +218,10 @@ public class NodeGroupChange extends ModelChange {
   private static String nodeRange(int begin, int end) {
     return (begin + 1 == end ? String.format("node #%d", begin) : String.format("nodes #%d-%d", begin, end - 1));
   }
-  private static boolean eq_yjf6x2_a0a7a52(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a7a82(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_yjf6x2_a0a7a52_0(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a7a82_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

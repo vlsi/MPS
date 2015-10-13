@@ -70,6 +70,11 @@ public class DiffEditor implements EditorMessageOwner {
       getMainEditor().editNode(root);
     }
   }
+  public void editNode(@NotNull Project project, @NotNull SNodeId nodeId, @NotNull SModel model) {
+    SNode node = model.getNode(nodeId);
+    assert node != null;
+    getMainEditor().editNode(node);
+  }
   public void inspect(SNode node) {
     myInspector.editNode(node);
     myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
@@ -86,8 +91,8 @@ public class DiffEditor implements EditorMessageOwner {
   public EditorComponent getEditorComponent(boolean inspector) {
     return (inspector ? myInspector : myMainEditorComponent);
   }
-  public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
-    final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, change, this, conflictChecker);
+  public void highlightChange(SModel model, ModelChange change, boolean isOldEditor, ChangeEditorMessage.ConflictChecker conflictChecker) {
+    final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, isOldEditor, change, this, conflictChecker);
     if (ListSequence.fromList(messages).isEmpty()) {
       return;
     }
