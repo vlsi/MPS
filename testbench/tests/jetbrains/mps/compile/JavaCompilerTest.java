@@ -20,6 +20,8 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -27,6 +29,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.util.Reference;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -58,30 +62,43 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   @Test
   public void testOldVersion() throws Exception {
-    testRecompileClasses(JavaVersion.VERSION_1_6, false);
+    Assert.assertFalse(testRecompileClasses(JavaVersion.VERSION_1_6, IMessageHandler.NULL_HANDLER));
   }
 
   @Test
   public void testNewVersion() throws Exception {
-    testRecompileClasses(JavaVersion.VERSION_1_8, true);
+    Assert.assertTrue(testRecompileClasses(JavaVersion.VERSION_1_8, null));
   }
 
-  private void testRecompileClasses(final JavaVersion version, final boolean needOk) {
+  /**
+   * @return true iff there were no errors during compilation
+   */
+  private boolean testRecompileClasses(final JavaVersion version, @Nullable final IMessageHandler msgHandler) {
     final Set<SModule> toCompile = new LinkedHashSet<SModule>();
     toCompile.add(ourSolution);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final Reference<Boolean> resultRef = new Reference<Boolean>();
+    final Reference<Throwable> throwableRef = new Reference<Throwable>();
+    ourProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        ModuleMaker moduleMaker = new ModuleMaker();
-        moduleMaker.clean(toCompile, new EmptyProgressMonitor());
-        MPSCompilationResult result = moduleMaker.make(toCompile, new EmptyProgressMonitor(), new JavaCompilerOptions(version));
-        boolean ok = result.isOk();
-        if (needOk) {
-          Assert.assertTrue(ok);
-        } else {
-          Assert.assertFalse(ok);
+        try {
+          ModuleMaker moduleMaker;
+          if (msgHandler == null) {
+            moduleMaker = new ModuleMaker();
+          } else {
+            moduleMaker = new ModuleMaker(msgHandler, MessageKind.INFORMATION);
+          }
+          moduleMaker.clean(toCompile, new EmptyProgressMonitor());
+          MPSCompilationResult result = moduleMaker.make(toCompile, new EmptyProgressMonitor(), new JavaCompilerOptions(version));
+          resultRef.set(result.isOk());
+        } catch (Throwable t) {
+          throwableRef.set(t);
         }
       }
     });
+    if (!throwableRef.isNull()) {
+      throw new RuntimeException(throwableRef.get());
+    }
+    return resultRef.get();
   }
 }

@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 public interface IMessageHandler {
-  public static final IMessageHandler NULL_HANDLER = new IMessageHandler() {
+  IMessageHandler NULL_HANDLER = new IMessageHandler() {
     @Override
     public void handle(IMessage msg) {
     }
