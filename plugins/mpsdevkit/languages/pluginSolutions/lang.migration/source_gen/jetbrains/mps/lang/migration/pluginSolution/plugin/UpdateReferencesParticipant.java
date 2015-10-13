@@ -4,12 +4,12 @@ package jetbrains.mps.lang.migration.pluginSolution.plugin;
 
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant.NamedNodeReference;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.query.CommandUtil;
@@ -33,7 +33,7 @@ import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference> {
+public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference>, RefactoringParticipant.PersistentRefactoringParticipant<NamedNodeReference, NamedNodeReference> {
 
   public static class UpdateReferencesParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateReferencesParticipant_extension() {

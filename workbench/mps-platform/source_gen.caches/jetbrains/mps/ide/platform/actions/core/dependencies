@@ -16,7 +16,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" file="MoveNodeRefactoringParticipant.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.ParticipantChanges" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />

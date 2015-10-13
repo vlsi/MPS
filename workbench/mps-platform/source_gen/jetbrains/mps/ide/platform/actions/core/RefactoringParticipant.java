@@ -20,10 +20,12 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
     public void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
   }
 
-  public SNode serializeInitialState(InitialDataObject initialState);
-  public InitialDataObject deserializeInitialState(SNode serialized);
-  public SNode serializeFinalState(FinalDataObject finalState);
-  public FinalDataObject deserializeFinalState(SNode serialized);
+  public static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject> extends RefactoringParticipant<InitialDataObject, FinalDataObject> {
+    public SNode serializeInitialState(InitialDataObject initialState);
+    public InitialDataObject deserializeInitialState(SNode serialized);
+    public SNode serializeFinalState(FinalDataObject finalState);
+    public FinalDataObject deserializeFinalState(SNode serialized);
+  }
 
   public static interface ParticipantChanges<I, F> {
     public RefactoringParticipant<I, F> getParticipant();

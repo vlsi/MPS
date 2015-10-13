@@ -17,9 +17,6 @@ public interface MoveNodeRefactoringParticipant<InitialDataObject, FinalDataObje
 
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<InitialDataObject, FinalDataObject> getDataCollector();
 
-  @Override
-  public Iterable<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, SearchScope searchScope);
-
   public static class MoveNodeParticipantState<I, F> implements RefactoringParticipant.ParticipantChanges<I, F> {
     private MoveNodeRefactoringParticipant<I, F> myParticipant;
     private I myInitialState;

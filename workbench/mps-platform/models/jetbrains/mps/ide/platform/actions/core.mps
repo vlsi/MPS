@@ -4333,59 +4333,79 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3KqYwoBIIPc" role="jymVt" />
-    <node concept="3clFb_" id="3KqYwoBKtUs" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="serializeInitialState" />
-      <node concept="3Tqbb2" id="3KqYwoBKtUt" role="3clF45" />
-      <node concept="3Tm1VV" id="3KqYwoBKtUu" role="1B3o_S" />
-      <node concept="3clFbS" id="3KqYwoBKtUv" role="3clF47" />
-      <node concept="37vLTG" id="3KqYwoBKv5H" role="3clF46">
-        <property role="TrG5h" value="initialState" />
-        <node concept="16syzq" id="3KqYwoBKv5G" role="1tU5fm">
-          <ref role="16sUi3" node="3KqYwoBIHZv" resolve="InitialDataObject" />
+    <node concept="3HP615" id="5DMHUkptmAc" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="PersistentRefactoringParticipant" />
+      <node concept="3clFb_" id="3KqYwoBKtUs" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="serializeInitialState" />
+        <node concept="3Tqbb2" id="3KqYwoBKtUt" role="3clF45" />
+        <node concept="3Tm1VV" id="3KqYwoBKtUu" role="1B3o_S" />
+        <node concept="3clFbS" id="3KqYwoBKtUv" role="3clF47" />
+        <node concept="37vLTG" id="3KqYwoBKv5H" role="3clF46">
+          <property role="TrG5h" value="initialState" />
+          <node concept="16syzq" id="3KqYwoBKv5G" role="1tU5fm">
+            <ref role="16sUi3" node="5DMHUkptmRU" resolve="InitialDataObject" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFb_" id="3KqYwoBKtUw" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="deserializeInitialState" />
+        <node concept="16syzq" id="3KqYwoBKuuu" role="3clF45">
+          <ref role="16sUi3" node="5DMHUkptmRU" resolve="InitialDataObject" />
+        </node>
+        <node concept="3Tm1VV" id="3KqYwoBKtUy" role="1B3o_S" />
+        <node concept="3clFbS" id="3KqYwoBKtUz" role="3clF47" />
+        <node concept="37vLTG" id="3KqYwoBKu9h" role="3clF46">
+          <property role="TrG5h" value="serialized" />
+          <node concept="3Tqbb2" id="3KqYwoBKu9g" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="3KqYwoBIZR6" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="serializeFinalState" />
+        <node concept="3Tqbb2" id="3KqYwoBIZR7" role="3clF45" />
+        <node concept="3Tm1VV" id="3KqYwoBIZR8" role="1B3o_S" />
+        <node concept="3clFbS" id="3KqYwoBIZR9" role="3clF47" />
+        <node concept="37vLTG" id="3KqYwoBKuVf" role="3clF46">
+          <property role="TrG5h" value="finalState" />
+          <node concept="16syzq" id="3KqYwoBKuVe" role="1tU5fm">
+            <ref role="16sUi3" node="5DMHUkptmRW" resolve="FinalDataObject" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFb_" id="3KqYwoBIZMy" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="deserializeFinalState" />
+        <node concept="16syzq" id="3KqYwoBKuDp" role="3clF45">
+          <ref role="16sUi3" node="5DMHUkptmRW" resolve="FinalDataObject" />
+        </node>
+        <node concept="3Tm1VV" id="3KqYwoBIZM$" role="1B3o_S" />
+        <node concept="3clFbS" id="3KqYwoBIZM_" role="3clF47" />
+        <node concept="37vLTG" id="3KqYwoBKuOI" role="3clF46">
+          <property role="TrG5h" value="serialized" />
+          <node concept="3Tqbb2" id="3KqYwoBKuOH" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5DMHUkptmAd" role="1B3o_S" />
+      <node concept="16euLQ" id="5DMHUkptmRU" role="16eVyc">
+        <property role="TrG5h" value="InitialDataObject" />
+      </node>
+      <node concept="16euLQ" id="5DMHUkptmRW" role="16eVyc">
+        <property role="TrG5h" value="FinalDataObject" />
+      </node>
+      <node concept="3uibUv" id="5DMHUkptmYj" role="3HQHJm">
+        <ref role="3uigEE" node="3KqYwoBIxpF" resolve="RefactoringParticipant" />
+        <node concept="16syzq" id="361hHo_ZVk6" role="11_B2D">
+          <ref role="16sUi3" node="5DMHUkptmRU" resolve="InitialDataObject" />
+        </node>
+        <node concept="16syzq" id="361hHo_ZVyj" role="11_B2D">
+          <ref role="16sUi3" node="5DMHUkptmRW" resolve="FinalDataObject" />
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="3KqYwoBKtUw" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="deserializeInitialState" />
-      <node concept="16syzq" id="3KqYwoBKuuu" role="3clF45">
-        <ref role="16sUi3" node="3KqYwoBIHZv" resolve="InitialDataObject" />
-      </node>
-      <node concept="3Tm1VV" id="3KqYwoBKtUy" role="1B3o_S" />
-      <node concept="3clFbS" id="3KqYwoBKtUz" role="3clF47" />
-      <node concept="37vLTG" id="3KqYwoBKu9h" role="3clF46">
-        <property role="TrG5h" value="serialized" />
-        <node concept="3Tqbb2" id="3KqYwoBKu9g" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="3KqYwoBIZR6" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="serializeFinalState" />
-      <node concept="3Tqbb2" id="3KqYwoBIZR7" role="3clF45" />
-      <node concept="3Tm1VV" id="3KqYwoBIZR8" role="1B3o_S" />
-      <node concept="3clFbS" id="3KqYwoBIZR9" role="3clF47" />
-      <node concept="37vLTG" id="3KqYwoBKuVf" role="3clF46">
-        <property role="TrG5h" value="finalState" />
-        <node concept="16syzq" id="3KqYwoBKuVe" role="1tU5fm">
-          <ref role="16sUi3" node="3KqYwoBIHZz" resolve="FinalDataObject" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="3KqYwoBIZMy" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="deserializeFinalState" />
-      <node concept="16syzq" id="3KqYwoBKuDp" role="3clF45">
-        <ref role="16sUi3" node="3KqYwoBIHZz" resolve="FinalDataObject" />
-      </node>
-      <node concept="3Tm1VV" id="3KqYwoBIZM$" role="1B3o_S" />
-      <node concept="3clFbS" id="3KqYwoBIZM_" role="3clF47" />
-      <node concept="37vLTG" id="3KqYwoBKuOI" role="3clF46">
-        <property role="TrG5h" value="serialized" />
-        <node concept="3Tqbb2" id="3KqYwoBKuOH" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="3KqYwoBJ0pO" role="jymVt" />
+    <node concept="2tJIrI" id="5DMHUkptmuA" role="jymVt" />
     <node concept="3HP615" id="5DMHUkpkQJQ" role="jymVt">
       <property role="2bfB8j" value="true" />
       <property role="TrG5h" value="ParticipantChanges" />
@@ -4601,46 +4621,6 @@
       <node concept="3clFbS" id="3KqYwoBJi4H" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="FLkVtyPnJS" role="jymVt" />
-    <node concept="3clFb_" id="FLkVtyPpcs" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getChanges" />
-      <node concept="37vLTG" id="FLkVtyPpq2" role="3clF46">
-        <property role="TrG5h" value="initialState" />
-        <node concept="16syzq" id="FLkVtyPpq3" role="1tU5fm">
-          <ref role="16sUi3" node="3KqYwoBJhhH" resolve="InitialDataObject" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="FLkVtyPpq4" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="FLkVtyPpq5" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="FLkVtyPpq6" role="3clF46">
-        <property role="TrG5h" value="searchScope" />
-        <node concept="3uibUv" id="FLkVtyPpq7" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="FLkVtyPpcv" role="1B3o_S" />
-      <node concept="3clFbS" id="FLkVtyPpcw" role="3clF47" />
-      <node concept="2AHcQZ" id="FLkVtyQo7s" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-      <node concept="3uibUv" id="5D$LV0rpmEm" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-        <node concept="3uibUv" id="5D$LV0rnji5" role="11_B2D">
-          <ref role="3uigEE" node="3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
-          <node concept="16syzq" id="5D$LV0rnji6" role="11_B2D">
-            <ref role="16sUi3" node="3KqYwoBJhhH" resolve="InitialDataObject" />
-          </node>
-          <node concept="16syzq" id="5D$LV0rnji7" role="11_B2D">
-            <ref role="16sUi3" node="3KqYwoBJhhL" resolve="FinalDataObject" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5DMHUkpcEJ0" role="jymVt" />
     <node concept="312cEu" id="2wqpb2$IKHk" role="jymVt">
       <property role="2bfB8j" value="false" />
       <property role="TrG5h" value="MoveNodeParticipantState" />
@@ -4896,7 +4876,7 @@
                   <ref role="3cqZAo" node="2wqpb2$N2BK" resolve="participant" />
                 </node>
                 <node concept="liA8E" id="2wqpb2$KjQC" role="2OqNvi">
-                  <ref role="37wK5l" node="FLkVtyPpcs" resolve="getChanges" />
+                  <ref role="37wK5l" node="3KqYwoBIKej" resolve="getChanges" />
                   <node concept="37vLTw" id="5c9yDr4AnqY" role="37wK5m">
                     <ref role="3cqZAo" node="5c9yDr4Aea$" resolve="myInitialState" />
                   </node>

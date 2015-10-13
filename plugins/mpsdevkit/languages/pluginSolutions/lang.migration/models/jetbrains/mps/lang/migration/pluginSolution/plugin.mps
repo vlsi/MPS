@@ -6668,6 +6668,15 @@
         <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
       </node>
     </node>
+    <node concept="3uibUv" id="5DMHUkptoJS" role="EKbjA">
+      <ref role="3uigEE" to="lfzw:5DMHUkptmAc" resolve="RefactoringParticipant.PersistentRefactoringParticipant" />
+      <node concept="2pR195" id="5DMHUkptpBL" role="11_B2D">
+        <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+      </node>
+      <node concept="2pR195" id="5DMHUkptpBM" role="11_B2D">
+        <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
+      </node>
+    </node>
   </node>
 </model>
 
