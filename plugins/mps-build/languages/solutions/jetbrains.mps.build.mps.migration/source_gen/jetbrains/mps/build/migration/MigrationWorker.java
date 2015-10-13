@@ -72,7 +72,7 @@ public class MigrationWorker extends MpsWorker {
       try {
         Class<?> euClass = PluginManager.getPlugin(PluginId.getId(MigrationWorker.MIGRATION_PLUGIN)).getPluginClassLoader().loadClass(MigrationWorker.TASK_EXEC_CLASS);
         Method method = euClass.getMethod("migrate", Project.class);
-        Object result = method.invoke(p);
+        Object result = method.invoke(null, p);
         if (!(((Boolean) result))) {
           info("Nothing to migrate");
         }
