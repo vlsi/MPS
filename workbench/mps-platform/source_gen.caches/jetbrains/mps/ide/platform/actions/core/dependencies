@@ -15,11 +15,11 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" file="MoveNodeRefactoringParticipant.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.ParticipantChanges" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.ParticipantState" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
@@ -117,9 +117,24 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" file="RefactoringParticipant.java">
+  <dependency className="jetbrains.mps.ide.platform.actions.core.RecursiveParticipant" file="RecursiveParticipant.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeParticipantState" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" file="RefactoringParticipant.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

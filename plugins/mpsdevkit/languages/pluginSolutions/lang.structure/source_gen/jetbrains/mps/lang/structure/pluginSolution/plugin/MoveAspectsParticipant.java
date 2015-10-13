@@ -4,35 +4,48 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.ide.platform.actions.core.RecursiveParticipant;
+import jetbrains.mps.smodel.structure.Extension;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.List;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
-import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import java.util.HashMap;
 import jetbrains.mps.smodel.CopyUtil;
-import java.util.ArrayList;
 
-public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
+public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference>, RecursiveParticipant<SNodeReference, SNodeReference> {
+
+  public static class MoveAspectsParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public MoveAspectsParticipant_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new MoveAspectsParticipant();
+    }
+  }
 
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference>() {
     public SNodeReference beforeMove(SNode nodeToMove) {
@@ -47,69 +60,16 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
     return myDataCollector;
   }
 
-  public abstract class CompositeChange<InitialState, FinalState> implements RefactoringParticipant.Change<InitialState, FinalState> {
-    private Iterable<RefactoringParticipant.ParticipantChanges> myChildParticipantStates;
-    public final void init(final Iterable<RefactoringParticipant.ParticipantChanges> parents) {
-      myChildParticipantStates = createChildParticipantStates();
-      Sequence.fromIterable(myChildParticipantStates).visitAll(new IVisitor<RefactoringParticipant.ParticipantChanges>() {
-        public void visit(final RefactoringParticipant.ParticipantChanges it) {
-          if (Sequence.fromIterable(parents).any(new IWhereFilter<RefactoringParticipant.ParticipantChanges>() {
-            public boolean accept(RefactoringParticipant.ParticipantChanges parent) {
-              return eq_k053lg_a0a0a0a0a0a0a0a0a0a1a1f_0(parent.getParticipant(), it.getParticipant()) && eq_k053lg_a0a0a0a0a0a0a0a0a0a1a1f(parent.getInitialState(), it.getInitialState());
-            }
-          })) {
-            throw new IllegalStateException("infinite recursion detected");
-          } else {
-            final Iterable<RefactoringParticipant.ParticipantChanges> appendedParents = Sequence.fromIterable(parents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantChanges>singleton(it)));
-            Sequence.fromIterable(it.getChanges()).ofType(MoveAspectsParticipant.CompositeChange.class).visitAll(new IVisitor<MoveAspectsParticipant.CompositeChange>() {
-              public void visit(MoveAspectsParticipant.CompositeChange it) {
-                it.init(appendedParents);
-              }
-            });
-          }
-        }
-      });
-    }
-    protected abstract Iterable<RefactoringParticipant.ParticipantChanges> createChildParticipantStates();
-    public SearchResults getSearchResults() {
-      final SearchResults results = new SearchResults();
-      results.addAll(getOwnResults());
-      Sequence.fromIterable(myChildParticipantStates).translate(new ITranslator2<RefactoringParticipant.ParticipantChanges, RefactoringParticipant.Change<Object, Object>>() {
-        public Iterable<RefactoringParticipant.Change<Object, Object>> translate(RefactoringParticipant.ParticipantChanges it) {
-          return it.getChanges();
-        }
-      }).select(new ISelector<RefactoringParticipant.Change<Object, Object>, SearchResults>() {
-        public SearchResults select(RefactoringParticipant.Change<Object, Object> it) {
-          return it.getSearchResults();
-        }
-      }).visitAll(new IVisitor<SearchResults>() {
-        public void visit(SearchResults it) {
-          results.addAll(results);
-        }
-      });
-      return results;
-    }
-    protected abstract SearchResults getOwnResults();
-    public boolean needsToPreserveOldNode() {
-      return Sequence.fromIterable(myChildParticipantStates).translate(new ITranslator2<RefactoringParticipant.ParticipantChanges, RefactoringParticipant.Change<Object, Object>>() {
-        public Iterable<RefactoringParticipant.Change<Object, Object>> translate(RefactoringParticipant.ParticipantChanges it) {
-          return it.getChanges();
-        }
-      }).any(new IWhereFilter<RefactoringParticipant.Change<Object, Object>>() {
-        public boolean accept(RefactoringParticipant.Change<Object, Object> it) {
-          return it.needsToPreserveOldNode();
-        }
-      });
-    }
+  @Override
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final SearchScope searchScope) {
+    return getChanges(initialState, repository, searchScope, Sequence.fromIterable(Collections.<RefactoringParticipant.ParticipantState>emptyList()));
   }
 
-
-  @Override
-  public Iterable<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final SearchScope searchScope) {
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final SearchScope searchScope, final Iterable<RefactoringParticipant.ParticipantState> parents) {
     if (!(((SNodeOperations.as(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) != null) && SNodeOperations.getModel(SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).getModule() instanceof Language))) {
-      return Sequence.fromIterable(Collections.<RefactoringParticipant.Change<SNodeReference, SNodeReference>>emptyList());
+      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     } else {
-      SNode sourceConcept = SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+      final SNode sourceConcept = SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
       Language sourceLanguage = ((Language) SNodeOperations.getModel(sourceConcept).getModule());
 
       Map<LanguageAspect, List<SNode>> aspectsMap = MoveConceptUtil.getAspectNodes(sourceLanguage, Sequence.<SNode>singleton(sourceConcept));
@@ -119,24 +79,42 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
           return ListSequence.fromList(mapping.value()).select(new ISelector<SNode, RefactoringParticipant.Change<SNodeReference, SNodeReference>>() {
             public RefactoringParticipant.Change<SNodeReference, SNodeReference> select(final SNode aspect) {
 
-              RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new MoveAspectsParticipant.CompositeChange<SNodeReference, SNodeReference>() {
-                private Iterable<MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> myChildParticipantStates;
-                protected Iterable<RefactoringParticipant.ParticipantChanges> createChildParticipantStates() {
-                  myChildParticipantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>() {
-                    public MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?> select(MoveNodeRefactoringParticipant<?, ?> participant) {
-                      return MoveNodeRefactoringParticipant.MoveNodeParticipantState.create(participant, aspect, repository, searchScope);
-                    }
-                  });
-                  return Sequence.fromIterable(myChildParticipantStates).select(new ISelector<MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>, RefactoringParticipant.ParticipantChanges>() {
-                    public RefactoringParticipant.ParticipantChanges select(MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?> it) {
-                      return ((RefactoringParticipant.ParticipantChanges) it);
-                    }
-                  });
+              final List<RecursiveParticipant.RecursiveParticipantState<?, ?>> childparticipantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
+                public RecursiveParticipant.RecursiveParticipantState<?, ?> select(MoveNodeRefactoringParticipant<?, ?> participant) {
+                  return RecursiveParticipant.RecursiveParticipantState.create(participant, aspect, repository, searchScope, parents);
                 }
-                protected SearchResults getOwnResults() {
-                  SearchResults results = new SearchResults();
-                  results.add(new SearchResult<SNode>(aspect, "concept aspect"));
+              }).toListSequence();
+
+              final SearchResults results = new SearchResults();
+              results.addAll(new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), sourceConcept), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(aspect, "concept aspect"))));
+              ListSequence.fromList(childparticipantStates).translate(new ITranslator2<RecursiveParticipant.RecursiveParticipantState<?, ?>, RefactoringParticipant.Change<Object, Object>>() {
+                public Iterable<RefactoringParticipant.Change<Object, Object>> translate(RecursiveParticipant.RecursiveParticipantState<?, ?> it) {
+                  return ((RefactoringParticipant.ParticipantState) it).getChanges();
+                }
+              }).select(new ISelector<RefactoringParticipant.Change<Object, Object>, SearchResults>() {
+                public SearchResults select(RefactoringParticipant.Change<Object, Object> it) {
+                  return it.getSearchResults();
+                }
+              }).visitAll(new IVisitor<SearchResults>() {
+                public void visit(SearchResults it) {
+                  results.addAll(it);
+                }
+              });
+
+              RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
+                public SearchResults getSearchResults() {
                   return results;
+                }
+                public boolean needsToPreserveOldNode() {
+                  return ListSequence.fromList(childparticipantStates).translate(new ITranslator2<RecursiveParticipant.RecursiveParticipantState<?, ?>, RefactoringParticipant.Change<Object, Object>>() {
+                    public Iterable<RefactoringParticipant.Change<Object, Object>> translate(RecursiveParticipant.RecursiveParticipantState<?, ?> it) {
+                      return ((RefactoringParticipant.ParticipantState) it).getChanges();
+                    }
+                  }).any(new IWhereFilter<RefactoringParticipant.Change<Object, Object>>() {
+                    public boolean accept(RefactoringParticipant.Change<Object, Object> it) {
+                      return it.needsToPreserveOldNode();
+                    }
+                  });
                 }
                 public void confirm(SNodeReference finalState, final SRepository repository, final RefactoringSession refactoringSession) {
                   SNode targetConcept = SNodeOperations.cast(finalState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
@@ -150,42 +128,24 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
                     SNodeOperations.detachNode(aspect);
                   }
                   newLocation.insertNode(repository, ListSequence.fromList(copied).first());
-                  Sequence.fromIterable(myChildParticipantStates).visitAll(new IVisitor<MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>() {
-                    public void visit(MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?> pis) {
+                  ListSequence.fromList(childparticipantStates).visitAll(new IVisitor<RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
+                    public void visit(RecursiveParticipant.RecursiveParticipantState<?, ?> pis) {
                       pis.confirm(ListSequence.fromList(copied).first(), repository, refactoringSession);
                     }
                   });
                 }
               };
-              return change;
+              return (RefactoringParticipant.Change<SNodeReference, SNodeReference>) change;
             }
           });
         }
-      });
+      }).toListSequence();
     }
   }
   public String getId() {
     return "moveNode.moveConceptAspects";
   }
   public String getDescription() {
-    return "move concept aspects";
-  }
-  public SNode serializeInitialState(SNodeReference initialState) {
-    throw new UnsupportedOperationException();
-  }
-  public SNodeReference deserializeInitialState(SNode serialized) {
-    throw new UnsupportedOperationException();
-  }
-  public SNode serializeFinalState(SNodeReference finalState) {
-    throw new UnsupportedOperationException();
-  }
-  public SNodeReference deserializeFinalState(SNode serialized) {
-    throw new UnsupportedOperationException();
-  }
-  private static boolean eq_k053lg_a0a0a0a0a0a0a0a0a0a1a1f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_k053lg_a0a0a0a0a0a0a0a0a0a1a1f_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+    return "Move concept aspects";
   }
 }

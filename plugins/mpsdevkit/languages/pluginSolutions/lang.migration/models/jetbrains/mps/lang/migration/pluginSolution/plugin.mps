@@ -6054,13 +6054,13 @@
           <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
         </node>
       </node>
-      <node concept="A3Dl8" id="1gg2oyeN_Bl" role="3clF45">
-        <node concept="3uibUv" id="2SJclOrOZMn" role="A3Ik2">
+      <node concept="_YKpA" id="361hHoA3O6g" role="3clF45">
+        <node concept="3uibUv" id="361hHoA3O6i" role="_ZDj9">
           <ref role="3uigEE" to="lfzw:3KqYwoBIKuf" resolve="RefactoringParticipant.Change" />
-          <node concept="2pR195" id="FLkVtyQwoh" role="11_B2D">
+          <node concept="2pR195" id="361hHoA3O6j" role="11_B2D">
             <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
           </node>
-          <node concept="2pR195" id="2SJclOrQQWC" role="11_B2D">
+          <node concept="2pR195" id="361hHoA3O6k" role="11_B2D">
             <ref role="3uigEE" node="2SJclOrOWU_" resolve="UpdateReferencesParticipant.NamedNodeReference" />
           </node>
         </node>

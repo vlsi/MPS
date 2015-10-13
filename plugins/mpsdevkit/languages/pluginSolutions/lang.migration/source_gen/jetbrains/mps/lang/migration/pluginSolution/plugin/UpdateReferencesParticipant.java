@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
+import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.query.CommandUtil;
@@ -82,7 +83,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> getDataCollector() {
     return myDataCollector;
   }
-  public Iterable<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, SearchScope searchScope) {
+  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, SearchScope searchScope) {
     {
       final SearchScope scope = CommandUtil.createScope(searchScope);
       QueryExecutionContext context = new QueryExecutionContext() {

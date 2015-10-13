@@ -197,7 +197,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     }
     for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
       for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
-        for (RefactoringParticipant.Change<?, ?> change : Sequence.fromIterable(nodeChanges.value().getChanges())) {
+        for (RefactoringParticipant.Change<?, ?> change : ListSequence.fromList(nodeChanges.value().getChanges())) {
           MapSequence.fromMap(shouldKeep).putValue(nodeChanges.key(), MapSequence.fromMap(shouldKeep).get(nodeChanges.key()) || (change.needsToPreserveOldNode()));
           searchResults.addAll(change.getSearchResults());
         }
