@@ -7266,6 +7266,166 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1oo0A63FZi$" role="jymVt" />
+    <node concept="3clFb_" id="1oo0A63FYV0" role="jymVt">
+      <property role="TrG5h" value="calculateClassPath" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="2AHcQZ" id="1oo0A63FYV1" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="37vLTG" id="1oo0A63FYV2" role="3clF46">
+        <property role="TrG5h" value="fork" />
+        <property role="3TUv4t" value="false" />
+        <node concept="10P_77" id="1oo0A63FYV3" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="1oo0A63FYV4" role="3clF47">
+        <node concept="3SKdUt" id="1oo0A63FYVH" role="3cqZAp">
+          <node concept="3SKdUq" id="1oo0A63FYVG" role="3SKWNk">
+            <property role="3SKdUp" value="copied from GenerationTask" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1oo0A63FYV6" role="3cqZAp">
+          <node concept="3cpWsn" id="1oo0A63FYV5" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="classPathRoots" />
+            <node concept="3uibUv" id="1oo0A63FYV7" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="1oo0A63FYV8" role="11_B2D">
+                <ref role="3uigEE" to="guwi:~File" resolve="File" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="1oo0A63FYVJ" role="33vP2m">
+              <ref role="1Pybhc" node="3t7WP23N$8C" resolve="MPSClasspathUtil" />
+              <ref role="37wK5l" node="vAjk0TGzfD" resolve="getClassPathRootsFromDependencies" />
+              <node concept="1rXfSq" id="1oo0A63FYVa" role="37wK5m">
+                <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1oo0A63FYVb" role="3cqZAp">
+          <node concept="2OqwBi" id="1oo0A63FYVM" role="3clFbw">
+            <node concept="37vLTw" id="1oo0A63FYVL" role="2Oq$k0">
+              <ref role="3cqZAo" node="1oo0A63FYV5" resolve="classPathRoots" />
+            </node>
+            <node concept="liA8E" id="1oo0A63FYVN" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.isEmpty():boolean" resolve="isEmpty" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1oo0A63FYVe" role="3clFbx">
+            <node concept="YS8fn" id="1oo0A63FYVh" role="3cqZAp">
+              <node concept="2ShNRf" id="1oo0A63FYVO" role="YScLw">
+                <node concept="1pGfFk" id="1oo0A63FYWg" role="2ShVmc">
+                  <ref role="37wK5l" to="gola:~BuildException.&lt;init&gt;(java.lang.String)" resolve="BuildException" />
+                  <node concept="Xl_RD" id="1oo0A63FYVg" role="37wK5m">
+                    <property role="Xl_RC" value="Dependency on MPS build scripts is required to generate MPS modules." />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1oo0A63FYVj" role="3cqZAp">
+          <node concept="3cpWsn" id="1oo0A63FYVi" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="classPath" />
+            <node concept="3uibUv" id="1oo0A63FYVk" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+              <node concept="3uibUv" id="1oo0A63FYVl" role="11_B2D">
+                <ref role="3uigEE" to="guwi:~File" resolve="File" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1oo0A63FYWh" role="33vP2m">
+              <node concept="1pGfFk" id="1oo0A63FYWi" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
+                <node concept="3uibUv" id="1oo0A63FYVn" role="1pMfVU">
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1oo0A63GPjg" role="3cqZAp">
+          <node concept="3cpWsn" id="1oo0A63GPjh" role="3cpWs9">
+            <property role="TrG5h" value="mpsHome" />
+            <node concept="17QB3L" id="1oo0A63GPji" role="1tU5fm" />
+            <node concept="2OqwBi" id="1oo0A63GY4l" role="33vP2m">
+              <node concept="37vLTw" id="1oo0A63GY4m" role="2Oq$k0">
+                <ref role="3cqZAo" to="gola:~ProjectComponent.project" resolve="project" />
+              </node>
+              <node concept="liA8E" id="1oo0A63GY4n" role="2OqNvi">
+                <ref role="37wK5l" to="gola:~Project.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
+                <node concept="Xl_RD" id="1oo0A63GY4o" role="37wK5m">
+                  <property role="Xl_RC" value="artifacts.mps" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1oo0A63FYVo" role="3cqZAp">
+          <node concept="2OqwBi" id="1oo0A63FYWl" role="3clFbG">
+            <node concept="37vLTw" id="1oo0A63FYWk" role="2Oq$k0">
+              <ref role="3cqZAo" node="1oo0A63FYVi" resolve="classPath" />
+            </node>
+            <node concept="liA8E" id="1oo0A63FYWm" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2ShNRf" id="1oo0A63FYWn" role="37wK5m">
+                <node concept="1pGfFk" id="1oo0A63FYWM" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="3cpWs3" id="1oo0A63GPO7" role="37wK5m">
+                    <node concept="37vLTw" id="1oo0A63GPQO" role="3uHU7B">
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                    </node>
+                    <node concept="Xl_RD" id="1oo0A63FYVr" role="3uHU7w">
+                      <property role="Xl_RC" value="/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="1oo0A63FYVs" role="3cqZAp">
+          <node concept="37vLTw" id="1oo0A63FYVA" role="1DdaDG">
+            <ref role="3cqZAo" node="1oo0A63FYV5" resolve="classPathRoots" />
+          </node>
+          <node concept="3cpWsn" id="1oo0A63FYVz" role="1Duv9x">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="file" />
+            <node concept="3uibUv" id="1oo0A63FYV_" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="1oo0A63FYVu" role="2LFqv$">
+            <node concept="3clFbF" id="1oo0A63FYVv" role="3cqZAp">
+              <node concept="2YIFZM" id="1oo0A63FYWO" role="3clFbG">
+                <ref role="1Pybhc" node="3t7WP23N$8C" resolve="MPSClasspathUtil" />
+                <ref role="37wK5l" node="vAjk0V2aML" resolve="gatherAllClassesAndJarsUnder" />
+                <node concept="37vLTw" id="1oo0A63FYVx" role="37wK5m">
+                  <ref role="3cqZAo" node="1oo0A63FYVz" resolve="file" />
+                </node>
+                <node concept="37vLTw" id="1oo0A63FYVy" role="37wK5m">
+                  <ref role="3cqZAo" node="1oo0A63FYVi" resolve="classPath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1oo0A63FYVB" role="3cqZAp">
+          <node concept="37vLTw" id="1oo0A63FYVC" role="3cqZAk">
+            <ref role="3cqZAo" node="1oo0A63FYVi" resolve="classPath" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="1oo0A63FYVD" role="1B3o_S" />
+      <node concept="3uibUv" id="1oo0A63FYVE" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3uibUv" id="1oo0A63FYVF" role="11_B2D">
+          <ref role="3uigEE" to="guwi:~File" resolve="File" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
