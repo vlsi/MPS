@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
-import java.util.List;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.query.CommandUtil;
@@ -22,6 +22,11 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
@@ -77,7 +82,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> getDataCollector() {
     return myDataCollector;
   }
-  public List<MoveNodeRefactoringParticipant.MoveNodeChange<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, SearchScope searchScope) {
+  public Iterable<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, SearchScope searchScope) {
     {
       final SearchScope scope = CommandUtil.createScope(searchScope);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -85,7 +90,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
           return scope;
         }
       };
-      SNode movedNode = initialState.reference().resolve(repository);
+      final SNode movedNode = initialState.reference().resolve(repository);
       Collection<SReference> usages;
       if (movedNode != null) {
         usages = CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), movedNode);
@@ -96,18 +101,18 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
           }
         }).toListSequence();
       }
-      return CollectionSequence.fromCollection(usages).select(new ISelector<SReference, MoveNodeRefactoringParticipant.MoveNodeChange<NamedNodeReference, NamedNodeReference>>() {
-        public MoveNodeRefactoringParticipant.MoveNodeChange<NamedNodeReference, NamedNodeReference> select(SReference ref) {
+      return CollectionSequence.fromCollection(usages).select(new ISelector<SReference, RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>() {
+        public RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference> select(SReference ref) {
           final SNodeReference containingNode = ref.getSourceNode().getReference();
           final SReferenceLink role = ref.getLink();
           final String resolveInfo = SLinkOperations.getResolveInfo(ref);
-          final SearchResult<SNode> searchResult = new SearchResult<SNode>(ref.getSourceNode(), "reference");
-          MoveNodeRefactoringParticipant.MoveNodeChange<NamedNodeReference, NamedNodeReference> change = new MoveNodeRefactoringParticipant.MoveNodeChange<NamedNodeReference, NamedNodeReference>() {
+          final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), movedNode), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
+          RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference> change = new RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>() {
             public MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference> getParticipant() {
               return UpdateReferencesParticipant.this;
             }
-            public SearchResult getSearchResult() {
-              return searchResult;
+            public SearchResults getSearchResults() {
+              return searchResults;
             }
             public boolean needsToPreserveOldNode() {
               return false;

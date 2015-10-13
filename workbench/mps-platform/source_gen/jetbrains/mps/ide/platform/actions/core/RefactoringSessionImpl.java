@@ -34,11 +34,12 @@ public class RefactoringSessionImpl implements RefactoringSession {
     for (RefactoringSession.RefactoringSessionOpenCloseAction openAction : ListSequence.fromList(myOpenClose)) {
       openAction.open(this);
     }
-    for (Runnable change : ListSequence.fromList(myChanges)) {
-      change.run();
+    for (int i = 0; i < ListSequence.fromList(myChanges).count(); i++) {
+      ListSequence.fromList(myChanges).getElement(i).run();
+
     }
-    for (RefactoringSession.RefactoringSessionOpenCloseAction close : ListSequence.fromList(myOpenClose).reversedList()) {
-      close.close(this);
+    for (RefactoringSession.RefactoringSessionOpenCloseAction closeAction : ListSequence.fromList(myOpenClose).reversedList()) {
+      closeAction.close(this);
     }
   }
 }

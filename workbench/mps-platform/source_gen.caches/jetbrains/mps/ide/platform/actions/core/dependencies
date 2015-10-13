@@ -15,9 +15,12 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" file="MoveNodeRefactoringParticipant.java">
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.Change" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.ParticipantChanges" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
@@ -40,8 +43,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault.ToMoveItem" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.SelectOptionsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
@@ -116,9 +119,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" file="RefactoringParticipant.java">
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
