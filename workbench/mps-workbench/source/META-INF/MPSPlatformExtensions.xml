@@ -474,4 +474,8 @@
   <projectService serviceImplementation="com.intellij.execution.startup.ProjectStartupTaskManager"/>
   <projectConfigurable groupId="tools" instance="com.intellij.execution.startup.ProjectStartupConfigurable"/>
   <postStartupActivity implementation="com.intellij.execution.startup.ProjectStartupRunner"/>
+
+  <!-- TODO: Uncomment in workbench/mps-workbench/source/META-INF/MPSLangExtensions.xml after platform update to build next after 142.4675.3-->
+  <applicationService serviceInterface="com.intellij.codeInsight.actions.FormatChangedTextUtil"
+                      serviceImplementation="com.intellij.codeInsight.actions.FormatChangedTextUtil"/>
 </extensions>
