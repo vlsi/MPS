@@ -15,7 +15,7 @@ import jetbrains.mps.project.Project;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import java.lang.reflect.Method;
-import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.common.ScriptProperties;
 import java.util.Set;
@@ -55,6 +55,7 @@ public class MigrationWorker extends MpsWorker {
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);
     environment.init();
+    setupEnvironment();
 
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
@@ -98,7 +99,7 @@ public class MigrationWorker extends MpsWorker {
   protected void showStatistic() {
   }
 
-  protected class MyEnvironment extends MpsEnvironment {
+  protected class MyEnvironment extends IdeaEnvironment {
     public MyEnvironment(@NotNull EnvironmentConfig config) {
       super(config);
     }

@@ -814,9 +814,9 @@
       <node concept="3clFbW" id="5kpQnuAv0sN" role="jymVt">
         <node concept="3cqZAl" id="5kpQnuAv0sO" role="3clF45" />
         <node concept="3clFbS" id="5kpQnuAv0sQ" role="3clF47">
-          <node concept="XkiVB" id="5kpQnuAv0_2" role="3cqZAp">
-            <ref role="37wK5l" to="79ha:6rx4kZDkRyV" resolve="MpsEnvironment" />
-            <node concept="37vLTw" id="5kpQnuAv0AZ" role="37wK5m">
+          <node concept="XkiVB" id="1oo0A63H2im" role="3cqZAp">
+            <ref role="37wK5l" to="cky9:6rx4kZDkRjb" resolve="IdeaEnvironment" />
+            <node concept="37vLTw" id="1oo0A63H2nu" role="37wK5m">
               <ref role="3cqZAo" node="5kpQnuAv0_B" resolve="config" />
             </node>
           </node>
@@ -854,8 +854,8 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3uibUv" id="5kpQnuAtlfK" role="1zkMxy">
-        <ref role="3uigEE" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
+      <node concept="3uibUv" id="1oo0A63H1D2" role="1zkMxy">
+        <ref role="3uigEE" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
       </node>
       <node concept="3Tmbuc" id="3Mm4xdrl1GS" role="1B3o_S" />
     </node>
