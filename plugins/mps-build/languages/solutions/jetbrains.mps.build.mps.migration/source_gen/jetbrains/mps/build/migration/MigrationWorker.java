@@ -54,7 +54,6 @@ public class MigrationWorker extends MpsWorker {
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);
     environment.init();
-    setupEnvironment();
 
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
