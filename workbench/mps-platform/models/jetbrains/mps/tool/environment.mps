@@ -603,10 +603,9 @@
           </node>
         </node>
         <node concept="3cpWs6" id="6z7xhWkukv5" role="3cqZAp">
-          <node concept="2YIFZM" id="4_TMdeLlISJ" role="3cqZAk">
+          <node concept="2YIFZM" id="4eRWbJ_JiEG" role="3cqZAk">
+            <ref role="37wK5l" to="1wbl:~IdeaTestApplication.getInstance():com.intellij.idea.IdeaTestApplication" resolve="getInstance" />
             <ref role="1Pybhc" to="1wbl:~IdeaTestApplication" resolve="IdeaTestApplication" />
-            <ref role="37wK5l" to="1wbl:~IdeaTestApplication.getInstance(java.lang.String):com.intellij.idea.IdeaTestApplication" resolve="getInstance" />
-            <node concept="10Nm6u" id="4_TMdeLkOyQ" role="37wK5m" />
           </node>
         </node>
       </node>

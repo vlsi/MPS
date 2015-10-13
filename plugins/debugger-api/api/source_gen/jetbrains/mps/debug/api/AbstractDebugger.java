@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
@@ -25,13 +24,11 @@ public abstract class AbstractDebugger<B extends IBreakpoint, K extends IBreakpo
     myBreakpointsProviderManager = breakpointsProviderManager;
   }
   public void init() {
-    ThreadUtils.assertEDT();
     myBreakpointsProvider = getBreakpointsProvider();
     myDebuggers.registerDebugger(this);
     myBreakpointsProviderManager.registerProvider(myBreakpointsProvider);
   }
   public void dispose() {
-    ThreadUtils.assertEDT();
     myBreakpointsProviderManager.unregisterProvider(myBreakpointsProvider);
     myDebuggers.unRegisterDebugger(this);
   }
