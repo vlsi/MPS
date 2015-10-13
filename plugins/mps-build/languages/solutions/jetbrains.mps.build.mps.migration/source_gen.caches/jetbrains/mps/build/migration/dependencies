@@ -8,9 +8,12 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />
@@ -18,6 +21,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

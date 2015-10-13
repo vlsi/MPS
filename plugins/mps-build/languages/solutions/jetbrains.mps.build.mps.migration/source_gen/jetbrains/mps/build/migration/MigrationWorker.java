@@ -12,9 +12,11 @@ import java.util.Map;
 import java.io.File;
 import java.util.List;
 import jetbrains.mps.project.Project;
+import javax.swing.SwingUtilities;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
@@ -66,17 +68,27 @@ public class MigrationWorker extends MpsWorker {
 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
-      Project p = myEnvironment.openProject(file);
+      final Project p = myEnvironment.openProject(file);
       info("Loaded project " + p);
       myEnvironment.flushAllEvents();
       try {
-        Class<?> euClass = PluginManager.getPlugin(PluginId.getId(MigrationWorker.MIGRATION_PLUGIN)).getPluginClassLoader().loadClass(MigrationWorker.TASK_EXEC_CLASS);
-        Method method = euClass.getMethod("migrate", Project.class);
-        Object result = method.invoke(null, p);
-        if (!(((Boolean) result))) {
-          info("Nothing to migrate");
-        }
-      } catch (Exception e) {
+        SwingUtilities.invokeAndWait(new Runnable() {
+          public void run() {
+            try {
+              Class<?> euClass = PluginManager.getPlugin(PluginId.getId(MIGRATION_PLUGIN)).getPluginClassLoader().loadClass(TASK_EXEC_CLASS);
+              Method method = euClass.getMethod("migrate", Project.class);
+              Object result = method.invoke(null, p);
+              if (!(((Boolean) result))) {
+                info("Nothing to migrate");
+              }
+            } catch (Exception e) {
+              error(e.getMessage());
+            }
+          }
+        });
+      } catch (InterruptedException e) {
+        error(e.getMessage());
+      } catch (InvocationTargetException e) {
         error(e.getMessage());
       }
       myEnvironment.flushAllEvents();

@@ -4,6 +4,7 @@
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
   </languages>
   <imports>
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
@@ -26,6 +27,7 @@
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="hhlx" ref="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -544,130 +546,188 @@
                 </node>
               </node>
             </node>
-            <node concept="SfApY" id="75eqTYkoETW" role="3cqZAp">
-              <node concept="3clFbS" id="75eqTYkoETX" role="SfCbr">
-                <node concept="3cpWs8" id="75eqTYkqhQX" role="3cqZAp">
-                  <node concept="3cpWsn" id="75eqTYkqhQY" role="3cpWs9">
-                    <property role="TrG5h" value="euClass" />
-                    <node concept="3uibUv" id="75eqTYkqhQI" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                      <node concept="3qTvmN" id="75eqTYkqhQL" role="11_B2D" />
-                    </node>
-                    <node concept="2OqwBi" id="75eqTYkqhQZ" role="33vP2m">
-                      <node concept="2OqwBi" id="75eqTYkqhR0" role="2Oq$k0">
-                        <node concept="2YIFZM" id="75eqTYkqhR1" role="2Oq$k0">
-                          <ref role="1Pybhc" to="ctgy:~PluginManager" resolve="PluginManager" />
-                          <ref role="37wK5l" to="ctgy:~PluginManager.getPlugin(com.intellij.openapi.extensions.PluginId):com.intellij.ide.plugins.IdeaPluginDescriptor" resolve="getPlugin" />
-                          <node concept="2YIFZM" id="75eqTYkqlOF" role="37wK5m">
-                            <ref role="37wK5l" to="9ti4:~PluginId.getId(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getId" />
-                            <ref role="1Pybhc" to="9ti4:~PluginId" resolve="PluginId" />
-                            <node concept="10M0yZ" id="75eqTYkrSb$" role="37wK5m">
-                              <ref role="3cqZAo" node="75eqTYkqe2J" resolve="MIGRATION_PLUGIN" />
-                              <ref role="1PxDUh" node="KL8Aqll4mG" resolve="MigrationWorker" />
+            <node concept="SfApY" id="1oo0A63J0s3" role="3cqZAp">
+              <node concept="3clFbS" id="1oo0A63J0s4" role="SfCbr">
+                <node concept="3clFbF" id="1oo0A63ITd$" role="3cqZAp">
+                  <node concept="2YIFZM" id="1oo0A63ITSg" role="3clFbG">
+                    <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+                    <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
+                    <node concept="1bVj0M" id="1oo0A63IUaM" role="37wK5m">
+                      <node concept="3clFbS" id="1oo0A63IUaN" role="1bW5cS">
+                        <node concept="SfApY" id="75eqTYkoETW" role="3cqZAp">
+                          <node concept="3clFbS" id="75eqTYkoETX" role="SfCbr">
+                            <node concept="3cpWs8" id="75eqTYkqhQX" role="3cqZAp">
+                              <node concept="3cpWsn" id="75eqTYkqhQY" role="3cpWs9">
+                                <property role="TrG5h" value="euClass" />
+                                <node concept="3uibUv" id="75eqTYkqhQI" role="1tU5fm">
+                                  <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
+                                  <node concept="3qTvmN" id="75eqTYkqhQL" role="11_B2D" />
+                                </node>
+                                <node concept="2OqwBi" id="75eqTYkqhQZ" role="33vP2m">
+                                  <node concept="2OqwBi" id="75eqTYkqhR0" role="2Oq$k0">
+                                    <node concept="2YIFZM" id="75eqTYkqhR1" role="2Oq$k0">
+                                      <ref role="1Pybhc" to="ctgy:~PluginManager" resolve="PluginManager" />
+                                      <ref role="37wK5l" to="ctgy:~PluginManager.getPlugin(com.intellij.openapi.extensions.PluginId):com.intellij.ide.plugins.IdeaPluginDescriptor" resolve="getPlugin" />
+                                      <node concept="2YIFZM" id="75eqTYkqlOF" role="37wK5m">
+                                        <ref role="37wK5l" to="9ti4:~PluginId.getId(java.lang.String):com.intellij.openapi.extensions.PluginId" resolve="getId" />
+                                        <ref role="1Pybhc" to="9ti4:~PluginId" resolve="PluginId" />
+                                        <node concept="37vLTw" id="1oo0A63IYPh" role="37wK5m">
+                                          <ref role="3cqZAo" node="75eqTYkqe2J" resolve="MIGRATION_PLUGIN" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="liA8E" id="75eqTYkqhR3" role="2OqNvi">
+                                      <ref role="37wK5l" to="9ti4:~PluginDescriptor.getPluginClassLoader():java.lang.ClassLoader" resolve="getPluginClassLoader" />
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="75eqTYkqhR4" role="2OqNvi">
+                                    <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
+                                    <node concept="37vLTw" id="1oo0A63IYPs" role="37wK5m">
+                                      <ref role="3cqZAo" node="75eqTYkqm2O" resolve="TASK_EXEC_CLASS" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWs8" id="75eqTYkqkcz" role="3cqZAp">
+                              <node concept="3cpWsn" id="75eqTYkqkc$" role="3cpWs9">
+                                <property role="TrG5h" value="method" />
+                                <node concept="3uibUv" id="75eqTYkqkct" role="1tU5fm">
+                                  <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
+                                </node>
+                                <node concept="2OqwBi" id="75eqTYkqkc_" role="33vP2m">
+                                  <node concept="37vLTw" id="75eqTYkqkcA" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="75eqTYkqhQY" resolve="euClass" />
+                                  </node>
+                                  <node concept="liA8E" id="75eqTYkqkcB" role="2OqNvi">
+                                    <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
+                                    <node concept="Xl_RD" id="75eqTYkqkcC" role="37wK5m">
+                                      <property role="Xl_RC" value="migrate" />
+                                    </node>
+                                    <node concept="3VsKOn" id="75eqTYkqkcD" role="37wK5m">
+                                      <ref role="3VsUkX" to="z1c3:~Project" resolve="Project" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWs8" id="75eqTYkqlcb" role="3cqZAp">
+                              <node concept="3cpWsn" id="75eqTYkqlcc" role="3cpWs9">
+                                <property role="TrG5h" value="result" />
+                                <node concept="3uibUv" id="75eqTYkqlbX" role="1tU5fm">
+                                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                                </node>
+                                <node concept="2OqwBi" id="75eqTYkqlcd" role="33vP2m">
+                                  <node concept="37vLTw" id="75eqTYkqlce" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="75eqTYkqkc$" resolve="method" />
+                                  </node>
+                                  <node concept="liA8E" id="75eqTYkqlcf" role="2OqNvi">
+                                    <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
+                                    <node concept="10Nm6u" id="1oo0A63IOPy" role="37wK5m" />
+                                    <node concept="37vLTw" id="75eqTYkqlcg" role="37wK5m">
+                                      <ref role="3cqZAo" node="60oBoEfqOa" resolve="p" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbJ" id="75eqTYkpMt5" role="3cqZAp">
+                              <node concept="3clFbS" id="75eqTYkpMt7" role="3clFbx">
+                                <node concept="3clFbF" id="75eqTYkpMCh" role="3cqZAp">
+                                  <node concept="1rXfSq" id="75eqTYkpMCf" role="3clFbG">
+                                    <ref role="37wK5l" to="jo3e:KL8Aqlj5zc" resolve="info" />
+                                    <node concept="Xl_RD" id="60oBoEewFZ" role="37wK5m">
+                                      <property role="Xl_RC" value="Nothing to migrate" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3fqX7Q" id="75eqTYkpMvt" role="3clFbw">
+                                <node concept="1eOMI4" id="75eqTYkqlBu" role="3fr31v">
+                                  <node concept="10QFUN" id="75eqTYkqlBv" role="1eOMHV">
+                                    <node concept="37vLTw" id="75eqTYkqlBt" role="10QFUP">
+                                      <ref role="3cqZAo" node="75eqTYkqlcc" resolve="result" />
+                                    </node>
+                                    <node concept="3uibUv" id="75eqTYkqlDl" role="10QFUM">
+                                      <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="liA8E" id="75eqTYkqhR3" role="2OqNvi">
-                          <ref role="37wK5l" to="9ti4:~PluginDescriptor.getPluginClassLoader():java.lang.ClassLoader" resolve="getPluginClassLoader" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="75eqTYkqhR4" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
-                        <node concept="10M0yZ" id="75eqTYkrSb_" role="37wK5m">
-                          <ref role="1PxDUh" node="KL8Aqll4mG" resolve="MigrationWorker" />
-                          <ref role="3cqZAo" node="75eqTYkqm2O" resolve="TASK_EXEC_CLASS" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="75eqTYkqkcz" role="3cqZAp">
-                  <node concept="3cpWsn" id="75eqTYkqkc$" role="3cpWs9">
-                    <property role="TrG5h" value="method" />
-                    <node concept="3uibUv" id="75eqTYkqkct" role="1tU5fm">
-                      <ref role="3uigEE" to="t6h5:~Method" resolve="Method" />
-                    </node>
-                    <node concept="2OqwBi" id="75eqTYkqkc_" role="33vP2m">
-                      <node concept="37vLTw" id="75eqTYkqkcA" role="2Oq$k0">
-                        <ref role="3cqZAo" node="75eqTYkqhQY" resolve="euClass" />
-                      </node>
-                      <node concept="liA8E" id="75eqTYkqkcB" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Class.getMethod(java.lang.String,java.lang.Class...):java.lang.reflect.Method" resolve="getMethod" />
-                        <node concept="Xl_RD" id="75eqTYkqkcC" role="37wK5m">
-                          <property role="Xl_RC" value="migrate" />
-                        </node>
-                        <node concept="3VsKOn" id="75eqTYkqkcD" role="37wK5m">
-                          <ref role="3VsUkX" to="z1c3:~Project" resolve="Project" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs8" id="75eqTYkqlcb" role="3cqZAp">
-                  <node concept="3cpWsn" id="75eqTYkqlcc" role="3cpWs9">
-                    <property role="TrG5h" value="result" />
-                    <node concept="3uibUv" id="75eqTYkqlbX" role="1tU5fm">
-                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                    </node>
-                    <node concept="2OqwBi" id="75eqTYkqlcd" role="33vP2m">
-                      <node concept="37vLTw" id="75eqTYkqlce" role="2Oq$k0">
-                        <ref role="3cqZAo" node="75eqTYkqkc$" resolve="method" />
-                      </node>
-                      <node concept="liA8E" id="75eqTYkqlcf" role="2OqNvi">
-                        <ref role="37wK5l" to="t6h5:~Method.invoke(java.lang.Object,java.lang.Object...):java.lang.Object" resolve="invoke" />
-                        <node concept="10Nm6u" id="1oo0A63IOPy" role="37wK5m" />
-                        <node concept="37vLTw" id="75eqTYkqlcg" role="37wK5m">
-                          <ref role="3cqZAo" node="60oBoEfqOa" resolve="p" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="75eqTYkpMt5" role="3cqZAp">
-                  <node concept="3clFbS" id="75eqTYkpMt7" role="3clFbx">
-                    <node concept="3clFbF" id="75eqTYkpMCh" role="3cqZAp">
-                      <node concept="1rXfSq" id="75eqTYkpMCf" role="3clFbG">
-                        <ref role="37wK5l" to="jo3e:KL8Aqlj5zc" resolve="info" />
-                        <node concept="Xl_RD" id="60oBoEewFZ" role="37wK5m">
-                          <property role="Xl_RC" value="Nothing to migrate" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3fqX7Q" id="75eqTYkpMvt" role="3clFbw">
-                    <node concept="1eOMI4" id="75eqTYkqlBu" role="3fr31v">
-                      <node concept="10QFUN" id="75eqTYkqlBv" role="1eOMHV">
-                        <node concept="37vLTw" id="75eqTYkqlBt" role="10QFUP">
-                          <ref role="3cqZAo" node="75eqTYkqlcc" resolve="result" />
-                        </node>
-                        <node concept="3uibUv" id="75eqTYkqlDl" role="10QFUM">
-                          <ref role="3uigEE" to="wyt6:~Boolean" resolve="Boolean" />
+                          <node concept="TDmWw" id="75eqTYkoETS" role="TEbGg">
+                            <node concept="3clFbS" id="75eqTYkoETT" role="TDEfX">
+                              <node concept="3clFbF" id="75eqTYkoEZz" role="3cqZAp">
+                                <node concept="1rXfSq" id="75eqTYkoEZy" role="3clFbG">
+                                  <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
+                                  <node concept="2OqwBi" id="75eqTYkoF3w" role="37wK5m">
+                                    <node concept="37vLTw" id="75eqTYkoF2D" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="75eqTYkoETU" resolve="e" />
+                                    </node>
+                                    <node concept="liA8E" id="75eqTYkoF6A" role="2OqNvi">
+                                      <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWsn" id="75eqTYkoETU" role="TDEfY">
+                              <property role="TrG5h" value="e" />
+                              <node concept="3uibUv" id="75eqTYkoETV" role="1tU5fm">
+                                <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="TDmWw" id="75eqTYkoETS" role="TEbGg">
-                <node concept="3clFbS" id="75eqTYkoETT" role="TDEfX">
-                  <node concept="3clFbF" id="75eqTYkoEZz" role="3cqZAp">
-                    <node concept="1rXfSq" id="75eqTYkoEZy" role="3clFbG">
+              <node concept="TDmWw" id="1oo0A63J0rV" role="TEbGg">
+                <node concept="3clFbS" id="1oo0A63J0rW" role="TDEfX">
+                  <node concept="3clFbF" id="1oo0A63J0NF" role="3cqZAp">
+                    <node concept="1rXfSq" id="1oo0A63J0NG" role="3clFbG">
                       <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
-                      <node concept="2OqwBi" id="75eqTYkoF3w" role="37wK5m">
-                        <node concept="37vLTw" id="75eqTYkoF2D" role="2Oq$k0">
-                          <ref role="3cqZAo" node="75eqTYkoETU" resolve="e" />
+                      <node concept="2OqwBi" id="1oo0A63J0NH" role="37wK5m">
+                        <node concept="37vLTw" id="1oo0A63J0NI" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1oo0A63J0rX" resolve="e" />
                         </node>
-                        <node concept="liA8E" id="75eqTYkoF6A" role="2OqNvi">
+                        <node concept="liA8E" id="1oo0A63J0NJ" role="2OqNvi">
                           <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node concept="3cpWsn" id="75eqTYkoETU" role="TDEfY">
+                <node concept="3cpWsn" id="1oo0A63J0rX" role="TDEfY">
                   <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="75eqTYkoETV" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+                  <node concept="3uibUv" id="1oo0A63J0rY" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+                  </node>
+                </node>
+              </node>
+              <node concept="TDmWw" id="1oo0A63J0rZ" role="TEbGg">
+                <node concept="3clFbS" id="1oo0A63J0s0" role="TDEfX">
+                  <node concept="3clFbF" id="1oo0A63J0WQ" role="3cqZAp">
+                    <node concept="1rXfSq" id="1oo0A63J0WR" role="3clFbG">
+                      <ref role="37wK5l" to="jo3e:KL8Aqlj5zJ" resolve="error" />
+                      <node concept="2OqwBi" id="1oo0A63J0WS" role="37wK5m">
+                        <node concept="37vLTw" id="1oo0A63J0WT" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1oo0A63J0s1" resolve="e" />
+                        </node>
+                        <node concept="liA8E" id="1oo0A63J0WU" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWsn" id="1oo0A63J0s1" role="TDEfY">
+                  <property role="TrG5h" value="e" />
+                  <node concept="3uibUv" id="1oo0A63J0s2" role="1tU5fm">
+                    <ref role="3uigEE" to="t6h5:~InvocationTargetException" resolve="InvocationTargetException" />
                   </node>
                 </node>
               </node>
