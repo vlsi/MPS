@@ -29,6 +29,7 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.notification.impl.NotificationSettings;
+import jetbrains.mps.make.IMakeService.INSTANCE;
 import jetbrains.mps.make.MakeNotification;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.StatusBar;
@@ -48,7 +49,9 @@ public class TransientModelBallonDisplayer implements Disposable {
   }
   @Override
   public void dispose() {
-    IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
+    if (INSTANCE.hasMakeService()) {
+      INSTANCE.get().removeListener(myMakeNotificationListener);
+    }
   }
   private void ensureRegistered() {
     if (!(NotificationsConfigurationImpl.getInstanceImpl().isRegistered(ID))) {
