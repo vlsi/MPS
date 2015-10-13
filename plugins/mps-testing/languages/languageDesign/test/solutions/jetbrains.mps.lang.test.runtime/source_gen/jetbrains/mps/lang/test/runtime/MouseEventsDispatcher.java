@@ -5,13 +5,15 @@ package jetbrains.mps.lang.test.runtime;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
 import java.lang.reflect.InvocationTargetException;
+import java.awt.Point;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import javax.swing.SwingUtilities;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.LinkedList;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class MouseEventsDispatcher {
   private final BaseEditorTestBody myEditorTest;
@@ -25,7 +27,9 @@ public class MouseEventsDispatcher {
   }
 
   public void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
-    final MouseEvent e = MouseEventsDispatcher.createMouseEvent(targetComponent, eventType, x, y);
+    Point componentPoint = convertToComponent(x, y, targetComponent);
+
+    final MouseEvent e = MouseEventsDispatcher.createMouseEvent(targetComponent, eventType, componentPoint.x, componentPoint.y);
     myEditorTest.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         targetComponent.dispatchEvent(e);
@@ -33,17 +37,31 @@ public class MouseEventsDispatcher {
     });
   }
 
+  private Point convertToComponent(int x, int y, final Component targetComponent) {
+    final EditorComponent editorComponent = myEditorTest.getEditorComponent();
+    EditorCell rootCell = editorComponent.getRootCell();
+    return SwingUtilities.convertPoint(editorComponent, x + rootCell.getX(), y + rootCell.getY(), targetComponent);
+  }
+
   public Component processMouseEvent(int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
-    EditorCell rootCell = myEditorTest.getEditorComponent().getRootCell();
+    final EditorComponent editorComponent = myEditorTest.getEditorComponent();
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        editorComponent.setSize(editorComponent.getPreferredSize());
+      }
+    });
+
+    EditorCell rootCell = editorComponent.getRootCell();
     assert rootCell != null;
+
     Queue<jetbrains.mps.openapi.editor.cells.EditorCell> cellCandidates = QueueSequence.fromQueue(new LinkedList<jetbrains.mps.openapi.editor.cells.EditorCell>());
     QueueSequence.fromQueue(cellCandidates).addLastElement(rootCell);
-    int absoluteX = x + rootCell.getX();
-    int absoluteY = y + rootCell.getY();
+    int editorX = x + rootCell.getX();
+    int editorY = y + rootCell.getY();
     jetbrains.mps.openapi.editor.cells.EditorCell eventTargetCell = null;
     while (QueueSequence.fromQueue(cellCandidates).isNotEmpty()) {
       jetbrains.mps.openapi.editor.cells.EditorCell nextCell = QueueSequence.fromQueue(cellCandidates).removeFirstElement();
-      if (nextCell.getX() <= absoluteX && nextCell.getY() <= absoluteY && nextCell.getX() + nextCell.getWidth() > absoluteX && nextCell.getY() + nextCell.getHeight() > absoluteY) {
+      if (nextCell.getX() <= editorX && nextCell.getY() <= editorY && nextCell.getX() + nextCell.getWidth() > editorX && nextCell.getY() + nextCell.getHeight() > editorY) {
         eventTargetCell = nextCell;
         if (nextCell instanceof EditorCell_Collection) {
           QueueSequence.fromQueue(cellCandidates).addSequence(Sequence.fromIterable((EditorCell_Collection) nextCell));
@@ -52,17 +70,21 @@ public class MouseEventsDispatcher {
     }
     assert eventTargetCell != null;
 
-    final Wrappers._T<Component> targetComponent = new Wrappers._T<Component>(EditorUtil.getEventTargetComponent(eventTargetCell, myEditorTest.getEditorComponent()));
-    targetComponent.value = targetComponent.value.getComponentAt(x, y);
-    assert targetComponent.value != null;
+    Component cellComponent = EditorUtil.getEventTargetComponent(eventTargetCell, editorComponent);
+    Point cellComponentPoint = SwingUtilities.convertPoint(editorComponent, editorX, editorY, cellComponent);
 
-    final MouseEvent e = MouseEventsDispatcher.createMouseEvent(targetComponent.value, eventType, x, y);
+    final Component targetComponent = cellComponent.getComponentAt(cellComponentPoint);
+    assert targetComponent != null;
+
+    Point targetComponentPoint = SwingUtilities.convertPoint(editorComponent, editorX, editorY, targetComponent);
+
+    final MouseEvent e = MouseEventsDispatcher.createMouseEvent(cellComponent, eventType, targetComponentPoint.x, targetComponentPoint.y);
     myEditorTest.runUndoableInEDTAndWait(new Runnable() {
       public void run() {
-        targetComponent.value.dispatchEvent(e);
+        targetComponent.dispatchEvent(e);
       }
     });
-    return targetComponent.value;
+    return targetComponent;
   }
 
 }
