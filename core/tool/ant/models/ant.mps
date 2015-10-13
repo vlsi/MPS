@@ -7386,6 +7386,52 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1oo0A63IrnR" role="3cqZAp">
+          <node concept="2OqwBi" id="1oo0A63Iro5" role="3clFbG">
+            <node concept="37vLTw" id="1oo0A63Iro4" role="2Oq$k0">
+              <ref role="3cqZAo" node="1oo0A63FYVi" resolve="classPath" />
+            </node>
+            <node concept="liA8E" id="1oo0A63Iro6" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2ShNRf" id="1oo0A63Iro7" role="37wK5m">
+                <node concept="1pGfFk" id="1oo0A63Irp9" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="3cpWs3" id="1oo0A63IrnU" role="37wK5m">
+                    <node concept="37vLTw" id="1oo0A63IrnV" role="3uHU7B">
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                    </node>
+                    <node concept="Xl_RD" id="1oo0A63IrnW" role="3uHU7w">
+                      <property role="Xl_RC" value="/plugins/modelchecker.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1oo0A63IrnX" role="3cqZAp">
+          <node concept="2OqwBi" id="1oo0A63Irpc" role="3clFbG">
+            <node concept="37vLTw" id="1oo0A63Irpb" role="2Oq$k0">
+              <ref role="3cqZAo" node="1oo0A63FYVi" resolve="classPath" />
+            </node>
+            <node concept="liA8E" id="1oo0A63Irpd" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2ShNRf" id="1oo0A63Irpe" role="37wK5m">
+                <node concept="1pGfFk" id="1oo0A63IrpZ" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="3cpWs3" id="1oo0A63Iro0" role="37wK5m">
+                    <node concept="37vLTw" id="1oo0A63Iro1" role="3uHU7B">
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                    </node>
+                    <node concept="Xl_RD" id="1oo0A63Iro2" role="3uHU7w">
+                      <property role="Xl_RC" value="/plugins/migrationAssistant.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="1oo0A63FYVs" role="3cqZAp">
           <node concept="37vLTw" id="1oo0A63FYVA" role="1DdaDG">
             <ref role="3cqZAo" node="1oo0A63FYV5" resolve="classPathRoots" />
