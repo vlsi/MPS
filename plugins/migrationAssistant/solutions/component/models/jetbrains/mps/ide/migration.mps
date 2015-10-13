@@ -57,6 +57,7 @@
     <import index="bdlm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.migration.global(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
@@ -956,6 +957,26 @@
       <node concept="3Tm1VV" id="1AzqgyAfalr" role="1B3o_S" />
       <node concept="3cqZAl" id="1AzqgyAfalt" role="3clF45" />
       <node concept="3clFbS" id="1AzqgyAfalu" role="3clF47">
+        <node concept="3SKdUt" id="1oo0A63IByz" role="3cqZAp">
+          <node concept="3SKdUq" id="1oo0A63IBQW" role="3SKWNk">
+            <property role="3SKdUp" value="this is a hack for migration task purposes" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1oo0A63Ix6Y" role="3cqZAp">
+          <node concept="3clFbS" id="1oo0A63Ix70" role="3clFbx">
+            <node concept="3cpWs6" id="1oo0A63IAp9" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="1oo0A63Iyeb" role="3clFbw">
+            <node concept="2YIFZM" id="1oo0A63IzXH" role="2Oq$k0">
+              <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
+              <ref role="37wK5l" to="fyhk:~RuntimeFlags.getTestMode():jetbrains.mps.TestMode" resolve="getTestMode" />
+            </node>
+            <node concept="liA8E" id="1oo0A63Iyed" role="2OqNvi">
+              <ref role="37wK5l" to="fyhk:~TestMode.isInsideTestEnvironment():boolean" resolve="isInsideTestEnvironment" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1oo0A63IApl" role="3cqZAp" />
         <node concept="3clFbJ" id="3gptLqNHPpf" role="3cqZAp">
           <node concept="9aQIb" id="7lByCvUz4lW" role="9aQIa">
             <node concept="3clFbS" id="7lByCvUz4lX" role="9aQI4">
