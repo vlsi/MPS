@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -79,9 +80,15 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
           return ListSequence.fromList(mapping.value()).select(new ISelector<SNode, RefactoringParticipant.Change<SNodeReference, SNodeReference>>() {
             public RefactoringParticipant.Change<SNodeReference, SNodeReference> select(final SNode aspect) {
 
-              final List<RecursiveParticipant.RecursiveParticipantState<?, ?>> childparticipantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
-                public RecursiveParticipant.RecursiveParticipantState<?, ?> select(MoveNodeRefactoringParticipant<?, ?> participant) {
-                  return RecursiveParticipant.RecursiveParticipantState.create(participant, aspect, repository, searchScope, parents);
+              List<SNode> descendants = SNodeOperations.getNodeDescendants(aspect, null, true, new SAbstractConcept[]{});
+
+              final List<RecursiveParticipant.RecursiveParticipantState<?, ?>> childparticipantStates = ListSequence.fromList(descendants).translate(new ITranslator2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
+                public Iterable<RecursiveParticipant.RecursiveParticipantState<?, ?>> translate(final SNode node) {
+                  return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
+                    public RecursiveParticipant.RecursiveParticipantState<?, ?> select(MoveNodeRefactoringParticipant<?, ?> participant) {
+                      return RecursiveParticipant.RecursiveParticipantState.create(participant, node, repository, searchScope, parents);
+                    }
+                  });
                 }
               }).toListSequence();
 

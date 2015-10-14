@@ -22,11 +22,12 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -157,12 +158,24 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     });
 
     final Map<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> changes = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>());
+    final Map<SNodeReference, SNodeReference> nodeRoots = MapSequence.fromMap(new HashMap<SNodeReference, SNodeReference>());
+
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        for (SNodeReference nodeToMove : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
+          for (SNodeReference descendant : ListSequence.fromList(SNodeOperations.getNodeDescendants(resolveNode(nodeToMove, project), null, true, new SAbstractConcept[]{})).select(new ISelector<SNode, SNodeReference>() {
+            public SNodeReference select(SNode it) {
+              return it.getReference();
+            }
+          })) {
+            MapSequence.fromMap(nodeRoots).put(descendant, nodeToMove);
+          }
+        }
+
         for (MoveNodeRefactoringParticipant<?, ?> participant : Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).toListSequence()) {
           Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> participantChanges = MapSequence.fromMap(new HashMap<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>());
           MapSequence.fromMap(changes).put(participant, participantChanges);
-          for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
+          for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(nodeRoots).keySet())) {
             MapSequence.fromMap(participantChanges).put(nodeRef, MoveNodeRefactoringParticipant.MoveNodeParticipantState.create(participant, resolveNode(nodeRef, project), project.getRepository(), project.getScope()));
           }
         }
@@ -198,7 +211,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
       for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
         for (RefactoringParticipant.Change<?, ?> change : ListSequence.fromList(nodeChanges.value().getChanges())) {
-          MapSequence.fromMap(shouldKeep).putValue(nodeChanges.key(), MapSequence.fromMap(shouldKeep).get(nodeChanges.key()) || (change.needsToPreserveOldNode()));
+          MapSequence.fromMap(shouldKeep).putValue(MapSequence.fromMap(nodeRoots).get(nodeChanges.key()), MapSequence.fromMap(shouldKeep).get(MapSequence.fromMap(nodeRoots).get(nodeChanges.key())) || (change.needsToPreserveOldNode()));
           searchResults.addAll(change.getSearchResults());
         }
       }
