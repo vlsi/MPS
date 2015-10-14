@@ -18,6 +18,7 @@ package jetbrains.mps.workbench;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSExtentions;
@@ -40,6 +41,12 @@ import org.junit.Test;
 import java.util.*;
 
 /**
+ * AP:
+ * A little incorrect test which checks the output xml config files in the project directory written by idea platform (like misc.xml etc.)
+ * The problem is that the IDEA platform tends to get rid of xml configuration files in the project directory
+ * on the empty project creation.
+ * So the list of xml configuration files is not invariant and this test does not make much sense.
+ *
  * Added on Oct 16, 2010
  *
  * @author Evgeny Gerashchenko
@@ -50,8 +57,6 @@ public class ProjectCreationTest {
   private static final String SOLUTION_NAMESPACE = "CreatedSandbox";
   private static final String PROJECT_PROPERTIES_DIR = PROJECT_NAME + "/.mps";
   private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
-      PROJECT_PROPERTIES_DIR + "/misc.xml",
-      PROJECT_PROPERTIES_DIR + "/vcs.xml",
       PROJECT_PROPERTIES_DIR + "/workspace.xml",
       PROJECT_PROPERTIES_DIR + "/version.xml");
 
@@ -134,7 +139,6 @@ public class ProjectCreationTest {
           public void run() {
             try {
               myTmpDir = IFileUtils.createTmpDir();
-
               try {
                 ProjectFactory factory = new ProjectFactory(null, projectOptionsProvider.getProjectOptions(myTmpDir));
                 myProject = factory.createProject();
