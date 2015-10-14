@@ -10,7 +10,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.Priority" />
     <classNode dependClassName="org.apache.log4j.spi.LoggingEvent" />
     <classNode dependClassName="org.apache.log4j.varia.LevelRangeFilter" />
     <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />

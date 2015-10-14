@@ -10,7 +10,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.varia.LevelRangeFilter;
 import org.apache.log4j.spi.LoggingEvent;
 import java.util.Arrays;
-import org.apache.log4j.Priority;
 
 /**
  * fyodor, Aug 18, 2010
@@ -40,7 +39,7 @@ public class CachingAppender extends AppenderSkeleton implements Output {
   }
   private boolean isExpected(LoggingEvent event) {
     for (Pair<Integer, String> pr : expectedEvents) {
-      if (event.level.isGreaterOrEqual(Priority.toPriority(pr.first))) {
+      if (event.getLevel().isGreaterOrEqual(Level.toLevel(pr.first))) {
         if (pr.second == null || pr.second.equals(event.getRenderedMessage())) {
           receivedExpectedEvents.add(pr);
           return true;

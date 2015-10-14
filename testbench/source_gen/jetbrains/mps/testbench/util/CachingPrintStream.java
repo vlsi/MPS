@@ -11,46 +11,53 @@ import java.io.IOException;
  * fyodor, Aug 18, 2010
  */
 public class CachingPrintStream extends PrintStream implements Output {
-  private final int LS_BYTES;
+  private static final int LS_BYTES = System.getProperty("line.separator").getBytes().length;
+
   private Pattern[] myIgnoredOutputPatterns = null;
-  private int bytes = 0;
-  private StringBuilder buffer = new StringBuilder();
-  private String name;
-  private boolean caching;
+  private int myByteCount = 0;
+  private StringBuilder myBuffer = new StringBuilder();
+  private String myName;
+  private boolean myCachingFlag;
+
   public CachingPrintStream(OutputStream out, String name) {
     super(out);
-    this.name = name;
-    this.LS_BYTES = System.getProperty("line.separator").getBytes().length;
+    myName = name;
   }
+
   public CachingPrintStream(OutputStream out, String name, Pattern[] ignoredOutputPatterns) {
     this(out, name);
     myIgnoredOutputPatterns = ignoredOutputPatterns;
   }
+
   public PrintStream getOut() {
     return (PrintStream) out;
   }
+
   public void startCaching() {
-    if (caching) {
+    if (myCachingFlag) {
       throw new IllegalStateException("Already caching");
     }
-    this.caching = true;
+    myCachingFlag = true;
   }
+
   public void stopCaching() {
-    if (!(caching)) {
+    if (!(myCachingFlag)) {
       throw new IllegalStateException("Not caching");
     }
-    this.caching = false;
+    myCachingFlag = false;
   }
+
   public void clear() {
-    if (caching) {
+    if (myCachingFlag) {
       throw new IllegalStateException("Currently caching");
     }
-    this.buffer.setLength(0);
-    this.bytes = 0;
+    myBuffer.setLength(0);
+    myByteCount = 0;
   }
+
   @Override
   public synchronized boolean isNotEmpty() {
-    if (myIgnoredOutputPatterns != null && bytes > 0) {
+    if (myIgnoredOutputPatterns != null && myByteCount > 0) {
       String bufferContents = getText();
       for (Pattern nextPattern : myIgnoredOutputPatterns) {
         if (nextPattern.matcher(bufferContents).matches()) {
@@ -58,185 +65,196 @@ public class CachingPrintStream extends PrintStream implements Output {
         }
       }
     }
-    return bytes > 0;
+    return myByteCount > 0;
   }
+
   @Override
   public synchronized String getDescription() {
-    return bytes + " bytes in " + name;
+    return myByteCount + " bytes in " + myName;
   }
+
   @Override
   public synchronized String getText() {
-    return buffer.toString();
+    return myBuffer.toString();
   }
+
   public synchronized int getBytesCount() {
-    return bytes;
+    return myByteCount;
   }
+
   public synchronized String getBuffer() {
-    return buffer.toString();
+    return myBuffer.toString();
   }
+
   @Override
   public synchronized void flush() {
     super.flush();
   }
+
   @Override
   public synchronized void close() {
     super.close();
   }
+
   @Override
   public synchronized void write(int buf) {
-    if (caching) {
-      bytes++;
-      buffer.append((char) buf);
+    if (myCachingFlag) {
+      myByteCount++;
+      myBuffer.append((char) buf);
     }
     super.write(buf);
   }
+
   @Override
   public synchronized void write(byte[] buf) throws IOException {
-    if (caching) {
-      bytes += LS_BYTES;
-      buffer.append(new String(buf));
+    if (myCachingFlag) {
+      myByteCount += LS_BYTES;
+      myBuffer.append(new String(buf));
     }
     super.write(buf);
   }
+
   @Override
   public synchronized void write(byte[] buf, int off, int len) {
-    if (caching) {
-      bytes += len;
-      buffer.append(new String(buf, off, len));
+    if (myCachingFlag) {
+      myByteCount += len;
+      myBuffer.append(new String(buf, off, len));
     }
     super.write(buf, off, len);
   }
+
   @Override
   public synchronized void print(boolean b) {
-    if (caching) {
-      bytes += String.valueOf(b).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(b).getBytes().length;
     }
     super.print(b);
   }
+
   @Override
   public synchronized void print(char c) {
-    if (caching) {
-      bytes += String.valueOf(c).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(c).getBytes().length;
     }
     super.print(c);
   }
+
   @Override
   public synchronized void print(int i) {
-    if (caching) {
-      bytes += String.valueOf(i).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(i).getBytes().length;
     }
     super.print(i);
   }
+
   @Override
-  public synchronized void print(long lo) {
-    if (caching) {
-      bytes += String.valueOf(lo).getBytes().length;
+  public synchronized void print(long l) {
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(l).getBytes().length;
     }
-    super.print(lo);
+    super.print(l);
   }
+
   @Override
   public synchronized void print(float f) {
-    if (caching) {
-      bytes += String.valueOf(f).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(f).getBytes().length;
     }
     super.print(f);
   }
+
   @Override
   public synchronized void print(double d) {
-    if (caching) {
-      bytes += String.valueOf(d).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(d).getBytes().length;
     }
     super.print(d);
   }
+
   @Override
   public synchronized void print(char[] s) {
-    if (caching) {
-      bytes += String.copyValueOf(s).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.copyValueOf(s).getBytes().length;
     }
     super.print(s);
   }
+
   @Override
   public synchronized void print(String s) {
-    if (caching) {
-      bytes += String.valueOf(s).getBytes().length;
+    if (myCachingFlag) {
+      myByteCount += String.valueOf(s).getBytes().length;
     }
     super.print(s);
   }
+
+  private void addByteCountForNewLine() {
+    if (myCachingFlag) {
+      myByteCount += LS_BYTES;
+    }
+  }
+
   @Override
   public synchronized void print(Object obj) {
-    if (caching) {
-      bytes += String.valueOf(obj).getBytes().length;
-    }
+    addByteCountForNewLine();
     super.print(obj);
   }
   @Override
   public synchronized void println() {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println();
   }
+
   @Override
   public synchronized void println(boolean x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(char x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(int x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(long x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(float x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(double x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(char[] x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(String x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
+
   @Override
   public synchronized void println(Object x) {
-    if (caching) {
-      bytes += LS_BYTES;
-    }
+    addByteCountForNewLine();
     super.println(x);
   }
 }

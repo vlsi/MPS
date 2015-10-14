@@ -1184,7 +1184,7 @@
     </node>
     <node concept="312cEg" id="4_TMdeLkPqc" role="jymVt">
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="oldLevel" />
+      <property role="TrG5h" value="myOldLevel" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4_TMdeLkPqe" role="1tU5fm">
@@ -1194,7 +1194,7 @@
     </node>
     <node concept="312cEg" id="4_TMdeLkPqk" role="jymVt">
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="cacheErr" />
+      <property role="TrG5h" value="myErrorCachingStream" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4_TMdeLkPqm" role="1tU5fm">
@@ -1204,7 +1204,7 @@
     </node>
     <node concept="312cEg" id="4_TMdeLkPqo" role="jymVt">
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="app" />
+      <property role="TrG5h" value="myCachingAppender" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4_TMdeLkPqq" role="1tU5fm">
@@ -1214,7 +1214,7 @@
     </node>
     <node concept="312cEg" id="4_TMdeLkPqs" role="jymVt">
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="testsToIgnore" />
+      <property role="TrG5h" value="myTestsToIgnore" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="2ShNRf" id="4_TMdeLliRG" role="33vP2m">
@@ -1241,7 +1241,7 @@
     </node>
     <node concept="312cEg" id="4_TMdeLkPq_" role="jymVt">
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="threadWatcher" />
+      <property role="TrG5h" value="myThreadWatcher" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
       <node concept="3uibUv" id="4_TMdeLkPqB" role="1tU5fm">
@@ -1316,11 +1316,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="4_TMdeLkPrd" role="37vLTJ">
-                <node concept="Xjq3P" id="4_TMdeLkPre" role="2Oq$k0" />
-                <node concept="2OwXpG" id="4_TMdeLkPrf" role="2OqNvi">
-                  <ref role="2Oxat5" node="4_TMdeLkPqk" resolve="cacheErr" />
-                </node>
+              <node concept="37vLTw" id="d4HXLLmLro" role="37vLTJ">
+                <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
               </node>
             </node>
           </node>
@@ -1328,7 +1325,7 @@
         <node concept="3clFbF" id="4_TMdeLkPrr" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliW5" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliW4" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
             </node>
             <node concept="liA8E" id="4_TMdeLliW6" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkP4a" resolve="clear" />
@@ -1338,7 +1335,7 @@
         <node concept="3clFbF" id="4_TMdeLkPru" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliW9" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliW8" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
             </node>
             <node concept="liA8E" id="4_TMdeLliWa" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkP3D" resolve="startCaching" />
@@ -1358,7 +1355,7 @@
         <node concept="3clFbF" id="4_TMdeLkPrK" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliWr" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliWq" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
             </node>
             <node concept="liA8E" id="4_TMdeLliWs" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkP5a" resolve="flush" />
@@ -1368,7 +1365,7 @@
         <node concept="3clFbF" id="4_TMdeLkPrN" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliWv" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliWu" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
             </node>
             <node concept="liA8E" id="4_TMdeLliWw" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkP3T" resolve="stopCaching" />
@@ -1381,7 +1378,7 @@
             <ref role="37wK5l" to="wyt6:~System.setErr(java.io.PrintStream):void" resolve="setErr" />
             <node concept="2OqwBi" id="4_TMdeLliW_" role="37wK5m">
               <node concept="37vLTw" id="4_TMdeLliW$" role="2Oq$k0">
-                <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+                <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
               </node>
               <node concept="liA8E" id="4_TMdeLliWA" role="2OqNvi">
                 <ref role="37wK5l" to="ot0m:4_TMdeLkP3x" resolve="getOut" />
@@ -1546,7 +1543,7 @@
         <node concept="3clFbF" id="4_TMdeLkPsT" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliWH" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliWG" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="testsToIgnore" />
+              <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
             </node>
             <node concept="liA8E" id="4_TMdeLliWI" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
@@ -1595,7 +1592,7 @@
         <node concept="3clFbF" id="4_TMdeLkPtb" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliWR" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliWQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="testsToIgnore" />
+              <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
             </node>
             <node concept="liA8E" id="4_TMdeLliWS" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
@@ -1644,7 +1641,7 @@
         <node concept="3clFbF" id="4_TMdeLkPtt" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliX1" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliX0" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="testsToIgnore" />
+              <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
             </node>
             <node concept="liA8E" id="4_TMdeLliX2" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
@@ -1687,7 +1684,7 @@
             <node concept="2OqwBi" id="4_TMdeLkPtJ" role="37vLTJ">
               <node concept="Xjq3P" id="4_TMdeLkPtK" role="2Oq$k0" />
               <node concept="2OwXpG" id="4_TMdeLkPtL" role="2OqNvi">
-                <ref role="2Oxat5" node="4_TMdeLkPqc" resolve="oldLevel" />
+                <ref role="2Oxat5" node="4_TMdeLkPqc" resolve="myOldLevel" />
               </node>
             </node>
             <node concept="2OqwBi" id="4_TMdeLkPtM" role="37vLTx">
@@ -1733,7 +1730,7 @@
             <node concept="2OqwBi" id="4_TMdeLkPu0" role="37vLTJ">
               <node concept="Xjq3P" id="4_TMdeLkPu1" role="2Oq$k0" />
               <node concept="2OwXpG" id="4_TMdeLkPu2" role="2OqNvi">
-                <ref role="2Oxat5" node="4_TMdeLkPqo" resolve="app" />
+                <ref role="2Oxat5" node="4_TMdeLkPqo" resolve="myCachingAppender" />
               </node>
             </node>
           </node>
@@ -1747,7 +1744,7 @@
             <node concept="liA8E" id="4_TMdeLkPu8" role="2OqNvi">
               <ref role="37wK5l" to="q7tw:~Category.addAppender(org.apache.log4j.Appender):void" resolve="addAppender" />
               <node concept="37vLTw" id="4_TMdeLkPu9" role="37wK5m">
-                <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="app" />
+                <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
               </node>
             </node>
           </node>
@@ -1798,7 +1795,7 @@
                 <node concept="3clFbF" id="4_TMdeLkPuq" role="3cqZAp">
                   <node concept="2OqwBi" id="4_TMdeLliXn" role="3clFbG">
                     <node concept="37vLTw" id="4_TMdeLliXm" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="app" />
+                      <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
                     </node>
                     <node concept="liA8E" id="4_TMdeLliXo" role="2OqNvi">
                       <ref role="37wK5l" to="ot0m:4_TMdeLkP1L" resolve="expectEvent" />
@@ -1858,11 +1855,8 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="4_TMdeLkPuO" role="37vLTJ">
-              <node concept="Xjq3P" id="4_TMdeLkPuP" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4_TMdeLkPuQ" role="2OqNvi">
-                <ref role="2Oxat5" node="4_TMdeLkPq_" resolve="threadWatcher" />
-              </node>
+            <node concept="37vLTw" id="d4HXLLpij8" role="37vLTJ">
+              <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
             </node>
           </node>
         </node>
@@ -1885,7 +1879,7 @@
         <node concept="3clFbF" id="4_TMdeLkPuZ" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliXB" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliXA" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="threadWatcher" />
+              <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
             </node>
             <node concept="liA8E" id="4_TMdeLliXC" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkOKq" resolve="waitUntilSettled" />
@@ -1903,7 +1897,7 @@
         <node concept="3clFbF" id="4_TMdeLkPv5" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliXF" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliXE" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="app" />
+              <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
             </node>
             <node concept="liA8E" id="4_TMdeLliXG" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkP1a" resolve="sealEvents" />
@@ -1919,7 +1913,7 @@
             <node concept="liA8E" id="4_TMdeLkPvc" role="2OqNvi">
               <ref role="37wK5l" to="q7tw:~Category.removeAppender(org.apache.log4j.Appender):void" resolve="removeAppender" />
               <node concept="37vLTw" id="4_TMdeLkPvd" role="37wK5m">
-                <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="app" />
+                <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
               </node>
             </node>
           </node>
@@ -1933,7 +1927,7 @@
             <node concept="liA8E" id="4_TMdeLkPvi" role="2OqNvi">
               <ref role="37wK5l" to="q7tw:~Category.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
               <node concept="37vLTw" id="4_TMdeLkPvj" role="37wK5m">
-                <ref role="3cqZAo" node="4_TMdeLkPqc" resolve="oldLevel" />
+                <ref role="3cqZAo" node="4_TMdeLkPqc" resolve="myOldLevel" />
               </node>
             </node>
           </node>
@@ -1953,7 +1947,7 @@
             <node concept="3fqX7Q" id="4_TMdeLkPvq" role="3uHU7B">
               <node concept="2OqwBi" id="4_TMdeLliXN" role="3fr31v">
                 <node concept="37vLTw" id="4_TMdeLliXM" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="testsToIgnore" />
+                  <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
                 </node>
                 <node concept="liA8E" id="4_TMdeLliXO" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
@@ -1967,7 +1961,7 @@
               <node concept="22lmx$" id="4_TMdeLkPvu" role="1eOMHV">
                 <node concept="2OqwBi" id="4_TMdeLliY3" role="3uHU7w">
                   <node concept="37vLTw" id="4_TMdeLliY2" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="threadWatcher" />
+                    <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
                   </node>
                   <node concept="liA8E" id="4_TMdeLliY4" role="2OqNvi">
                     <ref role="37wK5l" to="ot0m:4_TMdeLkOK3" resolve="isNotEmpty" />
@@ -1976,7 +1970,7 @@
                 <node concept="22lmx$" id="4_TMdeLkPvv" role="3uHU7B">
                   <node concept="2OqwBi" id="4_TMdeLliXZ" role="3uHU7w">
                     <node concept="37vLTw" id="4_TMdeLliXY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="app" />
+                      <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
                     </node>
                     <node concept="liA8E" id="4_TMdeLliY0" role="2OqNvi">
                       <ref role="37wK5l" to="ot0m:4_TMdeLkP05" resolve="isNotEmpty" />
@@ -1984,7 +1978,7 @@
                   </node>
                   <node concept="2OqwBi" id="4_TMdeLliXV" role="3uHU7B">
                     <node concept="37vLTw" id="4_TMdeLliXU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+                      <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
                     </node>
                     <node concept="liA8E" id="4_TMdeLliXW" role="2OqNvi">
                       <ref role="37wK5l" to="ot0m:4_TMdeLkP4x" resolve="isNotEmpty" />
@@ -2007,13 +2001,13 @@
                       <node concept="1pGfFk" id="4_TMdeLliY8" role="2ShVmc">
                         <ref role="37wK5l" node="4_TMdeLkPxf" resolve="UncleanTestExecutionException" />
                         <node concept="37vLTw" id="4_TMdeLkPvN" role="37wK5m">
-                          <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+                          <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
                         </node>
                         <node concept="37vLTw" id="4_TMdeLkPvO" role="37wK5m">
-                          <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="app" />
+                          <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
                         </node>
                         <node concept="37vLTw" id="4_TMdeLkPvP" role="37wK5m">
-                          <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="threadWatcher" />
+                          <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
                         </node>
                       </node>
                     </node>
@@ -2029,7 +2023,7 @@
         <node concept="3clFbF" id="4_TMdeLkPvT" role="3cqZAp">
           <node concept="2OqwBi" id="4_TMdeLliYf" role="3clFbG">
             <node concept="37vLTw" id="4_TMdeLliYe" role="2Oq$k0">
-              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="cacheErr" />
+              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
             </node>
             <node concept="liA8E" id="4_TMdeLliYg" role="2OqNvi">
               <ref role="37wK5l" to="ot0m:4_TMdeLkP4a" resolve="clear" />
