@@ -14,7 +14,9 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -45,13 +47,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -67,7 +62,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
-      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
+      <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -137,9 +132,13 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -363,51 +362,40 @@
                       <node concept="3zZkjj" id="2SJclOrPIEh" role="2OqNvi">
                         <node concept="1bVj0M" id="2SJclOrPIEi" role="23t8la">
                           <node concept="3clFbS" id="2SJclOrPIEj" role="1bW5cS">
-                            <node concept="3cpWs8" id="2SJclOrPIEk" role="3cqZAp">
-                              <node concept="3cpWsn" id="2SJclOrPIEl" role="3cpWs9">
-                                <property role="TrG5h" value="type" />
-                                <node concept="3uibUv" id="2SJclOrPIEm" role="1tU5fm">
-                                  <ref role="3uigEE" to="c17a:~SDataType" resolve="SDataType" />
-                                </node>
-                                <node concept="2OqwBi" id="2SJclOrPIEn" role="33vP2m">
-                                  <node concept="37vLTw" id="2SJclOrPIEo" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2SJclOrPIEB" resolve="it" />
-                                  </node>
-                                  <node concept="liA8E" id="2SJclOrPIEp" role="2OqNvi">
-                                    <ref role="37wK5l" to="c17a:~SProperty.getType():org.jetbrains.mps.openapi.language.SDataType" resolve="getType" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="2SJclOrPIEq" role="3cqZAp">
-                              <node concept="1Wc70l" id="2SJclOrPIEr" role="3clFbG">
-                                <node concept="17R0WA" id="2SJclOrPIEs" role="3uHU7w">
-                                  <node concept="10M0yZ" id="2SJclOrPIEt" role="3uHU7w">
-                                    <ref role="1PxDUh" to="c17a:~SPrimitiveDataType" resolve="SPrimitiveDataType" />
-                                    <ref role="3cqZAo" to="c17a:~SPrimitiveDataType.STRING" resolve="STRING" />
-                                  </node>
-                                  <node concept="2OqwBi" id="2SJclOrPIEu" role="3uHU7B">
-                                    <node concept="1eOMI4" id="2SJclOrPIEv" role="2Oq$k0">
-                                      <node concept="10QFUN" id="2SJclOrPIEw" role="1eOMHV">
-                                        <node concept="37vLTw" id="2SJclOrPIEx" role="10QFUP">
-                                          <ref role="3cqZAo" node="2SJclOrPIEl" resolve="type" />
+                            <node concept="3clFbF" id="4SG2RcUBoVo" role="3cqZAp">
+                              <node concept="1Wc70l" id="4SG2RcUBGWJ" role="3clFbG">
+                                <node concept="2OqwBi" id="4SG2RcUBn7Q" role="3uHU7w">
+                                  <node concept="2OqwBi" id="4SG2RcUBiRB" role="2Oq$k0">
+                                    <node concept="1PxgMI" id="4SG2RcUBiob" role="2Oq$k0">
+                                      <ref role="1PxNhF" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+                                      <node concept="2OqwBi" id="2SJclOrPIEn" role="1PxMeX">
+                                        <node concept="37vLTw" id="2SJclOrPIEo" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="2SJclOrPIEB" resolve="it" />
                                         </node>
-                                        <node concept="3uibUv" id="2SJclOrPIEy" role="10QFUM">
-                                          <ref role="3uigEE" to="c17a:~SPrimitiveDataType" resolve="SPrimitiveDataType" />
+                                        <node concept="liA8E" id="4SG2RcUBhGo" role="2OqNvi">
+                                          <ref role="37wK5l" to="c17a:~SProperty.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="liA8E" id="2SJclOrPIEz" role="2OqNvi">
-                                      <ref role="37wK5l" to="c17a:~SPrimitiveDataType.getType():int" resolve="getType" />
+                                    <node concept="3TrEf2" id="4SG2RcUBjcs" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="tpce:fKAX2Z_" />
                                     </node>
                                   </node>
-                                </node>
-                                <node concept="2ZW3vV" id="2SJclOrPIE$" role="3uHU7B">
-                                  <node concept="3uibUv" id="2SJclOrPIE_" role="2ZW6by">
-                                    <ref role="3uigEE" to="c17a:~SPrimitiveDataType" resolve="SPrimitiveDataType" />
+                                  <node concept="2qgKlT" id="4SG2RcUBnGK" role="2OqNvi">
+                                    <ref role="37wK5l" to="tpcn:hKtFG6a" resolve="isSimpleString" />
                                   </node>
-                                  <node concept="37vLTw" id="2SJclOrPIEA" role="2ZW6bz">
-                                    <ref role="3cqZAo" node="2SJclOrPIEl" resolve="type" />
+                                </node>
+                                <node concept="17QLQc" id="4SG2RcUBFNY" role="3uHU7B">
+                                  <node concept="35c_gC" id="4SG2RcUBG3d" role="3uHU7w">
+                                    <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                                  </node>
+                                  <node concept="2OqwBi" id="4SG2RcUBEQ_" role="3uHU7B">
+                                    <node concept="37vLTw" id="4SG2RcUBEDf" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="2SJclOrPIEB" resolve="it" />
+                                    </node>
+                                    <node concept="liA8E" id="4SG2RcUBF_3" role="2OqNvi">
+                                      <ref role="37wK5l" to="c17a:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
+                                    </node>
                                   </node>
                                 </node>
                               </node>

@@ -13,14 +13,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
-import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,7 +44,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ktoyyv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ktoyyv_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ktoyyv_c0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_ktoyyv_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ktoyyv_d0(editorContext, node));
     return editorCell;
   }
@@ -55,24 +63,28 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_ktoyyv_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("nodeName");
-    provider.setNoTargetText("<no nodeName>");
-    provider.setReadOnly(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_nodeName");
+  private EditorCell createReadOnlyModelAccessor_ktoyyv_c0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        SNode target = AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, SNodeOperations.getModel(node).getModule().getRepository());
+        if ((target != null)) {
+          return NodeReferenceUtil.getNodePresentation(target);
+        } else {
+          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName"));
+        }
+      }
+      public void setText(String s) {
+      }
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_ktoyyv_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(ReflectionNodeReference_Editor._StyleParameter_QueryFunction_ktoyyv_a0c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_ktoyyv_a0c0(EditorContext editorContext, SNode node) {
@@ -124,7 +136,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no nodeName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_nodeName_1");
+    editorCell.setCellId("property_nodeName");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
