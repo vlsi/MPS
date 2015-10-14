@@ -226,7 +226,11 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             }
 
             Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+            Map<SNodeReference, SNode> resoveMap = MapSequence.fromMap(new HashMap<SNodeReference, SNode>());
             Map<SNodeReference, SNode> nodesToMove = MapSequence.fromMap(new HashMap<SNodeReference, SNode>());
+            for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(nodeRoots).keySet())) {
+              MapSequence.fromMap(resoveMap).put(nodeRef, resolveNode(nodeRef, project));
+            }
             for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
               MapSequence.fromMap(nodesToMove).put(nodeRef, resolveNode(nodeRef, project));
             }
@@ -246,7 +250,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
 
             for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
               for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
-                nodeChanges.value().confirm(MapSequence.fromMap(copyMap).get(MapSequence.fromMap(nodesToMove).get(nodeChanges.key())), project.getRepository(), refactoringSession);
+                nodeChanges.value().confirm(MapSequence.fromMap(copyMap).get(MapSequence.fromMap(resoveMap).get(nodeChanges.key())), project.getRepository(), refactoringSession);
               }
             }
             try {
