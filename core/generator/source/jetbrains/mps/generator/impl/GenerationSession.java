@@ -36,6 +36,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -249,6 +250,17 @@ class GenerationSession {
             SModel checkpointModel = createTransientModel("cp-" + checkpointStep.getName());
             new CloneUtil(currInputModel, checkpointModel).cloneModelWithImports();
             publishTransientModel(checkpointModel.getReference());
+            CheckpointState cpState = new CheckpointState(checkpointModel.getReference(), checkpointStep, currInputModel.getReference());
+            // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
+            // the one from post-processing scripts. What if I add ML in post-processing script?
+            //
+            // FIXME could keep myStepArguments and access GeneratorMappings from there - myStepArguments is the same for pre/post and main part
+            if (myStepArguments != null) {
+              GeneratorMappings stepLabels = myStepArguments.mappingLabels;
+              stepLabels.export(cpState);
+              mySessionContext.getModule().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+            }
+            myStepArguments = null;
           }
         }
         ttrace.pop();
@@ -340,7 +352,7 @@ class GenerationSession {
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
       }
-      myStepArguments = null;
+//      myStepArguments = null;
       return outputModel;
     } finally {
       recordAccessedTransientModels();

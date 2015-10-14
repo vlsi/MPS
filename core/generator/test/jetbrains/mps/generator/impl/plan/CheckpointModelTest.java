@@ -152,6 +152,15 @@ public class CheckpointModelTest {
         }
       }
       myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
+      CheckpointState cpState = transientModelsModule.getCheckpoint(mr, new Checkpoint("aaa"));
+      myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
+      if (cpState != null) {
+        Collection<String> mappingLabels = cpState.getMappingLabels();
+        myErrors.checkThat("GetterMethod label present", mappingLabels.contains("GetterMethod"), CoreMatchers.equalTo(true));
+        if (mappingLabels.isEmpty()) {
+          myErrors.addError(new Throwable("aaa"));
+        }
+      }
     } finally {
       ourEnvironment.closeProject(mpsProject);
     }

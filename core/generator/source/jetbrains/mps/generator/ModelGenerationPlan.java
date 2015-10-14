@@ -70,6 +70,16 @@ public interface ModelGenerationPlan {
     public String getName() {
       return myName;
     }
+
+    @Override
+    public int hashCode() {
+      return myName.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return (obj instanceof Checkpoint) ? myName.equals(((Checkpoint) obj).myName) : false;
+    }
   }
 
   final class Transform implements Step {
