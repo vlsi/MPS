@@ -4586,19 +4586,6 @@
   <node concept="3HP615" id="3KqYwoBJ0xf">
     <property role="2bfB8j" value="true" />
     <property role="TrG5h" value="RefactoringSession" />
-    <node concept="3clFb_" id="3KqYwoBJ13n" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="registerAspect" />
-      <node concept="3cqZAl" id="3KqYwoBJ13o" role="3clF45" />
-      <node concept="3Tm1VV" id="3KqYwoBJ13p" role="1B3o_S" />
-      <node concept="3clFbS" id="3KqYwoBJ13q" role="3clF47" />
-      <node concept="37vLTG" id="3KqYwoBJ1tj" role="3clF46">
-        <property role="TrG5h" value="action" />
-        <node concept="3uibUv" id="3KqYwoBJ1ti" role="1tU5fm">
-          <ref role="3uigEE" node="3KqYwoBJ1mq" resolve="RefactoringSession.RefactoringSessionOpenCloseAction" />
-        </node>
-      </node>
-    </node>
     <node concept="2tJIrI" id="3KqYwoBJgGL" role="jymVt" />
     <node concept="3clFb_" id="3KqYwoBJgIa" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -4646,37 +4633,18 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="3KqYwoBJ1bD" role="jymVt" />
-    <node concept="3HP615" id="3KqYwoBJ1mq" role="jymVt">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="RefactoringSessionOpenCloseAction" />
-      <node concept="3clFb_" id="3KqYwoBJ2h3" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="open" />
-        <node concept="3cqZAl" id="3KqYwoBJ2h4" role="3clF45" />
-        <node concept="3Tm1VV" id="3KqYwoBJ2h5" role="1B3o_S" />
-        <node concept="3clFbS" id="3KqYwoBJ2h6" role="3clF47" />
-        <node concept="37vLTG" id="3KqYwoBJ2h7" role="3clF46">
-          <property role="TrG5h" value="session" />
-          <node concept="3uibUv" id="3KqYwoBJ2h8" role="1tU5fm">
-            <ref role="3uigEE" node="3KqYwoBJ0xf" resolve="RefactoringSession" />
-          </node>
+    <node concept="3clFb_" id="3KqYwoBJ13n" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="registerCloseAction" />
+      <node concept="3cqZAl" id="3KqYwoBJ13o" role="3clF45" />
+      <node concept="3Tm1VV" id="3KqYwoBJ13p" role="1B3o_S" />
+      <node concept="3clFbS" id="3KqYwoBJ13q" role="3clF47" />
+      <node concept="37vLTG" id="3KqYwoBJ1tj" role="3clF46">
+        <property role="TrG5h" value="closeAction" />
+        <node concept="3uibUv" id="3r9sVr9Thad" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
       </node>
-      <node concept="3clFb_" id="3KqYwoBJ294" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="close" />
-        <node concept="3cqZAl" id="3KqYwoBJ296" role="3clF45" />
-        <node concept="3Tm1VV" id="3KqYwoBJ297" role="1B3o_S" />
-        <node concept="3clFbS" id="3KqYwoBJ298" role="3clF47" />
-        <node concept="37vLTG" id="3KqYwoBJ2gb" role="3clF46">
-          <property role="TrG5h" value="session" />
-          <node concept="3uibUv" id="3KqYwoBJ2ga" role="1tU5fm">
-            <ref role="3uigEE" node="3KqYwoBJ0xf" resolve="RefactoringSession" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3KqYwoBJ1mr" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="3KqYwoBJ0xg" role="1B3o_S" />
   </node>
@@ -5199,17 +5167,17 @@
     <property role="TrG5h" value="RefactoringSessionImpl" />
     <node concept="2tJIrI" id="FLkVtyCNgi" role="jymVt" />
     <node concept="312cEg" id="FLkVtyCVI1" role="jymVt">
-      <property role="TrG5h" value="myOpenClose" />
+      <property role="TrG5h" value="myCloseActions" />
       <node concept="3Tm6S6" id="FLkVtyCVI2" role="1B3o_S" />
       <node concept="_YKpA" id="FLkVtyCVI3" role="1tU5fm">
-        <node concept="3uibUv" id="FLkVtyCVI4" role="_ZDj9">
-          <ref role="3uigEE" node="3KqYwoBJ1mq" resolve="RefactoringSession.RefactoringSessionOpenCloseAction" />
+        <node concept="3uibUv" id="3r9sVr9Thzt" role="_ZDj9">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
       </node>
       <node concept="2ShNRf" id="FLkVtyCVI5" role="33vP2m">
         <node concept="Tc6Ow" id="FLkVtyCVI6" role="2ShVmc">
-          <node concept="3uibUv" id="FLkVtyCVI7" role="HW$YZ">
-            <ref role="3uigEE" node="3KqYwoBJ1mq" resolve="RefactoringSession.RefactoringSessionOpenCloseAction" />
+          <node concept="3uibUv" id="3r9sVr9ThMM" role="HW$YZ">
+            <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
           </node>
         </node>
       </node>
@@ -5253,24 +5221,24 @@
     <node concept="2tJIrI" id="FLkVtyCRBv" role="jymVt" />
     <node concept="3clFb_" id="FLkVtyCNgM" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="registerAspect" />
+      <property role="TrG5h" value="registerCloseAction" />
       <node concept="3cqZAl" id="FLkVtyCNgN" role="3clF45" />
       <node concept="3Tm1VV" id="FLkVtyCNgO" role="1B3o_S" />
       <node concept="37vLTG" id="FLkVtyCNgQ" role="3clF46">
-        <property role="TrG5h" value="action" />
-        <node concept="3uibUv" id="FLkVtyCNgR" role="1tU5fm">
-          <ref role="3uigEE" node="3KqYwoBJ1mq" resolve="RefactoringSession.RefactoringSessionOpenCloseAction" />
+        <property role="TrG5h" value="closeAction" />
+        <node concept="3uibUv" id="3r9sVr9Ti0l" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
       </node>
       <node concept="3clFbS" id="FLkVtyCNgS" role="3clF47">
         <node concept="3clFbF" id="FLkVtyCQ$g" role="3cqZAp">
           <node concept="2OqwBi" id="FLkVtyCQQy" role="3clFbG">
             <node concept="37vLTw" id="FLkVtyD4gK" role="2Oq$k0">
-              <ref role="3cqZAo" node="FLkVtyCVI1" resolve="myOpenClose" />
+              <ref role="3cqZAo" node="FLkVtyCVI1" resolve="myCloseActions" />
             </node>
             <node concept="TSZUe" id="FLkVtyCRh1" role="2OqNvi">
               <node concept="37vLTw" id="FLkVtyCRya" role="25WWJ7">
-                <ref role="3cqZAo" node="FLkVtyCNgQ" resolve="action" />
+                <ref role="3cqZAo" node="FLkVtyCNgQ" resolve="closeAction" />
               </node>
             </node>
           </node>
@@ -5368,27 +5336,6 @@
       <property role="2aFKle" value="false" />
       <property role="TrG5h" value="commit" />
       <node concept="3clFbS" id="3KqYwoBJ10t" role="3clF47">
-        <node concept="2Gpval" id="FLkVtyD2_Y" role="3cqZAp">
-          <node concept="2GrKxI" id="FLkVtyD2_Z" role="2Gsz3X">
-            <property role="TrG5h" value="openAction" />
-          </node>
-          <node concept="3clFbS" id="FLkVtyD2A0" role="2LFqv$">
-            <node concept="3clFbF" id="FLkVtyD2A1" role="3cqZAp">
-              <node concept="2OqwBi" id="FLkVtyD2A2" role="3clFbG">
-                <node concept="2GrUjf" id="FLkVtyD2A3" role="2Oq$k0">
-                  <ref role="2Gs0qQ" node="FLkVtyD2_Z" resolve="openAction" />
-                </node>
-                <node concept="liA8E" id="FLkVtyD2A4" role="2OqNvi">
-                  <ref role="37wK5l" node="3KqYwoBJ2h3" resolve="open" />
-                  <node concept="Xjq3P" id="FLkVtyD2A5" role="37wK5m" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="37vLTw" id="FLkVtyD2A6" role="2GsD0m">
-            <ref role="3cqZAo" node="FLkVtyCVI1" resolve="myOpenClose" />
-          </node>
-        </node>
         <node concept="1Dw8fO" id="5C8QeJD_4t5" role="3cqZAp">
           <node concept="3clFbS" id="5C8QeJD_4t7" role="2LFqv$">
             <node concept="3clFbF" id="FLkVtyD3OI" role="3cqZAp">
@@ -5442,18 +5389,17 @@
                 <node concept="2GrUjf" id="FLkVtyD0gY" role="2Oq$k0">
                   <ref role="2Gs0qQ" node="FLkVtyCYX2" resolve="closeAction" />
                 </node>
-                <node concept="liA8E" id="FLkVtyD0sp" role="2OqNvi">
-                  <ref role="37wK5l" node="3KqYwoBJ294" resolve="close" />
-                  <node concept="Xjq3P" id="FLkVtyD0zQ" role="37wK5m" />
+                <node concept="liA8E" id="3r9sVr9Tif9" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="FLkVtyD1vW" role="2GsD0m">
+          <node concept="2OqwBi" id="3r9sVr9TfZG" role="2GsD0m">
             <node concept="37vLTw" id="FLkVtyD1dY" role="2Oq$k0">
-              <ref role="3cqZAo" node="FLkVtyCVI1" resolve="myOpenClose" />
+              <ref role="3cqZAo" node="FLkVtyCVI1" resolve="myCloseActions" />
             </node>
-            <node concept="35Qw8J" id="FLkVtyD2hP" role="2OqNvi" />
+            <node concept="35Qw8J" id="3r9sVr9Tgs1" role="2OqNvi" />
           </node>
         </node>
       </node>

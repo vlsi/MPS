@@ -4,15 +4,10 @@ package jetbrains.mps.ide.platform.actions.core;
 
 
 public interface RefactoringSession {
-  public void registerAspect(RefactoringSession.RefactoringSessionOpenCloseAction action);
 
   public void putObject(String id, Object object);
   public Object getObject(String id);
 
   public void registerChange(Runnable change);
-
-  public static interface RefactoringSessionOpenCloseAction {
-    public void open(RefactoringSession session);
-    public void close(RefactoringSession session);
-  }
+  public void registerCloseAction(Runnable closeAction);
 }
