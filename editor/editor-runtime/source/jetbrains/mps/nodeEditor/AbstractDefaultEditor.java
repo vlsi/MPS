@@ -83,7 +83,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       addPropertyCell(nameProperty);
     }
     addReferences();
-    if (!getContainmentLinks().isEmpty() || !getReferenceLinks().isEmpty()) {
+    if (!getContainmentLinks().isEmpty() || !getProperties().isEmpty()) {
       addPropertiesAndChildren();
     }
     popCollection();
