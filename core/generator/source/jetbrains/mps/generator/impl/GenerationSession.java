@@ -259,6 +259,8 @@ class GenerationSession {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
               stepLabels.export(cpState);
               mySessionContext.getModule().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getProject().getRepository()).build(checkpointModel, stepLabels);
+              checkpointModel.addRootNode(debugMappings);
             }
             myStepArguments = null;
           }
