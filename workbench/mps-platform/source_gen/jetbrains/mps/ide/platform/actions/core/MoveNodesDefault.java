@@ -11,13 +11,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
-import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
@@ -74,6 +74,18 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
     return result.value;
+  }
+
+  public static class CopyMapObject {
+    private static final String id = "refactoringSession.copyMap";
+    public static Map<SNode, SNode> getCopyMap(RefactoringSession session) {
+      Map<SNode, SNode> result = (Map<SNode, SNode>) session.getObject(id);
+      if (result == null) {
+        result = MapSequence.fromMap(new HashMap<SNode, SNode>());
+        session.putObject(id, result);
+      }
+      return result;
+    }
   }
 
   public void apply(final MPSProject project, final List<SNode> nodesToMove) {
@@ -225,7 +237,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
               callBack.run();
             }
 
-            Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+            RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
+
+            Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
             Map<SNodeReference, SNode> resoveMap = MapSequence.fromMap(new HashMap<SNodeReference, SNode>());
             Map<SNodeReference, SNode> nodesToMove = MapSequence.fromMap(new HashMap<SNodeReference, SNode>());
             for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(nodeRoots).keySet())) {
@@ -245,8 +259,6 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             for (IMapping<SNodeReference, SNode> oldNode : MapSequence.fromMap(nodesToMove)) {
               MapSequence.fromMap(moveMap).get(oldNode.key()).insertNode(project.getRepository(), MapSequence.fromMap(copyMap).get(oldNode.value()));
             }
-
-            RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
 
             for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantChanges : MapSequence.fromMap(selectedChanges)) {
               for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {

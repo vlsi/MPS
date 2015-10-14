@@ -34,7 +34,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
-import java.util.HashMap;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.smodel.CopyUtil;
 
 public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference>, RecursiveParticipant<SNodeReference, SNodeReference> {
@@ -128,7 +128,7 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
                   Language targetLanguage = ((Language) SNodeOperations.getModel(targetConcept).getModule());
                   NodeLocation.NodeLocationRootWithAspectModelCreation newLocation = new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage, mapping.key());
 
-                  Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+                  Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
                   final List<SNode> copied = CopyUtil.copyAndPreserveId(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect), copyMap);
 
                   if (!(needsToPreserveOldNode())) {

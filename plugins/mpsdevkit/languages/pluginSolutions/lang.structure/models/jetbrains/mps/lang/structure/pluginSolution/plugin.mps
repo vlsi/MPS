@@ -5507,10 +5507,11 @@
                                                         <node concept="3Tqbb2" id="361hHoA2jAM" role="3rvQeY" />
                                                         <node concept="3Tqbb2" id="361hHoA2jAN" role="3rvSg0" />
                                                       </node>
-                                                      <node concept="2ShNRf" id="361hHoA2jAO" role="33vP2m">
-                                                        <node concept="3rGOSV" id="361hHoA2jAP" role="2ShVmc">
-                                                          <node concept="3Tqbb2" id="361hHoA2jAQ" role="3rHrn6" />
-                                                          <node concept="3Tqbb2" id="361hHoA2jAR" role="3rHtpV" />
+                                                      <node concept="2YIFZM" id="5Y9QCNC0d2k" role="33vP2m">
+                                                        <ref role="37wK5l" to="lfzw:5Y9QCNBZQm$" resolve="getCopyMap" />
+                                                        <ref role="1Pybhc" to="lfzw:5Y9QCNBZLBG" resolve="MoveNodesDefault.CopyMapObject" />
+                                                        <node concept="37vLTw" id="5Y9QCNC0dxf" role="37wK5m">
+                                                          <ref role="3cqZAo" node="361hHoA2jAe" resolve="refactoringSession" />
                                                         </node>
                                                       </node>
                                                     </node>

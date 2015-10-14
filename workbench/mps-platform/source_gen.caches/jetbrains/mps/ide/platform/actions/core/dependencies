@@ -44,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault.ToMoveItem" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringSessionImpl" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.SelectOptionsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.MoveNodesDialog" />
