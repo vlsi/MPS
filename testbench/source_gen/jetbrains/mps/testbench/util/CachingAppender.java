@@ -15,52 +15,58 @@ import java.util.Arrays;
  * fyodor, Aug 18, 2010
  */
 public class CachingAppender extends AppenderSkeleton implements Output {
-  private int events;
-  private List<String> messages = new ArrayList<String>();
-  private List<Pair<Integer, String>> expectedEvents = new ArrayList<Pair<Integer, String>>();
-  private List<Pair<Integer, String>> receivedExpectedEvents = new ArrayList<Pair<Integer, String>>();
+  private int myEvents;
+  private List<String> myMessages = new ArrayList<String>();
+  private List<Pair<Integer, String>> myExpectedEvents = new ArrayList<Pair<Integer, String>>();
+  private List<Pair<Integer, String>> myReceivedExpectedEvents = new ArrayList<Pair<Integer, String>>();
+
   public CachingAppender(Level watchLevel) {
     final LevelRangeFilter newFilter = new LevelRangeFilter();
     newFilter.setLevelMin(watchLevel);
     this.addFilter(newFilter);
   }
+
   @Override
   protected void append(LoggingEvent loggingEvent) {
     if (!(isExpected(loggingEvent))) {
-      events++;
-      messages.add(loggingEvent.getRenderedMessage());
+      myEvents++;
+      myMessages.add(loggingEvent.getRenderedMessage());
       String[] stackTrace = loggingEvent.getThrowableStrRep();
       if (stackTrace != null) {
-        messages.add("++ =============StackTrace================");
-        messages.addAll(Arrays.asList(stackTrace));
-        messages.add("-- =============StackTrace================");
+        myMessages.add("++ =============StackTrace================");
+        myMessages.addAll(Arrays.asList(stackTrace));
+        myMessages.add("-- =============StackTrace================");
       }
     }
   }
+
   private boolean isExpected(LoggingEvent event) {
-    for (Pair<Integer, String> pr : expectedEvents) {
+    for (Pair<Integer, String> pr : myExpectedEvents) {
       if (event.getLevel().isGreaterOrEqual(Level.toLevel(pr.first))) {
         if (pr.second == null || pr.second.equals(event.getRenderedMessage())) {
-          receivedExpectedEvents.add(pr);
+          myReceivedExpectedEvents.add(pr);
           return true;
         }
       }
     }
     return false;
   }
+
   @Override
   public boolean isNotEmpty() {
-    return events > 0;
+    return myEvents > 0;
   }
+
   @Override
   public String getDescription() {
-    return events + " events";
+    return myEvents + " events";
   }
+
   @Override
   public String getText() {
     StringBuilder sb = new StringBuilder();
     String sep = "";
-    for (String s : messages) {
+    for (String s : myMessages) {
       sb.append(sep);
       sep = "\n";
       sb.append(s);
@@ -68,22 +74,26 @@ public class CachingAppender extends AppenderSkeleton implements Output {
     sb.append("\n");
     return sb.toString();
   }
+
   @Override
   public void close() {
   }
+
   @Override
   public boolean requiresLayout() {
     return false;
   }
+
   public void sealEvents() {
-    List<Pair<Integer, String>> list = new ArrayList<Pair<Integer, String>>(expectedEvents);
-    list.removeAll(receivedExpectedEvents);
+    List<Pair<Integer, String>> list = new ArrayList<Pair<Integer, String>>(myExpectedEvents);
+    list.removeAll(myReceivedExpectedEvents);
     for (Pair<Integer, String> pr : list) {
-      events++;
-      messages.add("MISSING: " + pr.second);
+      myEvents++;
+      myMessages.add("MISSING: " + pr.second);
     }
   }
+
   public void expectEvent(int level, String text) {
-    expectedEvents.add(new Pair<Integer, String>(level, text));
+    myExpectedEvents.add(new Pair<Integer, String>(level, text));
   }
 }

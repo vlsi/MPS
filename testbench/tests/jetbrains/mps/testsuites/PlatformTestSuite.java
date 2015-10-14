@@ -13,12 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.testsuites;import jetbrains.mps.testbench.junit.suites.BaseMpsSuite;
+package jetbrains.mps.testsuites;
+
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-// todo: !!!should be WatchingSuite!!!
-@RunWith(BaseMpsSuite.class)
+/**
+ * These are the tests which DO require the idea platform
+ *
+ * NB: the test which prints errors to output (apache Logger#error) is considered failed.
+ * Further the level will be lowered so that any warning will fail the test.
+ */
+@RunWith(OutputWatchingTestSuite.class)
 @Suite.SuiteClasses({
     jetbrains.mps.environment.IdeaEnvironmentTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,

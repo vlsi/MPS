@@ -38,7 +38,6 @@
     <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.WatchingRunNotifier" file="WatchingRunNotifier.java">
-    <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

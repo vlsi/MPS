@@ -95,6 +95,7 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
@@ -161,9 +162,6 @@
       <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
-        <child id="1079359253376" name="expression" index="1eOMHV" />
-      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -218,7 +216,7 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
-      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="8064396509828172209" name="jetbrains.mps.baseLanguage.structure.UnaryMinus" flags="nn" index="1ZRNhn" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
@@ -239,6 +237,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -1116,7 +1121,7 @@
       </node>
     </node>
     <node concept="Wx3nA" id="4_TMdeLkPpL" role="jymVt">
-      <property role="TrG5h" value="WATCH_LEVEL" />
+      <property role="TrG5h" value="DEFAULT_WATCH_LOGGER_LEVEL" />
       <property role="3TUv4t" value="true" />
       <node concept="10M0yZ" id="4_TMdeLliGZ" role="33vP2m">
         <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
@@ -1127,36 +1132,40 @@
       </node>
       <node concept="3Tm6S6" id="4_TMdeLkPpQ" role="1B3o_S" />
     </node>
-    <node concept="Wx3nA" id="4_TMdeLkPpR" role="jymVt">
-      <property role="TrG5h" value="IGNORED_LOGGERS" />
-      <property role="3TUv4t" value="true" />
-      <node concept="10Q1$e" id="4_TMdeLkPpT" role="1tU5fm">
-        <node concept="3uibUv" id="4_TMdeLkPpS" role="10Q1$1">
-          <ref role="3uigEE" to="uzhr:~Logger" resolve="Logger" />
-        </node>
-      </node>
-      <node concept="2ShNRf" id="4_TMdeLkPqa" role="33vP2m">
-        <node concept="3g6Rrh" id="4_TMdeLkPq9" role="2ShVmc">
-          <node concept="2YIFZM" id="4_TMdeLliRD" role="3g7hyw">
-            <ref role="37wK5l" to="uzhr:~Logger.getInstance(java.lang.String):com.intellij.openapi.diagnostic.Logger" resolve="getInstance" />
-            <ref role="1Pybhc" to="uzhr:~Logger" resolve="Logger" />
-            <node concept="Xl_RD" id="4_TMdeLkPq1" role="37wK5m">
-              <property role="Xl_RC" value="#com.intellij.openapi.application.impl.LaterInvocator" />
-            </node>
-          </node>
-          <node concept="2YIFZM" id="4_TMdeLliRF" role="3g7hyw">
-            <ref role="37wK5l" to="uzhr:~Logger.getInstance(java.lang.String):com.intellij.openapi.diagnostic.Logger" resolve="getInstance" />
-            <ref role="1Pybhc" to="uzhr:~Logger" resolve="Logger" />
-            <node concept="Xl_RD" id="4_TMdeLkPq8" role="37wK5m">
-              <property role="Xl_RC" value="#com.intellij.application.impl.ApplicationImpl" />
-            </node>
-          </node>
-          <node concept="3uibUv" id="4_TMdeLkPpU" role="3g7fb8">
+    <node concept="1X3_iC" id="d4HXLLqqhF" role="lGtFl">
+      <property role="3V$3am" value="member" />
+      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
+      <node concept="Wx3nA" id="4_TMdeLkPpR" role="8Wnug">
+        <property role="TrG5h" value="IGNORED_LOGGERS" />
+        <property role="3TUv4t" value="true" />
+        <node concept="10Q1$e" id="4_TMdeLkPpT" role="1tU5fm">
+          <node concept="3uibUv" id="4_TMdeLkPpS" role="10Q1$1">
             <ref role="3uigEE" to="uzhr:~Logger" resolve="Logger" />
           </node>
         </node>
+        <node concept="2ShNRf" id="4_TMdeLkPqa" role="33vP2m">
+          <node concept="3g6Rrh" id="4_TMdeLkPq9" role="2ShVmc">
+            <node concept="2YIFZM" id="4_TMdeLliRD" role="3g7hyw">
+              <ref role="37wK5l" to="uzhr:~Logger.getInstance(java.lang.String):com.intellij.openapi.diagnostic.Logger" resolve="getInstance" />
+              <ref role="1Pybhc" to="uzhr:~Logger" resolve="Logger" />
+              <node concept="Xl_RD" id="4_TMdeLkPq1" role="37wK5m">
+                <property role="Xl_RC" value="#com.intellij.openapi.application.impl.LaterInvocator" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="4_TMdeLliRF" role="3g7hyw">
+              <ref role="37wK5l" to="uzhr:~Logger.getInstance(java.lang.String):com.intellij.openapi.diagnostic.Logger" resolve="getInstance" />
+              <ref role="1Pybhc" to="uzhr:~Logger" resolve="Logger" />
+              <node concept="Xl_RD" id="4_TMdeLkPq8" role="37wK5m">
+                <property role="Xl_RC" value="#com.intellij.application.impl.ApplicationImpl" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="4_TMdeLkPpU" role="3g7fb8">
+              <ref role="3uigEE" to="uzhr:~Logger" resolve="Logger" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm6S6" id="4_TMdeLkPqb" role="1B3o_S" />
       </node>
-      <node concept="3Tm6S6" id="4_TMdeLkPqb" role="1B3o_S" />
     </node>
     <node concept="Wx3nA" id="1q879xociEx" role="jymVt">
       <property role="TrG5h" value="IGNORED_OUTPUT_PATTERNS" />
@@ -1182,25 +1191,49 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="4_TMdeLkPqc" role="jymVt">
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myOldLevel" />
+    <node concept="312cEg" id="d4HXLLqu1g" role="jymVt">
       <property role="34CwA1" value="false" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="4_TMdeLkPqe" role="1tU5fm">
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myWatchLevel" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="d4HXLLqtEH" role="1B3o_S" />
+      <node concept="3uibUv" id="d4HXLLqvtK" role="1tU5fm">
         <ref role="3uigEE" to="q7tw:~Level" resolve="Level" />
       </node>
-      <node concept="3Tm6S6" id="4_TMdeLkPqf" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="d4HXLLqv0H" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myWatchErrorOutput" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="d4HXLLqv0I" role="1B3o_S" />
+      <node concept="10P_77" id="d4HXLLqv0J" role="1tU5fm" />
+    </node>
+    <node concept="2tJIrI" id="d4HXLLquDB" role="jymVt" />
     <node concept="312cEg" id="4_TMdeLkPqk" role="jymVt">
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myErrorCachingStream" />
       <property role="34CwA1" value="false" />
-      <property role="3TUv4t" value="false" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="4_TMdeLkPqm" role="1tU5fm">
         <ref role="3uigEE" to="ot0m:4_TMdeLkP2G" resolve="CachingPrintStream" />
       </node>
       <node concept="3Tm6S6" id="4_TMdeLkPqn" role="1B3o_S" />
+      <node concept="2ShNRf" id="4_TMdeLliVR" role="33vP2m">
+        <node concept="1pGfFk" id="4_TMdeLliVS" role="2ShVmc">
+          <ref role="37wK5l" to="ot0m:1q879xoe8zy" resolve="CachingPrintStream" />
+          <node concept="10M0yZ" id="4_TMdeLliVU" role="37wK5m">
+            <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+            <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+          </node>
+          <node concept="Xl_RD" id="4_TMdeLkPrk" role="37wK5m">
+            <property role="Xl_RC" value="error" />
+          </node>
+          <node concept="37vLTw" id="d4HXLLqCwB" role="37wK5m">
+            <ref role="3cqZAo" node="1q879xociEx" resolve="IGNORED_OUTPUT_PATTERNS" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="312cEg" id="4_TMdeLkPqo" role="jymVt">
       <property role="eg7rD" value="false" />
@@ -1261,14 +1294,71 @@
         </node>
       </node>
       <node concept="3clFbS" id="4_TMdeLkPqH" role="3clF47">
-        <node concept="XkiVB" id="3SJmozh0iv9" role="3cqZAp">
-          <ref role="37wK5l" node="4_TMdeLkPjt" resolve="DelegatingRunNotifier" />
-          <node concept="37vLTw" id="3SJmozh0iyW" role="37wK5m">
+        <node concept="1VxSAg" id="d4HXLLqt8g" role="3cqZAp">
+          <ref role="37wK5l" node="d4HXLLqs6O" resolve="WatchingRunNotifier" />
+          <node concept="37vLTw" id="d4HXLLqtbB" role="37wK5m">
             <ref role="3cqZAo" node="4_TMdeLkPqF" resolve="delegate" />
+          </node>
+          <node concept="37vLTw" id="d4HXLLqtfv" role="37wK5m">
+            <ref role="3cqZAo" node="4_TMdeLkPpL" resolve="DEFAULT_WATCH_LOGGER_LEVEL" />
+          </node>
+          <node concept="3clFbT" id="d4HXLLqtjF" role="37wK5m">
+            <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="4_TMdeLkPqI" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="d4HXLLqszL" role="jymVt" />
+    <node concept="3clFbW" id="d4HXLLqs6O" role="jymVt">
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3cqZAl" id="d4HXLLqs6P" role="3clF45" />
+      <node concept="37vLTG" id="d4HXLLqs6Q" role="3clF46">
+        <property role="TrG5h" value="delegate" />
+        <node concept="3uibUv" id="d4HXLLqs6R" role="1tU5fm">
+          <ref role="3uigEE" to="k76n:~RunNotifier" resolve="RunNotifier" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="d4HXLLqt05" role="3clF46">
+        <property role="TrG5h" value="watchLevel" />
+        <node concept="3uibUv" id="d4HXLLquBf" role="1tU5fm">
+          <ref role="3uigEE" to="q7tw:~Level" resolve="Level" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="d4HXLLqt2r" role="3clF46">
+        <property role="TrG5h" value="watchErrorOutput" />
+        <node concept="10P_77" id="d4HXLLqt3H" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="d4HXLLqs6S" role="3clF47">
+        <node concept="XkiVB" id="d4HXLLqs6T" role="3cqZAp">
+          <ref role="37wK5l" node="4_TMdeLkPjt" resolve="DelegatingRunNotifier" />
+          <node concept="37vLTw" id="d4HXLLqs6U" role="37wK5m">
+            <ref role="3cqZAo" node="d4HXLLqs6Q" resolve="delegate" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="d4HXLLqutZ" role="3cqZAp">
+          <node concept="37vLTI" id="d4HXLLquyA" role="3clFbG">
+            <node concept="37vLTw" id="d4HXLLquAN" role="37vLTx">
+              <ref role="3cqZAo" node="d4HXLLqt05" resolve="watchLevel" />
+            </node>
+            <node concept="37vLTw" id="d4HXLLqutX" role="37vLTJ">
+              <ref role="3cqZAo" node="d4HXLLqu1g" resolve="myWatchLevel" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="d4HXLLqvFV" role="3cqZAp">
+          <node concept="37vLTI" id="d4HXLLqvHK" role="3clFbG">
+            <node concept="37vLTw" id="d4HXLLqvLz" role="37vLTx">
+              <ref role="3cqZAo" node="d4HXLLqt2r" resolve="watchErrorOutput" />
+            </node>
+            <node concept="37vLTw" id="d4HXLLqvFT" role="37vLTJ">
+              <ref role="3cqZAo" node="d4HXLLqv0H" resolve="myWatchErrorOutput" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="d4HXLLqs6V" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="4YCIFw5bzMt" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPqJ" role="jymVt">
@@ -1281,7 +1371,7 @@
     </node>
     <node concept="2tJIrI" id="4YCIFw5bzir" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPqN" role="jymVt">
-      <property role="TrG5h" value="initCaches" />
+      <property role="TrG5h" value="reRouteErrorStream" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="4_TMdeLkPqO" role="3clF47">
@@ -1300,25 +1390,8 @@
           <node concept="2YIFZM" id="4_TMdeLliVQ" role="3clFbG">
             <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
             <ref role="37wK5l" to="wyt6:~System.setErr(java.io.PrintStream):void" resolve="setErr" />
-            <node concept="37vLTI" id="4_TMdeLkPrc" role="37wK5m">
-              <node concept="2ShNRf" id="4_TMdeLliVR" role="37vLTx">
-                <node concept="1pGfFk" id="4_TMdeLliVS" role="2ShVmc">
-                  <ref role="37wK5l" to="ot0m:1q879xoe8zy" resolve="CachingPrintStream" />
-                  <node concept="10M0yZ" id="4_TMdeLliVU" role="37wK5m">
-                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                    <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-                  </node>
-                  <node concept="Xl_RD" id="4_TMdeLkPrk" role="37wK5m">
-                    <property role="Xl_RC" value="error" />
-                  </node>
-                  <node concept="37vLTw" id="1q879xotYIo" role="37wK5m">
-                    <ref role="3cqZAo" node="1q879xociEx" resolve="IGNORED_OUTPUT_PATTERNS" />
-                  </node>
-                </node>
-              </node>
-              <node concept="37vLTw" id="d4HXLLmLro" role="37vLTJ">
-                <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
-              </node>
+            <node concept="37vLTw" id="d4HXLLmLro" role="37wK5m">
+              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
             </node>
           </node>
         </node>
@@ -1348,7 +1421,7 @@
     </node>
     <node concept="2tJIrI" id="4YCIFw5byMq" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPrz" role="jymVt">
-      <property role="TrG5h" value="disposeCaches" />
+      <property role="TrG5h" value="resetErrorStream" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="4_TMdeLkPr$" role="3clF47">
@@ -1679,42 +1752,16 @@
         </node>
       </node>
       <node concept="3clFbS" id="4_TMdeLkPtG" role="3clF47">
-        <node concept="3clFbF" id="4_TMdeLkPtH" role="3cqZAp">
-          <node concept="37vLTI" id="4_TMdeLkPtI" role="3clFbG">
-            <node concept="2OqwBi" id="4_TMdeLkPtJ" role="37vLTJ">
-              <node concept="Xjq3P" id="4_TMdeLkPtK" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4_TMdeLkPtL" role="2OqNvi">
-                <ref role="2Oxat5" node="4_TMdeLkPqc" resolve="myOldLevel" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4_TMdeLkPtM" role="37vLTx">
-              <node concept="2YIFZM" id="4_TMdeLliX6" role="2Oq$k0">
-                <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
-                <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
-              </node>
-              <node concept="liA8E" id="4_TMdeLkPtP" role="2OqNvi">
-                <ref role="37wK5l" to="q7tw:~Category.getLevel():org.apache.log4j.Level" resolve="getLevel" />
+        <node concept="3clFbJ" id="d4HXLLqA8S" role="3cqZAp">
+          <node concept="3clFbS" id="d4HXLLqA8U" role="3clFbx">
+            <node concept="3clFbF" id="4_TMdeLkPtW" role="3cqZAp">
+              <node concept="1rXfSq" id="4_TMdeLkPtX" role="3clFbG">
+                <ref role="37wK5l" node="4_TMdeLkPqN" resolve="reRouteErrorStream" />
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="4_TMdeLkPtQ" role="3cqZAp">
-          <node concept="2OqwBi" id="4_TMdeLkPtR" role="3clFbG">
-            <node concept="2YIFZM" id="4_TMdeLliX8" role="2Oq$k0">
-              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
-              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
-            </node>
-            <node concept="liA8E" id="4_TMdeLkPtU" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
-              <node concept="37vLTw" id="4_TMdeLkPtV" role="37wK5m">
-                <ref role="3cqZAo" node="4_TMdeLkPpL" resolve="WATCH_LEVEL" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4_TMdeLkPtW" role="3cqZAp">
-          <node concept="1rXfSq" id="4_TMdeLkPtX" role="3clFbG">
-            <ref role="37wK5l" node="4_TMdeLkPqN" resolve="initCaches" />
+          <node concept="37vLTw" id="d4HXLLqAl9" role="3clFbw">
+            <ref role="3cqZAo" node="d4HXLLqv0H" resolve="myWatchErrorOutput" />
           </node>
         </node>
         <node concept="3clFbF" id="4_TMdeLkPtY" role="3cqZAp">
@@ -1722,16 +1769,13 @@
             <node concept="2ShNRf" id="4_TMdeLliX9" role="37vLTx">
               <node concept="1pGfFk" id="4_TMdeLliXa" role="2ShVmc">
                 <ref role="37wK5l" to="ot0m:4_TMdeLkOYy" resolve="CachingAppender" />
-                <node concept="37vLTw" id="1LCdstw2C84" role="37wK5m">
-                  <ref role="3cqZAo" node="4_TMdeLkPpL" resolve="WATCH_LEVEL" />
+                <node concept="37vLTw" id="d4HXLLqvMu" role="37wK5m">
+                  <ref role="3cqZAo" node="d4HXLLqu1g" resolve="myWatchLevel" />
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="4_TMdeLkPu0" role="37vLTJ">
-              <node concept="Xjq3P" id="4_TMdeLkPu1" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4_TMdeLkPu2" role="2OqNvi">
-                <ref role="2Oxat5" node="4_TMdeLkPqo" resolve="myCachingAppender" />
-              </node>
+            <node concept="37vLTw" id="d4HXLLq8be" role="37vLTJ">
+              <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
             </node>
           </node>
         </node>
@@ -1817,34 +1861,6 @@
             </node>
           </node>
         </node>
-        <node concept="1DcWWT" id="4_TMdeLkPu_" role="3cqZAp">
-          <node concept="37vLTw" id="4_TMdeLkPuL" role="1DdaDG">
-            <ref role="3cqZAo" node="4_TMdeLkPpR" resolve="IGNORED_LOGGERS" />
-          </node>
-          <node concept="3cpWsn" id="4_TMdeLkPuI" role="1Duv9x">
-            <property role="TrG5h" value="ignore" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="4_TMdeLkPuK" role="1tU5fm">
-              <ref role="3uigEE" to="uzhr:~Logger" resolve="Logger" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="4_TMdeLkPuB" role="2LFqv$">
-            <node concept="3clFbF" id="4_TMdeLkPuC" role="3cqZAp">
-              <node concept="2OqwBi" id="4_TMdeLliXv" role="3clFbG">
-                <node concept="37vLTw" id="4_TMdeLliXu" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4_TMdeLkPuI" resolve="ignore" />
-                </node>
-                <node concept="liA8E" id="4_TMdeLliXw" role="2OqNvi">
-                  <ref role="37wK5l" to="uzhr:~Logger.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
-                  <node concept="10M0yZ" id="1LCdstw2juz" role="37wK5m">
-                    <ref role="1PxDUh" to="q7tw:~Level" resolve="Level" />
-                    <ref role="3cqZAo" to="q7tw:~Level.FATAL" resolve="FATAL" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="4_TMdeLkPuM" role="3cqZAp">
           <node concept="37vLTI" id="4_TMdeLkPuN" role="3clFbG">
             <node concept="2ShNRf" id="4_TMdeLliXz" role="37vLTx">
@@ -1889,9 +1905,16 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4_TMdeLkPv3" role="3cqZAp">
-          <node concept="1rXfSq" id="4_TMdeLkPv4" role="3clFbG">
-            <ref role="37wK5l" node="4_TMdeLkPrz" resolve="disposeCaches" />
+        <node concept="3clFbJ" id="d4HXLLqA_d" role="3cqZAp">
+          <node concept="3clFbS" id="d4HXLLqA_e" role="3clFbx">
+            <node concept="3clFbF" id="4_TMdeLkPv3" role="3cqZAp">
+              <node concept="1rXfSq" id="4_TMdeLkPv4" role="3clFbG">
+                <ref role="37wK5l" node="4_TMdeLkPrz" resolve="resetErrorStream" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="d4HXLLqA_h" role="3clFbw">
+            <ref role="3cqZAo" node="d4HXLLqv0H" resolve="myWatchErrorOutput" />
           </node>
         </node>
         <node concept="3clFbF" id="4_TMdeLkPv5" role="3cqZAp">
@@ -1918,20 +1941,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4_TMdeLkPve" role="3cqZAp">
-          <node concept="2OqwBi" id="4_TMdeLkPvf" role="3clFbG">
-            <node concept="2YIFZM" id="4_TMdeLliXK" role="2Oq$k0">
-              <ref role="1Pybhc" to="q7tw:~Logger" resolve="Logger" />
-              <ref role="37wK5l" to="q7tw:~Logger.getRootLogger():org.apache.log4j.Logger" resolve="getRootLogger" />
-            </node>
-            <node concept="liA8E" id="4_TMdeLkPvi" role="2OqNvi">
-              <ref role="37wK5l" to="q7tw:~Category.setLevel(org.apache.log4j.Level):void" resolve="setLevel" />
-              <node concept="37vLTw" id="4_TMdeLkPvj" role="37wK5m">
-                <ref role="3cqZAo" node="4_TMdeLkPqc" resolve="myOldLevel" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="4_TMdeLkPvl" role="3cqZAp">
           <node concept="3cpWsn" id="4_TMdeLkPvk" role="3cpWs9">
             <property role="TrG5h" value="fail" />
@@ -1943,22 +1952,53 @@
           </node>
         </node>
         <node concept="3clFbJ" id="4_TMdeLkPvo" role="3cqZAp">
-          <node concept="1Wc70l" id="4_TMdeLkPvp" role="3clFbw">
-            <node concept="3fqX7Q" id="4_TMdeLkPvq" role="3uHU7B">
-              <node concept="2OqwBi" id="4_TMdeLliXN" role="3fr31v">
-                <node concept="37vLTw" id="4_TMdeLliXM" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
-                </node>
-                <node concept="liA8E" id="4_TMdeLliXO" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
-                  <node concept="37vLTw" id="4_TMdeLkPvt" role="37wK5m">
-                    <ref role="3cqZAo" node="4_TMdeLkPuW" resolve="desc" />
-                  </node>
+          <node concept="3fqX7Q" id="4_TMdeLkPvq" role="3clFbw">
+            <node concept="2OqwBi" id="4_TMdeLliXN" role="3fr31v">
+              <node concept="37vLTw" id="4_TMdeLliXM" role="2Oq$k0">
+                <ref role="3cqZAo" node="4_TMdeLkPqs" resolve="myTestsToIgnore" />
+              </node>
+              <node concept="liA8E" id="4_TMdeLliXO" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+                <node concept="37vLTw" id="4_TMdeLkPvt" role="37wK5m">
+                  <ref role="3cqZAo" node="4_TMdeLkPuW" resolve="desc" />
                 </node>
               </node>
             </node>
-            <node concept="1eOMI4" id="4_TMdeLkPvD" role="3uHU7w">
-              <node concept="22lmx$" id="4_TMdeLkPvu" role="1eOMHV">
+          </node>
+          <node concept="3clFbS" id="4_TMdeLkPvF" role="3clFbx">
+            <node concept="3clFbJ" id="d4HXLLqBo_" role="3cqZAp">
+              <node concept="3clFbS" id="d4HXLLqBoB" role="3clFbx">
+                <node concept="3clFbF" id="4_TMdeLkPvG" role="3cqZAp">
+                  <node concept="37vLTI" id="4_TMdeLkPvH" role="3clFbG">
+                    <node concept="2ShNRf" id="4_TMdeLliY5" role="37vLTx">
+                      <node concept="1pGfFk" id="4_TMdeLliY6" role="2ShVmc">
+                        <ref role="37wK5l" to="k76n:~Failure.&lt;init&gt;(org.junit.runner.Description,java.lang.Throwable)" resolve="Failure" />
+                        <node concept="37vLTw" id="4_TMdeLkPvK" role="37wK5m">
+                          <ref role="3cqZAo" node="4_TMdeLkPuW" resolve="desc" />
+                        </node>
+                        <node concept="2ShNRf" id="4_TMdeLliY7" role="37wK5m">
+                          <node concept="1pGfFk" id="4_TMdeLliY8" role="2ShVmc">
+                            <ref role="37wK5l" node="4_TMdeLkPxf" resolve="UncleanTestExecutionException" />
+                            <node concept="37vLTw" id="4_TMdeLkPvN" role="37wK5m">
+                              <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
+                            </node>
+                            <node concept="37vLTw" id="4_TMdeLkPvO" role="37wK5m">
+                              <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
+                            </node>
+                            <node concept="37vLTw" id="4_TMdeLkPvP" role="37wK5m">
+                              <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="4_TMdeLkPvI" role="37vLTJ">
+                      <ref role="3cqZAo" node="4_TMdeLkPvk" resolve="fail" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="22lmx$" id="4_TMdeLkPvu" role="3clFbw">
                 <node concept="2OqwBi" id="4_TMdeLliY3" role="3uHU7w">
                   <node concept="37vLTw" id="4_TMdeLliY2" role="2Oq$k0">
                     <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
@@ -1976,45 +2016,14 @@
                       <ref role="37wK5l" to="ot0m:4_TMdeLkP05" resolve="isNotEmpty" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="4_TMdeLliXV" role="3uHU7B">
+                  <node concept="2OqwBi" id="d4HXLLqD85" role="3uHU7B">
                     <node concept="37vLTw" id="4_TMdeLliXU" role="2Oq$k0">
                       <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
                     </node>
-                    <node concept="liA8E" id="4_TMdeLliXW" role="2OqNvi">
+                    <node concept="liA8E" id="d4HXLLqDe5" role="2OqNvi">
                       <ref role="37wK5l" to="ot0m:4_TMdeLkP4x" resolve="isNotEmpty" />
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="4_TMdeLkPvF" role="3clFbx">
-            <node concept="3clFbF" id="4_TMdeLkPvG" role="3cqZAp">
-              <node concept="37vLTI" id="4_TMdeLkPvH" role="3clFbG">
-                <node concept="2ShNRf" id="4_TMdeLliY5" role="37vLTx">
-                  <node concept="1pGfFk" id="4_TMdeLliY6" role="2ShVmc">
-                    <ref role="37wK5l" to="k76n:~Failure.&lt;init&gt;(org.junit.runner.Description,java.lang.Throwable)" resolve="Failure" />
-                    <node concept="37vLTw" id="4_TMdeLkPvK" role="37wK5m">
-                      <ref role="3cqZAo" node="4_TMdeLkPuW" resolve="desc" />
-                    </node>
-                    <node concept="2ShNRf" id="4_TMdeLliY7" role="37wK5m">
-                      <node concept="1pGfFk" id="4_TMdeLliY8" role="2ShVmc">
-                        <ref role="37wK5l" node="4_TMdeLkPxf" resolve="UncleanTestExecutionException" />
-                        <node concept="37vLTw" id="4_TMdeLkPvN" role="37wK5m">
-                          <ref role="3cqZAo" node="4_TMdeLkPqk" resolve="myErrorCachingStream" />
-                        </node>
-                        <node concept="37vLTw" id="4_TMdeLkPvO" role="37wK5m">
-                          <ref role="3cqZAo" node="4_TMdeLkPqo" resolve="myCachingAppender" />
-                        </node>
-                        <node concept="37vLTw" id="4_TMdeLkPvP" role="37wK5m">
-                          <ref role="3cqZAo" node="4_TMdeLkPq_" resolve="myThreadWatcher" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="4_TMdeLkPvI" role="37vLTJ">
-                  <ref role="3cqZAo" node="4_TMdeLkPvk" resolve="fail" />
                 </node>
               </node>
             </node>

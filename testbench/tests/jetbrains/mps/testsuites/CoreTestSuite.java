@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.testsuites;
 
-import jetbrains.mps.testbench.junit.suites.BaseMpsSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-// These are the tests which do not require the idea platform
-// todo: !!!should be WatchingSuite!!!
-@RunWith(BaseMpsSuite.class)
+/**
+ * These are the tests which DO NOT require the idea platform
+ *
+ * NB: the test which prints errors to output (apache Logger#error) is considered failed.
+ * Further the level will be lowered so that any warning will fail the test.
+ */
+@RunWith(OutputWatchingTestSuite.class)
 @Suite.SuiteClasses({
     jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest.class,
     jetbrains.mps.dataFlow.lang.LivenessAnalysisTest.class,

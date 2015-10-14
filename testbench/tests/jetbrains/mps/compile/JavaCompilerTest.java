@@ -29,6 +29,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Reference;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
@@ -66,6 +67,7 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   @Test
   public void testNewVersion() throws Exception {
+    LogManager.getLogger(getClass()).error("asdfsf");
     Assert.assertTrue(testRecompileClasses(JavaVersion.VERSION_1_8, null));
   }
 

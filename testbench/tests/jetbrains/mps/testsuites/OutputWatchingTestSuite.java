@@ -17,6 +17,7 @@ package jetbrains.mps.testsuites;
 
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import jetbrains.mps.testbench.junit.suites.BaseMpsSuite;
+import org.apache.log4j.Level;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.model.InitializationError;
@@ -34,12 +35,12 @@ public class OutputWatchingTestSuite extends BaseMpsSuite {
     super(aClass, builder);
   }
 
-  public OutputWatchingTestSuite(Class<?> klass, List<Runner> runners) throws InitializationError {
-    super(klass, runners);
+  public OutputWatchingTestSuite(Class<?> aClass, List<Runner> runners) throws InitializationError {
+    super(aClass, runners);
   }
 
   protected void runChild(Runner runner, RunNotifier notifier) {
-    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
+    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier, Level.ERROR, false); // may be customized via annotations
     try {
       runner.run(runNotifier);
     } finally {

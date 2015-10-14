@@ -227,109 +227,109 @@
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410428">
     <file name="CachingAppender.java">
-      <node id="5294483648489410433" at="18,0,19,0" concept="4" trace="events" />
-      <node id="5294483648489410437" at="19,0,20,0" concept="4" trace="messages" />
-      <node id="5294483648489410444" at="20,0,21,0" concept="4" trace="expectedEvents" />
-      <node id="5294483648489410455" at="21,0,22,0" concept="4" trace="receivedExpectedEvents" />
-      <node id="2046945161065992528" at="22,44,23,62" concept="8" />
-      <node id="2046945161066011729" at="23,62,24,38" concept="3" />
-      <node id="2046945161066015675" at="24,38,25,30" concept="3" />
-      <node id="5294483648489410481" at="29,38,30,15" concept="3" />
-      <node id="5294483648489410484" at="30,15,31,54" concept="3" />
-      <node id="5294483648489410490" at="31,54,32,62" concept="8" />
-      <node id="5294483648489410501" at="33,31,34,67" concept="3" />
-      <node id="5294483648489410505" at="34,67,35,51" concept="3" />
-      <node id="5294483648489410511" at="35,51,36,67" concept="3" />
-      <node id="5294483648489410549" at="43,80,44,41" concept="3" />
-      <node id="5294483648489410553" at="44,41,45,22" concept="9" />
-      <node id="5294483648489410561" at="48,5,49,17" concept="9" />
-      <node id="5294483648489410568" at="52,31,53,22" concept="9" />
-      <node id="5294483648489410577" at="56,34,57,30" concept="9" />
-      <node id="5294483648489410587" at="60,27,61,43" concept="8" />
-      <node id="5294483648489410591" at="61,43,62,20" concept="8" />
-      <node id="5294483648489410597" at="63,31,64,21" concept="3" />
-      <node id="5294483648489410601" at="64,21,65,17" concept="3" />
-      <node id="5294483648489410605" at="65,17,66,19" concept="3" />
-      <node id="5294483648489410613" at="67,5,68,20" concept="3" />
-      <node id="5294483648489410617" at="68,20,69,25" concept="9" />
-      <node id="5294483648489410630" at="75,35,76,17" concept="9" />
-      <node id="5294483648489410637" at="78,28,79,92" concept="8" />
-      <node id="5294483648489410647" at="79,92,80,43" concept="3" />
-      <node id="5294483648489410654" at="81,43,82,15" concept="3" />
-      <node id="5294483648489410657" at="82,15,83,44" concept="3" />
-      <node id="5294483648489410679" at="86,51,87,63" concept="3" />
-      <node id="5294483648489410622" at="71,0,74,0" concept="7" trace="close#()V" />
-      <node id="5294483648489410673" at="86,0,89,0" concept="7" trace="expectEvent#(ILjava/lang/String;)V" />
-      <node id="5294483648489410535" at="42,71,46,9" concept="6" />
-      <node id="5294483648489410565" at="51,0,55,0" concept="7" trace="isNotEmpty#()Z" />
-      <node id="5294483648489410574" at="55,0,59,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
-      <node id="5294483648489410627" at="74,0,78,0" concept="7" trace="requiresLayout#()Z" />
-      <node id="5294483648489410651" at="80,43,84,5" concept="5" />
-      <node id="5294483648489410466" at="22,0,27,0" concept="1" trace="CachingAppender#(Lorg/apache/log4j/Level;)V" />
-      <node id="5294483648489410495" at="32,62,37,7" concept="6" />
-      <node id="5294483648489410594" at="62,20,67,5" concept="5" />
-      <node id="5294483648489410524" at="41,53,47,7" concept="6" />
-      <node id="5294483648489410521" at="40,50,48,5" concept="5" />
-      <node id="5294483648489410634" at="78,0,86,0" concept="7" trace="sealEvents#()V" />
-      <node id="5294483648489410475" at="28,52,38,5" concept="6" />
-      <node id="5294483648489410517" at="40,0,51,0" concept="7" trace="isExpected#(Lorg/apache/log4j/spi/LoggingEvent;)Z" />
-      <node id="5294483648489410583" at="59,0,71,0" concept="7" trace="getText#()Ljava/lang/String;" />
-      <node id="5294483648489410470" at="27,0,40,0" concept="7" trace="append#(Lorg/apache/log4j/spi/LoggingEvent;)V" />
-      <scope id="5294483648489410624" at="72,23,72,23" />
-      <scope id="5294483648489410567" at="52,31,53,22" />
-      <scope id="5294483648489410576" at="56,34,57,30" />
-      <scope id="5294483648489410629" at="75,35,76,17" />
-      <scope id="5294483648489410678" at="86,51,87,63" />
-      <scope id="5294483648489410548" at="43,80,45,22" />
-      <scope id="5294483648489410653" at="81,43,83,44" />
-      <scope id="5294483648489410468" at="22,44,25,30">
+      <node id="5294483648489410433" at="18,0,19,0" concept="4" trace="myEvents" />
+      <node id="5294483648489410437" at="19,0,20,0" concept="4" trace="myMessages" />
+      <node id="5294483648489410444" at="20,0,21,0" concept="4" trace="myExpectedEvents" />
+      <node id="5294483648489410455" at="21,0,22,0" concept="4" trace="myReceivedExpectedEvents" />
+      <node id="2046945161065992528" at="23,44,24,62" concept="8" />
+      <node id="2046945161066011729" at="24,62,25,38" concept="3" />
+      <node id="2046945161066015675" at="25,38,26,30" concept="3" />
+      <node id="5294483648489410481" at="31,38,32,17" concept="3" />
+      <node id="5294483648489410484" at="32,17,33,56" concept="3" />
+      <node id="5294483648489410490" at="33,56,34,62" concept="8" />
+      <node id="5294483648489410501" at="35,31,36,69" concept="3" />
+      <node id="5294483648489410505" at="36,69,37,53" concept="3" />
+      <node id="5294483648489410511" at="37,53,38,69" concept="3" />
+      <node id="5294483648489410549" at="46,80,47,43" concept="3" />
+      <node id="5294483648489410553" at="47,43,48,22" concept="9" />
+      <node id="5294483648489410561" at="51,5,52,17" concept="9" />
+      <node id="5294483648489410568" at="56,31,57,24" concept="9" />
+      <node id="5294483648489410577" at="61,34,62,32" concept="9" />
+      <node id="5294483648489410587" at="66,27,67,43" concept="8" />
+      <node id="5294483648489410591" at="67,43,68,20" concept="8" />
+      <node id="5294483648489410597" at="69,33,70,21" concept="3" />
+      <node id="5294483648489410601" at="70,21,71,17" concept="3" />
+      <node id="5294483648489410605" at="71,17,72,19" concept="3" />
+      <node id="5294483648489410613" at="73,5,74,20" concept="3" />
+      <node id="5294483648489410617" at="74,20,75,25" concept="9" />
+      <node id="5294483648489410630" at="83,35,84,17" concept="9" />
+      <node id="5294483648489410637" at="87,28,88,94" concept="8" />
+      <node id="5294483648489410647" at="88,94,89,45" concept="3" />
+      <node id="5294483648489410654" at="90,43,91,17" concept="3" />
+      <node id="5294483648489410657" at="91,17,92,46" concept="3" />
+      <node id="5294483648489410679" at="96,51,97,65" concept="3" />
+      <node id="5294483648489410622" at="78,0,81,0" concept="7" trace="close#()V" />
+      <node id="5294483648489410673" at="96,0,99,0" concept="7" trace="expectEvent#(ILjava/lang/String;)V" />
+      <node id="5294483648489410535" at="45,71,49,9" concept="6" />
+      <node id="5294483648489410565" at="55,0,59,0" concept="7" trace="isNotEmpty#()Z" />
+      <node id="5294483648489410574" at="60,0,64,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <node id="5294483648489410627" at="82,0,86,0" concept="7" trace="requiresLayout#()Z" />
+      <node id="5294483648489410651" at="89,45,93,5" concept="5" />
+      <node id="5294483648489410466" at="23,0,28,0" concept="1" trace="CachingAppender#(Lorg/apache/log4j/Level;)V" />
+      <node id="5294483648489410495" at="34,62,39,7" concept="6" />
+      <node id="5294483648489410594" at="68,20,73,5" concept="5" />
+      <node id="5294483648489410524" at="44,55,50,7" concept="6" />
+      <node id="5294483648489410521" at="43,50,51,5" concept="5" />
+      <node id="5294483648489410634" at="87,0,95,0" concept="7" trace="sealEvents#()V" />
+      <node id="5294483648489410475" at="30,52,40,5" concept="6" />
+      <node id="5294483648489410517" at="43,0,54,0" concept="7" trace="isExpected#(Lorg/apache/log4j/spi/LoggingEvent;)Z" />
+      <node id="5294483648489410583" at="65,0,77,0" concept="7" trace="getText#()Ljava/lang/String;" />
+      <node id="5294483648489410470" at="29,0,42,0" concept="7" trace="append#(Lorg/apache/log4j/spi/LoggingEvent;)V" />
+      <scope id="5294483648489410624" at="79,23,79,23" />
+      <scope id="5294483648489410567" at="56,31,57,24" />
+      <scope id="5294483648489410576" at="61,34,62,32" />
+      <scope id="5294483648489410629" at="83,35,84,17" />
+      <scope id="5294483648489410678" at="96,51,97,65" />
+      <scope id="5294483648489410548" at="46,80,48,22" />
+      <scope id="5294483648489410653" at="90,43,92,46" />
+      <scope id="5294483648489410468" at="23,44,26,30">
         <var name="newFilter" id="2046945161065992526" />
       </scope>
-      <scope id="5294483648489410500" at="33,31,36,67" />
-      <scope id="5294483648489410596" at="63,31,66,19" />
-      <scope id="5294483648489410622" at="71,0,74,0" />
-      <scope id="5294483648489410673" at="86,0,89,0">
+      <scope id="5294483648489410500" at="35,31,38,69" />
+      <scope id="5294483648489410596" at="69,33,72,19" />
+      <scope id="5294483648489410622" at="78,0,81,0" />
+      <scope id="5294483648489410673" at="96,0,99,0">
         <var name="level" id="5294483648489410674" />
         <var name="text" id="5294483648489410676" />
       </scope>
-      <scope id="5294483648489410534" at="42,71,46,9" />
-      <scope id="5294483648489410565" at="51,0,55,0" />
-      <scope id="5294483648489410574" at="55,0,59,0" />
-      <scope id="5294483648489410627" at="74,0,78,0" />
-      <scope id="5294483648489410651" at="80,43,84,5">
+      <scope id="5294483648489410534" at="45,71,49,9" />
+      <scope id="5294483648489410565" at="55,0,59,0" />
+      <scope id="5294483648489410574" at="60,0,64,0" />
+      <scope id="5294483648489410627" at="82,0,86,0" />
+      <scope id="5294483648489410651" at="89,45,93,5">
         <var name="pr" id="5294483648489410665" />
       </scope>
-      <scope id="5294483648489410466" at="22,0,27,0">
+      <scope id="5294483648489410466" at="23,0,28,0">
         <var name="watchLevel" id="2046945161065986977" />
       </scope>
-      <scope id="5294483648489410594" at="62,20,67,5">
+      <scope id="5294483648489410594" at="68,20,73,5">
         <var name="s" id="5294483648489410609" />
       </scope>
-      <scope id="5294483648489410523" at="41,53,47,7" />
-      <scope id="5294483648489410635" at="78,28,84,5">
+      <scope id="5294483648489410523" at="44,55,50,7" />
+      <scope id="5294483648489410635" at="87,28,93,5">
         <var name="list" id="5294483648489410636" />
       </scope>
-      <scope id="5294483648489410480" at="29,38,37,7">
+      <scope id="5294483648489410480" at="31,38,39,7">
         <var name="stackTrace" id="5294483648489410489" />
       </scope>
-      <scope id="5294483648489410521" at="40,50,48,5">
+      <scope id="5294483648489410521" at="43,50,51,5">
         <var name="pr" id="5294483648489410555" />
       </scope>
-      <scope id="5294483648489410634" at="78,0,86,0" />
-      <scope id="5294483648489410520" at="40,50,49,17" />
-      <scope id="5294483648489410585" at="60,27,69,25">
+      <scope id="5294483648489410634" at="87,0,95,0" />
+      <scope id="5294483648489410520" at="43,50,52,17" />
+      <scope id="5294483648489410585" at="66,27,75,25">
         <var name="sb" id="5294483648489410586" />
         <var name="sep" id="5294483648489410590" />
       </scope>
-      <scope id="5294483648489410474" at="28,52,38,5" />
-      <scope id="5294483648489410517" at="40,0,51,0">
+      <scope id="5294483648489410474" at="30,52,40,5" />
+      <scope id="5294483648489410517" at="43,0,54,0">
         <var name="event" id="5294483648489410518" />
       </scope>
-      <scope id="5294483648489410583" at="59,0,71,0" />
-      <scope id="5294483648489410470" at="27,0,40,0">
+      <scope id="5294483648489410583" at="65,0,77,0" />
+      <scope id="5294483648489410470" at="29,0,42,0">
         <var name="loggingEvent" id="5294483648489410472" />
       </scope>
-      <unit id="5294483648489410428" at="17,0,90,0" name="jetbrains.mps.testbench.util.CachingAppender" />
+      <unit id="5294483648489410428" at="17,0,100,0" name="jetbrains.mps.testbench.util.CachingAppender" />
     </file>
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410732">
