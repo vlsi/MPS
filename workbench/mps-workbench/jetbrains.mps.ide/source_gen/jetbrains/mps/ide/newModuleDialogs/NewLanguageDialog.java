@@ -40,6 +40,7 @@ public class NewLanguageDialog extends DialogWrapper {
 
     init();
   }
+
   @Nullable
   protected JComponent createCenterPanel() {
     if (myLanguageSettings == null) {
@@ -53,6 +54,7 @@ public class NewLanguageDialog extends DialogWrapper {
     }
     return myLanguageSettings;
   }
+
   @Override
   protected void doOKAction() {
     if (!(check())) {
@@ -61,6 +63,7 @@ public class NewLanguageDialog extends DialogWrapper {
 
     super.doOKAction();
 
+    // TODO: reuse runnable in DefaultLanguageProjectTemplate 
     NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
@@ -70,6 +73,7 @@ public class NewLanguageDialog extends DialogWrapper {
           if (myLanguageSettings.isRuntimeSolutionNeeded()) {
             Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
             ((StandaloneMPSProject) myProject).setFolderFor(runtimeSolution, myVirtualFolder);
+            language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
           }
           if (myLanguageSettings.isSandboxSolutionNeeded()) {
             Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
@@ -86,6 +90,7 @@ public class NewLanguageDialog extends DialogWrapper {
       }
     });
   }
+
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
@@ -95,6 +100,7 @@ public class NewLanguageDialog extends DialogWrapper {
   public Language getLangauge() {
     return myResult;
   }
+
   private boolean check() {
     myError = NewModuleUtil.check(MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
     setErrorText(myError);
