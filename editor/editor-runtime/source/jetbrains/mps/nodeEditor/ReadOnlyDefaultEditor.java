@@ -35,9 +35,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.ArrayList;
 import java.util.Collection;
 
-/**
- * Created by simon on 11/03/15.
- */
 public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReadOnlyDefaultEditor.class));
   protected Collection<SProperty> myProperties = new ArrayList<SProperty>();
@@ -127,9 +124,9 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     final SNode referentNode = reference.getTargetNode();
     if (referentNode == null) {
       String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-      String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getRoleName() + "?";
+      String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getName() + "?";
       EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, myErrorText);
-      errorCell.setCellId("error_" + referenceLink.getRoleName());
+      errorCell.setCellId("error_" + referenceLink.getName());
       addCell(errorCell);
       return;
     }
@@ -141,9 +138,9 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       public EditorCell compute() {
         return createReferentEditorCell(myEditorContext, referenceLink, referentNode);
       }
-    }, referentNode, referenceLink.getRoleName());
+    }, referentNode, referenceLink.getName());
     setSemanticNodeToCells(cell, mySNode);
-    cell.setCellId("reference_" + referenceLink.getRoleName());
+    cell.setCellId("reference_" + referenceLink.getName());
     addCell(cell);
   }
 }

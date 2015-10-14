@@ -21,7 +21,6 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -29,8 +28,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.EqualUtil;
@@ -46,9 +43,6 @@ import java.util.Collection;
 import java.util.Deque;
 import java.util.LinkedList;
 
-/**
- * Created by simon on 11/03/15.
- */
 public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private static final String NAME_NAME = "name";
   private static final int NAME_PRIORITY = 10000;
@@ -103,9 +97,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     int maxPriority = -1;
     for (SProperty property : getProperties()) {
       String propertyName = property.getName();
-      if (propertyName == null) {
-        continue;
-      }
       int propertyPriority = getPropertyPriority(propertyName);
       if (maxPriority < propertyPriority) {
         maxPriority = propertyPriority;
@@ -167,14 +158,14 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   private void addReferences() {
     for (SReferenceLink reference : getReferenceLinks()) {
-      addRoleLabel(reference.getRoleName(), "reference");
+      addRoleLabel(reference.getName(), "reference");
       addReferenceCell(reference);
     }
   }
 
   private void addChildren() {
     for (SContainmentLink link : getContainmentLinks()) {
-      addRoleLabel(link.getRoleName(), "link");
+      addRoleLabel(link.getName(), "link");
       addNewLine();
       addChildCell(link);
       addNewLine();
@@ -248,7 +239,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, targetNode);
-    result.setRole(link.getRoleName());
+    result.setRole(link.getName());
     result.setReferenceCell(true);
     return result;
   }
