@@ -25,10 +25,9 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Reference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -49,7 +48,7 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setUp() {
-    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     ourProject = openProject(PROJECT_PATH);
     ourSolution = getSolution("TestCompileSolution");
   }

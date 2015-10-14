@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.BeforeClass;
@@ -54,7 +55,7 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setUp() {
-    IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
   }
 
   @Test

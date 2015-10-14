@@ -54,11 +54,10 @@ import java.util.Set;
  */
 public class ProjectMPSFacetCorrectnessTest extends CoreMpsTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSFacetCorrectnessTest.class);
-  private static Environment ourEnvironment;
 
   @BeforeClass
   public static void beforeTest() {
-    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @Test

@@ -17,6 +17,7 @@ package jetbrains.mps.environment;
 
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 
 public class RestartingIdea2MpsEnvironmentTest extends EnvironmentTest {
@@ -24,6 +25,6 @@ public class RestartingIdea2MpsEnvironmentTest extends EnvironmentTest {
   protected Environment createEnvironment() {
     Environment environment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     environment.dispose();
-    return MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    return IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 }

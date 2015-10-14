@@ -23,8 +23,8 @@ import jetbrains.mps.tool.environment.MpsEnvironment;
 public class RestartingMps2IdeaEnvironmentTest extends EnvironmentTest {
   @Override
   protected Environment createEnvironment() {
-    Environment environment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    Environment environment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     environment.dispose();
-    return IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    return MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 }
