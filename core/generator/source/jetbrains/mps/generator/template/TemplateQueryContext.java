@@ -150,6 +150,12 @@ public class TemplateQueryContext {
     myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
   }
 
+  /**
+   * @deprecated use {@link ReferenceMacroContext#getOutputNodeByInputNodeAndMappingLabel(SNode, String)} instead.
+   *             No need to expose this function in general TQC. Left for compatibility with existing generators in MPS 3.2.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     throw new UnsupportedOperationException("use this method only in reference macros");
   }

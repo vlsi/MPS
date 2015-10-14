@@ -149,12 +149,6 @@
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
     </language>
-    <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
-      <concept id="1176743162354" name="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" flags="nn" index="3VmV3z">
-        <property id="1176743296073" name="name" index="3VnrPo" />
-        <child id="1176743202636" name="type" index="3Vn4Tt" />
-      </concept>
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -632,8 +626,8 @@
           <node concept="1eOMI4" id="hLmowq7" role="2Oq$k0">
             <node concept="10QFUN" id="hLmowq8" role="1eOMHV">
               <node concept="10Nm6u" id="hLmowq9" role="10QFUP" />
-              <node concept="3uibUv" id="hLmowqa" role="10QFUM">
-                <ref role="3uigEE" to="q1l7:~TemplateQueryContext" resolve="TemplateQueryContext" />
+              <node concept="3uibUv" id="4_fmFKZr9K7" role="10QFUM">
+                <ref role="3uigEE" to="q1l7:~ReferenceMacroContext" resolve="ReferenceMacroContext" />
               </node>
             </node>
             <node concept="29HgVG" id="hLmowqb" role="lGtFl">
@@ -658,7 +652,7 @@
             </node>
           </node>
           <node concept="liA8E" id="hLmowql" role="2OqNvi">
-            <ref role="37wK5l" to="q1l7:~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.smodel.IOperationContext):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
+            <ref role="37wK5l" to="q1l7:~ReferenceMacroContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(org.jetbrains.mps.openapi.model.SNode,java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope" />
             <node concept="10Nm6u" id="hLmowqm" role="37wK5m">
               <node concept="29HgVG" id="hLmowqn" role="lGtFl">
                 <node concept="3NFfHV" id="hLmowqo" role="3NFExx">
@@ -723,12 +717,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3VmV3z" id="hLmp5yc" role="37wK5m">
-              <property role="3VnrPo" value="operationContext" />
-              <node concept="3uibUv" id="hLmpCNK" role="3Vn4Tt">
-                <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
               </node>
             </node>
           </node>
