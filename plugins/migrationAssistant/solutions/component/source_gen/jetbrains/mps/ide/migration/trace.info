@@ -687,44 +687,19 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/5351393548967765630">
     <file name="HeadlessMigrationExecutor.java">
-      <node id="5351393548967862369" at="15,0,16,0" concept="6" trace="myMigrationManager" />
-      <node id="5351393548967812714" at="16,88,17,19" concept="17" />
-      <node id="5351393548967862674" at="17,19,18,42" concept="5" />
-      <node id="3013058279687662693" at="25,58,26,17" concept="12" />
-      <node id="2620437876317092628" at="30,64,31,26" concept="12" />
-      <node id="2620437876317092093" at="33,75,34,33" concept="5" />
-      <node id="2620437876317092089" at="36,0,37,0" concept="6" trace="errors" />
-      <node id="8570387127138805332" at="38,0,40,0" concept="10" trace="invoke#()V" />
-      <node id="3013058279687662687" at="24,25,27,9" concept="9" />
-      <node id="2620437876317091061" at="33,0,36,0" concept="10" trace="setErrorDescriptor#(Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;)V" />
-      <node id="5351393548967812280" at="16,0,20,0" concept="3" trace="HeadlessMigrationExecutor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationManager;)V" />
-      <node id="2620437876317091052" at="29,0,33,0" concept="10" trace="getErrorDescriptor#()Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;" />
-      <node id="5351393548967863060" at="27,9,40,11" concept="5" />
-      <node id="8459882741667787862" at="24,0,42,0" concept="10" trace="run#()V" />
-      <node id="3013058279687663508" at="22,31,42,7" concept="5" />
-      <node id="5351393548967805621" at="21,0,44,0" concept="10" trace="projectOpened#()V" />
-      <scope id="8570387127138805333" at="38,32,38,32" />
-      <scope id="3013058279687662692" at="25,58,26,17" />
-      <scope id="2620437876317091059" at="30,64,31,26" />
-      <scope id="2620437876317091067" at="33,75,34,33" />
-      <scope id="5351393548967812284" at="16,88,18,42" />
-      <scope id="8570387127138805332" at="38,0,40,0" />
-      <scope id="2620437876317091061" at="33,0,36,0">
-        <var name="errors" id="2620437876317091065" />
-      </scope>
-      <scope id="5351393548967812280" at="16,0,20,0">
+      <node id="5351393548967862369" at="9,0,10,0" concept="6" trace="myMigrationManager" />
+      <node id="5351393548967812714" at="10,88,11,19" concept="17" />
+      <node id="5351393548967862674" at="11,19,12,42" concept="5" />
+      <node id="5351393548967805621" at="15,0,18,0" concept="10" trace="projectOpened#()V" />
+      <node id="5351393548967812280" at="10,0,14,0" concept="3" trace="HeadlessMigrationExecutor#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/migration/MigrationManager;)V" />
+      <scope id="5351393548967805625" at="16,31,16,31" />
+      <scope id="5351393548967812284" at="10,88,12,42" />
+      <scope id="5351393548967805621" at="15,0,18,0" />
+      <scope id="5351393548967812280" at="10,0,14,0">
         <var name="migrationManager" id="5351393548967861414" />
         <var name="project" id="5351393548967812594" />
       </scope>
-      <scope id="2620437876317091052" at="29,0,33,0" />
-      <scope id="8459882741667787873" at="24,25,40,11" />
-      <scope id="8459882741667787862" at="24,0,42,0" />
-      <scope id="5351393548967805625" at="22,31,42,7" />
-      <scope id="5351393548967805621" at="21,0,44,0" />
-      <unit id="8570387127138805332" at="37,25,40,9" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor$2" />
-      <unit id="2620437876317091050" at="28,76,37,9" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor$2" />
-      <unit id="8459882741667787862" at="23,74,42,5" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor$1" />
-      <unit id="5351393548967765630" at="14,0,45,0" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" />
+      <unit id="5351393548967765630" at="8,0,19,0" name="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382121685">

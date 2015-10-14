@@ -27,15 +27,8 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" file="HeadlessMigrationExecutor.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorContainer" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
   </dependency>
