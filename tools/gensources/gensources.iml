@@ -444,6 +444,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.workflow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/source_gen" isTestSource="false" />
@@ -468,6 +469,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.workflow/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.testModules/classes_gen" />
@@ -1113,3 +1115,4 @@
     <orderEntry type="module" module-name="mps-ant" />
   </component>
 </module>
+
