@@ -37,52 +37,9 @@ import java.util.Collection;
 
 public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReadOnlyDefaultEditor.class));
-  protected Collection<SProperty> myProperties = new ArrayList<SProperty>();
-  protected Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
-  protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
 
   public ReadOnlyDefaultEditor(@NotNull SConcept concept) {
     super(concept);
-  }
-
-  protected void init() {
-    assert mySNode != null && myConcept != null;
-    for (SProperty sProperty : mySNode.getProperties()) {
-      if (!sProperty.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
-        myProperties.add(sProperty);
-      }
-    }
-
-    for (SReference sReference : mySNode.getReferences()) {
-      SReferenceLink link = sReference.getLink();
-      assert link != null : "Null meta-link from node: " + this.mySNode + ", role: " + sReference.getRole();
-      if (!link.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
-        myReferenceLinks.add(link);
-      }
-    }
-
-    for (SNode child : this.mySNode.getChildren()) {
-      SContainmentLink containmentLink = child.getContainmentLink();
-      assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + this.mySNode + ", child: " + child;
-      if (!containmentLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
-        myContainmentLinks.add(containmentLink);
-      }
-    }
-  }
-
-  @Override
-  protected Collection<SProperty> getProperties() {
-    return myProperties;
-  }
-
-  @Override
-  protected Collection<SReferenceLink> getReferenceLinks() {
-    return myReferenceLinks;
-  }
-
-  @Override
-  protected Collection<SContainmentLink> getContainmentLinks() {
-    return myContainmentLinks;
   }
 
   @Override

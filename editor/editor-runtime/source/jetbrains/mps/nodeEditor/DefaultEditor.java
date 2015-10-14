@@ -67,9 +67,6 @@ import java.util.Collection;
  * 04 04, 2013
  */
 public class DefaultEditor extends AbstractDefaultEditor {
-  protected Collection<SProperty> myProperties = new ArrayList<SProperty>();
-  protected Collection<SReferenceLink> myReferenceLinks = new ArrayList<SReferenceLink>();
-  protected Collection<SContainmentLink> myContainmentLinks = new ArrayList<SContainmentLink>();
 
   public DefaultEditor(@NotNull SConcept concept) {
     super(concept);
@@ -79,38 +76,22 @@ public class DefaultEditor extends AbstractDefaultEditor {
     assert mySNode != null && myConcept != null;
     for (SProperty sProperty : myConcept.getProperties()) {
       if (!sProperty.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
-        myProperties.add(sProperty);
+        addProperty(sProperty);
       }
     }
-    // TODO: add other SProperties declared in this node, not declared in the concept
 
     for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
       if (!sReferenceLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
-        myReferenceLinks.add(sReferenceLink);
+        addReferenceLink(sReferenceLink);
       }
     }
-    // TODO: add other SReferenceLinks declared in this node, not declared in the concept
 
     for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
       if (!sContainmentLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
-        myContainmentLinks.add(sContainmentLink);
+        addContainmentLink(sContainmentLink);
       }
     }
-  }
-
-  @Override
-  protected Collection<SProperty> getProperties() {
-    return myProperties;
-  }
-
-  @Override
-  protected Collection<SReferenceLink> getReferenceLinks() {
-    return myReferenceLinks;
-  }
-
-  @Override
-  protected Collection<SContainmentLink> getContainmentLinks() {
-    return myContainmentLinks;
+    super.init();
   }
 
   @Override

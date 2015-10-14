@@ -116,14 +116,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     if (result == null) {
       editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() :
           AbstractDefaultEditor.createEditor(node, conceptDescriptor);
-      if (isPushDefaultEditorHintInContext) {
-        pushCellContext();
-        removeCellContextHints(PUSH_DEFAULT_EDITOR_HINT);
-      }
       result = createCell(node, isInspector, editor);
-      if (isPushDefaultEditorHintInContext) {
-        popCellContext();
-      }
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
 
