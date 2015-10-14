@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class Uncomment_SecondStatementTest_Test extends BaseTransformationTest {
-  public Uncomment_SecondStatementTest_Test() {
+public class Uncomment_NodeAtFirstPosition_Test extends BaseTransformationTest {
+  public Uncomment_NodeAtFirstPosition_Test() {
   }
   @Test
-  public void test_Uncomment_SecondStatementTest() throws Throwable {
+  public void test_Uncomment_NodeAtFirstPosition() throws Throwable {
     this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Uncomment_SecondStatementTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.actions.test.Uncomment_NodeAtFirstPosition_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,7 +22,7 @@ public class Uncomment_SecondStatementTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6047905657530791923", "6047905657530793642");
+      initEditor("2103596388770303850", "2103596388770305031");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }

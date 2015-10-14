@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class Comment_TypeTest_Test extends BaseTransformationTest {
-  public Comment_TypeTest_Test() {
+public class Comment_SecondType_Test extends BaseTransformationTest {
+  public Comment_SecondType_Test() {
   }
   @Test
-  public void test_Comment_TypeTest() throws Throwable {
+  public void test_Comment_SecondType() throws Throwable {
     this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Comment_TypeTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.actions.test.Comment_SecondType_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,7 +22,7 @@ public class Comment_TypeTest_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6047905657530651956", "6047905657530652487");
+      initEditor("6047905657530832261", "6047905657530832264");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }

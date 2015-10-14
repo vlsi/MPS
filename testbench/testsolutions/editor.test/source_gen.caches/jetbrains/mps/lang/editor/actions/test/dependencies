@@ -9,7 +9,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncommentTest_Test" file="Comment_CommentUncommentTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncommentWithSelection_Test" file="Comment_CommentUncommentWithSelection_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -18,7 +18,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_EditInsideComment_Test_Test" file="Comment_EditInsideComment_Test_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncomment_Test" file="Comment_CommentUncomment_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -27,7 +27,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_ExpressionStatementTest_Test" file="Comment_ExpressionStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_EditInsideComment_Test" file="Comment_EditInsideComment_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -36,7 +36,16 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_FirstStatementTest_Test" file="Comment_FirstStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_ExpressionStatement_Test" file="Comment_ExpressionStatement_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_FirstStatement_Test" file="Comment_FirstStatement_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -72,7 +81,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_LastStatementTest_Test" file="Comment_LastStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_LastStatement_Test" file="Comment_LastStatement_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -90,7 +99,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_SecondStatementTest_Test" file="Comment_SecondStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_SecondStatement_Test" file="Comment_SecondStatement_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -99,7 +108,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_SecondTypeTest_Test" file="Comment_SecondTypeTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_SecondType_Test" file="Comment_SecondType_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -108,7 +117,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_TypeTest_Test" file="Comment_TypeTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Comment_Type_Test" file="Comment_Type_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -207,7 +216,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_FirstStatementTest_Test" file="Uncomment_FirstStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_FirstStatement_Test" file="Uncomment_FirstStatement_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -216,7 +225,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_LastStatementTest_Test" file="Uncomment_LastStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_LastStatement_Test" file="Uncomment_LastStatement_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -225,7 +234,25 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_MethodTest_Test" file="Uncomment_MethodTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_Method_Test" file="Uncomment_Method_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_NodeAtFirstPosition_Test" file="Uncomment_NodeAtFirstPosition_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_NodeAtLastPosition_Test" file="Uncomment_NodeAtLastPosition_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -243,7 +270,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_SecondStatementTest_Test" file="Uncomment_SecondStatementTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_SecondStatement_Test" file="Uncomment_SecondStatement_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -252,7 +279,7 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_SecondTypeTest_Test" file="Uncomment_SecondTypeTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_SecondType_Test" file="Uncomment_SecondType_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -261,7 +288,16 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_TypeTest_Test" file="Uncomment_TypeTest_Test.java">
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_StatementAtFirstPosition_Test" file="Uncomment_StatementAtFirstPosition_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.actions.test.Uncomment_Type_Test" file="Uncomment_Type_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

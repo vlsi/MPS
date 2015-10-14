@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class Comment_EditInsideComment_Test_Test extends BaseTransformationTest {
-  public Comment_EditInsideComment_Test_Test() {
+public class Uncomment_NodeAtLastPosition_Test extends BaseTransformationTest {
+  public Uncomment_NodeAtLastPosition_Test() {
   }
   @Test
-  public void test_Comment_EditInsideComment_Test() throws Throwable {
+  public void test_Uncomment_NodeAtLastPosition() throws Throwable {
     this.initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    this.runTest("jetbrains.mps.lang.editor.actions.test.Comment_EditInsideComment_Test_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.actions.test.Uncomment_NodeAtLastPosition_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class Comment_EditInsideComment_Test_Test extends BaseTransformationTest 
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("4247887444754064722", "4247887444754068827");
-      this.typeString("return 1");
+      initEditor("2103596388770305346", "2103596388770305358");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }
 }
