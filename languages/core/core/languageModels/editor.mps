@@ -34,7 +34,6 @@
         <child id="5944657839000877563" name="hints" index="2ABdcP" />
       </concept>
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
-        <property id="168363875802087287" name="showInUI" index="2gpH_U" />
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
       <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_NextEditor" flags="ng" index="B$lHz">
@@ -432,7 +431,6 @@
       <property role="2BUmq6" value="comment" />
     </node>
     <node concept="2BsEeg" id="3YRgRgnTV5p" role="2ABdcP">
-      <property role="2gpH_U" value="true" />
       <property role="2BUmq6" value="reflectiveEditor" />
       <property role="TrG5h" value="reflectiveEditor" />
     </node>
