@@ -33,6 +33,7 @@ import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import javax.swing.JOptionPane;
@@ -192,7 +193,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           }
         });
         if (needSave) {
-          getProjectFromUI(model.getRepository()).getModelAccess().executeCommand(new Runnable() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               model.updateTimestamp();
               model.save();
