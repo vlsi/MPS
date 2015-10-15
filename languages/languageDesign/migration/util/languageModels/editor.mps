@@ -55,7 +55,6 @@
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
-        <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -393,11 +392,11 @@
   </node>
   <node concept="24kQdi" id="4uVwhQyAgfh">
     <property role="3GE5qa" value="refactoring" />
-    <ref role="1XX52x" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+    <ref role="1XX52x" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
     <node concept="3EZMnI" id="4uVwhQyAgg8" role="2wV5jI">
       <node concept="l2Vlx" id="4uVwhQyAgg9" role="2iSdaV" />
       <node concept="3F0ifn" id="4uVwhQyAgga" role="3EZMnx">
-        <property role="3F0ifm" value="refactoring step" />
+        <property role="3F0ifm" value="migration script" />
       </node>
       <node concept="3F0A7n" id="2mdzW6dQMMF" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -463,15 +462,74 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="2mdzW6dUkfT">
+  <node concept="24kQdi" id="36$CdjY62f7">
     <property role="3GE5qa" value="refactoring" />
-    <ref role="1XX52x" to="gqi5:4uVwhQyPCRd" resolve="RefactoringOrderDependency" />
-    <node concept="1iCGBv" id="2mdzW6dUkfV" role="2wV5jI">
-      <ref role="1NtTu8" to="gqi5:4uVwhQyPCRe" />
-      <node concept="1sVBvm" id="2mdzW6dUkfX" role="1sWHZn">
-        <node concept="3F0A7n" id="2mdzW6dUkg4" role="2wV5jI">
-          <property role="1Intyy" value="true" />
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+    <ref role="1XX52x" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
+    <node concept="3EZMnI" id="36$CdjY62f8" role="2wV5jI">
+      <node concept="l2Vlx" id="36$CdjY62f9" role="2iSdaV" />
+      <node concept="3F0ifn" id="36$CdjY62fa" role="3EZMnx">
+        <property role="3F0ifm" value="refactoring step" />
+      </node>
+      <node concept="3F0A7n" id="36$CdjY62fb" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="36$CdjY62fc" role="3EZMnx">
+        <property role="3F0ifm" value="from version" />
+      </node>
+      <node concept="3F0A7n" id="36$CdjY62fd" role="3EZMnx">
+        <ref role="1NtTu8" to="gqi5:1JTUOcBqQQh" resolve="fromVersion" />
+      </node>
+      <node concept="3F0ifn" id="36$CdjY62fe" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="3mYdg7" id="36$CdjY62ff" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="ljvvj" id="36$CdjY62fg" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="36$CdjY62fh" role="3EZMnx">
+        <node concept="VPM3Z" id="36$CdjY62fi" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="36$CdjY62fj" role="3EZMnx">
+          <property role="3F0ifm" value="execute after" />
+          <node concept="ljvvj" id="36$CdjY62fk" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="36$CdjY62fl" role="3EZMnx">
+          <ref role="1NtTu8" to="gqi5:1JTUOcBqQQg" />
+          <node concept="l2Vlx" id="36$CdjY62fm" role="2czzBx" />
+          <node concept="ljvvj" id="36$CdjY62fn" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="36$CdjY62fo" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="36$CdjY62fp" role="2iSdaV" />
+        <node concept="lj46D" id="36$CdjY62fq" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="36$CdjY62fr" role="3EZMnx">
+        <ref role="1NtTu8" to="gqi5:1JTUOcBqQQi" />
+        <node concept="l2Vlx" id="36$CdjY62fs" role="2czzBx" />
+        <node concept="pj6Ft" id="36$CdjY62ft" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="36$CdjY62fu" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="36$CdjY62fv" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="36$CdjY62fw" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="36$CdjY62fx" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
         </node>
       </node>
     </node>

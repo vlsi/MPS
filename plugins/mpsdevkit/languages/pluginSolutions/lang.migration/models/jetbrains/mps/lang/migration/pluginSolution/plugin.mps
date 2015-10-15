@@ -3255,12 +3255,12 @@
               <node concept="3cpWsn" id="5ZhKIheqGLP" role="3cpWs9">
                 <property role="TrG5h" value="sourceModuleRefactoringStep" />
                 <node concept="3Tqbb2" id="5ZhKIheqOyK" role="1tU5fm">
-                  <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+                  <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
                 </node>
                 <node concept="2ShNRf" id="5ZhKIheriaB" role="33vP2m">
                   <node concept="3zrR0B" id="5ZhKIheria_" role="2ShVmc">
                     <node concept="3Tqbb2" id="5ZhKIheriaA" role="3zrR0E">
-                      <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+                      <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
                     </node>
                   </node>
                 </node>
@@ -3540,12 +3540,12 @@
               <node concept="3cpWsn" id="2mdzW6dSl8w" role="3cpWs9">
                 <property role="TrG5h" value="targetModuleRefactoringStep" />
                 <node concept="3Tqbb2" id="2mdzW6dSl8x" role="1tU5fm">
-                  <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+                  <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
                 </node>
                 <node concept="2ShNRf" id="2mdzW6dSl8y" role="33vP2m">
                   <node concept="3zrR0B" id="2mdzW6dSl8z" role="2ShVmc">
                     <node concept="3Tqbb2" id="2mdzW6dSl8$" role="3zrR0E">
-                      <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+                      <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
                     </node>
                   </node>
                 </node>
@@ -3603,9 +3603,9 @@
                 <node concept="TSZUe" id="2mdzW6dSsno" role="2OqNvi">
                   <node concept="2pJPEk" id="2mdzW6dSsB5" role="25WWJ7">
                     <node concept="2pJPED" id="2mdzW6dSsHe" role="2pJPEn">
-                      <ref role="2pJxaS" to="gqi5:4uVwhQyPCRd" resolve="RefactoringOrderDependency" />
+                      <ref role="2pJxaS" to="53vh:3A3gNhf2pHU" resolve="OrderDependency" />
                       <node concept="2pIpSj" id="2mdzW6dSsVa" role="2pJxcM">
-                        <ref role="2pIpSl" to="gqi5:4uVwhQyPCRe" />
+                        <ref role="2pIpSl" to="53vh:3A3gNhf2pHV" />
                         <node concept="36biLy" id="2mdzW6dSx1N" role="2pJxcZ">
                           <node concept="37vLTw" id="2mdzW6dSx6Y" role="36biLW">
                             <ref role="3cqZAo" node="5ZhKIheqGLP" resolve="sourceModuleRefactoringStep" />
@@ -7302,7 +7302,7 @@
         <property role="TrG5h" value="myRefactoringStep" />
         <node concept="3Tm6S6" id="3r9sVr9TlA4" role="1B3o_S" />
         <node concept="3Tqbb2" id="3r9sVr9TlVe" role="1tU5fm">
-          <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+          <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
         </node>
       </node>
       <node concept="3clFbW" id="3r9sVr9Ta$9" role="jymVt">
@@ -7327,7 +7327,7 @@
             <node concept="37vLTI" id="3r9sVr9Tmd2" role="3clFbG">
               <node concept="2pJPEk" id="3r9sVr9TmfD" role="37vLTx">
                 <node concept="2pJPED" id="3r9sVr9Tmha" role="2pJPEn">
-                  <ref role="2pJxaS" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+                  <ref role="2pJxaS" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
                   <node concept="2pJxcG" id="3r9sVr9TuAA" role="2pJxcM">
                     <ref role="2pJxcJ" to="gqi5:6szrkDodGEW" resolve="fromVersion" />
                     <node concept="37vLTw" id="3r9sVr9T$ge" role="2pJxcZ">

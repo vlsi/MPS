@@ -171,7 +171,7 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       int sourceModuleVersion = sourceModule.getModuleVersion();
       int targetModuleVersion = targetModule.getModuleVersion();
 
-      SNode sourceModuleRefactoringStep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.RefactoringStep")));
+      SNode sourceModuleRefactoringStep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.PureMigrationScript")));
       SPropertyOperations.set(sourceModuleRefactoringStep, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MoveNodes_" + String.valueOf(sourceModuleVersion));
       SPropertyOperations.set(sourceModuleRefactoringStep, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion"), "" + (sourceModuleVersion));
       ListSequence.fromList(SLinkOperations.getChildren(sourceModuleRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addSequence(ListSequence.fromList(myMoveNodeItems));
@@ -199,10 +199,10 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
       SModelOperations.addRootNode(sourceModuleMigrationModel, sourceModuleRefactoringStep);
       sourceModule.setModuleVersion(sourceModuleVersion + 1);
 
-      SNode targetModuleRefactoringStep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.RefactoringStep")));
+      SNode targetModuleRefactoringStep = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.PureMigrationScript")));
       SPropertyOperations.set(targetModuleRefactoringStep, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MoveNodes_" + String.valueOf(targetModuleVersion));
       SPropertyOperations.set(targetModuleRefactoringStep, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion"), "" + (targetModuleVersion));
-      ListSequence.fromList(SLinkOperations.getChildren(targetModuleRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).addElement(createRefactoringOrderDependency_t528rj_a0a12a4a31(sourceModuleRefactoringStep));
+      ListSequence.fromList(SLinkOperations.getChildren(targetModuleRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x47bb811da2d68dd0L, "executeAfter"))).addElement(createOrderDependency_t528rj_a0a12a4a31(sourceModuleRefactoringStep));
 
       SModel targetModuleMigrationModel = LanguageAspect.MIGRATION.getOrCreate(targetModule);
       SModelInternal tm = (SModelInternal) (SModel) targetModuleMigrationModel;
@@ -224,10 +224,10 @@ public class LoggableMigrationStepBuilder implements MoveRefactoringContributor 
     }
     return n1;
   }
-  private static SNode createRefactoringOrderDependency_t528rj_a0a12a4a31(Object p0) {
+  private static SNode createOrderDependency_t528rj_a0a12a4a31(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, "jetbrains.mps.lang.migration.util.structure.RefactoringOrderDependency"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2d68dcdL, 0x47bb811da2d68dceL, "refactoring"), (SNode) p0);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, "jetbrains.mps.lang.migration.structure.OrderDependency"), null, null, false);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script"), (SNode) p0);
     return n1;
   }
   private static boolean eq_t528rj_a0a0a0a0a0a2a2a8(Object a, Object b) {

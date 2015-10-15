@@ -24,32 +24,32 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
-public class RefactoringStep_Editor extends DefaultNodeEditor {
+public class RefactoringLog_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_wcbf5s_a(editorContext, node);
+    return this.createCollection_jnvsis_a(editorContext, node);
   }
-  private EditorCell createCollection_wcbf5s_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jnvsis_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_wcbf5s_a");
+    editorCell.setCellId("Collection_jnvsis_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
-    editorCell.addEditorCell(this.createConstant_wcbf5s_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_wcbf5s_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_wcbf5s_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_wcbf5s_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_wcbf5s_e0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_wcbf5s_f0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_wcbf5s_g0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_wcbf5s_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jnvsis_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jnvsis_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jnvsis_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jnvsis_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jnvsis_e0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_jnvsis_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_jnvsis_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jnvsis_h0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_wcbf5s_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jnvsis_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "refactoring step");
-    editorCell.setCellId("Constant_wcbf5s_a0");
+    editorCell.setCellId("Constant_jnvsis_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_wcbf5s_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jnvsis_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -65,13 +65,13 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_wcbf5s_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jnvsis_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from version");
-    editorCell.setCellId("Constant_wcbf5s_c0");
+    editorCell.setCellId("Constant_jnvsis_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_wcbf5s_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jnvsis_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fromVersion");
     provider.setNoTargetText("<no fromVersion>");
@@ -87,9 +87,9 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_wcbf5s_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jnvsis_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_wcbf5s_e0");
+    editorCell.setCellId("Constant_jnvsis_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
@@ -97,28 +97,28 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_wcbf5s_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jnvsis_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_wcbf5s_f0");
+    editorCell.setCellId("Collection_jnvsis_f0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_wcbf5s_a5a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_wcbf5s_b5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jnvsis_a5a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_jnvsis_b5a(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_wcbf5s_a5a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jnvsis_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute after");
-    editorCell.setCellId("Constant_wcbf5s_a5a");
+    editorCell.setCellId("Constant_jnvsis_a5a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_wcbf5s_b5a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new RefactoringStep_Editor.executeAfterListHandler_wcbf5s_b5a(node, "executeAfter", editorContext);
+  private EditorCell createRefNodeList_jnvsis_b5a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new RefactoringLog_Editor.executeAfterListHandler_jnvsis_b5a(node, "executeAfter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_executeAfter");
     Style style = new StyleImpl();
@@ -128,8 +128,8 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class executeAfterListHandler_wcbf5s_b5a extends RefNodeListHandler {
-    public executeAfterListHandler_wcbf5s_b5a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class executeAfterListHandler_jnvsis_b5a extends RefNodeListHandler {
+    public executeAfterListHandler_jnvsis_b5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -160,8 +160,8 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
       }
     }
   }
-  private EditorCell createRefNodeList_wcbf5s_g0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new RefactoringStep_Editor.partListHandler_wcbf5s_g0(node, "part", editorContext);
+  private EditorCell createRefNodeList_jnvsis_g0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new RefactoringLog_Editor.partListHandler_jnvsis_g0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
     Style style = new StyleImpl();
@@ -172,8 +172,8 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class partListHandler_wcbf5s_g0 extends RefNodeListHandler {
-    public partListHandler_wcbf5s_g0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partListHandler_jnvsis_g0 extends RefNodeListHandler {
+    public partListHandler_jnvsis_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -204,9 +204,9 @@ public class RefactoringStep_Editor extends DefaultNodeEditor {
       }
     }
   }
-  private EditorCell createConstant_wcbf5s_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jnvsis_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_wcbf5s_h0");
+    editorCell.setCellId("Constant_jnvsis_h0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
     editorCell.getStyle().putAll(style);

@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.migration.LanguageScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
@@ -162,12 +163,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     SModuleReference depModule = scriptReference.getModule();
     final int current = scriptReference.getFromVersion();
     SModel migrationModel = LanguageAspect.MIGRATION.get((Language) depModule.resolve(MPSModuleRepository.getInstance()));
-    SNode script = ListSequence.fromList(SModelOperations.roots(migrationModel, MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"))).where(new IWhereFilter<SNode>() {
+    SNode script = ListSequence.fromList(SModelOperations.roots(migrationModel, MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.util.structure.RefactoringLog"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ((Integer) BHReflection.invoke(it, SMethodTrimmedId.create("fromVersion", null, "4uVwhQyFcnl"))) == current;
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")) == current;
       }
     }).first();
-    RefactoringStep implementation = ((RefactoringStep) BHReflection.invoke(script, SMethodTrimmedId.create("getImplementation", null, "4yRsQKnslQA")));
+    RefactoringStep implementation = ((RefactoringStep) BHReflection.invoke(script, SMethodTrimmedId.create("getImplementation", MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.util.structure.RefactoringLog"), "1JTUOcBrmo$")));
     return implementation;
   }
 

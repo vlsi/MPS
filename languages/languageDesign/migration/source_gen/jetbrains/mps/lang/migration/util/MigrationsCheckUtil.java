@@ -8,13 +8,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.LinkedList;
-import jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -24,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -50,7 +48,7 @@ public class MigrationsCheckUtil {
     return hasCycles(migrationScript, ListSequence.fromList(new LinkedList<SNode>()));
   }
   private static Iterable<SNode> allScriptDependencies(final SNode script) {
-    Iterable<SNode> result = Sequence.fromIterable(MigrationScript_BehaviorDescriptor.getRequiredData_id7s$_UJMVosT.invoke(script)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = Sequence.fromIterable(IMigrationUnit_BehaviorDescriptor.getRequiredData_id7s$_UJMVosT.invoke(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, 0x4f6b4ac0cd6d4af5L, "script")) != null);
       }
@@ -58,7 +56,7 @@ public class MigrationsCheckUtil {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, 0x4f6b4ac0cd6d4af5L, "script"));
       }
-    }).concat(Sequence.fromIterable(MigrationScript_BehaviorDescriptor.getExecuteAfter_id2bWK$jI6RRp.invoke(script)).where(new IWhereFilter<SNode>() {
+    }).concat(Sequence.fromIterable(IMigrationUnit_BehaviorDescriptor.getExecuteAfter_id2bWK$jI6RRp.invoke(script)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script")) != null);
       }
@@ -67,9 +65,9 @@ public class MigrationsCheckUtil {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script"));
       }
     }));
-    result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"))).where(new IWhereFilter<SNode>() {
+    result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion")) < SPropertyOperations.getInteger(script, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+        return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) < IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(script);
       }
     }));
     return result;

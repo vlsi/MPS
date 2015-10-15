@@ -307,8 +307,8 @@
   <node concept="bUwia" id="6rIOn75Xy3l">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="4uVwhQyzcsF" role="3lj3bC">
-      <ref role="30HIoZ" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
-      <ref role="3lhOvi" node="4uVwhQyzcsQ" resolve="map_RefactoringStep" />
+      <ref role="30HIoZ" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
+      <ref role="3lhOvi" node="4uVwhQyzcsQ" resolve="map_PureMigrationScript" />
     </node>
     <node concept="3aamgX" id="4uVwhQyzAw5" role="3acgRq">
       <ref role="30HIoZ" to="gqi5:6szrkDoc28u" resolve="MoveNode" />
@@ -318,7 +318,7 @@
     </node>
   </node>
   <node concept="3SyAh_" id="4uVwhQyzcsQ">
-    <property role="TrG5h" value="map_RefactoringStep" />
+    <property role="TrG5h" value="map_PureMigrationScript" />
     <property role="qMTe8" value="0" />
     <node concept="3Tm1VV" id="4uVwhQyzcsR" role="1B3o_S" />
     <node concept="3tYpXE" id="4uVwhQyzeqt" role="jymVt">
@@ -364,12 +364,12 @@
                   <node concept="2OqwBi" id="2mdzW6dRMR8" role="v9R3O">
                     <node concept="2OqwBi" id="2mdzW6dRMoh" role="2Oq$k0">
                       <node concept="30H73N" id="2mdzW6dRMey" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="2mdzW6dRMDn" role="2OqNvi">
-                        <ref role="3Tt5mk" to="gqi5:4uVwhQyPCRe" />
+                      <node concept="3TrEf2" id="1JTUOcBsdZL" role="2OqNvi">
+                        <ref role="3Tt5mk" to="53vh:3A3gNhf2pHV" />
                       </node>
                     </node>
-                    <node concept="3TrcHB" id="2mdzW6dRNc0" role="2OqNvi">
-                      <ref role="3TsBF5" to="gqi5:6szrkDodGEW" resolve="fromVersion" />
+                    <node concept="2qgKlT" id="1JTUOcBsepw" role="2OqNvi">
+                      <ref role="37wK5l" to="nbs9:4uVwhQyFcnl" resolve="fromVersion" />
                     </node>
                   </node>
                   <node concept="3NFfHV" id="2mdzW6dRL_A" role="5jGum">
@@ -377,8 +377,8 @@
                       <node concept="3clFbF" id="2mdzW6dRL_C" role="3cqZAp">
                         <node concept="2OqwBi" id="2mdzW6dRL_D" role="3clFbG">
                           <node concept="30H73N" id="2mdzW6dRL_E" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="2mdzW6dRL_F" role="2OqNvi">
-                            <ref role="3Tt5mk" to="gqi5:4uVwhQyPCRe" />
+                          <node concept="3TrEf2" id="1JTUOcBsdT2" role="2OqNvi">
+                            <ref role="3Tt5mk" to="53vh:3A3gNhf2pHV" />
                           </node>
                         </node>
                       </node>
@@ -458,7 +458,7 @@
       </node>
     </node>
     <node concept="n94m4" id="4uVwhQyzct5" role="lGtFl">
-      <ref role="n9lRv" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+      <ref role="n9lRv" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
     </node>
     <node concept="17Uvod" id="4uVwhQyzctx" role="lGtFl">
       <property role="P4ACc" value="90746344-04fd-4286-97d5-b46ae6a81709/8352104482584315555/5820409521797704727" />

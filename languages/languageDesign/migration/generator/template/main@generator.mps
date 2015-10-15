@@ -38,6 +38,7 @@
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)" />
+    <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -524,8 +525,8 @@
                             <ref role="3Tt5mk" to="53vh:4XFiG3drkFP" />
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="6d7r2FpJFfo" role="2OqNvi">
-                          <ref role="37wK5l" to="buve:7s$_UJMVDH8" resolve="getProducedData" />
+                        <node concept="2qgKlT" id="1JTUOcBspon" role="2OqNvi">
+                          <ref role="37wK5l" to="nbs9:7s$_UJMVDH8" resolve="getProducedData" />
                         </node>
                       </node>
                     </node>
@@ -729,8 +730,8 @@
                           <ref role="3Tt5mk" to="53vh:4XFiG3drkFP" />
                         </node>
                       </node>
-                      <node concept="3TrcHB" id="2mdzW6dRaol" role="2OqNvi">
-                        <ref role="3TsBF5" to="53vh:536fTXa3qKn" resolve="fromVersion" />
+                      <node concept="2qgKlT" id="1JTUOcBsBRt" role="2OqNvi">
+                        <ref role="37wK5l" to="nbs9:4uVwhQyFcnl" resolve="fromVersion" />
                       </node>
                     </node>
                     <node concept="3NFfHV" id="2mdzW6dR8Rf" role="5jGum">
@@ -756,8 +757,8 @@
                 <node concept="3clFbF" id="54APHaXfK4t" role="3cqZAp">
                   <node concept="2OqwBi" id="7s$_UJMV_BR" role="3clFbG">
                     <node concept="30H73N" id="7s$_UJMV_8k" role="2Oq$k0" />
-                    <node concept="2qgKlT" id="7s$_UJMVBDq" role="2OqNvi">
-                      <ref role="37wK5l" to="buve:7s$_UJMVosT" resolve="getRequiredData" />
+                    <node concept="2qgKlT" id="1JTUOcBs_nz" role="2OqNvi">
+                      <ref role="37wK5l" to="nbs9:7s$_UJMVosT" resolve="getRequiredData" />
                     </node>
                   </node>
                 </node>
@@ -812,7 +813,7 @@
                     <node concept="2OqwBi" id="6d7r2Fq4BBx" role="3uHU7B">
                       <node concept="30H73N" id="6d7r2Fq4Brm" role="2Oq$k0" />
                       <node concept="2qgKlT" id="6d7r2Fq4D7Y" role="2OqNvi">
-                        <ref role="37wK5l" to="buve:7s$_UJMVDH8" resolve="getProducedData" />
+                        <ref role="37wK5l" to="nbs9:7s$_UJMVDH8" resolve="getProducedData" />
                       </node>
                     </node>
                   </node>
@@ -957,7 +958,7 @@
                         <node concept="2OqwBi" id="2bWK$jI6CBz" role="3clFbG">
                           <node concept="30H73N" id="2bWK$jI6CB$" role="2Oq$k0" />
                           <node concept="2qgKlT" id="2bWK$jI6CB_" role="2OqNvi">
-                            <ref role="37wK5l" to="buve:7s$_UJMVosT" resolve="getRequiredData" />
+                            <ref role="37wK5l" to="nbs9:7s$_UJMVosT" resolve="getRequiredData" />
                           </node>
                         </node>
                       </node>
@@ -973,8 +974,8 @@
                         <ref role="3Tt5mk" to="53vh:4XFiG3drkFP" />
                       </node>
                     </node>
-                    <node concept="3TrcHB" id="2mdzW6dRh6k" role="2OqNvi">
-                      <ref role="3TsBF5" to="53vh:536fTXa3qKn" resolve="fromVersion" />
+                    <node concept="2qgKlT" id="1JTUOcBsP3R" role="2OqNvi">
+                      <ref role="37wK5l" to="nbs9:4uVwhQyFcnl" resolve="fromVersion" />
                     </node>
                   </node>
                   <node concept="3NFfHV" id="2mdzW6dRbUX" role="5jGum">
@@ -1003,7 +1004,7 @@
                 <node concept="2OqwBi" id="2bWK$jI6CBM" role="2Oq$k0">
                   <node concept="30H73N" id="2bWK$jI6CBN" role="2Oq$k0" />
                   <node concept="2qgKlT" id="2bWK$jI6CBO" role="2OqNvi">
-                    <ref role="37wK5l" to="buve:7s$_UJMVosT" resolve="getRequiredData" />
+                    <ref role="37wK5l" to="nbs9:7s$_UJMVosT" resolve="getRequiredData" />
                   </node>
                 </node>
                 <node concept="3GX2aA" id="2bWK$jI6CBP" role="2OqNvi" />
@@ -1037,7 +1038,7 @@
                         <node concept="2OqwBi" id="4F5w8gPUd7v" role="3clFbG">
                           <node concept="30H73N" id="4F5w8gPUcV7" role="2Oq$k0" />
                           <node concept="2qgKlT" id="2bWK$jI7fav" role="2OqNvi">
-                            <ref role="37wK5l" to="buve:2bWK$jI6RRp" resolve="getExecuteAfter" />
+                            <ref role="37wK5l" to="nbs9:2bWK$jI6RRp" resolve="getExecuteAfter" />
                           </node>
                         </node>
                       </node>
@@ -1053,8 +1054,8 @@
                         <ref role="3Tt5mk" to="53vh:3A3gNhf2pHV" />
                       </node>
                     </node>
-                    <node concept="3TrcHB" id="2mdzW6dRmyO" role="2OqNvi">
-                      <ref role="3TsBF5" to="53vh:536fTXa3qKn" resolve="fromVersion" />
+                    <node concept="2qgKlT" id="1JTUOcBsOh3" role="2OqNvi">
+                      <ref role="37wK5l" to="nbs9:4uVwhQyFcnl" resolve="fromVersion" />
                     </node>
                   </node>
                   <node concept="3NFfHV" id="2mdzW6dRhNp" role="5jGum">
@@ -1083,7 +1084,7 @@
                 <node concept="2OqwBi" id="6d7r2Fq7EfN" role="2Oq$k0">
                   <node concept="30H73N" id="6d7r2Fq7EfO" role="2Oq$k0" />
                   <node concept="2qgKlT" id="2bWK$jI7dIT" role="2OqNvi">
-                    <ref role="37wK5l" to="buve:2bWK$jI6RRp" resolve="getExecuteAfter" />
+                    <ref role="37wK5l" to="nbs9:2bWK$jI6RRp" resolve="getExecuteAfter" />
                   </node>
                 </node>
                 <node concept="3GX2aA" id="6d7r2Fq7FEe" role="2OqNvi" />

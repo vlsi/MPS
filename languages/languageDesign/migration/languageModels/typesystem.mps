@@ -15,6 +15,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" implicit="true" />
     <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" implicit="true" />
   </imports>
   <registry>
@@ -344,8 +345,8 @@
                         <ref role="3Tt5mk" to="53vh:4XFiG3drkFP" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="3yKhys4Afds" role="2OqNvi">
-                      <ref role="37wK5l" to="buve:7s$_UJMVDH8" resolve="getProducedData" />
+                    <node concept="2qgKlT" id="1JTUOcBrIii" role="2OqNvi">
+                      <ref role="37wK5l" to="nbs9:7s$_UJMVDH8" resolve="getProducedData" />
                     </node>
                   </node>
                 </node>

@@ -24,7 +24,7 @@
     <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
+    <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -269,8 +269,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="2qgKlT" id="6d7r2FpLhJv" role="2OqNvi">
-                    <ref role="37wK5l" to="buve:7s$_UJMVDH8" resolve="getProducedData" />
+                  <node concept="2qgKlT" id="1JTUOcBrSkR" role="2OqNvi">
+                    <ref role="37wK5l" to="nbs9:7s$_UJMVDH8" resolve="getProducedData" />
                   </node>
                 </node>
               </node>

@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myRefactoringLog_BehaviorDescriptor = new RefactoringLog_BehaviorDescriptor();
   private final BHDescriptor myReflectionNodeReference_BehaviorDescriptor = new ReflectionNodeReference_BehaviorDescriptor();
   private final BHDescriptor myRefactoringPart_BehaviorDescriptor = new RefactoringPart_BehaviorDescriptor();
   private final BHDescriptor myAbstractNodeReference_BehaviorDescriptor = new AbstractNodeReference_BehaviorDescriptor();
@@ -24,25 +25,26 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myIMigrationUnit_BehaviorDescriptor = new IMigrationUnit_BehaviorDescriptor();
   private final BHDescriptor myMoveNode_BehaviorDescriptor = new MoveNode_BehaviorDescriptor();
   private final BHDescriptor myDirectNodeReference_BehaviorDescriptor = new DirectNodeReference_BehaviorDescriptor();
-  private final BHDescriptor myRefactoringStep_BehaviorDescriptor = new RefactoringStep_BehaviorDescriptor();
+  private final BHDescriptor myPureMigrationScript_BehaviorDescriptor = new PureMigrationScript_BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[13];
-    myConceptBehaviorIds[0] = 0x27bf3263be23f0dfL;
-    myConceptBehaviorIds[1] = 0x2b3f57492c163158L;
-    myConceptBehaviorIds[2] = 0x2b3f57492c1648ccL;
-    myConceptBehaviorIds[3] = 0x2b3f57492c165c5dL;
-    myConceptBehaviorIds[4] = 0x2b3f57492c1741b6L;
-    myConceptBehaviorIds[5] = 0x2b3f57492c1741b7L;
-    myConceptBehaviorIds[6] = 0x2b3f57492c1741b8L;
-    myConceptBehaviorIds[7] = 0x2b3f57492c1741b9L;
-    myConceptBehaviorIds[8] = 0x2b3f57492c1741baL;
-    myConceptBehaviorIds[9] = 0x47bb811da2acc4d6L;
-    myConceptBehaviorIds[10] = 0x67236d4a5830221eL;
-    myConceptBehaviorIds[11] = 0x67236d4a58303771L;
-    myConceptBehaviorIds[12] = 0x67236d4a5836cabbL;
+    myConceptBehaviorIds = new long[14];
+    myConceptBehaviorIds[0] = 0x1bf9eb43276b6d8fL;
+    myConceptBehaviorIds[1] = 0x27bf3263be23f0dfL;
+    myConceptBehaviorIds[2] = 0x2b3f57492c163158L;
+    myConceptBehaviorIds[3] = 0x2b3f57492c1648ccL;
+    myConceptBehaviorIds[4] = 0x2b3f57492c165c5dL;
+    myConceptBehaviorIds[5] = 0x2b3f57492c1741b6L;
+    myConceptBehaviorIds[6] = 0x2b3f57492c1741b7L;
+    myConceptBehaviorIds[7] = 0x2b3f57492c1741b8L;
+    myConceptBehaviorIds[8] = 0x2b3f57492c1741b9L;
+    myConceptBehaviorIds[9] = 0x2b3f57492c1741baL;
+    myConceptBehaviorIds[10] = 0x47bb811da2acc4d6L;
+    myConceptBehaviorIds[11] = 0x67236d4a5830221eL;
+    myConceptBehaviorIds[12] = 0x67236d4a58303771L;
+    myConceptBehaviorIds[13] = 0x67236d4a5836cabbL;
   }
 
   @Deprecated
@@ -57,31 +59,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myReflectionNodeReference_BehaviorDescriptor;
+        return myRefactoringLog_BehaviorDescriptor;
       case 1:
-        return myRefactoringPart_BehaviorDescriptor;
+        return myReflectionNodeReference_BehaviorDescriptor;
       case 2:
-        return myAbstractNodeReference_BehaviorDescriptor;
+        return myRefactoringPart_BehaviorDescriptor;
       case 3:
-        return myMoveNodeSpecialization_BehaviorDescriptor;
+        return myAbstractNodeReference_BehaviorDescriptor;
       case 4:
-        return myMoveConcept_BehaviorDescriptor;
+        return myMoveNodeSpecialization_BehaviorDescriptor;
       case 5:
-        return myMoveReferenceLink_BehaviorDescriptor;
+        return myMoveConcept_BehaviorDescriptor;
       case 6:
-        return myMoveConceptMember_BehaviorDescriptor;
+        return myMoveReferenceLink_BehaviorDescriptor;
       case 7:
-        return myMoveProperty_BehaviorDescriptor;
+        return myMoveConceptMember_BehaviorDescriptor;
       case 8:
-        return myMoveContainmentLink_BehaviorDescriptor;
+        return myMoveProperty_BehaviorDescriptor;
       case 9:
-        return myIMigrationUnit_BehaviorDescriptor;
+        return myMoveContainmentLink_BehaviorDescriptor;
       case 10:
-        return myMoveNode_BehaviorDescriptor;
+        return myIMigrationUnit_BehaviorDescriptor;
       case 11:
-        return myDirectNodeReference_BehaviorDescriptor;
+        return myMoveNode_BehaviorDescriptor;
       case 12:
-        return myRefactoringStep_BehaviorDescriptor;
+        return myDirectNodeReference_BehaviorDescriptor;
+      case 13:
+        return myPureMigrationScript_BehaviorDescriptor;
       default:
         return null;
     }

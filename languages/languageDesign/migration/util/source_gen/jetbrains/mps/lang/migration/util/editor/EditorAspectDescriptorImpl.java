@@ -18,9 +18,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 1:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoveNode_Editor()));
       case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor()));
       case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringStep_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor()));
       case 4:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor()));
       default:
@@ -33,5 +33,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.util.structure.DirectNodeReference", "jetbrains.mps.lang.migration.util.structure.MoveNode", "jetbrains.mps.lang.migration.util.structure.RefactoringOrderDependency", "jetbrains.mps.lang.migration.util.structure.RefactoringStep", "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.util.structure.DirectNodeReference", "jetbrains.mps.lang.migration.util.structure.MoveNode", "jetbrains.mps.lang.migration.util.structure.PureMigrationScript", "jetbrains.mps.lang.migration.util.structure.RefactoringLog", "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference"};
 }

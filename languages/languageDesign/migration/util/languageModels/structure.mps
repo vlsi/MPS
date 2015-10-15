@@ -6,6 +6,7 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -16,7 +17,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -127,7 +130,7 @@
   </node>
   <node concept="1TIwiD" id="6szrkDodGEV">
     <property role="3GE5qa" value="refactoring" />
-    <property role="TrG5h" value="RefactoringStep" />
+    <property role="TrG5h" value="PureMigrationScript" />
     <property role="19KtqR" value="true" />
     <property role="1pbfSe" value="1084606459" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -135,7 +138,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
       <property role="20kJfa" value="executeAfter" />
-      <ref role="20lvS9" node="4uVwhQyPCRd" resolve="RefactoringOrderDependency" />
+      <ref role="20lvS9" to="53vh:3A3gNhf2pHU" resolve="OrderDependency" />
     </node>
     <node concept="1TJgyi" id="6szrkDodGEW" role="1TKVEl">
       <property role="TrG5h" value="fromVersion" />
@@ -231,17 +234,49 @@
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="IMigrationUnit" />
     <property role="1pbfSe" value="362265101" />
+    <node concept="PrWs8" id="1JTUOcBrycA" role="PrDN$">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
-  <node concept="1TIwiD" id="4uVwhQyPCRd">
+  <node concept="1TIwiD" id="1JTUOcBqQQf">
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="RefactoringLog" />
+    <property role="19KtqR" value="true" />
+    <property role="1pbfSe" value="1130715346" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1JTUOcBqQQg" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="executeAfter" />
+      <ref role="20lvS9" node="1JTUOcBqQQt" resolve="RefactoringOrderDependency" />
+    </node>
+    <node concept="1TJgyi" id="1JTUOcBqQQh" role="1TKVEl">
+      <property role="TrG5h" value="fromVersion" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="1JTUOcBqQQi" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="part" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2GZlO$G5z5o" resolve="RefactoringPart" />
+    </node>
+    <node concept="PrWs8" id="1JTUOcBqQQj" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="1JTUOcBqQQl" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1JTUOcBqQQt">
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="RefactoringOrderDependency" />
-    <property role="1pbfSe" value="359526678" />
+    <property role="1pbfSe" value="1130715360" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4uVwhQyPCRe" role="1TKVEi">
+    <node concept="1TJgyj" id="1JTUOcBqQQu" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="refactoring" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="6szrkDodGEV" resolve="RefactoringStep" />
+      <ref role="20lvS9" node="1JTUOcBqQQf" resolve="RefactoringLog" />
     </node>
   </node>
 </model>

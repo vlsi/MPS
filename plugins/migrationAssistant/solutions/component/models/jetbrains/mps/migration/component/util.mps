@@ -1197,7 +1197,7 @@
           <node concept="3cpWsn" id="4yRsQKntjQ0" role="3cpWs9">
             <property role="TrG5h" value="script" />
             <node concept="3Tqbb2" id="4yRsQKntjPY" role="1tU5fm">
-              <ref role="ehGHo" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
+              <ref role="ehGHo" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
             </node>
             <node concept="2OqwBi" id="4yRsQKntjQ1" role="33vP2m">
               <node concept="2OqwBi" id="4yRsQKntjQ2" role="2Oq$k0">
@@ -1206,7 +1206,7 @@
                     <ref role="3cqZAo" node="4yRsQKnsUpr" resolve="migrationModel" />
                   </node>
                   <node concept="2RRcyG" id="4yRsQKntjQ5" role="2OqNvi">
-                    <ref role="2RRcyH" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
+                    <ref role="2RRcyH" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="4yRsQKntjQ6" role="2OqNvi">
@@ -1221,8 +1221,8 @@
                             <node concept="37vLTw" id="4yRsQKntjQd" role="2Oq$k0">
                               <ref role="3cqZAo" node="4yRsQKntjQf" resolve="it" />
                             </node>
-                            <node concept="2qgKlT" id="4yRsQKntjQe" role="2OqNvi">
-                              <ref role="37wK5l" to="nbs9:4uVwhQyFcnl" resolve="fromVersion" />
+                            <node concept="3TrcHB" id="36$CdjY9L0F" role="2OqNvi">
+                              <ref role="3TsBF5" to="gqi5:1JTUOcBqQQh" resolve="fromVersion" />
                             </node>
                           </node>
                         </node>
@@ -1249,8 +1249,8 @@
               <node concept="37vLTw" id="4yRsQKntrZD" role="2Oq$k0">
                 <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="script" />
               </node>
-              <node concept="2qgKlT" id="4yRsQKntrZE" role="2OqNvi">
-                <ref role="37wK5l" to="nbs9:4yRsQKnslQA" resolve="getImplementation" />
+              <node concept="2qgKlT" id="36$CdjY9Moa" role="2OqNvi">
+                <ref role="37wK5l" to="nbs9:1JTUOcBrmo$" resolve="getImplementation" />
               </node>
             </node>
           </node>
