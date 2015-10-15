@@ -2601,6 +2601,78 @@
       <unit id="2738496478055587551" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInStaticFieldBackspace2_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2746054822153765832">
+    <file name="ShowReflectiveEditor_Test.java">
+      <node id="2746054822153765832" at="15,60,16,107" concept="2" />
+      <node id="2746054822153765832" at="16,107,17,101" concept="2" />
+      <node id="2746054822153765832" at="24,51,25,63" concept="2" />
+      <node id="2746054822153769062" at="25,63,26,88" concept="2" />
+      <node id="2746054822153765832" at="12,0,14,0" concept="1" trace="ShowReflectiveEditor_Test#()V" />
+      <node id="2746054822153765832" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2746054822153765832" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditor#()V" />
+      <node id="2746054822153765832" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2746054822153765832" at="12,38,12,38" />
+      <scope id="2746054822153765832" at="21,23,21,23" />
+      <scope id="2746054822153765832" at="12,0,14,0" />
+      <scope id="2746054822153765832" at="15,60,17,101" />
+      <scope id="2746054822153765832" at="21,0,23,0" />
+      <scope id="2746054822153765832" at="24,51,26,88" />
+      <scope id="2746054822153765832" at="14,0,19,0" />
+      <scope id="2746054822153765832" at="23,0,28,0" />
+      <unit id="2746054822153765832" at="19,0,29,0" name="jetbrains.mps.editorTest.ShowReflectiveEditor_Test$TestBody" />
+      <unit id="2746054822153765832" at="10,0,30,0" name="jetbrains.mps.editorTest.ShowReflectiveEditor_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2746054822154039271">
+    <file name="ShowReflectiveEditorAndMove_Test.java">
+      <node id="2746054822154039271" at="15,67,16,107" concept="2" />
+      <node id="2746054822154039271" at="16,107,17,108" concept="2" />
+      <node id="2746054822154039271" at="24,51,25,63" concept="2" />
+      <node id="2746054822154039293" at="25,63,26,88" concept="2" />
+      <node id="2746054822154165229" at="26,88,27,74" concept="2" />
+      <node id="2746054822154165235" at="27,74,28,76" concept="2" />
+      <node id="2746054822154165477" at="28,76,29,76" concept="2" />
+      <node id="2746054822154165487" at="29,76,30,76" concept="2" />
+      <node id="2746054822154039271" at="12,0,14,0" concept="1" trace="ShowReflectiveEditorAndMove_Test#()V" />
+      <node id="2746054822154039271" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2746054822154039271" at="14,0,19,0" concept="5" trace="test_ShowReflectiveEditorAndMove#()V" />
+      <node id="2746054822154039271" at="23,0,32,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2746054822154039271" at="12,45,12,45" />
+      <scope id="2746054822154039271" at="21,23,21,23" />
+      <scope id="2746054822154039271" at="12,0,14,0" />
+      <scope id="2746054822154039271" at="15,67,17,108" />
+      <scope id="2746054822154039271" at="21,0,23,0" />
+      <scope id="2746054822154039271" at="14,0,19,0" />
+      <scope id="2746054822154039271" at="24,51,30,76" />
+      <scope id="2746054822154039271" at="23,0,32,0" />
+      <unit id="2746054822154039271" at="19,0,33,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorAndMove_Test$TestBody" />
+      <unit id="2746054822154039271" at="10,0,34,0" name="jetbrains.mps.editorTest.ShowReflectiveEditorAndMove_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2746054822154165513">
+    <file name="ShowReflectiveThenRegularEditor_Test.java">
+      <node id="2746054822154165513" at="17,71,18,107" concept="2" />
+      <node id="2746054822154165513" at="18,107,19,112" concept="2" />
+      <node id="2746054822154165513" at="26,51,27,63" concept="2" />
+      <node id="2746054822154165539" at="27,63,28,88" concept="2" />
+      <node id="2746054822154422597" at="28,88,29,280" concept="2" />
+      <node id="2746054822154435067" at="29,280,30,85" concept="2" />
+      <node id="2746054822154165513" at="14,0,16,0" concept="1" trace="ShowReflectiveThenRegularEditor_Test#()V" />
+      <node id="2746054822154165513" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="2746054822154165513" at="16,0,21,0" concept="5" trace="test_ShowReflectiveThenRegularEditor#()V" />
+      <node id="2746054822154165513" at="25,0,32,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2746054822154165513" at="14,49,14,49" />
+      <scope id="2746054822154165513" at="23,23,23,23" />
+      <scope id="2746054822154165513" at="14,0,16,0" />
+      <scope id="2746054822154165513" at="17,71,19,112" />
+      <scope id="2746054822154165513" at="23,0,25,0" />
+      <scope id="2746054822154165513" at="26,51,30,85" />
+      <scope id="2746054822154165513" at="16,0,21,0" />
+      <scope id="2746054822154165513" at="25,0,32,0" />
+      <unit id="2746054822154165513" at="21,0,33,0" name="jetbrains.mps.editorTest.ShowReflectiveThenRegularEditor_Test$TestBody" />
+      <unit id="2746054822154165513" at="12,0,34,0" name="jetbrains.mps.editorTest.ShowReflectiveThenRegularEditor_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2834737865486664156">
     <file name="NoAbstractForPrivate_Test.java">
       <node id="2834737865486664156" at="15,60,16,107" concept="2" />

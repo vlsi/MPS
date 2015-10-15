@@ -29,7 +29,7 @@ public class ShowReflectiveEditor_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     String[] hints = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference());
-    return (hints == null ? true : Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
+    return (hints == null ? true : !(Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor")));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
