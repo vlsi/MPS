@@ -182,6 +182,14 @@ public final class GeneratorMappings {
     return !(o instanceof List);
   }
 
+  // expose internal structure, to build GeneratorDebug_Mappings with MPS-coded DebugMappingsBuilder
+  /*package*/ Collection<String> getAvailableLabels() {
+    return myMappingNameAndInputNodeToOutputNodeMap.keySet();
+  }
+  /*package*/Map<SNode,Object> getMappings(String label) {
+    return myMappingNameAndInputNodeToOutputNodeMap.get(label);
+  }
+
   // serialization
 
   public void export(TransientModelWithMetainfo model, DependenciesBuilder builder) {
