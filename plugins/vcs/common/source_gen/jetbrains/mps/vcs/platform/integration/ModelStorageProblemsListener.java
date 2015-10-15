@@ -5,37 +5,34 @@ package jetbrains.mps.vcs.platform.integration;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import com.intellij.notification.Notification;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.util.ui.UIUtil;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.event.HyperlinkEvent;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import com.intellij.notification.Notifications;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import java.io.File;
-import jetbrains.mps.util.Reference;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import javax.swing.JOptionPane;
@@ -46,6 +43,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
@@ -58,11 +56,6 @@ import org.apache.log4j.LogManager;
 public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private Notification myLastNotification;
   private volatile SModelReference myLastModel;
-  private final SRepository myRepository;
-
-  public ModelStorageProblemsListener(@NotNull SRepository repository) {
-    myRepository = repository;
-  }
 
   @Override
   protected void startListening(SModel model) {
@@ -102,14 +95,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   public void problemsDetected(SModel model, Iterable<SModel.Problem> problems) {
     Iterable<SModel.Problem> pr = problems;
     SRepository repository = model.getRepository();
-    final Wrappers._T<Project> project = new Wrappers._T<Project>(ProjectHelper.getProject(repository));
-    if (project.value == null) {
-      // Note: the following code can be removed after proper implementation of project repositories 
-      Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
-      if (openProjects != null && openProjects.length == 1) {
-        project.value = openProjects[0];
-      }
-    }
+    final Project project = getProjectFromUI(repository);
 
     if (Sequence.fromIterable(pr).any(new IWhereFilter<SModel.Problem>() {
       public boolean accept(SModel.Problem it) {
@@ -130,7 +116,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
       }).select(new ISelector<SModel.Problem, String>() {
         public String select(SModel.Problem it) {
           String link = "";
-          if (it.getNode() != null && project.value != null) {
+          if (it.getNode() != null && project != null) {
             link = " (<a href=\"" + index.value + "\">view node</a>)";
             errMap.put(Integer.toString(index.value++), it.getNode().getReference());
           }
@@ -153,14 +139,14 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
               final SNodeReference ref = errMap.get(e.getDescription());
               assert ref != null;
 
-              project.value.getModelAccess().runWriteInEDT(new Runnable() {
+              project.getModelAccess().runWriteInEDT(new Runnable() {
                 public void run() {
-                  SNode resolved = ref.resolve(project.value.getRepository());
+                  SNode resolved = ref.resolve(project.getRepository());
                   if (resolved == null) {
                     return;
                   }
 
-                  NavigationSupport.getInstance().openNode(project.value, resolved, true, true);
+                  NavigationSupport.getInstance().openNode(project, resolved, true, true);
                 }
               });
             }
@@ -172,60 +158,63 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
   }
 
+  private Project getProjectFromUI(SRepository repository) {
+    Project project = ProjectHelper.getProject(repository);
+    if (project == null) {
+      // Note: the following code can be removed after proper implementation of project repositories 
+      Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+      if (openProjects != null && openProjects.length == 1) {
+        project = openProjects[0];
+      }
+    }
+    return project;
+  }
+
   private void resolveDiskMemoryConflict(final EditableSModel model) {
     final IFile file = ((FileDataSource) model.getSource()).getFile();
     final File backupFile = doBackup(file, model);
-    final Reference<Throwable> refThrowable = new Reference<Throwable>();
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        try {
-          // do nothing if conflict was already resolved and model was saved or reloaded 
-          if (!(model.isChanged())) {
-            backupFile.delete();
-            return;
-          }
-          assert SNodeOperations.isModelDisposed(model) == false;
+        // do nothing if conflict was already resolved and model was saved or reloaded 
+        if (!(model.isChanged())) {
+          backupFile.delete();
+          return;
+        }
+        assert model.getRepository() != null;
 
-          final boolean contentConflict = file.exists();
-          boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {
-            public Boolean compute() {
+        final boolean contentConflict = file.exists();
+        boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {
+          public Boolean compute() {
+            if (contentConflict) {
+              return showDiskMemoryQuestion(file, model, backupFile);
+            } else {
+              return showDeletedFromDiskQuestion(model, backupFile);
+            }
+          }
+        });
+        if (needSave) {
+          getProjectFromUI(model.getRepository()).getModelAccess().executeCommand(new Runnable() {
+            public void run() {
+              model.updateTimestamp();
+              model.save();
+            }
+          });
+        } else {
+          model.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
               if (contentConflict) {
-                return showDiskMemoryQuestion(file, model, backupFile);
+                model.reloadFromSource();
               } else {
-                return showDeletedFromDiskQuestion(model, backupFile);
+                ((SModuleBase) model.getModule()).unregisterModel((SModelBase) model);
               }
             }
           });
-          if (needSave) {
-            myRepository.getModelAccess().executeCommand(new Runnable() {
-              public void run() {
-                model.updateTimestamp();
-                model.save();
-              }
-            });
-          } else {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                if (contentConflict) {
-                  model.reloadFromSource();
-                } else {
-                  ((SModuleBase) model.getModule()).unregisterModel((SModelBase) model);
-                }
-              }
-            });
-          }
-        } catch (Throwable t) {
-          refThrowable.set(t);
         }
       }
     });
-    if (!(refThrowable.isNull())) {
-      throw new RuntimeException(refThrowable.get());
-    }
   }
 
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
-
     if (isApplicationInUnitTestOrHeadless()) {
       return ourTestImplementation.show("") == 0;
     }

@@ -17,7 +17,7 @@ public class PluginVCSManager implements ApplicationComponent {
   public PluginVCSManager(MPSCoreComponents coreComponents) {
     SRepository moduleRepository = coreComponents.getMPSCore().getModuleRepository();
     myModelAccess = moduleRepository.getModelAccess();
-    myResolver = new ModelStorageProblemsListener(moduleRepository);
+    myResolver = new ModelStorageProblemsListener();
   }
 
   @Override

@@ -67,7 +67,6 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   @Test
   public void testNewVersion() throws Exception {
-    LogManager.getLogger(getClass()).error("asdfsf");
     Assert.assertTrue(testRecompileClasses(JavaVersion.VERSION_1_8, null));
   }
 

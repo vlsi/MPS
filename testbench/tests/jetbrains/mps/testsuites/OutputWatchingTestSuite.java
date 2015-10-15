@@ -40,7 +40,7 @@ public class OutputWatchingTestSuite extends BaseMpsSuite {
   }
 
   protected void runChild(Runner runner, RunNotifier notifier) {
-    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier, Level.ERROR, false); // may be customized via annotations
+    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier, Level.ERROR, true); // fixme AP: may be customized via annotations
     try {
       runner.run(runNotifier);
     } finally {

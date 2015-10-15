@@ -4,13 +4,14 @@ package jetbrains.mps.testbench.junit;
 
 import org.apache.log4j.Level;
 import java.util.regex.Pattern;
-import jetbrains.mps.testbench.util.CachingPrintStream;
 import jetbrains.mps.testbench.util.CachingAppender;
 import java.util.Map;
 import org.junit.runner.Description;
 import java.util.HashMap;
 import jetbrains.mps.testbench.util.ThreadWatcher;
 import org.junit.runner.notification.RunNotifier;
+import java.util.List;
+import java.util.ArrayList;
 import org.junit.runner.notification.StoppedByUserException;
 import org.junit.runner.notification.Failure;
 import org.apache.log4j.Logger;
@@ -20,11 +21,13 @@ import org.apache.log4j.Logger;
  */
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level DEFAULT_WATCH_LOGGER_LEVEL = Level.ERROR;
-  private static final Pattern[] IGNORED_OUTPUT_PATTERNS = new Pattern[]{Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*")};
-  private final Level myWatchLevel;
-  private final boolean myWatchErrorOutput;
+  private static final Pattern EXECUTION_LIMIT_FAILED_PATTERN = Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*");
+  private static final Pattern WARN_PATTERN = Pattern.compile("\\[([\\d\\s])*\\](\\s)*WARN.*");
 
-  private final CachingPrintStream myErrorCachingStream = new CachingPrintStream(System.err, "error", IGNORED_OUTPUT_PATTERNS);
+  private final Level myWatchLevel;
+
+  private final IgnoringPatternErrorStream myErrorCachingStream;
+
   private CachingAppender myCachingAppender;
   private Map<Description, Object> myTestsToIgnore = new HashMap<Description, Object>();
   private ThreadWatcher myThreadWatcher;
@@ -33,26 +36,22 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     this(delegate, DEFAULT_WATCH_LOGGER_LEVEL, true);
   }
 
-  public WatchingRunNotifier(RunNotifier delegate, Level watchLevel, boolean watchErrorOutput) {
+  public WatchingRunNotifier(RunNotifier delegate, Level watchLevel, boolean ignoreWarnings) {
     super(delegate);
     myWatchLevel = watchLevel;
-    myWatchErrorOutput = watchErrorOutput;
+    myErrorCachingStream = new IgnoringPatternErrorStream(getPatternsToIgnore(ignoreWarnings));
+  }
+
+  private List<Pattern> getPatternsToIgnore(boolean ignoreWarnings) {
+    List<Pattern> result = new ArrayList<Pattern>();
+    result.add(EXECUTION_LIMIT_FAILED_PATTERN);
+    if (ignoreWarnings) {
+      result.add(WARN_PATTERN);
+    }
+    return result;
   }
 
   public void dispose() {
-  }
-
-  private void reRouteErrorStream() {
-    System.err.flush();
-    System.setErr(myErrorCachingStream);
-    myErrorCachingStream.clear();
-    myErrorCachingStream.startCaching();
-  }
-
-  private void resetErrorStream() {
-    myErrorCachingStream.flush();
-    myErrorCachingStream.stopCaching();
-    System.setErr(myErrorCachingStream.getOut());
   }
 
   @Override
@@ -94,9 +93,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void beforeTest(Description desc) {
-    if (myWatchErrorOutput) {
-      reRouteErrorStream();
-    }
+    myErrorCachingStream.reRoute();
     myCachingAppender = new CachingAppender(myWatchLevel);
     Logger.getRootLogger().addAppender(myCachingAppender);
     ExpectLogEvent ignoreEvent = desc.getAnnotation(ExpectLogEvent.class);
@@ -110,9 +107,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
 
   private void afterTest(Description desc) {
     myThreadWatcher.waitUntilSettled(15000);
-    if (myWatchErrorOutput) {
-      resetErrorStream();
-    }
+    myErrorCachingStream.reset();
     myCachingAppender.sealEvents();
     Logger.getRootLogger().removeAppender(myCachingAppender);
     Failure fail = null;
