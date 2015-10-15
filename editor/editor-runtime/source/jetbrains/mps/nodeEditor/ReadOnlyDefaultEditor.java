@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.apache.log4j.LogManager;
@@ -32,9 +31,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReadOnlyDefaultEditor.class));
 
@@ -44,9 +40,9 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addPropertyCell(final SProperty property) {
-    EditorCell_Property cell = new EditorCell_Property(myEditorContext, new ModelAccessor() {
+    EditorCell_Property cell = new EditorCell_Property(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return mySNode.getProperty(property);
+        return getSNode().getProperty(property);
       }
 
       public void setText(String s) {
@@ -55,7 +51,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
-    }, mySNode);
+    }, getSNode());
     cell.setEditable(false);
     addCell(cell);
   }
@@ -63,8 +59,8 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   @Override
 
   protected void addChildCell(SContainmentLink link) {
-    for (SNode child : mySNode.getChildren(link)) {
-      EditorCell nodeCell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
+    for (SNode child : getSNode().getChildren(link)) {
+      EditorCell nodeCell = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
       addCell(nodeCell);
       setIndent(nodeCell);
       addNewLine();
@@ -73,7 +69,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addReferenceCell(final SReferenceLink referenceLink) {
-    SReference reference = mySNode.getReference(referenceLink);
+    SReference reference = getSNode().getReference(referenceLink);
     if (reference == null) {
       addLabel("<no target>");
       return;
@@ -82,7 +78,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     if (referentNode == null) {
       String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
       String myErrorText = resolveInfo != null ? resolveInfo : "?" + referenceLink.getName() + "?";
-      EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, myErrorText);
+      EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getSNode(), myErrorText);
       errorCell.setCellId("error_" + referenceLink.getName());
       addCell(errorCell);
       return;
@@ -90,13 +86,13 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     if (referentNode.getModel() == null) {
       LOG.error("Reference to node which is not inside model. Node: " + referentNode, referentNode);
     }
-    EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+    EditorCell cell = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
       @Override
       public EditorCell compute() {
-        return createReferentEditorCell(myEditorContext, referenceLink, referentNode);
+        return createReferentEditorCell(getEditorContext(), referenceLink, referentNode);
       }
     }, referentNode, referenceLink.getName());
-    setSemanticNodeToCells(cell, mySNode);
+    setSemanticNodeToCells(cell, getSNode());
     cell.setCellId("reference_" + referenceLink.getName());
     addCell(cell);
   }

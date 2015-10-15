@@ -59,9 +59,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 /**
  * Semen Alperovich
  * 04 04, 2013
@@ -73,20 +70,20 @@ public class DefaultEditor extends AbstractDefaultEditor {
   }
 
   protected void init() {
-    assert mySNode != null && myConcept != null;
-    for (SProperty sProperty : myConcept.getProperties()) {
+    assert getSNode() != null && getConcept() != null;
+    for (SProperty sProperty : getConcept().getProperties()) {
       if (!sProperty.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         addProperty(sProperty);
       }
     }
 
-    for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
+    for (SReferenceLink sReferenceLink : getConcept().getReferenceLinks()) {
       if (!sReferenceLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         addReferenceLink(sReferenceLink);
       }
     }
 
-    for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
+    for (SContainmentLink sContainmentLink : getConcept().getContainmentLinks()) {
       if (!sContainmentLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         addContainmentLink(sContainmentLink);
       }
@@ -96,42 +93,42 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addPropertyCell(SProperty property) {
-    EditorCell_Property editorCell = new EditorCell_Property(myEditorContext, new SPropertyAccessor(mySNode, property, false, true), mySNode);
+    EditorCell_Property editorCell = new EditorCell_Property(getEditorContext(), new SPropertyAccessor(getSNode(), property, false, true), getSNode());
     editorCell.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(editorCell,
-        new Pair<SNodeReference, String>(new SNodePointer(mySNode), property.getName()));
+        new Pair<SNodeReference, String>(new SNodePointer(getSNode()), property.getName()));
     editorCell.setDefaultText("<no " + property.getName() + ">");
     if (editorCell.getCellId() == null) {
       editorCell.setCellId("property_" + property);
     }
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(mySNode, property));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(mySNode, property));
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSPropertyOrNode(getSNode(), property));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSPropertyOrNode(getSNode(), property));
 
     SDataType type = property.getType();
     if (type instanceof SPrimitiveDataType) {
       if (((SPrimitiveDataType) type).getType() == SPrimitiveDataType.BOOL) {
-        editorCell.setSubstituteInfo(new BooleanSPropertySubstituteInfo(mySNode, property, myEditorContext));
+        editorCell.setSubstituteInfo(new BooleanSPropertySubstituteInfo(getSNode(), property, getEditorContext()));
       }
     } else {
-      editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(mySNode, property, myEditorContext));
+      editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(getSNode(), property, getEditorContext()));
     }
     //todo generate property data type
 //    if (type instanceof SEnumeration) {
 //      editorCell.setSubstituteInfo(new EnumSPropertySubstituteInfo(mySNode, property, myEditorContext));
 //    }
-    addCellWithRole(IterableUtils.first(AttributeOperations.getPropertyAttributes(mySNode, property)), AttributeKind.Property.class, editorCell);
+    addCellWithRole(IterableUtils.first(AttributeOperations.getPropertyAttributes(getSNode(), property)), AttributeKind.Property.class, editorCell);
   }
 
   @Override
   protected void addChildCell(final SContainmentLink link) {
     if (link.isMultiple()) {
-      AbstractCellListHandler handler = new ListHandler(mySNode, link, myEditorContext);
-      EditorCell editorCell = handler.createCells(myEditorContext, new CellLayout_Indent(), false);
+      AbstractCellListHandler handler = new ListHandler(getSNode(), link, getEditorContext());
+      EditorCell editorCell = handler.createCells(getEditorContext(), new CellLayout_Indent(), false);
       editorCell.setRole(handler.getElementRole());
       addStyle(editorCell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE);
       setIndent(editorCell);
       addCell(editorCell);
     } else {
-      SingleRoleCellProvider provider = new SingleRoleCellProvider(mySNode, link, myEditorContext) {
+      SingleRoleCellProvider provider = new SingleRoleCellProvider(getSNode(), link, getEditorContext()) {
         @Override
         protected String getNoTargetText() {
           return link.getName();
@@ -140,7 +137,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         @Override
         protected EditorCell createEmptyCell() {
           EditorCell emptyCell = super.createEmptyCell();
-          emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(mySNode, link, myEditorContext));
+          emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getSNode(), link, myEditorContext));
           emptyCell.setRole(link.getName());
           emptyCell.setCellId("empty_" + link.getName());
           return emptyCell;
@@ -149,7 +146,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
         @Override
         public EditorCell createChildCell(EditorContext editorContext, SNode child) {
           EditorCell cell = super.createChildCell(editorContext, child);
-          cell.setSubstituteInfo(new DefaultSChildSubstituteInfo(mySNode, child, link, editorContext));
+          cell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getSNode(), child, link, editorContext));
           if (cell.getRole() == null) {
             cell.setRole(link.getName());
           }
@@ -162,53 +159,53 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
   @Override
   protected void addReferenceCell(final SReferenceLink referenceLink) {
-    SReference reference = mySNode.getReference(referenceLink);
+    SReference reference = getSNode().getReference(referenceLink);
     if (reference == null) {
       String noTargetText = "<no " + referenceLink.getName() + ">";
       jetbrains.mps.nodeEditor.cells.EditorCell_Label noRefCell = referenceLink.isOptional() ?
-          new EditorCell_Constant(myEditorContext, mySNode, "") : new EditorCell_Error(myEditorContext, mySNode, noTargetText);
+          new EditorCell_Constant(getEditorContext(), getSNode(), "") : new EditorCell_Error(getEditorContext(), getSNode(), noTargetText);
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(noTargetText);
 
-      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(mySNode));
-      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(mySNode));
+      noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
+      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
 
       noRefCell.setCellId("empty_" + referenceLink.getName());
       noRefCell.setRole(referenceLink.getName());
       noRefCell.setReferenceCell(true);
-      noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
+      noRefCell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(getSNode(), referenceLink, getEditorContext()));
       noRefCell.setRole(referenceLink.getName());
       setIndent(noRefCell);
       addCell(noRefCell);
     } else {
       final SNode referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
+      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(getEditorContext().getModel(), referentNode.getModel())) {
         //todo do we need this?
         String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         EditorCell errorCell = createErrorCell(resolveInfo != null ? resolveInfo : "?" + referenceLink.getName() + "?", referenceLink);
         errorCell.setCellId("error_" + referenceLink.getName());
         addCell(errorCell);
       } else {
-        EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+        EditorCell cell = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           @Override
           public EditorCell compute() {
-            return createReferentEditorCell(myEditorContext, referenceLink, referentNode);
+            return createReferentEditorCell(getEditorContext(), referenceLink, referentNode);
           }
         }, referentNode, referenceLink.getName());
         //todo what is that?
         CellUtil.setupIDeprecatableStyles(referentNode, cell);
-        setSemanticNodeToCells(cell, mySNode);
+        setSemanticNodeToCells(cell, getSNode());
 
         //todo rewrite cell actions
-        cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(mySNode, referenceLink.getName()));
-        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(mySNode, referenceLink.getName()));
-        cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(mySNode, referenceLink, myEditorContext));
+        cell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), referenceLink.getName()));
+        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), referenceLink.getName()));
+        cell.setSubstituteInfo(new DefaultSReferenceSubstituteInfo(getSNode(), referenceLink, getEditorContext()));
         if (cell.getCellId() == null) {
           cell.setCellId("reference_" + referenceLink.getName());
         }
         //todo attributes
-        addCellWithRole(IterableUtils.first(AttributeOperations.getLinkAttributes(mySNode, referenceLink)), AttributeKind.Reference.class, cell);
+        addCellWithRole(IterableUtils.first(AttributeOperations.getLinkAttributes(getSNode(), referenceLink)), AttributeKind.Reference.class, cell);
       }
     }
 
@@ -216,18 +213,18 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
 
   protected EditorCell createErrorCell(String error, SReferenceLink link) {
-    EditorCell_Error errorCell = new EditorCell_Error(myEditorContext, mySNode, error, true);
+    EditorCell_Error errorCell = new EditorCell_Error(getEditorContext(), getSNode(), error, true);
     if (!link.isOptional()) {
-      if (ReferenceConceptUtil.getCharacteristicReference(mySNode.getConcept()) != null) {
-        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(mySNode));
-        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(mySNode));
+      if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
+        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
+        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
         return errorCell;
       }
     }
 
     //todo rewrite cell actions
-    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(mySNode, link.getName()));
-    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(mySNode, link.getName()));
+    errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(getSNode(), link.getName()));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(getSNode(), link.getName()));
     return errorCell;
   }
 
@@ -242,7 +239,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
   private EditorCell createRoleAttributeCell(SNode attributeConcept, Class attributeKind, EditorCell editorCell) {
     if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
+      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
       if (manager != null) {
         return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
       }

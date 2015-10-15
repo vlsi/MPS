@@ -18,6 +18,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind.Node;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -55,10 +58,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private static final int NAME_ADD_PRIORITY = 1000;
   private static final String QUALIFIED_NAME = "qualified";
   private static final int QUALIFIED_PRIORITY = 200;
+  private static final Color FIRST_LABEL_BACKGROUND_COLOR = new Color(107, 142, 20, 100);
 
-  protected SNode mySNode;
-  protected SConcept myConcept;
-  protected EditorContext myEditorContext;
+  private SNode mySNode;
+  private SConcept myConcept;
+  private EditorContext myEditorContext;
 
   private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
   private int currentCollectionIdNumber = 0;
@@ -84,13 +88,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     mainCellCollection.setBig(true);
     mainCellCollection.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     addLabel(camelToLabel(myConcept.getName()));
-    addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(107, 142, 20, 100));
+    addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, FIRST_LABEL_BACKGROUND_COLOR);
     if (nameProperty != null) {
       getProperties().remove(nameProperty);
       addPropertyCell(nameProperty);
     }
     addReferences();
-    if (!getContainmentLinks().isEmpty() || !getProperties().isEmpty()) {
+    if (!getContainmentLinks().isEmpty() || !getProperties().isEmpty() || isAttribute()) {
       addPropertiesAndChildren();
     }
     popCollection();
@@ -177,6 +181,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     myEditorContext.getCellFactory().pushCellContext();
     myEditorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.PUSH_DEFAULT_EDITOR_HINT);
     addChildren();
+    addAttributedEntity();
     myEditorContext.getCellFactory().popCellContext();
     popCollection();
     addLabel("}");
@@ -221,6 +226,29 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
       addChildCell(link);
       addNewLine();
     }
+  }
+
+  private void addAttributedEntity() {
+    if (AttributeOperations.isNodeAttribute(mySNode)) {
+      addAttributedCell("attributed node:", Node.class);
+    } else if (AttributeOperations.isPropertyAttribute(mySNode)) {
+      addAttributedCell("attributed property:", AttributeKind.Property.class);
+    } else if (AttributeOperations.isLinkAttribute(mySNode)) {
+      addAttributedCell("attributed reference:", AttributeKind.Reference.class);
+    }
+  }
+
+  private void addAttributedCell(String label, Class attributeKind) {
+    addLabel(label);
+    addNewLine();
+    EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(attributeKind, mySNode);
+    addCell(editorCell);
+    addNewLine();
+  }
+
+  private boolean isAttribute() {
+    return AttributeOperations.isNodeAttribute(mySNode) || AttributeOperations.isPropertyAttribute(mySNode) || AttributeOperations.isLinkAttribute(mySNode);
   }
 
   private void addRoleLabel(String role, String type) {
@@ -363,4 +391,15 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return descriptor instanceof IllegalConceptDescriptor ? new ReadOnlyDefaultEditor(node.getConcept()) : new DefaultEditor(node.getConcept());
   }
 
+  protected SNode getSNode() {
+    return mySNode;
+  }
+
+  protected SConcept getConcept() {
+    return myConcept;
+  }
+
+  protected EditorContext getEditorContext() {
+    return myEditorContext;
+  }
 }

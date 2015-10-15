@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.SModelModificationsCollector;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -181,35 +182,42 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   @Override
-  public EditorCell updateChildNodeCell(SNode node) {
-    ReferencedNodeContext currentContext = myContextStack.peek().sameContextButAnotherNode(node);
+  public EditorCell updateChildNodeCell(final SNode node) {
+    final ReferencedNodeContext currentContext = myContextStack.peek().sameContextButAnotherNode(node);
     myContextStack.push(currentContext);
     try {
-      EditorContext editorContext = getUpdater().getEditorContext();
-      String[] explicitHintsForNode = getExplicitHintsForNode(node);
-      if (explicitHintsForNode != null) {
-        editorContext.getCellFactory().pushCellContext();
-        editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
-      }
-      EditorCell nodeCell = EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), currentContext);
-      if (explicitHintsForNode != null) {
-        editorContext.getCellFactory().popCellContext();
-      }
-      return nodeCell;
+      final EditorContext editorContext = getUpdater().getEditorContext();
+      return createCellWRTExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
+        @Override
+        public EditorCell compute() {
+          return EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), currentContext);
+        }
+      });
     } finally {
       myContextStack.pop();
     }
   }
 
   @Override
-  public EditorCell updateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute) {
+  public EditorCell updateRoleAttributeCell(final Class attributeKind, final EditorCell cellWithRole, final SNode roleAttribute) {
     if (attributeKind != AttributeKind.Reference.class && myContextStack.peek().hasRoles()) {
       //Suppressing role attribute cell creation upon reference cells.
       return cellWithRole;
     }
-    EditorContext editorContext = getUpdater().getEditorContext();
-    return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
-        myModelModifications);
+    final EditorContext editorContext = getUpdater().getEditorContext();
+    editorContext.getCellFactory().pushCellContext();
+    editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.PUSH_DEFAULT_EDITOR_HINT);
+    EditorCell editorCell = createCellWRTExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
+      @Override
+      public EditorCell compute() {
+        EditorCell editorCell = EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
+            myModelModifications);
+        return editorCell;
+      }
+    });
+    editorContext.getCellFactory().popCellContext();
+    return editorCell;
+
   }
 
   @Override
@@ -240,5 +248,18 @@ public class UpdateSessionImpl implements UpdateSession {
   @NotNull
   protected UpdaterImpl getUpdater() {
     return myUpdater;
+  }
+
+  private EditorCell createCellWRTExplicitEditorHints(EditorContext editorContext, SNode node, Computable<EditorCell> cellCreator) {
+    String[] explicitHintsForNode = getExplicitHintsForNode(node);
+    if (explicitHintsForNode != null) {
+      editorContext.getCellFactory().pushCellContext();
+      editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+    }
+    EditorCell editorCell = cellCreator.compute();
+    if (explicitHintsForNode != null) {
+      editorContext.getCellFactory().popCellContext();
+    }
+    return editorCell;
   }
 }
