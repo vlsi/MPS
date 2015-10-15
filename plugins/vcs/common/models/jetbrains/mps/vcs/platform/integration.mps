@@ -4409,17 +4409,30 @@
                 <node concept="3clFbS" id="6KmbN9hT190" role="1bW5cS">
                   <node concept="3SKdUt" id="6aevj3pBhqn" role="3cqZAp">
                     <node concept="3SKdUq" id="6aevj3pBhqo" role="3SKWNk">
-                      <property role="3SKdUp" value="do nothing if conflict was already resolved and model was saved or reloaded" />
+                      <property role="3SKdUp" value="do nothing if conflict was already resolved and model was saved or reloaded or unregistered" />
                     </node>
                   </node>
                   <node concept="3clFbJ" id="6aevj3pBhpB" role="3cqZAp">
-                    <node concept="3fqX7Q" id="6aevj3pBhqg" role="3clFbw">
-                      <node concept="2OqwBi" id="6aevj3pBhqh" role="3fr31v">
-                        <node concept="37vLTw" id="6JliwLNg7Vb" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
+                    <node concept="22lmx$" id="2tgT6XaG_Po" role="3clFbw">
+                      <node concept="3clFbC" id="2tgT6XaGBMG" role="3uHU7w">
+                        <node concept="10Nm6u" id="2tgT6XaGChl" role="3uHU7w" />
+                        <node concept="2OqwBi" id="2tgT6XaGBvO" role="3uHU7B">
+                          <node concept="37vLTw" id="2tgT6XaGATF" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
+                          </node>
+                          <node concept="liA8E" id="2tgT6XaGBF0" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
                         </node>
-                        <node concept="liA8E" id="6aevj3pBhqj" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~EditableSModel.isChanged():boolean" resolve="isChanged" />
+                      </node>
+                      <node concept="3fqX7Q" id="6aevj3pBhqg" role="3uHU7B">
+                        <node concept="2OqwBi" id="6aevj3pBhqh" role="3fr31v">
+                          <node concept="37vLTw" id="6JliwLNg7Vb" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
+                          </node>
+                          <node concept="liA8E" id="6aevj3pBhqj" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~EditableSModel.isChanged():boolean" resolve="isChanged" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -4435,19 +4448,6 @@
                         </node>
                       </node>
                       <node concept="3cpWs6" id="6aevj3pBhqk" role="3cqZAp" />
-                    </node>
-                  </node>
-                  <node concept="1gVbGN" id="6aevj3pBhqs" role="3cqZAp">
-                    <node concept="3y3z36" id="d4HXLLqRNd" role="1gVkn0">
-                      <node concept="2OqwBi" id="d4HXLLqQTp" role="3uHU7B">
-                        <node concept="37vLTw" id="d4HXLLqQj4" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6KmbN9hT18Q" resolve="model" />
-                        </node>
-                        <node concept="liA8E" id="d4HXLLqR4k" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                        </node>
-                      </node>
-                      <node concept="10Nm6u" id="d4HXLLqRFl" role="3uHU7w" />
                     </node>
                   </node>
                   <node concept="3clFbH" id="6aevj3pBhql" role="3cqZAp" />

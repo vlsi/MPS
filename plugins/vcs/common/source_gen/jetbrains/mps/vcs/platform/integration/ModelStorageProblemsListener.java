@@ -175,12 +175,11 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     final File backupFile = doBackup(file, model);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        // do nothing if conflict was already resolved and model was saved or reloaded 
-        if (!(model.isChanged())) {
+        // do nothing if conflict was already resolved and model was saved or reloaded or unregistered 
+        if (!(model.isChanged()) || model.getRepository() == null) {
           backupFile.delete();
           return;
         }
-        assert model.getRepository() != null;
 
         final boolean contentConflict = file.exists();
         boolean needSave = ReloadManager.getInstance().computeNoReload(new Computable<Boolean>() {

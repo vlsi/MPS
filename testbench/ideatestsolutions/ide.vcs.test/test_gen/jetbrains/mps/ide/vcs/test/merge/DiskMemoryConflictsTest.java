@@ -130,7 +130,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
     Assert.assertTrue(myMockDialog.wasExecuted());
     checkSynchronizedState(FIELD_NAME_IN_MODEL);
-    waitEDT();
   }
 
   @Test
@@ -143,7 +142,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
     Assert.assertTrue(myMockDialog.wasExecuted());
     checkSynchronizedState(FIELD_NAME_IN_FILE);
-    waitEDT();
   }
 
   @Test
@@ -294,17 +292,17 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   }
 
   private void checkSynchronizedState(@Nullable final String fieldName) {
-//    Assert.assertEquals(fieldName, getFieldNameFromModel());
-//    Assert.assertEquals(fieldName, getFieldNameFromFile());
+    Assert.assertEquals(fieldName, getFieldNameFromModel());
+    Assert.assertEquals(fieldName, getFieldNameFromFile());
     final Reference<Throwable> refThrowable = new Reference<Throwable>();
     ourModelAccess.runReadAction(new Runnable() {
       public void run() {
         try {
           EditableSModel model = getModel();
           if (fieldName == null) {
-//            Assert.assertNull(model);
+            Assert.assertNull(model);
           } else {
-//            Assert.assertFalse(model.isChanged());
+            Assert.assertFalse(model.isChanged());
           }
         } catch (Throwable t) {
           refThrowable.set(t);
