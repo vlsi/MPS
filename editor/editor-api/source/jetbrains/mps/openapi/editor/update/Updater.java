@@ -108,7 +108,7 @@ public interface Updater {
    * @param nodeReference reference of the node
    * @return explicit editor hints for given node
    */
-  Collection<String> getExplicitEditorHintsForNode(SNodeReference nodeReference);
+  String[] getExplicitEditorHintsForNode(SNodeReference nodeReference);
 
   /**
    * Remove all explicit editor hints

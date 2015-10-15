@@ -201,13 +201,17 @@ public class UpdaterImpl implements Updater, CommandContext {
       for (String hint : hints) {
         currentHints.remove(hint);
       }
+      if (currentHints.isEmpty()) {
+        myEditorHintsForNodeMap.remove(nodeReference);
+      }
     }
 
   }
 
   @Override
-  public Collection<String> getExplicitEditorHintsForNode(SNodeReference nodeReference) {
-    return myEditorHintsForNodeMap.get(nodeReference);
+  public String[] getExplicitEditorHintsForNode(SNodeReference nodeReference) {
+    Collection<String> hints = myEditorHintsForNodeMap.get(nodeReference);
+    return hints == null ? null : hints.toArray(new String[hints.size()]);
   }
 
   @Override

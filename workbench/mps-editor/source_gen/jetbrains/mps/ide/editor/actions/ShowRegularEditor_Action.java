@@ -9,11 +9,11 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorContext;
-import java.util.Collection;
 
 public class ShowRegularEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -28,7 +28,8 @@ public class ShowRegularEditor_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_o6tdl2_a0a0(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference()));
+    String[] hints = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getExplicitEditorHintsForNode(((SNode) MapSequence.fromMap(_params).get("node")).getReference());
+    return (hints == null ? false : Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -65,11 +66,5 @@ public class ShowRegularEditor_Action extends BaseAction {
     ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).rebuildEditorContent();
     editorContext.flushEvents();
     editorContext.getSelectionManager().setSelection(((SNode) MapSequence.fromMap(_params).get("node")));
-  }
-  private static boolean check_o6tdl2_a0a0(Collection<String> checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
-    }
-    return false;
   }
 }
