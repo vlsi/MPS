@@ -315,7 +315,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   }
 
   private void refreshVfs() {
-    // AP: simple IFile#refresh will do, won't it?
+    // AP: simple IFile#refresh will do, won't it? 
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(DiskMemoryConflictsTest.MODEL_FILE);
     if (vf == null || !(vf.exists())) {
       vf = LocalFileSystem.getInstance().findFileByIoFile(DiskMemoryConflictsTest.MODEL_FILE.getParentFile());

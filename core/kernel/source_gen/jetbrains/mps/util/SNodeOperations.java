@@ -368,8 +368,7 @@ public class SNodeOperations {
   }
   /**
    * 
-   * @deprecated use model.getRepository!=null
-   * AP: I tried, it is not the same. Why?
+   * @deprecated use model.getRepository!=null. AP: I tried and it is not the same. Why?
    */
   @Deprecated
   public static boolean isModelDisposed(SModel model) {
