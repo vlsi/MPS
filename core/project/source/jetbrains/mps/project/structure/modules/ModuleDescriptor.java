@@ -39,7 +39,7 @@ public class ModuleDescriptor {
   private String myNamespace;
   private String myTimestamp;
 
-  private int myVersion;
+  private int myModuleVersion;
 
   private Collection<ModelRootDescriptor> myModelRoots;
   private Collection<ModuleFacetDescriptor> myFacets;
@@ -217,7 +217,7 @@ public class ModuleDescriptor {
     }
 
     stream.writeBoolean(myUseTransientOutput);
-    stream.writeInt(getVersion());
+    stream.writeInt(myModuleVersion);
 
     stream.writeByte(0x3a);
   }
@@ -272,7 +272,7 @@ public class ModuleDescriptor {
     }
 
     myUseTransientOutput = stream.readBoolean();
-    myVersion = stream.readInt();
+    myModuleVersion = stream.readInt();
 
     if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
   }
@@ -293,12 +293,12 @@ public class ModuleDescriptor {
     return myHasDependencyVersions;
   }
 
-  public int getVersion() {
-    return myVersion;
+  public int getModuleVersion() {
+    return myModuleVersion;
   }
 
-  public void setVersion(int version) {
-    myVersion = version;
+  public void setModuleVersion(int version) {
+    myModuleVersion = version;
   }
 
 }

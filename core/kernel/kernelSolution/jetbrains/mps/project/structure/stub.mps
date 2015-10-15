@@ -540,7 +540,7 @@
                 <ref role="3cqZAo" node="2n3WChpmw8Z" resolve="source" />
               </node>
               <node concept="liA8E" id="50LvD1$VpbA" role="2OqNvi">
-                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getVersion():int" resolve="getVersion" />
+                <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getLanguageVersion():int" resolve="getLanguageVersion" />
               </node>
             </node>
             <node concept="2OqwBi" id="50LvD1$VivT" role="37vLTJ">

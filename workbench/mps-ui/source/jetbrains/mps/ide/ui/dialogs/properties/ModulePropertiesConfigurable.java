@@ -24,6 +24,7 @@ import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
+import com.intellij.openapi.vcs.Ring.IntegerRing;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.CheckboxTree;
@@ -268,7 +269,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModuleDependenciesTab myModuleDependenciesTab;
     private ContentEntriesEditor myEntriesEditor;
     private JTextField myGenOut;
-    private JSpinner myVersion;
+    private JSpinner myLanguageVersion;
+    private JSpinner myModuleVersion;
 
     @Override
     protected String getConfigItemName() {
@@ -298,7 +300,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     //null=not supported
     @Nullable
-    protected Integer getVersion() {
+    protected Integer getLanguageVersion() {
+      if (!(myModule instanceof Language)) return null;
+      return ((Language) myModule).getLanguageVersion();
+    }
+
+    @Nullable
+    protected Integer getModuleVersion() {
+      if (myModule instanceof DevKit) return null;
       return myModule.getModuleVersion();
     }
 
@@ -306,9 +315,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     protected JComponent getTopComponent() {
       if (myModule instanceof Language || myModule instanceof Solution) {
 
-        boolean hasVersion = getVersion() != null;
+        boolean hasLanguageVersion = getLanguageVersion() != null;
+        boolean hasModuleVersion = getModuleVersion() != null;
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayoutManager(hasVersion ? 2 : 1, 2, JBUI.emptyInsets(), -1, -1));
+        panel.setLayout(new GridLayoutManager(1 + (hasLanguageVersion ? 1 : 0) + (hasModuleVersion ? 1 : 0), 2, JBUI.emptyInsets(), -1, -1));
 
         int row = 0;
 
@@ -330,18 +340,31 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
                 GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-        if (hasVersion) {
+        if (hasLanguageVersion) {
+          JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.language.version"));
+          panel.add(verLabel,
+              new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                  GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+          myLanguageVersion = new JSpinner(new SpinnerNumberModel((int) getLanguageVersion(), 0, getLanguageVersion() + 10000, 1));
+          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) myLanguageVersion.getEditor();
+          DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
+          formatter.setAllowsInvalid(false);
+          panel.add(myLanguageVersion,
+              new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                  GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
+        }
+        if (hasModuleVersion) {
           JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.version"));
           panel.add(verLabel,
               new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
                   GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-
-          myVersion = new JSpinner(new SpinnerNumberModel((int) getVersion(), 0, getVersion() + 10000, 1));
-          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor)myVersion.getEditor();
+          myModuleVersion = new JSpinner(new SpinnerNumberModel((int) getModuleVersion(), 0, getModuleVersion() + 10000, 1));
+          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) myModuleVersion.getEditor();
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
-          panel.add(myVersion,
+          panel.add(myModuleVersion,
               new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                   GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
@@ -363,10 +386,18 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (!(myModule instanceof DevKit) && myEntriesEditor.isModified()) return true;
       if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) return true;
 
-      if (myVersion != null) {
+      if (myLanguageVersion != null) {
         try {
-          int newVersion = ((Integer) myVersion.getValue());
-          if (!EqualUtil.equals(newVersion, getVersion())) return false;
+          int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
+          if (!EqualUtil.equals(newLanguageVersion, getLanguageVersion())) return false;
+        } catch (NumberFormatException e) {
+          //just continue omitting this field
+        }
+      }
+      if (myModuleVersion != null) {
+        try {
+          int newModuleVersion = ((Integer) myModuleVersion.getValue());
+          if (!EqualUtil.equals(newModuleVersion, getModuleVersion())) return false;
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
@@ -392,10 +423,18 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
           }
         }
-        if (myVersion != null) {
+        if (myLanguageVersion != null) {
           try {
-            int newVersion = ((Integer) myVersion.getValue());
-            myModule.setModuleVersion(newVersion);
+            int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
+            myModule.setModuleVersion(newLanguageVersion);
+          } catch (NumberFormatException e) {
+            //just continue omitting this field
+          }
+        }
+        if (myModuleVersion != null) {
+          try {
+            int newModuleVersion = ((Integer) myModuleVersion.getValue());
+            myModule.setModuleVersion(newModuleVersion);
           } catch (NumberFormatException e) {
             //just continue omitting this field
           }
