@@ -2660,6 +2660,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="4SG2RcUCtCx" role="3cqZAp">
+          <node concept="3SKdUq" id="4SG2RcUCtKr" role="3SKWNk">
+            <property role="3SKdUp" value="todo: collect changes after paticipant selection" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4SG2RcUCxi7" role="3cqZAp">
+          <node concept="3SKdUq" id="4SG2RcUCxq3" role="3SKWNk">
+            <property role="3SKdUp" value="todo: select options, not participants" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="FLkVtyz1ED" role="3cqZAp">
           <node concept="3cpWsn" id="FLkVtyz1EE" role="3cpWs9">
             <property role="TrG5h" value="selectedOptions" />
@@ -5831,6 +5841,11 @@
             <node concept="3clFbS" id="112yVMIA2_P" role="3clFbx">
               <node concept="3clFbJ" id="5DMHUkpe2gN" role="3cqZAp">
                 <node concept="3clFbS" id="5DMHUkpe2gP" role="3clFbx">
+                  <node concept="3SKdUt" id="4SG2RcUCvYK" role="3cqZAp">
+                    <node concept="3SKdUq" id="4SG2RcUCvZJ" role="3SKWNk">
+                      <property role="3SKdUp" value="todo: checked exception" />
+                    </node>
+                  </node>
                   <node concept="YS8fn" id="5DMHUkpepMm" role="3cqZAp">
                     <node concept="2ShNRf" id="5DMHUkpeqls" role="YScLw">
                       <node concept="1pGfFk" id="5DMHUkpeQnS" role="2ShVmc">

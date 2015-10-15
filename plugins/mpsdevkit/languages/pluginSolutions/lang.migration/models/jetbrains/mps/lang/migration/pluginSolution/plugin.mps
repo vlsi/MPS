@@ -286,6 +286,12 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -7898,6 +7904,12 @@
           </node>
         </node>
         <node concept="3clFbH" id="112yVMIDRW1" role="3cqZAp" />
+        <node concept="3SKdUt" id="4SG2RcUCoiH" role="3cqZAp">
+          <node concept="3SKdUq" id="4SG2RcUCpe9" role="3SKWNk">
+            <property role="3SKdUp" value="todo: write guard migration with 'execute after'" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="4SG2RcUCmWL" role="3cqZAp" />
         <node concept="3cpWs8" id="361hHoA2j_4" role="3cqZAp">
           <node concept="3cpWsn" id="361hHoA2j_5" role="3cpWs9">
             <property role="TrG5h" value="change" />

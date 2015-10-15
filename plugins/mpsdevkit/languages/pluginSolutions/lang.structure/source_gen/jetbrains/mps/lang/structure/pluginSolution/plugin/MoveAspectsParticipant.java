@@ -108,6 +108,9 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
                 }
               });
 
+
+              // todo: do not keep nodes but only node references 
+
               RefactoringParticipant.Change<SNodeReference, SNodeReference> change = new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
                 public SearchResults getSearchResults() {
                   return results;
