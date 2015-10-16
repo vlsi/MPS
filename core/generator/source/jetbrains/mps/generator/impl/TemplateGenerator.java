@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.CloneUtil.Factory;
 import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
@@ -31,6 +32,9 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
+import jetbrains.mps.generator.impl.plan.ModelCheckpoints;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.DynamicReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
@@ -500,6 +504,34 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return super.findOutputNodeById(nodeId);
   }
 
+  @Override
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+    SModel inputNodeModel = inputNode.getModel();
+    if (inputNodeModel == getInputModel()) {
+      return super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    }
+    if (inputNodeModel == null) {
+      return null;
+    }
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    if (!env.hasState(inputNodeModel.getReference())) {
+      return null;
+    }
+    ModelCheckpoints modelHistory = env.getState(inputNodeModel.getReference());
+    // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
+    Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    CheckpointState cp = modelHistory.find(lastPoint, targetPoint);
+    if (cp == null) {
+      return null;
+    }
+    Collection<SNode> output = cp.resolve(cp.getOutput(mappingName, inputNode.getNodeId()));
+    if (output.size() == 1) {
+      return output.iterator().next();
+    }
+    return null;
+
+  }
 
   // in fact, it's reasonable to keep this method in TEEI (in ReductionTrack, actually), to reflect narrowing scope of
   // generator -> TEEI -> TemplateProcessor. This would take another round of refactoring, though

@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -321,16 +322,30 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return myEnvironment.getOptions();
   }
 
+  /**
+   * @return never <code>null</code>
+   */
   public IGeneratorLogger getLogger() {
     return myLogger;
   }
 
+  /**
+   * @return never <code>null</code>
+   */
   public RoleValidation getRoleValidationFacility() {
     // XXX in fact, GenerationSessionContext seems to serve as an API (resides in public package and provides public services
     // to genContext, like unique name), while RoleValidation is implementation class.
     // However, don't want to refactor GSC now (split iface and impl) - there's e.g. GenerationPlan (impl class) exposed here as well, so it doesn't
     // look like that intention was to keep it API, rather a facility to keep everything handy.
     return myValidation;
+  }
+
+  /**
+   * @return never <code>null</code>
+   */
+  public CrossModelEnvironment getCrossModelEnvironment() {
+    // same considerations applies as for #getRoleValidationFacility() above, need a distinct implementation context for TG (could use StepArguments, perhaps).
+    return myEnvironment.getCrossModelEnvironment();
   }
 
   public IPerformanceTracer getPerformanceTracer() {

@@ -210,6 +210,7 @@ public final class GenerationFacade {
         }
       }
     });
+    myTransientModelsProvider.initCheckpointModule(); // at the moment, starts write action, thus shall start outside of read
 
     GenControllerContext ctx = new GenControllerContext(myProject, myGenerationOptions, myTransientModelsProvider, myStreamProvider);
     final GenerationController gc = new GenerationController(inputModels, ctx, myGenerationHandler, logger);

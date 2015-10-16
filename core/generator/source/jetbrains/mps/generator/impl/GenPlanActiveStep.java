@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -77,5 +78,17 @@ final class GenPlanActiveStep {
   @Nullable
   public TemplateModel getTemplateModel(SModelReference modelReference) {
     return myModelMap.get(modelReference);
+  }
+
+  @Nullable
+  public Checkpoint getLastCheckpoint() {
+    // FIXME implement
+    return null;
+  }
+
+  @Nullable
+  public Checkpoint getNextCheckpoint() {
+    // FIXME implement
+    return null;
   }
 }

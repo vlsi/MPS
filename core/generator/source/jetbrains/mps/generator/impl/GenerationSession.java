@@ -56,7 +56,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
@@ -247,10 +246,7 @@ class GenerationSession {
             currInputModel = currOutput;
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
-            SModel checkpointModel = createTransientModel("cp-" + checkpointStep.getName());
-            new CloneUtil(currInputModel, checkpointModel).cloneModelWithImports();
-            publishTransientModel(checkpointModel.getReference());
-            CheckpointState cpState = new CheckpointState(checkpointModel.getReference(), checkpointStep, currInputModel.getReference());
+            CheckpointState cpState = mySessionContext.getCrossModelEnvironment().createCheckpoint(myOriginalInputModel, currInputModel, checkpointStep);
             // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
             // the one from post-processing scripts. What if I add ML in post-processing script?
             //
@@ -258,7 +254,7 @@ class GenerationSession {
             if (myStepArguments != null) {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
               stepLabels.export(cpState);
-              mySessionContext.getModule().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+              SModel checkpointModel = cpState.getCheckpointModel();
               SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getProject().getRepository()).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
             }

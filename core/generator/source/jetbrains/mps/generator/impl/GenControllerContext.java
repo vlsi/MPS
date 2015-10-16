@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
@@ -34,6 +35,7 @@ public final class GenControllerContext {
   private final TransientModelsProvider myTransientModelProvider;
   private final ModelStreamManager.Provider myStreamProvider;
   private final ExportsVault myExportsVault;
+  private final CrossModelEnvironment myCrossModelEnvironment;
 
   public GenControllerContext(@NotNull Project project, @NotNull GenerationOptions options, @NotNull TransientModelsProvider transientModelsProvider, @NotNull ModelStreamManager.Provider streamProvider) {
     myProject = project;
@@ -41,6 +43,8 @@ public final class GenControllerContext {
     myTransientModelProvider = transientModelsProvider;
     myStreamProvider = streamProvider;
     myExportsVault = new ExportsVault(streamProvider);
+//    myCrossModelEnvironment = new CrossModelEnvironment(transientModelsProvider);
+    myCrossModelEnvironment = transientModelsProvider.getCrossModelEnvironment();
   }
 
   public Project getProject() {
@@ -61,5 +65,9 @@ public final class GenControllerContext {
 
   public ExportsVault getExportModels() {
     return myExportsVault;
+  }
+
+  public CrossModelEnvironment getCrossModelEnvironment() {
+    return myCrossModelEnvironment;
   }
 }
