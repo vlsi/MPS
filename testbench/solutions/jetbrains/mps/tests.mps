@@ -1738,6 +1738,15 @@
     <node concept="lpD6D" id="2axhso1Go$x" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="EditStringProperty" />
     </node>
+    <node concept="lpD6D" id="5EVBM58RzJo" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="ShowReflectiveEditor" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58RzVy" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0fmZB" resolve="ShowReflectiveEditorAndMove" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58R$7H" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0fPO9" resolve="ShowReflectiveThenRegularEditor" />
+    </node>
     <node concept="lpD6D" id="2axhso1GoGU" role="lpD6w">
       <ref role="lpD7u" to="ryl9:O7qdvf4DFS" resolve="TypeName" />
     </node>
