@@ -52,8 +52,6 @@ public class MigrationWorker extends MpsWorker {
   @Override
   protected Environment createEnvironment() {
     EnvironmentConfig cfg = MpsWorker.createEnvConfig(myWhatToDo);
-    cfg.addPlugin("jetbrains.mps.ide.make");
-    cfg.addPlugin("jetbrains.mps.ide.modelchecker");
     cfg.addPlugin(MigrationWorker.MIGRATION_PLUGIN);
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);

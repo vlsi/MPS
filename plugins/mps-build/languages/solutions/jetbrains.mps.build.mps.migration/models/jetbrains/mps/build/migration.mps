@@ -362,32 +362,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="75eqTYkq9qX" role="3cqZAp">
-          <node concept="2OqwBi" id="75eqTYkq9tu" role="3clFbG">
-            <node concept="37vLTw" id="75eqTYkq9qV" role="2Oq$k0">
-              <ref role="3cqZAo" node="75eqTYkq9g3" resolve="cfg" />
-            </node>
-            <node concept="liA8E" id="75eqTYkq9wl" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-              <node concept="Xl_RD" id="4KgFbPVmerD" role="37wK5m">
-                <property role="Xl_RC" value="jetbrains.mps.ide.make" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1oo0A63G38N" role="3cqZAp">
-          <node concept="2OqwBi" id="1oo0A63G38O" role="3clFbG">
-            <node concept="37vLTw" id="1oo0A63G38P" role="2Oq$k0">
-              <ref role="3cqZAo" node="75eqTYkq9g3" resolve="cfg" />
-            </node>
-            <node concept="liA8E" id="1oo0A63G38Q" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-              <node concept="Xl_RD" id="1oo0A63G38R" role="37wK5m">
-                <property role="Xl_RC" value="jetbrains.mps.ide.modelchecker" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="75eqTYkq9C4" role="3cqZAp">
           <node concept="2OqwBi" id="75eqTYkq9C5" role="3clFbG">
             <node concept="37vLTw" id="75eqTYkq9C6" role="2Oq$k0">
