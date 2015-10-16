@@ -19,11 +19,7 @@ public class TransientModels_CustomProjectPlugin extends BaseCustomProjectPlugin
     });
   }
   public void doDispose(MPSProject project) {
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        TransientModels_CustomProjectPlugin.this.myNotifier.projectClosed();
-        TransientModels_CustomProjectPlugin.this.myNotifier = null;
-      }
-    });
+    TransientModels_CustomProjectPlugin.this.myNotifier.projectClosed();
+    TransientModels_CustomProjectPlugin.this.myNotifier = null;
   }
 }

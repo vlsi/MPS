@@ -96,7 +96,6 @@ public class BaseGeneratorWorker extends MpsWorker {
   @Override
   protected void showStatistic() {
     failBuild("generation");
-
   }
 
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {

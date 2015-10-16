@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mps-editor-api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-editor-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

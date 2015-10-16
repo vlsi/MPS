@@ -51,7 +51,7 @@ public interface ModelGenerationPlan {
   // Seems to be bad design - if we allow external plans (with partial generation), then
   // we shall leave it up to caller to decide whether to report errors about unexpected languages in an output model
   // Besides, even if language is 'covered', nothing tells it is 'yet to get processed' one, not the one 'already processed'
-  // (so output nodes in that language still make no sense). Perhaps, could be part of Step, and each Step knows
+  // (so/ output nodes in that language still make no sense). Perhaps, could be part of Step, and each Step knows
   // what languages are to come down the road?
   boolean coversLanguage(SLanguage language);
 
@@ -69,6 +69,16 @@ public interface ModelGenerationPlan {
 
     public String getName() {
       return myName;
+    }
+
+    @Override
+    public int hashCode() {
+      return myName.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return (obj instanceof Checkpoint) ? myName.equals(((Checkpoint) obj).myName) : false;
     }
   }
 

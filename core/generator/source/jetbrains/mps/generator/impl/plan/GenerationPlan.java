@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -45,6 +46,7 @@ public class GenerationPlan implements ModelGenerationPlan {
   private final Collection<TemplateModel> myTemplateModels;
 
   private final List<List<TemplateMappingConfiguration>> myPlan;
+  private List<Step> mySteps;
   private final PriorityConflicts myConflictingPriorityRules;
 
   public GenerationPlan(@NotNull SModel inputModel) {
@@ -81,7 +83,17 @@ public class GenerationPlan implements ModelGenerationPlan {
 
   @Override
   public List<Step> getSteps_() {
-    return Collections.emptyList();
+    if (mySteps == null) {
+      LinkedList<Step> steps = new LinkedList<Step>();
+      for (List<TemplateMappingConfiguration> p : myPlan) {
+        steps.add(new Transform(p));
+      }
+      // debug
+//      steps.add(myPlan.size() / 3, new Checkpoint("first"));
+//      steps.add(myPlan.size() / 3 * 2, new Checkpoint("second"));
+      mySteps = Arrays.asList(steps.toArray(new Step[steps.size()]));
+    }
+    return mySteps;
   }
 
   public Collection<TemplateModule> getGenerators() {

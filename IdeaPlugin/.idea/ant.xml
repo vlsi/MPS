@@ -10,6 +10,7 @@
         <property name="home.idea_ce.plugins" value="$PLUGINS_PATH$/" />
         <property name="plugin.prefix" value="" />
       </properties>
+      <executeOn event="beforeCompilation" target="preBuildCore" />
     </buildFile>
   </component>
 </project>

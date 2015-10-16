@@ -868,164 +868,152 @@
   </root>
   <root nodeRef="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.ide.dataFlow.presentation)/4282822416100099480">
     <file name="ShowCFGDialog.java">
-      <node id="4282822416100099527" at="31,0,32,0" concept="4" trace="myScrollPane" />
-      <node id="4282822416100099530" at="32,0,33,0" concept="4" trace="myComponent" />
-      <node id="4282822416100099533" at="33,0,34,0" concept="4" trace="myControlFlowGraph" />
-      <node id="5386713169440204018" at="34,0,35,0" concept="4" trace="myProject" />
-      <node id="4282822416100099546" at="35,129,36,32" concept="13" />
-      <node id="5386713169440207175" at="36,32,37,24" concept="3" />
-      <node id="4282822416100099563" at="37,24,38,55" concept="3" />
-      <node id="4282822416100099570" at="38,55,39,72" concept="3" />
-      <node id="4282822416100099580" at="39,72,40,58" concept="3" />
-      <node id="4282822416100099597" at="40,58,41,75" concept="3" />
-      <node id="1410818700511176332" at="41,75,42,36" concept="3" />
-      <node id="1410818700511176375" at="42,36,43,36" concept="3" />
-      <node id="1410818700511176393" at="43,36,44,21" concept="3" />
-      <node id="7125738324217627028" at="47,64,48,63" concept="9" />
-      <node id="8206768923890542911" at="49,55,50,0" concept="11" />
-      <node id="8206768923889697796" at="50,0,51,45" concept="9" />
-      <node id="8206768923889790002" at="51,45,52,69" concept="9" />
-      <node id="1752256779112912506" at="52,69,53,59" concept="9" />
-      <node id="8206768923890030761" at="53,59,54,29" concept="3" />
-      <node id="1752256779112928332" at="54,29,55,29" concept="3" />
-      <node id="802679297407714714" at="55,29,56,80" concept="9" />
-      <node id="802679297407580556" at="56,80,57,57" concept="3" />
-      <node id="2788656688586525186" at="57,57,58,49" concept="3" />
-      <node id="8206768923889828082" at="58,49,59,70" concept="3" />
-      <node id="1752256779113417966" at="61,57,62,42" concept="3" />
-      <node id="1752256779113346078" at="66,57,67,34" concept="3" />
-      <node id="1752256779113131598" at="70,16,71,30" concept="3" />
-      <node id="5496206068112920241" at="74,7,75,20" concept="3" />
-      <node id="5130572135177608104" at="75,20,76,20" concept="3" />
-      <node id="3544826152738993524" at="76,20,77,11" concept="3" />
-      <node id="2034046503373003786" at="82,36,83,72" concept="9" />
-      <node id="2034046503373003795" at="84,29,85,82" concept="3" />
-      <node id="4282822416100099663" at="92,32,93,28" concept="10" />
-      <node id="3544826152738994601" at="97,44,98,24" concept="10" />
-      <node id="222564635107964943" at="102,38,103,25" concept="10" />
-      <node id="4282822416100099548" at="106,26,107,41" concept="3" />
-      <node id="4282822416100099744" at="110,48,111,71" concept="3" />
-      <node id="4282822416100099679" at="116,34,117,48" concept="10" />
-      <node id="4282822416100099684" at="120,35,121,39" concept="3" />
-      <node id="4282822416100099691" at="121,39,122,58" concept="3" />
-      <node id="4282822416100099703" at="122,58,123,53" concept="3" />
-      <node id="4282822416100099711" at="126,59,127,37" concept="10" />
-      <node id="4282822416100099716" at="130,41,131,128" concept="10" />
-      <node id="4282822416100099730" at="134,98,135,16" concept="10" />
-      <node id="4282822416100099733" at="138,99,139,32" concept="10" />
-      <node id="4282822416100099738" at="142,55,143,19" concept="10" />
-      <node id="4282822416100099741" at="146,56,147,19" concept="10" />
-      <node id="8206768923890114576" at="70,14,72,9" concept="0" />
-      <node id="2937623487936733228" at="61,0,64,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="1752256779112961947" at="66,0,69,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="2034046503373003793" at="83,72,86,11" concept="7" />
-      <node id="4282822416100099659" at="92,0,95,0" concept="8" trace="getBackground#()Ljava/awt/Color;" />
-      <node id="4282822416100099673" at="109,0,113,0" concept="8" trace="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
-      <node id="4282822416100099489" at="115,0,119,0" concept="8" trace="getBackground#()Ljava/awt/Color;" />
-      <node id="4282822416100099497" at="125,0,129,0" concept="8" trace="getPreferredScrollableViewportSize#()Ljava/awt/Dimension;" />
-      <node id="4282822416100099500" at="129,0,133,0" concept="8" trace="getPreferredSize#()Ljava/awt/Dimension;" />
-      <node id="4282822416100099503" at="133,0,137,0" concept="8" trace="getScrollableUnitIncrement#(Ljava/awt/Rectangle;II)I" />
-      <node id="4282822416100099512" at="137,0,141,0" concept="8" trace="getScrollableBlockIncrement#(Ljava/awt/Rectangle;II)I" />
-      <node id="4282822416100099521" at="141,0,145,0" concept="8" trace="getScrollableTracksViewportWidth#()Z" />
-      <node id="4282822416100099524" at="145,0,149,0" concept="8" trace="getScrollableTracksViewportHeight#()Z" />
-      <node id="2937623487936577327" at="59,70,64,13" concept="3" />
-      <node id="1752256779112961940" at="64,13,69,13" concept="3" />
-      <node id="3544826152738994444" at="95,0,100,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="222564635107936181" at="100,0,105,0" concept="8" trace="createActions#()[Ljavax/swing/Action;" />
-      <node id="2034046503373003784" at="81,25,87,9" concept="7" />
-      <node id="4282822416100099666" at="107,41,113,9" concept="3" />
-      <node id="4282822416100099492" at="119,0,125,0" concept="8" trace="paint#(Ljava/awt/Graphics;)V" />
-      <node id="2034046503373003782" at="81,0,89,0" concept="8" trace="run#()V" />
-      <node id="4282822416100099487" at="106,0,115,0" concept="2" trace="MyComponent#()V" />
-      <node id="2034046503373003778" at="79,61,89,7" concept="3" />
-      <node id="1752256779113131588" at="79,0,91,0" concept="8" trace="openNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-      <node id="8206768923889675631" at="48,63,72,9" concept="7" />
-      <node id="4282822416100099637" at="46,0,74,0" concept="8" trace="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
-      <node id="4282822416100099627" at="44,21,74,7" concept="3" />
-      <node id="4282822416100099537" at="35,0,79,0" concept="2" trace="ShowCFGDialog#(Ljetbrains/mps/ide/dataFlow/presentation/ControlFlowGraph;Ljetbrains/mps/project/MPSProject;Ljava/lang/String;)V" />
-      <scope id="2937623487936733234" at="61,57,62,42" />
-      <scope id="1752256779112961952" at="66,57,67,34" />
-      <scope id="8206768923890114577" at="70,16,71,30" />
-      <scope id="2034046503373003794" at="84,29,85,82" />
-      <scope id="4282822416100099662" at="92,32,93,28" />
-      <scope id="3544826152738994448" at="97,44,98,24" />
-      <scope id="222564635107936184" at="102,38,103,25" />
-      <scope id="4282822416100099743" at="110,48,111,71" />
-      <scope id="4282822416100099678" at="116,34,117,48" />
-      <scope id="4282822416100099710" at="126,59,127,37" />
-      <scope id="4282822416100099715" at="130,41,131,128" />
-      <scope id="4282822416100099729" at="134,98,135,16" />
-      <scope id="4282822416100099732" at="138,99,139,32" />
-      <scope id="4282822416100099737" at="142,55,143,19" />
-      <scope id="4282822416100099740" at="146,56,147,19" />
-      <scope id="2937623487936733228" at="61,0,64,0">
+      <node id="4282822416100099527" at="30,0,31,0" concept="4" trace="myScrollPane" />
+      <node id="4282822416100099530" at="31,0,32,0" concept="4" trace="myComponent" />
+      <node id="4282822416100099533" at="32,0,33,0" concept="4" trace="myControlFlowGraph" />
+      <node id="5386713169440204018" at="33,0,34,0" concept="4" trace="myProject" />
+      <node id="4282822416100099546" at="34,129,35,32" concept="13" />
+      <node id="5386713169440207175" at="35,32,36,24" concept="3" />
+      <node id="4282822416100099563" at="36,24,37,55" concept="3" />
+      <node id="4282822416100099570" at="37,55,38,72" concept="3" />
+      <node id="4282822416100099580" at="38,72,39,58" concept="3" />
+      <node id="4282822416100099597" at="39,58,40,75" concept="3" />
+      <node id="1410818700511176332" at="40,75,41,36" concept="3" />
+      <node id="1410818700511176375" at="41,36,42,36" concept="3" />
+      <node id="1410818700511176393" at="42,36,43,21" concept="3" />
+      <node id="7125738324217627028" at="46,64,47,63" concept="9" />
+      <node id="8206768923890542911" at="48,55,49,0" concept="11" />
+      <node id="8206768923889697796" at="49,0,50,45" concept="9" />
+      <node id="8206768923889790002" at="50,45,51,69" concept="9" />
+      <node id="1752256779112912506" at="51,69,52,59" concept="9" />
+      <node id="8206768923890030761" at="52,59,53,29" concept="3" />
+      <node id="1752256779112928332" at="53,29,54,29" concept="3" />
+      <node id="802679297407714714" at="54,29,55,80" concept="9" />
+      <node id="802679297407580556" at="55,80,56,57" concept="3" />
+      <node id="2788656688586525186" at="56,57,57,49" concept="3" />
+      <node id="8206768923889828082" at="57,49,58,70" concept="3" />
+      <node id="1752256779113417966" at="60,57,61,42" concept="3" />
+      <node id="1752256779113346078" at="65,57,66,34" concept="3" />
+      <node id="1752256779113131598" at="69,16,70,30" concept="3" />
+      <node id="5496206068112920241" at="73,7,74,20" concept="3" />
+      <node id="5130572135177608104" at="74,20,75,20" concept="3" />
+      <node id="3544826152738993524" at="75,20,76,11" concept="3" />
+      <node id="5237129338040731489" at="78,55,79,90" concept="3" />
+      <node id="4282822416100099663" at="82,32,83,28" concept="10" />
+      <node id="3544826152738994601" at="87,44,88,24" concept="10" />
+      <node id="222564635107964943" at="92,38,93,25" concept="10" />
+      <node id="4282822416100099548" at="96,26,97,41" concept="3" />
+      <node id="4282822416100099744" at="100,48,101,71" concept="3" />
+      <node id="4282822416100099679" at="106,34,107,48" concept="10" />
+      <node id="4282822416100099684" at="110,35,111,39" concept="3" />
+      <node id="4282822416100099691" at="111,39,112,58" concept="3" />
+      <node id="4282822416100099703" at="112,58,113,53" concept="3" />
+      <node id="4282822416100099711" at="116,59,117,37" concept="10" />
+      <node id="4282822416100099716" at="120,41,121,128" concept="10" />
+      <node id="4282822416100099730" at="124,98,125,16" concept="10" />
+      <node id="4282822416100099733" at="128,99,129,32" concept="10" />
+      <node id="4282822416100099738" at="132,55,133,19" concept="10" />
+      <node id="4282822416100099741" at="136,56,137,19" concept="10" />
+      <node id="8206768923890114576" at="69,14,71,9" concept="0" />
+      <node id="2937623487936733228" at="60,0,63,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="1752256779112961947" at="65,0,68,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="1752256779113131588" at="78,0,81,0" concept="8" trace="openNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+      <node id="4282822416100099659" at="82,0,85,0" concept="8" trace="getBackground#()Ljava/awt/Color;" />
+      <node id="4282822416100099673" at="99,0,103,0" concept="8" trace="mousePressed#(Ljava/awt/event/MouseEvent;)V" />
+      <node id="4282822416100099489" at="105,0,109,0" concept="8" trace="getBackground#()Ljava/awt/Color;" />
+      <node id="4282822416100099497" at="115,0,119,0" concept="8" trace="getPreferredScrollableViewportSize#()Ljava/awt/Dimension;" />
+      <node id="4282822416100099500" at="119,0,123,0" concept="8" trace="getPreferredSize#()Ljava/awt/Dimension;" />
+      <node id="4282822416100099503" at="123,0,127,0" concept="8" trace="getScrollableUnitIncrement#(Ljava/awt/Rectangle;II)I" />
+      <node id="4282822416100099512" at="127,0,131,0" concept="8" trace="getScrollableBlockIncrement#(Ljava/awt/Rectangle;II)I" />
+      <node id="4282822416100099521" at="131,0,135,0" concept="8" trace="getScrollableTracksViewportWidth#()Z" />
+      <node id="4282822416100099524" at="135,0,139,0" concept="8" trace="getScrollableTracksViewportHeight#()Z" />
+      <node id="2937623487936577327" at="58,70,63,13" concept="3" />
+      <node id="1752256779112961940" at="63,13,68,13" concept="3" />
+      <node id="3544826152738994444" at="85,0,90,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="222564635107936181" at="90,0,95,0" concept="8" trace="createActions#()[Ljavax/swing/Action;" />
+      <node id="4282822416100099666" at="97,41,103,9" concept="3" />
+      <node id="4282822416100099492" at="109,0,115,0" concept="8" trace="paint#(Ljava/awt/Graphics;)V" />
+      <node id="4282822416100099487" at="96,0,105,0" concept="2" trace="MyComponent#()V" />
+      <node id="8206768923889675631" at="47,63,71,9" concept="7" />
+      <node id="4282822416100099637" at="45,0,73,0" concept="8" trace="mousePressed#(Ljava/awt/event/MouseEvent;Ljetbrains/mps/ide/dataFlow/presentation/IBlock;)V" />
+      <node id="4282822416100099627" at="43,21,73,7" concept="3" />
+      <node id="4282822416100099537" at="34,0,78,0" concept="2" trace="ShowCFGDialog#(Ljetbrains/mps/ide/dataFlow/presentation/ControlFlowGraph;Ljetbrains/mps/project/MPSProject;Ljava/lang/String;)V" />
+      <scope id="2937623487936733234" at="60,57,61,42" />
+      <scope id="1752256779112961952" at="65,57,66,34" />
+      <scope id="8206768923890114577" at="69,16,70,30" />
+      <scope id="1752256779113131563" at="78,55,79,90" />
+      <scope id="4282822416100099662" at="82,32,83,28" />
+      <scope id="3544826152738994448" at="87,44,88,24" />
+      <scope id="222564635107936184" at="92,38,93,25" />
+      <scope id="4282822416100099743" at="100,48,101,71" />
+      <scope id="4282822416100099678" at="106,34,107,48" />
+      <scope id="4282822416100099710" at="116,59,117,37" />
+      <scope id="4282822416100099715" at="120,41,121,128" />
+      <scope id="4282822416100099729" at="124,98,125,16" />
+      <scope id="4282822416100099732" at="128,99,129,32" />
+      <scope id="4282822416100099737" at="132,55,133,19" />
+      <scope id="4282822416100099740" at="136,56,137,19" />
+      <scope id="2937623487936733228" at="60,0,63,0">
         <var name="p0" id="2937623487936733232" />
       </scope>
-      <scope id="1752256779112961947" at="66,0,69,0">
+      <scope id="1752256779112961947" at="65,0,68,0">
         <var name="p0" id="1752256779112961950" />
       </scope>
-      <scope id="4282822416100099659" at="92,0,95,0" />
-      <scope id="4282822416100099683" at="120,35,123,53" />
-      <scope id="2034046503373003785" at="82,36,86,11">
-        <var name="node" id="2034046503373003787" />
+      <scope id="1752256779113131588" at="78,0,81,0">
+        <var name="nodeReference" id="1752256779113163358" />
       </scope>
-      <scope id="4282822416100099673" at="109,0,113,0">
+      <scope id="4282822416100099659" at="82,0,85,0" />
+      <scope id="4282822416100099683" at="110,35,113,53" />
+      <scope id="4282822416100099673" at="99,0,103,0">
         <var name="e" id="4282822416100099676" />
       </scope>
-      <scope id="4282822416100099489" at="115,0,119,0" />
-      <scope id="4282822416100099497" at="125,0,129,0" />
-      <scope id="4282822416100099500" at="129,0,133,0" />
-      <scope id="4282822416100099503" at="133,0,137,0">
+      <scope id="4282822416100099489" at="105,0,109,0" />
+      <scope id="4282822416100099497" at="115,0,119,0" />
+      <scope id="4282822416100099500" at="119,0,123,0" />
+      <scope id="4282822416100099503" at="123,0,127,0">
         <var name="direction" id="4282822416100099510" />
         <var name="orientation" id="4282822416100099508" />
         <var name="visibleRect" id="4282822416100099506" />
       </scope>
-      <scope id="4282822416100099512" at="137,0,141,0">
+      <scope id="4282822416100099512" at="127,0,131,0">
         <var name="direction" id="4282822416100099519" />
         <var name="orientation" id="4282822416100099517" />
         <var name="visibleRect" id="4282822416100099515" />
       </scope>
-      <scope id="4282822416100099521" at="141,0,145,0" />
-      <scope id="4282822416100099524" at="145,0,149,0" />
-      <scope id="3544826152738994444" at="95,0,100,0" />
-      <scope id="222564635107936181" at="100,0,105,0" />
-      <scope id="2034046503373003783" at="81,25,87,9" />
-      <scope id="4282822416100099492" at="119,0,125,0">
+      <scope id="4282822416100099521" at="131,0,135,0" />
+      <scope id="4282822416100099524" at="135,0,139,0" />
+      <scope id="3544826152738994444" at="85,0,90,0" />
+      <scope id="222564635107936181" at="90,0,95,0" />
+      <scope id="4282822416100099492" at="109,0,115,0">
         <var name="g" id="4282822416100099495" />
       </scope>
-      <scope id="4282822416100099665" at="106,26,113,9" />
-      <scope id="2034046503373003782" at="81,0,89,0" />
-      <scope id="4282822416100099487" at="106,0,115,0" />
-      <scope id="1752256779113131563" at="79,61,89,7" />
-      <scope id="1752256779113131588" at="79,0,91,0">
-        <var name="nodeReference" id="1752256779113163358" />
-      </scope>
-      <scope id="8206768923889675634" at="49,55,69,13">
+      <scope id="4282822416100099665" at="96,26,103,9" />
+      <scope id="4282822416100099487" at="96,0,105,0" />
+      <scope id="8206768923889675634" at="48,55,68,13">
         <var name="menu" id="8206768923889697797" />
         <var name="nodeItem" id="1752256779112912507" />
         <var name="ruleItem" id="8206768923889790003" />
         <var name="ruleNodeReference" id="802679297407714715" />
       </scope>
-      <scope id="4282822416100099751" at="47,64,72,9">
+      <scope id="4282822416100099751" at="46,64,71,9">
         <var name="sourceRef" id="7125738324217627029" />
       </scope>
-      <scope id="4282822416100099637" at="46,0,74,0">
+      <scope id="4282822416100099637" at="45,0,73,0">
         <var name="block" id="7125738324217620657" />
         <var name="event" id="4282822416100099640" />
       </scope>
-      <scope id="4282822416100099545" at="35,129,77,11" />
-      <scope id="4282822416100099537" at="35,0,79,0">
+      <scope id="4282822416100099545" at="34,129,76,11" />
+      <scope id="4282822416100099537" at="34,0,78,0">
         <var name="graph" id="4282822416100099539" />
         <var name="project" id="4282822416100099543" />
         <var name="title" id="5130572135177357897" />
       </scope>
-      <unit id="2937623487936733226" at="60,41,64,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
-      <unit id="1752256779112961945" at="65,41,69,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
-      <unit id="4282822416100099672" at="108,32,113,7" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
-      <unit id="2034046503373003782" at="80,49,89,5" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
-      <unit id="4282822416100099635" at="45,49,74,5" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
-      <unit id="4282822416100099483" at="105,0,150,0" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
-      <unit id="4282822416100099480" at="30,0,151,0" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" />
+      <unit id="2937623487936733226" at="59,41,63,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
+      <unit id="1752256779112961945" at="64,41,68,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
+      <unit id="4282822416100099672" at="98,32,103,7" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
+      <unit id="4282822416100099635" at="44,49,73,5" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
+      <unit id="4282822416100099483" at="95,0,140,0" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
+      <unit id="4282822416100099480" at="29,0,141,0" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" />
     </file>
   </root>
   <root nodeRef="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.ide.dataFlow.presentation)/4282822416100099790">

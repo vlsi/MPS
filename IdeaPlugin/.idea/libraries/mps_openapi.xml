@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mps-openapi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-openapi.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

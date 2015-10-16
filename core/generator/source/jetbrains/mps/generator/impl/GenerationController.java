@@ -210,9 +210,9 @@ public class GenerationController implements ITaskPoolProvider {
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().generationStarted(traceTypes ? ttrace : null);
 
-    final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl() : new GenerationTrace.NoOp();
-
     final TransientModelsModule transientModule = myContext.getTransientModelProvider().getModule(module);
+    final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl(transientModule) : new GenerationTrace.NoOp();
+
     final GenerationSession generationSession = new GenerationSession(inputModel, myContext, this, myLogger, transientModule, ttrace, genTrace);
 
     monitor.start(inputModel.getModelName(), 10);

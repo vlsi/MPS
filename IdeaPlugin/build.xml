@@ -73,25 +73,17 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsCore/mps-core/languages"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages"/>
     </copy>
-    <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
-    <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m"
-           includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none"/>
-      <src>
-        <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
-        <path location="${base_dir}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
-      </src>
-      <classpath>
-        <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib" includes="*.jar"/>
-        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
-        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
-      </classpath>
-    </javac>
-    <jar destfile="${base_dir}/IdeaPlugin/mps-core/lib/mps-test-ex.jar">
-      <fileset dir="build/tmp/prepare/java/out/mps-test-ex"/>
-    </jar>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-testing">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
+    </copy>
+    <!-- only for running tests in mps-core -->
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib/jetbrains.mps.lang.test.util.jar"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/jetbrains.mps.lang.test.matcher.jar"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar"/>
+    </copy>
   </target>
 
   <target name="copyCoreFromDist" depends="loadIdeaPluginsPathVar">

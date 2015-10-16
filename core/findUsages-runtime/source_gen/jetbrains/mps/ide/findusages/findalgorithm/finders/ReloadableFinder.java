@@ -8,6 +8,9 @@ import java.lang.ref.WeakReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -92,6 +95,15 @@ public class ReloadableFinder implements IInterfacedFinder {
       return false;
     }
     return finder.canNavigate();
+  }
+
+  @Nullable
+  public SNodeReference getDeclarationNode() {
+    GeneratedFinder finder = getFinder();
+    if (finder == null) {
+      return null;
+    }
+    return FindersManager.getInstance().getDeclarationNode(finder);
   }
   @Override
   public SNode getNodeToNavigate() {

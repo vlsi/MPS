@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -55,8 +54,9 @@ public class TransientModelsProvider {
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
+        SRepositoryExt repoExt = (SRepositoryExt) myProject.getRepository();
         for (TransientModelsModule m : toRemove) {
-          MPSModuleRepository.getInstance().unregisterModule(m, myOwner);
+          repoExt.unregisterModule(m, myOwner);
         }
       }
     });
@@ -86,8 +86,7 @@ public class TransientModelsProvider {
     }
 
     final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsProvider.this);
-    // FIXME once ProjectRepository implements SRepositoryExt, take one from myProject
-    final SRepositoryExt repo = MPSModuleRepository.getInstance();
+    SRepositoryExt repo = (SRepositoryExt) myProject.getRepository();
     repo.registerModule(transientModelsModule, myOwner);
     myModuleMap.put(module, transientModelsModule);
   }

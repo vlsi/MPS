@@ -25,6 +25,8 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
@@ -34,6 +36,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -51,6 +54,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -147,7 +151,7 @@ class GenerationSession {
     }
     warnIfGenerateSelf(myGenerationPlan);
 
-    monitor.start("", 1 + myGenerationPlan.getSteps().size());
+    monitor.start("", 1 + myGenerationPlan.getSteps_().size());
     try {
       // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
       IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
@@ -218,27 +222,48 @@ class GenerationSession {
 
         ttrace.push("steps", false);
 
-        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
-          Transform planStep = new Transform(myGenerationPlan.getSteps().get(myMajorStep));
-          final List<TemplateMappingConfiguration> mappingConfigurations = planStep.getTransformations();
-          if (mappingConfigurations.size() >= 1) {
-            final TemplateMappingConfiguration first = mappingConfigurations.get(0);
-            String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
-            monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
-          }
+        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps_().size(); myMajorStep++) {
+          Step planStep = myGenerationPlan.getSteps_().get(myMajorStep);
+          if (planStep instanceof Transform) {
+            Transform transformStep = (Transform) planStep;
+            final List<TemplateMappingConfiguration> mappingConfigurations = transformStep.getTransformations();
+            if (mappingConfigurations.size() >= 1) {
+              final TemplateMappingConfiguration first = mappingConfigurations.get(0);
+              String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
+              monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
+            }
 
-          if (myLogger.needsInfo()) {
-            myLogger.info("executing step " + (myMajorStep + 1));
+            if (myLogger.needsInfo()) {
+              myLogger.info("executing step " + (myMajorStep + 1));
+            }
+            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep);
+            monitor.advance(0);
+            if (currOutput == null || myLogger.getErrorCount() > 0) {
+              break;
+            }
+            if (mappingConfigurations.isEmpty()) {
+              break;
+            }
+            currInputModel = currOutput;
+          } else if (planStep instanceof Checkpoint) {
+            Checkpoint checkpointStep = (Checkpoint) planStep;
+            SModel checkpointModel = createTransientModel("cp-" + checkpointStep.getName());
+            new CloneUtil(currInputModel, checkpointModel).cloneModelWithImports();
+            publishTransientModel(checkpointModel.getReference());
+            CheckpointState cpState = new CheckpointState(checkpointModel.getReference(), checkpointStep, currInputModel.getReference());
+            // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
+            // the one from post-processing scripts. What if I add ML in post-processing script?
+            //
+            // FIXME could keep myStepArguments and access GeneratorMappings from there - myStepArguments is the same for pre/post and main part
+            if (myStepArguments != null) {
+              GeneratorMappings stepLabels = myStepArguments.mappingLabels;
+              stepLabels.export(cpState);
+              mySessionContext.getModule().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getProject().getRepository()).build(checkpointModel, stepLabels);
+              checkpointModel.addRootNode(debugMappings);
+            }
+            myStepArguments = null;
           }
-          currOutput = executeMajorStep(monitor.subTask(1), currInputModel, planStep);
-          monitor.advance(0);
-          if (currOutput == null || myLogger.getErrorCount() > 0) {
-            break;
-          }
-          if (mappingConfigurations.isEmpty()) {
-            break;
-          }
-          currInputModel = currOutput;
         }
         ttrace.pop();
 
@@ -329,7 +354,7 @@ class GenerationSession {
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
       }
-      myStepArguments = null;
+//      myStepArguments = null;
       return outputModel;
     } finally {
       recordAccessedTransientModels();
@@ -586,7 +611,7 @@ class GenerationSession {
 
   private SModel createTransientModel(String stereotype) {
     TransientModelsModule module = mySessionContext.getModule();
-    String longName = SNodeOperations.getModelLongName(myOriginalInputModel);
+    String longName = NameUtil.getModelLongName(myOriginalInputModel);
     final String transientModelName = longName + '@' + stereotype;
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
     return module.createTransientModel(mr);
