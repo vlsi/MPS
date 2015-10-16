@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -378,17 +379,35 @@ public class NameUtil {
     return compactNamespace(getModelLongName(model)) + "." + name;
   }
 
+  /**
+   * @param model not null
+   * @return qualified name of the model without stereotype
+   */
   public static String getModelLongName(SModel model) {
     String name = model.getModelName();
-    return getModelLongName(name);
+    return SModelStereotype.withoutStereotype(name);
   }
 
-  public  static String getModelLongName(String name) {
-    int index = name.indexOf("@");
-    return (index == -1 ?
-        name :
-        name.substring(0, index)
-    );
+  /**
+   * @param modelRef not null
+   * @return qualified name of the model without stereotype
+   */
+  public static String getModelLongName(SModelReference modelRef) {
+    return SModelStereotype.withoutStereotype(modelRef.getModelName());
+  }
+
+  /**
+   * @deprecated there's implicit assumption string passed is name of the model. If all you care about is stereotype stripping,
+   * use {@link SModelStereotype#withoutStereotype(String)} instead. If you got model or model reference, use corresponding getModelLongName()
+   * from this class.
+   * To make it true OOP at last, introduce ModelName class with getLongName() and getStereotype() methods, to get rid of this ugly static helpers
+   * @param name not null
+   * @return name without stereotype part
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static String getModelLongName(String name) {
+    return SModelStereotype.withoutStereotype(name);
   }
 
   public static String compactModelName(SModelReference ref) {
