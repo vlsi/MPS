@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -117,6 +118,11 @@ public final class GenerationFacade {
   private IMessageHandler myMessageHandler = IMessageHandler.NULL_HANDLER;
   private ModelStreamManager.Provider myStreamProvider;
 
+  /**
+   * @deprecated Generator shall not depend on Project
+   */
+  @ToRemove(version = 0)
+  @Deprecated
   private GenerationFacade(@NotNull Project project, @NotNull GenerationOptions generationOptions) {
     myProject = project;
     myGenerationOptions = generationOptions;

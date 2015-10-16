@@ -27,6 +27,7 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -34,6 +35,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -137,8 +139,20 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   @Override
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Project getProject() {
     return myEnvironment.getProject();
+  }
+
+  /**
+   * @deprecated Transitional access to SRepository. Likely, the code that needs a repository shall get refactored
+   *             not to use one. Contract is questionable, provided we head towards distinct repository for transient models.
+   *             For the time being, this repository corresponds to generator's environment, e.g. project it's run from.
+   */
+  @Deprecated
+  public SRepository getRepository() {
+    return myEnvironment.getRepository();
   }
 
   @NotNull

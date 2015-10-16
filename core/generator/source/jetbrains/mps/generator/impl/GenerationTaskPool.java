@@ -35,8 +35,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class GenerationTaskPool implements IGenerationTaskPool {
 
-  public GenerationTaskPool(int numberOfThreads, @NotNull ModelAccess modelAccess) {
-    myModelAccess = modelAccess;
+  public GenerationTaskPool(int numberOfThreads) {
     myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new NamedThreadFactory("generation-thread-")) {
       @Override
       protected void afterExecute(Runnable r, Throwable t) {
@@ -50,7 +49,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     };
   }
 
-  private final ModelAccess myModelAccess;
   private volatile boolean isCancelled = false;
 
   final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();

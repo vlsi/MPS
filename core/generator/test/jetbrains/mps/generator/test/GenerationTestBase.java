@@ -36,7 +36,6 @@ import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.IOperationContext;
@@ -50,6 +49,7 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -95,6 +95,7 @@ public class GenerationTestBase {
   }
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
+    final SRepository repo = p.getRepository();
 
     // Stage 1. Regenerate. Warm-up
 
@@ -114,10 +115,10 @@ public class GenerationTestBase {
       }
     };
     GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), ModuleContext.create(descr, p),
+        Collections.singletonList(descr), null,
         new NoOpHandler(),
         new EmptyProgressMonitor(), new TestMessageHandler(), options,
-        new TransientModelsProvider(p, null));
+        new TransientModelsProvider(repo, null));
 
 
     // Stage 2. Regenerate. Measure time.
@@ -127,10 +128,10 @@ public class GenerationTestBase {
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     long start = System.nanoTime();
     GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), ModuleContext.create(descr, p),
+        Collections.singletonList(descr), null,
         new NoOpHandler(),
         new EmptyProgressMonitor(), new TestMessageHandler(), options,
-        new TransientModelsProvider(p, null));
+        new TransientModelsProvider(repo, null));
     long singleThread = System.nanoTime() - start;
 
     // Stage 3. Regenerate in parallel
@@ -140,10 +141,10 @@ public class GenerationTestBase {
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
     start = System.nanoTime();
     GenerationFacade.generateModels(p,
-        Collections.singletonList(descr), ModuleContext.create(descr, p),
+        Collections.singletonList(descr), null,
         new NoOpHandler(),
         new EmptyProgressMonitor(), new TestMessageHandler(), options,
-        new TransientModelsProvider(p, null));
+        new TransientModelsProvider(repo, null));
     long severalThreads = System.nanoTime() - start;
 
     PerformanceMessenger.getInstance().reportPercent("parallelGeneration", severalThreads / 1000000, singleThread / 1000000);
@@ -157,17 +158,17 @@ public class GenerationTestBase {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
-    p.getModelAccess().runWriteAction(new Runnable() {
+    final SRepositoryExt repo = (SRepositoryExt) p.getRepository();
+    repo.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        final SRepositoryExt repo = (SRepositoryExt) p.getRepository();
         repo.registerModule(tm, myOwner);
       }
     });
 
     final SModel[] descr1 = new SModel[]{null};
     try {
-      p.getModelAccess().runWriteAction(new Runnable() {
+      repo.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
           descr1[0] = tm.createModel(originalModel);
@@ -184,7 +185,7 @@ public class GenerationTestBase {
 
       final MyIncrementalGenerationStrategy incrementalStrategy = new MyIncrementalGenerationStrategy(descr,
           new FileBasedGenerationCacheContainer(generatorCaches));
-      p.getModelAccess().runReadAction(new Runnable() {
+      repo.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           incrementalStrategy.buildHash();
@@ -197,12 +198,12 @@ public class GenerationTestBase {
 
       GenerationOptions options = GenerationOptions.getDefaults()
           .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-      IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler(p);
+      IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler(repo);
       GenerationFacade.generateModels(p,
-          Collections.singletonList(descr), ModuleContext.create(descr, p),
+          Collections.singletonList(descr), null,
           generationHandler,
           new EmptyProgressMonitor(), new TestMessageHandler(), options,
-          new TransientModelsProvider(p, null));
+          new TransientModelsProvider(repo, null));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(),
           new String[]{randomName, originalModel.getModule().getModuleName()},
@@ -219,7 +220,7 @@ public class GenerationTestBase {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
-            p.getModelAccess().executeCommand(new Runnable() {
+            repo.getModelAccess().executeCommand(new Runnable() {
               @Override
               public void run() {
                 r.run(descr);
@@ -228,7 +229,7 @@ public class GenerationTestBase {
           }
         });
 
-        p.getModelAccess().runReadAction(new Runnable() {
+        repo.getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             incrementalStrategy.buildHash();
@@ -242,14 +243,14 @@ public class GenerationTestBase {
 
         options = GenerationOptions.getDefaults()
             .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-        generationHandler = new IncrementalTestGenerationHandler(p, incrementalGenerationResults);
+        generationHandler = new IncrementalTestGenerationHandler(repo, incrementalGenerationResults);
         generationHandler.checkIncremental(options);
         long start = System.nanoTime();
         GenerationFacade.generateModels(p,
-            Collections.singletonList(descr), ModuleContext.create(descr, p),
+            Collections.singletonList(descr), null,
             generationHandler,
             new EmptyProgressMonitor(), new TestMessageHandler(), options,
-            new TransientModelsProvider(p, null));
+            new TransientModelsProvider(repo, null));
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -261,13 +262,13 @@ public class GenerationTestBase {
       incrementalStrategy.setDependencies(null);
       options = GenerationOptions.getDefaults()
           .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-      generationHandler = new IncrementalTestGenerationHandler(p, incrementalGenerationResults);
+      generationHandler = new IncrementalTestGenerationHandler(repo, incrementalGenerationResults);
       long start = System.nanoTime();
       GenerationFacade.generateModels(p,
-          Collections.singletonList(descr), ModuleContext.create(descr, p),
+          Collections.singletonList(descr), null,
           generationHandler,
           new EmptyProgressMonitor(), new TestMessageHandler(), options,
-          new TransientModelsProvider(p, null));
+          new TransientModelsProvider(repo, null));
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
@@ -284,10 +285,9 @@ public class GenerationTestBase {
         System.out.println();
       }
     } finally {
-      p.getModelAccess().runWriteAction(new Runnable() {
+      repo.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          SRepositoryExt repo = (SRepositoryExt) p.getRepository();
           repo.unregisterModule(tm, myOwner);
         }
       });

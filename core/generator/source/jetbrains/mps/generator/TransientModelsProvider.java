@@ -24,12 +24,14 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +49,18 @@ public class TransientModelsProvider {
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
   private TransientModelsModule myCheckpointsModule;
 
+  /**
+   * @deprecated Generator shall not depend from Project, it may run from e.g. ant task where no project is available.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public TransientModelsProvider(Project project, TransientSwapOwner owner) {
-    myRepository = (SRepositoryExt) project.getRepository();
-    myTransientSwapOwner = owner;
+    this(project.getRepository(), owner);
+  }
+
+  public TransientModelsProvider(@NotNull SRepository repository, @Nullable TransientSwapOwner swapOwner) {
+    myRepository = (SRepositoryExt) repository;
+    myTransientSwapOwner = swapOwner;
   }
 
   protected void clearAll() {
@@ -121,14 +132,16 @@ public class TransientModelsProvider {
   private CrossModelEnvironment myEnvTemp;
 
   public void initCheckpointModule() {
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        SModuleReference cpModuleRef = new ModuleReference("", ModuleId.regular());
-        myCheckpointsModule = new TransientModelsModule(TransientModelsProvider.this, cpModuleRef);
-        myRepository.registerModule(myCheckpointsModule, myOwner);
-      }
-    });
+    if (myCheckpointsModule == null) {
+      myRepository.getModelAccess().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          SModuleReference cpModuleRef = new ModuleReference(null, ModuleId.regular());
+          myCheckpointsModule = new TransientModelsModule(TransientModelsProvider.this, cpModuleRef);
+          myRepository.registerModule(myCheckpointsModule, myOwner);
+        }
+      });
+    }
   }
 
   public boolean canKeepOneMore() {

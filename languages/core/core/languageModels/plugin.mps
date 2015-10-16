@@ -3042,9 +3042,14 @@
                   </node>
                   <node concept="2ShNRf" id="3ZXMS57C5Ti" role="3K4GZi">
                     <node concept="1pGfFk" id="3ZXMS57C5Tk" role="2ShVmc">
-                      <ref role="37wK5l" to="ap4t:~TransientModelsProvider.&lt;init&gt;(jetbrains.mps.project.Project,jetbrains.mps.generator.TransientModelsProvider$TransientSwapOwner)" resolve="TransientModelsProvider" />
-                      <node concept="37vLTw" id="5jLBleAj6wv" role="37wK5m">
-                        <ref role="3cqZAo" node="5jLBleAj6wp" resolve="mpsProject" />
+                      <ref role="37wK5l" to="ap4t:~TransientModelsProvider.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.generator.TransientModelsProvider$TransientSwapOwner)" resolve="TransientModelsProvider" />
+                      <node concept="2OqwBi" id="3spdfaK_t03" role="37wK5m">
+                        <node concept="37vLTw" id="5jLBleAj6wv" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5jLBleAj6wp" resolve="mpsProject" />
+                        </node>
+                        <node concept="liA8E" id="3spdfaK_t3P" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        </node>
                       </node>
                       <node concept="10Nm6u" id="3ZXMS57C8UO" role="37wK5m" />
                     </node>

@@ -16,11 +16,13 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Holds parameters global for particular generation activity/task. Similar to {@link jetbrains.mps.generator.GenerationSessionContext} which
@@ -47,8 +49,21 @@ public final class GenControllerContext {
     myCrossModelEnvironment = transientModelsProvider.getCrossModelEnvironment();
   }
 
+  /**
+   * @deprecated Generator shall not depend from Project to work from restricted environments
+   */
+  @Deprecated
   public Project getProject() {
     return myProject;
+  }
+
+  /**
+   * @deprecated see {@link GenerationSessionContext#getRepository()} for reasons.
+   *             It's not the idea that generator knows about the context repository is bad, we just need better story around it.
+   */
+  @Deprecated
+  public SRepository getRepository() {
+    return myProject.getRepository();
   }
 
   public GenerationOptions getOptions() {

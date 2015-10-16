@@ -49,7 +49,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -87,7 +86,6 @@ import java.util.List;
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
-  private final Project myProject;
   private ModelGenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
@@ -116,7 +114,6 @@ class GenerationSession {
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
     ttrace = performanceTracer;
     myGenerationOptions = environment.getOptions();
-    myProject = environment.getProject();
     mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel, performanceTracer);
   }
 
@@ -154,7 +151,7 @@ class GenerationSession {
     try {
       // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
       IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myProject,
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, mySessionContext.getRepository(),
           myGenerationOptions, cacheHelper, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
@@ -255,7 +252,7 @@ class GenerationSession {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
               stepLabels.export(cpState);
               SModel checkpointModel = cpState.getCheckpointModel();
-              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getProject().getRepository()).build(checkpointModel, stepLabels);
+              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository()).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
             }
             myStepArguments = null;
