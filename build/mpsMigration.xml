@@ -17,11 +17,7 @@
 
   <target name="migrate">
     <echo message="migrating" />
-    <migrate project="/Users/muhin/MPSProjects/Project1/" fork="true">
-      <jvmargs>
-        <arg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5020" />
-      </jvmargs>
-
+    <migrate project="/Users/muhin/MPSProjects/Project1/">
       <macro name="idea_home" path="${idea_home}" />
       <macro name="mps_home" path="${mps_home}" />
     </migrate>
