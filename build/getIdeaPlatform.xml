@@ -1,7 +1,7 @@
 <project name="Get Idea Platform" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
 
-  <property name="idea.platform.version" value="141.177.4" />
-  <property name="idea.platform.snapshot" value="141-SNAPSHOT" />
+  <property name="idea.platform.version" value="142.4675.3" />
+  <property name="idea.platform.snapshot" value="142-SNAPSHOT" />
   <property name="ivy.jar.dir" value="${basedir}/ivy" />
   <property name="ivy.cache.ttl.default" value="eternal" />
 

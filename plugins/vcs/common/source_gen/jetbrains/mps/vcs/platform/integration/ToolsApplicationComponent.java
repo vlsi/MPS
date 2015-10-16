@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class ToolsApplicationComponent implements ApplicationComponent {
   private final ModelDiffToolOld myModelDiffTool = new ModelDiffToolOld();
-  private final ModelMergeTool myModelMergeTool = new ModelMergeTool();
   private final DiffManager myDiffManager;
   public ToolsApplicationComponent(DiffManager diffManager) {
     myDiffManager = diffManager;
@@ -21,11 +20,9 @@ public class ToolsApplicationComponent implements ApplicationComponent {
   @Override
   public void initComponent() {
     myDiffManager.registerDiffTool(myModelDiffTool);
-    myDiffManager.registerDiffTool(myModelMergeTool);
   }
   @Override
   public void disposeComponent() {
     myDiffManager.unregisterDiffTool(myModelDiffTool);
-    myDiffManager.unregisterDiffTool(myModelMergeTool);
   }
 }

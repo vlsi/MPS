@@ -228,12 +228,12 @@ public class CommonPaths {
 
   private static void addWorkbenchJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-workbench.jar");
-    addIfExists(result, "/lib/junit-4.11.jar");
+    addIfExists(result, "/lib/junit-4.12.jar");
   }
 
   private static void addTestJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-test.jar");
-    addIfExists(result, "/lib/junit-4.11.jar");
+    addIfExists(result, "/lib/junit-4.12.jar");
   }
 
   private static void addToolsJar(CompositeClassPathItem result) {

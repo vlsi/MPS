@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.components.impl.stores.IProjectStore;
-import com.intellij.openapi.project.ex.ProjectEx;
+import com.intellij.openapi.components.ComponentsPackage;
 import java.io.File;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.components.StorageScheme;
@@ -24,7 +24,7 @@ public class MPSPlugin {
   @Deprecated
   public IProjectHandler getProjectHandler(Project project) {
     MPSPlugin.assertNotInEDT();
-    IProjectStore projectStore = ((ProjectEx) project).getStateStore();
+    IProjectStore projectStore = (IProjectStore) ComponentsPackage.getStateStore(project);
     File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
     File projectFile = (projectStore.getStorageScheme() == StorageScheme.DEFAULT ? mpsProject.getParentFile() : mpsProject);
     String projectPath = projectFile.getAbsolutePath();

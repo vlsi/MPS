@@ -129,7 +129,6 @@
       <action id="Help.JetBrainsTV" class="jetbrains.mps.ide.devkit.help.MPSJetBrainsTvAction"/>
       <!-- MPS Patch End-->
       <separator/>
-      <add-to-group group-id="MPSHelp" anchor="last"/>
     </group>
   </actions>
 

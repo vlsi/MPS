@@ -11,20 +11,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.Version;
 import jetbrains.mps.project.MPSProjectVersion;
 import com.intellij.openapi.project.ex.ProjectEx;
-import com.intellij.openapi.components.StorageScheme;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.ui.DialogWrapper;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.components.impl.stores.IProjectStore;
-import java.io.File;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.components.impl.stores.StateStorageManager;
-import java.util.Collection;
-import java.util.ArrayList;
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.ide.actions.SaveAsDirectoryBasedFormatAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import java.io.File;
 import com.intellij.openapi.vfs.VfsUtil;
 import java.io.IOException;
 
@@ -41,60 +35,20 @@ public class StorageAssistant extends AbstractProjectComponent implements Persis
   @Override
   public void projectOpened() {
     Version version = myProject.getComponent(MPSProjectVersion.class).getVersion();
-    if (myProject instanceof ProjectEx && !(version.isMajorUpdate(MPSProjectVersion.CURRENT)) && ((ProjectEx) myProject).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED && myState.offerStorageMigration) {
+    if (myProject instanceof ProjectEx && !((version.isMajorUpdate(MPSProjectVersion.CURRENT))) && ProjectUtil.isDirectoryBased(myProject) && myState.offerStorageMigration) {
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
         @Override
         public void run() {
-          DialogWrapper.DoNotAskOption option = new DialogWrapper.DoNotAskOption() {
+          SaveAsDirectoryBasedFormatAction action = new SaveAsDirectoryBasedFormatAction();
+          final AnActionEvent actionEvent = AnActionEvent.createFromDataContext("", null, new DataContext() {
+            @Nullable
             @Override
-            public boolean isToBeShown() {
-              return true;
+            public Object getData(String dataId) {
+              return (CommonDataKeys.PROJECT.getName().equals(dataId) ? myProject : null);
             }
-            @Override
-            public void setToBeShown(boolean value, int exitCode) {
-              myState.offerStorageMigration = value;
-            }
-            @Override
-            public boolean canBeHidden() {
-              return true;
-            }
-            @Override
-            public boolean shouldSaveOptionsOnCancel() {
-              return true;
-            }
-            @Override
-            @NotNull
-            public String getDoNotShowMessage() {
-              return "Do not ask me again";
-            }
-          };
-          if (DialogWrapper.OK_EXIT_CODE == Messages.showYesNoDialog("You have opened project in File-Based format.\nDo you want to convert it into Directory-Based format and reopen?", "Migrate to Directory-Based project format", "Yes", "No", Messages.getQuestionIcon(), option)) {
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
-              @Override
-              public void run() {
-                // TODO: reuse com.intellij.ide.actions.SaveAsDirectoryBasedFormatAction 
-                final VirtualFile baseDir = myProject.getBaseDir();
-                assert baseDir != null;
-                final IProjectStore projectStore = ((ProjectEx) myProject).getStateStore();
-                File ideaDir = new File(baseDir.getPath(), ProjectEx.DIRECTORY_STORE_FOLDER + File.separatorChar);
-                final boolean ok = (ideaDir.exists() && ideaDir.isDirectory()) || createDir(ideaDir);
-                if (ok) {
-                  LocalFileSystem.getInstance().refreshAndFindFileByIoFile(ideaDir);
-                  final StateStorageManager storageManager = projectStore.getStateStorageManager();
-                  final Collection<String> storageFileNames = new ArrayList<String>(storageManager.getStorageFileNames());
-                  for (String file : storageFileNames) {
-                    storageManager.clearStateStorage(file);
-                  }
-                  projectStore.setProjectFilePath(baseDir.getPath());
-                  myProject.save();
-                  ProjectUtil.closeAndDispose(myProject);
-                  ProjectUtil.openProject(baseDir.getPath(), null, false);
-                } else {
-                  Messages.showErrorDialog(myProject, String.format("Unable to create '.idea' directory (%s)", ideaDir), "Error saving project!");
-                }
-              }
-            });
-          }
+          });
+          action.update(actionEvent);
+          action.actionPerformed(actionEvent);
         }
       });
     }

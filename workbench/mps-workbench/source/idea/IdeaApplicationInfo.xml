@@ -8,9 +8,7 @@
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
-  <welcome-screen logo-url="/MPS_welcomeScreen.png"
-                  caption-url="/mpsWelcomeCaption.png"
-                  slogan-url="/mpsSlogan.png"/>
+  <welcome-screen logo-url="/MPS_welcomeScreen.png"/>
 
   <third-party url="http://www.jetbrains.org/"/>
 
