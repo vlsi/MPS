@@ -50,9 +50,6 @@ import jetbrains.mps.messages.IMessage;
 
 public class BaseGeneratorWorker extends MpsWorker {
   private final BaseGeneratorWorker.MyMessageHandler myMessageHandler = new BaseGeneratorWorker.MyMessageHandler();
-  public BaseGeneratorWorker(Script whatToDo) {
-    super(whatToDo);
-  }
   public BaseGeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }

@@ -24,9 +24,6 @@ import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
 
 public class MpsRunnerWorker extends GeneratorWorker {
-  public MpsRunnerWorker(Script whatToDo) {
-    super(whatToDo);
-  }
   public MpsRunnerWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }

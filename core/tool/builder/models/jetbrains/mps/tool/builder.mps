@@ -247,7 +247,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
@@ -355,31 +354,6 @@
       <node concept="3Tmbuc" id="5reM9AD3Vby" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="5A5jZrz0wnd" role="jymVt" />
-    <node concept="3clFbW" id="KL8Aqlj5lR" role="jymVt">
-      <node concept="3Tm1VV" id="KL8Aqlj5lS" role="1B3o_S" />
-      <node concept="3cqZAl" id="KL8Aqlj5lT" role="3clF45" />
-      <node concept="37vLTG" id="KL8Aqlj5lU" role="3clF46">
-        <property role="TrG5h" value="whatToDo" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="KL8Aqlj5lV" role="1tU5fm">
-          <ref role="3uigEE" to="asz6:KL8Aql8enO" resolve="Script" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="KL8Aqlj5lW" role="3clF47">
-        <node concept="1VxSAg" id="KL8Aqlj5lX" role="3cqZAp">
-          <ref role="37wK5l" node="KL8Aqlj5me" resolve="MpsWorker" />
-          <node concept="37vLTw" id="2BHiRxgm9_9" role="37wK5m">
-            <ref role="3cqZAo" node="KL8Aqlj5lU" resolve="whatToDo" />
-          </node>
-          <node concept="2ShNRf" id="KL8Aqlj5lZ" role="37wK5m">
-            <node concept="1pGfFk" id="KL8Aqlj5m0" role="2ShVmc">
-              <ref role="37wK5l" node="KL8Aqlj5Cu" resolve="MpsWorker.LogLogger" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5A5jZrz0uXO" role="jymVt" />
     <node concept="3clFbW" id="KL8Aqlj5me" role="jymVt">
       <node concept="3Tm1VV" id="KL8Aqlj5mf" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqlj5mg" role="3clF45" />

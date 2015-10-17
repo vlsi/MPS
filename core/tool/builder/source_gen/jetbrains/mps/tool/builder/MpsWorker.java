@@ -65,10 +65,6 @@ public abstract class MpsWorker {
   private final MpsWorker.AntLogger myLogger;
   protected Environment myEnvironment;
 
-  public MpsWorker(Script whatToDo) {
-    this(whatToDo, new MpsWorker.LogLogger());
-  }
-
   public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     myWhatToDo = whatToDo;
     myLogger = logger;

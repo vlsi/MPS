@@ -38,11 +38,6 @@ public class MigrationWorker extends MpsWorker {
 
   private final UrlClassLoader myClassLoader;
 
-  public MigrationWorker(Script whatToDo) {
-    super(whatToDo);
-    myClassLoader = createClassloader();
-  }
-
   public MigrationWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myClassLoader = createClassloader();
