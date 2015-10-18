@@ -18,8 +18,7 @@ public class Collections_Style_StyleSheet {
   }
   public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -28,8 +27,7 @@ public class Collections_Style_StyleSheet {
   }
   public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

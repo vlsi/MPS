@@ -21,8 +21,7 @@ public class StyleSheet_StyleSheet {
   }
   public static void apply_SquareBracket(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Bracket(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

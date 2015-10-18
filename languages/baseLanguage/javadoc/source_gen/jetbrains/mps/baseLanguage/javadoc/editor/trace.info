@@ -6407,42 +6407,40 @@
     <file name="DocumentationCommentStyleSheet_StyleSheet.java">
       <node id="7344646339284548672" at="15,72,16,62" concept="2" />
       <node id="7344646339284548672" at="16,62,17,105" concept="2" />
-      <node id="7344646339284548672" at="20,5,21,23" concept="7" />
-      <node id="7344646339284548672" at="21,23,22,35" concept="2" />
-      <node id="7344646339284548672" at="22,35,23,76" concept="2" />
-      <node id="7344646339284548672" at="23,76,24,34" concept="2" />
-      <node id="7344646339284548672" at="28,5,29,23" concept="7" />
-      <node id="7344646339284548672" at="29,23,30,35" concept="2" />
-      <node id="7344646339284548672" at="30,35,31,86" concept="2" />
-      <node id="7344646339284548672" at="31,86,32,34" concept="2" />
-      <node id="7344646339284548672" at="33,5,34,67" concept="2" />
+      <node id="7344646339284548672" at="20,5,21,41" concept="7" />
+      <node id="7344646339284548672" at="21,41,22,76" concept="2" />
+      <node id="7344646339284548672" at="22,76,23,34" concept="2" />
+      <node id="7344646339284548672" at="27,5,28,41" concept="7" />
+      <node id="7344646339284548672" at="28,41,29,86" concept="2" />
+      <node id="7344646339284548672" at="29,86,30,34" concept="2" />
+      <node id="7344646339284548672" at="31,5,32,67" concept="2" />
       <node id="7344646339284548672" at="15,0,19,0" concept="11" trace="apply_Comment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="7344646339284548672" at="19,75,25,5" concept="0" />
-      <node id="7344646339284548672" at="27,79,33,5" concept="0" />
-      <node id="7344646339284548672" at="19,0,27,0" concept="11" trace="apply_CommentTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="7344646339284548672" at="27,0,36,0" concept="11" trace="apply_CommentHTMLTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="7344646339284548672" at="19,75,24,5" concept="0" />
+      <node id="7344646339284548672" at="26,79,31,5" concept="0" />
+      <node id="7344646339284548672" at="19,0,26,0" concept="11" trace="apply_CommentTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="7344646339284548672" at="26,0,34,0" concept="11" trace="apply_CommentHTMLTag#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <scope id="7344646339284548672" at="15,72,17,105" />
+      <scope id="7344646339284548672" at="20,5,23,34">
+        <var name="styleToPut" id="7344646339284548672" />
+      </scope>
+      <scope id="7344646339284548672" at="27,5,30,34">
+        <var name="styleToPut" id="7344646339284548672" />
+      </scope>
       <scope id="7344646339284548672" at="15,0,19,0">
         <var name="editorCell" id="7344646339284548672" />
         <var name="style" id="7344646339284548672" />
       </scope>
-      <scope id="7344646339284548672" at="20,5,24,34">
-        <var name="styleToPut" id="7344646339284548672" />
-      </scope>
-      <scope id="7344646339284548672" at="28,5,32,34">
-        <var name="styleToPut" id="7344646339284548672" />
-      </scope>
-      <scope id="7344646339284548672" at="19,75,25,5" />
-      <scope id="7344646339284548672" at="27,79,34,67" />
-      <scope id="7344646339284548672" at="19,0,27,0">
+      <scope id="7344646339284548672" at="19,75,24,5" />
+      <scope id="7344646339284548672" at="26,79,32,67" />
+      <scope id="7344646339284548672" at="19,0,26,0">
         <var name="editorCell" id="7344646339284548672" />
         <var name="style" id="7344646339284548672" />
       </scope>
-      <scope id="7344646339284548672" at="27,0,36,0">
+      <scope id="7344646339284548672" at="26,0,34,0">
         <var name="editorCell" id="7344646339284548672" />
         <var name="style" id="7344646339284548672" />
       </scope>
-      <unit id="7344646339284548672" at="14,0,38,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DocumentationCommentStyleSheet_StyleSheet" />
+      <unit id="7344646339284548672" at="14,0,36,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DocumentationCommentStyleSheet_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/7427066632718486477">

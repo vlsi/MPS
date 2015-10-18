@@ -36,22 +36,22 @@ public class transformationTest_StyleSheet {
   }
   public static void apply_Parenthesis(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       transformationTest_StyleSheet.apply_AnyBracket(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
     {
-      Style styleToPut;
-      styleToPut = StyleRegistry.getInstance().getStyle("PARENTH");
+      Style styleToPut = StyleRegistry.getInstance().getStyle("PARENTH");
+      if (styleToPut == null) {
+        styleToPut = new StyleImpl();
+      }
       style.putAll(styleToPut, 0);
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       transformationTest_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -59,8 +59,7 @@ public class transformationTest_StyleSheet {
   }
   public static void apply_RightParen(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       transformationTest_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -68,8 +67,7 @@ public class transformationTest_StyleSheet {
   }
   public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       transformationTest_StyleSheet.apply_LeftParen(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

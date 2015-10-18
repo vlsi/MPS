@@ -238,8 +238,7 @@ public class Parameter_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2k1i0x_b0");
     Style style = new StyleImpl();
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       LightweightDsl_Styles_StyleSheet.apply_MethodInstance(styleToPut, editorCell);
       style.removeAll(styleToPut);
     }

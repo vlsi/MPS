@@ -51,8 +51,7 @@ public class Styles_StyleSheet {
   }
   public static void apply_mappingRuleReference(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_mappingRuleDeclaration(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -64,8 +63,7 @@ public class Styles_StyleSheet {
   }
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -74,8 +72,7 @@ public class Styles_StyleSheet {
   }
   public static void apply_RightParen(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       Styles_StyleSheet.apply_Parenthesis(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
