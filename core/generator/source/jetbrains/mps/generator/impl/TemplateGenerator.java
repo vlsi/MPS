@@ -506,9 +506,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Override
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+    SNode existing = super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    if (existing != null) {
+      // XXX apparently, there are models that use input nodes from a model other than that being transformed
+      // e.g. in build.workflow, bl.closures, bl.collections. Shall revert the change and try to rebuild
+      // to find out particular uses, as it's potential error (i.e. MLs between different models).
+      // For now, though, just check if there's mapping, and use it.
+      return existing;
+    }
+    if (inputNode == null) {
+      // there are models e.g. bl.plugin, debugger.api.ui.icons, d.java.runtime.ui that pass null as inputNode
+      return null;
+    }
     SModel inputNodeModel = inputNode.getModel();
     if (inputNodeModel == getInputModel()) {
-      return super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+//      return super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+      return null; // code down there deals with xModel references only
     }
     if (inputNodeModel == null) {
       return null;
