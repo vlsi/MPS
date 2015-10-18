@@ -718,8 +718,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   protected void paintChildCells(Graphics g, ParentSettings settings) {
     for (EditorCell child : this) {
-      if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paintCell(g, settings);
+      jetbrains.mps.nodeEditor.cells.EditorCell childInternal = (jetbrains.mps.nodeEditor.cells.EditorCell) child;
+      if (childInternal.isInClipRegion(g)) {
+        childInternal.paintCell(g, settings);
       }
     }
   }
@@ -732,8 +733,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   protected void paintChildDecorations(Graphics g) {
     for (EditorCell child : this) {
-      if (g.hitClip(child.getX(), child.getY(), child.getWidth(), child.getHeight())) {
-        ((jetbrains.mps.nodeEditor.cells.EditorCell) child).paintDecorations(g);
+      jetbrains.mps.nodeEditor.cells.EditorCell childInternal = (jetbrains.mps.nodeEditor.cells.EditorCell) child;
+      if (childInternal.isInClipRegion(g)) {
+        childInternal.paintDecorations(g);
       }
     }
   }
@@ -763,8 +765,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     if (selectionCells != null) {
       ParentSettings selection = isSelectionPaintedOnAncestor(parentSettings);
       for (EditorCell cell : selectionCells) {
-        if (g.hitClip(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
-          ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paintSelection(g, c, false, selection);
+        jetbrains.mps.nodeEditor.cells.EditorCell cellInternal = (jetbrains.mps.nodeEditor.cells.EditorCell) cell;
+        if (cellInternal.isInClipRegion(g)) {
+          cellInternal.paintSelection(g, c, false, selection);
         }
       }
     } else {

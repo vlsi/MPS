@@ -655,6 +655,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     paintDecorations(g);
   }
 
+  @Override
+  public boolean isInClipRegion(Graphics g) {
+    // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
+    return g.hitClip(getX(), getY(), getWidth() + 1, getHeight() + 1);
+  }
+
   protected ParentSettings fillBackground(Graphics g, ParentSettings parentSettings) {
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {

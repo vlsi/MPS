@@ -2236,7 +2236,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
     jetbrains.mps.openapi.editor.cells.EditorCell deepestCell = getDeepestSelectedCell();
-    if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
+    if (deepestCell instanceof EditorCell_Label && ((EditorCell) deepestCell).isInClipRegion(g)) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
       g.setColor(setting.getCaretRowColor());
@@ -2261,7 +2261,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell.relayout();
     }
 
-    if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
+    if (myRootCell != null && myRootCell.isInClipRegion(g)) {
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
@@ -2990,7 +2990,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    repaint(0, cell.getY(), getWidth(), cell.getHeight());
+    // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
+    repaint(0, cell.getY(), getWidth() + 1, cell.getHeight() + 1);
   }
 
   @Override
