@@ -65,13 +65,27 @@ public interface EditorCell_Collection extends EditorCell, Iterable<EditorCell> 
 
   boolean isAncestorOf(EditorCell cell);
 
+  /**
+   * @deprecated since MPS 3.3 use isCollapsed()
+   */
+  @Deprecated
   boolean isFolded();
+
+  boolean isCollapsed();
 
   void fold();
 
   void unfold();
 
   boolean isFoldable();
+
+  /**
+   * This method can be used to set specify if this (newly created) EditorCell_Collection should be
+   * initially collapsed in the editor or not.
+   *
+   * @param collapsed true if the cell should be collapsed, false by default
+   */
+  void setInitiallyCollapsed(boolean collapsed);
 
   int getBracesIndent();
 

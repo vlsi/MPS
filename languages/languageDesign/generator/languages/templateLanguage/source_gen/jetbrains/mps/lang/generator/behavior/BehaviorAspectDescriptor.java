@@ -64,6 +64,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myITemplateCall__BehaviorDescriptor = new ITemplateCall__BehaviorDescriptor();
   private final BHDescriptor myPatternReduction_MappingRule__BehaviorDescriptor = new PatternReduction_MappingRule__BehaviorDescriptor();
   private final BHDescriptor myWeaveMacro__BehaviorDescriptor = new WeaveMacro__BehaviorDescriptor();
+  private final BHDescriptor myGeneratorDebug_LabelEntry__BehaviorDescriptor = new GeneratorDebug_LabelEntry__BehaviorDescriptor();
+  private final BHDescriptor myGeneratorDebug_NodeMapEntry__BehaviorDescriptor = new GeneratorDebug_NodeMapEntry__BehaviorDescriptor();
   private final BHDescriptor myTemplateArgumentQuery__BehaviorDescriptor = new TemplateArgumentQuery__BehaviorDescriptor();
   private final BHDescriptor myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor = new TemplateArgumentPatternVarRefExpression__BehaviorDescriptor();
   private final BHDescriptor myTemplateArgumentPatternRef__BehaviorDescriptor = new TemplateArgumentPatternRef__BehaviorDescriptor();
@@ -85,7 +87,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[69];
+    myConceptBehaviorIds = new long[71];
     myConceptBehaviorIds[0] = 0xfd47e9f6f0L;
     myConceptBehaviorIds[1] = 0xfd47ed6742L;
     myConceptBehaviorIds[2] = 0xfd7f44d616L;
@@ -138,23 +140,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[49] = 0x17e941d108ce3120L;
     myConceptBehaviorIds[50] = 0x190d31fe6a12ebb4L;
     myConceptBehaviorIds[51] = 0x300c02df884235d3L;
-    myConceptBehaviorIds[52] = 0x380132d742e95ce5L;
-    myConceptBehaviorIds[53] = 0x40be82ad503b3c88L;
-    myConceptBehaviorIds[54] = 0x42d71bfbeb1a07e5L;
-    myConceptBehaviorIds[55] = 0x42d71bfbeb1a5de7L;
-    myConceptBehaviorIds[56] = 0x42d71bfbeb1a5de8L;
-    myConceptBehaviorIds[57] = 0x45991daad6a3d34eL;
-    myConceptBehaviorIds[58] = 0x45991daad6a5c71aL;
-    myConceptBehaviorIds[59] = 0x473cc5baf8a1e7a4L;
-    myConceptBehaviorIds[60] = 0x65a7fcfba8f40208L;
-    myConceptBehaviorIds[61] = 0x65a7fcfba8f41ba9L;
-    myConceptBehaviorIds[62] = 0x671e792f3d934cacL;
-    myConceptBehaviorIds[63] = 0x6cab949e66d5ae81L;
-    myConceptBehaviorIds[64] = 0x7b85dded0be53d6cL;
-    myConceptBehaviorIds[65] = 0x7d58bd9fd9b5e358L;
-    myConceptBehaviorIds[66] = 0x7d58bd9fd9b64463L;
-    myConceptBehaviorIds[67] = 0x7d58bd9fd9c8b6d3L;
-    myConceptBehaviorIds[68] = 0x7d58bd9fd9c8b8cbL;
+    myConceptBehaviorIds[52] = 0x35a02f6bfc9806c4L;
+    myConceptBehaviorIds[53] = 0x35a02f6bfc9806c7L;
+    myConceptBehaviorIds[54] = 0x380132d742e95ce5L;
+    myConceptBehaviorIds[55] = 0x40be82ad503b3c88L;
+    myConceptBehaviorIds[56] = 0x42d71bfbeb1a07e5L;
+    myConceptBehaviorIds[57] = 0x42d71bfbeb1a5de7L;
+    myConceptBehaviorIds[58] = 0x42d71bfbeb1a5de8L;
+    myConceptBehaviorIds[59] = 0x45991daad6a3d34eL;
+    myConceptBehaviorIds[60] = 0x45991daad6a5c71aL;
+    myConceptBehaviorIds[61] = 0x473cc5baf8a1e7a4L;
+    myConceptBehaviorIds[62] = 0x65a7fcfba8f40208L;
+    myConceptBehaviorIds[63] = 0x65a7fcfba8f41ba9L;
+    myConceptBehaviorIds[64] = 0x671e792f3d934cacL;
+    myConceptBehaviorIds[65] = 0x6cab949e66d5ae81L;
+    myConceptBehaviorIds[66] = 0x7b85dded0be53d6cL;
+    myConceptBehaviorIds[67] = 0x7d58bd9fd9b5e358L;
+    myConceptBehaviorIds[68] = 0x7d58bd9fd9b64463L;
+    myConceptBehaviorIds[69] = 0x7d58bd9fd9c8b6d3L;
+    myConceptBehaviorIds[70] = 0x7d58bd9fd9c8b8cbL;
   }
 
   @Deprecated
@@ -273,38 +277,42 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 51:
         return myWeaveMacro__BehaviorDescriptor;
       case 52:
-        return myTemplateArgumentQuery__BehaviorDescriptor;
+        return myGeneratorDebug_LabelEntry__BehaviorDescriptor;
       case 53:
-        return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
+        return myGeneratorDebug_NodeMapEntry__BehaviorDescriptor;
       case 54:
-        return myTemplateArgumentPatternRef__BehaviorDescriptor;
+        return myTemplateArgumentQuery__BehaviorDescriptor;
       case 55:
-        return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
+        return myTemplateArgumentPatternVarRefExpression__BehaviorDescriptor;
       case 56:
-        return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
+        return myTemplateArgumentPatternRef__BehaviorDescriptor;
       case 57:
-        return myVarMacro__BehaviorDescriptor;
+        return myTemplateArgumentPropertyPatternRefExpression__BehaviorDescriptor;
       case 58:
-        return myVarMacro_ValueQuery__BehaviorDescriptor;
+        return myTemplateArgumentLinkPatternRefExpression__BehaviorDescriptor;
       case 59:
-        return myLabelMacro__BehaviorDescriptor;
+        return myVarMacro__BehaviorDescriptor;
       case 60:
-        return myMarshalFunction__BehaviorDescriptor;
+        return myVarMacro_ValueQuery__BehaviorDescriptor;
       case 61:
-        return myUnmarshalFunction__BehaviorDescriptor;
+        return myLabelMacro__BehaviorDescriptor;
       case 62:
-        return myContextVariableProvider__BehaviorDescriptor;
+        return myMarshalFunction__BehaviorDescriptor;
       case 63:
-        return myMappingConfiguration_Condition__BehaviorDescriptor;
+        return myUnmarshalFunction__BehaviorDescriptor;
       case 64:
-        return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
+        return myContextVariableProvider__BehaviorDescriptor;
       case 65:
-        return myNodeIdentity__BehaviorDescriptor;
+        return myMappingConfiguration_Condition__BehaviorDescriptor;
       case 66:
-        return myTrivialNodeId__BehaviorDescriptor;
+        return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
       case 67:
-        return myModelIdentity__BehaviorDescriptor;
+        return myNodeIdentity__BehaviorDescriptor;
       case 68:
+        return myTrivialNodeId__BehaviorDescriptor;
+      case 69:
+        return myModelIdentity__BehaviorDescriptor;
+      case 70:
         return myTrivialModelId__BehaviorDescriptor;
       default:
         return null;

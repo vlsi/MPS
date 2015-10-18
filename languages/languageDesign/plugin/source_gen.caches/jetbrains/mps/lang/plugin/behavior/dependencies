@@ -31,8 +31,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior" file="ActionDataParameterDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -59,6 +59,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
@@ -78,6 +79,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

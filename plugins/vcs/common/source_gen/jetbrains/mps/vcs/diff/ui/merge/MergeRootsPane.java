@@ -240,7 +240,7 @@ public class MergeRootsPane {
         return Sequence.fromIterable(myMergeSession.getConflictedWith(ch)).isNotEmpty();
       }
     }).count();
-    myStatusBar.setText(MergeModelsDialog.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
+    myStatusBar.setText(MergeModelsPanel.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
   }
   private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
     diffEditor.highlightChange(model, change, isOldEditor, myConflictChecker);

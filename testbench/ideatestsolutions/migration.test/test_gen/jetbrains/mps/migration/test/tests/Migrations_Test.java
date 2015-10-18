@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collections;
 import junit.framework.Assert;
-import jetbrains.mps.migration.component.util.MigrationComponent;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

@@ -904,7 +904,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_4212343982984334781(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x78de9e36d994f770L, "usesFoldingCondition")), "query_method");
   }
-  public static Object referenceMacro_GetReferent_6240706158491210518(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5300980552070064553(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x569b712fbc6ece29L, "collapseByDefaultCondition")), "query_method");
   }
   public static Object referenceMacro_GetReferent_1182994006521(final ReferenceMacroContext _context) {
@@ -1197,7 +1197,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_6240706158491156333(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x569b712fbc6ece29L, "collapseByDefaultCondition")) == null && SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x569b712fbc6ece21L, "collapseByDefault"));
   }
-  public static boolean ifMacro_Condition_6240706158491199396(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5300980552070218848(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x569b712fbc6ece29L, "collapseByDefaultCondition")) != null;
   }
   public static boolean ifMacro_Condition_1182993960564(final IfMacroContext _context) {

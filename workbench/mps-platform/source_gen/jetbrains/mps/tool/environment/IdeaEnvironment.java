@@ -88,7 +88,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating IdeaTestApplication");
     }
-    return IdeaTestApplication.getInstance(null);
+    return IdeaTestApplication.getInstance();
   }
 
   @Override

@@ -25,6 +25,9 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.ModelGenerationPlan;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Step;
+import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
@@ -33,11 +36,13 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -48,12 +53,15 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -65,6 +73,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -80,7 +89,7 @@ class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
   private final Project myProject;
-  private GenerationPlan myGenerationPlan;
+  private ModelGenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
   private MPSAppenderBase myLoggingHandler;
@@ -120,24 +129,32 @@ class GenerationSession {
     // create a plan
     GenerationParametersProvider parametersProvider = myGenerationOptions.getParametersProvider();
     ttrace.push("analyzing dependencies", false);
-    Collection<String> additionalLanguages =
-        parametersProvider instanceof GenerationParametersProviderEx
-            ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
-            : null;
-    ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
-    myGenerationPlan = customPlan != null
-        ? new GenerationPlan(myOriginalInputModel, customPlan)
-        : new GenerationPlan(myOriginalInputModel, additionalLanguages);
-    if (!checkGenerationPlan(myGenerationPlan)) {
-      if (myGenerationOptions.isStrictMode()) {
+    myGenerationPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
+    if (myGenerationPlan == null) {
+      Collection<String> additionalLanguages =
+          parametersProvider instanceof GenerationParametersProviderEx
+              ? ((GenerationParametersProviderEx) parametersProvider).getAdditionalLanguages(myOriginalInputModel)
+              : null;
+
+      List<SLanguage> extraLanguages = null;
+      if (additionalLanguages != null && !additionalLanguages.isEmpty()) {
+        extraLanguages = new ArrayList<SLanguage>(additionalLanguages.size());
+        for (String l : additionalLanguages) {
+          extraLanguages.add(MetaAdapterFactoryByName.getLanguage(l));
+        }
+      }
+      GenerationPlan gp;
+      myGenerationPlan = gp = new GenerationPlan(myOriginalInputModel, extraLanguages);
+      if (!checkGenerationPlan(gp) && myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
       }
     }
+    warnIfGenerateSelf(myGenerationPlan);
 
-    monitor.start("", 1 + myGenerationPlan.getStepCount());
+    monitor.start("", 1 + myGenerationPlan.getSteps_().size());
     try {
       // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
-      IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), myGenerationPlan, ttrace);
+      IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
       IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myProject,
           myGenerationOptions, cacheHelper, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
@@ -179,7 +196,7 @@ class GenerationSession {
 
       boolean success = false;
 
-      myIntermediateCache = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), myGenerationPlan, ttrace);
+      myIntermediateCache = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
       myIntermediateCache.createNew(myOriginalInputModel);
       ttrace.pop();
       try {
@@ -194,7 +211,6 @@ class GenerationSession {
         // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
         // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
         // and we'll need to switch to 'transient' (generator) model here anyway
-        mySessionContext = new GenerationSessionContext(mySessionContext, myGenerationPlan);
         SModel currInputModel = createTransientModel("0");
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
@@ -205,28 +221,49 @@ class GenerationSession {
         SModel currOutput = null;
 
         ttrace.push("steps", false);
-        myGenerationPlan.createSwitchGraph();
 
-        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
-          final List<TemplateMappingConfiguration> mappingConfigurations = myGenerationPlan.getMappingConfigurations(myMajorStep);
-          if (mappingConfigurations.size() >= 1) {
-            final TemplateMappingConfiguration first = mappingConfigurations.get(0);
-            String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
-            monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
-          }
+        for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps_().size(); myMajorStep++) {
+          Step planStep = myGenerationPlan.getSteps_().get(myMajorStep);
+          if (planStep instanceof Transform) {
+            Transform transformStep = (Transform) planStep;
+            final List<TemplateMappingConfiguration> mappingConfigurations = transformStep.getTransformations();
+            if (mappingConfigurations.size() >= 1) {
+              final TemplateMappingConfiguration first = mappingConfigurations.get(0);
+              String n = GeneratorUtil.compactNamespace(first.getModel().getLongName());
+              monitor.step(String.format("step %d (%s#%s%s)", myMajorStep+1, n, first.getName(), mappingConfigurations.size() == 1 ? "" : "..."));
+            }
 
-          if (myLogger.needsInfo()) {
-            myLogger.info("executing step " + (myMajorStep + 1));
+            if (myLogger.needsInfo()) {
+              myLogger.info("executing step " + (myMajorStep + 1));
+            }
+            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep);
+            monitor.advance(0);
+            if (currOutput == null || myLogger.getErrorCount() > 0) {
+              break;
+            }
+            if (mappingConfigurations.isEmpty()) {
+              break;
+            }
+            currInputModel = currOutput;
+          } else if (planStep instanceof Checkpoint) {
+            Checkpoint checkpointStep = (Checkpoint) planStep;
+            SModel checkpointModel = createTransientModel("cp-" + checkpointStep.getName());
+            new CloneUtil(currInputModel, checkpointModel).cloneModelWithImports();
+            publishTransientModel(checkpointModel.getReference());
+            CheckpointState cpState = new CheckpointState(checkpointModel.getReference(), checkpointStep, currInputModel.getReference());
+            // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
+            // the one from post-processing scripts. What if I add ML in post-processing script?
+            //
+            // FIXME could keep myStepArguments and access GeneratorMappings from there - myStepArguments is the same for pre/post and main part
+            if (myStepArguments != null) {
+              GeneratorMappings stepLabels = myStepArguments.mappingLabels;
+              stepLabels.export(cpState);
+              mySessionContext.getModule().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
+              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getProject().getRepository()).build(checkpointModel, stepLabels);
+              checkpointModel.addRootNode(debugMappings);
+            }
+            myStepArguments = null;
           }
-          currOutput = executeMajorStep(monitor.subTask(1), currInputModel);
-          monitor.advance(0);
-          if (currOutput == null || myLogger.getErrorCount() > 0) {
-            break;
-          }
-          if (mappingConfigurations.isEmpty()) {
-            break;
-          }
-          currInputModel = currOutput;
         }
         ttrace.pop();
 
@@ -274,19 +311,14 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
-    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(
-        myGenerationPlan.getMappingConfigurations(myMajorStep));
-    if (mappingConfigurations.isEmpty()) {
-      if (inputModel.getRootNodes().iterator().hasNext()) {
-        myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
-      }
-      return inputModel;
-    }
+    List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(planStep.getTransformations());
+
     if (myLogger.needsInfo()) {
-      printGenerationStepData(inputModel);
+      printUsedLanguages(inputModel);
+      printMappingConfigurations("apply mapping configurations:", mappingConfigurations);
     }
 
     // -- replace context
@@ -306,20 +338,23 @@ class GenerationSession {
     mappingConfigurations.removeAll(drop);
     if (mappingConfigurations.isEmpty()) {
       // no applicable configurations found
+      if (inputModel.getRootNodes().iterator().hasNext()) {
+        myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
+      }
       return inputModel;
     }
 
     // -- prepare generator
     Collections.sort(mappingConfigurations, new MapCfgComparator());
-    RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
+    GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(ruleManager, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger));
+      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger));
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
       }
-      myStepArguments = null;
+//      myStepArguments = null;
       return outputModel;
     } finally {
       recordAccessedTransientModels();
@@ -475,7 +510,7 @@ class GenerationSession {
   }
 
   private SModel preProcessModel(SModel currentInputModel) throws GenerationFailureException {
-    final RuleManager ruleManager = myStepArguments.ruleManager;
+    final RuleManager ruleManager = myStepArguments.planStep.getRuleManager();
     if (ruleManager.getPreProcessScripts().isEmpty()) {
       return currentInputModel;
     }
@@ -525,7 +560,7 @@ class GenerationSession {
   }
 
   private SModel postProcessModel(SModel currentModel) throws GenerationFailureException {
-    final RuleManager ruleManager = myStepArguments.ruleManager;
+    final RuleManager ruleManager = myStepArguments.planStep.getRuleManager();
     if (ruleManager.getPostProcessScripts().isEmpty()) {
       return currentModel;
     }
@@ -576,7 +611,7 @@ class GenerationSession {
 
   private SModel createTransientModel(String stereotype) {
     TransientModelsModule module = mySessionContext.getModule();
-    String longName = SNodeOperations.getModelLongName(myOriginalInputModel);
+    String longName = NameUtil.getModelLongName(myOriginalInputModel);
     final String transientModelName = longName + '@' + stereotype;
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
     return module.createTransientModel(mr);
@@ -618,7 +653,10 @@ class GenerationSession {
     mySessionContext.getModule().removeModel(model);
   }
 
-  private boolean checkGenerationPlan(GenerationPlan generationPlan) {
+  private void warnIfGenerateSelf(ModelGenerationPlan generationPlan) {
+    // XXX why not to warn if I generate a model written in a language using this language's generator
+    // (i.e. intention aspect in lang.intention with lang.intention's generator). Is it generally ok (it is for intention,
+    // but e.g. for behaviors if they are used in generator it might not be the case)
     if (myOriginalInputModel.getModule() instanceof Generator && SModelStereotype.isGeneratorModel(myOriginalInputModel)) {
       SModuleReference me = myOriginalInputModel.getModule().getModuleReference();
       for (TemplateModule t : generationPlan.getGenerators()) {
@@ -628,6 +666,9 @@ class GenerationSession {
         }
       }
     }
+  }
+
+  private boolean checkGenerationPlan(GenerationPlan generationPlan) {
     if (generationPlan.hasConflictingPriorityRules()) {
       myLogger.error("Conflicting mapping priority rules encountered:");
       for (Conflict c : generationPlan.getConflicts()) {
@@ -646,14 +687,18 @@ class GenerationSession {
     return true;
   }
 
-  private void printGenerationStepData(SModel inputModel) {
-    List<String> references = new ArrayList<String>(ModelContentUtil.getUsedLanguageNamespaces(inputModel));
-    Collections.sort(references);
+  private void printUsedLanguages(SModel inputModel) {
+    List<SLanguage> references = new ArrayList<SLanguage>(ModelContentUtil.getUsedLanguages(inputModel));
+    Collections.sort(references, new Comparator<SLanguage>() {
+      @Override
+      public int compare(SLanguage l1, SLanguage l2) {
+        return l1.getQualifiedName().compareTo(l2.getQualifiedName());
+      }
+    });
     myLogger.info("languages used:");
-    for (String reference : references) {
-      myLogger.info("    " + reference);
+    for (SLanguage lang : references) {
+      myLogger.info("    " + lang);
     }
-    printMappingConfigurations("apply mapping configurations:", myGenerationPlan.getMappingConfigurations(myMajorStep));
   }
 
   private void printMappingConfigurations(String title, List<TemplateMappingConfiguration> mc) {

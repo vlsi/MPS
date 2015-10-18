@@ -4,7 +4,6 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 
 /**
@@ -16,7 +15,7 @@ public class ActionDataParameterDeclaration_Behavior {
   public static String call_getDescription_47694270442103157(SAbstractConcept __thisConcept__, SNode parameterObject) {
     return ActionDataParameterDeclaration__BehaviorDescriptor.getDescription_id2DsqYJxu5P(__thisConcept__, parameterObject);
   }
-  public static List<SNode> call_getDataKeys_1866752856967082411(SAbstractConcept __thisConcept__, SModel model) {
+  public static Iterable<SNode> call_getDataKeys_1866752856967082411(SAbstractConcept __thisConcept__, SModel model) {
     return ActionDataParameterDeclaration__BehaviorDescriptor.getDataKeys_id1BC2tkUXZ6F(__thisConcept__, model);
   }
 }

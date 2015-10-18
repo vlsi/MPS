@@ -139,7 +139,7 @@ public final class StaticReference extends SReferenceBase {
     if (targetNode != null) return targetNode;
     targetNode = UnregisteredNodes.instance().get(targetModel.getReference(), targetNodeId);
     if (targetNode == null) {
-      error("target model '" + targetModel.getReference() + "' doesn't contain node with id=" + getTargetNodeId());
+      error("target model '" + targetModel.getReference() + "' doesn't contain node with id=" + getTargetNodeId(), true);
     }
 
     return targetNode;

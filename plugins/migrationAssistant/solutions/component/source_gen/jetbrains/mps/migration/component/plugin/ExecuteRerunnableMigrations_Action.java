@@ -11,7 +11,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.migration.component.util.MigrationComponent;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.query.CommandUtil;

@@ -15,15 +15,11 @@
  */
 package jetbrains.mps.make;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.util.Condition;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
 import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -43,22 +39,23 @@ import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -66,7 +63,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -78,15 +74,27 @@ import java.util.Set;
  * are produced by previous steps (e.g. generated). There's another use-case in MPS, where a module may
  * reference existing Java sources (i.e. to get existing Java projects into MPS world) and MPS shall compile these as well.
  * However, for that case I'd expect dependencies to be expressed in a way of module dependencies, not through language and its runtime solution.
+ *
+ * TODO rewrite module creation via existing functionality.
+ * @see jetbrains.mps.classloading.ModulesReloadTest
  */
 public class TestMakeOnRealProject extends WorkbenchMpsTest {
   private static final String TEST_JAVA_FILE = "Test.java";
 
+  private static ModelAccess ourModelAccess;
+  private static SRepositoryExt ourRepository;
   private IFile myTmpDir;
   private Solution myCreatedRuntimeSolution;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
   private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner();
+
+  @BeforeClass
+  public static void setUp() {
+    Environment ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    ourRepository = ourEnvironment.getPlatform().getCore().getModuleRepository();
+    ourModelAccess = ourRepository.getModelAccess();
+  }
 
   @Before
   public void beforeTest() throws IOException {
@@ -95,26 +103,19 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
 
   @After
   public void afterTest() throws Exception {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ourModelAccess.runWriteAction(new Runnable() {
       public void run() {
-        ModuleRepositoryFacade.getInstance().unregisterModules(myModuleOwner);
-        CleanupManager.getInstance().cleanup();
+        new ModuleRepositoryFacade(ourRepository).unregisterModules(myModuleOwner);
       }
     });
 
-    ModelAccess.instance().flushEventQueue();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+    ourModelAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            myTmpDir.delete();
-            myTmpDir = null;
-          }
-        });
+        myTmpDir.delete();
+        myTmpDir = null;
       }
-    }, ModalityState.NON_MODAL);
+    });
   }
 
   /**
@@ -124,7 +125,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
     final Set<SModule> toCompile = new LinkedHashSet<SModule>();
     toCompile.add(myCreatedSolution);
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ourModelAccess.runReadAction(new Runnable() {
       public void run() {
         MPSCompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressMonitor());
         Assert.assertTrue("Compilation is not ok!", result.isOk());
@@ -139,7 +140,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   public void testSolutionAndItsDependency() {
     doSolutionsCompilation();
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ourModelAccess.runReadAction(new Runnable() {
       public void run() {
         checkModuleCompiled(myCreatedSolution);
         checkModuleCompiled(myCreatedRuntimeSolution);
@@ -152,7 +153,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   public void testNothingToCompileAfterCompilation() throws InterruptedException {
     doSolutionsCompilation();
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.EMPTY_SET));
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.<SModule>emptyList()));
     Assert.assertEquals(0, sources.getFilesToCompile().size());
   }
 
@@ -163,25 +164,14 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   public void testCompileAfterTouch() throws InterruptedException {
     doSolutionsCompilation();
 
-    // Touch file
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
-            IFile javaFile = outputPath.getDescendant(TEST_JAVA_FILE);
-            long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
-            if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
-              Assert.fail("Can't touch the file " + javaFile);
-            }
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
+    IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
+    IFile javaFile = outputPath.getDescendant(TEST_JAVA_FILE);
+    long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
+    if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
+      Assert.fail("Can't touch the file " + javaFile);
+    }
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.EMPTY_SET));
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.<SModule>emptyList()));
     Collection<JavaFile> filesToCompile = sources.getFilesToCompile();
     Assert.assertEquals(1, filesToCompile.size());
   }
@@ -190,28 +180,20 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   public void testFileDelete() throws InterruptedException {
     doSolutionsCompilation();
 
-    // Touch file
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
-            outputPath.getDescendant(TEST_JAVA_FILE).delete();
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
+    IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
+    outputPath.getDescendant(TEST_JAVA_FILE).delete();
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Arrays.asList((SModule) myCreatedSolution)));
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.singleton((SModule) myCreatedSolution)));
     Collection<File> filesToDelete = sources.getFilesToDelete();
     Assert.assertEquals(1, filesToDelete.size());
   }
 
 
   private void checkModuleCompiled(SModule module) {
-    IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    assert facet != null;
+    IFile classesGen = facet.getClassesGen();
+    assert classesGen != null;
     List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getPath()), "class");
     List<File> sources = new ArrayList<File>();
     for (String path : SModuleOperations.getAllSourcePaths(module)) {
@@ -235,31 +217,26 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   }
 
   private void createTmpModules() {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+    ourModelAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            myTmpDir = IFileUtils.createTmpDir();
+        myTmpDir = IFileUtils.createTmpDir();
 
-            myCreatedRuntimeSolution = createNewRuntimeSolution();
-            createJavaFiles(myCreatedRuntimeSolution);
+        myCreatedRuntimeSolution = createNewRuntimeSolution();
+        createJavaFiles(myCreatedRuntimeSolution);
 
-            myCreatedLanguage = createNewLanguage();
-            createJavaFiles(myCreatedLanguage);
+        myCreatedLanguage = createNewLanguage();
+        createJavaFiles(myCreatedLanguage);
 
-            myCreatedSolution = createNewSolution();
-            createJavaFiles(myCreatedSolution);
+        myCreatedSolution = createNewSolution();
+        createJavaFiles(myCreatedSolution);
 
-            String generatorOutputPath = myCreatedSolution.getOutputPath().getPath();
-            IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().getDescendant("resources");
-            myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getPath());
-            createFile(resourceDir, "res.0.1/test.txt", "test");
-          }
-        });
+        String generatorOutputPath = myCreatedSolution.getOutputPath().getPath();
+        IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().getDescendant("resources");
+        myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getPath());
+        createFile(resourceDir, "res.0.1/test.txt", "test");
       }
-    }, ModalityState.NON_MODAL);
+    });
   }
 
   public void createJavaFiles(AbstractModule module) {

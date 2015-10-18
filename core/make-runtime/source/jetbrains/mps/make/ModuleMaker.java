@@ -73,9 +73,21 @@ public class ModuleMaker {
   private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
   private Dependencies myDependencies;
   private final IPerformanceTracer myTracer;
-  @NotNull
-  private final IMessageHandler myHandler;
+  @NotNull private final IMessageHandler myHandler;
   private final MessageKind myLevel;
+
+  private static final class ErrorsLoggingHandler extends IMessageHandler.LogHandler {
+    public ErrorsLoggingHandler(@NotNull Logger log) {
+      super(log);
+    }
+
+    @Override
+    public void handle(IMessage msg) {
+      if (msg.getKind() == MessageKind.ERROR) {
+        myLog.error(msg.getText());
+      }
+    }
+  }
 
   public ModuleMaker() {
     this(null, MessageKind.ERROR);
@@ -86,7 +98,7 @@ public class ModuleMaker {
       myHandler = handler;
       myTracer = new PerformanceTracer("module maker");
     } else {
-      myHandler = new LogHandler(LogManager.getLogger(ModuleMaker.class));
+      myHandler = new ErrorsLoggingHandler(LogManager.getLogger(ModuleMaker.class));
       myTracer = new NullPerformanceTracer();
     }
     myLevel = level;
@@ -471,13 +483,13 @@ public class ModuleMaker {
           assert containingModule != null;
           JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
 
-          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+          String messageString = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
 
           //final SNode nodeToShow = getNodeByLine(cp, fqName);
 
           Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
 
-          String errMsg = messageStirng + " (line: " + cp.getSourceLineNumber() + ")";
+          String errMsg = messageString + " (line: " + cp.getSourceLineNumber() + ")";
           if (cp.isWarning()) {
             myMessages.add(createMessage(MessageKind.WARNING, errMsg, hintObject));
           } else {
@@ -558,6 +570,7 @@ public class ModuleMaker {
     m.setHintObject(hint);
     return m;
   }
+
   private static IMessage createMessage(@NotNull MessageKind kind, @NotNull String text, Throwable ex) {
     Message m = new Message(kind, ModuleMaker.class, text);
     m.setException(ex);

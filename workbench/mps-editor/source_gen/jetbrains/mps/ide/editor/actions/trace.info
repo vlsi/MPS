@@ -139,7 +139,7 @@
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3205778618063801970">
     <file name="MPSEditorActions.xml">
-      <unit id="3205778618063801970" at="1,0,333,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
+      <unit id="3205778618063801970" at="1,0,347,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3207605520775490121">
@@ -3751,6 +3751,150 @@
         <var name="event" id="8896169282214002721" />
       </scope>
       <unit id="8896169282214002721" at="16,0,58,0" name="jetbrains.mps.ide.editor.actions.Backspace_Action" />
+    </file>
+  </root>
+  <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/9078547641994488278">
+    <file name="ExpandRecursively_Action.java">
+      <node id="9078547641994488278" at="17,0,18,0" concept="12" trace="ICON" />
+      <node id="9078547641994488278" at="18,37,19,42" concept="14" />
+      <node id="9078547641994488278" at="19,42,20,35" concept="3" />
+      <node id="9078547641994488278" at="20,35,21,41" concept="3" />
+      <node id="9078547641994488278" at="24,32,25,16" concept="9" />
+      <node id="5611219249779516167" at="28,87,29,66" concept="9" />
+      <node id="9078547641994488278" at="32,89,33,85" concept="3" />
+      <node id="9078547641994488278" at="37,53,38,19" concept="9" />
+      <node id="9078547641994488278" at="40,5,41,72" concept="8" />
+      <node id="9078547641994488278" at="42,22,43,21" concept="9" />
+      <node id="9078547641994488278" at="46,5,47,90" concept="8" />
+      <node id="9078547641994488278" at="48,67,49,31" concept="3" />
+      <node id="9078547641994488278" at="51,36,52,21" concept="9" />
+      <node id="9078547641994488278" at="54,5,55,16" concept="9" />
+      <node id="5611219249779517473" at="58,96,59,108" concept="3" />
+      <node id="5611219249779516437" at="61,59,62,115" concept="9" />
+      <node id="9078547641994488278" at="36,95,39,5" concept="6" />
+      <node id="9078547641994488278" at="41,72,44,7" concept="6" />
+      <node id="9078547641994488278" at="47,90,50,7" concept="6" />
+      <node id="9078547641994488278" at="50,7,53,7" concept="6" />
+      <node id="5611219249779516434" at="61,0,64,0" concept="7" trace="getAction#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/openapi/editor/cells/CellAction;" />
+      <node id="9078547641994488278" at="23,0,27,0" concept="7" trace="isDumbAware#()Z" />
+      <node id="9078547641994488278" at="27,0,31,0" concept="7" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="9078547641994488278" at="31,0,35,0" concept="7" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="9078547641994488278" at="57,0,61,0" concept="7" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="9078547641994488278" at="18,0,23,0" concept="2" trace="ExpandRecursively_Action#()V" />
+      <node id="9078547641994488278" at="39,5,45,5" concept="0" />
+      <node id="9078547641994488278" at="45,5,54,5" concept="0" />
+      <node id="9078547641994488278" at="35,0,57,0" concept="7" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="9078547641994488278" at="24,32,25,16" />
+      <scope id="5611219249779516094" at="28,87,29,66" />
+      <scope id="9078547641994488278" at="32,89,33,85" />
+      <scope id="9078547641994488278" at="37,53,38,19" />
+      <scope id="9078547641994488278" at="42,22,43,21" />
+      <scope id="9078547641994488278" at="48,67,49,31" />
+      <scope id="9078547641994488278" at="51,36,52,21" />
+      <scope id="9078547641994488278" at="58,96,59,108" />
+      <scope id="5611219249779516436" at="61,59,62,115" />
+      <scope id="9078547641994488278" at="18,37,21,41" />
+      <scope id="5611219249779516434" at="61,0,64,0">
+        <var name="event" id="5611219249779516434" />
+      </scope>
+      <scope id="9078547641994488278" at="23,0,27,0" />
+      <scope id="9078547641994488278" at="27,0,31,0">
+        <var name="_params" id="9078547641994488278" />
+        <var name="event" id="9078547641994488278" />
+      </scope>
+      <scope id="9078547641994488278" at="31,0,35,0">
+        <var name="_params" id="9078547641994488278" />
+        <var name="event" id="9078547641994488278" />
+      </scope>
+      <scope id="9078547641994488278" at="40,5,44,7">
+        <var name="p" id="9078547641994488278" />
+      </scope>
+      <scope id="9078547641994488278" at="57,0,61,0">
+        <var name="_params" id="9078547641994488278" />
+        <var name="event" id="9078547641994488278" />
+      </scope>
+      <scope id="9078547641994488278" at="18,0,23,0" />
+      <scope id="9078547641994488278" at="46,5,53,7">
+        <var name="editorComponent" id="9078547641994488278" />
+      </scope>
+      <scope id="9078547641994488278" at="36,95,55,16" />
+      <scope id="9078547641994488278" at="35,0,57,0">
+        <var name="_params" id="9078547641994488278" />
+        <var name="event" id="9078547641994488278" />
+      </scope>
+      <unit id="9078547641994488278" at="16,0,65,0" name="jetbrains.mps.ide.editor.actions.ExpandRecursively_Action" />
+    </file>
+  </root>
+  <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/9078547641994488291">
+    <file name="CollapseRecursively_Action.java">
+      <node id="9078547641994488291" at="17,0,18,0" concept="12" trace="ICON" />
+      <node id="9078547641994488291" at="18,39,19,44" concept="14" />
+      <node id="9078547641994488291" at="19,44,20,35" concept="3" />
+      <node id="9078547641994488291" at="20,35,21,41" concept="3" />
+      <node id="9078547641994488291" at="24,32,25,16" concept="9" />
+      <node id="469430206737671054" at="28,87,29,68" concept="9" />
+      <node id="9078547641994488291" at="32,89,33,85" concept="3" />
+      <node id="9078547641994488291" at="37,53,38,19" concept="9" />
+      <node id="9078547641994488291" at="40,5,41,72" concept="8" />
+      <node id="9078547641994488291" at="42,22,43,21" concept="9" />
+      <node id="9078547641994488291" at="46,5,47,90" concept="8" />
+      <node id="9078547641994488291" at="48,67,49,31" concept="3" />
+      <node id="9078547641994488291" at="51,36,52,21" concept="9" />
+      <node id="9078547641994488291" at="54,5,55,16" concept="9" />
+      <node id="469430206737677251" at="58,96,59,110" concept="3" />
+      <node id="469430206737652589" at="61,59,62,113" concept="9" />
+      <node id="9078547641994488291" at="36,95,39,5" concept="6" />
+      <node id="9078547641994488291" at="41,72,44,7" concept="6" />
+      <node id="9078547641994488291" at="47,90,50,7" concept="6" />
+      <node id="9078547641994488291" at="50,7,53,7" concept="6" />
+      <node id="469430206737652586" at="61,0,64,0" concept="7" trace="getAction#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Ljetbrains/mps/openapi/editor/cells/CellAction;" />
+      <node id="9078547641994488291" at="23,0,27,0" concept="7" trace="isDumbAware#()Z" />
+      <node id="9078547641994488291" at="27,0,31,0" concept="7" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="9078547641994488291" at="31,0,35,0" concept="7" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="9078547641994488291" at="57,0,61,0" concept="7" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="9078547641994488291" at="18,0,23,0" concept="2" trace="CollapseRecursively_Action#()V" />
+      <node id="9078547641994488291" at="39,5,45,5" concept="0" />
+      <node id="9078547641994488291" at="45,5,54,5" concept="0" />
+      <node id="9078547641994488291" at="35,0,57,0" concept="7" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="9078547641994488291" at="24,32,25,16" />
+      <scope id="469430206737668026" at="28,87,29,68" />
+      <scope id="9078547641994488291" at="32,89,33,85" />
+      <scope id="9078547641994488291" at="37,53,38,19" />
+      <scope id="9078547641994488291" at="42,22,43,21" />
+      <scope id="9078547641994488291" at="48,67,49,31" />
+      <scope id="9078547641994488291" at="51,36,52,21" />
+      <scope id="9078547641994488291" at="58,96,59,110" />
+      <scope id="469430206737652588" at="61,59,62,113" />
+      <scope id="9078547641994488291" at="18,39,21,41" />
+      <scope id="469430206737652586" at="61,0,64,0">
+        <var name="event" id="469430206737652586" />
+      </scope>
+      <scope id="9078547641994488291" at="23,0,27,0" />
+      <scope id="9078547641994488291" at="27,0,31,0">
+        <var name="_params" id="9078547641994488291" />
+        <var name="event" id="9078547641994488291" />
+      </scope>
+      <scope id="9078547641994488291" at="31,0,35,0">
+        <var name="_params" id="9078547641994488291" />
+        <var name="event" id="9078547641994488291" />
+      </scope>
+      <scope id="9078547641994488291" at="40,5,44,7">
+        <var name="p" id="9078547641994488291" />
+      </scope>
+      <scope id="9078547641994488291" at="57,0,61,0">
+        <var name="_params" id="9078547641994488291" />
+        <var name="event" id="9078547641994488291" />
+      </scope>
+      <scope id="9078547641994488291" at="18,0,23,0" />
+      <scope id="9078547641994488291" at="46,5,53,7">
+        <var name="editorComponent" id="9078547641994488291" />
+      </scope>
+      <scope id="9078547641994488291" at="36,95,55,16" />
+      <scope id="9078547641994488291" at="35,0,57,0">
+        <var name="_params" id="9078547641994488291" />
+        <var name="event" id="9078547641994488291" />
+      </scope>
+      <unit id="9078547641994488291" at="16,0,65,0" name="jetbrains.mps.ide.editor.actions.CollapseRecursively_Action" />
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/991796682690297081">

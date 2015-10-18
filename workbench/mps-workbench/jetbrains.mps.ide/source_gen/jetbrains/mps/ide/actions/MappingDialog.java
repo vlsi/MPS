@@ -18,9 +18,9 @@ import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -32,6 +32,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import org.jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
@@ -68,21 +69,13 @@ public class MappingDialog extends DialogWrapper {
           return;
         }
         Object node = path.getLastPathComponent();
-        if (!(node instanceof SNodeTreeNode)) {
+        if (!(node instanceof NodeTargetProvider)) {
           return;
         }
-        final SNodeTreeNode treeNode = (SNodeTreeNode) node;
-        myProject.getModelAccess().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            SNode node = treeNode.getSNode();
-            if (!(SNodeUtil.isAccessible(node, myProject.getRepository()))) {
-              return;
-            }
-            // TODO: use node pointers here 
-            NavigationSupport.getInstance().openNode(myProject, node, true, true);
-          }
-        });
+        SNodeReference treeNode = ((NodeTargetProvider) node).getNavigationTarget();
+        if (treeNode != null) {
+          new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(treeNode);
+        }
       }
     });
     myTree.rebuildNow();

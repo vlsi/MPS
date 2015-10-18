@@ -25,6 +25,7 @@ import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalRepo
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.generator.impl.textgen.TextFacility2;
 import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.project.Project;
@@ -136,7 +137,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       GenerationDependencies dep = status.getDependencies();
       if (dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
-        IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenOptions.getIncrementalStrategy(), new GenerationPlan(inputModel), new NullPerformanceTracer());
+        IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenOptions.getIncrementalStrategy(), new PlanSignature(inputModel, new GenerationPlan(inputModel)), new NullPerformanceTracer());
         new IncrementalGenerationHandler(inputModel, myProject, myGenOptions, cacheHelper, new IncrementalReporter() {
           @Override
           public void report(String message) {

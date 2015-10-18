@@ -25,13 +25,13 @@
       <unit at="15,0,33,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerType_BehaviorDescriptor" />
     </file>
     <file name="AbstractEnumeratorOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractEnumeratorOperation_BehaviorDescriptor" />
+      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractEnumeratorOperation_BehaviorDescriptor" />
     </file>
     <file name="AbstractIteratorOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractIteratorOperation_BehaviorDescriptor" />
+      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractIteratorOperation_BehaviorDescriptor" />
     </file>
     <file name="AbstractMappingOperation_BehaviorDescriptor.java">
-      <unit at="16,0,40,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractMappingOperation_BehaviorDescriptor" />
+      <unit at="17,0,41,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractMappingOperation_BehaviorDescriptor" />
     </file>
     <file name="AbstractSetOperation_BehaviorDescriptor.java">
       <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AbstractSetOperation_BehaviorDescriptor" />
@@ -67,7 +67,7 @@
       <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.AnyOperation_BehaviorDescriptor" />
     </file>
     <file name="AsSequenceOperation_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsSequenceOperation_BehaviorDescriptor" />
+      <unit at="14,0,23,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsSequenceOperation_BehaviorDescriptor" />
     </file>
     <file name="AsSynchronizedOperation_BehaviorDescriptor.java">
       <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.AsSynchronizedOperation_BehaviorDescriptor" />
@@ -232,7 +232,7 @@
       <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToList_BehaviorDescriptor" />
     </file>
     <file name="IApplicableToNothing_BehaviorDescriptor.java">
-      <unit at="14,0,19,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor" />
+      <unit at="15,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing_BehaviorDescriptor" />
     </file>
     <file name="IApplicableToQueue_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.baseLanguage.collections.behavior.IApplicableToQueue_BehaviorDescriptor" />
@@ -403,7 +403,7 @@
       <unit at="15,0,45,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveLastElementOperation_BehaviorDescriptor" />
     </file>
     <file name="RemoveOperation_BehaviorDescriptor.java">
-      <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveOperation_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveOperation_BehaviorDescriptor" />
     </file>
     <file name="RemoveSetElementOperation_BehaviorDescriptor.java">
       <unit at="11,0,20,0" name="jetbrains.mps.baseLanguage.collections.behavior.RemoveSetElementOperation_BehaviorDescriptor" />

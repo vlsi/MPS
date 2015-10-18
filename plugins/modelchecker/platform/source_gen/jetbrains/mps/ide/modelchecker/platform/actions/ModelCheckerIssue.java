@@ -4,10 +4,12 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.Icons;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.validation.ValidationProblem;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public abstract class ModelCheckerIssue {
@@ -15,7 +17,7 @@ public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
   private String myMessage;
   private IModelCheckerFix myFix;
-  private ModelCheckerIssue(String message, IModelCheckerFix fix) {
+  private ModelCheckerIssue(String message, @Nullable IModelCheckerFix fix) {
     myMessage = message;
     myFix = fix;
   }
@@ -36,14 +38,21 @@ public abstract class ModelCheckerIssue {
     ModelCheckerIssue issue = new ModelCheckerIssue.NodeIssue(node, message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, node, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
-  public static SearchResult<ModelCheckerIssue> getSearchResultForModule(SModule module, String message, IModelCheckerFix fix, String severity, String issueType) {
-    ModelCheckerIssue issue = new ModelCheckerIssue.ModuleIssue(message, fix);
-    return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
+
+  public static SearchResult<ModelCheckerIssue> getSearchResultForModule(SModule module, ValidationProblem vp, String issueType) {
+    ModelCheckerIssue issue = new ModelCheckerIssue.ModuleIssue(module.getModuleName() + ": " + vp.getMessage(), (vp.canFix() ? new ModelCheckerIssue.ValidationFixAdapter(vp) : null));
+    return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, toCheckerSeverity(vp)), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
-  public static SearchResult<ModelCheckerIssue> getSearchResultForModel(SModel model, String message, IModelCheckerFix fix, String severity, String issueType) {
-    ModelCheckerIssue issue = new ModelCheckerIssue.ModelIssue(model, message, fix);
-    return new SearchResult<ModelCheckerIssue>(issue, model, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
+
+  public static SearchResult<ModelCheckerIssue> getSearchResultForModel(SModel model, ValidationProblem vp, String issueType) {
+    ModelCheckerIssue issue = new ModelCheckerIssue.ModelIssue(model, vp.getMessage(), (vp.canFix() ? new ModelCheckerIssue.ValidationFixAdapter(vp) : null));
+    return new SearchResult<ModelCheckerIssue>(issue, model, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, toCheckerSeverity(vp)), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
+
+  private static String toCheckerSeverity(ValidationProblem vp) {
+    return (vp.getSeverity() == ValidationProblem.Severity.ERROR ? ModelChecker.SEVERITY_ERROR : ModelChecker.SEVERITY_WARNING);
+  }
+
   public static class NodeIssue extends ModelCheckerIssue {
     private SNode myNode;
     public NodeIssue(SNode node, String message, IModelCheckerFix fix) {
@@ -75,6 +84,21 @@ public abstract class ModelCheckerIssue {
     }
     public SModel getModel() {
       return myModel;
+    }
+  }
+
+  /*package*/ static class ValidationFixAdapter implements IModelCheckerFix {
+    private final ValidationProblem myIssue;
+    public ValidationFixAdapter(ValidationProblem validationIssue) {
+      myIssue = validationIssue;
+    }
+
+    public boolean doFix() {
+      if (!(myIssue.canFix())) {
+        return false;
+      }
+      myIssue.fix();
+      return true;
     }
   }
 }

@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.DefaultValuesHolder" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -60,6 +61,9 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />

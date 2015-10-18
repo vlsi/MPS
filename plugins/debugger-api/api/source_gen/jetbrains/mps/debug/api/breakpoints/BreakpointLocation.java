@@ -30,7 +30,12 @@ public class BreakpointLocation {
   public SNodeReference getNodePointer() {
     return myNodePointer;
   }
+  /**
+   * 
+   * @deprecated to resolve a node, one needs a repository. Chances are we'll pass repo here, and un-deprecate the method back, it's smart not to use it nevertheless.
+   */
   @Nullable
+  @Deprecated
   public SNode getSNode() {
     return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }

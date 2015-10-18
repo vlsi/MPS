@@ -1668,7 +1668,7 @@
     <property role="TrG5h" value="MarshalFunction" />
     <property role="3GE5qa" value="crossmodel" />
     <property role="1pbfSe" value="245104387" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
   <node concept="1TIwiD" id="21N1KFSD2Ix">
     <property role="TrG5h" value="GeneratorInternal_ReferenceDescriptor" />
@@ -1761,7 +1761,7 @@
     <property role="TrG5h" value="UnmarshalFunction" />
     <property role="3GE5qa" value="crossmodel" />
     <property role="1pbfSe" value="245110948" />
-    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
   </node>
   <node concept="1TIwiD" id="7PoJpZpMbzb">
     <property role="3GE5qa" value="crossmodel.vault" />
@@ -1905,6 +1905,72 @@
     <property role="34LRSv" value="weaving anchor node " />
     <property role="R4oN_" value="controls exact location in parent where child is weaved to" />
     <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
+  </node>
+  <node concept="1TIwiD" id="3mwbQJW_Z71">
+    <property role="1pbfSe" value="842539308" />
+    <property role="TrG5h" value="GeneratorDebug_Mappings" />
+    <property role="R4oN_" value="Container for generator mappings produced during transformation step" />
+    <property role="3GE5qa" value="debug" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3mwbQJWA0r5" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="labels" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="3mwbQJWA0r4" resolve="GeneratorDebug_LabelEntry" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3mwbQJWA0r4">
+    <property role="1pbfSe" value="842544687" />
+    <property role="3GE5qa" value="debug" />
+    <property role="TrG5h" value="GeneratorDebug_LabelEntry" />
+    <property role="R4oN_" value="Entry for MappingLabel" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3mwbQJWA13F" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="entries" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="3mwbQJWA0r7" resolve="GeneratorDebug_NodeMapEntry" />
+    </node>
+    <node concept="1TJgyi" id="3mwbQJWA13D" role="1TKVEl">
+      <property role="TrG5h" value="label" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3mwbQJWA0r7">
+    <property role="1pbfSe" value="842544690" />
+    <property role="3GE5qa" value="debug" />
+    <property role="TrG5h" value="GeneratorDebug_NodeMapEntry" />
+    <property role="R4oN_" value="Records input node to output mapping, with origin of the input node (if any)." />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3mwbQJWA0rl" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="outputNode" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="3mwbQJWA0ri" resolve="GeneratorDebug_NodeRef" />
+    </node>
+    <node concept="1TJgyj" id="3mwbQJWA0ra" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="inputNode" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="1TJgyj" id="3mwbQJWA0rr" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="inputOrigin" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3mwbQJWA0ri">
+    <property role="1pbfSe" value="842544701" />
+    <property role="3GE5qa" value="debug" />
+    <property role="TrG5h" value="GeneratorDebug_NodeRef" />
+    <property role="R4oN_" value="Need multiple references to node&lt;&gt;, this is how they do it with MPS" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3mwbQJWA0rj" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="node" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
   </node>
 </model>
 

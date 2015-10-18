@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -35,7 +34,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "db4f79a0-a97a-461a-a29f-676be5f51cd6(BHL3#G3)"));
+    return null;
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {

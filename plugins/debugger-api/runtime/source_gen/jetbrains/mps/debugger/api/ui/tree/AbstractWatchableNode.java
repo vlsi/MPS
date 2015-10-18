@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 
 /*package*/ abstract class AbstractWatchableNode extends MPSTreeNode {
@@ -25,12 +25,7 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
     }
     final Project mpsProject = ProjectHelper.toMPSProject(getProject());
     if (mpsProject != null) {
-      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          NavigationSupport.getInstance().openNode(mpsProject, myNode, focus, select);
-        }
-      });
+      new EditorNavigator(mpsProject).shallFocus(focus).shallSelect(select).open(myNode.getReference());
     }
   }
   @Nullable

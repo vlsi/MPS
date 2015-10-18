@@ -20,7 +20,7 @@ import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.migration.component.util.MigrationComponent;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SearchScope;

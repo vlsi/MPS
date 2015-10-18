@@ -106,7 +106,7 @@ public abstract class SReferenceBase extends SReference {
     }
     if (force && myImmatureTargetNode != null) {
       if (sourceNode.getModel() != null) {
-        error("Impossible to resolve immature reference",
+        error("Impossible to resolve immature reference", false,
             new ProblemDescription(myImmatureTargetNode.getReference(),
                 "ImmatureTargetNode(modelID: " +
                     (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +

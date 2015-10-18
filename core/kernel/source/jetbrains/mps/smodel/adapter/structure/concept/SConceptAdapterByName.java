@@ -78,16 +78,16 @@ public final class SConceptAdapterByName extends SConceptAdapter implements SCon
   }
 
   @Override
-  protected SNode findInModel(SModel strucModel) {
+  protected SNode findInModel(SModel structureModel) {
     ConceptDescriptor cd = getConceptDescriptor();
     if (cd != null) {
-      SNode node = strucModel.getNode(new Regular(cd.getId().getIdValue()));
+      SNode node = structureModel.getNode(new Regular(cd.getId().getIdValue()));
       if (node != null) {
         return node;
       }
     }
     String shortName = NameUtil.shortNameFromLongName(myFqName);
-    for (SNode root : strucModel.getRootNodes()) {
+    for (SNode root : structureModel.getRootNodes()) {
       if (shortName.equals(root.getProperty(SNodeUtil.property_INamedConcept_name))) return root;
     }
     return null;

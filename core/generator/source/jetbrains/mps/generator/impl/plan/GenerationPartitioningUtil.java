@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -51,10 +50,6 @@ import java.util.List;
  * Date: Mar 30, 2007
  */
 public class GenerationPartitioningUtil {
-  public static Collection<TemplateModule> getTemplateModules(SModel inputModel) {
-    return new EngagedGeneratorCollector(inputModel, null).getGenerators();
-  }
-
   public static List<Pair<String, TemplateMappingConfiguration>> toStrings(Collection<TemplateMappingConfiguration> mappings) {
     List<Pair<String, TemplateMappingConfiguration>> strings = new ArrayList<Pair<String, TemplateMappingConfiguration>>();
 

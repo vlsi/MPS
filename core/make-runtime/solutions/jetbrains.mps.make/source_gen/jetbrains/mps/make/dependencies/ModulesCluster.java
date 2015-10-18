@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -24,18 +25,20 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.DevKit;
 import java.util.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModulesCluster {
   private Map<SModuleReference, SModule> modulesView = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
   private Map<SModuleReference, ModulesCluster.ModuleDeps> allDeps = MapSequence.fromMap(new HashMap<SModuleReference, ModulesCluster.ModuleDeps>());
-  public ModulesCluster(Iterable<SModule> mods) {
+  private final LanguageRegistry myLanguageRegistry;
+
+  public ModulesCluster(Iterable<SModule> mods, LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
     addAll(mods);
   }
   public void add(SModule mod) {
@@ -206,16 +209,12 @@ __switch__:
   private Iterable<SModuleReference> required(SModule mod) {
     GlobalModuleDependenciesManager depman = new GlobalModuleDependenciesManager(mod);
 
-    Set<SLanguage> allUsedSLanguages = new SLanguageHierarchy(mod.getUsedLanguages()).getExtended();
-    Iterable<Language> allUsedLangs = SetSequence.fromSet(allUsedSLanguages).select(new ISelector<SLanguage, Language>() {
-      public Language select(SLanguage it) {
-        return ((SLanguageAdapter) it).getSourceModule();
+    Set<SLanguage> allUsedSLanguages = new SLanguageHierarchy(myLanguageRegistry, mod.getUsedLanguages()).getExtended();
+    Iterable<Language> allUsedLangs = SetSequence.fromSet(allUsedSLanguages).select(new ISelector<SLanguage, SModule>() {
+      public SModule select(SLanguage it) {
+        return it.getSourceModule();
       }
-    }).where(new IWhereFilter<Language>() {
-      public boolean accept(Language it) {
-        return it != null;
-      }
-    });
+    }).ofType(Language.class);
 
     Set<SModule> reqmods = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable((allUsedLangs)).translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {

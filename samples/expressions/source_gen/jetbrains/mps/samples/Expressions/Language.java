@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -39,7 +38,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "eef058a7-de86-460b-ad59-5059d2eb4026(jetbrains.mps.samples.Expressions#2073504467207856858)"));
+    return null;
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {

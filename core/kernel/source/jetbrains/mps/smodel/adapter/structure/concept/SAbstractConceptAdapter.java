@@ -48,6 +48,27 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
+/**
+ * Common ancestor of adapter classes {@link SConceptAdapter} and {@link SInterfaceConceptAdapter}.
+ * It serves as an adapter from ConceptDescriptor to SAbstractConcept and the base class for all the implementations
+ * of the {@link SAbstractConcept}.
+ * The common idea is that on every client request it looks for the proper {@link ConceptDescriptor}
+ * in the special registry and redirects the client request to it.
+ * So it has only an id (string or smth else) as its state.
+ *
+ * One calls the SAbstractConcept instance <\it>valid</\it> if and only if its {@link ConceptDescriptor} is present
+ * ({@link #getConceptDescriptor()} != null).
+ *
+ * Whenever the descriptor is absent (the concept instance is NOT valid) the "fail-safe" behavior is provided:
+ * please look at each method individually to acknowledge the contract.
+ *
+ * NB: If a client of this API wants to distinguish the case when the concept is invalid, he/she
+ * needs to use the method {@link #isValid()}. (!)
+ *
+ * Currently a lot of "hacks" introduced to fix some common cases (e.g. not valid concept still is a subconcept of the BaseConcept).
+ * Also there is an editor issue when an instance of abstract concept (interface concept) might be created.
+ * (E.g. the method {@link #isSubConceptOf(SAbstractConcept)} works not as expected for such concepts)
+ */
 public abstract class SAbstractConceptAdapter implements SAbstractConcept, ConceptMetaInfoConverter {
   protected String myFqName;
 
@@ -55,13 +76,20 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     myFqName = fqName;
   }
 
+  /**
+   * @return the backing {@link ConceptDescriptor}
+   */
   @Nullable
   public abstract ConceptDescriptor getConceptDescriptor();
 
   @NotNull
   public abstract SConceptId getId();
 
-  protected abstract SNode findInModel(SModel strucModel);
+  /**
+   * a helper method to get a declaration node for this concept
+   * in the case of the legacy concept resolving (by string id)
+   */
+  protected abstract SNode findInModel(SModel structureModel);
 
   @NotNull
   @Override
@@ -141,38 +169,55 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
 
   @Override
   public Collection<SProperty> getProperties() {
-    ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return Collections.emptyList();
+    ConceptDescriptor descriptor = getConceptDescriptor();
+    if (descriptor == null) {
+      return Collections.emptyList();
+    }
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
-    for (SPropertyId pid : d.getPropertyIds()) {
-      result.add(MetaAdapterFactory.getProperty(pid, d.getPropertyDescriptor(pid).getName()));
+    for (SPropertyId pid : descriptor.getPropertyIds()) {
+      result.add(MetaAdapterFactory.getProperty(pid, descriptor.getPropertyDescriptor(pid).getName()));
     }
     return result;
   }
 
+  /**
+   * @param anotherConcept -- another SAbstractConcept
+   * @return true iff this concept is a subconcept of another concept.
+   * if one of the concepts is not valid then false is returned
+   */
   @Override
-  public boolean isSubConceptOf(SAbstractConcept concept) {
+  public boolean isSubConceptOf(SAbstractConcept anotherConcept) {
     // todo: hack, need for working node attributes on nodes of not generated concepts
     // todo: remove
-    if (SNodeUtil.concept_BaseConcept.equals(concept)) {
+    if (SNodeUtil.concept_BaseConcept.equals(anotherConcept)) { // providing the '* is a subconcept of BaseConcept' contract
+      return true;
+    }
+    if (equals(anotherConcept)) { // providing the 'A is a subconcept of A' contract
       return true;
     }
 
-    ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) return false;
-
-    ConceptDescriptor conceptDescriptor = ((SAbstractConceptAdapter) concept).getConceptDescriptor();
-    if ((conceptDescriptor == null || conceptDescriptor.isInterfaceConcept() && concept instanceof SConceptAdapter)) {
-      //only for instances of interface concepts
+    ConceptDescriptor descriptor = getConceptDescriptor();
+    if (descriptor == null) {
       return false;
     }
 
-    if (concept instanceof SAbstractConceptAdapterById) {
-      return d.isAssignableTo(((SAbstractConceptAdapterById) concept).getId());
+    ConceptDescriptor anotherDescriptor = ((SAbstractConceptAdapter) anotherConcept).getConceptDescriptor();
+    if (anotherDescriptor == null) {
+      return false;
+    }
+    if (anotherDescriptor.isInterfaceConcept() && anotherConcept instanceof SConceptAdapter) {
+      // anotherDescriptor is in fact an interface concept
+      // however is created as a SConceptAdapter, not a SInterfaceConceptAdapter (!)
+      // currently the editor has to perform hacky operations as this
+      return false;
     }
 
-    return d.isAssignableTo(concept.getQualifiedName());
+    if (anotherConcept instanceof SAbstractConceptAdapterById) {
+      return descriptor.isAssignableTo(((SAbstractConceptAdapterById) anotherConcept).getId());
+    }
+
+    return descriptor.isAssignableTo(anotherConcept.getQualifiedName());
   }
 
   @Override
@@ -187,10 +232,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     Language lang = ((Language) getLanguage().getSourceModule());
     if (lang == null) return null;
 
-    SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
-    if (strucModel == null) return null;
+    SModel structureModel = LanguageAspect.STRUCTURE.get(lang);
+    if (structureModel == null) return null;
 
-    return findInModel(strucModel);
+    return findInModel(structureModel);
   }
 
   @NotNull
@@ -217,8 +262,11 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return d.getHelpUrl();
   }
 
+  /**
+   * @return true iff the underlying descriptor is present
+   */
   @Override
-  public boolean isValid() {
+  public final boolean isValid() {
     return getConceptDescriptor() != null;
   }
 

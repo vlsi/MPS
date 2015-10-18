@@ -20,6 +20,7 @@ import java.util.List;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
@@ -91,8 +92,12 @@ public abstract class EnvironmentBase implements Environment {
     }
     final List<LibraryContributor> libContribs = ListSequence.fromList(new ArrayList<LibraryContributor>());
     LibraryContributorHelper helper = new LibraryContributorHelper(myConfig, rootClassLoader());
-    ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
-    ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
+    if (SetSequence.fromSet(myConfig.getLibs()).isNotEmpty()) {
+      ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
+    }
+    if (SetSequence.fromSet(myConfig.getPlugins()).isNotEmpty()) {
+      ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
+    }
     myLibInitializer.load(libContribs);
     return libContribs;
   }

@@ -16,13 +16,14 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -42,22 +43,24 @@ public class ChildAdopter {
   }
 
   public void checkIsExpectedLanguage(@NotNull Iterable<SNode> nodes, @NotNull SNodeReference templateNode, @NotNull TemplateContext templateContext) {
-    HashMap<Language, SNode> langToReport = new HashMap<Language, SNode>();
-    GenerationPlan gp = myGenerator.getGeneratorSessionContext().getGenerationPlan();
+    HashMap<SLanguage, SNode> langToReport = new HashMap<SLanguage, SNode>();
     for (SNode node : nodes) {
-      Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
-      if (!gp.isCountedLanguage(lang) && !lang.getGenerators().isEmpty()) {
-        langToReport.put(lang, node);
+      SLanguage lang = node.getConcept().getLanguage();
+      if (!myGenerator.getGenerationPlan().isCountedLanguage(lang)) {
+        LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(lang);
+        if (lr != null && !lr.getGenerators().isEmpty()) {
+          langToReport.put(lang, node);
+        }
       }
     }
     if (langToReport.isEmpty()) {
       return;
     }
-    for (Language lang : langToReport.keySet()) {
+    for (SLanguage lang : langToReport.keySet()) {
       String hint = String.format("workaround: add the language '%s' to list of 'Languages Engaged On Generation' in model '%s'",
-          lang.getModuleName(), myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName());
+          lang.getQualifiedName(), myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getModelName());
       myGenerator.getLogger().error(templateNode,
-          String.format("language of output node is '%s' - this language did not show up when computing generation steps!", lang.getModuleName()),
+          String.format("language of output node is '%s' - this language did not show up when computing generation steps!", lang.getQualifiedName()),
           GeneratorUtil.describeInput(templateContext),
           GeneratorUtil.describe(langToReport.get(lang), "output"),
           new ProblemDescription(hint));

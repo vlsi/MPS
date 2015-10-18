@@ -7,13 +7,10 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -37,25 +34,12 @@ public class CloneRoot_Action extends BaseAction {
     }
     {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
       if (p == null) {
         return false;
       }
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      if (nodes == null) {
-        MapSequence.fromMap(_params).put("nodes", null);
-      } else {
-        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
-      }
       if (nodes == null) {
         return false;
       }
@@ -65,12 +49,12 @@ public class CloneRoot_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+    for (SNode node : ListSequence.fromList(event.getData(MPSCommonDataKeys.NODES))) {
       SNode root = SNodeOperations.getContainingRoot(node);
       SNode copy = SNodeOperations.copyNode(root);
       SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-      NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, true, true);
-      NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), copy, false);
+      NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), copy, true, true);
+      NavigationSupport.getInstance().selectInTree(event.getData(MPSCommonDataKeys.MPS_PROJECT), copy, false);
     }
   }
 }

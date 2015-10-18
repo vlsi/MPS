@@ -29,6 +29,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
@@ -400,13 +401,13 @@ public class ModulesReloadTest extends ModuleMpsTest {
     addClassTo(l1);
     final Language l2 = createLanguage();
     final Language l3 = createLanguage();
-    final Wrapper<Dependency> dep12 = new Wrapper<Dependency>();
-    final Wrapper<Dependency> dep13 = new Wrapper<Dependency>();
+    final Reference<Dependency> dep12 = new Reference<Dependency>();
+    final Reference<Dependency> dep13 = new Reference<Dependency>();
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        dep12.setValue(l1.addDependency(l2.getModuleReference(), false));
-        dep13.setValue(l1.addDependency(l3.getModuleReference(), false));
+        dep12.set(l1.addDependency(l2.getModuleReference(), false));
+        dep13.set(l1.addDependency(l3.getModuleReference(), false));
       }
     });
     Assert.assertTrue(classIsLoadableFromModule(l1));
@@ -417,14 +418,14 @@ public class ModulesReloadTest extends ModuleMpsTest {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        l1.removeDependency(dep12.getValue());
+        l1.removeDependency(dep12.get());
       }
     });
     Assert.assertTrue(!classIsLoadableFromModule(l1)); // still no, obviously
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        l1.removeDependency(dep13.getValue());
+        l1.removeDependency(dep13.get());
       }
     });
     Assert.assertTrue(classIsLoadableFromModule(l1));
@@ -490,23 +491,6 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
     public void setCompileInMps(boolean value) {
       myCompileInMps = value;
-    }
-  }
-
-
-  private static class Wrapper<T> {
-    private T myValue;
-
-    public Wrapper() {
-      myValue = null;
-    }
-
-    public void setValue(T value) {
-      myValue = value;
-    }
-
-    public T getValue() {
-      return myValue;
     }
   }
 }

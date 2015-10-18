@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mps-editor-runtime">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-editor-runtime.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

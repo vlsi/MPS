@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.migration.component.util.MigrationComponent;
+import jetbrains.mps.ide.migration.MigrationComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.query.CommandUtil;

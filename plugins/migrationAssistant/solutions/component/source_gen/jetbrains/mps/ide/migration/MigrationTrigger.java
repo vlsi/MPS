@@ -15,6 +15,7 @@ import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -37,7 +38,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.migration.component.util.MigrationComponent;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -106,6 +106,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   }
 
   public void projectOpened() {
+    // this is a hack for migration task purposes 
+    if (RuntimeFlags.getTestMode().isInsideTestEnvironment()) {
+      return;
+    }
+
     if (!(myState.migrationRequired)) {
       addListeners();
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -150,7 +155,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0y(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0d0y(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -410,7 +415,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0y(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0d0y(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

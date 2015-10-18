@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationTrace;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -39,8 +40,13 @@ import java.util.concurrent.Semaphore;
  * @author Artem Tikhomirov
  */
 public class GenTraceImpl implements GenerationTrace {
+  private final TransientModelsModule myTransientModule;
   private Phase mySequence;
   private Phase myCurrent;
+
+  public GenTraceImpl(@NotNull TransientModelsModule transientModule) {
+    myTransientModule = transientModule;
+  }
 
   @Override
   public void trace(@Nullable SNodeId input, @NotNull List<SNodeId> output, @NotNull SNodeReference templateNode) {
@@ -60,7 +66,7 @@ public class GenTraceImpl implements GenerationTrace {
     final SNodeId startNodeId = inputNode.getNodeId();
     nodes.add(startNodeId);
     for (; ph != null && !nodes.isEmpty(); ph = ph.next) {
-      Collection<Element> changes = ph.getChangesWithInput(nodes);
+      Collection<Element> changes = ph.getChangesWithInput(nodes, myTransientModule);
       dispatch(v, ph, changes);
       if (!changes.isEmpty()) {
         LinkedHashSet<SNodeId> nextInputs = new LinkedHashSet<SNodeId>();
@@ -86,7 +92,7 @@ public class GenTraceImpl implements GenerationTrace {
     final SNodeId startNodeId = node.getNodeId();
     nodes.add(startNodeId);
     for (; ph != null && !nodes.isEmpty(); ph = ph.prev) {
-      Collection<Element> changes = ph.getChangesWithOutput(nodes);
+      Collection<Element> changes = ph.getChangesWithOutput(nodes, myTransientModule);
       dispatch(v, ph, changes);
       if (!changes.isEmpty()) {
         LinkedHashSet<SNodeId> prevOutputs = new LinkedHashSet<SNodeId>();
@@ -202,18 +208,20 @@ public class GenTraceImpl implements GenerationTrace {
       }
     }
 
-    public Collection<Element> getChangesWithInput(Iterable<SNodeId> inputs) {
+    public Collection<Element> getChangesWithInput(Iterable<SNodeId> inputs, TransientModelsModule transientModule) {
       buildIndex();
-      return collectChanges(inputIndex, input, inputs);
+      return collectChanges(inputIndex, input, inputs, transientModule);
     }
 
-    public Collection<Element> getChangesWithOutput(Iterable<SNodeId> outputs) {
+    public Collection<Element> getChangesWithOutput(Iterable<SNodeId> outputs, TransientModelsModule transientModule) {
       buildIndex();
-      return collectChanges(outputIndex, output, outputs);
+      return collectChanges(outputIndex, output, outputs, transientModule);
     }
 
-    private static Collection<Element> collectChanges(Map<SNodeId, Collection<Element>> index, SModelReference model, Iterable<SNodeId> nodes) {
-      final MPSModuleRepository modelRepository = MPSModuleRepository.getInstance();
+    private static Collection<Element> collectChanges(Map<SNodeId, Collection<Element>> index, SModelReference model, Iterable<SNodeId> nodes, TransientModelsModule tm) {
+      // FIXME In fact, shall not look outside of TransientModelsModule, however even if we move to separate repository for transient models,
+      // it's ok to use SRepository here
+      final SRepository modelRepository = tm.getRepository();
       final ArrayList<Element> rv = new ArrayList<Element>();
       for (SNodeId nid : nodes) {
         Collection<Element> changes = index.get(nid);

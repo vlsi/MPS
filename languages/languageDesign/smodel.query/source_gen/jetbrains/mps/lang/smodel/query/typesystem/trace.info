@@ -309,7 +309,7 @@
     <file name="check_QueryDuplicatedParameters_NonTypesystemRule.java">
       <node id="4307205004145330194" at="27,131,28,223" concept="6" />
       <node id="4307205004145277367" at="30,37,31,57" concept="7" />
-      <node id="4307205004145781772" at="37,42,38,138" concept="7" />
+      <node id="4307205004145781772" at="37,42,38,166" concept="7" />
       <node id="4307205004145898696" at="42,7,43,0" concept="8" />
       <node id="2284201910212797905" at="47,11,48,64" concept="6" />
       <node id="2284201910212797905" at="48,64,49,483" concept="6" />
@@ -334,7 +334,7 @@
       <node id="4307205004145151167" at="27,0,55,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4307205004145151167" at="25,62,25,62" />
       <scope id="4307205004145276653" at="30,37,31,57" />
-      <scope id="4307205004145781771" at="37,42,38,138" />
+      <scope id="4307205004145781771" at="37,42,38,166" />
       <scope id="4307205004145151167" at="55,50,56,168" />
       <scope id="4307205004145151167" at="58,68,59,102" />
       <scope id="4307205004145151167" at="61,30,62,17" />

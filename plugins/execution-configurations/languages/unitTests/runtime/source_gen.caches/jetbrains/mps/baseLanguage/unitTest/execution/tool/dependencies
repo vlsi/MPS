@@ -115,7 +115,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -145,7 +145,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestTreeNode" />

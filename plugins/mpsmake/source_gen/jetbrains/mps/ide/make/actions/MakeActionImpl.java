@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
-import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
 import jetbrains.mps.make.IMakeService;
@@ -38,6 +37,7 @@ public class MakeActionImpl {
     // save all before launching make 
     new SaveRepositoryCommand(project.getRepository()).execute();
 
+    // empty collection is fine, it's up to make service to report there's nothing to do (odd, but fine for now. Action could have do that instead) 
     final List<IResource> inputRes = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
       public List<IResource> compute() {
         List<IResource> rv = Sequence.fromIterable(myParams.collectInput()).toListSequence();
@@ -49,11 +49,11 @@ public class MakeActionImpl {
         if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
           return rv;
         }
-        return ListSequence.fromList(new ArrayList<IResource>());
+        return null;
       }
     });
 
-    if (ListSequence.fromList(inputRes).isEmpty()) {
+    if (inputRes == null) {
       return;
     }
 

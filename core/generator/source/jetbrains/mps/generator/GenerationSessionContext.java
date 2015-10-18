@@ -20,7 +20,6 @@ import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
@@ -53,7 +52,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   private final GenControllerContext myEnvironment;
   private final TransientModelsModule myTransientModule;
-  private final GenerationPlan myGenerationPlan;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
   private final QueryProviderCache myQueryProviders;
@@ -96,31 +94,12 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myPerfTrace = performanceTracer;
     myLogger = logger;
     myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
-    myGenerationPlan = null;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     myExportsSession = new ExportsSessionContext(environment.getExportModels(), this);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
     myUsedNames = new ConcurrentHashMap<SNodeReference, Set<String>>();
-  }
-
-  // copy cons
-  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan) {
-    myEnvironment = prevContext.myEnvironment;
-    myTransientModule = prevContext.myTransientModule;
-    myOriginalInputModel = prevContext.myOriginalInputModel;
-    myPerfTrace = prevContext.myPerfTrace;
-    myLogger = prevContext.myLogger;
-    mySessionObjects = prevContext.mySessionObjects;
-    myUsedNames = prevContext.myUsedNames;
-    myValidation = prevContext.myValidation;
-    myQueryProviders = prevContext.myQueryProviders;
-    myGenerationPlan = generationPlan;
-    myExportsSession = prevContext.myExportsSession;
-    // the moment this copy cons is used, nothing happened, reuse
-    myStepObjects = prevContext.myStepObjects;
-    myTransientObjects = prevContext.myTransientObjects;
   }
 
   /**
@@ -135,7 +114,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
-    myGenerationPlan = prevContext.myGenerationPlan;
     myQueryProviders = prevContext.myQueryProviders;
     myExportsSession = prevContext.myExportsSession;
     // this copy cons indicate new major step, hence new empty maps
@@ -301,10 +279,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return rv == null ? myUsedNames.get(key) : rv;
   }
 
-
-  public GenerationPlan getGenerationPlan() {
-    return myGenerationPlan;
-  }
 
   public void clearCopiedRootsSet() {
     Set<SNode> set = getCopiedRoots(false);

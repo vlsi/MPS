@@ -17,8 +17,6 @@
     </RunnerSettings>
     <RunnerSettings RunnerId="Run" />
     <ConfigurationWrapper RunnerId="Run" />
-    <method>
-      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/build.xml" target="copyCoreFromDist" />
-    </method>
+    <method />
   </configuration>
 </component>

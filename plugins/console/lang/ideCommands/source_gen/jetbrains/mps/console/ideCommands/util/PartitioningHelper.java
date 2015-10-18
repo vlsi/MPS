@@ -72,8 +72,8 @@ public class PartitioningHelper {
     }
     // show partitioning 
     console.addText("---------------------  mappings partitioning  -----------------------------------\n\n");
-    for (int step = 0; step < plan.getStepCount(); step++) {
-      List<TemplateMappingConfiguration> mappingSet = plan.getMappingConfigurations(step);
+    for (int step = 0; step < plan.getSteps().size(); step++) {
+      List<TemplateMappingConfiguration> mappingSet = plan.getSteps().get(step);
       console.addText(" [ " + (step + 1) + " ]\n");
       List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
       for (Pair<String, TemplateMappingConfiguration> string : strings) {

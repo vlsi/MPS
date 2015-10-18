@@ -108,16 +108,13 @@
         <property id="5253498789149547713" name="reexport" index="3bR36h" />
         <reference id="5253498789149547705" name="module" index="3bR37D" />
       </concept>
-      <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
       <concept id="4278635856200794926" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage" flags="ng" index="1Busua">
         <reference id="4278635856200794928" name="language" index="1Busuk" />
       </concept>
       <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA">
         <property id="269707337715731330" name="sourcesKind" index="aoJFB" />
       </concept>
-      <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD">
-        <child id="9200313594498201639" name="generator" index="1TViLv" />
-      </concept>
+      <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD" />
       <concept id="322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" flags="ng" index="3LEN3z">
         <property id="322010710375892619" name="uuid" index="3LESm3" />
         <child id="322010710375956261" name="path" index="3LF7KH" />
@@ -173,11 +170,6 @@
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1yeLz9" id="3i7$ne2FPR0" role="1TViLv">
-          <property role="TrG5h" value="testAnnotatedType#6405009306797628759" />
-          <property role="3LESm3" value="f94030c2-fd0d-44b7-9e44-9abfb59c3ba5" />
-          <property role="2GAjPV" value="false" />
-        </node>
       </node>
       <node concept="1E1JtD" id="3i7$ne2FPPp" role="2G$12L">
         <property role="TrG5h" value="testOverridingType" />
@@ -220,11 +212,6 @@
             <ref role="1Busuk" node="3i7$ne2FPPh" resolve="testAnnotatedType" />
           </node>
         </node>
-        <node concept="1yeLz9" id="3i7$ne2FPRm" role="1TViLv">
-          <property role="TrG5h" value="testOverridingType#6572489169071277907" />
-          <property role="3LESm3" value="12413e6d-6d1e-4071-b306-e36b5da0d263" />
-          <property role="2GAjPV" value="false" />
-        </node>
       </node>
       <node concept="1E1JtD" id="3i7$ne2FPPx" role="2G$12L">
         <property role="TrG5h" value="testWrappedType" />
@@ -254,11 +241,6 @@
           <node concept="1Busua" id="3i7$ne2FPRB" role="1SiIV1">
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
-        </node>
-        <node concept="1yeLz9" id="3i7$ne2FPRC" role="1TViLv">
-          <property role="TrG5h" value="testWrappedType#1252378774017429256" />
-          <property role="3LESm3" value="2f72b76c-318c-4049-ad6f-d93fccc08c25" />
-          <property role="2GAjPV" value="false" />
         </node>
       </node>
       <node concept="1E1JtD" id="3i7$ne2FPPD" role="2G$12L">
@@ -290,11 +272,6 @@
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1yeLz9" id="3i7$ne2FPRU" role="1TViLv">
-          <property role="TrG5h" value="testPrimitiveType#706089536801030402" />
-          <property role="3LESm3" value="83ede959-ca7a-4d58-b7f6-ca2b24865e4d" />
-          <property role="2GAjPV" value="false" />
-        </node>
       </node>
       <node concept="1E1JtD" id="3i7$ne2FPPL" role="2G$12L">
         <property role="TrG5h" value="testSubtypingA" />
@@ -324,11 +301,6 @@
           <node concept="1Busua" id="3i7$ne2FPSb" role="1SiIV1">
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
-        </node>
-        <node concept="1yeLz9" id="3i7$ne2FPSc" role="1TViLv">
-          <property role="TrG5h" value="testSubtypingA#2078093584692769750" />
-          <property role="3LESm3" value="d1d044b8-08b5-4de8-8186-8bdf6ff312f7" />
-          <property role="2GAjPV" value="false" />
         </node>
       </node>
       <node concept="1E1JtD" id="3i7$ne2FPPT" role="2G$12L">
@@ -364,11 +336,6 @@
           <node concept="1Busua" id="3i7$ne2FPSv" role="1SiIV1">
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
-        </node>
-        <node concept="1yeLz9" id="3i7$ne2FPSw" role="1TViLv">
-          <property role="TrG5h" value="testSubtypingB#2078093584692983110" />
-          <property role="3LESm3" value="3383be12-8310-46f2-b8de-eb89e44f9242" />
-          <property role="2GAjPV" value="false" />
         </node>
       </node>
     </node>

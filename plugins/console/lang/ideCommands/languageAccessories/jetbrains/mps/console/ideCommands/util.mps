@@ -21,8 +21,8 @@
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" implicit="true" />
-    <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
+    <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -764,12 +764,17 @@
             <node concept="37vLTw" id="67MRmR$wJoy" role="3uHU7B">
               <ref role="3cqZAo" node="67MRmR$wJot" resolve="step" />
             </node>
-            <node concept="2OqwBi" id="67MRmR$wKVC" role="3uHU7w">
-              <node concept="37vLTw" id="67MRmR$wKVB" role="2Oq$k0">
-                <ref role="3cqZAo" node="4dzOCaryA33" resolve="plan" />
+            <node concept="2OqwBi" id="73CrSbB72HG" role="3uHU7w">
+              <node concept="2OqwBi" id="67MRmR$wKVC" role="2Oq$k0">
+                <node concept="37vLTw" id="67MRmR$wKVB" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4dzOCaryA33" resolve="plan" />
+                </node>
+                <node concept="liA8E" id="67MRmR$wKVD" role="2OqNvi">
+                  <ref role="37wK5l" to="tft2:~GenerationPlan.getSteps():java.util.List" resolve="getSteps" />
+                </node>
               </node>
-              <node concept="liA8E" id="67MRmR$wKVD" role="2OqNvi">
-                <ref role="37wK5l" to="tft2:~GenerationPlan.getStepCount():int" resolve="getStepCount" />
+              <node concept="liA8E" id="73CrSbB7307" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
               </node>
             </node>
           </node>
@@ -789,13 +794,18 @@
                     <ref role="3uigEE" to="r99j:~TemplateMappingConfiguration" resolve="TemplateMappingConfiguration" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="67MRmR$wKVG" role="33vP2m">
-                  <node concept="37vLTw" id="67MRmR$wKVF" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4dzOCaryA33" resolve="plan" />
+                <node concept="2OqwBi" id="73CrSbB74Ec" role="33vP2m">
+                  <node concept="2OqwBi" id="67MRmR$wKVG" role="2Oq$k0">
+                    <node concept="37vLTw" id="67MRmR$wKVF" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4dzOCaryA33" resolve="plan" />
+                    </node>
+                    <node concept="liA8E" id="67MRmR$wKVH" role="2OqNvi">
+                      <ref role="37wK5l" to="tft2:~GenerationPlan.getSteps():java.util.List" resolve="getSteps" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="67MRmR$wKVH" role="2OqNvi">
-                    <ref role="37wK5l" to="tft2:~GenerationPlan.getMappingConfigurations(int):java.util.List" resolve="getMappingConfigurations" />
-                    <node concept="37vLTw" id="67MRmR$wJoI" role="37wK5m">
+                  <node concept="liA8E" id="73CrSbB75kl" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                    <node concept="37vLTw" id="73CrSbB7g73" role="37wK5m">
                       <ref role="3cqZAo" node="67MRmR$wJot" resolve="step" />
                     </node>
                   </node>

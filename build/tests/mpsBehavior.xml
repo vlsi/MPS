@@ -115,26 +115,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL1.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL1-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL1#G1" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL1-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L1/BHL1.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -167,26 +156,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL2.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL2-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL2#G2" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL2-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L2/BHL2.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -219,26 +197,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL3.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL3-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL3#G3" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL3-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L3/BHL3.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -271,26 +238,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL4.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL4-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL4#G4" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL4-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L4/BHL4.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -323,26 +279,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL5.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL5-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL5#G5" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL5-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L5/BHL5.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -375,26 +320,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL6.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL6-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL6#6167444251392476752" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL6-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L6/BHL6.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -427,26 +361,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL7.jar" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL7-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL7#6167444251392503098" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-generator-template">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-models">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL7-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L7/BHL7.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/languages" />
@@ -535,26 +458,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL1.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL1-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL1#G1" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL1-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L1/BHL1.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L1-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/BHL2.jar1" />
@@ -586,26 +498,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL2.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL2-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL2#G2" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL2-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L2/BHL2.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L2-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/BHL3.jar1" />
@@ -637,26 +538,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL3.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL3-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL3#G3" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL3-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L3/BHL3.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L3-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/BHL4.jar1" />
@@ -688,26 +578,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL4.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL4-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL4#G4" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL4-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L4/BHL4.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L4-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/BHL5.jar1" />
@@ -739,26 +618,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL5.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL5-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL5#G5" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL5-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L5/BHL5.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L5-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/BHL6.jar1" />
@@ -790,26 +658,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL6.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL6-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL6#6167444251392476752" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL6-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L6/BHL6.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L6-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/BHL7.jar1" />
@@ -841,26 +698,15 @@
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/BHL7.jar1" />
     </jar>
-    <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL7-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/BHL7#6167444251392503098" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-generator-template1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-models1">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/behavior-tests/test.behavior.plugin/languages/BHL7-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testBehavior/languages/L7/BHL7.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-generator-template1" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testBehavior-languages-L7-models1" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/behavior-tests/nonReflectiveTest" />
@@ -914,7 +760,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.BHL1, java.compile.BHL1#G1, java.compile.BHL2, java.compile.BHL2#G2, java.compile.BHL3, java.compile.BHL3#G3, java.compile.BHL4, java.compile.BHL4#G4, java.compile.BHL5, java.compile.BHL5#G5, java.compile.BHL6, java.compile.BHL6#6167444251392476752, java.compile.BHL7, java.compile.BHL7#6167444251392503098, java.compile.UtilSolution, java.compile.TestBehavior, java.compile.TestBehaviorReflective" />
+  <target name="compileJava" depends="java.compile.BHL1, java.compile.BHL2, java.compile.BHL3, java.compile.BHL4, java.compile.BHL5, java.compile.BHL6, java.compile.BHL7, java.compile.UtilSolution, java.compile.TestBehavior, java.compile.TestBehaviorReflective" />
   
   <target name="processResources" />
   
@@ -1066,48 +912,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.BHL1#G1" depends="java.compile.BHL1, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL1#G1" />
-    <javac2 destdir="${build.tmp}/java/out/BHL1#G1" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L1/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL1" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL1#G1">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.BHL2" depends="java.compile.UtilSolution, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L2/source_gen" />
     <mkdir dir="${build.tmp}/java/out/BHL2" />
@@ -1147,48 +951,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/BHL2">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.BHL2#G2" depends="java.compile.BHL2, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL2#G2" />
-    <javac2 destdir="${build.tmp}/java/out/BHL2#G2" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L2/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL2" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL2#G2">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1234,48 +996,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.BHL3#G3" depends="java.compile.BHL3, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL3#G3" />
-    <javac2 destdir="${build.tmp}/java/out/BHL3#G3" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L3/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL3" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL3#G3">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.BHL4" depends="java.compile.UtilSolution, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L4/source_gen" />
     <mkdir dir="${build.tmp}/java/out/BHL4" />
@@ -1315,48 +1035,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/BHL4">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.BHL4#G4" depends="java.compile.BHL4, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL4#G4" />
-    <javac2 destdir="${build.tmp}/java/out/BHL4#G4" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L4/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL4" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL4#G4">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1402,48 +1080,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.BHL5#G5" depends="java.compile.BHL5, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL5#G5" />
-    <javac2 destdir="${build.tmp}/java/out/BHL5#G5" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L5/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL5" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL5#G5">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.BHL6" depends="java.compile.UtilSolution, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L6/source_gen" />
     <mkdir dir="${build.tmp}/java/out/BHL6" />
@@ -1486,48 +1122,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.BHL6#6167444251392476752" depends="java.compile.BHL6, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL6#6167444251392476752" />
-    <javac2 destdir="${build.tmp}/java/out/BHL6#6167444251392476752" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L6/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL6" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL6#6167444251392476752">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.BHL7" depends="java.compile.UtilSolution, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen" />
     <mkdir dir="${build.tmp}/java/out/BHL7" />
@@ -1567,48 +1161,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/BHL7">
       <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.BHL7#6167444251392503098" depends="java.compile.BHL7, fetchDependencies">
-    <mkdir dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/BHL7#6167444251392503098" />
-    <javac2 destdir="${build.tmp}/java/out/BHL7#6167444251392503098" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/testbench/modules/testBehavior/languages/L7/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/BHL7" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/BHL7#6167444251392503098">
-      <fileset dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1667,7 +1219,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/junit-4.11.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/junit-4.12.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -1728,7 +1280,7 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
-        <fileset file="${artifacts.IDEA}/lib/junit-4.11.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/junit-4.12.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -1870,13 +1422,6 @@
     <delete dir="${basedir}/testbench/modules/testBehavior/languages/L7/source_gen" />
     <delete dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective/source_gen" />
     <delete dir="${basedir}/testbench/modules/testBehavior/solutions/UtilSolution/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L1/generator/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L2/generator/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L3/generator/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L4/generator/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L5/generator/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L6/generator/source_gen" />
-    <delete dir="${basedir}/testbench/modules/testBehavior/languages/L7/generator/source_gen" />
     <delete dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehavior/source_gen" />
     <delete dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehaviorReflective/test_gen" />
     <delete dir="${basedir}/testbench/modules/testBehavior/solutions/TestBehavior/test_gen" />

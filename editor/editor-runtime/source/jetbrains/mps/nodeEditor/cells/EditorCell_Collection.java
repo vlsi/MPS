@@ -108,7 +108,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   private int myArtificialBracesIndent = 0;
 
-  private boolean myFolded = false;
+  private Boolean myCollapsed;
+  private boolean myInitiallyCollapsed = false;
   private boolean myCanBeFolded = false;
 
   private int myAscent = -1;
@@ -161,7 +162,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public boolean isFolded() {
-    return myFolded;
+    return isCollapsed();
+  }
+
+  public boolean isCollapsed() {
+    return isDefaultCollapsedValueChanged() ? myCollapsed : myInitiallyCollapsed;
   }
 
   private List<EditorCell> getEditorCells() {
@@ -209,7 +214,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   private List<EditorCell> getVisibleChildCells() {
-    return isFolded() ? getFoldedCellCollection() : getEditorCells();
+    return isCollapsed() ? getFoldedCellCollection() : getEditorCells();
   }
 
   public int getChildCount() {
@@ -426,7 +431,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public Iterable<EditorCell> getContentCells() {
-    if (usesBraces() && !isFolded()) {
+    if (usesBraces() && !isCollapsed()) {
       List<EditorCell> editorCells = getEditorCells();
       return editorCells.subList(1, editorCells.size() - 1);
     } else {
@@ -490,49 +495,96 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
+  public void setInitiallyCollapsed(boolean collapsed) {
+    if (myInitiallyCollapsed == collapsed) {
+      return;
+    }
+    myInitiallyCollapsed = collapsed;
+    if (isDefaultCollapsedValueChanged()) {
+      // Collapsed value was changed by user. After initiallyCollapsed value change user value become "default",
+      // so should be removed from editor "folded" map. Editor state will not change in this case.
+      myCollapsed = null;
+      if (isInTree()) {
+        getEditor().resetCollapseState(this);
+      }
+    } else {
+      if (isInTree()) {
+        requestRelayout();
+        collapsedStateChanged();
+      }
+    }
+  }
+
+  private boolean isDefaultCollapsedValueChanged() {
+    return myCollapsed != null;
+  }
 
   public void fold() {
-    fold(false);
+    toggleCollapsed(true);
   }
 
   public void unfold() {
-    unfold(false);
+    toggleCollapsed(false);
   }
 
-  private void setFolded(boolean folded) {
-    if (myFolded == folded) {
+  public void toggleCollapsed(boolean collapsed) {
+    if (!isFoldable() || isCollapsed() == collapsed) {
       return;
     }
-    myFolded = folded;
+
+    myCollapsed = collapsed == myInitiallyCollapsed ? null : collapsed;
+
     if (!isInTree()) {
       return;
     }
-    getEditor().setFolded(this, folded);
+
+    getEditor().setCollapseState(this, myCollapsed);
     requestRelayout();
+
+    collapsedStateChanged();
+    updateSelectionOnCollapseChange();
   }
 
-  public void fold(boolean programmaticaly) {
-    if (!isFoldable()) return;
-    if (isFolded()) {
-      // updating editor's myFoldedCells set (sometimes this method is called from Memento)
-      if (isInTree()) {
-        getEditor().setFolded(this, true);
-      }
+  private void collapsedStateChanged() {
+    // should be called only is this cell isInTree()
+    if (isUnderFolded()) {
       return;
     }
-    setFolded(true);
-    if (!isInTree()) {
-      return;
-    }
-    if (!isUnderFolded()) {
+
+    if (isCollapsed()) {
       addUnfoldingListener();
       removeFoldingListenerForChildren();
+    } else {
+      removeUnfoldingListener();
+      addUnfoldingListenerForChildren();
     }
-    if (!programmaticaly) {
-      getContext().flushEvents();
-      getEditor().relayout();
-      adjustSelectionToFoldingState(getEditor());
+  }
+
+  private void updateSelectionOnCollapseChange() {
+    // should be called only is this cell isInTree()
+    getContext().flushEvents();
+    getEditor().relayout();
+    if (!isDescendantCellSelected(getEditor())) {
+      return;
     }
+
+    getEditor().clearSelectionStack();
+    EditorCell editorCellToSelect = getFirstLeaf(CellConditions.SELECTABLE);
+    if (editorCellToSelect != null) {
+      getEditor().changeSelection(editorCellToSelect);
+      editorCellToSelect.home();
+    } else {
+      getEditor().changeSelection(this);
+      home();
+    }
+  }
+
+  /**
+   * @deprecated since MPS 3.3 use toggleCollapsed(true, programmatically)
+   */
+  @Deprecated
+  public void fold(boolean programmaticaly) {
+    toggleCollapsed(true);
   }
 
   protected boolean isUnderFolded() {
@@ -550,7 +602,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
         continue;
       }
       EditorCell_Collection childCollection = (EditorCell_Collection) child;
-      if (childCollection.isFolded()) {
+      if (childCollection.isCollapsed()) {
         childCollection.addUnfoldingListener();
       } else {
         children.addAll(childCollection.getEditorCells());
@@ -569,7 +621,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
         continue;
       }
       EditorCell_Collection childCollection = (EditorCell_Collection) child;
-      if (childCollection.isFolded()) {
+      if (childCollection.isCollapsed()) {
         childCollection.removeUnfoldingListener();
       } else {
         children.addAll(childCollection.getEditorCells());
@@ -602,21 +654,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     });
   }
 
-  private void adjustSelectionToFoldingState(EditorComponent editorComponent) {
-    if (isDescendantCellSelected(editorComponent)) {
-      editorComponent.clearSelectionStack();
-      jetbrains.mps.nodeEditor.cells.EditorCell editorCellToSelect = getFirstLeaf(CellConditions.SELECTABLE);
-      if (editorCellToSelect != null) {
-        editorComponent.changeSelection(editorCellToSelect);
-        editorCellToSelect.home();
-      } else {
-        editorComponent.changeSelection(this);
-        home();
-      }
-    }
-  }
-
-  private boolean isDescendantCellSelected(EditorComponent editorComponent) {
+  private boolean isDescendantCellSelected(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
     EditorCell selectedCell = editorComponent.getDeepestSelectedCell();
     return selectedCell != null && CellFinderUtil.findParent(selectedCell, new Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection>() {
       @Override
@@ -658,29 +696,17 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     setFoldable(canBeFolded);
   }
 
+  /**
+   * @deprecated since MPS 3.3 use toggleCollapsed(false, programmatically)
+   */
+  @Deprecated
   public void unfold(boolean programmaticaly) {
-    if (!isFolded()) {
-      return;
-    }
-    setFolded(false);
-    if (!isInTree()) {
-      return;
-    }
-    if (!isUnderFolded()) {
-      removeUnfoldingListener();
-      addUnfoldingListenerForChildren();
-    }
-
-    if (!programmaticaly) {
-      getContext().flushEvents();
-      getEditor().relayout();
-      adjustSelectionToFoldingState(getEditor());
-    }
+    toggleCollapsed(false);
   }
 
   @Override
   public boolean isUnfoldedCollection() {
-    return !isFolded();
+    return !isCollapsed();
   }
 
   @Override
@@ -824,7 +850,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
   @Override
   public boolean usesBraces() {
-    return isFolded() ? false : myUsesBraces;
+    return isCollapsed() ? false : myUsesBraces;
   }
 
   public void setUsesBraces(boolean b) {
@@ -918,7 +944,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       getEditor().getCellTracker().addFoldableCell(this);
     }
     if (isFolded()) {
-      getEditor().setFolded(this, true);
+      if (isDefaultCollapsedValueChanged()) {
+        getEditor().setCollapseState(this, myCollapsed);
+      }
       if (!isUnderFolded()) {
         addUnfoldingListener();
       }
@@ -931,8 +959,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
       getEditor().getCellTracker().removeFoldableCell(this);
     }
     removeUnfoldingListener();
-    if (isFolded()) {
-      getEditor().setFolded(this, false);
+    if (isDefaultCollapsedValueChanged()) {
+      getEditor().resetCollapseState(this);
     }
 
     if (myLastCellSelectionListener != null) {

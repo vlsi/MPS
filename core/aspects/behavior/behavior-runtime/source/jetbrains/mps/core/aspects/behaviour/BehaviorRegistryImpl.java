@@ -43,7 +43,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Registry for behavior descriptors. Currently contains {@link BHDescriptor} and old legacy {@link BehaviorDescriptor}.
- *
+ * <p/>
  * Created by apyshkin on 7/15/15.
  */
 public class BehaviorRegistryImpl implements BehaviorRegistry {
@@ -53,6 +53,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   private final ConceptInLoadingStorage<String> myLegacyStorage = new ConceptInLoadingStorage<String>();
   private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
   private final Map<String, BehaviorDescriptor> myLegacyBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
+  private final ConcurrentHashMap<String, BehaviorDescriptor> myBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
   private final Map<SConceptId, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SConceptId, BHDescriptor>();
   private final LanguageRegistry myLanguageRegistry;
 
@@ -70,18 +71,24 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
   @ToRemove(version = 3.3)
   @Deprecated
   public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
+    BehaviorDescriptor behaviorDescriptor = myBehaviorDescriptors.get(fqName);
+    if (behaviorDescriptor != null) {
+      return behaviorDescriptor;
+    }
+
     SAbstractConcept concept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(fqName));
     BHDescriptor bhDescriptor = getBHDescriptor(concept);
     if (bhDescriptor instanceof BHDescriptorLegacyAdapter || bhDescriptor instanceof IllegalBHDescriptor) {
       // then fallback to legacy is fine
-      return getLegacyBehaviorDescriptor(fqName);
+      myBehaviorDescriptors.putIfAbsent(fqName, getLegacyBehaviorDescriptor(fqName));
     } else {
       if (bhDescriptor instanceof BaseBHDescriptor) {
-        return new BehaviorDescriptorAdapter((BaseBHDescriptor) bhDescriptor);
+        myBehaviorDescriptors.putIfAbsent(fqName, new BehaviorDescriptorAdapter((BaseBHDescriptor) bhDescriptor));
       } else {
         throw new IllegalStateException("Broken contract : unknown behavior descriptor is returned by #getBHDescriptor()");
       }
     }
+    return myBehaviorDescriptors.get(fqName);
   }
 
   @ToRemove(version = 3.3)

@@ -139,7 +139,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
-      LOG.warning("Model file " + getReference().getModelName() + " was modified externally!\n" +
+      LOG.warning("Model file " + getReference().getModelName() + " was modified externally! " +
           "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
