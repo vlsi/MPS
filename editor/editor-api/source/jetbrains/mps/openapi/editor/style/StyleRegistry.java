@@ -15,152 +15,167 @@
  */
 package jetbrains.mps.openapi.editor.style;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class StyleRegistry {
+public class StyleRegistry {
   protected static StyleRegistry ourInstance;
 
   public static StyleRegistry getInstance() {
     if (ourInstance == null) {
-      ourInstance = new DummyStyleRegistry();
+      ourInstance = new StyleRegistry();
     }
     return ourInstance;
   }
 
-  private static final Map<String, Color> ourColorMap = new HashMap<String, Color>();
-  private static final Map<String, StyleAttribute> ourStyleAttributesMap = new HashMap<String, StyleAttribute>();
-  private static final Map<String, Style> ourStyleMap = new HashMap<String, Style>();
+  private final Map<String, Style> myStyleMap = new HashMap<String, Style>();
 
-  public abstract Color getEditorBackground();
-  public abstract Color getEditorForeground();
+  public Color getEditorBackground() {
+    return Color.white;
+  }
 
-  public abstract String getEditorFontName();
-  public abstract void setEditorFontName(String fontName);
-
-  public abstract int getEditorFontSize();
-  public abstract void setEditorFontSize(int fontSize);
-
-  public abstract float getEditorLineSpacing();
-  public abstract void setEditorLineSpacing(float lineSpacing);
-
-  public abstract String getConsoleFontName();
-  public abstract void setConsoleFontName(String fontName);
-
-  public abstract int getConsoleFontSize();
-  public abstract void setConsoleFontSize(int fontSize);
-
-  public abstract float getConsoleLineSpacing();
-  public abstract void setConsoleLineSpacing(float lineSpacing);
+  public Color getEditorForeground() {
+    return Color.DARK_GRAY;
+  }
 
   public Color getColor(String key) {
-    return ourColorMap.get(key);
+    return null;
   }
-  public abstract void setColor(String key, Color color);
+
   public Color getSimpleColor(Color color) {
     return color;
   }
+
   public Color getSimpleColor(Color color, Color bg) {
     return color;
   }
 
+  @Nullable
   public StyleAttribute getAttributes(String key) {
-    return ourStyleAttributesMap.get(key);
+    return null;
   }
-  public abstract void setAttributes(String key, StyleAttribute attributes);
 
+  @Nullable
   public Style getStyle(String key) {
-    return ourStyleMap.get(key);
-  }
-  public void setStyle(String key, Style style) {
-    ourStyleMap.put(key, style);
+    return myStyleMap.get(key);
   }
 
-  public abstract boolean isDarkTheme();
+  public void setStyle(String key, Style style) {
+    myStyleMap.put(key, style);
+  }
+
+  public boolean isDarkTheme() {
+    return false;
+  }
 
   protected void clearCache() {
-    ourColorMap.clear();
-    ourStyleAttributesMap.clear();
-    ourStyleMap.clear();
+    myStyleMap.clear();
   }
 
-  private static class DummyStyleRegistry extends StyleRegistry {
-    @Override
-    public Color getEditorBackground() {
-      return Color.white;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public String getEditorFontName() {
+    return null;
+  }
 
-    @Override
-    public Color getEditorForeground() {
-      return Color.DARK_GRAY;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setEditorFontName(String fontName) {
+  }
 
-    @Override
-    public String getEditorFontName() {
-      return null;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public int getEditorFontSize() {
+    return 0;
+  }
 
-    @Override
-    public void setEditorFontName(String fontName) {
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setEditorFontSize(int fontSize) {
+  }
 
-    @Override
-    public int getEditorFontSize() {
-      return 0;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public float getEditorLineSpacing() {
+    return 0;
+  }
 
-    @Override
-    public void setEditorFontSize(int fontSize) {
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setEditorLineSpacing(float lineSpacing) {
+  }
 
-    @Override
-    public float getEditorLineSpacing() {
-      return 0;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public String getConsoleFontName() {
+    return null;
+  }
 
-    @Override
-    public void setEditorLineSpacing(float lineSpacing) {
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setConsoleFontName(String fontName) {
+  }
 
-    @Override
-    public String getConsoleFontName() {
-      return null;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public int getConsoleFontSize() {
+    return 0;
+  }
 
-    @Override
-    public void setConsoleFontName(String fontName) {
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setConsoleFontSize(int fontSize) {
+  }
 
-    @Override
-    public int getConsoleFontSize() {
-      return 0;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public float getConsoleLineSpacing() {
+    return 0;
+  }
 
-    @Override
-    public void setConsoleFontSize(int fontSize) {
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setConsoleLineSpacing(float lineSpacing) {
+  }
 
-    @Override
-    public float getConsoleLineSpacing() {
-      return 0;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setColor(String key, Color color) {
+  }
 
-    @Override
-    public void setConsoleLineSpacing(float lineSpacing) {
-    }
-
-    @Override
-    public void setColor(String key, Color color) {
-    }
-
-    @Override
-    public void setAttributes(String key, StyleAttribute attributes) {
-    }
-
-    @Override
-    public boolean isDarkTheme() {
-      return false;
-    }
+  /**
+   * @deprecated since MPS 3.3 not used
+   */
+  @Deprecated
+  public void setAttributes(String key, StyleAttribute attributes) {
   }
 }

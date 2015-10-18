@@ -27,27 +27,30 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
 public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColorsListener {
-  
-  protected static EditorColorsScheme ourColorsScheme = EditorColorsManager.getInstance().getGlobalScheme();
-  protected final static Map<String,String> IDEAStylesMapping = new HashMap<String, String>();
-  protected final static Map<Pair<Color, Color>,Color> colorsMapping = new HashMap<Pair<Color, Color>,Color>();
+  private static final Logger LOG = LogManager.getLogger(StyleRegistryIdeaImpl.class);
 
   private final static int brightnessTH = 125;
   private final static int colorTH = 500;
   private final static int colorIterationSteps = 5;
   private final static int colorIterationDelta = 50;
 
+  private EditorColorsManager myColorsManager;
+  protected final Map<String, String> myIDEAStylesMapping = new HashMap<String, String>();
+  protected final Map<Pair<Color, Color>, Color> myColorsMapping = new HashMap<Pair<Color, Color>, Color>();
 
-  public StyleRegistryIdeaImpl() {
+  public StyleRegistryIdeaImpl(EditorColorsManager colorsManager) {
+    myColorsManager = colorsManager;
     ourInstance = this;
     fillIdeaMappings();
     fillColorMappings();
@@ -55,87 +58,25 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   @Override
   public Color getEditorBackground() {
-    return ourColorsScheme.getDefaultBackground();
+    return getColorsScheme().getDefaultBackground();
   }
 
   @Override
   public Color getEditorForeground() {
-    return ourColorsScheme.getDefaultForeground();
-  }
-
-  @Override
-  public String getEditorFontName() {
-    return null;
-  }
-
-  @Override
-  public void setEditorFontName(String fontName) {
-  }
-
-  @Override
-  public int getEditorFontSize() {
-    return 0;
-  }
-
-  @Override
-  public void setEditorFontSize(int fontSize) {
-  }
-
-  @Override
-  public float getEditorLineSpacing() {
-    return 0;
-  }
-
-  @Override
-  public void setEditorLineSpacing(float lineSpacing) {
-  }
-
-  @Override
-  public String getConsoleFontName() {
-    return null;
-  }
-
-  @Override
-  public void setConsoleFontName(String fontName) {
-  }
-
-  @Override
-  public int getConsoleFontSize() {
-    return 0;
-  }
-
-  @Override
-  public void setConsoleFontSize(int fontSize) {
-  }
-
-  @Override
-  public float getConsoleLineSpacing() {
-    return 0;
-  }
-
-  @Override
-  public void setConsoleLineSpacing(float lineSpacing) {
+    return getColorsScheme().getDefaultForeground();
   }
 
   @Override
   public Color getColor(String key) {
-    if(IDEAStylesMapping.containsKey(key))
-      key = IDEAStylesMapping.get(key);
-
-    Color color = super.getColor(key);
-
-    if(color == null) {
-      color = ourColorsScheme.getColor(ColorKey.find(key));
-      if(color == null) {
-        color = ourColorsScheme.getAttributes(TextAttributesKey.find(key)).getForegroundColor();
-      }
+    if (myIDEAStylesMapping.containsKey(key)) {
+      key = myIDEAStylesMapping.get(key);
     }
 
+    Color color = getColorsScheme().getColor(ColorKey.find(key));
+    if (color == null) {
+      color = getColorsScheme().getAttributes(TextAttributesKey.find(key)).getForegroundColor();
+    }
     return color;
-  }
-
-  @Override
-  public void setColor(String key, Color color) {
   }
 
   @Override
@@ -145,178 +86,170 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   @Override
   public Color getSimpleColor(Color color, final Color bg) {
-    if(!isDarkTheme() || color == null || bg == null)
-        return color;
+    if (!isDarkTheme() || color == null || bg == null)
+      return color;
 
     final Color original = color;
     Pair<Color, Color> colorPair = new Pair<Color, Color>(original, bg);
-    if(colorsMapping.containsKey(colorPair))
-      return colorsMapping.get(colorPair);
+    if (myColorsMapping.containsKey(colorPair))
+      return myColorsMapping.get(colorPair);
 
-    if( (Math.abs(color.getRGB()) - Math.abs(Color.BLACK.getRGB())/2) * (Math.abs(bg.getRGB()) - Math.abs(Color.BLACK.getRGB())/2) < 0 )
+    if ((Math.abs(color.getRGB()) - Math.abs(Color.BLACK.getRGB()) / 2) * (Math.abs(bg.getRGB()) - Math.abs(Color.BLACK.getRGB()) / 2) < 0)
       color = new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
 
     int counter = 0;
     while (!isGoodContrastWithBG(color, bg) && counter < colorIterationSteps) {
-      int deltaR = Math.abs( bg.getRed() - color.getRed() );
-      int deltaG = Math.abs( bg.getGreen() - color.getGreen() );
-      int deltaB = Math.abs( bg.getBlue() - color.getBlue() );
-      int deltaMin = Math.min((Math.min(deltaR, deltaG)),deltaB);
-      if(deltaMin == deltaR) {
-        color = new Color( (color.getRed() + colorIterationDelta) % 256, color.getGreen(), color.getBlue() );
-      }
-      else if(deltaMin == deltaG) {
-        color = new Color( color.getRed(), (color.getGreen() + colorIterationDelta) % 256, color.getBlue() );
-      }
-      else if(deltaMin == deltaB) {
-        color = new Color( color.getRed(), color.getGreen(), (color.getBlue() + colorIterationDelta) % 256 );
+      int deltaR = Math.abs(bg.getRed() - color.getRed());
+      int deltaG = Math.abs(bg.getGreen() - color.getGreen());
+      int deltaB = Math.abs(bg.getBlue() - color.getBlue());
+      int deltaMin = Math.min((Math.min(deltaR, deltaG)), deltaB);
+      if (deltaMin == deltaR) {
+        color = new Color((color.getRed() + colorIterationDelta) % 256, color.getGreen(), color.getBlue());
+      } else if (deltaMin == deltaG) {
+        color = new Color(color.getRed(), (color.getGreen() + colorIterationDelta) % 256, color.getBlue());
+      } else if (deltaMin == deltaB) {
+        color = new Color(color.getRed(), color.getGreen(), (color.getBlue() + colorIterationDelta) % 256);
       }
       counter++;
     }
 
-    colorsMapping.put(colorPair, color);
+    myColorsMapping.put(colorPair, color);
     return color;
   }
 
   private boolean isGoodContrastWithBG(Color color, final Color bg) {
-    int brightnessColor = ( 299 * color.getRed() + 587 * color.getGreen() + 114 * color.getBlue() )/1000;
-    int brightnessBG = ( 299 * bg.getRed() + 587 * bg.getGreen() + 114 * bg.getBlue() )/1000;
+    int brightnessColor = (299 * color.getRed() + 587 * color.getGreen() + 114 * color.getBlue()) / 1000;
+    int brightnessBG = (299 * bg.getRed() + 587 * bg.getGreen() + 114 * bg.getBlue()) / 1000;
 
     int brightnessDiff = brightnessBG - brightnessColor;
     int colorDiff = Math.abs(color.getRed() - bg.getRed())
-      + Math.abs(color.getGreen() - bg.getGreen())
-      + Math.abs(color.getBlue() - bg.getBlue());
+        + Math.abs(color.getGreen() - bg.getGreen())
+        + Math.abs(color.getBlue() - bg.getBlue());
 
     return Math.abs(brightnessDiff) >= brightnessTH || colorDiff >= colorTH;
   }
 
   @Override
-  public void setAttributes(String key, StyleAttribute attributes) {
-  }
-
-  @Override
-  public void setStyle(String key, Style style) {
-    super.setStyle(key, style);
-  }
-
-  @Override
   public Style getStyle(String key) {
-    if(IDEAStylesMapping.containsKey(key))
-      key = IDEAStylesMapping.get(key);
+    if (myIDEAStylesMapping.containsKey(key)) {
+      key = myIDEAStylesMapping.get(key);
+    }
 
     Style style = super.getStyle(key);
+    if (style == null) {
+      // TODO: check if specified key is valid. We should return null for unknown keys...
+      style = new StyleImpl();
 
-    if(style == null) {
-       style = new StyleImpl();
-
-      TextAttributes textAttributes = ourColorsScheme.getAttributes(TextAttributesKey.find(key));
-      if(textAttributes == null)
+      TextAttributes textAttributes = getColorsScheme().getAttributes(TextAttributesKey.find(key));
+      if (textAttributes == null)
         textAttributes = new TextAttributes();
       style.set(StyleAttributes.TEXT_COLOR, textAttributes.getForegroundColor());
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, textAttributes.getBackgroundColor());
       style.set(StyleAttributes.FONT_STYLE, textAttributes.getFontType());
-      if(textAttributes.getEffectColor() != null) {
+      if (textAttributes.getEffectColor() != null) {
         style.set(StyleAttributes.UNDERLINED, textAttributes.getEffectType().equals(EffectType.LINE_UNDERSCORE));
         style.set(StyleAttributes.STRIKE_OUT, textAttributes.getEffectType().equals(EffectType.STRIKEOUT));
       }
 
       setStyle(key, style);
     }
-    
     return style;
   }
 
   @Override
   public boolean isDarkTheme() {
-    return EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula");
+    return getColorsScheme().getName().contains("Darcula");
   }
 
   private void fillIdeaMappings() {
     try {
-      addIdeaMappingsExt("DEFAULT_NULL_TEXT_COLOR","NOT_USED_ELEMENT_ATTRIBUTES");
+      addIdeaMappingsExt("DEFAULT_NULL_TEXT_COLOR", "NOT_USED_ELEMENT_ATTRIBUTES");
 
-      addIdeaMappingsExt("FOLDED_TEXT","FOLDED_TEXT_ATTRIBUTES");
-      addIdeaMappingsExt("URL","HYPERLINK_ATTRIBUTES");
+      addIdeaMappingsExt("FOLDED_TEXT", "FOLDED_TEXT_ATTRIBUTES");
+      addIdeaMappingsExt("URL", "HYPERLINK_ATTRIBUTES");
 
-      addIdeaMappingsExt("LOCAL_VARIABLE","LOCAL_VARIABLE_ATTRIBUTES");
-      addIdeaMappingsExt("PARAMETER","PARAMETER_ATTRIBUTES");
-      addIdeaMappingsExt("INSTANCE_FIELD","INSTANCE_FIELD_ATTRIBUTES");
-      addIdeaMappingsExt("METHOD_DECLARATION","METHOD_DECLARATION_ATTRIBUTES");
-      addIdeaMappingsExt("METHOD_CALL","METHOD_CALL_ATTRIBUTES");
-      addIdeaMappingsExt("STATIC_FIELD","STATIC_FIELD_ATTRIBUTES");
-      addIdeaMappingsExt("STATIC_FINAL_FIELD","STATIC_FINAL_FIELD_ATTRIBUTES");
-      addIdeaMappingsExt("STATIC_METHOD","STATIC_METHOD_ATTRIBUTES");
-      addIdeaMappingsExt("DEPRECATED","DEPRECATED_ATTRIBUTES");
+      addIdeaMappingsExt("LOCAL_VARIABLE", "LOCAL_VARIABLE_ATTRIBUTES");
+      addIdeaMappingsExt("PARAMETER", "PARAMETER_ATTRIBUTES");
+      addIdeaMappingsExt("INSTANCE_FIELD", "INSTANCE_FIELD_ATTRIBUTES");
+      addIdeaMappingsExt("METHOD_DECLARATION", "METHOD_DECLARATION_ATTRIBUTES");
+      addIdeaMappingsExt("METHOD_CALL", "METHOD_CALL_ATTRIBUTES");
+      addIdeaMappingsExt("STATIC_FIELD", "STATIC_FIELD_ATTRIBUTES");
+      addIdeaMappingsExt("STATIC_FINAL_FIELD", "STATIC_FINAL_FIELD_ATTRIBUTES");
+      addIdeaMappingsExt("STATIC_METHOD", "STATIC_METHOD_ATTRIBUTES");
+      addIdeaMappingsExt("DEPRECATED", "DEPRECATED_ATTRIBUTES");
 
-      addIdeaMappingsExt("CLASS_NAME","CLASS_NAME_ATTRIBUTES");
+      addIdeaMappingsExt("CLASS_NAME", "CLASS_NAME_ATTRIBUTES");
 
-      addIdeaMappingsExt("ANNOTATION","ANNOTATION_NAME_ATTRIBUTES");
-      addIdeaMappingsExt("NOT_USED_ELEMENT","NOT_USED_ELEMENT_ATTRIBUTES");
-      addIdeaMappingsExt("TODO","TODO_DEFAULT_ATTRIBUTES");
+      addIdeaMappingsExt("ANNOTATION", "ANNOTATION_NAME_ATTRIBUTES");
+      addIdeaMappingsExt("NOT_USED_ELEMENT", "NOT_USED_ELEMENT_ATTRIBUTES");
+      addIdeaMappingsExt("TODO", "TODO_DEFAULT_ATTRIBUTES");
 
       //HACK: find out right way to init Syntax Highlighters
       Object o = SyntaxHighlighterColors.KEYWORD;
-      addIdeaMappingsExt("DOC_TAG","JAVA_DOC_TAG");
-      addIdeaMappingsExt("DOC_COMMENT","JAVA_DOC_COMMENT");
-      addIdeaMappingsExt("KEYWORD","JAVA_KEYWORD");
-      addIdeaMappingsExt("LINE_COMMENT","JAVA_LINE_COMMENT");
-      addIdeaMappingsExt("BLOCK_COMMENT","JAVA_BLOCK_COMMENT");
-      addIdeaMappingsExt("NUMBER","JAVA_NUMBER");
-      addIdeaMappingsExt("STRING","JAVA_STRING");
-      addIdeaMappingsExt("OPERATION_SIGN","JAVA_OPERATION_SIGN");
-      addIdeaMappingsExt("PARENTH","JAVA_PARENTH");
-      addIdeaMappingsExt("BRACKETS","JAVA_BRACKETS");
-      addIdeaMappingsExt("BRACES","JAVA_BRACES");
-      addIdeaMappingsExt("SEMICOLON","JAVA_SEMICOLON");
-      addIdeaMappingsExt("DOT","JAVA_DOT");
+      addIdeaMappingsExt("DOC_TAG", "JAVA_DOC_TAG");
+      addIdeaMappingsExt("DOC_COMMENT", "JAVA_DOC_COMMENT");
+      addIdeaMappingsExt("KEYWORD", "JAVA_KEYWORD");
+      addIdeaMappingsExt("LINE_COMMENT", "JAVA_LINE_COMMENT");
+      addIdeaMappingsExt("BLOCK_COMMENT", "JAVA_BLOCK_COMMENT");
+      addIdeaMappingsExt("NUMBER", "JAVA_NUMBER");
+      addIdeaMappingsExt("STRING", "JAVA_STRING");
+      addIdeaMappingsExt("OPERATION_SIGN", "JAVA_OPERATION_SIGN");
+      addIdeaMappingsExt("PARENTH", "JAVA_PARENTH");
+      addIdeaMappingsExt("BRACKETS", "JAVA_BRACKETS");
+      addIdeaMappingsExt("BRACES", "JAVA_BRACES");
+      addIdeaMappingsExt("SEMICOLON", "JAVA_SEMICOLON");
+      addIdeaMappingsExt("DOT", "JAVA_DOT");
 
-      addIdeaMappingsExt("BREAKPOINT","BREAKPOINT_ATTRIBUTES");
-      addIdeaMappingsExt("EXECUTIONPOINT","EXECUTIONPOINT_ATTRIBUTES");
+      addIdeaMappingsExt("BREAKPOINT", "BREAKPOINT_ATTRIBUTES");
+      addIdeaMappingsExt("EXECUTIONPOINT", "EXECUTIONPOINT_ATTRIBUTES");
 
       //addIdeaMappingsExt("","");
-    }
-    catch (StyleRegistryMappingKeyException e){
-
+    } catch (StyleRegistryMappingKeyException e) {
+      LOG.error("Exception on registering IDEA style mappings", e);
     }
   }
 
   private void fillColorMappings() {
     final Color bg = getEditorBackground();
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_BLUE, bg), new Color(104, 151, 186));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_BLUE, bg), new Color(204, 120, 50));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GREEN, bg), new Color(98, 151, 85));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_MAGENTA, bg), new Color(152, 118, 170));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.RED, bg), new Color(255, 107, 104));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.PINK, bg), new Color(90, 100, 126));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.ORANGE, bg), new Color(255, 198, 109));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.YELLOW, bg), new Color(0, 99, 0));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.GREEN, bg), new Color(0, 128, 0));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.MAGENTA, bg), new Color(174, 138, 190));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.CYAN, bg), new Color(32, 153, 157));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.BLUE, bg), new Color(40, 123, 222));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_GRAY, bg), new Color(96, 96, 96));
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.GRAY, bg), MPSColors.GRAY);
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GRAY, bg), MPSColors.LIGHT_GRAY);
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.WHITE, bg), getEditorBackground());
-    colorsMapping.put(new Pair<Color, Color>(MPSColors.BLACK, bg), getEditorForeground());
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_BLUE, bg), new Color(104, 151, 186));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_BLUE, bg), new Color(204, 120, 50));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GREEN, bg), new Color(98, 151, 85));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_MAGENTA, bg), new Color(152, 118, 170));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.RED, bg), new Color(255, 107, 104));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.PINK, bg), new Color(90, 100, 126));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.ORANGE, bg), new Color(255, 198, 109));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.YELLOW, bg), new Color(0, 99, 0));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.GREEN, bg), new Color(0, 128, 0));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.MAGENTA, bg), new Color(174, 138, 190));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.CYAN, bg), new Color(32, 153, 157));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.BLUE, bg), new Color(40, 123, 222));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_GRAY, bg), new Color(96, 96, 96));
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.GRAY, bg), MPSColors.GRAY);
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GRAY, bg), MPSColors.LIGHT_GRAY);
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.WHITE, bg), getEditorBackground());
+    myColorsMapping.put(new Pair<Color, Color>(MPSColors.BLACK, bg), getEditorForeground());
   }
 
-  public void addIdeaMappingsExt(String mpsKey, String ideaKey) throws StyleRegistryMappingKeyException {
-    if(IDEAStylesMapping.containsKey(mpsKey))
-      throw new StyleRegistryMappingKeyException(mpsKey, IDEAStylesMapping.get(mpsKey), ideaKey);
-    IDEAStylesMapping.put(mpsKey, ideaKey);
+  private void addIdeaMappingsExt(String mpsKey, String ideaKey) throws StyleRegistryMappingKeyException {
+    if (myIDEAStylesMapping.containsKey(mpsKey))
+      throw new StyleRegistryMappingKeyException(mpsKey, myIDEAStylesMapping.get(mpsKey), ideaKey);
+    myIDEAStylesMapping.put(mpsKey, ideaKey);
   }
 
   @Override
   public void globalSchemeChange(EditorColorsScheme scheme) {
-    ourColorsScheme = EditorColorsManager.getInstance().getGlobalScheme();
     clearCache();
+  }
+
+  @NotNull
+  private EditorColorsScheme getColorsScheme() {
+    return myColorsManager.getGlobalScheme();
   }
 
   private class StyleRegistryMappingKeyException extends Exception {
     public StyleRegistryMappingKeyException(String mpsKey, String oldIdeaKey, String newIdeaKey) {
       super("Can't set value '" + newIdeaKey + "' for key '" + mpsKey
-        + "', because it has been already defined with value '" + oldIdeaKey + "'");
+          + "', because it has been already defined with value '" + oldIdeaKey + "'");
     }
   }
 }
