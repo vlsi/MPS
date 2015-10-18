@@ -92,6 +92,7 @@
       </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <child id="3071639529306477415" name="exports" index="24Zfi7" />
+        <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
@@ -99,7 +100,13 @@
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
-      <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
+      <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj">
+        <reference id="1200916687663" name="labelDeclaration" index="2sdACS" />
+      </concept>
+      <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
+        <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
+        <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
+      </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
@@ -253,7 +260,9 @@
         <node concept="3cqZAl" id="3EgJbItDxo6" role="3clF45" />
         <node concept="3Tm1VV" id="3EgJbItDxo7" role="1B3o_S" />
         <node concept="3clFbS" id="3EgJbItDxo8" role="3clF47" />
-        <node concept="raruj" id="3EgJbItDzVo" role="lGtFl" />
+        <node concept="raruj" id="3EgJbItDzVo" role="lGtFl">
+          <ref role="2sdACS" node="4_fmFKZrnvq" resolve="GetterMethod" />
+        </node>
         <node concept="17Uvod" id="4vmTtDyRQJl" role="lGtFl">
           <property role="2qtEX9" value="name" />
           <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
@@ -345,6 +354,11 @@
   </node>
   <node concept="bUwia" id="58Wq7fcwtZD">
     <property role="TrG5h" value="main" />
+    <node concept="2rT7sh" id="4_fmFKZrnvq" role="2rTMjI">
+      <property role="TrG5h" value="GetterMethod" />
+      <ref role="2rTdP9" to="sroc:4NbWtCFCvTK" resolve="BeanProperty" />
+      <ref role="2rZz_L" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+    </node>
     <node concept="1J8HWv" id="58Wq7fcwxhG" role="24Zfi7">
       <property role="TrG5h" value="BeanToClass" />
       <ref role="vkxhZ" to="sroc:4NbWtCFCvTH" resolve="Bean" />

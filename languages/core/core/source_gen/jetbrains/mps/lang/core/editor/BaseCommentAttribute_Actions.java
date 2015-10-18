@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.editor.runtime.impl.cellActions.Cell_Action_Uncomment;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Uncomment;
 
 public class BaseCommentAttribute_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -37,7 +37,7 @@ public class BaseCommentAttribute_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      new Cell_Action_Uncomment(node).execute(editorContext);
+      new CellAction_Uncomment(node).execute(editorContext);
     }
   }
   public static class BaseCommentAttribute_Actions_BACKSPACE extends AbstractCellAction {

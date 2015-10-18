@@ -3294,8 +3294,8 @@
         </node>
         <node concept="3clFbF" id="9D0Ba05uX_" role="3cqZAp">
           <node concept="2YIFZM" id="9D0Ba05uXA" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="9D0Ba05uXB" role="37wK5m">
               <node concept="3clFbS" id="9D0Ba05uXC" role="1bW5cS">
                 <node concept="3clFbF" id="9D0Ba05uXD" role="3cqZAp">

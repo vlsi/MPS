@@ -240,6 +240,7 @@
         <child id="3604384757217586546" name="selectionStart" index="3dN3m$" />
       </concept>
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
+      <concept id="625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" flags="sg" stub="730538219795961225" index="3SHvHV" />
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" flags="lg" index="3Xmtl4">
         <child id="1950447826683828796" name="target" index="3XvnJa" />
@@ -7251,6 +7252,73 @@
         <property role="VOm3f" value="false" />
       </node>
       <node concept="2iRfu4" id="1WfddY$Vo$j" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3mwbQJWA0rR">
+    <property role="3GE5qa" value="debug" />
+    <ref role="1XX52x" to="tpf8:3mwbQJW_Z71" resolve="GeneratorDebug_Mappings" />
+    <node concept="3F2HdR" id="3mwbQJWA0rT" role="2wV5jI">
+      <ref role="1NtTu8" to="tpf8:3mwbQJWA0r5" />
+      <node concept="2iRkQZ" id="3mwbQJWA0rY" role="2czzBx" />
+      <node concept="xShMh" id="3mwbQJWA1Ev" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3mwbQJWA1Fe">
+    <property role="3GE5qa" value="debug" />
+    <ref role="1XX52x" to="tpf8:3mwbQJWA0r4" resolve="GeneratorDebug_LabelEntry" />
+    <node concept="3F2HdR" id="3mwbQJWA1Fg" role="2wV5jI">
+      <ref role="1NtTu8" to="tpf8:3mwbQJWA13F" />
+      <node concept="2iRkQZ" id="3mwbQJWA1Fj" role="2czzBx" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3mwbQJWA1GV">
+    <property role="3GE5qa" value="debug" />
+    <ref role="1XX52x" to="tpf8:3mwbQJWA0r7" resolve="GeneratorDebug_NodeMapEntry" />
+    <node concept="3EZMnI" id="3mwbQJWA4aW" role="2wV5jI">
+      <node concept="3EZMnI" id="Hduj2adaAe" role="3EZMnx">
+        <node concept="2iRfu4" id="Hduj2adaAf" role="2iSdaV" />
+        <node concept="1iCGBv" id="3mwbQJWA4b6" role="3EZMnx">
+          <ref role="1NtTu8" to="tpf8:3mwbQJWA0ra" />
+          <node concept="1sVBvm" id="3mwbQJWA4b8" role="1sWHZn">
+            <node concept="3SHvHV" id="3mwbQJWA4d3" role="2wV5jI" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="Hduj2adaBb" role="3EZMnx" />
+        <node concept="3F0ifn" id="Hduj2adaBt" role="3EZMnx">
+          <property role="3F0ifm" value="origin:" />
+        </node>
+        <node concept="1iCGBv" id="3mwbQJWA4bw" role="3EZMnx">
+          <ref role="1NtTu8" to="tpf8:3mwbQJWA0rr" />
+          <node concept="1sVBvm" id="3mwbQJWA4by" role="1sWHZn">
+            <node concept="3SHvHV" id="3mwbQJWA4er" role="2wV5jI" />
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="Hduj2acJjT" role="3EZMnx">
+        <node concept="l2Vlx" id="Hduj2acJjU" role="2iSdaV" />
+        <node concept="3F2HdR" id="3mwbQJWA4eA" role="3EZMnx">
+          <ref role="1NtTu8" to="tpf8:3mwbQJWA0rl" />
+          <node concept="2iRkQZ" id="3mwbQJWA4eC" role="2czzBx" />
+          <node concept="lj46D" id="Hduj2acJjR" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="Hduj2acJb4" role="3EZMnx" />
+      <node concept="3F0ifn" id="Hduj2acJbp" role="3EZMnx" />
+      <node concept="2iRkQZ" id="3mwbQJWA4aZ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="Hduj2adtVr">
+    <property role="3GE5qa" value="debug" />
+    <ref role="1XX52x" to="tpf8:3mwbQJWA0ri" resolve="GeneratorDebug_NodeRef" />
+    <node concept="1iCGBv" id="Hduj2adtVt" role="2wV5jI">
+      <ref role="1NtTu8" to="tpf8:3mwbQJWA0rj" />
+      <node concept="1sVBvm" id="Hduj2adtVv" role="1sWHZn">
+        <node concept="3SHvHV" id="Hduj2adtVA" role="2wV5jI" />
+      </node>
     </node>
   </node>
 </model>

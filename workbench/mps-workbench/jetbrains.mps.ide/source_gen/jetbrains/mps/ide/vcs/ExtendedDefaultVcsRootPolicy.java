@@ -4,11 +4,13 @@ package jetbrains.mps.ide.vcs;
 
 import com.intellij.openapi.vcs.impl.BasicDefaultVcsRootPolicy;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.changes.DirtBuilder;
-import com.intellij.openapi.vcs.changes.VcsGuess;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsRoot;
+import org.jetbrains.annotations.NotNull;
+import java.util.Collection;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import com.intellij.openapi.vcs.VcsRoot;
 import com.intellij.platform.ProjectBaseDirectory;
 
 public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
@@ -17,15 +19,16 @@ public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
     super(project);
     myProject = project;
   }
+  @NotNull
   @Override
-  public void markDefaultRootsDirty(DirtBuilder builder, final VcsGuess vcsGuess) {
-    super.markDefaultRootsDirty(builder, vcsGuess);
+  public Collection<VirtualFile> getDirtyRoots() {
     // TODO is it needed? 
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(myProject);
-    VcsRoot[] roots = manager.getAllVcsRoots();
-    for (VcsRoot root : roots) {
-      builder.addDirtyDirRecursively(root);
-    }
+    return Sequence.fromIterable(Sequence.fromArray(manager.getAllVcsRoots())).select(new ISelector<VcsRoot, VirtualFile>() {
+      public VirtualFile select(VcsRoot it) {
+        return it.getPath();
+      }
+    }).toListSequence();
   }
   @Override
   public boolean matchesDefaultMapping(VirtualFile file, Object matchContext) {

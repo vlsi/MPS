@@ -23,16 +23,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
-import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
-import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
-import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -92,33 +82,8 @@ public class TestMergeAction_Action extends BaseAction {
           }
         }).toGenericArray(SimpleContent.class);
 
-        MergeModelsDialog dialog = new MergeModelsDialog(new MergeTemporaryModel(zipped[0], true), new MergeTemporaryModel(zipped[1], true), new MergeTemporaryModel(zipped[2], true), new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), diffContents, new String[]{"Local Version", "Merge Result", "Remote Version"}));
 
-        ISaveMergedModel saver = new ISaveMergedModel() {
-          public boolean save(MergeModelsDialog parent, final org.jetbrains.mps.openapi.model.SModel resultModel) {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              @Override
-              public void run() {
-                IFile iFile = FileSystem.getInstance().getFileByPath(resFile);
-                if (!(iFile.exists())) {
-                  iFile.createNewFile();
-                }
-                try {
-                  PersistenceFacade.getInstance().getDefaultModelFactory().save(resultModel, new FileDataSource(iFile));
-                } catch (Exception e) {
-                  if (LOG.isEnabledFor(Level.ERROR)) {
-                    LOG.error("Cannot save model.", e);
-                  }
-                }
-              }
-            });
 
-            return true;
-          }
-        };
-
-        dialog.setSaver(saver);
-        dialog.show();
       }
     });
   }

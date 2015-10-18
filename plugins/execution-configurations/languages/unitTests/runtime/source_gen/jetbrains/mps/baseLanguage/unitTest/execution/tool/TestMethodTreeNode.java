@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class TestMethodTreeNode extends BaseTestTreeNode {
   @NotNull
@@ -45,12 +45,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   }
   @Override
   public void doubleClick() {
-    Runnable nav = new Runnable() {
-      @Override
-      public void run() {
-        NavigationSupport.getInstance().openNode(myProject, myTestMethod.getNode(), true, true);
-      }
-    };
-    myProject.getModelAccess().runWriteInEDT(nav);
+    new EditorNavigator(myProject).shallFocus(true).shallSelect(true).open(myTestMethod.getNodePointer());
   }
 }

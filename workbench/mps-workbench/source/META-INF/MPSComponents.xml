@@ -185,9 +185,6 @@
       <implementation-class>jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptsTool
       </implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.findusages.caches.MPSFileBasedIndexProjectHandler</implementation-class>
-    </component>
     <!-- language development workbench -->
     <component>
       <interface-class>jetbrains.mps.ide.make.StartupModuleMaker</interface-class>

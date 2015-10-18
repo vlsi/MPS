@@ -19,8 +19,6 @@ package jetbrains.mps.idea.java.debugger.breakpoints;
 import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.ui.breakpoints.Breakpoint;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
-import com.intellij.debugger.ui.breakpoints.FieldBreakpoint;
-import com.intellij.debugger.ui.breakpoints.MethodBreakpoint;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.editor.Document;

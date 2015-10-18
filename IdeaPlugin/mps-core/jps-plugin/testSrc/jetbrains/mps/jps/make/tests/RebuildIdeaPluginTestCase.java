@@ -75,6 +75,29 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     setUpEnvironment("test.in");
 
     String projectDir = copyToProject("../IdeaPlugin", "IdeaPlugin");
+
+    // The dependency on outer sources (parts of mps project) are back for now
+    // because we don't link against plugin distrib any longer, rather against
+    // pre-built jars (parts of core)
+    // These dependencies may be fixed in 2 ways:
+    // 1) pre-compile them into jars in the same way as core
+    // 2) make IdeaPlugin and mps one same project, and then don't do pre-building at all
+    // (to be precise, pre-built only what's in gensources, but not what's compiled in idea)
+    copyToProject("../plugins/vcs-core/core/source_gen", "plugins/vcs-core/core/source_gen");
+    copyToProject("../plugins/vcs/common/source_gen", "plugins/vcs/common/source_gen");
+    copyToProject("../plugins/vcs/common/source", "plugins/vcs/common/source");
+    copyToProject("../plugins/mpsjava/basePlatform/source_gen", "plugins/mpsjava/basePlatform/source_gen");
+    copyToProject("../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
+    copyToProject("../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
+
+    // this is the counter-part of pre-building and copying core jars before compiling IdeaPlugin sources
+    copyToProject(PLUGINS_PATH + "/mps-core/lib", "IdeaPlugin/mps-core/lib");
+    copyToProject(PLUGINS_PATH + "/mps-core/languages", "IdeaPlugin/mps-core/languages");
+
+    copyToProject(PLUGINS_PATH + "/mps-testing/lib/jetbrains.mps.lang.test.util.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.util.jar");
+    copyToProject(PLUGINS_PATH + "/mps-testing/languages/jetbrains.mps.lang.test.matcher.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.matcher.jar");
+    copyToProject(PLUGINS_PATH + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.runtime.jar");
+
     loadProject(projectDir);
     setUpJdk();
     setUpIdeaSdk();

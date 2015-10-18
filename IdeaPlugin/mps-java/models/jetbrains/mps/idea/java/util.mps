@@ -6,11 +6,11 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
   </languages>
   <imports>
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -246,7 +246,7 @@
                     <ref role="3cqZAo" node="6i0V1pKiBr1" resolve="parent" />
                   </node>
                   <node concept="1mIQ4w" id="6i0V1pKiMSO" role="2OqNvi">
-                    <node concept="chp4Y" id="6i0V1pKiMX0" role="cj9EA">
+                    <node concept="chp4Y" id="6_GhYiw$B2M" role="cj9EA">
                       <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                     </node>
                   </node>
@@ -344,7 +344,7 @@
       <node concept="17QB3L" id="67yURBzQ4f1" role="3clF45" />
       <node concept="37vLTG" id="67yURBzQ4wN" role="3clF46">
         <property role="TrG5h" value="claz" />
-        <node concept="3uibUv" id="3if7C7GZX6E" role="1tU5fm">
+        <node concept="3uibUv" id="74BXoM_pMBH" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
         </node>
       </node>

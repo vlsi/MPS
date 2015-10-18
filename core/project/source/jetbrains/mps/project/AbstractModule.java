@@ -773,9 +773,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     for (SModel model : getModels()) {
       if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
-        LOG.error(
-            "Trying to reload module " + getModuleName() + " which contains a non-saved model" +
-                model.getModelName() + "To prevent data loss, MPS will not update models in this module. " +
+        LOG.warn(
+            "Trying to reload module " + getModuleName() + " which contains a non-saved model '" +
+                model.getModelName() + "'. To prevent data loss, MPS will not update models in this module. " +
                 "Please save your work and restart MPS. See MPS-18743 for details."
         );
         return;

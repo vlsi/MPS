@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 public interface IMessageHandler {
-  public static final IMessageHandler NULL_HANDLER = new IMessageHandler() {
+  IMessageHandler NULL_HANDLER = new IMessageHandler() {
     @Override
     public void handle(IMessage msg) {
     }
@@ -37,12 +37,13 @@ public interface IMessageHandler {
     }
   };
 
-  public final static class LogHandler implements IMessageHandler {
-    private final Logger myLog;
+  class LogHandler implements IMessageHandler {
+    protected final Logger myLog;
 
     public LogHandler(@NotNull Logger log) {
       myLog = log;
     }
+
     @Override
     public void handle(IMessage msg) {
       if (msg.getKind() == MessageKind.ERROR) {

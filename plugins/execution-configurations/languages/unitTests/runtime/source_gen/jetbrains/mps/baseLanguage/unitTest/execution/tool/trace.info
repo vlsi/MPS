@@ -36,31 +36,28 @@
       <node id="2034046503361610754" at="36,25,37,50" concept="5" />
       <node id="3575782568432719134" at="39,7,40,28" concept="11" />
       <node id="3575782568432719140" at="43,27,44,16" concept="11" />
-      <node id="3575782568432719166" at="50,25,51,96" concept="5" />
-      <node id="3575782568432719178" at="53,6,54,50" concept="5" />
+      <node id="3084972867226510296" at="47,29,48,106" concept="5" />
       <node id="3575782568432719039" at="12,0,14,0" concept="6" trace="myTestMethod" />
       <node id="2034046503361619912" at="25,63,28,9" concept="8" />
       <node id="2034046503361610752" at="36,0,39,0" concept="9" trace="run#()V" />
       <node id="3575782568432719138" at="42,0,46,0" concept="9" trace="isLeaf#()Z" />
-      <node id="3575782568432719162" at="49,0,53,0" concept="9" trace="run#()V" />
+      <node id="3575782568432719151" at="46,0,50,0" concept="9" trace="doubleClick#()V" />
       <node id="2034046503361610748" at="34,73,39,7" concept="5" />
       <node id="2034046503361619903" at="24,0,30,0" concept="9" trace="run#()V" />
-      <node id="3575782568432719155" at="47,29,53,6" concept="10" />
       <node id="3575782568432719043" at="14,0,21,0" concept="2" trace="TestMethodTreeNode#(Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
       <node id="2034046503361619898" at="22,72,30,7" concept="5" />
       <node id="3575782568432719115" at="33,0,42,0" concept="9" trace="getMethodName#()Ljava/lang/String;" />
-      <node id="3575782568432719151" at="46,0,56,0" concept="9" trace="doubleClick#()V" />
       <node id="3575782568432719083" at="21,0,33,0" concept="9" trace="getClassName#()Ljava/lang/String;" />
       <scope id="2034046503361619913" at="26,31,27,49" />
       <scope id="2034046503361610753" at="36,25,37,50" />
       <scope id="3575782568432719139" at="43,27,44,16" />
-      <scope id="3575782568432719165" at="50,25,51,96" />
+      <scope id="3575782568432719154" at="47,29,48,106" />
       <scope id="2034046503361610752" at="36,0,39,0" />
       <scope id="2034046503361619904" at="24,25,28,9">
         <var name="testCase" id="2034046503361619907" />
       </scope>
       <scope id="3575782568432719138" at="42,0,46,0" />
-      <scope id="3575782568432719162" at="49,0,53,0" />
+      <scope id="3575782568432719151" at="46,0,50,0" />
       <scope id="3575782568432719050" at="14,93,19,36" />
       <scope id="2034046503361619903" at="24,0,30,0" />
       <scope id="3575782568432719043" at="14,0,21,0">
@@ -70,19 +67,14 @@
       <scope id="3575782568432719118" at="33,33,40,28">
         <var name="methodName" id="3575782568432719120" />
       </scope>
-      <scope id="3575782568432719154" at="47,29,54,50">
-        <var name="nav" id="3575782568432719156" />
-      </scope>
       <scope id="3575782568432719115" at="33,0,42,0" />
       <scope id="3575782568432719086" at="21,32,31,27">
         <var name="className" id="3575782568432719088" />
       </scope>
-      <scope id="3575782568432719151" at="46,0,56,0" />
       <scope id="3575782568432719083" at="21,0,33,0" />
       <unit id="2034046503361610752" at="35,49,39,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode$2" />
-      <unit id="3575782568432719160" at="48,23,53,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode$3" />
       <unit id="2034046503361619903" at="23,49,30,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode$1" />
-      <unit id="3575782568432719038" at="11,0,57,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode" />
+      <unit id="3575782568432719038" at="11,0,51,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode" />
     </file>
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432719197">
@@ -1555,33 +1547,28 @@
       <node id="3575782568432724209" at="28,32,29,72" concept="10" />
       <node id="2034046503361624155" at="31,25,32,49" concept="5" />
       <node id="3575782568432724224" at="34,7,35,27" concept="11" />
-      <node id="2034046503373002300" at="40,25,41,95" concept="5" />
+      <node id="3084972867226556951" at="38,29,39,86" concept="5" />
       <node id="3575782568432724145" at="17,0,19,0" concept="6" trace="myTestCase" />
       <node id="2034046503361624153" at="31,0,34,0" concept="9" trace="run#()V" />
-      <node id="2034046503373002298" at="40,0,43,0" concept="9" trace="run#()V" />
+      <node id="3575782568432724233" at="37,0,41,0" concept="9" trace="doubleClick#()V" />
       <node id="2034046503361624149" at="29,72,34,7" concept="5" />
-      <node id="2034046503373002294" at="38,29,43,7" concept="5" />
-      <node id="3575782568432724233" at="37,0,45,0" concept="9" trace="doubleClick#()V" />
       <node id="3575782568432724149" at="19,0,28,0" concept="2" trace="TestCaseTreeNode#(Ljetbrains/mps/project/Project;Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
       <node id="3575782568432724205" at="28,0,37,0" concept="9" trace="getClassName#()Ljava/lang/String;" />
       <scope id="2034046503361624154" at="31,25,32,49" />
-      <scope id="2034046503373002299" at="40,25,41,95" />
+      <scope id="3575782568432724236" at="38,29,39,86" />
       <scope id="2034046503361624153" at="31,0,34,0" />
-      <scope id="2034046503373002298" at="40,0,43,0" />
-      <scope id="3575782568432724236" at="38,29,43,7" />
+      <scope id="3575782568432724233" at="37,0,41,0" />
       <scope id="3575782568432724156" at="19,89,26,122" />
       <scope id="3575782568432724208" at="28,32,35,27">
         <var name="className" id="3575782568432724210" />
       </scope>
-      <scope id="3575782568432724233" at="37,0,45,0" />
       <scope id="3575782568432724149" at="19,0,28,0">
         <var name="project" id="3575782568432724150" />
         <var name="testCase" id="3575782568432724153" />
       </scope>
       <scope id="3575782568432724205" at="28,0,37,0" />
       <unit id="2034046503361624153" at="30,49,34,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$1" />
-      <unit id="2034046503373002298" at="39,50,43,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$2" />
-      <unit id="3575782568432724144" at="16,0,46,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode" />
+      <unit id="3575782568432724144" at="16,0,42,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode" />
     </file>
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432724266">

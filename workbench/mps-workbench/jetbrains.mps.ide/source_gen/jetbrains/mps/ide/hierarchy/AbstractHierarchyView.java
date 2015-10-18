@@ -22,8 +22,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
@@ -34,6 +33,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.IOperationContext;
@@ -106,19 +106,12 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   }
 
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);
-  public void openNode(final SNodeReference nodeRef) {
+  public void openNode(SNodeReference nodeRef) {
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     if (mpsProject == null) {
       return;
     }
-    mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-      public void run() {
-        SNode node = nodeRef.resolve(mpsProject.getRepository());
-        if (node != null) {
-          NavigationSupport.getInstance().openNode(mpsProject, node, true, true);
-        }
-      }
-    });
+    new EditorNavigator(mpsProject).shallFocus(true).shallSelect(true).open(nodeRef);
   }
   protected DefaultActionGroup createButtonsGroup() {
     GroupedToggleAction childrenAction = new GroupedToggleAction("Children Hierarchy", "Show children hierarchy", Icons.CHILDREN_ICON, true) {

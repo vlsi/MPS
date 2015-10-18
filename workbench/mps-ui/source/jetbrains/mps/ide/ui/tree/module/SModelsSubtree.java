@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil;
@@ -169,8 +169,8 @@ public class SModelsSubtree {
   }
 
   public static int getCountNamePart(SModel md, String baseName) {
-    String modelLongName = jetbrains.mps.util.SNodeOperations.getModelLongName(md);
-    String shortName = md instanceof TransientSModelDescriptor ? modelLongName : modelLongName.replace(baseName + '.', "");
+    String modelLongName = NameUtil.getModelLongName(md);
+    String shortName = md instanceof TransientSModel ? modelLongName : modelLongName.replace(baseName + '.', "");
     return shortName.split("\\.").length - 1;
   }
 

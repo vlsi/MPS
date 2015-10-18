@@ -2510,8 +2510,8 @@
         </node>
         <node concept="3clFbF" id="513ZrA4x4zF" role="3cqZAp">
           <node concept="2YIFZM" id="513ZrA4x4zG" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="513ZrA4x4zH" role="37wK5m">
               <node concept="3clFbS" id="513ZrA4x4zI" role="1bW5cS">
                 <node concept="3clFbF" id="513ZrA4x4zJ" role="3cqZAp">
@@ -2629,8 +2629,8 @@
         </node>
         <node concept="3clFbF" id="5SsFeroaay_" role="3cqZAp">
           <node concept="2YIFZM" id="5SsFeroblQW" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="513ZrA4wEkb" role="37wK5m">
               <property role="3yWfEV" value="true" />
               <node concept="3clFbS" id="513ZrA4wEkl" role="1bW5cS">

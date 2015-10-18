@@ -9,8 +9,7 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
-import com.intellij.openapi.project.ex.ProjectEx;
-import com.intellij.openapi.components.StorageScheme;
+import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.MPSProject;
@@ -44,7 +43,7 @@ public class NewLanguageDialog extends DialogWrapper {
   @Nullable
   protected JComponent createCenterPanel() {
     if (myLanguageSettings == null) {
-      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
+      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((!(ProjectUtil.isDirectoryBased(ProjectHelper.toIdeaProject(myProject))) ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
       myLanguageSettings.setListener(new NewLanguageSettings.LangSettingsChangedListener() {
         @Override
         public void changed() {

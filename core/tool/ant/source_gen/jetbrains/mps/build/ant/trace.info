@@ -20,6 +20,50 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/108194650710656503">
+    <file name="MigrationTask.java">
+      <node id="8164581507603522282" at="15,42,16,49" concept="4" />
+      <node id="108194650710750561" at="19,37,20,59" concept="11" />
+      <node id="1592025086119898861" at="24,56,25,34" concept="12" />
+      <node id="1592025086119898822" at="25,34,26,97" concept="10" />
+      <node id="1592025086119898833" at="27,35,28,103" concept="16" />
+      <node id="1592025086119898835" at="29,5,30,52" concept="10" />
+      <node id="1592025086120121552" at="30,52,31,58" concept="10" />
+      <node id="1592025086119898840" at="31,58,32,110" concept="4" />
+      <node id="1592025086120539639" at="32,110,33,67" concept="4" />
+      <node id="1592025086120539645" at="33,67,34,73" concept="4" />
+      <node id="1592025086119898847" at="35,38,36,69" concept="4" />
+      <node id="1592025086119898855" at="37,5,38,21" concept="11" />
+      <node id="108194650710656537" at="12,0,14,0" concept="2" trace="MigrationTask#()V" />
+      <node id="8164581507603522278" at="15,0,18,0" concept="9" trace="setProject#(Ljava/lang/String;)V" />
+      <node id="108194650710657371" at="19,0,22,0" concept="9" trace="getWorkerClass#()Ljava/lang/String;" />
+      <node id="1592025086119898827" at="26,97,29,5" concept="8" />
+      <node id="1592025086119898844" at="34,73,37,5" concept="7" />
+      <node id="1592025086119898816" at="23,0,40,0" concept="9" trace="calculateClassPath#(Z)Ljava/util/Set;" />
+      <scope id="108194650710656540" at="12,26,12,26" />
+      <scope id="8164581507603522281" at="15,42,16,49" />
+      <scope id="108194650710657374" at="19,37,20,59" />
+      <scope id="1592025086119898830" at="27,35,28,103" />
+      <scope id="1592025086119898846" at="35,38,36,69" />
+      <scope id="108194650710656537" at="12,0,14,0" />
+      <scope id="8164581507603522278" at="15,0,18,0">
+        <var name="project" id="8164581507603522279" />
+      </scope>
+      <scope id="108194650710657371" at="19,0,22,0" />
+      <scope id="1592025086119898844" at="34,73,37,5">
+        <var name="file" id="1592025086119898851" />
+      </scope>
+      <scope id="1592025086119898820" at="24,56,38,21">
+        <var name="classPath" id="1592025086119898834" />
+        <var name="classPathRoots" id="1592025086119898821" />
+        <var name="mpsHome" id="1592025086120121553" />
+      </scope>
+      <scope id="1592025086119898816" at="23,0,40,0">
+        <var name="fork" id="1592025086119898818" />
+      </scope>
+      <unit id="108194650710656503" at="11,0,41,0" name="jetbrains.mps.build.ant.MigrationTask" />
+    </file>
+  </root>
   <root nodeRef="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)/3449270742160220910">
     <file name="ExcludeNested.java">
       <node id="3449270742160233220" at="15,0,16,0" concept="5" trace="excluded" />

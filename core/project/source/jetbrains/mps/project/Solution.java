@@ -150,7 +150,9 @@ public class Solution extends ReloadableModuleBase {
 
   @Override
   public void updateModelsSet() {
-    if (myUpdateBootstrapSolutions) updateBootstrapSolutionLibraries();
+    if (myUpdateBootstrapSolutions) {
+      updateBootstrapSolutionLibraries();
+    }
     super.updateModelsSet();
   }
 

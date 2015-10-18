@@ -60,7 +60,14 @@ public class ProjectFactory {
         indicator.setIndeterminate(true);
         error[0] = createDirs();
         if (error[0] != null) return;
-        String projectFilePath = myOptions.getProjectPath() + (myOptions.getStorageScheme().equals(StorageScheme.DIRECTORY_BASED) ? "" : File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT);
+        String projectFilePath = myOptions.getProjectPath();
+        String suffix;
+        if (myOptions.getStorageScheme().equals(StorageScheme.DIRECTORY_BASED)) {
+          suffix = Project.DIRECTORY_STORE_FOLDER;
+        } else {
+          suffix = myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT;
+        }
+        projectFilePath += File.separator + suffix;
         myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
       }
     });

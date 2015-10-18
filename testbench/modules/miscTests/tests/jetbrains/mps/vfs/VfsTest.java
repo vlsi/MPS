@@ -19,10 +19,17 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProviderSR;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import static org.junit.Assert.*;
 
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -42,6 +49,11 @@ public class VfsTest extends WorkbenchMpsTest {
 
   private static final String JAR_NAME = "testjar.zip";
   private static final String JAR_SUFFIX = "!/testjar";
+
+  @BeforeClass
+  public static void setUp() {
+    IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+  }
 
   private static final TestInvoker IO_TEST_INVOKER = new TestInvoker() {
     @Override

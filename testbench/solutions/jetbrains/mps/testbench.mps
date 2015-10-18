@@ -811,8 +811,8 @@
         </node>
         <node concept="3clFbF" id="1PHw7mnlmNp" role="3cqZAp">
           <node concept="2YIFZM" id="1PHw7mnlmNq" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="1PHw7mnlmNr" role="37wK5m">
               <node concept="3clFbS" id="1PHw7mnlmNs" role="1bW5cS">
                 <node concept="3cpWs8" id="4nixdct4wVg" role="3cqZAp">

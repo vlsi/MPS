@@ -621,6 +621,74 @@
       <unit id="1733398552130474119" at="26,0,426,0" name="jetbrains.mps.generator.impl.RuleUtil" />
     </file>
   </root>
+  <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/3864140621130068067">
+    <file name="DebugMappingsBuilder.java">
+      <node id="3864140621130107776" at="23,0,24,0" concept="4" trace="myRepo" />
+      <node id="3864140621130107780" at="25,49,26,18" concept="3" />
+      <node id="3864140621130068460" at="29,79,30,260" concept="9" />
+      <node id="3864140621130079691" at="31,56,32,272" concept="9" />
+      <node id="3864140621130092805" at="32,272,33,174" concept="3" />
+      <node id="3864140621130081819" at="33,174,34,217" concept="3" />
+      <node id="3864140621130101591" at="35,81,36,271" concept="9" />
+      <node id="3864140621130091905" at="36,271,37,223" concept="3" />
+      <node id="3864140621130102292" at="37,223,38,187" concept="3" />
+      <node id="3864140621130106332" at="38,187,39,65" concept="9" />
+      <node id="3864140621130103371" at="39,65,40,227" concept="3" />
+      <node id="3864140621130115554" at="40,227,41,28" concept="9" />
+      <node id="3864140621130113844" at="42,44,43,43" concept="9" />
+      <node id="3864140621130116204" at="43,43,44,39" concept="3" />
+      <node id="3864140621130127782" at="45,56,46,47" concept="3" />
+      <node id="3864140621130127243" at="47,16,48,38" concept="3" />
+      <node id="3864140621130114944" at="50,62,51,264" concept="9" />
+      <node id="3864140621130126419" at="51,264,52,171" concept="3" />
+      <node id="3864140621130118480" at="52,171,53,219" concept="3" />
+      <node id="3864140621130068558" at="56,5,57,14" concept="10" />
+      <node id="3864140621130127043" at="47,14,49,9" concept="0" />
+      <node id="3864140621130107646" at="25,0,28,0" concept="2" trace="DebugMappingsBuilder#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <node id="3864140621130117905" at="49,9,54,9" concept="6" />
+      <node id="3864140621130109410" at="41,28,49,9" concept="7" />
+      <node id="3864140621130080536" at="34,217,55,7" concept="6" />
+      <node id="3864140621130075696" at="30,260,56,5" concept="6" />
+      <node id="3864140621130068099" at="29,0,59,0" concept="8" trace="build#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/impl/GeneratorMappings;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3864140621130107650" at="25,49,26,18" />
+      <scope id="3864140621130110155" at="45,56,46,47" />
+      <scope id="3864140621130127044" at="47,16,48,38" />
+      <scope id="3864140621130109412" at="42,44,44,39">
+        <var name="n" id="3864140621130113845" />
+      </scope>
+      <scope id="3864140621130107646" at="25,0,28,0">
+        <var name="repo" id="3864140621130107766" />
+      </scope>
+      <scope id="3864140621130117909" at="50,62,53,219">
+        <var name="r" id="3864140621130114947" />
+      </scope>
+      <scope id="3864140621130117905" at="49,9,54,9">
+        <var name="n" id="3864140621130117907" />
+      </scope>
+      <scope id="3864140621130080538" at="35,81,54,9">
+        <var name="c" id="3864140621130115557" />
+        <var name="entry" id="3864140621130101594" />
+        <var name="origin" id="3864140621130106333" />
+      </scope>
+      <scope id="3864140621130080536" at="34,217,55,7">
+        <var name="e" id="3864140621130080540" />
+      </scope>
+      <scope id="3864140621130075698" at="31,56,55,7">
+        <var name="labelEntry" id="3864140621130079694" />
+      </scope>
+      <scope id="3864140621130075696" at="30,260,56,5">
+        <var name="label" id="3864140621130075700" />
+      </scope>
+      <scope id="3864140621130068103" at="29,79,57,14">
+        <var name="rv" id="3864140621130068461" />
+      </scope>
+      <scope id="3864140621130068099" at="29,0,59,0">
+        <var name="mappings" id="3864140621130068163" />
+        <var name="nodeFactory" id="3864140621130068129" />
+      </scope>
+      <unit id="3864140621130068067" at="22,0,60,0" name="jetbrains.mps.generator.impl.DebugMappingsBuilder" />
+    </file>
+  </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/8341644365990734226">
     <file name="TemplateModelScanner.java">
       <node id="8341644365990734232" at="19,0,20,0" concept="4" trace="myTemplateModel" />

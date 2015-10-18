@@ -54,23 +54,30 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
+      <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
       <concept id="1070534513062" name="jetbrains.mps.baseLanguage.structure.DoubleType" flags="in" index="10P55v" />
+      <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
+        <child id="1070534760952" name="componentType" index="10Q1$1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
       <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
+        <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
       </concept>
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_" />
@@ -539,7 +546,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0c9kv">
-    <property role="TrG5h" value="Comment_TypeTest" />
+    <property role="TrG5h" value="Comment_Type" />
     <property role="3GE5qa" value="comment" />
     <node concept="3cpWsn" id="5fIuys0c9kO" role="LiRBU">
       <property role="TrG5h" value="a" />
@@ -579,7 +586,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cFvu">
-    <property role="TrG5h" value="Uncomment_SecondStatementTest" />
+    <property role="TrG5h" value="Uncomment_SecondStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cFvB" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cFvC" role="3cqZAp">
@@ -700,7 +707,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cGoI">
-    <property role="TrG5h" value="Comment_FirstStatementTest" />
+    <property role="TrG5h" value="Comment_FirstStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cGoJ" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cGoK" role="3cqZAp">
@@ -821,7 +828,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cHEt">
-    <property role="TrG5h" value="Comment_LastStatementTest" />
+    <property role="TrG5h" value="Comment_LastStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cHEu" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cHEv" role="3cqZAp">
@@ -942,7 +949,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cI6e">
-    <property role="TrG5h" value="Uncomment_FirstStatementTest" />
+    <property role="TrG5h" value="Uncomment_FirstStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cI6f" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cI6g" role="3cqZAp">
@@ -1063,7 +1070,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cI6R">
-    <property role="TrG5h" value="Uncomment_LastStatementTest" />
+    <property role="TrG5h" value="Uncomment_LastStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cI6S" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cI6T" role="3cqZAp">
@@ -1184,7 +1191,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cI7w">
-    <property role="TrG5h" value="Comment_SecondStatementTest" />
+    <property role="TrG5h" value="Comment_SecondStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cI7x" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cI7y" role="3cqZAp">
@@ -1305,7 +1312,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cJ7d">
-    <property role="TrG5h" value="Uncomment_TypeTest" />
+    <property role="TrG5h" value="Uncomment_Type" />
     <property role="3GE5qa" value="comment" />
     <node concept="3cpWsn" id="5fIuys0cJ7e" role="LiRBU">
       <property role="TrG5h" value="a" />
@@ -1556,7 +1563,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cKzo">
-    <property role="TrG5h" value="Uncomment_MethodTest" />
+    <property role="TrG5h" value="Uncomment_Method" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cKzx" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cKzy" role="3cqZAp">
@@ -1633,7 +1640,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cPl5">
-    <property role="TrG5h" value="Comment_ExpressionStatementTest" />
+    <property role="TrG5h" value="Comment_ExpressionStatement" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cPl6" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cPl7" role="3cqZAp">
@@ -1704,7 +1711,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cPm4">
-    <property role="TrG5h" value="Comment_SecondTypeTest" />
+    <property role="TrG5h" value="Comment_SecondType" />
     <property role="3GE5qa" value="comment" />
     <node concept="3cpWsn" id="5fIuys0cPm5" role="LiRBU">
       <property role="TrG5h" value="a" />
@@ -1893,7 +1900,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cPG7">
-    <property role="TrG5h" value="Uncomment_SecondTypeTest" />
+    <property role="TrG5h" value="Uncomment_SecondType" />
     <property role="3GE5qa" value="comment" />
     <node concept="3cpWsn" id="5fIuys0cPG8" role="LiRBU">
       <property role="TrG5h" value="a" />
@@ -1948,7 +1955,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5fIuys0cQ7i">
-    <property role="TrG5h" value="Comment_CommentUncommentTest" />
+    <property role="TrG5h" value="Comment_CommentUncomment" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="5fIuys0cQ7j" role="LjaKd">
       <node concept="2HxZob" id="5fIuys0cQ7k" role="3cqZAp">
@@ -2296,7 +2303,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="3FNxLZIq6le">
-    <property role="TrG5h" value="Comment_EditInsideComment_Test" />
+    <property role="TrG5h" value="Comment_EditInsideComment" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="3FNxLZIq6lf" role="LjaKd">
       <node concept="2TK7Tu" id="3FNxLZIqrCQ" role="3cqZAp">
@@ -2512,6 +2519,262 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1OLuskJsGhT">
+    <property role="TrG5h" value="Uncomment_StatementAtFirstPosition" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="1OLuskJsGhU" role="LjaKd">
+      <node concept="2HxZob" id="1OLuskJsGhV" role="3cqZAp">
+        <node concept="1iFQzN" id="1OLuskJsGhW" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="1OLuskJsGhX" role="LiRBU">
+      <node concept="3clFbS" id="1OLuskJsGhY" role="9aQI4">
+        <node concept="1X3_iC" id="1OLuskJsGhZ" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3clFbF" id="1OLuskJsGi0" role="8Wnug">
+            <node concept="2OqwBi" id="1OLuskJsGi1" role="3clFbG">
+              <node concept="10M0yZ" id="1OLuskJsGi2" role="2Oq$k0">
+                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+              </node>
+              <node concept="liA8E" id="1OLuskJsGi3" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
+                <node concept="Xl_RD" id="1OLuskJsGi4" role="37wK5m">
+                  <property role="Xl_RC" value="hi" />
+                </node>
+              </node>
+            </node>
+            <node concept="LIFWc" id="1OLuskJsGOp" role="lGtFl">
+              <property role="LIFWa" value="0" />
+              <property role="OXtK3" value="true" />
+              <property role="p6zMq" value="0" />
+              <property role="p6zMs" value="0" />
+              <property role="LIFWd" value="LEFT_COMMENT_ANCHOR" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="1OLuskJsGig" role="LiZbd">
+      <node concept="3clFbS" id="1OLuskJsGih" role="9aQI4">
+        <node concept="3clFbF" id="1OLuskJsGii" role="3cqZAp">
+          <node concept="2OqwBi" id="1OLuskJsGij" role="3clFbG">
+            <node concept="10M0yZ" id="1OLuskJsGik" role="2Oq$k0">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+              <node concept="LIFWc" id="1OLuskJsGR1" role="lGtFl">
+                <property role="LIFWa" value="0" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="property_name" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1OLuskJsGil" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
+              <node concept="Xl_RD" id="1OLuskJsGim" role="37wK5m">
+                <property role="Xl_RC" value="hi" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1OLuskJsGTG">
+    <property role="TrG5h" value="Uncomment_NodeAtFirstPosition" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="1OLuskJsGTH" role="LjaKd">
+      <node concept="2HxZob" id="1OLuskJsGTI" role="3cqZAp">
+        <node concept="1iFQzN" id="1OLuskJsGTJ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="1OLuskJsGXE" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CommentHolder" />
+      <node concept="3Tm1VV" id="1OLuskJsGXF" role="1B3o_S" />
+      <node concept="2tJIrI" id="1OLuskJsH3E" role="jymVt" />
+      <node concept="1X3_iC" id="1OLuskJsH3m" role="lGtFl">
+        <property role="3V$3am" value="member" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
+        <node concept="2YIFZL" id="1OLuskJsH2r" role="8Wnug">
+          <property role="TrG5h" value="main" />
+          <node concept="37vLTG" id="1OLuskJsH2s" role="3clF46">
+            <property role="TrG5h" value="args" />
+            <node concept="10Q1$e" id="1OLuskJsH2t" role="1tU5fm">
+              <node concept="17QB3L" id="1OLuskJsH2u" role="10Q1$1" />
+            </node>
+          </node>
+          <node concept="3cqZAl" id="1OLuskJsH2v" role="3clF45" />
+          <node concept="3Tm1VV" id="1OLuskJsH2w" role="1B3o_S" />
+          <node concept="3clFbS" id="1OLuskJsH2x" role="3clF47" />
+          <node concept="LIFWc" id="1OLuskJsH4l" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="LEFT_COMMENT_ANCHOR" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="1OLuskJsHg7" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CommentHolder" />
+      <node concept="3Tm1VV" id="1OLuskJsHg8" role="1B3o_S" />
+      <node concept="2tJIrI" id="1OLuskJsHg9" role="jymVt" />
+      <node concept="2YIFZL" id="1OLuskJsHgb" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="1OLuskJsHgc" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="1OLuskJsHgd" role="1tU5fm">
+            <node concept="17QB3L" id="1OLuskJsHge" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="1OLuskJsHgf" role="3clF45" />
+        <node concept="3Tm1VV" id="1OLuskJsHgg" role="1B3o_S">
+          <node concept="LIFWc" id="1OLuskJsHgY" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="1OLuskJsHgh" role="3clF47" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1OLuskJsHkY">
+    <property role="TrG5h" value="Uncomment_NodeAtLastPosition" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="1OLuskJsHkZ" role="LjaKd">
+      <node concept="2HxZob" id="1OLuskJsHl0" role="3cqZAp">
+        <node concept="1iFQzN" id="1OLuskJsHl1" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="1OLuskJsHl2" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CommentHolder" />
+      <node concept="3Tm1VV" id="1OLuskJsHl3" role="1B3o_S" />
+      <node concept="2tJIrI" id="1OLuskJsHl4" role="jymVt" />
+      <node concept="1X3_iC" id="1OLuskJsHl5" role="lGtFl">
+        <property role="3V$3am" value="member" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
+        <node concept="2YIFZL" id="1OLuskJsHl6" role="8Wnug">
+          <property role="TrG5h" value="main" />
+          <node concept="37vLTG" id="1OLuskJsHl7" role="3clF46">
+            <property role="TrG5h" value="args" />
+            <node concept="10Q1$e" id="1OLuskJsHl8" role="1tU5fm">
+              <node concept="17QB3L" id="1OLuskJsHl9" role="10Q1$1" />
+            </node>
+          </node>
+          <node concept="3cqZAl" id="1OLuskJsHla" role="3clF45" />
+          <node concept="3Tm1VV" id="1OLuskJsHlb" role="1B3o_S" />
+          <node concept="3clFbS" id="1OLuskJsHlc" role="3clF47" />
+          <node concept="LIFWc" id="1OLuskJsHlN" role="lGtFl">
+            <property role="LIFWa" value="1" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="1" />
+            <property role="p6zMs" value="1" />
+            <property role="LIFWd" value="RIGHT_COMMENT_ANCHOR" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="1OLuskJsHle" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CommentHolder" />
+      <node concept="3Tm1VV" id="1OLuskJsHlf" role="1B3o_S" />
+      <node concept="2tJIrI" id="1OLuskJsHlg" role="jymVt" />
+      <node concept="2YIFZL" id="1OLuskJsHlh" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="1OLuskJsHli" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="1OLuskJsHlj" role="1tU5fm">
+            <node concept="17QB3L" id="1OLuskJsHlk" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="1OLuskJsHll" role="3clF45" />
+        <node concept="3Tm1VV" id="1OLuskJsHlm" role="1B3o_S" />
+        <node concept="3clFbS" id="1OLuskJsHlo" role="3clF47" />
+        <node concept="LIFWc" id="1OLuskJsHlP" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="Constant_fao2ea_c0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="1OLuskJsHlT">
+    <property role="TrG5h" value="Comment_CommentUncommentWithSelection" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="1OLuskJsHlU" role="LjaKd">
+      <node concept="2HxZob" id="1OLuskJsHlV" role="3cqZAp">
+        <node concept="1iFQzN" id="1OLuskJsHlW" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="1OLuskJsHnl" role="3cqZAp">
+        <node concept="1iFQzN" id="1OLuskJsHnm" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="1OLuskJsHlX" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CommentHolder" />
+      <node concept="3Tm1VV" id="1OLuskJsHlY" role="1B3o_S" />
+      <node concept="2tJIrI" id="1OLuskJsHlZ" role="jymVt" />
+      <node concept="2YIFZL" id="1OLuskJsHm1" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="1OLuskJsHm2" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="1OLuskJsHm3" role="1tU5fm">
+            <node concept="17QB3L" id="1OLuskJsHm4" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="1OLuskJsHm5" role="3clF45" />
+        <node concept="3Tm1VV" id="1OLuskJsHm6" role="1B3o_S" />
+        <node concept="3clFbS" id="1OLuskJsHm7" role="3clF47" />
+        <node concept="LIFWc" id="1OLuskJsHnd" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_j4vm40_a" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="1OLuskJsHm9" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="CommentHolder" />
+      <node concept="3Tm1VV" id="1OLuskJsHma" role="1B3o_S" />
+      <node concept="2tJIrI" id="1OLuskJsHmb" role="jymVt" />
+      <node concept="2YIFZL" id="1OLuskJsHmc" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="1OLuskJsHmd" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="1OLuskJsHme" role="1tU5fm">
+            <node concept="17QB3L" id="1OLuskJsHmf" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="1OLuskJsHmg" role="3clF45" />
+        <node concept="3Tm1VV" id="1OLuskJsHmh" role="1B3o_S" />
+        <node concept="3clFbS" id="1OLuskJsHmi" role="3clF47" />
+        <node concept="LIFWc" id="1OLuskJsHnh" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="LIFWd" value="Collection_j4vm40_a" />
         </node>
       </node>
     </node>

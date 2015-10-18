@@ -6,7 +6,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -101,6 +101,7 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534555686" name="jetbrains.mps.baseLanguage.structure.CharType" flags="in" index="10Pfzv" />
+      <concept id="1070534604311" name="jetbrains.mps.baseLanguage.structure.ByteType" flags="in" index="10PrrI" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
@@ -1080,19 +1081,29 @@
         </node>
         <node concept="3clFbF" id="341WClvYwfA" role="3cqZAp">
           <node concept="2YIFZM" id="60S3DtlQaol" role="3clFbG">
-            <ref role="1Pybhc" node="60S3DtlQamH" resolve="MergeBackupUtil" />
-            <ref role="37wK5l" node="341WClvYweC" resolve="writeContentsToFile" />
-            <node concept="AH0OO" id="341WClvYwfC" role="37wK5m">
-              <node concept="37vLTw" id="2BHiRxghggQ" role="AHHXb">
-                <ref role="3cqZAo" node="341WClvYwfc" resolve="contents" />
+            <ref role="1Pybhc" to="ur19:341WClvYweB" resolve="MergeDriverBackupUtil" />
+            <ref role="37wK5l" to="ur19:341WClvYwhA" resolve="writeContentsToFile" />
+            <node concept="2OqwBi" id="4qk_0lIsF8c" role="37wK5m">
+              <node concept="AH0OO" id="341WClvYwfC" role="2Oq$k0">
+                <node concept="37vLTw" id="2BHiRxghggQ" role="AHHXb">
+                  <ref role="3cqZAo" node="341WClvYwfc" resolve="contents" />
+                </node>
+                <node concept="10M0yZ" id="341WClvYLJI" role="AHEQo">
+                  <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+                  <ref role="3cqZAo" to="ur19:341WClvYLJE" resolve="CURRENT" />
+                </node>
               </node>
-              <node concept="10M0yZ" id="341WClvYLJI" role="AHEQo">
-                <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
-                <ref role="3cqZAo" to="ur19:341WClvYLJE" resolve="CURRENT" />
+              <node concept="liA8E" id="4qk_0lIsFb9" role="2OqNvi">
+                <ref role="37wK5l" to="ok99:~DiffContent.getBytes():byte[]" resolve="getBytes" />
               </node>
             </node>
-            <node concept="37vLTw" id="2BHiRxgmwVx" role="37wK5m">
-              <ref role="3cqZAo" node="341WClvYwff" resolve="file" />
+            <node concept="2OqwBi" id="4qk_0lIsFfC" role="37wK5m">
+              <node concept="37vLTw" id="2BHiRxgmwVx" role="2Oq$k0">
+                <ref role="3cqZAo" node="341WClvYwff" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsFrU" role="2OqNvi">
+                <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
+              </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTtkZ" role="37wK5m">
               <ref role="3cqZAo" node="341WClvYwfj" resolve="tmpDir" />
@@ -1110,19 +1121,29 @@
         </node>
         <node concept="3clFbF" id="341WClvYwfK" role="3cqZAp">
           <node concept="2YIFZM" id="60S3DtlQaom" role="3clFbG">
-            <ref role="1Pybhc" node="60S3DtlQamH" resolve="MergeBackupUtil" />
-            <ref role="37wK5l" node="341WClvYweC" resolve="writeContentsToFile" />
-            <node concept="AH0OO" id="341WClvYwfM" role="37wK5m">
-              <node concept="37vLTw" id="2BHiRxgllfK" role="AHHXb">
-                <ref role="3cqZAo" node="341WClvYwfc" resolve="contents" />
+            <ref role="1Pybhc" to="ur19:341WClvYweB" resolve="MergeDriverBackupUtil" />
+            <ref role="37wK5l" to="ur19:341WClvYwhA" resolve="writeContentsToFile" />
+            <node concept="2OqwBi" id="4qk_0lIsIy1" role="37wK5m">
+              <node concept="AH0OO" id="341WClvYwfM" role="2Oq$k0">
+                <node concept="37vLTw" id="2BHiRxgllfK" role="AHHXb">
+                  <ref role="3cqZAo" node="341WClvYwfc" resolve="contents" />
+                </node>
+                <node concept="10M0yZ" id="341WClvYLLd" role="AHEQo">
+                  <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+                  <ref role="3cqZAo" to="ur19:341WClvYLL9" resolve="LAST_REVISION" />
+                </node>
               </node>
-              <node concept="10M0yZ" id="341WClvYLLd" role="AHEQo">
-                <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
-                <ref role="3cqZAo" to="ur19:341WClvYLL9" resolve="LAST_REVISION" />
+              <node concept="liA8E" id="4qk_0lIsIFP" role="2OqNvi">
+                <ref role="37wK5l" to="ok99:~DiffContent.getBytes():byte[]" resolve="getBytes" />
               </node>
             </node>
-            <node concept="37vLTw" id="2BHiRxgma03" role="37wK5m">
-              <ref role="3cqZAo" node="341WClvYwff" resolve="file" />
+            <node concept="2OqwBi" id="4qk_0lIsILU" role="37wK5m">
+              <node concept="37vLTw" id="2BHiRxgma03" role="2Oq$k0">
+                <ref role="3cqZAo" node="341WClvYwff" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsIYa" role="2OqNvi">
+                <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
+              </node>
             </node>
             <node concept="37vLTw" id="3GM_nagTxPh" role="37wK5m">
               <ref role="3cqZAo" node="341WClvYwfj" resolve="tmpDir" />
@@ -1200,6 +1221,213 @@
         </node>
       </node>
       <node concept="3uibUv" id="341WClvYwgf" role="Sfmx6">
+        <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="4qk_0lIsKC1" role="jymVt">
+      <property role="TrG5h" value="zipModel" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="4qk_0lIsKC2" role="1B3o_S" />
+      <node concept="3uibUv" id="4qk_0lIsKC3" role="3clF45">
+        <ref role="3uigEE" to="guwi:~File" resolve="File" />
+      </node>
+      <node concept="37vLTG" id="4qk_0lIsKC4" role="3clF46">
+        <property role="TrG5h" value="contents" />
+        <property role="3TUv4t" value="false" />
+        <node concept="10Q1$e" id="4qk_0lIsKC5" role="1tU5fm">
+          <node concept="10Q1$e" id="4qk_0lIsLl4" role="10Q1$1">
+            <node concept="10PrrI" id="4qk_0lIsLcB" role="10Q1$1" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4qk_0lIsKC7" role="3clF46">
+        <property role="TrG5h" value="file" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="4qk_0lIsKC8" role="1tU5fm">
+          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="4qk_0lIsKC9" role="3clF47">
+        <node concept="3cpWs8" id="4qk_0lIsKCa" role="3cqZAp">
+          <node concept="3cpWsn" id="4qk_0lIsKCb" role="3cpWs9">
+            <property role="TrG5h" value="tmpDir" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3uibUv" id="4qk_0lIsKCc" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+            <node concept="2YIFZM" id="4qk_0lIsKCd" role="33vP2m">
+              <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+              <ref role="37wK5l" to="18ew:~FileUtil.createTmpDir():java.io.File" resolve="createTmpDir" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4qk_0lIsKCe" role="3cqZAp">
+          <node concept="2YIFZM" id="4qk_0lIsKCf" role="3clFbG">
+            <ref role="37wK5l" to="ur19:341WClvYwhA" resolve="writeContentsToFile" />
+            <ref role="1Pybhc" to="ur19:341WClvYweB" resolve="MergeDriverBackupUtil" />
+            <node concept="AH0OO" id="4qk_0lIsKCl" role="37wK5m">
+              <node concept="37vLTw" id="4qk_0lIsKCm" role="AHHXb">
+                <ref role="3cqZAo" node="4qk_0lIsKC4" resolve="contents" />
+              </node>
+              <node concept="10M0yZ" id="4qk_0lIsKCn" role="AHEQo">
+                <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+                <ref role="3cqZAo" to="ur19:341WClvYLKO" resolve="ORIGINAL" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4qk_0lIsKCq" role="37wK5m">
+              <node concept="37vLTw" id="4qk_0lIsKCr" role="2Oq$k0">
+                <ref role="3cqZAo" node="4qk_0lIsKC7" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKCs" role="2OqNvi">
+                <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4qk_0lIsKCt" role="37wK5m">
+              <ref role="3cqZAo" node="4qk_0lIsKCb" resolve="tmpDir" />
+            </node>
+            <node concept="2OqwBi" id="4qk_0lIsKCu" role="37wK5m">
+              <node concept="Rm8GO" id="4qk_0lIsKCv" role="2Oq$k0">
+                <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                <ref role="Rm8GQ" to="ur19:341WClvYLIk" resolve="BASE" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKCw" role="2OqNvi">
+                <ref role="37wK5l" to="ur19:341WClvYLIz" resolve="getSuffix" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4qk_0lIsKCx" role="3cqZAp">
+          <node concept="2YIFZM" id="4qk_0lIsKCy" role="3clFbG">
+            <ref role="37wK5l" to="ur19:341WClvYwhA" resolve="writeContentsToFile" />
+            <ref role="1Pybhc" to="ur19:341WClvYweB" resolve="MergeDriverBackupUtil" />
+            <node concept="AH0OO" id="4qk_0lIsKC$" role="37wK5m">
+              <node concept="37vLTw" id="4qk_0lIsKC_" role="AHHXb">
+                <ref role="3cqZAo" node="4qk_0lIsKC4" resolve="contents" />
+              </node>
+              <node concept="10M0yZ" id="4qk_0lIsKCA" role="AHEQo">
+                <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+                <ref role="3cqZAo" to="ur19:341WClvYLJE" resolve="CURRENT" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4qk_0lIsKCC" role="37wK5m">
+              <node concept="37vLTw" id="4qk_0lIsKCD" role="2Oq$k0">
+                <ref role="3cqZAo" node="4qk_0lIsKC7" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKCE" role="2OqNvi">
+                <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4qk_0lIsKCF" role="37wK5m">
+              <ref role="3cqZAo" node="4qk_0lIsKCb" resolve="tmpDir" />
+            </node>
+            <node concept="2OqwBi" id="4qk_0lIsKCG" role="37wK5m">
+              <node concept="Rm8GO" id="4qk_0lIsKCH" role="2Oq$k0">
+                <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
+                <ref role="Rm8GQ" to="ur19:341WClvYLIg" resolve="MINE" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKCI" role="2OqNvi">
+                <ref role="37wK5l" to="ur19:341WClvYLIz" resolve="getSuffix" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4qk_0lIsKCJ" role="3cqZAp">
+          <node concept="2YIFZM" id="4qk_0lIsKCK" role="3clFbG">
+            <ref role="1Pybhc" to="ur19:341WClvYweB" resolve="MergeDriverBackupUtil" />
+            <ref role="37wK5l" to="ur19:341WClvYwhA" resolve="writeContentsToFile" />
+            <node concept="AH0OO" id="4qk_0lIsKCM" role="37wK5m">
+              <node concept="37vLTw" id="4qk_0lIsKCN" role="AHHXb">
+                <ref role="3cqZAo" node="4qk_0lIsKC4" resolve="contents" />
+              </node>
+              <node concept="10M0yZ" id="4qk_0lIsKCO" role="AHEQo">
+                <ref role="3cqZAo" to="ur19:341WClvYLL9" resolve="LAST_REVISION" />
+                <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4qk_0lIsKCQ" role="37wK5m">
+              <node concept="37vLTw" id="4qk_0lIsKCR" role="2Oq$k0">
+                <ref role="3cqZAo" node="4qk_0lIsKC7" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKCS" role="2OqNvi">
+                <ref role="37wK5l" to="jlff:~VirtualFile.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="4qk_0lIsKCT" role="37wK5m">
+              <ref role="3cqZAo" node="4qk_0lIsKCb" resolve="tmpDir" />
+            </node>
+            <node concept="2OqwBi" id="4qk_0lIsKCU" role="37wK5m">
+              <node concept="Rm8GO" id="4qk_0lIsKCV" role="2Oq$k0">
+                <ref role="Rm8GQ" to="ur19:341WClvYLIi" resolve="REPOSITORY" />
+                <ref role="1Px2BO" to="ur19:341WClvYLId" resolve="MergeVersion" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKCW" role="2OqNvi">
+                <ref role="37wK5l" to="ur19:341WClvYLIz" resolve="getSuffix" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4qk_0lIsKCX" role="3cqZAp">
+          <node concept="3cpWsn" id="4qk_0lIsKCY" role="3cpWs9">
+            <property role="TrG5h" value="zipfile" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3uibUv" id="4qk_0lIsKCZ" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+            <node concept="1rXfSq" id="4qk_0lIsKD0" role="33vP2m">
+              <ref role="37wK5l" node="nQhvklQRWa" resolve="chooseZipFileForModelFile" />
+              <node concept="2YIFZM" id="4qk_0lIsKD1" role="37wK5m">
+                <ref role="37wK5l" to="4hrd:~VirtualFileUtils.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolve="toIFile" />
+                <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
+                <node concept="37vLTw" id="4qk_0lIsKD2" role="37wK5m">
+                  <ref role="3cqZAo" node="4qk_0lIsKC7" resolve="file" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4qk_0lIsKD3" role="3cqZAp">
+          <node concept="2OqwBi" id="4qk_0lIsKD4" role="3clFbG">
+            <node concept="2OqwBi" id="4qk_0lIsKD5" role="2Oq$k0">
+              <node concept="37vLTw" id="4qk_0lIsKD6" role="2Oq$k0">
+                <ref role="3cqZAo" node="4qk_0lIsKCY" resolve="zipfile" />
+              </node>
+              <node concept="liA8E" id="4qk_0lIsKD7" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.getParentFile():java.io.File" resolve="getParentFile" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4qk_0lIsKD8" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~File.mkdirs():boolean" resolve="mkdirs" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4qk_0lIsKD9" role="3cqZAp">
+          <node concept="2YIFZM" id="4qk_0lIsKDa" role="3clFbG">
+            <ref role="37wK5l" to="18ew:~FileUtil.zip(java.io.File,java.io.File):void" resolve="zip" />
+            <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+            <node concept="37vLTw" id="4qk_0lIsKDb" role="37wK5m">
+              <ref role="3cqZAo" node="4qk_0lIsKCb" resolve="tmpDir" />
+            </node>
+            <node concept="37vLTw" id="4qk_0lIsKDc" role="37wK5m">
+              <ref role="3cqZAo" node="4qk_0lIsKCY" resolve="zipfile" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4qk_0lIsKDd" role="3cqZAp">
+          <node concept="2YIFZM" id="4qk_0lIsKDe" role="3clFbG">
+            <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+            <ref role="37wK5l" to="18ew:~FileUtil.delete(java.io.File):boolean" resolve="delete" />
+            <node concept="37vLTw" id="4qk_0lIsKDf" role="37wK5m">
+              <ref role="3cqZAo" node="4qk_0lIsKCb" resolve="tmpDir" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4qk_0lIsKDg" role="3cqZAp">
+          <node concept="37vLTw" id="4qk_0lIsKDh" role="3cqZAk">
+            <ref role="3cqZAo" node="4qk_0lIsKCY" resolve="zipfile" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="4qk_0lIsKDi" role="Sfmx6">
         <ref role="3uigEE" to="guwi:~IOException" resolve="IOException" />
       </node>
     </node>

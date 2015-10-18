@@ -151,6 +151,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
@@ -696,8 +697,11 @@
                                 </node>
                                 <node concept="3O6GUB" id="3J6h25QTeKh" role="2OqNvi">
                                   <node concept="25Kdxt" id="3J6h25QTeKi" role="3QVz_e">
-                                    <node concept="37vLTw" id="3J6h25QThhL" role="25KhWn">
-                                      <ref role="3cqZAo" node="3J6h25QTekh" resolve="c" />
+                                    <node concept="2OqwBi" id="5VdAhx7TBXE" role="25KhWn">
+                                      <node concept="37vLTw" id="5VdAhx7TAkF" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="3J6h25QTekh" resolve="c" />
+                                      </node>
+                                      <node concept="1rGIog" id="5VdAhx7TCeu" role="2OqNvi" />
                                     </node>
                                   </node>
                                 </node>

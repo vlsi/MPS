@@ -4,6 +4,9 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -16,6 +19,14 @@ public interface IInterfacedFinder extends IFinder {
   public String getDescription();
   public String getLongDescription();
   public boolean canNavigate();
+  @Nullable
+  public SNodeReference getDeclarationNode();
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder#getDeclarationNode() }
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SNode getNodeToNavigate();
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor);
 }

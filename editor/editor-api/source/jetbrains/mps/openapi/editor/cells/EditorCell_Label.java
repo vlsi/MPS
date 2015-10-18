@@ -42,5 +42,7 @@ public interface EditorCell_Label extends EditorCell {
 
   void setCaretEnabled(boolean enabled);
 
+  int getCaretPosition();
+
   void setCaretPosition(int position);
 }

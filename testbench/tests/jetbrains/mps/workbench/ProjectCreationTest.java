@@ -18,7 +18,9 @@ package jetbrains.mps.workbench;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -26,18 +28,25 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.*;
 
 /**
+ * AP:
+ * A little incorrect test which checks the output xml config files in the project directory written by idea platform (like misc.xml etc.)
+ * The problem is that the IDEA platform tends to get rid of xml configuration files in the project directory
+ * on the empty project creation.
+ * So the list of xml configuration files is not invariant and this test does not make much sense.
+ *
  * Added on Oct 16, 2010
  *
  * @author Evgeny Gerashchenko
@@ -48,28 +57,17 @@ public class ProjectCreationTest {
   private static final String SOLUTION_NAMESPACE = "CreatedSandbox";
   private static final String PROJECT_PROPERTIES_DIR = PROJECT_NAME + "/.mps";
   private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
-      PROJECT_PROPERTIES_DIR + "/misc.xml",
-      PROJECT_PROPERTIES_DIR + "/vcs.xml",
       PROJECT_PROPERTIES_DIR + "/workspace.xml",
       PROJECT_PROPERTIES_DIR + "/version.xml");
 
   private static final List<String> EMPTY_PROJECT_PATH_LIST_FB = Arrays.asList(
       PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT);
   private static final List<String> EMPTY_PROJECT_PATH_LIST_DB = PROJECT_PROPERTIES_DIR_CONTENT;
-
   static final String LANGUAGES_ROOT = "languages";
   static final String SOLUTIONS_ROOT = "solutions";
-
-  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE;
-  static {
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<String>();
-    final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
-    final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(languageModule);
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(solutionModule);
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(languageModels(PROJECT_NAME, LANGUAGE_NAMESPACE));
-    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(solutionModels(PROJECT_NAME, SOLUTION_NAMESPACE));
-  }
+  private static List<String> PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE;
+  private static List<String> PROJECT_WITH_MODULES_PATH_LIST_FB;
+  private static List<String> PROJECT_WITH_MODULES_PATH_LIST_DB;
 
   // project/root/module/...
   private static final String PATH_IN_PROJECT = "%s/%s/%s/%s/%s.%s";
@@ -92,19 +90,23 @@ public class ProjectCreationTest {
             MPSExtentions.MODEL));
   }
 
-
-  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_FB = CollectionUtil.union(
-      Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
-      PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
-  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
-
   private IFile myTmpDir;
-
   private Project myProject;
 
   @BeforeClass
   public static void init() {
     IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<String>();
+    final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
+    final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(languageModule);
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(solutionModule);
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(languageModels(PROJECT_NAME, LANGUAGE_NAMESPACE));
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(solutionModels(PROJECT_NAME, SOLUTION_NAMESPACE));
+    PROJECT_WITH_MODULES_PATH_LIST_FB = CollectionUtil.union(
+        Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
+        PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
+    PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
   }
 
   @Test
@@ -128,32 +130,46 @@ public class ProjectCreationTest {
   }
 
   private void invokeTest(final ProjectOptionsProvider projectOptionsProvider, List<String> expectedPathList) {
+    final Reference<Throwable> refThrowable = new Reference<Throwable>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       @Override
       public void run() {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            myTmpDir = IFileUtils.createTmpDir();
-
             try {
-              ProjectFactory factory = new ProjectFactory(null, projectOptionsProvider.getProjectOptions(myTmpDir));
-              myProject = factory.createProject();
-              factory.activate();
-              myProject.save();
-            } catch (ProjectNotCreatedException e) {
-              Assert.fail();
+              myTmpDir = IFileUtils.createTmpDir();
+              try {
+                ProjectFactory factory = new ProjectFactory(null, projectOptionsProvider.getProjectOptions(myTmpDir));
+                myProject = factory.createProject();
+                factory.activate();
+                myProject.save();
+              } catch (ProjectNotCreatedException e) {
+                Assert.fail();
+              }
+            } catch (Throwable t) {
+              refThrowable.set(t);
             }
           }
         });
       }
     }, ModalityState.defaultModalityState());
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    if (!refThrowable.isNull()) {
+      throw new RuntimeException(refThrowable.get());
+    }
+    Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        ProjectUtil.closeAndDispose(myProject);
+        try {
+          ProjectUtil.closeAndDispose(myProject);
+        } catch (Throwable t) {
+          refThrowable.set(t);
+        }
       }
     });
+    if (exception != null) {
+      throw new RuntimeException(exception);
+    }
     checkFilePathList(myTmpDir, expectedPathList);
   }
 

@@ -41,8 +41,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import org.jetbrains.annotations.NonNls;
@@ -327,20 +326,11 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
   private AnActionEvent createEvent(AnAction action) {
     return new AnActionEvent(null, DataManager.getInstance().getDataContext(this.getContentPane()), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
   }
-  private void openNode(final IBreakpoint breakpoint, final boolean focus, final boolean select) {
+  private void openNode(IBreakpoint breakpoint, boolean focus, boolean select) {
     if (!((breakpoint instanceof ILocationBreakpoint))) {
       return;
     }
-    myProject.getModelAccess().executeCommand(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
-        if (node == null) {
-          return;
-        }
-        NavigationSupport.getInstance().openNode(myProject, node, focus, select);
-      }
-    });
+    new EditorNavigator(myProject).shallFocus(focus).shallSelect(select).open(((ILocationBreakpoint) breakpoint).getLocation().getNodePointer());
   }
   @Nullable
   @Override

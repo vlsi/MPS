@@ -25,9 +25,10 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -118,15 +119,10 @@ public class FindUsagesDialog extends DialogWrapper {
     @Override
     public void goToFinder(final ReloadableFinder finder) {
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          SNode finderNode = finder.getNodeToNavigate();
-          if (finderNode == null) return;
-          FindUsagesDialog.this.doCancelAction();
-          NavigationSupport.getInstance().openNode(mpsProject, finderNode, true, !(finderNode.getModel() != null && finderNode.getParent() == null));
-        }
-      });
+      SNodeReference finderDeclaration = finder.getDeclarationNode();
+      if (finderDeclaration != null && mpsProject != null) {
+        new EditorNavigator(mpsProject).shallFocus(true).selectIfChild().open(finderDeclaration);
+      }
     }
 
     @Override
