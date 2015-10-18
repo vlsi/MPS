@@ -1489,7 +1489,7 @@
   </node>
   <node concept="13h7C7" id="1JTUOcBrlbi">
     <property role="3GE5qa" value="refactoring" />
-    <ref role="13h7C2" to="gqi5:1JTUOcBqQQf" resolve="Refactoringlog" />
+    <ref role="13h7C2" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
     <node concept="13i0hz" id="4uVwhQyPQ_Z" role="13h7CS">
       <property role="TrG5h" value="getDescriptor" />
       <node concept="3Tm1VV" id="4uVwhQyPQA0" role="1B3o_S" />
@@ -1497,21 +1497,16 @@
         <node concept="3clFbF" id="4uVwhQyPQEv" role="3cqZAp">
           <node concept="2ShNRf" id="4uVwhQyPPNW" role="3clFbG">
             <node concept="1pGfFk" id="4uVwhQyPPNV" role="2ShVmc">
-              <ref role="37wK5l" to="6f4m:4uVwhQyPurm" resolve="RefactoringStepReference" />
-              <node concept="2OqwBi" id="4uVwhQyPQJJ" role="37wK5m">
-                <node concept="2OqwBi" id="4uVwhQyPQuN" role="2Oq$k0">
-                  <node concept="2JrnkZ" id="4uVwhQyPQtu" role="2Oq$k0">
-                    <node concept="2OqwBi" id="4uVwhQyPPSz" role="2JrQYb">
-                      <node concept="13iPFW" id="4uVwhQyPPPr" role="2Oq$k0" />
-                      <node concept="I4A8Y" id="4uVwhQyPQ4x" role="2OqNvi" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4uVwhQyPQ$c" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+              <ref role="37wK5l" to="6f4m:4uVwhQyPurm" resolve="RefactoringLogReference" />
+              <node concept="2OqwBi" id="4uVwhQyPQuN" role="37wK5m">
+                <node concept="2JrnkZ" id="4uVwhQyPQtu" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4uVwhQyPPSz" role="2JrQYb">
+                    <node concept="13iPFW" id="4uVwhQyPPPr" role="2Oq$k0" />
+                    <node concept="I4A8Y" id="4uVwhQyPQ4x" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="liA8E" id="4uVwhQyPQP9" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                <node concept="liA8E" id="4uVwhQyPQ$c" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                 </node>
               </node>
               <node concept="2OqwBi" id="4uVwhQyPQXZ" role="37wK5m">
@@ -1525,7 +1520,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="4uVwhQyPQDa" role="3clF45">
-        <ref role="3uigEE" to="6f4m:4uVwhQyPurf" resolve="RefactoringStepReference" />
+        <ref role="3uigEE" to="6f4m:4uVwhQyPurf" resolve="RefactoringLogReference" />
       </node>
     </node>
     <node concept="13i0hz" id="1JTUOcBrmo$" role="13h7CS">
@@ -1611,7 +1606,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="1JTUOcBrmoG" role="3clF45">
-        <ref role="3uigEE" to="6f4m:4uVwhQyPtVd" resolve="RefactoringStep" />
+        <ref role="3uigEE" to="6f4m:4uVwhQyPtVd" resolve="RefactoringLog" />
       </node>
     </node>
     <node concept="13hLZK" id="1JTUOcBrlbj" role="13h7CW">

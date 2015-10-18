@@ -8,13 +8,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringStepReference;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringStep;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -34,18 +34,18 @@ public final class RefactoringLog_BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.util.structure.RefactoringLog");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<RefactoringStepReference> getDescriptor_id4uVwhQyPQ_Z = new SMethodBuilder<RefactoringStepReference>(new SJavaCompoundTypeImpl(RefactoringStepReference.class)).name("getDescriptor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPQ_Z").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<RefactoringStep> getImplementation_id1JTUOcBrmo$ = new SMethodBuilder<RefactoringStep>(new SJavaCompoundTypeImpl(RefactoringStep.class)).name("getImplementation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1JTUOcBrmo$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<RefactoringLogReference> getDescriptor_id4uVwhQyPQ_Z = new SMethodBuilder<RefactoringLogReference>(new SJavaCompoundTypeImpl(RefactoringLogReference.class)).name("getDescriptor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPQ_Z").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
+  public static final SMethod<RefactoringLog> getImplementation_id1JTUOcBrmo$ = new SMethodBuilder<RefactoringLog>(new SJavaCompoundTypeImpl(RefactoringLog.class)).name("getImplementation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1JTUOcBrmo$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescriptor_id4uVwhQyPQ_Z, getImplementation_id1JTUOcBrmo$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  private static RefactoringStepReference getDescriptor_id4uVwhQyPQ_Z(@NotNull SNode __thisNode__) {
-    return new RefactoringStepReference(SNodeOperations.getModel(__thisNode__).getModule().getModuleReference(), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")));
+  private static RefactoringLogReference getDescriptor_id4uVwhQyPQ_Z(@NotNull SNode __thisNode__) {
+    return new RefactoringLogReference(SNodeOperations.getModel(__thisNode__).getModule(), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")));
   }
-  private static RefactoringStep getImplementation_id1JTUOcBrmo$(@NotNull SNode __thisNode__) {
+  private static RefactoringLog getImplementation_id1JTUOcBrmo$(@NotNull SNode __thisNode__) {
     return new RefactoringStepImpl(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), RefactoringLog_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(__thisNode__), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d90L, "executeAfter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d9dL, 0x1bf9eb43276b6d9eL, "refactoring")) != null);
@@ -54,8 +54,8 @@ public final class RefactoringLog_BehaviorDescriptor extends BaseBHDescriptor {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d9dL, 0x1bf9eb43276b6d9eL, "refactoring"));
       }
-    }).select(new ISelector<SNode, RefactoringStepReference>() {
-      public RefactoringStepReference select(SNode it) {
+    }).select(new ISelector<SNode, RefactoringLogReference>() {
+      public RefactoringLogReference select(SNode it) {
         return RefactoringLog_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(it);
       }
     }), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).select(new ISelector<SNode, RefactoringPart>() {

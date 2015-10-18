@@ -37,7 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.migration.component.util.MigrationComponent;
+import jetbrains.mps.migration.component.util.MigrationManagerImpl;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -253,7 +253,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
     updateUsedLanguagesVersions(modules);
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (!(MigrationComponent.isMigrationRequired(myMpsProject, modules2Check))) {
+    if (!(MigrationManagerImpl.isMigrationRequired(myMpsProject, modules2Check))) {
       return;
     }
 
@@ -286,7 +286,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       }
     });
     updateUsedLanguagesVersions(modules2Check);
-    if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
+    if (!(MigrationManagerImpl.isModuleMigrationRequired(modules2Check))) {
       return;
     }
 

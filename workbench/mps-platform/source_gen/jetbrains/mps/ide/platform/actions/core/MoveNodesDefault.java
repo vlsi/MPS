@@ -199,6 +199,8 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         return MapSequence.fromMap(it.value()).isNotEmpty();
       }
     }).toListSequence();
+    // todo: collect changes after paticipant selection 
+    // todo: select options, not participants 
     List<Integer> selectedOptions = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(changesAsList).select(new ISelector<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>, String>() {
       public String select(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> it) {
         return it.key().getDescription();

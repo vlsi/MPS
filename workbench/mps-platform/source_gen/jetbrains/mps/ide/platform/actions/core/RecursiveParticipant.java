@@ -30,6 +30,7 @@ public interface RecursiveParticipant<InitialDataObject, FinalDataObject> extend
             return eq_7nv468_a0a0a0a0a0a0a0a3d_0(parent.getParticipant(), RecursiveParticipantState.this.getParticipant()) && eq_7nv468_a0a0a0a0a0a0a0a3d(parent.getInitialState(), RecursiveParticipantState.this.getInitialState());
           }
         })) {
+          // todo: checked exception 
           throw new IllegalStateException("infinite recursion detected");
         } else {
           return ((RecursiveParticipant<I, F>) participant).getChanges(getInitialState(), repository, searchScope, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(this))));

@@ -26,11 +26,7 @@
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids()" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="qlpt" ref="r:6b933bd4-3712-4b1d-8046-c244bf51a0fc(jetbrains.mps.lang.project.constraints)" />
-    <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
-    <import index="gqi5" ref="r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util.structure)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -218,21 +214,6 @@
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="5383422241790532083" name="tags" index="3nqlJM" />
-      </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
@@ -248,9 +229,6 @@
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -428,45 +406,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="5UnT0284Vhn" role="jymVt" />
-    <node concept="2tJIrI" id="5UnT0284V2W" role="jymVt" />
-    <node concept="3clFb_" id="2RG318eVG2e" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="execute" />
-      <property role="IEkAT" value="false" />
-      <node concept="37vLTG" id="2RG318eVG2f" role="3clF46">
-        <property role="TrG5h" value="moduleToMigrate" />
-        <node concept="3uibUv" id="2RG318eVG2g" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="2RG318eVG2h" role="3clF46">
-        <property role="TrG5h" value="dataCollector" />
-        <node concept="3uibUv" id="2RG318eW1nI" role="1tU5fm">
-          <ref role="3uigEE" node="2RG318eW0B2" resolve="DataCollector" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="2RG318eVG2j" role="1B3o_S" />
-      <node concept="3clFbS" id="2RG318eVG2k" role="3clF47" />
-      <node concept="3uibUv" id="14fCAVcflV" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="2AHcQZ" id="2RG318eXq3w" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
-      <node concept="P$JXv" id="5UnT0284UEh" role="lGtFl">
-        <node concept="TZ5HI" id="5UnT0284UEi" role="3nqlJM">
-          <node concept="TZ5HA" id="5UnT0284UEj" role="3HnX3l">
-            <node concept="1dT_AC" id="5UnT0284UG_" role="1dT_Ay">
-              <property role="1dT_AB" value="use setDataCollector+execute methods. This was deprecated before 3.2, can be removed after 3.2. Left for compatibility in projects that were already migrated " />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5UnT0284UEk" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="3Tm1VV" id="2RG318eVG2B" role="1B3o_S" />
   </node>
   <node concept="3HP615" id="2RG318eW0B2">
@@ -573,78 +512,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5UnT0284VSa" role="jymVt" />
-    <node concept="3clFb_" id="5UnT0284VJS" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="execute" />
-      <property role="IEkAT" value="false" />
-      <node concept="37vLTG" id="5UnT0284VJT" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="5UnT0284VJU" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="5UnT0284VJV" role="1B3o_S" />
-      <node concept="3uibUv" id="5UnT0284VJX" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="2AHcQZ" id="5UnT0284VJY" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
-      <node concept="3clFbS" id="5UnT0284VJZ" role="3clF47">
-        <node concept="3SKdUt" id="5UnT0284W9w" role="3cqZAp">
-          <node concept="3SKdUq" id="5UnT0284W9R" role="3SKWNk">
-            <property role="3SKdUp" value="todo remove implementation after 3.2. " />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5UnT0284W4M" role="3cqZAp">
-          <node concept="10Nm6u" id="5UnT0284W4O" role="3cqZAk" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5UnT0284VXN" role="jymVt" />
-    <node concept="3clFb_" id="5Fumpqe3tuN" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="execute" />
-      <node concept="37vLTG" id="5UnT0284UbI" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="5UnT0284Ug7" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3bMTD0E__zd" role="3clF46">
-        <property role="TrG5h" value="c" />
-        <node concept="3uibUv" id="2RG318eW9_$" role="1tU5fm">
-          <ref role="3uigEE" node="2RG318eW0B2" resolve="DataCollector" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="14fCAVbU4Q" role="3clF45">
-        <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-      </node>
-      <node concept="3Tm1VV" id="5Fumpqe3tuR" role="1B3o_S" />
-      <node concept="3clFbS" id="5Fumpqe3tuT" role="3clF47">
-        <node concept="3SKdUt" id="5UnT0285q09" role="3cqZAp">
-          <node concept="3SKdUq" id="5UnT0285q5G" role="3SKWNk">
-            <property role="3SKdUp" value="todo remove after 3.2" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5UnT0284Wb5" role="3cqZAp">
-          <node concept="1rXfSq" id="5UnT0284Wb4" role="3clFbG">
-            <ref role="37wK5l" node="5UnT0284VJL" resolve="setDataCollector" />
-            <node concept="37vLTw" id="5UnT0284Wfy" role="37wK5m">
-              <ref role="3cqZAo" node="3bMTD0E__zd" resolve="c" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5UnT0284WnJ" role="3cqZAp">
-          <node concept="1rXfSq" id="5UnT0284WnH" role="3clFbG">
-            <ref role="37wK5l" node="5UnT0284VJS" resolve="execute" />
-            <node concept="37vLTw" id="5UnT0284Ws$" role="37wK5m">
-              <ref role="3cqZAo" node="5UnT0284UbI" resolve="module" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="5$zfhXzrs$M" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
@@ -2038,9 +1905,6 @@
         <node concept="17QB3L" id="2RG318eWq24" role="1tU5fm" />
       </node>
     </node>
-    <node concept="3uibUv" id="4yRsQKntGne" role="EKbjA">
-      <ref role="3uigEE" node="4yRsQKntBpt" resolve="MigrationUnitReference" />
-    </node>
   </node>
   <node concept="312cEu" id="4uVwhQyQ2vB">
     <property role="TrG5h" value="MoveNodePart" />
@@ -2580,12 +2444,12 @@
     </node>
   </node>
   <node concept="312cEu" id="4uVwhQyPurf">
-    <property role="TrG5h" value="RefactoringStepReference" />
+    <property role="TrG5h" value="RefactoringLogReference" />
     <node concept="312cEg" id="4uVwhQyPurg" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="module" />
-      <node concept="3uibUv" id="4uVwhQyPyub" role="1tU5fm">
-        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      <node concept="3uibUv" id="79xDgbheUtA" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
       </node>
       <node concept="3Tm6S6" id="4uVwhQyPuri" role="1B3o_S" />
     </node>
@@ -2628,8 +2492,8 @@
       </node>
       <node concept="37vLTG" id="4uVwhQyPurA" role="3clF46">
         <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="4uVwhQyPzvH" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+        <node concept="3uibUv" id="79xDgbheUBc" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
         </node>
       </node>
       <node concept="37vLTG" id="4uVwhQyPurC" role="3clF46">
@@ -2640,8 +2504,8 @@
     <node concept="3Tm1VV" id="4uVwhQyPurE" role="1B3o_S" />
     <node concept="3clFb_" id="4uVwhQyPurF" role="jymVt">
       <property role="TrG5h" value="getModule" />
-      <node concept="3uibUv" id="4uVwhQyP$A3" role="3clF45">
-        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      <node concept="3uibUv" id="79xDgbheUBZ" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
       </node>
       <node concept="3Tm1VV" id="4uVwhQyPurH" role="1B3o_S" />
       <node concept="3clFbS" id="4uVwhQyPurI" role="3clF47">
@@ -2721,11 +2585,11 @@
           <node concept="3cpWsn" id="4uVwhQyPusi" role="3cpWs9">
             <property role="TrG5h" value="that" />
             <node concept="3uibUv" id="4uVwhQyPusj" role="1tU5fm">
-              <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+              <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
             </node>
             <node concept="10QFUN" id="4uVwhQyPusk" role="33vP2m">
               <node concept="3uibUv" id="4uVwhQyPusl" role="10QFUM">
-                <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+                <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
               </node>
               <node concept="37vLTw" id="4uVwhQyPusm" role="10QFUP">
                 <ref role="3cqZAo" node="4uVwhQyPusH" resolve="o" />
@@ -2828,9 +2692,6 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3uibUv" id="4yRsQKntBLP" role="EKbjA">
-      <ref role="3uigEE" node="4yRsQKntBpt" resolve="MigrationUnitReference" />
-    </node>
   </node>
   <node concept="312cEu" id="4uVwhQyPD4s">
     <property role="TrG5h" value="RefactoringStepImpl" />
@@ -2843,7 +2704,7 @@
       <property role="TrG5h" value="myDescriptor" />
       <node concept="3Tm6S6" id="4uVwhQyPG8c" role="1B3o_S" />
       <node concept="3uibUv" id="4uVwhQyPG8d" role="1tU5fm">
-        <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+        <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
       </node>
     </node>
     <node concept="312cEg" id="4uVwhQyPFRe" role="jymVt">
@@ -2851,7 +2712,7 @@
       <node concept="3Tm6S6" id="4uVwhQyPFRf" role="1B3o_S" />
       <node concept="_YKpA" id="4uVwhQyPGf7" role="1tU5fm">
         <node concept="3uibUv" id="4uVwhQyPGmV" role="_ZDj9">
-          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
         </node>
       </node>
     </node>
@@ -2896,7 +2757,7 @@
             <node concept="2ShNRf" id="4uVwhQyPWQc" role="37vLTx">
               <node concept="Tc6Ow" id="4uVwhQyPWQ8" role="2ShVmc">
                 <node concept="3uibUv" id="4uVwhQyPWQ9" role="HW$YZ">
-                  <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+                  <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
                 </node>
                 <node concept="37vLTw" id="4uVwhQyPX7W" role="I$8f6">
                   <ref role="3cqZAo" node="4uVwhQyPLmk" resolve="executeAfter" />
@@ -2930,14 +2791,14 @@
       <node concept="37vLTG" id="4uVwhQyPLiC" role="3clF46">
         <property role="TrG5h" value="descriptor" />
         <node concept="3uibUv" id="4uVwhQyPLkl" role="1tU5fm">
-          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
         </node>
       </node>
       <node concept="37vLTG" id="4uVwhQyPLmk" role="3clF46">
         <property role="TrG5h" value="executeAfter" />
         <node concept="A3Dl8" id="4uVwhQyPWl8" role="1tU5fm">
           <node concept="3uibUv" id="4uVwhQyPWla" role="A3Ik2">
-            <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+            <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
           </node>
         </node>
       </node>
@@ -2967,7 +2828,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getDescriptor" />
       <node concept="3uibUv" id="4uVwhQyPD5a" role="3clF45">
-        <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+        <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
       </node>
       <node concept="3Tm1VV" id="4uVwhQyPD5b" role="1B3o_S" />
       <node concept="3clFbS" id="4uVwhQyPD5d" role="3clF47">
@@ -2983,7 +2844,7 @@
       <property role="TrG5h" value="getExecuteAfter" />
       <node concept="A3Dl8" id="4uVwhQyPD5h" role="3clF45">
         <node concept="3uibUv" id="4uVwhQyPD5i" role="A3Ik2">
-          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4uVwhQyPD5j" role="1B3o_S" />
@@ -3035,7 +2896,7 @@
     </node>
     <node concept="3Tm1VV" id="4uVwhQyPD4t" role="1B3o_S" />
     <node concept="3uibUv" id="4uVwhQyPD4N" role="EKbjA">
-      <ref role="3uigEE" node="4uVwhQyPtVd" resolve="RefactoringStep" />
+      <ref role="3uigEE" node="4uVwhQyPtVd" resolve="RefactoringLog" />
     </node>
   </node>
   <node concept="3HP615" id="4uVwhQyPI7d">
@@ -3079,7 +2940,7 @@
     <node concept="3Tm1VV" id="4uVwhQyPI7e" role="1B3o_S" />
   </node>
   <node concept="3HP615" id="4uVwhQyPtVd">
-    <property role="TrG5h" value="RefactoringStep" />
+    <property role="TrG5h" value="RefactoringLog" />
     <node concept="3clFb_" id="4uVwhQyPtVe" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getCaption" />
@@ -3091,7 +2952,7 @@
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getDescriptor" />
       <node concept="3uibUv" id="4uVwhQyPCgy" role="3clF45">
-        <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+        <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
       </node>
       <node concept="3Tm1VV" id="4uVwhQyPtVk" role="1B3o_S" />
       <node concept="3clFbS" id="4uVwhQyPtVl" role="3clF47" />
@@ -3101,7 +2962,7 @@
       <property role="TrG5h" value="getExecuteAfter" />
       <node concept="A3Dl8" id="4uVwhQyPtVn" role="3clF45">
         <node concept="3uibUv" id="4uVwhQyPChq" role="A3Ik2">
-          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringStepReference" />
+          <ref role="3uigEE" node="4uVwhQyPurf" resolve="RefactoringLogReference" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4uVwhQyPtVp" role="1B3o_S" />
@@ -3199,10 +3060,6 @@
     <node concept="16euLQ" id="193i4_4XStO" role="16eVyc">
       <property role="TrG5h" value="T" />
     </node>
-  </node>
-  <node concept="3HP615" id="4yRsQKntBpt">
-    <property role="TrG5h" value="MigrationUnitReference" />
-    <node concept="3Tm1VV" id="4yRsQKntBpu" role="1B3o_S" />
   </node>
 </model>
 

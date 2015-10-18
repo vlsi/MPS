@@ -7,7 +7,7 @@ import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 
-public class MigrationScriptReference implements MigrationUnitReference {
+public class MigrationScriptReference {
   private final SLanguage language;
   private final int fromVersion;
   public MigrationScriptReference(SLanguage language, int fromVersion) {

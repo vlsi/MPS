@@ -7,24 +7,24 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class RefactoringStepImpl implements RefactoringStep {
+public class RefactoringStepImpl implements RefactoringLog {
   private String myCaption;
-  private RefactoringStepReference myDescriptor;
-  private List<RefactoringStepReference> myExecuteAfter;
+  private RefactoringLogReference myDescriptor;
+  private List<RefactoringLogReference> myExecuteAfter;
   private List<RefactoringPart> myParts;
-  public RefactoringStepImpl(String caption, RefactoringStepReference descriptor, Iterable<RefactoringStepReference> executeAfter, Iterable<RefactoringPart> parts) {
+  public RefactoringStepImpl(String caption, RefactoringLogReference descriptor, Iterable<RefactoringLogReference> executeAfter, Iterable<RefactoringPart> parts) {
     myCaption = caption;
     myDescriptor = descriptor;
-    myExecuteAfter = ListSequence.fromListWithValues(new ArrayList<RefactoringStepReference>(), executeAfter);
+    myExecuteAfter = ListSequence.fromListWithValues(new ArrayList<RefactoringLogReference>(), executeAfter);
     myParts = ListSequence.fromListWithValues(new ArrayList<RefactoringPart>(), parts);
   }
   public String getCaption() {
     return myCaption;
   }
-  public RefactoringStepReference getDescriptor() {
+  public RefactoringLogReference getDescriptor() {
     return myDescriptor;
   }
-  public Iterable<RefactoringStepReference> getExecuteAfter() {
+  public Iterable<RefactoringLogReference> getExecuteAfter() {
     return myExecuteAfter;
   }
   public void execute(SModule module) {

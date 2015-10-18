@@ -188,9 +188,9 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       return;
     }
 
-    int languageStepsCount = myManager.languageStepsCount();
+    int languageStepsCount = myManager.moduleStepsCount();
     stepNum = 0;
-    while (executeSingleStep(myManager.nextLanguageStep())) {
+    while (executeSingleStep(myManager.nextModuleStep())) {
       stepNum++;
       setFraction(progress, ProgressEstimation.languageMigrations(1.0 * stepNum / languageStepsCount));
     }

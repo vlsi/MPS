@@ -83,7 +83,7 @@ public class Migrations_ActionGroup extends GeneratedActionGroup {
       SetSequence.fromSet(languages).visitAll(new IVisitor<SLanguage>() {
         public void visit(SLanguage it) {
           for (int ver = 0; ver < it.getLanguageVersion(); ver++) {
-            MigrationScript script = mc.fetchLanguageScript(new MigrationScriptReference(it, ver), true);
+            MigrationScript script = mc.fetchMigrationScript(new MigrationScriptReference(it, ver), true);
             if (script == null) {
               continue;
             }

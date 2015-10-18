@@ -119,7 +119,7 @@ __switch__:
                           this.__CP__ = 2;
                           break;
                         case 4:
-                          this._7_script = mc.fetchLanguageScript(new MigrationScriptReference(it, _2_ver), true);
+                          this._7_script = mc.fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
                           this.__CP__ = 8;
                           break;
                         case 9:

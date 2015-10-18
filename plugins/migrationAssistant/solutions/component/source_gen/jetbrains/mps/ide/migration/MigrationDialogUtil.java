@@ -5,22 +5,28 @@ package jetbrains.mps.ide.migration;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.openapi.ui.Messages;
 
 public class MigrationDialogUtil {
   private static final int MIGRATIONS_TO_SHOW_COUNT = 3;
 
-  public static boolean showMigrationConfirmation(final Project p, final Iterable<SModule> modules, final MigrationManager m) {
+  public static boolean showMigrationConfirmation(Project p, final Iterable<SModule> modules, final MigrationManager m) {
     final StringBuilder text = new StringBuilder();
     text.append("This project needs to be migrated.\n");
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<String> migrations;
-        migrations = m.getProjectMigrationsToApply(ProjectHelper.toMPSProject(p));
+        migrations = Sequence.fromIterable(m.getProjectMigrationsToApply()).select(new ISelector<ProjectMigration, String>() {
+          public String select(ProjectMigration it) {
+            return it.getDescription();
+          }
+        });
         if (Sequence.fromIterable(migrations).isNotEmpty()) {
           text.append("  Project migrations to be executed:\n");
           Sequence.fromIterable(migrations).take(MIGRATIONS_TO_SHOW_COUNT).visitAll(new IVisitor<String>() {
@@ -33,7 +39,11 @@ public class MigrationDialogUtil {
           }
         }
 
-        migrations = m.getLanguageMigrationsToApply(modules);
+        migrations = Sequence.fromIterable(m.getModuleMigrationsToApply(modules)).select(new ISelector<Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference>, String>() {
+          public String select(Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference> it) {
+            return it._1().getKindDescription(it._0());
+          }
+        });
         if (Sequence.fromIterable(migrations).isNotEmpty()) {
           text.append("  Language migrations to be executed:\n");
           Sequence.fromIterable(migrations).take(MIGRATIONS_TO_SHOW_COUNT).visitAll(new IVisitor<String>() {
