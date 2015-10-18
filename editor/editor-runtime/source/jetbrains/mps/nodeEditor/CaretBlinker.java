@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -27,7 +28,7 @@ public class CaretBlinker {
   private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
-    return ServiceManager.getService(CaretBlinker.class);
+    return ApplicationManager.getApplication() == null ? null : ServiceManager.getService(CaretBlinker.class);
   }
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
@@ -78,9 +79,11 @@ public class CaretBlinker {
 
   private class MyRunnable implements Runnable {
     private int myBlinkRate;
+
     public MyRunnable(int blinkValue) {
       setBlinkRate(blinkValue);
     }
+
     @Override
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {

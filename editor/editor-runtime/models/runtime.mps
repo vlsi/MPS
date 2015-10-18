@@ -2937,6 +2937,14 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="4AUcghxsOv6" role="3cqZAp">
+          <node concept="1rXfSq" id="4AUcghxsOv4" role="3clFbG">
+            <ref role="37wK5l" to="exr9:~EditorComponent.setNoVirtualFile(boolean):void" resolve="setNoVirtualFile" />
+            <node concept="3clFbT" id="4AUcghxsOT_" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="2qx2hw9g_n5" role="jymVt" />
@@ -2977,7 +2985,7 @@
       </node>
       <node concept="TZ5HA" id="7jFHz5ktb7k" role="TZ5H$">
         <node concept="1dT_AC" id="7jFHz5ktb7l" role="1dT_Ay">
-          <property role="1dT_AB" value="in order to: part" />
+          <property role="1dT_AB" value="in order to:" />
         </node>
       </node>
       <node concept="TZ5HA" id="7jFHz5ktb7y" role="TZ5H$">
@@ -2997,7 +3005,7 @@
       </node>
       <node concept="TZ5HA" id="7jFHz5kvX6F" role="TZ5H$">
         <node concept="1dT_AC" id="7jFHz5kvX6G" role="1dT_Ay">
-          <property role="1dT_AB" value="- call some editor-specific aciotns - e.g. substitute" />
+          <property role="1dT_AB" value="- call some editor-specific actions - e.g. substitute" />
         </node>
       </node>
       <node concept="TZ5HA" id="7jFHz5kvX6T" role="TZ5H$">
