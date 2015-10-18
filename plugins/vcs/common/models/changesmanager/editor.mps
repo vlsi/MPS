@@ -2078,6 +2078,19 @@
         <node concept="3cqZAl" id="v7AJWA4bYs" role="3clF45" />
         <node concept="3Tm1VV" id="v7AJWA4bYt" role="1B3o_S" />
         <node concept="3clFbS" id="v7AJWA4bYu" role="3clF47">
+          <node concept="3clFbJ" id="5f5LHA4If5z" role="3cqZAp">
+            <node concept="3clFbS" id="5f5LHA4If5_" role="3clFbx">
+              <node concept="3cpWs6" id="5f5LHA4IhlE" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="5f5LHA4Ig5R" role="3clFbw">
+              <node concept="37vLTw" id="5f5LHA4IfGJ" role="2Oq$k0">
+                <ref role="3cqZAo" node="5zpsdFy5B1v" resolve="myEditorComponent" />
+              </node>
+              <node concept="liA8E" id="5f5LHA4IgNT" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbJ" id="PH5JSZXqnk" role="3cqZAp">
             <node concept="3clFbS" id="PH5JSZXqnl" role="3clFbx">
               <node concept="3cpWs8" id="7MduFaKE7d0" role="3cqZAp">

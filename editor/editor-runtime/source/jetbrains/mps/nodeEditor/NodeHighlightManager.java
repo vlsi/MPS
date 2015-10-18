@@ -244,6 +244,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void mark(SimpleEditorMessage message) {
+    assert !myDisposed;
     for (SimpleEditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
@@ -258,6 +259,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void unmark(SimpleEditorMessage message) {
+    assert !myDisposed;
     synchronized (myMessagesLock) {
       if (removeMessage(message)) {
         invalidateMessagesCaches();

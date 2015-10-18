@@ -212,6 +212,9 @@ public class EditorHighlighter implements EditorMessageOwner {
     }
     @Override
     public void changeUpdateFinished() {
+      if (myEditorComponent.isDisposed()) {
+        return;
+      }
       if (!(ListSequence.fromList(myAddedMessages).isEmpty()) || !(ListSequence.fromList(myRemovedMessages).isEmpty())) {
         NodeHighlightManager nodeHighlightManager = getHighlightManager();
         for (ChangeEditorMessage removedMessage : ListSequence.fromList(myRemovedMessages)) {
@@ -220,7 +223,7 @@ public class EditorHighlighter implements EditorMessageOwner {
         for (ChangeEditorMessage addedMessage : ListSequence.fromList(myAddedMessages)) {
           nodeHighlightManager.mark(addedMessage);
         }
-        check_urq9my_a3a0a5r(myStripsPainter);
+        check_urq9my_a3a1a5r(myStripsPainter);
         nodeHighlightManager.repaintAndRebuildEditorMessages();
         ListSequence.fromList(myAddedMessages).clear();
         ListSequence.fromList(myRemovedMessages).clear();
@@ -233,7 +236,7 @@ public class EditorHighlighter implements EditorMessageOwner {
     }
     return null;
   }
-  private static void check_urq9my_a3a0a5r(ChangeStripsPainter checkedDotOperand) {
+  private static void check_urq9my_a3a1a5r(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.relayout();
     }
