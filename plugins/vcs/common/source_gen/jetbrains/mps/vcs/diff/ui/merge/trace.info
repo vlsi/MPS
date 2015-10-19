@@ -120,9 +120,9 @@
       <node id="2657001694096389160" at="211,46,212,23" concept="3" />
       <node id="2657001694096389166" at="214,7,215,0" concept="11" />
       <node id="2657001694096389180" at="217,45,218,54" concept="9" />
-      <node id="2657001694096389193" at="221,70,222,78" concept="3" />
-      <node id="2657001694096389206" at="223,46,224,74" concept="3" />
-      <node id="2657001694096389215" at="225,14,226,88" concept="3" />
+      <node id="2657001694096389193" at="221,70,222,84" concept="3" />
+      <node id="2657001694096389206" at="223,46,224,81" concept="3" />
+      <node id="2657001694096389215" at="225,14,226,95" concept="3" />
       <node id="2657001694096389228" at="230,46,231,23" concept="3" />
       <node id="2657001694096389234" at="233,7,234,0" concept="11" />
       <node id="2657001694096389235" at="234,0,235,51" concept="3" />
@@ -130,7 +130,7 @@
       <node id="2657001694096389243" at="236,53,237,57" concept="3" />
       <node id="2657001694096389256" at="239,45,240,88" concept="9" />
       <node id="2657001694096389266" at="242,15,243,139" concept="3" />
-      <node id="2657001694096389279" at="245,88,246,65" concept="3" />
+      <node id="2657001694096389279" at="245,109,246,78" concept="3" />
       <node id="2657001694096389300" at="248,61,249,78" concept="10" />
       <node id="2657001694096389302" at="249,78,250,97" concept="10" />
       <node id="2657001694096389304" at="250,97,251,72" concept="8" />
@@ -188,7 +188,7 @@
       <node id="2657001694096389178" at="217,0,220,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
       <node id="2657001694096389226" at="230,0,233,0" concept="7" trace="visit#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;)V" />
       <node id="2657001694096389254" at="239,0,242,0" concept="7" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-      <node id="2657001694096389275" at="245,0,248,0" concept="7" trace="higlightChange#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+      <node id="2657001694096389275" at="245,0,248,0" concept="7" trace="higlightChange#(Ljetbrains/mps/vcs/diff/ui/common/DiffEditor;Lorg/jetbrains/mps/openapi/model/SModel;ZLjetbrains/mps/vcs/diff/changes/ModelChange;)V" />
       <node id="2657001694096389389" at="262,41,265,5" concept="6" />
       <node id="2657001694096389411" at="267,70,270,7" concept="6" />
       <node id="2657001694096389602" at="288,0,291,0" concept="7" trace="getMergeSession#()Ljetbrains/mps/vcs/diff/merge/MergeSession;" />
@@ -207,7 +207,7 @@
       <node id="2657001694096389041" at="184,0,189,0" concept="7" trace="createChangeGroupLayout#(ZZ)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroupLayout;" />
       <node id="2657001694096389154" at="209,38,214,7" concept="3" />
       <node id="2657001694096389167" at="215,0,220,24" concept="8" />
-      <node id="2657001694096389200" at="222,78,227,7" concept="6" />
+      <node id="2657001694096389200" at="222,84,227,7" concept="6" />
       <node id="2657001694096389222" at="228,5,233,7" concept="3" />
       <node id="2657001694096389247" at="237,57,242,15" concept="8" />
       <node id="2657001694096389679" at="315,32,320,9" concept="3" />
@@ -243,11 +243,11 @@
       <scope id="2657001694096389124" at="200,27,201,64" />
       <scope id="2657001694096389159" at="211,46,212,23" />
       <scope id="2657001694096389179" at="217,45,218,54" />
-      <scope id="2657001694096389205" at="223,46,224,74" />
-      <scope id="2657001694096389214" at="225,14,226,88" />
+      <scope id="2657001694096389205" at="223,46,224,81" />
+      <scope id="2657001694096389214" at="225,14,226,95" />
       <scope id="2657001694096389227" at="230,46,231,23" />
       <scope id="2657001694096389255" at="239,45,240,88" />
-      <scope id="2657001694096389278" at="245,88,246,65" />
+      <scope id="2657001694096389278" at="245,109,246,78" />
       <scope id="2657001694096389390" at="263,51,264,22" />
       <scope id="2657001694096389412" at="268,32,269,27" />
       <scope id="2657001694096389604" at="288,46,289,26" />
@@ -295,6 +295,7 @@
       <scope id="2657001694096389275" at="245,0,248,0">
         <var name="change" id="2657001694096389290" />
         <var name="diffEditor" id="2657001694096389286" />
+        <var name="isOldEditor" id="6018209681139031260" />
         <var name="model" id="2657001694096389288" />
       </scope>
       <scope id="2657001694096389602" at="288,0,291,0" />

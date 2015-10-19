@@ -18,10 +18,10 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class DiffButtonsPainter extends ButtonsPainter {
-  private RootDifferencePane myDiffPane;
-  private DiffButtonsPainter(RootDifferencePane pane, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
+  private IHighlighter myDiffPane;
+  private DiffButtonsPainter(IHighlighter rehighlighter, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(1, editorComponent, changeGroupLayout);
-    myDiffPane = pane;
+    myDiffPane = rehighlighter;
   }
   @Override
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
@@ -46,9 +46,9 @@ public class DiffButtonsPainter extends ButtonsPainter {
       return null;
     }
   }
-  public static DiffButtonsPainter addTo(RootDifferencePane pane, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
+  public static DiffButtonsPainter addTo(IHighlighter rehighliter, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
     EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
-    DiffButtonsPainter painter = new DiffButtonsPainter(pane, editorComponent, changeGroupLayout);
+    DiffButtonsPainter painter = new DiffButtonsPainter(rehighliter, editorComponent, changeGroupLayout);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }
@@ -60,7 +60,8 @@ public class DiffButtonsPainter extends ButtonsPainter {
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myDiffPane.rollbackChanges(getChangeGroup().getChanges());
+          ModelChange.rollbackChanges(getChangeGroup().getChanges());
+          myDiffPane.rehighlight();
         }
       });
     }

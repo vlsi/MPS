@@ -31,6 +31,9 @@ public class SetPropertyChange extends NodeChange {
   public String getPropertyName() {
     return myProperty.getName();
   }
+  public SProperty getProperty() {
+    return myProperty;
+  }
   public boolean isAbout(SProperty property) {
     return myProperty.equals(property);
   }
@@ -40,7 +43,7 @@ public class SetPropertyChange extends NodeChange {
     // get "nonconflicting" attribute in metamodel  
     if (!(myMergeHintLoaded)) {
       myMergeHintLoaded = true;
-      SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId());
+      SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId(false));
       SNode c = SNodeOperations.getConceptDeclaration(n);
       SNode propDecl = SNodeOperations.as(myProperty.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
       SNode hint = AttributeOperations.getAttribute(propDecl, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint")));
@@ -65,16 +68,16 @@ public class SetPropertyChange extends NodeChange {
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
-    SNode node = getChangeSet().getOldModel().getNode(getAffectedNodeId());
+    SNode node = getChangeSet().getOldModel().getNode(getAffectedNodeId(false));
     assert node != null;
-    return new SetPropertyChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), myProperty, node.getProperty(myProperty));
+    return new SetPropertyChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(true), myProperty, node.getProperty(myProperty));
   }
   @Override
   public String toString() {
-    return String.format("Set property %s to %s in node %s", myProperty, myNewValue, getAffectedNodeId());
+    return String.format("Set property %s to %s in node %s", myProperty, myNewValue, getAffectedNodeId(false));
   }
   @Override
   public String getDescription() {
-    return String.format("Changed %s of #%s from '%s' to '%s'", myProperty, getAffectedNodeId(), getChangeSet().getOldModel().getNode(getAffectedNodeId()).getProperty(myProperty), getChangeSet().getNewModel().getNode(getAffectedNodeId()).getProperty(myProperty));
+    return String.format("Changed %s of #%s from '%s' to '%s'", myProperty, getAffectedNodeId(false), getChangeSet().getOldModel().getNode(getAffectedNodeId(false)).getProperty(myProperty), getChangeSet().getNewModel().getNode(getAffectedNodeId(true)).getProperty(myProperty));
   }
 }

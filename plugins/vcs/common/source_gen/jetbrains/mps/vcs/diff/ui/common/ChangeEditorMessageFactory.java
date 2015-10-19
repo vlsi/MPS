@@ -6,20 +6,19 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.LinkedList;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
-import jetbrains.mps.vcs.diff.changes.NodeChange;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
@@ -27,37 +26,32 @@ import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 public class ChangeEditorMessageFactory {
   private ChangeEditorMessageFactory() {
   }
-  public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker, boolean highlighted) {
-    List<ChangeEditorMessage> messages = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
-    SNodeId id;
-    MessageTarget messageTarget;
+  public static List<ChangeEditorMessage> createMessages(SModel editedModel, boolean isOldEditor, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker, boolean highlighted) {
     if (change instanceof AddRootChange || change instanceof DeleteRootChange) {
-      id = change.getRootId();
-      messageTarget = new NodeMessageTarget();
+      return ListSequence.fromListAndArray(new LinkedList<ChangeEditorMessage>(), new ChangeEditorMessage(editedModel.getNode(change.getRootId()), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
     } else if (change instanceof SetPropertyChange) {
-      id = ((NodeChange) change).getAffectedNodeId();
-      messageTarget = new PropertyMessageTarget(((SetPropertyChange) change).getPropertyName());
+      SetPropertyChange chng = (SetPropertyChange) change;
+      SNode node = editedModel.getNode(chng.getAffectedNodeId(!(isOldEditor)));
+      PropertyMessageTarget target = new PropertyMessageTarget(chng.getPropertyName());
+      return ListSequence.fromListAndArray(new LinkedList<ChangeEditorMessage>(), new ChangeEditorMessage(node, target, owner, change, conflictChecker, highlighted));
     } else if (change instanceof SetReferenceChange) {
-      id = ((NodeChange) change).getAffectedNodeId();
-      messageTarget = new ReferenceMessageTarget(((SetReferenceChange) change).getRole());
+      SetReferenceChange chng = (SetReferenceChange) change;
+      SNode node = editedModel.getNode(chng.getAffectedNodeId(!(isOldEditor)));
+      ReferenceMessageTarget target = new ReferenceMessageTarget(chng.getRole());
+      return ListSequence.fromListAndArray(new LinkedList<ChangeEditorMessage>(), new ChangeEditorMessage(node, target, owner, change, conflictChecker, highlighted));
     } else if (change instanceof NodeGroupChange) {
-      NodeGroupChange ngc = ((NodeGroupChange) change);
-      SModel changeModel = change.getChangeSet().getNewModel();
-      boolean reversed = changeModel != editedModel;
-      if (reversed) {
-        changeModel = change.getChangeSet().getOldModel();
-      }
-
-      String role = ngc.getRole();
-      SNodeId parentId = ngc.getParentNodeId();
+      NodeGroupChange chng = (NodeGroupChange) change;
+      SModel changeModel = (isOldEditor ? change.getChangeSet().getOldModel() : change.getChangeSet().getNewModel());
+      SContainmentLink roleLink = chng.getRoleLink();
+      SNodeId parentId = chng.getParentNodeId(!(isOldEditor));
       SNode parentNode = changeModel.getNode(parentId);
       if (parentNode == null) {
         return null;
       }
-      List<? extends SNode> changeChildren = IterableUtil.asList(parentNode.getChildren(role));
+      List<SNode> changeChildren = IterableUtil.asList(parentNode.getChildren(roleLink));
 
-      int changeBegin = (reversed ? ngc.getBegin() : ngc.getResultBegin());
-      int changeEnd = (reversed ? ngc.getEnd() : ngc.getResultEnd());
+      int changeBegin = (isOldEditor ? chng.getBegin() : chng.getResultBegin());
+      int changeEnd = (isOldEditor ? chng.getEnd() : chng.getResultEnd());
 
       // We need to check change models because current edited model can have different indices 
       // (for instance, when some changes are already applied) 
@@ -73,23 +67,20 @@ public class ChangeEditorMessageFactory {
       }
       if (beginIndex == endIndex) {
         // delete nodes 
-        id = parentId;
-        messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
+        return ListSequence.fromListAndArray(new LinkedList<ChangeEditorMessage>(), new ChangeEditorMessage(editedModel.getNode(parentId), new DeletedNodeMessageTarget(roleLink.getName(), beginIndex), owner, change, conflictChecker, highlighted));
       } else {
-        List<? extends SNode> editedChildren = IterableUtil.asList(editedModel.getNode(parentId).getChildren(role));
+        List<? extends SNode> editedChildren = IterableUtil.asList(editedModel.getNode(parentId).getChildren(roleLink));
+        List<ChangeEditorMessage> msgs = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
         for (int i = beginIndex; i < endIndex; i++) {
-          ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
+          ListSequence.fromList(msgs).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }
-        return messages;
+        return msgs;
       }
-    } else {
-      return null;
     }
-    SNode node = editedModel.getNode(id);
-    ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker, highlighted));
-    return messages;
+    return null;
   }
-  public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
-    return ChangeEditorMessageFactory.createMessages(editedModel, change, owner, conflictChecker, true);
+
+  public static List<ChangeEditorMessage> createMessages(SModel editedModel, boolean isOldEditor, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
+    return ChangeEditorMessageFactory.createMessages(editedModel, isOldEditor, change, owner, conflictChecker, true);
   }
 }
