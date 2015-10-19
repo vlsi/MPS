@@ -187,7 +187,7 @@ public class UpdateSessionImpl implements UpdateSession {
     myContextStack.push(currentContext);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
-      return createCellWRTExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
+      return runWithExplicitEditorHints(editorContext, node, new Computable<EditorCell>() {
         @Override
         public EditorCell compute() {
           return EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), currentContext);
@@ -206,18 +206,18 @@ public class UpdateSessionImpl implements UpdateSession {
     }
     final EditorContext editorContext = getUpdater().getEditorContext();
     editorContext.getCellFactory().pushCellContext();
-    editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.PUSH_DEFAULT_EDITOR_HINT);
-    EditorCell editorCell = createCellWRTExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
-      @Override
-      public EditorCell compute() {
-        EditorCell editorCell = EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
-            myModelModifications);
-        return editorCell;
-      }
-    });
-    editorContext.getCellFactory().popCellContext();
-    return editorCell;
-
+    editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    try {
+      return runWithExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
+        @Override
+        public EditorCell compute() {
+          return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
+              myModelModifications);
+        }
+      });
+    } finally {
+      editorContext.getCellFactory().popCellContext();
+    }
   }
 
   @Override
@@ -250,16 +250,18 @@ public class UpdateSessionImpl implements UpdateSession {
     return myUpdater;
   }
 
-  private EditorCell createCellWRTExplicitEditorHints(EditorContext editorContext, SNode node, Computable<EditorCell> cellCreator) {
+  private <T> T runWithExplicitEditorHints(EditorContext editorContext, SNode node, Computable<T> cellCreator) {
     String[] explicitHintsForNode = getExplicitHintsForNode(node);
     if (explicitHintsForNode != null) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
     }
-    EditorCell editorCell = cellCreator.compute();
-    if (explicitHintsForNode != null) {
-      editorContext.getCellFactory().popCellContext();
+    try {
+      return cellCreator.compute();
+    } finally {
+      if (explicitHintsForNode != null) {
+        editorContext.getCellFactory().popCellContext();
+      }
     }
-    return editorCell;
   }
 }

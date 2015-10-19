@@ -484,11 +484,21 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
+        <child id="8465538089690917625" name="param" index="TUOzN" />
+      </concept>
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -46551,6 +46561,84 @@
           <ref role="1iFR8X" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="wACy6P0PjQ">
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="TrG5h" value="ShowReflectiveEditorForAttribute" />
+    <node concept="312cEu" id="wACy6P0PjR" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="ShowReflectiveEditorTest" />
+      <node concept="2YIFZL" id="wACy6P0PjS" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="wACy6P0PjT" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="wACy6P0PjU" role="1tU5fm">
+            <node concept="17QB3L" id="wACy6P0PjV" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="wACy6P0PjW" role="3clF45" />
+        <node concept="3Tm1VV" id="wACy6P0PjX" role="1B3o_S" />
+        <node concept="3clFbS" id="wACy6P0PjY" role="3clF47" />
+        <node concept="P$JXv" id="wACy6P0Pr9" role="lGtFl">
+          <node concept="TZ5HA" id="wACy6P0Pra" role="TZ5H$">
+            <node concept="1dT_AC" id="wACy6P0Prb" role="1dT_Ay" />
+          </node>
+          <node concept="TUZQ0" id="wACy6P0Prc" role="TUOzN">
+            <property role="TUZQ4" value="args" />
+            <node concept="zr_55" id="wACy6P0Pre" role="zr_5Q">
+              <ref role="zr_51" node="wACy6P0PjT" resolve="args" />
+            </node>
+          </node>
+          <node concept="LIFWc" id="wACy6P0Psx" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="3" />
+            <property role="p6zMs" value="3" />
+            <property role="LIFWd" value="Constant_ls0i5e_a0a" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="wACy6P0Pk0" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="wACy6P0Pkb" role="LjaKd">
+      <node concept="2HxZob" id="wACy6P0Pkc" role="3cqZAp">
+        <node concept="1iFQzN" id="wACy6P0Pkd" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEu" id="wACy6P0PrC" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="ShowReflectiveEditorTest" />
+      <node concept="2YIFZL" id="wACy6P0PrD" role="jymVt">
+        <property role="TrG5h" value="main" />
+        <node concept="37vLTG" id="wACy6P0PrE" role="3clF46">
+          <property role="TrG5h" value="args" />
+          <node concept="10Q1$e" id="wACy6P0PrF" role="1tU5fm">
+            <node concept="17QB3L" id="wACy6P0PrG" role="10Q1$1" />
+          </node>
+        </node>
+        <node concept="3cqZAl" id="wACy6P0PrH" role="3clF45" />
+        <node concept="3Tm1VV" id="wACy6P0PrI" role="1B3o_S" />
+        <node concept="3clFbS" id="wACy6P0PrJ" role="3clF47" />
+        <node concept="P$JXv" id="wACy6P0PrK" role="lGtFl">
+          <node concept="TZ5HA" id="wACy6P0PrL" role="TZ5H$">
+            <node concept="1dT_AC" id="wACy6P0PrM" role="1dT_Ay" />
+          </node>
+          <node concept="TUZQ0" id="wACy6P0PrN" role="TUOzN">
+            <property role="TUZQ4" value="args" />
+            <node concept="zr_55" id="wACy6P0PrO" role="zr_5Q">
+              <ref role="zr_51" node="wACy6P0PrE" resolve="args" />
+            </node>
+          </node>
+          <node concept="LIFWc" id="wACy6P0Psz" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="collection_1" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="wACy6P0PrQ" role="1B3o_S" />
     </node>
   </node>
 </model>

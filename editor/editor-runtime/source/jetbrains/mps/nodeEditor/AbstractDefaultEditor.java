@@ -179,10 +179,13 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addLabel("");
     addNewLine();
     myEditorContext.getCellFactory().pushCellContext();
-    myEditorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.PUSH_DEFAULT_EDITOR_HINT);
-    addChildren();
+    myEditorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    try {
+      addChildren();
+    } finally {
+      myEditorContext.getCellFactory().popCellContext();
+    }
     addAttributedEntity();
-    myEditorContext.getCellFactory().popCellContext();
     popCollection();
     addLabel("}");
     addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");

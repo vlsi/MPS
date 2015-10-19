@@ -1744,6 +1744,9 @@
     <node concept="lpD6D" id="5EVBM58RzVy" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2orW$Z0fmZB" resolve="ShowReflectiveEditorAndMove" />
     </node>
+    <node concept="lpD6D" id="wACy6P0Ptq" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:wACy6P0PjQ" resolve="ShowReflectiveEditorForAttribute" />
+    </node>
     <node concept="lpD6D" id="5EVBM58R$7H" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2orW$Z0fPO9" resolve="ShowReflectiveThenRegularEditor" />
     </node>

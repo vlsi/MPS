@@ -61,7 +61,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
-  public static final String PUSH_DEFAULT_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
+  public static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
@@ -97,7 +97,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends BaseConceptEditor>> excludedEditors) {
     ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    boolean isPushDefaultEditorHintInContext = getCellContext().getHints().contains(PUSH_DEFAULT_EDITOR_HINT);
+    boolean isPushDefaultEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT);
     ConceptEditor editor = isPushDefaultEditorHintInContext ? null : myConceptEditorRegistry.getEditor(conceptDescriptor, excludedEditors);
     EditorCell result = null;
     if (editor != null) {
