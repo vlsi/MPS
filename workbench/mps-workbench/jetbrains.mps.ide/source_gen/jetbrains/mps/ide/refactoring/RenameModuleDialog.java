@@ -29,7 +29,8 @@ public class RenameModuleDialog extends RenameDialog {
 
         final SRepository projectRepository = ProjectHelper.getProjectRepository(getProject());
         for (final SModule module : projectRepository.getModules()) {
-          if (module.getModuleName().equals(fqName)) {
+          // module.getModuleName() can be null 
+          if (fqName.equals(module.getModuleName())) {
             setErrorText("Duplicate module name");
             return;
           }

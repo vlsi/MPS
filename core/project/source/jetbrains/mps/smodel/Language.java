@@ -268,6 +268,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
   }
 
+  @Override
   public void rename(String newNamespace) {
     for (Generator g : getGenerators()) {
       g.rename(newNamespace);

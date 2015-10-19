@@ -162,36 +162,36 @@
       <node id="1685972956014330155" at="68,0,69,19" concept="8" />
       <node id="1685972956014330157" at="69,19,70,0" concept="10" />
       <node id="1685972956014330163" at="72,35,73,26" concept="8" />
-      <node id="1097902074760517919" at="75,38,76,38" concept="8" />
-      <node id="1685972956014330170" at="79,40,80,48" concept="2" />
-      <node id="5918389564640884787" at="80,48,81,32" concept="2" />
-      <node id="1685972956014329987" at="83,104,84,98" concept="7" />
-      <node id="1685972956014329996" at="84,98,85,18" concept="2" />
-      <node id="1685972956014330000" at="85,18,86,33" concept="8" />
+      <node id="1097902074760517919" at="76,38,77,82" concept="8" />
+      <node id="1685972956014330170" at="80,40,81,48" concept="2" />
+      <node id="5918389564640884787" at="81,48,82,32" concept="2" />
+      <node id="1685972956014329987" at="84,104,85,98" concept="7" />
+      <node id="1685972956014329996" at="85,98,86,18" concept="2" />
+      <node id="1685972956014330000" at="86,18,87,33" concept="8" />
       <node id="1685972956014330160" at="72,0,75,0" concept="6" trace="getResultString#()Ljava/lang/String;" />
-      <node id="1097902074760517876" at="75,0,78,0" concept="6" trace="getCurrentValue#()Ljava/lang/String;" />
       <node id="9032941800334145714" at="40,0,44,0" concept="6" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="1097902074760517876" at="75,0,79,0" concept="6" trace="getCurrentValue#()Ljava/lang/String;" />
       <node id="8326030452010200248" at="26,11,31,5" concept="5" />
       <node id="1685972956014330021" at="35,0,40,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="1685972956014330166" at="78,0,83,0" concept="6" trace="doRefactoringAction#()V" />
-      <node id="1685972956014329976" at="83,0,88,0" concept="12" trace="getString#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1685972956014330166" at="79,0,84,0" concept="6" trace="doRefactoringAction#()V" />
+      <node id="1685972956014329976" at="84,0,89,0" concept="12" trace="getString#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1685972956014330183" at="23,0,35,0" concept="1" trace="StringChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
       <node id="1685972956014330028" at="44,0,72,0" concept="6" trace="createNorthPanel#()Ljavax/swing/JComponent;" />
       <scope id="1685972956014330025" at="37,44,38,16" />
       <scope id="9032941800334145717" at="41,52,42,23" />
       <scope id="1685972956014330162" at="72,35,73,26" />
-      <scope id="1097902074760517879" at="75,38,76,38" />
-      <scope id="1685972956014330169" at="79,40,81,32" />
+      <scope id="1097902074760517879" at="76,38,77,82" />
+      <scope id="1685972956014330169" at="80,40,82,32" />
       <scope id="8326030452010200249" at="27,31,30,57" />
       <scope id="1685972956014330160" at="72,0,75,0" />
-      <scope id="1097902074760517876" at="75,0,78,0" />
-      <scope id="1685972956014329986" at="83,104,86,33">
+      <scope id="1685972956014329986" at="84,104,87,33">
         <var name="dialog" id="1685972956014329988" />
       </scope>
       <scope id="9032941800334145714" at="40,0,44,0" />
+      <scope id="1097902074760517876" at="75,0,79,0" />
       <scope id="1685972956014330021" at="35,0,40,0" />
-      <scope id="1685972956014330166" at="78,0,83,0" />
-      <scope id="1685972956014329976" at="83,0,88,0">
+      <scope id="1685972956014330166" at="79,0,84,0" />
+      <scope id="1685972956014329976" at="84,0,89,0">
         <var name="initialValue" id="1685972956014329983" />
         <var name="labelText" id="1685972956014329981" />
         <var name="project" id="1685972956014329977" />
@@ -208,7 +208,7 @@
         <var name="c" id="1685972956014330048" />
       </scope>
       <scope id="1685972956014330028" at="44,0,72,0" />
-      <unit id="1685972956014329975" at="18,0,89,0" name="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
+      <unit id="1685972956014329975" at="18,0,90,0" name="jetbrains.mps.ide.platform.refactoring.StringChooserDialog" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/1685972956014334002">
