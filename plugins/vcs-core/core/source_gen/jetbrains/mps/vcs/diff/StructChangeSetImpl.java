@@ -11,6 +11,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -28,6 +30,9 @@ public class StructChangeSetImpl implements StructChangeSet {
   private final Map<SNodeId, SNodeId> myOldToNewMap = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
   private final Map<SNodeId, SNodeId> myNewToOldMap = MapSequence.fromMap(new HashMap<SNodeId, SNodeId>());
   private StructChangeSetImpl myOppositeChangeSet = null;
+  public StructChangeSetImpl(@NotNull SNode oldNode, @NotNull SNode newNode) {
+    this(SNodeOperations.getModel(oldNode), oldNode.getNodeId(), SNodeOperations.getModel(newNode), newNode.getNodeId());
+  }
   public StructChangeSetImpl(@NotNull SModel oldModel, @NotNull SNodeId oldNodeId, @NotNull SModel newModel, @NotNull SNodeId newNodeId) {
     myOldModel = oldModel;
     myOldNodeId = oldNodeId;
@@ -90,6 +95,8 @@ public class StructChangeSetImpl implements StructChangeSet {
       myOppositeChangeSet = new StructChangeSetImpl(myNewModel, myNewNodeId, myOldModel, myOldNodeId);
       myOppositeChangeSet.myOppositeChangeSet = this;
 
+      MapSequence.fromMap(myOppositeChangeSet.myOldToNewMap).putAll(myNewToOldMap);
+      MapSequence.fromMap(myOppositeChangeSet.myNewToOldMap).putAll(myOldToNewMap);
       ListSequence.fromList(myOppositeChangeSet.myModelChanges).addSequence(ListSequence.fromList(myModelChanges).select(new ISelector<ModelChange, ModelChange>() {
         public ModelChange select(ModelChange c) {
           return c.getOppositeChange();

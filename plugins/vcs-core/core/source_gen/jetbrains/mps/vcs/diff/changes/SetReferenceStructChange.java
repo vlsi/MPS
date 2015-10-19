@@ -11,6 +11,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.vcs.diff.StructChangeSet;
+import jetbrains.mps.smodel.StaticReference;
 
 public class SetReferenceStructChange extends SetReferenceChange {
   private final SNodeId myOppositeNodeId;
@@ -26,7 +29,29 @@ public class SetReferenceStructChange extends SetReferenceChange {
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     assert model == getChangeSet().getOldModel();
-    super.apply(model, nodeCopier);
+
+    SNode node = model.getNode(getAffectedNodeId(false));
+    assert node != null;
+    if (getTargetNodeId() == null && getResolveInfo() == null) {
+      node.setReferenceTarget(getRoleLink(), null);
+    } else {
+      SModelReference targetModelReference = (getTargetModelReference() == null ? model.getReference() : getTargetModelReference());
+      SReference reference;
+      if (getTargetNodeId() == null) {
+        reference = new DynamicReference(getRoleLink(), node, targetModelReference, getResolveInfo());
+      } else {
+        // try to convert SNodeId 
+        StructChangeSet changeset = (StructChangeSet) getChangeSet();
+        SNodeId targetNodeId = getTargetNodeId();
+        SNodeId mapToOldId = changeset.mapToOldId(targetNodeId);
+        if (mapToOldId != null && eq_xjb9w7_a0a4a0c0a4a3(targetModelReference, changeset.getNewModel().getReference())) {
+          targetNodeId = mapToOldId;
+        }
+        reference = new StaticReference(getRoleLink(), node, targetModelReference, targetNodeId, getResolveInfo());
+      }
+      node.setReferenceTarget(getRoleLink(), null);
+      node.setReference(getRoleLink(), reference);
+    }
   }
   @NotNull
   @Override
@@ -41,6 +66,9 @@ public class SetReferenceStructChange extends SetReferenceChange {
     }
 
     return new SetReferenceStructChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(true), getAffectedNodeId(false), getRoleLink(), targetModel, check_xjb9w7_f0a6a4(ref), check_xjb9w7_g0a6a4(((jetbrains.mps.smodel.SReference) ref)));
+  }
+  private static boolean eq_xjb9w7_a0a4a0c0a4a3(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SModelReference check_xjb9w7_a0d0e(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
