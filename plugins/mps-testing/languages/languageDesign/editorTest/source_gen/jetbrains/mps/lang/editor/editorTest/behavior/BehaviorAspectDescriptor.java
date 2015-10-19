@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myAttractsFocusBlock_BehaviorDescriptor = new AttractsFocusBlock_BehaviorDescriptor();
-  private final BHDescriptor myReferenceAnnotataion_BehaviorDescriptor = new ReferenceAnnotataion_BehaviorDescriptor();
+  private final BHDescriptor myAttractsFocusBlock__BehaviorDescriptor = new AttractsFocusBlock__BehaviorDescriptor();
+  private final BHDescriptor myReferenceAnnotataion__BehaviorDescriptor = new ReferenceAnnotataion__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -35,9 +35,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myAttractsFocusBlock_BehaviorDescriptor;
+        return myAttractsFocusBlock__BehaviorDescriptor;
       case 1:
-        return myReferenceAnnotataion_BehaviorDescriptor;
+        return myReferenceAnnotataion__BehaviorDescriptor;
       default:
         return null;
     }

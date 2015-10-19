@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IContainsStatementList__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -29,7 +29,7 @@ public class UnwrapStatementListContainer {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
+      List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
       ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNodeOperations.insertPrevSiblingChild(node, it);
@@ -47,7 +47,7 @@ public class UnwrapStatementListContainer {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, final SNode node) {
-      List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList_BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
+      List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
       ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNodeOperations.insertPrevSiblingChild(node, it);

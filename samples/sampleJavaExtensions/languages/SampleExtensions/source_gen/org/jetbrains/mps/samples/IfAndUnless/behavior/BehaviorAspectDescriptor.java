@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myFlow_BehaviorDescriptor = new Flow_BehaviorDescriptor();
-  private final BHDescriptor myTrueFlow_BehaviorDescriptor = new TrueFlow_BehaviorDescriptor();
-  private final BHDescriptor myFalseFlow_BehaviorDescriptor = new FalseFlow_BehaviorDescriptor();
+  private final BHDescriptor myFlow__BehaviorDescriptor = new Flow__BehaviorDescriptor();
+  private final BHDescriptor myTrueFlow__BehaviorDescriptor = new TrueFlow__BehaviorDescriptor();
+  private final BHDescriptor myFalseFlow__BehaviorDescriptor = new FalseFlow__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myFlow_BehaviorDescriptor;
+        return myFlow__BehaviorDescriptor;
       case 1:
-        return myTrueFlow_BehaviorDescriptor;
+        return myTrueFlow__BehaviorDescriptor;
       case 2:
-        return myFalseFlow_BehaviorDescriptor;
+        return myFalseFlow__BehaviorDescriptor;
       default:
         return null;
     }

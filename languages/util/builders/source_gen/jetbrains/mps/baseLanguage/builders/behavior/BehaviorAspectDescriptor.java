@@ -12,20 +12,20 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBeanPropertyBuilder_BehaviorDescriptor = new BeanPropertyBuilder_BehaviorDescriptor();
-  private final BHDescriptor myAsTypeBuilder_BehaviorDescriptor = new AsTypeBuilder_BehaviorDescriptor();
-  private final BHDescriptor mySimpleBuilderPropertyBuilder_BehaviorDescriptor = new SimpleBuilderPropertyBuilder_BehaviorDescriptor();
-  private final BHDescriptor myBaseSimpleBuilderDeclaration_BehaviorDescriptor = new BaseSimpleBuilderDeclaration_BehaviorDescriptor();
-  private final BHDescriptor mySimpleBuilderExtensionDeclaration_BehaviorDescriptor = new SimpleBuilderExtensionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBeanBuilder_BehaviorDescriptor = new BeanBuilder_BehaviorDescriptor();
-  private final BHDescriptor myBuilder_BehaviorDescriptor = new Builder_BehaviorDescriptor();
-  private final BHDescriptor myBuilderCreator_BehaviorDescriptor = new BuilderCreator_BehaviorDescriptor();
-  private final BHDescriptor myBuilderStatement_BehaviorDescriptor = new BuilderStatement_BehaviorDescriptor();
-  private final BHDescriptor mySimpleBuilderDeclaration_BehaviorDescriptor = new SimpleBuilderDeclaration_BehaviorDescriptor();
-  private final BHDescriptor mySimpleBuilders_BehaviorDescriptor = new SimpleBuilders_BehaviorDescriptor();
-  private final BHDescriptor mySimpleBuilder_BehaviorDescriptor = new SimpleBuilder_BehaviorDescriptor();
-  private final BHDescriptor myAsBuilderStatement_BehaviorDescriptor = new AsBuilderStatement_BehaviorDescriptor();
-  private final BHDescriptor myBuilderContainer_BehaviorDescriptor = new BuilderContainer_BehaviorDescriptor();
+  private final BHDescriptor myBeanPropertyBuilder__BehaviorDescriptor = new BeanPropertyBuilder__BehaviorDescriptor();
+  private final BHDescriptor myAsTypeBuilder__BehaviorDescriptor = new AsTypeBuilder__BehaviorDescriptor();
+  private final BHDescriptor mySimpleBuilderPropertyBuilder__BehaviorDescriptor = new SimpleBuilderPropertyBuilder__BehaviorDescriptor();
+  private final BHDescriptor myBaseSimpleBuilderDeclaration__BehaviorDescriptor = new BaseSimpleBuilderDeclaration__BehaviorDescriptor();
+  private final BHDescriptor mySimpleBuilderExtensionDeclaration__BehaviorDescriptor = new SimpleBuilderExtensionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBeanBuilder__BehaviorDescriptor = new BeanBuilder__BehaviorDescriptor();
+  private final BHDescriptor myBuilder__BehaviorDescriptor = new Builder__BehaviorDescriptor();
+  private final BHDescriptor myBuilderCreator__BehaviorDescriptor = new BuilderCreator__BehaviorDescriptor();
+  private final BHDescriptor myBuilderStatement__BehaviorDescriptor = new BuilderStatement__BehaviorDescriptor();
+  private final BHDescriptor mySimpleBuilderDeclaration__BehaviorDescriptor = new SimpleBuilderDeclaration__BehaviorDescriptor();
+  private final BHDescriptor mySimpleBuilders__BehaviorDescriptor = new SimpleBuilders__BehaviorDescriptor();
+  private final BHDescriptor mySimpleBuilder__BehaviorDescriptor = new SimpleBuilder__BehaviorDescriptor();
+  private final BHDescriptor myAsBuilderStatement__BehaviorDescriptor = new AsBuilderStatement__BehaviorDescriptor();
+  private final BHDescriptor myBuilderContainer__BehaviorDescriptor = new BuilderContainer__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -59,33 +59,33 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myBeanPropertyBuilder_BehaviorDescriptor;
+        return myBeanPropertyBuilder__BehaviorDescriptor;
       case 1:
-        return myAsTypeBuilder_BehaviorDescriptor;
+        return myAsTypeBuilder__BehaviorDescriptor;
       case 2:
-        return mySimpleBuilderPropertyBuilder_BehaviorDescriptor;
+        return mySimpleBuilderPropertyBuilder__BehaviorDescriptor;
       case 3:
-        return myBaseSimpleBuilderDeclaration_BehaviorDescriptor;
+        return myBaseSimpleBuilderDeclaration__BehaviorDescriptor;
       case 4:
-        return mySimpleBuilderExtensionDeclaration_BehaviorDescriptor;
+        return mySimpleBuilderExtensionDeclaration__BehaviorDescriptor;
       case 5:
-        return myBeanBuilder_BehaviorDescriptor;
+        return myBeanBuilder__BehaviorDescriptor;
       case 6:
-        return myBuilder_BehaviorDescriptor;
+        return myBuilder__BehaviorDescriptor;
       case 7:
-        return myBuilderCreator_BehaviorDescriptor;
+        return myBuilderCreator__BehaviorDescriptor;
       case 8:
-        return myBuilderStatement_BehaviorDescriptor;
+        return myBuilderStatement__BehaviorDescriptor;
       case 9:
-        return mySimpleBuilderDeclaration_BehaviorDescriptor;
+        return mySimpleBuilderDeclaration__BehaviorDescriptor;
       case 10:
-        return mySimpleBuilders_BehaviorDescriptor;
+        return mySimpleBuilders__BehaviorDescriptor;
       case 11:
-        return mySimpleBuilder_BehaviorDescriptor;
+        return mySimpleBuilder__BehaviorDescriptor;
       case 12:
-        return myAsBuilderStatement_BehaviorDescriptor;
+        return myAsBuilderStatement__BehaviorDescriptor;
       case 13:
-        return myBuilderContainer_BehaviorDescriptor;
+        return myBuilderContainer__BehaviorDescriptor;
       default:
         return null;
     }

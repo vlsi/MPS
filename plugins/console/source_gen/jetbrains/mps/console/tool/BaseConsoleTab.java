@@ -63,7 +63,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Scanner;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -315,7 +314,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
       if (!(importedLanguages.contains(usedLanguage))) {
         modelInternal.addLanguage(usedLanguage);
       }
-      for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
+      for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(subNode))) {
         SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
         if (usedModel != null && !(modelInternal.importedModels().contains(usedModel))) {
           modelInternal.addModelImport(usedModel.getReference(), false);

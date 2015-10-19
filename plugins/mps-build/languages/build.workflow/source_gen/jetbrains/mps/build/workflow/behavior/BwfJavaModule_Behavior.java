@@ -4,29 +4,21 @@ package jetbrains.mps.build.workflow.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class BwfJavaModule_Behavior {
   public static List<String> call_getCompilerNames_4416461515996720469(SAbstractConcept __thisConcept__) {
-    return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
+    return BwfJavaModule__BehaviorDescriptor.getCompilerNames_id3Par5_LaIPl(__thisConcept__);
   }
   public static String call_getAntTargetName_7385586609667776611(SNode __thisNode__) {
-    return "java.compile." + SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return BwfJavaModule__BehaviorDescriptor.getAntTargetName_id6pYRYgn8i1z(__thisNode__);
   }
   public static boolean call_needsFork_4416461515996686032(SNode __thisNode__) {
-    boolean userFork = SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"));
-    boolean compilerForkedByDefault = isNotEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x1c936d31d30fdf98L, "compiler"))) && !(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x1c936d31d30fdf98L, "compiler")).equals("IntelliJ")) && !(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x1c936d31d30fdf98L, "compiler")).equals("modern"));
-    return !(compilerForkedByDefault) && userFork;
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
+    return BwfJavaModule__BehaviorDescriptor.needsFork_id3Par5_LaArg(__thisNode__);
   }
 }

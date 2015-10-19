@@ -476,13 +476,13 @@
           <node concept="3clFbF" id="4aotOFCaJXH" role="3cqZAp">
             <node concept="2OqwBi" id="4aotOFCaJXI" role="3clFbG">
               <node concept="2ShNRf" id="4aotOFCaJXJ" role="2Oq$k0">
-                <node concept="1pGfFk" id="4aotOFCaJXK" role="2ShVmc">
-                  <ref role="37wK5l" to="b3bi:~Cell_Action_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="Cell_Action_Uncomment" />
-                  <node concept="0IXxy" id="4aotOFCaJXL" role="37wK5m" />
+                <node concept="1pGfFk" id="2fHR8tjPqaV" role="2ShVmc">
+                  <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_Uncomment" />
+                  <node concept="0IXxy" id="2fHR8tjPqgY" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="4aotOFCaJXM" role="2OqNvi">
-                <ref role="37wK5l" to="b3bi:~Cell_Action_Uncomment.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <ref role="37wK5l" to="b3bi:~AbstractCommentAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                 <node concept="1Q80Hx" id="4aotOFCaJXN" role="37wK5m" />
               </node>
             </node>
@@ -509,6 +509,9 @@
       <ref role="1k5W1q" node="3VARyd8XcQs" resolve="Comment" />
       <node concept="3F0ifn" id="7hmFG5jQPBz" role="3EZMnx">
         <property role="3F0ifm" value="/*" />
+        <node concept="2SqB2G" id="6EsXCvAxypg" role="2SqHTX">
+          <property role="TrG5h" value="LEFT_COMMENT_ANCHOR" />
+        </node>
         <node concept="11LMrY" id="3VARyd8Xg0r" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -523,6 +526,9 @@
       </node>
       <node concept="3F0ifn" id="3VARyd8X5Rv" role="3EZMnx">
         <property role="3F0ifm" value="*/" />
+        <node concept="2SqB2G" id="6EsXCvAxypj" role="2SqHTX">
+          <property role="TrG5h" value="RIGHT_COMMENT_ANCHOR" />
+        </node>
         <node concept="11L4FC" id="3VARyd8Xg26" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

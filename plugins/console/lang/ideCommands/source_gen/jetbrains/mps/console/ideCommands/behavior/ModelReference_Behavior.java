@@ -5,16 +5,14 @@ package jetbrains.mps.console.ideCommands.behavior;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescriptor;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class ModelReference_Behavior {
   public static SModel call_getModel_7057947030098579394(SNode __thisNode__, SRepository repo) {
-    return new ModuleRepositoryFacade(repo).getModelByName(ModelReferenceExpression_BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(__thisNode__));
+    return ModelReference__BehaviorDescriptor.getModel_id67MRmR$z8Z2(__thisNode__, repo);
   }
 }

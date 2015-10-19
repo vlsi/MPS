@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myIconResource_BehaviorDescriptor = new IconResource_BehaviorDescriptor();
-  private final BHDescriptor myIconResourceBundle_BehaviorDescriptor = new IconResourceBundle_BehaviorDescriptor();
-  private final BHDescriptor myIconResourceReference_BehaviorDescriptor = new IconResourceReference_BehaviorDescriptor();
-  private final BHDescriptor myResource_BehaviorDescriptor = new Resource_BehaviorDescriptor();
+  private final BHDescriptor myIconResource__BehaviorDescriptor = new IconResource__BehaviorDescriptor();
+  private final BHDescriptor myIconResourceBundle__BehaviorDescriptor = new IconResourceBundle__BehaviorDescriptor();
+  private final BHDescriptor myIconResourceReference__BehaviorDescriptor = new IconResourceReference__BehaviorDescriptor();
+  private final BHDescriptor myResource__BehaviorDescriptor = new Resource__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -39,13 +39,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myIconResource_BehaviorDescriptor;
+        return myIconResource__BehaviorDescriptor;
       case 1:
-        return myIconResourceBundle_BehaviorDescriptor;
+        return myIconResourceBundle__BehaviorDescriptor;
       case 2:
-        return myIconResourceReference_BehaviorDescriptor;
+        return myIconResourceReference__BehaviorDescriptor;
       case 3:
-        return myResource_BehaviorDescriptor;
+        return myResource__BehaviorDescriptor;
       default:
         return null;
     }

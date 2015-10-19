@@ -12,13 +12,13 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor mySolutionRef_BehaviorDescriptor = new SolutionRef_BehaviorDescriptor();
-  private final BHDescriptor myIModuleRef_BehaviorDescriptor = new IModuleRef_BehaviorDescriptor();
-  private final BHDescriptor myModuleSuite_BehaviorDescriptor = new ModuleSuite_BehaviorDescriptor();
-  private final BHDescriptor myTestCaseRef_BehaviorDescriptor = new TestCaseRef_BehaviorDescriptor();
-  private final BHDescriptor myJUnit4TestCaseRef_BehaviorDescriptor = new JUnit4TestCaseRef_BehaviorDescriptor();
-  private final BHDescriptor myJUnit3TestCaseRef_BehaviorDescriptor = new JUnit3TestCaseRef_BehaviorDescriptor();
-  private final BHDescriptor myITestRef_BehaviorDescriptor = new ITestRef_BehaviorDescriptor();
+  private final BHDescriptor mySolutionRef__BehaviorDescriptor = new SolutionRef__BehaviorDescriptor();
+  private final BHDescriptor myIModuleRef__BehaviorDescriptor = new IModuleRef__BehaviorDescriptor();
+  private final BHDescriptor myModuleSuite__BehaviorDescriptor = new ModuleSuite__BehaviorDescriptor();
+  private final BHDescriptor myTestCaseRef__BehaviorDescriptor = new TestCaseRef__BehaviorDescriptor();
+  private final BHDescriptor myJUnit4TestCaseRef__BehaviorDescriptor = new JUnit4TestCaseRef__BehaviorDescriptor();
+  private final BHDescriptor myJUnit3TestCaseRef__BehaviorDescriptor = new JUnit3TestCaseRef__BehaviorDescriptor();
+  private final BHDescriptor myITestRef__BehaviorDescriptor = new ITestRef__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -45,19 +45,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return mySolutionRef_BehaviorDescriptor;
+        return mySolutionRef__BehaviorDescriptor;
       case 1:
-        return myIModuleRef_BehaviorDescriptor;
+        return myIModuleRef__BehaviorDescriptor;
       case 2:
-        return myModuleSuite_BehaviorDescriptor;
+        return myModuleSuite__BehaviorDescriptor;
       case 3:
-        return myTestCaseRef_BehaviorDescriptor;
+        return myTestCaseRef__BehaviorDescriptor;
       case 4:
-        return myJUnit4TestCaseRef_BehaviorDescriptor;
+        return myJUnit4TestCaseRef__BehaviorDescriptor;
       case 5:
-        return myJUnit3TestCaseRef_BehaviorDescriptor;
+        return myJUnit3TestCaseRef__BehaviorDescriptor;
       case 6:
-        return myITestRef_BehaviorDescriptor;
+        return myITestRef__BehaviorDescriptor;
       default:
         return null;
     }

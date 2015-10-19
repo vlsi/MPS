@@ -25,6 +25,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @see SAbstractConceptAdapter
+ */
 public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements SInterfaceConcept {
   protected SInterfaceConceptAdapter(String fqName) {
     super(fqName);

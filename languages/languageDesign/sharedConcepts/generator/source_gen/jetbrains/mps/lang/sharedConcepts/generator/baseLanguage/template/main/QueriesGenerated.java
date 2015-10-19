@@ -4,11 +4,11 @@ package jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
 
 @Generated
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1199881492477(final BaseMappingRuleContext _context) {
-    return !(ConceptFunctionParameter_BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
+    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.getFromParameterObject_idhEwJh7s.invoke(_context.getNode()));
   }
 }

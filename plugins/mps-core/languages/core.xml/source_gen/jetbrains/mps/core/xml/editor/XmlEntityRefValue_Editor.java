@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.core.xml.behavior.XmlValuePart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlValuePart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -52,7 +52,7 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_poez2y_a1a0(EditorContext editorContext, SNode node) {
-    return !(XmlValuePart_BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
   }
   private EditorCell createProperty_poez2y_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -94,6 +94,6 @@ public class XmlEntityRefValue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_poez2y_a1c0(EditorContext editorContext, SNode node) {
-    return !(XmlValuePart_BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
   }
 }

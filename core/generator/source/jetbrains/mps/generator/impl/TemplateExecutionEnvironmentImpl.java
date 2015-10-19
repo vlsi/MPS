@@ -202,7 +202,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
 
   /*package*/ TemplateDeclaration loadTemplateDeclaration(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) {
-    TemplateModel templateModel = generator.getRuleManager().getTemplateModel(templateDeclaration.getModelReference());
+    TemplateModel templateModel = generator.getGenerationPlan().getTemplateModel(templateDeclaration.getModelReference());
     TemplateDeclaration templateDeclarationInstance = templateModel == null ? null : templateModel.loadTemplate(templateDeclaration, arguments);
     if (templateModel == null || templateDeclarationInstance == null) {
       String msg = "%s not found: cannot apply template declaration, try to check & regenerate affected generators";

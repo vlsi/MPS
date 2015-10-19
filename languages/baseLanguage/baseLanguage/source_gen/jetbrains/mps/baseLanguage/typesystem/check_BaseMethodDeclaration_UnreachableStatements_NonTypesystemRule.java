@@ -7,11 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -19,7 +19,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   public check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(BaseMethodDeclaration_BehaviorDescriptor.isDataFlowChecked_idhRptrfk.invoke(nodeToCheck))) {
+    if (!((boolean) BaseMethodDeclaration__BehaviorDescriptor.isDataFlowChecked_idhRptrfk.invoke(nodeToCheck))) {
       return;
     }
     if ((SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")) == null)) {
@@ -30,13 +30,13 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     boolean checkReturns = true;
     if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
       checkReturns = false;
-    } else if (BaseMethodDeclaration_BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(nodeToCheck)) {
+    } else if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isAbstract_idhWjv7RO.invoke(nodeToCheck)) {
       checkReturns = false;
-    } else if ((IMethodLike_BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(nodeToCheck) == null)) {
+    } else if ((IMethodLike__BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(nodeToCheck) == null)) {
       checkReturns = false;
-    } else if (SNodeOperations.isInstanceOf(IMethodLike_BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(nodeToCheck), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    } else if (SNodeOperations.isInstanceOf(IMethodLike__BehaviorDescriptor.getExpectedRetType_idi2fhBNC.invoke(nodeToCheck), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       checkReturns = false;
-    } else if (BaseMethodDeclaration_BehaviorDescriptor.isReturnsVoid_idhX_$1pM.invoke(nodeToCheck)) {
+    } else if ((boolean) BaseMethodDeclaration__BehaviorDescriptor.isReturnsVoid_idhX_$1pM.invoke(nodeToCheck)) {
       checkReturns = false;
     } else if (ListSequence.fromList(SNodeOperations.getNodeDescendants(nodeToCheck, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x74bdb321e1ee0043L, "jetbrains.mps.baseLanguage.structure.ISkipsReturn"), false, new SAbstractConcept[]{})).isNotEmpty()) {
       checkReturns = false;

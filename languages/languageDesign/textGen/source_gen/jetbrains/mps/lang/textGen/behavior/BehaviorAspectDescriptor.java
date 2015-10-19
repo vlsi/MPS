@@ -12,25 +12,25 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myConceptTextGenDeclaration_BehaviorDescriptor = new ConceptTextGenDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myNodeParameter_BehaviorDescriptor = new NodeParameter_BehaviorDescriptor();
-  private final BHDescriptor myGenerateTextDeclaration_BehaviorDescriptor = new GenerateTextDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myLanguageTextGenDeclaration_BehaviorDescriptor = new LanguageTextGenDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myOperationDeclaration_BehaviorDescriptor = new OperationDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myContextParameter_BehaviorDescriptor = new ContextParameter_BehaviorDescriptor();
-  private final BHDescriptor myAbstractTextGenDeclaration_BehaviorDescriptor = new AbstractTextGenDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBufferParameter_BehaviorDescriptor = new BufferParameter_BehaviorDescriptor();
-  private final BHDescriptor myUtilityMethodCall_BehaviorDescriptor = new UtilityMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myAbstractTextGenParameter_BehaviorDescriptor = new AbstractTextGenParameter_BehaviorDescriptor();
-  private final BHDescriptor myWithIndentOperation_BehaviorDescriptor = new WithIndentOperation_BehaviorDescriptor();
-  private final BHDescriptor myAbstractAppendPart_BehaviorDescriptor = new AbstractAppendPart_BehaviorDescriptor();
-  private final BHDescriptor myNodeAppendPart_BehaviorDescriptor = new NodeAppendPart_BehaviorDescriptor();
-  private final BHDescriptor myCollectionAppendPart_BehaviorDescriptor = new CollectionAppendPart_BehaviorDescriptor();
-  private final BHDescriptor myConstantStringAppendPart_BehaviorDescriptor = new ConstantStringAppendPart_BehaviorDescriptor();
-  private final BHDescriptor myFilenameFunction_BehaviorDescriptor = new FilenameFunction_BehaviorDescriptor();
-  private final BHDescriptor myEncodingDeclaration_BehaviorDescriptor = new EncodingDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myStubOperationDeclaration_BehaviorDescriptor = new StubOperationDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myExtensionDeclaration_BehaviorDescriptor = new ExtensionDeclaration_BehaviorDescriptor();
+  private final BHDescriptor myConceptTextGenDeclaration__BehaviorDescriptor = new ConceptTextGenDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myNodeParameter__BehaviorDescriptor = new NodeParameter__BehaviorDescriptor();
+  private final BHDescriptor myGenerateTextDeclaration__BehaviorDescriptor = new GenerateTextDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myLanguageTextGenDeclaration__BehaviorDescriptor = new LanguageTextGenDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myOperationDeclaration__BehaviorDescriptor = new OperationDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myContextParameter__BehaviorDescriptor = new ContextParameter__BehaviorDescriptor();
+  private final BHDescriptor myAbstractTextGenDeclaration__BehaviorDescriptor = new AbstractTextGenDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBufferParameter__BehaviorDescriptor = new BufferParameter__BehaviorDescriptor();
+  private final BHDescriptor myUtilityMethodCall__BehaviorDescriptor = new UtilityMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myAbstractTextGenParameter__BehaviorDescriptor = new AbstractTextGenParameter__BehaviorDescriptor();
+  private final BHDescriptor myWithIndentOperation__BehaviorDescriptor = new WithIndentOperation__BehaviorDescriptor();
+  private final BHDescriptor myAbstractAppendPart__BehaviorDescriptor = new AbstractAppendPart__BehaviorDescriptor();
+  private final BHDescriptor myNodeAppendPart__BehaviorDescriptor = new NodeAppendPart__BehaviorDescriptor();
+  private final BHDescriptor myCollectionAppendPart__BehaviorDescriptor = new CollectionAppendPart__BehaviorDescriptor();
+  private final BHDescriptor myConstantStringAppendPart__BehaviorDescriptor = new ConstantStringAppendPart__BehaviorDescriptor();
+  private final BHDescriptor myFilenameFunction__BehaviorDescriptor = new FilenameFunction__BehaviorDescriptor();
+  private final BHDescriptor myEncodingDeclaration__BehaviorDescriptor = new EncodingDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myStubOperationDeclaration__BehaviorDescriptor = new StubOperationDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myExtensionDeclaration__BehaviorDescriptor = new ExtensionDeclaration__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -69,43 +69,43 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myConceptTextGenDeclaration_BehaviorDescriptor;
+        return myConceptTextGenDeclaration__BehaviorDescriptor;
       case 1:
-        return myNodeParameter_BehaviorDescriptor;
+        return myNodeParameter__BehaviorDescriptor;
       case 2:
-        return myGenerateTextDeclaration_BehaviorDescriptor;
+        return myGenerateTextDeclaration__BehaviorDescriptor;
       case 3:
-        return myLanguageTextGenDeclaration_BehaviorDescriptor;
+        return myLanguageTextGenDeclaration__BehaviorDescriptor;
       case 4:
-        return myOperationDeclaration_BehaviorDescriptor;
+        return myOperationDeclaration__BehaviorDescriptor;
       case 5:
-        return myContextParameter_BehaviorDescriptor;
+        return myContextParameter__BehaviorDescriptor;
       case 6:
-        return myAbstractTextGenDeclaration_BehaviorDescriptor;
+        return myAbstractTextGenDeclaration__BehaviorDescriptor;
       case 7:
-        return myBufferParameter_BehaviorDescriptor;
+        return myBufferParameter__BehaviorDescriptor;
       case 8:
-        return myUtilityMethodCall_BehaviorDescriptor;
+        return myUtilityMethodCall__BehaviorDescriptor;
       case 9:
-        return myAbstractTextGenParameter_BehaviorDescriptor;
+        return myAbstractTextGenParameter__BehaviorDescriptor;
       case 10:
-        return myWithIndentOperation_BehaviorDescriptor;
+        return myWithIndentOperation__BehaviorDescriptor;
       case 11:
-        return myAbstractAppendPart_BehaviorDescriptor;
+        return myAbstractAppendPart__BehaviorDescriptor;
       case 12:
-        return myNodeAppendPart_BehaviorDescriptor;
+        return myNodeAppendPart__BehaviorDescriptor;
       case 13:
-        return myCollectionAppendPart_BehaviorDescriptor;
+        return myCollectionAppendPart__BehaviorDescriptor;
       case 14:
-        return myConstantStringAppendPart_BehaviorDescriptor;
+        return myConstantStringAppendPart__BehaviorDescriptor;
       case 15:
-        return myFilenameFunction_BehaviorDescriptor;
+        return myFilenameFunction__BehaviorDescriptor;
       case 16:
-        return myEncodingDeclaration_BehaviorDescriptor;
+        return myEncodingDeclaration__BehaviorDescriptor;
       case 17:
-        return myStubOperationDeclaration_BehaviorDescriptor;
+        return myStubOperationDeclaration__BehaviorDescriptor;
       case 18:
-        return myExtensionDeclaration_BehaviorDescriptor;
+        return myExtensionDeclaration__BehaviorDescriptor;
       default:
         return null;
     }

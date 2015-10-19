@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,47 +16,44 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
-import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.TemplateSwitchGraph;
 import jetbrains.mps.generator.impl.plan.PriorityConflicts.Kind;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Evgeny Gryaznov, Jan 18, 2010
  */
-public class GenerationPlan {
+public class GenerationPlan implements ModelGenerationPlan {
 
   private static final Logger LOG = LogManager.getLogger(GenerationPlan.class);
 
   private final Collection<TemplateModule> myGenerators;
-  private Collection<TemplateModel> myTemplateModels;
+  private final Collection<TemplateModel> myTemplateModels;
 
-  //  private Set<Language> myLanguages = new HashSet<Language>();
   private final List<List<TemplateMappingConfiguration>> myPlan;
+  private List<Step> mySteps;
   private final PriorityConflicts myConflictingPriorityRules;
-  private final String myInputName;
-  private TemplateSwitchGraph myTemplateSwitchGraph;
 
   public GenerationPlan(@NotNull SModel inputModel) {
-    this(inputModel, (Collection<String>) null);
+    this(inputModel, null);
   }
 
-  public GenerationPlan(@NotNull SModel inputModel, Collection<String> additionalLanguages) {
-    myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
+  public GenerationPlan(@NotNull SModel inputModel, @Nullable Collection<SLanguage> additionalLanguages) {
     try {
       EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
 
@@ -67,49 +64,44 @@ public class GenerationPlan {
         myPlan.add(Collections.<TemplateMappingConfiguration>emptyList());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
-      initTemplateModels();
+      myTemplateModels = new ArrayList<TemplateModel>();
+      for (TemplateModule module : myGenerators) {
+        myTemplateModels.addAll(module.getModels());
+      }
     } catch (Throwable t) {
-      LOG.error(null, t);
-      throw new RuntimeException("Couldn't compute generation steps for model '" + jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel) + "'", t);
+      String msg = String.format("Couldn't compute generation steps for model '%s;", NameUtil.getModelLongName(inputModel));
+      LOG.error(msg, t);
+      throw new RuntimeException(msg, t);
     }
   }
 
-  public GenerationPlan(@NotNull SModel inputModel, @NotNull ModelGenerationPlan plan) {
-    myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
-    myGenerators = new HashSet<TemplateModule>();
-    myPlan = plan.getSteps();
-    for (List<TemplateMappingConfiguration> step : myPlan) {
-      for (TemplateMappingConfiguration templateMappingConfiguration : step) {
-        myGenerators.add(templateMappingConfiguration.getModel().getModule());
+  @Override
+  @Deprecated
+  public List<List<TemplateMappingConfiguration>> getSteps() {
+    return myPlan;
+  }
+
+  @Override
+  public List<Step> getSteps_() {
+    if (mySteps == null) {
+      LinkedList<Step> steps = new LinkedList<Step>();
+      for (List<TemplateMappingConfiguration> p : myPlan) {
+        steps.add(new Transform(p));
       }
+      // debug
+//      steps.add(myPlan.size() / 3, new Checkpoint("first"));
+//      steps.add(myPlan.size() / 3 * 2, new Checkpoint("second"));
+      mySteps = Arrays.asList(steps.toArray(new Step[steps.size()]));
     }
-    myConflictingPriorityRules = new PriorityConflicts(myGenerators);
-    initTemplateModels();
-    if (myPlan.isEmpty()) {
-      myPlan.add(new ArrayList<TemplateMappingConfiguration>());
-    }
+    return mySteps;
   }
 
   public Collection<TemplateModule> getGenerators() {
     return myGenerators;
   }
 
-  private void initTemplateModels() {
-    myTemplateModels = new ArrayList<TemplateModel>();
-    for (TemplateModule module : myGenerators) {
-      myTemplateModels.addAll(module.getModels());
-    }
-  }
-
-  public int getStepCount() {
-    return myPlan.size();
-  }
-
-  public List<TemplateMappingConfiguration> getMappingConfigurations(int step) {
-    return myPlan.get(step);
-  }
-
-  public boolean isCountedLanguage(Language language) {
+  @Override
+  public boolean coversLanguage(SLanguage language) {
 //    return myLanguages.contains(language);
 
     //
@@ -146,47 +138,5 @@ public class GenerationPlan {
     ArrayList<Kind> deemedConflict = new ArrayList<Kind>(Arrays.asList(Kind.values()));
     deemedConflict.remove(Kind.Invalid);
     return deemedConflict;
-  }
-
-  public String getSignature() {
-    StringBuilder sb = new StringBuilder();
-    sb.append(myInputName);
-    sb.append(", ");
-    sb.append(myPlan.size());
-    sb.append(" steps\n");
-    int i = 0;
-    for (List<TemplateMappingConfiguration> step : myPlan) {
-      sb.append('[');
-      sb.append(i++);
-      sb.append(']');
-      sb.append('\n');
-      List<String> res = new ArrayList<String>(step.size());
-      for (TemplateMappingConfiguration mconfig : step) {
-        res.add(toString(mconfig));
-      }
-      Collections.sort(res);
-      for (String s : res) {
-        sb.append(s);
-        sb.append('\n');
-      }
-    }
-    return sb.toString();
-  }
-
-  private static String toString(TemplateMappingConfiguration mappingConfig) {
-    TemplateModel model = mappingConfig.getModel();
-    return model.getLongName() + "#" + mappingConfig.getName();
-  }
-
-  public TemplateSwitchGraph getTemplateSwitchGraph() {
-    return myTemplateSwitchGraph;
-  }
-
-  public void createSwitchGraph() throws GenerationFailureException {
-    myTemplateSwitchGraph = new TemplateSwitchGraph(myTemplateModels);
-  }
-
-  public Collection<TemplateModel> getTemplateModels() {
-    return myTemplateModels;
   }
 }

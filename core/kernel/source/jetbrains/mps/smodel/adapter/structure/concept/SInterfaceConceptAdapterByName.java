@@ -75,9 +75,9 @@ public class SInterfaceConceptAdapterByName extends SInterfaceConceptAdapter imp
   }
 
   @Override
-  protected SNode findInModel(SModel strucModel) {
+  protected SNode findInModel(SModel structureModel) {
     String shortName = NameUtil.shortNameFromLongName(myFqName);
-    for (SNode root : strucModel.getRootNodes()) {
+    for (SNode root : structureModel.getRootNodes()) {
       if (shortName.equals(root.getProperty(SNodeUtil.property_INamedConcept_name))) return root;
     }
     return null;

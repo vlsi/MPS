@@ -5,9 +5,11 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.findusages.FindersManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -39,6 +41,11 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   @Override
   public String getLongDescription() {
     return "";
+  }
+
+  @Nullable
+  public SNodeReference getDeclarationNode() {
+    return FindersManager.getInstance().getDeclarationNode(this);
   }
   @Override
   public SNode getNodeToNavigate() {

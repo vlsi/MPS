@@ -5,12 +5,12 @@ package BHL6.behavior;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class E_Behavior {
   public static int call_foo_6167444251392485299(SAbstractConcept __thisConcept__) {
-    return C_BehaviorDescriptor.foo_id5mnatV0hxLf.invokeSpecial(__thisConcept__);
+    return E__BehaviorDescriptor.foo_id5mnatV0hyuN(__thisConcept__);
   }
 }

@@ -37,7 +37,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor;
+import jetbrains.mps.lang.typesystem.behavior.AbstractRule__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -376,7 +376,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_robprv_a3b1a(SNode node, EditorContext editorContext) {
-    return AbstractRule_BehaviorDescriptor.isAttributeRule_id6lCixFI9vx1.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x65684a1aee271b08L, "supercedesFun")) != null);
+    return (boolean) AbstractRule__BehaviorDescriptor.isAttributeRule_id6lCixFI9vx1.invoke(node) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x65684a1aee271b08L, "supercedesFun")) != null);
   }
   private EditorCell createConstant_robprv_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "supercedes attributed");

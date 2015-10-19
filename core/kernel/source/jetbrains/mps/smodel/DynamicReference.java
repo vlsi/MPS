@@ -209,11 +209,11 @@ public class DynamicReference extends SReferenceBase {
           result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().toString()));
         }
         if (result.size() > 0) {
-          error(message, result.toArray(new ProblemDescription[result.size()]));
+          error(message, false, result.toArray(new ProblemDescription[result.size()]));
           return;
         }
       }
-      error(message);
+      error(message, false);
     } finally {
       refs.remove(this);
     }

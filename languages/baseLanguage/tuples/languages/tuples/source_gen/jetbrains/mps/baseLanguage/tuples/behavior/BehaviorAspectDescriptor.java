@@ -12,14 +12,14 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myIndexedTupleType_BehaviorDescriptor = new IndexedTupleType_BehaviorDescriptor();
-  private final BHDescriptor myIndexedTupleLiteral_BehaviorDescriptor = new IndexedTupleLiteral_BehaviorDescriptor();
-  private final BHDescriptor myIndexedTupleMemberAccessExpression_BehaviorDescriptor = new IndexedTupleMemberAccessExpression_BehaviorDescriptor();
-  private final BHDescriptor myNamedTupleDeclaration_BehaviorDescriptor = new NamedTupleDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myNamedTupleComponentDeclaration_BehaviorDescriptor = new NamedTupleComponentDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myNamedTupleType_BehaviorDescriptor = new NamedTupleType_BehaviorDescriptor();
-  private final BHDescriptor myNamedTupleLiteral_BehaviorDescriptor = new NamedTupleLiteral_BehaviorDescriptor();
-  private final BHDescriptor myNamedTupleComponentAccessOperation_BehaviorDescriptor = new NamedTupleComponentAccessOperation_BehaviorDescriptor();
+  private final BHDescriptor myIndexedTupleType__BehaviorDescriptor = new IndexedTupleType__BehaviorDescriptor();
+  private final BHDescriptor myIndexedTupleLiteral__BehaviorDescriptor = new IndexedTupleLiteral__BehaviorDescriptor();
+  private final BHDescriptor myIndexedTupleMemberAccessExpression__BehaviorDescriptor = new IndexedTupleMemberAccessExpression__BehaviorDescriptor();
+  private final BHDescriptor myNamedTupleDeclaration__BehaviorDescriptor = new NamedTupleDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myNamedTupleComponentDeclaration__BehaviorDescriptor = new NamedTupleComponentDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myNamedTupleType__BehaviorDescriptor = new NamedTupleType__BehaviorDescriptor();
+  private final BHDescriptor myNamedTupleLiteral__BehaviorDescriptor = new NamedTupleLiteral__BehaviorDescriptor();
+  private final BHDescriptor myNamedTupleComponentAccessOperation__BehaviorDescriptor = new NamedTupleComponentAccessOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -47,21 +47,21 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myIndexedTupleType_BehaviorDescriptor;
+        return myIndexedTupleType__BehaviorDescriptor;
       case 1:
-        return myIndexedTupleLiteral_BehaviorDescriptor;
+        return myIndexedTupleLiteral__BehaviorDescriptor;
       case 2:
-        return myIndexedTupleMemberAccessExpression_BehaviorDescriptor;
+        return myIndexedTupleMemberAccessExpression__BehaviorDescriptor;
       case 3:
-        return myNamedTupleDeclaration_BehaviorDescriptor;
+        return myNamedTupleDeclaration__BehaviorDescriptor;
       case 4:
-        return myNamedTupleComponentDeclaration_BehaviorDescriptor;
+        return myNamedTupleComponentDeclaration__BehaviorDescriptor;
       case 5:
-        return myNamedTupleType_BehaviorDescriptor;
+        return myNamedTupleType__BehaviorDescriptor;
       case 6:
-        return myNamedTupleLiteral_BehaviorDescriptor;
+        return myNamedTupleLiteral__BehaviorDescriptor;
       case 7:
-        return myNamedTupleComponentAccessOperation_BehaviorDescriptor;
+        return myNamedTupleComponentAccessOperation__BehaviorDescriptor;
       default:
         return null;
     }

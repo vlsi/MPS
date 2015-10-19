@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class Interface_Behavior {
   public static boolean call_canBeStatic_3190746170685014638(SNode __thisNode__) {
-    return Classifier_BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(__thisNode__) && !(IClassifierMember_BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(__thisNode__));
+    return Interface__BehaviorDescriptor.canBeStatic_id2L7NFMC7$9I(__thisNode__);
   }
 }

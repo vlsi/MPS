@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="Container_BehaviorDescriptor.java">
+      <unit at="14,0,26,0" name="MultiTarget.behavior.Container_BehaviorDescriptor" />
+    </file>
+    <file name="Member_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="MultiTarget.behavior.Member_BehaviorDescriptor" />
+    </file>
+    <file name="NumericValue_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="MultiTarget.behavior.NumericValue_BehaviorDescriptor" />
+    </file>
+    <file name="StringValue_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="MultiTarget.behavior.StringValue_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

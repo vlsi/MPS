@@ -5,12 +5,12 @@ package jetbrains.mps.lang.behavior.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class I_Behavior {
   public static String call_nonVirtualFromInterfaceConcept_4731970554577186854(SNode __thisNode__, String in, int dummy) {
-    return in;
+    return I__BehaviorDescriptor.nonVirtualFromInterfaceConcept_id46FlynTbB0A(__thisNode__, in, dummy);
   }
 }

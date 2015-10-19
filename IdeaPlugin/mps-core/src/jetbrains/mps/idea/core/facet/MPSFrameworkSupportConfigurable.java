@@ -102,7 +102,7 @@ public class MPSFrameworkSupportConfigurable extends FrameworkSupportConfigurabl
 
     myModelDirectoryName = new JTextField(getDefaultModelDirectoryName());
     final FileChooserDescriptor chooserDescriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
-    chooserDescriptor.setIsTreeRootVisible(true);
+    chooserDescriptor.withTreeRootVisible(true);
     final FieldPanel fieldPanel = new FieldPanel(myModelDirectoryName, null, null, new BrowsePathListener(myModelDirectoryName, chooserDescriptor), null);
     fieldPanel.getFieldLabel().setFont(UIUtil.getLabelFont().deriveFont(Font.BOLD));
     gridConstraints.setRow(2);

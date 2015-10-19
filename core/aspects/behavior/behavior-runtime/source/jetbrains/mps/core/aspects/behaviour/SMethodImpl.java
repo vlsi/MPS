@@ -112,11 +112,19 @@ public final class SMethodImpl<T> implements SMethod<T> {
     return new SMethodImpl<T>(methodName, modifiers, returnType, concept, id, registry, parameters);
   }
 
+  private void checkForConcept(@NotNull SAbstractConcept concept) {
+    if (!concept.isSubConceptOf(myConcept)) {
+      throw new IllegalArgumentException("Illegal parameter : " + concept + " is not a subconcept of " + myConcept);
+    }
+  }
+
   @Override
   public T invoke(@Nullable SNode node, Object... parameters) {
     if (node == null) {
       return (T) getReturnType().getDefaultValue();
     }
+    checkForConcept(node.getConcept());
+
     if (myMethodModifiers.isPrivate()) {
       return invokeSpecial(node, parameters);
     }
@@ -129,6 +137,8 @@ public final class SMethodImpl<T> implements SMethod<T> {
     if (concept == null) {
       return (T) getReturnType().getDefaultValue();
     }
+    checkForConcept(concept);
+
     if (myMethodModifiers.isPrivate()) {
       return invokeSpecial(concept, parameters);
     }
@@ -141,6 +151,8 @@ public final class SMethodImpl<T> implements SMethod<T> {
     if (node == null) {
       return (T) getReturnType().getDefaultValue();
     }
+    checkForConcept(node.getConcept());
+
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
     return bhDescriptor.invokeSpecial(node, this, parameters);
   }
@@ -150,6 +162,8 @@ public final class SMethodImpl<T> implements SMethod<T> {
     if (concept == null) {
       return (T) getReturnType().getDefaultValue();
     }
+    checkForConcept(concept);
+
     BHDescriptor bhDescriptor = myRegistry.getBHDescriptor(myConcept);
     return bhDescriptor.invokeSpecial(concept, this, parameters);
   }

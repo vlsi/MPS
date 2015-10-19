@@ -5,12 +5,12 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class RemoveSTByConditionPart_Behavior {
   public static String call_getQueryMethodName_1220279474449(SNode __thisNode__) {
-    return "removeSideTransformActionsByCondition_" + __thisNode__.getNodeId().toString();
+    return RemoveSTByConditionPart__BehaviorDescriptor.getQueryMethodName_idhKukL$h(__thisNode__);
   }
 }

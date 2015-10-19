@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.environment;
 
-import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;

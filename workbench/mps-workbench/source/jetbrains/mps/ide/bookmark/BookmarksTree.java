@@ -25,7 +25,6 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -210,15 +209,7 @@ public class BookmarksTree extends MPSTree {
 
     @Override
     public void doubleClick() {
-      myProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          SNode openNode = getSNode();
-          if (openNode == null) return;
-          NavigationSupport.getInstance().openNode(myProject, openNode, true,
-              !(openNode.getModel() != null && openNode.getParent() == null));
-        }
-      });
+      new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(getSNode().getReference());
     }
 
     @Override

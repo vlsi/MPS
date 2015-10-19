@@ -55,7 +55,7 @@ public class PresentationUtil {
       return "new " + ((String) BHReflection.invoke(SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
     }
 
-    if (((Boolean) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)), SMethodTrimmedId.create("constant", null, "1653mnvAgr2")))) {
+    if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)), SMethodTrimmedId.create("constant", null, "1653mnvAgr2")))) {
       return ((Object) BHReflection.invoke(expression, SMethodTrimmedId.create("getCompileTimeConstantValue", null, "i1LP2xI"), SNodeOperations.getModel(expression).getModule())) + "";
     }
 

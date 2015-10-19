@@ -44,10 +44,6 @@ public class JavaCompiler {
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
-  public JavaCompiler() {
-  }
-
-
   public void addSourceFile(String path, String filename, Object contents) {
     if (!(contents instanceof String)) {
       // binary files aren't sources
@@ -174,16 +170,6 @@ public class JavaCompiler {
   private class MyCompilerRequestor implements ICompilerRequestor {
     @Override
     public void acceptResult(CompilationResult result) {
-      if (result.getErrors() != null) {
-        for (CategorizedProblem e : result.getErrors()) {
-          char[] fname = e.getOriginatingFileName();
-          LOG.error("Compilation error: " +
-              (fname == null ? "" : new String(fname)) +
-              "; line:" + e.getSourceLineNumber() +
-              "; column:" + e.getSourceStart() +
-              ":::" + e.getMessage());
-        }
-      }
       for (ClassFile file : result.getClassFiles()) {
         onClass(file);
         myClasses.put(getClassName(file), file.getBytes());

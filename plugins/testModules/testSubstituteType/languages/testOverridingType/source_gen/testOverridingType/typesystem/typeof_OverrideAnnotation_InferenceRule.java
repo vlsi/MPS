@@ -12,7 +12,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import testAnnotatedType.behavior.PresenceCondition_BehaviorDescriptor;
+import testAnnotatedType.behavior.PresenceCondition__BehaviorDescriptor;
 
 public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_OverrideAnnotation_InferenceRule() {
@@ -31,7 +31,7 @@ public class typeof_OverrideAnnotation_InferenceRule extends AbstractInferenceRu
     if (argument.getConcept().isSubConceptOf(getApplicableConcept())) {
       return new IsApplicableStatus(new IsApplicableStatus.Probe() {
         public boolean eval() {
-          return PresenceCondition_BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(argument, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
+          return (boolean) PresenceCondition__BehaviorDescriptor.isSatisfied_id5zzawu2JLe0.invoke(SLinkOperations.getTarget(argument, MetaAdapterFactory.getContainmentLink(0x394e385732564e8bL, 0x96015abe7ad354d9L, 0x391548fac32006d4L, 0x58e32a0782beb1c4L, "condition")));
         }
       }, null);
     } else {

@@ -12,27 +12,27 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myInIntervalExpression_BehaviorDescriptor = new InIntervalExpression_BehaviorDescriptor();
-  private final BHDescriptor myIntervalContainsExpression_BehaviorDescriptor = new IntervalContainsExpression_BehaviorDescriptor();
-  private final BHDescriptor myMathSymbol_BehaviorDescriptor = new MathSymbol_BehaviorDescriptor();
-  private final BHDescriptor myBigProdExpression_BehaviorDescriptor = new BigProdExpression_BehaviorDescriptor();
-  private final BHDescriptor myBigMaxExpression_BehaviorDescriptor = new BigMaxExpression_BehaviorDescriptor();
-  private final BHDescriptor myBigMinExpression_BehaviorDescriptor = new BigMinExpression_BehaviorDescriptor();
-  private final BHDescriptor myBigSumExpression_BehaviorDescriptor = new BigSumExpression_BehaviorDescriptor();
-  private final BHDescriptor myDecimalBinaryOperation_BehaviorDescriptor = new DecimalBinaryOperation_BehaviorDescriptor();
-  private final BHDescriptor myDecimalDivExpression_BehaviorDescriptor = new DecimalDivExpression_BehaviorDescriptor();
-  private final BHDescriptor myDecimalMulExpression_BehaviorDescriptor = new DecimalMulExpression_BehaviorDescriptor();
-  private final BHDescriptor myDecimalPlusExpression_BehaviorDescriptor = new DecimalPlusExpression_BehaviorDescriptor();
-  private final BHDescriptor myDecimalMinusExpression_BehaviorDescriptor = new DecimalMinusExpression_BehaviorDescriptor();
-  private final BHDescriptor myMatrixInverseOperation_BehaviorDescriptor = new MatrixInverseOperation_BehaviorDescriptor();
-  private final BHDescriptor myMathContext_BehaviorDescriptor = new MathContext_BehaviorDescriptor();
-  private final BHDescriptor myMatrixType_BehaviorDescriptor = new MatrixType_BehaviorDescriptor();
-  private final BHDescriptor myMatrixConstructor_BehaviorDescriptor = new MatrixConstructor_BehaviorDescriptor();
-  private final BHDescriptor myMatrixElementAccessExpression_BehaviorDescriptor = new MatrixElementAccessExpression_BehaviorDescriptor();
-  private final BHDescriptor myExponentialOperation_BehaviorDescriptor = new ExponentialOperation_BehaviorDescriptor();
-  private final BHDescriptor myMatrixExponentialOperation_BehaviorDescriptor = new MatrixExponentialOperation_BehaviorDescriptor();
-  private final BHDescriptor myConjugateOperation_BehaviorDescriptor = new ConjugateOperation_BehaviorDescriptor();
-  private final BHDescriptor myTransposeOperation_BehaviorDescriptor = new TransposeOperation_BehaviorDescriptor();
+  private final BHDescriptor myInIntervalExpression__BehaviorDescriptor = new InIntervalExpression__BehaviorDescriptor();
+  private final BHDescriptor myIntervalContainsExpression__BehaviorDescriptor = new IntervalContainsExpression__BehaviorDescriptor();
+  private final BHDescriptor myMathSymbol__BehaviorDescriptor = new MathSymbol__BehaviorDescriptor();
+  private final BHDescriptor myBigProdExpression__BehaviorDescriptor = new BigProdExpression__BehaviorDescriptor();
+  private final BHDescriptor myBigMaxExpression__BehaviorDescriptor = new BigMaxExpression__BehaviorDescriptor();
+  private final BHDescriptor myBigMinExpression__BehaviorDescriptor = new BigMinExpression__BehaviorDescriptor();
+  private final BHDescriptor myBigSumExpression__BehaviorDescriptor = new BigSumExpression__BehaviorDescriptor();
+  private final BHDescriptor myDecimalBinaryOperation__BehaviorDescriptor = new DecimalBinaryOperation__BehaviorDescriptor();
+  private final BHDescriptor myDecimalDivExpression__BehaviorDescriptor = new DecimalDivExpression__BehaviorDescriptor();
+  private final BHDescriptor myDecimalMulExpression__BehaviorDescriptor = new DecimalMulExpression__BehaviorDescriptor();
+  private final BHDescriptor myDecimalPlusExpression__BehaviorDescriptor = new DecimalPlusExpression__BehaviorDescriptor();
+  private final BHDescriptor myDecimalMinusExpression__BehaviorDescriptor = new DecimalMinusExpression__BehaviorDescriptor();
+  private final BHDescriptor myMatrixInverseOperation__BehaviorDescriptor = new MatrixInverseOperation__BehaviorDescriptor();
+  private final BHDescriptor myMathContext__BehaviorDescriptor = new MathContext__BehaviorDescriptor();
+  private final BHDescriptor myMatrixType__BehaviorDescriptor = new MatrixType__BehaviorDescriptor();
+  private final BHDescriptor myMatrixConstructor__BehaviorDescriptor = new MatrixConstructor__BehaviorDescriptor();
+  private final BHDescriptor myMatrixElementAccessExpression__BehaviorDescriptor = new MatrixElementAccessExpression__BehaviorDescriptor();
+  private final BHDescriptor myExponentialOperation__BehaviorDescriptor = new ExponentialOperation__BehaviorDescriptor();
+  private final BHDescriptor myMatrixExponentialOperation__BehaviorDescriptor = new MatrixExponentialOperation__BehaviorDescriptor();
+  private final BHDescriptor myConjugateOperation__BehaviorDescriptor = new ConjugateOperation__BehaviorDescriptor();
+  private final BHDescriptor myTransposeOperation__BehaviorDescriptor = new TransposeOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -73,47 +73,47 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myInIntervalExpression_BehaviorDescriptor;
+        return myInIntervalExpression__BehaviorDescriptor;
       case 1:
-        return myIntervalContainsExpression_BehaviorDescriptor;
+        return myIntervalContainsExpression__BehaviorDescriptor;
       case 2:
-        return myMathSymbol_BehaviorDescriptor;
+        return myMathSymbol__BehaviorDescriptor;
       case 3:
-        return myBigProdExpression_BehaviorDescriptor;
+        return myBigProdExpression__BehaviorDescriptor;
       case 4:
-        return myBigMaxExpression_BehaviorDescriptor;
+        return myBigMaxExpression__BehaviorDescriptor;
       case 5:
-        return myBigMinExpression_BehaviorDescriptor;
+        return myBigMinExpression__BehaviorDescriptor;
       case 6:
-        return myBigSumExpression_BehaviorDescriptor;
+        return myBigSumExpression__BehaviorDescriptor;
       case 7:
-        return myDecimalBinaryOperation_BehaviorDescriptor;
+        return myDecimalBinaryOperation__BehaviorDescriptor;
       case 8:
-        return myDecimalDivExpression_BehaviorDescriptor;
+        return myDecimalDivExpression__BehaviorDescriptor;
       case 9:
-        return myDecimalMulExpression_BehaviorDescriptor;
+        return myDecimalMulExpression__BehaviorDescriptor;
       case 10:
-        return myDecimalPlusExpression_BehaviorDescriptor;
+        return myDecimalPlusExpression__BehaviorDescriptor;
       case 11:
-        return myDecimalMinusExpression_BehaviorDescriptor;
+        return myDecimalMinusExpression__BehaviorDescriptor;
       case 12:
-        return myMatrixInverseOperation_BehaviorDescriptor;
+        return myMatrixInverseOperation__BehaviorDescriptor;
       case 13:
-        return myMathContext_BehaviorDescriptor;
+        return myMathContext__BehaviorDescriptor;
       case 14:
-        return myMatrixType_BehaviorDescriptor;
+        return myMatrixType__BehaviorDescriptor;
       case 15:
-        return myMatrixConstructor_BehaviorDescriptor;
+        return myMatrixConstructor__BehaviorDescriptor;
       case 16:
-        return myMatrixElementAccessExpression_BehaviorDescriptor;
+        return myMatrixElementAccessExpression__BehaviorDescriptor;
       case 17:
-        return myExponentialOperation_BehaviorDescriptor;
+        return myExponentialOperation__BehaviorDescriptor;
       case 18:
-        return myMatrixExponentialOperation_BehaviorDescriptor;
+        return myMatrixExponentialOperation__BehaviorDescriptor;
       case 19:
-        return myConjugateOperation_BehaviorDescriptor;
+        return myConjugateOperation__BehaviorDescriptor;
       case 20:
-        return myTransposeOperation_BehaviorDescriptor;
+        return myTransposeOperation__BehaviorDescriptor;
       default:
         return null;
     }

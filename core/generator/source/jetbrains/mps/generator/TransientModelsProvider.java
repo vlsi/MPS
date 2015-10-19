@@ -17,18 +17,22 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -38,25 +42,35 @@ public class TransientModelsProvider {
 
   private final ConcurrentMap<SModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<SModule, TransientModelsModule>();
   private int myModelsToKeepMax = 0; /* unlimited */
-  private final Project myProject;
+  private final SRepositoryExt myRepository;
   private int myKeptModels;
   private final TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
   private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
+  private TransientModelsModule myCheckpointsModule;
 
+  /**
+   * @deprecated Generator shall not depend from Project, it may run from e.g. ant task where no project is available.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public TransientModelsProvider(Project project, TransientSwapOwner owner) {
-    myProject = project;
-    myTransientSwapOwner = owner;
+    this(project.getRepository(), owner);
+  }
+
+  public TransientModelsProvider(@NotNull SRepository repository, @Nullable TransientSwapOwner swapOwner) {
+    myRepository = (SRepositoryExt) repository;
+    myTransientSwapOwner = swapOwner;
   }
 
   protected void clearAll() {
-    myProject.getModelAccess().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
         for (TransientModelsModule m : toRemove) {
-          MPSModuleRepository.getInstance().unregisterModule(m, myOwner);
+          myRepository.unregisterModule(m, myOwner);
         }
       }
     });
@@ -70,12 +84,13 @@ public class TransientModelsProvider {
   }
 
   public void publishAll() {
-    myProject.getModelAccess().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         for (TransientModelsModule m : myModuleMap.values()) {
           m.publishAll();
         }
+        myCheckpointsModule.publishAll();
       }
     });
   }
@@ -85,10 +100,8 @@ public class TransientModelsProvider {
       return;
     }
 
-    final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsProvider.this);
-    // FIXME once ProjectRepository implements SRepositoryExt, take one from myProject
-    final SRepositoryExt repo = MPSModuleRepository.getInstance();
-    repo.registerModule(transientModelsModule, myOwner);
+    final TransientModelsModule transientModelsModule = new TransientModelsModule(module, this);
+    myRepository.registerModule(transientModelsModule, myOwner);
     myModuleMap.put(module, transientModelsModule);
   }
 
@@ -98,6 +111,37 @@ public class TransientModelsProvider {
     }
 
     throw new IllegalStateException();
+  }
+
+  public TransientModelsModule getCheckpointsModule() {
+    return myCheckpointsModule;
+  }
+
+  /**
+   * FIXME: temp prototype. We shall not keep CME instance along with TMP, this is just to facilitate
+   * move forward. Now we need original CheckpointState instance as it keeps mapping labels, and we do
+   * not serialize/restore these yet (it's easy to restore CheckpointState based on transient SModel, but
+   * impossible to resurrect labels yet).
+   */
+  public CrossModelEnvironment getCrossModelEnvironment() {
+    if (myEnvTemp == null) {
+      myEnvTemp = new CrossModelEnvironment(this);
+    }
+    return myEnvTemp;
+  }
+  private CrossModelEnvironment myEnvTemp;
+
+  public void initCheckpointModule() {
+    if (myCheckpointsModule == null) {
+      myRepository.getModelAccess().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          SModuleReference cpModuleRef = new ModuleReference(null, ModuleId.regular());
+          myCheckpointsModule = new TransientModelsModule(TransientModelsProvider.this, cpModuleRef);
+          myRepository.registerModule(myCheckpointsModule, myOwner);
+        }
+      });
+    }
   }
 
   public boolean canKeepOneMore() {
@@ -140,7 +184,7 @@ public class TransientModelsProvider {
   }
 
   public Iterable<TransientModelsModule> getModules() {
-    myProject.getModelAccess().checkReadAccess();
+    myRepository.getModelAccess().checkReadAccess();
 
     List<TransientModelsModule> result = new ArrayList<TransientModelsModule>(myModuleMap.size());
     for (TransientModelsModule m : myModuleMap.values()) {
@@ -171,12 +215,10 @@ public class TransientModelsProvider {
   }
 
   private String newSessionId() {
-    File projectFile = myProject.getProjectFile();
-    return (projectFile != null ? projectFile.getAbsolutePath().hashCode() : System.identityHashCode(myProject)) +
-        Long.toHexString(System.currentTimeMillis());
+    return String.valueOf(System.identityHashCode(myRepository)) + Long.toHexString(System.currentTimeMillis());
   }
 
-  public static interface TransientSwapSpace {
+  public interface TransientSwapSpace {
 
     boolean swapOut(SModelData model);
 
@@ -185,7 +227,7 @@ public class TransientModelsProvider {
     void clear();
   }
 
-  public static interface TransientSwapOwner {
+  public interface TransientSwapOwner {
 
     TransientSwapSpace initSwapSpace(String spaceId);
 

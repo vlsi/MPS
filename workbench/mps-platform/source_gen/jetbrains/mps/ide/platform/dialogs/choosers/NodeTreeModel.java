@@ -15,12 +15,11 @@ import com.intellij.navigation.ItemPresentation;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.util.AsyncResult;
+import com.intellij.util.Consumer;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public abstract class NodeTreeModel implements TreeModel {
   private static SNodeReference FAKE_ROOT = new SNodePointer(null);
@@ -80,23 +79,13 @@ public abstract class NodeTreeModel implements TreeModel {
     }
     @Override
     public void navigate(boolean b) {
-      DataManager.getInstance().getDataContextFromFocus().doWhenDone(new AsyncResult.Handler<DataContext>() {
-        @Override
-        public void run(DataContext dataContext) {
-          final Project project = MPSCommonDataKeys.MPS_PROJECT.getData(dataContext);
+      DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Consumer<DataContext>() {
+        public void consume(DataContext dataContext) {
+          Project project = MPSCommonDataKeys.MPS_PROJECT.getData(dataContext);
           if (project == null) {
             return;
           }
-
-          project.getModelAccess().runWriteInEDT(new Runnable() {
-            public void run() {
-              SNode node = myNode.resolve(project.getRepository());
-              if (node == null) {
-                return;
-              }
-              NavigationSupport.getInstance().openNode(project, node, true, true);
-            }
-          });
+          new EditorNavigator(project).shallFocus(true).shallSelect(true).open(myNode);
         }
       });
     }

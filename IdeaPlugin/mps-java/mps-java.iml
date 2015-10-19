@@ -41,39 +41,23 @@
       <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/basePlatform">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/basePlatform/source_gen" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/platform">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="module" module-name="mps-java-common" />
-    <orderEntry type="library" name="mps.Annotations_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage" level="project" />
-    <orderEntry type="library" name="mps.MPS.Platform" level="project" />
-    <orderEntry type="library" name="mps.MPS.Editor" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.lang.core_auto" level="project" />
-    <orderEntry type="library" name="mps.collections.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.kernel_auto" level="project" />
-    <orderEntry type="library" name="mps.closures.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.refactoring.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.blTypes_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.make.facets_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.javadoc_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.dataFlow.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.logging.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.lang.traceable_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.collections_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.scopes_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.lang.structure_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.IDEA_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.smodel.resources_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.Editor_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.Platform_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.closures_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.tuples.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.lang.behavior" level="project" />
+    <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.collections" level="project" />
+    <orderEntry type="library" name="mps-collections" level="project" />
+    <orderEntry type="library" name="mps-closures" level="project" />
+    <orderEntry type="library" name="mps-editor-runtime" level="project" />
+    <orderEntry type="library" name="mps-tuples" level="project" />
+    <orderEntry type="library" name="mps-icons" level="project" />
   </component>
 </module>

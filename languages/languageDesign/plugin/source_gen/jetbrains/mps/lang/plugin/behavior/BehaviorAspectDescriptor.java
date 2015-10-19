@@ -12,68 +12,68 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myActionDeclaration_BehaviorDescriptor = new ActionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myDoUpdateBlock_BehaviorDescriptor = new DoUpdateBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_AnActionEvent_BehaviorDescriptor = new ConceptFunctionParameter_AnActionEvent_BehaviorDescriptor();
-  private final BHDescriptor myExecuteBlock_BehaviorDescriptor = new ExecuteBlock_BehaviorDescriptor();
-  private final BHDescriptor myActionGroupDeclaration_BehaviorDescriptor = new ActionGroupDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myGroupAnchor_BehaviorDescriptor = new GroupAnchor_BehaviorDescriptor();
-  private final BHDescriptor myGetNodeBlock_BehaviorDescriptor = new GetNodeBlock_BehaviorDescriptor();
-  private final BHDescriptor myGetNodesBlock_BehaviorDescriptor = new GetNodesBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_node_BehaviorDescriptor = new ConceptFunctionParameter_node_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_OperationContext_BehaviorDescriptor = new ConceptFunctionParameter_OperationContext_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_IModule_BehaviorDescriptor = new ConceptFunctionParameter_IModule_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_MPSProject_BehaviorDescriptor = new ConceptFunctionParameter_MPSProject_BehaviorDescriptor();
-  private final BHDescriptor myActionParameterDeclaration_BehaviorDescriptor = new ActionParameterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myUpdateBlock_BehaviorDescriptor = new UpdateBlock_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableBlock_BehaviorDescriptor = new IsApplicableBlock_BehaviorDescriptor();
-  private final BHDescriptor myActionType_BehaviorDescriptor = new ActionType_BehaviorDescriptor();
-  private final BHDescriptor myActionParameterReferenceOperation_BehaviorDescriptor = new ActionParameterReferenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myBuildGroupBlock_BehaviorDescriptor = new BuildGroupBlock_BehaviorDescriptor();
-  private final BHDescriptor myKeyMapKeystroke_BehaviorDescriptor = new KeyMapKeystroke_BehaviorDescriptor();
-  private final BHDescriptor myGroupType_BehaviorDescriptor = new GroupType_BehaviorDescriptor();
-  private final BHDescriptor myToolType_BehaviorDescriptor = new ToolType_BehaviorDescriptor();
-  private final BHDescriptor myPreferencesComponentDeclaration_BehaviorDescriptor = new PreferencesComponentDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myPersistentPropertyDeclaration_BehaviorDescriptor = new PersistentPropertyDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myPersistentPropertyReference_BehaviorDescriptor = new PersistentPropertyReference_BehaviorDescriptor();
-  private final BHDescriptor myPreferencesComponentType_BehaviorDescriptor = new PreferencesComponentType_BehaviorDescriptor();
-  private final BHDescriptor myOnBeforeWriteBlock_BehaviorDescriptor = new OnBeforeWriteBlock_BehaviorDescriptor();
-  private final BHDescriptor myOnAfterReadBlock_BehaviorDescriptor = new OnAfterReadBlock_BehaviorDescriptor();
-  private final BHDescriptor myPreferencePage_BehaviorDescriptor = new PreferencePage_BehaviorDescriptor();
-  private final BHDescriptor myPreferencePageResetBlock_BehaviorDescriptor = new PreferencePageResetBlock_BehaviorDescriptor();
-  private final BHDescriptor myPreferencePageCommitBlock_BehaviorDescriptor = new PreferencePageCommitBlock_BehaviorDescriptor();
-  private final BHDescriptor myPreferencePageIsModifiedBlock_BehaviorDescriptor = new PreferencePageIsModifiedBlock_BehaviorDescriptor();
-  private final BHDescriptor myInitBlock_BehaviorDescriptor = new InitBlock_BehaviorDescriptor();
-  private final BHDescriptor myDisposeBlock_BehaviorDescriptor = new DisposeBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Project_BehaviorDescriptor = new ConceptFunctionParameter_Project_BehaviorDescriptor();
-  private final BHDescriptor myGetComponentBlock_BehaviorDescriptor = new GetComponentBlock_BehaviorDescriptor();
-  private final BHDescriptor myActionDataParameterDeclaration_BehaviorDescriptor = new ActionDataParameterDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myActionDataParameterReferenceOperation_BehaviorDescriptor = new ActionDataParameterReferenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myActionParameter_BehaviorDescriptor = new ActionParameter_BehaviorDescriptor();
-  private final BHDescriptor myToStringConceptFunction_BehaviorDescriptor = new ToStringConceptFunction_BehaviorDescriptor();
-  private final BHDescriptor myUpdateGroupFunction_BehaviorDescriptor = new UpdateGroupFunction_BehaviorDescriptor();
-  private final BHDescriptor myEnumerateChildrenFunction_BehaviorDescriptor = new EnumerateChildrenFunction_BehaviorDescriptor();
-  private final BHDescriptor myMPSPluginDependency_BehaviorDescriptor = new MPSPluginDependency_BehaviorDescriptor();
-  private final BHDescriptor myKeymapChangesDeclaration_BehaviorDescriptor = new KeymapChangesDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myActionParameterReference_BehaviorDescriptor = new ActionParameterReference_BehaviorDescriptor();
-  private final BHDescriptor myOrderConstraints_BehaviorDescriptor = new OrderConstraints_BehaviorDescriptor();
-  private final BHDescriptor myOrder_BehaviorDescriptor = new Order_BehaviorDescriptor();
-  private final BHDescriptor myOrderReference_BehaviorDescriptor = new OrderReference_BehaviorDescriptor();
-  private final BHDescriptor myCreateNodeAspectBlock_BehaviorDescriptor = new CreateNodeAspectBlock_BehaviorDescriptor();
-  private final BHDescriptor myEditorTab_BehaviorDescriptor = new EditorTab_BehaviorDescriptor();
-  private final BHDescriptor myIsApplicableTabBlock_BehaviorDescriptor = new IsApplicableTabBlock_BehaviorDescriptor();
-  private final BHDescriptor myBaseNodeBlock_BehaviorDescriptor = new BaseNodeBlock_BehaviorDescriptor();
-  private final BHDescriptor myListenBlock_BehaviorDescriptor = new ListenBlock_BehaviorDescriptor();
-  private final BHDescriptor myIdeaInitializerDescriptor_BehaviorDescriptor = new IdeaInitializerDescriptor_BehaviorDescriptor();
-  private final BHDescriptor myCustomCondition_BehaviorDescriptor = new CustomCondition_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Model_BehaviorDescriptor = new ConceptFunctionParameter_Model_BehaviorDescriptor();
-  private final BHDescriptor myPluginDependency_BehaviorDescriptor = new PluginDependency_BehaviorDescriptor();
-  private final BHDescriptor myIdeaPluginDependency_BehaviorDescriptor = new IdeaPluginDependency_BehaviorDescriptor();
-  private final BHDescriptor myParameterizedShortcutChange_BehaviorDescriptor = new ParameterizedShortcutChange_BehaviorDescriptor();
-  private final BHDescriptor myBaseToolDeclaration_BehaviorDescriptor = new BaseToolDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myGetConceptsBlock_BehaviorDescriptor = new GetConceptsBlock_BehaviorDescriptor();
-  private final BHDescriptor myNewCreateBlock_BehaviorDescriptor = new NewCreateBlock_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_Concept_BehaviorDescriptor = new ConceptFunctionParameter_Concept_BehaviorDescriptor();
+  private final BHDescriptor myActionDeclaration__BehaviorDescriptor = new ActionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myDoUpdateBlock__BehaviorDescriptor = new DoUpdateBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_AnActionEvent__BehaviorDescriptor = new ConceptFunctionParameter_AnActionEvent__BehaviorDescriptor();
+  private final BHDescriptor myExecuteBlock__BehaviorDescriptor = new ExecuteBlock__BehaviorDescriptor();
+  private final BHDescriptor myActionGroupDeclaration__BehaviorDescriptor = new ActionGroupDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myGroupAnchor__BehaviorDescriptor = new GroupAnchor__BehaviorDescriptor();
+  private final BHDescriptor myGetNodeBlock__BehaviorDescriptor = new GetNodeBlock__BehaviorDescriptor();
+  private final BHDescriptor myGetNodesBlock__BehaviorDescriptor = new GetNodesBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_node__BehaviorDescriptor = new ConceptFunctionParameter_node__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_OperationContext__BehaviorDescriptor = new ConceptFunctionParameter_OperationContext__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_IModule__BehaviorDescriptor = new ConceptFunctionParameter_IModule__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_MPSProject__BehaviorDescriptor = new ConceptFunctionParameter_MPSProject__BehaviorDescriptor();
+  private final BHDescriptor myActionParameterDeclaration__BehaviorDescriptor = new ActionParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myUpdateBlock__BehaviorDescriptor = new UpdateBlock__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableBlock__BehaviorDescriptor = new IsApplicableBlock__BehaviorDescriptor();
+  private final BHDescriptor myActionType__BehaviorDescriptor = new ActionType__BehaviorDescriptor();
+  private final BHDescriptor myActionParameterReferenceOperation__BehaviorDescriptor = new ActionParameterReferenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myBuildGroupBlock__BehaviorDescriptor = new BuildGroupBlock__BehaviorDescriptor();
+  private final BHDescriptor myKeyMapKeystroke__BehaviorDescriptor = new KeyMapKeystroke__BehaviorDescriptor();
+  private final BHDescriptor myGroupType__BehaviorDescriptor = new GroupType__BehaviorDescriptor();
+  private final BHDescriptor myToolType__BehaviorDescriptor = new ToolType__BehaviorDescriptor();
+  private final BHDescriptor myPreferencesComponentDeclaration__BehaviorDescriptor = new PreferencesComponentDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myPersistentPropertyDeclaration__BehaviorDescriptor = new PersistentPropertyDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myPersistentPropertyReference__BehaviorDescriptor = new PersistentPropertyReference__BehaviorDescriptor();
+  private final BHDescriptor myPreferencesComponentType__BehaviorDescriptor = new PreferencesComponentType__BehaviorDescriptor();
+  private final BHDescriptor myOnBeforeWriteBlock__BehaviorDescriptor = new OnBeforeWriteBlock__BehaviorDescriptor();
+  private final BHDescriptor myOnAfterReadBlock__BehaviorDescriptor = new OnAfterReadBlock__BehaviorDescriptor();
+  private final BHDescriptor myPreferencePage__BehaviorDescriptor = new PreferencePage__BehaviorDescriptor();
+  private final BHDescriptor myPreferencePageResetBlock__BehaviorDescriptor = new PreferencePageResetBlock__BehaviorDescriptor();
+  private final BHDescriptor myPreferencePageCommitBlock__BehaviorDescriptor = new PreferencePageCommitBlock__BehaviorDescriptor();
+  private final BHDescriptor myPreferencePageIsModifiedBlock__BehaviorDescriptor = new PreferencePageIsModifiedBlock__BehaviorDescriptor();
+  private final BHDescriptor myInitBlock__BehaviorDescriptor = new InitBlock__BehaviorDescriptor();
+  private final BHDescriptor myDisposeBlock__BehaviorDescriptor = new DisposeBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Project__BehaviorDescriptor = new ConceptFunctionParameter_Project__BehaviorDescriptor();
+  private final BHDescriptor myGetComponentBlock__BehaviorDescriptor = new GetComponentBlock__BehaviorDescriptor();
+  private final BHDescriptor myActionDataParameterDeclaration__BehaviorDescriptor = new ActionDataParameterDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myActionDataParameterReferenceOperation__BehaviorDescriptor = new ActionDataParameterReferenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myActionParameter__BehaviorDescriptor = new ActionParameter__BehaviorDescriptor();
+  private final BHDescriptor myToStringConceptFunction__BehaviorDescriptor = new ToStringConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myUpdateGroupFunction__BehaviorDescriptor = new UpdateGroupFunction__BehaviorDescriptor();
+  private final BHDescriptor myEnumerateChildrenFunction__BehaviorDescriptor = new EnumerateChildrenFunction__BehaviorDescriptor();
+  private final BHDescriptor myMPSPluginDependency__BehaviorDescriptor = new MPSPluginDependency__BehaviorDescriptor();
+  private final BHDescriptor myKeymapChangesDeclaration__BehaviorDescriptor = new KeymapChangesDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myActionParameterReference__BehaviorDescriptor = new ActionParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myOrderConstraints__BehaviorDescriptor = new OrderConstraints__BehaviorDescriptor();
+  private final BHDescriptor myOrder__BehaviorDescriptor = new Order__BehaviorDescriptor();
+  private final BHDescriptor myOrderReference__BehaviorDescriptor = new OrderReference__BehaviorDescriptor();
+  private final BHDescriptor myCreateNodeAspectBlock__BehaviorDescriptor = new CreateNodeAspectBlock__BehaviorDescriptor();
+  private final BHDescriptor myEditorTab__BehaviorDescriptor = new EditorTab__BehaviorDescriptor();
+  private final BHDescriptor myIsApplicableTabBlock__BehaviorDescriptor = new IsApplicableTabBlock__BehaviorDescriptor();
+  private final BHDescriptor myBaseNodeBlock__BehaviorDescriptor = new BaseNodeBlock__BehaviorDescriptor();
+  private final BHDescriptor myListenBlock__BehaviorDescriptor = new ListenBlock__BehaviorDescriptor();
+  private final BHDescriptor myIdeaInitializerDescriptor__BehaviorDescriptor = new IdeaInitializerDescriptor__BehaviorDescriptor();
+  private final BHDescriptor myCustomCondition__BehaviorDescriptor = new CustomCondition__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Model__BehaviorDescriptor = new ConceptFunctionParameter_Model__BehaviorDescriptor();
+  private final BHDescriptor myPluginDependency__BehaviorDescriptor = new PluginDependency__BehaviorDescriptor();
+  private final BHDescriptor myIdeaPluginDependency__BehaviorDescriptor = new IdeaPluginDependency__BehaviorDescriptor();
+  private final BHDescriptor myParameterizedShortcutChange__BehaviorDescriptor = new ParameterizedShortcutChange__BehaviorDescriptor();
+  private final BHDescriptor myBaseToolDeclaration__BehaviorDescriptor = new BaseToolDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myGetConceptsBlock__BehaviorDescriptor = new GetConceptsBlock__BehaviorDescriptor();
+  private final BHDescriptor myNewCreateBlock__BehaviorDescriptor = new NewCreateBlock__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_Concept__BehaviorDescriptor = new ConceptFunctionParameter_Concept__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -155,129 +155,129 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myActionDeclaration_BehaviorDescriptor;
+        return myActionDeclaration__BehaviorDescriptor;
       case 1:
-        return myDoUpdateBlock_BehaviorDescriptor;
+        return myDoUpdateBlock__BehaviorDescriptor;
       case 2:
-        return myConceptFunctionParameter_AnActionEvent_BehaviorDescriptor;
+        return myConceptFunctionParameter_AnActionEvent__BehaviorDescriptor;
       case 3:
-        return myExecuteBlock_BehaviorDescriptor;
+        return myExecuteBlock__BehaviorDescriptor;
       case 4:
-        return myActionGroupDeclaration_BehaviorDescriptor;
+        return myActionGroupDeclaration__BehaviorDescriptor;
       case 5:
-        return myGroupAnchor_BehaviorDescriptor;
+        return myGroupAnchor__BehaviorDescriptor;
       case 6:
-        return myGetNodeBlock_BehaviorDescriptor;
+        return myGetNodeBlock__BehaviorDescriptor;
       case 7:
-        return myGetNodesBlock_BehaviorDescriptor;
+        return myGetNodesBlock__BehaviorDescriptor;
       case 8:
-        return myConceptFunctionParameter_node_BehaviorDescriptor;
+        return myConceptFunctionParameter_node__BehaviorDescriptor;
       case 9:
-        return myConceptFunctionParameter_OperationContext_BehaviorDescriptor;
+        return myConceptFunctionParameter_OperationContext__BehaviorDescriptor;
       case 10:
-        return myConceptFunctionParameter_IModule_BehaviorDescriptor;
+        return myConceptFunctionParameter_IModule__BehaviorDescriptor;
       case 11:
-        return myConceptFunctionParameter_MPSProject_BehaviorDescriptor;
+        return myConceptFunctionParameter_MPSProject__BehaviorDescriptor;
       case 12:
-        return myActionParameterDeclaration_BehaviorDescriptor;
+        return myActionParameterDeclaration__BehaviorDescriptor;
       case 13:
-        return myUpdateBlock_BehaviorDescriptor;
+        return myUpdateBlock__BehaviorDescriptor;
       case 14:
-        return myIsApplicableBlock_BehaviorDescriptor;
+        return myIsApplicableBlock__BehaviorDescriptor;
       case 15:
-        return myActionType_BehaviorDescriptor;
+        return myActionType__BehaviorDescriptor;
       case 16:
-        return myActionParameterReferenceOperation_BehaviorDescriptor;
+        return myActionParameterReferenceOperation__BehaviorDescriptor;
       case 17:
-        return myBuildGroupBlock_BehaviorDescriptor;
+        return myBuildGroupBlock__BehaviorDescriptor;
       case 18:
-        return myKeyMapKeystroke_BehaviorDescriptor;
+        return myKeyMapKeystroke__BehaviorDescriptor;
       case 19:
-        return myGroupType_BehaviorDescriptor;
+        return myGroupType__BehaviorDescriptor;
       case 20:
-        return myToolType_BehaviorDescriptor;
+        return myToolType__BehaviorDescriptor;
       case 21:
-        return myPreferencesComponentDeclaration_BehaviorDescriptor;
+        return myPreferencesComponentDeclaration__BehaviorDescriptor;
       case 22:
-        return myPersistentPropertyDeclaration_BehaviorDescriptor;
+        return myPersistentPropertyDeclaration__BehaviorDescriptor;
       case 23:
-        return myPersistentPropertyReference_BehaviorDescriptor;
+        return myPersistentPropertyReference__BehaviorDescriptor;
       case 24:
-        return myPreferencesComponentType_BehaviorDescriptor;
+        return myPreferencesComponentType__BehaviorDescriptor;
       case 25:
-        return myOnBeforeWriteBlock_BehaviorDescriptor;
+        return myOnBeforeWriteBlock__BehaviorDescriptor;
       case 26:
-        return myOnAfterReadBlock_BehaviorDescriptor;
+        return myOnAfterReadBlock__BehaviorDescriptor;
       case 27:
-        return myPreferencePage_BehaviorDescriptor;
+        return myPreferencePage__BehaviorDescriptor;
       case 28:
-        return myPreferencePageResetBlock_BehaviorDescriptor;
+        return myPreferencePageResetBlock__BehaviorDescriptor;
       case 29:
-        return myPreferencePageCommitBlock_BehaviorDescriptor;
+        return myPreferencePageCommitBlock__BehaviorDescriptor;
       case 30:
-        return myPreferencePageIsModifiedBlock_BehaviorDescriptor;
+        return myPreferencePageIsModifiedBlock__BehaviorDescriptor;
       case 31:
-        return myInitBlock_BehaviorDescriptor;
+        return myInitBlock__BehaviorDescriptor;
       case 32:
-        return myDisposeBlock_BehaviorDescriptor;
+        return myDisposeBlock__BehaviorDescriptor;
       case 33:
-        return myConceptFunctionParameter_Project_BehaviorDescriptor;
+        return myConceptFunctionParameter_Project__BehaviorDescriptor;
       case 34:
-        return myGetComponentBlock_BehaviorDescriptor;
+        return myGetComponentBlock__BehaviorDescriptor;
       case 35:
-        return myActionDataParameterDeclaration_BehaviorDescriptor;
+        return myActionDataParameterDeclaration__BehaviorDescriptor;
       case 36:
-        return myActionDataParameterReferenceOperation_BehaviorDescriptor;
+        return myActionDataParameterReferenceOperation__BehaviorDescriptor;
       case 37:
-        return myActionParameter_BehaviorDescriptor;
+        return myActionParameter__BehaviorDescriptor;
       case 38:
-        return myToStringConceptFunction_BehaviorDescriptor;
+        return myToStringConceptFunction__BehaviorDescriptor;
       case 39:
-        return myUpdateGroupFunction_BehaviorDescriptor;
+        return myUpdateGroupFunction__BehaviorDescriptor;
       case 40:
-        return myEnumerateChildrenFunction_BehaviorDescriptor;
+        return myEnumerateChildrenFunction__BehaviorDescriptor;
       case 41:
-        return myMPSPluginDependency_BehaviorDescriptor;
+        return myMPSPluginDependency__BehaviorDescriptor;
       case 42:
-        return myKeymapChangesDeclaration_BehaviorDescriptor;
+        return myKeymapChangesDeclaration__BehaviorDescriptor;
       case 43:
-        return myActionParameterReference_BehaviorDescriptor;
+        return myActionParameterReference__BehaviorDescriptor;
       case 44:
-        return myOrderConstraints_BehaviorDescriptor;
+        return myOrderConstraints__BehaviorDescriptor;
       case 45:
-        return myOrder_BehaviorDescriptor;
+        return myOrder__BehaviorDescriptor;
       case 46:
-        return myOrderReference_BehaviorDescriptor;
+        return myOrderReference__BehaviorDescriptor;
       case 47:
-        return myCreateNodeAspectBlock_BehaviorDescriptor;
+        return myCreateNodeAspectBlock__BehaviorDescriptor;
       case 48:
-        return myEditorTab_BehaviorDescriptor;
+        return myEditorTab__BehaviorDescriptor;
       case 49:
-        return myIsApplicableTabBlock_BehaviorDescriptor;
+        return myIsApplicableTabBlock__BehaviorDescriptor;
       case 50:
-        return myBaseNodeBlock_BehaviorDescriptor;
+        return myBaseNodeBlock__BehaviorDescriptor;
       case 51:
-        return myListenBlock_BehaviorDescriptor;
+        return myListenBlock__BehaviorDescriptor;
       case 52:
-        return myIdeaInitializerDescriptor_BehaviorDescriptor;
+        return myIdeaInitializerDescriptor__BehaviorDescriptor;
       case 53:
-        return myCustomCondition_BehaviorDescriptor;
+        return myCustomCondition__BehaviorDescriptor;
       case 54:
-        return myConceptFunctionParameter_Model_BehaviorDescriptor;
+        return myConceptFunctionParameter_Model__BehaviorDescriptor;
       case 55:
-        return myPluginDependency_BehaviorDescriptor;
+        return myPluginDependency__BehaviorDescriptor;
       case 56:
-        return myIdeaPluginDependency_BehaviorDescriptor;
+        return myIdeaPluginDependency__BehaviorDescriptor;
       case 57:
-        return myParameterizedShortcutChange_BehaviorDescriptor;
+        return myParameterizedShortcutChange__BehaviorDescriptor;
       case 58:
-        return myBaseToolDeclaration_BehaviorDescriptor;
+        return myBaseToolDeclaration__BehaviorDescriptor;
       case 59:
-        return myGetConceptsBlock_BehaviorDescriptor;
+        return myGetConceptsBlock__BehaviorDescriptor;
       case 60:
-        return myNewCreateBlock_BehaviorDescriptor;
+        return myNewCreateBlock__BehaviorDescriptor;
       case 61:
-        return myConceptFunctionParameter_Concept_BehaviorDescriptor;
+        return myConceptFunctionParameter_Concept__BehaviorDescriptor;
       default:
         return null;
     }

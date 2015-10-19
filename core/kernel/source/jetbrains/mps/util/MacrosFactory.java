@@ -42,7 +42,9 @@ public class MacrosFactory {
     String[] extensions = new String[]{MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_IDEMODULE, MPSExtentions.PACKAGED_MODULE};
     String name = moduleFile.getPath().toLowerCase();
     for (String ext : extensions) {
-      if (name.endsWith(ext)) return new MacroHelperImpl(moduleFile, new ModuleMacros());
+      if (name.endsWith(ext)) {
+        return new MacroHelperImpl(moduleFile, new ModuleMacros());
+      }
     }
 
     return null;

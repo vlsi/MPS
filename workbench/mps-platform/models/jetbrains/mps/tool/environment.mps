@@ -603,10 +603,9 @@
           </node>
         </node>
         <node concept="3cpWs6" id="6z7xhWkukv5" role="3cqZAp">
-          <node concept="2YIFZM" id="4_TMdeLlISJ" role="3cqZAk">
+          <node concept="2YIFZM" id="4eRWbJ_JiEG" role="3cqZAk">
+            <ref role="37wK5l" to="1wbl:~IdeaTestApplication.getInstance():com.intellij.idea.IdeaTestApplication" resolve="getInstance" />
             <ref role="1Pybhc" to="1wbl:~IdeaTestApplication" resolve="IdeaTestApplication" />
-            <ref role="37wK5l" to="1wbl:~IdeaTestApplication.getInstance(java.lang.String):com.intellij.idea.IdeaTestApplication" resolve="getInstance" />
-            <node concept="10Nm6u" id="4_TMdeLkOyQ" role="37wK5m" />
           </node>
         </node>
       </node>
@@ -907,8 +906,8 @@
         </node>
         <node concept="3clFbF" id="4_TMdeLkOz5" role="3cqZAp">
           <node concept="2YIFZM" id="5A5jZrz7ufA" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="2ShNRf" id="5A5jZrz7ufB" role="37wK5m">
               <node concept="YeOm9" id="5A5jZrz7ufC" role="2ShVmc">
                 <node concept="1Y3b0j" id="5A5jZrz7ufD" role="YeSDq">
@@ -1321,7 +1320,7 @@
         <node concept="3clFbF" id="4_TMdeLkOoz" role="3cqZAp">
           <node concept="2YIFZM" id="5A5jZrz7uSD" role="3clFbG">
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="2ShNRf" id="5A5jZrz7uSE" role="37wK5m">
               <node concept="YeOm9" id="5A5jZrz7uSF" role="2ShVmc">
                 <node concept="1Y3b0j" id="5A5jZrz7uSG" role="YeSDq">
@@ -1560,7 +1559,7 @@
         <node concept="3clFbF" id="6m1MVDkUQcP" role="3cqZAp">
           <node concept="2YIFZM" id="6m1MVDkUQcQ" role="3clFbG">
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="3rTF030YdQj" role="37wK5m">
               <node concept="3clFbS" id="3rTF030YdQs" role="1bW5cS">
                 <node concept="3cpWs6" id="3rTF030YBUl" role="3cqZAp" />

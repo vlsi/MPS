@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
 class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
   @Override
   public boolean canNavigate(NodeWithContext object) {
-    IOperationContext context = object.getContext();
-    if (context == null) return false;
-
     return NodePointerNavigationHandler.isCorrectNode(object.getNode());
   }
 

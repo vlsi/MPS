@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.CloneUtil.Factory;
 import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
@@ -31,6 +32,9 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
+import jetbrains.mps.generator.impl.plan.ModelCheckpoints;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.DynamicReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
@@ -93,7 +97,7 @@ import java.util.Set;
 public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean myChanged = false;
-  private final RuleManager myRuleManager;
+  private final GenPlanActiveStep myPlanStep;
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
   /**
@@ -129,12 +133,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   static final class StepArguments {
     public final DependenciesBuilder dependenciesBuilder;
-    public final RuleManager ruleManager;
+    public final GenPlanActiveStep planStep;
     public final GenerationTrace genTrace;
     public final GeneratorMappings mappingLabels;
-    public StepArguments(RuleManager ruleManager, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
+    public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
       this.dependenciesBuilder = dependenciesBuilder;
-      this.ruleManager = ruleManager;
+      this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
     }
@@ -142,7 +146,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments stepArgs) {
     super(operationContext, inputModel, outputModel, stepArgs.mappingLabels);
-    myRuleManager = stepArgs.ruleManager;
+    myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen(); // FIXME use GenerationOptions instead!
@@ -284,7 +288,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       final QueryExecutionContext executionContext = getExecutionContext(null);
       if (executionContext != null) {
-        for (TemplateCreateRootRule rule : myRuleManager.getCreateRootRules()) {
+        for (TemplateCreateRootRule rule : getRuleManager().getCreateRootRules()) {
           TemplateExecutionEnvironment environment = new TemplateExecutionEnvironmentImpl(myTemplateProcessor, executionContext, new ReductionTrack(getBlockedReductionsData()));
           applyCreateRoot(rule, environment);
         }
@@ -296,7 +300,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // root mapping rules
     ttrace.push("root mappings", false);
     ArrayList<SNode> rootsConsumed = new ArrayList<SNode>();
-    for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
+    for (TemplateRootMappingRule rule : getRuleManager().getRoot_MappingRules()) {
       checkMonitorCanceled();
       applyRootRule(rule, rootsConsumed);
     }
@@ -424,7 +428,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       copyProcessor = new PartialCopyFacility(env, myDeltaBuilder);
     }
     // check if can drop
-    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules(inputRootNode))) {
+    if (copyProcessor.checkDropRules(inputRootNode, getRuleManager().getDropRootRules(inputRootNode))) {
       setChanged();
       return;
     }
@@ -500,6 +504,47 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return super.findOutputNodeById(nodeId);
   }
 
+  @Override
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+    SNode existing = super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    if (existing != null) {
+      // XXX apparently, there are models that use input nodes from a model other than that being transformed
+      // e.g. in build.workflow, bl.closures, bl.collections. Shall revert the change and try to rebuild
+      // to find out particular uses, as it's potential error (i.e. MLs between different models).
+      // For now, though, just check if there's mapping, and use it.
+      return existing;
+    }
+    if (inputNode == null) {
+      // there are models e.g. bl.plugin, debugger.api.ui.icons, d.java.runtime.ui that pass null as inputNode
+      return null;
+    }
+    SModel inputNodeModel = inputNode.getModel();
+    if (inputNodeModel == getInputModel()) {
+//      return super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+      return null; // code down there deals with xModel references only
+    }
+    if (inputNodeModel == null) {
+      return null;
+    }
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    if (!env.hasState(inputNodeModel.getReference())) {
+      return null;
+    }
+    ModelCheckpoints modelHistory = env.getState(inputNodeModel.getReference());
+    // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
+    Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    CheckpointState cp = modelHistory.find(lastPoint, targetPoint);
+    if (cp == null) {
+      return null;
+    }
+    Collection<SNode> output = cp.resolve(cp.getOutput(mappingName, inputNode.getNodeId()));
+    if (output.size() == 1) {
+      return output.iterator().next();
+    }
+    return null;
+
+  }
 
   // in fact, it's reasonable to keep this method in TEEI (in ReductionTrack, actually), to reflect narrowing scope of
   // generator -> TEEI -> TemplateProcessor. This would take another round of refactoring, though
@@ -597,8 +642,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myDelayedChanges;
   }
 
-  RuleManager getRuleManager() {
-    return myRuleManager;
+  final GenPlanActiveStep getGenerationPlan() {
+    return myPlanStep;
+  }
+
+  final RuleManager getRuleManager() {
+    return myPlanStep.getRuleManager();
   }
 
   GeneratorQueryProvider.Source getQuerySource() {
@@ -606,7 +655,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
-    return myRuleManager.getSwitch(switch_);
+    return getRuleManager().getSwitch(switch_);
   }
 
   @Override
@@ -921,7 +970,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             } else {
               String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
               getLogger().error(inputNode.getReference(),
-                  String.format(msg, inputReference.getRole(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
+                  String.format(msg, inputReference.getLink().getName(), SNodeOperations.getDebugText(inputNode), inputReference.getClass().getName()));
             }
             continue;
           }
@@ -937,7 +986,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
           new PostponedReference(inputReference.getLink(), outputNode, refInfo).registerWith(myEnv.getGenerator());
         } else if (refTarget.getModel() != null) {
-          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
+          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getLink(), refTarget);
         } else {
           reportBrokenRef(inputNode, inputReference);
         }

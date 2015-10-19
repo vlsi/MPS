@@ -78,7 +78,7 @@
   <dependency className="jetbrains.mps.lang.generator.generationContext.typesystem.typeof_GenerationContextOp_ContextVarRef_InferenceRule" file="typeof_GenerationContextOp_ContextVarRef_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.ContextVariableProvider_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.ContextVariableProvider__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.constraints.TraverseUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

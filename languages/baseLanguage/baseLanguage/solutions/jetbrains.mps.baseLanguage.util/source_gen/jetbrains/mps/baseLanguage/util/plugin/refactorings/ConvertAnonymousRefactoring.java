@@ -133,7 +133,7 @@ public class ConvertAnonymousRefactoring {
     if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(this.myClassToRefactor, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isNotEmpty()) {
       List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return ((SNode) BHReflection.invoke(it, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
+          return ((SNode) (SNode) BHReflection.invoke(it, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
         }
       }).toListSequence();
       SNode invocation = _quotation_createNode_qy1soj_a0b0a0q(parameterReferences);
@@ -199,7 +199,7 @@ public class ConvertAnonymousRefactoring {
     SNode constructorInvocation = _quotation_createNode_qy1soj_a0a0x(constructor, SLinkOperations.getChildren(this.myClassToRefactor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")));
     ListSequence.fromList(SLinkOperations.getChildren(constructorInvocation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return ((SNode) BHReflection.invoke(it, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
+        return ((SNode) (SNode) BHReflection.invoke(it, SMethodTrimmedId.create("createReference", null, "hEwJfME")));
       }
     }));
     for (SNode typeVaryable : MapSequence.fromMap(this.myInnerTypeVariables).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
@@ -347,7 +347,7 @@ public class ConvertAnonymousRefactoring {
   }
   private static boolean check_qy1soj_a0a52(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((Boolean) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("isStatic", null, "7MS72Gc8avw")));
+      return ((boolean) (Boolean) BHReflection.invoke(checkedDotOperand, SMethodTrimmedId.create("isStatic", null, "7MS72Gc8avw")));
     }
     return false;
   }

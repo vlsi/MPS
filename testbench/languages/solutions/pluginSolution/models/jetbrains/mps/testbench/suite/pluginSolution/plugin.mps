@@ -577,7 +577,7 @@
                       <node concept="3clFbS" id="4KDfkUwMp7Q" role="3clFbx">
                         <node concept="3clFbF" id="4KDfkUwMp83" role="3cqZAp">
                           <node concept="2YIFZM" id="4KDfkUwMp84" role="3clFbG">
-                            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
+                            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
                             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
                             <node concept="1bVj0M" id="4KDfkUwMp85" role="37wK5m">
                               <node concept="3clFbS" id="4KDfkUwMp86" role="1bW5cS">

@@ -8,9 +8,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public class ResetState extends BaseAction implements DumbAware {
-  private MergeModelsDialog myMergeModelsDialog;
-  public ResetState(MergeModelsDialog mergeModelsDialog) {
-    super("Reset Merge State", null, MergeModelsDialog.RESET);
+  private MergeModelsPanel myMergeModelsDialog;
+  public ResetState(MergeModelsPanel mergeModelsDialog) {
+    super("Reset Merge State", null, MergeModelsPanel.RESET);
     myMergeModelsDialog = mergeModelsDialog;
     setDisableOnNoProject(false);
   }

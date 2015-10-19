@@ -1,6 +1,7 @@
 package jetbrains.mps.idea.java.tests;
 
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
@@ -59,50 +60,63 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
   }
 
   public void testIndex() {
-    Project project = myModule.getProject();
-    List<Collection<Pair<SNodeDescriptor, String>>> values =
-        FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.f", GlobalSearchScope.allScope(project));
-    List<Collection<Pair<SNodeDescriptor, String>>> values2 =
-        FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.", GlobalSearchScope.allScope(project));
-    assertEquals(values, values2);
-
-    assertEquals(values.size(), 1);
-    Collection<Pair<SNodeDescriptor, String>> pairs = values.get(0);
-    assertEquals(pairs.size(), 1);
-    final Pair<SNodeDescriptor, String> p = pairs.iterator().next();
-
-    String role = p.o2;
-    assertEquals("variableDeclaration", role);
-
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final Project project = myModule.getProject();
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode snode = p.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
-        assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
+        List<Collection<Pair<SNodeDescriptor, String>>> values =
+          FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.f", GlobalSearchScope.allScope(project));
+        List<Collection<Pair<SNodeDescriptor, String>>> values2 =
+          FileBasedIndex.getInstance().getValues(ForeignIdReferenceIndex.ID, "Marker.", GlobalSearchScope.allScope(project));
+
+        assertEquals(values, values2);
+
+        assertEquals(values.size(), 1);
+        Collection<Pair<SNodeDescriptor, String>> pairs = values.get(0);
+
+        assertEquals(pairs.size(), 1);
+        final Pair<SNodeDescriptor, String> p = pairs.iterator().next();
+
+        String role = p.o2;
+
+        assertEquals("variableDeclaration", role);
+
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SNode snode = p.o1.getNodeReference().resolve(MPSModuleRepository.getInstance());
+            assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
+          }
+        });
       }
     });
   }
 
   public void testReferences() {
-    Project project = myModule.getProject();
-    Iterable<SReference> refs = ForeignIdReferenceCache.getInstance(project).getReferencesMatchingPrefix("Marker.f", GlobalSearchScope.allScope(project));
-    Iterator<SReference> it = refs.iterator();
-    final SReference ref = it.next();
-    assertFalse(it.hasNext());
-
-    RuntimeException throwable = ModelAccess.instance().runReadAction(new Computable<RuntimeException>() {
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
       @Override
-      public RuntimeException compute() {
-        try {
-          SNode snode = ref.getSourceNode();
-          assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
-        } catch (RuntimeException t) {
-          return t;
-        }
-        return null;
+      public void run() {
+        Project project = myModule.getProject();
+        Iterable<SReference> refs = ForeignIdReferenceCache.getInstance(project).getReferencesMatchingPrefix("Marker.f", GlobalSearchScope.allScope(project));
+        Iterator<SReference> it = refs.iterator();
+        final SReference ref = it.next();
+        assertFalse(it.hasNext());
+
+        RuntimeException throwable = ModelAccess.instance().runReadAction(new Computable<RuntimeException>() {
+          @Override
+          public RuntimeException compute() {
+            try {
+              SNode snode = ref.getSourceNode();
+              assertEquals("jetbrains.mps.baseLanguage.structure.StaticFieldReference", snode.getConcept().getQualifiedName());
+            } catch (RuntimeException t) {
+              return t;
+            }
+            return null;
+          }
+        });
+
+        if (throwable != null) throw throwable;
       }
     });
-
-    if (throwable != null) throw throwable;
   }
 }

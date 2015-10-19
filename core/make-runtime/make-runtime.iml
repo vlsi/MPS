@@ -26,5 +26,6 @@
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="environment" scope="TEST" />
   </component>
 </module>

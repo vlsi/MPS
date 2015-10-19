@@ -40,7 +40,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 
-public class RootDifferencePane {
+public class RootDifferencePane implements IHighlighter {
   private static final String PARAM_SHOW_INSPECTOR = RootDifferencePane.class.getName() + "ShowInspector";
   private static final String PARAM_INSPECTOR_SPLITTER_POSITION = RootDifferencePane.class.getName() + "InspectorSplitterPosition";
   private Project myProject;
@@ -202,8 +202,8 @@ public class RootDifferencePane {
       }
     });
     for (ModelChange change : Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId))) {
-      higlightChange(myOldEditor, myChangeSet.getOldModel(), change);
-      higlightChange(myNewEditor, myChangeSet.getNewModel(), change);
+      higlightChange(myOldEditor, myChangeSet.getOldModel(), true, change);
+      higlightChange(myNewEditor, myChangeSet.getNewModel(), false, change);
     }
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout b) {
@@ -217,9 +217,10 @@ public class RootDifferencePane {
     int count = Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId)).count();
     myStatusBar.setText((count == 0 ? "no differences" : NameUtil.formatNumericalString(count, "difference")));
   }
-  private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
-    diffEditor.highlightChange(model, change, null);
+  private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
+    diffEditor.highlightChange(model, change, isOldEditor, null);
   }
+  @Override
   public void rehighlight() {
     ChangeSetBuilder.rebuildChangeSet(myChangeSet);
     myNewEditor.unhighlightAllChanges();

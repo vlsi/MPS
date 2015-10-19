@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.extension.behavior.IRootWithUniqueName_BehaviorDescriptor;
+import jetbrains.mps.lang.extension.behavior.IRootWithUniqueName__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
@@ -169,7 +169,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     private EditorCell createReadOnlyModelAccessor_hr8njl_a0b0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return IRootWithUniqueName_BehaviorDescriptor.getId_id3vRuGRRXlj.invoke(node);
+          return (String) IRootWithUniqueName__BehaviorDescriptor.getId_id3vRuGRRXlj.invoke(node);
         }
         public void setText(String s) {
         }

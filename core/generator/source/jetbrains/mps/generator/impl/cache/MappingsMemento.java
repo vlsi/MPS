@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,12 +47,14 @@ public class MappingsMemento {
     }
     if (value instanceof SNode) {
       currentMapping.put(inputNode, ((SNode) value).getNodeId());
-    } else if (value instanceof List) {
-      List<SNode> n0 = (List<SNode>) value;
+    } else if (value instanceof Collection) {
+      @SuppressWarnings("unchecked")
+      Collection<SNode> n0 = (Collection<SNode>) value;
       List<SNodeId> v = new ArrayList<SNodeId>(n0.size());
       for (SNode n : n0) {
         v.add(n.getNodeId());
       }
+      currentMapping.put(inputNode, v);
     }
   }
 

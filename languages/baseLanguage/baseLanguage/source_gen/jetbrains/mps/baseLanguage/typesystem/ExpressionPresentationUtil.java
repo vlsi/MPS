@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 
@@ -46,14 +46,14 @@ public class ExpressionPresentationUtil {
     }
 
     if (SNodeOperations.isInstanceOf(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
-      return "new " + BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")));
+      return "new " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(SNodeOperations.cast(expression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")));
     }
 
-    if (Expression_BehaviorDescriptor.constant_id1653mnvAgr2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)))) {
-      return Expression_BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expression, SNodeOperations.getModel(expression).getModule()) + "";
+    if ((boolean) Expression__BehaviorDescriptor.constant_id1653mnvAgr2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(expression)))) {
+      return Expression__BehaviorDescriptor.getCompileTimeConstantValue_idi1LP2xI.invoke(expression, SNodeOperations.getModel(expression).getModule()) + "";
     }
 
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(expression);
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(expression);
   }
   public static String getOperationPresentation(@Nullable SNode operation) {
     if (operation == null) {
@@ -69,7 +69,7 @@ public class ExpressionPresentationUtil {
         }
       }) + ")";
     }
-    return BaseConcept_BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(operation);
+    return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(operation);
   }
 
   private static boolean isNotEmptyString(String str) {

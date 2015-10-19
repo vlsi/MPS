@@ -13,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.core.xml.behavior.XmlPart_BehaviorDescriptor;
+import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -45,7 +45,7 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_9277sk_a1a0(EditorContext editorContext, SNode node) {
-    return !(XmlPart_BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node));
+    return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node));
   }
   private EditorCell createProperty_9277sk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -97,6 +97,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_9277sk_a1d0(EditorContext editorContext, SNode node) {
-    return !(XmlPart_BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node));
+    return !((boolean) XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node));
   }
 }

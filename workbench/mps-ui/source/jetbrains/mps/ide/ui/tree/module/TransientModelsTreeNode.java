@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 

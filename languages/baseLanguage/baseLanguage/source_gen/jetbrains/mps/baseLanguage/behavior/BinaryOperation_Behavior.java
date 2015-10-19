@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class BinaryOperation_Behavior {
   public static boolean call_bothShouldBeWidenedTo_6205351058571053912(SAbstractConcept __thisConcept__, Class type, Object a, Object b) {
-    return a.getClass().isAssignableFrom(type) || b.getClass().isAssignableFrom(type);
+    return BinaryOperation__BehaviorDescriptor.bothShouldBeWidenedTo_id5otPu$gIcHo(__thisConcept__, type, a, b);
   }
 }

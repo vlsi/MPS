@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class TestCaseTreeNode extends BaseTestTreeNode {
   @NotNull
@@ -36,10 +36,6 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   }
   @Override
   public void doubleClick() {
-    myProject.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        NavigationSupport.getInstance().openNode(myProject, myTestCase.getNode(), true, false);
-      }
-    });
+    new EditorNavigator(myProject).shallFocus(true).open(myTestCase.getNodePointer());
   }
 }

@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myICheckedNamePolicy_BehaviorDescriptor = new ICheckedNamePolicy_BehaviorDescriptor();
+  private final BHDescriptor myICheckedNamePolicy__BehaviorDescriptor = new ICheckedNamePolicy__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -33,7 +33,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myICheckedNamePolicy_BehaviorDescriptor;
+        return myICheckedNamePolicy__BehaviorDescriptor;
       default:
         return null;
     }

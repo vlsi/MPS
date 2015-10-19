@@ -70,13 +70,15 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   }
 
   @Override
-  protected File findFindUnderProjectHome(String relativePath) {
-    String homePath = getHomePath();
-    File file = new File(homePath, FileUtil.toSystemDependentName(relativePath));
+  protected File findFindUnderProjectHome(String path) { // path may be either absolute or relative (from the project directory)
+    File file = new File(path);
     if (!file.exists()) {
-      throw new IllegalArgumentException("Cannot find file '" + relativePath + "' under '" + homePath + "' directory");
+      String homePath = getHomePath();
+      file = new File(homePath, FileUtil.toSystemDependentName(path));
+      if (!file.exists()) {
+        throw new IllegalArgumentException("Cannot find file by '" + path + "'; the home path is '" + homePath + "'.");
+      }
     }
-
     return file;
   }
 

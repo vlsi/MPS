@@ -7,9 +7,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptRef {
@@ -33,11 +33,11 @@ public class ConceptRef {
   }
 
   public void concept_conceptProperties(SNode exprConcept) {
-    boolean b = Expression_BehaviorDescriptor.lvalue_id1653mnvAgpj.invoke(SNodeOperations.asSConcept(exprConcept));
+    boolean b = (boolean) Expression__BehaviorDescriptor.lvalue_id1653mnvAgpj.invoke(SNodeOperations.asSConcept(exprConcept));
   }
 
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {
-    List<SNode> applicableParams = ConceptFunction_BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invoke(SNodeOperations.asSConcept(conceptFunctionConcept));
+    List<SNode> applicableParams = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invoke(SNodeOperations.asSConcept(conceptFunctionConcept));
   }
 
   public void concept_types() {

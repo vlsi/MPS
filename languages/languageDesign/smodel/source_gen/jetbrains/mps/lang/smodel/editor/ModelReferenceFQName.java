@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -45,7 +45,7 @@ public class ModelReferenceFQName implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_ho2vdo_a0(SNode node, EditorContext editorContext) {
-    return ModelReferenceExpression_BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node) != null;
+    return ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node) != null;
   }
   public static class ModelReferenceExpression_component_cellMenu_ho2vdo_a0a implements SubstituteInfoPartExt {
     private ModelReferenceCompletion myComponent;
@@ -59,7 +59,7 @@ public class ModelReferenceFQName implements ConceptEditorComponent {
   private EditorCell createReadOnlyModelAccessor_ho2vdo_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return ModelReferenceExpression_BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node);
+        return (String) ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node);
       }
       public void setText(String s) {
       }

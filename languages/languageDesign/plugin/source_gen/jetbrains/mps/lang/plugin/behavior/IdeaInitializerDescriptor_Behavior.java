@@ -6,21 +6,21 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class IdeaInitializerDescriptor_Behavior {
   public static String call_getGeneratedFileName_4015626213814045644(SNode __thisNode__) {
-    return IdeaInitializerDescriptor_BehaviorDescriptor.getGeneratedFileShortName_id3uUnGg98M$X.invoke(__thisNode__) + "." + IdeaInitializerDescriptor_BehaviorDescriptor.getGeneratesFileExtension_id3uUnGg98M_4.invoke(__thisNode__);
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratedFileName_id3uUnGg98wJc(__thisNode__);
   }
   public static String call_getGeneratedFileShortName_4015626213814118717(SNode __thisNode__) {
-    return "plugin";
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratedFileShortName_id3uUnGg98M$X(__thisNode__);
   }
   public static String call_getGeneratesFileExtension_4015626213814118724(SNode __thisNode__) {
-    return "xml";
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getGeneratesFileExtension_id3uUnGg98M_4(__thisNode__);
   }
   public static String call_getLibrariesResourceName_7967031338862798704(SAbstractConcept __thisConcept__) {
-    return "libraries";
+    return IdeaInitializerDescriptor__BehaviorDescriptor.getLibrariesResourceName_id6Ug_cEzkAtK(__thisConcept__);
   }
 }

@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -27,7 +27,7 @@ public class check_ChildAttribute_NonTypesystemRule extends AbstractNonTypesyste
     Iterable<SContainmentLink> links = SNodeOperations.getConcept(SNodeOperations.getParent(childAttribute)).getContainmentLinks();
     SContainmentLink existingLink = Sequence.fromIterable(links).findFirst(new IWhereFilter<SContainmentLink>() {
       public boolean accept(SContainmentLink it) {
-        return eq_qv0pth_a0a0a0a0a0a1a1(it, ChildAttribute_BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(childAttribute));
+        return eq_qv0pth_a0a0a0a0a0a1a1(it, ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(childAttribute));
       }
     });
     if (existingLink == null) {

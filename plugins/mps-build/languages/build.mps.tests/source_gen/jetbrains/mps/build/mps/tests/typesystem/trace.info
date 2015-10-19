@@ -13,7 +13,7 @@
   </root>
   <root nodeRef="r:f8814f89-9801-40d6-822f-e0e0a3a2c53d(jetbrains.mps.build.mps.tests.typesystem)/1880188600397226919">
     <file name="check_BuildMpsLayout_TestModules_NonTypesystemRule.java">
-      <node id="8674425381621574270" at="22,192,23,273" concept="4" />
+      <node id="8674425381621574270" at="22,192,23,274" concept="4" />
       <node id="8674425381621582730" at="24,46,25,15" concept="5" />
       <node id="8674425381621586698" at="26,53,27,15" concept="5" />
       <node id="8674425381621590644" at="28,54,29,15" concept="5" />
@@ -29,7 +29,7 @@
       <node id="1880188600397226919" at="44,0,47,0" concept="3" trace="overrides#()Z" />
       <node id="8674425381621591023" at="30,14,34,9" concept="0" />
       <node id="8674425381621590650" at="30,12,35,7" concept="0" />
-      <node id="8674425381621575595" at="23,273,35,7" concept="2" />
+      <node id="8674425381621575595" at="23,274,35,7" concept="2" />
       <node id="1880188600397202122" at="21,117,36,5" concept="2" />
       <node id="1880188600397226919" at="21,0,38,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1880188600397226919" at="19,63,19,63" />

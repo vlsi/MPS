@@ -3841,12 +3841,6 @@
       <node concept="3Tm1VV" id="3SnNvqCaJC4" role="1B3o_S" />
       <node concept="3cqZAl" id="3SnNvqCaJC5" role="3clF45" />
       <node concept="3clFbS" id="3SnNvqCaJC6" role="3clF47">
-        <node concept="3clFbF" id="_hFHZw5c9Z" role="3cqZAp">
-          <node concept="2YIFZM" id="_hFHZw5cNj" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
-            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
-          </node>
-        </node>
         <node concept="3clFbF" id="3SnNvqCaJC7" role="3cqZAp">
           <node concept="37vLTI" id="3SnNvqCaJC8" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuU00" role="37vLTJ">
@@ -3890,12 +3884,6 @@
       <node concept="3Tm1VV" id="3SnNvqCaJCm" role="1B3o_S" />
       <node concept="3cqZAl" id="3SnNvqCaJCn" role="3clF45" />
       <node concept="3clFbS" id="3SnNvqCaJCo" role="3clF47">
-        <node concept="3clFbF" id="_hFHZw5cYH" role="3cqZAp">
-          <node concept="2YIFZM" id="_hFHZw5cYI" role="3clFbG">
-            <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
-            <ref role="37wK5l" to="3a50:~ThreadUtils.assertEDT():void" resolve="assertEDT" />
-          </node>
-        </node>
         <node concept="3clFbF" id="3SnNvqCaJCp" role="3cqZAp">
           <node concept="2OqwBi" id="3SnNvqCaJCq" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuyNe" role="2Oq$k0">

@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor;
+import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_BehaviorDescriptor;
+import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -21,9 +21,9 @@ public class typeof_ConstraintFunctionParameter_referenceNode_InferenceRule exte
   public typeof_ConstraintFunctionParameter_referenceNode_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode applicableConcept = NodeReferentConstraint_BehaviorDescriptor.getApplicableConcept_idhEwIMWq.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), false, false));
+    SNode applicableConcept = NodeReferentConstraint__BehaviorDescriptor.getApplicableConcept_idhEwIMWq.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), false, false));
     if ((applicableConcept == null)) {
-      applicableConcept = NodeDefaultSearchScope_BehaviorDescriptor.getReferentConcept_idhEwIhhr.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), false, false));
+      applicableConcept = NodeDefaultSearchScope__BehaviorDescriptor.getReferentConcept_idhEwIhhr.invoke(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), false, false));
     }
     if ((applicableConcept == null)) {
       {

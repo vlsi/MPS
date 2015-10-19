@@ -1205,25 +1205,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6Th6Oi71DHW" role="jymVt" />
-    <node concept="3clFbW" id="5Npqc2YfUo_" role="jymVt">
-      <node concept="3cqZAl" id="5Npqc2YfUoA" role="3clF45" />
-      <node concept="3Tm1VV" id="5Npqc2YfUoB" role="1B3o_S" />
-      <node concept="3clFbS" id="5Npqc2YfUoC" role="3clF47">
-        <node concept="XkiVB" id="5Npqc2YfUoD" role="3cqZAp">
-          <ref role="37wK5l" to="jo3e:KL8Aqlj5lR" resolve="MpsWorker" />
-          <node concept="37vLTw" id="2BHiRxglw$r" role="37wK5m">
-            <ref role="3cqZAo" node="5Npqc2YfUoF" resolve="whatToDo" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="5Npqc2YfUoF" role="3clF46">
-        <property role="TrG5h" value="whatToDo" />
-        <node concept="3uibUv" id="5Npqc2YfUoG" role="1tU5fm">
-          <ref role="3uigEE" to="asz6:KL8Aql8enO" resolve="Script" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1vtSNIfIB6S" role="jymVt" />
     <node concept="3clFbW" id="5Npqc2YfWce" role="jymVt">
       <node concept="37vLTG" id="5Npqc2YfWd7" role="3clF46">
         <property role="TrG5h" value="whatToDo" />

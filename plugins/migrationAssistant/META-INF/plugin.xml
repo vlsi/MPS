@@ -20,7 +20,7 @@
   <description>Provides assistance migrating projects developed with earlier versions of MPS</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="139.1" until-build="142.1"/>
+  <idea-version since-build="142.1" until-build="143.1"/>
 
   <depends>jetbrains.mps.ide.modelchecker</depends>
 
@@ -50,7 +50,7 @@
     </component>
     <component>
       <interface-class>jetbrains.mps.ide.migration.MigrationManager</interface-class>
-      <implementation-class>jetbrains.mps.migration.component.util.MigrationComponent</implementation-class>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationComponent</implementation-class>
     </component>
   </project-components>
 

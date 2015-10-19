@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,33 +15,27 @@
  */
 package jetbrains.mps.project;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+/**
+ * @deprecated shall cease along with IOperationContext
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class ModuleContext extends StandaloneMPSContext {
-  private static final Logger LOG = LogManager.getLogger(ModuleContext.class);
-
-  private Project myProject;
+  private final Project myProject;
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
-  private SModuleReference myModuleReference;
+  private final SModuleReference myModuleReference;
 
   public ModuleContext(@NotNull final SModule module, @NotNull final Project project) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myModuleReference = module.getModuleReference();
-      }
-    });
+    myModuleReference = module.getModuleReference();
     myProject = project;
   }
 
@@ -59,7 +53,12 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Override
   public SModule getModule() {
-    return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SModule>() {
+      @Override
+      public SModule compute() {
+        return myModuleReference.resolve(myProject.getRepository());
+      }
+    });
   }
 
   @Override
@@ -70,37 +69,5 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public String toString() {
     return "module context: " + myModuleReference;
-  }
-
-  @Nullable
-  @Deprecated
-  public static ModuleContext create(final SNode node, Project project) {
-    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-      @Override
-      public SModel compute() {
-        return node.getModel();
-      }
-    });
-    return create(model, project);
-  }
-
-  @Nullable
-  @Deprecated
-  public static ModuleContext create(@NotNull final SModel model, Project project) {
-
-    SModule owningModule = ModelAccess.instance().runReadAction(new Computable<SModule>() {
-      @Override
-      public SModule compute() {
-        return model.getModule();
-      }
-    });
-
-    if (owningModule == null) {
-      LOG.error("couldn't create module context for node:" +
-        "\ncouldn't find owner module for model '" + model.getReference() + "'");
-      return null;
-    }
-
-    return new ModuleContext(owningModule, project);
   }
 }

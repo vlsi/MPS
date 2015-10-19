@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.structure;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 
 // FIXME class loading shall be part of LanguageRuntime, rather than this standalone utility
 public class DescriptorUtils {
-
   private static Logger LOG = LogManager.getLogger(DescriptorUtils.class);
 
   @Nullable
@@ -45,7 +43,7 @@ public class DescriptorUtils {
     try {
       return (Class<T>) language.getOwnClass(className);
     } catch (Throwable e) {
-      LOG.debug(String.format("error loading class '%s' from module %s", className, language.getModuleName()), e);
+      LOG.debug(String.format("error loading class '%s' from module %s", className, language.getModuleName()));
     }
     return null;
   }
@@ -60,7 +58,7 @@ public class DescriptorUtils {
 
       return clazz.newInstance();
     } catch (Throwable e) {
-      LOG.debug(String.format("error instantiating class '%s'", className), e);
+      LOG.debug(String.format("error instantiating class '%s'", className));
     }
     return null;
   }
@@ -75,7 +73,7 @@ public class DescriptorUtils {
 
       return castTo.cast(o);
     } catch (Throwable e) {
-      LOG.debug(String.format("failed to cast class '%s' to %s", className, castTo.getName()), e);
+      LOG.debug(String.format("failed to cast class '%s' to %s", className, castTo.getName()));
     }
     return null;
   }

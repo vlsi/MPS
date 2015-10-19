@@ -15,11 +15,11 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint_BehaviorDescriptor;
+import jetbrains.mps.lang.constraints.behavior.NodeReferentConstraint__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_BehaviorDescriptor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -42,7 +42,7 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // links declared in specified concept 
-            SNode applicableConcept = NodeReferentConstraint_BehaviorDescriptor.getApplicableConcept_idhEwIMWq.invoke(_context.getReferenceNode());
+            SNode applicableConcept = NodeReferentConstraint__BehaviorDescriptor.getApplicableConcept_idhEwIMWq.invoke(_context.getReferenceNode());
             if (applicableConcept == null) {
               SNode root = SNodeOperations.getContainingRoot(_context.getEnclosingNode());
               if (SNodeOperations.isInstanceOf(root, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
@@ -51,7 +51,7 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
                 applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
               }
             }
-            return AbstractConceptDeclaration_BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(applicableConcept);
+            return AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(applicableConcept);
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

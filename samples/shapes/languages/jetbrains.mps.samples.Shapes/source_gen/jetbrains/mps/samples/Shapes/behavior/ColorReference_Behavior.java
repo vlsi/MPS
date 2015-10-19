@@ -4,31 +4,14 @@ package jetbrains.mps.samples.Shapes.behavior;
 
 import java.awt.Color;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class ColorReference_Behavior {
   public static Color call_findColor_2097561739636344968(SNode __thisNode__) {
-    SNode color = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL, 0x3a2b0182df22029aL, "color"));
-    if (color == null) {
-      return Color.BLUE;
-    }
-    Class<Color> clazz = Color.class;
-    try {
-      return (Color) clazz.getField(SPropertyOperations.getString(color, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))).get(clazz);
-    } catch (SecurityException e) {
-      return Color.BLUE;
-    } catch (IllegalAccessException e) {
-      return Color.BLUE;
-    } catch (NoSuchFieldException e) {
-      return Color.BLUE;
-    }
-
+    return ColorReference__BehaviorDescriptor.findColor_id1Os2kBLuoy8(__thisNode__);
   }
 }

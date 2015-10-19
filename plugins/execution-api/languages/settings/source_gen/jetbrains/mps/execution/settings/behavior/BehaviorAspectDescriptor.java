@@ -12,23 +12,23 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myPersistentConfigurationType_BehaviorDescriptor = new PersistentConfigurationType_BehaviorDescriptor();
-  private final BHDescriptor myPersistentConfiguration_BehaviorDescriptor = new PersistentConfiguration_BehaviorDescriptor();
-  private final BHDescriptor myTemplateParameterReference_BehaviorDescriptor = new TemplateParameterReference_BehaviorDescriptor();
-  private final BHDescriptor myReportConfigurationErrorStatement_BehaviorDescriptor = new ReportConfigurationErrorStatement_BehaviorDescriptor();
-  private final BHDescriptor myCreateEditor_Function_BehaviorDescriptor = new CreateEditor_Function_BehaviorDescriptor();
-  private final BHDescriptor myDispose_Function_BehaviorDescriptor = new Dispose_Function_BehaviorDescriptor();
-  private final BHDescriptor myPersistentPropertyReferenceOperation_BehaviorDescriptor = new PersistentPropertyReferenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myPersistentConfigurationTemplate_BehaviorDescriptor = new PersistentConfigurationTemplate_BehaviorDescriptor();
-  private final BHDescriptor myPersistentPropertyDeclaration_BehaviorDescriptor = new PersistentPropertyDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myCheckProperties_Function_BehaviorDescriptor = new CheckProperties_Function_BehaviorDescriptor();
-  private final BHDescriptor myApplyTo_Function_BehaviorDescriptor = new ApplyTo_Function_BehaviorDescriptor();
-  private final BHDescriptor myEditorOperationDeclaration_BehaviorDescriptor = new EditorOperationDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEditorPropertyDeclaration_BehaviorDescriptor = new EditorPropertyDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myEditorPropertyReference_BehaviorDescriptor = new EditorPropertyReference_BehaviorDescriptor();
-  private final BHDescriptor myResetFrom_Function_BehaviorDescriptor = new ResetFrom_Function_BehaviorDescriptor();
-  private final BHDescriptor mySettingsEditor_BehaviorDescriptor = new SettingsEditor_BehaviorDescriptor();
-  private final BHDescriptor myDeprecatedAnnotation_BehaviorDescriptor = new DeprecatedAnnotation_BehaviorDescriptor();
+  private final BHDescriptor myPersistentConfigurationType__BehaviorDescriptor = new PersistentConfigurationType__BehaviorDescriptor();
+  private final BHDescriptor myPersistentConfiguration__BehaviorDescriptor = new PersistentConfiguration__BehaviorDescriptor();
+  private final BHDescriptor myTemplateParameterReference__BehaviorDescriptor = new TemplateParameterReference__BehaviorDescriptor();
+  private final BHDescriptor myReportConfigurationErrorStatement__BehaviorDescriptor = new ReportConfigurationErrorStatement__BehaviorDescriptor();
+  private final BHDescriptor myCreateEditor_Function__BehaviorDescriptor = new CreateEditor_Function__BehaviorDescriptor();
+  private final BHDescriptor myDispose_Function__BehaviorDescriptor = new Dispose_Function__BehaviorDescriptor();
+  private final BHDescriptor myPersistentPropertyReferenceOperation__BehaviorDescriptor = new PersistentPropertyReferenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myPersistentConfigurationTemplate__BehaviorDescriptor = new PersistentConfigurationTemplate__BehaviorDescriptor();
+  private final BHDescriptor myPersistentPropertyDeclaration__BehaviorDescriptor = new PersistentPropertyDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myCheckProperties_Function__BehaviorDescriptor = new CheckProperties_Function__BehaviorDescriptor();
+  private final BHDescriptor myApplyTo_Function__BehaviorDescriptor = new ApplyTo_Function__BehaviorDescriptor();
+  private final BHDescriptor myEditorOperationDeclaration__BehaviorDescriptor = new EditorOperationDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEditorPropertyDeclaration__BehaviorDescriptor = new EditorPropertyDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myEditorPropertyReference__BehaviorDescriptor = new EditorPropertyReference__BehaviorDescriptor();
+  private final BHDescriptor myResetFrom_Function__BehaviorDescriptor = new ResetFrom_Function__BehaviorDescriptor();
+  private final BHDescriptor mySettingsEditor__BehaviorDescriptor = new SettingsEditor__BehaviorDescriptor();
+  private final BHDescriptor myDeprecatedAnnotation__BehaviorDescriptor = new DeprecatedAnnotation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -65,39 +65,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myPersistentConfigurationType_BehaviorDescriptor;
+        return myPersistentConfigurationType__BehaviorDescriptor;
       case 1:
-        return myPersistentConfiguration_BehaviorDescriptor;
+        return myPersistentConfiguration__BehaviorDescriptor;
       case 2:
-        return myTemplateParameterReference_BehaviorDescriptor;
+        return myTemplateParameterReference__BehaviorDescriptor;
       case 3:
-        return myReportConfigurationErrorStatement_BehaviorDescriptor;
+        return myReportConfigurationErrorStatement__BehaviorDescriptor;
       case 4:
-        return myCreateEditor_Function_BehaviorDescriptor;
+        return myCreateEditor_Function__BehaviorDescriptor;
       case 5:
-        return myDispose_Function_BehaviorDescriptor;
+        return myDispose_Function__BehaviorDescriptor;
       case 6:
-        return myPersistentPropertyReferenceOperation_BehaviorDescriptor;
+        return myPersistentPropertyReferenceOperation__BehaviorDescriptor;
       case 7:
-        return myPersistentConfigurationTemplate_BehaviorDescriptor;
+        return myPersistentConfigurationTemplate__BehaviorDescriptor;
       case 8:
-        return myPersistentPropertyDeclaration_BehaviorDescriptor;
+        return myPersistentPropertyDeclaration__BehaviorDescriptor;
       case 9:
-        return myCheckProperties_Function_BehaviorDescriptor;
+        return myCheckProperties_Function__BehaviorDescriptor;
       case 10:
-        return myApplyTo_Function_BehaviorDescriptor;
+        return myApplyTo_Function__BehaviorDescriptor;
       case 11:
-        return myEditorOperationDeclaration_BehaviorDescriptor;
+        return myEditorOperationDeclaration__BehaviorDescriptor;
       case 12:
-        return myEditorPropertyDeclaration_BehaviorDescriptor;
+        return myEditorPropertyDeclaration__BehaviorDescriptor;
       case 13:
-        return myEditorPropertyReference_BehaviorDescriptor;
+        return myEditorPropertyReference__BehaviorDescriptor;
       case 14:
-        return myResetFrom_Function_BehaviorDescriptor;
+        return myResetFrom_Function__BehaviorDescriptor;
       case 15:
-        return mySettingsEditor_BehaviorDescriptor;
+        return mySettingsEditor__BehaviorDescriptor;
       case 16:
-        return myDeprecatedAnnotation_BehaviorDescriptor;
+        return myDeprecatedAnnotation__BehaviorDescriptor;
       default:
         return null;
     }

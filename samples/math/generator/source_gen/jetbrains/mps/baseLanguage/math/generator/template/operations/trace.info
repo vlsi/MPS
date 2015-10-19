@@ -13,13 +13,13 @@
   <root nodeRef="r:e8891659-6cf7-4c12-aefc-c30d28622ede(jetbrains.mps.baseLanguage.math.generator.template.operations@generator)/1236429487122">
     <file name="QueriesGenerated.java">
       <node id="1237191873567" at="38,106,39,48" concept="3" />
-      <node id="1237191873555" at="86,102,87,431" concept="3" />
+      <node id="1237191873555" at="86,102,87,440" concept="3" />
       <node id="1237191873575" at="89,102,90,30" concept="3" />
       <node id="1237116417258" at="92,102,93,180" concept="3" />
       <node id="1237192137815" at="95,108,96,183" concept="3" />
       <node id="3415580819641882225" at="98,108,99,185" concept="3" />
       <scope id="1237191873566" at="38,106,39,48" />
-      <scope id="1237191873554" at="86,102,87,431" />
+      <scope id="1237191873554" at="86,102,87,440" />
       <scope id="1237191873574" at="89,102,90,30" />
       <scope id="1237116414163" at="92,102,93,180" />
       <scope id="3415580819641879970" at="95,108,96,183" />
@@ -119,12 +119,12 @@
   <root nodeRef="r:e8891659-6cf7-4c12-aefc-c30d28622ede(jetbrains.mps.baseLanguage.math.generator.template.operations@generator)/1237112574952">
     <file name="QueriesGenerated.java">
       <node id="1237123277209" at="50,106,51,48" concept="3" />
-      <node id="1237123277189" at="125,102,126,431" concept="3" />
+      <node id="1237123277189" at="125,102,126,440" concept="3" />
       <node id="1237123277202" at="128,102,129,184" concept="3" />
       <node id="1237192411120" at="131,102,132,184" concept="3" />
       <node id="1237192429800" at="134,102,135,184" concept="3" />
       <scope id="1237123277208" at="50,106,51,48" />
-      <scope id="1237123277188" at="125,102,126,431" />
+      <scope id="1237123277188" at="125,102,126,440" />
       <scope id="1237123277201" at="128,102,129,184" />
       <scope id="1237192405706" at="131,102,132,184" />
       <scope id="1237192427721" at="134,102,135,184" />

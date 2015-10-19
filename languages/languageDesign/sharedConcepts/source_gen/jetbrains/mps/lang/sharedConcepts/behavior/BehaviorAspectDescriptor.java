@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myConceptFunctionParameter_model_BehaviorDescriptor = new ConceptFunctionParameter_model_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_operationContext_BehaviorDescriptor = new ConceptFunctionParameter_operationContext_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_editorContext_BehaviorDescriptor = new ConceptFunctionParameter_editorContext_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_node_BehaviorDescriptor = new ConceptFunctionParameter_node_BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_model__BehaviorDescriptor = new ConceptFunctionParameter_model__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_operationContext__BehaviorDescriptor = new ConceptFunctionParameter_operationContext__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_editorContext__BehaviorDescriptor = new ConceptFunctionParameter_editorContext__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_node__BehaviorDescriptor = new ConceptFunctionParameter_node__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -39,13 +39,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myConceptFunctionParameter_model_BehaviorDescriptor;
+        return myConceptFunctionParameter_model__BehaviorDescriptor;
       case 1:
-        return myConceptFunctionParameter_operationContext_BehaviorDescriptor;
+        return myConceptFunctionParameter_operationContext__BehaviorDescriptor;
       case 2:
-        return myConceptFunctionParameter_editorContext_BehaviorDescriptor;
+        return myConceptFunctionParameter_editorContext__BehaviorDescriptor;
       case 3:
-        return myConceptFunctionParameter_node_BehaviorDescriptor;
+        return myConceptFunctionParameter_node__BehaviorDescriptor;
       default:
         return null;
     }

@@ -11,10 +11,10 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -34,9 +34,9 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
       return;
     }
 
-    SNode nearestOverriddenMethod = BaseMethodDeclaration_BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(instanceMethodDeclaration);
+    SNode nearestOverriddenMethod = BaseMethodDeclaration__BehaviorDescriptor.getNearestOverriddenMethod_id4DuBHEkPTzU.invoke(instanceMethodDeclaration);
     if ((nearestOverriddenMethod == null)) {
-      nearestOverriddenMethod = InstanceMethodDeclaration_BehaviorDescriptor.getImplementedInterfaceMethod_id7cTWCexFh1W.invoke(instanceMethodDeclaration);
+      nearestOverriddenMethod = InstanceMethodDeclaration__BehaviorDescriptor.getImplementedInterfaceMethod_id7cTWCexFh1W.invoke(instanceMethodDeclaration);
     }
     if ((nearestOverriddenMethod == null)) {
       return;
@@ -49,7 +49,7 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
         if (myClassifier == null) {
           return;
         }
-        Iterable<SNode> superTypes = Classifier_BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier);
+        Iterable<SNode> superTypes = Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier);
 
         if (!((eq_l20hbd_a0a0a0e0a0a0a0i0b(myClassifier, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)", "~RuntimeException")) || Sequence.fromIterable(superTypes).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -58,7 +58,7 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
         }))) && !(ListSequence.fromList(superThrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             final SNode superClassifier = ThrownTypeVariableReferencesHelper.retrieveClassifier(it);
-            return superClassifier != null && (eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(myClassifier, superClassifier) || SetSequence.fromSet(Classifier_BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier)).any(new IWhereFilter<SNode>() {
+            return superClassifier != null && (eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(myClassifier, superClassifier) || SetSequence.fromSet(Classifier__BehaviorDescriptor.getAllExtendedClassifiers_id2xreLMO8jma.invoke(myClassifier)).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return eq_l20hbd_a0a0a0a0a0a0a1a0a0a0a0a4a0a0a0a8a1(it, superClassifier);
               }

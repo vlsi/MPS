@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myPrivateStaticFieldReference_BehaviorDescriptor = new PrivateStaticFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myPrivateFieldReferenceOperation_BehaviorDescriptor = new PrivateFieldReferenceOperation_BehaviorDescriptor();
-  private final BHDescriptor myPrivateInstanceMethodCallOperation_BehaviorDescriptor = new PrivateInstanceMethodCallOperation_BehaviorDescriptor();
+  private final BHDescriptor myPrivateStaticFieldReference__BehaviorDescriptor = new PrivateStaticFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myPrivateFieldReferenceOperation__BehaviorDescriptor = new PrivateFieldReferenceOperation__BehaviorDescriptor();
+  private final BHDescriptor myPrivateInstanceMethodCallOperation__BehaviorDescriptor = new PrivateInstanceMethodCallOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myPrivateStaticFieldReference_BehaviorDescriptor;
+        return myPrivateStaticFieldReference__BehaviorDescriptor;
       case 1:
-        return myPrivateFieldReferenceOperation_BehaviorDescriptor;
+        return myPrivateFieldReferenceOperation__BehaviorDescriptor;
       case 2:
-        return myPrivateInstanceMethodCallOperation_BehaviorDescriptor;
+        return myPrivateInstanceMethodCallOperation__BehaviorDescriptor;
       default:
         return null;
     }

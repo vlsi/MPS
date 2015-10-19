@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.persistence.def.v9.IdEncoder;
-import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 
 /**
  * TODO need to be moved to the behavior of the ConceptBehavior after MPS project rebuilt
@@ -37,8 +37,8 @@ public final class MethodNameHelper {
 
   private SNode getBaseMethod() {
     SNode baseMethod = myMethodDecl;
-    if (BaseMethodDeclaration_BehaviorDescriptor.getBaseMethod_id4mmymf_0z7l.invoke(myMethodDecl) != null) {
-      baseMethod = BaseMethodDeclaration_BehaviorDescriptor.getBaseMethod_id4mmymf_0z7l.invoke(myMethodDecl);
+    if (BaseMethodDeclaration__BehaviorDescriptor.getBaseMethod_id4mmymf_0z7l.invoke(myMethodDecl) != null) {
+      baseMethod = BaseMethodDeclaration__BehaviorDescriptor.getBaseMethod_id4mmymf_0z7l.invoke(myMethodDecl);
     }
     return baseMethod;
   }

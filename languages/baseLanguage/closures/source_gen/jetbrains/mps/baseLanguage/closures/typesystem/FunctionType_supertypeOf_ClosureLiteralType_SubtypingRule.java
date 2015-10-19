@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.IInternalType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IInternalType__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -15,7 +15,7 @@ public class FunctionType_supertypeOf_ClosureLiteralType_SubtypingRule extends S
   public FunctionType_supertypeOf_ClosureLiteralType_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode closureLiteralType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return IInternalType_BehaviorDescriptor.getPublicType_idhEwIXGa.invoke(closureLiteralType);
+    return (SNode) IInternalType__BehaviorDescriptor.getPublicType_idhEwIXGa.invoke(closureLiteralType);
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0xe8770ba07b68051L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType");

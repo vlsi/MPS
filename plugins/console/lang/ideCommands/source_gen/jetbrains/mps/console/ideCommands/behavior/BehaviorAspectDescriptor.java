@@ -12,31 +12,31 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myShowBrokenReferences_BehaviorDescriptor = new ShowBrokenReferences_BehaviorDescriptor();
-  private final BHDescriptor mySubtreeStatisticsTarget_BehaviorDescriptor = new SubtreeStatisticsTarget_BehaviorDescriptor();
-  private final BHDescriptor myClean_BehaviorDescriptor = new Clean_BehaviorDescriptor();
-  private final BHDescriptor myRemoveGenSources_BehaviorDescriptor = new RemoveGenSources_BehaviorDescriptor();
-  private final BHDescriptor myAbsractMake_BehaviorDescriptor = new AbsractMake_BehaviorDescriptor();
-  private final BHDescriptor myClickableGenerator_BehaviorDescriptor = new ClickableGenerator_BehaviorDescriptor();
-  private final BHDescriptor myINodeSetReference_BehaviorDescriptor = new INodeSetReference_BehaviorDescriptor();
-  private final BHDescriptor myActionCallDeclaredParameter_BehaviorDescriptor = new ActionCallDeclaredParameter_BehaviorDescriptor();
-  private final BHDescriptor myActionCallGlobalParameter_BehaviorDescriptor = new ActionCallGlobalParameter_BehaviorDescriptor();
-  private final BHDescriptor myActionCallParameter_BehaviorDescriptor = new ActionCallParameter_BehaviorDescriptor();
-  private final BHDescriptor myCallActionExpression_BehaviorDescriptor = new CallActionExpression_BehaviorDescriptor();
-  private final BHDescriptor myModelProperties_BehaviorDescriptor = new ModelProperties_BehaviorDescriptor();
-  private final BHDescriptor myModuleProperties_BehaviorDescriptor = new ModuleProperties_BehaviorDescriptor();
-  private final BHDescriptor myMake_BehaviorDescriptor = new Make_BehaviorDescriptor();
-  private final BHDescriptor myOfAspectOperation_BehaviorDescriptor = new OfAspectOperation_BehaviorDescriptor();
-  private final BHDescriptor myShowGenPlan_BehaviorDescriptor = new ShowGenPlan_BehaviorDescriptor();
-  private final BHDescriptor myStatCommand_BehaviorDescriptor = new StatCommand_BehaviorDescriptor();
-  private final BHDescriptor myIStatisticsTarget_BehaviorDescriptor = new IStatisticsTarget_BehaviorDescriptor();
-  private final BHDescriptor myGlobalStatisticTarget_BehaviorDescriptor = new GlobalStatisticTarget_BehaviorDescriptor();
-  private final BHDescriptor myProjectStatisticsTarget_BehaviorDescriptor = new ProjectStatisticsTarget_BehaviorDescriptor();
-  private final BHDescriptor myModelStatisticsTarget_BehaviorDescriptor = new ModelStatisticsTarget_BehaviorDescriptor();
-  private final BHDescriptor myModelReference_BehaviorDescriptor = new ModelReference_BehaviorDescriptor();
-  private final BHDescriptor myShowExpression_BehaviorDescriptor = new ShowExpression_BehaviorDescriptor();
-  private final BHDescriptor myUnloadModelsCommand_BehaviorDescriptor = new UnloadModelsCommand_BehaviorDescriptor();
-  private final BHDescriptor myRebuildProjectCommand_BehaviorDescriptor = new RebuildProjectCommand_BehaviorDescriptor();
+  private final BHDescriptor myShowBrokenReferences__BehaviorDescriptor = new ShowBrokenReferences__BehaviorDescriptor();
+  private final BHDescriptor mySubtreeStatisticsTarget__BehaviorDescriptor = new SubtreeStatisticsTarget__BehaviorDescriptor();
+  private final BHDescriptor myClean__BehaviorDescriptor = new Clean__BehaviorDescriptor();
+  private final BHDescriptor myRemoveGenSources__BehaviorDescriptor = new RemoveGenSources__BehaviorDescriptor();
+  private final BHDescriptor myAbsractMake__BehaviorDescriptor = new AbsractMake__BehaviorDescriptor();
+  private final BHDescriptor myClickableGenerator__BehaviorDescriptor = new ClickableGenerator__BehaviorDescriptor();
+  private final BHDescriptor myINodeSetReference__BehaviorDescriptor = new INodeSetReference__BehaviorDescriptor();
+  private final BHDescriptor myActionCallDeclaredParameter__BehaviorDescriptor = new ActionCallDeclaredParameter__BehaviorDescriptor();
+  private final BHDescriptor myActionCallGlobalParameter__BehaviorDescriptor = new ActionCallGlobalParameter__BehaviorDescriptor();
+  private final BHDescriptor myActionCallParameter__BehaviorDescriptor = new ActionCallParameter__BehaviorDescriptor();
+  private final BHDescriptor myCallActionExpression__BehaviorDescriptor = new CallActionExpression__BehaviorDescriptor();
+  private final BHDescriptor myModelProperties__BehaviorDescriptor = new ModelProperties__BehaviorDescriptor();
+  private final BHDescriptor myModuleProperties__BehaviorDescriptor = new ModuleProperties__BehaviorDescriptor();
+  private final BHDescriptor myMake__BehaviorDescriptor = new Make__BehaviorDescriptor();
+  private final BHDescriptor myOfAspectOperation__BehaviorDescriptor = new OfAspectOperation__BehaviorDescriptor();
+  private final BHDescriptor myShowGenPlan__BehaviorDescriptor = new ShowGenPlan__BehaviorDescriptor();
+  private final BHDescriptor myStatCommand__BehaviorDescriptor = new StatCommand__BehaviorDescriptor();
+  private final BHDescriptor myIStatisticsTarget__BehaviorDescriptor = new IStatisticsTarget__BehaviorDescriptor();
+  private final BHDescriptor myGlobalStatisticTarget__BehaviorDescriptor = new GlobalStatisticTarget__BehaviorDescriptor();
+  private final BHDescriptor myProjectStatisticsTarget__BehaviorDescriptor = new ProjectStatisticsTarget__BehaviorDescriptor();
+  private final BHDescriptor myModelStatisticsTarget__BehaviorDescriptor = new ModelStatisticsTarget__BehaviorDescriptor();
+  private final BHDescriptor myModelReference__BehaviorDescriptor = new ModelReference__BehaviorDescriptor();
+  private final BHDescriptor myShowExpression__BehaviorDescriptor = new ShowExpression__BehaviorDescriptor();
+  private final BHDescriptor myUnloadModelsCommand__BehaviorDescriptor = new UnloadModelsCommand__BehaviorDescriptor();
+  private final BHDescriptor myRebuildProjectCommand__BehaviorDescriptor = new RebuildProjectCommand__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -81,55 +81,55 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myShowBrokenReferences_BehaviorDescriptor;
+        return myShowBrokenReferences__BehaviorDescriptor;
       case 1:
-        return mySubtreeStatisticsTarget_BehaviorDescriptor;
+        return mySubtreeStatisticsTarget__BehaviorDescriptor;
       case 2:
-        return myClean_BehaviorDescriptor;
+        return myClean__BehaviorDescriptor;
       case 3:
-        return myRemoveGenSources_BehaviorDescriptor;
+        return myRemoveGenSources__BehaviorDescriptor;
       case 4:
-        return myAbsractMake_BehaviorDescriptor;
+        return myAbsractMake__BehaviorDescriptor;
       case 5:
-        return myClickableGenerator_BehaviorDescriptor;
+        return myClickableGenerator__BehaviorDescriptor;
       case 6:
-        return myINodeSetReference_BehaviorDescriptor;
+        return myINodeSetReference__BehaviorDescriptor;
       case 7:
-        return myActionCallDeclaredParameter_BehaviorDescriptor;
+        return myActionCallDeclaredParameter__BehaviorDescriptor;
       case 8:
-        return myActionCallGlobalParameter_BehaviorDescriptor;
+        return myActionCallGlobalParameter__BehaviorDescriptor;
       case 9:
-        return myActionCallParameter_BehaviorDescriptor;
+        return myActionCallParameter__BehaviorDescriptor;
       case 10:
-        return myCallActionExpression_BehaviorDescriptor;
+        return myCallActionExpression__BehaviorDescriptor;
       case 11:
-        return myModelProperties_BehaviorDescriptor;
+        return myModelProperties__BehaviorDescriptor;
       case 12:
-        return myModuleProperties_BehaviorDescriptor;
+        return myModuleProperties__BehaviorDescriptor;
       case 13:
-        return myMake_BehaviorDescriptor;
+        return myMake__BehaviorDescriptor;
       case 14:
-        return myOfAspectOperation_BehaviorDescriptor;
+        return myOfAspectOperation__BehaviorDescriptor;
       case 15:
-        return myShowGenPlan_BehaviorDescriptor;
+        return myShowGenPlan__BehaviorDescriptor;
       case 16:
-        return myStatCommand_BehaviorDescriptor;
+        return myStatCommand__BehaviorDescriptor;
       case 17:
-        return myIStatisticsTarget_BehaviorDescriptor;
+        return myIStatisticsTarget__BehaviorDescriptor;
       case 18:
-        return myGlobalStatisticTarget_BehaviorDescriptor;
+        return myGlobalStatisticTarget__BehaviorDescriptor;
       case 19:
-        return myProjectStatisticsTarget_BehaviorDescriptor;
+        return myProjectStatisticsTarget__BehaviorDescriptor;
       case 20:
-        return myModelStatisticsTarget_BehaviorDescriptor;
+        return myModelStatisticsTarget__BehaviorDescriptor;
       case 21:
-        return myModelReference_BehaviorDescriptor;
+        return myModelReference__BehaviorDescriptor;
       case 22:
-        return myShowExpression_BehaviorDescriptor;
+        return myShowExpression__BehaviorDescriptor;
       case 23:
-        return myUnloadModelsCommand_BehaviorDescriptor;
+        return myUnloadModelsCommand__BehaviorDescriptor;
       case 24:
-        return myRebuildProjectCommand_BehaviorDescriptor;
+        return myRebuildProjectCommand__BehaviorDescriptor;
       default:
         return null;
     }

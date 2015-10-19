@@ -81,6 +81,10 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -92,6 +96,9 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
+        <reference id="1144433057691" name="classifier" index="1PxDUh" />
+      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -101,6 +108,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -202,22 +210,6 @@
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
-    </language>
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331502" name="body" index="TZ5H$" />
-        <child id="5383422241790532083" name="tags" index="3nqlJM" />
-      </concept>
-      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
-        <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
-      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
-        <property id="8970989240999019144" name="text" index="1dT_AB" />
-      </concept>
-      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176543928247" name="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" flags="nn" index="3JuTUA">
@@ -1335,8 +1327,9 @@
       <node concept="3clFbS" id="66HNO1XTVFY" role="3clF47">
         <node concept="3cpWs6" id="66HNO1XTX8W" role="3cqZAp">
           <node concept="3cpWs3" id="66HNO1XTX8X" role="3cqZAk">
-            <node concept="Xl_RD" id="66HNO1XUjfc" role="3uHU7w">
-              <property role="Xl_RC" value="_BehaviorDescriptor" />
+            <node concept="10M0yZ" id="6y08WFMgFPs" role="3uHU7w">
+              <ref role="1PxDUh" node="47BD7OhLhid" resolve="BehaviorMethodNames" />
+              <ref role="3cqZAo" node="6y08WFMgF2z" resolve="BEHAVIOR_DESCRIPTOR_SUFFIX" />
             </node>
             <node concept="3cpWs3" id="66HNO1XTX8Z" role="3uHU7B">
               <node concept="3cpWs3" id="66HNO1XTX90" role="3uHU7B">
@@ -2159,23 +2152,18 @@
   <node concept="312cEu" id="47BD7OhLhid">
     <property role="TrG5h" value="BehaviorMethodNames" />
     <property role="IEkAT" value="true" />
-    <node concept="2AHcQZ" id="5jWiLvubM5u" role="2AJF6D">
-      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-    </node>
-    <node concept="3UR2Jj" id="5jWiLvubM2X" role="lGtFl">
-      <node concept="TZ5HA" id="5jWiLvubM2Y" role="TZ5H$">
-        <node concept="1dT_AC" id="5jWiLvubM2Z" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
+    <node concept="Wx3nA" id="6y08WFMgF2z" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="BEHAVIOR_DESCRIPTOR_SUFFIX" />
+      <property role="3TUv4t" value="false" />
+      <node concept="17QB3L" id="6y08WFMgF2$" role="1tU5fm" />
+      <node concept="Xl_RD" id="6y08WFMgF2_" role="33vP2m">
+        <property role="Xl_RC" value="__BehaviorDescriptor" />
       </node>
-      <node concept="TZ5HI" id="5jWiLvubM3l" role="3nqlJM">
-        <node concept="TZ5HA" id="5jWiLvubM3m" role="3HnX3l">
-          <node concept="1dT_AC" id="5jWiLvubM5Q" role="1dT_Ay">
-            <property role="1dT_AB" value="obsolete api" />
-          </node>
-        </node>
-      </node>
+      <node concept="3Tm1VV" id="6y08WFMgF2A" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="6y08WFMgF5N" role="jymVt" />
     <node concept="3clFbW" id="47BD7OhLhif" role="jymVt">
       <node concept="3cqZAl" id="47BD7OhLhig" role="3clF45" />
       <node concept="3clFbS" id="47BD7OhLhii" role="3clF47" />

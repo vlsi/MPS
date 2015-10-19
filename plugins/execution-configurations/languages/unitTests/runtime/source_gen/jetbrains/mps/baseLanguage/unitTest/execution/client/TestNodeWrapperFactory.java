@@ -65,7 +65,7 @@ public enum TestNodeWrapperFactory {
           return false;
         }
         SNode ancestor = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-        if (!(((Boolean) BHReflection.invoke(ancestor, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
+        if (!(((boolean) (Boolean) BHReflection.invoke(ancestor, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
           return false;
         }
         while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && !(((String) BHReflection.invoke(ancestor, SMethodTrimmedId.create("getFqName", null, "hEwIO9y"))).equals(TestCase.class.getCanonicalName()))) {

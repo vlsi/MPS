@@ -428,7 +428,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="37vLTG" id="1OSjOxq0Yvz" role="3clF46">
-        <property role="TrG5h" value="klass" />
+        <property role="TrG5h" value="aClass" />
         <node concept="3uibUv" id="1OSjOxq0Yv$" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qTvmN" id="1OSjOxq0Yv_" role="11_B2D" />

@@ -12,17 +12,17 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myRule_BehaviorDescriptor = new Rule_BehaviorDescriptor();
-  private final BHDescriptor myApplicableCondition_BehaviorDescriptor = new ApplicableCondition_BehaviorDescriptor();
-  private final BHDescriptor myPatternCondition_BehaviorDescriptor = new PatternCondition_BehaviorDescriptor();
-  private final BHDescriptor myEmitInstruction_BehaviorDescriptor = new EmitInstruction_BehaviorDescriptor();
-  private final BHDescriptor myInstructionReference_BehaviorDescriptor = new InstructionReference_BehaviorDescriptor();
-  private final BHDescriptor myAnalyzerInitialFunction_BehaviorDescriptor = new AnalyzerInitialFunction_BehaviorDescriptor();
-  private final BHDescriptor myAnalyzerFunFunction_BehaviorDescriptor = new AnalyzerFunFunction_BehaviorDescriptor();
-  private final BHDescriptor myConceptCondition_BehaviorDescriptor = new ConceptCondition_BehaviorDescriptor();
-  private final BHDescriptor myAnalyzerMergeFunction_BehaviorDescriptor = new AnalyzerMergeFunction_BehaviorDescriptor();
-  private final BHDescriptor myAnalyzer_BehaviorDescriptor = new Analyzer_BehaviorDescriptor();
-  private final BHDescriptor myInstruction_BehaviorDescriptor = new Instruction_BehaviorDescriptor();
+  private final BHDescriptor myRule__BehaviorDescriptor = new Rule__BehaviorDescriptor();
+  private final BHDescriptor myApplicableCondition__BehaviorDescriptor = new ApplicableCondition__BehaviorDescriptor();
+  private final BHDescriptor myPatternCondition__BehaviorDescriptor = new PatternCondition__BehaviorDescriptor();
+  private final BHDescriptor myEmitInstruction__BehaviorDescriptor = new EmitInstruction__BehaviorDescriptor();
+  private final BHDescriptor myInstructionReference__BehaviorDescriptor = new InstructionReference__BehaviorDescriptor();
+  private final BHDescriptor myAnalyzerInitialFunction__BehaviorDescriptor = new AnalyzerInitialFunction__BehaviorDescriptor();
+  private final BHDescriptor myAnalyzerFunFunction__BehaviorDescriptor = new AnalyzerFunFunction__BehaviorDescriptor();
+  private final BHDescriptor myConceptCondition__BehaviorDescriptor = new ConceptCondition__BehaviorDescriptor();
+  private final BHDescriptor myAnalyzerMergeFunction__BehaviorDescriptor = new AnalyzerMergeFunction__BehaviorDescriptor();
+  private final BHDescriptor myAnalyzer__BehaviorDescriptor = new Analyzer__BehaviorDescriptor();
+  private final BHDescriptor myInstruction__BehaviorDescriptor = new Instruction__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -53,27 +53,27 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myRule_BehaviorDescriptor;
+        return myRule__BehaviorDescriptor;
       case 1:
-        return myApplicableCondition_BehaviorDescriptor;
+        return myApplicableCondition__BehaviorDescriptor;
       case 2:
-        return myPatternCondition_BehaviorDescriptor;
+        return myPatternCondition__BehaviorDescriptor;
       case 3:
-        return myEmitInstruction_BehaviorDescriptor;
+        return myEmitInstruction__BehaviorDescriptor;
       case 4:
-        return myInstructionReference_BehaviorDescriptor;
+        return myInstructionReference__BehaviorDescriptor;
       case 5:
-        return myAnalyzerInitialFunction_BehaviorDescriptor;
+        return myAnalyzerInitialFunction__BehaviorDescriptor;
       case 6:
-        return myAnalyzerFunFunction_BehaviorDescriptor;
+        return myAnalyzerFunFunction__BehaviorDescriptor;
       case 7:
-        return myConceptCondition_BehaviorDescriptor;
+        return myConceptCondition__BehaviorDescriptor;
       case 8:
-        return myAnalyzerMergeFunction_BehaviorDescriptor;
+        return myAnalyzerMergeFunction__BehaviorDescriptor;
       case 9:
-        return myAnalyzer_BehaviorDescriptor;
+        return myAnalyzer__BehaviorDescriptor;
       case 10:
-        return myInstruction_BehaviorDescriptor;
+        return myInstruction__BehaviorDescriptor;
       default:
         return null;
     }

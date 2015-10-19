@@ -105,7 +105,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void loadState(Element state) {
-    myProjectElement = state;
+    myProjectElement = state.clone(); // it can be changed by platform later, so need to store copy
     if(isOpened) {
       initProject();
     }

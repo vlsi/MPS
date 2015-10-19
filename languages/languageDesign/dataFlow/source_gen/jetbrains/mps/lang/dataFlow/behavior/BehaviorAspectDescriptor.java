@@ -12,12 +12,12 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myDataFlowBuilderDeclaration_BehaviorDescriptor = new DataFlowBuilderDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBuilderBlock_BehaviorDescriptor = new BuilderBlock_BehaviorDescriptor();
-  private final BHDescriptor myNodeParameter_BehaviorDescriptor = new NodeParameter_BehaviorDescriptor();
-  private final BHDescriptor myEmitStatement_BehaviorDescriptor = new EmitStatement_BehaviorDescriptor();
-  private final BHDescriptor myLabelPosition_BehaviorDescriptor = new LabelPosition_BehaviorDescriptor();
-  private final BHDescriptor myInstructionType_BehaviorDescriptor = new InstructionType_BehaviorDescriptor();
+  private final BHDescriptor myDataFlowBuilderDeclaration__BehaviorDescriptor = new DataFlowBuilderDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBuilderBlock__BehaviorDescriptor = new BuilderBlock__BehaviorDescriptor();
+  private final BHDescriptor myNodeParameter__BehaviorDescriptor = new NodeParameter__BehaviorDescriptor();
+  private final BHDescriptor myEmitStatement__BehaviorDescriptor = new EmitStatement__BehaviorDescriptor();
+  private final BHDescriptor myLabelPosition__BehaviorDescriptor = new LabelPosition__BehaviorDescriptor();
+  private final BHDescriptor myInstructionType__BehaviorDescriptor = new InstructionType__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -43,17 +43,17 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myDataFlowBuilderDeclaration_BehaviorDescriptor;
+        return myDataFlowBuilderDeclaration__BehaviorDescriptor;
       case 1:
-        return myBuilderBlock_BehaviorDescriptor;
+        return myBuilderBlock__BehaviorDescriptor;
       case 2:
-        return myNodeParameter_BehaviorDescriptor;
+        return myNodeParameter__BehaviorDescriptor;
       case 3:
-        return myEmitStatement_BehaviorDescriptor;
+        return myEmitStatement__BehaviorDescriptor;
       case 4:
-        return myLabelPosition_BehaviorDescriptor;
+        return myLabelPosition__BehaviorDescriptor;
       case 5:
-        return myInstructionType_BehaviorDescriptor;
+        return myInstructionType__BehaviorDescriptor;
       default:
         return null;
     }

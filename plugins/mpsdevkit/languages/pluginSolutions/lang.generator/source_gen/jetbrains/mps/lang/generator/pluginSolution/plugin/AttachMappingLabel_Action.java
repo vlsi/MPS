@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -46,7 +46,7 @@ public class AttachMappingLabel_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode node = event.getData(MPSCommonDataKeys.NODE);
-    if (!(BaseConcept_BehaviorDescriptor.isInTemplates_idhEwIMij.invoke(node))) {
+    if (!((boolean) BaseConcept__BehaviorDescriptor.isInTemplates_idhEwIMij.invoke(node))) {
       return false;
     }
     //  not an element from generator language 

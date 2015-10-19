@@ -608,7 +608,7 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Make" />
-    <property role="9BnSO" value="139.1" />
+    <property role="9BnSO" value="142.1" />
     <property role="9BnSK" value="3.3" />
     <property role="2PJ1tZ" value="true" />
     <node concept="2Tc6Op" id="7_yYGx27If5" role="2Tc6Ou">
@@ -3619,6 +3619,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="236SrjKnykS" role="3cqZAp" />
+        <node concept="3SKdUt" id="ZqkXIVTEHe" role="3cqZAp">
+          <node concept="3SKdUq" id="ZqkXIVTEYt" role="3SKWNk">
+            <property role="3SKdUp" value="empty collection is fine, it's up to make service to report there's nothing to do (odd, but fine for now. Action could have do that instead)" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="7tZeFupJF6E" role="3cqZAp">
           <node concept="3cpWsn" id="7tZeFupJF6F" role="3cpWs9">
             <property role="TrG5h" value="inputRes" />
@@ -3733,13 +3738,7 @@
                       </node>
                     </node>
                     <node concept="3cpWs6" id="6xMoDGgBp87" role="3cqZAp">
-                      <node concept="2ShNRf" id="6xMoDGgBpZ2" role="3cqZAk">
-                        <node concept="Tc6Ow" id="6xMoDGgBwWo" role="2ShVmc">
-                          <node concept="3uibUv" id="6xMoDGgB_pS" role="HW$YZ">
-                            <ref role="3uigEE" to="yo81:5mqBoD3U3WC" resolve="IResource" />
-                          </node>
-                        </node>
-                      </node>
+                      <node concept="10Nm6u" id="ZqkXIVTCkn" role="3cqZAk" />
                     </node>
                   </node>
                 </node>
@@ -3757,11 +3756,11 @@
           <node concept="3clFbS" id="6xMoDGgBAAM" role="3clFbx">
             <node concept="3cpWs6" id="6xMoDGgBDnx" role="3cqZAp" />
           </node>
-          <node concept="2OqwBi" id="6xMoDGgBBHs" role="3clFbw">
-            <node concept="37vLTw" id="6xMoDGgBB2k" role="2Oq$k0">
+          <node concept="3clFbC" id="ZqkXIVTE03" role="3clFbw">
+            <node concept="10Nm6u" id="ZqkXIVTEhp" role="3uHU7w" />
+            <node concept="37vLTw" id="6xMoDGgBB2k" role="3uHU7B">
               <ref role="3cqZAo" node="7tZeFupJF6F" resolve="inputRes" />
             </node>
-            <node concept="1v1jN8" id="6xMoDGgBDbh" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbH" id="1AfPmE4tJSb" role="3cqZAp" />
@@ -8237,6 +8236,7 @@
         <ref role="3uigEE" node="hP8D6fqe6p" resolve="TransientModelsWidget" />
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc1a0" role="jymVt" />
     <node concept="3clFbW" id="C3dcc38Te5" role="jymVt">
       <node concept="37vLTG" id="1Kgs_4ZGAYF" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -8275,6 +8275,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc0OY" role="jymVt" />
     <node concept="3clFb_" id="C3dcc38V0G" role="jymVt">
       <property role="TrG5h" value="init" />
       <node concept="3cqZAl" id="C3dcc38V0H" role="3clF45" />
@@ -8301,21 +8302,30 @@
       </node>
       <node concept="3Tm1VV" id="C3dcc38V0I" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc0wi" role="jymVt" />
     <node concept="3clFb_" id="C3dcc38V0L" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <node concept="3clFbS" id="C3dcc38V0O" role="3clF47">
-        <node concept="3clFbF" id="C3dcc38V0P" role="3cqZAp">
-          <node concept="2OqwBi" id="C3dcc38V0Q" role="3clFbG">
-            <node concept="liA8E" id="C3dcc38V0S" role="2OqNvi">
-              <ref role="37wK5l" to="hfuk:7lTD6YZtjhT" resolve="removeListener" />
-              <node concept="37vLTw" id="2BHiRxeuyOm" role="37wK5m">
-                <ref role="3cqZAo" node="16OFrd77GJR" resolve="myMakeNotificationListener" />
+        <node concept="3clFbJ" id="2ZAgslkc0bW" role="3cqZAp">
+          <node concept="3clFbS" id="2ZAgslkc0bY" role="3clFbx">
+            <node concept="3clFbF" id="C3dcc38V0P" role="3cqZAp">
+              <node concept="2OqwBi" id="C3dcc38V0Q" role="3clFbG">
+                <node concept="liA8E" id="C3dcc38V0S" role="2OqNvi">
+                  <ref role="37wK5l" to="hfuk:7lTD6YZtjhT" resolve="removeListener" />
+                  <node concept="37vLTw" id="2BHiRxeuyOm" role="37wK5m">
+                    <ref role="3cqZAo" node="16OFrd77GJR" resolve="myMakeNotificationListener" />
+                  </node>
+                </node>
+                <node concept="2YIFZM" id="C3dcc38V0R" role="2Oq$k0">
+                  <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
+                  <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
+                </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="C3dcc38V0R" role="2Oq$k0">
-              <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
-              <ref role="37wK5l" to="hfuk:7yGn3z4MRr2" resolve="get" />
-            </node>
+          </node>
+          <node concept="2YIFZM" id="2ZAgslkc0t5" role="3clFbw">
+            <ref role="37wK5l" to="hfuk:mmOAtMHTPM" resolve="hasMakeService" />
+            <ref role="1Pybhc" to="hfuk:7yGn3z4MRqM" resolve="IMakeService.INSTANCE" />
           </node>
         </node>
       </node>
@@ -8325,6 +8335,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc1xH" role="jymVt" />
     <node concept="3clFb_" id="1tPM9NIM0of" role="jymVt">
       <property role="TrG5h" value="ensureRegistered" />
       <node concept="3cqZAl" id="1tPM9NIM0og" role="3clF45" />
@@ -8371,6 +8382,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc1Pz" role="jymVt" />
     <node concept="3clFb_" id="C3dcc38Te9" role="jymVt">
       <property role="TrG5h" value="showBaloonInternal" />
       <node concept="3cqZAl" id="C3dcc38Tea" role="3clF45" />
@@ -8806,6 +8818,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc2aC" role="jymVt" />
     <node concept="3clFb_" id="7yo6vBMyssk" role="jymVt">
       <property role="TrG5h" value="showBallon" />
       <node concept="3Tm6S6" id="4B9wRKB8AYN" role="1B3o_S" />
@@ -8875,6 +8888,7 @@
       </node>
       <node concept="3cqZAl" id="7yo6vBMyst_" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc2vI" role="jymVt" />
     <node concept="3clFb_" id="5ortMJzsDjo" role="jymVt">
       <property role="TrG5h" value="showForComponent" />
       <node concept="37vLTG" id="5ortMJzsDjn" role="3clF46">
@@ -8979,6 +8993,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc2OP" role="jymVt" />
     <node concept="2YIFZL" id="7XY3GP2vBC9" role="jymVt">
       <property role="TrG5h" value="isPopupShown" />
       <property role="DiZV1" value="false" />
@@ -9049,6 +9064,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc39X" role="jymVt" />
     <node concept="2YIFZL" id="7XY3GP2vBLo" role="jymVt">
       <property role="TrG5h" value="setShowPopup" />
       <property role="DiZV1" value="false" />
@@ -9099,6 +9115,7 @@
       </node>
       <node concept="3cqZAl" id="7XY3GP2vEW8" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="2ZAgslkc3v6" role="jymVt" />
     <node concept="312cEu" id="16OFrd77RJ$" role="jymVt">
       <property role="TrG5h" value="MyMakeNotificationListener" />
       <property role="2bfB8j" value="true" />

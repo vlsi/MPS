@@ -17,7 +17,7 @@
   </root>
   <root nodeRef="r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)/195736285282741216">
     <file name="check_IHasUniqueId_NonTypesystemRule.java">
-      <node id="195736285282743922" at="27,183,28,62" concept="6" />
+      <node id="195736285282743922" at="27,185,28,62" concept="6" />
       <node id="195736285282743922" at="28,62,29,387" concept="6" />
       <node id="195736285282741216" at="34,50,35,174" concept="7" />
       <node id="195736285282741216" at="37,68,38,102" concept="0" />
@@ -39,7 +39,7 @@
       <scope id="195736285282741216" at="40,30,41,17" />
       <scope id="195736285282988783" at="43,68,44,51" />
       <scope id="195736285282741216" at="22,0,24,0" />
-      <scope id="195736285282743922" at="27,183,29,387">
+      <scope id="195736285282743922" at="27,185,29,387">
         <var name="_reporter_2309309498" id="195736285282743922" />
         <var name="errorTarget" id="195736285282743922" />
       </scope>
@@ -176,11 +176,11 @@
   <root nodeRef="r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)/3175313036448577254">
     <file name="typeof_GetExtensionObjectsOperation_InferenceRule.java">
       <node id="3999125756866747142" at="25,117,26,101" concept="6" />
-      <node id="3175313036448577342" at="28,7,29,107" concept="6" />
-      <node id="3175313036448577342" at="29,107,30,207" concept="6" />
+      <node id="3175313036448577342" at="28,7,29,108" concept="6" />
+      <node id="3175313036448577342" at="29,108,30,207" concept="6" />
       <node id="3175313036448577342" at="30,207,31,375" concept="2" />
       <node id="3999125756866746162" at="33,5,34,0" concept="8" />
-      <node id="3999125756866733643" at="35,5,36,236" concept="6" />
+      <node id="3999125756866733643" at="35,5,36,237" concept="6" />
       <node id="3999125756866737310" at="38,27,39,34" concept="6" />
       <node id="3999125756866735668" at="40,11,41,154" concept="6" />
       <node id="3999125756866735668" at="41,154,42,167" concept="6" />
@@ -224,7 +224,7 @@
       <node id="3999125756866735668" at="39,34,47,11" concept="0" />
       <node id="3175313036448577269" at="73,0,84,0" concept="9" trace="_quotation_createNode_4o3874_a0c0d0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3999125756866733643" at="38,0,54,0" concept="5" trace="run#()V" />
-      <node id="3999125756866733643" at="36,236,54,129" concept="2" />
+      <node id="3999125756866733643" at="36,237,54,129" concept="2" />
       <node id="3999125756866733643" at="34,0,55,5" concept="0" />
       <node id="3175313036448577254" at="25,0,57,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3175313036448577254" at="23,62,23,62" />
@@ -383,7 +383,7 @@
     <file name="typeof_ExtensionObjectGetter_InferenceRule.java">
       <node id="7261386713308408619" at="21,5,22,45" concept="6" />
       <node id="7261386713308408619" at="22,45,23,205" concept="6" />
-      <node id="7261386713308408619" at="23,205,24,718" concept="2" />
+      <node id="7261386713308408619" at="23,205,24,719" concept="2" />
       <node id="8029776554053057814" at="27,50,28,168" concept="7" />
       <node id="8029776554053057814" at="30,68,31,102" concept="0" />
       <node id="8029776554053057814" at="30,68,31,102" concept="7" />
@@ -399,7 +399,7 @@
       <scope id="8029776554053057814" at="30,68,31,102" />
       <scope id="8029776554053057814" at="33,30,34,17" />
       <scope id="8029776554053057814" at="18,0,20,0" />
-      <scope id="7261386713308408619" at="21,5,24,718">
+      <scope id="7261386713308408619" at="21,5,24,719">
         <var name="_info_12389875345" id="7261386713308408619" />
         <var name="_nodeToCheck_1029348928467" id="7261386713308408619" />
       </scope>

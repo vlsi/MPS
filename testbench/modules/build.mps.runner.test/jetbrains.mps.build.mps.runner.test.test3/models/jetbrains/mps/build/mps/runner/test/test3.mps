@@ -89,8 +89,8 @@
       <node concept="3clFbS" id="7GotP_FDhs" role="3clF47">
         <node concept="3clFbF" id="1E8U0XDKj4L" role="3cqZAp">
           <node concept="2YIFZM" id="1E8U0XDKjey" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="1bVj0M" id="1E8U0XDKjfU" role="37wK5m">
               <node concept="3clFbS" id="1E8U0XDKjfV" role="1bW5cS">
                 <node concept="3clFbF" id="4CYT8qWE_3m" role="3cqZAp">

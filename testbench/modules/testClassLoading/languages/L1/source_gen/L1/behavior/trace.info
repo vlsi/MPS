@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info />
+<debug-info>
+  <root>
+    <file name="C1_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="L1.behavior.C1_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

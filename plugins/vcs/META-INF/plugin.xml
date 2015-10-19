@@ -20,7 +20,7 @@
   <description>VCS features in MPS</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="139.1" until-build="142.1"/>
+  <idea-version since-build="142.1" until-build="143.1"/>
 
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
@@ -94,6 +94,7 @@
     <mps.LanguageLibrary dir="/languages"/>
 
     <diff.DiffTool implementation="jetbrains.mps.vcs.platform.integration.ModelDiffTool"/>
+    <diff.merge.MergeTool implementation="jetbrains.mps.vcs.platform.integration.ModelMergeTool"/>
 
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
     <mps.TabColorProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider"/>

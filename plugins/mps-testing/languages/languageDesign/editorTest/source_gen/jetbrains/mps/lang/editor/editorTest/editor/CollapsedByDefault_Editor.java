@@ -46,7 +46,7 @@ public class CollapsedByDefault_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_2arfu4_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2arfu4_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2arfu4_c1a(editorContext, node));
-    editorCell.fold(false);
+    editorCell.setInitiallyCollapsed(true);
     return editorCell;
   }
   private EditorCell createConstant_2arfu4_a1a(EditorContext editorContext, SNode node) {

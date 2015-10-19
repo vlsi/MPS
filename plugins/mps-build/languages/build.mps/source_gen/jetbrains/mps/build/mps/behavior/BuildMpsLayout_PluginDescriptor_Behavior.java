@@ -5,12 +5,12 @@ package jetbrains.mps.build.mps.behavior;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class BuildMpsLayout_PluginDescriptor_Behavior {
   public static String call_pluginXml_978600701690250198(SAbstractConcept __thisConcept__) {
-    return "plugin.xml";
+    return BuildMpsLayout_PluginDescriptor__BehaviorDescriptor.pluginXml_idQkG2t1cwfm(__thisConcept__);
   }
 }

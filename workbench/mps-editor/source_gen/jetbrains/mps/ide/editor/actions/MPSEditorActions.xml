@@ -22,6 +22,9 @@
       <keyboard-shortcut first-keystroke="ctrl shift SUBTRACT" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl shift MINUS" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.CollapseRecursively_Action" class="jetbrains.mps.ide.editor.actions.CollapseRecursively_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt MINUS" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.Collapse_Action" class="jetbrains.mps.ide.editor.actions.Collapse_Action">
       <keyboard-shortcut first-keystroke="ctrl SUBTRACT" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl MINUS" keymap="$default" />
@@ -67,6 +70,9 @@
     <action id="jetbrains.mps.ide.editor.actions.ExpandAll_Action" class="jetbrains.mps.ide.editor.actions.ExpandAll_Action">
       <keyboard-shortcut first-keystroke="ctrl shift ADD" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl shift EQUALS" keymap="$default" />
+    </action>
+    <action id="jetbrains.mps.ide.editor.actions.ExpandRecursively_Action" class="jetbrains.mps.ide.editor.actions.ExpandRecursively_Action">
+      <keyboard-shortcut first-keystroke="ctrl alt EQUALS" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Expand_Action" class="jetbrains.mps.ide.editor.actions.Expand_Action">
       <keyboard-shortcut first-keystroke="ctrl ADD" keymap="$default" />
@@ -212,6 +218,8 @@
     <group id="EditorPopup_ActionGrouphints" />
     <group id="EditorPopup_ActionGroupreflective" />
     <group id="EditorPopup_ActionGroupdiagram" />
+    <group id="Folding_ActionGroupexpandToLevel" />
+    <group id="Folding_ActionGroupexpandAllToLevel" />
     <group id="GoToEditorPopupAddition_ActionGroupother" />
     <group id="GoToEditorPopupAddition_ActionGrouprefs" />
     <group id="IDE_Edit_ActionGrouptoplevel" />
@@ -299,8 +307,14 @@
       <reference ref="jetbrains.mps.ide.editor.actions.Expand_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.Collapse_Action" />
       <separator />
+      <reference ref="jetbrains.mps.ide.editor.actions.ExpandRecursively_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.CollapseRecursively_Action" />
+      <separator />
       <reference ref="jetbrains.mps.ide.editor.actions.ExpandAll_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.CollapseAll_Action" />
+      <separator />
+      <reference ref="Folding_ActionGroupexpandToLevel" />
+      <reference ref="Folding_ActionGroupexpandAllToLevel" />
       <separator />
       <reference ref="jetbrains.mps.ide.editor.actions.FoldSelection_Action" />
       <add-to-group group-id="EditorPopup_ActionGroupfolding" anchor="last" />

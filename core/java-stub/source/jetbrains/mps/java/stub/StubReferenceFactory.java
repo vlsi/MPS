@@ -67,7 +67,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
     myModule = module;
     myModel = new VisibleModel(model);
     myModelReference = model.getReference();
-    myModelLongName = NameUtil.getModelLongName(myModelReference.getModelName());
+    myModelLongName = NameUtil.getModelLongName(myModelReference);
   }
 
   @NotNull

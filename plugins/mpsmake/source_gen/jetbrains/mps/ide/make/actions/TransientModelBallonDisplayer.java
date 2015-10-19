@@ -38,23 +38,30 @@ public class TransientModelBallonDisplayer implements Disposable {
   private final IMakeNotificationListener myMakeNotificationListener = new TransientModelBallonDisplayer.MyMakeNotificationListener();
   private final Project myProject;
   private final TransientModelsWidget myWidget;
+
   public TransientModelBallonDisplayer(Project project, TransientModelsWidget widget) {
     myProject = project;
     myWidget = widget;
   }
+
   public void init() {
     IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     ensureRegistered();
   }
+
   @Override
   public void dispose() {
-    IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
+    if (IMakeService.INSTANCE.hasMakeService()) {
+      IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
+    }
   }
+
   private void ensureRegistered() {
     if (!(NotificationsConfigurationImpl.getInstanceImpl().isRegistered(ID))) {
       NotificationsConfiguration.getNotificationsConfiguration().register(ID, NotificationDisplayType.BALLOON, false);
     }
   }
+
   private void showBaloonInternal() {
     Notification notification = new Notification(ID, "Saving transient models", "Saving transient models is on", NotificationType.WARNING);
     boolean sticky = NotificationsConfigurationImpl.getSettings(ID).getDisplayType() == NotificationDisplayType.STICKY_BALLOON;
@@ -67,11 +74,11 @@ public class TransientModelBallonDisplayer implements Disposable {
 
     Disposer.register(this, balloon);
 
-    Component component = check_45eojt_a0j0i(myWidget);
+    Component component = check_45eojt_a0j0n(myWidget);
     if (component != null && component.isShowing()) {
       showForComponent(component, balloon);
     } else {
-      component = check_45eojt_a0a0a01a8(WindowManager.getInstance().getStatusBar(myProject));
+      component = check_45eojt_a0a0a01a31(WindowManager.getInstance().getStatusBar(myProject));
       if (component != null && component.isShowing()) {
         showForComponent(component, balloon);
       } else {
@@ -86,6 +93,7 @@ public class TransientModelBallonDisplayer implements Disposable {
       }
     }
   }
+
   private void showBallon() {
     if (!(GenerationSettings.getInstance().isSaveTransientModels()) || !(isPopupShown())) {
       return;
@@ -97,11 +105,13 @@ public class TransientModelBallonDisplayer implements Disposable {
       }
     });
   }
+
   private void showForComponent(Component component, Balloon ballon) {
     int offset = component.getHeight() / 2;
     Point point = new Point(component.getWidth() - offset, component.getHeight() - offset);
     ballon.show(new RelativePoint(component, point), Balloon.Position.above);
   }
+
   public static boolean isPopupShown() {
     if (!(NotificationsConfigurationImpl.getInstanceImpl().SHOW_BALLOONS)) {
       return false;
@@ -109,10 +119,12 @@ public class TransientModelBallonDisplayer implements Disposable {
     NotificationDisplayType displayType = NotificationsConfigurationImpl.getSettings(ID).getDisplayType();
     return displayType == NotificationDisplayType.BALLOON || displayType == NotificationDisplayType.STICKY_BALLOON;
   }
+
   public static void setShowPopup(boolean show) {
     NotificationSettings settings = NotificationsConfigurationImpl.getSettings(ID);
     settings.withDisplayType((show ? NotificationDisplayType.BALLOON : NotificationDisplayType.NONE));
   }
+
   private class MyMakeNotificationListener implements IMakeNotificationListener {
     private volatile boolean mySessionJustOpened;
     public MyMakeNotificationListener() {
@@ -143,13 +155,13 @@ public class TransientModelBallonDisplayer implements Disposable {
     public void sessionClosed(MakeNotification notification) {
     }
   }
-  private static JComponent check_45eojt_a0j0i(TransientModelsWidget checkedDotOperand) {
+  private static JComponent check_45eojt_a0j0n(TransientModelsWidget checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
-  private static JComponent check_45eojt_a0a0a01a8(StatusBar checkedDotOperand) {
+  private static JComponent check_45eojt_a0a0a01a31(StatusBar checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }

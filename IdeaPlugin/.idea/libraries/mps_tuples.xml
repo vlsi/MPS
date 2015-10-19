@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mps-tuples">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-tuples.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

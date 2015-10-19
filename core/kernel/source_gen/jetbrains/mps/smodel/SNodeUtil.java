@@ -121,18 +121,18 @@ public final class SNodeUtil {
     }
   }
   public static String getDetailedPresentation(SNode node) {
-    return ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
+    return ((String) (String) BHReflection.invoke(node, SMethodTrimmedId.create("getDetailedPresentation", null, "22G2W3WJ92t")));
   }
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isDefaultSubstitutable(SNode node) {
-    return ((Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isDefaultSubstitutable", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "6spw4TQeyqh")));
+    return ((boolean) (Boolean) BHReflection.invoke(node, SMethodTrimmedId.create("isDefaultSubstitutable", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "6spw4TQeyqh")));
   }
   public static boolean isDefaultSubstitutable(SAbstractConcept concept) {
     return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static int getMetaLevel(SNode node) {
-    return ((Integer) BHReflection.invoke(node, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
+    return ((int) (Integer) BHReflection.invoke(node, SMethodTrimmedId.create("getMetaLevel", null, "3t0v3yFOD1A")));
   }
   public static String getConceptDeclarationAlias(SNode conceptDeclaration) {
     return SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"));

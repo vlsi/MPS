@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.lang.editor.behavior.CellModel_Collection_BehaviorDescriptor;
+import jetbrains.mps.lang.editor.behavior.CellModel_Collection__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -73,7 +73,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cvgoyj_a0(SNode node, EditorContext editorContext) {
-    return !(CellModel_Collection_BehaviorDescriptor.isIndentLayout_idi0pB9jQ.invoke(node));
+    return !((boolean) CellModel_Collection__BehaviorDescriptor.isIndentLayout_idi0pB9jQ.invoke(node));
   }
   private EditorCell createCollection_cvgoyj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
@@ -105,7 +105,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext) {
-    return CellModel_Collection_BehaviorDescriptor.isVertical_idi0pAV23.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isVertical_idi0pAV23.invoke(node);
   }
   private EditorCell createCollection_cvgoyj_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -199,7 +199,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext) {
-    return CellModel_Collection_BehaviorDescriptor.isFoldingEnabled_id1_9L3A4DrOF.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isFoldingEnabled_id1_9L3A4DrOF.invoke(node);
   }
   private EditorCell createConstant_cvgoyj_a2a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -250,7 +250,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext) {
-    return !(CellModel_Collection_BehaviorDescriptor.isVertical_idi0pAV23.invoke(node)) && !(CellModel_Collection_BehaviorDescriptor.isIndentLayout_idi0pB9jQ.invoke(node));
+    return !((boolean) CellModel_Collection__BehaviorDescriptor.isVertical_idi0pAV23.invoke(node)) && !((boolean) CellModel_Collection__BehaviorDescriptor.isIndentLayout_idi0pB9jQ.invoke(node));
   }
   private EditorCell createComponent_cvgoyj_a1a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
@@ -308,7 +308,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext) {
-    return CellModel_Collection_BehaviorDescriptor.isFoldingEnabled_id1_9L3A4DrOF.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isFoldingEnabled_id1_9L3A4DrOF.invoke(node);
   }
   private EditorCell createComponent_cvgoyj_d1a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
@@ -343,7 +343,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_cvgoyj_a0a0a(EditorContext editorContext, SNode node) {
-    return CellModel_Collection_BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(node);
   }
   private EditorCell createRefNodeList_cvgoyj_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new CellModel_Collection_Editor.childCellModelListHandler_cvgoyj_b0a(node, "childCellModel", editorContext);
@@ -389,7 +389,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext) {
-    return CellModel_Collection_BehaviorDescriptor.isFoldingEnabled_id1_9L3A4DrOF.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isFoldingEnabled_id1_9L3A4DrOF.invoke(node);
   }
   private EditorCell createComponent_cvgoyj_d0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
@@ -402,10 +402,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_cvgoyj_a0d0a(EditorContext editorContext, SNode node) {
-    return CellModel_Collection_BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(node);
   }
   private static boolean _StyleParameter_QueryFunction_cvgoyj_a1d0a(EditorContext editorContext, SNode node) {
-    return CellModel_Collection_BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(node);
+    return (boolean) CellModel_Collection__BehaviorDescriptor.isVerticalIndent_idi0tOX1j.invoke(node);
   }
   private EditorCell createCollection_cvgoyj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);

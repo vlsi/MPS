@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -71,6 +71,12 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
   @Override
+  @ToRemove(version = 3.3)
+  public Collection<String> getUsedLanguages() {
+    return Collections.emptyList();
+  }
+
+  @Override
   @ToRemove(version = 3.2)
   public Collection<TemplateModule> getEmployedGenerators() {
     // Generators didn't support dependencies other than 'extends'
@@ -84,12 +90,36 @@ public abstract class TemplateModuleBase implements TemplateModule {
   }
 
   @Override
-  @ToRemove(version = 3.2)
-  public Set<SLanguage> getTargetLanguages() {
+  @ToRemove(version = 3.3)
+  public Collection<SLanguage> getTargetLanguages() {
     HashSet<SLanguage> rv = new HashSet<SLanguage>();
+    // once I fix templates for generated generators to generate this method instead of getUsedLanguages(),
+    // I shall pull getUsedLanguages implementation from interpreted module here (for transition period)
     for (String l : getUsedLanguages()) {
       rv.add(MetaAdapterFactoryByName.getLanguage(l));
     }
     return rv;
+  }
+
+  protected TemplateModel loadModel(String modelName) {
+    ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getModuleReference());
+    Class<TemplateModel> clazz = null;
+    if (module != null && module.willLoad()) {
+      try {
+        clazz = (Class<TemplateModel>) module.getClass(modelName);
+      } catch (ClassNotFoundException e) {
+        throw new IllegalStateException("Class not found for model " + modelName, e);
+      }
+    }
+    if (clazz == null) {
+      throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
+    }
+    try {
+      return clazz.getConstructor(TemplateModule.class).newInstance(this);
+    } catch (RuntimeException ex) {
+      throw ex;
+    } catch (Exception ex) {
+      throw new RuntimeException(ex);
+    }
   }
 }

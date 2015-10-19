@@ -12,18 +12,18 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myInternalStaticMethodCall_BehaviorDescriptor = new InternalStaticMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myInternalNewExpression_BehaviorDescriptor = new InternalNewExpression_BehaviorDescriptor();
-  private final BHDescriptor myInternalPartialInstanceMethodCall_BehaviorDescriptor = new InternalPartialInstanceMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myInternalVariableReference_BehaviorDescriptor = new InternalVariableReference_BehaviorDescriptor();
-  private final BHDescriptor myInternalPartialFieldReference_BehaviorDescriptor = new InternalPartialFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myInternalClassCreator_BehaviorDescriptor = new InternalClassCreator_BehaviorDescriptor();
-  private final BHDescriptor myExtractStatementListExpression_BehaviorDescriptor = new ExtractStatementListExpression_BehaviorDescriptor();
-  private final BHDescriptor myInternalAnonymousClass_BehaviorDescriptor = new InternalAnonymousClass_BehaviorDescriptor();
-  private final BHDescriptor myExtractStaticMethodExpression_BehaviorDescriptor = new ExtractStaticMethodExpression_BehaviorDescriptor();
-  private final BHDescriptor myExtractStaticMethod_CallExpression_BehaviorDescriptor = new ExtractStaticMethod_CallExpression_BehaviorDescriptor();
-  private final BHDescriptor myInternalSuperMethodCallOperation_BehaviorDescriptor = new InternalSuperMethodCallOperation_BehaviorDescriptor();
-  private final BHDescriptor myExtractStaticInnerClassExpression_BehaviorDescriptor = new ExtractStaticInnerClassExpression_BehaviorDescriptor();
+  private final BHDescriptor myInternalStaticMethodCall__BehaviorDescriptor = new InternalStaticMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myInternalNewExpression__BehaviorDescriptor = new InternalNewExpression__BehaviorDescriptor();
+  private final BHDescriptor myInternalPartialInstanceMethodCall__BehaviorDescriptor = new InternalPartialInstanceMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myInternalVariableReference__BehaviorDescriptor = new InternalVariableReference__BehaviorDescriptor();
+  private final BHDescriptor myInternalPartialFieldReference__BehaviorDescriptor = new InternalPartialFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myInternalClassCreator__BehaviorDescriptor = new InternalClassCreator__BehaviorDescriptor();
+  private final BHDescriptor myExtractStatementListExpression__BehaviorDescriptor = new ExtractStatementListExpression__BehaviorDescriptor();
+  private final BHDescriptor myInternalAnonymousClass__BehaviorDescriptor = new InternalAnonymousClass__BehaviorDescriptor();
+  private final BHDescriptor myExtractStaticMethodExpression__BehaviorDescriptor = new ExtractStaticMethodExpression__BehaviorDescriptor();
+  private final BHDescriptor myExtractStaticMethod_CallExpression__BehaviorDescriptor = new ExtractStaticMethod_CallExpression__BehaviorDescriptor();
+  private final BHDescriptor myInternalSuperMethodCallOperation__BehaviorDescriptor = new InternalSuperMethodCallOperation__BehaviorDescriptor();
+  private final BHDescriptor myExtractStaticInnerClassExpression__BehaviorDescriptor = new ExtractStaticInnerClassExpression__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -55,29 +55,29 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myInternalStaticMethodCall_BehaviorDescriptor;
+        return myInternalStaticMethodCall__BehaviorDescriptor;
       case 1:
-        return myInternalNewExpression_BehaviorDescriptor;
+        return myInternalNewExpression__BehaviorDescriptor;
       case 2:
-        return myInternalPartialInstanceMethodCall_BehaviorDescriptor;
+        return myInternalPartialInstanceMethodCall__BehaviorDescriptor;
       case 3:
-        return myInternalVariableReference_BehaviorDescriptor;
+        return myInternalVariableReference__BehaviorDescriptor;
       case 4:
-        return myInternalPartialFieldReference_BehaviorDescriptor;
+        return myInternalPartialFieldReference__BehaviorDescriptor;
       case 5:
-        return myInternalClassCreator_BehaviorDescriptor;
+        return myInternalClassCreator__BehaviorDescriptor;
       case 6:
-        return myExtractStatementListExpression_BehaviorDescriptor;
+        return myExtractStatementListExpression__BehaviorDescriptor;
       case 7:
-        return myInternalAnonymousClass_BehaviorDescriptor;
+        return myInternalAnonymousClass__BehaviorDescriptor;
       case 8:
-        return myExtractStaticMethodExpression_BehaviorDescriptor;
+        return myExtractStaticMethodExpression__BehaviorDescriptor;
       case 9:
-        return myExtractStaticMethod_CallExpression_BehaviorDescriptor;
+        return myExtractStaticMethod_CallExpression__BehaviorDescriptor;
       case 10:
-        return myInternalSuperMethodCallOperation_BehaviorDescriptor;
+        return myInternalSuperMethodCallOperation__BehaviorDescriptor;
       case 11:
-        return myExtractStaticInnerClassExpression_BehaviorDescriptor;
+        return myExtractStaticInnerClassExpression__BehaviorDescriptor;
       default:
         return null;
     }

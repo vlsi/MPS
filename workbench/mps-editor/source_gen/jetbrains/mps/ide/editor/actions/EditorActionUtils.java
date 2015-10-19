@@ -186,7 +186,7 @@ public class EditorActionUtils {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode linkDeclaration = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingLinkDeclaration(((SNode) cell.getSNode()));
-        result[0] = linkDeclaration != null && ((Boolean) BHReflection.invoke(linkDeclaration, SMethodTrimmedId.create("isSingular", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAt")));
+        result[0] = linkDeclaration != null && ((boolean) (Boolean) BHReflection.invoke(linkDeclaration, SMethodTrimmedId.create("isSingular", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "hEwIfAt")));
       }
     });
     return result[0];

@@ -86,7 +86,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.IActionHolder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
@@ -269,8 +269,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.IActionHolder_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.IActionHolder__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -348,8 +348,8 @@
   <dependency className="jetbrains.mps.console.base.editor.PastedNodeReference_Editor" file="PastedNodeReference_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.INodeWithReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.console.base.behavior.PastedNodeReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.console.base.behavior.PastedNodeReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />

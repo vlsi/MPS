@@ -16,7 +16,7 @@ public class DefaultConstructorUtils {
   public DefaultConstructorUtils() {
   }
   public static boolean containsDefaultConstructor(SNode clazz) {
-    if (!(((Boolean) BHReflection.invoke(clazz, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
+    if (!(((boolean) (Boolean) BHReflection.invoke(clazz, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
       return false;
     }
     if (Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(clazz, SMethodTrimmedId.create("constructors", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "4_LVZ3pCvsd")))).isNotEmpty()) {
@@ -37,7 +37,7 @@ public class DefaultConstructorUtils {
       if ((constructor == null)) {
         return false;
       }
-      return ((Boolean) BHReflection.invoke(constructor, SMethodTrimmedId.create("isVisible", null, "70J2WaK_oVl"), currentClass, startClass));
+      return ((boolean) (Boolean) BHReflection.invoke(constructor, SMethodTrimmedId.create("isVisible", null, "70J2WaK_oVl"), currentClass, startClass));
     } else {
       if ((SLinkOperations.getTarget(((SNode) BHReflection.invoke(currentClass, SMethodTrimmedId.create("getSuperclass", null, "i3H_lLu"))), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == null)) {
         return false;

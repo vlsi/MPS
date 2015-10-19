@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class UnrestrictedFunctionType_Behavior {
   public static String call_getRuntimeAdapterClassName_1231423631922(SNode __thisNode__) {
-    return "_UnrestrictedClosures";
+    return UnrestrictedFunctionType__BehaviorDescriptor.getRuntimeAdapterClassName_idhUQ$n8M(__thisNode__);
   }
 }

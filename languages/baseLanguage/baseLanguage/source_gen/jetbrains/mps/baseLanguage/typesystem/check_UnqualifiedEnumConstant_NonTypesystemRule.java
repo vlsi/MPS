@@ -24,8 +24,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.baseLanguage.behavior.JavaImports_BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.behavior.Tokens_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.JavaImports__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.Tokens__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -85,12 +85,12 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       return;
     }
 
-    for (SNode singleNameImport : Sequence.fromIterable(JavaImports_BehaviorDescriptor.staticSingleName_id4ykJ8Y6iJRa.invoke(javaImports))) {
-      if (!(enumConstName.equals(Tokens_BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(singleNameImport)))) {
+    for (SNode singleNameImport : Sequence.fromIterable(JavaImports__BehaviorDescriptor.staticSingleName_id4ykJ8Y6iJRa.invoke(javaImports))) {
+      if (!(enumConstName.equals(Tokens__BehaviorDescriptor.lastToken_id17WpDCYLyrY.invoke(singleNameImport)))) {
         continue;
       }
 
-      String enumClassCandidateName = Tokens_BehaviorDescriptor.withoutLastToken_id5ll4uk6512$.invoke(singleNameImport);
+      String enumClassCandidateName = Tokens__BehaviorDescriptor.withoutLastToken_id5ll4uk6512$.invoke(singleNameImport);
       SNode enumClassCandidate = ResolveUnknownUtil.findClass(varRef, enumClassCandidateName);
       if ((enumClassCandidate == null)) {
         // seems like there is no need to continue 
@@ -130,7 +130,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       return;
     }
 
-    for (SNode onDemandImport : Sequence.fromIterable(JavaImports_BehaviorDescriptor.staticOnDemand_id4ykJ8Y6iCVz.invoke(javaImports))) {
+    for (SNode onDemandImport : Sequence.fromIterable(JavaImports__BehaviorDescriptor.staticOnDemand_id4ykJ8Y6iCVz.invoke(javaImports))) {
       SNode claz = ResolveUnknownUtil.findClass(varRef, SPropertyOperations.getString(onDemandImport, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x5a98df4004080866L, 0x1996ec29712bdd92L, "tokens")));
       if ((claz == null)) {
         continue;

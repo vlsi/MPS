@@ -12,23 +12,23 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBuildMps_DevKit_BehaviorDescriptor = new BuildMps_DevKit_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_AbstractModule_BehaviorDescriptor = new BuildMps_AbstractModule_BehaviorDescriptor();
-  private final BHDescriptor myBuildMPSPlugin_BehaviorDescriptor = new BuildMPSPlugin_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_ModuleJars_BehaviorDescriptor = new BuildMpsLayout_ModuleJars_BehaviorDescriptor();
-  private final BHDescriptor myBuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor = new BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_ModuleSources_BehaviorDescriptor = new BuildMpsLayout_ModuleSources_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_FolderWithSources_BehaviorDescriptor = new BuildMpsLayout_FolderWithSources_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_Solution_BehaviorDescriptor = new BuildMps_Solution_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_Language_BehaviorDescriptor = new BuildMps_Language_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_Module_BehaviorDescriptor = new BuildMps_Module_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_Generator_BehaviorDescriptor = new BuildMps_Generator_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_Plugin_BehaviorDescriptor = new BuildMpsLayout_Plugin_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_IdeaPlugin_BehaviorDescriptor = new BuildMps_IdeaPlugin_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_IdeaPluginModule_BehaviorDescriptor = new BuildMps_IdeaPluginModule_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_IdeaPluginContent_BehaviorDescriptor = new BuildMps_IdeaPluginContent_BehaviorDescriptor();
-  private final BHDescriptor myBuildMps_IdeaPluginGroup_BehaviorDescriptor = new BuildMps_IdeaPluginGroup_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_PluginDescriptor_BehaviorDescriptor = new BuildMpsLayout_PluginDescriptor_BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_DevKit__BehaviorDescriptor = new BuildMps_DevKit__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_AbstractModule__BehaviorDescriptor = new BuildMps_AbstractModule__BehaviorDescriptor();
+  private final BHDescriptor myBuildMPSPlugin__BehaviorDescriptor = new BuildMPSPlugin__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_ModuleJars__BehaviorDescriptor = new BuildMpsLayout_ModuleJars__BehaviorDescriptor();
+  private final BHDescriptor myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor = new BuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_ModuleSources__BehaviorDescriptor = new BuildMpsLayout_ModuleSources__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_FolderWithSources__BehaviorDescriptor = new BuildMpsLayout_FolderWithSources__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_Solution__BehaviorDescriptor = new BuildMps_Solution__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_Language__BehaviorDescriptor = new BuildMps_Language__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_Module__BehaviorDescriptor = new BuildMps_Module__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_Generator__BehaviorDescriptor = new BuildMps_Generator__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_Plugin__BehaviorDescriptor = new BuildMpsLayout_Plugin__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_IdeaPlugin__BehaviorDescriptor = new BuildMps_IdeaPlugin__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_IdeaPluginModule__BehaviorDescriptor = new BuildMps_IdeaPluginModule__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_IdeaPluginContent__BehaviorDescriptor = new BuildMps_IdeaPluginContent__BehaviorDescriptor();
+  private final BHDescriptor myBuildMps_IdeaPluginGroup__BehaviorDescriptor = new BuildMps_IdeaPluginGroup__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor = new BuildMpsLayout_PluginDescriptor__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -65,39 +65,39 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myBuildMps_DevKit_BehaviorDescriptor;
+        return myBuildMps_DevKit__BehaviorDescriptor;
       case 1:
-        return myBuildMps_AbstractModule_BehaviorDescriptor;
+        return myBuildMps_AbstractModule__BehaviorDescriptor;
       case 2:
-        return myBuildMPSPlugin_BehaviorDescriptor;
+        return myBuildMPSPlugin__BehaviorDescriptor;
       case 3:
-        return myBuildMpsLayout_ModuleJars_BehaviorDescriptor;
+        return myBuildMpsLayout_ModuleJars__BehaviorDescriptor;
       case 4:
-        return myBuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor;
+        return myBuildLayout_ToBinaryCopyProcessor__BehaviorDescriptor;
       case 5:
-        return myBuildMpsLayout_ModuleSources_BehaviorDescriptor;
+        return myBuildMpsLayout_ModuleSources__BehaviorDescriptor;
       case 6:
-        return myBuildMpsLayout_FolderWithSources_BehaviorDescriptor;
+        return myBuildMpsLayout_FolderWithSources__BehaviorDescriptor;
       case 7:
-        return myBuildMps_Solution_BehaviorDescriptor;
+        return myBuildMps_Solution__BehaviorDescriptor;
       case 8:
-        return myBuildMps_Language_BehaviorDescriptor;
+        return myBuildMps_Language__BehaviorDescriptor;
       case 9:
-        return myBuildMps_Module_BehaviorDescriptor;
+        return myBuildMps_Module__BehaviorDescriptor;
       case 10:
-        return myBuildMps_Generator_BehaviorDescriptor;
+        return myBuildMps_Generator__BehaviorDescriptor;
       case 11:
-        return myBuildMpsLayout_Plugin_BehaviorDescriptor;
+        return myBuildMpsLayout_Plugin__BehaviorDescriptor;
       case 12:
-        return myBuildMps_IdeaPlugin_BehaviorDescriptor;
+        return myBuildMps_IdeaPlugin__BehaviorDescriptor;
       case 13:
-        return myBuildMps_IdeaPluginModule_BehaviorDescriptor;
+        return myBuildMps_IdeaPluginModule__BehaviorDescriptor;
       case 14:
-        return myBuildMps_IdeaPluginContent_BehaviorDescriptor;
+        return myBuildMps_IdeaPluginContent__BehaviorDescriptor;
       case 15:
-        return myBuildMps_IdeaPluginGroup_BehaviorDescriptor;
+        return myBuildMps_IdeaPluginGroup__BehaviorDescriptor;
       case 16:
-        return myBuildMpsLayout_PluginDescriptor_BehaviorDescriptor;
+        return myBuildMpsLayout_PluginDescriptor__BehaviorDescriptor;
       default:
         return null;
     }

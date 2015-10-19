@@ -85,7 +85,7 @@ public class JUnitTests_Producer {
         for (ITestNodeWrapper testNode : ListSequence.fromList(list)) {
           SNode testRoot = check_f2w1m9_a0a0d0f0a1(testNode.getNode());
           if (testRoot != null && SNodeOperations.isInstanceOf(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            if (!(((Boolean) BHReflection.invoke(SNodeOperations.cast(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
+            if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
               canExecuteInProcess = false;
             }
           } else {
@@ -132,7 +132,7 @@ public class JUnitTests_Producer {
         for (ITestNodeWrapper testNode : ListSequence.fromList(list)) {
           SNode testRoot = check_f2w1m9_a0a0d0f0a2(testNode.getNode());
           if (testRoot != null && SNodeOperations.isInstanceOf(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            if (!(((Boolean) BHReflection.invoke(SNodeOperations.cast(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
+            if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
               canExecuteInProcess = false;
             }
           } else {
@@ -194,7 +194,7 @@ public class JUnitTests_Producer {
       configuration.getJUnitSettings().setTestCases(PointerUtils.nodeToCloneableList(testNode));
       boolean canRunInProcess = false;
       if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-        canRunInProcess = ((Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB")));
+        canRunInProcess = ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB")));
       }
       configuration.getJUnitSettings().setLightExec(canRunInProcess);
       return configuration;
@@ -228,7 +228,7 @@ public class JUnitTests_Producer {
 
       SNode testNode = TestNodeWrapperFactory.findWrappableAncestor(source, true);
       if (SNodeOperations.isInstanceOf(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-        boolean canRunInProcess = ((Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB")));
+        boolean canRunInProcess = ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testNode, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB")));
         configuration.getJUnitSettings().setLightExec(canRunInProcess);
       }
       return configuration;
@@ -261,7 +261,7 @@ public class JUnitTests_Producer {
         if (ListSequence.fromList(((List<SNode>) BHReflection.invoke(testCase, SMethodTrimmedId.create("getTestMethods", null, "1RfJDyhAUar")))).isNotEmpty()) {
           containsTest = true;
         }
-        if (!(((Boolean) BHReflection.invoke(testCase, SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
+        if (!(((boolean) (Boolean) BHReflection.invoke(testCase, SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
           canRunInProcess = false;
         }
       }
@@ -302,7 +302,7 @@ public class JUnitTests_Producer {
       boolean canRunInProcess = true;
       for (SNode testMethod : source) {
         SNode testCase = ((SNode) BHReflection.invoke(testMethod, SMethodTrimmedId.create("getTestCase", null, "hGBgWVd")));
-        if (testCase == null || !(((Boolean) BHReflection.invoke(testCase, SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
+        if (testCase == null || !(((boolean) (Boolean) BHReflection.invoke(testCase, SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
           canRunInProcess = false;
         }
       }

@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myExtension_BehaviorDescriptor = new Extension_BehaviorDescriptor();
-  private final BHDescriptor myIRootWithUniqueName_BehaviorDescriptor = new IRootWithUniqueName_BehaviorDescriptor();
-  private final BHDescriptor myExtensionPointType_BehaviorDescriptor = new ExtensionPointType_BehaviorDescriptor();
-  private final BHDescriptor myExtensionDeclaration_BehaviorDescriptor = new ExtensionDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myExtensionPointDeclaration_BehaviorDescriptor = new ExtensionPointDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myExtensionPointExpression_BehaviorDescriptor = new ExtensionPointExpression_BehaviorDescriptor();
-  private final BHDescriptor myExtensionFunction_BehaviorDescriptor = new ExtensionFunction_BehaviorDescriptor();
-  private final BHDescriptor myExtensionFieldReference_BehaviorDescriptor = new ExtensionFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myExtensionObjectGetter_BehaviorDescriptor = new ExtensionObjectGetter_BehaviorDescriptor();
+  private final BHDescriptor myExtension__BehaviorDescriptor = new Extension__BehaviorDescriptor();
+  private final BHDescriptor myIRootWithUniqueName__BehaviorDescriptor = new IRootWithUniqueName__BehaviorDescriptor();
+  private final BHDescriptor myExtensionPointType__BehaviorDescriptor = new ExtensionPointType__BehaviorDescriptor();
+  private final BHDescriptor myExtensionDeclaration__BehaviorDescriptor = new ExtensionDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myExtensionPointDeclaration__BehaviorDescriptor = new ExtensionPointDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myExtensionPointExpression__BehaviorDescriptor = new ExtensionPointExpression__BehaviorDescriptor();
+  private final BHDescriptor myExtensionFunction__BehaviorDescriptor = new ExtensionFunction__BehaviorDescriptor();
+  private final BHDescriptor myExtensionFieldReference__BehaviorDescriptor = new ExtensionFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myExtensionObjectGetter__BehaviorDescriptor = new ExtensionObjectGetter__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -49,23 +49,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myExtension_BehaviorDescriptor;
+        return myExtension__BehaviorDescriptor;
       case 1:
-        return myIRootWithUniqueName_BehaviorDescriptor;
+        return myIRootWithUniqueName__BehaviorDescriptor;
       case 2:
-        return myExtensionPointType_BehaviorDescriptor;
+        return myExtensionPointType__BehaviorDescriptor;
       case 3:
-        return myExtensionDeclaration_BehaviorDescriptor;
+        return myExtensionDeclaration__BehaviorDescriptor;
       case 4:
-        return myExtensionPointDeclaration_BehaviorDescriptor;
+        return myExtensionPointDeclaration__BehaviorDescriptor;
       case 5:
-        return myExtensionPointExpression_BehaviorDescriptor;
+        return myExtensionPointExpression__BehaviorDescriptor;
       case 6:
-        return myExtensionFunction_BehaviorDescriptor;
+        return myExtensionFunction__BehaviorDescriptor;
       case 7:
-        return myExtensionFieldReference_BehaviorDescriptor;
+        return myExtensionFieldReference__BehaviorDescriptor;
       case 8:
-        return myExtensionObjectGetter_BehaviorDescriptor;
+        return myExtensionObjectGetter__BehaviorDescriptor;
       default:
         return null;
     }

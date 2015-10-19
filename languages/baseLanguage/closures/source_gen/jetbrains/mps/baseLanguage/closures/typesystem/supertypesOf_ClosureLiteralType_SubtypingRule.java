@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.closures.behavior.FunctionType__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -21,7 +21,7 @@ public class supertypesOf_ClosureLiteralType_SubtypingRule extends SubtypingRule
   }
   public SNode getSubOrSuperType(SNode closureLiteralType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(closureLiteralType, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface")) == null)) {
-      return FunctionType_BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(closureLiteralType);
+      return FunctionType__BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(closureLiteralType);
     } else {
       return ClosureLiteralUtil.fillParams(_quotation_createNode_dhclly_a0a0a0a1(SLinkOperations.getTarget(closureLiteralType, MetaAdapterFactory.getReferenceLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x16630bea72d45e9L, "runtimeIface"))), closureLiteralType);
     }

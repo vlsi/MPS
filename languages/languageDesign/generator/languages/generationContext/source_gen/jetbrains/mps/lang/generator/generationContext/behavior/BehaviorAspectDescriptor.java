@@ -12,16 +12,16 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myTemplateFunctionParameter_generationContext_BehaviorDescriptor = new TemplateFunctionParameter_generationContext_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_SessionObjectAccess_BehaviorDescriptor = new GenerationContextOp_SessionObjectAccess_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_UserObjectAccessBase_BehaviorDescriptor = new GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_StepObjectAccess_BehaviorDescriptor = new GenerationContextOp_StepObjectAccess_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_TransientObjectAccess_BehaviorDescriptor = new GenerationContextOp_TransientObjectAccess_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_LinkPatternRef_BehaviorDescriptor = new GenerationContextOp_LinkPatternRef_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_PropertyPatternRef_BehaviorDescriptor = new GenerationContextOp_PropertyPatternRef_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_PatternRef_BehaviorDescriptor = new GenerationContextOp_PatternRef_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_NodePatternRef_BehaviorDescriptor = new GenerationContextOp_NodePatternRef_BehaviorDescriptor();
-  private final BHDescriptor myGenerationContextOp_ContextVarRef_BehaviorDescriptor = new GenerationContextOp_ContextVarRef_BehaviorDescriptor();
+  private final BHDescriptor myTemplateFunctionParameter_generationContext__BehaviorDescriptor = new TemplateFunctionParameter_generationContext__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor = new GenerationContextOp_SessionObjectAccess__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor = new GenerationContextOp_UserObjectAccessBase__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_StepObjectAccess__BehaviorDescriptor = new GenerationContextOp_StepObjectAccess__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor = new GenerationContextOp_TransientObjectAccess__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_LinkPatternRef__BehaviorDescriptor = new GenerationContextOp_LinkPatternRef__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor = new GenerationContextOp_PropertyPatternRef__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_PatternRef__BehaviorDescriptor = new GenerationContextOp_PatternRef__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_NodePatternRef__BehaviorDescriptor = new GenerationContextOp_NodePatternRef__BehaviorDescriptor();
+  private final BHDescriptor myGenerationContextOp_ContextVarRef__BehaviorDescriptor = new GenerationContextOp_ContextVarRef__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -51,25 +51,25 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myTemplateFunctionParameter_generationContext_BehaviorDescriptor;
+        return myTemplateFunctionParameter_generationContext__BehaviorDescriptor;
       case 1:
-        return myGenerationContextOp_SessionObjectAccess_BehaviorDescriptor;
+        return myGenerationContextOp_SessionObjectAccess__BehaviorDescriptor;
       case 2:
-        return myGenerationContextOp_UserObjectAccessBase_BehaviorDescriptor;
+        return myGenerationContextOp_UserObjectAccessBase__BehaviorDescriptor;
       case 3:
-        return myGenerationContextOp_StepObjectAccess_BehaviorDescriptor;
+        return myGenerationContextOp_StepObjectAccess__BehaviorDescriptor;
       case 4:
-        return myGenerationContextOp_TransientObjectAccess_BehaviorDescriptor;
+        return myGenerationContextOp_TransientObjectAccess__BehaviorDescriptor;
       case 5:
-        return myGenerationContextOp_LinkPatternRef_BehaviorDescriptor;
+        return myGenerationContextOp_LinkPatternRef__BehaviorDescriptor;
       case 6:
-        return myGenerationContextOp_PropertyPatternRef_BehaviorDescriptor;
+        return myGenerationContextOp_PropertyPatternRef__BehaviorDescriptor;
       case 7:
-        return myGenerationContextOp_PatternRef_BehaviorDescriptor;
+        return myGenerationContextOp_PatternRef__BehaviorDescriptor;
       case 8:
-        return myGenerationContextOp_NodePatternRef_BehaviorDescriptor;
+        return myGenerationContextOp_NodePatternRef__BehaviorDescriptor;
       case 9:
-        return myGenerationContextOp_ContextVarRef_BehaviorDescriptor;
+        return myGenerationContextOp_ContextVarRef__BehaviorDescriptor;
       default:
         return null;
     }

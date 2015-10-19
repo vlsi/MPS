@@ -13,8 +13,15 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
       </concept>
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -62,6 +69,34 @@
     <property role="1pbfSe" value="1990793499" />
     <property role="TrG5h" value="H" />
     <ref role="1TJDcQ" node="5mnatV0hyfC" resolve="D" />
+  </node>
+  <node concept="1TIwiD" id="1eK5xBtRxrX">
+    <property role="1pbfSe" value="242340586" />
+    <property role="TrG5h" value="J" />
+    <node concept="PrWs8" id="yOqIWcnDxX" role="PzmwI">
+      <ref role="PrY4T" node="1eK5xBtRxtu" resolve="I1" />
+    </node>
+    <node concept="PrWs8" id="yOqIWcnDy4" role="PzmwI">
+      <ref role="PrY4T" node="1eK5xBtRxtD" resolve="I2" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1eK5xBtRxtu">
+    <property role="1pbfSe" value="242340489" />
+    <property role="TrG5h" value="I1" />
+    <node concept="PrWs8" id="yOqIWcnDw4" role="PrDN$">
+      <ref role="PrY4T" node="1eK5xBtRxtO" resolve="I" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1eK5xBtRxtD">
+    <property role="1pbfSe" value="242340478" />
+    <property role="TrG5h" value="I2" />
+    <node concept="PrWs8" id="yOqIWcnDry" role="PrDN$">
+      <ref role="PrY4T" node="1eK5xBtRxtO" resolve="I" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="1eK5xBtRxtO">
+    <property role="1pbfSe" value="242340467" />
+    <property role="TrG5h" value="I" />
   </node>
 </model>
 

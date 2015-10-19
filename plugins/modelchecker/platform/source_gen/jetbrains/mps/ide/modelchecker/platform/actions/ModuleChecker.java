@@ -13,25 +13,16 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class ModuleChecker {
-  private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
+  private final SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
   public ModuleChecker() {
   }
   public void checkModule(final SModule module, ProgressMonitor monitor) {
-    final String moduleName = module.getModuleName();
+    String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
     try {
       ValidationUtil.validateModule(module, new Processor<ValidationProblem>() {
-        public boolean process(final ValidationProblem vp) {
-          String severity = (vp.getSeverity() == ValidationProblem.Severity.ERROR ? ModelChecker.SEVERITY_ERROR : ModelChecker.SEVERITY_WARNING);
-          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + vp.getMessage(), new IModelCheckerFix() {
-            public boolean doFix() {
-              if (!(vp.canFix())) {
-                return false;
-              }
-              vp.fix();
-              return true;
-            }
-          }, severity, "module properties"));
+        public boolean process(ValidationProblem vp) {
+          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, vp, "module properties"));
           return true;
         }
       });

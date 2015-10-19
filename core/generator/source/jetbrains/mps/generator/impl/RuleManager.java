@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -28,19 +26,17 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.util.FlattenIterable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Manages rules/templates of major step.
+ * Manages rules/templates/switches of a major step.
  */
 public class RuleManager {
 
@@ -50,18 +46,19 @@ public class RuleManager {
 
   private final TemplateSwitchGraph myTemplateSwitchGraph;
 
-  private final Map<SModelReference, TemplateModel> myModelMap;
-
   private final ScriptManager myPreScripts, myPostScripts;
 
   private final FastRuleFinder<TemplateReductionRule> myReductionRuleFinder;
   private final FastRuleFinder<TemplateDropRootRule> myDropRuleFinder;
 
-  public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations, IGeneratorLogger logger) {
-    myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
-    if (myTemplateSwitchGraph == null) {
-      throw new IllegalStateException("switch graph is not initialized");
-    }
+  /**
+   *
+   * @param configurations where to pick rules for the step from
+   * @param templateModels where to look for switches
+   * @throws GenerationFailureException if there are troubles building relevant information (e.g. cycles in switch extends)
+   */
+  public RuleManager(List<TemplateMappingConfiguration> configurations, Collection<TemplateModel> templateModels) throws GenerationFailureException {
+    myTemplateSwitchGraph = new TemplateSwitchGraph(templateModels);
 
     myCreateRootRules = new FlattenIterable<TemplateCreateRootRule>(configurations.size());
     myRoot_MappingRules = new FlattenIterable<TemplateRootMappingRule>(configurations.size());
@@ -72,7 +69,6 @@ public class RuleManager {
     LinkedList<TemplateMappingScript> postScripts = new LinkedList<TemplateMappingScript>();
     LinkedList<TemplateMappingScript> preScripts = new LinkedList<TemplateMappingScript>();
 
-    final String warnMsg = "skip script %s - wrong script kind";
     for (TemplateMappingConfiguration mappingConfig : configurations) {
       myCreateRootRules.add(mappingConfig.getCreateRules());
       myRoot_MappingRules.add(mappingConfig.getRootRules());
@@ -82,14 +78,12 @@ public class RuleManager {
       reductionRules.add(mappingConfig.getReductionRules());
       for (TemplateMappingScript postMappingScript : mappingConfig.getPostScripts()) {
         if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
-          logger.warning(postMappingScript.getScriptNode(), String.format(warnMsg, postMappingScript.getLongName()));
           continue;
         }
         postScripts.add(postMappingScript);
       }
       for (TemplateMappingScript preMappingScript : mappingConfig.getPreScripts()) {
         if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
-          logger.warning(preMappingScript.getScriptNode(), String.format(warnMsg, preMappingScript.getLongName()));
           continue;
         }
         preScripts.add(preMappingScript);
@@ -102,10 +96,6 @@ public class RuleManager {
     myPreScripts = new ScriptManager(preScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(preScripts));
     myPostScripts = new ScriptManager(postScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(postScripts));
 
-    myModelMap = new HashMap<SModelReference, TemplateModel>();
-    for (TemplateModel m : plan.getTemplateModels()) {
-      myModelMap.put(m.getSModelReference(), m);
-    }
   }
 
   @NotNull
@@ -119,7 +109,7 @@ public class RuleManager {
   }
 
   @NotNull
-  public FlattenIterable<TemplateWeavingRule> getWeaving_MappingRules() {
+  public Iterable<TemplateWeavingRule> getWeaving_MappingRules() {
     return myWeaving_MappingRules;
   }
 
@@ -140,10 +130,6 @@ public class RuleManager {
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
     return myTemplateSwitchGraph.getSwitch(switch_);
-  }
-
-  public TemplateModel getTemplateModel(SModelReference modelReference) {
-    return myModelMap.get(modelReference);
   }
 
   public ScriptManager getPreProcessScripts() {

@@ -384,43 +384,38 @@
       <node id="4474271214083118893" at="19,26,20,18" concept="10" />
       <node id="4474271214083118923" at="23,25,24,13" concept="10" />
       <node id="4474271214083118924" at="25,5,26,72" concept="9" />
-      <node id="1071422968910406756" at="30,27,31,86" concept="3" />
-      <node id="4474271214083118959" at="37,61,38,29" concept="9" />
-      <node id="4474271214083118972" at="39,40,40,49" concept="10" />
-      <node id="4474271214083118979" at="41,5,42,16" concept="10" />
+      <node id="3084972867226692346" at="27,29,28,104" concept="3" />
+      <node id="4474271214083118959" at="32,61,33,29" concept="9" />
+      <node id="4474271214083118972" at="34,40,35,49" concept="10" />
+      <node id="4474271214083118979" at="36,5,37,16" concept="10" />
       <node id="4474271214083118863" at="15,0,18,0" concept="2" trace="AbstractWatchableNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4474271214083118918" at="22,67,25,5" concept="7" />
-      <node id="4474271214083118963" at="38,29,41,5" concept="7" />
+      <node id="4474271214083118932" at="26,72,29,5" concept="7" />
+      <node id="4474271214083118963" at="33,29,36,5" concept="7" />
       <node id="4474271214083118889" at="18,0,22,0" concept="8" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4474271214083118948" at="29,0,33,0" concept="8" trace="run#()V" />
-      <node id="4474271214083118941" at="27,29,33,9" concept="3" />
-      <node id="4474271214083118932" at="26,72,34,5" concept="7" />
-      <node id="4474271214083118955" at="36,0,44,0" concept="8" trace="getProject#()Lcom/intellij/openapi/project/Project;" />
-      <node id="4474271214083118910" at="22,0,36,0" concept="8" trace="openNode#(ZZ)V" />
+      <node id="4474271214083118955" at="31,0,39,0" concept="8" trace="getProject#()Lcom/intellij/openapi/project/Project;" />
+      <node id="4474271214083118910" at="22,0,31,0" concept="8" trace="openNode#(ZZ)V" />
       <scope id="4474271214083118869" at="15,54,16,18" />
       <scope id="4474271214083118892" at="19,26,20,18" />
       <scope id="4474271214083118922" at="23,25,24,13" />
-      <scope id="4474271214083119074" at="30,27,31,86" />
-      <scope id="4474271214083118971" at="39,40,40,49" />
+      <scope id="4474271214083118940" at="27,29,28,104" />
+      <scope id="4474271214083118971" at="34,40,35,49" />
       <scope id="4474271214083118863" at="15,0,18,0">
         <var name="node" id="4474271214083118866" />
       </scope>
       <scope id="4474271214083118889" at="18,0,22,0" />
-      <scope id="4474271214083118948" at="29,0,33,0" />
-      <scope id="4474271214083118958" at="37,61,42,16">
+      <scope id="4474271214083118958" at="32,61,37,16">
         <var name="tree" id="4474271214083118960" />
       </scope>
-      <scope id="4474271214083118940" at="27,29,33,9" />
-      <scope id="4474271214083118955" at="36,0,44,0" />
-      <scope id="4474271214083118917" at="22,67,34,5">
+      <scope id="4474271214083118917" at="22,67,29,5">
         <var name="mpsProject" id="4474271214083118925" />
       </scope>
-      <scope id="4474271214083118910" at="22,0,36,0">
+      <scope id="4474271214083118955" at="31,0,39,0" />
+      <scope id="4474271214083118910" at="22,0,31,0">
         <var name="focus" id="4474271214083118913" />
         <var name="select" id="4474271214083118915" />
       </scope>
-      <unit id="4474271214083118947" at="28,52,33,7" name="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode$1" />
-      <unit id="4474271214083118844" at="13,0,45,0" name="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" />
+      <unit id="4474271214083118844" at="13,0,40,0" name="jetbrains.mps.debugger.api.ui.tree.AbstractWatchableNode" />
     </file>
   </root>
   <root nodeRef="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)/4474271214083120082">

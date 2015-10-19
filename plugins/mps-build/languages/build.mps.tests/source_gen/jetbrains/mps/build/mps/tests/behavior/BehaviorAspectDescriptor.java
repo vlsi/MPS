@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myBuildModuleTestsPlugin_BehaviorDescriptor = new BuildModuleTestsPlugin_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_TestModuleGroup_BehaviorDescriptor = new BuildMpsLayout_TestModuleGroup_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_TestModules_BehaviorDescriptor = new BuildMpsLayout_TestModules_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_TestModules_Content_BehaviorDescriptor = new BuildMpsLayout_TestModules_Content_BehaviorDescriptor();
-  private final BHDescriptor myBuildMpsLayout_TestModule_BehaviorDescriptor = new BuildMpsLayout_TestModule_BehaviorDescriptor();
+  private final BHDescriptor myBuildModuleTestsPlugin__BehaviorDescriptor = new BuildModuleTestsPlugin__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor = new BuildMpsLayout_TestModuleGroup__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_TestModules__BehaviorDescriptor = new BuildMpsLayout_TestModules__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_TestModules_Content__BehaviorDescriptor = new BuildMpsLayout_TestModules_Content__BehaviorDescriptor();
+  private final BHDescriptor myBuildMpsLayout_TestModule__BehaviorDescriptor = new BuildMpsLayout_TestModule__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -41,15 +41,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myBuildModuleTestsPlugin_BehaviorDescriptor;
+        return myBuildModuleTestsPlugin__BehaviorDescriptor;
       case 1:
-        return myBuildMpsLayout_TestModuleGroup_BehaviorDescriptor;
+        return myBuildMpsLayout_TestModuleGroup__BehaviorDescriptor;
       case 2:
-        return myBuildMpsLayout_TestModules_BehaviorDescriptor;
+        return myBuildMpsLayout_TestModules__BehaviorDescriptor;
       case 3:
-        return myBuildMpsLayout_TestModules_Content_BehaviorDescriptor;
+        return myBuildMpsLayout_TestModules_Content__BehaviorDescriptor;
       case 4:
-        return myBuildMpsLayout_TestModule_BehaviorDescriptor;
+        return myBuildMpsLayout_TestModule__BehaviorDescriptor;
       default:
         return null;
     }

@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myExtensionMethodCall_BehaviorDescriptor = new ExtensionMethodCall_BehaviorDescriptor();
-  private final BHDescriptor myExtensionMethodDeclaration_BehaviorDescriptor = new ExtensionMethodDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myExtensionStaticFieldReference_BehaviorDescriptor = new ExtensionStaticFieldReference_BehaviorDescriptor();
-  private final BHDescriptor myExtensionStaticFieldDeclaration_BehaviorDescriptor = new ExtensionStaticFieldDeclaration_BehaviorDescriptor();
-  private final BHDescriptor myBaseExtensionMethodContainer_BehaviorDescriptor = new BaseExtensionMethodContainer_BehaviorDescriptor();
+  private final BHDescriptor myExtensionMethodCall__BehaviorDescriptor = new ExtensionMethodCall__BehaviorDescriptor();
+  private final BHDescriptor myExtensionMethodDeclaration__BehaviorDescriptor = new ExtensionMethodDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myExtensionStaticFieldReference__BehaviorDescriptor = new ExtensionStaticFieldReference__BehaviorDescriptor();
+  private final BHDescriptor myExtensionStaticFieldDeclaration__BehaviorDescriptor = new ExtensionStaticFieldDeclaration__BehaviorDescriptor();
+  private final BHDescriptor myBaseExtensionMethodContainer__BehaviorDescriptor = new BaseExtensionMethodContainer__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -41,15 +41,15 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myExtensionMethodCall_BehaviorDescriptor;
+        return myExtensionMethodCall__BehaviorDescriptor;
       case 1:
-        return myExtensionMethodDeclaration_BehaviorDescriptor;
+        return myExtensionMethodDeclaration__BehaviorDescriptor;
       case 2:
-        return myExtensionStaticFieldReference_BehaviorDescriptor;
+        return myExtensionStaticFieldReference__BehaviorDescriptor;
       case 3:
-        return myExtensionStaticFieldDeclaration_BehaviorDescriptor;
+        return myExtensionStaticFieldDeclaration__BehaviorDescriptor;
       case 4:
-        return myBaseExtensionMethodContainer_BehaviorDescriptor;
+        return myBaseExtensionMethodContainer__BehaviorDescriptor;
       default:
         return null;
     }

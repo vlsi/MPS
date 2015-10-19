@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myQueryDefinition_BehaviorDescriptor = new QueryDefinition_BehaviorDescriptor();
-  private final BHDescriptor myOptionType_BehaviorDescriptor = new OptionType_BehaviorDescriptor();
-  private final BHDescriptor myExpectedOption_BehaviorDescriptor = new ExpectedOption_BehaviorDescriptor();
-  private final BHDescriptor myRelayQueryExpression_BehaviorDescriptor = new RelayQueryExpression_BehaviorDescriptor();
-  private final BHDescriptor myResourceType_BehaviorDescriptor = new ResourceType_BehaviorDescriptor();
-  private final BHDescriptor myJobDefinition_BehaviorDescriptor = new JobDefinition_BehaviorDescriptor();
-  private final BHDescriptor myInputResourcesParameter_BehaviorDescriptor = new InputResourcesParameter_BehaviorDescriptor();
-  private final BHDescriptor myConceptFunctionParameter_progressMonitor_BehaviorDescriptor = new ConceptFunctionParameter_progressMonitor_BehaviorDescriptor();
-  private final BHDescriptor myResultStatement_BehaviorDescriptor = new ResultStatement_BehaviorDescriptor();
+  private final BHDescriptor myQueryDefinition__BehaviorDescriptor = new QueryDefinition__BehaviorDescriptor();
+  private final BHDescriptor myOptionType__BehaviorDescriptor = new OptionType__BehaviorDescriptor();
+  private final BHDescriptor myExpectedOption__BehaviorDescriptor = new ExpectedOption__BehaviorDescriptor();
+  private final BHDescriptor myRelayQueryExpression__BehaviorDescriptor = new RelayQueryExpression__BehaviorDescriptor();
+  private final BHDescriptor myResourceType__BehaviorDescriptor = new ResourceType__BehaviorDescriptor();
+  private final BHDescriptor myJobDefinition__BehaviorDescriptor = new JobDefinition__BehaviorDescriptor();
+  private final BHDescriptor myInputResourcesParameter__BehaviorDescriptor = new InputResourcesParameter__BehaviorDescriptor();
+  private final BHDescriptor myConceptFunctionParameter_progressMonitor__BehaviorDescriptor = new ConceptFunctionParameter_progressMonitor__BehaviorDescriptor();
+  private final BHDescriptor myResultStatement__BehaviorDescriptor = new ResultStatement__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -49,23 +49,23 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myQueryDefinition_BehaviorDescriptor;
+        return myQueryDefinition__BehaviorDescriptor;
       case 1:
-        return myOptionType_BehaviorDescriptor;
+        return myOptionType__BehaviorDescriptor;
       case 2:
-        return myExpectedOption_BehaviorDescriptor;
+        return myExpectedOption__BehaviorDescriptor;
       case 3:
-        return myRelayQueryExpression_BehaviorDescriptor;
+        return myRelayQueryExpression__BehaviorDescriptor;
       case 4:
-        return myResourceType_BehaviorDescriptor;
+        return myResourceType__BehaviorDescriptor;
       case 5:
-        return myJobDefinition_BehaviorDescriptor;
+        return myJobDefinition__BehaviorDescriptor;
       case 6:
-        return myInputResourcesParameter_BehaviorDescriptor;
+        return myInputResourcesParameter__BehaviorDescriptor;
       case 7:
-        return myConceptFunctionParameter_progressMonitor_BehaviorDescriptor;
+        return myConceptFunctionParameter_progressMonitor__BehaviorDescriptor;
       case 8:
-        return myResultStatement_BehaviorDescriptor;
+        return myResultStatement__BehaviorDescriptor;
       default:
         return null;
     }

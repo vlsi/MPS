@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myComponentSet_BehaviorDescriptor = new ComponentSet_BehaviorDescriptor();
-  private final BHDescriptor myComponent_BehaviorDescriptor = new Component_BehaviorDescriptor();
-  private final BHDescriptor myDependency_BehaviorDescriptor = new Dependency_BehaviorDescriptor();
+  private final BHDescriptor myComponentSet__BehaviorDescriptor = new ComponentSet__BehaviorDescriptor();
+  private final BHDescriptor myComponent__BehaviorDescriptor = new Component__BehaviorDescriptor();
+  private final BHDescriptor myDependency__BehaviorDescriptor = new Dependency__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -37,11 +37,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myComponentSet_BehaviorDescriptor;
+        return myComponentSet__BehaviorDescriptor;
       case 1:
-        return myComponent_BehaviorDescriptor;
+        return myComponent__BehaviorDescriptor;
       case 2:
-        return myDependency_BehaviorDescriptor;
+        return myDependency__BehaviorDescriptor;
       default:
         return null;
     }

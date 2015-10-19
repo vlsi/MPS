@@ -27,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @see SAbstractConceptAdapter
+ */
 public abstract class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
   protected SConceptAdapter(String fqName) {
     super(fqName);
@@ -34,15 +37,21 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
 
   @Override
   public SConcept getSuperConcept() {
-    ConceptDescriptor d = getConceptDescriptor();
-    if (d == null) {
-      return SNodeUtil.concept_BaseConcept;
+    ConceptDescriptor conceptDescriptor = getConceptDescriptor();
+    if (conceptDescriptor == null) {
+      if (this != SNodeUtil.concept_BaseConcept) {
+        return SNodeUtil.concept_BaseConcept;
+      } else {
+        return null;
+      }
     }
 
-    SConceptId superConcept = d.getSuperConceptId();
-    if (superConcept == null) return d.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : SNodeUtil.concept_BaseConcept;
+    SConceptId superConcept = conceptDescriptor.getSuperConceptId();
+    if (superConcept == null) {
+      return conceptDescriptor.getId().equals(SNodeUtil.conceptId_BaseConcept) ? null : SNodeUtil.concept_BaseConcept;
+    }
 
-    return MetaAdapterFactory.getConcept(superConcept, d.getSuperConcept());
+    return MetaAdapterFactory.getConcept(superConcept, conceptDescriptor.getSuperConcept());
   }
 
   @Override

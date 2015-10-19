@@ -546,7 +546,7 @@
       <node id="8182547171709457733" at="60,30,64,168" concept="0" />
       <node id="8182547171709457029" at="24,61,29,9" concept="0" />
       <node id="8182547171709457731" at="32,61,37,9" concept="0" />
-      <node id="8182547171709457029" at="23,234,30,7" concept="4" />
+      <node id="8182547171709457029" at="23,245,30,7" concept="4" />
       <node id="8182547171709457731" at="31,12,38,7" concept="4" />
       <node id="8182547171709457034" at="50,0,57,0" concept="8" trace="_quotation_createNode_729lck_a0a0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8182547171709457729" at="31,10,39,5" concept="0" />
@@ -580,7 +580,7 @@
         <var name="facade" id="8182547171709457034" />
         <var name="quotedNode_2" id="8182547171709457034" />
       </scope>
-      <scope id="8182547171709457040" at="23,234,30,7" />
+      <scope id="8182547171709457040" at="23,245,30,7" />
       <scope id="8182547171709457730" at="31,12,38,7" />
       <scope id="8182547171709457034" at="50,0,57,0">
         <var name="parameter_1" id="8182547171709457034" />
@@ -607,7 +607,7 @@
       <node id="8182547171709457972" at="19,116,20,333" concept="6" />
       <node id="8182547171709457965" at="22,7,23,211" concept="6" />
       <node id="8182547171709457965" at="23,211,24,207" concept="6" />
-      <node id="8182547171709457965" at="24,207,25,354" concept="2" />
+      <node id="8182547171709457965" at="24,207,25,355" concept="2" />
       <node id="8182547171709457804" at="29,50,30,170" concept="7" />
       <node id="8182547171709457804" at="32,68,33,102" concept="0" />
       <node id="8182547171709457804" at="32,68,33,102" concept="7" />
@@ -624,7 +624,7 @@
       <scope id="8182547171709457804" at="32,68,33,102" />
       <scope id="8182547171709457804" at="35,30,36,17" />
       <scope id="8182547171709457804" at="17,0,19,0" />
-      <scope id="8182547171709457965" at="22,7,25,354">
+      <scope id="8182547171709457965" at="22,7,25,355">
         <var name="_info_12389875345" id="8182547171709457965" />
         <var name="_nodeToCheck_1029348928467" id="8182547171709457965" />
       </scope>
@@ -705,7 +705,7 @@
         <var name="status" id="8182547171709513208" />
         <var name="typeCheckingContext" id="8182547171709513208" />
       </scope>
-      <unit id="8182547171709513292" at="27,309,31,5" name="jetbrains.mps.lang.quotation.typesystem.check_LightQuotationNode_NonTypesystemRule$2" />
+      <unit id="8182547171709513292" at="27,310,31,5" name="jetbrains.mps.lang.quotation.typesystem.check_LightQuotationNode_NonTypesystemRule$2" />
       <unit id="8182547171709514491" at="32,210,36,7" name="jetbrains.mps.lang.quotation.typesystem.check_LightQuotationNode_NonTypesystemRule$1" />
       <unit id="8182547171709513208" at="23,0,59,0" name="jetbrains.mps.lang.quotation.typesystem.check_LightQuotationNode_NonTypesystemRule" />
     </file>
@@ -777,7 +777,7 @@
     <file name="typeof_LightQuotationLinkList_InferenceRule.java">
       <node id="8182547171709952633" at="25,117,26,231" concept="6" />
       <node id="8182547171709952816" at="26,231,27,15" concept="6" />
-      <node id="8182547171709952844" at="28,235,29,358" concept="2" />
+      <node id="8182547171709952844" at="28,246,29,358" concept="2" />
       <node id="8182547171709952867" at="30,12,31,359" concept="2" />
       <node id="7838325468139342753" at="33,5,34,46" concept="6" />
       <node id="7838325468139342753" at="34,46,35,205" concept="6" />
@@ -830,7 +830,7 @@
       <node id="8182547171709952796" at="64,0,74,0" concept="8" trace="_quotation_createNode_ttlvyh_a0a0a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8182547171709952572" at="25,0,48,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8182547171709952572" at="23,56,23,56" />
-      <scope id="8182547171709952771" at="28,235,29,358" />
+      <scope id="8182547171709952771" at="28,246,29,358" />
       <scope id="8182547171709952793" at="30,12,31,359" />
       <scope id="8182547171709952572" at="48,50,49,162" />
       <scope id="8182547171709952572" at="51,68,52,102" />

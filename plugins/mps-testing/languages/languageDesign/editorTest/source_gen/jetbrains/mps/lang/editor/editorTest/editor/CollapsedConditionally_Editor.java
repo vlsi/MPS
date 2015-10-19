@@ -49,9 +49,7 @@ public class CollapsedConditionally_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gbleq0_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_gbleq0_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gbleq0_c1a(editorContext, node));
-    if (renderingCondition_gbleq0_a1a(node, editorContext)) {
-      editorCell.fold(false);
-    }
+    editorCell.setInitiallyCollapsed(renderingCondition_gbleq0_a1a(node, editorContext));
     return editorCell;
   }
   private static boolean renderingCondition_gbleq0_a1a(SNode node, EditorContext editorContext) {

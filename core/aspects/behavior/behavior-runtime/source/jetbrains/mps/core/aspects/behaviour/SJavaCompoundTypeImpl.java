@@ -29,25 +29,11 @@ import java.util.Map;
  * A type backed by java class.
  */
 public class SJavaCompoundTypeImpl implements SJavaCompoundType {
-  private static final Map<Class, Class> PRIMITIVE_TO_BOXED_TYPE = new HashMap<Class, Class>();
-
-  static {
-    PRIMITIVE_TO_BOXED_TYPE.put(Character.TYPE, Character.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Byte.TYPE, Byte.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Short.TYPE, Short.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Integer.TYPE, Integer.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Long.TYPE, Long.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Float.TYPE, Float.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Double.TYPE, Double.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Boolean.TYPE, Boolean.class);
-    PRIMITIVE_TO_BOXED_TYPE.put(Void.TYPE, Void.class);
-  }
 
   private final Class<?> myType;
 
   public SJavaCompoundTypeImpl(@NotNull Class<?> type) {
-    myType = box(type);
-    assert !myType.isPrimitive();
+    myType = type;
   }
 
   @NotNull
@@ -55,7 +41,7 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
     if (!type.isPrimitive()) {
       return type;
     }
-    return PRIMITIVE_TO_BOXED_TYPE.get(type);
+    return BoxingHelper.box(type);
   }
 
   @Nullable
@@ -64,10 +50,13 @@ public class SJavaCompoundTypeImpl implements SJavaCompoundType {
     return DefaultValuesHolder.defaultValue(myType);
   }
 
+  /**
+   * similar to java implicit conversions
+   */
   @Override
   public boolean isAssignableFrom(@NotNull SAbstractType another) {
     if (another instanceof SJavaCompoundType) {
-      return myType.isAssignableFrom(((SJavaCompoundType) another).getJavaType());
+      return BoxingHelper.isAssignableTo(myType, ((SJavaCompoundType) another).getJavaType());
     }
     return false;
   }

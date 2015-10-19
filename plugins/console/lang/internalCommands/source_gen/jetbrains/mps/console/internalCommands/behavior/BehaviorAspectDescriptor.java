@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myConsoleModelExpression_BehaviorDescriptor = new ConsoleModelExpression_BehaviorDescriptor();
-  private final BHDescriptor myReloadClassesCommand_BehaviorDescriptor = new ReloadClassesCommand_BehaviorDescriptor();
-  private final BHDescriptor myShowRepositoryCommand_BehaviorDescriptor = new ShowRepositoryCommand_BehaviorDescriptor();
-  private final BHDescriptor myInternalMode_BehaviorDescriptor = new InternalMode_BehaviorDescriptor();
+  private final BHDescriptor myConsoleModelExpression__BehaviorDescriptor = new ConsoleModelExpression__BehaviorDescriptor();
+  private final BHDescriptor myReloadClassesCommand__BehaviorDescriptor = new ReloadClassesCommand__BehaviorDescriptor();
+  private final BHDescriptor myShowRepositoryCommand__BehaviorDescriptor = new ShowRepositoryCommand__BehaviorDescriptor();
+  private final BHDescriptor myInternalMode__BehaviorDescriptor = new InternalMode__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -39,13 +39,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myConsoleModelExpression_BehaviorDescriptor;
+        return myConsoleModelExpression__BehaviorDescriptor;
       case 1:
-        return myReloadClassesCommand_BehaviorDescriptor;
+        return myReloadClassesCommand__BehaviorDescriptor;
       case 2:
-        return myShowRepositoryCommand_BehaviorDescriptor;
+        return myShowRepositoryCommand__BehaviorDescriptor;
       case 3:
-        return myInternalMode_BehaviorDescriptor;
+        return myInternalMode__BehaviorDescriptor;
       default:
         return null;
     }
