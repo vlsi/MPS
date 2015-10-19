@@ -27,6 +27,12 @@ public final class RefactoringLogApplied implements ScriptApplied {
       myModule = module;
       myRefactoringLogReference = refactoringLogReference;
     }
+    public SModule getModule() {
+      return myModule;
+    }
+    public RefactoringLogReference getRefactoringLogReference() {
+      return myRefactoringLogReference;
+    }
     public RefactoringLogApplied resolve(MigrationComponent migrationComponent, boolean silently) {
       RefactoringLog fetchRefactoringLog = migrationComponent.fetchRefactoringLog(myRefactoringLogReference, silently);
       if (fetchRefactoringLog == null) {

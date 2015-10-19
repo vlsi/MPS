@@ -9,7 +9,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 
 public class MigrationDialogUtil {
@@ -39,11 +39,11 @@ public class MigrationDialogUtil {
           }
         }
 
-        migrations = Sequence.fromIterable(m.getModuleMigrationsToApply(modules)).select(new ISelector<Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference>, String>() {
-          public String select(Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference> it) {
-            return it._1().getKindDescription(it._0());
+        migrations = ListSequence.fromList(m.getModuleMigrationsToApply(modules)).select(new ISelector<ScriptApplied.ScriptAppliedReference, String>() {
+          public String select(ScriptApplied.ScriptAppliedReference it) {
+            return it.getKindDescription(it.resolve(m.getMigrationComponent(), false));
           }
-        });
+        }).distinct();
         if (Sequence.fromIterable(migrations).isNotEmpty()) {
           text.append("  Language migrations to be executed:\n");
           Sequence.fromIterable(migrations).take(MIGRATIONS_TO_SHOW_COUNT).visitAll(new IVisitor<String>() {

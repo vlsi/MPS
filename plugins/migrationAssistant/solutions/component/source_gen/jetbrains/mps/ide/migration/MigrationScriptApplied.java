@@ -26,6 +26,12 @@ public final class MigrationScriptApplied implements ScriptApplied {
       myModule = module;
       myMigrationScriptReference = migrationScriptReference;
     }
+    public SModule getModule() {
+      return myModule;
+    }
+    public MigrationScriptReference getMigrationSciptReference() {
+      return myMigrationScriptReference;
+    }
     public MigrationScriptApplied resolve(MigrationComponent migrationComponent, boolean silently) {
       MigrationScript fetchMigrationScript = migrationComponent.fetchMigrationScript(myMigrationScriptReference, silently);
       if (fetchMigrationScript == null) {

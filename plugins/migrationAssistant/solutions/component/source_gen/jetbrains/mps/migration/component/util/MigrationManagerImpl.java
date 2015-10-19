@@ -12,24 +12,17 @@ import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -43,6 +36,10 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     super(project);
     myMpsMproject = mpsProject;
     myMigrationComponent = migrationComponent;
+  }
+
+  public MigrationComponent getMigrationComponent() {
+    return myMigrationComponent;
   }
 
   public boolean isMigrationRequired() {
@@ -78,46 +75,26 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
 
 
-  public Iterable<Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference>> getModuleMigrationsToApply(Iterable<SModule> modules) {
+  public List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
       public Iterable<ScriptApplied.ScriptAppliedReference> translate(SModule module) {
         return MigrationsUtil.getAllSteps(module);
       }
-    }).select(new ISelector<ScriptApplied.ScriptAppliedReference, Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference>>() {
-      public Tuples._2<ScriptApplied, ScriptApplied.ScriptAppliedReference> select(ScriptApplied.ScriptAppliedReference it) {
-        return MultiTuple.<ScriptApplied,ScriptApplied.ScriptAppliedReference>from(it.resolve(myMigrationComponent, false), it);
-      }
-    });
+    }).toListSequence();
   }
 
-  public List<Tuples._3<SModule, SLanguage, Integer>> getMissingMigrations() {
-    final List<Tuples._3<SModule, SLanguage, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, SLanguage, Integer>>());
+  public List<ScriptApplied.ScriptAppliedReference> getMissingMigrations() {
+    final Wrappers._T<List<ScriptApplied.ScriptAppliedReference>> result = new Wrappers._T<List<ScriptApplied.ScriptAppliedReference>>(ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>()));
     myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject);
-        for (SModule module : Sequence.fromIterable(modules)) {
-          for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
-            int currentLangVersion = lang.getLanguageVersion();
-            int ver = module.getUsedLanguageVersion(lang);
-
-            ver = Math.max(ver, 0);
-            currentLangVersion = Math.max(currentLangVersion, 0);
-
-            if (ver >= currentLangVersion) {
-              continue;
-            }
-            for (int v = ver; v < currentLangVersion; v++) {
-              if (myMigrationComponent.fetchMigrationScript(new MigrationScriptReference(lang, v), false) == null) {
-                ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage,Integer>from(module, lang, v));
-                // next used language, please 
-                break;
-              }
-            }
+        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject))).where(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+          public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+            return it.resolve(myMigrationComponent, false) == null;
           }
-        }
+        }).toListSequence();
       }
     });
-    return result;
+    return result.value;
   }
 
   public static boolean isModuleMigrationRequired(Iterable<SModule> modules) {
@@ -212,86 +189,60 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
   public int moduleStepsCount() {
     final Wrappers._int result = new Wrappers._int();
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Integer>() {
-      public Integer invoke() {
-        Iterable<Integer> scriptsByModule = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject)).select(new ISelector<SModule, Integer>() {
-          public Integer select(SModule module) {
-            int scripts = 0;
-            for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
-              int currentLangVersion = lang.getLanguageVersion();
-              int ver = module.getUsedLanguageVersion(lang);
-
-              ver = Math.max(ver, 0);
-              currentLangVersion = Math.max(currentLangVersion, 0);
-
-              if (ver < currentLangVersion) {
-                scripts += currentLangVersion - ver;
-              }
-            }
-            return scripts;
-          }
-        });
-        return result.value = Sequence.fromIterable(scriptsByModule).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
-          public Integer combine(Integer s, Integer it) {
-            return s + it;
-          }
-        });
+    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject))).count();
       }
-    }));
+    });
     return result.value;
   }
 
   public MigrationManager.MigrationStep nextModuleStep() {
     final Wrappers._T<MigrationManager.MigrationStep> result = new Wrappers._T<MigrationManager.MigrationStep>(null);
-
-    myMpsMproject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
-      public Boolean invoke() {
-        return Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).any(new IWhereFilter<SModule>() {
-          public boolean accept(SModule module) {
-            return Sequence.fromIterable(MigrationsUtil.getAllSteps(module)).any(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
-              public boolean accept(ScriptApplied.ScriptAppliedReference it) {
-                final ScriptApplied applied = it.resolve(myMigrationComponent, false);
-                if (applied == null) {
-                  return false;
-                }
-                if (Sequence.fromIterable(applied.getDependencies()).where(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
-                  public boolean accept(ScriptApplied.ScriptAppliedReference it) {
-                    return !(it.isAlreadyDone());
-                  }
-                }).isNotEmpty()) {
-                  return false;
-                }
-                if (it instanceof MigrationScriptApplied.MigrationScriptAppliedReference) {
-                  if (!(MigrationsUtil.areDepsSatisfied((MigrationScriptApplied) applied))) {
-                    throw new IllegalStateException();
-                  }
-                }
-                // todo: execute after for refactorings 
-                result.value = new MigrationManager.MigrationStep() {
-                  public String getDescription() {
-                    return applied.getDescription();
-                  }
-                  public boolean execute() {
-                    final Wrappers._boolean res = new Wrappers._boolean();
-                    myMpsMproject.getRepository().getModelAccess().executeCommand(new Runnable() {
-                      public void run() {
-                        res.value = applied.execute(myMigrationComponent);
-                      }
-                    });
-                    return res.value;
-                  }
-                  public void forceExecutionNextTime() {
-                    throw new UnsupportedOperationException("not supported for module migrations");
-                  }
-                };
-                return true;
-              }
-            });
+    myMpsMproject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<MigrationManager.MigrationStep>() {
+      public MigrationManager.MigrationStep invoke() {
+        return result.value = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
+          public Iterable<ScriptApplied.ScriptAppliedReference> translate(SModule module) {
+            return MigrationsUtil.getAllSteps(module);
           }
-        });
+        }).select(new ISelector<ScriptApplied.ScriptAppliedReference, ScriptApplied>() {
+          public ScriptApplied select(ScriptApplied.ScriptAppliedReference it) {
+            return it.resolve(myMigrationComponent, false);
+          }
+        }).where(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            if (it instanceof MigrationScriptApplied && !(MigrationsUtil.areDepsSatisfied((MigrationScriptApplied) it))) {
+              throw new IllegalStateException();
+            }
+            return it != null && Sequence.fromIterable(it.getDependencies()).where(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+              public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+                return !(it.isAlreadyDone());
+              }
+            }).isEmpty();
+          }
+        }).select(new ISelector<ScriptApplied, MigrationManager.MigrationStep>() {
+          public MigrationManager.MigrationStep select(final ScriptApplied it) {
+            return new MigrationManager.MigrationStep() {
+              public String getDescription() {
+                return it.getDescription();
+              }
+              public boolean execute() {
+                final Wrappers._boolean res = new Wrappers._boolean();
+                myMpsMproject.getRepository().getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    res.value = it.execute(myMigrationComponent);
+                  }
+                });
+                return res.value;
+              }
+              public void forceExecutionNextTime() {
+                throw new UnsupportedOperationException("not supported for module migrations");
+              }
+            };
+          }
+        }).first();
       }
     }));
-
     return result.value;
   }
 
