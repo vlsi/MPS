@@ -107,14 +107,14 @@
   <root nodeRef="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)/7398401354080376432">
     <file name="HeadlessEditorComponent.java">
       <node id="2783516043530875038" at="19,70,20,22" concept="11" />
-      <node id="2783516043530880923" at="20,22,21,19" concept="2" />
-      <node id="5312612605321496518" at="21,19,22,27" concept="2" />
+      <node id="5312612605321496518" at="20,22,21,27" concept="2" />
+      <node id="2783516043530880923" at="21,27,22,19" concept="2" />
       <node id="2783516043530892718" at="25,0,28,0" concept="5" trace="attachListeners#()V" />
       <node id="2783516043530893337" at="29,0,32,0" concept="5" trace="detachListeners#()V" />
       <node id="2783516043530867820" at="19,0,24,0" concept="1" trace="HeadlessEditorComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <scope id="2783516043530892722" at="26,36,26,36" />
       <scope id="2783516043530893341" at="30,36,30,36" />
-      <scope id="2783516043530867824" at="19,70,22,27" />
+      <scope id="2783516043530867824" at="19,70,22,19" />
       <scope id="2783516043530892718" at="25,0,28,0" />
       <scope id="2783516043530893337" at="29,0,32,0" />
       <scope id="2783516043530867820" at="19,0,24,0">
