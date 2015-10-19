@@ -114,6 +114,8 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/make/languages/facet/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/make/languages/facet/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/make/languages/gentest/source_gen" includeSubdirectories="true" />

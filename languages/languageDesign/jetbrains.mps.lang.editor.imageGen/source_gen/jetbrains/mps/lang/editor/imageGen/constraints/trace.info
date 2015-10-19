@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.imageGen.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:4e9a9958-f159-4048-9d34-aa57f65be511(jetbrains.mps.lang.editor.imageGen.constraints)/3245637733309668517">
+    <file name="ImageGenerator_Constraints.java">
+      <node id="3245637733309668517" at="17,39,18,98" concept="6" />
+      <node id="3245637733309668517" at="21,88,22,123" concept="4" />
+      <node id="3245637733309668517" at="25,37,26,20" concept="5" />
+      <node id="3245637733309668517" at="29,42,30,37" concept="4" />
+      <node id="3245637733309668517" at="30,37,31,190" concept="0" />
+      <node id="3245637733309668597" at="30,37,31,190" concept="5" />
+      <node id="3245637733309668517" at="33,7,34,22" concept="5" />
+      <node id="3245637733309668517" at="17,0,20,0" concept="1" trace="ImageGenerator_Constraints#()V" />
+      <node id="3245637733309668517" at="24,0,28,0" concept="3" trace="hasOwnGetter#()Z" />
+      <node id="3245637733309668517" at="28,0,33,0" concept="3" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="3245637733309668517" at="22,123,33,7" concept="2" />
+      <node id="3245637733309668517" at="20,0,36,0" concept="3" trace="getNotDefaultSProperties#()Ljava/util/Map;" />
+      <scope id="3245637733309668517" at="17,39,18,98" />
+      <scope id="3245637733309668517" at="25,37,26,20" />
+      <scope id="3245637733309668522" at="30,37,31,190" />
+      <scope id="3245637733309668517" at="29,42,31,190">
+        <var name="propertyName" id="3245637733309668517" />
+      </scope>
+      <scope id="3245637733309668517" at="17,0,20,0" />
+      <scope id="3245637733309668517" at="24,0,28,0" />
+      <scope id="3245637733309668517" at="28,0,33,0">
+        <var name="node" id="3245637733309668517" />
+      </scope>
+      <scope id="3245637733309668517" at="21,88,34,22">
+        <var name="properties" id="3245637733309668517" />
+      </scope>
+      <scope id="3245637733309668517" at="20,0,36,0" />
+      <unit id="3245637733309668517" at="23,119,33,5" name="jetbrains.mps.lang.editor.imageGen.constraints.ImageGenerator_Constraints$1" />
+      <unit id="3245637733309668517" at="16,0,37,0" name="jetbrains.mps.lang.editor.imageGen.constraints.ImageGenerator_Constraints" />
+    </file>
+  </root>
+</debug-info>
+
