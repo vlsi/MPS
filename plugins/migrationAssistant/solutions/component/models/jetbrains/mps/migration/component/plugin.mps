@@ -442,7 +442,7 @@
                                         <ref role="3cqZAo" node="5$zfhXzq_jv" resolve="mc" />
                                       </node>
                                       <node concept="liA8E" id="5$zfhXzqQnL" role="2OqNvi">
-                                        <ref role="37wK5l" to="auc7:5TtkZMYUq8y" resolve="fetchLanguageScript" />
+                                        <ref role="37wK5l" to="auc7:5TtkZMYUq8y" resolve="fetchMigrationScript" />
                                         <node concept="2ShNRf" id="5$zfhXzqQnM" role="37wK5m">
                                           <node concept="1pGfFk" id="5$zfhXzqQnN" role="2ShVmc">
                                             <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />
@@ -703,25 +703,18 @@
           </node>
           <node concept="3cpWs8" id="5$zfhXzrTuL" role="3cqZAp">
             <node concept="3cpWsn" id="5$zfhXzrTuM" role="3cpWs9">
-              <property role="TrG5h" value="mc" />
-              <node concept="3uibUv" id="5$zfhXzrTuN" role="1tU5fm">
-                <ref role="3uigEE" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
+              <property role="TrG5h" value="mm" />
+              <node concept="3uibUv" id="6lH4CJJ0Wq4" role="1tU5fm">
+                <ref role="3uigEE" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
               </node>
-              <node concept="1eOMI4" id="5$zfhXzrTuO" role="33vP2m">
-                <node concept="10QFUN" id="5$zfhXzrTuP" role="1eOMHV">
-                  <node concept="2OqwBi" id="5$zfhXzrTuQ" role="10QFUP">
-                    <node concept="37vLTw" id="4zPpOEulQsu" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5$zfhXzrXR4" resolve="project" />
-                    </node>
-                    <node concept="liA8E" id="5$zfhXzrTuU" role="2OqNvi">
-                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                      <node concept="3VsKOn" id="5$zfhXzrTuV" role="37wK5m">
-                        <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="5$zfhXzrTuW" role="10QFUM">
-                    <ref role="3uigEE" to="auc7:tdUHv2l0Sg" resolve="MigrationComponent" />
+              <node concept="2OqwBi" id="5$zfhXzrTuQ" role="33vP2m">
+                <node concept="37vLTw" id="4zPpOEulQsu" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5$zfhXzrXR4" resolve="project" />
+                </node>
+                <node concept="liA8E" id="5$zfhXzrTuU" role="2OqNvi">
+                  <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                  <node concept="3VsKOn" id="5$zfhXzrTuV" role="37wK5m">
+                    <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
                   </node>
                 </node>
               </node>
@@ -833,11 +826,16 @@
                               <ref role="3uigEE" to="6f4m:2RG318eVG1Z" resolve="MigrationScript" />
                             </node>
                             <node concept="2OqwBi" id="5$zfhXzrXqB" role="33vP2m">
-                              <node concept="37vLTw" id="5$zfhXzrXqC" role="2Oq$k0">
-                                <ref role="3cqZAo" node="5$zfhXzrTuM" resolve="mc" />
+                              <node concept="2OqwBi" id="6lH4CJJ0WvB" role="2Oq$k0">
+                                <node concept="37vLTw" id="5$zfhXzrXqC" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="5$zfhXzrTuM" resolve="mm" />
+                                </node>
+                                <node concept="liA8E" id="6lH4CJJ0W$U" role="2OqNvi">
+                                  <ref role="37wK5l" to="bim2:6Z8qT6OTV9H" resolve="getMigrationComponent" />
+                                </node>
                               </node>
                               <node concept="liA8E" id="5$zfhXzrXqD" role="2OqNvi">
-                                <ref role="37wK5l" to="auc7:5TtkZMYUq8y" resolve="fetchLanguageScript" />
+                                <ref role="37wK5l" to="auc7:5TtkZMYUq8y" resolve="fetchMigrationScript" />
                                 <node concept="2ShNRf" id="5$zfhXzrXqE" role="37wK5m">
                                   <node concept="1pGfFk" id="5$zfhXzrXqF" role="2ShVmc">
                                     <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />
@@ -1288,7 +1286,7 @@
                                         <ref role="3cqZAo" node="5$zfhXzr60k" resolve="mc" />
                                       </node>
                                       <node concept="liA8E" id="5$zfhXzr615" role="2OqNvi">
-                                        <ref role="37wK5l" to="auc7:5TtkZMYUq8y" resolve="fetchLanguageScript" />
+                                        <ref role="37wK5l" to="auc7:5TtkZMYUq8y" resolve="fetchMigrationScript" />
                                         <node concept="2ShNRf" id="5$zfhXzr616" role="37wK5m">
                                           <node concept="1pGfFk" id="5$zfhXzr617" role="2ShVmc">
                                             <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />

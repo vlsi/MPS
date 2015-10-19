@@ -107,7 +107,6 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunMigration_Action" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationComponent" />
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
