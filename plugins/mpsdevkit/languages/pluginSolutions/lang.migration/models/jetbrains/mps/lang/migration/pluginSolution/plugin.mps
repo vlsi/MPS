@@ -7302,7 +7302,7 @@
         <property role="TrG5h" value="myRefactoringStep" />
         <node concept="3Tm6S6" id="3r9sVr9TlA4" role="1B3o_S" />
         <node concept="3Tqbb2" id="3r9sVr9TlVe" role="1tU5fm">
-          <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
+          <ref role="ehGHo" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
         </node>
       </node>
       <node concept="3clFbW" id="3r9sVr9Ta$9" role="jymVt">
@@ -7327,9 +7327,15 @@
             <node concept="37vLTI" id="3r9sVr9Tmd2" role="3clFbG">
               <node concept="2pJPEk" id="3r9sVr9TmfD" role="37vLTx">
                 <node concept="2pJPED" id="3r9sVr9Tmha" role="2pJPEn">
-                  <ref role="2pJxaS" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
+                  <ref role="2pJxaS" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
+                  <node concept="2pJxcG" id="6lH4CJIZm8C" role="2pJxcM">
+                    <ref role="2pJxcJ" to="tpck:hnGE5uv" resolve="virtualPackage" />
+                    <node concept="Xl_RD" id="6lH4CJIZmbM" role="2pJxcZ">
+                      <property role="Xl_RC" value="refactoring" />
+                    </node>
+                  </node>
                   <node concept="2pJxcG" id="3r9sVr9TuAA" role="2pJxcM">
-                    <ref role="2pJxcJ" to="gqi5:6szrkDodGEW" resolve="fromVersion" />
+                    <ref role="2pJxcJ" to="gqi5:1JTUOcBqQQh" resolve="fromVersion" />
                     <node concept="37vLTw" id="3r9sVr9T$ge" role="2pJxcZ">
                       <ref role="3cqZAo" node="3r9sVr9T$g9" resolve="moduleVersion" />
                     </node>
@@ -7617,8 +7623,8 @@
                 <node concept="37vLTw" id="3r9sVr9TNyV" role="2Oq$k0">
                   <ref role="3cqZAo" node="3r9sVr9TlA3" resolve="myRefactoringStep" />
                 </node>
-                <node concept="3Tsc0h" id="3r9sVr9TNOY" role="2OqNvi">
-                  <ref role="3TtcxE" to="gqi5:6szrkDodHvN" />
+                <node concept="3Tsc0h" id="6lH4CJIYA3V" role="2OqNvi">
+                  <ref role="3TtcxE" to="gqi5:1JTUOcBqQQi" />
                 </node>
               </node>
               <node concept="TSZUe" id="3r9sVr9TP8U" role="2OqNvi">

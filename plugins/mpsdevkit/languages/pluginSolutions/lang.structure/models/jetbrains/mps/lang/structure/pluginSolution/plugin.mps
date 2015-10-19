@@ -6025,7 +6025,7 @@
         <property role="TrG5h" value="myRefactoringStep" />
         <node concept="3Tm6S6" id="3r9sVr9TlA4" role="1B3o_S" />
         <node concept="3Tqbb2" id="3r9sVr9TlVe" role="1tU5fm">
-          <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+          <ref role="ehGHo" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
         </node>
       </node>
       <node concept="3clFbW" id="3r9sVr9Ta$9" role="jymVt">
@@ -6050,7 +6050,7 @@
             <node concept="37vLTI" id="3r9sVr9Tmd2" role="3clFbG">
               <node concept="2pJPEk" id="3r9sVr9TmfD" role="37vLTx">
                 <node concept="2pJPED" id="3r9sVr9Tmha" role="2pJPEn">
-                  <ref role="2pJxaS" to="gqi5:6szrkDodGEV" resolve="RefactoringStep" />
+                  <ref role="2pJxaS" to="gqi5:6szrkDodGEV" resolve="PureMigrationScript" />
                   <node concept="2pJxcG" id="3r9sVr9TuAA" role="2pJxcM">
                     <ref role="2pJxcJ" to="gqi5:6szrkDodGEW" resolve="fromVersion" />
                     <node concept="37vLTw" id="3r9sVr9T$ge" role="2pJxcZ">
@@ -6061,7 +6061,7 @@
                     <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
                     <node concept="3cpWs3" id="3r9sVr9TvI1" role="2pJxcZ">
                       <node concept="Xl_RD" id="3r9sVr9TvDy" role="3uHU7B">
-                        <property role="Xl_RC" value="RefactoringLog_" />
+                        <property role="Xl_RC" value="MigrationScript_" />
                       </node>
                       <node concept="37vLTw" id="3r9sVr9T$gf" role="3uHU7w">
                         <ref role="3cqZAo" node="3r9sVr9T$g9" resolve="languageVersion" />
@@ -6472,13 +6472,8 @@
           </node>
           <node concept="3clFbC" id="4SG2RcUDJZq" role="3clFbw">
             <node concept="10Nm6u" id="4SG2RcUDK5X" role="3uHU7w" />
-            <node concept="1LFfDK" id="4SG2RcUFQOJ" role="3uHU7B">
-              <node concept="3cmrfG" id="4SG2RcUFRfO" role="1LF_Uc">
-                <property role="3cmrfH" value="1" />
-              </node>
-              <node concept="37vLTw" id="4SG2RcUDJJ2" role="1LFl5Q">
-                <ref role="3cqZAo" node="3r9sVr9QWlV" resolve="initialState" />
-              </node>
+            <node concept="37vLTw" id="4SG2RcUDJJ2" role="3uHU7B">
+              <ref role="3cqZAo" node="3r9sVr9QWlV" resolve="initialState" />
             </node>
           </node>
         </node>

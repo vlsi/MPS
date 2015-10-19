@@ -22,6 +22,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 3:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor()));
       case 4:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor()));
+      case 5:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor()));
       default:
     }
@@ -33,5 +35,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.util.structure.DirectNodeReference", "jetbrains.mps.lang.migration.util.structure.MoveNode", "jetbrains.mps.lang.migration.util.structure.PureMigrationScript", "jetbrains.mps.lang.migration.util.structure.RefactoringLog", "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.util.structure.DirectNodeReference", "jetbrains.mps.lang.migration.util.structure.MoveNode", "jetbrains.mps.lang.migration.util.structure.PureMigrationScript", "jetbrains.mps.lang.migration.util.structure.RefactoringLog", "jetbrains.mps.lang.migration.util.structure.RefactoringOrderDependency", "jetbrains.mps.lang.migration.util.structure.ReflectionNodeReference"};
 }

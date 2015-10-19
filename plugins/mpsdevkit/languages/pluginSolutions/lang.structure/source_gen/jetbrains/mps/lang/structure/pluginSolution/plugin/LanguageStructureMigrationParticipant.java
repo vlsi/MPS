@@ -67,7 +67,7 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
     private SNode myRefactoringStep;
     public MigrationBuilder(RefactoringSession session, final Language language) {
       final int languageVersion = language.getLanguageVersion();
-      myRefactoringStep = createRefactoringStep_kz6lmo_a0b0d7(languageVersion, "RefactoringLog_" + languageVersion);
+      myRefactoringStep = createPureMigrationScript_kz6lmo_a0b0d7(languageVersion, "MigrationScript_" + languageVersion);
       session.registerChange(new Runnable() {
         public void run() {
           SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(language);
@@ -98,9 +98,9 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
     public void addPart(SNode initialStateNode, SNode finalStateNode, SNode specialization) {
       ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addElement(createMoveNode_kz6lmo_a0a0a4h(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(specialization), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.util.structure.MoveNodeSpecialization"))));
     }
-    private static SNode createRefactoringStep_kz6lmo_a0b0d7(Object p0, Object p1) {
+    private static SNode createPureMigrationScript_kz6lmo_a0b0d7(Object p0, Object p1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.RefactoringStep"), null, null, false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.PureMigrationScript"), null, null, false);
       n1.setProperty(MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion"), p0 + "");
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), p1 + "");
       return n1;
@@ -122,7 +122,7 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
   }
 
   public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, SearchScope searchScope) {
-    if (initialState._1() == null) {
+    if (initialState == null) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
     final Language sourceModule = initialState._0();

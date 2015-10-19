@@ -534,5 +534,15 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="6lH4CJIZiYt">
+    <property role="3GE5qa" value="refactoring" />
+    <ref role="1XX52x" to="gqi5:1JTUOcBqQQt" resolve="RefactoringOrderDependency" />
+    <node concept="1iCGBv" id="3A3gNhf2pLy" role="2wV5jI">
+      <ref role="1NtTu8" to="gqi5:1JTUOcBqQQu" />
+      <node concept="1sVBvm" id="3A3gNhf2pL$" role="1sWHZn">
+        <node concept="3SHvHV" id="3A3gNhf2pLF" role="2wV5jI" />
+      </node>
+    </node>
+  </node>
 </model>
 
