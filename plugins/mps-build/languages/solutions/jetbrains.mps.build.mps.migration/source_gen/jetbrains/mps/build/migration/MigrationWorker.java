@@ -43,7 +43,6 @@ public class MigrationWorker extends MpsWorker {
     myClassLoader = createClassloader();
   }
 
-
   @Override
   protected Environment createEnvironment() {
     EnvironmentConfig cfg = MpsWorker.createEnvConfig(myWhatToDo);
