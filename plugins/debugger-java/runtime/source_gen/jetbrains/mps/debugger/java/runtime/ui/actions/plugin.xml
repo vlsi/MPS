@@ -6,7 +6,7 @@
   <description>description</description>
   <version>version</version>
   <vendor url="url" logo="mock">vendor</vendor>
-  <idea-version since-build="139.1" />
+  <idea-version since-build="142.1" />
   
   <application-components>
     <component>
