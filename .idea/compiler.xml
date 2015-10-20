@@ -96,6 +96,7 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/generationContext/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/generationParameters/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/generationParameters/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/plan/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/templateLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/templateLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/crossmodel/source_gen" includeSubdirectories="true" />

@@ -99,6 +99,7 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/errorReporting/jetbrains.mps.transformation.test.errorReporting.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" folder="core.aspects.generator" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/plan/jetbrains.mps.lang.generator.plan.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/languages/templateLanguage/jetbrains.mps.lang.generator.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/crossmodel/jetbrains.mps.generator.crossmodel.sandbox.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/entity/jetbrains.mps.generator.test.crossmodel.entity.mpl" folder="core.aspects.generator" />
