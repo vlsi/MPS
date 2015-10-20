@@ -56,6 +56,7 @@ public abstract class FacetsFacade {
   public abstract void removeFactory(FacetFactory factory);
 
   public interface FacetFactory {
+    // FIXME why cast to ModuleFacetBase.setModule when we can pass SModule right into #create() here?
     SModuleFacet create();
   }
 }

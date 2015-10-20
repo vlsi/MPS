@@ -16,20 +16,31 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.components.ComponentPluginBase;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * evgeny, 10/14/11
  */
 public final class MPSGenerator extends ComponentPluginBase {
+  private final FacetsFacade myFacetsFacade;
+  private FacetFactory myGeneratorFacetFactory = new FacetFactory() {
+    @Override
+    public SModuleFacet create() {
+      return new CustomGenerationModuleFacet();
+    }
+  };
 
   public MPSGenerator() {
+    // XXX in fact, shall receive FF as an argument
+    myFacetsFacade = FacetsFacade.getInstance();
   }
 
   @Override
@@ -44,5 +55,14 @@ public final class MPSGenerator extends ComponentPluginBase {
     mgsm.setModelHashSource(depsCache);
     init(new GeneratorPathsComponent());
     init(new GenerationSettingsProvider());
+    // FIXME odd registration/un-registration mechanism. Factory shall know its facet type
+    // and #create there shall take SModule
+    myFacetsFacade.addFactory(CustomGenerationModuleFacet.FACET_TYPE, myGeneratorFacetFactory);
+  }
+
+  @Override
+  public void dispose() {
+    myFacetsFacade.removeFactory(myGeneratorFacetFactory);
+    super.dispose();
   }
 }
