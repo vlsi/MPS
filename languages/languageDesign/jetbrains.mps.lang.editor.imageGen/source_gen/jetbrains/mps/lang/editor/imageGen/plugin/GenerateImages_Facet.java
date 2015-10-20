@@ -36,9 +36,9 @@ import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
@@ -126,7 +126,6 @@ public class GenerateImages_Facet extends IFacet.Stub {
                         MapSequence.fromMap(folder2PrintData).put(outputDir, ListSequence.fromList(new ArrayList<Tuples._2<String, SNodeReference>>()));
                       }
                       for (SNode imageGenerator : ListSequence.fromList(SModelOperations.roots(modelsPair._1(), MetaAdapterFactory.getConcept(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, "jetbrains.mps.lang.editor.imageGen.structure.ImageGenerator")))) {
-                        System.out.println("Image root: " + SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
                         SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad2528389ad26L, "id")));
                         SNode node = modelsPair._0().getNode(nodeId);
                         ListSequence.fromList(MapSequence.fromMap(folder2PrintData).get(outputDir)).addElement(MultiTuple.<String,SNodeReference>from(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x20c051df23a9da87L, "fileName")) + ".png", node.getReference()));

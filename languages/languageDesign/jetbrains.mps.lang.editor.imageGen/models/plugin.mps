@@ -33,7 +33,6 @@
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" implicit="true" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
@@ -785,30 +784,6 @@
                               <property role="TrG5h" value="imageGenerator" />
                             </node>
                             <node concept="3clFbS" id="oUcJT$i_d2" role="2LFqv$">
-                              <node concept="3clFbF" id="2OaO_a3xOks" role="3cqZAp">
-                                <node concept="2OqwBi" id="2OaO_a3xOkp" role="3clFbG">
-                                  <node concept="10M0yZ" id="2OaO_a3xOkq" role="2Oq$k0">
-                                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                                  </node>
-                                  <node concept="liA8E" id="2OaO_a3xOkr" role="2OqNvi">
-                                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                                    <node concept="3cpWs3" id="2OaO_a3xRvd" role="37wK5m">
-                                      <node concept="2OqwBi" id="2OaO_a3xS9O" role="3uHU7w">
-                                        <node concept="2GrUjf" id="2OaO_a3xROB" role="2Oq$k0">
-                                          <ref role="2Gs0qQ" node="oUcJT$i_d0" resolve="imageGenerator" />
-                                        </node>
-                                        <node concept="3TrcHB" id="2OaO_a3xSyM" role="2OqNvi">
-                                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                        </node>
-                                      </node>
-                                      <node concept="Xl_RD" id="2OaO_a3xODz" role="3uHU7B">
-                                        <property role="Xl_RC" value="Image root: " />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
                               <node concept="3cpWs8" id="2OaO_a3zNcR" role="3cqZAp">
                                 <node concept="3cpWsn" id="2OaO_a3zNcS" role="3cpWs9">
                                   <property role="TrG5h" value="nodeId" />

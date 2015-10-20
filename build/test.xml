@@ -117,6 +117,12 @@
       <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
+    <ant antfile="build/tests/mpsEditorImageGen.xml" inheritAll="true" useNativeBasedir="true">
+      <target name="generate"/>
+      <target name="build"/>
+      <target name="check"/>
+      <property name="mps_home" value="${mps_build_home}"/>
+    </ant>
   </target>
 
   <target name="default" depends="check-project-structure, module-tests"/>
