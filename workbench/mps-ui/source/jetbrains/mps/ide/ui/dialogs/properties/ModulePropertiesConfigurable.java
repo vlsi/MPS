@@ -389,7 +389,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myLanguageVersion != null) {
         try {
           int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
-          if (!EqualUtil.equals(newLanguageVersion, getLanguageVersion())) return false;
+          if (!EqualUtil.equals(newLanguageVersion, getLanguageVersion())) return true;
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
@@ -397,7 +397,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModuleVersion != null) {
         try {
           int newModuleVersion = ((Integer) myModuleVersion.getValue());
-          if (!EqualUtil.equals(newModuleVersion, getModuleVersion())) return false;
+          if (!EqualUtil.equals(newModuleVersion, getModuleVersion())) return true;
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
