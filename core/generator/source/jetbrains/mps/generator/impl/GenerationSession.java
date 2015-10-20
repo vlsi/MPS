@@ -49,14 +49,12 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.apache.log4j.Priority;
 import org.jetbrains.annotations.NotNull;
@@ -88,7 +86,6 @@ import java.util.List;
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
-  private final Project myProject;
   private ModelGenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
@@ -117,7 +114,6 @@ class GenerationSession {
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
     ttrace = performanceTracer;
     myGenerationOptions = environment.getOptions();
-    myProject = environment.getProject();
     mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel, performanceTracer);
   }
 
@@ -155,7 +151,7 @@ class GenerationSession {
     try {
       // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
       IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myProject,
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, mySessionContext.getRepository(),
           myGenerationOptions, cacheHelper, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
@@ -247,10 +243,7 @@ class GenerationSession {
             currInputModel = currOutput;
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
-            SModel checkpointModel = createTransientModel("cp-" + checkpointStep.getName());
-            new CloneUtil(currInputModel, checkpointModel).cloneModelWithImports();
-            publishTransientModel(checkpointModel.getReference());
-            CheckpointState cpState = new CheckpointState(checkpointModel.getReference(), checkpointStep, currInputModel.getReference());
+            CheckpointState cpState = mySessionContext.getCrossModelEnvironment().createCheckpoint(myOriginalInputModel, currInputModel, checkpointStep);
             // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
             // the one from post-processing scripts. What if I add ML in post-processing script?
             //
@@ -258,8 +251,8 @@ class GenerationSession {
             if (myStepArguments != null) {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
               stepLabels.export(cpState);
-              mySessionContext.getModule().publishCheckpoint(myOriginalInputModel.getReference(), cpState);
-              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getProject().getRepository()).build(checkpointModel, stepLabels);
+              SModel checkpointModel = cpState.getCheckpointModel();
+              SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository()).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
             }
             myStepArguments = null;

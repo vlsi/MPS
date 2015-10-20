@@ -23,6 +23,7 @@ public class Vcs_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ReRunMergeFromBackup_Action());
     addAction(new ShowDifferencesWithModelOnDisk_Action());
     addAction(new ShowDiffererenceWithCurrentRevision_Action());
+    addAction(new ShowNodeDifference_Action());
     addAction(new TestMergeAction_Action());
     // groups 
     addGroup(new MakeFromChangesView_ActionGroup());

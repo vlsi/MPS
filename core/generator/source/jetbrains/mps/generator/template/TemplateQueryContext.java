@@ -174,7 +174,7 @@ public class TemplateQueryContext {
 
   public SNode getOriginalCopiedInputNode(SNode node) {
     if (node == null) return null;
-    SRepository repo = myGenerator.getGeneratorSessionContext().getProject().getRepository();
+    SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
     SNode result = TracingUtil.getInputNode(node, repo);
     return result != null ? result : node;
   }
@@ -270,7 +270,7 @@ public class TemplateQueryContext {
    */
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();
-    SRepository repo = myGenerator.getGeneratorSessionContext().getProject().getRepository();
+    SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
     return tnr == null ? null : tnr.resolve(repo);
   }
 

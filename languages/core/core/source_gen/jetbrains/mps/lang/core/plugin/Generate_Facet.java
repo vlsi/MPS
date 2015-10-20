@@ -208,7 +208,7 @@ public class Generate_Facet extends IFacet.Stub {
 
               Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
               TransientModelsProvider tmc = mpsProject.getComponent(TransientModelsProvider.class);
-              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(mpsProject, null)));
+              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(mpsProject.getRepository(), null)));
 
               vars(pa.global()).transientModelsProvider().removeAllTransient();
               return new IResult.SUCCESS(_output_fi61u2_a0b);

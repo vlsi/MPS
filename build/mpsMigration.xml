@@ -1,28 +1,20 @@
 <project name="mpsMigration" default="migrate" basedir="../">
 
-  <property name="build.dir" location="build" />
-  <property name="idea_home" location="" />
   <property name="mps_home" location="/Users/muhin/work/mps/build/artifacts/mps" />
-  <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
-  <property name="artifacts.IDEA" location="${idea_home}" />
+  <property name="artifacts.mpsBootstrapCore" location="build/artifacts/mpsBootstrapCore" />
   <property name="artifacts.mps" location="${mps_home}" />
 
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mpsBootstrapCore}/lib/ant/lib/ant-mps.jar" />
-    <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
-    <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
+    <pathelement location="lib/jdom.jar" />
+    <pathelement location="lib/log4j.jar" />
   </path>
 
   <taskdef resource="jetbrains/mps/build/ant/antlib.xml"  classpathref="path.mps.ant.path" />
 
   <target name="migrate">
     <echo message="migrating" />
-    <migrate project="/Users/muhin/MPSProjects/Project1/" fork="true">
-      <jvmargs>
-        <arg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5020" />
-      </jvmargs>
-
-      <macro name="idea_home" path="${idea_home}" />
+    <migrate project="/Users/muhin/MPSProjects/Project1/">
       <macro name="mps_home" path="${mps_home}" />
     </migrate>
   </target>

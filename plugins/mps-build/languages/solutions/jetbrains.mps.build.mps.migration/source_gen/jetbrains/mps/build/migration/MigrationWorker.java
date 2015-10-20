@@ -16,6 +16,8 @@ import javax.swing.SwingUtilities;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import java.lang.reflect.Method;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.ide.impl.ProjectUtil;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.annotations.NotNull;
@@ -36,22 +38,14 @@ public class MigrationWorker extends MpsWorker {
 
   private final UrlClassLoader myClassLoader;
 
-  public MigrationWorker(Script whatToDo) {
-    super(whatToDo);
-    myClassLoader = createClassloader();
-  }
-
   public MigrationWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myClassLoader = createClassloader();
   }
 
-
   @Override
   protected Environment createEnvironment() {
     EnvironmentConfig cfg = MpsWorker.createEnvConfig(myWhatToDo);
-    cfg.addPlugin("jetbrains.mps.ide.make");
-    cfg.addPlugin("jetbrains.mps.ide.modelchecker");
     cfg.addPlugin(MigrationWorker.MIGRATION_PLUGIN);
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);
@@ -81,6 +75,9 @@ public class MigrationWorker extends MpsWorker {
               if (!(((Boolean) result))) {
                 info("Nothing to migrate");
               }
+              com.intellij.openapi.project.Project[] projects = ProjectManager.getInstance().getOpenProjects();
+              assert projects.length == 1 : "more than one project opened: " + projects.length;
+              ProjectUtil.closeAndDispose(projects[0]);
             } catch (Exception e) {
               error(e.getMessage());
             }
@@ -91,8 +88,8 @@ public class MigrationWorker extends MpsWorker {
       } catch (InvocationTargetException e) {
         error(e.getMessage());
       }
-      myEnvironment.flushAllEvents();
       myEnvironment.closeProject(p);
+      myEnvironment.flushAllEvents();
     }
 
     dispose();

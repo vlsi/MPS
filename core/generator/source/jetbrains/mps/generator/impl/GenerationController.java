@@ -268,8 +268,8 @@ public class GenerationController implements ITaskPoolProvider {
     // either shall merge PTG with TG and use ITaskPoolProvider, or drop SimpleGenerationTaskPool which is dead code otherwise.
     if (myParallelTaskPool == null) {
       myParallelTaskPool = myOptions.isGenerateInParallel()
-        ? new GenerationTaskPool(myOptions.getNumberOfThreads(), myContext.getProject().getModelAccess())
-        : new SimpleGenerationTaskPool(myContext.getProject().getModelAccess());
+        ? new GenerationTaskPool(myOptions.getNumberOfThreads())
+        : new SimpleGenerationTaskPool(myContext.getRepository().getModelAccess());
     }
     return myParallelTaskPool;
   }

@@ -21,7 +21,6 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -142,18 +141,25 @@ public class CheckpointModelTest {
         }
       }, new EmptyProgressMonitor(), null, opt, tmProvider);
       myErrors.checkThat("Generation succeeds", result, CoreMatchers.equalTo(true));
-      TransientModelsModule transientModelsModule = tmProvider.getModule(m.getModule());
+      CrossModelEnvironment cme = tmProvider.getCrossModelEnvironment();
+//      CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider); FIXME uncomment
+      // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
+      myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr), CoreMatchers.equalTo(true));
+
+      SModule checkpointModule = tmProvider.getCheckpointsModule();
       final String cpModelName = SModelStereotype.withStereotype(SModelStereotype.withoutStereotype(m.getModelName()), "cp-aaa");
       SModel cpModel = null;
-      for (SModel trm : transientModelsModule.getModels()) {
+      for (SModel trm : checkpointModule.getModels()) {
         if (cpModelName.equals(trm.getModelName())) {
           cpModel = trm;
           break;
         }
       }
       myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
-      CheckpointState cpState = transientModelsModule.getCheckpoint(mr, new Checkpoint("aaa"));
+      ModelCheckpoints modelCheckpoints = cme.getState(mr);
+      CheckpointState cpState = modelCheckpoints.find(null, new Checkpoint("aaa"));
       myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
+      myErrors.checkThat("Both ModelCheckpoints.find and direct getCheckpoint are identical", cme.getCheckpoint(mr, new Checkpoint("aaa")), CoreMatchers.equalTo(cpState));
       if (cpState != null) {
         Collection<String> mappingLabels = cpState.getMappingLabels();
         myErrors.checkThat("GetterMethod label present", mappingLabels.contains("GetterMethod"), CoreMatchers.equalTo(true));

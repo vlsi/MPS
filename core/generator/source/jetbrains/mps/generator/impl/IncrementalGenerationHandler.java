@@ -28,12 +28,12 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class IncrementalGenerationHandler {
   private static final String CONDITIONALS_ID = "";
 
   private final SModel myModel;
-  private final Project myProject;
+  private final SRepository myRepository;
   private GenerationOptions myGenerationOptions;
   private final String myParametersHash;
   private final IncrementalReporter myTracer;
@@ -67,10 +67,10 @@ public class IncrementalGenerationHandler {
   private GenerationDependencies mySavedDependencies;
   private final IntermediateCacheHelper myCacheHelper;
 
-  public IncrementalGenerationHandler(SModel model, Project project, GenerationOptions options,
+  public IncrementalGenerationHandler(SModel model, @NotNull SRepository repository, GenerationOptions options,
       @NotNull IntermediateCacheHelper cacheHelper, IncrementalReporter tracer) {
     myModel = model;
-    myProject = project;
+    myRepository = repository;
     myGenerationOptions = options;
     final GenerationParametersProvider parametersProvider = options.getParametersProvider();
     if (parametersProvider == null) {
@@ -182,7 +182,7 @@ public class IncrementalGenerationHandler {
     Map<String, String> externalHashes = oldDependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
-      SModel sm = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(myProject.getRepository());
+      SModel sm = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(myRepository);
       if (sm == null) {
         changedModels.add(modelReference);
         continue;

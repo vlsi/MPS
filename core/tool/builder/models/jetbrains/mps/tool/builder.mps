@@ -10,6 +10,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
   <imports>
     <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
@@ -82,7 +83,6 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -247,10 +247,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
-        <reference id="1116615189566" name="classifier" index="3VsUkX" />
-      </concept>
-      <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
@@ -259,6 +255,12 @@
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -284,21 +286,6 @@
     <property role="1sVAO0" value="true" />
     <property role="1EXbeo" value="false" />
     <node concept="3Tm1VV" id="KL8Aqlj5lo" role="1B3o_S" />
-    <node concept="Wx3nA" id="KL8Aqlj5lp" role="jymVt">
-      <property role="TrG5h" value="LOG" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="KL8Aqlj5lq" role="1tU5fm">
-        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
-      </node>
-      <node concept="3Tm6S6" id="KL8Aqlj5lr" role="1B3o_S" />
-      <node concept="2YIFZM" id="KL8Aqlj5ls" role="33vP2m">
-        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
-        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
-        <node concept="3VsKOn" id="KL8Aqlj5lt" role="37wK5m">
-          <ref role="3VsUkX" node="KL8Aqlj5ln" resolve="MpsWorker" />
-        </node>
-      </node>
-    </node>
     <node concept="312cEg" id="KL8Aqlj5lu" role="jymVt">
       <property role="TrG5h" value="myErrors" />
       <property role="34CwA1" value="false" />
@@ -367,31 +354,6 @@
       <node concept="3Tmbuc" id="5reM9AD3Vby" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="5A5jZrz0wnd" role="jymVt" />
-    <node concept="3clFbW" id="KL8Aqlj5lR" role="jymVt">
-      <node concept="3Tm1VV" id="KL8Aqlj5lS" role="1B3o_S" />
-      <node concept="3cqZAl" id="KL8Aqlj5lT" role="3clF45" />
-      <node concept="37vLTG" id="KL8Aqlj5lU" role="3clF46">
-        <property role="TrG5h" value="whatToDo" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="KL8Aqlj5lV" role="1tU5fm">
-          <ref role="3uigEE" to="asz6:KL8Aql8enO" resolve="Script" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="KL8Aqlj5lW" role="3clF47">
-        <node concept="1VxSAg" id="KL8Aqlj5lX" role="3cqZAp">
-          <ref role="37wK5l" node="KL8Aqlj5me" resolve="MpsWorker" />
-          <node concept="37vLTw" id="2BHiRxgm9_9" role="37wK5m">
-            <ref role="3cqZAo" node="KL8Aqlj5lU" resolve="whatToDo" />
-          </node>
-          <node concept="2ShNRf" id="KL8Aqlj5lZ" role="37wK5m">
-            <node concept="1pGfFk" id="KL8Aqlj5m0" role="2ShVmc">
-              <ref role="37wK5l" node="KL8Aqlj5Cu" resolve="MpsWorker.LogLogger" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5A5jZrz0uXO" role="jymVt" />
     <node concept="3clFbW" id="KL8Aqlj5me" role="jymVt">
       <node concept="3Tm1VV" id="KL8Aqlj5mf" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqlj5mg" role="3clF45" />
@@ -2993,32 +2955,24 @@
               </node>
             </node>
             <node concept="3clFbS" id="KL8Aqlj5CI" role="3Kb1Dw">
-              <node concept="3clFbF" id="KL8Aqlj5CJ" role="3cqZAp">
-                <node concept="2OqwBi" id="KL8Aqlj5CK" role="3clFbG">
-                  <node concept="10M0yZ" id="KL8Aqlj5CL" role="2Oq$k0">
-                    <ref role="1PxDUh" node="KL8Aqlj5ln" resolve="MpsWorker" />
-                    <ref role="3cqZAo" node="KL8Aqlj5lp" resolve="LOG" />
-                  </node>
-                  <node concept="liA8E" id="KL8Aqlj5CM" role="2OqNvi">
-                    <ref role="37wK5l" to="q7tw:~Category.fatal(java.lang.Object):void" resolve="fatal" />
-                    <node concept="3cpWs3" id="KL8Aqlj5CN" role="37wK5m">
-                      <node concept="3cpWs3" id="KL8Aqlj5CO" role="3uHU7B">
-                        <node concept="3cpWs3" id="KL8Aqlj5CP" role="3uHU7B">
-                          <node concept="Xl_RD" id="KL8Aqlj5CQ" role="3uHU7B">
-                            <property role="Xl_RC" value="[unknown level " />
-                          </node>
-                          <node concept="37vLTw" id="2BHiRxghcw$" role="3uHU7w">
-                            <ref role="3cqZAo" node="KL8Aqlj5CB" resolve="level" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="KL8Aqlj5CS" role="3uHU7w">
-                          <property role="Xl_RC" value="] " />
-                        </node>
+              <node concept="34ab3g" id="3Vc2puPmoZY" role="3cqZAp">
+                <property role="35gtTG" value="fatal" />
+                <node concept="3cpWs3" id="KL8Aqlj5CN" role="34bqiv">
+                  <node concept="3cpWs3" id="KL8Aqlj5CO" role="3uHU7B">
+                    <node concept="3cpWs3" id="KL8Aqlj5CP" role="3uHU7B">
+                      <node concept="Xl_RD" id="KL8Aqlj5CQ" role="3uHU7B">
+                        <property role="Xl_RC" value="[unknown level " />
                       </node>
-                      <node concept="37vLTw" id="2BHiRxgm77M" role="3uHU7w">
-                        <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
+                      <node concept="37vLTw" id="2BHiRxghcw$" role="3uHU7w">
+                        <ref role="3cqZAo" node="KL8Aqlj5CB" resolve="level" />
                       </node>
                     </node>
+                    <node concept="Xl_RD" id="KL8Aqlj5CS" role="3uHU7w">
+                      <property role="Xl_RC" value="] " />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="2BHiRxgm77M" role="3uHU7w">
+                    <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
                   </node>
                 </node>
               </node>
@@ -3030,18 +2984,10 @@
                 <ref role="3cqZAo" to="q7tw:~Priority.ERROR_INT" resolve="ERROR_INT" />
               </node>
               <node concept="3clFbS" id="KL8Aqlj5CX" role="3Kbo56">
-                <node concept="3clFbF" id="KL8Aqlj5CY" role="3cqZAp">
-                  <node concept="2OqwBi" id="KL8Aqlj5CZ" role="3clFbG">
-                    <node concept="10M0yZ" id="KL8Aqlj5D0" role="2Oq$k0">
-                      <ref role="1PxDUh" node="KL8Aqlj5ln" resolve="MpsWorker" />
-                      <ref role="3cqZAo" node="KL8Aqlj5lp" resolve="LOG" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqlj5D1" role="2OqNvi">
-                      <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object):void" resolve="error" />
-                      <node concept="37vLTw" id="2BHiRxgm8K4" role="37wK5m">
-                        <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
-                      </node>
-                    </node>
+                <node concept="34ab3g" id="3Vc2puPmgZN" role="3cqZAp">
+                  <property role="35gtTG" value="error" />
+                  <node concept="37vLTw" id="3Vc2puPmkBX" role="34bqiv">
+                    <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
                   </node>
                 </node>
                 <node concept="3zACq4" id="KL8Aqlj5D3" role="3cqZAp" />
@@ -3053,18 +2999,10 @@
                 <ref role="3cqZAo" to="q7tw:~Priority.WARN_INT" resolve="WARN_INT" />
               </node>
               <node concept="3clFbS" id="KL8Aqlj5D6" role="3Kbo56">
-                <node concept="3clFbF" id="KL8Aqlj5D7" role="3cqZAp">
-                  <node concept="2OqwBi" id="KL8Aqlj5D8" role="3clFbG">
-                    <node concept="10M0yZ" id="KL8Aqlj5D9" role="2Oq$k0">
-                      <ref role="1PxDUh" node="KL8Aqlj5ln" resolve="MpsWorker" />
-                      <ref role="3cqZAo" node="KL8Aqlj5lp" resolve="LOG" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqlj5Da" role="2OqNvi">
-                      <ref role="37wK5l" to="q7tw:~Category.warn(java.lang.Object):void" resolve="warn" />
-                      <node concept="37vLTw" id="2BHiRxghfQd" role="37wK5m">
-                        <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
-                      </node>
-                    </node>
+                <node concept="34ab3g" id="3Vc2puPmo_g" role="3cqZAp">
+                  <property role="35gtTG" value="warn" />
+                  <node concept="37vLTw" id="3Vc2puPmoAD" role="34bqiv">
+                    <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
                   </node>
                 </node>
                 <node concept="3zACq4" id="KL8Aqlj5Dc" role="3cqZAp" />
@@ -3076,18 +3014,10 @@
                 <ref role="3cqZAo" to="q7tw:~Priority.INFO_INT" resolve="INFO_INT" />
               </node>
               <node concept="3clFbS" id="KL8Aqlj5Df" role="3Kbo56">
-                <node concept="3clFbF" id="KL8Aqlj5Dg" role="3cqZAp">
-                  <node concept="2OqwBi" id="KL8Aqlj5Dh" role="3clFbG">
-                    <node concept="10M0yZ" id="KL8Aqlj5Di" role="2Oq$k0">
-                      <ref role="1PxDUh" node="KL8Aqlj5ln" resolve="MpsWorker" />
-                      <ref role="3cqZAo" node="KL8Aqlj5lp" resolve="LOG" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqlj5Dj" role="2OqNvi">
-                      <ref role="37wK5l" to="q7tw:~Category.info(java.lang.Object):void" resolve="info" />
-                      <node concept="37vLTw" id="2BHiRxghiKA" role="37wK5m">
-                        <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
-                      </node>
-                    </node>
+                <node concept="34ab3g" id="3Vc2puPmoGL" role="3cqZAp">
+                  <property role="35gtTG" value="info" />
+                  <node concept="37vLTw" id="3Vc2puPmoIa" role="34bqiv">
+                    <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
                   </node>
                 </node>
                 <node concept="3zACq4" id="KL8Aqlj5Dl" role="3cqZAp" />
@@ -3095,18 +3025,10 @@
             </node>
             <node concept="3KbdKl" id="KL8Aqlj5Dm" role="3KbHQx">
               <node concept="3clFbS" id="KL8Aqlj5Dn" role="3Kbo56">
-                <node concept="3clFbF" id="KL8Aqlj5Do" role="3cqZAp">
-                  <node concept="2OqwBi" id="KL8Aqlj5Dp" role="3clFbG">
-                    <node concept="10M0yZ" id="KL8Aqlj5Dq" role="2Oq$k0">
-                      <ref role="1PxDUh" node="KL8Aqlj5ln" resolve="MpsWorker" />
-                      <ref role="3cqZAo" node="KL8Aqlj5lp" resolve="LOG" />
-                    </node>
-                    <node concept="liA8E" id="KL8Aqlj5Dr" role="2OqNvi">
-                      <ref role="37wK5l" to="q7tw:~Category.debug(java.lang.Object):void" resolve="debug" />
-                      <node concept="37vLTw" id="2BHiRxglayW" role="37wK5m">
-                        <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
-                      </node>
-                    </node>
+                <node concept="34ab3g" id="3Vc2puPmoT8" role="3cqZAp">
+                  <property role="35gtTG" value="debug" />
+                  <node concept="37vLTw" id="3Vc2puPmoUk" role="34bqiv">
+                    <ref role="3cqZAo" node="KL8Aqlj5C_" resolve="text" />
                   </node>
                 </node>
                 <node concept="3zACq4" id="KL8Aqlj5Dt" role="3cqZAp" />

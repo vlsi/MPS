@@ -18,10 +18,8 @@ package jetbrains.mps.generator;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.TransientSModule;
-import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.impl.ModelVault;
-import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
@@ -31,6 +29,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -48,11 +47,9 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -70,14 +67,13 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private Set<SDependency> myCachedDependencies = null;
 
-  private final Map<String,GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
-  private final HashMap<SModelReference, List<CheckpointState>> myCheckpoints = new HashMap<SModelReference, List<CheckpointState>>();
+  private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
 
-  public TransientModelsModule(SModule original, TransientModelsProvider component) {
+  public TransientModelsModule(@NotNull SModule original, @NotNull TransientModelsProvider component) {
     assert !(original instanceof TransientModelsModule) :
         "create TransientModelsModule based on another TransientModelsModule with name " + original.getModuleName();
     myComponent = component;
@@ -85,6 +81,16 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();
     SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
+  }
+
+  /*package*/ TransientModelsModule(@NotNull TransientModelsProvider tmProvider, @NotNull SModuleReference moduleReference) {
+    // I could have used custom subclass of AbstractModule and regular models (instanceof extapi.TransientSModel, not necessarily
+    // the same as generator.TransientSModel this class produces), there's no true need in TransientModelsModule, however,
+    // (a) don't want to refactor right now; (b) perhaps, could use swap mechanism of TransientModelsModule in future to keep checkpoint models
+    // (though later could be addressed with extra consumer for TransientSwapOwner, not to mix the two kinds of transient models into single module kind).
+    myComponent = tmProvider;
+    myOriginalModule = null;
+    setModuleReference(moduleReference);
   }
 
   public boolean hasPublished() {
@@ -177,6 +183,13 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     return getName() + " [transient models module]";
   }
 
+  /**
+   * @deprecated need for the method is dubious, though the method itself is ok (transient module could be associated with an origin module).
+   * This is a reminder to refactor StaticMethodCall.eval() not to use this method
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  @Nullable
   public SModule getOriginalModule() {
     return myOriginalModule;
   }
@@ -212,16 +225,21 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return myOriginalModule.getUsedLanguages();
+    return myOriginalModule == null ? Collections.<SLanguage>emptySet() : myOriginalModule.getUsedLanguages();
   }
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     if (myCachedDependencies == null) {
       // could be invoked from multiple threads. Don't want synchronization, and hope extra iteration won't hurt that much
-      HashSet<SDependency> deps = new HashSet<SDependency>();
-      for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
-        deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
+      Set<SDependency> deps;
+      if (myOriginalModule == null) {
+        deps = Collections.emptySet();
+      } else {
+        deps = new HashSet<SDependency>();
+        for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
+          deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
+        }
       }
       myCachedDependencies = deps;
     }
@@ -234,35 +252,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   public void publishTrace(@NotNull SModelReference model, @NotNull GenerationTrace trace) {
     myTraces.put(SModelStereotype.withoutStereotype(model.getModelName()), trace);
-  }
-
-  @Nullable
-  public CheckpointState getCheckpoint(@NotNull SModelReference originalModel, @NotNull Checkpoint checkpoint) {
-    List<CheckpointState> checkpoints = myCheckpoints.get(originalModel);
-    if (checkpoints == null) {
-      return null;
-    }
-    for (CheckpointState cp : checkpoints) {
-      if (cp.getCheckpoint().equals(checkpoint)) {
-        return cp;
-      }
-    }
-    return null;
-  }
-
-  public void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
-    List<CheckpointState> checkpoints = myCheckpoints.get(originalModel);
-    if (checkpoints == null) {
-      myCheckpoints.put(originalModel, checkpoints = new ArrayList<CheckpointState>(3));
-    } else {
-      for (Iterator<CheckpointState> it = checkpoints.iterator(); it.hasNext(); ) {
-        if (it.next().getCheckpoint().equals(cpState.getCheckpoint())) {
-          it.remove();
-          break;
-        }
-      }
-    }
-    checkpoints.add(cpState);
   }
 
   public void changeModelReference(@NotNull SModel transientModel, @NotNull SModelReference newRef) {

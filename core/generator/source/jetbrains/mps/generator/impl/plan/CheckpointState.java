@@ -19,11 +19,13 @@ import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Map;
@@ -32,17 +34,27 @@ import java.util.Map;
  * Translate information about mapping labels known at checkpoint step to persisted (even though memory-only now) state
  * FIXME CheckpointStateBuilder + immutable CheckpointState, instead?
  *
+ * FIXME now CheckpointState represents state at a given Checkpoint. Perhaps, need a model-wide state that records states for all checkpoints
+ * that were in the model (to avoid code with CheckpointState[]), what would be its name, though? ModelCheckpoints? ModelCheckpointState?
+ *
  * @author Artem Tikhomirov
  */
 public class CheckpointState {
   private final MappingsMemento myState;
   private final SModelReference myOutputModel;
+  private final SModel myCheckpointModel;
   private final Checkpoint myCheckpoint;
 
-  public CheckpointState(SModelReference checkpointModel, Checkpoint cp, SModelReference lastTransientModel) {
+  // FIXME lastTransientModel is needed for builder aspect only
+  public CheckpointState(@NotNull SModel checkpointModel, @NotNull Checkpoint cp, @NotNull SModelReference lastTransientModel) {
+    myCheckpointModel = checkpointModel;
     myCheckpoint = cp;
     myState = new MappingsMemento();
     myOutputModel = lastTransientModel;
+  }
+
+  public SModel getCheckpointModel() {
+    return myCheckpointModel;
   }
 
   public Checkpoint getCheckpoint() {
@@ -86,10 +98,11 @@ public class CheckpointState {
     return values.keySet();
   }
 
+  @NotNull
   public Collection<SNodeId> getOutput(String mappingLabel, SNodeId input) {
     Map<SNodeId, Object> values = myState.getMappingNameAndInputNodeToOutputNodeMap().get(mappingLabel);
     assert values != null; // provided getMappingLabels().contains(mappingLabel)
-    Object outputNodes = values.get(values);
+    Object outputNodes = values.get(input);
     if (outputNodes instanceof Collection) {
       @SuppressWarnings("unchecked")
       Collection<SNodeId> rv = (Collection<SNodeId>) outputNodes;
@@ -100,5 +113,13 @@ public class CheckpointState {
     return Collections.emptyList();
   }
 
-
+  public Collection<SNode> resolve(Collection<SNodeId> output) {
+    ArrayList<SNode> rv = new ArrayList<SNode>(output.size());
+    for (SNodeId id : output) {
+      SNode node = myCheckpointModel.getNode(id);
+      assert node != null : "provided SNodeId comes from getOutput() it's unreasonable to expect model misses the node";
+      rv.add(node);
+    }
+    return rv;
+  }
 }
