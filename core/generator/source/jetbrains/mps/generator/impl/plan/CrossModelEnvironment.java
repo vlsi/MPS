@@ -34,6 +34,10 @@ import java.util.List;
 /**
  * Captures what outer world would like to tell generator about available cross-model reference targets.
  *
+ * FIXME likely, we shall not keep checkpoint models for actions other than true generate
+ * (e.g. text preview). Still shall resolve cross model references, but #createCheckpoint shall become no-op.
+ * OTOH, what if I preview 2 nodes ith cross-references from 2 different models? Kept, but separately?
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */
@@ -59,7 +63,7 @@ public class CrossModelEnvironment {
   }
 
   /**
-   * FIXME Nullable or IAE+hasState?
+   * FIXME keep Nullable or IAE+hasState?
    * @return recorded checkpoints for the model
    */
   @Nullable

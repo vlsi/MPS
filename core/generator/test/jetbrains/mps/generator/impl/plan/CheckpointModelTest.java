@@ -21,6 +21,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
+import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -103,27 +104,7 @@ public class CheckpointModelTest {
           final GeneratorRuntime g2 = lr.getLanguage(langBaseLang).getGenerators().iterator().next();
           final Transform step2 = new Transform(getGenerators(g2));
           final Checkpoint cp1 = new Checkpoint("aaa");
-          return new ModelGenerationPlan() {
-            @Override
-            public List<List<TemplateMappingConfiguration>> getSteps() {
-              return Arrays.asList(step1.getTransformations(), step2.getTransformations());
-            }
-
-            @Override
-            public List<Step> getSteps_() {
-              return Arrays.asList(step1, cp1, step2);
-            }
-
-            @Override
-            public Collection<TemplateModule> getGenerators() {
-              return Arrays.asList((TemplateModule) g1, (TemplateModule) g2);
-            }
-
-            @Override
-            public boolean coversLanguage(SLanguage language) {
-              return true;
-            }
-          };
+          return new RigidGenerationPlan(step1, cp1, step2);
         }
       });
       GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
