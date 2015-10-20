@@ -17,6 +17,6 @@ package org.jetbrains.mps.openapi.ui.persistence;
 
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-public interface TabFactory {
-  public FacetTab getTab(SModuleFacet moduleFacet);
+public interface TabFactory<T extends SModuleFacet> {
+  FacetTab getTab(T moduleFacet);
 }

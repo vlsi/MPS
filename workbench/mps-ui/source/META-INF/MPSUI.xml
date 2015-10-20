@@ -3,9 +3,6 @@
     <component>
       <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryPersistenceComponent</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabPersistenceComponent</implementation-class>
-    </component>
   </application-components>
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>

@@ -173,19 +173,21 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
-  private ModuleDescriptor myModuleDescriptor;
+  private final ModuleDescriptor myModuleDescriptor;
   private AbstractModule myModule;
-  private Set<JCheckBox> myCheckBoxes = new TreeSet<JCheckBox>(new Comparator<JCheckBox>() {
+  private final Set<JCheckBox> myCheckBoxes = new TreeSet<JCheckBox>(new Comparator<JCheckBox>() {
     @Override
     public int compare(JCheckBox o1, JCheckBox o2) {
       return o1.getText().toLowerCase().compareTo(o2.getText().toLowerCase());
     }
   });
+  private final FacetTabsPersistence myFacetTabsPersistence;
 
   public ModulePropertiesConfigurable(SModule module, Project project) {
     super(project);
     myModule = (AbstractModule) module;
     myModuleDescriptor = myModule.getModuleDescriptor();
+    myFacetTabsPersistence = new FacetTabsPersistence().initFromEP();
 
     addTab(new ModuleCommonTab());
     if (!(myModule instanceof DevKit)) {
@@ -202,7 +204,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         continue;
       }
       ModuleFacetBase moduleFacetBase = (ModuleFacetBase) moduleFacet;
-      Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
+      Tab facetTab = myFacetTabsPersistence.getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
       if (facetTab != null) {
         addTab(facetTab);
       }
@@ -1363,7 +1365,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (!e.getSource().equals(myCheckBox)) return;
         if (myCheckBox.isSelected()) {
           final ModuleFacetBase moduleFacetBase = (ModuleFacetBase) myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
-          Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(
+          Tab facetTab = myFacetTabsPersistence.getFacetTab(
               moduleFacetBase.getFacetType(), moduleFacetBase);
           if (facetTab != null) {
             ModulePropertiesConfigurable.this.insertTab(facetTab, ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this));
