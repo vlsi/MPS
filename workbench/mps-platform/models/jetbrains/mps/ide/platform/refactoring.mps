@@ -40,8 +40,8 @@
     <import index="ngmm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view(MPS.Platform/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -214,6 +214,11 @@
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
+      </concept>
+      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
+        <child id="1163668914799" name="condition" index="3K4Cdx" />
+        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
+        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -2478,18 +2483,40 @@
       <node concept="3Tmbuc" id="WWy1UWgX$1" role="1B3o_S" />
       <node concept="3clFbS" id="WWy1UWgXzR" role="3clF47">
         <node concept="3cpWs6" id="WWy1UWgX$v" role="3cqZAp">
-          <node concept="2OqwBi" id="WWy1UWgX$E" role="3cqZAk">
-            <node concept="2OqwBi" id="WWy1UWgX$F" role="2Oq$k0">
-              <node concept="Xjq3P" id="WWy1UWgX$G" role="2Oq$k0" />
-              <node concept="2OwXpG" id="WWy1UWgX$H" role="2OqNvi">
-                <ref role="2Oxat5" node="1t_LRy89$2t" resolve="myTextField" />
-              </node>
+          <node concept="3K4zz7" id="1dXf3Q0T0CH" role="3cqZAk">
+            <node concept="Xl_RD" id="1dXf3Q0T1Pe" role="3K4GZi">
+              <property role="Xl_RC" value="" />
             </node>
-            <node concept="liA8E" id="WWy1UWgX$I" role="2OqNvi">
-              <ref role="37wK5l" to="r791:~JTextComponent.getText():java.lang.String" resolve="getText" />
+            <node concept="3y3z36" id="1dXf3Q0T0QL" role="3K4Cdx">
+              <node concept="2OqwBi" id="WWy1UWgX$E" role="3uHU7B">
+                <node concept="2OqwBi" id="WWy1UWgX$F" role="2Oq$k0">
+                  <node concept="Xjq3P" id="WWy1UWgX$G" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="WWy1UWgX$H" role="2OqNvi">
+                    <ref role="2Oxat5" node="1t_LRy89$2t" resolve="myTextField" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="WWy1UWgX$I" role="2OqNvi">
+                  <ref role="37wK5l" to="r791:~JTextComponent.getText():java.lang.String" resolve="getText" />
+                </node>
+              </node>
+              <node concept="10Nm6u" id="1dXf3Q0T0qU" role="3uHU7w" />
+            </node>
+            <node concept="2OqwBi" id="1dXf3Q0T1B4" role="3K4E3e">
+              <node concept="2OqwBi" id="1dXf3Q0T1B5" role="2Oq$k0">
+                <node concept="Xjq3P" id="1dXf3Q0T1B6" role="2Oq$k0" />
+                <node concept="2OwXpG" id="1dXf3Q0T1B7" role="2OqNvi">
+                  <ref role="2Oxat5" node="1t_LRy89$2t" resolve="myTextField" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1dXf3Q0T1B8" role="2OqNvi">
+                <ref role="37wK5l" to="r791:~JTextComponent.getText():java.lang.String" resolve="getText" />
+              </node>
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="1dXf3Q0T23m" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="1t_LRy89$4Q" role="jymVt">
