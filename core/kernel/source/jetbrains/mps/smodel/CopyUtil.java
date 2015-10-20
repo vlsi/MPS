@@ -137,7 +137,7 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
+  public static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if (root == null) return;
     Iterable<SNode> thisAndDesc = SNodeUtil.getDescendants(root);
     for (SNode inputNode : thisAndDesc) {

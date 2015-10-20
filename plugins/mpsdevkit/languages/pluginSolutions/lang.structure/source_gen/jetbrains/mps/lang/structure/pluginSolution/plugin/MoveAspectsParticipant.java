@@ -25,7 +25,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -35,7 +37,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
-import jetbrains.mps.smodel.CopyUtil;
 
 public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference>, RecursiveParticipant<SNodeReference, SNodeReference> {
 
@@ -82,11 +83,11 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
 
               List<SNode> descendants = SNodeOperations.getNodeDescendants(aspect, null, true, new SAbstractConcept[]{});
 
-              final List<RecursiveParticipant.RecursiveParticipantState<?, ?>> childparticipantStates = ListSequence.fromList(descendants).translate(new ITranslator2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
-                public Iterable<RecursiveParticipant.RecursiveParticipantState<?, ?>> translate(final SNode node) {
-                  return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
-                    public RecursiveParticipant.RecursiveParticipantState<?, ?> select(MoveNodeRefactoringParticipant<?, ?> participant) {
-                      return RecursiveParticipant.RecursiveParticipantState.create(participant, node, repository, searchScope, parents);
+              final List<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>> childparticipantStates = ListSequence.fromList(descendants).translate(new ITranslator2<SNode, Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>>() {
+                public Iterable<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>> translate(final SNode node) {
+                  return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>>() {
+                    public Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>> select(MoveNodeRefactoringParticipant<?, ?> participant) {
+                      return MultiTuple.<SNode,RecursiveParticipant.RecursiveParticipantState<?, ?>>from(node, RecursiveParticipant.RecursiveParticipantState.create(participant, node, repository, searchScope, parents));
                     }
                   });
                 }
@@ -94,9 +95,9 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
 
               final SearchResults results = new SearchResults();
               results.addAll(new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), sourceConcept), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(aspect, "concept aspect"))));
-              ListSequence.fromList(childparticipantStates).translate(new ITranslator2<RecursiveParticipant.RecursiveParticipantState<?, ?>, RefactoringParticipant.Change<Object, Object>>() {
-                public Iterable<RefactoringParticipant.Change<Object, Object>> translate(RecursiveParticipant.RecursiveParticipantState<?, ?> it) {
-                  return ((RefactoringParticipant.ParticipantState) it).getChanges();
+              ListSequence.fromList(childparticipantStates).translate(new ITranslator2<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>, RefactoringParticipant.Change<Object, Object>>() {
+                public Iterable<RefactoringParticipant.Change<Object, Object>> translate(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>> it) {
+                  return ((RefactoringParticipant.ParticipantState) it._1()).getChanges();
                 }
               }).select(new ISelector<RefactoringParticipant.Change<Object, Object>, SearchResults>() {
                 public SearchResults select(RefactoringParticipant.Change<Object, Object> it) {
@@ -116,9 +117,9 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
                   return results;
                 }
                 public boolean needsToPreserveOldNode() {
-                  return ListSequence.fromList(childparticipantStates).translate(new ITranslator2<RecursiveParticipant.RecursiveParticipantState<?, ?>, RefactoringParticipant.Change<Object, Object>>() {
-                    public Iterable<RefactoringParticipant.Change<Object, Object>> translate(RecursiveParticipant.RecursiveParticipantState<?, ?> it) {
-                      return ((RefactoringParticipant.ParticipantState) it).getChanges();
+                  return ListSequence.fromList(childparticipantStates).translate(new ITranslator2<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>, RefactoringParticipant.Change<Object, Object>>() {
+                    public Iterable<RefactoringParticipant.Change<Object, Object>> translate(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>> it) {
+                      return ((RefactoringParticipant.ParticipantState) it._1()).getChanges();
                     }
                   }).any(new IWhereFilter<RefactoringParticipant.Change<Object, Object>>() {
                     public boolean accept(RefactoringParticipant.Change<Object, Object> it) {
@@ -131,16 +132,12 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
                   Language targetLanguage = ((Language) SNodeOperations.getModel(targetConcept).getModule());
                   NodeLocation.NodeLocationRootWithAspectModelCreation newLocation = new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage, mapping.key());
 
-                  Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
-                  final List<SNode> copied = CopyUtil.copyAndPreserveId(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect), copyMap);
-
-                  if (!(needsToPreserveOldNode())) {
-                    SNodeOperations.detachNode(aspect);
-                  }
+                  List<SNode> copied = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).copy(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect), ListSequence.fromListAndArray(new ArrayList<Boolean>(), needsToPreserveOldNode() || MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).whetherKeepNode(sourceConcept)));
+                  final Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).getCopyMap();
                   newLocation.insertNode(repository, ListSequence.fromList(copied).first());
-                  ListSequence.fromList(childparticipantStates).visitAll(new IVisitor<RecursiveParticipant.RecursiveParticipantState<?, ?>>() {
-                    public void visit(RecursiveParticipant.RecursiveParticipantState<?, ?> pis) {
-                      pis.confirm(ListSequence.fromList(copied).first(), repository, refactoringSession);
+                  ListSequence.fromList(childparticipantStates).visitAll(new IVisitor<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>>() {
+                    public void visit(Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>> pis) {
+                      pis._1().confirm(MapSequence.fromMap(copyMap).get(pis._0()), repository, refactoringSession);
                     }
                   });
                 }
