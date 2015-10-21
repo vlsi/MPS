@@ -9,5 +9,4 @@ public interface RefactoringSession {
   public Object getObject(String id);
 
   public void registerChange(Runnable change);
-  public void registerCloseAction(Runnable closeAction);
 }

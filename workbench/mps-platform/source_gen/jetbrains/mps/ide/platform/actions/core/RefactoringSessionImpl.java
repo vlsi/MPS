@@ -11,15 +11,10 @@ import java.util.HashMap;
 
 public class RefactoringSessionImpl implements RefactoringSession {
 
-  private List<Runnable> myCloseActions = ListSequence.fromList(new ArrayList<Runnable>());
   private List<Runnable> myChanges = ListSequence.fromList(new ArrayList<Runnable>());
 
   private Map<String, Object> myObjects = MapSequence.fromMap(new HashMap<String, Object>());
 
-
-  public void registerCloseAction(Runnable closeAction) {
-    ListSequence.fromList(myCloseActions).addElement(closeAction);
-  }
   public void putObject(String id, Object object) {
     MapSequence.fromMap(myObjects).put(id, object);
   }
@@ -34,9 +29,6 @@ public class RefactoringSessionImpl implements RefactoringSession {
     for (int i = 0; i < ListSequence.fromList(myChanges).count(); i++) {
       ListSequence.fromList(myChanges).getElement(i).run();
 
-    }
-    for (Runnable closeAction : ListSequence.fromList(myCloseActions).reversedList()) {
-      closeAction.run();
     }
   }
 }
