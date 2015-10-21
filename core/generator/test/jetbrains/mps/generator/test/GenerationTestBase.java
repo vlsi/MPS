@@ -21,10 +21,8 @@ import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.TransientModelsProvider;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -50,7 +48,6 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -102,18 +99,6 @@ public class GenerationTestBase {
     GenerationOptions options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    class NoOpHandler extends GenerationHandlerBase {
-      @Override
-      public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext,
-          ProgressMonitor progressMonitor) {
-        return true;
-      }
-
-      @Override
-      public int estimateCompilationMillis() {
-        return 0;
-      }
-    };
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), null,
         new NoOpHandler(),
