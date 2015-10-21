@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -43,11 +42,8 @@ public class MoveConceptMigrationParticipant extends LanguageStructureMigrationP
     }
   }
 
-  public void confirm(Tuples._2<Language, SAbstractConcept> initialState, Tuples._2<Language, SAbstractConcept> finalState, RefactoringSession refactoringSession) {
-    Language sourceModule = initialState._0();
-    Language targetModule = finalState._0();
-    LanguageStructureMigrationParticipant.MigrationBuilder logBuilder = LanguageStructureMigrationParticipant.MigrationBuilder.getBuilder(refactoringSession, sourceModule);
-    logBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveConcept_o15gry_c0a3a7());
+  public void confirm(Tuples._2<Language, SAbstractConcept> initialState, Tuples._2<Language, SAbstractConcept> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
+    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveConcept_o15gry_c0a0a7());
   }
 
   public String getId() {
@@ -56,7 +52,7 @@ public class MoveConceptMigrationParticipant extends LanguageStructureMigrationP
   public String getDescription() {
     return "Write migration script (move concept)";
   }
-  private static SNode createMoveConcept_o15gry_c0a3a7() {
+  private static SNode createMoveConcept_o15gry_c0a0a7() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.util.structure.MoveConcept"), null, null, false);
     return n1;

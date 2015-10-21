@@ -5,12 +5,12 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
@@ -40,9 +40,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 public abstract class LanguageStructureMigrationParticipant<I, F> implements MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>>, MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> {
 
-  public abstract Tuples._2<Language, I> beforeMove(SNode nodeToMove);
-
-  public abstract Tuples._2<Language, F> afterMove(SNode movedNode);
 
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> getDataCollector() {
     return this;
@@ -67,7 +64,7 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
     private SNode myRefactoringStep;
     public MigrationBuilder(RefactoringSession session, final Language language) {
       final int languageVersion = language.getLanguageVersion();
-      myRefactoringStep = createPureMigrationScript_kz6lmo_a0b0d7(languageVersion, "MigrationScript_" + languageVersion);
+      myRefactoringStep = createPureMigrationScript_kz6lmo_a0b0d4(languageVersion, "MigrationScript_" + languageVersion);
       session.registerChange(new Runnable() {
         public void run() {
           SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(language);
@@ -96,16 +93,16 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
       });
     }
     public void addPart(SNode initialStateNode, SNode finalStateNode, SNode specialization) {
-      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addElement(createMoveNode_kz6lmo_a0a0a4h(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(finalStateNode)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(specialization), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.util.structure.MoveNodeSpecialization"))));
+      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836d7f3L, "part"))).addElement(createMoveNode_kz6lmo_a0a0a4e(SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(initialStateNode)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(NodeReferenceUtil.makeReflection(finalStateNode)), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(specialization), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c165c5dL, "jetbrains.mps.lang.migration.util.structure.MoveNodeSpecialization"))));
     }
-    private static SNode createPureMigrationScript_kz6lmo_a0b0d7(Object p0, Object p1) {
+    private static SNode createPureMigrationScript_kz6lmo_a0b0d4(Object p0, Object p1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.util.structure.PureMigrationScript"), null, null, false);
       n1.setProperty(MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5836cabbL, 0x67236d4a5836cabcL, "fromVersion"), p0 + "");
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), p1 + "");
       return n1;
     }
-    private static SNode createMoveNode_kz6lmo_a0a0a4h(Object p0, Object p1, Object p2) {
+    private static SNode createMoveNode_kz6lmo_a0a0a4e(Object p0, Object p1, Object p2) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.util.structure.MoveNode"), null, null, false);
       if (p0 != null) {
@@ -140,10 +137,13 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
         return true;
       }
       public void confirm(Tuples._2<Language, F> finalState, SRepository repository, RefactoringSession refactoringSession) {
-        LanguageStructureMigrationParticipant.this.confirm(initialState, finalState, refactoringSession);
+        Language sourceModule = initialState._0();
+        Language targetModule = finalState._0();
+        LanguageStructureMigrationParticipant.MigrationBuilder logBuilder = LanguageStructureMigrationParticipant.MigrationBuilder.getBuilder(refactoringSession, sourceModule);
+        LanguageStructureMigrationParticipant.this.confirm(initialState, finalState, logBuilder);
       }
     };
     return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>(), change);
   }
-  public abstract void confirm(Tuples._2<Language, I> initialState, Tuples._2<Language, F> finalState, RefactoringSession refactoringSession);
+  public abstract void confirm(Tuples._2<Language, I> initialState, Tuples._2<Language, F> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder);
 }
