@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -116,7 +115,8 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
   public void paintSelection(Graphics2D g) {
     jetbrains.mps.nodeEditor.EditorComponent.turnOnAliasingIfPossible(g);
     for (EditorCell cell : getSelectedCells()) {
-      if (!g.hitClip(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
+      jetbrains.mps.nodeEditor.cells.EditorCell internalCell = (jetbrains.mps.nodeEditor.cells.EditorCell) cell;
+      if (!internalCell.isInClipRegion(g)) {
         continue;
       }
       boolean wasSelected = cell.isSelected();
@@ -129,7 +129,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
         label.setCaretEnabled(false);
       }
 
-      ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).paint(g);
+      internalCell.paint(g);
       if (cell instanceof EditorCell_Label && !wasSelected) {
         EditorCell_Label label = (EditorCell_Label) cell;
         label.setCaretEnabled(wasCaretEnabled);

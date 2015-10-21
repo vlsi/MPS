@@ -26,6 +26,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.annotations.NonNls;
@@ -50,7 +53,6 @@ public class DiffEditor implements EditorMessageOwner {
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
         ec.getLeftEditorHighlighter().setDefaultFoldingAreaPaintersEnabled(false);
-        ec.setPopupMenuEnabled(false);
       }
     });
 
@@ -139,6 +141,7 @@ public class DiffEditor implements EditorMessageOwner {
     public MainEditorComponent(SRepository repository, boolean showGutter, boolean rightToLeft) {
       super(repository, showGutter, rightToLeft);
       myDiffFileEditor = new DiffFileEditor(this);
+      setDefaultPopupGroupId(((String) BHReflection.invoke(SNodeOperations.getNode("r:c29f530b-f74d-4627-9da2-61138cfa6722(jetbrains.mps.vcs.platform.actions)", "426251916200108583"), SMethodTrimmedId.create("getGeneratedClassFQName", MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), "hEwJa8g"))));
     }
     @Deprecated
     public MainEditorComponent(SRepository repository, boolean rightToLeft) {

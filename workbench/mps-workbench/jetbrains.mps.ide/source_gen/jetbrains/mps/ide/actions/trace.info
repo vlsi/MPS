@@ -3211,7 +3211,6 @@
       <scope id="1234018313905" at="35,53,36,19" />
       <scope id="1234018313905" at="41,22,42,21" />
       <scope id="1234018313905" at="48,96,49,145" />
-      <scope id="1234018313905" at="29,89,31,182" />
       <scope id="8131292300541655368" at="29,89,31,182" />
       <scope id="1234018313905" at="55,20,57,20" />
       <scope id="1234018313905" at="18,43,22,41" />
@@ -5948,7 +5947,6 @@
       <node id="2010440180771532928" at="50,0,61,0" concept="11" trace="getActionId#()Ljava/lang/String;" />
       <node id="2010440180771532928" at="33,0,46,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="2010440180771532928" at="26,32,27,16" />
-      <scope id="2010440180771532928" at="30,89,31,68" />
       <scope id="2010440180771532991" at="30,89,31,68" />
       <scope id="2010440180771532928" at="35,53,36,19" />
       <scope id="2010440180771532928" at="40,22,41,21" />
@@ -6973,7 +6971,6 @@
       <scope id="8975322769639391775" at="73,47,74,13" />
       <scope id="8243555296290550312" at="79,23,80,60" />
       <scope id="2834677590307342574" at="24,41,27,41" />
-      <scope id="2834677590307342574" at="34,89,37,5" />
       <scope id="8243555296290550346" at="34,89,37,5" />
       <scope id="2834677590307342574" at="29,0,33,0" />
       <scope id="2834677590307480284" at="64,0,68,0">
@@ -7137,7 +7134,6 @@
       <node id="2834677590307810352" at="57,0,70,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="2834677590307810352" at="36,0,57,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="2834677590307810352" at="29,32,30,16" />
-      <scope id="2834677590307810352" at="33,89,34,69" />
       <scope id="2834677590307810368" at="33,89,34,69" />
       <scope id="2834677590307810352" at="38,53,39,19" />
       <scope id="2834677590307810352" at="44,22,45,21" />
@@ -7980,7 +7976,6 @@
       </scope>
       <scope id="3858094006307874058" at="82,37,82,37" />
       <scope id="3858094006307618582" at="32,32,33,16" />
-      <scope id="3858094006307618582" at="36,89,37,60" />
       <scope id="3858094006307874170" at="36,89,37,60" />
       <scope id="3858094006307618582" at="41,53,42,19" />
       <scope id="3858094006307618582" at="47,22,48,21" />
@@ -8083,7 +8078,6 @@
       <node id="3906874221886742260" at="16,0,22,0" concept="4" trace="GoToAction_Action#(Lcom/intellij/openapi/actionSystem/AnAction;)V" />
       <node id="3906874221886742260" at="35,0,44,0" concept="11" trace="getActionId#()Ljava/lang/String;" />
       <scope id="3906874221886742260" at="23,32,24,16" />
-      <scope id="3906874221886742260" at="27,89,28,48" />
       <scope id="3906874221886742267" at="27,89,28,48" />
       <scope id="3906874221886742273" at="44,54,45,14" />
       <scope id="3906874221886742260" at="31,96,33,57" />
@@ -8206,7 +8200,6 @@
       <node id="3906874221886742347" at="15,0,21,0" concept="4" trace="GoToNamedNode_Action#(Lcom/intellij/openapi/actionSystem/AnAction;)V" />
       <node id="3906874221886742347" at="33,0,42,0" concept="11" trace="getActionId#()Ljava/lang/String;" />
       <scope id="3906874221886742347" at="22,32,23,16" />
-      <scope id="3906874221886742347" at="26,89,27,51" />
       <scope id="3906874221886742365" at="26,89,27,51" />
       <scope id="3906874221886742347" at="30,96,31,60" />
       <scope id="3906874221886742358" at="42,54,43,14" />
@@ -8430,7 +8423,6 @@
       <node id="3906874221886749855" at="59,0,68,0" concept="11" trace="getActionId#()Ljava/lang/String;" />
       <node id="3906874221886749855" at="34,0,55,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="3906874221886749855" at="27,32,28,16" />
-      <scope id="3906874221886749855" at="31,89,32,48" />
       <scope id="3906874221886749873" at="31,89,32,48" />
       <scope id="3906874221886749855" at="36,53,37,19" />
       <scope id="3906874221886749855" at="42,22,43,21" />
@@ -9313,7 +9305,6 @@
       <node id="5014390439885403930" at="16,0,22,0" concept="4" trace="GoToFile_Action#(Lcom/intellij/openapi/actionSystem/AnAction;)V" />
       <node id="5014390439885403930" at="35,0,44,0" concept="11" trace="getActionId#()Ljava/lang/String;" />
       <scope id="5014390439885403930" at="23,32,24,16" />
-      <scope id="5014390439885403930" at="27,89,28,46" />
       <scope id="5014390439885403949" at="27,89,28,46" />
       <scope id="5014390439885403935" at="44,54,45,14" />
       <scope id="5014390439885403930" at="31,96,33,55" />
@@ -13471,7 +13462,6 @@
       <node id="8131292300541727034" at="58,0,67,0" concept="11" trace="getActionId#()Ljava/lang/String;" />
       <node id="8131292300541727034" at="33,0,54,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="8131292300541727034" at="26,32,27,16" />
-      <scope id="8131292300541727034" at="30,89,31,83" />
       <scope id="8131292300541727054" at="30,89,31,83" />
       <scope id="8131292300541727034" at="35,53,36,19" />
       <scope id="8131292300541727034" at="41,22,42,21" />

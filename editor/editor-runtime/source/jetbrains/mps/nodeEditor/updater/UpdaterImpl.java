@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -72,6 +73,7 @@ public class UpdaterImpl implements Updater, CommandContext {
   private boolean myDisposed;
   private int myCommandLevel = 0;
   private String[] myInitialHints;
+  private Map<SNodeReference, Collection<String>> myEditorHintsForNodeMap = new HashMap<SNodeReference, Collection<String>>();
 
   public UpdaterImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -179,6 +181,44 @@ public class UpdaterImpl implements Updater, CommandContext {
     return result;
   }
 
+  @Override
+  public void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints) {
+    Collection<String> currentHints = myEditorHintsForNodeMap.get(nodeReference);
+    if (currentHints == null) {
+      currentHints = new ArrayList<String>();
+      Collections.addAll(currentHints, hints);
+      myEditorHintsForNodeMap.put(nodeReference, currentHints);
+    } else {
+      Collections.addAll(currentHints, hints);
+    }
+
+  }
+
+  @Override
+  public void removeExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints) {
+    Collection<String> currentHints = myEditorHintsForNodeMap.get(nodeReference);
+    if (currentHints != null) {
+      for (String hint : hints) {
+        currentHints.remove(hint);
+      }
+      if (currentHints.isEmpty()) {
+        myEditorHintsForNodeMap.remove(nodeReference);
+      }
+    }
+
+  }
+
+  @Override
+  public String[] getExplicitEditorHintsForNode(SNodeReference nodeReference) {
+    Collection<String> hints = myEditorHintsForNodeMap.get(nodeReference);
+    return hints == null ? null : hints.toArray(new String[hints.size()]);
+  }
+
+  @Override
+  public void clearExplicitHints() {
+    myEditorHintsForNodeMap.clear();
+  }
+
   private void fireCellSynchronized(EditorCell cell) {
     for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
       nextListener.cellSynchronizedWithModel(cell);
@@ -196,6 +236,7 @@ public class UpdaterImpl implements Updater, CommandContext {
         new UpdateSessionImpl(node, events, this, myBigCellsMap, myRelatedNodes, myRelatedRefTargets, myCleanDependentCells, myDirtyDependentCells,
             myExistenceDependentCells);
     result.setInitialEditorHints(myInitialHints);
+    result.setEditorHintsForNodeMap(myEditorHintsForNodeMap);
     return result;
   }
 

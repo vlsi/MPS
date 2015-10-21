@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.tabs;
 
-
+import jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
@@ -24,26 +24,30 @@ import org.jetbrains.mps.openapi.ui.persistence.TabFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FacetTabsPersistence {
-  private static FacetTabsPersistence ourPersistence;
+/**
+ * Registry with UI components (tabs) for {@link SModuleFacet}.
+ * To use, instantiate and call {@link #initFromEP()}
+ */
+public final class FacetTabsPersistence {
+  private final Map<String, TabFactory> myFacetTabs = new HashMap<String, TabFactory>();
 
-  public static FacetTabsPersistence getInstance() {
-    if(ourPersistence == null)
-      ourPersistence = new FacetTabsPersistence();
-
-    return ourPersistence;
+  public FacetTabsPersistence() {
   }
 
-  private Map<String, TabFactory> myFacetTabs = new HashMap<String, TabFactory>();
-
-  private FacetTabsPersistence() {
-    init();
+  /**
+   * Initialize {@link TabFactory tab factories} from {@link FacetTabEP extension point}
+   * @return <code>this</code> for convenience
+   */
+  public FacetTabsPersistence initFromEP() {
+    FacetTabEP[] extensions = FacetTabEP.EP_NAME.getExtensions();
+    for (FacetTabEP extension : extensions) {
+      addFacetTab(extension.facetType, extension.getFacetTabFactory());
+    }
+    return this;
   }
 
-  private void init() {
-  }
-
-  public void addFacetTab(String facetType, @NotNull TabFactory tab) {
+  // may become public if there's need to populate this registry not from EP
+  private void addFacetTab(String facetType, @NotNull TabFactory tab) {
     myFacetTabs.put(facetType, tab);
   }
 
@@ -51,7 +55,7 @@ public class FacetTabsPersistence {
     if(!myFacetTabs.containsKey(facetType))
       return null;
 
-    TabFactory tabFactory = myFacetTabs.get(facetType);
+    TabFactory<SModuleFacet> tabFactory = myFacetTabs.get(facetType);
     return tabFactory.getTab(moduleFacet);
   }
 }

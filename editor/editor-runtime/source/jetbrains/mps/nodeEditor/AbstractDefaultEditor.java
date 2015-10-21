@@ -18,10 +18,13 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind.Node;
+import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -29,8 +32,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.smodel.SNodeLegacy;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.EqualUtil;
@@ -40,14 +42,14 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
+import java.awt.Color;
 import java.util.Collection;
 import java.util.Deque;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
-/**
- * Created by simon on 11/03/15.
- */
 public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private static final String NAME_NAME = "name";
   private static final int NAME_PRIORITY = 10000;
@@ -56,15 +58,19 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
   private static final int NAME_ADD_PRIORITY = 1000;
   private static final String QUALIFIED_NAME = "qualified";
   private static final int QUALIFIED_PRIORITY = 200;
+  private static final Color FIRST_LABEL_BACKGROUND_COLOR = new Color(107, 142, 20, 100);
 
-  protected SNode mySNode;
-  protected SConcept myConcept;
-  protected EditorContext myEditorContext;
+  private SNode mySNode;
+  private SConcept myConcept;
+  private EditorContext myEditorContext;
 
   private Deque<EditorCell_Collection> collectionStack = new LinkedList<EditorCell_Collection>();
   private int currentCollectionIdNumber = 0;
   private int currentConstantIdNumber = 0;
 
+  private Collection<SProperty> myProperties = new LinkedHashSet<SProperty>();
+  private Collection<SReferenceLink> myReferenceLinks = new LinkedHashSet<SReferenceLink>();
+  private Collection<SContainmentLink> myContainmentLinks = new LinkedHashSet<SContainmentLink>();
 
 
   public AbstractDefaultEditor(@NotNull SConcept concept) {
@@ -77,33 +83,66 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     mySNode = node;
     assert myConcept.equals(mySNode.getConcept());
     init();
-    SProperty nameProperty = initNameProperty();
+    SProperty nameProperty = getNameProperty();
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
     mainCellCollection.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     addLabel(camelToLabel(myConcept.getName()));
+    addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, FIRST_LABEL_BACKGROUND_COLOR);
     if (nameProperty != null) {
       getProperties().remove(nameProperty);
       addPropertyCell(nameProperty);
     }
     addReferences();
-    if (!getContainmentLinks().isEmpty() || !getReferenceLinks().isEmpty()) {
+    if (!getContainmentLinks().isEmpty() || !getProperties().isEmpty() || isAttribute()) {
       addPropertiesAndChildren();
     }
     popCollection();
     return mainCellCollection;
   }
 
-  abstract protected void init();
+  protected void init() {
+    assert mySNode != null && myConcept != null;
+    for (SProperty sProperty : mySNode.getProperties()) {
+      if (!sProperty.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
+        myProperties.add(sProperty);
+      }
+    }
 
-  private SProperty initNameProperty() {
+    for (SReference sReference : mySNode.getReferences()) {
+      SReferenceLink link = sReference.getLink();
+      assert link != null : "Null meta-link from node: " + this.mySNode + ", role: " + sReference.getRole();
+      if (!link.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
+        myReferenceLinks.add(link);
+      }
+    }
+
+    for (SNode child : this.mySNode.getChildren()) {
+      SContainmentLink containmentLink = child.getContainmentLink();
+      assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + this.mySNode + ", child: " + child;
+      if (!containmentLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
+        myContainmentLinks.add(containmentLink);
+      }
+    }
+  }
+
+  protected void addProperty(SProperty property) {
+    myProperties.add(property);
+  }
+
+  protected void addContainmentLink(SContainmentLink containmentLink) {
+    myContainmentLinks.add(containmentLink);
+  }
+
+  protected void addReferenceLink(SReferenceLink link) {
+    myReferenceLinks.add(link);
+  }
+
+  private SProperty getNameProperty() {
     SProperty nameProperty = null;
     int maxPriority = -1;
     for (SProperty property : getProperties()) {
       String propertyName = property.getName();
-      if (propertyName == null) {
-        continue;
-      }
       int propertyPriority = getPropertyPriority(propertyName);
       if (maxPriority < propertyPriority) {
         maxPriority = propertyPriority;
@@ -139,15 +178,28 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addProperties();
     addLabel("");
     addNewLine();
-    addChildren();
+    myEditorContext.getCellFactory().pushCellContext();
+    myEditorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    try {
+      addChildren();
+    } finally {
+      myEditorContext.getCellFactory().popCellContext();
+    }
+    addAttributedEntity();
     popCollection();
     addLabel("}");
     addStyle(StyleAttributes.MATCHING_LABEL, "body-brace");
   }
 
-  protected abstract Collection<SProperty> getProperties();
-  protected abstract Collection<SReferenceLink> getReferenceLinks();
-  protected abstract Collection<SContainmentLink> getContainmentLinks();
+  protected Collection<SProperty> getProperties() {
+    return myProperties;
+  }
+  protected Collection<SReferenceLink> getReferenceLinks() {
+    return myReferenceLinks;
+  }
+  protected Collection<SContainmentLink> getContainmentLinks() {
+    return myContainmentLinks;
+  }
 
   protected abstract void addPropertyCell(final SProperty property);
 
@@ -165,18 +217,41 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   private void addReferences() {
     for (SReferenceLink reference : getReferenceLinks()) {
-      addRoleLabel(reference.getRoleName(), "reference");
+      addRoleLabel(reference.getName(), "reference");
       addReferenceCell(reference);
     }
   }
 
   private void addChildren() {
     for (SContainmentLink link : getContainmentLinks()) {
-      addRoleLabel(link.getRoleName(), "link");
+      addRoleLabel(link.getName(), "link");
       addNewLine();
       addChildCell(link);
       addNewLine();
     }
+  }
+
+  private void addAttributedEntity() {
+    if (AttributeOperations.isNodeAttribute(mySNode)) {
+      addAttributedCell("attributed node:", Node.class);
+    } else if (AttributeOperations.isPropertyAttribute(mySNode)) {
+      addAttributedCell("attributed property:", AttributeKind.Property.class);
+    } else if (AttributeOperations.isLinkAttribute(mySNode)) {
+      addAttributedCell("attributed reference:", AttributeKind.Reference.class);
+    }
+  }
+
+  private void addAttributedCell(String label, Class attributeKind) {
+    addLabel(label);
+    addNewLine();
+    EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(attributeKind, mySNode);
+    addCell(editorCell);
+    addNewLine();
+  }
+
+  private boolean isAttribute() {
+    return AttributeOperations.isNodeAttribute(mySNode) || AttributeOperations.isPropertyAttribute(mySNode) || AttributeOperations.isLinkAttribute(mySNode);
   }
 
   private void addRoleLabel(String role, String type) {
@@ -246,7 +321,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
         return EqualUtil.equals(s, getText());
       }
     }, targetNode);
-    result.setRole(link.getRoleName());
+    result.setRole(link.getName());
     result.setReferenceCell(true);
     return result;
   }
@@ -319,4 +394,15 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return descriptor instanceof IllegalConceptDescriptor ? new ReadOnlyDefaultEditor(node.getConcept()) : new DefaultEditor(node.getConcept());
   }
 
+  protected SNode getSNode() {
+    return mySNode;
+  }
+
+  protected SConcept getConcept() {
+    return myConcept;
+  }
+
+  protected EditorContext getEditorContext() {
+    return myEditorContext;
+  }
 }

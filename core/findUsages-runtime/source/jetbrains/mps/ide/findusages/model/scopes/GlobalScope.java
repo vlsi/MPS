@@ -24,9 +24,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class GlobalScope extends FindUsagesScope {
   public GlobalScope() {
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-      if (!(module.getModuleName().contains("@transient"))) {
-        addModule(module);
-      }
+      addModule(module);
     }
   }
 

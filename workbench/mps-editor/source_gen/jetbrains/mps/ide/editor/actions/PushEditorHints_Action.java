@@ -10,9 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettings;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import javax.swing.SwingUtilities;
@@ -54,9 +53,12 @@ public class PushEditorHints_Action extends BaseAction {
       }
     }
     {
-      Editor p = event.getData(MPSEditorDataKeys.MPS_EDITOR);
-      MapSequence.fromMap(_params).put("editor", p);
-      if (p == null) {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
         return false;
       }
     }
@@ -64,17 +66,13 @@ public class PushEditorHints_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final EditorComponent component = ((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent());
-    if (component == null) {
-      return;
-    }
     final ConceptEditorHintSettings settings = new ConceptEditorHintSettings(LanguageRegistry.getInstance().getAvailableLanguages());
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        String[] initialEditorHints = component.getUpdater().getInitialEditorHints();
+        String[] initialEditorHints = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().getInitialEditorHints();
         settings.updateSettings((initialEditorHints == null ? Collections.<String>emptySet() : SetSequence.fromSetAndArray(new HashSet<String>(), initialEditorHints)));
         final ConceptEditorHintPreferencesPage page = new ConceptEditorHintPreferencesPage(settings);
-        DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, component);
+        DialogWrapper dialog = new HintsDialog(((Project) MapSequence.fromMap(_params).get("project")), page, settings, ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
         dialog.show();
       }
     });

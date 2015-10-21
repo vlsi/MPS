@@ -218,6 +218,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
 
   private static final int SCROLL_GAP = 15;
+  
+  private String myDefaultPopupGroupId = MPSActions.EDITOR_POPUP_GROUP;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -525,10 +527,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return;
         }
         jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-        if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
-            selectedCell instanceof EditorCell_Label) {
-          ((EditorCell_Label) selectedCell).selectWordOrAll();
-          repaintExternalComponent();
+        boolean inSelectedCell = myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell;
+        if (inSelectedCell) {
+          Selection selection = getSelectionManager().getSelection();
+          if (selection.canExecuteAction(CellActionType.CLICK)) {
+            selection.executeAction(CellActionType.CLICK);
+          } else if (e.getClickCount() == 2 && selectedCell instanceof EditorCell_Label) {
+            ((EditorCell_Label) selectedCell).selectWordOrAll();
+            repaintExternalComponent();
+          }
         }
       }
 
@@ -1294,7 +1301,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!myPopupMenuEnabled) {
       return;
     }
-    DefaultActionGroup baseGroup = ActionUtils.getDefaultGroup(EDITOR_POPUP_MENU_ACTIONS);
+    DefaultActionGroup baseGroup = ActionUtils.getDefaultGroup(myDefaultPopupGroupId);
     if (baseGroup == null) return;
 
     baseGroup.setPopup(false);
@@ -1307,6 +1314,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_POPUP, group).getComponent();
     popupMenu.show(EditorComponent.this, x, y);
+  }
+
+  protected String getDefaultPopupGroupId() {
+    return myDefaultPopupGroupId;
+  }
+
+  protected void setDefaultPopupGroupId(String id) {
+    myDefaultPopupGroupId = id;
   }
 
   private DefaultActionGroup getCellActionsGroup() {
@@ -2291,7 +2306,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
     jetbrains.mps.openapi.editor.cells.EditorCell deepestCell = getDeepestSelectedCell();
-    if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
+    if (deepestCell instanceof EditorCell_Label && ((EditorCell) deepestCell).isInClipRegion(g)) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
       g.setColor(setting.getCaretRowColor());
@@ -2316,7 +2331,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell.relayout();
     }
 
-    if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
+    if (myRootCell != null && myRootCell.isInClipRegion(g)) {
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
@@ -2972,6 +2987,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNodePointer != null) {
       myNode = myNodePointer.resolve(getRepository());
       myEditorContext = createEditorContext(myNode == null ? null : myNode.getModel(), myRepository);
+      myUpdater.clearExplicitHints();
     }
     acquireTypeCheckingContext();
   }
@@ -3049,7 +3065,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    repaint(0, cell.getY(), getWidth(), cell.getHeight());
+    // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
+    repaint(0, cell.getY(), getWidth() + 1, cell.getHeight() + 1);
   }
 
   @Override

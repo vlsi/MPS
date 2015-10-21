@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,13 +41,13 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
-import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -79,6 +79,7 @@ public class ContentEntriesEditor implements Disposable {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
+  private final ModelRootEntryPersistence myRootEntryPersistence;
   private List<ModelRootEntryContainer> myModelRootEntries = new ArrayList<ModelRootEntryContainer>();
   private ModelRootEntryContainer myFocucedModelRootEntryContainer;
   private MyContentEntryEditorListener myEditorListener = new MyContentEntryEditorListener();
@@ -90,8 +91,9 @@ public class ContentEntriesEditor implements Disposable {
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
+    myRootEntryPersistence = new ModelRootEntryPersistence().initFromEP();
     for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
-      ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(descriptor);
+      ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(descriptor);
       Disposer.register(this, entry);
       ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
       container.addContentEntryEditorListener(myEditorListener);
@@ -102,7 +104,7 @@ public class ContentEntriesEditor implements Disposable {
 
   private AnAction getContentEntryActions() {
     final List<AddContentEntryAction> list = new ArrayList<AddContentEntryAction>();
-    for (String type : ModelRootEntryPersistence.getInstance().getModelRootTypes()) {
+    for (String type : myRootEntryPersistence.getModelRootTypes()) {
       list.add(new AddContentEntryAction(type));
     }
 
@@ -294,7 +296,7 @@ public class ContentEntriesEditor implements Disposable {
     @Override
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
-      ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
+      ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(modelRoot);
       Disposer.register(ContentEntriesEditor.this, entry);
       if (entry instanceof FileBasedModelRootEntry) {
         if (!checkAndAddFBModelRoot(entry)) {

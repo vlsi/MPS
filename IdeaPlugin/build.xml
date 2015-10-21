@@ -214,7 +214,7 @@
       <jvmarg value="-ea"/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1024m"/>
-      <jvmarg value="-XX:MaxPermSize=256m"/>
+      <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>

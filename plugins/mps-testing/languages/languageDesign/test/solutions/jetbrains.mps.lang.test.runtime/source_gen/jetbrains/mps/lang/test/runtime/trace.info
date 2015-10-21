@@ -1102,87 +1102,120 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/6270156512828582018">
     <file name="MouseEventsDispatcher.java">
-      <node id="6965998111422628517" at="17,0,18,0" concept="7" trace="myEditorTest" />
-      <node id="6965998111422645290" at="19,63,20,30" concept="6" />
-      <node id="8420540249644838671" at="23,95,24,120" concept="12" />
-      <node id="210559400607072453" at="27,159,28,98" concept="11" />
-      <node id="6270156512830803654" at="30,25,31,41" concept="6" />
-      <node id="6270156512829024016" at="36,122,37,74" concept="11" />
-      <node id="6270156512829024022" at="37,74,38,28" concept="0" />
-      <node id="6270156512829024026" at="38,28,39,163" concept="11" />
-      <node id="6270156512829024033" at="39,163,40,69" concept="6" />
-      <node id="6270156512829024038" at="40,69,41,40" concept="11" />
-      <node id="6270156512829024046" at="41,40,42,40" concept="11" />
-      <node id="6270156512829024054" at="42,40,43,73" concept="11" />
-      <node id="6270156512829024060" at="44,66,45,124" concept="11" />
-      <node id="6270156512829024068" at="46,180,47,35" concept="6" />
-      <node id="6270156512829024074" at="48,56,49,119" concept="6" />
-      <node id="6270156512829024118" at="52,5,53,35" concept="0" />
-      <node id="6270156512829024122" at="53,35,54,0" concept="14" />
-      <node id="6270156512829024123" at="54,0,55,166" concept="11" />
-      <node id="6270156512829024129" at="55,166,56,71" concept="6" />
-      <node id="6270156512829024137" at="56,71,57,41" concept="0" />
-      <node id="6270156512829024141" at="57,41,58,0" concept="14" />
-      <node id="6270156512829024142" at="58,0,59,104" concept="11" />
-      <node id="6270156512830861796" at="61,25,62,47" concept="6" />
-      <node id="6270156512829024159" at="64,7,65,33" concept="12" />
-      <node id="6270156512829078690" at="19,0,22,0" concept="3" trace="MouseEventsDispatcher#(Ljetbrains/mps/lang/test/runtime/BaseEditorTestBody;)V" />
-      <node id="8420540249644824305" at="23,0,26,0" concept="16" trace="createMouseEvent#(Ljava/awt/Component;III)Ljava/awt/event/MouseEvent;" />
-      <node id="6270156512830803105" at="30,0,33,0" concept="10" trace="run#()V" />
-      <node id="6270156512829024072" at="47,35,50,9" concept="9" />
-      <node id="6270156512830861794" at="61,0,64,0" concept="10" trace="run#()V" />
-      <node id="6270156512830801132" at="28,98,33,7" concept="6" />
-      <node id="6270156512830861790" at="59,104,64,7" concept="6" />
-      <node id="6270156512829024066" at="45,124,51,7" concept="9" />
-      <node id="6270156512830838289" at="27,0,35,0" concept="10" trace="processSecondaryMouseEvent#(Ljava/awt/Component;III)V" />
-      <node id="6270156512829024058" at="43,73,52,5" concept="22" />
-      <node id="6270156512829024002" at="36,0,67,0" concept="10" trace="processMouseEvent#(III)Ljava/awt/Component;" />
-      <scope id="6270156512829078692" at="19,63,20,30" />
-      <scope id="8420540249644824308" at="23,95,24,120" />
-      <scope id="6270156512830803106" at="30,25,31,41" />
-      <scope id="6270156512829024073" at="48,56,49,119" />
-      <scope id="6270156512830861795" at="61,25,62,47" />
-      <scope id="6270156512829078690" at="19,0,22,0">
+      <node id="6965998111422628517" at="19,0,20,0" concept="7" trace="myEditorTest" />
+      <node id="6965998111422645290" at="21,63,22,30" concept="6" />
+      <node id="8420540249644838671" at="25,95,26,120" concept="12" />
+      <node id="5347446703375192585" at="29,159,30,69" concept="11" />
+      <node id="5347446703375191436" at="30,69,31,0" concept="14" />
+      <node id="210559400607072453" at="31,0,32,128" concept="11" />
+      <node id="6270156512830803654" at="34,25,35,41" concept="6" />
+      <node id="5347446703375299918" at="40,83,41,78" concept="11" />
+      <node id="5347446703375299924" at="41,78,42,56" concept="11" />
+      <node id="5347446703375299954" at="42,56,43,115" concept="12" />
+      <node id="5347446703374993246" at="46,122,47,78" concept="11" />
+      <node id="5347446703375477689" at="49,25,50,68" concept="6" />
+      <node id="5347446703375060402" at="52,7,53,0" concept="14" />
+      <node id="6270156512829024016" at="53,0,54,56" concept="11" />
+      <node id="6270156512829024022" at="54,56,55,28" concept="0" />
+      <node id="5347446703374996849" at="55,28,56,0" concept="14" />
+      <node id="6270156512829024026" at="56,0,57,163" concept="11" />
+      <node id="6270156512829024033" at="57,163,58,69" concept="6" />
+      <node id="6270156512829024038" at="58,69,59,38" concept="11" />
+      <node id="6270156512829024046" at="59,38,60,38" concept="11" />
+      <node id="6270156512829024054" at="60,38,61,73" concept="11" />
+      <node id="6270156512829024060" at="62,66,63,124" concept="11" />
+      <node id="6270156512829024068" at="64,172,65,35" concept="6" />
+      <node id="6270156512829024074" at="66,56,67,119" concept="6" />
+      <node id="6270156512829024118" at="70,5,71,35" concept="0" />
+      <node id="6270156512829024122" at="71,35,72,0" concept="14" />
+      <node id="6270156512829024123" at="72,0,73,99" concept="11" />
+      <node id="5347446703374961031" at="73,99,74,109" concept="11" />
+      <node id="5347446703374949399" at="74,109,75,0" concept="14" />
+      <node id="5347446703374981639" at="75,0,76,87" concept="11" />
+      <node id="6270156512829024137" at="76,87,77,35" concept="0" />
+      <node id="5347446703374958417" at="77,35,78,0" concept="14" />
+      <node id="5347446703374989410" at="78,0,79,113" concept="11" />
+      <node id="6270156512829024141" at="79,113,80,0" concept="14" />
+      <node id="6270156512829024142" at="80,0,81,138" concept="11" />
+      <node id="6270156512830861796" at="83,25,84,41" concept="6" />
+      <node id="6270156512829024159" at="86,7,87,27" concept="12" />
+      <node id="6270156512829078690" at="21,0,24,0" concept="3" trace="MouseEventsDispatcher#(Ljetbrains/mps/lang/test/runtime/BaseEditorTestBody;)V" />
+      <node id="8420540249644824305" at="25,0,28,0" concept="16" trace="createMouseEvent#(Ljava/awt/Component;III)Ljava/awt/event/MouseEvent;" />
+      <node id="6270156512830803105" at="34,0,37,0" concept="10" trace="run#()V" />
+      <node id="5347446703375064491" at="49,0,52,0" concept="10" trace="run#()V" />
+      <node id="6270156512829024072" at="65,35,68,9" concept="9" />
+      <node id="6270156512830861794" at="83,0,86,0" concept="10" trace="run#()V" />
+      <node id="6270156512830801132" at="32,128,37,7" concept="6" />
+      <node id="5347446703375299967" at="40,0,45,0" concept="10" trace="convertToComponent#(IILjava/awt/Component;)Ljava/awt/Point;" />
+      <node id="5347446703375062293" at="47,78,52,7" concept="6" />
+      <node id="6270156512830861790" at="81,138,86,7" concept="6" />
+      <node id="6270156512829024066" at="63,124,69,7" concept="9" />
+      <node id="6270156512829024058" at="61,73,70,5" concept="22" />
+      <node id="6270156512830838289" at="29,0,39,0" concept="10" trace="processSecondaryMouseEvent#(Ljava/awt/Component;III)V" />
+      <node id="6270156512829024002" at="46,0,89,0" concept="10" trace="processMouseEvent#(III)Ljava/awt/Component;" />
+      <scope id="6270156512829078692" at="21,63,22,30" />
+      <scope id="8420540249644824308" at="25,95,26,120" />
+      <scope id="6270156512830803106" at="34,25,35,41" />
+      <scope id="5347446703375064492" at="49,25,50,68" />
+      <scope id="6270156512829024073" at="66,56,67,119" />
+      <scope id="6270156512830861795" at="83,25,84,41" />
+      <scope id="6270156512829078690" at="21,0,24,0">
         <var name="editorTest" id="6965998111422623245" />
       </scope>
-      <scope id="8420540249644824305" at="23,0,26,0">
+      <scope id="8420540249644824305" at="25,0,28,0">
         <var name="id" id="8420540249644845623" />
         <var name="targetComponent" id="8420540249644840716" />
         <var name="x" id="8420540249644867616" />
         <var name="y" id="8420540249644867933" />
       </scope>
-      <scope id="6270156512830803105" at="30,0,33,0" />
-      <scope id="6270156512830861794" at="61,0,64,0" />
-      <scope id="6270156512829024067" at="46,180,50,9" />
-      <scope id="210559400607005919" at="27,159,33,7">
-        <var name="e" id="210559400607072454" />
+      <scope id="6270156512830803105" at="34,0,37,0" />
+      <scope id="5347446703375299915" at="40,83,43,115">
+        <var name="editorComponent" id="5347446703375299919" />
+        <var name="rootCell" id="5347446703375299925" />
       </scope>
-      <scope id="6270156512829024059" at="44,66,51,7">
+      <scope id="5347446703375064491" at="49,0,52,0" />
+      <scope id="6270156512830861794" at="83,0,86,0" />
+      <scope id="6270156512829024067" at="64,172,68,9" />
+      <scope id="5347446703375299967" at="40,0,45,0">
+        <var name="targetComponent" id="5347446703375299960" />
+        <var name="x" id="5347446703375299956" />
+        <var name="y" id="5347446703375299958" />
+      </scope>
+      <scope id="6270156512829024059" at="62,66,69,7">
         <var name="nextCell" id="6270156512829024061" />
       </scope>
-      <scope id="6270156512830838289" at="27,0,35,0">
+      <scope id="210559400607005919" at="29,159,37,7">
+        <var name="componentPoint" id="5347446703375192586" />
+        <var name="e" id="210559400607072454" />
+      </scope>
+      <scope id="6270156512830838289" at="29,0,39,0">
         <var name="eventType" id="210559400607068100" />
         <var name="targetComponent" id="210559400607017119" />
         <var name="x" id="210559400607017121" />
         <var name="y" id="210559400607017123" />
       </scope>
-      <scope id="6270156512829024010" at="36,122,65,33">
-        <var name="absoluteX" id="6270156512829024039" />
-        <var name="absoluteY" id="6270156512829024047" />
+      <scope id="6270156512829024010" at="46,122,87,27">
         <var name="cellCandidates" id="6270156512829024027" />
+        <var name="cellComponent" id="6270156512829024124" />
+        <var name="cellComponentPoint" id="5347446703374961032" />
         <var name="e" id="6270156512829024143" />
+        <var name="editorComponent" id="5347446703374993247" />
+        <var name="editorX" id="6270156512829024039" />
+        <var name="editorY" id="6270156512829024047" />
         <var name="eventTargetCell" id="6270156512829024055" />
         <var name="rootCell" id="6270156512829024017" />
-        <var name="targetComponent" id="6270156512829024124" />
+        <var name="targetComponent" id="5347446703374981640" />
+        <var name="targetComponentPoint" id="5347446703374989411" />
       </scope>
-      <scope id="6270156512829024002" at="36,0,67,0">
+      <scope id="6270156512829024002" at="46,0,89,0">
         <var name="eventType" id="6270156512829024008" />
         <var name="x" id="6270156512829024004" />
         <var name="y" id="6270156512829024006" />
       </scope>
-      <unit id="6270156512830803105" at="29,45,33,5" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher$1" />
-      <unit id="6270156512830861794" at="60,45,64,5" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher$2" />
-      <unit id="6270156512828582018" at="16,0,69,0" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" />
+      <unit id="6270156512830803105" at="33,45,37,5" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher$1" />
+      <unit id="5347446703375064491" at="48,37,52,5" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher$2" />
+      <unit id="6270156512830861794" at="82,45,86,5" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher$3" />
+      <unit id="6270156512828582018" at="18,0,91,0" name="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/6270156512828616345">

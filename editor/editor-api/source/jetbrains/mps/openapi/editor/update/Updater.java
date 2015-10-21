@@ -16,6 +16,10 @@
 package jetbrains.mps.openapi.editor.update;
 
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Collection;
 
 /**
  * User: shatalin
@@ -82,4 +86,32 @@ public interface Updater {
    */
   @Nullable
   String[] getInitialEditorHints();
+
+  /**
+   * Use this method to add explicit set of editor hints for particular node.
+   * These hints will be counted when updater finds the most specific editor for the node
+   *
+   * @param nodeReference reference of the node
+   * @param hints explicit hints to add
+   */
+  void addExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
+
+  /**
+   * Use this method to remove previously added hints for particular node
+   *
+   * @param nodeReference reference of the node
+   * @param hints explicit hints to remove
+   */
+  void removeExplicitEditorHintsForNode(SNodeReference nodeReference, String... hints);
+
+  /**
+   * @param nodeReference reference of the node
+   * @return explicit editor hints for given node
+   */
+  String[] getExplicitEditorHintsForNode(SNodeReference nodeReference);
+
+  /**
+   * Remove all explicit editor hints
+   */
+  void clearExplicitHints();
 }

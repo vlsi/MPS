@@ -430,9 +430,13 @@
       <property role="TrG5h" value="comment" />
       <property role="2BUmq6" value="comment" />
     </node>
+    <node concept="2BsEeg" id="3YRgRgnTV5p" role="2ABdcP">
+      <property role="2BUmq6" value="reflectiveEditor" />
+      <property role="TrG5h" value="reflectiveEditor" />
+    </node>
   </node>
   <node concept="24kQdi" id="2ETBKOyksop">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing" />
     <ref role="1XX52x" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="3EZMnI" id="43t9AOLcZPi" role="2wV5jI">
       <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Actions" />
@@ -449,7 +453,7 @@
     </node>
   </node>
   <node concept="1h_SRR" id="5FzO4t9jA_b">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing" />
     <property role="TrG5h" value="BaseCommentAttribute_Actions" />
     <ref role="1h_SK9" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="1hA7zw" id="6cD7K5bTsay" role="1h_SK8">

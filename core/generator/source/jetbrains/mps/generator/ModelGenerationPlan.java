@@ -89,6 +89,7 @@ public interface ModelGenerationPlan {
       myMapCfg = tmc.toArray(new TemplateMappingConfiguration[tmc.size()]);
     }
 
+    @NotNull
     public List<TemplateMappingConfiguration> getTransformations() {
       return Arrays.asList(myMapCfg);
     }

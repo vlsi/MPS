@@ -64,16 +64,21 @@ public class Generator extends ReloadableModuleBase {
     mySourceLanguage = sourceLanguage;
     initGeneratorDescriptor(generatorDescriptor);
   }
-  
-  @Override
+
   //models will be named like xxx.modelName, where xxx is a part of newName before sharp symbol
+  @Override
   public void rename(String newName) {
-    int sharp = newName.indexOf("#");
+      int sharp = newName.indexOf("#");
     newName = sharp < 0 ? newName : newName.substring(sharp);
     renameModels(getSourceLanguage().getModuleName(), newName, false);
 
     //see MPS-18743, need to save before setting descriptor
     getRepository().saveAll();
+
+    // MPS-22787 - update generator id
+    String uid = myGeneratorDescriptor.getGeneratorUID();
+    int sharpIndex = uid.indexOf('#');
+    myGeneratorDescriptor.setGeneratorUID(newName + "#" + uid.substring(sharpIndex + 1));
   }
 
   @Override

@@ -46,6 +46,11 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings);
 
+  /**
+   * Returns whether the cell is at least partially inside the clip region of a {@link Graphics} object.
+   */
+  boolean isInClipRegion(Graphics g);
+
   boolean validate(boolean strict, boolean canActivatePopup);
 
   TextBuilder renderText();

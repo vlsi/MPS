@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -1770,6 +1770,18 @@
     </node>
     <node concept="lpD6D" id="2axhso1Go$x" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="EditStringProperty" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58RzJo" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="ShowReflectiveEditor" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58RzVy" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0fmZB" resolve="ShowReflectiveEditorAndMove" />
+    </node>
+    <node concept="lpD6D" id="wACy6P0Ptq" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:wACy6P0PjQ" resolve="ShowReflectiveEditorForAttribute" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58R$7H" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0fPO9" resolve="ShowReflectiveThenRegularEditor" />
     </node>
     <node concept="lpD6D" id="2axhso1GoGU" role="lpD6w">
       <ref role="lpD7u" to="ryl9:O7qdvf4DFS" resolve="TypeName" />

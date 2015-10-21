@@ -197,6 +197,8 @@
     <action id="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action" class="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action">
       <keyboard-shortcut first-keystroke="alt shift M" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" class="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action"></action>
+    <action id="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" class="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action"></action>
     <action id="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action" class="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action">
       <keyboard-shortcut first-keystroke="ctrl alt T" keymap="$default" />
     </action>
@@ -214,6 +216,7 @@
     <group id="EditorPopup_ActionGrouprefactoring" />
     <group id="EditorPopup_ActionGroupvcs" />
     <group id="EditorPopup_ActionGrouphints" />
+    <group id="EditorPopup_ActionGroupreflective" />
     <group id="EditorPopup_ActionGroupdiagram" />
     <group id="Folding_ActionGroupexpandToLevel" />
     <group id="Folding_ActionGroupexpandAllToLevel" />
@@ -295,6 +298,7 @@
       <reference ref="EditorPopup_ActionGroupvcs" />
       <separator />
       <reference ref="EditorPopup_ActionGrouphints" />
+      <reference ref="EditorPopup_ActionGroupreflective" />
       <separator />
       <reference ref="EditorPopup_ActionGroupdiagram" />
     </group>
@@ -338,6 +342,11 @@
     <group id="jetbrains.mps.ide.editor.actions.EditorHintsActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
       <add-to-group group-id="EditorPopup_ActionGrouphints" anchor="last" />
+    </group>
+    <group id="jetbrains.mps.ide.editor.actions.ReflectiveEditorGroup_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" />
+      <add-to-group group-id="EditorPopup_ActionGroupreflective" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.editor.actions.RefactoringActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" />
