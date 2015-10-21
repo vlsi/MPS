@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model.scopes;
 
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -24,7 +25,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class GlobalScope extends FindUsagesScope {
   public GlobalScope() {
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-      addModule(module);
+      if (!(module instanceof TransientSModule)) {
+        addModule(module);
+      }
     }
   }
 
