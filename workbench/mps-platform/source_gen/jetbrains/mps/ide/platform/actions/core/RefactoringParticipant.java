@@ -4,16 +4,16 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
 
-  public String getId();
-  public String getDescription();
+  public List<String> getOptions(InitialDataObject initialState, SRepository repository);
 
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, SearchScope searchScope);
+  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope);
 
   public static interface Change<InitialDataObject, FinalDataObject> {
     public SearchResults getSearchResults();
@@ -22,6 +22,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
   }
 
   public static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject> extends RefactoringParticipant<InitialDataObject, FinalDataObject> {
+    public String getId();
     public SNode serializeInitialState(InitialDataObject initialState);
     public InitialDataObject deserializeInitialState(SNode serialized);
     public SNode serializeFinalState(FinalDataObject finalState);

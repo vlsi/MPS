@@ -32,8 +32,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.List;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -162,7 +162,23 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     }
   }
 
-  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, SearchScope searchScope) {
+  public boolean isApplicable(SNodeReference initialState, SRepository repository) {
+    SNode sourceNode = initialState.resolve(repository);
+    final SModule sourceModule = SNodeOperations.getModel(sourceNode).getModule();
+    return sourceModule instanceof Language;
+  }
+  public List<String> getOptions(SNodeReference initialState, SRepository repository) {
+    if (isApplicable(initialState, repository)) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), getDescription());
+    } else {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
+  }
+
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+    if (!(MapSequence.fromMap(options).get(getDescription())) || !(isApplicable(initialState, repository))) {
+      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
+    }
     final SNode sourceNode = initialState.resolve(repository);
     final SModule sourceModule = SNodeOperations.getModel(sourceNode).getModule();
     final List<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>> participantStates = Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>>() {
@@ -174,7 +190,7 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
         return it != null;
       }
     }).toListSequence();
-    if (ListSequence.fromList(participantStates).isEmpty() || !(sourceModule instanceof Language)) {
+    if (ListSequence.fromList(participantStates).isEmpty()) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     }
     final List<SNode> initialStates = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, SNode>() {
@@ -227,9 +243,6 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), change);
   }
 
-  public String getId() {
-    return "moveNode.refactoringLog";
-  }
   public String getDescription() {
     return "Write refactoring log";
   }

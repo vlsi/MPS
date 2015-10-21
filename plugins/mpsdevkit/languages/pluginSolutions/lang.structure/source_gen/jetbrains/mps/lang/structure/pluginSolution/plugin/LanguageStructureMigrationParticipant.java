@@ -31,8 +31,8 @@ import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -118,8 +118,19 @@ public abstract class LanguageStructureMigrationParticipant<I, F> implements Mov
     }
   }
 
-  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, SearchScope searchScope) {
-    if (initialState == null) {
+  public List<String> getOptions(Tuples._2<Language, I> initialState, SRepository repository) {
+    if (initialState != null) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), getDescription());
+    } else {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
+  }
+  public String getDescription() {
+    return "Write migration script";
+  }
+
+  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+    if (!(MapSequence.fromMap(options).get(getDescription())) || initialState == null) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
     final Language sourceModule = initialState._0();

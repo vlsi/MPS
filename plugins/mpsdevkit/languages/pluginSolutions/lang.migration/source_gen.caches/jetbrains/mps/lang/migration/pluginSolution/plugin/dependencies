@@ -194,6 +194,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodesContributor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant" file="MoveNodeRefactoringLogParticipant.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -254,6 +255,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant" file="UpdateReferencesParticipant.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -261,6 +263,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />

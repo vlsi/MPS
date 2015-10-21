@@ -45,13 +45,6 @@ public class MoveConceptMigrationParticipant extends LanguageStructureMigrationP
   public void confirm(Tuples._2<Language, SAbstractConcept> initialState, Tuples._2<Language, SAbstractConcept> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
     migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveConcept_o15gry_c0a0a7());
   }
-
-  public String getId() {
-    return "moveNode.migrationScript.moveConcept";
-  }
-  public String getDescription() {
-    return "Write migration script (move concept)";
-  }
   private static SNode createMoveConcept_o15gry_c0a0a7() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.util.structure.MoveConcept"), null, null, false);

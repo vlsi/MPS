@@ -68,6 +68,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" file="LanguageStructureMigrationParticipant.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -155,7 +156,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.RecursiveParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptMigrationParticipant" file="MoveConceptMigrationParticipant.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
@@ -440,7 +440,6 @@
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalConceptInstancesParticipant" file="UpdateLocalConceptInstancesParticipant.java">
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
@@ -463,10 +462,13 @@
     <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant" file="UpdateLocalInstancesParticipant.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />

@@ -31,12 +31,6 @@ public class UpdateLocalConceptInstancesParticipant extends UpdateLocalInstances
       return new UpdateLocalConceptInstancesParticipant();
     }
   }
-  public String getId() {
-    return "moveNode.updateConceptInstances";
-  }
-  public String getDescription() {
-    return "Update concept instances in current project";
-  }
   public Tuples._2<Language, SAbstractConcept> beforeMove(SNode nodeToMove) {
     if (SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && SNodeOperations.getModel(nodeToMove).getModule() instanceof Language) {
       return MultiTuple.<Language,SAbstractConcept>from((Language) SNodeOperations.getModel(nodeToMove).getModule(), MetaAdapterByDeclaration.getConcept(nodeToMove));

@@ -7,20 +7,20 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.platform.actions.core.RecursiveParticipant;
 import jetbrains.mps.smodel.structure.Extension;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.List;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import java.util.Map;
-import jetbrains.mps.smodel.LanguageAspect;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -62,13 +62,25 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
     return myDataCollector;
   }
 
-  @Override
-  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final SearchScope searchScope) {
-    return getChanges(initialState, repository, searchScope, Sequence.fromIterable(Collections.<RefactoringParticipant.ParticipantState>emptyList()));
+  public boolean isApplicable(SNodeReference initialState, SRepository repository) {
+    return (SNodeOperations.as(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) != null) && SNodeOperations.getModel(SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).getModule() instanceof Language;
+  }
+  public List<String> getOptions(SNodeReference initialState, SRepository repository) {
+    if (isApplicable(initialState, repository)) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), getDescription());
+    } else {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
   }
 
-  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final SearchScope searchScope, final Iterable<RefactoringParticipant.ParticipantState> parents) {
-    if (!(((SNodeOperations.as(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) != null) && SNodeOperations.getModel(SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).getModule() instanceof Language))) {
+  @Override
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, Map<String, Boolean> options, final SearchScope searchScope) {
+    return getChanges(initialState, repository, options, searchScope, Sequence.fromIterable(Collections.<RefactoringParticipant.ParticipantState>emptyList()));
+  }
+
+  @Override
+  public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final Map<String, Boolean> options, final SearchScope searchScope, final Iterable<RefactoringParticipant.ParticipantState> parents) {
+    if (!(MapSequence.fromMap(options).get(getDescription())) || !((isApplicable(initialState, repository)))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     } else {
       final SNode sourceConcept = SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
@@ -87,7 +99,9 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
                 public Iterable<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>> translate(final SNode node) {
                   return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).select(new ISelector<MoveNodeRefactoringParticipant<?, ?>, Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>>>() {
                     public Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?>> select(MoveNodeRefactoringParticipant<?, ?> participant) {
-                      return MultiTuple.<SNode,RecursiveParticipant.RecursiveParticipantState<?, ?>>from(node, RecursiveParticipant.RecursiveParticipantState.create(participant, node, repository, searchScope, parents));
+                      RecursiveParticipant.RecursiveParticipantState<?, ?> participantState = RecursiveParticipant.RecursiveParticipantState.create(participant, node, parents);
+                      participantState.findChanges(repository, options, searchScope);
+                      return MultiTuple.<SNode,RecursiveParticipant.RecursiveParticipantState<?, ?>>from(node, participantState);
                     }
                   });
                 }
@@ -148,9 +162,6 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
         }
       }).toListSequence();
     }
-  }
-  public String getId() {
-    return "moveNode.moveConceptAspects";
   }
   public String getDescription() {
     return "Move concept aspects";

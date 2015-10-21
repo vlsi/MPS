@@ -9,10 +9,12 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
-import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -20,7 +22,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public abstract class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>>, MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> {
 
@@ -31,8 +32,19 @@ public abstract class UpdateLocalInstancesParticipant<I, F> implements MoveNodeR
 
   public abstract Collection<SNode> findInstances(I concept, SearchScope searchScope);
 
-  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(Tuples._2<Language, I> initialState, SRepository repository, SearchScope searchScope) {
-    if (initialState == null) {
+  public List<String> getOptions(Tuples._2<Language, I> initialState, SRepository repository) {
+    if (initialState != null) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), getDescription());
+    } else {
+      return ListSequence.fromList(new ArrayList<String>());
+    }
+  }
+  public String getDescription() {
+    return "Update instances in current project";
+  }
+
+  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(Tuples._2<Language, I> initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+    if (!(MapSequence.fromMap(options).get(getDescription())) || initialState == null) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
     Collection<SNode> instances = findInstances(initialState._1(), searchScope);

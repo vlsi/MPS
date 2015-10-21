@@ -12,7 +12,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.query.CommandUtil;
 import jetbrains.mps.smodel.query.QueryExecutionContext;
 import java.util.Collection;
@@ -26,12 +30,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -85,7 +86,15 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> getDataCollector() {
     return myDataCollector;
   }
-  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, SearchScope searchScope) {
+
+  public List<String> getOptions(NamedNodeReference initialState, SRepository repository) {
+    return ListSequence.fromListAndArray(new ArrayList<String>(), getDescription());
+  }
+
+  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+    if (!(MapSequence.fromMap(options).get(getDescription()))) {
+      return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>());
+    }
     {
       final SearchScope scope = CommandUtil.createScope(searchScope);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -100,7 +109,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
       } else {
         usages = Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return eq_k8iioh_a0a0a0a0a0a0a0a4a0a9(it.getTargetNodeReference(), initialState.reference());
+            return eq_k8iioh_a0a0a0a0a0a0a0a4a1a21(it.getTargetNodeReference(), initialState.reference());
           }
         }).toListSequence();
       }
@@ -150,7 +159,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public NamedNodeReference deserializeFinalState(SNode serialized) {
     return new NamedNodeReference(AbstractNodeReference_BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
   }
-  private static boolean eq_k8iioh_a0a0a0a0a0a0a0a4a0a9(Object a, Object b) {
+  private static boolean eq_k8iioh_a0a0a0a0a0a0a0a4a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

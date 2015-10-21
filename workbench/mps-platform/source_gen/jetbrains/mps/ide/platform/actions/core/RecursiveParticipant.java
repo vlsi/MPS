@@ -4,6 +4,7 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -11,20 +12,20 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public interface RecursiveParticipant<InitialDataObject, FinalDataObject> extends RefactoringParticipant<InitialDataObject, FinalDataObject> {
 
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, SearchScope searchScope, Iterable<RefactoringParticipant.ParticipantState> parents);
+  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope, Iterable<RefactoringParticipant.ParticipantState> parents);
 
   public static class RecursiveParticipantState<I, F> extends MoveNodeRefactoringParticipant.MoveNodeParticipantState<I, F> {
     private Iterable<RefactoringParticipant.ParticipantState> myParents;
-    public static <I, F> RecursiveParticipant.RecursiveParticipantState<I, F> create(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode, SRepository repository, SearchScope searchScope, Iterable<RefactoringParticipant.ParticipantState> parents) {
-      return new RecursiveParticipant.RecursiveParticipantState<I, F>(participant, oldNode, repository, searchScope, parents);
+    public static <I, F> RecursiveParticipant.RecursiveParticipantState<I, F> create(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode, Iterable<RefactoringParticipant.ParticipantState> parents) {
+      return new RecursiveParticipant.RecursiveParticipantState<I, F>(participant, oldNode, parents);
     }
-    private RecursiveParticipantState(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode, SRepository repository, SearchScope searchScope, Iterable<RefactoringParticipant.ParticipantState> parents) {
-      super(participant, oldNode, repository, searchScope);
+    private RecursiveParticipantState(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode, Iterable<RefactoringParticipant.ParticipantState> parents) {
+      super(participant, oldNode);
       myParents = parents;
     }
     @Override
-    protected List<RefactoringParticipant.Change<I, F>> initChanges(MoveNodeRefactoringParticipant<I, F> participant, SRepository repository, SearchScope searchScope) {
-      if (participant instanceof RecursiveParticipant) {
+    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+      if (getParticipant() instanceof RecursiveParticipant) {
         if (Sequence.fromIterable(myParents).any(new IWhereFilter<RefactoringParticipant.ParticipantState>() {
           public boolean accept(RefactoringParticipant.ParticipantState parent) {
             return eq_7nv468_a0a0a0a0a0a0a0a3d_0(parent.getParticipant(), RecursiveParticipantState.this.getParticipant()) && eq_7nv468_a0a0a0a0a0a0a0a3d(parent.getInitialState(), RecursiveParticipantState.this.getInitialState());
@@ -33,10 +34,10 @@ public interface RecursiveParticipant<InitialDataObject, FinalDataObject> extend
           // todo: checked exception 
           throw new IllegalStateException("infinite recursion detected");
         } else {
-          return ((RecursiveParticipant<I, F>) participant).getChanges(getInitialState(), repository, searchScope, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(this))));
+          return ((RecursiveParticipant<I, F>) getParticipant()).getChanges(getInitialState(), repository, options, searchScope, Sequence.fromIterable(myParents).concat(Sequence.fromIterable(Sequence.<RefactoringParticipant.ParticipantState>singleton(this))));
         }
       } else {
-        return super.initChanges(participant, repository, searchScope);
+        return super.initChanges(repository, options, searchScope);
       }
     }
     private static boolean eq_7nv468_a0a0a0a0a0a0a0a3d(Object a, Object b) {

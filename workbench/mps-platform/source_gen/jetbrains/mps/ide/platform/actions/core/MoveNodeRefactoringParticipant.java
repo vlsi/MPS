@@ -5,6 +5,7 @@ package jetbrains.mps.ide.platform.actions.core;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -31,16 +32,21 @@ public interface MoveNodeRefactoringParticipant<InitialDataObject, FinalDataObje
     public I getInitialState() {
       return myInitialState;
     }
-    public static <I, F> MoveNodeRefactoringParticipant.MoveNodeParticipantState<I, F> create(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode, SRepository repository, SearchScope searchScope) {
-      return new MoveNodeRefactoringParticipant.MoveNodeParticipantState<I, F>(participant, oldNode, repository, searchScope);
+    public static <I, F> MoveNodeRefactoringParticipant.MoveNodeParticipantState<I, F> create(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode) {
+      return new MoveNodeRefactoringParticipant.MoveNodeParticipantState<I, F>(participant, oldNode);
     }
-    public MoveNodeParticipantState(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode, SRepository repository, SearchScope searchScope) {
+    public MoveNodeParticipantState(MoveNodeRefactoringParticipant<I, F> participant, SNode oldNode) {
       this.myParticipant = participant;
       myInitialState = this.myParticipant.getDataCollector().beforeMove(oldNode);
-      this.changes = initChanges(participant, repository, searchScope);
     }
-    protected List<RefactoringParticipant.Change<I, F>> initChanges(MoveNodeRefactoringParticipant<I, F> participant, SRepository repository, SearchScope searchScope) {
-      return participant.getChanges(myInitialState, repository, searchScope);
+    public List<String> getOptions(SRepository repository) {
+      return myParticipant.getOptions(myInitialState, repository);
+    }
+    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+      return changes = initChanges(repository, options, searchScope);
+    }
+    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+      return myParticipant.getChanges(myInitialState, repository, options, searchScope);
     }
     public void confirm(SNode newNode, final SRepository repository, final RefactoringSession session) {
       final F finalState = this.myParticipant.getDataCollector().afterMove(newNode);
