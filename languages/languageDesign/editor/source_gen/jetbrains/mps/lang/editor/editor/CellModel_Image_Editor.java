@@ -198,7 +198,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static JComponent _QueryFunction_JComponent_yczb8_a1b1d0(final SNode node, final EditorContext editorContext) {
-    return new SelectImageFileButton(node);
+    return new SelectImageFileButton(node, editorContext);
   }
   private EditorCell createCollection_yczb8_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
