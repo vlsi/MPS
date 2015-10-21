@@ -17,8 +17,8 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -61,6 +61,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -85,6 +86,9 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -824,6 +828,30 @@
     <ref role="13h7C2" to="bj1v:3E8vDQwGYyk" resolve="EmitInstruction" />
     <node concept="13hLZK" id="7jE3VEJNI2v" role="13h7CW">
       <node concept="3clFbS" id="7jE3VEJNI2w" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3tEjlbSMTnC">
+    <property role="3GE5qa" value="Analyzer" />
+    <ref role="13h7C2" to="bj1v:3tEjlbSL27S" resolve="AnalyzerConstructorParameterReference" />
+    <node concept="13hLZK" id="3tEjlbSMTnD" role="13h7CW">
+      <node concept="3clFbS" id="3tEjlbSMTnE" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3tEjlbSMTpp" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="lvalue" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:1653mnvAgpj" resolve="lvalue" />
+      <node concept="3Tm1VV" id="3tEjlbSMTpq" role="1B3o_S" />
+      <node concept="3clFbS" id="3tEjlbSMTpv" role="3clF47">
+        <node concept="3clFbF" id="3tEjlbSMTrs" role="3cqZAp">
+          <node concept="3clFbT" id="3tEjlbSMTrr" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="3tEjlbSMTpw" role="3clF45" />
     </node>
   </node>
 </model>

@@ -35,6 +35,7 @@
         <property id="1071599776563" name="role" index="20kJfa" />
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
+        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -92,6 +93,12 @@
       <property role="20kJfa" value="instruction" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="5JpT3MjX6ua" resolve="Instruction" />
+    </node>
+    <node concept="1TJgyj" id="3tEjlbSKIc3" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="constructorParameters" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="3tEjlbSL22K" resolve="AnalyzerConstructorParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="5JpT3MjX6ua">
@@ -376,6 +383,12 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="3tEjlbSOgR6" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameters" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
     <node concept="1TJgyj" id="5hLfAui9Cn" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="analyzer" />
@@ -476,6 +489,25 @@
     </node>
     <node concept="PrWs8" id="3QJUKqj7A6_" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3tEjlbSL22K">
+    <property role="1pbfSe" value="808349186" />
+    <property role="3GE5qa" value="Analyzer" />
+    <property role="TrG5h" value="AnalyzerConstructorParameter" />
+    <ref role="1TJDcQ" to="tpee:4k3qd$cSlJ3" resolve="BaseVariableDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="3tEjlbSL27S">
+    <property role="1pbfSe" value="808349514" />
+    <property role="3GE5qa" value="Analyzer" />
+    <property role="TrG5h" value="AnalyzerConstructorParameterReference" />
+    <ref role="1TJDcQ" to="tpee:4Lb$w0Yiqs4" resolve="BaseVariableReference" />
+    <node concept="1TJgyj" id="3tEjlbSL27T" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="declaration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3tEjlbSL22K" resolve="AnalyzerConstructorParameter" />
+      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" />
     </node>
   </node>
 </model>
