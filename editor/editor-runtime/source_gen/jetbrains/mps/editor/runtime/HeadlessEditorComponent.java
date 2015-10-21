@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class HeadlessEditorComponent extends EditorComponent {
   public HeadlessEditorComponent(SNode node, SRepository repository) {
-    super(repository);
+    super(repository, false, false, false);
     setNoVirtualFile(true);
     editNode(node);
   }

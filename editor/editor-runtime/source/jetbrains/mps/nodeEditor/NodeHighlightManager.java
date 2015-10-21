@@ -237,7 +237,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
       }
     }
     myMessages.remove(m);
-    myEditor.getMessagesGutter().remove(m);
+    if (myEditor.hasUI()) {
+      myEditor.getMessagesGutter().remove(m);
+    }
 
     myMessagesToNodes.clearFirst(m);
     return true;
@@ -253,7 +255,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
       addMessage(message);
       invalidateMessagesCaches();
     }
-    if (message.showInGutter()) {
+    if (message.showInGutter() && myEditor.hasUI()) {
       myEditor.getMessagesGutter().add(message);
     }
   }
@@ -317,8 +319,10 @@ public class NodeHighlightManager implements EditorMessageOwner {
           return;
         }
         refreshMessagesCache();
-        refreshLeftHighlighterMessages();
-        myEditor.getExternalComponent().repaint();
+        if (myEditor.hasUI()) {
+          refreshLeftHighlighterMessages();
+          myEditor.repaintExternalComponent();
+        }
       }
     });
   }

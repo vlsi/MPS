@@ -2924,9 +2924,18 @@
       <node concept="3Tm1VV" id="2qx2hw9gxhJ" role="1B3o_S" />
       <node concept="3clFbS" id="2qx2hw9gxhK" role="3clF47">
         <node concept="XkiVB" id="2qx2hw9gz2u" role="3cqZAp">
-          <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="EditorComponent" />
+          <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean,boolean)" resolve="EditorComponent" />
           <node concept="37vLTw" id="2qx2hw9gzFV" role="37wK5m">
             <ref role="3cqZAo" node="HonEu9vgRQ" resolve="repository" />
+          </node>
+          <node concept="3clFbT" id="73THaLqa8_U" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+          <node concept="3clFbT" id="73THaLqa913" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+          <node concept="3clFbT" id="73THaLqa9rb" role="37wK5m">
+            <property role="3clFbU" value="false" />
           </node>
         </node>
         <node concept="3clFbF" id="4AUcghxsOv6" role="3cqZAp">
@@ -2947,7 +2956,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="2qx2hw9g_n5" role="jymVt" />
+    <node concept="2tJIrI" id="73THaLq9wWh" role="jymVt" />
     <node concept="3clFb_" id="2qx2hw9gBmI" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="attachListeners" />
