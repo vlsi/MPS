@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,12 @@ package org.jetbrains.mps.openapi.ui.persistence;
 
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
+/**
+ * Construct UI tabs for a given module facet.
+ *
+ * Implementation note: there's no guarantee same instance of the factory would be
+ * used for tabs of the same module facet or throughout of project/application lifetime.
+ */
 public interface TabFactory<T extends SModuleFacet> {
   FacetTab getTab(T moduleFacet);
 }

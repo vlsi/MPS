@@ -1,7 +1,10 @@
 <components>
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.facetTabFactory" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP"/>
+    <extensionPoint
+            qualifiedName="com.intellij.mps.facetTabFactory"
+            area="IDEA_PROJECT"
+            beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

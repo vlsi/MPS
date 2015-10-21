@@ -76,7 +76,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
-import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.LanguageModelImportFinder;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
@@ -84,6 +83,7 @@ import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -183,11 +183,20 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   });
   private final FacetTabsPersistence myFacetTabsPersistence;
 
+  /**
+   * @deprecated use {@link #ModulePropertiesConfigurable(SModule, MPSProject)} instead.
+   *             We are tightly coupled with IDEA IDE here, no reason to be shy about project kind.
+   */
+  @Deprecated
   public ModulePropertiesConfigurable(SModule module, Project project) {
+    this(module, (MPSProject) project);
+  }
+
+  public ModulePropertiesConfigurable(SModule module, MPSProject project) {
     super(project);
     myModule = (AbstractModule) module;
     myModuleDescriptor = myModule.getModuleDescriptor();
-    myFacetTabsPersistence = new FacetTabsPersistence().initFromEP();
+    myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
 
     addTab(new ModuleCommonTab());
     if (!(myModule instanceof DevKit)) {
