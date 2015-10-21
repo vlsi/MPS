@@ -1287,12 +1287,22 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
 
       for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
-        final SModuleFacet sModuleFacet = facetsTypes.keySet().contains(facet)
-            ? facetsTypes.get(facet) : FacetsFacade.getInstance().getFacetFactory(facet).create();
-        if (!(sModuleFacet instanceof ModuleFacetBase)) continue;
+        ModuleFacetBase sModuleFacet = facetsTypes.get(facet);
+        if (sModuleFacet == null) {
+          // i.e. !facetsTypes.contains(facet)
+          SModuleFacet newInstance = FacetsFacade.getInstance().getFacetFactory(facet).create();
+          if (newInstance instanceof ModuleFacetBase) {
+            sModuleFacet = (ModuleFacetBase) newInstance;
+            // FIXME It's not smart to establish one-way association (facet->module)
+            // as facet may get confused (i.e. getModule().getFacets().contains(this) == false)
+            // but this is the easiest way to comply with @NotNull Facet.getModule().
+            // The right way, though bit longer, is not to instantiate facet unless truly created
+            sModuleFacet.setModule(myModule);
+          }
+        }
         final String facetPresentation = applicableFacetTypes.contains(facet)
-            ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() + " (recommended)"
-            : ((ModuleFacetBase) sModuleFacet).getFacetPresentation();
+            ? sModuleFacet.getFacetPresentation() + " (recommended)"
+            : sModuleFacet.getFacetPresentation();
         final JBCheckBox checkBox = new JBCheckBox(facetPresentation, facetsTypes.keySet().contains(facet));
         checkBox.putClientProperty(CHECKBOX_PROPERTY_KEY, sModuleFacet);
         myCheckBoxes.add(checkBox);
@@ -1344,7 +1354,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         ModuleFacetBase facet = (ModuleFacetBase) checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
 
         if (checkBox.isSelected() && !moduleFacets.keySet().contains(facet.getFacetType())) {
-          facet.setModule(myModule);
           Memento memento = new MementoImpl();
           facet.save(memento);
           myModuleDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facet.getFacetType(), memento));

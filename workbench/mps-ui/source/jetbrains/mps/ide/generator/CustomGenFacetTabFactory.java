@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.generator.CustomGenerationModuleFacet;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.TabFactory;
 
@@ -24,9 +25,15 @@ import org.jetbrains.mps.openapi.ui.persistence.TabFactory;
  * @since 3.3
  */
 public class CustomGenFacetTabFactory implements TabFactory<CustomGenerationModuleFacet> {
+  private final MPSProject myProject;
+
+  public CustomGenFacetTabFactory(MPSProject mpsProject) {
+    myProject = mpsProject;
+  }
+
   @Override
   public FacetTab getTab(CustomGenerationModuleFacet moduleFacet) {
-    return new CustomGenerationTab(moduleFacet);
+    return new CustomGenerationTab(myProject, moduleFacet);
   }
 
 }

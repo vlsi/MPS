@@ -19,6 +19,9 @@ import jetbrains.mps.extapi.module.ModuleFacetBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * @author Artem Tikhomirov
@@ -26,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModel;
  */
 public class CustomGenerationModuleFacet extends ModuleFacetBase {
   public static final String FACET_TYPE = "generator";
+  private SModelReference myPlanModel;
 
   @Override
   public String getFacetType() {
@@ -39,6 +43,34 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase {
 
   @Nullable
   public ModelGenerationPlan getPlan(@NotNull SModel model) {
+    if (myPlanModel == null) {
+      return null;
+    }
+    SModel planModel = myPlanModel.resolve(model.getRepository());
     return null;
+//    return new ModelGenerationPlan(planModel) {
+//    };
+  }
+
+  // despite public, these methods are not part of the contract.
+  // it's facet's implementation details
+
+  @Nullable
+  public SModelReference getPlanModelReference() {
+    return myPlanModel;
+  }
+
+  public void setPlanModelReference(@Nullable SModelReference modelRef) {
+    myPlanModel = modelRef;
+  }
+
+  @Override
+  public void load(Memento memento) {
+    myPlanModel = PersistenceFacade.getInstance().createModelReference(memento.get("planModel"));
+  }
+
+  @Override
+  public void save(Memento memento) {
+    memento.put("planModel", myPlanModel == null ? null : PersistenceFacade.getInstance().asString(myPlanModel));
   }
 }
