@@ -329,6 +329,33 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest" file="StructuredChangesCalculationTest.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.StructChangeSet" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.StructChangeSetBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.NodeGroupStructChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyStructChange" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceStructChange" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.ide.vcs.test.merge.ChangesTestBase" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.vcs.test.merge._Adapters" file="_Adapters.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />

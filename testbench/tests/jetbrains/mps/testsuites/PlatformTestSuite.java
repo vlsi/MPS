@@ -30,6 +30,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
     jetbrains.mps.ide.vcs.test.merge.ChangesCalculationTest.class,
+    jetbrains.mps.ide.vcs.test.merge.StructuredChangesCalculationTest.class,
     jetbrains.mps.ide.vcs.test.merge.RootStatusTest.class,
     jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Nodes.class,
     //temporary disabled as after last enabling it is hanging builds, need more accurate waits
