@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
+import jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -26,28 +27,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class ModelRootEntryPersistence {
-  private static ModelRootEntryPersistence ourPersistence;
+/**
+ * Registry with UI components ({@link org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor editors})
+ * for {@link ModelRootEntry}.
+ * To populate from extension point, instantiate and invoke {@link #initFromEP()}.
+ */
+final class ModelRootEntryPersistence {
+  private final Map<String, ModelRootEntryFactory> myModelRootEntries = new HashMap<String, ModelRootEntryFactory>();
 
-  public static ModelRootEntryPersistence getInstance() {
-    if (ourPersistence == null)
-      ourPersistence = new ModelRootEntryPersistence();
-
-    return ourPersistence;
+  public ModelRootEntryPersistence() {
   }
 
-  private Map<String, ModelRootEntryFactory> myModelRootEntries = new HashMap<String, ModelRootEntryFactory>();
-
-  private ModelRootEntryPersistence() {
-    init();
-  }
-
-  private void init() {
-
+  public ModelRootEntryPersistence initFromEP() {
+    ModelRootEntryEP[] extensions = ModelRootEntryEP.EP_NAME.getExtensions();
+    for (ModelRootEntryEP extension : extensions) {
+      addModelRootEntry(extension.rootType, extension.getModelRootEntryFactory());
+    }
+    // XXX why not through ExtPoint?
     addModelRootEntry(PersistenceRegistry.DEFAULT_MODEL_ROOT, new FileBasedModelRootEntryFactory());
+    return this;
   }
 
-  public void addModelRootEntry(String type, @NotNull ModelRootEntryFactory factory) {
+  // may become public, if there's scenario to populate the registry not from EP
+  private void addModelRootEntry(String type, @NotNull ModelRootEntryFactory factory) {
     myModelRootEntries.put(type, factory);
   }
 

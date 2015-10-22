@@ -89,7 +89,7 @@ class Memento {
       collectErrors(nodeEditor);
     }
 
-    myViewPosition = nodeEditor.getViewport().getViewPosition();
+    myViewPosition = nodeEditor.getViewPosition();
     myEnabledHints = nodeEditor.getUpdater().getInitialEditorHints();
   }
 
@@ -141,7 +141,7 @@ class Memento {
       editor.relayout();
     }
     if (myViewPosition != null) {
-      editor.getViewport().setViewPosition(myViewPosition);
+      editor.setViewPosition(myViewPosition);
     }
   }
 

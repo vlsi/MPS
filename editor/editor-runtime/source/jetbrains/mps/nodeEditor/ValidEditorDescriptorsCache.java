@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
@@ -30,12 +27,68 @@ import java.util.Set;
 /**
  * @author simon
  */
-public class ValidEditorDescriptorsCache implements ApplicationComponent {
+public class ValidEditorDescriptorsCache {
+  private static ValidEditorDescriptorsCache ourInstance;
 
   private Set<EditorAspectDescriptor> myCachedEditorDescriptors = new HashSet<EditorAspectDescriptor>();
 
 
-  private LanguageRegistryListener myListener = new LanguageRegistryListener() {
+  private LanguageRegistryListener myListener;
+
+  public static ValidEditorDescriptorsCache getInstance() {
+    if (ourInstance == null) {
+      ourInstance = new ValidEditorDescriptorsCache();
+    }
+    return ourInstance;
+  }
+
+  public synchronized boolean isDescriptorValid(EditorAspectDescriptor descriptor) {
+    return myCachedEditorDescriptors.contains(descriptor);
+  }
+
+  public synchronized void cacheDescriptor(@NotNull EditorAspectDescriptor descriptor) {
+    myCachedEditorDescriptors.add(descriptor);
+    attachLanguageRegistryListener();
+  }
+
+  private void cleanCaches(Iterable<LanguageRuntime> languages) {
+    Set<EditorAspectDescriptor> descriptorsToRemove = new HashSet<EditorAspectDescriptor>();
+    for (LanguageRuntime language : languages) {
+      loadEditorDescriptor(language, descriptorsToRemove);
+      for (LanguageRuntime extendedLanguage : language.getExtendedLanguages()) {
+        loadEditorDescriptor(extendedLanguage, descriptorsToRemove);
+      }
+    }
+
+    synchronized (this) {
+      myCachedEditorDescriptors.removeAll(descriptorsToRemove);
+      if (myCachedEditorDescriptors.isEmpty()) {
+        detachLanguageRegistryListener();
+      }
+    }
+  }
+
+  private void loadEditorDescriptor(LanguageRuntime language, Set<EditorAspectDescriptor> editorDescriptors) {
+    EditorAspectDescriptor descriptor = language.getAspect(EditorAspectDescriptor.class);
+    if (descriptor != null) {
+      editorDescriptors.add(descriptor);
+    }
+  }
+
+  private void attachLanguageRegistryListener() {
+    if (myListener == null) {
+      LanguageRegistry.getInstance().addRegistryListener(myListener = new InvalidateCacheListener());
+    }
+  }
+
+  private void detachLanguageRegistryListener() {
+    if (myListener != null) {
+      LanguageRegistry.getInstance().removeRegistryListener(myListener);
+      myListener = null;
+    }
+  }
+
+  private class InvalidateCacheListener implements LanguageRegistryListener {
     @Override
     public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
       cleanCaches(languages);
@@ -45,50 +98,5 @@ public class ValidEditorDescriptorsCache implements ApplicationComponent {
     public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
       cleanCaches(languages);
     }
-  };
-
-  public static ValidEditorDescriptorsCache getInstance() {
-    return ApplicationManager.getApplication().getComponent(ValidEditorDescriptorsCache.class);
-  }
-
-  private synchronized void cleanCaches(Iterable<LanguageRuntime> languages) {
-    for (LanguageRuntime language : languages) {
-      removeDescriptor(language);
-      for (LanguageRuntime extendedLanguage : language.getExtendedLanguages()) {
-        removeDescriptor(extendedLanguage);
-      }
-    }
-  }
-
-  private void removeDescriptor(LanguageRuntime language) {
-    EditorAspectDescriptor descriptor = language.getAspect(EditorAspectDescriptor.class);
-    if (descriptor != null) {
-      myCachedEditorDescriptors.remove(descriptor);
-    }
-  }
-
-
-  public synchronized boolean isDescriptorValid(EditorAspectDescriptor descriptor) {
-    return myCachedEditorDescriptors.contains(descriptor);
-  }
-
-  public synchronized void cacheDescriptor(@NotNull EditorAspectDescriptor descriptor) {
-    myCachedEditorDescriptors.add(descriptor);
-  }
-
-  @Override
-  public void initComponent() {
-    LanguageRegistry.getInstance().addRegistryListener(myListener);
-  }
-
-  @Override
-  public void disposeComponent() {
-    LanguageRegistry.getInstance().removeRegistryListener(myListener);
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Valid Editor Descriptor Cache";
   }
 }

@@ -27,6 +27,8 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public class EditorSettingsConfigurable implements SearchableConfigurable {
+  private EditorSettingsPreferencesPage mySettingsPreferencesPage;
+
   @NotNull
   @Override
   public String getId() {
@@ -53,27 +55,29 @@ public class EditorSettingsConfigurable implements SearchableConfigurable {
 
   @Override
   public JComponent createComponent() {
-    return EditorSettings.getInstance().getPreferencesPage().getComponent();
+    mySettingsPreferencesPage = new EditorSettingsPreferencesPage(EditorSettings.getInstance());
+    return mySettingsPreferencesPage.getComponent();
   }
 
   @Override
   public boolean isModified() {
-    return EditorSettings.getInstance().getPreferencesPage().isModified();
+    return mySettingsPreferencesPage.isModified();
   }
 
   @Override
   public void apply() throws ConfigurationException {
-    EditorSettings.getInstance().getPreferencesPage().commit();
+    mySettingsPreferencesPage.commit();
   }
 
   @Override
   public void reset() {
-    EditorSettings.getInstance().getPreferencesPage().reset();
+    mySettingsPreferencesPage.reset();
   }
 
   @Override
   public void disposeUIResources() {
-    EditorSettings.getInstance().disposeUi();
+    mySettingsPreferencesPage.dispose();
+    mySettingsPreferencesPage = null;
   }
 
   /**

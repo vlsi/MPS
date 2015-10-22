@@ -3747,5 +3747,142 @@
       </node>
     </node>
   </node>
+  <node concept="1l3spW" id="3m6iW5ABSUY">
+    <property role="2DA0ip" value="../../../../" />
+    <property role="TrG5h" value="mpsEditorImageGen" />
+    <property role="turDy" value="mpsEditorImageGen.xml" />
+    <node concept="2sgV4H" id="3m6iW5ABSVC" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
+      <node concept="398BVA" id="3m6iW5ABSVD" role="2JcizS">
+        <ref role="398BVh" node="3m6iW5ABSVa" resolve="mps_home" />
+      </node>
+    </node>
+    <node concept="398rNT" id="3m6iW5ABSVa" role="1l3spd">
+      <property role="TrG5h" value="mps_home" />
+      <node concept="55IIr" id="3m6iW5ACi9w" role="398pKh">
+        <node concept="2Ry0Ak" id="3m6iW5ACiat" role="iGT6I">
+          <property role="2Ry0Am" value="build" />
+          <node concept="2Ry0Ak" id="3m6iW5ACia$" role="2Ry0An">
+            <property role="2Ry0Am" value="artifacts" />
+            <node concept="2Ry0Ak" id="3m6iW5ACiaX" role="2Ry0An">
+              <property role="2Ry0Am" value="mps" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="398rNT" id="3m6iW5ABSVb" role="1l3spd">
+      <property role="TrG5h" value="idea_home" />
+      <node concept="398BVA" id="3m6iW5ABSVc" role="398pKh">
+        <ref role="398BVh" node="3m6iW5ABSVa" resolve="mps_home" />
+      </node>
+    </node>
+    <node concept="10PD9b" id="3m6iW5ABSV1" role="10PD9s" />
+    <node concept="3b7kt6" id="3m6iW5ABSV2" role="10PD9s" />
+    <node concept="1gjT0q" id="3m6iW5ABSV3" role="10PD9s" />
+    <node concept="1l3spV" id="3m6iW5ABSV0" role="1l3spN">
+      <node concept="398223" id="3m6iW5ABT0X" role="39821P">
+        <node concept="L2wRC" id="3m6iW5ABT0Y" role="39821P">
+          <ref role="L2wRA" node="3m6iW5ABSW3" resolve="jetbrains.mps.lang.editor.imageGen.testLanguage" />
+        </node>
+        <node concept="L2wRC" id="3m6iW5ABT0Z" role="39821P">
+          <ref role="L2wRA" node="3m6iW5ABSXQ" resolve="jetbrains.mps.lang.editor.imageGen.tests" />
+        </node>
+        <node concept="3_J27D" id="3m6iW5ABT11" role="Nbhlr">
+          <node concept="3Mxwew" id="3m6iW5ABT12" role="3MwsjC">
+            <property role="3MwjfP" value="tests" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2_Ic$z" id="7d2DnzDyiWl" role="3989C9">
+      <property role="2_Ic$$" value="true" />
+      <property role="2_Ic$B" value="true" />
+      <property role="3fwGa$" value="IntelliJ" />
+      <property role="2_GNG2" value="1024" />
+      <property role="TZNOO" value="1.6" />
+      <node concept="3qWCbU" id="7d2DnzDyiWm" role="2_Ic$A">
+        <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      </node>
+    </node>
+    <node concept="2G$12M" id="3m6iW5ABSW0" role="3989C9">
+      <property role="TrG5h" value="imagegen-editor-tests" />
+      <node concept="1E1JtD" id="3m6iW5ABSW3" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.imageGen.testLanguage" />
+        <property role="3LESm3" value="9bcd3d4b-c789-4f70-85e4-038ea20762b9" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="3m6iW5ABSW4" role="3LF7KH">
+          <node concept="2Ry0Ak" id="3m6iW5ABSWd" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="3m6iW5ABSWk" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="3m6iW5ABSWr" role="2Ry0An">
+                <property role="2Ry0Am" value="testlangs" />
+                <node concept="2Ry0Ak" id="3m6iW5ABSWy" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.imageGen.testLanguage" />
+                  <node concept="2Ry0Ak" id="3m6iW5ABSWD" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.lang.editor.imageGen.testLanguage.mpl" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3m6iW5ABSWG" role="3bR37C">
+          <node concept="3bR9La" id="3m6iW5ABSWH" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1TaHNgiIbIZ" resolve="MPS.Editor" />
+          </node>
+        </node>
+        <node concept="1yeLz9" id="3m6iW5ABSWI" role="1TViLv">
+          <property role="TrG5h" value="jetbrains.mps.lang.editor.imageGen.testLanguage#5244026788026447518" />
+          <property role="3LESm3" value="bb4184f1-9cb1-45cb-911f-bff431b5de5b" />
+          <property role="2GAjPV" value="false" />
+        </node>
+      </node>
+      <node concept="1E1JtA" id="3m6iW5ABSXQ" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.editor.imageGen.tests" />
+        <property role="3LESm3" value="d48febc8-a636-425c-92c3-a2b671b6f363" />
+        <property role="2GAjPV" value="false" />
+        <property role="aoJFB" value="tests" />
+        <node concept="55IIr" id="3m6iW5ABSXT" role="3LF7KH">
+          <node concept="2Ry0Ak" id="3m6iW5ABSZa" role="iGT6I">
+            <property role="2Ry0Am" value="testbench" />
+            <node concept="2Ry0Ak" id="3m6iW5ABSZF" role="2Ry0An">
+              <property role="2Ry0Am" value="testsolutions" />
+              <node concept="2Ry0Ak" id="3m6iW5ABSZM" role="2Ry0An">
+                <property role="2Ry0Am" value="jetbrains.mps.lang.editor.imageGen.tests" />
+                <node concept="2Ry0Ak" id="3m6iW5ABSZT" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.editor.imageGen.tests.msd" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3m6iW5ABSZW" role="3bR37C">
+          <node concept="3bR9La" id="3m6iW5ABSZX" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="22LTRH" id="3m6iW5ABT2Z" role="1hWBAP">
+      <property role="TrG5h" value="imageGenTests" />
+      <node concept="22LTRF" id="3m6iW5ABTpe" role="22LTRK">
+        <ref role="22LTRG" node="3m6iW5ABSW0" resolve="imagegen-editor-tests" />
+      </node>
+    </node>
+    <node concept="55IIr" id="3m6iW5AC5Lh" role="auvoZ">
+      <node concept="2Ry0Ak" id="3m6iW5AC5Li" role="iGT6I">
+        <property role="2Ry0Am" value="build" />
+        <node concept="2Ry0Ak" id="3m6iW5AC5Lj" role="2Ry0An">
+          <property role="2Ry0Am" value="tests" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

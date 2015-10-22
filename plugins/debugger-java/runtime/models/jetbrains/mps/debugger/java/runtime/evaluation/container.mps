@@ -58,10 +58,10 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
+    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="gvpw" ref="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)" implicit="true" />
-    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
-    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1945,8 +1945,40 @@
         <node concept="3cpWs6" id="1tJ4mqhtB83" role="3cqZAp">
           <node concept="2OqwBi" id="2LPTy715w4f" role="3cqZAk">
             <node concept="2OqwBi" id="7_a$FDO1ach" role="2Oq$k0">
-              <node concept="37vLTw" id="7_a$FDO1988" role="2Oq$k0">
-                <ref role="3cqZAo" node="7_a$FDO0Lav" resolve="modules" />
+              <node concept="2OqwBi" id="3CNlD2dIhEh" role="2Oq$k0">
+                <node concept="37vLTw" id="7_a$FDO1988" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7_a$FDO0Lav" resolve="modules" />
+                </node>
+                <node concept="3zZkjj" id="3CNlD2dIifm" role="2OqNvi">
+                  <node concept="1bVj0M" id="3CNlD2dIifo" role="23t8la">
+                    <node concept="3clFbS" id="3CNlD2dIifp" role="1bW5cS">
+                      <node concept="3clFbF" id="3CNlD2dIiLC" role="3cqZAp">
+                        <node concept="1Wc70l" id="3CNlD2dIk5X" role="3clFbG">
+                          <node concept="3y3z36" id="3CNlD2dIjmx" role="3uHU7B">
+                            <node concept="37vLTw" id="3CNlD2dIiLB" role="3uHU7B">
+                              <ref role="3cqZAo" node="3CNlD2dIifq" resolve="it" />
+                            </node>
+                            <node concept="Xjq3P" id="3CNlD2dIjIP" role="3uHU7w" />
+                          </node>
+                          <node concept="3fqX7Q" id="3CNlD2dIljb" role="3uHU7w">
+                            <node concept="2ZW3vV" id="3CNlD2dImkD" role="3fr31v">
+                              <node concept="3uibUv" id="3CNlD2dImSy" role="2ZW6by">
+                                <ref role="3uigEE" to="31cb:~TransientSModule" resolve="TransientSModule" />
+                              </node>
+                              <node concept="37vLTw" id="3CNlD2dIlLs" role="2ZW6bz">
+                                <ref role="3cqZAo" node="3CNlD2dIifq" resolve="it" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Rh6nW" id="3CNlD2dIifq" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="3CNlD2dIifr" role="1tU5fm" />
+                    </node>
+                  </node>
+                </node>
               </node>
               <node concept="3$u5V9" id="7_a$FDO1bTU" role="2OqNvi">
                 <node concept="1bVj0M" id="7_a$FDO1bTW" role="23t8la">

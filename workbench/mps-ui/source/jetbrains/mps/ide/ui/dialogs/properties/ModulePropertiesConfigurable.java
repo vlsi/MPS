@@ -76,7 +76,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModuleDependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
-import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.LanguageModelImportFinder;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
@@ -84,6 +83,7 @@ import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -173,19 +173,30 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
-  private ModuleDescriptor myModuleDescriptor;
+  private final ModuleDescriptor myModuleDescriptor;
   private AbstractModule myModule;
-  private Set<JCheckBox> myCheckBoxes = new TreeSet<JCheckBox>(new Comparator<JCheckBox>() {
+  private final Set<JCheckBox> myCheckBoxes = new TreeSet<JCheckBox>(new Comparator<JCheckBox>() {
     @Override
     public int compare(JCheckBox o1, JCheckBox o2) {
       return o1.getText().toLowerCase().compareTo(o2.getText().toLowerCase());
     }
   });
+  private final FacetTabsPersistence myFacetTabsPersistence;
 
+  /**
+   * @deprecated use {@link #ModulePropertiesConfigurable(SModule, MPSProject)} instead.
+   *             We are tightly coupled with IDEA IDE here, no reason to be shy about project kind.
+   */
+  @Deprecated
   public ModulePropertiesConfigurable(SModule module, Project project) {
+    this(module, (MPSProject) project);
+  }
+
+  public ModulePropertiesConfigurable(SModule module, MPSProject project) {
     super(project);
     myModule = (AbstractModule) module;
     myModuleDescriptor = myModule.getModuleDescriptor();
+    myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
 
     addTab(new ModuleCommonTab());
     if (!(myModule instanceof DevKit)) {
@@ -202,7 +213,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         continue;
       }
       ModuleFacetBase moduleFacetBase = (ModuleFacetBase) moduleFacet;
-      Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
+      Tab facetTab = myFacetTabsPersistence.getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
       if (facetTab != null) {
         addTab(facetTab);
       }
@@ -1276,12 +1287,22 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
 
       for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
-        final SModuleFacet sModuleFacet = facetsTypes.keySet().contains(facet)
-            ? facetsTypes.get(facet) : FacetsFacade.getInstance().getFacetFactory(facet).create();
-        if (!(sModuleFacet instanceof ModuleFacetBase)) continue;
+        ModuleFacetBase sModuleFacet = facetsTypes.get(facet);
+        if (sModuleFacet == null) {
+          // i.e. !facetsTypes.contains(facet)
+          SModuleFacet newInstance = FacetsFacade.getInstance().getFacetFactory(facet).create();
+          if (newInstance instanceof ModuleFacetBase) {
+            sModuleFacet = (ModuleFacetBase) newInstance;
+            // FIXME It's not smart to establish one-way association (facet->module)
+            // as facet may get confused (i.e. getModule().getFacets().contains(this) == false)
+            // but this is the easiest way to comply with @NotNull Facet.getModule().
+            // The right way, though bit longer, is not to instantiate facet unless truly created
+            sModuleFacet.setModule(myModule);
+          }
+        }
         final String facetPresentation = applicableFacetTypes.contains(facet)
-            ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() + " (recommended)"
-            : ((ModuleFacetBase) sModuleFacet).getFacetPresentation();
+            ? sModuleFacet.getFacetPresentation() + " (recommended)"
+            : sModuleFacet.getFacetPresentation();
         final JBCheckBox checkBox = new JBCheckBox(facetPresentation, facetsTypes.keySet().contains(facet));
         checkBox.putClientProperty(CHECKBOX_PROPERTY_KEY, sModuleFacet);
         myCheckBoxes.add(checkBox);
@@ -1333,7 +1354,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         ModuleFacetBase facet = (ModuleFacetBase) checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
 
         if (checkBox.isSelected() && !moduleFacets.keySet().contains(facet.getFacetType())) {
-          facet.setModule(myModule);
           Memento memento = new MementoImpl();
           facet.save(memento);
           myModuleDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
@@ -1363,7 +1383,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (!e.getSource().equals(myCheckBox)) return;
         if (myCheckBox.isSelected()) {
           final ModuleFacetBase moduleFacetBase = (ModuleFacetBase) myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
-          Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(
+          Tab facetTab = myFacetTabsPersistence.getFacetTab(
               moduleFacetBase.getFacetType(), moduleFacetBase);
           if (facetTab != null) {
             ModulePropertiesConfigurable.this.insertTab(facetTab, ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this));

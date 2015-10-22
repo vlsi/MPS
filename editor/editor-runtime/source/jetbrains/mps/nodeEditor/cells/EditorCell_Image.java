@@ -141,7 +141,7 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   private static String expandIconPath(String path, SNode sourceNode) {
     AbstractModule module = findAnchorModule(sourceNode.getModel());
-    return module != null ? MacrosFactory.forModule(module).expandPath(path) : null;
+    return module != null ? MacrosFactory.forModule(module).expandPath(path) : path;
   }
 
   private static AbstractModule findAnchorModule(SModel model) {

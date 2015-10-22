@@ -113,6 +113,7 @@ public class TransientModelsProvider {
     throw new IllegalStateException();
   }
 
+  // despite public, not part of API/contract. Made available to friend classes
   public TransientModelsModule getCheckpointsModule() {
     return myCheckpointsModule;
   }
@@ -187,6 +188,9 @@ public class TransientModelsProvider {
     myRepository.getModelAccess().checkReadAccess();
 
     List<TransientModelsModule> result = new ArrayList<TransientModelsModule>(myModuleMap.size());
+    if (getCheckpointsModule() != null && getCheckpointsModule().hasPublished()) {
+      result.add(getCheckpointsModule());
+    }
     for (TransientModelsModule m : myModuleMap.values()) {
       if (m.hasPublished()) {
         result.add(m);

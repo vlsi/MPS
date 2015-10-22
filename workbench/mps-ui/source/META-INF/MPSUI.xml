@@ -1,20 +1,16 @@
 <components>
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryPersistenceComponent</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabPersistenceComponent</implementation-class>
-    </component>
-  </application-components>
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.facetTabFactory" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP"/>
+    <extensionPoint
+            qualifiedName="com.intellij.mps.facetTabFactory"
+            area="IDEA_PROJECT"
+            beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntryFactory"/>
     <mps.facetTabFactory facetType="java" className="jetbrains.mps.ide.java.ui.JavaModuleFacetTabFactory"/>
+    <mps.facetTabFactory facetType="generator" className="jetbrains.mps.ide.generator.CustomGenFacetTabFactory"/>
     <mps.projectGroupTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.SolutionProjectsGroup"/>
     <mps.solutionProjectTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.DefaultSolutionProjectTemplate"/>
     <mps.projectGroupTemplateEP implementation="jetbrains.mps.workbench.dialogs.project.newproject.OtherProjectsGroup"/>

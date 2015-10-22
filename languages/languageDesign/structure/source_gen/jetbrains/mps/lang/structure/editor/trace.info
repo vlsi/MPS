@@ -5400,27 +5400,26 @@
       <node id="1224242074741" at="16,79,17,82" concept="4" />
       <node id="1224242074741" at="17,82,18,51" concept="4" />
       <node id="1224242074741" at="18,51,19,111" concept="4" />
-      <node id="1224242074741" at="22,5,23,23" concept="9" />
-      <node id="1224242074741" at="23,23,24,35" concept="4" />
-      <node id="1224242074741" at="24,35,25,73" concept="4" />
-      <node id="1224242074741" at="25,73,26,34" concept="4" />
+      <node id="1224242074741" at="22,5,23,41" concept="9" />
+      <node id="1224242074741" at="23,41,24,73" concept="4" />
+      <node id="1224242074741" at="24,73,25,34" concept="4" />
       <node id="1224242074741" at="16,0,21,0" concept="12" trace="apply_AnnotationNode#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1224242074741" at="21,72,27,5" concept="0" />
-      <node id="1224242074741" at="21,0,29,0" concept="12" trace="apply_Keyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1224242074741" at="21,72,26,5" concept="0" />
+      <node id="1224242074741" at="21,0,28,0" concept="12" trace="apply_Keyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <scope id="1224242074741" at="16,79,19,111" />
-      <scope id="1224242074741" at="22,5,26,34">
+      <scope id="1224242074741" at="22,5,25,34">
         <var name="styleToPut" id="1224242074741" />
       </scope>
       <scope id="1224242074741" at="16,0,21,0">
         <var name="editorCell" id="1224242074741" />
         <var name="style" id="1224242074741" />
       </scope>
-      <scope id="1224242074741" at="21,72,27,5" />
-      <scope id="1224242074741" at="21,0,29,0">
+      <scope id="1224242074741" at="21,72,26,5" />
+      <scope id="1224242074741" at="21,0,28,0">
         <var name="editorCell" id="1224242074741" />
         <var name="style" id="1224242074741" />
       </scope>
-      <unit id="1224242074741" at="15,0,31,0" name="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
+      <unit id="1224242074741" at="15,0,30,0" name="jetbrains.mps.lang.structure.editor.structure_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/1225209508867">

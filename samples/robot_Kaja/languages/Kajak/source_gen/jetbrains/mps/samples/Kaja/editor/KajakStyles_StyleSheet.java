@@ -14,8 +14,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 public class KajakStyles_StyleSheet {
   public static void apply_Command(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_KeyWord(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

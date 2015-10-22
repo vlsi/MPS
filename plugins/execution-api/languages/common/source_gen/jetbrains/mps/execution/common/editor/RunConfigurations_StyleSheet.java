@@ -27,8 +27,7 @@ public class RunConfigurations_StyleSheet {
   }
   public static void apply_leftOperationBrace(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       RunConfigurations_StyleSheet.apply_operation(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -38,8 +37,7 @@ public class RunConfigurations_StyleSheet {
   }
   public static void apply_rightOperationBrace(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       RunConfigurations_StyleSheet.apply_operation(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -48,8 +46,7 @@ public class RunConfigurations_StyleSheet {
   }
   public static void apply_constructorParameter(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

@@ -15,8 +15,7 @@ public class TestStylesheet_StyleSheet {
   }
   public static void apply_priorityStyleCopy(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       TestStylesheet_StyleSheet.apply_priorityStyle(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -26,8 +25,7 @@ public class TestStylesheet_StyleSheet {
   }
   public static void apply_unapplyPriorityStyleCopy(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       TestStylesheet_StyleSheet.apply_priorityStyleCopy(styleToPut, editorCell);
       style.removeAll(styleToPut);
     }

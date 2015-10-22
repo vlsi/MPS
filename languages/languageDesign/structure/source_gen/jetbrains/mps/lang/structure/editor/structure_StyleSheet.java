@@ -20,8 +20,7 @@ public class structure_StyleSheet {
   }
   public static void apply_Keyword(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_KeyWord(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

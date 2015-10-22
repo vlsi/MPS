@@ -2,15 +2,15 @@
 <model ref="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="lcr" ref="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)" />
@@ -190,7 +190,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1409,8 +1409,8 @@
                       <node concept="3clFbF" id="1KUoCipvFhY" role="3cqZAp">
                         <node concept="37vLTI" id="1KUoCipvFhZ" role="3clFbG">
                           <node concept="2YIFZM" id="1KUoCipvFi0" role="37vLTx">
-                            <ref role="1Pybhc" to="hdhb:7X2JJJDQ1m9" resolve="ChangeEditorMessageFactory" />
                             <ref role="37wK5l" to="hdhb:7X2JJJDQ1mf" resolve="createMessages" />
+                            <ref role="1Pybhc" to="hdhb:7X2JJJDQ1m9" resolve="ChangeEditorMessageFactory" />
                             <node concept="37vLTw" id="nthHoNZPj4" role="37wK5m">
                               <ref role="3cqZAo" node="nthHoNZPj0" resolve="model" />
                             </node>
@@ -2107,6 +2107,19 @@
         <node concept="3cqZAl" id="v7AJWA4bYs" role="3clF45" />
         <node concept="3Tm1VV" id="v7AJWA4bYt" role="1B3o_S" />
         <node concept="3clFbS" id="v7AJWA4bYu" role="3clF47">
+          <node concept="3clFbJ" id="5f5LHA4If5z" role="3cqZAp">
+            <node concept="3clFbS" id="5f5LHA4If5_" role="3clFbx">
+              <node concept="3cpWs6" id="5f5LHA4IhlE" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="5f5LHA4Ig5R" role="3clFbw">
+              <node concept="37vLTw" id="5f5LHA4IfGJ" role="2Oq$k0">
+                <ref role="3cqZAo" node="5zpsdFy5B1v" resolve="myEditorComponent" />
+              </node>
+              <node concept="liA8E" id="5f5LHA4IgNT" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbJ" id="PH5JSZXqnk" role="3cqZAp">
             <node concept="3clFbS" id="PH5JSZXqnl" role="3clFbx">
               <node concept="3cpWs8" id="7MduFaKE7d0" role="3cqZAp">

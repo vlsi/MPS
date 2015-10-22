@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.ModelGenerationPlan.Step;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -28,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -82,13 +84,32 @@ final class GenPlanActiveStep {
 
   @Nullable
   public Checkpoint getLastCheckpoint() {
-    // FIXME implement
-    return null;
+    Checkpoint lastSeen = null;
+    for (Step p : myPlan.getSteps_()) {
+      if (myStep.equals(p)) {
+        break;
+      }
+      if (p instanceof Checkpoint) {
+        lastSeen = (Checkpoint) p;
+      }
+    }
+    return lastSeen;
   }
 
   @Nullable
   public Checkpoint getNextCheckpoint() {
-    // FIXME implement
+    Iterator<Step> it = myPlan.getSteps_().iterator();
+    while (it.hasNext()) {
+      if (myStep.equals(it.next())) {
+        break;
+      }
+    }
+    while (it.hasNext()) {
+      Step p = it.next();
+      if (p instanceof Checkpoint) {
+        return (Checkpoint) p;
+      }
+    }
     return null;
   }
 }

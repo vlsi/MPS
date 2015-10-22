@@ -21,9 +21,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.StaticReference;
-import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -62,7 +62,7 @@ public final class ClassCreator__BehaviorDescriptor extends BaseBHDescriptor {
     // special logic for java stubs 
     SReference cRef = SNodeOperations.getReference(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
     if (cRef == null) {
-      return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+      return Collections.emptyList();
     }
 
     SModel targetModel = ((StaticReference) cRef).getTargetSModel();
@@ -77,7 +77,11 @@ public final class ClassCreator__BehaviorDescriptor extends BaseBHDescriptor {
     }
 
 
-    return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+    if ((classConcept != null)) {
+      return ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept);
+    } else {
+      return Collections.emptyList();
+    }
   }
   /*package*/ static boolean isInTypeInferenceContext_id4cxv$9$kw67(@NotNull SNode __thisNode__) {
     return ((boolean) IMethodCall__BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invokeSpecial(__thisNode__));

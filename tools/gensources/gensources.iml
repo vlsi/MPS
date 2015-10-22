@@ -84,6 +84,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/generationContext/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/generationParameters/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/generationParameters/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/plan/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/templateLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/templateLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/crossmodel/source_gen" isTestSource="false" />
@@ -97,8 +98,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.lang1/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.lang1/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/gentest/source_gen" isTestSource="false" />
@@ -240,6 +245,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/generationContext/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/generationParameters/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/generationParameters/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/plan/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/templateLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/languages/templateLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/crossmodel/classes_gen" />
@@ -253,8 +259,13 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/property/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.lang1/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.lang1/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/gentest/classes_gen" />
@@ -1003,6 +1014,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/extension.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/generator.inputModels.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/generator.test/test_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/kernel.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/make.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/pattern.test/source_gen" isTestSource="false" />
@@ -1012,6 +1024,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/editor.style.testLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.testWeaving/source_gen" isTestSource="false" />
@@ -1036,6 +1050,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/extension.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/generator.inputModels.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/generator.test/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/kernel.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/make.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/pattern.test/classes_gen" />
@@ -1045,6 +1060,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/editor.mult.testLang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/editor.style.testLang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/editor.tableTests.testLang/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/jetbrains.mps.lang.editor.imageGen.testLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/testlangs/lang.actions.testLang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/testsolutions/traceInfo.testWeaving/classes_gen" />

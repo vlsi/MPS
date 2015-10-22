@@ -9352,43 +9352,41 @@
     <file name="RegexpStylesheet_StyleSheet.java">
       <node id="5169131996393625116" at="13,76,14,113" concept="2" />
       <node id="5169131996393625116" at="14,113,15,64" concept="2" />
-      <node id="5169131996393625116" at="18,5,19,23" concept="6" />
-      <node id="5169131996393625116" at="19,23,20,35" concept="2" />
-      <node id="5169131996393625116" at="20,35,21,76" concept="2" />
-      <node id="5169131996393625116" at="21,76,22,34" concept="2" />
-      <node id="5169131996393625116" at="23,5,24,58" concept="2" />
-      <node id="5169131996393625116" at="27,5,28,23" concept="6" />
-      <node id="5169131996393625116" at="28,23,29,35" concept="2" />
-      <node id="5169131996393625116" at="29,35,30,76" concept="2" />
-      <node id="5169131996393625116" at="30,76,31,34" concept="2" />
-      <node id="5169131996393625116" at="32,5,33,57" concept="2" />
+      <node id="5169131996393625116" at="18,5,19,41" concept="6" />
+      <node id="5169131996393625116" at="19,41,20,76" concept="2" />
+      <node id="5169131996393625116" at="20,76,21,34" concept="2" />
+      <node id="5169131996393625116" at="22,5,23,58" concept="2" />
+      <node id="5169131996393625116" at="26,5,27,41" concept="6" />
+      <node id="5169131996393625116" at="27,41,28,76" concept="2" />
+      <node id="5169131996393625116" at="28,76,29,34" concept="2" />
+      <node id="5169131996393625116" at="30,5,31,57" concept="2" />
       <node id="5169131996393625116" at="13,0,17,0" concept="9" trace="apply_RegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="5169131996393625116" at="17,80,23,5" concept="0" />
-      <node id="5169131996393625116" at="26,81,32,5" concept="0" />
-      <node id="5169131996393625116" at="17,0,26,0" concept="9" trace="apply_LeftRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="5169131996393625116" at="26,0,35,0" concept="9" trace="apply_RightRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="5169131996393625116" at="17,80,22,5" concept="0" />
+      <node id="5169131996393625116" at="25,81,30,5" concept="0" />
+      <node id="5169131996393625116" at="17,0,25,0" concept="9" trace="apply_LeftRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="5169131996393625116" at="25,0,33,0" concept="9" trace="apply_RightRegexpBrace#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <scope id="5169131996393625116" at="13,76,15,64" />
+      <scope id="5169131996393625116" at="18,5,21,34">
+        <var name="styleToPut" id="5169131996393625116" />
+      </scope>
+      <scope id="5169131996393625116" at="26,5,29,34">
+        <var name="styleToPut" id="5169131996393625116" />
+      </scope>
       <scope id="5169131996393625116" at="13,0,17,0">
         <var name="editorCell" id="5169131996393625116" />
         <var name="style" id="5169131996393625116" />
       </scope>
-      <scope id="5169131996393625116" at="18,5,22,34">
-        <var name="styleToPut" id="5169131996393625116" />
-      </scope>
-      <scope id="5169131996393625116" at="27,5,31,34">
-        <var name="styleToPut" id="5169131996393625116" />
-      </scope>
-      <scope id="5169131996393625116" at="17,80,24,58" />
-      <scope id="5169131996393625116" at="26,81,33,57" />
-      <scope id="5169131996393625116" at="17,0,26,0">
+      <scope id="5169131996393625116" at="17,80,23,58" />
+      <scope id="5169131996393625116" at="25,81,31,57" />
+      <scope id="5169131996393625116" at="17,0,25,0">
         <var name="editorCell" id="5169131996393625116" />
         <var name="style" id="5169131996393625116" />
       </scope>
-      <scope id="5169131996393625116" at="26,0,35,0">
+      <scope id="5169131996393625116" at="25,0,33,0">
         <var name="editorCell" id="5169131996393625116" />
         <var name="style" id="5169131996393625116" />
       </scope>
-      <unit id="5169131996393625116" at="12,0,37,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
+      <unit id="5169131996393625116" at="12,0,35,0" name="jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/6129327962763255291">

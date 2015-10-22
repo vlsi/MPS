@@ -213,14 +213,12 @@ import java.util.TreeSet;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
+
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditorComponent.class));
-  private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
 
   private static final int SCROLL_GAP = 15;
-
-  private final Object myAdditionalPaintersLock = new Object();
-
+  
   private String myDefaultPopupGroupId = MPSActions.EDITOR_POPUP_GROUP;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
@@ -237,6 +235,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
   }
+
+  private final Object myAdditionalPaintersLock = new Object();
+  private boolean myHasUI;
 
   private Map<EditorCell, Boolean> myCollapseStates = new HashMap<EditorCell, Boolean>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
@@ -297,12 +298,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   private final SRepository myRepository;
-  @NotNull
+
+  //TODO: make @NotNull after separating UI-less logic into AbstractEditorComponent class
   private JScrollPane myScrollPane;
-  @NotNull
-  private MyScrollBar myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL);
-  @NotNull
+  //TODO: make @NotNull after separating UI-less logic into AbstractEditorComponent class
+  private MyScrollBar myVerticalScrollBar;
+  //TODO: make @NotNull after separating UI-less logic into AbstractEditorComponent class
   private JComponent myContainer;
+
   protected EditorCell myRootCell;
   private boolean myCellSwapInProgress;
   private int myShiftX = 15;
@@ -359,14 +362,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
+    this(repository, showErrorsGutter, rightToLeft, true);
+  }
+
+  protected EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft, boolean createUI) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
     myUpdater = createUpdater();
     myUpdater.addListener(new UpdaterEventDispatcher());
     setEditorContext(null, repository);
 
-    //TODO: fix problem with NPE
-    setBackground(StyleRegistry.getInstance() == null ? Color.white : StyleRegistry.getInstance().getEditorBackground());
+    setBackground(StyleRegistry.getInstance().getEditorBackground());
 
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
@@ -404,54 +410,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setFocusTraversalKeysEnabled(false);
 
     setDoubleBuffered(true);
-    myScrollPane = ScrollPaneFactory.createScrollPane();
-    if (rightToLeft) {
-      myScrollPane.setLayout(new LeftHandScrollbarLayout());
-    }
-    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-    myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
-    myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    myScrollPane.setViewportView(this);
-    myScrollPane.getViewport().addChangeListener(new ChangeListener() {
-
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        if (!getNodeSubstituteChooser().isVisible()) {
-          return;
-        }
-        Point point = getNodeSubstituteChooser().calcPatternEditorLocation();
-        Rectangle viewRect = getViewport().getViewRect();
-        if (isInsideEditor(point, viewRect)) {
-          getNodeSubstituteChooser().moveToContextCell();
-        } else {
-          deactivateSubstituteChooser();
-        }
-      }
-
-      private boolean isInsideEditor(Point point, Rectangle viewRect) {
-        return isShowing() && point != null
-            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
-            && point.getY() >= 0 &&
-            point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
-      }
-    });
-
-    myContainer = new JPanel() {
-      @Override
-      public void addNotify() {
-        super.addNotify();
-        myIsInFiguresHierarchy = true;
-      }
-
-      @Override
-      public void removeNotify() {
-        myIsInFiguresHierarchy = false;
-        super.removeNotify();
-      }
-    };
-    myContainer.setMinimumSize(new Dimension(0, 0));
-    myContainer.setLayout(new BorderLayout());
-    myContainer.add(myScrollPane, BorderLayout.CENTER);
 
     myNodeSubstituteChooser = new NodeSubstituteChooser(this);
 
@@ -569,10 +527,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return;
         }
         jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-        if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
-            selectedCell instanceof EditorCell_Label) {
-          ((EditorCell_Label) selectedCell).selectWordOrAll();
-          repaintExternalComponent();
+        boolean inSelectedCell = myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell;
+        if (inSelectedCell) {
+          Selection selection = getSelectionManager().getSelection();
+          if (selection.canExecuteAction(CellActionType.CLICK)) {
+            selection.executeAction(CellActionType.CLICK);
+          } else if (e.getClickCount() == 2 && selectedCell instanceof EditorCell_Label) {
+            ((EditorCell_Label) selectedCell).selectWordOrAll();
+            repaintExternalComponent();
+          }
         }
       }
 
@@ -604,42 +567,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         processKeyReleased(e);
       }
     });
-
-    myMessagesGutter = new MessagesGutter(this, rightToLeft);
-    if (showErrorsGutter) {
-      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
-    } else {
-      getVerticalScrollBar().setPersistentUI(new ButtonlessScrollBarUI() {
-        @Override
-        public boolean alwaysShowTrack() {
-          return true;
-        }
-      });
-    }
-    myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
-    myLeftHighlighter.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mousePressed(MouseEvent e) {
-        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
-          listener.mousePressed(e, EditorComponent.this);
-        }
-      }
-
-      @Override
-      public void mouseReleased(MouseEvent e) {
-        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
-          listener.mouseReleased(e, EditorComponent.this);
-        }
-      }
-
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
-          listener.mouseClicked(e, EditorComponent.this);
-        }
-      }
-    });
-    myScrollPane.setRowHeaderView(myLeftHighlighter);
 
     addFocusListener(new FocusListener() {
       @Override
@@ -680,15 +607,124 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
 
-    myIntentionsSupport = new IntentionsSupport(this);
-    myAutoValidator = new AutoValidator(this);
+    addFocusListener(new FocusAdapter() {
+      @Override
+      public void focusLost(FocusEvent e) {
+        commitAll();
+      }
+    });
 
-    if (MPSToolTipManager.getInstance() != null) {
-      MPSToolTipManager.getInstance().registerComponent(this);
+    myAutoValidator = new AutoValidator(this);
+    attachListeners();
+    enablePasteFromHistory();
+
+    if (createUI) {
+      createUI(rightToLeft, showErrorsGutter);
     }
+  }
+
+  // TODO:
+  // - extract all UI-free common logic into a super-class (AbstractEditorComponent)
+  // - let HeadlessEditorComponent extend AbstractEditorComponent
+  // - make this method again a part of constructor for this class
+  private void createUI(boolean rightToLeft, boolean showErrorsGutter) {
+    myHasUI = true;
+
+    myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL);
+
+    myScrollPane = ScrollPaneFactory.createScrollPane();
+    if (rightToLeft) {
+      myScrollPane.setLayout(new LeftHandScrollbarLayout());
+    }
+    myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    myScrollPane.setVerticalScrollBar(myVerticalScrollBar);
+    myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    myScrollPane.setViewportView(this);
+    myScrollPane.getViewport().addChangeListener(new ChangeListener() {
+
+      @Override
+      public void stateChanged(ChangeEvent e) {
+        if (!getNodeSubstituteChooser().isVisible()) {
+          return;
+        }
+        Point point = getNodeSubstituteChooser().calcPatternEditorLocation();
+        Rectangle viewRect = getViewport().getViewRect();
+        if (isInsideEditor(point, viewRect)) {
+          getNodeSubstituteChooser().moveToContextCell();
+        } else {
+          deactivateSubstituteChooser();
+        }
+      }
+
+      private boolean isInsideEditor(Point point, Rectangle viewRect) {
+        return isShowing() && point != null
+            && point.getX() >= 0 && point.getX() <= getLocationOnScreen().getX() + viewRect.getX() + viewRect.getWidth()
+            && point.getY() >= 0 &&
+            point.getY() <= getLocationOnScreen().getY() + viewRect.getY() + viewRect.getHeight() + myScrollPane.getHorizontalScrollBar().getHeight();
+      }
+    });
+
+    myContainer = new JPanel() {
+      @Override
+      public void addNotify() {
+        super.addNotify();
+        myIsInFiguresHierarchy = true;
+      }
+
+      @Override
+      public void removeNotify() {
+        myIsInFiguresHierarchy = false;
+        super.removeNotify();
+      }
+    };
+    myContainer.setMinimumSize(new Dimension(0, 0));
+    myContainer.setLayout(new BorderLayout());
+    myContainer.add(myScrollPane, BorderLayout.CENTER);
+
+    myMessagesGutter = new MessagesGutter(this, rightToLeft);
+    if (showErrorsGutter) {
+      getVerticalScrollBar().setPersistentUI(myMessagesGutter);
+    } else {
+      getVerticalScrollBar().setPersistentUI(new ButtonlessScrollBarUI() {
+        @Override
+        public boolean alwaysShowTrack() {
+          return true;
+        }
+      });
+    }
+    myLeftHighlighter = new LeftEditorHighlighter(this, rightToLeft);
+    myLeftHighlighter.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mousePressed(MouseEvent e) {
+        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+          listener.mousePressed(e, EditorComponent.this);
+        }
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+          listener.mouseReleased(e, EditorComponent.this);
+        }
+      }
+
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+          listener.mouseClicked(e, EditorComponent.this);
+        }
+      }
+    });
+    myScrollPane.setRowHeaderView(myLeftHighlighter);
+
+    myIntentionsSupport = new IntentionsSupport(this);
 
     if (CaretBlinker.getInstance() != null) {
       CaretBlinker.getInstance().registerEditor(this);
+    }
+
+    if (MPSToolTipManager.getInstance() != null) {
+      MPSToolTipManager.getInstance().registerComponent(this);
     }
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
@@ -702,14 +738,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
           selectComponentCell(current);
         }
-      }
-    });
-    attachListeners();
-
-    addFocusListener(new FocusAdapter() {
-      @Override
-      public void focusLost(FocusEvent e) {
-        commitAll();
       }
     });
 
@@ -734,8 +762,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     });
+  }
 
-    enablePasteFromHistory();
+  boolean hasUI() {
+    return myHasUI;
   }
 
   private void enablePasteFromHistory() {
@@ -800,11 +830,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public JViewport getViewport() {
+    assert myHasUI;
     return myScrollPane.getViewport();
+  }
+
+  Point getViewPosition() {
+    return myHasUI ? getViewport().getViewPosition() : new Point(0, 0);
+  }
+
+  void setViewPosition(Point point) {
+    if (!myHasUI) {
+      return;
+    }
+    getViewport().setViewPosition(point);
   }
 
   @NotNull
   public MyScrollBar getVerticalScrollBar() {
+    assert myHasUI;
     return myVerticalScrollBar;
   }
 
@@ -1157,16 +1200,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   // TODO pool this method up to NodeEditorComponent
   @NotNull
   public MessagesGutter getMessagesGutter() {
+    assert myHasUI;
     return myMessagesGutter;
   }
 
   @NotNull
   public LeftEditorHighlighter getLeftEditorHighlighter() {
+    assert myHasUI;
     return myLeftHighlighter;
   }
 
   @NotNull
   public SearchPanel getSearchPanel() {
+    assert myHasUI;
     if (mySearchPanel == null) {
       mySearchPanel = new SearchPanel(this);
     }
@@ -1178,6 +1224,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public JPanel getUpperPanel() {
+    assert myHasUI;
     if (myUpperPanel == null) {
       myUpperPanel = new JPanel();
       myUpperPanel.setLayout(new GridLayout(0, 1));
@@ -1310,11 +1357,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   public JComponent getExternalComponent() {
+    assert myHasUI;
     return myContainer;
   }
 
   public void repaintExternalComponent() {
+    if (!myHasUI) {
+      return;
+    }
     getExternalComponent().repaint();
+  }
+
+  public void validateExternalComponent() {
+    if (!myHasUI) {
+      return;
+    }
+    getExternalComponent().validate();
   }
 
   @NotNull
@@ -1435,8 +1493,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myUpdater.dispose();
 
-    myLeftHighlighter.dispose();
-    myMessagesGutter.dispose();
+    if (myHasUI) {
+      myLeftHighlighter.dispose();
+      myMessagesGutter.dispose();
+    }
 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
@@ -1693,6 +1753,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
+    if (!myHasUI) {
+      return;
+    }
     myLeftHighlighter.relayout(true);
     if (mySearchPanel != null && mySearchPanel.isVisible()) {
       mySearchPanel.search(false);
@@ -1700,14 +1763,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void leftHighlightCell(EditorCell cell, Color c) {
+    if (!myHasUI) {
+      return;
+    }
     myLeftHighlighter.highlight(cell, cell, c);
   }
 
   public void leftHighlightCells(EditorCell cell, EditorCell cell2, Color c) {
+    if (!myHasUI) {
+      return;
+    }
     myLeftHighlighter.highlight(cell, cell2, c);
   }
 
   public void leftUnhighlightCell(EditorCell cell) {
+    if (!myHasUI) {
+      return;
+    }
     myLeftHighlighter.unHighlight(cell);
   }
 
@@ -2101,8 +2173,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     showCellInViewPort(newSelectedCell);
   }
 
-  // TODO: think about replacing this method with one of ensureVisible()/scrollToCell()
+  // TODO: replace this method with selection listener
   private void showCellInViewPort(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
+    if (!myHasUI) {
+      return;
+    }
     if (getVisibleRect().isEmpty()) {
       final JViewport viewport = getViewport();
       viewport.addChangeListener(new ChangeListener() {
@@ -2138,7 +2213,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    if (getVisibleRect().isEmpty()) {
+    if (!myHasUI || getVisibleRect().isEmpty()) {
       return;
     }
 
@@ -2231,7 +2306,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
     jetbrains.mps.openapi.editor.cells.EditorCell deepestCell = getDeepestSelectedCell();
-    if (deepestCell instanceof EditorCell_Label && g.hitClip(deepestCell.getX(), deepestCell.getY(), deepestCell.getWidth(), deepestCell.getHeight())) {
+    if (deepestCell instanceof EditorCell_Label && ((EditorCell) deepestCell).isInClipRegion(g)) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
       g.setColor(setting.getCaretRowColor());
@@ -2256,7 +2331,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell.relayout();
     }
 
-    if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
+    if (myRootCell != null && myRootCell.isInClipRegion(g)) {
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
@@ -2273,12 +2348,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   Dimension getPreferredComponentSize() {
-    if (myRootCell == null) {
+    if (myRootCell != null) {
+      return new Dimension(myRootCell.getWidth() + myShiftX + 10, myRootCell.getHeight() + myShiftY + 10);
+    }
+    if (myHasUI) {
       JViewport viewport = myScrollPane.getViewport();
       Rectangle viewRect = viewport.getViewRect();
       return new Dimension(viewRect.width, viewRect.height);
     }
-    return new Dimension(myRootCell.getWidth() + myShiftX + 10, myRootCell.getHeight() + myShiftY + 10);
+    return new Dimension(0, 0);
   }
 
   @Override
@@ -2302,11 +2380,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public boolean getScrollableTracksViewportWidth() {
+    assert myHasUI;
     return myScrollPane.getViewport().getWidth() > getPreferredSize().width;
   }
 
   @Override
   public boolean getScrollableTracksViewportHeight() {
+    assert myHasUI;
     return myScrollPane.getViewport().getHeight() > getPreferredSize().height;
   }
 
@@ -2985,7 +3065,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void repaint(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    repaint(0, cell.getY(), getWidth(), cell.getHeight());
+    // The +1 for width and height takes into account decorations such as selection or border, which may currently be drawn outside the cell.
+    repaint(0, cell.getY(), getWidth() + 1, cell.getHeight() + 1);
   }
 
   @Override
@@ -3287,6 +3368,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public int getUnitIncrement(int direction) {
+      assert myHasUI;
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableUnitIncrement(vr, SwingConstants.VERTICAL, direction);
@@ -3294,6 +3376,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public int getBlockIncrement(int direction) {
+      assert myHasUI;
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableBlockIncrement(vr, SwingConstants.VERTICAL, direction);

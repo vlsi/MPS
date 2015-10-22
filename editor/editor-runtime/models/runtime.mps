@@ -2924,9 +2924,26 @@
       <node concept="3Tm1VV" id="2qx2hw9gxhJ" role="1B3o_S" />
       <node concept="3clFbS" id="2qx2hw9gxhK" role="3clF47">
         <node concept="XkiVB" id="2qx2hw9gz2u" role="3cqZAp">
-          <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="EditorComponent" />
+          <ref role="37wK5l" to="exr9:~EditorComponent.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,boolean,boolean,boolean)" resolve="EditorComponent" />
           <node concept="37vLTw" id="2qx2hw9gzFV" role="37wK5m">
             <ref role="3cqZAo" node="HonEu9vgRQ" resolve="repository" />
+          </node>
+          <node concept="3clFbT" id="73THaLqa8_U" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+          <node concept="3clFbT" id="73THaLqa913" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+          <node concept="3clFbT" id="73THaLqa9rb" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4AUcghxsOv6" role="3cqZAp">
+          <node concept="1rXfSq" id="4AUcghxsOv4" role="3clFbG">
+            <ref role="37wK5l" to="exr9:~EditorComponent.setNoVirtualFile(boolean):void" resolve="setNoVirtualFile" />
+            <node concept="3clFbT" id="4AUcghxsOT_" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="2qx2hw9g$ur" role="3cqZAp">
@@ -2939,7 +2956,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="2qx2hw9g_n5" role="jymVt" />
+    <node concept="2tJIrI" id="73THaLq9wWh" role="jymVt" />
     <node concept="3clFb_" id="2qx2hw9gBmI" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="attachListeners" />
@@ -2972,12 +2989,12 @@
     <node concept="3UR2Jj" id="7jFHz5ktb41" role="lGtFl">
       <node concept="TZ5HA" id="7jFHz5ktb5i" role="TZ5H$">
         <node concept="1dT_AC" id="7jFHz5ktb5j" role="1dT_Ay">
-          <property role="1dT_AB" value="This editor component was designed to be used in headless mode. Instance of this editor component can be created" />
+          <property role="1dT_AB" value="\This editor component was designed to be used in headless mode. Instance of this editor component can be created" />
         </node>
       </node>
       <node concept="TZ5HA" id="7jFHz5ktb7k" role="TZ5H$">
         <node concept="1dT_AC" id="7jFHz5ktb7l" role="1dT_Ay">
-          <property role="1dT_AB" value="in order to: part" />
+          <property role="1dT_AB" value="in order to:" />
         </node>
       </node>
       <node concept="TZ5HA" id="7jFHz5ktb7y" role="TZ5H$">
@@ -2997,7 +3014,7 @@
       </node>
       <node concept="TZ5HA" id="7jFHz5kvX6F" role="TZ5H$">
         <node concept="1dT_AC" id="7jFHz5kvX6G" role="1dT_Ay">
-          <property role="1dT_AB" value="- call some editor-specific aciotns - e.g. substitute" />
+          <property role="1dT_AB" value="- call some editor-specific actions - e.g. substitute" />
         </node>
       </node>
       <node concept="TZ5HA" id="7jFHz5kvX6T" role="TZ5H$">

@@ -5,12 +5,15 @@ package jetbrains.mps.lang.core.editor;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class BaseStyles_StyleSheet {
   public static void apply_StubImplementation(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = StyleRegistry.getInstance().getStyle("LINE_COMMENT");
+      Style styleToPut = StyleRegistry.getInstance().getStyle("LINE_COMMENT");
+      if (styleToPut == null) {
+        styleToPut = new StyleImpl();
+      }
       style.putAll(styleToPut, 1);
     }
   }

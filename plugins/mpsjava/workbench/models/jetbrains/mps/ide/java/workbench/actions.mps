@@ -2087,7 +2087,7 @@
                     </node>
                     <node concept="2ShNRf" id="3GE7ucjMMtk" role="33vP2m">
                       <node concept="1pGfFk" id="3GE7ucjMNJ9" role="2ShVmc">
-                        <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.Project)" resolve="ModulePropertiesConfigurable" />
+                        <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.MPSProject)" resolve="ModulePropertiesConfigurable" />
                         <node concept="2OqwBi" id="6L4KMkepMvA" role="37wK5m">
                           <node concept="2WthIp" id="6L4KMkepMvB" role="2Oq$k0" />
                           <node concept="1DTwFV" id="6L4KMkepMvC" role="2OqNvi">
