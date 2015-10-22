@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/141865155246494254">
+    <file name="mpsDataFlow.xml">
+      <unit id="141865155246494254" at="1,0,586,10" name="jetbrains.mps.ide.build.tests.mpsDataFlow" />
+    </file>
+  </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/2085316548396374793">
     <file name="mpsImplementationStripping.xml">
       <unit id="2085316548396374793" at="1,0,587,10" name="jetbrains.mps.ide.build.tests.mpsImplementationStripping" />
@@ -57,7 +62,7 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/7210153263370654627">
     <file name="mpsBaseLanguage.xml">
-      <unit id="7210153263370654627" at="1,0,558,10" name="jetbrains.mps.ide.build.tests.mpsBaseLanguage" />
+      <unit id="7210153263370654627" at="1,0,449,10" name="jetbrains.mps.ide.build.tests.mpsBaseLanguage" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/7438002853058266164">
