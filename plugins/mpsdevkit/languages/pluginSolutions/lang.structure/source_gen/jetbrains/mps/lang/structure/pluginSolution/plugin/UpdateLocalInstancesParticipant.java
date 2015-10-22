@@ -5,6 +5,11 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.structure.Extension;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,9 +30,42 @@ import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 
 public class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>> {
 
-  private LanguageStructureMigrationParticipant.StructureSpecialization<I, F> myStructureSpecialization;
-  public UpdateLocalInstancesParticipant(LanguageStructureMigrationParticipant.StructureSpecialization<I, F> structureSpecialization) {
+  private StructureSpecialization<I, F> myStructureSpecialization;
+  public UpdateLocalInstancesParticipant(StructureSpecialization<I, F> structureSpecialization) {
     myStructureSpecialization = structureSpecialization;
+  }
+
+  public static class UpdateConceptInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public UpdateConceptInstances_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new UpdateLocalInstancesParticipant<SAbstractConcept, SAbstractConcept>(new MoveConceptSpecialization());
+    }
+  }
+  public static class UpdatePropertyInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public UpdatePropertyInstances_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new UpdateLocalInstancesParticipant<SProperty, SProperty>(new MovePropertySpecialization());
+    }
+  }
+  public static class UpdateContainmentLinkInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public UpdateContainmentLinkInstances_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new UpdateLocalInstancesParticipant<SContainmentLink, SContainmentLink>(new MoveContainmentLinkSpecialization());
+    }
+  }
+  public static class UpdateReferenceLinkInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public UpdateReferenceLinkInstances_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new UpdateLocalInstancesParticipant<SReferenceLink, SReferenceLink>(new MoveReferenceLinkSpecialization());
+    }
   }
 
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> getDataCollector() {
@@ -45,7 +83,7 @@ public class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactorin
     return "Update instances in current project";
   }
 
-  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(Tuples._2<Language, I> initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
+  public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
     if (!(MapSequence.fromMap(options).get(getDescription())) || initialState == null) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
@@ -72,9 +110,9 @@ public class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactorin
                 SNode node = nodeRef.resolve(repository);
                 MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
                 if (node == null || MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node)) {
-                  myStructureSpecialization.doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), finalState._1());
+                  myStructureSpecialization.doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), initialState._1(), finalState._1());
                 }
-                myStructureSpecialization.doReplaceInstance(node, finalState._1());
+                myStructureSpecialization.doReplaceInstance(node, initialState._1(), finalState._1());
               }
             });
           }
