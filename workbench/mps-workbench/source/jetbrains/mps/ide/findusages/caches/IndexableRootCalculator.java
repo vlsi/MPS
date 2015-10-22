@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.ide.findusages.caches;
 
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.indexing.IndexableSetContributor;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -33,23 +33,22 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class MPSIndexedRootsProvider extends IndexableSetContributor {
-  @Override
-  public Set<VirtualFile> getAdditionalRootsToIndex() {
-    return EMPTY_FILE_SET;
+class IndexableRootCalculator {
+  private final Project myProject;
+
+  public IndexableRootCalculator(@NotNull com.intellij.openapi.project.Project project) {
+    myProject = ProjectHelper.toMPSProject(project);
   }
 
-  @NotNull
-  @Override
-  public Set<VirtualFile> getAdditionalProjectRootsToIndex(@Nullable Project project) {
+  public Set<VirtualFile> getIndexableRoots() {
     final Set<VirtualFile> files = new HashSet<VirtualFile>();
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    mpsProject.getModelAccess().runReadAction(new Runnable() {
+
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         // We should iterate over all modules, visible inside this project including libraries & core modules.
         // Not only those modules explicitly included into this project.
-        for (final SModule m : mpsProject.getRepository().getModules()) {
+        for (final SModule m : myProject.getRepository().getModules()) {
           for (String path : getIndexablePaths(m)) {
             VirtualFile file = VirtualFileUtils.getVirtualFile(path);
             if (file == null) continue;
@@ -62,7 +61,7 @@ public class MPSIndexedRootsProvider extends IndexableSetContributor {
     return files;
   }
 
-  private static Collection<String> getIndexablePaths(@NotNull SModule module) {
+  public static Collection<String> getIndexablePaths(@NotNull SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
     Set<String> result = new TreeSet<String>();
 
@@ -87,5 +86,9 @@ public class MPSIndexedRootsProvider extends IndexableSetContributor {
   private static String exposePath(String path) {
     String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
     return path + suffix;
+  }
+
+  public static boolean isIgnored(VirtualFile file, ProjectRootManagerEx manager) {
+    return FileTypeManager.getInstance().isFileIgnored(file.getName()) || manager.getFileIndex().isIgnored(file);
   }
 }
