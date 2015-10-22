@@ -20,6 +20,8 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.module.SDependencyImpl;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -78,7 +80,11 @@ public class EvaluationModule extends AbstractModule implements SModule {
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
-    return Sequence.fromIterable(modules).select(new ISelector<SModule, SDependencyImpl>() {
+    return Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return it != EvaluationModule.this && !(it instanceof TransientSModule);
+      }
+    }).select(new ISelector<SModule, SDependencyImpl>() {
       public SDependencyImpl select(SModule it) {
         return (new SDependencyImpl(it, SDependencyScope.DEFAULT, false));
       }
