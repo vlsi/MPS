@@ -1136,9 +1136,6 @@
     <node concept="lpD6D" id="3FJ0r$qO2HP" role="lpD6w">
       <ref role="lpD7u" to="tpej:5dHXnb3qyzv" resolve="NullableAnalyzer" />
     </node>
-    <node concept="lpD6D" id="1eGlc3_p$q7" role="lpD6w">
-      <ref role="lpD7u" to="tpej:1eGlc3_m1cS" resolve="ExtendingNullableAnalyzer" />
-    </node>
     <node concept="lpD6D" id="3FJ0r$qO2HQ" role="lpD6w">
       <ref role="lpD7u" to="tpej:7SKJuJJPA7s" resolve="ForBreakUnreachable" />
     </node>
@@ -4067,6 +4064,9 @@
     </node>
     <node concept="lpD6D" id="7ez5JvPiiGO" role="lpD6w">
       <ref role="lpD7u" to="ma4t:7ez5JvPib_b" resolve="TestAnalyzerWithConstructorParameters" />
+    </node>
+    <node concept="lpD6D" id="1PSwCEWmZrN" role="lpD6w">
+      <ref role="lpD7u" to="ma4t:1eGlc3_m1cS" resolve="ExtendingNullableAnalyzer" />
     </node>
   </node>
 </model>

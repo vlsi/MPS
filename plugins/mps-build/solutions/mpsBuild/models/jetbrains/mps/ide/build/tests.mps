@@ -1251,43 +1251,6 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6UFhkIkLvHn" role="3bR37C">
-          <node concept="3bR9La" id="6UFhkIkLvHo" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="6UFhkIkLvno" resolve="testExtendingAnalyzer" />
-          </node>
-        </node>
-      </node>
-      <node concept="1E1JtD" id="6UFhkIkLvno" role="2G$12L">
-        <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="testExtendingAnalyzer" />
-        <property role="3LESm3" value="3ac033a0-bffa-48e3-a843-a40cbdd89859" />
-        <property role="2GAjPV" value="false" />
-        <node concept="55IIr" id="6UFhkIkLvoI" role="3LF7KH">
-          <node concept="2Ry0Ak" id="6UFhkIkLvFN" role="iGT6I">
-            <property role="2Ry0Am" value="testbench" />
-            <node concept="2Ry0Ak" id="6UFhkIkLvGb" role="2Ry0An">
-              <property role="2Ry0Am" value="modules" />
-              <node concept="2Ry0Ak" id="6UFhkIkLvGi" role="2Ry0An">
-                <property role="2Ry0Am" value="testExtendingAnalyzer" />
-                <node concept="2Ry0Ak" id="6UFhkIkLvGp" role="2Ry0An">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="6UFhkIkLvGw" role="2Ry0An">
-                    <property role="2Ry0Am" value="testExtendingAnalyzer" />
-                    <node concept="2Ry0Ak" id="6UFhkIkLvGB" role="2Ry0An">
-                      <property role="2Ry0Am" value="testExtendingAnalyzer.mpl" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="6UFhkIkLvIg" role="3bR37C">
-          <node concept="1Busua" id="6UFhkIkLvIh" role="1SiIV1">
-            <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
       </node>
     </node>
     <node concept="2G$12M" id="QtAfUFXwu" role="3989C9">
@@ -1340,9 +1303,6 @@
       </node>
       <node concept="L2wRC" id="2LuGVbI_tBO" role="39821P">
         <ref role="L2wRA" node="QtAfUFZXZ" resolve="jetbrains.mps.baseLanguage.closures.unittest" />
-      </node>
-      <node concept="L2wRC" id="6UFhkIkLvGV" role="39821P">
-        <ref role="L2wRA" node="6UFhkIkLvno" resolve="testExtendingAnalyzer" />
       </node>
     </node>
     <node concept="10PD9b" id="6gfB34Bldfq" role="10PD9s" />

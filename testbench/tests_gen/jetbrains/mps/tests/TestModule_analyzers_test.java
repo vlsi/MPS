@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test"}, tests = {"test_NodeErrorCheck8332528989793491523,test_NodeErrorCheck8332528989793494654,test_ErrorMessagesCheck8332528989793494697"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"analyzers.test.tests.TestAnalyzerWithConstructorParameters_Test", "analyzers.test.tests.ExtendingNullableAnalyzer_Test"}, tests = {"test_NodeErrorCheck8332528989793491523,test_NodeErrorCheck8332528989793494654,test_ErrorMessagesCheck8332528989793494697", "test_ErrorMessagesCheck7974543756120908670,test_NodeWarningCheck1417601170173161910"})
 @ModuleSymbolicSuite.ModuleReference("f9665e4e-baa4-42c6-b97d-c49dfa9f7381(analyzers.test)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_analyzers_test {
