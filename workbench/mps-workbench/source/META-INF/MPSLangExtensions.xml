@@ -60,7 +60,9 @@
 
     <applicationService serviceInterface="com.intellij.ide.PsiActionSupportFactory"
                         serviceImplementation="com.intellij.ide.PsiActionSupportFactoryImpl"/>
+    -->
     <applicationService serviceImplementation="com.intellij.codeInspection.ex.InspectionToolRegistrar"/>
+    <!--
     <applicationService serviceImplementation="com.intellij.codeInsight.template.impl.TemplateSettings"/>
     <applicationService serviceImplementation="com.intellij.codeInsight.template.impl.ExportableTemplateSettings"/>
     -->

@@ -2961,6 +2961,38 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="pBvCW7BDUz" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="refresh" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="pBvCW7BDU$" role="1B3o_S" />
+      <node concept="3cqZAl" id="pBvCW7BDUA" role="3clF45" />
+      <node concept="37vLTG" id="pBvCW7BDUB" role="3clF46">
+        <property role="TrG5h" value="b" />
+        <node concept="10P_77" id="pBvCW7BDUC" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="pBvCW7BDUD" role="3clF46">
+        <property role="TrG5h" value="b1" />
+        <node concept="10P_77" id="pBvCW7BDUE" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="pBvCW7BDUF" role="3clF46">
+        <property role="TrG5h" value="runnable" />
+        <node concept="3uibUv" id="pBvCW7BDUG" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="pBvCW7BDUH" role="3clF47">
+        <node concept="3SKdUt" id="pBvCW7BItt" role="3cqZAp">
+          <node concept="3SKdUq" id="pBvCW7BItv" role="3SKWNk">
+            <property role="3SKdUp" value="Do nothing and don't throw exception as StubVirtualFile to prevent error from TextPreviewModel_Action" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="pBvCW7BDUI" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="9D0Ba05uVt">
     <property role="TrG5h" value="UIFeedbackStrategy" />
