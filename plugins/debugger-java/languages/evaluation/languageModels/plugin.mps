@@ -21,6 +21,7 @@
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" implicit="true" />
   </imports>
@@ -123,6 +124,7 @@
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
@@ -422,6 +424,42 @@
                                       </node>
                                     </node>
                                   </node>
+                                  <node concept="3SKdUt" id="10Zk5zsugO" role="3cqZAp">
+                                    <node concept="3SKdUq" id="10Zk5zsukp" role="3SKWNk">
+                                      <property role="3SKdUp" value="TextGen would use model's repository to obtain read lock, and if model is not registered, there'd be no lock" />
+                                    </node>
+                                  </node>
+                                  <node concept="3SKdUt" id="10Zk5zsvs5" role="3cqZAp">
+                                    <node concept="3SKdUq" id="10Zk5zsvuV" role="3SKWNk">
+                                      <property role="3SKdUp" value="which is fine for the transient model itself, but once there's reference outside of the model, e.g. to a java stub elsewhere," />
+                                    </node>
+                                  </node>
+                                  <node concept="3SKdUt" id="10Zk5zsw_8" role="3cqZAp">
+                                    <node concept="3SKdUq" id="10Zk5zswC0" role="3SKWNk">
+                                      <property role="3SKdUp" value="there would be a lock violation exception" />
+                                    </node>
+                                  </node>
+                                  <node concept="3clFbF" id="10Zk5zssGr" role="3cqZAp">
+                                    <node concept="2OqwBi" id="10Zk5zssKW" role="3clFbG">
+                                      <node concept="37vLTw" id="10Zk5zssGp" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="3wgj6mgL4G7" resolve="module" />
+                                      </node>
+                                      <node concept="liA8E" id="10Zk5zssYY" role="2OqNvi">
+                                        <ref role="37wK5l" to="ap4t:~TransientModelsModule.addModelToKeep(org.jetbrains.mps.openapi.model.SModelReference,boolean):boolean" resolve="addModelToKeep" />
+                                        <node concept="2OqwBi" id="10Zk5zst4i" role="37wK5m">
+                                          <node concept="37vLTw" id="10Zk5zst1B" role="2Oq$k0">
+                                            <ref role="3cqZAo" node="3wgj6mgLjol" resolve="newModel" />
+                                          </node>
+                                          <node concept="liA8E" id="10Zk5zst9B" role="2OqNvi">
+                                            <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                                          </node>
+                                        </node>
+                                        <node concept="3clFbT" id="10Zk5zstf5" role="37wK5m">
+                                          <property role="3clFbU" value="true" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                                 <node concept="TDmWw" id="6zsZmIBXJ27" role="TEbGg">
                                   <node concept="3cpWsn" id="6zsZmIBXJ28" role="TDEfY">
@@ -450,9 +488,42 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="2OqwBi" id="6Bz2ybIoRgp" role="ukAjM">
+                        <node concept="2OqwBi" id="6Bz2ybIoQH8" role="2Oq$k0">
+                          <node concept="2bn25q" id="6Bz2ybIoQH9" role="2Oq$k0">
+                            <node concept="2bn25r" id="6Bz2ybIoQHa" role="2Oq$k0">
+                              <ref role="2bn25l" to="tpcq:5L5h3brvz7k" resolve="checkParameters" />
+                            </node>
+                            <node concept="2sxana" id="6Bz2ybIoQHb" role="2OqNvi">
+                              <ref role="2sxfKC" to="tpcq:5L5h3brvz7T" resolve="makeSession" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="6Bz2ybIoQHc" role="2OqNvi">
+                            <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="6Bz2ybIoRlb" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        </node>
+                      </node>
                     </node>
                     <node concept="3clFbJ" id="2d8cCdtEFSC" role="3cqZAp">
                       <node concept="3clFbS" id="2d8cCdtEFSE" role="3clFbx">
+                        <node concept="3clFbF" id="10Zk5zstzL" role="3cqZAp">
+                          <node concept="2OqwBi" id="10Zk5zstKr" role="3clFbG">
+                            <node concept="liA8E" id="10Zk5zstWz" role="2OqNvi">
+                              <ref role="37wK5l" to="ap4t:~TransientModelsProvider.publishAll():void" resolve="publishAll" />
+                            </node>
+                            <node concept="2bn25q" id="2xdTpLHdaeK" role="2Oq$k0">
+                              <node concept="2bn25r" id="2xdTpLHdaeL" role="2Oq$k0">
+                                <ref role="2bn25l" to="tpcq:5L5h3brvz8m" resolve="configure" />
+                              </node>
+                              <node concept="2sxana" id="2xdTpLHdaeM" role="2OqNvi">
+                                <ref role="2sxfKC" to="tpcq:1sTai73x1y1" resolve="transientModelsProvider" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node concept="3clFbF" id="3wgj6mgLtFS" role="3cqZAp">
                           <node concept="37vLTI" id="3wgj6mgLxZZ" role="3clFbG">
                             <node concept="2ShNRf" id="3wgj6mgLylL" role="37vLTx">

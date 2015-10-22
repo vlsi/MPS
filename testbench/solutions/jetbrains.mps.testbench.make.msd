@@ -77,6 +77,7 @@
     <dependency reexport="false">2f5af9e7-34c8-45f3-b417-4dcbb52409b8(testPackagedLanguage.test)</dependency>
     <dependency reexport="false">f4227833-0d14-4ab5-8560-70880fd9d5ef(testSubstituteType)</dependency>
     <dependency reexport="false">fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41(jetbrains.mps.core.tool.environment)</dependency>
+    <dependency reexport="false">1839bec5-cea6-41df-b9e0-c405ff35c41e(jetbrains.mps.lang.editor.imageGen)</dependency>
     <dependency reexport="false">f9665e4e-baa4-42c6-b97d-c49dfa9f7381(analyzers.test)</dependency>
   </dependencies>
   <languageVersions>

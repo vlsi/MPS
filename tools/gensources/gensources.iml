@@ -261,7 +261,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.lang1/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.lang1/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/xmodel.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.imageGen/classes_gen" />
@@ -950,6 +949,14 @@
     <content url="file://$MODULE_DIR$/../../testbench/modules/testCompilation">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/solutions/analyzers.test/test_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomAnalyzer/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testExtendingAnalyzer/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/solutions/analyzers.test/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor/languages/testDefaultEditor/classes_gen" />
@@ -957,10 +964,6 @@
     <content url="file://$MODULE_DIR$/../../testbench/modules/testDepViewer">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDepViewer/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDepViewer/classes_gen" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../testbench/modules/testExtendingAnalyzer">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testFS">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testFS/solutions/solution1/source_gen" isTestSource="false" />
