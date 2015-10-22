@@ -400,6 +400,8 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/UtilSolution/UtilSolution.msd" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L1/L1.mpl" folder="tests.testClassLoading" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L2/L2.mpl" folder="tests.testClassLoading" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testDataflow/languages/testCustomAnalyzer/testCustomAnalyzer.mpl" folder="tests" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/testDataflow/solutions/analyzers.test/analyzers.test.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDefaultEditor/languages/testDefaultEditor/testDefaultEditor.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDepViewer/tests.testDepViewer.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/testExtendingAnalyzer.mpl" folder="tests" />

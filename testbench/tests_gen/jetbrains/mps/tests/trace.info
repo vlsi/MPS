@@ -369,6 +369,14 @@
       <unit id="7917427600705105663" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test" />
     </file>
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/8332528989793495728">
+    <file name="TestModule_analyzers_test.java">
+      <node id="8332528989793495728" at="12,0,14,0" concept="0" trace="TestModule_analyzers_test#()V" />
+      <scope id="8332528989793495728" at="12,38,12,38" />
+      <scope id="8332528989793495728" at="12,0,14,0" />
+      <unit id="8332528989793495728" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_analyzers_test" />
+    </file>
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/8565053360342421683">
     <file name="TestModule_jetbrains_mps_traceInfo_testWeaving.java">
       <node id="8565053360342421683" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_traceInfo_testWeaving#()V" />

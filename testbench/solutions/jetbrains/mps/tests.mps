@@ -75,6 +75,7 @@
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
     <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
     <import index="hcvu" ref="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)" />
+    <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -4057,6 +4058,15 @@
     </node>
     <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
       <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="7ez5JvPiiEK">
+    <node concept="2R4zua" id="7ez5JvPiiGM" role="2R4z3u">
+      <property role="2R4zub" value="analyzers.test" />
+      <property role="2R4zu8" value="f9665e4e-baa4-42c6-b97d-c49dfa9f7381" />
+    </node>
+    <node concept="lpD6D" id="7ez5JvPiiGO" role="lpD6w">
+      <ref role="lpD7u" to="ma4t:7ez5JvPib_b" resolve="TestAnalyzerWithConstructorParameters" />
     </node>
   </node>
 </model>
