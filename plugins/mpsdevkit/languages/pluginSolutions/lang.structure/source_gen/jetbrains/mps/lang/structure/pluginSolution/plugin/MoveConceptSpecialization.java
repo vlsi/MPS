@@ -20,17 +20,28 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
-public class UpdateLocalConceptInstancesParticipant extends UpdateLocalInstancesParticipant<SAbstractConcept, SAbstractConcept> {
+public class MoveConceptSpecialization implements LanguageStructureMigrationParticipant.StructureSpecialization<SAbstractConcept, SAbstractConcept> {
 
+  public static class LanguageStructureMigrationParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public LanguageStructureMigrationParticipant_extension() {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+    }
+    public MoveNodeRefactoringParticipant<?, ?> get() {
+      return new LanguageStructureMigrationParticipant<SAbstractConcept, SAbstractConcept>(new MoveConceptSpecialization());
+    }
+  }
   public static class UpdateLocalInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateLocalInstances_extension() {
       super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
-      return new UpdateLocalConceptInstancesParticipant();
+      return new UpdateLocalInstancesParticipant<SAbstractConcept, SAbstractConcept>(new MoveConceptSpecialization());
     }
   }
+
   public Tuples._2<Language, SAbstractConcept> beforeMove(SNode nodeToMove) {
     if (SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && SNodeOperations.getModel(nodeToMove).getModule() instanceof Language) {
       return MultiTuple.<Language,SAbstractConcept>from((Language) SNodeOperations.getModel(nodeToMove).getModule(), MetaAdapterByDeclaration.getConcept(nodeToMove));
@@ -38,13 +49,16 @@ public class UpdateLocalConceptInstancesParticipant extends UpdateLocalInstances
       return null;
     }
   }
-
   public Tuples._2<Language, SAbstractConcept> afterMove(SNode movedNode) {
     if (SNodeOperations.isInstanceOf(movedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && SNodeOperations.getModel(movedNode).getModule() instanceof Language) {
       return MultiTuple.<Language,SAbstractConcept>from((Language) SNodeOperations.getModel(movedNode).getModule(), MetaAdapterByDeclaration.getConcept(movedNode));
     } else {
       return null;
     }
+  }
+
+  public void confirm(Tuples._2<Language, SAbstractConcept> initialState, Tuples._2<Language, SAbstractConcept> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
+    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveConcept_kdm6vl_c0a0a7());
   }
   public Collection<SNode> findInstances(final SAbstractConcept concept, SearchScope searchScope) {
     {
@@ -63,5 +77,11 @@ public class UpdateLocalConceptInstancesParticipant extends UpdateLocalInstances
   }
   public void doReplaceInstance(SNode instance, SAbstractConcept newConcept) {
     RefactoringRuntime.replaceWithNewConcept(instance, newConcept);
+  }
+
+  private static SNode createMoveConcept_kdm6vl_c0a0a7() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.util.structure.MoveConcept"), null, null, false);
+    return n1;
   }
 }

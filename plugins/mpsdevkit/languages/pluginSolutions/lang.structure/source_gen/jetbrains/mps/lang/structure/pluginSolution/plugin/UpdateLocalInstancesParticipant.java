@@ -5,16 +5,16 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.Language;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
 import java.util.Map;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -23,14 +23,16 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 
-public abstract class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>>, MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> {
+public class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactoringParticipant<Tuples._2<Language, I>, Tuples._2<Language, F>> {
 
-
-  public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> getDataCollector() {
-    return this;
+  private LanguageStructureMigrationParticipant.StructureSpecialization<I, F> myStructureSpecialization;
+  public UpdateLocalInstancesParticipant(LanguageStructureMigrationParticipant.StructureSpecialization<I, F> structureSpecialization) {
+    myStructureSpecialization = structureSpecialization;
   }
 
-  public abstract Collection<SNode> findInstances(I concept, SearchScope searchScope);
+  public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<Language, I>, Tuples._2<Language, F>> getDataCollector() {
+    return myStructureSpecialization;
+  }
 
   public List<String> getOptions(Tuples._2<Language, I> initialState, SRepository repository) {
     if (initialState != null) {
@@ -47,7 +49,7 @@ public abstract class UpdateLocalInstancesParticipant<I, F> implements MoveNodeR
     if (!(MapSequence.fromMap(options).get(getDescription())) || initialState == null) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
-    Collection<SNode> instances = findInstances(initialState._1(), searchScope);
+    Collection<SNode> instances = myStructureSpecialization.findInstances(initialState._1(), searchScope);
 
     return CollectionSequence.fromCollection(instances).select(new ISelector<SNode, RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>() {
       public RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>> select(SNode instance) {
@@ -70,9 +72,9 @@ public abstract class UpdateLocalInstancesParticipant<I, F> implements MoveNodeR
                 SNode node = nodeRef.resolve(repository);
                 MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
                 if (node == null || MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node)) {
-                  doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), finalState._1());
+                  myStructureSpecialization.doReplaceInstance(MapSequence.fromMap(copyMap.getCopyMap()).get(node), finalState._1());
                 }
-                doReplaceInstance(node, finalState._1());
+                myStructureSpecialization.doReplaceInstance(node, finalState._1());
               }
             });
           }
@@ -82,5 +84,4 @@ public abstract class UpdateLocalInstancesParticipant<I, F> implements MoveNodeR
     }).toListSequence();
   }
 
-  public abstract void doReplaceInstance(SNode instance, F newConcept);
 }
