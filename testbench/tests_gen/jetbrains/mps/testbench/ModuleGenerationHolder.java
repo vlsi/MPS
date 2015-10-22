@@ -65,6 +65,7 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 public class ModuleGenerationHolder {
+  private static String[] BINARY_FILE_EXTENSIONS = new String[]{".png"};
   private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", "exports");
   private final Project project;
   private final SModule module;
@@ -207,6 +208,9 @@ public class ModuleGenerationHolder {
       File rnext = new File(revd, name);
       if (onext.isDirectory() == rnext.isDirectory()) {
         if (!(onext.isDirectory())) {
+          if (isBinary(name)) {
+            continue;
+          }
           List<String> olines = fileToStrings(onext);
           Patch patch = DiffUtils.diff(olines, fileToStrings(rnext));
           if (!(patch.getDeltas().isEmpty())) {
@@ -222,6 +226,14 @@ public class ModuleGenerationHolder {
   }
   private boolean ignoredFile(String fileName) {
     return SetSequence.fromSet(ignoredFiles).contains(fileName) || (fileName != null && fileName.startsWith(".hash"));
+  }
+  private boolean isBinary(String filename) {
+    for (String nextExt : BINARY_FILE_EXTENSIONS) {
+      if (filename.endsWith(nextExt)) {
+        return true;
+      }
+    }
+    return false;
   }
   private List<String> fileToStrings(File f) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
@@ -273,7 +285,7 @@ public class ModuleGenerationHolder {
     });
   }
   private static ScriptBuilder defaultScriptBuilder() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make"), new IFacet.Name("jetbrains.mps.lang.editor.imageGen.GenerateImages")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
   private static Iterable<SModule> withGenerators(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
