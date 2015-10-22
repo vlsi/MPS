@@ -453,7 +453,7 @@
   <search.topHitProvider implementation="com.intellij.ui.tabs.FileColorsOptionsTopHitProvider"/>
   <search.topHitProvider implementation="com.intellij.ide.ui.EditorOptionsTopHitProvider"/>
   <search.topHitProvider implementation="com.intellij.ide.ui.EditorOptionsTopHitProvider$Ex"/>
-  <search.topHitProvider implementation="com.intellij.ide.ui.InspectionsTopHitProvider"/>
+  <!--<search.topHitProvider implementation="com.intellij.ide.ui.InspectionsTopHitProvider"/>-->
   <search.topHitProvider implementation="com.intellij.ide.ui.RegistryOptionsTopHitProvider"/>
   <search.topHitProvider implementation="com.intellij.ide.ui.PluginOptionsTopHitProvider"/>
   <projectService serviceImplementation="com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.UnknownFeaturesCollector"/>
