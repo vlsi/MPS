@@ -2651,6 +2651,9 @@
           <node concept="L2wRC" id="2d0qgmCdfZD" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L6w" resolve="jetbrains.mps.lang.generator.generationParameters" />
           </node>
+          <node concept="L2wRC" id="307DWrMj6V1" role="39821P">
+            <ref role="L2wRA" node="307DWrMiIBc" resolve="jetbrains.mps.lang.generator.plan" />
+          </node>
           <node concept="L2wRC" id="2d0qgmCdfZF" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L7y" resolve="jetbrains.mps.lang.intentions" />
           </node>
@@ -4317,6 +4320,12 @@
           <node concept="3bR9La" id="hE9hNB32OZ" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6L6o" resolve="jetbrains.mps.lang.generator.generationContext" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="307DWrMiM7_" role="3bR37C">
+          <node concept="3bR9La" id="307DWrMiM7A" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="307DWrMiIBc" resolve="jetbrains.mps.lang.generator.plan" />
           </node>
         </node>
       </node>
@@ -9309,6 +9318,39 @@
           <node concept="3bR9La" id="7PoJpZpOEfO" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtD" id="307DWrMiIBc" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.generator.plan" />
+        <property role="3LESm3" value="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" />
+        <property role="2GAjPV" value="false" />
+        <node concept="398BVA" id="307DWrMiJuW" role="3LF7KH">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="307DWrMiK0y" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="307DWrMiK0B" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="307DWrMiK0G" role="2Ry0An">
+                <property role="2Ry0Am" value="generator" />
+                <node concept="2Ry0Ak" id="307DWrMiK0L" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="307DWrMiK0Q" role="2Ry0An">
+                    <property role="2Ry0Am" value="plan" />
+                    <node concept="2Ry0Ak" id="307DWrMiK0V" role="2Ry0An">
+                      <property role="2Ry0Am" value="jetbrains.mps.lang.generator.plan.mpl" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="307DWrMiL_z" role="3bR37C">
+          <node concept="3bR9La" id="307DWrMiL_$" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
           </node>
         </node>
       </node>
