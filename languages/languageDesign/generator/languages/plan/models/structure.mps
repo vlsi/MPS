@@ -6,6 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -75,6 +76,12 @@
     <property role="TrG5h" value="Transform" />
     <property role="R4oN_" value="Collection of languages to reduce (iow, generators to apply)" />
     <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
+    <node concept="1TJgyj" id="2ztrlDPivEd" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="languages" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" to="tp25:34EJa6aIcco" resolve="LanguageIdentity" />
+    </node>
   </node>
 </model>
 
