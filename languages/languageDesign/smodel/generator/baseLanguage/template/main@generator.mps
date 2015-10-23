@@ -243,6 +243,7 @@
         <child id="1169669152123" name="generatorMessage" index="1lHHLF" />
       </concept>
       <concept id="1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" flags="ig" index="jVnub">
+        <child id="1226355936225" name="nullInputMessage" index="28wCFW" />
         <child id="1168558750579" name="defaultConsequence" index="jxRDz" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
@@ -266,9 +267,6 @@
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
-      <concept id="1227303129915" name="jetbrains.mps.lang.generator.structure.AbstractMacro" flags="lg" index="30XT8A">
-        <property id="3265704088513289864" name="comment" index="34cw8o" />
-      </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
         <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
         <child id="1092060348987" name="contentNode" index="13RCb5" />
@@ -290,9 +288,6 @@
       <concept id="1169670156577" name="jetbrains.mps.lang.generator.structure.GeneratorMessage" flags="lg" index="1lLz0L">
         <property id="1169670173015" name="messageText" index="1lLB17" />
         <property id="1169670356567" name="messageType" index="1lMjX7" />
-      </concept>
-      <concept id="1131073187192" name="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro" flags="ln" index="1pdMLZ">
-        <child id="1168281849769" name="sourceNodeQuery" index="31$UT" />
       </concept>
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
@@ -15920,34 +15915,17 @@
     <property role="TrG5h" value="reduce_LanguageRefExpression" />
     <property role="3GE5qa" value="reference.module" />
     <ref role="3gUMe" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
-    <node concept="2YIFZM" id="3TEgbCBRst3" role="13RCb5">
-      <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-      <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-      <node concept="raruj" id="3TEgbCBRsti" role="lGtFl" />
-      <node concept="10Nm6u" id="34EJa6aI_Lj" role="37wK5m">
-        <node concept="5jKBG" id="34EJa6aIAqE" role="lGtFl">
-          <ref role="v9R2y" node="34EJa6aItQJ" resolve="reduce_LanguageId_Id" />
-        </node>
-      </node>
-      <node concept="Xl_RD" id="34EJa6aLIV1" role="37wK5m">
-        <property role="Xl_RC" value="" />
-        <node concept="5jKBG" id="34EJa6aLJsQ" role="lGtFl">
-          <ref role="v9R2y" node="34EJa6aLETL" resolve="reduce_LanguageId_Name" />
-        </node>
-      </node>
-      <node concept="1pdMLZ" id="34EJa6aLJYU" role="lGtFl">
-        <property role="34cw8o" value="Shall either use switch for LanguageIdentity, or rely on LanguageId instance (which is ok as we deliberately create one ourselves)" />
-        <node concept="3NFfHV" id="34EJa6aLKga" role="31$UT">
-          <node concept="3clFbS" id="34EJa6aLKgb" role="2VODD2">
-            <node concept="3clFbF" id="34EJa6aLK_r" role="3cqZAp">
-              <node concept="1PxgMI" id="34EJa6aLLzI" role="3clFbG">
-                <property role="1BlNFB" value="true" />
-                <ref role="1PxNhF" to="tp25:34EJa6aIcz0" resolve="LanguageId" />
-                <node concept="2OqwBi" id="34EJa6aLKJV" role="1PxMeX">
-                  <node concept="30H73N" id="34EJa6aLK_q" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="34EJa6aLLfK" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp25:34EJa6aIpny" />
-                  </node>
+    <node concept="2VYdi" id="2ztrlDPi7nh" role="13RCb5">
+      <node concept="raruj" id="2ztrlDPi7nj" role="lGtFl" />
+      <node concept="1sPUBX" id="2ztrlDPi7nn" role="lGtFl">
+        <ref role="v9R2y" node="2ztrlDPhXlD" resolve="switch_LanguageIdentity_SLanguage" />
+        <node concept="3NFfHV" id="2ztrlDPi7nr" role="1sPUBK">
+          <node concept="3clFbS" id="2ztrlDPi7ns" role="2VODD2">
+            <node concept="3clFbF" id="2ztrlDPi7o5" role="3cqZAp">
+              <node concept="2OqwBi" id="2ztrlDPi7qm" role="3clFbG">
+                <node concept="30H73N" id="2ztrlDPi7o4" role="2Oq$k0" />
+                <node concept="3TrEf2" id="2ztrlDPi7xY" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tp25:34EJa6aIpny" />
                 </node>
               </node>
             </node>
@@ -19767,6 +19745,48 @@
         <node concept="10Oyi0" id="3HzlNjB4xE7" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="3HzlNjB4xCd" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="2ztrlDPhWU_">
+    <property role="TrG5h" value="reduce_LanguageId_SLanguage" />
+    <property role="3GE5qa" value="identity" />
+    <ref role="3gUMe" to="tp25:34EJa6aIcz0" resolve="LanguageId" />
+    <node concept="2YIFZM" id="2ztrlDPhX9P" role="13RCb5">
+      <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
+      <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+      <node concept="raruj" id="2ztrlDPhX9Q" role="lGtFl" />
+      <node concept="10Nm6u" id="2ztrlDPhX9R" role="37wK5m">
+        <node concept="5jKBG" id="2ztrlDPhX9S" role="lGtFl">
+          <ref role="v9R2y" node="34EJa6aItQJ" resolve="reduce_LanguageId_Id" />
+        </node>
+      </node>
+      <node concept="Xl_RD" id="2ztrlDPhX9T" role="37wK5m">
+        <property role="Xl_RC" value="" />
+        <node concept="5jKBG" id="2ztrlDPhX9U" role="lGtFl">
+          <ref role="v9R2y" node="34EJa6aLETL" resolve="reduce_LanguageId_Name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="2ztrlDPhXlD">
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="switch_LanguageIdentity_SLanguage" />
+    <node concept="3aamgX" id="2ztrlDPhXlG" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:34EJa6aIcz0" resolve="LanguageId" />
+      <node concept="j$656" id="2ztrlDPhXlK" role="1lVwrX">
+        <ref role="v9R2y" node="2ztrlDPhWU_" resolve="reduce_LanguageId_SLanguage" />
+      </node>
+    </node>
+    <node concept="1lLz0L" id="2ztrlDPhXlE" role="28wCFW">
+      <property role="1lMjX7" value="error" />
+      <property role="1lLB17" value="&quot;Need an instance of LanguageIdentity&quot;" />
+    </node>
+    <node concept="j$LIH" id="2ztrlDPhXlS" role="jxRDz">
+      <node concept="1lLz0L" id="2ztrlDPhXlU" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="&quot;Unsupported LanguageIdentity kind&quot;" />
+      </node>
     </node>
   </node>
 </model>

@@ -64,6 +64,7 @@
   <node concept="1TIwiD" id="1_4co2y1Lw1">
     <property role="1pbfSe" value="1152693887" />
     <property role="TrG5h" value="Checkpoint" />
+    <property role="R4oN_" value="Synchronization point of a generation plan" />
     <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
     <node concept="PrWs8" id="1_4co2y1Lw3" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -72,6 +73,7 @@
   <node concept="1TIwiD" id="1_4co2y1Lw2">
     <property role="1pbfSe" value="1152693886" />
     <property role="TrG5h" value="Transform" />
+    <property role="R4oN_" value="Collection of languages to reduce (iow, generators to apply)" />
     <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
   </node>
 </model>
