@@ -19,7 +19,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -64,9 +64,9 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return true;
     }
 
-    int maxFrom = IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
+    int maxFrom = (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
-        return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
+        return (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
       }
     }, false).first());
 
@@ -108,9 +108,9 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
     if (ListSequence.fromList(scripts).isNotEmpty()) {
-      int maxFrom = IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
+      int maxFrom = (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
-          return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
+          return (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
         }
       }, false).first());
       lang.setLanguageVersion(maxFrom + 1);
