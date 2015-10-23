@@ -426,7 +426,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (myLanguageVersion != null) {
           try {
             int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
-            myModule.setModuleVersion(newLanguageVersion);
+            ((Language) myModule).setLanguageVersion(newLanguageVersion);
           } catch (NumberFormatException e) {
             //just continue omitting this field
           }
