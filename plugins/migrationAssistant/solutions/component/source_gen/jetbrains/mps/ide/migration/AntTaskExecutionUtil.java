@@ -36,7 +36,7 @@ public class AntTaskExecutionUtil {
       }
     }
 
-    List<Tuples._3<SModule, SLanguage, Integer>> missingMigrations = m.getMissingMigrations();
+    List<Tuples._3<SModule, SLanguage, Integer>> missingMigrations = null;
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
       throw new Exception("Some migrations are missing");
     }
@@ -66,7 +66,7 @@ public class AntTaskExecutionUtil {
     }
 
     while (true) {
-      MigrationManager.MigrationStep step = m.nextLanguageStep();
+      MigrationManager.MigrationStep step = m.nextModuleStep();
       if (step == null) {
         break;
       }

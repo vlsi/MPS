@@ -11,7 +11,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,7 +35,7 @@ public final class MakeDirect_Intention extends IntentionDescriptorBase implemen
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository()) != null);
+    return (AbstractNodeReference__BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository()) != null);
   }
   @Override
   public boolean isSurroundWith() {
@@ -56,7 +56,7 @@ public final class MakeDirect_Intention extends IntentionDescriptorBase implemen
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, NodeReferenceUtil.makeDirect(AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository())));
+      SNodeOperations.replaceWithAnother(node, NodeReferenceUtil.makeDirect(AbstractNodeReference__BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository())));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

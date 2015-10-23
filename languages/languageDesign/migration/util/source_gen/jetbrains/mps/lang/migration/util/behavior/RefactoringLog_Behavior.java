@@ -4,17 +4,14 @@ package jetbrains.mps.lang.migration.util.behavior;
 
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /**
- * will be removed after 3.3
- * need to support the legacy static direct method calls
+ * Will be removed after 3.3
+ * Need to support the legacy static direct method calls
  */
 @Deprecated
 public class RefactoringLog_Behavior {
   public static RefactoringLogReference call_getDescriptor_5168866961623837055(SNode __thisNode__) {
-    return new RefactoringLogReference(SNodeOperations.getModel(__thisNode__).getModule(), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")));
+    return RefactoringLog__BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z(__thisNode__);
   }
 }

@@ -335,8 +335,8 @@
         <node concept="3cpWs8" id="5$zfhXzq_ju" role="3cqZAp">
           <node concept="3cpWsn" id="5$zfhXzq_jv" role="3cpWs9">
             <property role="TrG5h" value="mc" />
-            <node concept="3uibUv" id="vzRt1VhfQp" role="1tU5fm">
-              <ref role="3uigEE" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
+            <node concept="3uibUv" id="2STGii$9ks3" role="1tU5fm">
+              <ref role="3uigEE" to="bim2:36$CdjYcVqX" resolve="MigrationManagerImpl" />
             </node>
             <node concept="1eOMI4" id="5$zfhXzq_Ma" role="33vP2m">
               <node concept="10QFUN" id="5$zfhXzq_Mb" role="1eOMHV">
@@ -354,8 +354,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3uibUv" id="5$zfhXzq_M3" role="10QFUM">
-                  <ref role="3uigEE" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
+                <node concept="3uibUv" id="2STGii$9kQB" role="10QFUM">
+                  <ref role="3uigEE" to="bim2:36$CdjYcVqX" resolve="MigrationManagerImpl" />
                 </node>
               </node>
             </node>
@@ -438,11 +438,16 @@
                                       <ref role="3uigEE" to="6f4m:2RG318eVG1Z" resolve="MigrationScript" />
                                     </node>
                                     <node concept="2OqwBi" id="5$zfhXzqQnJ" role="33vP2m">
-                                      <node concept="37vLTw" id="5$zfhXzqQnK" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="5$zfhXzq_jv" resolve="mc" />
+                                      <node concept="2OqwBi" id="2STGii$9l1P" role="2Oq$k0">
+                                        <node concept="37vLTw" id="5$zfhXzqQnK" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="5$zfhXzq_jv" resolve="mc" />
+                                        </node>
+                                        <node concept="liA8E" id="2STGii$9ldC" role="2OqNvi">
+                                          <ref role="37wK5l" to="bim2:2STGii$$vtx" resolve="getMigrationComponent" />
+                                        </node>
                                       </node>
                                       <node concept="liA8E" id="5$zfhXzqQnL" role="2OqNvi">
-                                        <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchScript" />
+                                        <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchMigrationScript" />
                                         <node concept="2ShNRf" id="5$zfhXzqQnM" role="37wK5m">
                                           <node concept="1pGfFk" id="5$zfhXzqQnN" role="2ShVmc">
                                             <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />
@@ -835,7 +840,7 @@
                                 </node>
                               </node>
                               <node concept="liA8E" id="5$zfhXzrXqD" role="2OqNvi">
-                                <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchScript" />
+                                <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchMigrationScript" />
                                 <node concept="2ShNRf" id="5$zfhXzrXqE" role="37wK5m">
                                   <node concept="1pGfFk" id="5$zfhXzrXqF" role="2ShVmc">
                                     <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />
@@ -1177,8 +1182,8 @@
         <node concept="3cpWs8" id="5$zfhXzr60j" role="3cqZAp">
           <node concept="3cpWsn" id="5$zfhXzr60k" role="3cpWs9">
             <property role="TrG5h" value="mc" />
-            <node concept="3uibUv" id="5$zfhXzr60l" role="1tU5fm">
-              <ref role="3uigEE" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
+            <node concept="3uibUv" id="2STGii$9mno" role="1tU5fm">
+              <ref role="3uigEE" to="bim2:36$CdjYcVqX" resolve="MigrationManagerImpl" />
             </node>
             <node concept="1eOMI4" id="5$zfhXzr60m" role="33vP2m">
               <node concept="10QFUN" id="5$zfhXzr60n" role="1eOMHV">
@@ -1196,8 +1201,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3uibUv" id="5$zfhXzr60u" role="10QFUM">
-                  <ref role="3uigEE" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
+                <node concept="3uibUv" id="2STGii$9mBZ" role="10QFUM">
+                  <ref role="3uigEE" to="bim2:36$CdjYcVqX" resolve="MigrationManagerImpl" />
                 </node>
               </node>
             </node>
@@ -1282,11 +1287,16 @@
                                       <ref role="3uigEE" to="6f4m:2RG318eVG1Z" resolve="MigrationScript" />
                                     </node>
                                     <node concept="2OqwBi" id="5$zfhXzr613" role="33vP2m">
-                                      <node concept="37vLTw" id="5$zfhXzr614" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="5$zfhXzr60k" resolve="mc" />
+                                      <node concept="2OqwBi" id="2STGii$9mSh" role="2Oq$k0">
+                                        <node concept="37vLTw" id="5$zfhXzr614" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="5$zfhXzr60k" resolve="mc" />
+                                        </node>
+                                        <node concept="liA8E" id="2STGii$9n70" role="2OqNvi">
+                                          <ref role="37wK5l" to="bim2:2STGii$$vtx" resolve="getMigrationComponent" />
+                                        </node>
                                       </node>
                                       <node concept="liA8E" id="5$zfhXzr615" role="2OqNvi">
-                                        <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchScript" />
+                                        <ref role="37wK5l" to="bim2:5TtkZMYUq8y" resolve="fetchMigrationScript" />
                                         <node concept="2ShNRf" id="5$zfhXzr616" role="37wK5m">
                                           <node concept="1pGfFk" id="5$zfhXzr617" role="2ShVmc">
                                             <ref role="37wK5l" to="6f4m:1HyHl70Zxpa" resolve="MigrationScriptReference" />

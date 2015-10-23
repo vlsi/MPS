@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +19,7 @@ public class check_NodeReference_NonTypesystemRule extends AbstractNonTypesystem
   public check_NodeReference_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNodeReference ref = AbstractNodeReference_BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(nodeReference);
+    SNodeReference ref = AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(nodeReference);
     if (!(ref != null)) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeReference, "Invalid node reference", "9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)", "112372100253050975", null, errorTarget);

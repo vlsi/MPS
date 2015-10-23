@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.util.NodeReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -40,7 +40,7 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.util.NodeReferenceUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

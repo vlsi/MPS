@@ -5,7 +5,6 @@ package jetbrains.mps.ide.migration;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.migration.component.util.MigrationComponent;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.NameUtil;

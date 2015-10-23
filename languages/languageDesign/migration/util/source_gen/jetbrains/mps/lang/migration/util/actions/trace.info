@@ -15,10 +15,10 @@
     <file name="NodeReference_factories.java">
       <node id="2864063292004391952" at="18,214,19,543" concept="0" />
       <node id="2864063292004398534" at="19,543,20,605" concept="0" />
-      <node id="2864063292004382263" at="20,605,21,587" concept="0" />
+      <node id="2864063292004382263" at="20,605,21,588" concept="0" />
       <node id="2864063292004381173" at="17,91,22,7" concept="1" />
       <node id="2864063292004380727" at="17,0,24,0" concept="2" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="2864063292004381174" at="18,214,21,587" />
+      <scope id="2864063292004381174" at="18,214,21,588" />
       <scope id="2864063292004380727" at="17,91,22,7" />
       <scope id="2864063292004380727" at="17,0,24,0">
         <var name="enclosingNode" id="2864063292004380727" />

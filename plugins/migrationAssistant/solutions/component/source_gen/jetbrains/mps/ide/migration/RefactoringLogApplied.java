@@ -5,7 +5,6 @@ package jetbrains.mps.ide.migration;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.migration.component.util.MigrationComponent;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.AbstractModule;

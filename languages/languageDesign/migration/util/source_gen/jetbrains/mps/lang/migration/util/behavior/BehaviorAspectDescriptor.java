@@ -12,19 +12,19 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myRefactoringLog_BehaviorDescriptor = new RefactoringLog_BehaviorDescriptor();
-  private final BHDescriptor myReflectionNodeReference_BehaviorDescriptor = new ReflectionNodeReference_BehaviorDescriptor();
-  private final BHDescriptor myAbstractNodeReference_BehaviorDescriptor = new AbstractNodeReference_BehaviorDescriptor();
-  private final BHDescriptor myMoveNodeSpecialization_BehaviorDescriptor = new MoveNodeSpecialization_BehaviorDescriptor();
-  private final BHDescriptor myMoveConcept_BehaviorDescriptor = new MoveConcept_BehaviorDescriptor();
-  private final BHDescriptor myMoveReferenceLink_BehaviorDescriptor = new MoveReferenceLink_BehaviorDescriptor();
-  private final BHDescriptor myMoveConceptMember_BehaviorDescriptor = new MoveConceptMember_BehaviorDescriptor();
-  private final BHDescriptor myMoveProperty_BehaviorDescriptor = new MoveProperty_BehaviorDescriptor();
-  private final BHDescriptor myMoveContainmentLink_BehaviorDescriptor = new MoveContainmentLink_BehaviorDescriptor();
-  private final BHDescriptor myIMigrationUnit_BehaviorDescriptor = new IMigrationUnit_BehaviorDescriptor();
-  private final BHDescriptor myMoveNode_BehaviorDescriptor = new MoveNode_BehaviorDescriptor();
-  private final BHDescriptor myDirectNodeReference_BehaviorDescriptor = new DirectNodeReference_BehaviorDescriptor();
-  private final BHDescriptor myPureMigrationScript_BehaviorDescriptor = new PureMigrationScript_BehaviorDescriptor();
+  private final BHDescriptor myRefactoringLog__BehaviorDescriptor = new RefactoringLog__BehaviorDescriptor();
+  private final BHDescriptor myReflectionNodeReference__BehaviorDescriptor = new ReflectionNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myAbstractNodeReference__BehaviorDescriptor = new AbstractNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myMoveNodeSpecialization__BehaviorDescriptor = new MoveNodeSpecialization__BehaviorDescriptor();
+  private final BHDescriptor myMoveConcept__BehaviorDescriptor = new MoveConcept__BehaviorDescriptor();
+  private final BHDescriptor myMoveReferenceLink__BehaviorDescriptor = new MoveReferenceLink__BehaviorDescriptor();
+  private final BHDescriptor myMoveConceptMember__BehaviorDescriptor = new MoveConceptMember__BehaviorDescriptor();
+  private final BHDescriptor myMoveProperty__BehaviorDescriptor = new MoveProperty__BehaviorDescriptor();
+  private final BHDescriptor myMoveContainmentLink__BehaviorDescriptor = new MoveContainmentLink__BehaviorDescriptor();
+  private final BHDescriptor myIMigrationUnit__BehaviorDescriptor = new IMigrationUnit__BehaviorDescriptor();
+  private final BHDescriptor myMoveNode__BehaviorDescriptor = new MoveNode__BehaviorDescriptor();
+  private final BHDescriptor myDirectNodeReference__BehaviorDescriptor = new DirectNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myPureMigrationScript__BehaviorDescriptor = new PureMigrationScript__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
@@ -57,31 +57,31 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myRefactoringLog_BehaviorDescriptor;
+        return myRefactoringLog__BehaviorDescriptor;
       case 1:
-        return myReflectionNodeReference_BehaviorDescriptor;
+        return myReflectionNodeReference__BehaviorDescriptor;
       case 2:
-        return myAbstractNodeReference_BehaviorDescriptor;
+        return myAbstractNodeReference__BehaviorDescriptor;
       case 3:
-        return myMoveNodeSpecialization_BehaviorDescriptor;
+        return myMoveNodeSpecialization__BehaviorDescriptor;
       case 4:
-        return myMoveConcept_BehaviorDescriptor;
+        return myMoveConcept__BehaviorDescriptor;
       case 5:
-        return myMoveReferenceLink_BehaviorDescriptor;
+        return myMoveReferenceLink__BehaviorDescriptor;
       case 6:
-        return myMoveConceptMember_BehaviorDescriptor;
+        return myMoveConceptMember__BehaviorDescriptor;
       case 7:
-        return myMoveProperty_BehaviorDescriptor;
+        return myMoveProperty__BehaviorDescriptor;
       case 8:
-        return myMoveContainmentLink_BehaviorDescriptor;
+        return myMoveContainmentLink__BehaviorDescriptor;
       case 9:
-        return myIMigrationUnit_BehaviorDescriptor;
+        return myIMigrationUnit__BehaviorDescriptor;
       case 10:
-        return myMoveNode_BehaviorDescriptor;
+        return myMoveNode__BehaviorDescriptor;
       case 11:
-        return myDirectNodeReference_BehaviorDescriptor;
+        return myDirectNodeReference__BehaviorDescriptor;
       case 12:
-        return myPureMigrationScript_BehaviorDescriptor;
+        return myPureMigrationScript__BehaviorDescriptor;
       default:
         return null;
     }

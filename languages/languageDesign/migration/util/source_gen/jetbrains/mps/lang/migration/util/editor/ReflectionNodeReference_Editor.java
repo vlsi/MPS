@@ -15,7 +15,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -66,7 +66,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ktoyyv_c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        SNode target = AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, SNodeOperations.getModel(node).getModule().getRepository());
+        SNode target = AbstractNodeReference__BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, SNodeOperations.getModel(node).getModule().getRepository());
         if ((target != null)) {
           return NodeReferenceUtil.getNodePresentation(target);
         } else {
@@ -88,7 +88,7 @@ public class ReflectionNodeReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_ktoyyv_a0c0(EditorContext editorContext, SNode node) {
-    if (AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository()) == null) {
+    if (AbstractNodeReference__BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository()) == null) {
       return MPSColors.YELLOW;
     } else {
       return null;

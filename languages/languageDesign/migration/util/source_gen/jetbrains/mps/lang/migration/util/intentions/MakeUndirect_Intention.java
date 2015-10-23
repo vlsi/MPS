@@ -15,7 +15,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
-import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference_BehaviorDescriptor;
+import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class MakeUndirect_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -50,7 +50,7 @@ public final class MakeUndirect_Intention extends IntentionDescriptorBase implem
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, NodeReferenceUtil.makeReflection(AbstractNodeReference_BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository())));
+      SNodeOperations.replaceWithAnother(node, NodeReferenceUtil.makeReflection(AbstractNodeReference__BehaviorDescriptor.tryToFindNode_id6szrkDoc2K7.invoke(node, editorContext.getRepository())));
     }
     @Override
     public IntentionDescriptor getDescriptor() {

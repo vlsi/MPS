@@ -42,7 +42,7 @@
       <node id="2864063292004105744" at="61,77,62,40" concept="2" />
       <node id="2864063292004105744" at="62,40,63,34" concept="2" />
       <node id="2864063292004105744" at="63,34,64,22" concept="6" />
-      <node id="2864063292004144187" at="68,31,69,165" concept="5" />
+      <node id="2864063292004144187" at="68,31,69,166" concept="5" />
       <node id="5632889823466108433" at="70,31,71,63" concept="6" />
       <node id="5632889823466108980" at="72,16,73,181" concept="6" />
       <node id="2864063292004103289" at="78,44,79,46" concept="6" />
@@ -53,7 +53,7 @@
       <node id="2864063292004103289" at="85,34,86,282" concept="2" />
       <node id="2864063292004103289" at="86,282,87,40" concept="2" />
       <node id="2864063292004103289" at="87,40,88,22" concept="6" />
-      <node id="2864063292004364737" at="91,131,92,30" concept="6" />
+      <node id="2864063292004364737" at="91,132,92,30" concept="6" />
       <node id="2864063292004374372" at="93,12,94,18" concept="6" />
       <node id="2864063292004105757" at="97,88,98,87" concept="5" />
       <node id="2864063292004105757" at="98,87,99,47" concept="2" />
@@ -167,7 +167,7 @@
       <node id="2864063292004103289" at="34,0,37,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2864063292004103289" at="37,0,40,0" concept="4" trace="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="2864063292004103289" at="78,0,81,0" concept="4" trace="isValidText#(Ljava/lang/String;)Z" />
-      <node id="2864063292004143175" at="69,165,74,9" concept="3" />
+      <node id="2864063292004143175" at="69,166,74,9" concept="3" />
       <node id="2864063292004355172" at="90,107,95,5" concept="3" />
       <node id="2864063292004163989" at="145,59,150,22" concept="3" />
       <node id="2864063292004164008" at="180,59,185,22" concept="3" />
@@ -200,7 +200,7 @@
       <scope id="2864063292004143176" at="70,31,71,63" />
       <scope id="5632889823466106901" at="72,16,73,181" />
       <scope id="2864063292004103289" at="78,44,79,46" />
-      <scope id="2864063292004355173" at="91,131,92,30" />
+      <scope id="2864063292004355173" at="91,132,92,30" />
       <scope id="2864063292004373810" at="93,12,94,18" />
       <scope id="2864063292004103289" at="111,35,112,83" />
       <scope id="2864063292004103289" at="112,83,113,83" />

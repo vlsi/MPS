@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.lang.core.behavior.ChildAttribute_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -45,11 +45,11 @@ public class RefactoringRuntime {
     Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
     Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ChildAttribute_BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it).equals(oldLink);
+        return ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it).equals(oldLink);
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ChildAttribute_BehaviorDescriptor.setLink_idBpxLfMirzM.invoke(it, newLink);
+        ChildAttribute__BehaviorDescriptor.setLink_idBpxLfMirzM.invoke(it, newLink);
       }
     });
 
