@@ -14,19 +14,12 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.core.aspects.behaviour.SParameterImpl;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringStepImpl;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
@@ -35,34 +28,14 @@ public final class RefactoringLog_BehaviorDescriptor extends BaseBHDescriptor {
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<RefactoringLogReference> getDescriptor_id4uVwhQyPQ_Z = new SMethodBuilder<RefactoringLogReference>(new SJavaCompoundTypeImpl(RefactoringLogReference.class)).name("getDescriptor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4uVwhQyPQ_Z").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
-  public static final SMethod<RefactoringLog> getImplementation_id1JTUOcBrmo$ = new SMethodBuilder<RefactoringLog>(new SJavaCompoundTypeImpl(RefactoringLog.class)).name("getImplementation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1JTUOcBrmo$").registry(REGISTRY).build(SParameterImpl.fromList(SJavaCompoundTypeImpl.fromClasses()));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescriptor_id4uVwhQyPQ_Z, getImplementation_id1JTUOcBrmo$);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDescriptor_id4uVwhQyPQ_Z);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   private static RefactoringLogReference getDescriptor_id4uVwhQyPQ_Z(@NotNull SNode __thisNode__) {
     return new RefactoringLogReference(SNodeOperations.getModel(__thisNode__).getModule(), SPropertyOperations.getInteger(__thisNode__, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion")));
-  }
-  private static RefactoringLog getImplementation_id1JTUOcBrmo$(@NotNull SNode __thisNode__) {
-    return new RefactoringStepImpl(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), RefactoringLog_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(__thisNode__), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d90L, "executeAfter"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d9dL, 0x1bf9eb43276b6d9eL, "refactoring")) != null);
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d9dL, 0x1bf9eb43276b6d9eL, "refactoring"));
-      }
-    }).select(new ISelector<SNode, RefactoringLogReference>() {
-      public RefactoringLogReference select(SNode it) {
-        return RefactoringLog_BehaviorDescriptor.getDescriptor_id4uVwhQyPQ_Z.invoke(it);
-      }
-    }), ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).select(new ISelector<SNode, RefactoringPart>() {
-      public RefactoringPart select(SNode it) {
-        return RefactoringPart_BehaviorDescriptor.getImplementation_id4uVwhQyQ01H.invoke(it);
-      }
-    }));
   }
 
   /*package*/ RefactoringLog_BehaviorDescriptor() {
@@ -83,8 +56,6 @@ public final class RefactoringLog_BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) getDescriptor_id4uVwhQyPQ_Z(node);
-      case 1:
-        return (T) getImplementation_id1JTUOcBrmo$(node);
       default:
         throw new BHMethodNotFoundException(this, method);
     }

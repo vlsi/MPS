@@ -74,7 +74,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.Problem" file="Problem.java">
     <classNode dependClassName="java.lang.String" />
@@ -91,11 +90,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringPart" file="RefactoringPart.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.RefactoringStepImpl" file="RefactoringStepImpl.java">
     <classNode dependClassName="java.lang.Iterable" />

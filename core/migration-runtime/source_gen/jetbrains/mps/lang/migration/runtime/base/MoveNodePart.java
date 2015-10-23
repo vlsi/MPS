@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public class MoveNodePart implements RefactoringPart {
+public class MoveNodePart {
   private SNodeReference myFrom;
   private SNodeReference myTo;
 

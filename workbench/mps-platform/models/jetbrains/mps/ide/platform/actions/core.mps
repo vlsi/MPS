@@ -6163,5 +6163,15 @@
       </node>
     </node>
   </node>
+  <node concept="vrV6u" id="39r_V8zIHX1">
+    <property role="TrG5h" value="PersistentRefactoringParticipantsEP" />
+    <node concept="A3Dl8" id="39r_V8zII6G" role="luc8K">
+      <node concept="3uibUv" id="39r_V8zII9U" role="A3Ik2">
+        <ref role="3uigEE" node="5DMHUkptmAc" resolve="RefactoringParticipant.PersistentRefactoringParticipant" />
+        <node concept="3qTvmN" id="39r_V8zIIjs" role="11_B2D" />
+        <node concept="3qTvmN" id="39r_V8zIIpM" role="11_B2D" />
+      </node>
+    </node>
+  </node>
 </model>
 

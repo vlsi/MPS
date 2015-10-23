@@ -2439,9 +2439,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="4uVwhQyQ2vC" role="1B3o_S" />
-    <node concept="3uibUv" id="4uVwhQyQ2w6" role="EKbjA">
-      <ref role="3uigEE" node="4uVwhQyPI7d" resolve="RefactoringPart" />
-    </node>
   </node>
   <node concept="312cEu" id="4uVwhQyPurf">
     <property role="TrG5h" value="RefactoringLogReference" />
@@ -2901,29 +2898,6 @@
   </node>
   <node concept="3HP615" id="4uVwhQyPI7d">
     <property role="TrG5h" value="RefactoringPart" />
-    <node concept="3clFb_" id="3pibKp8s_Cu" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="getAffectedNodes" />
-      <node concept="A3Dl8" id="3pibKp8ti7_" role="3clF45">
-        <node concept="3uibUv" id="3pibKp8tiNV" role="A3Ik2">
-          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="3pibKp8s_Cx" role="1B3o_S" />
-      <node concept="3clFbS" id="3pibKp8s_Cy" role="3clF47" />
-      <node concept="37vLTG" id="3pibKp8tiA8" role="3clF46">
-        <property role="TrG5h" value="searchScope" />
-        <node concept="3uibUv" id="3pibKp8tiA7" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3pibKp8tiCn" role="3clF46">
-        <property role="TrG5h" value="repository" />
-        <node concept="3uibUv" id="3pibKp8tiFR" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="4uVwhQyPJD3" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="execute" />

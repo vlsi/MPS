@@ -6,6 +6,9 @@ import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -23,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -35,8 +37,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -53,9 +53,22 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     }
   }
 
+  public static class MoveNodeParticipants extends Extension.Default<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>> {
+    public MoveNodeParticipants() {
+      super("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP");
+    }
+    public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>> get() {
+      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>() {
+        public RefactoringParticipant.PersistentRefactoringParticipant<?, ?> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
+          return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?>) it;
+        }
+      });
+    }
+  }
+
   public static class SerializingParticipantState<I, F> {
     private MoveNodeRefactoringParticipant<I, F> myParticipant;
-    private RefactoringParticipant.PersistentRefactoringParticipant<I, F> myParticipantPersistent;
+    private RefactoringParticipant.PersistentRefactoringParticipant<I, F> myPersistentParticipant;
     public static <I, F> MoveNodeRefactoringLogParticipant.SerializingParticipantState<I, F> create(MoveNodeRefactoringParticipant<I, F> participant) {
       if (!(participant instanceof RefactoringParticipant.PersistentRefactoringParticipant)) {
         return null;
@@ -64,16 +77,16 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     }
     public SerializingParticipantState(MoveNodeRefactoringParticipant<I, F> participant, RefactoringParticipant.PersistentRefactoringParticipant<I, F> participantPersistence) {
       myParticipant = participant;
-      myParticipantPersistent = participantPersistence;
+      myPersistentParticipant = participantPersistence;
     }
     public RefactoringParticipant.PersistentRefactoringParticipant<I, F> getParticipant() {
-      return myParticipantPersistent;
+      return myPersistentParticipant;
     }
     public SNode getSerializedInitial(SNode oldNode) {
-      return myParticipantPersistent.serializeInitialState(myParticipant.getDataCollector().beforeMove(oldNode));
+      return myPersistentParticipant.serializeInitialState(myParticipant.getDataCollector().beforeMove(oldNode));
     }
     public SNode getSerializedFinal(SNode newNode) {
-      return myParticipantPersistent.serializeFinalState(myParticipant.getDataCollector().afterMove(newNode));
+      return myPersistentParticipant.serializeFinalState(myParticipant.getDataCollector().afterMove(newNode));
     }
   }
 
@@ -110,7 +123,7 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     private SNode myRefactoringStep;
     public LogBuilder(RefactoringSession session, final Language module) {
       final int moduleVersion = module.getModuleVersion();
-      myRefactoringStep = createRefactoringLog_29rp6m_a0b0d01(moduleVersion, "RefactoringLog_" + moduleVersion);
+      myRefactoringStep = createRefactoringLog_29rp6m_a0b0d21(moduleVersion, "RefactoringLog_" + moduleVersion);
       session.registerChange(new Runnable() {
         public void run() {
           SModel migrationModel = LanguageAspect.MIGRATION.getOrCreate(module);
@@ -139,9 +152,9 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
       });
     }
     public void addPart(RefactoringParticipant.PersistentRefactoringParticipant participant, SNode initialState, SNode finalState) {
-      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).addElement(createMoveNode_29rp6m_a0a0a4k(SNodeOperations.cast(HUtil.copyIfNecessary(initialState), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference")), SNodeOperations.cast(HUtil.copyIfNecessary(finalState), MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1648ccL, "jetbrains.mps.lang.migration.util.structure.AbstractNodeReference"))));
+      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).addElement(createRefactoringPart_29rp6m_a0a0a4m(participant.getId(), SNodeOperations.cast(HUtil.copyIfNecessary(initialState), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), SNodeOperations.cast(HUtil.copyIfNecessary(finalState), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
     }
-    private static SNode createRefactoringLog_29rp6m_a0b0d01(Object p0, Object p1) {
+    private static SNode createRefactoringLog_29rp6m_a0b0d21(Object p0, Object p1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.util.structure.RefactoringLog"), null, null, false);
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "refactoring");
@@ -149,14 +162,15 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), p1 + "");
       return n1;
     }
-    private static SNode createMoveNode_29rp6m_a0a0a4k(Object p0, Object p1) {
+    private static SNode createRefactoringPart_29rp6m_a0a0a4m(Object p0, Object p1, Object p2) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.util.structure.MoveNode"), null, null, false);
-      if (p0 != null) {
-        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d15L, "fromNode"), (SNode) p0);
-      }
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, "jetbrains.mps.lang.migration.util.structure.RefactoringPart"), null, null, false);
+      n1.setProperty(MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant"), p0 + "");
       if (p1 != null) {
-        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x67236d4a5830221eL, 0x67236d4a58343d17L, "toNode"), (SNode) p1);
+        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState"), (SNode) p1);
+      }
+      if (p2 != null) {
+        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState"), (SNode) p2);
       }
       return n1;
     }

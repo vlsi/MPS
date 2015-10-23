@@ -96,7 +96,6 @@
     <property role="TrG5h" value="MoveNode" />
     <property role="3GE5qa" value="refactoring" />
     <property role="1pbfSe" value="1085042840" />
-    <ref role="1TJDcQ" node="2GZlO$G5z5o" resolve="RefactoringPart" />
     <node concept="1TJgyj" id="6szrkDod3Ol" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="fromNode" />
@@ -148,7 +147,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="part" />
       <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="2GZlO$G5z5o" resolve="RefactoringPart" />
+      <ref role="20lvS9" node="6szrkDoc28u" resolve="MoveNode" />
     </node>
     <node concept="PrWs8" id="4uVwhQyPPvQ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -163,10 +162,26 @@
   <node concept="1TIwiD" id="2GZlO$G5z5o">
     <property role="3GE5qa" value="refactoring" />
     <property role="TrG5h" value="RefactoringPart" />
-    <property role="R5$K7" value="true" />
+    <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="1pbfSe" value="1465223329" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="39r_V8zIueG" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="initialState" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="1TJgyj" id="39r_V8zIueI" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="finalState" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="1TJgyi" id="39r_V8zIueE" role="1TKVEl">
+      <property role="TrG5h" value="participant" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2GZlO$G5$zc">
     <property role="3GE5qa" value="refactoring.reference" />
