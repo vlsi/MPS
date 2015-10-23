@@ -276,6 +276,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void save() {
     assertCanChange();
     validateLanguageVersions();
+    validateDependencyVersions();
     myChanged = false;
   }
 
@@ -629,6 +630,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myDescriptorFile;
   }
 
+  public void setModuleVersion(int version) {
+    getModuleDescriptor().setModuleVersion(version);
+    fireChanged();
+    setChanged();
+  }
+
+  public int getModuleVersion() {
+    return getModuleDescriptor().getModuleVersion();
+  }
+
   public void rename(String newName) {
     renameModels(getModuleName(), newName, true);
 
@@ -940,6 +951,32 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     oldLanguageVersions.putAll(newLanguageVersions);
   }
 
+  public void validateDependencyVersions() {
+    assertCanChange();
+    ModuleDescriptor md = getModuleDescriptor();
+    Map<SModuleReference, Integer> oldDepVersions = md.getDependencyVersions();
+    Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
+    List<SModule> visible = new ArrayList<SModule>();
+    visible.add(this);
+    visible.addAll(new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE));
+    if (!md.hasDependencyVersions()) {
+      for (SModule dep : visible) {
+        newDepVersions.put(dep.getModuleReference(), 0);
+      }
+      md.setHasDependencyVersions(true);
+    } else {
+      for (SModule dep : visible) {
+        if (oldDepVersions.containsKey(dep.getModuleReference())) {
+          newDepVersions.put(dep.getModuleReference(), oldDepVersions.get(dep.getModuleReference()));
+        } else {
+          newDepVersions.put(dep.getModuleReference(), ((AbstractModule) dep).getModuleVersion());
+        }
+      }
+    }
+    oldDepVersions.clear();
+    oldDepVersions.putAll(newDepVersions);
+  }
+
   @Override
   public int getUsedLanguageVersion(SLanguage usedLanguage) {
     Integer res = getModuleDescriptor().getLanguageVersions().get(usedLanguage);
@@ -948,9 +985,23 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           "getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
               " in module " + getModuleName() + "." +
               " This can either mean that the language is not imported into this module or that " +
-              "validateLanguageVersions was not called on this module in appropriate moment.",
+              "validateLanguageVersions() was not called on this module in appropriate moment.",
           new Throwable());
       return usedLanguage.getLanguageVersion();
+    }
+    return res;
+  }
+
+  public int getDependencyVersion(SModule dependency) {
+    Integer res = getModuleDescriptor().getDependencyVersions().get(dependency.getModuleReference());
+    if (res == null) {
+      LOG.error(
+          "getDependencyVersion can't find a version for module " + dependency.getModuleName() +
+              " in module " + getModuleName() + "." +
+              " This can either mean that the module is not visible from this module or that " +
+              "validateDependencyVersions() was not called on this module in appropriate moment.",
+          new Throwable());
+      return ((AbstractModule) dependency).getModuleVersion();
     }
     return res;
   }

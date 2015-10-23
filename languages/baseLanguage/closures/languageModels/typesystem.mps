@@ -185,6 +185,11 @@
       </concept>
       <concept id="363746191845175146" name="jetbrains.mps.baseLanguage.structure.LoopLabel" flags="ng" index="3Wmmph" />
     </language>
+    <language id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern">
+      <concept id="1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" flags="in" index="2DMOqp">
+        <child id="1136720037778" name="patternNode" index="2DMOqq" />
+      </concept>
+    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
         <child id="1199542457201" name="resultType" index="1ajl9A" />
@@ -276,6 +281,9 @@
       </concept>
       <concept id="1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" flags="ig" index="1YaCAy">
         <reference id="1174642800329" name="concept" index="1YaFvo" />
+      </concept>
+      <concept id="1174642900584" name="jetbrains.mps.lang.typesystem.structure.PatternCondition" flags="ig" index="1Yb3XT">
+        <child id="1174642936809" name="pattern" index="1YbcFS" />
       </concept>
       <concept id="1174643105530" name="jetbrains.mps.lang.typesystem.structure.InferenceRule" flags="ig" index="1YbPZF" />
       <concept id="1174648085619" name="jetbrains.mps.lang.typesystem.structure.AbstractRule" flags="ng" index="1YuPPy">
@@ -5151,6 +5159,22 @@
     <node concept="1YaCAy" id="U7sbC7MAg5" role="1YuTPh">
       <property role="TrG5h" value="closureLiteralType" />
       <ref role="1YaFvo" to="tp2c:U7sbC7HC1h" resolve="ClosureLiteralType" />
+    </node>
+  </node>
+  <node concept="35pCF_" id="3BInSoF5DMF">
+    <property role="TrG5h" value="FunctionType_subtypeOf_Object" />
+    <node concept="3clFbS" id="3BInSoF5DMG" role="2sgrp5" />
+    <node concept="1YaCAy" id="3BInSoF5DMJ" role="1YuTPh">
+      <property role="TrG5h" value="functionType" />
+      <ref role="1YaFvo" to="tp2c:htajhBZ" resolve="FunctionType" />
+    </node>
+    <node concept="1Yb3XT" id="3BInSoF5DOP" role="35pZ6h">
+      <property role="TrG5h" value="object" />
+      <node concept="2DMOqp" id="3BInSoF5DOQ" role="1YbcFS">
+        <node concept="3uibUv" id="3BInSoF5DP4" role="2DMOqq">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

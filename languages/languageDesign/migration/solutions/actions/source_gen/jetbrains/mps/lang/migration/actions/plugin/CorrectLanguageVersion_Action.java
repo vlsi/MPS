@@ -19,7 +19,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit_BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -56,7 +56,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return slang.getLanguageVersion() != 0;
     }
 
-    List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+    List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"));
     if (lang.getLanguageVersion() == 0) {
       return false;
     }
@@ -64,11 +64,11 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return true;
     }
 
-    int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
+    int maxFrom = IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
-        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+        return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
       }
-    }, false).first(), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+    }, false).first());
 
     if (lang.getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
       if (lang.getModuleDescriptor().getLanguageVersions().get(slang) != lang.getLanguageVersion()) {
@@ -108,11 +108,11 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
     if (ListSequence.fromList(scripts).isNotEmpty()) {
-      int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
+      int maxFrom = IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
         public Integer select(SNode it) {
-          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+          return IMigrationUnit_BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it);
         }
-      }, false).first(), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+      }, false).first());
       lang.setLanguageVersion(maxFrom + 1);
     } else {
       final int v = lang.getLanguageVersion();
@@ -146,7 +146,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
   }
   private static List<SNode> check_wnyb8b_a0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+      return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"));
     }
     return null;
   }

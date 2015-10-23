@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -55,7 +56,7 @@ public class LanguageDescriptorPersistence {
           String version = languageElement.getAttributeValue("version");
           if (version != null) {
             try {
-              result_v3r4p8_a0a0e0c0b.setVersion(Integer.parseInt(version));
+              result_v3r4p8_a0a0e0c0b.setLanguageVersion(Integer.parseInt(version));
             } catch (NumberFormatException ignored) {
             }
           }
@@ -157,7 +158,7 @@ public class LanguageDescriptorPersistence {
     if (descriptor.getGenPath() != null) {
       languageElement.setAttribute("generatorOutputPath", macroHelper.shrinkPath(descriptor.getGenPath()));
     }
-    languageElement.setAttribute("version", Integer.toString(descriptor.getVersion()));
+    languageElement.setAttribute("version", Integer.toString(descriptor.getLanguageVersion()));
 
     Element models = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
@@ -184,7 +185,7 @@ public class LanguageDescriptorPersistence {
 
     if (!(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
       Element stubModelEntries = new Element("stubModelEntries");
-      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, descriptor.getAdditionalJavaStubPaths(), macroHelper);
+      ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, (Collection<String>) descriptor.getAdditionalJavaStubPaths(), macroHelper);
       languageElement.addContent(stubModelEntries);
     }
 

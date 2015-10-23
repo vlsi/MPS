@@ -3515,7 +3515,7 @@
                                 <node concept="2OqwBi" id="2pywGSQXwMv" role="3clFbG">
                                   <node concept="1bf8Ab" id="2pywGSQXwLD" role="2Oq$k0" />
                                   <node concept="liA8E" id="2pywGSQXwV3" role="2OqNvi">
-                                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.setVersion(int):void" resolve="setVersion" />
+                                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.setLanguageVersion(int):void" resolve="setLanguageVersion" />
                                     <node concept="2YIFZM" id="2pywGSQX$Xc" role="37wK5m">
                                       <ref role="37wK5l" to="wyt6:~Integer.parseInt(java.lang.String):int" resolve="parseInt" />
                                       <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
@@ -4547,7 +4547,7 @@
                     <ref role="3cqZAo" node="6PNr9t9OD5I" resolve="descriptor" />
                   </node>
                   <node concept="liA8E" id="6PNr9t9OD2L" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getVersion():int" resolve="getVersion" />
+                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getLanguageVersion():int" resolve="getLanguageVersion" />
                   </node>
                 </node>
               </node>
@@ -4828,12 +4828,17 @@
                 <node concept="37vLTw" id="6PNr9t9OD4t" role="37wK5m">
                   <ref role="3cqZAo" node="6PNr9t9OD4m" resolve="stubModelEntries" />
                 </node>
-                <node concept="2OqwBi" id="6PNr9t9OD4u" role="37wK5m">
-                  <node concept="37vLTw" id="6PNr9t9OD5Y" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6PNr9t9OD5I" resolve="descriptor" />
+                <node concept="10QFUN" id="1JTUOcBqk35" role="37wK5m">
+                  <node concept="2OqwBi" id="6PNr9t9OD4u" role="10QFUP">
+                    <node concept="37vLTw" id="6PNr9t9OD5Y" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6PNr9t9OD5I" resolve="descriptor" />
+                    </node>
+                    <node concept="liA8E" id="6PNr9t9OD4w" role="2OqNvi">
+                      <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="6PNr9t9OD4w" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
+                  <node concept="3vKaQO" id="1JTUOcBqk36" role="10QFUM">
+                    <node concept="17QB3L" id="1JTUOcBqk37" role="3O5elw" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="6PNr9t9OD5W" role="37wK5m">

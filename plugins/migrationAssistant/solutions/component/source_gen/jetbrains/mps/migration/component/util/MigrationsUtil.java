@@ -10,16 +10,20 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.apache.log4j.Level;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.ide.migration.ScriptApplied;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.ide.migration.MigrationScriptApplied;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.ide.migration.RefactoringLogApplied;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.AbstractModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -37,7 +41,8 @@ public class MigrationsUtil {
     return !((m instanceof DevKit)) && !((Solution.isBootstrapSolution(m.getModuleReference()))) && !((m.isReadOnly()));
   }
 
-  public static boolean isMigrationNeeded(SLanguage language, int importVersion, SModule module) {
+  @Deprecated
+  public static boolean isLanguageMigrationNeeded(SLanguage language, int importVersion, SModule module) {
     int currentVersion = language.getLanguageVersion();
 
     // broken language 
@@ -57,17 +62,49 @@ public class MigrationsUtil {
     }
     return importVersion < currentVersion;
   }
-  public static Iterable<MigrationScriptReference> getNextStepScripts(SModule module) {
-    List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
-    for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
+  @Deprecated
+  public static boolean isDependencyMigrationNeeded(SModule depencency, int importVersion, SModule module) {
+    int currentVersion = ((AbstractModule) depencency).getModuleVersion();
+
+    // broken language 
+    if (currentVersion == -1) {
+      return false;
+    }
+
+    // if we don't have version, it's simply 0 
+    if (importVersion == -1) {
+      importVersion = 0;
+    }
+    if (importVersion > currentVersion) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Module " + module + " depends on version " + importVersion + " of module " + depencency + " which is higher than available version (" + currentVersion + ")");
+      }
+      return false;
+    }
+    return importVersion < currentVersion;
+  }
+  public static Iterable<ScriptApplied.ScriptAppliedReference> getAllSteps(SModule module) {
+    List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
+    for (SLanguage lang : SetSequence.fromSet(getUsedLanguages(module))) {
       int currentLangVersion = lang.getLanguageVersion();
       int ver = module.getUsedLanguageVersion(lang);
 
       ver = Math.max(ver, 0);
       currentLangVersion = Math.max(currentLangVersion, 0);
 
-      if (ver < currentLangVersion) {
-        ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, ver));
+      for (int i = ver; i < currentLangVersion; i++) {
+        ListSequence.fromList(result).addElement(new MigrationScriptApplied.MigrationScriptAppliedReference(new MigrationScriptReference(lang, i), module));
+      }
+    }
+    for (SModule dep : SetSequence.fromSet(getModuleDependencies(module))) {
+      int currentDepVersion = ((AbstractModule) dep).getModuleVersion();
+      int ver = ((AbstractModule) module).getDependencyVersion(dep);
+
+      ver = Math.max(ver, 0);
+      currentDepVersion = Math.max(currentDepVersion, 0);
+
+      for (int i = ver; i < currentDepVersion; i++) {
+        ListSequence.fromList(result).addElement(new RefactoringLogApplied.RefactoringLogAppliedReference(new RefactoringLogReference(dep, i), module));
       }
     }
     return result;
@@ -86,20 +123,44 @@ public class MigrationsUtil {
     }
     return result;
   }
+  @Deprecated
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
-    return !(new SLanguageHierarchy(module.getUsedLanguages()).getExtended().contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
+    return !(SetSequence.fromSet(getUsedLanguages(module)).contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }
   public static Set<SModule> getModuleDependencies(SModule module) {
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
     SetSequence.fromSet(dependencies).addElement(module);
     return dependencies;
   }
+  public static Set<SLanguage> getUsedLanguages(SModule module) {
+    return new SLanguageHierarchy(module.getUsedLanguages()).getExtended();
+  }
+  @Deprecated
   public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, SModule module) {
     return SetSequence.fromSet(getModuleDependencies(module)).ofType(AbstractModule.class).all(new IWhereFilter<AbstractModule>() {
       public boolean accept(AbstractModule it) {
         return isApplied(script, it);
       }
     });
+  }
+  @Deprecated
+  public static boolean areDepsSatisfied(final MigrationScriptApplied p) {
+    Iterable<MigrationScriptReference> requiresData = p.getScript().requiresData();
+    boolean dataDeps = Sequence.fromIterable(requiresData).all(new IWhereFilter<MigrationScriptReference>() {
+      public boolean accept(MigrationScriptReference it) {
+        return MigrationsUtil.isAppliedForAllMyDeps(it, p.getModule());
+      }
+    });
+    Iterable<MigrationScriptReference> executeAfter = p.getScript().executeAfter();
+    boolean orderDeps = Sequence.fromIterable(executeAfter).all(new IWhereFilter<MigrationScriptReference>() {
+      public boolean accept(MigrationScriptReference it) {
+        return MigrationsUtil.isApplied(it, (AbstractModule) p.getModule());
+      }
+    });
+    if (dataDeps && orderDeps) {
+      return true;
+    }
+    return false;
   }
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
 }

@@ -2,14 +2,14 @@
 <model ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="uxeh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.wizard(MPS.IDEA/)" />
@@ -50,11 +50,6 @@
     <import index="auc7" ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)" />
   </imports>
   <registry>
-    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
-      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
-        <child id="1238852204892" name="componentType" index="1Lm7xW" />
-      </concept>
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
@@ -179,7 +174,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -315,11 +310,11 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
+      <concept id="1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" flags="nn" index="56pJg">
+        <child id="1176906787974" name="rightExpression" index="576Qk" />
+      </concept>
       <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
         <child id="540871147943773366" name="argument" index="25WWJ7" />
-      </concept>
-      <concept id="1172664342967" name="jetbrains.mps.baseLanguage.collections.structure.TakeOperation" flags="nn" index="8ftyA">
-        <child id="1172664372046" name="elementsToTake" index="8f$Dv" />
       </concept>
       <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
@@ -328,6 +323,7 @@
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
+      <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
         <child id="1153944424730" name="inputSequence" index="2GsD0m" />
@@ -349,6 +345,9 @@
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
+      <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
+      <concept id="1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" flags="nn" index="3QWeyG" />
+      <concept id="1178894719932" name="jetbrains.mps.baseLanguage.collections.structure.DistinctOperation" flags="nn" index="1VAtEI" />
     </language>
   </registry>
   <node concept="312cEu" id="5SsFeroaapp">
@@ -1820,23 +1819,17 @@
         <node concept="3cpWs8" id="3OvHNCMjzBR" role="3cqZAp">
           <node concept="3cpWsn" id="3OvHNCMjzBS" role="3cpWs9">
             <property role="TrG5h" value="missingMigrations" />
+            <node concept="_YKpA" id="6Z8qT6OUNQv" role="1tU5fm">
+              <node concept="3uibUv" id="6Z8qT6OUNQy" role="_ZDj9">
+                <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
+              </node>
+            </node>
             <node concept="2OqwBi" id="3OvHNCMjzBT" role="33vP2m">
               <node concept="37vLTw" id="3OvHNCMjzBU" role="2Oq$k0">
                 <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
               </node>
               <node concept="liA8E" id="3OvHNCMjzBV" role="2OqNvi">
                 <ref role="37wK5l" to="bim2:3OvHNCMjyBz" resolve="getMissingMigrations" />
-              </node>
-            </node>
-            <node concept="_YKpA" id="3OvHNCMjAOI" role="1tU5fm">
-              <node concept="1LlUBW" id="3OvHNCMjAP1" role="_ZDj9">
-                <node concept="3uibUv" id="3OvHNCMjAP2" role="1Lm7xW">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-                <node concept="3uibUv" id="3OvHNCMjAP3" role="1Lm7xW">
-                  <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
-                </node>
-                <node concept="10Oyi0" id="6dYNaa8m6DJ" role="1Lm7xW" />
               </node>
             </node>
           </node>
@@ -2142,7 +2135,7 @@
                 <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
               </node>
               <node concept="liA8E" id="7rK8qWGIaEy" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="languageStepsCount" />
+                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="moduleStepsCount" />
               </node>
             </node>
           </node>
@@ -2199,7 +2192,7 @@
                 <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
               </node>
               <node concept="liA8E" id="25gV4Lszl1p" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextLanguageStep" />
+                <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextModuleStep" />
               </node>
             </node>
           </node>
@@ -3082,31 +3075,19 @@
       <property role="2bfB8j" value="true" />
       <node concept="312cEg" id="3OvHNCMjF7p" role="jymVt">
         <property role="TrG5h" value="errors" />
-        <node concept="3Tm6S6" id="3OvHNCMjF7q" role="1B3o_S" />
-        <node concept="_YKpA" id="3OvHNCMjF7s" role="1tU5fm">
-          <node concept="1LlUBW" id="3OvHNCMjF7t" role="_ZDj9">
-            <node concept="3uibUv" id="3OvHNCMjF7u" role="1Lm7xW">
-              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-            </node>
-            <node concept="3uibUv" id="3OvHNCMjF7v" role="1Lm7xW">
-              <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
-            </node>
-            <node concept="10Oyi0" id="6dYNaa8mBun" role="1Lm7xW" />
+        <node concept="_YKpA" id="6Z8qT6OUOEC" role="1tU5fm">
+          <node concept="3uibUv" id="6Z8qT6OUOED" role="_ZDj9">
+            <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
           </node>
         </node>
+        <node concept="3Tm6S6" id="3OvHNCMjF7q" role="1B3o_S" />
       </node>
       <node concept="3clFbW" id="2htE_P_OSFa" role="jymVt">
         <node concept="37vLTG" id="3OvHNCMjEDl" role="3clF46">
           <property role="TrG5h" value="errors" />
-          <node concept="_YKpA" id="3OvHNCMjEO2" role="1tU5fm">
-            <node concept="1LlUBW" id="3OvHNCMjEO3" role="_ZDj9">
-              <node concept="3uibUv" id="3OvHNCMjEO4" role="1Lm7xW">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-              <node concept="3uibUv" id="3OvHNCMjEO5" role="1Lm7xW">
-                <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
-              </node>
-              <node concept="10Oyi0" id="6dYNaa8mAUX" role="1Lm7xW" />
+          <node concept="_YKpA" id="6Z8qT6OUe8v" role="1tU5fm">
+            <node concept="3uibUv" id="6Z8qT6OUe8w" role="_ZDj9">
+              <ref role="3uigEE" to="bim2:36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
             </node>
           </node>
         </node>
@@ -3175,29 +3156,181 @@
           </node>
         </node>
         <node concept="3clFbS" id="2htE_P_OKgV" role="3clF47">
-          <node concept="3clFbF" id="3OvHNCMjGfp" role="3cqZAp">
-            <node concept="2OqwBi" id="3OvHNCMjJ3_" role="3clFbG">
-              <node concept="2OqwBi" id="3OvHNCMjH1v" role="2Oq$k0">
-                <node concept="37vLTw" id="3OvHNCMjGfn" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3OvHNCMjF7p" resolve="errors" />
-                </node>
-                <node concept="8ftyA" id="3OvHNCMjIC5" role="2OqNvi">
-                  <node concept="3cmrfG" id="3OvHNCMjIJo" role="8f$Dv">
-                    <property role="3cmrfH" value="100" />
-                  </node>
+          <node concept="3cpWs8" id="6Z8qT6OV_v4" role="3cqZAp">
+            <node concept="3cpWsn" id="6Z8qT6OV_v5" role="3cpWs9">
+              <property role="TrG5h" value="modules" />
+              <node concept="_YKpA" id="6Z8qT6OVBpz" role="1tU5fm">
+                <node concept="3uibUv" id="6Z8qT6OVBp_" role="_ZDj9">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                 </node>
               </node>
-              <node concept="3$u5V9" id="3OvHNCMjL8T" role="2OqNvi">
-                <node concept="1bVj0M" id="3OvHNCMjL8V" role="23t8la">
-                  <node concept="3clFbS" id="3OvHNCMjL8W" role="1bW5cS">
-                    <node concept="3clFbF" id="3OvHNCMjQXu" role="3cqZAp">
-                      <node concept="1eOMI4" id="7k0ZD$h8l1B" role="3clFbG">
-                        <node concept="10QFUN" id="7k0ZD$h8l1C" role="1eOMHV">
+              <node concept="2OqwBi" id="6Z8qT6OVAVr" role="33vP2m">
+                <node concept="2OqwBi" id="6Z8qT6OV_v6" role="2Oq$k0">
+                  <node concept="37vLTw" id="6Z8qT6OV_v7" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3OvHNCMjF7p" resolve="errors" />
+                  </node>
+                  <node concept="3$u5V9" id="6Z8qT6OV_v8" role="2OqNvi">
+                    <node concept="1bVj0M" id="6Z8qT6OV_v9" role="23t8la">
+                      <node concept="3clFbS" id="6Z8qT6OV_va" role="1bW5cS">
+                        <node concept="3clFbF" id="6Z8qT6OV_vb" role="3cqZAp">
+                          <node concept="2OqwBi" id="6Z8qT6OV_vc" role="3clFbG">
+                            <node concept="37vLTw" id="6Z8qT6OV_vd" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6Z8qT6OV_vf" resolve="it" />
+                            </node>
+                            <node concept="liA8E" id="6Z8qT6OV_ve" role="2OqNvi">
+                              <ref role="37wK5l" to="bim2:6Z8qT6OUVNN" resolve="getModule" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="6Z8qT6OV_vf" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="6Z8qT6OV_vg" role="1tU5fm" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="ANE8D" id="6Z8qT6OVBd9" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="6Z8qT6OVrTI" role="3cqZAp">
+            <node concept="2OqwBi" id="6Z8qT6OW3a$" role="3clFbG">
+              <node concept="2OqwBi" id="6Z8qT6OVwcu" role="2Oq$k0">
+                <node concept="2OqwBi" id="6Z8qT6OVtFg" role="2Oq$k0">
+                  <node concept="2OqwBi" id="6Z8qT6OVsOI" role="2Oq$k0">
+                    <node concept="2OqwBi" id="6Z8qT6OVsjb" role="2Oq$k0">
+                      <node concept="37vLTw" id="6Z8qT6OVrTG" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3OvHNCMjF7p" resolve="errors" />
+                      </node>
+                      <node concept="UnYns" id="6Z8qT6OVsBE" role="2OqNvi">
+                        <node concept="3uibUv" id="6Z8qT6OVsKy" role="UnYnz">
+                          <ref role="3uigEE" to="bim2:79xDgbha3G0" resolve="MigrationScriptApplied.MigrationScriptAppliedReference" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3$u5V9" id="6Z8qT6OVsWX" role="2OqNvi">
+                      <node concept="1bVj0M" id="6Z8qT6OVsWZ" role="23t8la">
+                        <node concept="3clFbS" id="6Z8qT6OVsX0" role="1bW5cS">
+                          <node concept="3clFbF" id="6Z8qT6OVtqo" role="3cqZAp">
+                            <node concept="2OqwBi" id="6Z8qT6OVtv6" role="3clFbG">
+                              <node concept="37vLTw" id="6Z8qT6OVtqn" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6Z8qT6OVsX1" resolve="it" />
+                              </node>
+                              <node concept="liA8E" id="6Z8qT6OVt_a" role="2OqNvi">
+                                <ref role="37wK5l" to="bim2:6Z8qT6OUWCR" resolve="getMigrationSciptReference" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="Rh6nW" id="6Z8qT6OVsX1" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="6Z8qT6OVsX2" role="1tU5fm" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="1VAtEI" id="6Z8qT6OVtQ1" role="2OqNvi" />
+                </node>
+                <node concept="3$u5V9" id="6Z8qT6OVwrT" role="2OqNvi">
+                  <node concept="1bVj0M" id="6Z8qT6OVwrV" role="23t8la">
+                    <node concept="3clFbS" id="6Z8qT6OVwrW" role="1bW5cS">
+                      <node concept="3cpWs8" id="6Z8qT6OVIc9" role="3cqZAp">
+                        <node concept="3cpWsn" id="6Z8qT6OVIca" role="3cpWs9">
+                          <property role="TrG5h" value="languageUsages" />
+                          <node concept="_YKpA" id="6Z8qT6OVIYJ" role="1tU5fm">
+                            <node concept="3uibUv" id="6Z8qT6OVIYL" role="_ZDj9">
+                              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="6Z8qT6OVJdi" role="33vP2m">
+                            <node concept="2OqwBi" id="6Z8qT6OVIcb" role="2Oq$k0">
+                              <node concept="37vLTw" id="6Z8qT6OVIcc" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6Z8qT6OV_v5" resolve="modules" />
+                              </node>
+                              <node concept="3zZkjj" id="6Z8qT6OVIcd" role="2OqNvi">
+                                <node concept="1bVj0M" id="6Z8qT6OVIce" role="23t8la">
+                                  <node concept="3clFbS" id="6Z8qT6OVIcf" role="1bW5cS">
+                                    <node concept="3clFbF" id="6Z8qT6OVIcg" role="3cqZAp">
+                                      <node concept="2OqwBi" id="6Z8qT6OVIch" role="3clFbG">
+                                        <node concept="2YIFZM" id="6Z8qT6OVIci" role="2Oq$k0">
+                                          <ref role="37wK5l" to="auc7:79xDgbhf49e" resolve="getUsedLanguages" />
+                                          <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
+                                          <node concept="37vLTw" id="6Z8qT6OVIcj" role="37wK5m">
+                                            <ref role="3cqZAo" node="6Z8qT6OVIco" resolve="module" />
+                                          </node>
+                                        </node>
+                                        <node concept="3JPx81" id="6Z8qT6OVIck" role="2OqNvi">
+                                          <node concept="2OqwBi" id="6Z8qT6OVIcl" role="25WWJ7">
+                                            <node concept="37vLTw" id="6Z8qT6OVIcm" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="6Z8qT6OVwrX" resolve="it" />
+                                            </node>
+                                            <node concept="liA8E" id="6Z8qT6OVIcn" role="2OqNvi">
+                                              <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="Rh6nW" id="6Z8qT6OVIco" role="1bW2Oz">
+                                    <property role="TrG5h" value="module" />
+                                    <node concept="2jxLKc" id="6Z8qT6OVIcp" role="1tU5fm" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="ANE8D" id="6Z8qT6OVJvt" role="2OqNvi" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbF" id="6Z8qT6OVKLo" role="3cqZAp">
+                        <node concept="10QFUN" id="7k0ZD$h8l1C" role="3clFbG">
                           <node concept="2ShNRf" id="7k0ZD$h8l1v" role="10QFUP">
                             <node concept="1pGfFk" id="7k0ZD$h8l1w" role="2ShVmc">
-                              <ref role="37wK5l" to="t99v:2htE_P_SIXr" resolve="MissingMigrationProblem" />
+                              <ref role="37wK5l" to="t99v:2htE_P_SIXr" resolve="MissingMigrationProblem.MissingMigrationScriptProblem" />
                               <node concept="37vLTw" id="6dYNaa8mC1k" role="37wK5m">
-                                <ref role="3cqZAo" node="3OvHNCMjL8X" resolve="it" />
+                                <ref role="3cqZAo" node="6Z8qT6OVwrX" resolve="it" />
+                              </node>
+                              <node concept="2YIFZM" id="6Z8qT6OVYsD" role="37wK5m">
+                                <ref role="37wK5l" to="33ny:~Collections.min(java.util.Collection):java.lang.Object" resolve="min" />
+                                <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                                <node concept="2OqwBi" id="6Z8qT6OW08a" role="37wK5m">
+                                  <node concept="2OqwBi" id="6Z8qT6OVMnW" role="2Oq$k0">
+                                    <node concept="37vLTw" id="6Z8qT6OVLP9" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="6Z8qT6OVIca" resolve="languageUsages" />
+                                    </node>
+                                    <node concept="3$u5V9" id="6Z8qT6OVMPN" role="2OqNvi">
+                                      <node concept="1bVj0M" id="6Z8qT6OVMPP" role="23t8la">
+                                        <node concept="3clFbS" id="6Z8qT6OVMPQ" role="1bW5cS">
+                                          <node concept="3clFbF" id="6Z8qT6OVNR3" role="3cqZAp">
+                                            <node concept="2OqwBi" id="6Z8qT6OVOiR" role="3clFbG">
+                                              <node concept="37vLTw" id="6Z8qT6OVNR2" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="6Z8qT6OVMPR" resolve="module" />
+                                              </node>
+                                              <node concept="liA8E" id="6Z8qT6OVOyK" role="2OqNvi">
+                                                <ref role="37wK5l" to="lui2:~SModule.getUsedLanguageVersion(org.jetbrains.mps.openapi.language.SLanguage):int" resolve="getUsedLanguageVersion" />
+                                                <node concept="2OqwBi" id="6Z8qT6OVRrO" role="37wK5m">
+                                                  <node concept="37vLTw" id="6Z8qT6OVQ7s" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="6Z8qT6OVwrX" resolve="it" />
+                                                  </node>
+                                                  <node concept="liA8E" id="6Z8qT6OVRGQ" role="2OqNvi">
+                                                    <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                        <node concept="Rh6nW" id="6Z8qT6OVMPR" role="1bW2Oz">
+                                          <property role="TrG5h" value="module" />
+                                          <node concept="2jxLKc" id="6Z8qT6OVMPS" role="1tU5fm" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="ANE8D" id="6Z8qT6OW0vf" role="2OqNvi" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -3207,10 +3340,170 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="Rh6nW" id="6Z8qT6OVwrX" role="1bW2Oz">
+                      <property role="TrG5h" value="it" />
+                      <node concept="2jxLKc" id="6Z8qT6OVwrY" role="1tU5fm" />
+                    </node>
                   </node>
-                  <node concept="Rh6nW" id="3OvHNCMjL8X" role="1bW2Oz">
-                    <property role="TrG5h" value="it" />
-                    <node concept="2jxLKc" id="3OvHNCMjL8Y" role="1tU5fm" />
+                </node>
+              </node>
+              <node concept="3QWeyG" id="6Z8qT6OW3Im" role="2OqNvi">
+                <node concept="2OqwBi" id="6Z8qT6OWEh7" role="576Qk">
+                  <node concept="2OqwBi" id="6Z8qT6OWEh8" role="2Oq$k0">
+                    <node concept="2OqwBi" id="6Z8qT6OWEh9" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6Z8qT6OWEha" role="2Oq$k0">
+                        <node concept="37vLTw" id="6Z8qT6OWEhb" role="2Oq$k0">
+                          <ref role="3cqZAo" node="3OvHNCMjF7p" resolve="errors" />
+                        </node>
+                        <node concept="UnYns" id="6Z8qT6OWEhc" role="2OqNvi">
+                          <node concept="3uibUv" id="6Z8qT6OWF2h" role="UnYnz">
+                            <ref role="3uigEE" to="bim2:79xDgbhb4AS" resolve="RefactoringLogApplied.RefactoringLogAppliedReference" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3$u5V9" id="6Z8qT6OWEhe" role="2OqNvi">
+                        <node concept="1bVj0M" id="6Z8qT6OWEhf" role="23t8la">
+                          <node concept="3clFbS" id="6Z8qT6OWEhg" role="1bW5cS">
+                            <node concept="3clFbF" id="6Z8qT6OWEhh" role="3cqZAp">
+                              <node concept="2OqwBi" id="6Z8qT6OWEhi" role="3clFbG">
+                                <node concept="37vLTw" id="6Z8qT6OWEhj" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6Z8qT6OWEhl" resolve="it" />
+                                </node>
+                                <node concept="liA8E" id="6Z8qT6OWEhk" role="2OqNvi">
+                                  <ref role="37wK5l" to="bim2:6Z8qT6OWGlE" resolve="getRefactoringLogReference" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="6Z8qT6OWEhl" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="6Z8qT6OWEhm" role="1tU5fm" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="1VAtEI" id="6Z8qT6OWEhn" role="2OqNvi" />
+                  </node>
+                  <node concept="3$u5V9" id="6Z8qT6OWEho" role="2OqNvi">
+                    <node concept="1bVj0M" id="6Z8qT6OWEhp" role="23t8la">
+                      <node concept="3clFbS" id="6Z8qT6OWEhq" role="1bW5cS">
+                        <node concept="3cpWs8" id="6Z8qT6OWEhr" role="3cqZAp">
+                          <node concept="3cpWsn" id="6Z8qT6OWEhs" role="3cpWs9">
+                            <property role="TrG5h" value="languageUsages" />
+                            <node concept="_YKpA" id="6Z8qT6OWEht" role="1tU5fm">
+                              <node concept="3uibUv" id="6Z8qT6OWEhu" role="_ZDj9">
+                                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="6Z8qT6OWEhv" role="33vP2m">
+                              <node concept="2OqwBi" id="6Z8qT6OWEhw" role="2Oq$k0">
+                                <node concept="37vLTw" id="6Z8qT6OWEhx" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="6Z8qT6OV_v5" resolve="modules" />
+                                </node>
+                                <node concept="3zZkjj" id="6Z8qT6OWEhy" role="2OqNvi">
+                                  <node concept="1bVj0M" id="6Z8qT6OWEhz" role="23t8la">
+                                    <node concept="3clFbS" id="6Z8qT6OWEh$" role="1bW5cS">
+                                      <node concept="3clFbF" id="6Z8qT6OWEh_" role="3cqZAp">
+                                        <node concept="2OqwBi" id="6Z8qT6OWEhA" role="3clFbG">
+                                          <node concept="2YIFZM" id="6Z8qT6OWLLu" role="2Oq$k0">
+                                            <ref role="37wK5l" to="auc7:3UfGsecu9ay" resolve="getModuleDependencies" />
+                                            <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
+                                            <node concept="37vLTw" id="6Z8qT6OWLLv" role="37wK5m">
+                                              <ref role="3cqZAo" node="6Z8qT6OWEhH" resolve="module" />
+                                            </node>
+                                          </node>
+                                          <node concept="3JPx81" id="6Z8qT6OWEhD" role="2OqNvi">
+                                            <node concept="2OqwBi" id="6Z8qT6OWEhE" role="25WWJ7">
+                                              <node concept="37vLTw" id="6Z8qT6OWEhF" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="6Z8qT6OWEi7" resolve="it" />
+                                              </node>
+                                              <node concept="liA8E" id="6Z8qT6OWEhG" role="2OqNvi">
+                                                <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="Rh6nW" id="6Z8qT6OWEhH" role="1bW2Oz">
+                                      <property role="TrG5h" value="module" />
+                                      <node concept="2jxLKc" id="6Z8qT6OWEhI" role="1tU5fm" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="ANE8D" id="6Z8qT6OWEhJ" role="2OqNvi" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="6Z8qT6OWEhK" role="3cqZAp">
+                          <node concept="10QFUN" id="6Z8qT6OWEhL" role="3clFbG">
+                            <node concept="2ShNRf" id="6Z8qT6OWEhM" role="10QFUP">
+                              <node concept="1pGfFk" id="6Z8qT6OWEhN" role="2ShVmc">
+                                <ref role="37wK5l" to="t99v:6Z8qT6OW_4O" resolve="MissingMigrationProblem.MissingRefactoringLogProblem" />
+                                <node concept="37vLTw" id="6Z8qT6OWEhO" role="37wK5m">
+                                  <ref role="3cqZAo" node="6Z8qT6OWEi7" resolve="it" />
+                                </node>
+                                <node concept="2YIFZM" id="6Z8qT6OWEhP" role="37wK5m">
+                                  <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                                  <ref role="37wK5l" to="33ny:~Collections.min(java.util.Collection):java.lang.Object" resolve="min" />
+                                  <node concept="2OqwBi" id="6Z8qT6OWEhQ" role="37wK5m">
+                                    <node concept="2OqwBi" id="6Z8qT6OWEhR" role="2Oq$k0">
+                                      <node concept="37vLTw" id="6Z8qT6OWEhS" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="6Z8qT6OWEhs" resolve="languageUsages" />
+                                      </node>
+                                      <node concept="3$u5V9" id="6Z8qT6OWEhT" role="2OqNvi">
+                                        <node concept="1bVj0M" id="6Z8qT6OWEhU" role="23t8la">
+                                          <node concept="3clFbS" id="6Z8qT6OWEhV" role="1bW5cS">
+                                            <node concept="3clFbF" id="6Z8qT6OWEhW" role="3cqZAp">
+                                              <node concept="2OqwBi" id="6Z8qT6OWEhX" role="3clFbG">
+                                                <node concept="1eOMI4" id="6Z8qT6OWOxx" role="2Oq$k0">
+                                                  <node concept="10QFUN" id="6Z8qT6OWOxy" role="1eOMHV">
+                                                    <node concept="37vLTw" id="6Z8qT6OWOxw" role="10QFUP">
+                                                      <ref role="3cqZAo" node="6Z8qT6OWEi3" resolve="module" />
+                                                    </node>
+                                                    <node concept="3uibUv" id="6Z8qT6OWP9_" role="10QFUM">
+                                                      <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                                <node concept="liA8E" id="6Z8qT6OWEhZ" role="2OqNvi">
+                                                  <ref role="37wK5l" to="z1c3:~AbstractModule.getDependencyVersion(org.jetbrains.mps.openapi.module.SModule):int" resolve="getDependencyVersion" />
+                                                  <node concept="2OqwBi" id="6Z8qT6OWEi0" role="37wK5m">
+                                                    <node concept="37vLTw" id="6Z8qT6OWEi1" role="2Oq$k0">
+                                                      <ref role="3cqZAo" node="6Z8qT6OWEi7" resolve="it" />
+                                                    </node>
+                                                    <node concept="liA8E" id="6Z8qT6OWEi2" role="2OqNvi">
+                                                      <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                              </node>
+                                            </node>
+                                          </node>
+                                          <node concept="Rh6nW" id="6Z8qT6OWEi3" role="1bW2Oz">
+                                            <property role="TrG5h" value="module" />
+                                            <node concept="2jxLKc" id="6Z8qT6OWEi4" role="1tU5fm" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="ANE8D" id="6Z8qT6OWEi5" role="2OqNvi" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3uibUv" id="6Z8qT6OWEi6" role="10QFUM">
+                              <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Rh6nW" id="6Z8qT6OWEi7" role="1bW2Oz">
+                        <property role="TrG5h" value="it" />
+                        <node concept="2jxLKc" id="6Z8qT6OWEi8" role="1tU5fm" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

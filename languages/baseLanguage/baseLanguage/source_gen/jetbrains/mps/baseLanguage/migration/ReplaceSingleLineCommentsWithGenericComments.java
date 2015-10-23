@@ -28,7 +28,7 @@ public class ReplaceSingleLineCommentsWithGenericComments extends MigrationScrip
   public boolean isRerunnable() {
     return false;
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     Iterable<SModel> models = ((Iterable<SModel>) m.getModels());
     Sequence.fromIterable(models).visitAll(new IVisitor<SModel>() {
       public void visit(SModel model) {

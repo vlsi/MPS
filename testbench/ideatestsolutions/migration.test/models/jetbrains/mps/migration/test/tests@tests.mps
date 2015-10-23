@@ -595,12 +595,6 @@
             <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
           </node>
         </node>
-        <node concept="37vLTG" id="5yUWKvFP1uM" role="3clF46">
-          <property role="TrG5h" value="dataCollector" />
-          <node concept="3uibUv" id="5yUWKvFP1uN" role="1tU5fm">
-            <ref role="3uigEE" to="6f4m:2RG318eW0B2" resolve="DataCollector" />
-          </node>
-        </node>
         <node concept="3Tm1VV" id="5yUWKvFP1uO" role="1B3o_S" />
         <node concept="3uibUv" id="5yUWKvFP1uQ" role="3clF45">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -903,7 +897,7 @@
           <node concept="3clFbH" id="$5yWDrkAcp" role="3cqZAp" />
           <node concept="3vwNmj" id="3ZYZaNLMYBY" role="3cqZAp">
             <node concept="2YIFZM" id="3ZYZaNLMYBZ" role="3vwVQn">
-              <ref role="1Pybhc" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
+              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="bim2:7skfiiCuuW4" resolve="areDepsSatisfied" />
               <node concept="2ShNRf" id="3ZYZaNLMYC0" role="37wK5m">
                 <node concept="1pGfFk" id="3ZYZaNLMYC1" role="2ShVmc">
@@ -920,8 +914,8 @@
           </node>
           <node concept="3vFxKo" id="3ZYZaNLMYC4" role="3cqZAp">
             <node concept="2YIFZM" id="3ZYZaNLMYC5" role="3vFALc">
+              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="bim2:7skfiiCuuW4" resolve="areDepsSatisfied" />
-              <ref role="1Pybhc" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
               <node concept="2ShNRf" id="3ZYZaNLMYC6" role="37wK5m">
                 <node concept="1pGfFk" id="3ZYZaNLMYC7" role="2ShVmc">
                   <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
@@ -1088,7 +1082,7 @@
           <node concept="3clFbH" id="3ZYZaNLN0Bp" role="3cqZAp" />
           <node concept="3vwNmj" id="3ZYZaNLN2Au" role="3cqZAp">
             <node concept="2YIFZM" id="3ZYZaNLN2Av" role="3vwVQn">
-              <ref role="1Pybhc" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
+              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="bim2:7skfiiCuuW4" resolve="areDepsSatisfied" />
               <node concept="2ShNRf" id="3ZYZaNLN2Aw" role="37wK5m">
                 <node concept="1pGfFk" id="3ZYZaNLN2Ax" role="2ShVmc">
@@ -1105,8 +1099,8 @@
           </node>
           <node concept="3vwNmj" id="3ZYZaNLN28i" role="3cqZAp">
             <node concept="2YIFZM" id="3ZYZaNLN28j" role="3vwVQn">
+              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="bim2:7skfiiCuuW4" resolve="areDepsSatisfied" />
-              <ref role="1Pybhc" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
               <node concept="2ShNRf" id="3ZYZaNLN28k" role="37wK5m">
                 <node concept="1pGfFk" id="3ZYZaNLN28l" role="2ShVmc">
                   <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
@@ -1122,8 +1116,8 @@
           </node>
           <node concept="3vFxKo" id="3ZYZaNLN3FF" role="3cqZAp">
             <node concept="2YIFZM" id="3ZYZaNLN3FG" role="3vFALc">
+              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="bim2:7skfiiCuuW4" resolve="areDepsSatisfied" />
-              <ref role="1Pybhc" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
               <node concept="2ShNRf" id="3ZYZaNLN3FH" role="37wK5m">
                 <node concept="1pGfFk" id="3ZYZaNLN3FI" role="2ShVmc">
                   <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
@@ -1139,8 +1133,8 @@
           </node>
           <node concept="3vFxKo" id="3ZYZaNLN28o" role="3cqZAp">
             <node concept="2YIFZM" id="3ZYZaNLN28p" role="3vFALc">
+              <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
               <ref role="37wK5l" to="bim2:7skfiiCuuW4" resolve="areDepsSatisfied" />
-              <ref role="1Pybhc" to="bim2:tdUHv2l0Sg" resolve="MigrationComponent" />
               <node concept="2ShNRf" id="3ZYZaNLN28q" role="37wK5m">
                 <node concept="1pGfFk" id="3ZYZaNLN28r" role="2ShVmc">
                   <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
