@@ -36,7 +36,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -121,9 +120,13 @@
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
+      <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
       <concept id="8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" flags="lg" index="1Koe21">
         <child id="8900764248744213871" name="contentNode" index="1Koe22" />
+      </concept>
+      <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
+        <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
       </concept>
       <concept id="1088761943574" name="jetbrains.mps.lang.generator.structure.ReferenceMacro" flags="ln" index="1ZhdrF">
         <child id="1167770376702" name="referentFunction" index="3$ytzL" />
@@ -163,6 +166,9 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
+    </language>
   </registry>
   <node concept="bUwia" id="6AUY56j4BTL">
     <property role="TrG5h" value="main" />
@@ -180,7 +186,7 @@
           </node>
           <node concept="3clFb_" id="6AUY56j4D9v" role="jymVt">
             <property role="TrG5h" value="get" />
-            <node concept="10Oyi0" id="6AUY56j4Da1" role="3clF45" />
+            <node concept="17QB3L" id="Js16QyPQ9O" role="3clF45" />
             <node concept="3Tm1VV" id="6AUY56j4D9y" role="1B3o_S" />
             <node concept="3clFbS" id="6AUY56j4D9z" role="3clF47">
               <node concept="3cpWs6" id="6AUY56j4Dai" role="3cqZAp">
@@ -399,6 +405,23 @@
                   </node>
                   <node concept="30H73N" id="6AUY56j4D5H" role="2Oq$k0" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1W57fq" id="Js16QyPQlX" role="lGtFl">
+        <node concept="3IZrLx" id="Js16QyPQlZ" role="3IZSJc">
+          <node concept="3clFbS" id="Js16QyPQm1" role="2VODD2">
+            <node concept="3clFbF" id="Js16QyPQpa" role="3cqZAp">
+              <node concept="2OqwBi" id="Js16QyPQX7" role="3clFbG">
+                <node concept="2OqwBi" id="Js16QyPQrL" role="2Oq$k0">
+                  <node concept="30H73N" id="Js16QyPQp9" role="2Oq$k0" />
+                  <node concept="3Tsc0h" id="Js16QyPQw2" role="2OqNvi">
+                    <ref role="3TtcxE" to="82l8:6AUY56j4CHM" />
+                  </node>
+                </node>
+                <node concept="3GX2aA" id="Js16QyPRGf" role="2OqNvi" />
               </node>
             </node>
           </node>
