@@ -23,6 +23,7 @@ import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Transform;
 import jetbrains.mps.generator.RigidGenerationPlan;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.generator.impl.GenPlanBuilder;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
@@ -46,6 +47,7 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -171,6 +173,30 @@ public class CheckpointModelTest {
     boolean result2 = GenerationFacade.generateModels(mpsProject, Collections.singletonList(m2), null, h, new EmptyProgressMonitor(), null, opt, tmProvider);
     myErrors.checkThat("m1 generation succeeds", result1, CoreMatchers.equalTo(true));
     myErrors.checkThat("m2 generation succeeds", result2, CoreMatchers.equalTo(true));
+  }
+
+  @Test
+  public void testPlanBuilder() {
+    final SModelReference planModelRef = PersistenceFacade.getInstance().createModelReference("r:85a0bc80-fc68-485e-a9a1-926c3cc284af(jetbrains.mps.generator.xmodel.test.plan1@genplan)");
+    ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
+      @Override
+      public ModelGenerationPlan compute() {
+        SModel planModel = resolve(planModelRef);
+        GenPlanBuilder gpBuilder = new GenPlanBuilder(LanguageRegistry.getInstance(mpsProject));
+        return gpBuilder.create(planModel.getRootNodes().iterator().next());
+      }
+    });
+    Assert.assertNotNull(plan);
+    Assert.assertEquals(3, plan.getSteps_().size());
+    myErrors.checkThat(plan.getSteps_().get(0), CoreMatchers.instanceOf(Transform.class));
+    myErrors.checkThat(plan.getSteps_().get(1), CoreMatchers.instanceOf(Checkpoint.class));
+    myErrors.checkThat(plan.getSteps_().get(2), CoreMatchers.instanceOf(Transform.class));
+    Transform s1 = (Transform) plan.getSteps_().get(0);
+    Checkpoint s2 = (Checkpoint) plan.getSteps_().get(1);
+    Transform s3 = (Transform) plan.getSteps_().get(2);
+    myErrors.checkThat(s1.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
+    myErrors.checkThat(s3.getTransformations().isEmpty(), CoreMatchers.equalTo(false));
+    myErrors.checkThat(s2.getName(), CoreMatchers.equalTo("first"));
   }
 
   private static List<TemplateMappingConfiguration> getGenerators(GeneratorRuntime gr) {
