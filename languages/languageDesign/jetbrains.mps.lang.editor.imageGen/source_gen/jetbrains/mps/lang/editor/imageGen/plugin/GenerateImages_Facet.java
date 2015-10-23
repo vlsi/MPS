@@ -24,10 +24,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.core.plugin.TextGen_Facet.Target_configure;
 import java.util.Map;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -101,7 +100,7 @@ public class GenerateImages_Facet extends IFacet.Stub {
 
                 final SRepository repository = Target_configure.vars(pa.global()).makeSession().getProject().getRepository();
 
-                final Map<IFile, List<Tuples._2<String, SNodeReference>>> folder2PrintData = MapSequence.fromMap(new HashMap<IFile, List<Tuples._2<String, SNodeReference>>>());
+                final Map<IFile, List<PrintNodeRunnable>> folder2PrintRunnables = MapSequence.fromMap(new HashMap<IFile, List<PrintNodeRunnable>>());
 
                 repository.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
@@ -122,13 +121,23 @@ public class GenerateImages_Facet extends IFacet.Stub {
                       String output = SModuleOperations.getOutputPathFor(modelsPair._0());
                       IFile outputRoot = Target_make.vars(pa.global()).pathToFile().invoke(output);
                       IFile outputDir = FileGenerationUtil.getDefaultOutputDir(modelsPair._0(), outputRoot);
-                      if (!(MapSequence.fromMap(folder2PrintData).containsKey(outputDir))) {
-                        MapSequence.fromMap(folder2PrintData).put(outputDir, ListSequence.fromList(new ArrayList<Tuples._2<String, SNodeReference>>()));
+                      if (!(MapSequence.fromMap(folder2PrintRunnables).containsKey(outputDir))) {
+                        MapSequence.fromMap(folder2PrintRunnables).put(outputDir, ListSequence.fromList(new ArrayList<PrintNodeRunnable>()));
                       }
                       for (SNode imageGenerator : ListSequence.fromList(SModelOperations.roots(modelsPair._1(), MetaAdapterFactory.getConcept(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, "jetbrains.mps.lang.editor.imageGen.structure.ImageGenerator")))) {
                         SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad2528389ad26L, "id")));
                         SNode node = modelsPair._0().getNode(nodeId);
-                        ListSequence.fromList(MapSequence.fromMap(folder2PrintData).get(outputDir)).addElement(MultiTuple.<String,SNodeReference>from(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x20c051df23a9da87L, "fileName")) + ".png", node.getReference()));
+
+                        PrintNodeRunnable printRunnable = new PrintNodeRunnable(node.getReference(), repository, SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x20c051df23a9da87L, "fileName")));
+                        if (SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11568fbL, "imageFormat")) != null) {
+                          printRunnable.setImageFormat(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11568fbL, "imageFormat")));
+                        }
+                        if (SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11572e9L, "scale")) != null) {
+                          printRunnable.setScale(Double.parseDouble(SPropertyOperations.getString(imageGenerator, MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11572e9L, "scale"))));
+                        }
+                        printRunnable.setBackgroundColor(255, 255, 255, 255);
+
+                        ListSequence.fromList(MapSequence.fromMap(folder2PrintRunnables).get(outputDir)).addElement(printRunnable);
                       }
                       collectingNodesMonitor.advance(1);
                     }
@@ -139,20 +148,19 @@ public class GenerateImages_Facet extends IFacet.Stub {
                 List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
                 List<Tuples._2<IFile, byte[]>> fileContentsToWrite = ListSequence.fromList(new ArrayList<Tuples._2<IFile, byte[]>>());
                 ProgressMonitor printingFoldersMonitor = progressMonitor.subTask(1);
-                printingFoldersMonitor.start("Printing folders", MapSequence.fromMap(folder2PrintData).count());
-                for (IFile folder : SetSequence.fromSet(MapSequence.fromMap(folder2PrintData).keySet())) {
+                printingFoldersMonitor.start("Printing folders", MapSequence.fromMap(folder2PrintRunnables).count());
+                for (IFile folder : SetSequence.fromSet(MapSequence.fromMap(folder2PrintRunnables).keySet())) {
                   FilesDelta fd = new FilesDelta(folder);
                   ListSequence.fromList(deltaList).addElement(fd);
                   new StaleFilesCollector(folder).updateDelta(fd);
 
                   ProgressMonitor printFilesMonitor = printingFoldersMonitor.subTask(1);
-                  printFilesMonitor.start("Printing files", ListSequence.fromList(MapSequence.fromMap(folder2PrintData).get(folder)).count());
-                  for (Tuples._2<String, SNodeReference> printData : ListSequence.fromList(MapSequence.fromMap(folder2PrintData).get(folder))) {
-                    printFilesMonitor.step(printData._0());
-                    PrintNodeRunnable printNodeRunnable = new PrintNodeRunnable(printData._1(), repository);
+                  printFilesMonitor.start("Printing files", ListSequence.fromList(MapSequence.fromMap(folder2PrintRunnables).get(folder)).count());
+                  for (PrintNodeRunnable printNodeRunnable : ListSequence.fromList(MapSequence.fromMap(folder2PrintRunnables).get(folder))) {
+                    printFilesMonitor.step(printNodeRunnable.getFileName());
                     repository.getModelAccess().runWriteInEDT(printNodeRunnable);
                     if (printNodeRunnable.waitForExecution()) {
-                      IFile outputFile = folder.getDescendant(printData._0());
+                      IFile outputFile = folder.getDescendant(printNodeRunnable.getFileName());
                       ListSequence.fromList(fileContentsToWrite).addElement(MultiTuple.<IFile,byte[]>from(outputFile, printNodeRunnable.getResult()));
                       fd.written(outputFile);
                     } else {

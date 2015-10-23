@@ -118,6 +118,8 @@
     <language id="1839bec5-cea6-41df-b9e0-c405ff35c41e" name="jetbrains.mps.lang.editor.imageGen">
       <concept id="2359976223559993484" name="jetbrains.mps.lang.editor.imageGen.structure.ImageGenerator" flags="ng" index="3qh_j">
         <property id="2359976223560030855" name="fileName" index="3qoHo" />
+        <property id="1380214350862969083" name="imageFormat" index="2ycI_o" />
+        <property id="1380214350862971625" name="scale" index="2ycJda" />
         <reference id="3245637733310277398" name="node" index="2IAJl4" />
       </concept>
     </language>
@@ -147,6 +149,8 @@
   </registry>
   <node concept="3qh_j" id="duj7encuQW">
     <property role="3qoHo" value="ManuallyExportedImage" />
+    <property role="2ycJda" value="1.5" />
+    <property role="2ycI_o" value="gif" />
     <ref role="2IAJl4" node="duj7encuQW" resolve="Image_ManuallyExportedImage" />
   </node>
   <node concept="1lH9Xt" id="4z6xDh$X8cX">
