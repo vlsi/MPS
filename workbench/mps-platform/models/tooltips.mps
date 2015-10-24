@@ -883,7 +883,7 @@
           </node>
           <node concept="3clFbF" id="ZpMnc7KQbJ" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyzklf" role="3clFbG">
-              <ref role="37wK5l" to="z60i:~Window.setLocation(java.awt.Point):void" resolve="setLocation" />
+              <ref role="37wK5l" to="z60i:~Component.setLocation(java.awt.Point):void" resolve="setLocation" />
               <node concept="37vLTw" id="2BHiRxgm8iq" role="37wK5m">
                 <ref role="3cqZAo" node="1s17jCa3yC_" resolve="location" />
               </node>

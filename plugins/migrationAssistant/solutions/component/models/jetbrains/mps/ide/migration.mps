@@ -72,11 +72,6 @@
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
-    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
-      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
-        <child id="1238852204892" name="componentType" index="1Lm7xW" />
-      </concept>
-    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
         <child id="1224071154657" name="classifierType" index="0kSFW" />
@@ -6158,15 +6153,9 @@
                 <ref role="37wK5l" node="3OvHNCMjyBz" resolve="getMissingMigrations" />
               </node>
             </node>
-            <node concept="_YKpA" id="3OvHNCMjAOI" role="1tU5fm">
-              <node concept="1LlUBW" id="3OvHNCMjAP1" role="_ZDj9">
-                <node concept="3uibUv" id="3OvHNCMjAP2" role="1Lm7xW">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
-                <node concept="3uibUv" id="3OvHNCMjAP3" role="1Lm7xW">
-                  <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
-                </node>
-                <node concept="10Oyi0" id="6dYNaa8m6DJ" role="1Lm7xW" />
+            <node concept="_YKpA" id="3ldK8LvD1HJ" role="1tU5fm">
+              <node concept="3uibUv" id="3ldK8LvD1HM" role="_ZDj9">
+                <ref role="3uigEE" node="36$CdjYfPok" resolve="ScriptApplied.ScriptAppliedReference" />
               </node>
             </node>
           </node>

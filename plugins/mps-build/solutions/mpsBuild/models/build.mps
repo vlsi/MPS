@@ -25459,6 +25459,9 @@
             <node concept="L2wRC" id="5bqL32k0kBF" role="39821P">
               <ref role="L2wRA" node="5bqL32k0kxU" resolve="jetbrains.mps.lang.structure.pluginSolution" />
             </node>
+            <node concept="L2wRC" id="6oJSkzE6QRk" role="39821P">
+              <ref role="L2wRA" node="6zEiAnm2Tr5" resolve="jetbrains.mps.lang.migration.pluginSolution" />
+            </node>
             <node concept="L2wRC" id="5bqL32k0kBt" role="39821P">
               <ref role="L2wRA" node="5bqL32k0kuu" resolve="jetbrains.mps.lang.dataFlow.pluginSolution" />
             </node>

@@ -17,10 +17,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.Computable;
+import java.util.List;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -61,7 +61,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_9wc3oy_a0a0f(((SNode) pattern.getFieldValue("patternVar_deps")), ((String) pattern.getFieldValue("patternVar_name")));
+              return _quotation_createNode_9wc3oy_a0a0f(((List<SNode>) pattern.getFieldValue("patternVar_deps")), ((String) pattern.getFieldValue("patternVar_name")));
             }
           }, null);
         }

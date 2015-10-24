@@ -7,12 +7,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -36,7 +34,7 @@ public class AntTaskExecutionUtil {
       }
     }
 
-    List<Tuples._3<SModule, SLanguage, Integer>> missingMigrations = null;
+    List<ScriptApplied.ScriptAppliedReference> missingMigrations = m.getMissingMigrations();
     if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
       throw new Exception("Some migrations are missing");
     }

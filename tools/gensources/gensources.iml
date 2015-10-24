@@ -115,6 +115,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/source_gen" isTestSource="false" />
@@ -277,6 +278,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin-standalone/classes_gen" />
@@ -570,7 +572,6 @@
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpsmake">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mpsmake/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/testModules">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" isTestSource="false" />
