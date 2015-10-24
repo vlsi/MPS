@@ -21,23 +21,16 @@ import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class MoveConceptSpecialization implements StructureSpecialization<SConcept, SConcept> {
-  public Tuples._2<Language, SConcept> beforeMove(SNode nodeToMove) {
-    if (SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SNodeOperations.getModel(nodeToMove).getModule() instanceof Language) {
-      return MultiTuple.<Language,SConcept>from((Language) SNodeOperations.getModel(nodeToMove).getModule(), MetaAdapterByDeclaration.getInstanceConcept(nodeToMove));
-    } else {
-      return null;
-    }
-  }
-  public Tuples._2<Language, SConcept> afterMove(SNode movedNode) {
-    if (SNodeOperations.isInstanceOf(movedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SNodeOperations.getModel(movedNode).getModule() instanceof Language) {
-      return MultiTuple.<Language,SConcept>from((Language) SNodeOperations.getModel(movedNode).getModule(), MetaAdapterByDeclaration.getInstanceConcept(movedNode));
+public class MoveConceptSpecialization extends StructureSpecializationBase<SConcept> {
+  public Tuples._2<Language, SConcept> fetchState(SNode movingNode) {
+    if (SNodeOperations.isInstanceOf(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && SNodeOperations.getModel(movingNode).getModule() instanceof Language) {
+      return MultiTuple.<Language,SConcept>from((Language) SNodeOperations.getModel(movingNode).getModule(), MetaAdapterByDeclaration.getInstanceConcept(movingNode));
     } else {
       return null;
     }
   }
   public void confirm(Tuples._2<Language, SConcept> initialState, Tuples._2<Language, SConcept> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
-    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveConcept_kdm6vl_c0a0a2());
+    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveConcept_kdm6vl_c0a0a1());
   }
   public Collection<SNode> findInstances(final SConcept concept, SearchScope searchScope) {
     {
@@ -57,7 +50,7 @@ public class MoveConceptSpecialization implements StructureSpecialization<SConce
   public void doReplaceInstance(SNode instance, SConcept oldConcept, SConcept newConcept) {
     RefactoringRuntime.replaceWithNewConcept(instance, newConcept);
   }
-  private static SNode createMoveConcept_kdm6vl_c0a0a2() {
+  private static SNode createMoveConcept_kdm6vl_c0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.util.structure.MoveConcept"), null, null, false);
     return n1;

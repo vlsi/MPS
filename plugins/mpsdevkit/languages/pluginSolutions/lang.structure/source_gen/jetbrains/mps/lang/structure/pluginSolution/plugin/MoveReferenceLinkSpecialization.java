@@ -21,23 +21,16 @@ import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class MoveReferenceLinkSpecialization implements StructureSpecialization<SReferenceLink, SReferenceLink> {
-  public Tuples._2<Language, SReferenceLink> beforeMove(SNode nodeToMove) {
-    if (SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && (SLinkOperations.getTarget(SNodeOperations.cast(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) == null) && SNodeOperations.getModel(nodeToMove).getModule() instanceof Language) {
-      return MultiTuple.<Language,SReferenceLink>from((Language) SNodeOperations.getModel(nodeToMove).getModule(), MetaAdapterByDeclaration.getReferenceLink(nodeToMove));
-    } else {
-      return null;
-    }
-  }
-  public Tuples._2<Language, SReferenceLink> afterMove(SNode movedNode) {
-    if (SNodeOperations.isInstanceOf(movedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(movedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && (SLinkOperations.getTarget(SNodeOperations.cast(movedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) == null) && SNodeOperations.getModel(movedNode).getModule() instanceof Language) {
-      return MultiTuple.<Language,SReferenceLink>from((Language) SNodeOperations.getModel(movedNode).getModule(), MetaAdapterByDeclaration.getReferenceLink(movedNode));
+public class MoveReferenceLinkSpecialization extends StructureSpecializationBase<SReferenceLink> {
+  public Tuples._2<Language, SReferenceLink> fetchState(SNode movingNode) {
+    if (SNodeOperations.isInstanceOf(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && (SLinkOperations.getTarget(SNodeOperations.cast(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) == null) && SNodeOperations.getModel(movingNode).getModule() instanceof Language) {
+      return MultiTuple.<Language,SReferenceLink>from((Language) SNodeOperations.getModel(movingNode).getModule(), MetaAdapterByDeclaration.getReferenceLink(movingNode));
     } else {
       return null;
     }
   }
   public void confirm(Tuples._2<Language, SReferenceLink> initialState, Tuples._2<Language, SReferenceLink> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
-    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveReferenceLink_w90w7j_c0a0a2());
+    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveReferenceLink_w90w7j_c0a0a1());
   }
   public Collection<SNode> findInstances(SReferenceLink oldLink, SearchScope searchScope) {
     {
@@ -53,7 +46,7 @@ public class MoveReferenceLinkSpecialization implements StructureSpecialization<
   public void doReplaceInstance(SNode instance, SReferenceLink oldLink, SReferenceLink newLink) {
     RefactoringRuntime.changeReferenceLinkInstances(instance, oldLink, newLink);
   }
-  private static SNode createMoveReferenceLink_w90w7j_c0a0a2() {
+  private static SNode createMoveReferenceLink_w90w7j_c0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b7L, "jetbrains.mps.lang.migration.util.structure.MoveReferenceLink"), null, null, false);
     return n1;

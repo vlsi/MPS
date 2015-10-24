@@ -185,7 +185,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConceptUtil" file="MoveConceptUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -263,7 +263,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp" file="MoveFeatureUp.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -306,7 +306,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveReferenceLinkSpecialization" file="MoveReferenceLinkSpecialization.java">
     <classNode dependClassName="java.util.Collection" />
@@ -328,7 +328,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -518,6 +518,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringDataCollector" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" file="StructureSpecializationBase.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringDataCollector" />
+    <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_ActionGroup" file="Structure_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />

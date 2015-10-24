@@ -19,26 +19,16 @@ import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class MovePropertySpecialization implements StructureSpecialization<SProperty, SProperty> {
-
-
-  public Tuples._2<Language, SProperty> beforeMove(SNode nodeToMove) {
-    if (SNodeOperations.isInstanceOf(nodeToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) && SNodeOperations.getModel(nodeToMove).getModule() instanceof Language) {
-      return MultiTuple.<Language,SProperty>from((Language) SNodeOperations.getModel(nodeToMove).getModule(), MetaAdapterByDeclaration.getProperty(nodeToMove));
+public class MovePropertySpecialization extends StructureSpecializationBase<SProperty> {
+  public Tuples._2<Language, SProperty> fetchState(SNode movingNode) {
+    if (SNodeOperations.isInstanceOf(movingNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) && SNodeOperations.getModel(movingNode).getModule() instanceof Language) {
+      return MultiTuple.<Language,SProperty>from((Language) SNodeOperations.getModel(movingNode).getModule(), MetaAdapterByDeclaration.getProperty(movingNode));
     } else {
       return null;
     }
   }
-  public Tuples._2<Language, SProperty> afterMove(SNode movedNode) {
-    if (SNodeOperations.isInstanceOf(movedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) && SNodeOperations.getModel(movedNode).getModule() instanceof Language) {
-      return MultiTuple.<Language,SProperty>from((Language) SNodeOperations.getModel(movedNode).getModule(), MetaAdapterByDeclaration.getProperty(movedNode));
-    } else {
-      return null;
-    }
-  }
-
   public void confirm(Tuples._2<Language, SProperty> initialState, Tuples._2<Language, SProperty> finalState, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder) {
-    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveProperty_fubpxk_c0a0a5());
+    migrationBuilder.addPart(initialState._1().getDeclarationNode(), finalState._1().getDeclarationNode(), createMoveProperty_fubpxk_c0a0a1());
   }
   public Collection<SNode> findInstances(SProperty oldProperty, SearchScope searchScope) {
     {
@@ -54,8 +44,7 @@ public class MovePropertySpecialization implements StructureSpecialization<SProp
   public void doReplaceInstance(SNode instance, SProperty oldProperty, SProperty newProperty) {
     RefactoringRuntime.changePropertyInstance(instance, oldProperty, newProperty);
   }
-
-  private static SNode createMoveProperty_fubpxk_c0a0a5() {
+  private static SNode createMoveProperty_fubpxk_c0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b9L, "jetbrains.mps.lang.migration.util.structure.MoveProperty"), null, null, false);
     return n1;
