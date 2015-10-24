@@ -6,7 +6,7 @@ import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.structure.Extension;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -40,7 +40,7 @@ public class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactorin
       super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
-      return new UpdateLocalInstancesParticipant<SAbstractConcept, SAbstractConcept>(new MoveConceptSpecialization());
+      return new UpdateLocalInstancesParticipant<SConcept, SConcept>(new MoveConceptSpecialization());
     }
   }
   public static class UpdatePropertyInstances_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {

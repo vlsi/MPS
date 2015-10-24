@@ -6,7 +6,7 @@ import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.structure.Extension;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -54,7 +55,7 @@ public class LanguageStructureMigrationParticipant<I, F> implements MoveNodeRefa
       super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {
-      return new LanguageStructureMigrationParticipant<SAbstractConcept, SAbstractConcept>(new MoveConceptSpecialization());
+      return new LanguageStructureMigrationParticipant<SConcept, SConcept>(new MoveConceptSpecialization());
     }
   }
   public static class MovePropertyMigration_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
