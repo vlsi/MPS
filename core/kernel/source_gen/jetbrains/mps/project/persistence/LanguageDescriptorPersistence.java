@@ -53,10 +53,17 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0e0c0b.setGenPath(result_v3r4p8_a0a5a0a0e0c0b);
           }
 
-          String version = languageElement.getAttributeValue("version");
-          if (version != null) {
+          String moduleVersion = languageElement.getAttributeValue("moduleVersion");
+          if (moduleVersion != null) {
             try {
-              result_v3r4p8_a0a0e0c0b.setLanguageVersion(Integer.parseInt(version));
+              result_v3r4p8_a0a0e0c0b.setModuleVersion(Integer.parseInt(moduleVersion));
+            } catch (NumberFormatException ignored) {
+            }
+          }
+          String languageVersion = (languageElement.getAttributeValue("languageVersion") != null ? languageElement.getAttributeValue("languageVersion") : languageElement.getAttributeValue("version"));
+          if (languageVersion != null) {
+            try {
+              result_v3r4p8_a0a0e0c0b.setLanguageVersion(Integer.parseInt(languageVersion));
             } catch (NumberFormatException ignored) {
             }
           }
@@ -158,7 +165,8 @@ public class LanguageDescriptorPersistence {
     if (descriptor.getGenPath() != null) {
       languageElement.setAttribute("generatorOutputPath", macroHelper.shrinkPath(descriptor.getGenPath()));
     }
-    languageElement.setAttribute("version", Integer.toString(descriptor.getLanguageVersion()));
+    languageElement.setAttribute("languageVersion", Integer.toString(descriptor.getLanguageVersion()));
+    languageElement.setAttribute("moduleVersion", Integer.toString(descriptor.getModuleVersion()));
 
     Element models = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
