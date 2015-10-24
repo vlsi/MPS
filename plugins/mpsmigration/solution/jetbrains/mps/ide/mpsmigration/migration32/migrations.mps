@@ -1632,7 +1632,7 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="Xl_RD" id="513ZrA4uCHQ" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.resaveModules" />
+        <property role="Xl_RC" value="jetbrains.mps.mps33.resaveModules" />
       </node>
       <node concept="3Tm1VV" id="513ZrA4uCHR" role="1B3o_S" />
     </node>
