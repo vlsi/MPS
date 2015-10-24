@@ -209,9 +209,6 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
           }
         }).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
-            if (it instanceof MigrationScriptApplied && !(MigrationsUtil.areDepsSatisfied((MigrationScriptApplied) it))) {
-              throw new IllegalStateException();
-            }
             return it != null && Sequence.fromIterable(it.getDependencies()).where(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
               public boolean accept(ScriptApplied.ScriptAppliedReference it) {
                 return !(it.isAlreadyDone());

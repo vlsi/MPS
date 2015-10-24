@@ -4,9 +4,9 @@ package jetbrains.mps.ide.migration;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringLog;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
@@ -20,9 +20,6 @@ public final class RefactoringLogApplied implements ScriptApplied {
     private SModule myModule;
     private RefactoringLogReference myRefactoringLogReference;
     public RefactoringLogAppliedReference(RefactoringLogReference refactoringLogReference, SModule module) {
-      if (!(MigrationsUtil.isDependencyMigrationNeeded(refactoringLogReference.getModule(), refactoringLogReference.getFromVersion(), module))) {
-        throw new IllegalArgumentException();
-      }
       myModule = module;
       myRefactoringLogReference = refactoringLogReference;
     }

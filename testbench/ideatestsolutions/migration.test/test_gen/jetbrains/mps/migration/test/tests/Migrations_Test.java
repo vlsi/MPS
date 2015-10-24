@@ -14,8 +14,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.Collections;
 import junit.framework.Assert;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.MigrationScriptApplied;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.migration.ScriptApplied;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -59,8 +60,16 @@ public class Migrations_Test extends TestCase {
 
 
 
-    Assert.assertTrue(MigrationsUtil.areDepsSatisfied(new MigrationScriptApplied(scriptA0, singleModule)));
-    Assert.assertFalse(MigrationsUtil.areDepsSatisfied(new MigrationScriptApplied(scriptB0, singleModule)));
+    Assert.assertTrue(Sequence.fromIterable(new MigrationScriptApplied(scriptA0, singleModule).getDependencies()).all(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+      public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+        return it.isAlreadyDone();
+      }
+    }));
+    Assert.assertFalse(Sequence.fromIterable(new MigrationScriptApplied(scriptB0, singleModule).getDependencies()).all(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+      public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+        return it.isAlreadyDone();
+      }
+    }));
 
 
     List<SModule> dep1 = ListSequence.fromList(new ArrayList<SModule>());
@@ -70,10 +79,26 @@ public class Migrations_Test extends TestCase {
     ListSequence.fromList(dep1).addElement(cyclicModule2);
     ListSequence.fromList(dep2).addElement(cyclicModule1);
 
-    Assert.assertTrue(MigrationsUtil.areDepsSatisfied(new MigrationScriptApplied(scriptB0, cyclicModule1)));
-    Assert.assertTrue(MigrationsUtil.areDepsSatisfied(new MigrationScriptApplied(scriptB0, cyclicModule2)));
-    Assert.assertFalse(MigrationsUtil.areDepsSatisfied(new MigrationScriptApplied(scriptA1, cyclicModule1)));
-    Assert.assertFalse(MigrationsUtil.areDepsSatisfied(new MigrationScriptApplied(scriptA1, cyclicModule2)));
+    Assert.assertTrue(Sequence.fromIterable(new MigrationScriptApplied(scriptB0, cyclicModule1).getDependencies()).all(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+      public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+        return it.isAlreadyDone();
+      }
+    }));
+    Assert.assertTrue(Sequence.fromIterable(new MigrationScriptApplied(scriptB0, cyclicModule2).getDependencies()).all(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+      public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+        return it.isAlreadyDone();
+      }
+    }));
+    Assert.assertFalse(Sequence.fromIterable(new MigrationScriptApplied(scriptA1, cyclicModule1).getDependencies()).all(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+      public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+        return it.isAlreadyDone();
+      }
+    }));
+    Assert.assertFalse(Sequence.fromIterable(new MigrationScriptApplied(scriptA1, cyclicModule2).getDependencies()).all(new IWhereFilter<ScriptApplied.ScriptAppliedReference>() {
+      public boolean accept(ScriptApplied.ScriptAppliedReference it) {
+        return it.isAlreadyDone();
+      }
+    }));
 
   }
   /*package*/ static class MockModule extends AbstractModule {

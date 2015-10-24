@@ -155,7 +155,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationManagerImpl" file="MigrationManagerImpl.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -168,7 +167,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration._Adapters" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -191,7 +189,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationManager" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationScriptApplied" file="MigrationScriptApplied.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -271,7 +268,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.ProgressEstimation" file="ProgressEstimation.java" />
   <dependency className="jetbrains.mps.ide.migration.RefactoringLogApplied" file="RefactoringLogApplied.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

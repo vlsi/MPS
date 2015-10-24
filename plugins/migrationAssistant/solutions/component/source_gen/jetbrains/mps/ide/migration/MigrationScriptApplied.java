@@ -4,9 +4,9 @@ package jetbrains.mps.ide.migration;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,9 +19,6 @@ public final class MigrationScriptApplied implements ScriptApplied {
     private SModule myModule;
     private MigrationScriptReference myMigrationScriptReference;
     public MigrationScriptAppliedReference(MigrationScriptReference migrationScriptReference, SModule module) {
-      if (!(MigrationsUtil.isLanguageMigrationNeeded(migrationScriptReference.getLanguage(), migrationScriptReference.getFromVersion(), module))) {
-        throw new IllegalArgumentException();
-      }
       myModule = module;
       myMigrationScriptReference = migrationScriptReference;
     }
