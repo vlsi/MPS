@@ -944,6 +944,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
           newLanguageVersions.put(lang, lang.getLanguageVersion());
+          setChanged();
         }
       }
     }
@@ -970,6 +971,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           newDepVersions.put(dep.getModuleReference(), oldDepVersions.get(dep.getModuleReference()));
         } else {
           newDepVersions.put(dep.getModuleReference(), ((AbstractModule) dep).getModuleVersion());
+          setChanged();
         }
       }
     }
