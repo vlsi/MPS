@@ -27,7 +27,7 @@ public abstract class MissingMigrationProblem extends Problem<SModule> {
       final Wrappers._T<String> msg = new Wrappers._T<String>();
       getReason().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          msg.value = "The language " + myScriptReference.getLanguage().getQualifiedName() + " does not provide migration for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this language with version" + myUsedVersion + " while current version is " + myScriptReference.getLanguage().getLanguageVersion() + ".";
+          msg.value = "The language " + myScriptReference.getLanguage().getQualifiedName() + " does not provide migration for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this language with version " + myUsedVersion + " while current version is " + myScriptReference.getLanguage().getLanguageVersion() + ".";
         }
       });
       return msg.value;
@@ -46,7 +46,7 @@ public abstract class MissingMigrationProblem extends Problem<SModule> {
       final Wrappers._T<String> msg = new Wrappers._T<String>();
       getReason().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          msg.value = "The module " + myScriptReference.getModule().getModuleName() + " does not provide refactoring log for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this module with version" + myUsedVersion + " while current version is " + ((AbstractModule) myScriptReference.getModule()).getModuleVersion() + ".";
+          msg.value = "The module " + myScriptReference.getModule().getModuleName() + " does not provide refactoring log for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this module with version " + myUsedVersion + " while current version is " + ((AbstractModule) myScriptReference.getModule()).getModuleVersion() + ".";
         }
       });
       return msg.value;

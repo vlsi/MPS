@@ -2653,7 +2653,7 @@
                                 </node>
                               </node>
                               <node concept="Xl_RD" id="6Z8qT6OVkM2" role="3uHU7w">
-                                <property role="Xl_RC" value="Some modules use this language with version" />
+                                <property role="Xl_RC" value="Some modules use this language with version " />
                               </node>
                             </node>
                             <node concept="37vLTw" id="6Z8qT6OVo6v" role="3uHU7w">
@@ -2830,7 +2830,7 @@
                                 </node>
                               </node>
                               <node concept="Xl_RD" id="6Z8qT6OW_5D" role="3uHU7w">
-                                <property role="Xl_RC" value="Some modules use this module with version" />
+                                <property role="Xl_RC" value="Some modules use this module with version " />
                               </node>
                             </node>
                             <node concept="37vLTw" id="6Z8qT6OW_5E" role="3uHU7w">
