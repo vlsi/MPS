@@ -22,6 +22,10 @@ public interface NodeLocation {
   public static class NodeLocationChild implements NodeLocation {
     private SNodeReference parent;
     private SContainmentLink role;
+    public NodeLocationChild(SNode parent, SContainmentLink role) {
+      this(parent);
+      this.role = role;
+    }
     public NodeLocationChild(SNode parent) {
       this.parent = parent.getReference();
     }

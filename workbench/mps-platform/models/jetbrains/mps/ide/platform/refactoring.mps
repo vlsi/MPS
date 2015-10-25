@@ -159,7 +159,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -229,6 +229,7 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
@@ -4818,6 +4819,43 @@
         <node concept="3Tm6S6" id="FLkVtyuHCg" role="1B3o_S" />
         <node concept="3uibUv" id="FLkVtyuIdm" role="1tU5fm">
           <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
+      </node>
+      <node concept="3clFbW" id="4TDY5SFdDlY" role="jymVt">
+        <node concept="3cqZAl" id="4TDY5SFdDlZ" role="3clF45" />
+        <node concept="3Tm1VV" id="4TDY5SFdDm0" role="1B3o_S" />
+        <node concept="3clFbS" id="4TDY5SFdDm1" role="3clF47">
+          <node concept="1VxSAg" id="7k5vcvm16$s" role="3cqZAp">
+            <ref role="37wK5l" node="1F5g4zQtI41" resolve="NodeLocation.NodeLocationChild" />
+            <node concept="37vLTw" id="7k5vcvm16N9" role="37wK5m">
+              <ref role="3cqZAo" node="4TDY5SFdDma" resolve="parent" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="7k5vcvm176M" role="3cqZAp">
+            <node concept="37vLTI" id="7k5vcvm17d9" role="3clFbG">
+              <node concept="37vLTw" id="7k5vcvm17kM" role="37vLTx">
+                <ref role="3cqZAo" node="4TDY5SFdDLl" resolve="role" />
+              </node>
+              <node concept="2OqwBi" id="7k5vcvm177q" role="37vLTJ">
+                <node concept="Xjq3P" id="7k5vcvm176K" role="2Oq$k0" />
+                <node concept="2OwXpG" id="7k5vcvm179C" role="2OqNvi">
+                  <ref role="2Oxat5" node="FLkVtyuHCf" resolve="role" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="4TDY5SFdDma" role="3clF46">
+          <property role="TrG5h" value="parent" />
+          <node concept="3uibUv" id="4TDY5SFdDmb" role="1tU5fm">
+            <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="4TDY5SFdDLl" role="3clF46">
+          <property role="TrG5h" value="role" />
+          <node concept="3uibUv" id="4TDY5SFdHL9" role="1tU5fm">
+            <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+          </node>
         </node>
       </node>
       <node concept="3clFbW" id="1F5g4zQtI41" role="jymVt">
