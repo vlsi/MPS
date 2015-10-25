@@ -9,8 +9,8 @@
   </root>
   <root nodeRef="r:291c2e75-1693-4702-b50c-6c96d8d6956d(jetbrains.mps.samples.customAspect.documentation.generator.template.main@generator)/2897519568668508167">
     <file name="QueriesGenerated.java">
-      <node id="8334940743345626675" at="26,108,27,81" concept="1" />
-      <scope id="8334940743345623048" at="26,108,27,81" />
+      <node id="8334940743345626675" at="26,108,27,89" concept="1" />
+      <scope id="8334940743345623048" at="26,108,27,89" />
     </file>
   </root>
   <root nodeRef="r:291c2e75-1693-4702-b50c-6c96d8d6956d(jetbrains.mps.samples.customAspect.documentation.generator.template.main@generator)/2897519568668587738">

@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 @Generated
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_8334940743345623047(final CreateRootRuleContext _context) {
-    return SModuleOperations.isAspect(_context.getInputModel(), "documentation");
+    return SModuleOperations.isAspect(_context.getOriginalInputModel(), "documentation");
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
     return SModuleOperations.isAspect(((SModel) _context.getVariable("model")), "documentation");
