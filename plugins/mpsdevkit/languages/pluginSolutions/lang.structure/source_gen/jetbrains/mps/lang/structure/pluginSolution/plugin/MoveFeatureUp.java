@@ -60,7 +60,7 @@ public class MoveFeatureUp extends MoveNodesDefault {
       return;
     }
 
-    MoveNodesDefault.doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationChild(targetConcept))), null);
+    MoveNodesDefault.doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()))), null);
   }
   public static class MovePropertyUp_extension extends Extension.Default<MoveNodesRefactoring> {
     public MovePropertyUp_extension() {

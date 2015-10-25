@@ -614,7 +614,6 @@
         <child id="1240424402756" name="valueType" index="3f3$T$" />
       </concept>
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
-      <concept id="1201872418428" name="jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation" flags="nn" index="3lbrtF" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
         <child id="1197683475734" name="valueType" index="3rvSg0" />
@@ -3443,6 +3442,31 @@
     <property role="TrG5h" value="MoveConcepts" />
     <property role="1sVAO0" value="false" />
     <node concept="2tJIrI" id="1yIP13OGu$8" role="jymVt" />
+    <node concept="1lYeZD" id="4$as01tMNca" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="MoveConcepts_extension" />
+      <ref role="1lYe$Y" to="lfzw:1F5g4zQqSPo" resolve="MoveNodesAction" />
+      <node concept="3Tm1VV" id="4$as01tMNcb" role="1B3o_S" />
+      <node concept="q3mfD" id="4$as01tMNch" role="jymVt">
+        <property role="TrG5h" value="get" />
+        <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
+        <node concept="3Tm1VV" id="4$as01tMNcj" role="1B3o_S" />
+        <node concept="3clFbS" id="4$as01tMNcl" role="3clF47">
+          <node concept="3clFbF" id="4$as01tMOL6" role="3cqZAp">
+            <node concept="2ShNRf" id="4$as01tMOL4" role="3clFbG">
+              <node concept="HV5vD" id="4$as01tN3Ti" role="2ShVmc">
+                <ref role="HV5vE" node="6gEjUfBzz$q" resolve="MoveConcepts" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="q3mfm" id="4$as01tMNcm" role="3clF45">
+          <ref role="q3mfh" to="90d:3zLwYDe0sv$" />
+          <ref role="1QQUv3" node="4$as01tMNch" resolve="get" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4$as01tMIQw" role="jymVt" />
     <node concept="3clFb_" id="6gEjUfBzAKz" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="2aFKle" value="false" />
@@ -3812,9 +3836,6 @@
           <node concept="3cpWsn" id="6gEjUfB$Yu2" role="3cpWs9">
             <property role="TrG5h" value="targetModelRef" />
             <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="6gEjUfB$Yu3" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-            </node>
             <node concept="2YIFZM" id="6gEjUfB$YuJ" role="33vP2m">
               <ref role="1Pybhc" to="o2jy:2v0NNHY7yo6" resolve="SModelReferenceDialog" />
               <ref role="37wK5l" to="o2jy:2v0NNHY9Jlw" resolve="getSelectedModel" />
@@ -3829,6 +3850,9 @@
               <node concept="37vLTw" id="6gEjUfB_F5E" role="37wK5m">
                 <ref role="3cqZAo" node="6gEjUfB_pxF" resolve="structureModels" />
               </node>
+            </node>
+            <node concept="3uibUv" id="6gEjUfB$Yu3" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
           </node>
         </node>
@@ -3990,56 +4014,6 @@
                       <ref role="37wK5l" to="u42p:1F5g4zQtJYF" resolve="NodeLocation.NodeLocationRoot" />
                       <node concept="37vLTw" id="3BJTP_NsNo$" role="37wK5m">
                         <ref role="3cqZAo" node="3BJTP_NrGqr" resolve="targetModel" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2Gpval" id="4fE$IBvDmdQ" role="3cqZAp">
-          <node concept="2GrKxI" id="4fE$IBvDmdR" role="2Gsz3X">
-            <property role="TrG5h" value="aspect" />
-          </node>
-          <node concept="2OqwBi" id="3n$qWi4O6ct" role="2GsD0m">
-            <node concept="37vLTw" id="3JYspdAr5gV" role="2Oq$k0">
-              <ref role="3cqZAo" node="3BJTP_NrZCf" resolve="aspectsMap" />
-            </node>
-            <node concept="3lbrtF" id="3n$qWi4O6cx" role="2OqNvi" />
-          </node>
-          <node concept="3clFbS" id="4fE$IBvDmdT" role="2LFqv$">
-            <node concept="3clFbF" id="3BJTP_NsUyC" role="3cqZAp">
-              <node concept="2OqwBi" id="3BJTP_NsUyD" role="3clFbG">
-                <node concept="37vLTw" id="3BJTP_NsUyE" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1QrPC3Beorj" resolve="moveAspects" />
-                </node>
-                <node concept="TSZUe" id="3BJTP_NsUyF" role="2OqNvi">
-                  <node concept="2ry78W" id="3BJTP_NsUyG" role="25WWJ7">
-                    <ref role="2ryb1Q" to="lfzw:3BJTP_NofFn" resolve="MoveNodesDefault.ToMoveItem" />
-                    <node concept="2r$n1x" id="3BJTP_NsUyH" role="2r_Bvh">
-                      <ref role="2r$qp6" to="lfzw:3BJTP_Nog8M" resolve="nodes" />
-                      <node concept="3EllGN" id="3BJTP_NsVU5" role="2r_lH1">
-                        <node concept="2GrUjf" id="3BJTP_NsVU6" role="3ElVtu">
-                          <ref role="2Gs0qQ" node="4fE$IBvDmdR" resolve="aspect" />
-                        </node>
-                        <node concept="37vLTw" id="3BJTP_NsVU7" role="3ElQJh">
-                          <ref role="3cqZAo" node="3BJTP_NrZCf" resolve="aspectsMap" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2r$n1x" id="3BJTP_NsUyJ" role="2r_Bvh">
-                      <ref role="2r$qp6" to="lfzw:3BJTP_NogzI" resolve="newLocation" />
-                      <node concept="2ShNRf" id="3BJTP_NsUyK" role="2r_lH1">
-                        <node concept="1pGfFk" id="3BJTP_NsUyL" role="2ShVmc">
-                          <ref role="37wK5l" to="u42p:3BJTP_Nt7hY" resolve="NodeLocation.NodeLocationRootWithAspectModelCreation" />
-                          <node concept="37vLTw" id="3BJTP_NtrLH" role="37wK5m">
-                            <ref role="3cqZAo" node="3BJTP_NrQYZ" resolve="targetLanguage" />
-                          </node>
-                          <node concept="2GrUjf" id="3BJTP_NtxGX" role="37wK5m">
-                            <ref role="2Gs0qQ" node="4fE$IBvDmdR" resolve="aspect" />
-                          </node>
-                        </node>
                       </node>
                     </node>
                   </node>
@@ -4509,9 +4483,19 @@
                     <ref role="2r$qp6" to="lfzw:3BJTP_NogzI" resolve="newLocation" />
                     <node concept="2ShNRf" id="7tnaD0TeYv5" role="2r_lH1">
                       <node concept="1pGfFk" id="7tnaD0Tfq5V" role="2ShVmc">
-                        <ref role="37wK5l" to="u42p:1F5g4zQtI41" resolve="NodeLocation.NodeLocationChild" />
+                        <ref role="37wK5l" to="u42p:4TDY5SFdDlY" resolve="NodeLocation.NodeLocationChild" />
                         <node concept="37vLTw" id="7tnaD0Tfqjb" role="37wK5m">
                           <ref role="3cqZAo" node="6gEjUfBrB9F" resolve="targetConcept" />
+                        </node>
+                        <node concept="2OqwBi" id="4TDY5SFdKYp" role="37wK5m">
+                          <node concept="2JrnkZ" id="4TDY5SFdLrq" role="2Oq$k0">
+                            <node concept="37vLTw" id="4TDY5SFdKH6" role="2JrQYb">
+                              <ref role="3cqZAo" node="6gEjUfBwJ_j" resolve="feature" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="4TDY5SFdLys" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+                          </node>
                         </node>
                       </node>
                     </node>
