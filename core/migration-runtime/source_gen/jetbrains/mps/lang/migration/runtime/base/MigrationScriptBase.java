@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -132,6 +134,13 @@ public abstract class MigrationScriptBase implements MigrationScript {
     return nodes;
   }
 
+  public boolean isInTransformPattern(SNode node) {
+    if (!(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(node)))) {
+      return false;
+    }
+    SNode enclosingPattern = SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), false, false);
+    return (enclosingPattern != null) && SNodeOperations.hasRole(enclosingPattern, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529eeeL, "pattern"));
+  }
 
   protected void applyTransormMigration(SNode origin, Computable<SNode> migration, _FunctionTypes._void_P2_E0<? super SNode, ? super SNode> postprocess) {
     MigrationScriptBase.SNodePlacePointer pointer = createSNodePlacePointer(origin);

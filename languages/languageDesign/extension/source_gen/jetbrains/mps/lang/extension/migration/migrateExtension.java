@@ -60,6 +60,10 @@ public class migrateExtension extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode field) {
           return SNodeOperations.hasRole(field, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L, 0x61a62b43e1534edcL, "fieldDeclaration"));
         }
@@ -90,6 +94,10 @@ public class migrateExtension extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
           return true;
         }
@@ -118,6 +126,10 @@ public class migrateExtension extends MigrationScriptBase {
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
@@ -158,6 +170,10 @@ public class migrateExtension extends MigrationScriptBase {
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
