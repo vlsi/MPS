@@ -138,10 +138,10 @@ public class ModuleDescriptorPersistence {
     });
     Element dependencyVersions = new Element("dependencyVersions");
     for (SModuleReference ref : deps) {
-      Element languageVersion = new Element("module");
-      languageVersion.setAttribute("reference", ref.toString());
-      languageVersion.setAttribute("version", String.valueOf(lver.get(ref)));
-      dependencyVersions.addContent(languageVersion);
+      Element moduleVersion = new Element("module");
+      moduleVersion.setAttribute("reference", ref.toString());
+      moduleVersion.setAttribute("version", String.valueOf(depVer.get(ref)));
+      dependencyVersions.addContent(moduleVersion);
     }
     result.addContent(dependencyVersions);
 

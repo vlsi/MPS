@@ -115,6 +115,7 @@ public class SolutionDescriptorPersistence {
     if (descriptor.getId() != null) {
       result.setAttribute("uuid", descriptor.getId().toString());
     }
+    result.setAttribute("moduleVersion", Integer.toString(descriptor.getModuleVersion()));
     if (descriptor.getKind() != SolutionKind.NONE) {
       result.setAttribute("pluginKind", descriptor.getKind().name());
     }

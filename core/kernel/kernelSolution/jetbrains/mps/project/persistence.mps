@@ -6338,7 +6338,7 @@
           <node concept="3clFbS" id="6oJSkzE7JLe" role="2LFqv$">
             <node concept="3cpWs8" id="6oJSkzE7JLf" role="3cqZAp">
               <node concept="3cpWsn" id="6oJSkzE7JLg" role="3cpWs9">
-                <property role="TrG5h" value="languageVersion" />
+                <property role="TrG5h" value="moduleVersion" />
                 <property role="3TUv4t" value="false" />
                 <node concept="3uibUv" id="6oJSkzE7JLh" role="1tU5fm">
                   <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
@@ -6356,7 +6356,7 @@
             <node concept="3clFbF" id="6oJSkzE7JLl" role="3cqZAp">
               <node concept="2OqwBi" id="6oJSkzE7JLm" role="3clFbG">
                 <node concept="37vLTw" id="6oJSkzE7JLn" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6oJSkzE7JLg" resolve="languageVersion" />
+                  <ref role="3cqZAo" node="6oJSkzE7JLg" resolve="moduleVersion" />
                 </node>
                 <node concept="liA8E" id="6oJSkzE7JLo" role="2OqNvi">
                   <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
@@ -6377,7 +6377,7 @@
             <node concept="3clFbF" id="6oJSkzE7JLA" role="3cqZAp">
               <node concept="2OqwBi" id="6oJSkzE7JLB" role="3clFbG">
                 <node concept="37vLTw" id="6oJSkzE7JLC" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6oJSkzE7JLg" resolve="languageVersion" />
+                  <ref role="3cqZAo" node="6oJSkzE7JLg" resolve="moduleVersion" />
                 </node>
                 <node concept="liA8E" id="6oJSkzE7JLD" role="2OqNvi">
                   <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
@@ -6388,8 +6388,8 @@
                     <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
                     <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                     <node concept="2OqwBi" id="6oJSkzE7JLG" role="37wK5m">
-                      <node concept="37vLTw" id="6oJSkzE7JLH" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6ErrHV2r4I3" resolve="lver" />
+                      <node concept="37vLTw" id="4YhrNOncvqA" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6oJSkzE7LAL" resolve="depVer" />
                       </node>
                       <node concept="liA8E" id="6oJSkzE7JLI" role="2OqNvi">
                         <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
@@ -6410,7 +6410,7 @@
                 <node concept="liA8E" id="6oJSkzE7JLN" role="2OqNvi">
                   <ref role="37wK5l" to="mmaq:~Element.addContent(org.jdom.Element):org.jdom.Element" resolve="addContent" />
                   <node concept="37vLTw" id="6oJSkzE7JLO" role="37wK5m">
-                    <ref role="3cqZAo" node="6oJSkzE7JLg" resolve="languageVersion" />
+                    <ref role="3cqZAo" node="6oJSkzE7JLg" resolve="moduleVersion" />
                   </node>
                 </node>
               </node>
@@ -10293,6 +10293,31 @@
                     <node concept="liA8E" id="6DUjbZQMMgv" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
                     </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4YhrNOncqLR" role="3cqZAp">
+          <node concept="2OqwBi" id="4YhrNOncqLS" role="3clFbG">
+            <node concept="37vLTw" id="4YhrNOncuzN" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Tieq1im88u" resolve="result" />
+            </node>
+            <node concept="liA8E" id="4YhrNOncqLU" role="2OqNvi">
+              <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
+              <node concept="Xl_RD" id="4YhrNOncqLV" role="37wK5m">
+                <property role="Xl_RC" value="moduleVersion" />
+              </node>
+              <node concept="2YIFZM" id="4YhrNOncqLW" role="37wK5m">
+                <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
+                <ref role="37wK5l" to="wyt6:~Integer.toString(int):java.lang.String" resolve="toString" />
+                <node concept="2OqwBi" id="4YhrNOncqLX" role="37wK5m">
+                  <node concept="37vLTw" id="4YhrNOncqLY" role="2Oq$k0">
+                    <ref role="3cqZAo" node="IMUMWuHRak" resolve="descriptor" />
+                  </node>
+                  <node concept="liA8E" id="4YhrNOncqLZ" role="2OqNvi">
+                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getModuleVersion():int" resolve="getModuleVersion" />
                   </node>
                 </node>
               </node>
