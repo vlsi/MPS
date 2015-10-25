@@ -190,7 +190,7 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
   }
 
   public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
-    if (!(MapSequence.fromMap(options).get(getDescription())) || !(isApplicable(initialState, repository))) {
+    if (!(isApplicable(initialState, repository)) || !(MapSequence.fromMap(options).get(getDescription()))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     }
     final SNode sourceNode = initialState.resolve(repository);

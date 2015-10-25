@@ -80,7 +80,7 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
 
   @Override
   public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final Map<String, Boolean> options, final SearchScope searchScope, final Iterable<RefactoringParticipant.ParticipantState> parents) {
-    if (!(MapSequence.fromMap(options).get(getDescription())) || !((isApplicable(initialState, repository)))) {
+    if (!((isApplicable(initialState, repository))) || !(MapSequence.fromMap(options).get(getDescription()))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     } else {
       final SNode sourceConcept = SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));

@@ -172,7 +172,7 @@ public class LanguageStructureMigrationParticipant<I, F> implements MoveNodeRefa
   }
 
   public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
-    if (!(MapSequence.fromMap(options).get(getDescription())) || initialState == null) {
+    if (initialState == null || !(MapSequence.fromMap(options).get(getDescription()))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
     final Language sourceModule = initialState._0();

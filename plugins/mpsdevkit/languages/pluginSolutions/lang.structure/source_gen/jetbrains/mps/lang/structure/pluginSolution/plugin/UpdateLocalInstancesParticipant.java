@@ -84,7 +84,7 @@ public class UpdateLocalInstancesParticipant<I, F> implements MoveNodeRefactorin
   }
 
   public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
-    if (!(MapSequence.fromMap(options).get(getDescription())) || initialState == null) {
+    if (initialState == null || !(MapSequence.fromMap(options).get(getDescription()))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
     Collection<SNode> instances = myStructureSpecialization.findInstances(initialState._1(), searchScope);
