@@ -29,10 +29,11 @@ public class check_Counter_NonTypesystemRule extends AbstractNonTypesystemRule_R
     List<Instruction> instructions = runner.getProgram().getInstructions();
     for (Instruction instruction : ListSequence.fromList(instructions)) {
       Integer resultCounter = result.get(instruction);
-      if (resultCounter > SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount"))) {
+      SNode source = ((SNode) instruction.getSource());
+      if (resultCounter > SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount")) && source != null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(((SNode) instruction.getSource()), "counter > " + SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount")), "r:6ac8df16-203b-470e-8af3-57784a2fb1f4(testCustomAnalyzer.typesystem)", "6628579460233872871", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(source, "counter > " + SPropertyOperations.getInteger(root, MetaAdapterFactory.getProperty(0xb124c25e1e164432L, 0xad5e0ac0ecae98f5L, 0x73a316f7f5468ed4L, 0x73a316f7f548c73dL, "maxChildCount")), "r:6ac8df16-203b-470e-8af3-57784a2fb1f4(testCustomAnalyzer.typesystem)", "6628579460233872871", null, errorTarget);
         }
       }
     }

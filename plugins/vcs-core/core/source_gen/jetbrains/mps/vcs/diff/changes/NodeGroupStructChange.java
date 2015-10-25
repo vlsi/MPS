@@ -28,6 +28,6 @@ public class NodeGroupStructChange extends NodeGroupChange {
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
-    return new NodeGroupStructChange(getChangeSet().getOppositeChangeSet(), getParentNodeId(false), getParentNodeId(true), getRoleLink(), getResultBegin(), getResultEnd(), getBegin(), getEnd());
+    return new NodeGroupStructChange(getChangeSet().getOppositeChangeSet(), getParentNodeId(true), getParentNodeId(false), getRoleLink(), getResultBegin(), getResultEnd(), getBegin(), getEnd());
   }
 }

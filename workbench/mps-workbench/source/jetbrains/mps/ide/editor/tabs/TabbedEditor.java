@@ -230,7 +230,14 @@ public class TabbedEditor extends BaseNodeEditor {
     myNameListener.detach();
 
     if (nodeRef == null) {
-      nodeRef = myBaseNode;
+      // Null means that it is empty tab - just update tab header
+      executeInEDT(new PrioritizedTask(TaskType.UPDATE_PROPERTIES, myType2TaskMap) {
+        @Override
+        public void performTask() {
+          updateProperties();
+        }
+      });
+      return;
     }
 
     SNode node = nodeRef.resolve(myProject.getRepository());
