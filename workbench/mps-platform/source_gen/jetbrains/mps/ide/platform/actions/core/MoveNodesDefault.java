@@ -98,7 +98,10 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       if (ListSequence.fromList(oldNodes).count() != ListSequence.fromList(shouldKeep).count()) {
         throw new IllegalArgumentException();
       }
-      List<SNode> result = CopyUtil.copyAndPreserveId(oldNodes, copyMap);
+      Map<SNode, SNode> localCopyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+      List<SNode> result = CopyUtil.copyAndPreserveId(oldNodes, localCopyMap);
+      MapSequence.fromMap(copyMap).putAll(localCopyMap);
+      
       for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(copyMap)) {
         CopyUtil.addReferences(mapping.key(), copyMap, false);
       }
@@ -192,6 +195,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         MapSequence.fromMap(moveMap).put(node.getReference(), nodesToMove.newLocation());
       }
     }
+    doMove(project, moveMap, callBack);
   }
 
   public static void doMove(final MPSProject project, final Map<SNodeReference, NodeLocation> moveMap, final Runnable callBack) {
