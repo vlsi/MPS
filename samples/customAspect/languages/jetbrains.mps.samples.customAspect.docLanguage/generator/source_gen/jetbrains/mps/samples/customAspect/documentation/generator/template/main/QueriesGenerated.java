@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -34,11 +36,14 @@ public class QueriesGenerated {
       }
     }), MetaAdapterFactory.getProperty(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, 0x28360eb22c3acdf0L, "text"));
   }
-  public static Object propertyMacro_GetPropertyValue_4565427742315554124(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe27L, 0x5869770da61dfe2eL, "qualifiedName")) + ".DocumentationDescriptor";
-  }
   public static Object referenceMacro_GetReferent_2897519568668612287(final ReferenceMacroContext _context) {
     return _context.getNode();
+  }
+  public static Object templateArgumentQuery_4565427742315565556(final TemplateArgumentContext _context) {
+    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".DocumentationDescriptor";
+  }
+  public static Object templateArgumentQuery_5700381506346626450(final TemplateArgumentContext _context) {
+    return SNodeOperations.getNode("r:ed8e9175-44d1-47ad-9d2b-75c7b10d01f8(jetbrains.mps.samples.customAspect.documentation.runtime)", "2897519568668564140");
   }
   public static Iterable<SNode> sourceNodesQuery_2897519568668600552(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getOriginalInputModel(), MetaAdapterFactory.getConcept(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, "jetbrains.mps.samples.customAspect.documentation.structure.ConceptDocumentation"))).select(new ISelector<SNode, SNode>() {
