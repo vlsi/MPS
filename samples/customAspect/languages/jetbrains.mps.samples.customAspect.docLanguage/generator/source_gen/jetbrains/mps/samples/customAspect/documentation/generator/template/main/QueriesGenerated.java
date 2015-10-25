@@ -9,7 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.descriptor.generator.template.utils.LanguageRuntimeGeneratorUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
+import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +27,7 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(_context.getInputModel()).endsWith("." + SPropertyOperations.getString(SNodeOperations.getNode("r:0b865d91-07c7-474d-b8a4-ec619adc5e54(jetbrains.mps.samples.customAspect.documentation.plugin)", "2897519568668531956"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static boolean baseMappingRule_Condition_1570228009929814973(final BaseMappingRuleContext _context) {
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(((SModelReference) _context.getVariable("modelRef")).resolve(_context.getGenerator().getGeneratorSessionContext().getProject().getRepository()), _context, MetaAdapterFactory.getConcept(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, "jetbrains.mps.samples.customAspect.documentation.structure.ConceptDocumentation"));
+    return SModuleOperations.getAspect(((Language) _context.getVariable("langModule")), "documentation").getReference().equals(((SModelReference) _context.getVariable("modelRef")));
   }
   public static Object propertyMacro_GetPropertyValue_2897519568668614238(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, "jetbrains.mps.samples.customAspect.documentation.structure.ConceptDocumentation"))).findFirst(new IWhereFilter<SNode>() {
