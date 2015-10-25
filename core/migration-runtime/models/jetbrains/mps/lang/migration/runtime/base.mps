@@ -227,6 +227,7 @@
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1185,6 +1186,71 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1xD045lRVlS" role="jymVt" />
+    <node concept="2YIFZL" id="6oJSkzEcB7u" role="jymVt">
+      <property role="TrG5h" value="detachNodePatternVariable" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6oJSkzEcB7x" role="3clF47">
+        <node concept="3clFbF" id="6oJSkzEcCnS" role="3cqZAp">
+          <node concept="2OqwBi" id="6oJSkzEcCpC" role="3clFbG">
+            <node concept="37vLTw" id="6oJSkzEcCnR" role="2Oq$k0">
+              <ref role="3cqZAo" node="6oJSkzEcBuO" resolve="node" />
+            </node>
+            <node concept="3YRAZt" id="6oJSkzEcCrl" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6oJSkzEcAKd" role="1B3o_S" />
+      <node concept="3Tqbb2" id="6oJSkzEcDxz" role="3clF45" />
+      <node concept="37vLTG" id="6oJSkzEcBuO" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="6oJSkzEcChr" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="6oJSkzEcCI3" role="jymVt">
+      <property role="TrG5h" value="detachListPatternVariable" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6oJSkzEcCI4" role="3clF47">
+        <node concept="2Gpval" id="6oJSkzEcDQN" role="3cqZAp">
+          <node concept="2GrKxI" id="6oJSkzEcDQP" role="2Gsz3X">
+            <property role="TrG5h" value="node" />
+          </node>
+          <node concept="3clFbS" id="6oJSkzEcDQR" role="2LFqv$">
+            <node concept="3clFbF" id="6oJSkzEcDXF" role="3cqZAp">
+              <node concept="2OqwBi" id="6oJSkzEcDYC" role="3clFbG">
+                <node concept="2GrUjf" id="6oJSkzEcDXE" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="6oJSkzEcDQP" resolve="node" />
+                </node>
+                <node concept="3YRAZt" id="6oJSkzEcE1r" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="6oJSkzEcDV9" role="2GsD0m">
+            <ref role="3cqZAo" node="6oJSkzEcCIb" resolve="nodes" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6oJSkzEcDCv" role="3cqZAp">
+          <node concept="37vLTw" id="6oJSkzEcDHF" role="3cqZAk">
+            <ref role="3cqZAo" node="6oJSkzEcCIb" resolve="nodes" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6oJSkzEcCI9" role="1B3o_S" />
+      <node concept="_YKpA" id="6oJSkzEcDzS" role="3clF45">
+        <node concept="3Tqbb2" id="6oJSkzEcDAz" role="_ZDj9" />
+      </node>
+      <node concept="37vLTG" id="6oJSkzEcCIb" role="3clF46">
+        <property role="TrG5h" value="nodes" />
+        <node concept="_YKpA" id="6oJSkzEcDlo" role="1tU5fm">
+          <node concept="3Tqbb2" id="6oJSkzEcDqL" role="_ZDj9" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6oJSkzEcCs4" role="jymVt" />
+    <node concept="2tJIrI" id="6oJSkzEcAmT" role="jymVt" />
     <node concept="3clFb_" id="1xD045lRVzu" role="jymVt">
       <property role="TrG5h" value="applyTransormMigration" />
       <property role="DiZV1" value="false" />

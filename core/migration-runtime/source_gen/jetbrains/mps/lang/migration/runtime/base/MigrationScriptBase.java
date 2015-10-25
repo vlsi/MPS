@@ -11,9 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.List;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
 
@@ -121,6 +121,17 @@ public abstract class MigrationScriptBase implements MigrationScript {
       return new MigrationScriptBase.SNodePlacePointer.RootPointer(node);
     }
   }
+
+  public static SNode detachNodePatternVariable(SNode node) {
+    return SNodeOperations.detachNode(node);
+  }
+  public static List<SNode> detachListPatternVariable(List<SNode> nodes) {
+    for (SNode node : ListSequence.fromList(nodes)) {
+      SNodeOperations.detachNode(node);
+    }
+    return nodes;
+  }
+
 
   protected void applyTransormMigration(SNode origin, Computable<SNode> migration, _FunctionTypes._void_P2_E0<? super SNode, ? super SNode> postprocess) {
     MigrationScriptBase.SNodePlacePointer pointer = createSNodePlacePointer(origin);
