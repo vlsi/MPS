@@ -104,6 +104,31 @@
       <unit id="1101499704720825413" at="17,0,58,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     </file>
   </root>
+  <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6171083915388368126">
+    <file name="SModuleOperations.java">
+      <node id="6171083915388378072" at="19,37,20,18" concept="11" />
+      <node id="6171083915388379308" at="21,5,22,53" concept="10" />
+      <node id="6171083915388383229" at="24,40,25,54" concept="11" />
+      <node id="6171083915388377750" at="18,64,21,5" concept="8" />
+      <node id="6171083915388383042" at="24,0,27,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="6171083915388380144" at="22,53,27,7" concept="11" />
+      <node id="6171083915388377518" at="18,0,29,0" concept="15" trace="getAspect#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <scope id="6171083915388377751" at="19,37,20,18" />
+      <scope id="6171083915388383043" at="24,40,25,54" />
+      <scope id="6171083915388383042" at="24,0,27,0">
+        <var name="it" id="6171083915388383042" />
+      </scope>
+      <scope id="6171083915388377524" at="18,64,27,7">
+        <var name="models" id="6171083915388379309" />
+      </scope>
+      <scope id="6171083915388377518" at="18,0,29,0">
+        <var name="m" id="6171083915388377613" />
+        <var name="name" id="6171083915388377625" />
+      </scope>
+      <unit id="6171083915388383042" at="23,55,27,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations$1" />
+      <unit id="6171083915388368126" at="12,0,30,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
+    </file>
+  </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6407023681582958584">
     <file name="AttributeOperations.java">
       <node id="6407023681583007509" at="34,39,35,36" concept="11" />
