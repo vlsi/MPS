@@ -26,4 +26,11 @@ public class SModuleOperations {
       }
     });
   }
+
+  public static boolean isAspect(SModel m, String name) {
+    if (!((m.getModule() instanceof Language))) {
+      return false;
+    }
+    return m.getModelName().endsWith("." + name);
+  }
 }

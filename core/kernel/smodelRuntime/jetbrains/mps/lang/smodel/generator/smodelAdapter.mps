@@ -17790,15 +17790,137 @@
   </node>
   <node concept="312cEu" id="5m$620fQrjY">
     <property role="TrG5h" value="SModuleOperations" />
-    <node concept="2YIFZL" id="5m$620fQtAI" role="jymVt">
+    <node concept="2YIFZL" id="1KHvivZHmfq" role="jymVt">
       <property role="TrG5h" value="getAspect" />
-      <node concept="H_c77" id="5m$620fQtBZ" role="3clF45" />
+      <node concept="H_c77" id="1KHvivZHmfr" role="3clF45" />
+      <node concept="3Tm1VV" id="1KHvivZHmfs" role="1B3o_S" />
+      <node concept="3clFbS" id="1KHvivZHmft" role="3clF47">
+        <node concept="3clFbJ" id="1KHvivZHmfu" role="3cqZAp">
+          <node concept="3clFbS" id="1KHvivZHmfv" role="3clFbx">
+            <node concept="3cpWs6" id="1KHvivZHmfw" role="3cqZAp">
+              <node concept="10Nm6u" id="1KHvivZHmfx" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="1KHvivZHmfy" role="3clFbw">
+            <node concept="1eOMI4" id="1KHvivZHmfz" role="3fr31v">
+              <node concept="2ZW3vV" id="1KHvivZHmf$" role="1eOMHV">
+                <node concept="3uibUv" id="1KHvivZHmf_" role="2ZW6by">
+                  <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                </node>
+                <node concept="37vLTw" id="1KHvivZHmfA" role="2ZW6bz">
+                  <ref role="3cqZAo" node="1KHvivZHmg2" resolve="m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1KHvivZHmfB" role="3cqZAp">
+          <node concept="3cpWsn" id="1KHvivZHmfC" role="3cpWs9">
+            <property role="TrG5h" value="models" />
+            <node concept="_YKpA" id="1KHvivZHmfD" role="1tU5fm">
+              <node concept="3uibUv" id="1KHvivZHmfE" role="_ZDj9">
+                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="1KHvivZHmfF" role="33vP2m">
+              <node concept="1eOMI4" id="1KHvivZHmfG" role="2Oq$k0">
+                <node concept="10QFUN" id="1KHvivZHmfH" role="1eOMHV">
+                  <node concept="37vLTw" id="1KHvivZHmfI" role="10QFUP">
+                    <ref role="3cqZAo" node="1KHvivZHmg2" resolve="m" />
+                  </node>
+                  <node concept="3uibUv" id="1KHvivZHmfJ" role="10QFUM">
+                    <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1KHvivZHmfK" role="2OqNvi">
+                <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1KHvivZHmfL" role="3cqZAp">
+          <node concept="2OqwBi" id="1KHvivZHmfM" role="3clFbG">
+            <node concept="37vLTw" id="1KHvivZHmfN" role="2Oq$k0">
+              <ref role="3cqZAo" node="1KHvivZHmfC" resolve="models" />
+            </node>
+            <node concept="1z4cxt" id="1KHvivZHmfO" role="2OqNvi">
+              <node concept="1bVj0M" id="1KHvivZHmfP" role="23t8la">
+                <node concept="3clFbS" id="1KHvivZHmfQ" role="1bW5cS">
+                  <node concept="3clFbF" id="1KHvivZHmfR" role="3cqZAp">
+                    <node concept="2OqwBi" id="1KHvivZHmfS" role="3clFbG">
+                      <node concept="2OqwBi" id="1KHvivZHmfT" role="2Oq$k0">
+                        <node concept="37vLTw" id="1KHvivZHmfU" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1KHvivZHmg0" resolve="it" />
+                        </node>
+                        <node concept="liA8E" id="1KHvivZHmfV" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1KHvivZHmfW" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                        <node concept="3cpWs3" id="1KHvivZHmfX" role="37wK5m">
+                          <node concept="37vLTw" id="1KHvivZHmfY" role="3uHU7w">
+                            <ref role="3cqZAo" node="1KHvivZHmg4" resolve="name" />
+                          </node>
+                          <node concept="Xl_RD" id="1KHvivZHmfZ" role="3uHU7B">
+                            <property role="Xl_RC" value="." />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="1KHvivZHmg0" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="1KHvivZHmg1" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1KHvivZHmg2" role="3clF46">
+        <property role="TrG5h" value="m" />
+        <node concept="3uibUv" id="1KHvivZHmg3" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1KHvivZHmg4" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="3uibUv" id="1KHvivZHmg5" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="1KHvivZHmg6" role="lGtFl">
+        <node concept="TZ5HA" id="1KHvivZHmg7" role="TZ5H$">
+          <node concept="1dT_AC" id="1KHvivZHmg8" role="1dT_Ay">
+            <property role="1dT_AB" value="We use name here because we can't make a connection between aspect and the corresponding interface" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1KHvivZHmg9" role="TZ5H$">
+          <node concept="1dT_AC" id="1KHvivZHmga" role="1dT_Ay">
+            <property role="1dT_AB" value="This is because we can't generate generators yet" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1KHvivZHmgb" role="TZ5H$">
+          <node concept="1dT_AC" id="1KHvivZHmgc" role="1dT_Ay">
+            <property role="1dT_AB" value="Still, it is better if user does not write this by-name stuff explicitly - it will be changed later by regenerating, not by manually changing code" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1KHvivZHmxg" role="jymVt" />
+    <node concept="2YIFZL" id="5m$620fQtAI" role="jymVt">
+      <property role="TrG5h" value="isAspect" />
       <node concept="3Tm1VV" id="5m$620fQtAN" role="1B3o_S" />
       <node concept="3clFbS" id="5m$620fQtAO" role="3clF47">
         <node concept="3clFbJ" id="5m$620fQtEm" role="3cqZAp">
           <node concept="3clFbS" id="5m$620fQtEn" role="3clFbx">
             <node concept="3cpWs6" id="5m$620fQtJo" role="3cqZAp">
-              <node concept="10Nm6u" id="5m$620fQtJN" role="3cqZAk" />
+              <node concept="3clFbT" id="1KHvivZHp_D" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
             </node>
           </node>
           <node concept="3fqX7Q" id="5m$620fQtEI" role="3clFbw">
@@ -17807,73 +17929,40 @@
                 <node concept="3uibUv" id="5m$620fQtIy" role="2ZW6by">
                   <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
                 </node>
-                <node concept="37vLTw" id="5m$620fQtH9" role="2ZW6bz">
+                <node concept="2OqwBi" id="1KHvivZHpxy" role="2ZW6bz">
+                  <node concept="2JrnkZ" id="1KHvivZHpww" role="2Oq$k0">
+                    <node concept="37vLTw" id="5m$620fQtH9" role="2JrQYb">
+                      <ref role="3cqZAo" node="5m$620fQtCd" resolve="m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1KHvivZHp$$" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1KHvivZHpLd" role="3cqZAp">
+          <node concept="2OqwBi" id="1KHvivZHpWn" role="3cqZAk">
+            <node concept="2OqwBi" id="1KHvivZHpWo" role="2Oq$k0">
+              <node concept="2JrnkZ" id="1KHvivZHqae" role="2Oq$k0">
+                <node concept="37vLTw" id="1KHvivZHq3x" role="2JrQYb">
                   <ref role="3cqZAo" node="5m$620fQtCd" resolve="m" />
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5m$620fQu2G" role="3cqZAp">
-          <node concept="3cpWsn" id="5m$620fQu2H" role="3cpWs9">
-            <property role="TrG5h" value="models" />
-            <node concept="_YKpA" id="5m$620fQu9C" role="1tU5fm">
-              <node concept="3uibUv" id="5m$620fQu9E" role="_ZDj9">
-                <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+              <node concept="liA8E" id="1KHvivZHpWq" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
               </node>
             </node>
-            <node concept="2OqwBi" id="5m$620fQu2I" role="33vP2m">
-              <node concept="1eOMI4" id="5m$620fQu2J" role="2Oq$k0">
-                <node concept="10QFUN" id="5m$620fQu2K" role="1eOMHV">
-                  <node concept="37vLTw" id="5m$620fQu2L" role="10QFUP">
-                    <ref role="3cqZAo" node="5m$620fQtCd" resolve="m" />
-                  </node>
-                  <node concept="3uibUv" id="5m$620fQu2M" role="10QFUM">
-                    <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                  </node>
+            <node concept="liA8E" id="1KHvivZHpWr" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+              <node concept="3cpWs3" id="1KHvivZHpWs" role="37wK5m">
+                <node concept="37vLTw" id="1KHvivZHpWt" role="3uHU7w">
+                  <ref role="3cqZAo" node="5m$620fQtCp" resolve="name" />
                 </node>
-              </node>
-              <node concept="liA8E" id="5m$620fQu2N" role="2OqNvi">
-                <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5m$620fQufK" role="3cqZAp">
-          <node concept="2OqwBi" id="5m$620fQupr" role="3clFbG">
-            <node concept="37vLTw" id="5m$620fQufI" role="2Oq$k0">
-              <ref role="3cqZAo" node="5m$620fQu2H" resolve="models" />
-            </node>
-            <node concept="1z4cxt" id="5m$620fQuX0" role="2OqNvi">
-              <node concept="1bVj0M" id="5m$620fQuX2" role="23t8la">
-                <node concept="3clFbS" id="5m$620fQuX3" role="1bW5cS">
-                  <node concept="3clFbF" id="5m$620fQuZX" role="3cqZAp">
-                    <node concept="2OqwBi" id="5m$620fQva5" role="3clFbG">
-                      <node concept="2OqwBi" id="5m$620fQv2H" role="2Oq$k0">
-                        <node concept="37vLTw" id="5m$620fQuZW" role="2Oq$k0">
-                          <ref role="3cqZAo" node="5m$620fQuX4" resolve="it" />
-                        </node>
-                        <node concept="liA8E" id="5m$620fQv5M" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="5m$620fQvmH" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                        <node concept="3cpWs3" id="5m$620fQvwT" role="37wK5m">
-                          <node concept="37vLTw" id="5m$620fQvxc" role="3uHU7w">
-                            <ref role="3cqZAo" node="5m$620fQtCp" resolve="name" />
-                          </node>
-                          <node concept="Xl_RD" id="5m$620fQvpF" role="3uHU7B">
-                            <property role="Xl_RC" value="." />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="Rh6nW" id="5m$620fQuX4" role="1bW2Oz">
-                  <property role="TrG5h" value="it" />
-                  <node concept="2jxLKc" id="5m$620fQuX5" role="1tU5fm" />
+                <node concept="Xl_RD" id="1KHvivZHpWu" role="3uHU7B">
+                  <property role="Xl_RC" value="." />
                 </node>
               </node>
             </node>
@@ -17882,9 +17971,7 @@
       </node>
       <node concept="37vLTG" id="5m$620fQtCd" role="3clF46">
         <property role="TrG5h" value="m" />
-        <node concept="3uibUv" id="5m$620fQtCc" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
+        <node concept="H_c77" id="1KHvivZHpnG" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5m$620fQtCp" role="3clF46">
         <property role="TrG5h" value="name" />
@@ -17892,23 +17979,7 @@
           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
-      <node concept="P$JXv" id="5m$620fQtDc" role="lGtFl">
-        <node concept="TZ5HA" id="5m$620fQtDd" role="TZ5H$">
-          <node concept="1dT_AC" id="5m$620fQtDe" role="1dT_Ay">
-            <property role="1dT_AB" value="We use name here because we can't make a connection between aspect and the corresponding interface" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="5m$620fQtDC" role="TZ5H$">
-          <node concept="1dT_AC" id="5m$620fQtDD" role="1dT_Ay">
-            <property role="1dT_AB" value="This is because we can't generate generators yet" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="5m$620fQtDI" role="TZ5H$">
-          <node concept="1dT_AC" id="5m$620fQtDJ" role="1dT_Ay">
-            <property role="1dT_AB" value="Still, it is better if user does not write this by-name stuff explicitly - it will be changed later by regenerating, not by manually changing code" />
-          </node>
-        </node>
-      </node>
+      <node concept="10P_77" id="1KHvivZHp7e" role="3clF45" />
     </node>
     <node concept="3Tm1VV" id="5m$620fQrjZ" role="1B3o_S" />
   </node>

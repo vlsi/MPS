@@ -2370,5 +2370,21 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1KHvivZHjVV">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="Model_IsAspectOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="operation.model" />
+    <property role="1pbfSe" value="467844130" />
+    <property role="34LRSv" value="isAspectModel" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="1TJgyj" id="1KHvivZHjYS" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="aspect" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+    </node>
+  </node>
 </model>
 

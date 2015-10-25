@@ -11611,5 +11611,29 @@
       <ref role="1YaFvo" to="tp25:5m$620fQi1E" resolve="AspectModelRefExpression" />
     </node>
   </node>
+  <node concept="1YbPZF" id="1KHvivZHrF7">
+    <property role="TrG5h" value="typeof_Model_IsAspectOperation" />
+    <property role="3GE5qa" value="operation.model" />
+    <node concept="3clFbS" id="1KHvivZHrF8" role="18ibNy">
+      <node concept="1Z5TYs" id="1KHvivZHspd" role="3cqZAp">
+        <node concept="mw_s8" id="1KHvivZHspx" role="1ZfhKB">
+          <node concept="2c44tf" id="1KHvivZHspt" role="mwGJk">
+            <node concept="10P_77" id="1KHvivZHspO" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="1KHvivZHspg" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1KHvivZHsmL" role="mwGJk">
+            <node concept="1YBJjd" id="1KHvivZHsns" role="1Z2MuG">
+              <ref role="1YBMHb" node="1KHvivZHrFa" resolve="op" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1KHvivZHrFa" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
+    </node>
+  </node>
 </model>
 
