@@ -944,7 +944,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
           newLanguageVersions.put(lang, lang.getLanguageVersion());
-          setChanged();
+          // this check is needed to avoid numerous changes in msd/mpl files when opening project without dependency versions
+          // here we assume that validateLanguageVersions() is called before validateDependencyVersions()
+          // todo: remove this hack after 3.3
+          if (md.hasDependencyVersions()) {
+            setChanged();
+          }
         }
       }
     }
