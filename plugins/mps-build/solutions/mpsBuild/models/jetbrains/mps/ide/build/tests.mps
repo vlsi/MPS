@@ -3762,7 +3762,7 @@
       <property role="2_GNG2" value="1024" />
       <property role="TZNOO" value="1.6" />
       <node concept="3qWCbU" id="7d2DnzDyiWm" role="2_Ic$A">
-        <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+        <property role="3qWCbO" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info, **/*.gif" />
       </node>
     </node>
     <node concept="2G$12M" id="3m6iW5ABSW0" role="3989C9">

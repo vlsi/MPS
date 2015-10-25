@@ -169,7 +169,7 @@
               <node concept="1pGfFk" id="4z6xDh$XaCV" role="2ShVmc">
                 <ref role="37wK5l" node="4z6xDh$XajT" resolve="ImageLoader" />
                 <node concept="Xl_RD" id="4z6xDh$XaCW" role="37wK5m">
-                  <property role="Xl_RC" value="ManuallyExportedImage.png" />
+                  <property role="Xl_RC" value="ManuallyExportedImage.gif" />
                 </node>
               </node>
             </node>
