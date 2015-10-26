@@ -10,10 +10,10 @@ import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -36,7 +36,7 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")))) {
+    if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository())) {
       MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
       event.getPresentation().setText(refactoring.getName());
       event.getPresentation().setEnabled(true);
@@ -75,7 +75,7 @@ public class MoveNodes_Action extends BaseAction {
     MoveNodes_Action.this.getRefactoring(_params).apply(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
   }
   private MoveNodesRefactoring getRefactoring(final Map<String, Object> _params) {
-    Iterable<MoveNodesRefactoring> specialRefactorings = new ExtensionPoint<MoveNodesRefactoring>("jetbrains.mps.ide.platform.MoveNodes").getObjects();
+    Iterable<MoveNodesRefactoring> specialRefactorings = new ExtensionPoint<MoveNodesRefactoring>("jetbrains.mps.ide.platform.MoveNodesAction").getObjects();
     Iterable<MoveNodesRefactoring> applicableRefactorings = Sequence.fromIterable(specialRefactorings).where(new IWhereFilter<MoveNodesRefactoring>() {
       public boolean accept(MoveNodesRefactoring it) {
         return it.isApplicable(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));

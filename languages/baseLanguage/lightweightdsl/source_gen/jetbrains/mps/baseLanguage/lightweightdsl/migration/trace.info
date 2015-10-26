@@ -28,7 +28,7 @@
       <node id="2516477739733857545" at="24,0,28,0" concept="2" trace="isRerunnable#()Z" />
       <node id="2516477739733858583" at="30,59,35,8" concept="3" />
       <node id="2516477739733859255" at="35,8,44,9" concept="1" />
-      <node id="2516477739733858583" at="28,35,45,5" concept="0" />
+      <node id="2516477739733858583" at="28,41,45,5" concept="0" />
       <node id="2516477739733857545" at="28,0,48,0" concept="2" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2516477739733857545" at="21,30,22,77" />
       <scope id="2516477739733857545" at="25,33,26,17" />
@@ -50,7 +50,7 @@
         <var name="context" id="2516477739733858583" />
         <var name="scope" id="2516477739733858583" />
       </scope>
-      <scope id="2516477739733857545" at="28,35,46,16" />
+      <scope id="2516477739733857545" at="28,41,46,16" />
       <scope id="2516477739733857545" at="28,0,48,0">
         <var name="m" id="2516477739733857545" />
       </scope>

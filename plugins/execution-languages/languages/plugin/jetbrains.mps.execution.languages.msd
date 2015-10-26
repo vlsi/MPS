@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.languages" uuid="2fe588b4-688c-48ba-b903-0b7dc3d30070" compileInMPS="false">
+<solution name="jetbrains.mps.execution.languages" uuid="2fe588b4-688c-48ba-b903-0b7dc3d30070" moduleVersion="0" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -24,5 +24,8 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="2" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="2fe588b4-688c-48ba-b903-0b7dc3d30070(jetbrains.mps.execution.languages)" version="0" />
+  </dependencyVersions>
 </solution>
 

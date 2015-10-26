@@ -37,7 +37,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
   public boolean isRerunnable() {
     return false;
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new ReplaceNodeOperationsWithGenContextOp.Pattern_q6klpg_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -47,6 +47,10 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
@@ -63,7 +67,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return createDotExpression_q6klpg_a0a0a0f(SNodeOperations.cast(HUtil.copyIfNecessary(((SNode) pattern.getFieldValue("patternVar_operand"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+                  return createDotExpression_q6klpg_a0a0a0f(SNodeOperations.cast(HUtil.copyIfNecessary(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_operand")))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
                 }
               }.invoke(nodeToMigrate);
             }
@@ -82,6 +86,10 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
           return true;
         }
@@ -96,7 +104,7 @@ public class ReplaceNodeOperationsWithGenContextOp extends MigrationScriptBase {
             public SNode compute() {
               return new _FunctionTypes._return_P1_E0<SNode, SNode>() {
                 public SNode invoke(SNode node) {
-                  return createDotExpression_q6klpg_a0a0b0f(SNodeOperations.cast(HUtil.copyIfNecessary(((SNode) pattern.getFieldValue("patternVar_args"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
+                  return createDotExpression_q6klpg_a0a0b0f(SNodeOperations.cast(HUtil.copyIfNecessary(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_args")))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
                 }
               }.invoke(nodeToMigrate);
             }

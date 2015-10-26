@@ -4,30 +4,55 @@ package jetbrains.mps.ide.migration.check;
 
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.migration.runtime.base.RefactoringLogReference;
+import jetbrains.mps.project.AbstractModule;
 
-public class MissingMigrationProblem extends Problem<SModule> {
-  private SLanguage myLanguage;
-  private int myBadVersion;
+public abstract class MissingMigrationProblem extends Problem<SModule> {
 
-  public MissingMigrationProblem(Tuples._3<SModule, SLanguage, Integer> desc) {
-    super(desc._0());
-    myLanguage = desc._1();
-    myBadVersion = (int) desc._2();
+  public MissingMigrationProblem(SModule migrationProvider) {
+    super(migrationProvider);
   }
 
-  public String getMessage() {
-    final Wrappers._T<String> msg = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        msg.value = "Module " + getReason().getModuleName() + " uses language " + myLanguage.getQualifiedName() + " with version " + getReason().getUsedLanguageVersion(myLanguage) + " while current version is " + myLanguage.getLanguageVersion() + ". At least migration for version " + myBadVersion + " is missing.";
-      }
-    });
-    return msg.value;
+  public static class MissingMigrationScriptProblem extends MissingMigrationProblem {
+    private MigrationScriptReference myScriptReference;
+    private int myUsedVersion;
+
+    public MissingMigrationScriptProblem(MigrationScriptReference migration, int usedVersion) {
+      super(migration.getLanguage().getSourceModule());
+      myScriptReference = migration;
+    }
+    public String getMessage() {
+      final Wrappers._T<String> msg = new Wrappers._T<String>();
+      getReason().getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          msg.value = "The language " + myScriptReference.getLanguage().getQualifiedName() + " does not provide migration for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this language with version " + myUsedVersion + " while current version is " + myScriptReference.getLanguage().getLanguageVersion() + ".";
+        }
+      });
+      return msg.value;
+    }
   }
+
+  public static class MissingRefactoringLogProblem extends MissingMigrationProblem {
+    private RefactoringLogReference myScriptReference;
+    private int myUsedVersion;
+
+    public MissingRefactoringLogProblem(RefactoringLogReference migration, int usedVersion) {
+      super(migration.getModule());
+      myScriptReference = migration;
+    }
+    public String getMessage() {
+      final Wrappers._T<String> msg = new Wrappers._T<String>();
+      getReason().getRepository().getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          msg.value = "The module " + myScriptReference.getModule().getModuleName() + " does not provide refactoring log for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this module with version " + myUsedVersion + " while current version is " + ((AbstractModule) myScriptReference.getModule()).getModuleVersion() + ".";
+        }
+      });
+      return msg.value;
+    }
+  }
+
 
   public String getCategory() {
     return "Missing migrations";

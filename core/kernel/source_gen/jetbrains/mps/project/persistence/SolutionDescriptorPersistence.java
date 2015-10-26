@@ -54,10 +54,18 @@ public class SolutionDescriptorPersistence {
           final boolean result_8ckma3_a7a0a0g0b0e = XmlUtil.booleanWithDefault(rootElement, COMPILE_IN_MPS, false);
           result_8ckma3_a0a0g0b0e.setCompileInMPS(result_8ckma3_a7a0a0g0b0e);
 
+          String moduleVersion = rootElement.getAttributeValue("moduleVersion");
+          if (moduleVersion != null) {
+            try {
+              result_8ckma3_a0a0g0b0e.setModuleVersion(Integer.parseInt(moduleVersion));
+            } catch (NumberFormatException ignored) {
+            }
+          }
+
           String genOutput = rootElement.getAttributeValue("generatorOutputPath");
           if ((genOutput != null && genOutput.length() > 0)) {
-            final String result_8ckma3_a0a01a0a0g0b0e = macroHelper.expandPath(genOutput);
-            result_8ckma3_a0a0g0b0e.setOutputPath(result_8ckma3_a0a01a0a0g0b0e);
+            final String result_8ckma3_a0a31a0a0g0b0e = macroHelper.expandPath(genOutput);
+            result_8ckma3_a0a0g0b0e.setOutputPath(result_8ckma3_a0a31a0a0g0b0e);
           }
 
           result_8ckma3_a0a0g0b0e.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), contentRoot, macroHelper));
@@ -107,6 +115,7 @@ public class SolutionDescriptorPersistence {
     if (descriptor.getId() != null) {
       result.setAttribute("uuid", descriptor.getId().toString());
     }
+    result.setAttribute("moduleVersion", Integer.toString(descriptor.getModuleVersion()));
     if (descriptor.getKind() != SolutionKind.NONE) {
       result.setAttribute("pluginKind", descriptor.getKind().name());
     }

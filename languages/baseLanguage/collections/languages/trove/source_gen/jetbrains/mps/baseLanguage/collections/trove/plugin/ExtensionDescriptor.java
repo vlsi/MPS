@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new Extension_customContainers_()};
+  private Extension[] extensions = new Extension[]{new customContainers_extension()};
   public ExtensionDescriptor() {
   }
   @Override

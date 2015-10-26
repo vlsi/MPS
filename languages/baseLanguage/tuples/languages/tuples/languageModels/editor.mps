@@ -32,7 +32,6 @@
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
-      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -239,6 +238,7 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1343,7 +1343,7 @@
                     <ref role="37wK5l" to="17gi:1653mnvAgvE" resolve="getLeftBracket" />
                   </node>
                   <node concept="2OqwBi" id="1653mnvCj66" role="2Oq$k0">
-                    <node concept="3NT_Vc" id="1653mnvCj67" role="2OqNvi" />
+                    <node concept="2yIwOk" id="3BJTP_Nt_vv" role="2OqNvi" />
                     <node concept="pncrf" id="1653mnvCj63" role="2Oq$k0" />
                   </node>
                 </node>
@@ -1359,7 +1359,7 @@
           <property role="3F0ifm" value="" />
           <property role="ilYzB" value="&lt;&lt;components&gt;&gt;" />
         </node>
-        <node concept="2iRfu4" id="i2IAAJi" role="2czzBx" />
+        <node concept="l2Vlx" id="3BJTP_Nt_aN" role="2czzBx" />
       </node>
       <node concept="1HlG4h" id="1653mnvCj8N" role="3EZMnx">
         <property role="1cu_pB" value="0" />
@@ -1373,7 +1373,7 @@
                     <ref role="37wK5l" to="17gi:1653mnvAgsr" resolve="getRightBracket" />
                   </node>
                   <node concept="2OqwBi" id="1653mnvCj8U" role="2Oq$k0">
-                    <node concept="3NT_Vc" id="1653mnvCj8V" role="2OqNvi" />
+                    <node concept="2yIwOk" id="3BJTP_Nt_ij" role="2OqNvi" />
                     <node concept="pncrf" id="1653mnvCj8R" role="2Oq$k0" />
                   </node>
                 </node>

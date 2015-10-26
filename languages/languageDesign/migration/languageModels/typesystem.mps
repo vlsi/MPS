@@ -15,8 +15,8 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
+    <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" implicit="true" />
+    <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -226,7 +226,7 @@
               <node concept="2JrnkZ" id="1IkLLL1qAj6" role="2Oq$k0">
                 <node concept="2OqwBi" id="1IkLLL1qAj7" role="2JrQYb">
                   <node concept="1YBJjd" id="1IkLLL1qAj8" role="2Oq$k0">
-                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="ms" />
+                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="iMigrationUnit" />
                   </node>
                   <node concept="I4A8Y" id="1IkLLL1qAj9" role="2OqNvi" />
                 </node>
@@ -242,7 +242,7 @@
         <node concept="2OqwBi" id="1IkLLL1qCPP" role="3clFbG">
           <node concept="3EllGN" id="1IkLLL1qC_Y" role="2Oq$k0">
             <node concept="1YBJjd" id="1IkLLL1qCBV" role="3ElVtu">
-              <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="ms" />
+              <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="iMigrationUnit" />
             </node>
             <node concept="37vLTw" id="1IkLLL1qBSL" role="3ElQJh">
               <ref role="3cqZAo" node="1IkLLL1qAj3" resolve="errors" />
@@ -253,7 +253,7 @@
               <node concept="3clFbS" id="1IkLLL1qEkZ" role="1bW5cS">
                 <node concept="2MkqsV" id="1IkLLL1qEo8" role="3cqZAp">
                   <node concept="1YBJjd" id="1IkLLL1qGa3" role="2OEOjV">
-                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="ms" />
+                    <ref role="1YBMHb" node="2T7ZPM5bRZf" resolve="iMigrationUnit" />
                   </node>
                   <node concept="37vLTw" id="1IkLLL1qECt" role="2MkJ7o">
                     <ref role="3cqZAo" node="1IkLLL1qEl0" resolve="it" />
@@ -270,8 +270,8 @@
       </node>
     </node>
     <node concept="1YaCAy" id="2T7ZPM5bRZf" role="1YuTPh">
-      <property role="TrG5h" value="ms" />
-      <ref role="1YaFvo" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
+      <property role="TrG5h" value="iMigrationUnit" />
+      <ref role="1YaFvo" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
     </node>
   </node>
   <node concept="Q5z_Y" id="2T7ZPM5dYT_">
@@ -288,31 +288,16 @@
     </node>
     <node concept="Q5ZZ6" id="2T7ZPM5dYTA" role="Q6x$H">
       <node concept="3clFbS" id="2T7ZPM5dYTB" role="2VODD2">
-        <node concept="3clFbF" id="2T7ZPM5eMjK" role="3cqZAp">
-          <node concept="2OqwBi" id="2T7ZPM5eMYx" role="3clFbG">
-            <node concept="2OqwBi" id="2T7ZPM5eMnT" role="2Oq$k0">
-              <node concept="QwW4i" id="2T7ZPM5eMjJ" role="2Oq$k0">
-                <ref role="QwW4h" node="2T7ZPM5eMe8" resolve="l" />
-              </node>
-              <node concept="liA8E" id="2T7ZPM5eMXd" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
-              </node>
-            </node>
-            <node concept="liA8E" id="2T7ZPM5f2JQ" role="2OqNvi">
-              <ref role="37wK5l" to="w0gx:~LanguageDescriptor.setVersion(int):void" resolve="setVersion" />
-              <node concept="QwW4i" id="2T7ZPM5gwmY" role="37wK5m">
-                <ref role="QwW4h" node="2T7ZPM5dYTS" resolve="wanted" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="MlMxr8k0zN" role="3cqZAp">
-          <node concept="2OqwBi" id="MlMxr8k0Ck" role="3clFbG">
-            <node concept="QwW4i" id="MlMxr8k0zL" role="2Oq$k0">
+        <node concept="3clFbF" id="4uVwhQywy5F" role="3cqZAp">
+          <node concept="2OqwBi" id="4uVwhQywyaf" role="3clFbG">
+            <node concept="QwW4i" id="4uVwhQywy5D" role="2Oq$k0">
               <ref role="QwW4h" node="2T7ZPM5eMe8" resolve="l" />
             </node>
-            <node concept="liA8E" id="MlMxr8k1eK" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~AbstractModule.setChanged():void" resolve="setChanged" />
+            <node concept="liA8E" id="4uVwhQywyrv" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~Language.setLanguageVersion(int):void" resolve="setLanguageVersion" />
+              <node concept="QwW4i" id="4uVwhQywyrU" role="37wK5m">
+                <ref role="QwW4h" node="2T7ZPM5dYTS" resolve="wanted" />
+              </node>
             </node>
           </node>
         </node>
@@ -360,8 +345,8 @@
                         <ref role="3Tt5mk" to="53vh:4XFiG3drkFP" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="3yKhys4Afds" role="2OqNvi">
-                      <ref role="37wK5l" to="buve:7s$_UJMVDH8" resolve="getProducedData" />
+                    <node concept="2qgKlT" id="1JTUOcBrIii" role="2OqNvi">
+                      <ref role="37wK5l" to="nbs9:7s$_UJMVDH8" resolve="getProducedData" />
                     </node>
                   </node>
                 </node>

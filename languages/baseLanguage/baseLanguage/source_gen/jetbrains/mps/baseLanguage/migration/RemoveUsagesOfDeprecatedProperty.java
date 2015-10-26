@@ -29,7 +29,7 @@ public class RemoveUsagesOfDeprecatedProperty extends MigrationScriptBase {
   public boolean isRerunnable() {
     return false;
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {

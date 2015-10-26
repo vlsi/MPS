@@ -42,7 +42,6 @@
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="biux" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.compiler(MPS.Platform/)" />
     <import index="7sic" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.ex(MPS.Core/)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1632,7 +1631,7 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="Xl_RD" id="513ZrA4uCHQ" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.resaveModules" />
+        <property role="Xl_RC" value="jetbrains.mps.mps33.resaveModules" />
       </node>
       <node concept="3Tm1VV" id="513ZrA4uCHR" role="1B3o_S" />
     </node>
@@ -1709,32 +1708,13 @@
             <property role="TrG5h" value="module" />
           </node>
           <node concept="3clFbS" id="513ZrA4uNlX" role="2LFqv$">
-            <node concept="3clFbJ" id="uUg8lPrh0S" role="3cqZAp">
-              <node concept="3clFbS" id="uUg8lPrh0V" role="3clFbx">
-                <node concept="3clFbF" id="513ZrA4uOeW" role="3cqZAp">
-                  <node concept="2OqwBi" id="513ZrA4uOyi" role="3clFbG">
-                    <node concept="2GrUjf" id="513ZrA4uPqV" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="513ZrA4uNlV" resolve="module" />
-                    </node>
-                    <node concept="liA8E" id="513ZrA4uPGs" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~AbstractModule.setChanged():void" resolve="setChanged" />
-                    </node>
-                  </node>
+            <node concept="3clFbF" id="513ZrA4uOeW" role="3cqZAp">
+              <node concept="2OqwBi" id="513ZrA4uOyi" role="3clFbG">
+                <node concept="2GrUjf" id="513ZrA4uPqV" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="513ZrA4uNlV" resolve="module" />
                 </node>
-              </node>
-              <node concept="3fqX7Q" id="uUg8lPrkku" role="3clFbw">
-                <node concept="2OqwBi" id="uUg8lPrkkw" role="3fr31v">
-                  <node concept="2OqwBi" id="uUg8lPrkkx" role="2Oq$k0">
-                    <node concept="2GrUjf" id="uUg8lPrkky" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="513ZrA4uNlV" resolve="module" />
-                    </node>
-                    <node concept="liA8E" id="uUg8lPrkkz" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="uUg8lPrkk$" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.hasLanguageVersions():boolean" resolve="hasLanguageVersions" />
-                  </node>
+                <node concept="liA8E" id="513ZrA4uPGs" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~AbstractModule.setChanged():void" resolve="setChanged" />
                 </node>
               </node>
             </node>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="myReaderConfiguration" uuid="2403a764-6efe-4d9b-a8ae-0fe408281aaa" compileInMPS="true">
+<solution name="myReaderConfiguration" uuid="2403a764-6efe-4d9b-a8ae-0fe408281aaa" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
@@ -14,5 +14,8 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="089e26c5-bfc3-4a60-9953-f68169a4608a" fqName="jetbrains.mps.samples.readerConfigLanguage" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="2403a764-6efe-4d9b-a8ae-0fe408281aaa(myReaderConfiguration)" version="0" />
+  </dependencyVersions>
 </solution>
 

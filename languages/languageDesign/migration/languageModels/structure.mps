@@ -2,17 +2,18 @@
 <model ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
+    <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
+    <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
-    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -76,7 +77,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="script" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7fCCGqboGqz" resolve="MigrationScript" />
+      <ref role="20lvS9" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
     </node>
     <node concept="PrWs8" id="3yKhys4ADHp" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -96,6 +97,9 @@
     <property role="19KtqR" value="true" />
     <property role="1pbfSe" value="11835031" />
     <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+    <node concept="PrWs8" id="4uVwhQyFcOL" role="PzmwI">
+      <ref role="PrY4T" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
+    </node>
     <node concept="1TJgyi" id="536fTXa3qKn" role="1TKVEl">
       <property role="TrG5h" value="fromVersion" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
@@ -164,7 +168,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="script" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="7fCCGqboGqz" resolve="MigrationScript" />
+      <ref role="20lvS9" to="gqi5:4uVwhQyFcjm" resolve="IMigrationUnit" />
     </node>
   </node>
   <node concept="1TIwiD" id="4SSaNAQkDV9">

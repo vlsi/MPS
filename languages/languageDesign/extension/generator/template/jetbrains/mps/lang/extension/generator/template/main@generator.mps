@@ -7,7 +7,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -657,12 +657,14 @@
                 </node>
                 <node concept="2OqwBi" id="21KXiZCHwmo" role="3uHU7w">
                   <node concept="2OqwBi" id="21KXiZCHwmp" role="2Oq$k0">
+                    <node concept="2SmgA7" id="1IfZEhD4YoA" role="2OqNvi">
+                      <node concept="chp4Y" id="1IfZEhD4Z7p" role="1dBWTz">
+                        <ref role="cht4Q" to="v54s:7335HkeYeM" resolve="Extension" />
+                      </node>
+                    </node>
                     <node concept="2OqwBi" id="21KXiZCHwmq" role="2Oq$k0">
                       <node concept="1iwH7S" id="21KXiZCHwmr" role="2Oq$k0" />
                       <node concept="1r8y6K" id="21KXiZCHwms" role="2OqNvi" />
-                    </node>
-                    <node concept="2RRcyG" id="21KXiZCHwmt" role="2OqNvi">
-                      <ref role="2RRcyH" to="v54s:7335HkeYeM" resolve="Extension" />
                     </node>
                   </node>
                   <node concept="3GX2aA" id="21KXiZCHwmu" role="2OqNvi" />
@@ -937,12 +939,14 @@
                 </node>
                 <node concept="2OqwBi" id="21KXiZCI73k" role="3uHU7w">
                   <node concept="2OqwBi" id="21KXiZCI73l" role="2Oq$k0">
+                    <node concept="2SmgA7" id="1IfZEhD55$d" role="2OqNvi">
+                      <node concept="chp4Y" id="1IfZEhD55Oe" role="1dBWTz">
+                        <ref role="cht4Q" to="v54s:7335HkeYeM" resolve="Extension" />
+                      </node>
+                    </node>
                     <node concept="2OqwBi" id="21KXiZCI73m" role="2Oq$k0">
                       <node concept="1iwH7S" id="21KXiZCI73n" role="2Oq$k0" />
                       <node concept="1r8y6K" id="21KXiZCI73o" role="2OqNvi" />
-                    </node>
-                    <node concept="2RRcyG" id="21KXiZCI73p" role="2OqNvi">
-                      <ref role="2RRcyH" to="v54s:7335HkeYeM" resolve="Extension" />
                     </node>
                   </node>
                   <node concept="3GX2aA" id="21KXiZCI73q" role="2OqNvi" />

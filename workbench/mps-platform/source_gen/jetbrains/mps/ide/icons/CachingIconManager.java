@@ -10,9 +10,9 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,7 +43,7 @@ public class CachingIconManager {
 
   public Icon getConceptIcon(SAbstractConcept concept) {
     if (concept instanceof SConcept) {
-      Icon icon = getIcon(SNodeOperations.asNode(concept));
+      Icon icon = getIcon(SNodeOperations.cast(SNodeOperations.asNode(concept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
       if (icon != null) {
         return icon;
       }
@@ -59,15 +59,14 @@ public class CachingIconManager {
     boolean withoutAdditional = false;
     Icon mainIcon = null;
 
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
+    SNode concept = SNodeOperations.asNode(SNodeOperations.getConcept(node));
     if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      SNode cd = ((SNode) concept);
       String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getAlternativeIcon(node);
       if (alternativeIconPath != null) {
         mainIcon = getIcon(SModelUtil.getDeclaringLanguage(concept), alternativeIconPath);
       }
       if (mainIcon == null) {
-        mainIcon = getIcon(concept);
+        mainIcon = getIcon(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
       }
     }
 

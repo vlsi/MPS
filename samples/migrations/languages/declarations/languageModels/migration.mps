@@ -145,8 +145,8 @@
       <concept id="3220955710218030028" name="jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference" flags="ng" index="sveBF">
         <reference id="3220955710218036329" name="declaration" index="svcpe" />
       </concept>
-      <concept id="7527743013695058339" name="jetbrains.mps.lang.migration.structure.NodePatternVariableReference" flags="ng" index="1bNLJ0">
-        <reference id="7527743013695058340" name="declaration" index="1bNLJ7" />
+      <concept id="6129256022887940218" name="jetbrains.mps.lang.migration.structure.ListPatternVariableReference" flags="ng" index="2SDVQq">
+        <reference id="6129256022887940219" name="declaration" index="2SDVQr" />
       </concept>
       <concept id="5636302460526173897" name="jetbrains.mps.lang.migration.structure.TransformStatement" flags="ng" index="3SqFnK">
         <child id="5636302460526173936" name="consequence" index="3SqFn9" />
@@ -210,8 +210,8 @@
               <node concept="zNr5x" id="14sMr$jSUoQ" role="2c44tc">
                 <node concept="zNoCi" id="14sMr$jSW02" role="zNr5$">
                   <node concept="2c44t8" id="14sMr$jSW0$" role="lGtFl">
-                    <node concept="1bNLJ0" id="14sMr$jSW24" role="2c44t1">
-                      <ref role="1bNLJ7" node="14sMr$jSUg0" resolve="#deps" />
+                    <node concept="2SDVQq" id="22bUQ$cIE36" role="2c44t1">
+                      <ref role="2SDVQr" node="14sMr$jSUg0" resolve="#deps" />
                     </node>
                   </node>
                 </node>

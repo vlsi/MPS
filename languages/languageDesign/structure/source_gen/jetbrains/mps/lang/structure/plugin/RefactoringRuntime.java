@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.lang.core.behavior.ChildAttribute__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -24,8 +25,8 @@ import jetbrains.mps.smodel.SModelInternal;
 public class RefactoringRuntime {
 
   public static void changePropertyInstance(SNode node, final SProperty oldProp, final SProperty newProp) {
-    Iterable<SNode> children = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
-    Sequence.fromIterable(SNodeOperations.ofConcept(children, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+    Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it).equals(oldProp);
       }
@@ -40,7 +41,18 @@ public class RefactoringRuntime {
     node.setProperty(oldProp, null);
   }
 
-  public static void changeContainmentLinkInstance(SNode node, SContainmentLink oldLink, SContainmentLink newLink) {
+  public static void changeContainmentLinkInstance(SNode node, final SContainmentLink oldLink, final SContainmentLink newLink) {
+    Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+    Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, "jetbrains.mps.lang.core.structure.ChildAttribute"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return ChildAttribute__BehaviorDescriptor.getLink_idBpxLfMirzf.invoke(it).equals(oldLink);
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        ChildAttribute__BehaviorDescriptor.setLink_idBpxLfMirzM.invoke(it, newLink);
+      }
+    });
+
     List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), (Iterable<SNode>) node.getChildren(oldLink));
     for (SNode child : ListSequence.fromList(children)) {
       node.removeChild(child);
@@ -49,8 +61,8 @@ public class RefactoringRuntime {
   }
 
   public static void changeReferenceLinkInstances(SNode node, final SReferenceLink oldLink, final SReferenceLink newLink) {
-    Iterable<SNode> children = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
-    Sequence.fromIterable(SNodeOperations.ofConcept(children, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> attributes = (Iterable<SNode>) node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+    Sequence.fromIterable(SNodeOperations.ofConcept(attributes, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return LinkAttribute__BehaviorDescriptor.getLink_id1avfQ4BEFo6.invoke(it).equals(oldLink);
       }
@@ -87,9 +99,6 @@ public class RefactoringRuntime {
     }
     return SNodeOperations.replaceWithAnother(node, newInstance);
   }
-
-
-
   private static <T> T as_7voxfg_a0a0a0a6a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

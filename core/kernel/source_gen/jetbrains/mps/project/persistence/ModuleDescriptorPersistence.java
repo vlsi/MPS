@@ -74,6 +74,13 @@ public class ModuleDescriptorPersistence {
         descriptor.getLanguageVersions().put(MetaAdapterFactory.getLanguage(id, name), Integer.parseInt(it.getAttributeValue("version")));
       }
     });
+    descriptor.setHasDependencyVersions(!(root.getChildren("dependencyVersions").isEmpty()));
+    Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "dependencyVersions"), "module")).visitAll(new IVisitor<Element>() {
+      public void visit(Element it) {
+        SModuleReference id = PersistenceFacade.getInstance().createModuleReference(it.getAttributeValue("reference"));
+        descriptor.getDependencyVersions().put(id, Integer.parseInt(it.getAttributeValue("version")));
+      }
+    });
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
@@ -122,6 +129,21 @@ public class ModuleDescriptorPersistence {
       languageVersions.addContent(languageVersion);
     }
     result.addContent(languageVersions);
+    Map<SModuleReference, Integer> depVer = descriptor.getDependencyVersions();
+    ArrayList<SModuleReference> deps = new ArrayList<SModuleReference>(depVer.keySet());
+    Collections.sort(deps, new Comparator<SModuleReference>() {
+      public int compare(SModuleReference p0, SModuleReference p1) {
+        return p0.getModuleName().compareTo(p1.getModuleName());
+      }
+    });
+    Element dependencyVersions = new Element("dependencyVersions");
+    for (SModuleReference ref : deps) {
+      Element moduleVersion = new Element("module");
+      moduleVersion.setAttribute("reference", ref.toString());
+      moduleVersion.setAttribute("version", String.valueOf(depVer.get(ref)));
+      dependencyVersions.addContent(moduleVersion);
+    }
+    result.addContent(dependencyVersions);
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
