@@ -19,7 +19,7 @@
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="kernel-resources" />
-    <orderEntry type="module" module-name="mps-core" />
+    <orderEntry type="module" module-name="mps-core" exported="" />
     <orderEntry type="module" module-name="java-stub" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
@@ -35,5 +35,6 @@
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
   </component>
 </module>

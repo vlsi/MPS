@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.project.structure.ProjectStructureModule;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -32,7 +32,7 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
       if (model instanceof ProjectStructureModule.ProjectStructureSModelDescriptor) {
         hasProjectModels = true;
       }
-      if (model instanceof TransientModelsModule.TransientSModelDescriptor) {
+      if (model instanceof TransientSModel) {
         hasTransientModels = true;
       }
     }
@@ -42,7 +42,7 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
           processedConsumer.consume(model);
         }
       } else
-      if (model instanceof TransientModelsModule.TransientSModelDescriptor) {
+      if (model instanceof TransientSModel) {
         if (!(hasTransientModels)) {
           processedConsumer.consume(model);
         }

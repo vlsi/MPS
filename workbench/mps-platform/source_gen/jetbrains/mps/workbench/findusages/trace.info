@@ -1004,7 +1004,7 @@
       <node id="4897777221271802925" at="28,37,29,39" concept="9" />
       <node id="4897777221271802932" at="30,27,31,34" concept="9" />
       <node id="4897777221271802941" at="32,85,33,32" concept="4" />
-      <node id="4897777221271802951" at="35,77,36,34" concept="4" />
+      <node id="4897777221271802951" at="35,45,36,34" concept="4" />
       <node id="4897777221271802971" at="41,34,42,43" concept="4" />
       <node id="4897777221271802984" at="46,36,47,43" concept="4" />
       <node id="4897777221271803171" at="50,85,51,48" concept="11" />
@@ -1024,7 +1024,7 @@
       <node id="4897777221271802935" at="31,34,34,7" concept="7" />
       <node id="4897777221271802945" at="34,7,37,7" concept="7" />
       <node id="4897777221271802968" at="40,85,43,9" concept="7" />
-      <node id="4897777221271802981" at="45,77,48,9" concept="7" />
+      <node id="4897777221271802981" at="45,45,48,9" concept="7" />
       <node id="4897777221271803030" at="59,41,62,7" concept="7" />
       <node id="4897777221271803052" at="65,85,68,9" concept="7" />
       <node id="4897777221271802988" at="49,12,53,7" concept="7" />
@@ -1046,7 +1046,7 @@
       <node id="4897777221271803003" at="56,0,76,0" concept="8" trace="findInstances#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
       <node id="4897777221271802905" at="26,0,56,0" concept="8" trace="findUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
       <scope id="4897777221271802940" at="32,85,33,32" />
-      <scope id="4897777221271802950" at="35,77,36,34" />
+      <scope id="4897777221271802950" at="35,45,36,34" />
       <scope id="4897777221271802974" at="41,34,42,43" />
       <scope id="4897777221271802987" at="46,36,47,43" />
       <scope id="4897777221271803034" at="60,193,61,42" />
@@ -1059,7 +1059,7 @@
       <scope id="4897777221271803097" at="79,85,81,41" />
       <scope id="4897777221271803106" at="83,85,85,41" />
       <scope id="4897777221271802967" at="40,85,43,9" />
-      <scope id="4897777221271802980" at="45,77,48,9" />
+      <scope id="4897777221271802980" at="45,45,48,9" />
       <scope id="4897777221271803024" at="59,41,62,7" />
       <scope id="4897777221271803051" at="65,85,68,9" />
       <scope id="4897777221271803128" at="94,0,98,0" />

@@ -9,7 +9,6 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <generationPart ref="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -41,8 +40,8 @@
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="rqo8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure(MPS.Core/)" />
-    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="xygl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.progress()" />
+    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -6080,8 +6079,8 @@
                 <node concept="37vLTw" id="4fSpAVATXh2" role="2ZW6bz">
                   <ref role="3cqZAo" node="4fSpAVATXgN" resolve="model" />
                 </node>
-                <node concept="3uibUv" id="4fSpAVATXh3" role="2ZW6by">
-                  <ref role="3uigEE" to="ap4t:~TransientModelsModule$TransientSModelDescriptor" resolve="TransientModelsModule.TransientSModelDescriptor" />
+                <node concept="3uibUv" id="5Swgq_$rHg" role="2ZW6by">
+                  <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
                 </node>
               </node>
               <node concept="3clFbS" id="4fSpAVATXh6" role="3clFbx">
@@ -6125,8 +6124,8 @@
                   <node concept="37vLTw" id="4fSpAVATXhw" role="2ZW6bz">
                     <ref role="3cqZAo" node="4fSpAVATXhP" resolve="model" />
                   </node>
-                  <node concept="3uibUv" id="4fSpAVATXhx" role="2ZW6by">
-                    <ref role="3uigEE" to="ap4t:~TransientModelsModule$TransientSModelDescriptor" resolve="TransientModelsModule.TransientSModelDescriptor" />
+                  <node concept="3uibUv" id="5Swgq_$rI8" role="2ZW6by">
+                    <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
                   </node>
                 </node>
                 <node concept="3clFbJ" id="4fSpAVATXhG" role="9aQIa">
