@@ -23,6 +23,6 @@
     <orderEntry type="module" module-name="migrations-runtime" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="modelchecker" />
+    <orderEntry type="module" module-name="make-runtime" />
   </component>
 </module>
-
