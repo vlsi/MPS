@@ -115,7 +115,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/source_gen" isTestSource="false" />
@@ -278,7 +277,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin-standalone/classes_gen" />
@@ -348,14 +346,14 @@
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/base/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommandsRuntime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/ideCommands/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/internalCommands/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/internalCommands/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/internalCommandsRuntime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/internalCommands/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/scripts/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/scripts/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/scriptsRuntime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/console/lang/scripts/generator/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/debugger-api/languages">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/source_gen" isTestSource="false" />
@@ -1120,3 +1118,4 @@
     <orderEntry type="module" module-name="mps-ant" />
   </component>
 </module>
+
