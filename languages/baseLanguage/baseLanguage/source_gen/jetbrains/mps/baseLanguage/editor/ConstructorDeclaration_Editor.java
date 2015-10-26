@@ -115,6 +115,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ConstructorDeclaration_Editor.parameterListHandler_1x071y_g0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
+    _InstanceMethodDeclaration_CommentParameters.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

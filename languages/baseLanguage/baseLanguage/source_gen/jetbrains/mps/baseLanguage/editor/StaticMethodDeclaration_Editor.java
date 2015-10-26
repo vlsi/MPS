@@ -283,6 +283,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new StaticMethodDeclaration_Editor.parameterListHandler_j4vm40_m0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
+    _InstanceMethodDeclaration_CommentParameters.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
