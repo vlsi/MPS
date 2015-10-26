@@ -28,7 +28,6 @@
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="findUsages-runtime" />
-    <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="module" module-name="basePlatform" />
