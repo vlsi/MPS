@@ -5,6 +5,7 @@
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
     <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -8225,6 +8226,12 @@
               <ref role="3bR37D" node="7Kfy9QB6KZ0" resolve="jetbrains.mps.baseLanguageInternal" />
             </node>
           </node>
+          <node concept="1SiIV0" id="7h0lSLC3Rtk" role="3bR37C">
+            <node concept="3bR9La" id="7h0lSLC3Rtl" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2Qa9MYMHz8V" role="3bR37C">
           <node concept="3bR9La" id="2Qa9MYMHz8U" role="1SiIV1">
@@ -8363,6 +8370,12 @@
           <node concept="3bR9La" id="6uoVEpbzspF" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7h0lSLC3Rti" role="3bR37C">
+          <node concept="3bR9La" id="7h0lSLC3Rtj" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
           </node>
         </node>
       </node>

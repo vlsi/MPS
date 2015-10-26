@@ -2059,7 +2059,7 @@
     <property role="TrG5h" value="QueryFunction_ImagePath" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="QueryFunction" />
-    <property role="34LRSv" value="string" />
+    <property role="34LRSv" value="query" />
     <property role="1pbfSe" value="78309912" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
