@@ -5,16 +5,13 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
-import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
-import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByNode;
-import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionComposite;
 
-public class CellAction_Comment extends AbstractCommentAction {
+public class CellAction_Comment extends AbstractCommentOutAction {
   private final SNode myNode;
 
 
@@ -24,32 +21,17 @@ public class CellAction_Comment extends AbstractCommentAction {
 
   @Override
   public boolean canExecute(EditorContext editorContext) {
-    Selection selection = editorContext.getSelectionManager().getSelection();
-    return SNodeOperations.getParent(this.myNode) != null && selection != null && selection instanceof SingularSelection && needToComment(editorContext);
-  }
-
-  public void executeInternal(EditorContext editorContext) {
-    CommentUtil.commentOut(myNode);
-  }
-  private boolean needToComment(EditorContext editorContext) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
+    if (SNodeOperations.getParent(this.myNode) == null || SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
       return false;
-    } else if ((SNodeOperations.getNodeAncestor(myNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) == null)) {
-      return true;
-    } else {
-      Selection selection = editorContext.getSelectionManager().getSelection();
-      if ((selection instanceof EditorCellLabelSelection && !(((EditorCellLabelSelection) selection).hasNonTrivialSelection()))) {
-        return false;
-      } else {
-        return true;
-      }
     }
+    Selection selection = editorContext.getSelectionManager().getSelection();
+    if (selection == null || !(selection instanceof SingularSelection)) {
+      return false;
+    }
+    return !(selection instanceof EditorCellLabelSelection) || ((EditorCellLabelSelection) selection).hasNonTrivialSelection();
   }
 
-  protected RestorableSelection createRestorableSelection(EditorContext editorContext) {
-    RestorableSelection firstSelection = super.createRestorableSelection(editorContext);
-    RestorableSelectionByNode secondSelection = new RestorableSelectionByNode(myNode);
-    return new RestorableSelectionComposite(firstSelection, secondSelection);
+  protected SNode getNodeToComment(EditorContext editroContext) {
+    return myNode;
   }
-
 }

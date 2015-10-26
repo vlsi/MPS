@@ -14,21 +14,38 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" file="CellAction_Comment.java">
-    <classNode dependClassName="java.lang.Override" />
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentOutAction" file="AbstractCommentOutAction.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByNode" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionComposite" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" file="CellAction_Comment.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.Selection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SingularSelection" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentAction" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentOutAction" />
+  </dependency>
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentChildLine" file="CellAction_CommentChildLine.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.Selection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SingularSelection" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentOutAction" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection" file="CellAction_CreateChildRangeSelection.java">
     <classNode dependClassName="java.lang.Override" />
