@@ -14,20 +14,20 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />
-    <orderEntry type="module" module-name="analyzers" />
+    <orderEntry type="module" module-name="analyzers" scope="TEST" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="generator-engine" />
-    <orderEntry type="module" module-name="make-runtime" />
-    <orderEntry type="module" module-name="baseLanguage-search" />
-    <orderEntry type="module" module-name="MPSSupport" />
+    <orderEntry type="module" module-name="make-runtime" scope="TEST" />
+    <orderEntry type="module" module-name="baseLanguage-search" scope="TEST" />
+    <orderEntry type="module" module-name="MPSSupport" scope="TEST" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="miscTests" />
-    <orderEntry type="module" module-name="typesystemUi" />
-    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="typesystemUi" scope="TEST" />
+    <orderEntry type="module" module-name="mps-workbench" scope="TEST" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="module" module-name="findUsages-runtime" />
+    <orderEntry type="module" module-name="findUsages-runtime" scope="TEST" />
     <orderEntry type="module" module-name="debugger-api-api" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-java-api" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-configurations-ant" scope="RUNTIME" />
@@ -40,14 +40,14 @@
     <orderEntry type="module" module-name="debugger-java-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-impl" scope="RUNTIME" />
     <orderEntry type="module" module-name="dataflow-rt" scope="TEST" />
-    <orderEntry type="module" module-name="resources" />
-    <orderEntry type="module" module-name="resources_en" />
-    <orderEntry type="module" module-name="make-facets" />
+    <orderEntry type="module" module-name="resources" scope="TEST" />
+    <orderEntry type="module" module-name="resources_en" scope="TEST" />
+    <orderEntry type="module" module-name="make-facets" scope="TEST" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="editorlang-runtime" scope="TEST" />
     <orderEntry type="module" module-name="persistence" scope="TEST" />
     <orderEntry type="module" module-name="vcs" scope="TEST" />
-    <orderEntry type="module" module-name="kernel-resources" />
+    <orderEntry type="module" module-name="kernel-resources" scope="TEST" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="XmlRpc" level="project" />
@@ -72,7 +72,7 @@
     <orderEntry type="module" module-name="vcs-core" scope="TEST" />
     <orderEntry type="module" module-name="editor-runtime" scope="TEST" />
     <orderEntry type="module" module-name="console" scope="RUNTIME" />
-    <orderEntry type="module" module-name="migrationAssistant" />
+    <orderEntry type="module" module-name="migrationAssistant" scope="TEST" />
     <orderEntry type="module" module-name="migrations-runtime" scope="TEST" />
     <orderEntry type="module" module-name="textgen" scope="TEST" />
     <orderEntry type="module" module-name="components" />
