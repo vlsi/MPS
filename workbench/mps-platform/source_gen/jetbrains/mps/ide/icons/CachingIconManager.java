@@ -31,9 +31,8 @@ import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import javax.swing.ImageIcon;
-import java.io.InputStream;
-import java.io.IOException;
+import com.intellij.openapi.util.IconLoader;
+import java.net.MalformedURLException;
 
 public class CachingIconManager {
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
@@ -137,37 +136,10 @@ public class CachingIconManager {
   }
 
   private Icon getIcon(IFile file) {
-    ImageIcon icon = null;
-    if (file.exists()) {
-      byte[] image = new byte[(int) file.length()];
-      InputStream is = null;
-      try {
-        is = file.openInputStream();
-        int current = 0;
-        while (true) {
-          int result = is.read(image, current, image.length - current);
-          if (result == -1 || result == 0) {
-            break;
-          } else {
-            current += result;
-          }
-        }
-      } catch (IOException e) {
-        IconManager.LOG.error(null, e);
-      } finally {
-        try {
-          if (is != null) {
-            is.close();
-          }
-        } catch (IOException e) {
-          IconManager.LOG.error(null, e);
-        }
-      }
-      icon = new ImageIcon(image);
-      if ((icon.getImageLoadStatus() & IMAGE_LOADED) == 0) {
-        icon = null;
-      }
+    try {
+      return IconLoader.findIcon(file.getUrl(), false);
+    } catch (MalformedURLException e) {
+      return null;
     }
-    return icon;
   }
 }
