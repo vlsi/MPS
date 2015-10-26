@@ -1,10 +1,33 @@
 <components>
+  <application-components>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
+    </component>
+
+  </application-components>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.view.UsagesViewTool</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.actions.AnalyzeDependenciesViewTool</implementation-class>
+    </component>
+  </project-components>
+
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
     <extensionPoint
             qualifiedName="com.intellij.mps.facetTabFactory"
             area="IDEA_PROJECT"
             beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.treeCreationHandler"
+                    area="IDEA_PROJECT"
+                    interface="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
