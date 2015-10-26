@@ -1898,10 +1898,10 @@
                 <node concept="3cpWs3" id="1HyHl70ZKzl" role="3uHU7B">
                   <node concept="3cpWs3" id="2RG318eWq1x" role="3uHU7B">
                     <node concept="2OqwBi" id="1HyHl70ZFSH" role="3uHU7B">
-                      <node concept="2YIFZM" id="1HyHl70ZF1a" role="2Oq$k0">
-                        <ref role="37wK5l" to="pa15:~IdHelper.getLanguageId(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
-                        <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                        <node concept="37vLTw" id="1HyHl70ZFP2" role="37wK5m">
+                      <node concept="2YIFZM" id="$9QEq5ImhE" role="2Oq$k0">
+                        <ref role="37wK5l" to="e8bb:~MetaIdHelper.getLanguage(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguage" />
+                        <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                        <node concept="37vLTw" id="$9QEq5ImhF" role="37wK5m">
                           <ref role="3cqZAo" node="2RG318eWpZ9" resolve="language" />
                         </node>
                       </node>
