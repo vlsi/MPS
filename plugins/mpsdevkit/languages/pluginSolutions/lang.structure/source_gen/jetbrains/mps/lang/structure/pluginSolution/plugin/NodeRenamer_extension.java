@@ -7,10 +7,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class Extension_NodeRenamer_ extends Extension.Default<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>> {
-  public Extension_NodeRenamer_() {
+public class NodeRenamer_extension extends Extension.Default<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>> {
+  public NodeRenamer_extension() {
     super("jetbrains.mps.lang.structure.NodeRenamer");
   }
+
+
+
   public _FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> get() {
     return new _FunctionTypes._return_P4_E0<Boolean, EditorContext, SNode, String, String>() {
       public Boolean invoke(EditorContext context, SNode node, String oldName, String newName) {

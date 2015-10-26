@@ -49,6 +49,10 @@ public class MigrateDeclarations extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
           return !(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(n)));
         }
@@ -61,7 +65,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_9wc3oy_a0a0f(((List<SNode>) pattern.getFieldValue("patternVar_deps")), ((String) pattern.getFieldValue("patternVar_name")));
+              return _quotation_createNode_9wc3oy_a0a0f(MigrationScriptBase.detachListPatternVariable(((List<SNode>) pattern.getFieldValue("patternVar_deps"))), ((String) pattern.getFieldValue("patternVar_name")));
             }
           }, null);
         }
@@ -92,9 +96,6 @@ public class MigrateDeclarations extends MigrationScriptBase {
           SContainmentLink childRole_9wc3oy_ = MetaAdapterFactory.getContainmentLink(0x1d2b03a474044a1eL, 0x939c9c1c316327e7L, 0x6aff2c1049316cdaL, 0x6aff2c104931bb27L, "member");
           this.patternVar_deps = ListSequence.fromList(new ArrayList<SNode>());
           for (SNode childVar : nodeToMatch_9wc3oy_a0a0f.getChildren(childRole_9wc3oy_)) {
-            {
-              SNode nodeToMatch_9wc3oy_a0a0a5 = childVar;
-            }
             ListSequence.fromList(this.patternVar_deps).addElement(childVar);
           }
         }

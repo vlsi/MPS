@@ -7,10 +7,13 @@ import jetbrains.mps.generator.GenerationCacheContainer;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.generator.GeneratorCacheComponent;
 
-public class Extension_GeneratorCache_ extends Extension.Default<GenerationCacheContainer> {
-  public Extension_GeneratorCache_() {
+public class GeneratorCache_extension extends Extension.Default<GenerationCacheContainer> {
+  public GeneratorCache_extension() {
     super("jetbrains.mps.lang.core.GeneratorCache");
   }
+
+
+
   public GenerationCacheContainer get() {
     if (ApplicationManager.getApplication() == null) {
       return null;

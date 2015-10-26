@@ -4,14 +4,13 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 import jetbrains.mps.smodel.structure.Extension;
 
-public class Extension_testExtensionPoint_ extends Extension.Default<TestObject> {
-  private TestObject myTestObject;
-  public Extension_testExtensionPoint_() {
+public class testExtensionPoint_extension extends Extension.Default<TestObject> {
+  public testExtensionPoint_extension() {
     super("jetbrains.mps.lang.extension.tests.testExtensionPoint");
   }
-  public TestObject get() {
-    return myTestObject;
-  }
+
+  private TestObject myTestObject;
+
   public void activate() {
     myTestObject = new TestObject();
     myTestObject.setValue("foobar");
@@ -19,5 +18,9 @@ public class Extension_testExtensionPoint_ extends Extension.Default<TestObject>
   public void deactivate() {
     myTestObject.setShutDown(true);
     myTestObject = null;
+  }
+
+  public TestObject get() {
+    return myTestObject;
   }
 }

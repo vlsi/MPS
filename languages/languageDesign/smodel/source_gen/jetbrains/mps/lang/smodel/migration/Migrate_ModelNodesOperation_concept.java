@@ -49,6 +49,10 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode op) {
           if (pattern.getFieldValue("patternVar_concept") == null) {
             return false;

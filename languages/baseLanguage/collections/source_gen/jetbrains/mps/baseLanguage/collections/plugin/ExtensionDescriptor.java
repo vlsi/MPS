@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers")};
-  private Extension[] extensions = new Extension[]{new Extension_customContainers_()};
+  private Extension[] extensions = new Extension[]{new customContainers_extension()};
   public ExtensionDescriptor() {
   }
   @Override

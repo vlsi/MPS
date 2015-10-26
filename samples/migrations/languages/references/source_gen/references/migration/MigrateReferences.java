@@ -46,6 +46,10 @@ public class MigrateReferences extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {
           return !(LanguageAspect.MIGRATION.is(SNodeOperations.getModel(n)));
         }

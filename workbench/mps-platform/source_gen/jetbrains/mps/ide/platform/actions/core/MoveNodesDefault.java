@@ -101,7 +101,6 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       Map<SNode, SNode> localCopyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       List<SNode> result = CopyUtil.copyAndPreserveId(oldNodes, localCopyMap);
       MapSequence.fromMap(copyMap).putAll(localCopyMap);
-      
       for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(copyMap)) {
         CopyUtil.addReferences(mapping.key(), copyMap, false);
       }

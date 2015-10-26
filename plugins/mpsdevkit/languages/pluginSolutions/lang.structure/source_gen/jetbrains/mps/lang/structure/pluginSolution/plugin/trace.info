@@ -2172,26 +2172,26 @@
     </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7972144475523791621">
-    <file name="Extension_NodeRenamer_.java">
-      <node id="7972144475523791621" at="11,35,12,54" concept="15" />
-      <node id="7972144475523810067" at="16,96,17,72" concept="10" />
-      <node id="7972144475523791621" at="11,0,14,0" concept="3" trace="Extension_NodeRenamer_#()V" />
-      <node id="7972144475523791625" at="16,0,19,0" concept="8" trace="invoke#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" />
-      <node id="7972144475523791624" at="14,134,19,6" concept="10" />
-      <node id="7972144475523791621" at="14,0,21,0" concept="8" trace="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P4_E0;" />
-      <scope id="7972144475523791621" at="11,35,12,54" />
-      <scope id="7972144475523791626" at="16,96,17,72" />
+    <file name="NodeRenamer_extension.java">
+      <node id="7972144475523791621" at="11,34,12,54" concept="15" />
+      <node id="7972144475523810067" at="19,96,20,72" concept="10" />
+      <node id="7972144475523791621" at="11,0,14,0" concept="3" trace="NodeRenamer_extension#()V" />
+      <node id="7972144475523791625" at="19,0,22,0" concept="8" trace="invoke#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" />
+      <node id="7972144475523791624" at="17,134,22,6" concept="10" />
+      <node id="4296411869844556260" at="17,0,24,0" concept="0" trace="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P4_E0;" />
+      <scope id="7972144475523791621" at="11,34,12,54" />
+      <scope id="7972144475523791626" at="19,96,20,72" />
       <scope id="7972144475523791621" at="11,0,14,0" />
-      <scope id="7972144475523791625" at="16,0,19,0">
+      <scope id="7972144475523791625" at="19,0,22,0">
         <var name="context" id="7972144475523791625" />
         <var name="newName" id="7972144475523791625" />
         <var name="node" id="7972144475523791625" />
         <var name="oldName" id="7972144475523791625" />
       </scope>
-      <scope id="7972144475523791621" at="14,134,19,6" />
-      <scope id="7972144475523791621" at="14,0,21,0" />
-      <unit id="7972144475523791625" at="15,15,19,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.Extension_NodeRenamer_$1" />
-      <unit id="7972144475523791621" at="10,0,22,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.Extension_NodeRenamer_" />
+      <scope id="4296411869844556262" at="17,134,22,6" />
+      <scope id="4296411869844556260" at="17,0,24,0" />
+      <unit id="7972144475523791625" at="18,15,22,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.NodeRenamer_extension$1" />
+      <unit id="7972144475523791621" at="10,0,25,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.NodeRenamer_extension" />
     </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7972144475523810178">

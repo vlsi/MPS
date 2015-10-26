@@ -4,11 +4,14 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 import jetbrains.mps.smodel.structure.Extension;
 
-public class Extension_multiExtensionPoint_ extends Extension.Default<String> {
-  public Extension_multiExtensionPoint_() {
+public class multiExtensionPoint_extension1 extends Extension.Default<String> {
+  public multiExtensionPoint_extension1() {
     super("jetbrains.mps.lang.extension.tests.multiExtensionPoint");
   }
+
+
+
   public String get() {
-    return "salam";
+    return "dunya";
   }
 }

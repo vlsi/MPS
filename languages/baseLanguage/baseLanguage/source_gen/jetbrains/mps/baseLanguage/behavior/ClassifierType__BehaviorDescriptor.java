@@ -564,9 +564,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
         {
           SContainmentLink childRole_hz3823_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
-            patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }
@@ -652,9 +650,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
         {
           SContainmentLink childRole_hz3823__0 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_hz3823_a0a1a01.getChildren(childRole_hz3823__0)) {
-            patternVar_ignored = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }

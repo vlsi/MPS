@@ -768,9 +768,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
         {
           SContainmentLink childRole_qw8l7c_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          patternVar_foo = null;
           for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a42.getChildren(childRole_qw8l7c_)) {
-            patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }

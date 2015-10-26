@@ -8,10 +8,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.ActionManager;
 
-public class Extension_ActionIDs_ extends Extension.Default<List<String>> {
-  public Extension_ActionIDs_() {
+public class ActionIDs_extension extends Extension.Default<List<String>> {
+  public ActionIDs_extension() {
     super("jetbrains.mps.lang.test.ActionIDs");
   }
+
+
+
   public List<String> get() {
     return ListSequence.fromListAndArray(new ArrayList<String>(), ActionManager.getInstance().getActionIds(""));
   }

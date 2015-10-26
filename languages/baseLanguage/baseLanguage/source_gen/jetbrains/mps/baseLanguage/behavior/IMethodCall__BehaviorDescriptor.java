@@ -232,9 +232,7 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
         {
           SContainmentLink childRole_fq0410_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
           this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
-          patternVar_ignore = null;
           for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {
-            patternVar_ignore = childVar;
             ListSequence.fromList(this.patternVar_param).addElement(childVar);
           }
         }

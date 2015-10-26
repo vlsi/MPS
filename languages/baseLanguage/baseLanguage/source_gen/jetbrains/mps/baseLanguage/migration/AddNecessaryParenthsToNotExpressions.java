@@ -48,6 +48,10 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
           return pattern.match(it);
         }
       }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
+        }
+      }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
           return PrecedenceUtil.needsParensAroundNotExpression(node);
         }
@@ -60,7 +64,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_fbexqr_a0a0f(((SNode) pattern.getFieldValue("patternVar_expr")));
+              return _quotation_createNode_fbexqr_a0a0f(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_expr"))));
             }
           }, null);
         }
