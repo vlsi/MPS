@@ -325,7 +325,7 @@
   </node>
   <node concept="1lYeZD" id="3R7uD3D6CzO">
     <property role="2bfB8j" value="true" />
-    <property role="TrG5h" value="multiExtensionPoint_extension" />
+    <property role="TrG5h" value="multiExtensionPoint_extension2" />
     <ref role="1lYe$Y" node="3R7uD3D6CzJ" resolve="multiExtensionPoint" />
     <node concept="3Tm1VV" id="3IvUXkeQOCg" role="1B3o_S" />
     <node concept="2tJIrI" id="3IvUXkeQOCh" role="jymVt" />
@@ -358,7 +358,7 @@
   </node>
   <node concept="1lYeZD" id="3R7uD3D6CzT">
     <property role="2bfB8j" value="true" />
-    <property role="TrG5h" value="multiExtensionPoint_extension" />
+    <property role="TrG5h" value="multiExtensionPoint_extension1" />
     <ref role="1lYe$Y" node="3R7uD3D6CzJ" resolve="multiExtensionPoint" />
     <node concept="3Tm1VV" id="3IvUXkeQOCr" role="1B3o_S" />
     <node concept="2tJIrI" id="3IvUXkeQOCs" role="jymVt" />
