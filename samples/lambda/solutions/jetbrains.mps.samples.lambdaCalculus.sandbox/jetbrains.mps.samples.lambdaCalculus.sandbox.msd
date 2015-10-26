@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.lambdaCalculus.sandbox" uuid="32dea48e-1fa8-4bb1-ba27-df0bf51a7ce5" compileInMPS="true">
+<solution name="jetbrains.mps.samples.lambdaCalculus.sandbox" uuid="32dea48e-1fa8-4bb1-ba27-df0bf51a7ce5" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -14,5 +14,8 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" fqName="jetbrains.mps.samples.lambdaCalculus" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="32dea48e-1fa8-4bb1-ba27-df0bf51a7ce5(jetbrains.mps.samples.lambdaCalculus.sandbox)" version="0" />
+  </dependencyVersions>
 </solution>
 

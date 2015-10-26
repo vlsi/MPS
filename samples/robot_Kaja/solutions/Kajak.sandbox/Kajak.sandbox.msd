@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.Kaja.sandbox" uuid="202a7e1d-f62f-48e2-a734-32662e238d8a" compileInMPS="true">
+<solution name="jetbrains.mps.samples.Kaja.sandbox" uuid="202a7e1d-f62f-48e2-a734-32662e238d8a" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -20,5 +20,10 @@
     <language id="44306fd2-ef94-4b56-9806-d9ab509536db" fqName="jetbrains.mps.samples.KajaAndOr" version="0" />
     <language id="b56912a3-674f-4530-b0cf-55261b526a1f" fqName="jetbrains.mps.samples.KajaSceneConstruction" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="5004e7d9-a353-4cb0-960a-68fc804bd95d(jetbrains.mps.samples.JavaKaja)" version="0" />
+    <module reference="202a7e1d-f62f-48e2-a734-32662e238d8a(jetbrains.mps.samples.Kaja.sandbox)" version="0" />
+  </dependencyVersions>
 </solution>
 

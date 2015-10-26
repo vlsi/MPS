@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.Expressions.sandbox" uuid="8be13549-194e-408d-bbda-4afa252a98de" compileInMPS="true">
+<solution name="jetbrains.mps.samples.Expressions.sandbox" uuid="8be13549-194e-408d-bbda-4afa252a98de" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -14,5 +14,8 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="7e282943-fc6b-4900-ada5-34c0024cc4f4" fqName="jetbrains.mps.samples.Expressions" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="8be13549-194e-408d-bbda-4afa252a98de(jetbrains.mps.samples.Expressions.sandbox)" version="0" />
+  </dependencyVersions>
 </solution>
 
