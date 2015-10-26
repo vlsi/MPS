@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 import jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.openapi.ui.persistence.TabFactory;
@@ -26,8 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Registry with UI components (tabs) for {@link SModuleFacet}.
- * To use, instantiate and call {@link #initFromEP()}
+ * Keeps track of tabs instantiated, hence its lifecycle shall not span single UI action
  */
 final class FacetTabsPersistence {
   private final Map<String, TabFactory> myFacetTabs = new HashMap<String, TabFactory>();
@@ -54,6 +54,11 @@ final class FacetTabsPersistence {
     myFacetTabs.put(facetType, tab);
   }
 
+  /**
+   * @return newly instantiated or existing tab instance for the given facet, <code>null</code> if facet doesn't need an UI.
+   * FIXME take facetType from moduleFacet (move appropriate method into API).
+   */
+  @Nullable
   public Tab getFacetTab(String facetType, SModuleFacet moduleFacet) {
     if(!myFacetTabs.containsKey(facetType))
       return null;
