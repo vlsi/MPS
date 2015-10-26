@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.persistence.IndexAwareModelFactory;
 import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.ModelFactoryRegister;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.apache.log4j.Logger;
@@ -33,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.util.Consumer;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -41,7 +40,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MPSModelsIndexer implements ApplicationComponent {
-  private final PersistenceRegistry myPersistenceRegistry;
+  private final PersistenceFacade myPersistenceRegistry;
 
   public MPSModelsIndexer(ModelFactoryRegister mfr) {
     myPersistenceRegistry = mfr.getPersistenceRegistry();

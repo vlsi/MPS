@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,45 +15,39 @@
  */
 package jetbrains.mps.persistence;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.util.xmlb.annotations.Attribute;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactoryRegister implements ApplicationComponent {
-  private static final Logger LOG = LogManager.getLogger(ModelFactoryRegister.class);
   private final List<ModelFactory> myRegisteredFactories = new ArrayList<ModelFactory>();
 
-  private PersistenceRegistry myPersistenceRegistry;
+  private PersistenceFacade myPersistenceRegistry;
+
+  public ModelFactoryRegister(MPSCoreComponents mpsCoreComponents) {
+    myPersistenceRegistry = mpsCoreComponents.getMPSCore().getPersistenceFacade();
+  }
 
   @Override
   public void initComponent() {
-    myPersistenceRegistry = PersistenceRegistry.getInstance();
     for (ModelFactoryProvider provider : ModelFactoryProvider.EP_MODEL_FACTORY.getExtensions()) {
       try {
-        String implementationClassName = provider.getImplementationClass();
-        if (implementationClassName.isEmpty()) {
-          LOG.error("Empty implementationClass in ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId());
-          continue;
-        }
-        Class<ModelFactory> implementationClass =
-            (Class<ModelFactory>) Class.forName(implementationClassName, true, provider.getLoaderForClass());
-        ModelFactory modelFactory = implementationClass.newInstance();
+        ModelFactory modelFactory = provider.instantiate(provider.getImplementationClass(), ApplicationManager.getApplication().getPicoContainer());
         myRegisteredFactories.add(modelFactory);
         myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), modelFactory);
       } catch (ClassNotFoundException e) {
-        LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
-      } catch (InstantiationException e) {
-        LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
-      } catch (IllegalAccessException e) {
-        LOG.error("Can not load ModelFactoryProvider in plugin " + provider.getPluginDescriptor().getPluginId(), e);
+        String m = String.format("Failed to load ModelFactoryProvider in plugin %s", provider.getPluginDescriptor().getPluginId());
+        LogManager.getLogger(ModelFactoryRegister.class).error(m, e);
       }
     }
   }
@@ -63,11 +57,12 @@ public class ModelFactoryRegister implements ApplicationComponent {
     for (ModelFactory factory : myRegisteredFactories) {
       myPersistenceRegistry.setModelFactory(factory.getFileExtension(), null);
     }
+    myRegisteredFactories.clear();
     myPersistenceRegistry = null;
   }
 
   // it's preferable to use this method instead of static getInstance()
-  public PersistenceRegistry getPersistenceRegistry() {
+  public PersistenceFacade getPersistenceRegistry() {
     return myPersistenceRegistry;
   }
 
