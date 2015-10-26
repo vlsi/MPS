@@ -39,7 +39,13 @@ public class LabelCellSelector implements CellSelector {
     if (!(editorCell instanceof EditorCell_Label)) {
       return false;
     }
-    editorContext.getSelectionManager().setSelection(((EditorCell_Label) editorCell), myCaretPosition, mySelectionStart, mySelectionEnd);
-    return editorContext.getSelectionManager().getSelection() != null;
+
+    int textLength = ((EditorCell_Label) editorCell).getText().length();
+    int caretPosition = Math.min(myCaretPosition, textLength);
+    int selectionStart = Math.min(mySelectionStart, textLength);
+    int selectionEnd = Math.min(mySelectionEnd, textLength);
+
+    editorContext.getSelectionManager().setSelection(((EditorCell_Label) editorCell), caretPosition, selectionStart, selectionEnd);
+    return true;
   }
 }
