@@ -25,7 +25,7 @@ public class ImageExport_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_manuallyExportedImage() throws Exception {
-      ImageLoader imageloader = new ImageLoader("ManuallyExportedImage.png");
+      ImageLoader imageloader = new ImageLoader("ManuallyExportedImage.gif");
       try {
         BufferedImage image = imageloader.getImage();
         Assert.assertNotNull(image);

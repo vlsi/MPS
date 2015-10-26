@@ -7223,5 +7223,28 @@
       <node concept="10P_77" id="1_xVpohXRzk" role="3clF45" />
     </node>
   </node>
+  <node concept="13h7C7" id="1KHvivZHjZJ">
+    <property role="3GE5qa" value="operation.model" />
+    <ref role="13h7C2" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
+    <node concept="13i0hz" id="1KHvivZHjZM" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="applicableToModel" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" node="1653mnvAf1y" resolve="applicableToModel" />
+      <node concept="3Tm1VV" id="1KHvivZHjZN" role="1B3o_S" />
+      <node concept="10P_77" id="1KHvivZHjZO" role="3clF45" />
+      <node concept="3clFbS" id="1KHvivZHjZP" role="3clF47">
+        <node concept="3cpWs6" id="1KHvivZHjZQ" role="3cqZAp">
+          <node concept="3clFbT" id="1KHvivZHjZR" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1KHvivZHjZK" role="13h7CW">
+      <node concept="3clFbS" id="1KHvivZHjZL" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

@@ -65,7 +65,7 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 public class ModuleGenerationHolder {
-  private static String[] BINARY_FILE_EXTENSIONS = new String[]{".png"};
+  private static String[] BINARY_FILE_EXTENSIONS = new String[]{".png", ".gif"};
   private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "dependencies", "exports");
   private final Project project;
   private final SModule module;

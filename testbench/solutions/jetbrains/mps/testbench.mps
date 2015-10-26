@@ -448,6 +448,9 @@
           <node concept="Xl_RD" id="2v4QUtSHWc5" role="3g7hyw">
             <property role="Xl_RC" value=".png" />
           </node>
+          <node concept="Xl_RD" id="1cBwqeL61R$" role="3g7hyw">
+            <property role="Xl_RC" value=".gif" />
+          </node>
         </node>
       </node>
     </node>
