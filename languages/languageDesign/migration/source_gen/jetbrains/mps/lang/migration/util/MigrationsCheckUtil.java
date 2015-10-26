@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.LinkedList;
-import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit__BehaviorDescriptor;
+import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -65,7 +65,7 @@ public class MigrationsCheckUtil {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script"));
       }
     }));
-    result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"))).where(new IWhereFilter<SNode>() {
+    result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(script), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(it) < (int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(script);
       }
@@ -85,7 +85,7 @@ public class MigrationsCheckUtil {
       return Collections.emptyMap();
     }
 
-    List<SNode> allScripts = SModelOperations.roots(migModel, MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"));
+    List<SNode> allScripts = SModelOperations.roots(migModel, MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"));
 
     // scripts with no versions set 
     final Map<SNode, Collection<String>> result = MapSequence.fromMap(new HashMap<SNode, Collection<String>>());

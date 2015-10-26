@@ -65,7 +65,7 @@ public class MoveConceptSpecialization extends StructureSpecializationBase<SConc
   }
   private static SNode createMoveConcept_kdm6vl_c0a4a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.util.structure.MoveConcept"), null, null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c1741b6L, "jetbrains.mps.lang.migration.structure.MoveConcept"), null, null, false);
     return n1;
   }
 }

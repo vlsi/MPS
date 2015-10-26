@@ -152,25 +152,25 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
       });
     }
     public void addPart(RefactoringParticipant.PersistentRefactoringParticipant participant, SNode initialState, SNode finalState) {
-      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).addElement(createRefactoringPart_29rp6m_a0a0a4m(participant.getId(), SNodeOperations.cast(HUtil.copyIfNecessary(initialState), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), SNodeOperations.cast(HUtil.copyIfNecessary(finalState), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
+      ListSequence.fromList(SLinkOperations.getChildren(myRefactoringStep, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d92L, "part"))).addElement(createRefactoringPart_29rp6m_a0a0a4m(participant.getId(), SNodeOperations.cast(HUtil.copyIfNecessary(initialState), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), SNodeOperations.cast(HUtil.copyIfNecessary(finalState), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
     }
     private static SNode createRefactoringLog_29rp6m_a0b0d21(Object p0, Object p1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.util.structure.RefactoringLog"), null, null, false);
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"), null, null, false);
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "refactoring");
-      n1.setProperty(MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion"), p0 + "");
+      n1.setProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, 0x1bf9eb43276b6d91L, "fromVersion"), p0 + "");
       n1.setProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), p1 + "");
       return n1;
     }
     private static SNode createRefactoringPart_29rp6m_a0a0a4m(Object p0, Object p1, Object p2) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, "jetbrains.mps.lang.migration.util.structure.RefactoringPart"), null, null, false);
-      n1.setProperty(MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant"), p0 + "");
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, "jetbrains.mps.lang.migration.structure.RefactoringPart"), null, null, false);
+      n1.setProperty(MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aaL, "participant"), p0 + "");
       if (p1 != null) {
-        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState"), (SNode) p1);
+        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3acL, "initialState"), (SNode) p1);
       }
       if (p2 != null) {
-        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState"), (SNode) p2);
+        n1.addChild(MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2b3f57492c163158L, 0x325b97b223b9e3aeL, "finalState"), (SNode) p2);
       }
       return n1;
     }

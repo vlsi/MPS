@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.migration.util.util.NodeReferenceUtil;
+import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -34,7 +34,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.lang.migration.util.behavior.AbstractNodeReference__BehaviorDescriptor;
+import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -156,13 +156,13 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
     return NodeReferenceUtil.makeReflection(initialState.reference(), initialState.name());
   }
   public NamedNodeReference deserializeInitialState(SNode serialized) {
-    return new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
+    return new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
   }
   public SNode serializeFinalState(NamedNodeReference finalState) {
     return NodeReferenceUtil.makeReflection(finalState.reference(), finalState.name());
   }
   public NamedNodeReference deserializeFinalState(SNode serialized) {
-    return new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
+    return new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
   }
   private static boolean eq_k8iioh_a0a0a0a0a0a0a0a4a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

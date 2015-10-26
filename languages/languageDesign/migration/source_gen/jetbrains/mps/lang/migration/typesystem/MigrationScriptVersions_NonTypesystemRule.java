@@ -35,7 +35,7 @@ public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesy
     });
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit");
+    return MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

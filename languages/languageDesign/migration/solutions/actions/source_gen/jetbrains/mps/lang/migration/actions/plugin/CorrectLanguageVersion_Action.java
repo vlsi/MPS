@@ -19,7 +19,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.migration.util.behavior.IMigrationUnit__BehaviorDescriptor;
+import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -56,7 +56,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return slang.getLanguageVersion() != 0;
     }
 
-    List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"));
+    List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"));
     if (lang.getLanguageVersion() == 0) {
       return false;
     }
@@ -146,7 +146,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
   }
   private static List<SNode> check_wnyb8b_a0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0x9882f4ad195546feL, 0x826994189e5dbbf2L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.util.structure.IMigrationUnit"));
+      return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit"));
     }
     return null;
   }

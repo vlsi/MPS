@@ -66,9 +66,7 @@
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
-    <import index="gqi5" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="nbs9" ref="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" implicit="true" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -7550,7 +7548,7 @@
           <node concept="3cpWsn" id="4yRsQKntjQ0" role="3cpWs9">
             <property role="TrG5h" value="log" />
             <node concept="3Tqbb2" id="4yRsQKntjPY" role="1tU5fm">
-              <ref role="ehGHo" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
+              <ref role="ehGHo" to="53vh:1JTUOcBqQQf" resolve="RefactoringLog" />
             </node>
             <node concept="2OqwBi" id="4yRsQKntjQ1" role="33vP2m">
               <node concept="2OqwBi" id="4yRsQKntjQ2" role="2Oq$k0">
@@ -7559,7 +7557,7 @@
                     <ref role="3cqZAo" node="4yRsQKnsUpr" resolve="migrationModel" />
                   </node>
                   <node concept="2RRcyG" id="4yRsQKntjQ5" role="2OqNvi">
-                    <ref role="2RRcyH" to="gqi5:1JTUOcBqQQf" resolve="RefactoringLog" />
+                    <ref role="2RRcyH" to="53vh:1JTUOcBqQQf" resolve="RefactoringLog" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="4yRsQKntjQ6" role="2OqNvi">
@@ -7575,7 +7573,7 @@
                               <ref role="3cqZAo" node="4yRsQKntjQf" resolve="it" />
                             </node>
                             <node concept="3TrcHB" id="36$CdjY9L0F" role="2OqNvi">
-                              <ref role="3TsBF5" to="gqi5:1JTUOcBqQQh" resolve="fromVersion" />
+                              <ref role="3TsBF5" to="53vh:1JTUOcBqQQh" resolve="fromVersion" />
                             </node>
                           </node>
                         </node>
@@ -7733,7 +7731,7 @@
                     <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="log" />
                   </node>
                   <node concept="2qgKlT" id="39r_V8zIyWK" role="2OqNvi">
-                    <ref role="37wK5l" to="nbs9:4uVwhQyPQ_Z" resolve="getDescriptor" />
+                    <ref role="37wK5l" to="buve:4uVwhQyPQ_Z" resolve="getDescriptor" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4uVwhQyPUIH" role="37wK5m">
@@ -7743,11 +7741,11 @@
                         <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="log" />
                       </node>
                       <node concept="3Tsc0h" id="1JTUOcBrlnm" role="2OqNvi">
-                        <ref role="3TtcxE" to="gqi5:1JTUOcBqQQg" />
+                        <ref role="3TtcxE" to="53vh:1JTUOcBqQQg" />
                       </node>
                     </node>
                     <node concept="13MTOL" id="1JTUOcBrm6f" role="2OqNvi">
-                      <ref role="13MTZf" to="gqi5:1JTUOcBqQQu" />
+                      <ref role="13MTZf" to="53vh:1JTUOcBqQQu" />
                     </node>
                   </node>
                   <node concept="3$u5V9" id="4uVwhQyPYx1" role="2OqNvi">
@@ -7759,7 +7757,7 @@
                               <ref role="3cqZAo" node="4uVwhQyPYx9" resolve="it" />
                             </node>
                             <node concept="2qgKlT" id="4uVwhQyPYx8" role="2OqNvi">
-                              <ref role="37wK5l" to="nbs9:4uVwhQyPQ_Z" resolve="getDescriptor" />
+                              <ref role="37wK5l" to="buve:4uVwhQyPQ_Z" resolve="getDescriptor" />
                             </node>
                           </node>
                         </node>
@@ -7777,7 +7775,7 @@
                       <ref role="3cqZAo" node="4yRsQKntjQ0" resolve="log" />
                     </node>
                     <node concept="3Tsc0h" id="1JTUOcBrmhA" role="2OqNvi">
-                      <ref role="3TtcxE" to="gqi5:1JTUOcBqQQi" />
+                      <ref role="3TtcxE" to="53vh:1JTUOcBqQQi" />
                     </node>
                   </node>
                   <node concept="3$u5V9" id="4uVwhQyQ1Vn" role="2OqNvi">
@@ -7825,7 +7823,7 @@
                                               <ref role="3cqZAo" node="4uVwhQyQ1Vr" resolve="refactoringPartNode" />
                                             </node>
                                             <node concept="3TrcHB" id="39r_V8zKOnL" role="2OqNvi">
-                                              <ref role="3TsBF5" to="gqi5:39r_V8zIueE" resolve="participant" />
+                                              <ref role="3TsBF5" to="53vh:39r_V8zIueE" resolve="participant" />
                                             </node>
                                           </node>
                                           <node concept="37vLTw" id="39r_V8zKMR0" role="3ElQJh">
@@ -7837,7 +7835,7 @@
                                             <ref role="3cqZAo" node="4uVwhQyQ1Vr" resolve="refactoringPartNode" />
                                           </node>
                                           <node concept="3TrEf2" id="39r_V8zKPGq" role="2OqNvi">
-                                            <ref role="3Tt5mk" to="gqi5:39r_V8zIueG" />
+                                            <ref role="3Tt5mk" to="53vh:39r_V8zIueG" />
                                           </node>
                                         </node>
                                         <node concept="2OqwBi" id="39r_V8zKQHM" role="37wK5m">
@@ -7845,7 +7843,7 @@
                                             <ref role="3cqZAo" node="4uVwhQyQ1Vr" resolve="refactoringPartNode" />
                                           </node>
                                           <node concept="3TrEf2" id="39r_V8zKQPc" role="2OqNvi">
-                                            <ref role="3Tt5mk" to="gqi5:39r_V8zIueI" />
+                                            <ref role="3Tt5mk" to="53vh:39r_V8zIueI" />
                                           </node>
                                         </node>
                                         <node concept="2OqwBi" id="39r_V8zKRgx" role="37wK5m">
