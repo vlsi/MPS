@@ -11,6 +11,7 @@
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -51,10 +52,14 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1197027803184" name="jetbrains.mps.baseLanguage.structure.IOperation" flags="ng" index="2OqG4A" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -65,6 +70,9 @@
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
       <concept id="1068431790189" name="jetbrains.mps.baseLanguage.structure.Type" flags="in" index="33vP2l" />
       <concept id="1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" flags="nn" index="33vP2n" />
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -94,6 +102,9 @@
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
@@ -103,6 +114,9 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -551,11 +565,11 @@
     <node concept="3cpWsn" id="5fIuys0c9kO" role="LiRBU">
       <property role="TrG5h" value="a" />
       <node concept="10Oyi0" id="5fIuys0c9oN" role="1tU5fm">
-        <node concept="LIFWc" id="5fIuys0c9t0" role="lGtFl">
-          <property role="LIFWa" value="2" />
+        <node concept="LIFWc" id="4T4PEv8GUAf" role="lGtFl">
+          <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="2" />
-          <property role="p6zMs" value="2" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="3" />
           <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
         </node>
       </node>
@@ -566,11 +580,11 @@
         <property role="3V$3am" value="type" />
         <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" />
         <node concept="10Oyi0" id="5fIuys0c9x4" role="8Wnug">
-          <node concept="LIFWc" id="5fIuys0cNTO" role="lGtFl">
-            <property role="LIFWa" value="2" />
+          <node concept="LIFWc" id="4T4PEv8GUAm" role="lGtFl">
+            <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="2" />
-            <property role="p6zMs" value="2" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="3" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
           </node>
         </node>
@@ -1721,10 +1735,10 @@
         <node concept="10Oyi0" id="5fIuys0cPm6" role="8Wnug" />
       </node>
       <node concept="10P55v" id="5fIuys0cPuk" role="1tU5fm">
-        <node concept="LIFWc" id="5fIuys0cPut" role="lGtFl">
-          <property role="ZRATv" value="true" />
+        <node concept="LIFWc" id="4T4PEv8GUxF" role="lGtFl">
+          <property role="LIFWa" value="4" />
           <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="6" />
+          <property role="p6zMq" value="0" />
           <property role="p6zMs" value="6" />
           <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
         </node>
@@ -1741,10 +1755,10 @@
         <property role="3V$3am" value="type" />
         <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" />
         <node concept="10P55v" id="5fIuys0cPqe" role="8Wnug">
-          <node concept="LIFWc" id="5fIuys0cPyA" role="lGtFl">
+          <node concept="LIFWc" id="4T4PEv8GUA6" role="lGtFl">
             <property role="ZRATv" value="true" />
             <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="6" />
+            <property role="p6zMq" value="0" />
             <property role="p6zMs" value="6" />
             <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
           </node>
@@ -2775,6 +2789,818 @@
         <node concept="LIFWc" id="1OLuskJsHnh" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="LIFWd" value="Collection_j4vm40_a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8GVFR">
+    <property role="TrG5h" value="Comment_Line" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8GVFS" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8GVFT" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8GVFU" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8GVFV" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8GVFW" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8GVFX" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8GVFY" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8GW5Q" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8GW5T" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8GX_L" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8GWfb" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8GW6p" role="2Oq$k0">
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                  </node>
+                  <node concept="liA8E" id="4T4PEv8GXqz" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <node concept="3cmrfG" id="4T4PEv8GXtQ" role="37wK5m">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="LIFWc" id="4T4PEv8GXND" role="lGtFl">
+                      <property role="LIFWa" value="2" />
+                      <property role="OXtK3" value="true" />
+                      <property role="p6zMq" value="2" />
+                      <property role="p6zMs" value="2" />
+                      <property role="LIFWd" value="property_name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8GVGg" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8GVGh" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8GXZ_" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8GXZA" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8GY8j" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8GXZD" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8GXZE" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8GXZF" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8GXZG" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8GXZH" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    </node>
+                    <node concept="liA8E" id="4T4PEv8GXZI" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8GXZJ" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8GY8A" role="lGtFl">
+                        <property role="LIFWa" value="2" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="2" />
+                        <property role="p6zMs" value="2" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8GY8C">
+    <property role="TrG5h" value="Comment_Node" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8GY8D" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8GY8E" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8GY8F" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8GY8G" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8GY8H" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8GY8I" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8GY8J" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8GY8K" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8GY8L" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8GY8M" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8GY8N" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8GY8O" role="2Oq$k0">
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                  </node>
+                  <node concept="liA8E" id="4T4PEv8GY8P" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <node concept="3cmrfG" id="4T4PEv8GY8Q" role="37wK5m">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="LIFWc" id="4T4PEv8GYDJ" role="lGtFl">
+                      <property role="ZRATv" value="true" />
+                      <property role="OXtK3" value="true" />
+                      <property role="p6zMq" value="0" />
+                      <property role="p6zMs" value="3" />
+                      <property role="LIFWd" value="property_name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8GY8S" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8GY8T" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8GY8U" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8GY8V" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8GY8X" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8GY8Y" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8GY8Z" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8GY90" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8GY91" role="2Oq$k0">
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                  </node>
+                  <node concept="1X3_iC" id="4T4PEv8GYXx" role="lGtFl">
+                    <property role="3V$3am" value="operation" />
+                    <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                    <node concept="liA8E" id="4T4PEv8GY92" role="8Wnug">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8GY93" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8GZnI" role="lGtFl">
+                        <property role="ZRATv" value="true" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="0" />
+                        <property role="p6zMs" value="3" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqG4A" id="4T4PEv8GYXy" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8GZo1">
+    <property role="TrG5h" value="Comment_LineInsideCommentedNode" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8GZo2" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8GZo3" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8GZo4" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8GZo5" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8GZo6" role="9aQI4">
+        <node concept="1X3_iC" id="4T4PEv8H0eB" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="9aQIb" id="4T4PEv8GZo7" role="8Wnug">
+            <node concept="3clFbS" id="4T4PEv8GZo8" role="9aQI4">
+              <node concept="3cpWs8" id="4T4PEv8GZo9" role="3cqZAp">
+                <node concept="3cpWsn" id="4T4PEv8GZoa" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8GZob" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8GZoc" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8GZod" role="2Oq$k0">
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    </node>
+                    <node concept="liA8E" id="4T4PEv8GZoe" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8GZof" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8GZog" role="lGtFl">
+                        <property role="LIFWa" value="2" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="2" />
+                        <property role="p6zMs" value="2" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8GZoh" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8GZoi" role="9aQI4">
+        <node concept="1X3_iC" id="4T4PEv8H0eZ" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="9aQIb" id="4T4PEv8GZoj" role="8Wnug">
+            <node concept="3clFbS" id="4T4PEv8GZok" role="9aQI4">
+              <node concept="1X3_iC" id="4T4PEv8GZol" role="lGtFl">
+                <property role="3V$3am" value="statement" />
+                <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+                <node concept="3cpWs8" id="4T4PEv8GZom" role="8Wnug">
+                  <node concept="3cpWsn" id="4T4PEv8GZon" role="3cpWs9">
+                    <property role="TrG5h" value="a" />
+                    <node concept="3uibUv" id="4T4PEv8GZoo" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                    </node>
+                    <node concept="2OqwBi" id="4T4PEv8GZop" role="33vP2m">
+                      <node concept="2YIFZM" id="4T4PEv8GZoq" role="2Oq$k0">
+                        <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                        <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                      </node>
+                      <node concept="liA8E" id="4T4PEv8GZor" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                        <node concept="3cmrfG" id="4T4PEv8GZos" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="LIFWc" id="4T4PEv8GZot" role="lGtFl">
+                          <property role="LIFWa" value="2" />
+                          <property role="OXtK3" value="true" />
+                          <property role="p6zMq" value="2" />
+                          <property role="p6zMs" value="2" />
+                          <property role="LIFWd" value="property_name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8H0fp">
+    <property role="TrG5h" value="Comment_NodeInsideCommentedNode" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8H0fq" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8H0fr" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8H0fs" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0ft" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8H0fu" role="9aQI4">
+        <node concept="1X3_iC" id="4T4PEv8H0fv" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="9aQIb" id="4T4PEv8H0fw" role="8Wnug">
+            <node concept="3clFbS" id="4T4PEv8H0fx" role="9aQI4">
+              <node concept="3cpWs8" id="4T4PEv8H0fy" role="3cqZAp">
+                <node concept="3cpWsn" id="4T4PEv8H0fz" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H0f$" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H0f_" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H0fA" role="2Oq$k0">
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    </node>
+                    <node concept="liA8E" id="4T4PEv8H0fB" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8H0fC" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8H0fY" role="lGtFl">
+                        <property role="ZRATv" value="true" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="0" />
+                        <property role="p6zMs" value="3" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0fE" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8H0fF" role="9aQI4">
+        <node concept="1X3_iC" id="4T4PEv8H0fG" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="9aQIb" id="4T4PEv8H0fH" role="8Wnug">
+            <node concept="3clFbS" id="4T4PEv8H0fI" role="9aQI4">
+              <node concept="3cpWs8" id="4T4PEv8H0fK" role="3cqZAp">
+                <node concept="3cpWsn" id="4T4PEv8H0fL" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H0fM" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H0fN" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H0fO" role="2Oq$k0">
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    </node>
+                    <node concept="1X3_iC" id="4T4PEv8H75a" role="lGtFl">
+                      <property role="3V$3am" value="operation" />
+                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                      <node concept="liA8E" id="4T4PEv8H0fP" role="8Wnug">
+                        <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                        <node concept="3cmrfG" id="4T4PEv8H0fQ" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="LIFWc" id="4T4PEv8H75n" role="lGtFl">
+                          <property role="ZRATv" value="true" />
+                          <property role="OXtK3" value="true" />
+                          <property role="p6zMq" value="0" />
+                          <property role="p6zMs" value="3" />
+                          <property role="LIFWd" value="property_name" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqG4A" id="4T4PEv8H75b" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8H0g2">
+    <property role="TrG5h" value="Comment_NodeInsideCommentedLine" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8H0g3" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8H0g4" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8H0g5" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0g6" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8H0g7" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H0g9" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H0ga" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8H0kE" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8H0gb" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8H0gc" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H0gd" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H0ge" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H0gf" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    </node>
+                    <node concept="liA8E" id="4T4PEv8H0gg" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8H0gh" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8H0kY" role="lGtFl">
+                        <property role="ZRATv" value="true" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="0" />
+                        <property role="p6zMs" value="3" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0gj" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8H0gk" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H0gm" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H0gn" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8H0go" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8H0gp" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8H0gq" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H0gr" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H0gs" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H0gt" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    </node>
+                    <node concept="1X3_iC" id="4T4PEv8H5qf" role="lGtFl">
+                      <property role="3V$3am" value="operation" />
+                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                      <node concept="liA8E" id="4T4PEv8H0gu" role="8Wnug">
+                        <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                        <node concept="3cmrfG" id="4T4PEv8H0gv" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="LIFWc" id="4T4PEv8H5qs" role="lGtFl">
+                          <property role="ZRATv" value="true" />
+                          <property role="OXtK3" value="true" />
+                          <property role="p6zMq" value="0" />
+                          <property role="p6zMs" value="3" />
+                          <property role="LIFWd" value="property_name" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqG4A" id="4T4PEv8H5qg" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8H0le">
+    <property role="TrG5h" value="Uncomment_Line" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8H0lf" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8H0lg" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8H0lh" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0li" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8H0lj" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H0lk" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H0ll" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8H0xn" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8H0lm" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8H0ln" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H0lo" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H0lp" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H0lq" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    </node>
+                    <node concept="liA8E" id="4T4PEv8H0lr" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8H0ls" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8H0xF" role="lGtFl">
+                        <property role="LIFWa" value="2" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="2" />
+                        <property role="p6zMs" value="2" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0lu" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8H0lv" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H0lw" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H0lx" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8H0lz" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8H0l$" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8H0l_" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8H0lA" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8H0lB" role="2Oq$k0">
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                  </node>
+                  <node concept="liA8E" id="4T4PEv8H0lC" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <node concept="3cmrfG" id="4T4PEv8H0lD" role="37wK5m">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="LIFWc" id="4T4PEv8H0_M" role="lGtFl">
+                      <property role="LIFWa" value="2" />
+                      <property role="OXtK3" value="true" />
+                      <property role="p6zMq" value="2" />
+                      <property role="p6zMs" value="2" />
+                      <property role="LIFWd" value="property_name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8H0DI">
+    <property role="TrG5h" value="Comment_LineOutsideCommentedNode" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8H0DJ" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8H0DK" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8H0DL" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0DM" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8H0DN" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H0DO" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H0DP" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8H0DQ" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8H0DR" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8H0DS" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8H0DT" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8H0DU" role="2Oq$k0">
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                  </node>
+                  <node concept="1X3_iC" id="4T4PEv8H29Z" role="lGtFl">
+                    <property role="3V$3am" value="operation" />
+                    <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                    <node concept="liA8E" id="4T4PEv8H0DV" role="8Wnug">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8H0DW" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8H2ac" role="lGtFl">
+                        <property role="ZRATv" value="true" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="0" />
+                        <property role="p6zMs" value="3" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqG4A" id="4T4PEv8H2a0" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H0DY" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8H0DZ" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H0E0" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H0E1" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8H3GM" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8H0E2" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8H0E3" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H0E4" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H0E5" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H0E6" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    </node>
+                    <node concept="1X3_iC" id="4T4PEv8H3iz" role="lGtFl">
+                      <property role="3V$3am" value="operation" />
+                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                      <node concept="liA8E" id="4T4PEv8H0E8" role="8Wnug">
+                        <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                        <node concept="3cmrfG" id="4T4PEv8H0E9" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="LIFWc" id="4T4PEv8H3He" role="lGtFl">
+                          <property role="ZRATv" value="true" />
+                          <property role="OXtK3" value="true" />
+                          <property role="p6zMq" value="3" />
+                          <property role="p6zMs" value="3" />
+                          <property role="LIFWd" value="property_name" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqG4A" id="4T4PEv8H3i$" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8H3IK">
+    <property role="TrG5h" value="Uncomment_LineOutsideCommentedNode" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8H3IL" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8H3IM" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8H3IN" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H3IO" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8H3IP" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H3IQ" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H3IR" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8H3Ks" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8H3IS" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8H3IT" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8H3IU" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8H3IV" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8H3IW" role="2Oq$k0">
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    </node>
+                    <node concept="1X3_iC" id="4T4PEv8H3IX" role="lGtFl">
+                      <property role="3V$3am" value="operation" />
+                      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                      <node concept="liA8E" id="4T4PEv8H3IY" role="8Wnug">
+                        <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                        <node concept="3cmrfG" id="4T4PEv8H3IZ" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                        <node concept="LIFWc" id="4T4PEv8H3J0" role="lGtFl">
+                          <property role="ZRATv" value="true" />
+                          <property role="OXtK3" value="true" />
+                          <property role="p6zMq" value="0" />
+                          <property role="p6zMs" value="3" />
+                          <property role="LIFWd" value="property_name" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqG4A" id="4T4PEv8H3J1" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8H3J2" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8H3J3" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8H3J4" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8H3J5" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8H3J7" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8H3J8" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8H3J9" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8H3Ja" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8H3Jb" role="2Oq$k0">
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                  </node>
+                  <node concept="1X3_iC" id="4T4PEv8H3Jc" role="lGtFl">
+                    <property role="3V$3am" value="operation" />
+                    <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" />
+                    <node concept="liA8E" id="4T4PEv8H3Jd" role="8Wnug">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8H3Je" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="LIFWc" id="4T4PEv8H3Jf" role="lGtFl">
+                        <property role="ZRATv" value="true" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="3" />
+                        <property role="p6zMs" value="3" />
+                        <property role="LIFWd" value="property_name" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqG4A" id="4T4PEv8H3Jg" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4T4PEv8Iv0b">
+    <property role="TrG5h" value="Comment_LineFromParameter" />
+    <property role="3GE5qa" value="comment" />
+    <node concept="3clFbS" id="4T4PEv8Iv0c" role="LjaKd">
+      <node concept="2HxZob" id="4T4PEv8Iv0d" role="3cqZAp">
+        <node concept="1iFQzN" id="4T4PEv8Iv0e" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:4yOeMfyP6wh" resolve="Comment" />
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8Iv0f" role="LiRBU">
+      <node concept="3clFbS" id="4T4PEv8Iv0g" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8Iv0h" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8Iv0i" role="9aQI4">
+            <node concept="3cpWs8" id="4T4PEv8Iv0j" role="3cqZAp">
+              <node concept="3cpWsn" id="4T4PEv8Iv0k" role="3cpWs9">
+                <property role="TrG5h" value="a" />
+                <node concept="3uibUv" id="4T4PEv8Iv0l" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                </node>
+                <node concept="2OqwBi" id="4T4PEv8Iv0m" role="33vP2m">
+                  <node concept="2YIFZM" id="4T4PEv8Iv0n" role="2Oq$k0">
+                    <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                  </node>
+                  <node concept="liA8E" id="4T4PEv8Iv0o" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                    <node concept="3cmrfG" id="4T4PEv8Iv0p" role="37wK5m">
+                      <property role="3cmrfH" value="0" />
+                      <node concept="LIFWc" id="4T4PEv8IvHp" role="lGtFl">
+                        <property role="ZRATv" value="true" />
+                        <property role="OXtK3" value="true" />
+                        <property role="p6zMq" value="1" />
+                        <property role="p6zMs" value="1" />
+                        <property role="LIFWd" value="property_value" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="9aQIb" id="4T4PEv8Iv0r" role="LiZbd">
+      <node concept="3clFbS" id="4T4PEv8Iv0s" role="9aQI4">
+        <node concept="9aQIb" id="4T4PEv8Iv0t" role="3cqZAp">
+          <node concept="3clFbS" id="4T4PEv8Iv0u" role="9aQI4">
+            <node concept="1X3_iC" id="4T4PEv8Iv0v" role="lGtFl">
+              <property role="3V$3am" value="statement" />
+              <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+              <node concept="3cpWs8" id="4T4PEv8Iv0w" role="8Wnug">
+                <node concept="3cpWsn" id="4T4PEv8Iv0x" role="3cpWs9">
+                  <property role="TrG5h" value="a" />
+                  <node concept="3uibUv" id="4T4PEv8Iv0y" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                  </node>
+                  <node concept="2OqwBi" id="4T4PEv8Iv0z" role="33vP2m">
+                    <node concept="2YIFZM" id="4T4PEv8Iv0$" role="2Oq$k0">
+                      <ref role="37wK5l" to="wyt6:~System.getProperties():java.util.Properties" resolve="getProperties" />
+                      <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+                    </node>
+                    <node concept="liA8E" id="4T4PEv8Iv0_" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Hashtable.get(java.lang.Object):java.lang.Object" resolve="get" />
+                      <node concept="3cmrfG" id="4T4PEv8Iv0A" role="37wK5m">
+                        <property role="3cmrfH" value="0" />
+                        <node concept="LIFWc" id="4T4PEv8IvL4" role="lGtFl">
+                          <property role="ZRATv" value="true" />
+                          <property role="OXtK3" value="true" />
+                          <property role="p6zMq" value="1" />
+                          <property role="p6zMs" value="1" />
+                          <property role="LIFWd" value="property_value" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
