@@ -28,9 +28,7 @@ public class ReSaveModulesMigration extends BaseProjectMigration {
         return !(it.isReadOnly());
       }
     })) {
-      if (!(module.getModuleDescriptor().hasLanguageVersions())) {
-        module.setChanged();
-      }
+      module.setChanged();
     }
     MPSModuleRepository.getInstance().saveAll();
     return true;
