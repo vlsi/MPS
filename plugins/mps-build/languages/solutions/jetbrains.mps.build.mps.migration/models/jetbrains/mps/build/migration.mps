@@ -339,6 +339,9 @@
             </node>
             <node concept="liA8E" id="75eqTYkq9C7" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
+              <node concept="Xl_RD" id="3FVfMMI1T2E" role="37wK5m">
+                <property role="Xl_RC" value="migrationAssistant" />
+              </node>
               <node concept="10M0yZ" id="75eqTYkrSbz" role="37wK5m">
                 <ref role="3cqZAo" node="75eqTYkqe2J" resolve="MIGRATION_PLUGIN" />
                 <ref role="1PxDUh" node="KL8Aqll4mG" resolve="MigrationWorker" />

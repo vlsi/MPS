@@ -103,7 +103,7 @@ public class GlobalModuleDependenciesManager {
   private Set<SModule> collectNeighbours(Deptype depType) {
     HashSet<SModule> result = new HashSet<SModule>();
     for (SModule module : myModules) {
-      result.addAll(directlyUsedModules(module, true, depType.runtimes));
+      result.addAll(directlyUsedModules0(module, true, depType.runtimes));
     }
     result.addAll(myModules);
     return result;
@@ -112,7 +112,7 @@ public class GlobalModuleDependenciesManager {
   private void collect(SModule current, Set<SModule> result, Deptype depType) {
     if (result.contains(current)) return;
     result.add(current);
-    for (SModule m : directlyUsedModules(current, depType.reexportAll, depType.runtimes)) {
+    for (SModule m : directlyUsedModules0(current, depType.reexportAll, depType.runtimes)) {
       collect(m, result, depType);
     }
   }
@@ -129,12 +129,32 @@ public class GlobalModuleDependenciesManager {
     return result;
   }
 
-  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) throws AbsentDependencyException {
+    return directlyUsedModules0(module, includeNonReexport, runtimes, true);
+  }
+
+  private static Collection<SModule> directlyUsedModules0(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+    try {
+      return directlyUsedModules0(module, includeNonReexport, runtimes, false);
+    } catch (AbsentDependencyException e) {
+      throw new IllegalStateException("Impossible to get exception when the check is off", e);
+    }
+  }
+
+  private static Collection<SModule> directlyUsedModules0(@NotNull SModule module, boolean includeNonReexport, boolean runtimes, boolean checked) throws
+      AbsentDependencyException {
     Set<SModule> result = new HashSet<SModule>();
     for (SDependency dependency : module.getDeclaredDependencies()) {
       SModule m = dependency.getTarget();
       if (m == null) {
-        continue;
+        if (dependency.getScope() == SDependencyScope.GENERATES_INTO || dependency.getScope() == SDependencyScope.DESIGN) {
+          continue;
+        }
+        if (!checked) {
+          continue;
+        } else {
+          throw new AbsentDependencyException(dependency);
+        }
       }
       // if module A extends module B, and module C depends from A, module B shall always be part of C dependencies along with A.
       boolean isExport = dependency.isReexport() || dependency.getScope() == SDependencyScope.EXTENDS;
@@ -146,7 +166,13 @@ public class GlobalModuleDependenciesManager {
     if (includeNonReexport) {
       if (runtimes) {
         for (SLanguage l : module.getUsedLanguages()) {
-          if (l.getSourceModule() == null) continue;
+          if (l.getSourceModule() == null) {
+            if (!checked) {
+              continue;
+            } else {
+              throw new AbsentDependencyException(l);
+            }
+          }
           for (SModuleReference runtimeRef : l.getLanguageRuntimes()) {
             SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
             if (runtime != null) {
@@ -185,13 +211,22 @@ public class GlobalModuleDependenciesManager {
      */
     EXECUTE(true, true);
 
-
     public boolean runtimes;
     public boolean reexportAll;
 
     Deptype(boolean runtimes, boolean reexportAll) {
       this.runtimes = runtimes;
       this.reexportAll = reexportAll;
+    }
+  }
+
+  public final static class AbsentDependencyException extends Exception {
+    public AbsentDependencyException(@NotNull SDependency unresolvableDep) {
+      super("The dependency cannot be resolved " + unresolvableDep);
+    }
+
+    public AbsentDependencyException(@NotNull SLanguage languageWithoutSource) {
+      super("SLanguage's source module cannot be resolved " + languageWithoutSource);
     }
   }
 }

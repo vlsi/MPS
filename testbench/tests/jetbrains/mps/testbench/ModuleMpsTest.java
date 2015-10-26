@@ -16,7 +16,9 @@
 package jetbrains.mps.testbench;
 
 import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.persistence.PersistenceUtil.InMemoryStreamDataSource;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
@@ -32,12 +34,25 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.TestLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.After;
+import org.junit.Assert;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -100,8 +115,21 @@ public class ModuleMpsTest extends CoreMpsTest {
   }
 
   // invoked in write action once new module is created
+  @Hack
   protected void populate(AbstractModule module) {
     // no-op, subclasses may add whatever appropriate to the newly created module
+    try {
+      if (module instanceof Language || module instanceof Solution) {
+        // HACK. With used languages of a module being derived from that of owned models,
+        // we need a model to keep this imports
+        InMemoryStreamDataSource ds = new InMemoryStreamDataSource();
+        SModelBase m = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().create(ds, Collections.singletonMap(
+            ModelFactory.OPTION_MODELNAME, "model-for-language-imports"));
+        module.registerModel(m);
+      }
+    } catch (IOException ex) {
+      throw new RuntimeException(ex);
+    }
   }
 
   private int getNewId() {
@@ -118,24 +146,31 @@ public class ModuleMpsTest extends CoreMpsTest {
     return createLanguageFromDescriptor(languageDescriptor);
   }
 
-  private LanguageDescriptor createLanguageDescriptor(final ModuleId id, final String name) {
+  @NotNull
+  private LanguageDescriptor createLanguageDescriptor(final SModuleId id, final String name, SModuleReference... runtimes) {
     LanguageDescriptor descriptor = new LanguageDescriptor();
     descriptor.setNamespace(name);
-    descriptor.setId(id);
+    descriptor.setId(ModuleId.fromString(id.toString()));
+    descriptor.getRuntimeModules().addAll(Arrays.asList(runtimes));
     return descriptor;
   }
 
-  private LanguageDescriptor createLanguageDescriptor() {
+  @NotNull
+  private LanguageDescriptor createLanguageDescriptor(SModuleReference... runtimes) {
     String id = UUID.randomUUID().toString();
-    return createLanguageDescriptor(ModuleId.fromString(id), TEST_PREFIX_LANG + "_" + getNewId() + "_" + id);
+    return createLanguageDescriptor(ModuleId.fromString(id), TEST_PREFIX_LANG + "_" + getNewId() + "_" + id, runtimes);
   }
 
   protected Language createLanguage() {
     return createLanguageFromDescriptor(createLanguageDescriptor());
   }
 
-  protected Language createLanguage(final ModuleId id, final String name) {
-    return createLanguageFromDescriptor(createLanguageDescriptor(id, name));
+  protected Language createLanguage(SModuleReference... runtimes) {
+    return createLanguageFromDescriptor(createLanguageDescriptor(runtimes));
+  }
+
+  protected Language createLanguage(final SModuleId id, final String name, SModuleReference... runtimes) {
+    return createLanguageFromDescriptor(createLanguageDescriptor(id, name, runtimes));
   }
 
   private Language createLanguageFromDescriptor(final LanguageDescriptor descriptor) {
@@ -179,5 +214,42 @@ public class ModuleMpsTest extends CoreMpsTest {
         getTestRepository().unregisterModule(module, OWNER);
       }
     });
+  }
+
+  protected void addUsedLanguage(AbstractModule client, Language toUse) {
+    addUsedLanguageImpl(client, toUse.getModuleReference(), false);
+  }
+
+  protected void addUsedDevKit(AbstractModule client, DevKit toUse) {
+    addUsedLanguageImpl(client, toUse.getModuleReference(), true);
+  }
+
+  @Hack
+  private void addUsedLanguageImpl(final AbstractModule client, final SModuleReference toUse, boolean isDevKit) {
+    for (SModel m : client.getModels()) {
+      if ("model-for-language-imports".equals(m.getModelName())) {
+        // HACK. We set update mode of model data to prevent event dispatching
+        // which otherwise fails in ModelsEventsCollector, registered as command listener, with a check that changes happen inside command.
+        // however, GlobalModelAccess, active during tests, doesn't support commands and listeners, and thus ModelsEventsCollector treats
+        // any change as 'outside command' change, and fails.
+        ((SModelBase) m).getSModel().enterUpdateMode();
+        if (isDevKit) {
+          ((SModelInternal) m).addDevKit(toUse);
+        } else {
+          ((SModelInternal) m).addLanguage(MetaAdapterFactory.getLanguage(toUse));
+        }
+        ((SModelBase) m).getSModel().leaveUpdateMode();
+        // HACK.
+        // DependencyUtil.build looks into dependencies between module descriptors, so we mimic them there,
+        // although the right solution is to <strikeout>throw DependencyUtil away</strikeout> rewrite DependencyUtil to use SModule API
+        if (isDevKit) {
+          client.getModuleDescriptor().getUsedDevkits().add(toUse);
+        } else {
+          client.getModuleDescriptor().getUsedLanguages().add(toUse);
+        }
+        return;
+      }
+    }
+    Assert.fail("No model to keep used language in the module " + client.getModuleName());
   }
 }

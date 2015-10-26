@@ -1211,6 +1211,9 @@
                 </node>
                 <node concept="liA8E" id="47fY$PLJDII" role="2OqNvi">
                   <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
+                  <node concept="Xl_RD" id="3FVfMMI1WBL" role="37wK5m">
+                    <property role="Xl_RC" value="mps-build" />
+                  </node>
                   <node concept="Xl_RD" id="47fY$PLJDIJ" role="37wK5m">
                     <property role="Xl_RC" value="jetbrains.mps.build" />
                   </node>

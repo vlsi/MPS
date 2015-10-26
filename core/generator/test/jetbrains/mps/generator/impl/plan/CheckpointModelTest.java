@@ -38,6 +38,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.PathManager;
 import org.hamcrest.CoreMatchers;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -70,8 +71,8 @@ public class CheckpointModelTest {
 
   @BeforeClass
   public static void setup() {
-    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().withWorkbenchPath());
-    mpsProject = ourEnvironment.openProject(new File(System.getProperty("user.dir")));
+    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    mpsProject = ourEnvironment.openProject(new File(PathManager.getUserDir()));
   }
 
   @AfterClass

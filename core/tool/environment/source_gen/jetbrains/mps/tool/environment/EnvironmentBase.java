@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 
@@ -138,7 +139,11 @@ public abstract class EnvironmentBase implements Environment {
     if (isEmptyString(System.getProperty(PLUGINS_PATH))) {
       setPluginPath();
       // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-      System.setProperty("idea.load.plugins.id", IterableUtils.join(config.getPlugins(), ","));
+      System.setProperty("idea.load.plugins.id", IterableUtils.join(SetSequence.fromSet(config.getPlugins()).select(new ISelector<PluginDescriptor, String>() {
+        public String select(PluginDescriptor it) {
+          return it.getId();
+        }
+      }), ","));
     }
   }
 

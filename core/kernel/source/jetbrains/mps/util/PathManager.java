@@ -224,4 +224,8 @@ public class PathManager {
   public static String getPreInstalledPluginsPath() {
     return getHomePath() + File.separator + PLUGINS_PATH;
   }
+
+  public static String getUserDir() {
+    return System.getProperty("user.dir");
+  }
 }

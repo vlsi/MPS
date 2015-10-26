@@ -17,10 +17,12 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -132,9 +134,8 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   @Test
   public void testPluginSolutionIsLoadable() {
-    final Solution solution = createSolution();
+    final Solution solution = createSolution(SolutionKind.PLUGIN_CORE);
     addClassTo(solution);
-    solution.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -146,16 +147,15 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   @Test
   public void testNotLoadableDepsAreNotLoadable() {
-    final Solution solution = createSolution();
+    final Solution solution = createSolution(SolutionKind.NONE);
     addClassTo(solution);
-    solution.getModuleDescriptor().setKind(SolutionKind.NONE);
     final Language l1 = createLanguage();
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        myManager.reloadModule(solution);
         l1.addDependency(solution.getModuleReference(), false);
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        myManager.reloadModule(solution);
 //        Assert.assertFalse(classIsLoadableFromModule(l1)); // the class must be available already here FIXME: enable after 3.2
       }
     });
@@ -163,13 +163,12 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   @Test
   public void testNonPluginSolutionIsNotLoadable() {
-    final Solution solution = createSolution();
+    final Solution solution = createSolution(SolutionKind.NONE);
     addClassTo(solution);
-    solution.getModuleDescriptor().setKind(SolutionKind.NONE);
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        myManager.reloadModule(solution);
 //        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
       }
     });
@@ -177,36 +176,37 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
   @Test
   public void testReloadNonLoadableSolution() {
-    final Solution solution = createSolution();
-    solution.getModuleDescriptor().setKind(SolutionKind.NONE);
+    final Solution solution = createSolution(SolutionKind.NONE);
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         solution.reload();
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        myManager.reloadModule(solution);
       }
     });
   }
 
   @Test
   public void testReloadingSolutionKinds() {
-    final Solution solution = createSolution();
+    final Solution solution = createSolution(SolutionKind.NONE);
     addClassTo(solution);
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        solution.getModuleDescriptor().setKind(SolutionKind.NONE);
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        SolutionDescriptor moduleDescriptor = solution.getModuleDescriptor();
+        assert moduleDescriptor != null;
+        moduleDescriptor.setKind(SolutionKind.NONE);
+        myManager.reloadModule(solution);
         Assert.assertTrue(myManager.getModulesWatcher().isModuleWatched(solution));
 //        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
-        solution.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        moduleDescriptor.setKind(SolutionKind.PLUGIN_CORE);
+        myManager.reloadModule(solution);
         Assert.assertTrue(classIsLoadableFromModule(solution));
         Assert.assertTrue(myManager.getModulesWatcher().isModuleWatched(solution));
-        solution.getModuleDescriptor().setKind(SolutionKind.NONE);
-        ClassLoaderManager.getInstance().reloadModule(solution);
+        moduleDescriptor.setKind(SolutionKind.NONE);
+        myManager.reloadModule(solution);
         Assert.assertTrue(myManager.getModulesWatcher().isModuleWatched(solution));
-//        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
+        //        Assert.assertFalse(classIsLoadableFromModule(solution)); FIXME: enable after 3.2
       }
     });
   }
@@ -236,7 +236,9 @@ public class ModulesReloadTest extends ModuleMpsTest {
         addClassTo(s);
         l.addDependency(s.getModuleReference(), false);
 //        Assert.assertFalse(classIsLoadableFromModule(l)); FIXME turn on after 3.2
-        s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
+        SolutionDescriptor moduleDescriptor = s.getModuleDescriptor();
+        assert moduleDescriptor != null;
+        moduleDescriptor.setKind(SolutionKind.PLUGIN_CORE);
         s.reload();
         Assert.assertTrue(classIsLoadableFromModule(l)); // the class must be available already here
       }
@@ -246,7 +248,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   @Test
   public void testNonLoadableDepsThrows() {
     final Language l = createLanguage();
-    final Solution s = createSolution();
+    final Solution s = createSolution(SolutionKind.NONE);
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -326,7 +328,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   }
 
   @Test
-  public void testModuleRecreation() {
+  public void testModuleRecreation1() {
     final Language l1 = createLanguage();
     final Language[] l2 = new Language[1];
     getModelAccess().runWriteAction(new Runnable() {
@@ -376,6 +378,55 @@ public class ModulesReloadTest extends ModuleMpsTest {
       }
     });
     Assert.assertTrue(classIsLoadableFromModule(l[0]));
+  }
+
+  @Test
+  public void testLanguageRuntimeIsLoadable() {
+    final Reference<Language> language = new Reference<Language>();
+    final Reference<Solution> runtime = new Reference<Solution>();
+    final Reference<Solution> solution = new Reference<Solution>();
+    getModelAccess().runWriteAction(new Runnable() {
+      @SuppressWarnings("ConstantConditions")
+      @Override
+      public void run() {
+        runtime.set(createSolution(SolutionKind.PLUGIN_OTHER));
+        addClassTo(runtime.get());
+        Assert.assertTrue(classIsLoadableFromModule(runtime.get()));
+      }
+    });
+    language.set(createLanguage(runtime.get().getModuleReference()));
+    solution.set(createSolution(SolutionKind.PLUGIN_OTHER));
+    addUsedLanguage(solution.get(), language.get());
+    getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        solution.get().reload();
+        Assert.assertTrue(classIsLoadableFromModule(solution.get()));
+      }
+    });
+  }
+
+  @Test
+  public void testLanguageRuntimeIsReloadable() {
+    final Reference<Language> language = new Reference<Language>();
+    final Reference<Solution> runtime = new Reference<Solution>();
+    final Reference<Solution> solution = new Reference<Solution>();
+    getModelAccess().runWriteAction(new Runnable() {
+      @SuppressWarnings("ConstantConditions")
+      @Override
+      public void run() {
+        runtime.set(createSolution(SolutionKind.PLUGIN_OTHER));
+        addClassTo(runtime.get());
+        Assert.assertTrue(classIsLoadableFromModule(runtime.get()));
+        language.set(createLanguage(runtime.get().getModuleReference()));
+        solution.set(createSolution(SolutionKind.PLUGIN_OTHER));
+        addUsedLanguage(solution.get(), language.get());
+        removeModule(language.get());
+        Language sameLanguage = createLanguage(language.get().getModuleDescriptor().getId(), language.get().getModuleName(), runtime.get().getModuleReference()); // the same
+        solution.get().reload();
+        Assert.assertTrue(classIsLoadableFromModule(solution.get()));
+      }
+    });
   }
 
   @Test
@@ -492,5 +543,13 @@ public class ModulesReloadTest extends ModuleMpsTest {
     public void setCompileInMps(boolean value) {
       myCompileInMps = value;
     }
+  }
+
+  private Solution createSolution(SolutionKind kind) {
+    Solution solution = super.createSolution();
+    SolutionDescriptor moduleDescriptor = solution.getModuleDescriptor();
+    assert moduleDescriptor != null;
+    moduleDescriptor.setKind(kind);
+    return solution;
   }
 }

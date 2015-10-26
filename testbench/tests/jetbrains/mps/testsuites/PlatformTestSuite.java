@@ -39,7 +39,9 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
     jetbrains.mps.vfs.VfsTest.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class  //TODO: move this test to closed repository
-    jetbrains.mps.generator.impl.plan.CheckpointModelTest.class //TODO: in the end, cause dispose enviroment - need to fix tearDown
+    jetbrains.mps.generator.impl.plan.CheckpointModelTest.class
+    // VM: TODO: in the end, cause dispose environment - need to fix tearDown
+    // AP: no, we do not need to do that in suite, check BaseMpsSuite
 })
 public class PlatformTestSuite {
 }

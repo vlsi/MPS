@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.GraphHolder.Graph;
 import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -30,9 +31,11 @@ import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class ModuleUpdater {
@@ -47,6 +50,7 @@ public class ModuleUpdater {
   private final GraphHolder<SModuleReference> myDepGraph = new GraphHolder<SModuleReference>();
   private final ReferenceStorage<ReloadableModule> myRefStorage;
   private final SRepository myRepository;
+  private final Map<ReloadableModule, AbsentDependencyException> myModulesWithAbsentDeps = new HashMap<ReloadableModule, AbsentDependencyException>();
 
   public ModuleUpdater(SRepository repository, Condition<ReloadableModule> watchableCondition, ReferenceStorage<ReloadableModule> refStorage) {
     myRepository = repository;
@@ -118,6 +122,7 @@ public class ModuleUpdater {
       int wasEdges = myDepGraph.getEdgesCount();
       int wasVertices = myDepGraph.getVerticesCount();
 
+      myModulesWithAbsentDeps.clear();
       boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
       updateRemoved(myModulesToRemove);
       updateAdded(myModulesToAdd);
@@ -132,6 +137,10 @@ public class ModuleUpdater {
     }
   }
 
+  public Map<ReloadableModule, AbsentDependencyException> getModulesWithAbsentDeps() {
+    return Collections.unmodifiableMap(myModulesWithAbsentDeps);
+  }
+
   private void updateRemoved(Set<? extends SModuleReference> modulesToRemove) {
     for (SModuleReference mRef : modulesToRemove) {
       if (!myDepGraph.contains(mRef)) continue;
@@ -141,7 +150,6 @@ public class ModuleUpdater {
   }
 
   private void updateAdded(final Set<? extends ReloadableModule> modulesToAdd) {
-    if (modulesToAdd.isEmpty()) return;
     updateAddedVertices(modulesToAdd);
     updateAddedEdges(modulesToAdd);
   }
@@ -170,7 +178,7 @@ public class ModuleUpdater {
     for (ReloadableModule moduleToAdd : modulesToAdd) {
       putModuleDeps(moduleToAdd);
     }
-    updateBackDeps(modulesToAdd);
+    updateBackDepsAndReviewDependencies(modulesToAdd);
   }
 
   private boolean updateReloadedVertices(Set<? extends ReloadableModule> modulesToReload) {
@@ -195,7 +203,13 @@ public class ModuleUpdater {
     for (ReloadableModule module : modulesToReload) {
       SModuleReference mRef = module.getModuleReference();
       Collection<? extends SModuleReference> currentDeps = new HashSet<SModuleReference>(myDepGraph.getOutgoingEdges(mRef));
-      Collection<? extends ReloadableModule> newModuleDeps = getModuleDeps(module);
+      Collection<? extends ReloadableModule> newModuleDeps;
+      try {
+        newModuleDeps = getModuleDeps(module);
+      } catch (AbsentDependencyException e) {
+        assert myModulesWithAbsentDeps.containsKey(module);
+        return true;
+      }
       for (ReloadableModule moduleDep : newModuleDeps) {
         SModuleReference depRef = moduleDep.getModuleReference();
         if (!currentDeps.contains(depRef)) {
@@ -218,7 +232,12 @@ public class ModuleUpdater {
   private void putModuleDeps(@NotNull ReloadableModule module) {
     Collection<? extends SModuleReference> allRefs = myDepGraph.getVertices();
     SModuleReference refToAdd = module.getModuleReference();
-    Collection<? extends SModule> deps = getModuleDeps(module);
+    Collection<? extends SModule> deps;
+    try {
+      deps = getModuleDeps(module);
+    } catch (AbsentDependencyException e) {
+      return;
+    }
     for (SModule dep : deps) {
       SModuleReference depRef = dep.getModuleReference();
       if (allRefs.contains(depRef)) {
@@ -230,11 +249,25 @@ public class ModuleUpdater {
     }
   }
 
-  private void updateBackDeps(Set<? extends ReloadableModule> modules) {
+  /**
+   * Here we are updating references from existing modules to the newly added modules
+   * Also we are going through all the modules in the repository and checking that their dependencies do exist.
+   * It checks every module in the current graph and tracks whether it has some unresolved dependencies.
+   * If so it puts it to the map {@link #myModulesWithAbsentDeps}.
+   *
+   * @param modules -- newly added modules
+   */
+  private void updateBackDepsAndReviewDependencies(Set<? extends ReloadableModule> modules) {
     for (SModuleReference backRef : myDepGraph.getVertices()) {
       ReloadableModule reloadableModule = myRefStorage.resolveRef(backRef);
       assert reloadableModule != null;
-      Collection<? extends ReloadableModule> deps = getModuleDeps(reloadableModule);
+      Collection<? extends ReloadableModule> deps;
+      try {
+        deps = getModuleDeps(reloadableModule);
+      } catch (AbsentDependencyException e) {
+        myModulesWithAbsentDeps.put(reloadableModule, e);
+        continue;
+      }
       for (ReloadableModule dep : deps) {
         if (modules.contains(dep)) {
           myDepGraph.addEdge(backRef, dep.getModuleReference());
@@ -243,7 +276,7 @@ public class ModuleUpdater {
     }
   }
 
-  private Collection<ReloadableModule> getModuleDeps(@NotNull ReloadableModule module) {
+  private Collection<ReloadableModule> getModuleDeps(@NotNull ReloadableModule module) throws AbsentDependencyException {
     myRepository.getModelAccess().checkReadAccess();
     if (module.getRepository() == null) return Collections.emptySet();
     Set<ReloadableModule> deps = new LinkedHashSet<ReloadableModule>();
