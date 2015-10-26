@@ -20,6 +20,7 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -68,14 +69,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.imageGen.plugin.PrintNodeRunnable" file="PrintNodeRunnable.java">
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.awt.Graphics2D" />
+    <classNode dependClassName="java.awt.Rectangle" />
+    <classNode dependClassName="java.awt.RenderingHints" />
     <classNode dependClassName="java.awt.image.BufferedImage" />
+    <classNode dependClassName="java.awt.image.RenderedImage" />
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -83,6 +89,8 @@
     <classNode dependClassName="javax.imageio.ImageIO" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.HeadlessEditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />

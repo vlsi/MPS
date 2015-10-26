@@ -20,4 +20,10 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3245637733310318546(final PropertyMacroContext _context) {
     return _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad25283902716L, "node"))).getNodeId().toString();
   }
+  public static Object propertyMacro_GetPropertyValue_1380214350863106265(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11572e9L, "scale"));
+  }
+  public static Object propertyMacro_GetPropertyValue_1380214350863109720(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x132781a3b11568fbL, "imageFormat"));
+  }
 }

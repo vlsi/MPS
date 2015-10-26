@@ -116,6 +116,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   protected void enterCreateMode(RelationDescriptor tab) {
     myLastNode = null;
+    myCallback.changeNode(null); // this is workaround for update tab header icon
     if (myCreateModeCallback != null) {
       myCreateModeCallback.create(tab);
     }

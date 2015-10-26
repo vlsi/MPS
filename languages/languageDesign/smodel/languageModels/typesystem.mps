@@ -11565,5 +11565,75 @@
       <ref role="1YaFvo" to="tp25:4o40NPkYE0z" resolve="Node_PointerOperation" />
     </node>
   </node>
+  <node concept="1YbPZF" id="5m$620fQiLN">
+    <property role="TrG5h" value="typeof_AspectModelRefExpression" />
+    <property role="3GE5qa" value="reference" />
+    <node concept="3clFbS" id="5m$620fQiLO" role="18ibNy">
+      <node concept="1Z5TYs" id="5m$620fQjFf" role="3cqZAp">
+        <node concept="mw_s8" id="5m$620fQjFz" role="1ZfhKB">
+          <node concept="2c44tf" id="5m$620fQjFv" role="mwGJk">
+            <node concept="H_c77" id="5m$620fQjFT" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="5m$620fQjFi" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5m$620fQjCV" role="mwGJk">
+            <node concept="1YBJjd" id="5m$620fQjDn" role="1Z2MuG">
+              <ref role="1YBMHb" node="5m$620fQiLQ" resolve="e" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2NvLDW" id="5m$620fQjQd" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="5m$620fQjQG" role="1ZfhKB">
+          <node concept="2c44tf" id="5m$620fQjQC" role="mwGJk">
+            <node concept="3uibUv" id="5m$620fQjRu" role="2c44tc">
+              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5m$620fQjQg" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5m$620fQjGr" role="mwGJk">
+            <node concept="2OqwBi" id="5m$620fQjID" role="1Z2MuG">
+              <node concept="1YBJjd" id="5m$620fQjGO" role="2Oq$k0">
+                <ref role="1YBMHb" node="5m$620fQiLQ" resolve="e" />
+              </node>
+              <node concept="3TrEf2" id="5m$620fQjMZ" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp25:5m$620fQi1F" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5m$620fQiLQ" role="1YuTPh">
+      <property role="TrG5h" value="e" />
+      <ref role="1YaFvo" to="tp25:5m$620fQi1E" resolve="AspectModelRefExpression" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1KHvivZHrF7">
+    <property role="TrG5h" value="typeof_Model_IsAspectOperation" />
+    <property role="3GE5qa" value="operation.model" />
+    <node concept="3clFbS" id="1KHvivZHrF8" role="18ibNy">
+      <node concept="1Z5TYs" id="1KHvivZHspd" role="3cqZAp">
+        <node concept="mw_s8" id="1KHvivZHspx" role="1ZfhKB">
+          <node concept="2c44tf" id="1KHvivZHspt" role="mwGJk">
+            <node concept="10P_77" id="1KHvivZHspO" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="1KHvivZHspg" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1KHvivZHsmL" role="mwGJk">
+            <node concept="1YBJjd" id="1KHvivZHsns" role="1Z2MuG">
+              <ref role="1YBMHb" node="1KHvivZHrFa" resolve="op" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1KHvivZHrFa" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
+    </node>
+  </node>
 </model>
 

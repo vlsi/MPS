@@ -357,6 +357,9 @@
     <dependency org="lib" name="idea_rt.jar" rev="${idea.platform.version}">
       <artifact name="idea_rt.jar" ext="jar"/>
     </dependency>
+    <dependency org="lib" name="imgscalr-lib-4.2.jar" rev="${idea.platform.version}">
+      <artifact name="imgscalr-lib-4.2.jar" ext="jar"/>
+    </dependency>
     <dependency org="lib" name="forms_rt.jar" rev="${idea.platform.version}">
       <artifact name="forms_rt.jar" ext="jar"/>
     </dependency>
