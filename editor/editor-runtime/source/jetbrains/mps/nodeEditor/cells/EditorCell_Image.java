@@ -113,6 +113,14 @@ public class EditorCell_Image extends EditorCell_Basic {
         myHeight = height;
       }
     }
+
+    if (myDescent < 0) {
+      myDescent = getFontMetrics().getDescent();
+    }
+  }
+
+  private FontMetrics getFontMetrics() {
+    return FontRegistry.getInstance().getFontMetrics(EditorSettings.getInstance().getDefaultEditorFont());
   }
 
   @Override
