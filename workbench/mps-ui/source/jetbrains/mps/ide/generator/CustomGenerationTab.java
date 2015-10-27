@@ -50,7 +50,6 @@ class CustomGenerationTab extends BaseTab implements FacetTab {
     super("Custom generation", IdeIcons.GENERATOR_ICON, "Alternative generation process for models of the module");
     myProject = mpsProject;
     myModuleFacet = moduleFacet;
-    init(); // FIXME ORLY?! Implement an interface we need, and don't forget to invoke its method, for us.
   }
 
   @Override

@@ -50,8 +50,6 @@ public class IdeaPluginModuleFacetTab extends BaseTab implements FacetTab {
 
     myIdeaPluginModuleFacet = moduleFacet;
     myNewIdeaPluginModuleFacet = cloneFacet(moduleFacet);
-
-    init();
   }
 
   @Override

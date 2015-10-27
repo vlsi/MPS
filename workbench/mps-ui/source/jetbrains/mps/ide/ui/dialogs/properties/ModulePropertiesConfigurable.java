@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
-import com.intellij.facet.Facet;
 import com.intellij.icons.AllIcons;
 import com.intellij.ide.util.BrowseFilesListener;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -25,7 +24,6 @@ import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
-import com.intellij.openapi.vcs.Ring.IntegerRing;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.CheckboxTree;
@@ -123,7 +121,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
-import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.util.Condition;
 
@@ -189,15 +186,18 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     myModuleDescriptor = myModule.getModuleDescriptor();
     myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
 
+    registerTabs(new ModuleCommonTab());
+
     addTab(new ModuleCommonTab());
     if (!(myModule instanceof DevKit)) {
       final ModuleDependenciesTab moduleDependenciesTab = new ModuleDependenciesTab();
-      addTab(moduleDependenciesTab);
-      addTab(new ModuleUsedLanguagesTab());
-      if (myModule instanceof Language)
-        addTab(new RuntimeTab());
-      if (myModule instanceof Generator)
-        addTab(new GeneratorAdvancesTab((Generator) myModule, new GeneratorDependencyProvider(moduleDependenciesTab)));
+      registerTabs(moduleDependenciesTab, new ModuleUsedLanguagesTab());
+      if (myModule instanceof Language) {
+        registerTabs(new RuntimeTab());
+      }
+      if (myModule instanceof Generator) {
+        registerTabs(new GeneratorAdvancesTab((Generator) myModule, new GeneratorDependencyProvider(moduleDependenciesTab)));
+      }
     }
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
       if (!(moduleFacet instanceof ModuleFacetBase)) {
@@ -206,11 +206,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       ModuleFacetBase moduleFacetBase = (ModuleFacetBase) moduleFacet;
       Tab facetTab = myFacetTabsPersistence.getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
       if (facetTab != null) {
-        addTab(facetTab);
+        registerTabs(facetTab);
       }
     }
 
-    addTab(new AddFacetsTab());
+    registerTabs(new AddFacetsTab());
   }
 
   @Override
@@ -229,7 +229,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   @Nls
   @Override
   public String getDisplayName() {
-    return String.format(PropertiesBundle.message("mps.properties.module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
+    return String.format(PropertiesBundle.message("module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
   }
 
   private FindUsagesScope getModuleAndOwnedModelsScope() {
@@ -293,7 +293,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         myModuleDependenciesTab = new ModuleDependenciesTab();
         return myModuleDependenciesTab.getTabComponent();
       } else {
-        myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor);
+        myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor, myProject.getRepository());
         Disposer.register(ModulePropertiesConfigurable.this, myEntriesEditor);
         return myEntriesEditor.getComponent();
       }
@@ -323,7 +323,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         int row = 0;
 
-        JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
+        JBLabel label = new JBLabel(PropertiesBundle.message("module.genoutput.title"));
         panel.add(label, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
@@ -597,9 +597,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private AccessoriesModelsTableModel myAccessoriesModelsTableModel;
 
     public RuntimeTab() {
-      super(PropertiesBundle.message("mps.properties.runtime.title"), General.Runtime,
-          PropertiesBundle.message("mps.properties.runtime.tip"));
-      init();
+      super(PropertiesBundle.message("mps.properties.runtime.title"), General.Runtime, PropertiesBundle.message("mps.properties.runtime.tip"));
     }
 
     @Override
@@ -928,11 +926,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
-      super(PropertiesBundle.message("mps.properties.module.generator.title"), IdeIcons.DEFAULT_ICON,
-          PropertiesBundle.message("mps.properties.module.generator.tip"));
+      super(PropertiesBundle.message("module.generator.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("module.generator.tip"));
       myGenerator = generator;
       myDepGenerators = depGenerators;
-      init();
     }
 
     @Override
@@ -1132,8 +1128,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       JPanel generationOptions = new JPanel();
       generationOptions.setLayout(new FlowLayout(FlowLayout.LEFT));
-      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("mps.properties.module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
-      myGenerateTemplates.setToolTipText(PropertiesBundle.message("mps.properties.module.generator.gentemplates.tip"));
+      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
+      myGenerateTemplates.setToolTipText(PropertiesBundle.message("module.generator.gentemplates.tip"));
       myReflectiveQueries = new JBCheckBox("Reflective queries", genDescr.isReflectiveQueries());
       myReflectiveQueries.setToolTipText("Invoke generated queries via reflection. Compatibility option, turn off and rebuild generator");
       generationOptions.add(myGenerateTemplates);
@@ -1279,8 +1275,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   public class AddFacetsTab extends BaseTab {
 
     public AddFacetsTab() {
-      super("Facets", AllIcons.General.Settings, "Add facets");
-      init();
+      super(PropertiesBundle.message("module.facets.title"), AllIcons.General.Settings, PropertiesBundle.message("module.facets.tip"));
     }
 
     @Override
@@ -1311,8 +1306,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           sModuleFacet = (ModuleFacetBase) newInstance;
         }
         String facetPresentation = sModuleFacet.getFacetPresentation();
+        String fmt = PropertiesBundle.message("module.facets.checkbox.title");
         facetPresentation = applicableFacetTypes.contains(facet)
-            ? String.format("%s (recommended)", facetPresentation) : facetPresentation;
+            ? String.format(fmt, facetPresentation) : facetPresentation;
         FacetCheckBox checkBox = existingFacetTypes.containsKey(facet)
             ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(facet, sModuleFacet), facetPresentation)
             : new FacetCheckBox(AddFacetsTab.this, facet, facetPresentation);
@@ -1432,6 +1428,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         }
         if (myFacetTab == null) {
           myFacetTab = myFacetTabsPersistence.getFacetTab(myFacetType, myFacet);
+          if (myFacetTab != null) {
+            // perhaps, would be better if MPSPropertiesConfigurable is responsible for tab intialization,
+            // and keeps track of which one is already initialized to avoid multiple initializations.
+            myFacetTab.init();
+          }
         }
         if (myFacetTab != null) {
           ModulePropertiesConfigurable.this.insertTab(myFacetTab, ModulePropertiesConfigurable.this.indexOfTab(myAnchorTab));

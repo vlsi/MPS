@@ -65,6 +65,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
 import javax.swing.JComponent;
@@ -80,11 +81,15 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-
+/**
+ * Configuration page consisting of {@link Tab tabs}.
+ */
 public abstract class MPSPropertiesConfigurable implements Configurable, Disposable {
   private TabbedPaneWrapper myTabbedPaneWrapper = new TabbedPaneWrapper(this);
   private List<Tab> myTabs = new ArrayList<Tab>();
@@ -120,10 +125,33 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   public void dispose() {
   }
 
+  /**
+   * Subclasses may choose whether to instantiate initial tabs on demand with {@link #createInitialTabs()}
+   * or register them at once with this method. Supplied tabs would get a chance to build UI
+   * at a proper moment some time later (with {@link Modifiable#init()} call.
+   *
+   * The method may be invoked few times before the UI is created, registered tabs sum up.
+   * @param tabs initial set of tabs
+   */
+  protected void registerTabs(Tab... tabs) {
+    myTabs.addAll(Arrays.asList(tabs));
+  }
+
+  /**
+   * Provides initial set of tabs to appear in the UI. Subclasses may override or could use {@link #registerTabs(Tab...)} instead.
+   * Note, tabs supplied would get {@link Modifiable#init() initialized} from EDT thread some moment later, when deemed appropriate
+   * (i.e. there's no guarantee all tabs get initialized, chances are implementation may opt to initialize visible tabs only)
+   */
+  protected Collection<Tab> createInitialTabs() {
+    return myTabs;
+  }
+
   @Override
   public final JComponent createComponent() {
-    for (Tab tab : myTabs)
+    for (Tab tab : createInitialTabs()) {
+      tab.init();
       addTab(tab);
+    }
     return myTabbedPaneWrapper.getComponent();
   }
 
@@ -258,7 +286,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     public CommonTab() {
       super(PropertiesBundle.message("mps.properties.common.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.common.tip"));
-      init();
     }
 
     protected abstract String getConfigItemName();
@@ -310,7 +337,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     public DependenciesTab() {
       super(PropertiesBundle.message("mps.properties.dependencies.title"), General.Dependencies, PropertiesBundle.message("mps.properties.dependencies.tip"));
-      init();
     }
 
     protected abstract DependTableModel getDependTableModel();
@@ -413,7 +439,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     public UsedLanguagesTab() {
       super(PropertiesBundle.message("mps.properties.usedlanguages.title"), IdeIcons.LANGUAGE_ICON, PropertiesBundle.message("mps.properties.usedlanguages.tip"));
-      init();
     }
 
     protected abstract UsedLangsTableModel getUsedLangsTableModel();
