@@ -3887,7 +3887,6 @@
         <module file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" bootstrap="true" />
-        <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" bootstrap="true" />
         <module file="${mps_home}/core/java-stub/jetbrains.mps.java.stub.msd" bootstrap="true" />
         <module file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" bootstrap="true" />
@@ -3907,7 +3906,6 @@
         <module file="${mps_home}/languages/languageDesign/findUsages/jetbrains.mps.lang.findUsages.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/jetbrains.mps.lang.generator.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/generator/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" bootstrap="true" />
-        <module file="${mps_home}/languages/languageDesign/generator/languages/plan/jetbrains.mps.lang.generator.plan.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/migration/jetbrains.mps.lang.migration.mpl" bootstrap="true" />
         <module file="${mps_home}/core/migration-runtime/jetbrains.mps.lang.migration.runtime.msd" bootstrap="true" />
@@ -3951,11 +3949,13 @@
         <module file="${mps_home}/core/tool/environment/jetbrains.mps.core.tool.environment.msd" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" />
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
+        <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" />
         <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" />
         <module file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" />
         <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
         <module file="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/jetbrains.mps.lang.editor.imageGen.mpl" />
         <module file="${mps_home}/languages/languageDesign/generator/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" />
+        <module file="${mps_home}/languages/languageDesign/generator/languages/plan/jetbrains.mps.lang.generator.plan.mpl" />
         <module file="${mps_home}/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" bootstrap="true" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
         <module file="${mps_home}/languages/languageDesign/make/languages/reduced/jetbrains.mps.make.reduced.mpl" />
