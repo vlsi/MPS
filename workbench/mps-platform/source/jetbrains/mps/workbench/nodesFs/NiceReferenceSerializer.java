@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,30 +26,35 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * Provide nice reference presentation for nodes/models/modules using names, be careful - can be not persistent in case of node/model/module changes.
  * Format: {module_name}/{model_name}/{node_presentation}. In case of names ambiguity format becomes name~{id} like DOS fs.
  */
-public class NiceReferenceSerializer {
+/*package*/ class NiceReferenceSerializer {
   private static final String SEP = "/";
+  private final SRepository myRepository;
+
+  public NiceReferenceSerializer(SRepository repository) {
+    myRepository = repository;
+  }
 
   // module
-  public static String serializeModule(SModule module) {
-    return serialize(module, module.getRepository().getModules(), MODULE_TARGET);
+  public String serializeModule(SModule module) {
+    return serialize(module, myRepository.getModules(), MODULE_TARGET);
   }
 
   @Nullable
-  public static SModule deserializeModule(SRepository repo, String s) {
-    return deserialize(s, repo.getModules(), MODULE_TARGET);
+  public SModule deserializeModule(String s) {
+    return deserialize(s, myRepository.getModules(), MODULE_TARGET);
   }
 
   // model
-  public static String serializeModel(SModel model) {
+  public String serializeModel(SModel model) {
     return serializeModule(model.getModule()) + SEP + serialize(model, model.getModule().getModels(), MODEL_TARGET);
   }
 
   @Nullable
-  public static SModel deserializeModel(SRepository repo, String s) {
+  public SModel deserializeModel(String s) {
     if (!s.contains("/")) {
       return null;
     }
-    SModule module = deserializeModule(repo, s.substring(0, s.lastIndexOf(SEP)));
+    SModule module = deserializeModule(s.substring(0, s.lastIndexOf(SEP)));
     if (module == null) {
       return null;
     }
@@ -57,16 +62,16 @@ public class NiceReferenceSerializer {
   }
 
   // node
-  public static String serializeNode(SNode node) {
+  public String serializeNode(SNode node) {
     return serializeModel(node.getModel()) + SEP + serialize(node, node.getModel().getRootNodes(), NODE_TARGET);
   }
 
   @Nullable
-  public static SNode deserializeNode(SRepository repo, String s) {
+  public SNode deserializeNode(String s) {
     if (!s.contains(SEP)) {
       return null;
     }
-    SModel model = deserializeModel(repo, s.substring(0, s.lastIndexOf(SEP)));
+    SModel model = deserializeModel(s.substring(0, s.lastIndexOf(SEP)));
     if (model == null) {
       return null;
     }
@@ -99,23 +104,23 @@ public class NiceReferenceSerializer {
   private static final SerializerTarget<SNode> NODE_TARGET = new SerializerTarget<SNode>() {
     @Override
     public String getName(SNode e) {
-      return "" + e.getPresentation();
+      return String.valueOf(e.getPresentation());
     }
   };
   private static final SerializerTarget<SModel> MODEL_TARGET = new SerializerTarget<SModel>() {
     @Override
     public String getName(SModel e) {
-      return e.getModelName();
+      return String.valueOf(e.getModelName());
     }
   };
   private static final SerializerTarget<SModule> MODULE_TARGET = new SerializerTarget<SModule>() {
     @Override
     public String getName(SModule e) {
-      return e.getModuleName();
+      return String.valueOf(e.getModuleName());
     }
   };
 
-  private static interface SerializerTarget<T> {
+  private interface SerializerTarget<T> {
     @NotNull
     String getName(T e);
   }
