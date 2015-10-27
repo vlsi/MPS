@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -94,7 +96,11 @@ public final class VisibilityUtil {
   }
   public static boolean isMember(SNode classifier, @NotNull SNode member) {
     // hiding is not checked here 
-    return new ClassifierAndSuperClassifiersScope(classifier).getClassifierNodes().contains(SNodeOperations.getNodeAncestor(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false));
+    return ListSequence.fromList(((List<SNode>) BHReflection.invoke(classifier, SMethodTrimmedId.create("getExtendedClassifierTypes", null, "1UeCwxlWKny")))).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+      }
+    }).contains(SNodeOperations.getNodeAncestor(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false));
   }
   public static boolean isLocalMember(@NotNull SNode context, @NotNull final SNode member) {
     // hiding and shadowing are not checked here 
