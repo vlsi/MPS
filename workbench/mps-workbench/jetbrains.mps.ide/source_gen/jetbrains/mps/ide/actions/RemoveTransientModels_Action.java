@@ -8,9 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.TransientModelsProvider;
 
 public class RemoveTransientModels_Action extends BaseAction {
@@ -31,7 +29,6 @@ public class RemoveTransientModels_Action extends BaseAction {
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -40,9 +37,10 @@ public class RemoveTransientModels_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MessagesViewTool.class).clear();
-    TransientModelsProvider component = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(TransientModelsProvider.class);
-    component.removeAllTransient();
+    TransientModelsProvider component = event.getData(CommonDataKeys.PROJECT).getComponent(TransientModelsProvider.class);
+    if (component != null) {
+      component.removeAllTransients(true);
+    }
     System.gc();
   }
 }

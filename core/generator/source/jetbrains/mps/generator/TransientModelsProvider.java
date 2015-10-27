@@ -63,7 +63,7 @@ public class TransientModelsProvider {
     myTransientSwapOwner = swapOwner;
   }
 
-  protected void clearAll() {
+  protected void clearAll(final boolean dropCheckpoint) {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -71,6 +71,11 @@ public class TransientModelsProvider {
         myModuleMap.clear();
         for (TransientModelsModule m : toRemove) {
           myRepository.unregisterModule(m, myOwner);
+        }
+        if (dropCheckpoint && myCheckpointsModule != null) {
+          myRepository.unregisterModule(myCheckpointsModule, myOwner);
+          myCheckpointsModule = null;
+          myEnvTemp = null;
         }
       }
     });
@@ -181,7 +186,11 @@ public class TransientModelsProvider {
   }
 
   public void removeAllTransient() {
-    clearAll();
+    clearAll(false);
+  }
+
+  public void removeAllTransients(boolean includeCheckpoints) {
+    clearAll(includeCheckpoints);
   }
 
   public Iterable<TransientModelsModule> getModules() {
