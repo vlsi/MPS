@@ -40,12 +40,14 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import jetbrains.mps.icons.MPSIcons.General;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
@@ -70,7 +72,6 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellEditor;
@@ -99,9 +100,10 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   protected final void forceCancelCloseDialog() {
-    if(myParentForCallBack == null)
+    if(myParentForCallBack == null) {
       return;
-    SwingUtilities.invokeLater(new Runnable() {
+    }
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         myParentForCallBack.doCancelAction();
@@ -189,11 +191,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   @Override
   public void apply() throws ConfigurationException {
-    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
+    ThreadUtils.assertEDT();
+    //see MPS-18743
+    new SaveRepositoryCommand(myProject.getRepository()).execute();
+    myProject.getModelAccess().executeCommand(new Runnable() {
       @Override
       public void run() {
-        //see MPS-18743
-        myProject.getRepository().saveAll();
         for (Tab tab : myTabs) {
           tab.apply();
         }
