@@ -367,7 +367,7 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_5735715048356169572(final SourceSubstituteMacroNodesContext _context) {
     final SModule languageModule = _context.getOriginalInputModel().getModule();
-    return Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.customAspect.LanguageAspectsEP").getObjects()).where(new IWhereFilter<LanguageAspectDescriptor>() {
+    return Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects()).where(new IWhereFilter<LanguageAspectDescriptor>() {
       public boolean accept(LanguageAspectDescriptor it) {
         return it.hasAspect(languageModule) && it.getGenerator() != null;
       }
