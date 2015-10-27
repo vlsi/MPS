@@ -37,5 +37,7 @@
     <orderEntry type="library" scope="TEST" name="lang.test.util" level="project" />
     <orderEntry type="library" scope="TEST" name="lang.test.matcher" level="project" />
     <orderEntry type="library" scope="TEST" name="lang.test.runtime" level="project" />
+    <orderEntry type="library" name="mps-tool" level="project" />
+    <orderEntry type="library" name="mps-closures" level="project" />
   </component>
 </module>

@@ -23,6 +23,9 @@
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
   <idea-version since-build="139.1117" until-build="142.1"/>
 
+  <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
+  <depends optional="true" config-file="otherIdes-support.xml">com.intellij.modules.ultimate</depends>
+
   <application-components>
     <component>
       <interface-class>jetbrains.mps.ide.vfs.FileSystemProviderComponent</interface-class>
@@ -101,6 +104,9 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.idea.core.facet.AutoAddMPSFacet</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
     <!--
@@ -111,9 +117,9 @@
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>
-    </component>
+    <!--<component>-->
+      <!--<implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>-->
+    <!--</component>-->
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
@@ -215,6 +221,15 @@
                     anchor="first"/>
       <keyboard-shortcut first-keystroke="ctrl alt shift M" keymap="$default"/>
     </action>
+
+    <action id="jetbrains.mps.idea.build.GenerateModuleInProcessAction"
+            class="jetbrains.mps.idea.build.GenerateModuleInProcessAction">
+      <add-to-group group-id="ProjectViewPopupMenu"/>
+    </action>
+    <action id="jetbrains.mps.idea.build.GenerateModelInProcessAction"
+                     class="jetbrains.mps.idea.build.GenerateModelInProcessAction">
+    <add-to-group group-id="ProjectViewPopupMenu"/>
+  </action>
 
     <group id="jetbrains.mps.NewGroup">
       <add-to-group group-id="NewGroup" anchor="first"/>

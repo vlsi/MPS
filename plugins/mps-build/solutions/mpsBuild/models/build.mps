@@ -14881,6 +14881,40 @@
                   </node>
                 </node>
               </node>
+              <node concept="28jJK3" id="rfGKhuSVUs" role="39821P">
+                <node concept="398BVA" id="rfGKhuSVUt" role="28jJRO">
+                  <ref role="398BVh" node="4tNwrSpaf08" resolve="mps_home" />
+                  <node concept="2Ry0Ak" id="rfGKhuSVUu" role="iGT6I">
+                    <property role="2Ry0Am" value="IdeaPlugin" />
+                    <node concept="2Ry0Ak" id="rfGKhuSVUv" role="2Ry0An">
+                      <property role="2Ry0Am" value="mps-core" />
+                      <node concept="2Ry0Ak" id="rfGKhuSVUw" role="2Ry0An">
+                        <property role="2Ry0Am" value="META-INF" />
+                        <node concept="2Ry0Ak" id="rfGKhuSVUx" role="2Ry0An">
+                          <property role="2Ry0Am" value="idea-support.xml" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="rfGKhuSVYa" role="39821P">
+                <node concept="398BVA" id="rfGKhuSVYb" role="28jJRO">
+                  <ref role="398BVh" node="4tNwrSpaf08" resolve="mps_home" />
+                  <node concept="2Ry0Ak" id="rfGKhuSVYc" role="iGT6I">
+                    <property role="2Ry0Am" value="IdeaPlugin" />
+                    <node concept="2Ry0Ak" id="rfGKhuSVYd" role="2Ry0An">
+                      <property role="2Ry0Am" value="mps-core" />
+                      <node concept="2Ry0Ak" id="rfGKhuSVYe" role="2Ry0An">
+                        <property role="2Ry0Am" value="META-INF" />
+                        <node concept="2Ry0Ak" id="rfGKhuSVZ6" role="2Ry0An">
+                          <property role="2Ry0Am" value="otherIdes-support.xml" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3_J27D" id="7XQqoCTmkzE" role="Nbhlr">
                 <node concept="3Mxwew" id="7XQqoCTmkzF" role="3MwsjC">
                   <property role="3MwjfP" value="META-INF" />

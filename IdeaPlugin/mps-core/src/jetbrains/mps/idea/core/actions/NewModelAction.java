@@ -285,7 +285,8 @@ public class NewModelAction extends AnAction {
         || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
     }
 
-    return isUnderSourceRoot && myModelRoot != null && myProject != null;
+    // temp
+    return /* isUnderSourceRoot &&*/  myModelRoot != null && myProject != null;
   }
 
   private enum ModelTemplates {
