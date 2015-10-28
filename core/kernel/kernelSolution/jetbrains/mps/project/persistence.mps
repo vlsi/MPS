@@ -7043,6 +7043,63 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="Z5TLhr0vNY" role="3cqZAp">
+              <node concept="3clFbS" id="Z5TLhr0vO0" role="3clFbx">
+                <node concept="3SKdUt" id="6fRkDrIj3JN" role="3cqZAp">
+                  <node concept="3SKdUq" id="6fRkDrIj3NL" role="3SKWNk">
+                    <property role="3SKdUp" value="This is debug code to find out cause of https://youtrack.jetbrains.com/issue/MPS-22589." />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="6fRkDrIj36k" role="3cqZAp">
+                  <node concept="3cpWsn" id="6fRkDrIj36l" role="3cpWs9">
+                    <property role="TrG5h" value="msg" />
+                    <node concept="3uibUv" id="6fRkDrIj36e" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                    </node>
+                    <node concept="2YIFZM" id="6fRkDrIj36m" role="33vP2m">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                      <node concept="Xl_RD" id="6fRkDrIj36n" role="37wK5m">
+                        <property role="Xl_RC" value="Unsupported model root detected in module at %s. Likely outdated module is being loaded, please check your environment" />
+                      </node>
+                      <node concept="2OqwBi" id="6fRkDrIj36o" role="37wK5m">
+                        <node concept="37vLTw" id="6fRkDrIj36p" role="2Oq$k0">
+                          <ref role="3cqZAo" node="IMUMWuHQTj" resolve="macroHelper" />
+                        </node>
+                        <node concept="liA8E" id="6fRkDrIj36q" role="2OqNvi">
+                          <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                          <node concept="Xl_RD" id="6fRkDrIj36r" role="37wK5m">
+                            <property role="Xl_RC" value="${module}" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="34ab3g" id="2lU74FLCukR" role="3cqZAp">
+                  <property role="35gtTG" value="error" />
+                  <node concept="37vLTw" id="2lU74FLCusR" role="34bqiv">
+                    <ref role="3cqZAo" node="6fRkDrIj36l" resolve="msg" />
+                  </node>
+                </node>
+                <node concept="YS8fn" id="Z5TLhr0w3T" role="3cqZAp">
+                  <node concept="2ShNRf" id="Z5TLhr0w6k" role="YScLw">
+                    <node concept="1pGfFk" id="6fRkDrIj1aa" role="2ShVmc">
+                      <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                      <node concept="37vLTw" id="6fRkDrIj3pa" role="37wK5m">
+                        <ref role="3cqZAo" node="6fRkDrIj36l" resolve="msg" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="Z5TLhr0vYQ" role="3clFbw">
+                <node concept="10Nm6u" id="Z5TLhr0w1m" role="3uHU7w" />
+                <node concept="37vLTw" id="Z5TLhr0vV3" role="3uHU7B">
+                  <ref role="3cqZAo" node="4tq5h$9Kuzc" resolve="type" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="613fAArdF30" role="3cqZAp">
               <node concept="3cpWsn" id="613fAArdF31" role="3cpWs9">
                 <property role="TrG5h" value="descriptor" />
