@@ -21,13 +21,10 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
@@ -37,9 +34,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Created by danilla on 26/10/15.
@@ -63,24 +60,49 @@ public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent 
   }
 
   @Override
+  public DefaultModelRoot getModelRoot(Module module) {
+    for (ModelRoot modelRoot: mySolution.getModelRoots()) {
+      if (modelRoot instanceof DefaultModelRoot) {
+        return (DefaultModelRoot) modelRoot;
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public boolean canCreateModel(Module module, VirtualFile dir) {
+    // source roots are not explicit, so we allow creating model anywhere
+    return true;
+  }
+
+  @Override
   public void projectOpened() {
     Module[] modules = ModuleManager.getInstance(myProject).getModules();
     assert modules.length == 1;
-    Module singleModule = modules[0];
+    final Module singleModule = modules[0];
 
-    Solution solution = new SolutionIdea(singleModule, makeDescriptor(singleModule));
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    final SRepository repository = mpsProject.getRepository();
+    if (repository == null) {
+      return;
+    }
 
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-    SRepositoryExt repository = (SRepositoryExt) mpsProject.getRepository();
+    repository.getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        Solution solution = new SolutionIdea(singleModule, makeDescriptor(singleModule));
+
 //    if (repository.getModule(solution.getModuleId()) != null) {
 //      MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
 //      return;
 //    }
 
-    repository.registerModule(solution, mpsProject);
-    mpsProject.addModule(mySolution.getModuleReference());
+        ((SRepositoryExt) repository).registerModule(solution, mpsProject);
+        mpsProject.addModule(solution.getModuleReference());
 
-    mySolution = solution;
+        mySolution = solution;
+      }
+    });
   }
 
   private SolutionDescriptor makeDescriptor(Module module) {
@@ -97,6 +119,7 @@ public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent 
     FileBasedModelRoot root = new DefaultModelRoot();
 
     root.setContentRoot(moduleContentRoot.getPath());
+    root.addFile(FileBasedModelRoot.SOURCE_ROOTS, moduleContentRoot.getPath());
     Memento m = new MementoImpl();
     root.save(m);
     ModelRootDescriptor modelRootDesc = new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, m);

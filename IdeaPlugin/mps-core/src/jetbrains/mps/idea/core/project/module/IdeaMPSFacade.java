@@ -20,10 +20,13 @@ import com.intellij.facet.FacetManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
  * Created by danilla on 26/10/15.
@@ -38,6 +41,21 @@ public class IdeaMPSFacade implements MPSModuleFacade, ProjectComponent {
   @Override
   public Solution getSolution(Module module) {
     return FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
+  }
+
+  @Override
+  public DefaultModelRoot getModelRoot(Module module) {
+    for (ModelRoot modelRoot: getSolution(module).getModelRoots()) {
+      if (modelRoot instanceof DefaultModelRoot) {
+        return (DefaultModelRoot) modelRoot;
+      }
+    }
+    return null;
+  }
+
+  @Override
+  public boolean canCreateModel(Module module, VirtualFile dir) {
+    return false;
   }
 
   @Override

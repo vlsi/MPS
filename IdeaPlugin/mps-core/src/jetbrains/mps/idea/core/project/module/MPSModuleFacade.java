@@ -17,6 +17,8 @@
 package jetbrains.mps.idea.core.project.module;
 
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
 
 /**
@@ -27,4 +29,8 @@ public interface MPSModuleFacade {
   boolean isMPSEnabled(Module module);
 
   Solution getSolution(Module module);
+
+  DefaultModelRoot getModelRoot(Module module);
+
+  boolean canCreateModel(Module module, VirtualFile dir);
 }

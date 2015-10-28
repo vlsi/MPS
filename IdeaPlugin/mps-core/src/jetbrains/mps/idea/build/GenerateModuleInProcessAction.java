@@ -16,13 +16,12 @@
 
 package jetbrains.mps.idea.build;
 
-import com.intellij.facet.FacetManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.module.Module;
 import jetbrains.mps.fileTypes.FileIcons;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.project.module.MPSModuleFacade;
 import jetbrains.mps.project.Solution;
 
 /**
@@ -48,7 +47,7 @@ public class GenerateModuleInProcessAction extends AnAction {
   @Override
   public void actionPerformed(AnActionEvent anActionEvent) {
     Module module = LangDataKeys.MODULE.getData(anActionEvent.getDataContext());
-    Solution solution = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
+    Solution solution = module.getProject().getComponent(MPSModuleFacade.class).getSolution(module);
     new GenerateModelsInProcess(module.getProject(), solution.getModels()).generate();
   }
 }

@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.actions;
 
-import com.intellij.facet.FacetManager;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -33,9 +32,8 @@ import com.intellij.psi.PsiElement;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.facet.MPSFacet;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.project.module.MPSModuleFacade;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -101,14 +99,14 @@ public class NewModelAction extends AnAction {
     mySolution = null;
     myModelRoot = null;
     myModelPrefix = null;
-    Module module = e.getData(LangDataKeys.MODULE);
+    final Module module = e.getData(LangDataKeys.MODULE);
     VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
     if (module == null || vFiles == null || vFiles.length != 1 || !vFiles[0].isDirectory()) {
       return;
     }
 
-    final MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-    if (mpsFacet == null || !mpsFacet.wasInitialized()) {
+    final MPSModuleFacade mpsFacade = module.getProject().getComponent(MPSModuleFacade.class);
+    if (!mpsFacade.isMPSEnabled(module)) {
       return;
     }
 
@@ -121,12 +119,12 @@ public class NewModelAction extends AnAction {
     ProjectHelper.toMPSProject(module.getProject()).getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
+        for (ModelRoot root : mpsFacade.getSolution(module).getModelRoots()) {
           if (!(root instanceof DefaultModelRoot)) continue;
           DefaultModelRoot modelRoot = (DefaultModelRoot) root;
           for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
             if (FileUtil.isSubPath(sourceRoot, path)) {
-              mySolution = mpsFacet.getSolution();
+              mySolution = mpsFacade.getSolution(module);
               myModelRoot = modelRoot;
               mySourceRoot = sourceRoot;
               myModelPrefix = path.substring(sourceRoot.length());

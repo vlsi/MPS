@@ -104,9 +104,6 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.facet.AutoAddMPSFacet</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
     <!--
@@ -117,9 +114,6 @@
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>
-    <!--<component>-->
-      <!--<implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>-->
-    <!--</component>-->
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>

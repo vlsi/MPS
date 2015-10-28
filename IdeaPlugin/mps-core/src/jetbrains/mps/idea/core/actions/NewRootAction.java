@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.actions;
 
-import com.intellij.facet.FacetManager;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -31,14 +30,12 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.impl.file.PsiJavaDirectoryImpl;
 import jetbrains.mps.ide.editor.actions.ImportHelper;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.facet.MPSFacet;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.project.module.MPSModuleFacade;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -142,8 +139,8 @@ public class NewRootAction extends AnAction {
 
   private boolean createPerRootModel(AnActionEvent e) {
     final PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-    if (psiElement == null || !(psiElement instanceof PsiJavaDirectoryImpl)) {
-      //Can be used only on package
+    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
+      //Can be used only on directories
       return true;
     }
     final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
@@ -166,7 +163,9 @@ public class NewRootAction extends AnAction {
         }
         if (useModelRoot == null) return null;
 
-        final String modelName = ((PsiJavaDirectoryImpl) psiElement).getPresentation().getLocationString();
+        // fixme getPresentation() for model name sucks
+        // for java package it will be package name
+        final String modelName = ((PsiDirectory) psiElement).getPresentation().getLocationString();
         EditableSModel model = null;
         try {
           model = (EditableSModel) ((DefaultModelRoot) useModelRoot).createModel(modelName, useSourceRoot, null,
@@ -221,7 +220,7 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    Module module = e.getData(LangDataKeys.MODULE);
+    final Module module = e.getData(LangDataKeys.MODULE);
     final VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
     if (module == null ||
       vFiles == null ||
@@ -229,8 +228,8 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    final MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-    if (mpsFacet == null || !mpsFacet.wasInitialized()) {
+    final MPSModuleFacade mpsFacade = module.getProject().getComponent(MPSModuleFacade.class);
+    if (!mpsFacade.isMPSEnabled(module)) {
       return;
     }
 
@@ -242,12 +241,12 @@ public class NewRootAction extends AnAction {
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
+        for (ModelRoot root : mpsFacade.getSolution(module).getModelRoots()) {
           if (!(root instanceof DefaultModelRoot)) continue;
           DefaultModelRoot modelRoot = (DefaultModelRoot) root;
           for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
             if (path.startsWith(sourceRoot)) {
-              Solution solution = mpsFacet.getSolution();
+              Solution solution = mpsFacade.getSolution(module);
               myOperationContext = new ModuleContext(solution, mpsProject);
               myModelDescriptor = (EditableSModel) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
               if (myModelDescriptor != null) {
@@ -281,25 +280,23 @@ public class NewRootAction extends AnAction {
     }
     VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-    boolean isUnderSourceRoot = false;
-    if (psiElement instanceof MPSPsiModel) {
-      isUnderSourceRoot = true;
-    } else {
+    if (!(psiElement instanceof MPSPsiModel)) {
       Module module = e.getData(LangDataKeys.MODULE);
       if (module == null) {
         return false;
       }
-      VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots(true);
-      for (VirtualFile root : sourceRoots) {
-        if (targetDir.getPath().equals(root.getPath())) {
-          //Can't be source or test folder
-          return false;
+      if (myNewModel) {
+        VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots(true);
+        for (VirtualFile root : sourceRoots) {
+          if (targetDir.getPath().equals(root.getPath())) {
+            //Can't be source or test folder
+            return false;
+          }
         }
-        isUnderSourceRoot = isUnderSourceRoot || FileUtil.isSubPath(root.getPath(), targetDir.getPath());
       }
     }
 
-    return isUnderSourceRoot && myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;
+    return myOperationContext != null && (myModelDescriptor != null || myNewModel) && myProject != null;
   }
 
   private class MyCreateFromTemplateDialog extends CreateFromTemplateDialog {
