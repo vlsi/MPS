@@ -60,7 +60,7 @@ public class StubModelLazyLoadStressTest {
 
   @BeforeClass
   public static void setUp() {
-    ourPlatform = MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries());
+    ourPlatform = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withBootstrapLibraries());
     ourModuleRepository = ourPlatform.getPlatform().getCore().getModuleRepository();
   }
 

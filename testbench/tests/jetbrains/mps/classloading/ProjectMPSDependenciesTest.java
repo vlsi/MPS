@@ -54,7 +54,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
 
   @BeforeClass
   public static void beforeTest(){
-    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @Test

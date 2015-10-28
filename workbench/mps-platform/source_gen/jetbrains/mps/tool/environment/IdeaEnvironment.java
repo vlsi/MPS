@@ -10,7 +10,6 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.util.FileUtil;
@@ -24,6 +23,7 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
+import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -34,7 +34,6 @@ import org.apache.log4j.LogManager;
 public class IdeaEnvironment extends EnvironmentBase {
   private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
 
-  private final ProjectContainer myContainer = new ProjectContainer();
   private IdeaTestApplication myIdeaApplication;
 
   protected IdeaEnvironment(@NotNull EnvironmentConfig config) {
@@ -93,22 +92,8 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   @Override
   @NotNull
-  public Project openProject(@NotNull File projectFile) {
-    checkInitialized();
-    Project lastUsedProject = getOpenedProject(projectFile);
-    if (lastUsedProject != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Using the last created project");
-      }
-      return lastUsedProject;
-    } else {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Opening a new project");
-      }
-      Project project = openProjectInIdeaEnvironment(projectFile);
-      myContainer.addProject(project);
-      return project;
-    }
+  public Project doOpenProject(@NotNull File projectFile) {
+    return openProjectInIdeaEnvironment(projectFile);
   }
 
   @NotNull
@@ -124,25 +109,7 @@ public class IdeaEnvironment extends EnvironmentBase {
   }
 
   @Override
-  public void closeProject(@NotNull final Project project) {
-    checkInitialized();
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("Closing the project " + project);
-    }
-    myContainer.closeProject(project);
-  }
-
-  @Nullable
-  @Override
-  public Project getOpenedProject(@NotNull File projectFile) {
-    checkInitialized();
-    return myContainer.getProject(projectFile);
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    myContainer.dispose();
+  public void doDispose() {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {

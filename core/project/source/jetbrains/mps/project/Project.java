@@ -64,6 +64,7 @@ public abstract class Project implements MPSModuleOwner {
     return myScope;
   }
 
+  // What is this? Is it used in the idea plugin? why is it here in project?
   public abstract List<String> getWatchedModulesPaths();
 
   @NotNull
@@ -186,6 +187,13 @@ public abstract class Project implements MPSModuleOwner {
     }
   }
 
+  /**
+   * these are our own project opened/closed events.
+   * in the case of idea platform presence they are triggered from the corresponding idea project opened/closed events.
+   * in the other case they are triggered at the init/dispose methods
+   *
+   * @see FileMPSProject
+   */
   protected void projectOpened() {
     ProjectManager.getInstance().projectOpened(this);
   }

@@ -259,9 +259,9 @@
         <node concept="3cpWs8" id="3H7CugYe6Tr" role="3cqZAp">
           <node concept="3cpWsn" id="3H7CugYe6Ts" role="3cpWs9">
             <property role="TrG5h" value="config" />
-            <node concept="2YIFZM" id="o7F7WgJ3Ku" role="33vP2m">
+            <node concept="2YIFZM" id="63LKn8yO6xi" role="33vP2m">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
             </node>
             <node concept="3uibUv" id="2E_b7aHCttA" role="1tU5fm">
               <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />

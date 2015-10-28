@@ -77,8 +77,8 @@ public class CheckpointModelTest {
 
   @AfterClass
   public static void tearDown() {
-    ourEnvironment.closeProject(mpsProject);
-//    ourEnvironment.dispose(); FIXME implement environment use count mechanism so that tests could dispose it gracefully
+    mpsProject.dispose();
+    ourEnvironment.dispose();
   }
 
   @Test

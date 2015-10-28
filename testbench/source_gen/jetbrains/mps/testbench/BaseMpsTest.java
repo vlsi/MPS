@@ -5,12 +5,13 @@ package jetbrains.mps.testbench;
 import org.junit.AfterClass;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.project.Project;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -30,7 +31,10 @@ public abstract class BaseMpsTest {
   public static void tearDownBase() {
     // it is possible we are inside suite run, no need to recreate an environment then 
     if (RuntimeFlags.getTestMode() == TestMode.USUAL) {
-      EnvironmentContainer.dispose();
+      Environment env = EnvironmentContainer.get();
+      if (env != null) {
+        env.dispose();
+      }
     }
   }
 
@@ -47,12 +51,9 @@ public abstract class BaseMpsTest {
     return getEnvironment().openProject(projectFile);
   }
 
-  protected static void closeProject(@NotNull Project project) {
-    getEnvironment().closeProject(project);
-  }
-
   protected static <T extends SModule> T getModule(String moduleFqName, Class<T> cls) {
-    return ModuleRepositoryFacade.getInstance().getModule(moduleFqName, cls);
+    SRepository moduleRepository = getEnvironment().getPlatform().getCore().getModuleRepository();
+    return new ModuleRepositoryFacade(moduleRepository).getModule(moduleFqName, cls);
   }
 
   protected static Solution getSolution(String moduleFqName) {
@@ -98,7 +99,7 @@ public abstract class BaseMpsTest {
   protected static void closeClonedProject(final Project project, final File destinationDir) {
     Environment env = getEnvironment();
     env.flushAllEvents();
-    env.closeProject(project);
+    project.dispose();
     FileUtil.delete(destinationDir);
   }
 }

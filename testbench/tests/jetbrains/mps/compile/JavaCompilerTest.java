@@ -56,8 +56,9 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   @AfterClass
   public static void tearDown() {
-    if (ourProject == null) return;
-    ourEnvironment.closeProject(ourProject);
+    if (ourProject != null) {
+      ourProject.dispose();
+    }
   }
 
   @Test

@@ -38,7 +38,7 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
 
   @Before
   public void beforeTest() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     String homePath = PathManager.getHomePath();
     assert homePath != null;
     myProject = openProject(new File(homePath));
@@ -46,7 +46,7 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
 
   @After
   public void afterTest() {
-    closeProject(myProject);
+    myProject.dispose();
   }
 
   /**

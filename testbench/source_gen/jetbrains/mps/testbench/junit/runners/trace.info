@@ -294,49 +294,46 @@
       <node id="3021026760599827426" at="29,62,30,35" concept="10" />
       <node id="3021026760599832816" at="31,5,32,91" concept="17" />
       <node id="3021026760600106230" at="36,66,37,47" concept="9" />
-      <node id="3021026760600106236" at="37,47,38,62" concept="9" />
-      <node id="3021026760600113386" at="39,32,40,51" concept="3" />
-      <node id="3021026760600117295" at="40,51,41,43" concept="3" />
-      <node id="3021026760600106765" at="42,5,43,25" concept="10" />
-      <node id="3021026760600129535" at="48,54,49,18" concept="11" />
-      <node id="3021026760600118162" at="49,18,50,19" concept="10" />
-      <node id="3021026760599847649" at="54,33,55,33" concept="10" />
+      <node id="3021026760600106236" at="37,47,38,57" concept="9" />
+      <node id="3021026760600117295" at="38,57,39,41" concept="3" />
+      <node id="3021026760600106765" at="39,41,40,25" concept="10" />
+      <node id="3021026760600129535" at="45,54,46,18" concept="11" />
+      <node id="3021026760600118162" at="46,18,47,19" concept="10" />
+      <node id="3021026760599847649" at="51,33,52,33" concept="10" />
       <node id="6450649963068943342" at="17,0,20,0" concept="2" trace="FromProjectPathProjectStrategy#(Ljava/lang/String;)V" />
       <node id="3021026760599560247" at="21,0,24,0" concept="2" trace="FromProjectPathProjectStrategy#()V" />
       <node id="3021026760599827234" at="27,51,31,5" concept="7" />
-      <node id="3021026760600112349" at="38,62,42,5" concept="7" />
-      <node id="3021026760599847647" at="53,0,57,0" concept="8" trace="isApplicable#()Z" />
-      <node id="6450649963068983111" at="46,0,52,0" concept="8" trace="construct#(Ljetbrains/mps/project/Project;)Ljetbrains/mps/project/Project;" />
+      <node id="3021026760599847647" at="50,0,54,0" concept="8" trace="isApplicable#()Z" />
+      <node id="6450649963068983111" at="43,0,49,0" concept="8" trace="construct#(Ljetbrains/mps/project/Project;)Ljetbrains/mps/project/Project;" />
+      <node id="3021026760600105614" at="35,0,42,0" concept="8" trace="openProjectIfNotAlreadyOpened#(Ljetbrains/mps/tool/environment/Environment;)Ljetbrains/mps/project/Project;" />
       <node id="3021026760599826086" at="25,0,34,0" concept="8" trace="create#(Ljetbrains/mps/tool/environment/Environment;)Ljetbrains/mps/project/Project;" />
-      <node id="3021026760600105614" at="35,0,45,0" concept="8" trace="openProjectIfNotAlreadyOpened#(Ljetbrains/mps/tool/environment/Environment;)Ljetbrains/mps/project/Project;" />
       <scope id="6450649963068943345" at="17,71,18,32" />
       <scope id="3021026760599560250" at="21,43,22,52" />
-      <scope id="3021026760599847648" at="54,33,55,33" />
+      <scope id="3021026760599847648" at="51,33,52,33" />
       <scope id="3021026760599827236" at="28,25,30,35">
         <var name="newProject" id="3021026760599995816" />
       </scope>
-      <scope id="3021026760600112351" at="39,32,41,43" />
-      <scope id="6450649963068983117" at="48,54,50,19" />
+      <scope id="6450649963068983117" at="45,54,47,19" />
       <scope id="6450649963068943342" at="17,0,20,0">
         <var name="projectPath" id="6450649963068943446" />
       </scope>
       <scope id="3021026760599560247" at="21,0,24,0" />
-      <scope id="3021026760599847647" at="53,0,57,0" />
-      <scope id="3021026760599826091" at="27,51,32,91" />
-      <scope id="6450649963068983111" at="46,0,52,0">
-        <var name="project" id="3021026760600026495" />
-      </scope>
-      <scope id="3021026760600105617" at="36,66,43,25">
+      <scope id="3021026760600105617" at="36,66,40,25">
         <var name="openedProject" id="3021026760600106237" />
         <var name="projectFile" id="3021026760600106231" />
+      </scope>
+      <scope id="3021026760599847647" at="50,0,54,0" />
+      <scope id="3021026760599826091" at="27,51,32,91" />
+      <scope id="6450649963068983111" at="43,0,49,0">
+        <var name="project" id="3021026760600026495" />
+      </scope>
+      <scope id="3021026760600105614" at="35,0,42,0">
+        <var name="env" id="3021026760600126338" />
       </scope>
       <scope id="3021026760599826086" at="25,0,34,0">
         <var name="env" id="3021026760599970635" />
       </scope>
-      <scope id="3021026760600105614" at="35,0,45,0">
-        <var name="env" id="3021026760600126338" />
-      </scope>
-      <unit id="6450649963068242592" at="12,0,58,0" name="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" />
+      <unit id="6450649963068242592" at="12,0,55,0" name="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" />
     </file>
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6450649963068242642">

@@ -5,7 +5,6 @@ package jetbrains.mps.tool.environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.platform.Platform;
 
 /**
@@ -13,19 +12,21 @@ import jetbrains.mps.core.platform.Platform;
  * Currently it is cached for all tests in the case of group test runs (suites).
  * To initialize environment in a lazy way (trying to get cached environment if available) please
  * 
+ * TODO consider merging all the project creation methods
+ * 
  * @see jetbrains.mps.tool.environment.EnvironmentContainer 
  */
-public interface Environment {
+public interface Environment extends Retainable {
   /**
-   * Creates an empty project
+   * Creates and opens an empty project
    * 
-   * @return newly created Project. Must be already opened.
+   * @return newly created Project.
    */
   @NotNull
   public Project createEmptyProject();
 
   /**
-   * Creates a project and constructs it according to the given strategy
+   * Creates a project and opens it according to the given strategy
    * 
    * @return newly created Project constructed as the strategy suggests. It is already opened.
    */
@@ -35,17 +36,11 @@ public interface Environment {
   @NotNull
   public Project openProject(@NotNull File projectFile);
 
-  /**
-   * Contract:
-   * Returns null if there is no opened project with such File
-   */
-  @Nullable
-  public Project getOpenedProject(@NotNull File projectFile);
-
-  public void closeProject(@NotNull Project project);
-
   public void init();
 
+  /**
+   * disposes the environment, uses ref counting (!)
+   */
   public void dispose();
 
   /**

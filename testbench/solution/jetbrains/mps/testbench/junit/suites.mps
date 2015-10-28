@@ -5208,16 +5208,11 @@
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5A5jZryZYv0" role="3clF47">
-        <node concept="3SKdUt" id="5A5jZryZYv1" role="3cqZAp">
-          <node concept="3SKdUq" id="5A5jZryZYv2" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME: plugins are already loaded into plugin.path property used by idea plugin manager" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="5A5jZryZYv3" role="3cqZAp">
           <node concept="3cpWsn" id="5A5jZryZYv4" role="3cpWs9">
             <property role="TrG5h" value="config" />
-            <node concept="2YIFZM" id="5A5jZryZYv6" role="33vP2m">
-              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
+            <node concept="2YIFZM" id="63LKn8yNVO0" role="33vP2m">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
             <node concept="3uibUv" id="4YCIFw5be8G" role="1tU5fm">
@@ -5954,10 +5949,36 @@
             </node>
           </node>
           <node concept="3clFbS" id="1nB28sh8HG" role="2GVbov">
-            <node concept="3clFbF" id="1nB28sh8TN" role="3cqZAp">
-              <node concept="2YIFZM" id="1nB28sh8UK" role="3clFbG">
-                <ref role="37wK5l" to="79ha:4YCIFw5b4i1" resolve="dispose" />
-                <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+            <node concept="3cpWs8" id="3pEStHM450k" role="3cqZAp">
+              <node concept="3cpWsn" id="3pEStHM450l" role="3cpWs9">
+                <property role="TrG5h" value="env" />
+                <node concept="3uibUv" id="3pEStHM450m" role="1tU5fm">
+                  <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+                </node>
+                <node concept="2YIFZM" id="3pEStHM452h" role="33vP2m">
+                  <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+                  <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3pEStHM4549" role="3cqZAp">
+              <node concept="3clFbS" id="3pEStHM454b" role="3clFbx">
+                <node concept="3clFbF" id="3pEStHM457s" role="3cqZAp">
+                  <node concept="2OqwBi" id="3pEStHM458q" role="3clFbG">
+                    <node concept="37vLTw" id="3pEStHM457q" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3pEStHM450l" resolve="env" />
+                    </node>
+                    <node concept="liA8E" id="3pEStHM4594" role="2OqNvi">
+                      <ref role="37wK5l" to="79ha:6rx4kZDk5rd" resolve="dispose" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3y3z36" id="3pEStHM455U" role="3clFbw">
+                <node concept="10Nm6u" id="3pEStHM456A" role="3uHU7w" />
+                <node concept="37vLTw" id="3pEStHM4550" role="3uHU7B">
+                  <ref role="3cqZAo" node="3pEStHM450l" resolve="env" />
+                </node>
               </node>
             </node>
             <node concept="3clFbF" id="61uE6zXlKHf" role="3cqZAp">

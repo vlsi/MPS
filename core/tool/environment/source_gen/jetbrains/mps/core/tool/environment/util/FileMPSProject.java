@@ -47,16 +47,6 @@ public class FileMPSProject extends Project {
     return projectFile.getName();
   }
 
-  @Override
-  public void projectOpened() {
-    super.projectOpened();
-  }
-
-  @Override
-  public void projectClosed() {
-    super.projectClosed();
-  }
-
   /**
    * 
    * @deprecated 
@@ -69,6 +59,7 @@ public class FileMPSProject extends Project {
 
   @Override
   public void dispose() {
+    projectClosed();
     super.dispose();
     getModelAccess().runWriteAction(new Runnable() {
       @Override
@@ -107,15 +98,15 @@ public class FileMPSProject extends Project {
 
   private void error(String text) {
     if (myErrors == null) {
-      this.myErrors = text;
+      myErrors = text;
     } else {
       myErrors += "\n" + text;
     }
-    FileMPSProject.LOG.error(text);
+    LOG.error(text);
   }
 
   public void init(FileMPSProject.ProjectDescriptor desc) {
-    this.myDescriptor = desc;
+    myDescriptor = desc;
     if (getProjectFile() == null) {
       return;
     }
@@ -130,6 +121,7 @@ public class FileMPSProject extends Project {
         }
       }
     });
+    projectOpened();
   }
 
   public FileMPSProject.ProjectDescriptor getDescriptor() {
@@ -142,24 +134,24 @@ public class FileMPSProject extends Project {
   }
 
   public static class ProjectDescriptor {
-    private String name;
+    private String myName;
     private List<Path> myModulePaths = new ArrayList<Path>();
 
     public ProjectDescriptor(File project) {
       load(project);
     }
 
-    private void load(File project) {
-      if (project == null) {
+    private void load(File projectFile) {
+      if (projectFile == null) {
         return;
       }
-      if (!(project.exists())) {
-        throw new IllegalArgumentException("The project file '" + project + "' does not exist");
+      if (!(projectFile.exists())) {
+        throw new IllegalArgumentException("The project file '" + projectFile + "' does not exist");
       }
-      if (project.isDirectory()) {
-        load(project, new File(project, ".mps/modules.xml"));
+      if (projectFile.isDirectory()) {
+        load(projectFile, new File(projectFile, ".mps/modules.xml"));
       } else {
-        load(project, project);
+        load(projectFile, projectFile);
       }
     }
 
@@ -194,9 +186,9 @@ public class FileMPSProject extends Project {
     }
 
     private void load(File project, Element modulesXml) {
-      FileMPSProject.ProjectDescriptor result_dkknya_a0a9ab = this;
-      final String result_dkknya_a0a0a9ab = project.getName();
-      result_dkknya_a0a9ab.setName(result_dkknya_a0a0a9ab);
+      FileMPSProject.ProjectDescriptor result_dkknya_a0a9w = this;
+      final String result_dkknya_a0a0a9w = project.getName();
+      result_dkknya_a0a9w.setName(result_dkknya_a0a0a9w);
 
       if (modulesXml == null) {
         return;
@@ -209,22 +201,22 @@ public class FileMPSProject extends Project {
       ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(modulesXml, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
-        Path result_dkknya_a1a9a0a9ab = modulePath;
+        Path result_dkknya_a1a9a0a9w = modulePath;
         // todo: replace - wtf? @see ProjectDescriptorPersistence#saveProjectDescriptorToElement 
-        final String result_dkknya_a1a1a9a0a9ab = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(project.getPath())).expandPath(moduleElement.getAttributeValue("path").replace("$PROJECT_DIR$", "${project}"));
-        result_dkknya_a1a9a0a9ab.setPath(result_dkknya_a1a1a9a0a9ab);
-        final String result_dkknya_a2a1a9a0a9ab = moduleElement.getAttributeValue("folder");
-        result_dkknya_a1a9a0a9ab.setMPSFolder(result_dkknya_a2a1a9a0a9ab);
-        result_dkknya_a0a9ab.addModule(modulePath);
+        final String result_dkknya_a1a1a9a0a9w = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(project.getPath())).expandPath(moduleElement.getAttributeValue("path").replace("$PROJECT_DIR$", "${project}"));
+        result_dkknya_a1a9a0a9w.setPath(result_dkknya_a1a1a9a0a9w);
+        final String result_dkknya_a2a1a9a0a9w = moduleElement.getAttributeValue("folder");
+        result_dkknya_a1a9a0a9w.setMPSFolder(result_dkknya_a2a1a9a0a9w);
+        result_dkknya_a0a9w.addModule(modulePath);
       }
     }
 
     public void setName(String name) {
-      this.name = name;
+      myName = name;
     }
 
     public String getName() {
-      return name;
+      return myName;
     }
 
     public List<Path> getModules() {

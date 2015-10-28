@@ -26,6 +26,7 @@ import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,10 +42,15 @@ public abstract class EnvironmentTest extends BaseMpsTest {
     }
   }
 
+  @After
+  public void afterTest() {
+    myEnvironment.dispose();
+  }
+
   @Test
   public void testCreateAndOpenProject() {
     Project dummyProject = myEnvironment.createEmptyProject();
-    myEnvironment.closeProject(dummyProject);
+    dummyProject.dispose();
   }
 
   @Test
@@ -66,6 +72,6 @@ public abstract class EnvironmentTest extends BaseMpsTest {
         });
       }
     });
-    myEnvironment.closeProject(dummyProject);
+    dummyProject.dispose();
   }
 }

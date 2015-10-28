@@ -81,7 +81,11 @@ public class EnvironmentConfig {
     return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries().withWorkbenchPath();
   }
 
-  public static EnvironmentConfig emptyEnvironment() {
+  /**
+   * fixme: currently the repository within the 'empty environment' is inconsistent (mps-core plugin is needed),
+   * so use defaultConfig
+   */
+  public static EnvironmentConfig emptyConfig() {
     return new EnvironmentConfig();
   }
 }

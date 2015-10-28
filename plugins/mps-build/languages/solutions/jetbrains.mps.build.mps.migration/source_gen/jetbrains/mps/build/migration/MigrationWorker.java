@@ -88,7 +88,7 @@ public class MigrationWorker extends MpsWorker {
       } catch (InvocationTargetException e) {
         error(e.getMessage());
       }
-      myEnvironment.closeProject(p);
+      p.dispose();
       myEnvironment.flushAllEvents();
     }
 

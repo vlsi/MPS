@@ -1572,9 +1572,9 @@
       <node concept="3clFbS" id="5A5jZrz0cqM" role="3clF47">
         <node concept="3cpWs6" id="5A5jZrz0crW" role="3cqZAp">
           <node concept="2OqwBi" id="5A5jZrz0crX" role="3cqZAk">
-            <node concept="2YIFZM" id="5A5jZrz0crZ" role="2Oq$k0">
+            <node concept="2YIFZM" id="63LKn8yOYkB" role="2Oq$k0">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
             </node>
             <node concept="liA8E" id="5A5jZrz0cs2" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />

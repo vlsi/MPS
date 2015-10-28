@@ -312,7 +312,7 @@ public class GenerationTestBase {
   }
 
   protected static void cleanup(final Project p) {
-    CREATED_ENV.closeProject(p);
+    p.dispose();
   }
 
   protected static void assertNoDiff(Map<String, String> expected, Map<String, String> actual) {

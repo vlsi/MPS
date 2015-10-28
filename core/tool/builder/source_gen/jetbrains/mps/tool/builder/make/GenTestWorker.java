@@ -97,7 +97,7 @@ public class GenTestWorker extends GeneratorWorker {
   public void work() {
     myReporter.init();
 
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
 
     for (String jar : myWhatToDo.getLibraryJars()) {
       config = config.addLib(jar);

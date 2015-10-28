@@ -55,14 +55,14 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setUp() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @Test
   public void ClassesAreLoaded() {
     project = openProject(new File(PathManager.getHomePath()));
     doTest();
-    closeProject(project);
+    project.dispose();
   }
 
   @Test
@@ -71,7 +71,7 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
     project.getRepository().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
     doTest();
     project.getRepository().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
-    closeProject(project);
+    project.dispose();
   }
 
   private void doTest() {

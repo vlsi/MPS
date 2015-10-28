@@ -2077,51 +2077,23 @@
             <node concept="3uibUv" id="2BGPXkExbjY" role="1tU5fm">
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
-            <node concept="2OqwBi" id="2BGPXkExbjZ" role="33vP2m">
-              <node concept="37vLTw" id="2BGPXkExgK8" role="2Oq$k0">
+            <node concept="2OqwBi" id="2BGPXkExdcT" role="33vP2m">
+              <node concept="37vLTw" id="2BGPXkExgQI" role="2Oq$k0">
                 <ref role="3cqZAo" node="2BGPXkExge2" resolve="env" />
               </node>
-              <node concept="liA8E" id="2BGPXkExbk1" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:yBZlauN1vW" resolve="getOpenedProject" />
-                <node concept="37vLTw" id="2BGPXkExbk2" role="37wK5m">
+              <node concept="liA8E" id="2BGPXkExdki" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                <node concept="37vLTw" id="2BGPXkExdmq" role="37wK5m">
                   <ref role="3cqZAo" node="2BGPXkExbjR" resolve="projectFile" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="2BGPXkExcNt" role="3cqZAp">
-          <node concept="3clFbS" id="2BGPXkExcNv" role="3clFbx">
-            <node concept="3clFbF" id="2BGPXkExd3E" role="3cqZAp">
-              <node concept="37vLTI" id="2BGPXkExd8o" role="3clFbG">
-                <node concept="2OqwBi" id="2BGPXkExdcT" role="37vLTx">
-                  <node concept="37vLTw" id="2BGPXkExgQI" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2BGPXkExge2" resolve="env" />
-                  </node>
-                  <node concept="liA8E" id="2BGPXkExdki" role="2OqNvi">
-                    <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
-                    <node concept="37vLTw" id="2BGPXkExdmq" role="37wK5m">
-                      <ref role="3cqZAo" node="2BGPXkExbjR" resolve="projectFile" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="2BGPXkExd3C" role="37vLTJ">
-                  <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2BGPXkExe0J" role="3cqZAp">
-              <node concept="1rXfSq" id="2BGPXkExe0H" role="3clFbG">
-                <ref role="37wK5l" to="79ha:2BGPXkEwSeK" resolve="makeOnFirstTimeOpened" />
-                <node concept="37vLTw" id="2BGPXkExe6J" role="37wK5m">
-                  <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="2BGPXkExd08" role="3clFbw">
-            <node concept="10Nm6u" id="2BGPXkExd11" role="3uHU7w" />
-            <node concept="37vLTw" id="2BGPXkExcV_" role="3uHU7B">
+        <node concept="3clFbF" id="2BGPXkExe0J" role="3cqZAp">
+          <node concept="1rXfSq" id="2BGPXkExe0H" role="3clFbG">
+            <ref role="37wK5l" to="79ha:2BGPXkEwSeK" resolve="makeOnFirstTimeOpened" />
+            <node concept="37vLTw" id="2BGPXkExe6J" role="37wK5m">
               <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
             </node>
           </node>

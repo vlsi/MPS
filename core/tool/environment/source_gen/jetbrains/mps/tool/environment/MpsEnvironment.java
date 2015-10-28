@@ -20,7 +20,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class MpsEnvironment extends EnvironmentBase {
-  private final ProjectContainer myContainer = new ProjectContainer();
   private Platform myPlatform;
 
   protected MpsEnvironment(@NotNull EnvironmentConfig config) {
@@ -75,32 +74,12 @@ public class MpsEnvironment extends EnvironmentBase {
     });
   }
 
-  @Nullable
-  @Override
-  public Project getOpenedProject(@NotNull File projectFile) {
-    checkInitialized();
-    return myContainer.getProject(projectFile);
-  }
-
   @Override
   @NotNull
-  public Project openProject(@NotNull File projectFile) {
-    checkInitialized();
-    Project lastUsedProject = getOpenedProject(projectFile);
-    if (lastUsedProject != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Using the last created project");
-      }
-      return lastUsedProject;
-    } else {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Opening a new project");
-      }
-      FileMPSProject project = new FileMPSProject(projectFile);
-      project.init(new FileMPSProject.ProjectDescriptor(projectFile));
-      myContainer.addProject(project);
-      return project;
-    }
+  public Project doOpenProject(@NotNull File projectFile) {
+    FileMPSProject project = new FileMPSProject(projectFile);
+    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
+    return project;
   }
 
   @NotNull
@@ -111,23 +90,13 @@ public class MpsEnvironment extends EnvironmentBase {
       LOG.info("Creating an empty project");
     }
     File projectFile = FileUtil.createTmpFile();
-    FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(null));
     projectFile.deleteOnExit();
-    myContainer.addProject(project);
+    Project project = openProject(projectFile);
     return project;
   }
 
   @Override
-  public void closeProject(@NotNull Project project) {
-    checkInitialized();
-    myContainer.closeProject(project);
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    myContainer.dispose();
+  public void doDispose() {
     myPlatform.dispose();
     myPlatform = null;
   }

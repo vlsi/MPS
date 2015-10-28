@@ -544,8 +544,8 @@
         <node concept="3cpWs8" id="5kpQnuAFrK5" role="3cqZAp">
           <node concept="3cpWsn" id="5kpQnuAFrK6" role="3cpWs9">
             <property role="TrG5h" value="config" />
-            <node concept="2YIFZM" id="5kpQnuAFyEx" role="33vP2m">
-              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
+            <node concept="2YIFZM" id="63LKn8yP2eR" role="33vP2m">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
             <node concept="3uibUv" id="5kpQnuAFrK7" role="1tU5fm">

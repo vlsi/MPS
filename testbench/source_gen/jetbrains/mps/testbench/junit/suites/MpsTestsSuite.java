@@ -52,8 +52,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
   }
 
   public Environment initIdeaEnvironment() {
-    // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
     for (IMapping<String, String> lib : MapSequence.fromMap(loadLibraries())) {
       config = config.addLib(lib.value());
     }

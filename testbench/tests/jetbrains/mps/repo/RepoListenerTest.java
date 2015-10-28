@@ -75,7 +75,7 @@ public class RepoListenerTest extends CoreMpsTest {
 
   private void closeProject() {
     if (myProject != null) {
-      getEnvironment().closeProject(myProject);
+      myProject.dispose();
       myProject = null;
     }
   }

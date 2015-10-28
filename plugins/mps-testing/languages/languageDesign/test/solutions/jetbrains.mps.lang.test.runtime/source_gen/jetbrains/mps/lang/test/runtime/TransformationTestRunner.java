@@ -58,7 +58,7 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   private void startMps() {
-    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withDefaultPlugins());
+    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     clearSystemClipboard();
     readSystemMacro();
   }
@@ -124,16 +124,12 @@ public class TransformationTestRunner implements TestRunner {
       }
       Project openedProject = anyOpenedProject();
       if (reopenProject) {
-        projectToOpen = openedProject.getProjectFile();
-        assert myEnvironment.getOpenedProject(projectToOpen) != null;
-        myEnvironment.closeProject(openedProject);
+        openedProject.dispose();
       }
     } else {
       if (reopenProject) {
-        Project openedProject = myEnvironment.getOpenedProject(projectToOpen);
-        if (openedProject != null) {
-          myEnvironment.closeProject(openedProject);
-        }
+        Project openedProject = myEnvironment.openProject(projectToOpen);
+        openedProject.dispose();
       }
     }
     return myEnvironment.openProject(projectToOpen);

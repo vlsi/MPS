@@ -40,9 +40,11 @@ public abstract class EnvironmentBase implements Environment {
   private static final String PLUGINS_PATH = "plugin.path";
 
   private boolean myInitialized;
+  private int myRefCount;
   protected final EnvironmentConfig myConfig;
   private LibraryInitializer myLibInitializer;
   private PathMacrosProvider myMacrosProvider;
+  private final ProjectContainer myContainer = new ProjectContainer();
 
   static {
     new Log4jInitializer().init();
@@ -57,10 +59,14 @@ public abstract class EnvironmentBase implements Environment {
   }
 
   public void init(@NotNull MPSCore mpsCore) {
+    if (myInitialized) {
+      throw new IllegalStateException("Double initialization " + this);
+    }
     myLibInitializer = mpsCore.getLibraryInitializer();
     initMacros();
     initLibraries();
     EnvironmentContainer.setCurrent(this);
+    retain();
     myInitialized = true;
   }
 
@@ -112,18 +118,69 @@ public abstract class EnvironmentBase implements Environment {
   protected abstract ClassLoader rootClassLoader();
 
   @Override
+  public synchronized void retain() {
+    ++myRefCount;
+  }
+
+  @Override
+  public void release() {
+    if (myRefCount == 0) {
+      throw new IllegalStateException("Referece counter is set to zero -- cannot release!");
+    }
+    --myRefCount;
+    if (myRefCount == 0) {
+      doDispose();
+      EnvironmentContainer.clear();
+    }
+  }
+
+  @Override
   @NotNull
   public Project createProject(@NotNull ProjectStrategy strategy) {
     checkInitialized();
     return strategy.create(this);
   }
 
-  public void dispose() {
+  /**
+   * Contract:
+   * Returns null if there is no opened project with such File
+   */
+  @Nullable
+  protected final Project getOpenedProject(@NotNull File projectFile) {
+    checkInitialized();
+    return myContainer.getProject(projectFile);
+  }
+
+  @Override
+  @NotNull
+  public Project openProject(@NotNull File projectFile) {
+    checkInitialized();
+    Project lastUsedProject = getOpenedProject(projectFile);
+    if (lastUsedProject != null) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Using the last created project");
+      }
+      return lastUsedProject;
+    } else {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Opening a new project");
+      }
+      Project project = doOpenProject(projectFile);
+      return project;
+    }
+  }
+
+  protected abstract void doDispose();
+
+  protected abstract Project doOpenProject(@NotNull File projectFile);
+
+  @Override
+  public synchronized void dispose() {
     checkInitialized();
     if (LOG.isDebugEnabled()) {
       LOG.debug("Disposing environment");
     }
-    EnvironmentContainer.clear();
+    release();
   }
 
   protected static void setSystemProperties(boolean loadIdeaPlugins) {
