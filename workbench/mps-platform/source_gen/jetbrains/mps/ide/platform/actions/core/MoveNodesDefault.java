@@ -20,6 +20,8 @@ import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.annotations.NotNull;
@@ -138,17 +140,26 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         role.value = ListSequence.fromList(nodesToMove).first().getContainmentLink();
       }
     });
+    final SContainmentLink finalRole = role.value;
     final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), currentModel.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
       @Override
       public boolean check(NodeLocation selectedObject, SModel model) {
-        return true;
+        if (selectedObject == null) {
+          return false;
+        }
+        if (selectedObject instanceof NodeLocation.NodeLocationChild) {
+          if (finalRole == null) {
+            return false;
+          }
+          Collection<SContainmentLink> containmentLinks = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(project.getRepository()).getConcept().getContainmentLinks();
+          return CollectionSequence.fromCollection(containmentLinks).contains(finalRole);
+        } else {
+          return true;
+        }
       }
     });
     if (newLocation instanceof NodeLocation.NodeLocationChild) {
       ((NodeLocation.NodeLocationChild) newLocation).setRole(role.value);
-    }
-    if (newLocation == null) {
-      return;
     }
     Map<SNodeReference, NodeLocation> moveMap = MapSequence.fromMap(new HashMap<SNodeReference, NodeLocation>());
     for (SNode node : ListSequence.fromList(nodesToMove)) {

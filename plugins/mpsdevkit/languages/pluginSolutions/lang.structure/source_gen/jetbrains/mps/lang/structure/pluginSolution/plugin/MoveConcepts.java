@@ -95,9 +95,7 @@ public class MoveConcepts extends MoveNodesDefault {
       }
     });
 
-    List<ToMoveItem> moveAspects = ListSequence.fromList(new ArrayList<ToMoveItem>());
-    ListSequence.fromList(moveAspects).addElement(new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationRoot(targetModel.value)));
-    MoveNodesDefault.doMove(project, moveAspects, new Runnable() {
+    MoveNodesDefault.doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationRoot(targetModel.value))), new Runnable() {
       public void run() {
         for (IMapping<LanguageAspect, List<SNode>> aspectItem : MapSequence.fromMap(aspectsMap.value)) {
           SModelOperations.validateLanguagesAndImports(aspectItem.key().get(targetLanguage.value), true, true);

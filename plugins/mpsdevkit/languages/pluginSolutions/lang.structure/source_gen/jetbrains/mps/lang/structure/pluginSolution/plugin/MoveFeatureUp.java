@@ -13,8 +13,10 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
+import java.util.HashMap;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -60,7 +62,7 @@ public class MoveFeatureUp extends MoveNodesDefault {
       return;
     }
 
-    MoveNodesDefault.doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()))), null);
+    MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, NodeLocation>fromMapAndKeysArray(new HashMap<SNodeReference, NodeLocation>(), feature.getReference()).withValues(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink())), null);
   }
   public static class MovePropertyUp_extension extends Extension.Default<MoveNodesRefactoring> {
     public MovePropertyUp_extension() {
