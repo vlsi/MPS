@@ -67,7 +67,7 @@ public class MPSModelVirtualFile extends VirtualFile {
           myPath = "";
         } else {
           myName = NameUtil.shortNameFromLongName(model.getModelName());
-          myPath = MODEL_PREFIX + NiceReferenceSerializer.serializeModel(model);
+          myPath = MODEL_PREFIX + myFileSystem.getPathFacility().serializeModel(model);
         }
       }
     });

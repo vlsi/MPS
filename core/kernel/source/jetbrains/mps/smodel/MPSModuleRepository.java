@@ -195,7 +195,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
-      myFqNameToModulesMap.remove(module.getModuleName());
+      if (module.getModuleName() != null) {
+        myFqNameToModulesMap.remove(module.getModuleName());
+      }
       return true;
     }
     return false;

@@ -51,6 +51,6 @@ public class TransientModelsComponent extends TransientModelsProvider implements
 
   @Override
   public void disposeComponent() {
-    clearAll();
+    clearAll(true);
   }
 }

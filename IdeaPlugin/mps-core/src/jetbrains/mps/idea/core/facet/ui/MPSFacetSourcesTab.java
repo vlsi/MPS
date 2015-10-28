@@ -23,6 +23,7 @@ import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -64,7 +65,7 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
       Disposer.dispose(myContentEntriesEditor);
       myContentEntriesEditor = null;
     }
-    myContentEntriesEditor = new ContentEntriesEditor(data.getSolutionDescriptor());
+    myContentEntriesEditor = new ContentEntriesEditor(data.getSolutionDescriptor(), ProjectHelper.getProjectRepository(myContext.getProject()));
     Disposer.register(myParentDisposable, myContentEntriesEditor);
     myContentEntriesEditor.setDefaultFolder(myContext.getModule().getModuleFile() != null
       ? myContext.getModule().getModuleFile().getParent().getCanonicalPath()
