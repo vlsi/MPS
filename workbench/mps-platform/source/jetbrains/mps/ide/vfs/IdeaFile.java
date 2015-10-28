@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.StandardFileSystems;
 import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.core.tool.environment.common.SystemInfo;
@@ -53,6 +54,8 @@ import java.util.List;
  */
 class IdeaFile implements IFileEx {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
+  public static final String FILE_PROTOCOL_PREFIX = "file://";
+  public static final int FILE_PROTOCOL_PREFIX_LENGTH = FILE_PROTOCOL_PREFIX.length();
 
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
@@ -82,7 +85,15 @@ class IdeaFile implements IFileEx {
   @Override
   public URL getUrl() throws MalformedURLException {
     if (findVirtualFile()) {
-      return new URL(VfsUtil.fixIDEAUrl(myVirtualFile.getUrl()));
+      String ideaUrl = myVirtualFile.getUrl();
+      if (SystemInfo.isWindows) {
+        // Fix incorrect URLs that VirtualFile#getUrl() returns for local files on Windows: file://C:/f.txt instead of file:/C:/f.txt (note the extra slash).
+        // URL.openStream() does not work properly on such URLs. Fix them only on Windows, however, since fixIDEAUrl breaks valid URLs on Mac OS.
+        //
+        // See https://youtrack.jetbrains.com/issue/IDEA-146869
+        ideaUrl = VfsUtilCore.fixIDEAUrl(ideaUrl);
+      }
+      return new URL(ideaUrl);
     } else {
       return new File(myPath).toURI().toURL();
     }
