@@ -13,6 +13,6 @@ public class ValidationError extends Message {
   }
   @Override
   public String getText() {
-    return "Validation failed: " + super.getText() + ((object != null ? " in " + object.toString() : ""));
+    return "Make script validation failed: " + super.getText() + ((object != null ? " in " + object.toString() : ""));
   }
 }

@@ -104,7 +104,7 @@ public class ScriptBuilder {
       }
     }
     if (SetSequence.fromSet(facets).isEmpty()) {
-      error(null, "No make facets requested, nothing to make");
+      error(null, "No make facets found, nothing to make. This may have been caused by a language module failed to load.");
     }
     return facetsView;
   }
