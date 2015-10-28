@@ -30,8 +30,9 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
@@ -276,12 +277,26 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
 
   }
   private EditorCell createImage_liyxwi_a0a(final EditorContext editorContext, final SNode node) {
-    EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath"));
+    SModule imageModule;
+    String imagePath;
+    {
+      Object image = ((_FunctionTypes._return_P0_E0<? extends Object>) new _FunctionTypes._return_P0_E0<String>() {
+        public String invoke() {
+          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x7f3b793b6d76c3d0L, "iconPath"));
+        }
+      }).invoke();
+      if (image instanceof String) {
+        imageModule = SNodeOperations.getModel(node).getModule();
+        imagePath = (String) image;
+      } else {
+        {
+          Tuples._2<SModule, String> _tmp_liyxwi_a0a1a2a02 = (Tuples._2<SModule, String>) image;
+          imageModule = _tmp_liyxwi_a0a1a2a02._0();
+          imagePath = _tmp_liyxwi_a0a1a2a02._1();
+        }
       }
-    }).invoke());
+    }
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
     editorCell.setCellId("Image_liyxwi_a0a");
     editorCell.setDescent(0);
     return editorCell;

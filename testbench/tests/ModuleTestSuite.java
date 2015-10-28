@@ -45,6 +45,7 @@ import org.junit.runners.Suite;
     TestModule_jetbrains_mps_ide_java_tests.class,
     TestModule_jetbrains_mps_kernel_tests.class,
     TestModule_jetbrains_mps_lang_actions_test.class,
+    TestModule_jetbrains_mps_lang_editor_forms_tests.class,
     TestModule_jetbrains_mps_lang_editor_multiple_tests.class,
     TestModule_jetbrains_mps_lang_editor_table_tests.class,
     TestModule_jetbrains_mps_lang_editor_tests.class,

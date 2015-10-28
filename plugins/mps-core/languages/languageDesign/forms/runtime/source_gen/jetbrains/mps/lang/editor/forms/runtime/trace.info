@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root nodeRef="r:035b816f-5496-4daa-904b-836c78191509(jetbrains.mps.lang.editor.forms.runtime)/1322445664742910747">
+    <file name="SaveSelectionForCheckbox.java">
+      <node id="8215612579905005536" at="14,0,15,0" concept="9" trace="EXPECTED_CHILD_INDEX" />
+      <node id="1322445664742917526" at="15,0,16,0" concept="2" trace="mySelectedCell" />
+      <node id="1322445664742918154" at="17,60,18,34" concept="1" />
+      <node id="1322445664742809646" at="22,84,23,72" concept="7" />
+      <node id="1322445664742809648" at="23,72,24,18" concept="6" />
+      <node id="1322445664742809657" at="25,5,26,0" concept="8" />
+      <node id="1322445664742809658" at="26,0,27,62" concept="5" />
+      <node id="8215612579905011352" at="28,120,29,72" concept="7" />
+      <node id="8215612579905010261" at="29,72,30,18" concept="6" />
+      <node id="1322445664742809681" at="31,5,32,0" concept="8" />
+      <node id="1322445664742809717" at="32,0,33,165" concept="6" />
+      <node id="1322445664742913685" at="36,0,37,0" concept="4" trace="createCellSelector#()Ljetbrains/mps/nodeEditor/selectionRestoring/CellSelector;" />
+      <node id="1322445664742912299" at="17,0,20,0" concept="0" trace="SaveSelectionForCheckbox#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1322445664742809644" at="21,37,25,5" concept="3" />
+      <node id="8215612579905006663" at="27,62,31,5" concept="3" />
+      <node id="1322445664742910778" at="21,0,35,0" concept="4" trace="save#()Ljetbrains/mps/nodeEditor/selectionRestoring/RestorableSelection;" />
+      <scope id="1322445664742912302" at="17,60,18,34" />
+      <scope id="1322445664742913685" at="36,0,37,0" />
+      <scope id="1322445664742809645" at="22,84,24,18" />
+      <scope id="8215612579905006665" at="28,120,30,18" />
+      <scope id="1322445664742912299" at="17,0,20,0">
+        <var name="selectedCell" id="1322445664742917935" />
+      </scope>
+      <scope id="1322445664742910781" at="21,37,33,165">
+        <var name="parent" id="1322445664742809659" />
+      </scope>
+      <scope id="1322445664742910778" at="21,0,35,0" />
+      <unit id="1322445664742910747" at="13,0,38,0" name="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
+    </file>
+  </root>
+</debug-info>
+
