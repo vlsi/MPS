@@ -135,7 +135,6 @@
       <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
         <child id="4380385936562148502" name="containerName" index="Nbhlr" />
       </concept>
-      <concept id="7389400916848036997" name="jetbrains.mps.build.structure.BuildLayout_Node" flags="ng" index="39821Y" />
       <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
       <concept id="7389400916848073810" name="jetbrains.mps.build.structure.BuildSource_JavaContentRoot" flags="ng" index="398b2D">
         <child id="2754769020641429197" name="folders" index="nFU4p" />
@@ -316,7 +315,6 @@
         <child id="5253498789149547825" name="sources" index="3bR31x" />
         <child id="5253498789149547704" name="dependencies" index="3bR37C" />
       </concept>
-      <concept id="5253498789149547703" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency" flags="ng" index="3bR37B" />
       <concept id="5253498789149588970" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource" flags="ng" index="3bR92U">
         <child id="5253498789149588972" name="folder" index="3bR92W" />
       </concept>
@@ -2624,7 +2622,6 @@
           <node concept="L2wRC" id="2d0qgmCdfZr" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6LeI" resolve="jetbrains.mps.lang.dataFlow.analyzers" />
           </node>
-          <node concept="39821Y" id="6zkSwmUJ5Lf" role="39821P" />
           <node concept="L2wRC" id="2d0qgmCdfZB" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L68" resolve="jetbrains.mps.lang.descriptor" />
           </node>
@@ -9645,7 +9642,6 @@
             <ref role="3bR37D" node="7Kfy9QB6Lh7" resolve="jetbrains.mps.typesystemEngine" />
           </node>
         </node>
-        <node concept="3bR37B" id="7PkFlVge$qs" role="3bR37C" />
       </node>
       <node concept="1E1JtD" id="1CtrbKI23Wm" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -26713,7 +26709,6 @@
               </node>
             </node>
           </node>
-          <node concept="39821Y" id="2T92ovrfgtx" role="39821P" />
           <node concept="3_J27D" id="5qX22802cff" role="Nbhlr">
             <node concept="3Mxwew" id="5qX22802cfx" role="3MwsjC">
               <property role="3MwjfP" value="solutions" />
