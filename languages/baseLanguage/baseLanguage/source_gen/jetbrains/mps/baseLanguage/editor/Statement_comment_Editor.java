@@ -40,7 +40,7 @@ public class Statement_comment_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_ffwlke_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
-    editorCell.setCellId("Constant_ffwlke_a0");
+    editorCell.setCellId("LEFT_COMMENT_ANCHOR");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD_ITALIC);
     editorCell.getStyle().putAll(style);

@@ -18,16 +18,14 @@ public class DocumentationCommentStyleSheet_StyleSheet {
   }
   public static void apply_CommentTag(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_JavaDocTag(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
   }
   public static void apply_CommentHTMLTag(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       DocumentationCommentStyleSheet_StyleSheet.apply_Comment(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

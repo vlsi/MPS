@@ -186,7 +186,7 @@
       </implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.caches.MPSFileBasedIndexProjectHandler</implementation-class>
+      <implementation-class>jetbrains.mps.ide.findusages.caches.MPSIndexableFileSet</implementation-class>
     </component>
     <!-- language development workbench -->
     <component>

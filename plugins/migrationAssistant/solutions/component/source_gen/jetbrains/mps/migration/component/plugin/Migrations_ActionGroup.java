@@ -19,8 +19,6 @@ import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.migration.component.util.MigrationComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -63,8 +61,8 @@ public class Migrations_ActionGroup extends GeneratedActionGroup {
       Migrations_ActionGroup.this.addSeparator();
       // language migrations 
       Project project = event.getData(MPSCommonDataKeys.PROJECT);
-      MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      final MigrationComponent mc = ((MigrationComponent) project.getComponent(MigrationManager.class));
+      jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      final MigrationManager mm = project.getComponent(MigrationManager.class);
       Set<SLanguage> languages = SetSequence.fromSet(new HashSet<SLanguage>());
       {
         final SearchScope scope = CommandUtil.createScope(mpsProject);
@@ -84,7 +82,7 @@ public class Migrations_ActionGroup extends GeneratedActionGroup {
       SetSequence.fromSet(languages).visitAll(new IVisitor<SLanguage>() {
         public void visit(SLanguage it) {
           for (int ver = 0; ver < it.getLanguageVersion(); ver++) {
-            MigrationScript script = mc.fetchScript(new MigrationScriptReference(it, ver), true);
+            MigrationScript script = mm.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(it, ver), true);
             if (script == null) {
               continue;
             }

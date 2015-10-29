@@ -15,6 +15,7 @@ public class ShowDiffWithCurrRev_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       ShowDiffWithCurrRev_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowDiffererenceWithCurrentRevision_Action");
+      ShowDiffWithCurrRev_ActionGroup.this.addAction("jetbrains.mps.vcs.plugin.ShowNodeDifference_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

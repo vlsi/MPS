@@ -239,8 +239,7 @@ public class MethodInstance_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       {
-        Style styleToPut;
-        styleToPut = new StyleImpl();
+        Style styleToPut = new StyleImpl();
         LightweightDsl_Styles_StyleSheet.apply_MethodInstance(styleToPut, editorCell);
         style.removeAll(styleToPut);
       }

@@ -35,5 +35,11 @@
       <reference ref="jetbrains.mps.vcs.platform.actions.Annotate_Action" />
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.EditorLeftPanelMenu_ActionGroup" anchor="last" />
     </group>
+    <group id="jetbrains.mps.vcs.platform.actions.DiffEditorPopupGroup_ActionGroup">
+      <reference ref="jetbrains.mps.ide.editor.actions.PushEditorHints_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action" />
+      <add-to-group group-id="jetbrains.mps.vcs.platform.actions.AnnotateGroup_ActionGroup" anchor="last" />
+    </group>
   </actions>
 </components>

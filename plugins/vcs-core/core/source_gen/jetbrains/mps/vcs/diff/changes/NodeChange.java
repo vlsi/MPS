@@ -17,10 +17,14 @@ public abstract class NodeChange extends ModelChange {
   public SNodeId getAffectedNodeId() {
     return myAffectedNodeId;
   }
+  @NotNull
+  public SNodeId getAffectedNodeId(boolean isNewModel) {
+    return myAffectedNodeId;
+  }
   @Nullable
   @Override
   public SNodeId getRootId() {
-    return getChangeSet().getOldModel().getNode(getAffectedNodeId()).getContainingRoot().getNodeId();
+    return getChangeSet().getOldModel().getNode(getAffectedNodeId(false)).getContainingRoot().getNodeId();
   }
   @NotNull
   @Override

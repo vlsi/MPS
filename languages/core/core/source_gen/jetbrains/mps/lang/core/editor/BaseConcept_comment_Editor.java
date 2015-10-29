@@ -40,7 +40,7 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_vav8l6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/*");
-    editorCell.setCellId("Constant_vav8l6_a0");
+    editorCell.setCellId("LEFT_COMMENT_ANCHOR");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
@@ -61,7 +61,7 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_vav8l6_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*/");
-    editorCell.setCellId("Constant_vav8l6_c0");
+    editorCell.setCellId("RIGHT_COMMENT_ANCHOR");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);

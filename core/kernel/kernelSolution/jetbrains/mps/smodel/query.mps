@@ -4,11 +4,11 @@
   <languages>
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
@@ -1235,6 +1235,29 @@
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="1H31ARNRcHg" role="1tU5fm">
           <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
+    </node>
+    <node concept="2YIFZL" id="2ZOO3bS4NGh" role="jymVt">
+      <property role="TrG5h" value="createScope" />
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="2ZOO3bS4NGi" role="3clF47">
+        <node concept="3cpWs6" id="2ZOO3bS4NYM" role="3cqZAp">
+          <node concept="37vLTw" id="2ZOO3bS4O1A" role="3cqZAk">
+            <ref role="3cqZAo" node="2ZOO3bS4NGp" resolve="searchScope" />
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2ZOO3bS4NGn" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+      </node>
+      <node concept="3Tm1VV" id="2ZOO3bS4NGo" role="1B3o_S" />
+      <node concept="37vLTG" id="2ZOO3bS4NGp" role="3clF46">
+        <property role="TrG5h" value="searchScope" />
+        <node concept="3uibUv" id="2ZOO3bS4NTL" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
         </node>
       </node>
     </node>

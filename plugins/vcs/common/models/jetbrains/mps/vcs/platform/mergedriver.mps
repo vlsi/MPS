@@ -7723,8 +7723,8 @@
       <node concept="3clFbS" id="fZ9ka7YMGo" role="3clF47">
         <node concept="3clFbF" id="4rwBlQ4TpvX" role="3cqZAp">
           <node concept="2YIFZM" id="3BgDQ5Ur4fr" role="3clFbG">
-            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):boolean" resolve="runInUIThreadAndWait" />
             <ref role="1Pybhc" to="3a50:~ThreadUtils" resolve="ThreadUtils" />
+            <ref role="37wK5l" to="3a50:~ThreadUtils.runInUIThreadAndWait(java.lang.Runnable):java.lang.Exception" resolve="runInUIThreadAndWait" />
             <node concept="2ShNRf" id="3BgDQ5Ur4fs" role="37wK5m">
               <node concept="YeOm9" id="3BgDQ5Ur4ft" role="2ShVmc">
                 <node concept="1Y3b0j" id="3BgDQ5Ur4fu" role="YeSDq">

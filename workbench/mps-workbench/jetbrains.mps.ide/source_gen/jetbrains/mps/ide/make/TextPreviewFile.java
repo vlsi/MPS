@@ -265,4 +265,8 @@ public class TextPreviewFile extends StubVirtualFile {
       return false;
     }
   }
+  @Override
+  public void refresh(boolean b, boolean b1, Runnable runnable) {
+    // Do nothing and don't throw exception as StubVirtualFile to prevent error from TextPreviewModel_Action 
+  }
 }

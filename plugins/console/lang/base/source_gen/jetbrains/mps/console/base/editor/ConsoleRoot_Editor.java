@@ -29,8 +29,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     Style style = new StyleImpl();
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       ConsoleStyle_StyleSheet.apply_ReadOnly(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -134,8 +133,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
       }
       Style style = new StyleImpl();
       {
-        Style styleToPut;
-        styleToPut = new StyleImpl();
+        Style styleToPut = new StyleImpl();
         ConsoleStyle_StyleSheet.apply_ReadOnly(styleToPut, editorCell);
         style.removeAll(styleToPut);
       }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.traceInfo.tracemacro.sandbox" uuid="721ee040-6a64-417f-b067-15e72b43ce64" compileInMPS="true">
+<solution name="jetbrains.mps.traceInfo.tracemacro.sandbox" uuid="721ee040-6a64-417f-b067-15e72b43ce64" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -18,5 +18,9 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="140c4818-bfbc-4850-bf7c-e3d80739a03c" fqName="jetbrains.mps.traceInfo.tracemacro.testlang" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="721ee040-6a64-417f-b067-15e72b43ce64(jetbrains.mps.traceInfo.tracemacro.sandbox)" version="0" />
+  </dependencyVersions>
 </solution>
 

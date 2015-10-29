@@ -23,19 +23,19 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public MigrationScriptVersions_NonTypesystemRule() {
   }
-  public void applyRule(final SNode ms, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    Map<SNode, Collection<String>> errors = MigrationsCheckUtil.checkMigrationsVersions(SNodeOperations.getModel(ms).getModule());
-    CollectionSequence.fromCollection(MapSequence.fromMap(errors).get(ms)).visitAll(new IVisitor<String>() {
+  public void applyRule(final SNode iMigrationUnit, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    Map<SNode, Collection<String>> errors = MigrationsCheckUtil.checkMigrationsVersions(SNodeOperations.getModel(iMigrationUnit).getModule());
+    CollectionSequence.fromCollection(MapSequence.fromMap(errors).get(iMigrationUnit)).visitAll(new IVisitor<String>() {
       public void visit(String it) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ms, it, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "1987432259747751432", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iMigrationUnit, it, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "1987432259747751432", null, errorTarget);
         }
       }
     });
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript");
+    return MetaAdapterFactory.getInterfaceConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x47bb811da2acc4d6L, "jetbrains.mps.lang.migration.structure.IMigrationUnit");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

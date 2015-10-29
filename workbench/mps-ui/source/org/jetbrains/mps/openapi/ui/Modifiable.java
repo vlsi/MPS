@@ -16,6 +16,9 @@
 package org.jetbrains.mps.openapi.ui;
 
 public interface Modifiable {
+  /**
+   * Instantiate UI controls. Invoked in EDT
+   */
   void init();
   boolean isModified();
   void apply();

@@ -156,6 +156,9 @@ public class CommandUtil {
   public static SearchScope createScope(Project project) {
     return new ProjectScope(project);
   }
+  public static SearchScope createScope(SearchScope searchScope) {
+    return searchScope;
+  }
 
   private static SNode check_1pinza_a0a0a0a0b0a0a21(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {

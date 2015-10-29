@@ -58,7 +58,7 @@ public abstract class ProjectStructureBuilder {
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS"), "" + (true));
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639e820aL, "genPath"), source.getGenPath());
     SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5edd58f612649635L, "languagePath"), myFile.getPath());
-    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x50317e9064ec725dL, "version"), "" + (source.getVersion()));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x50317e9064ec725dL, "version"), "" + (source.getLanguageVersion()));
     for (SModelReference ref : source.getAccessoryModels()) {
       SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639dff80L, "accessoryModels")).add(convert(ref));
     }

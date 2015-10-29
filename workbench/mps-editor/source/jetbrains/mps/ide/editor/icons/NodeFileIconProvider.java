@@ -74,6 +74,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
             if (node != null) {
               return IconManager.getIconWithoutAdditionalPart(node);
             }
+            // TODO: get current empty tab component in MPSEditorUtil by using ((TabbedEditor) nodeEditor).myTabsComponent.getCurrentTabAspect()[.getIcon]
           }
           SNode node = nodeFile.getNode();
           if (node != null) {

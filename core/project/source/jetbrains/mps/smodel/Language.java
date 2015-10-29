@@ -254,13 +254,11 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public int getLanguageVersion() {
-    return getModuleDescriptor().getVersion();
+    return getModuleDescriptor().getLanguageVersion();
   }
 
   public void setLanguageVersion(int version) {
-    getModuleDescriptor().setVersion(version);
-    fireChanged();
-    setChanged();
+    getModuleDescriptor().setLanguageVersion(version);
   }
 
   public Collection<Generator> getGenerators() {
@@ -268,6 +266,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
   }
 
+  @Override
   public void rename(String newNamespace) {
     for (Generator g : getGenerators()) {
       g.rename(newNamespace);
@@ -316,6 +315,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     super.save();
     for (Generator gen : getGenerators()) {
       gen.validateLanguageVersions();
+      gen.validateDependencyVersions();
     }
     if (isReadOnly()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="testCustomAnalyzer.dataFlow.ChildRule" file="ChildRule.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="testCustomAnalyzer.dataFlow.counterInstructionInstruction" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
+  </dependency>
+  <dependency className="testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructorAnalyzerRunner" file="CounterAnalyzerWithConstructorAnalyzerRunner.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisDirection" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalyzerRules" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ProgramState" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
+  </dependency>
+  <dependency className="testCustomAnalyzer.dataFlow.DFABuilders" file="DFABuilders.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
+    <classNode dependClassName="testCustomAnalyzer.dataFlow.Root_DataFlow" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
+  </dependency>
+  <dependency className="testCustomAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" file="DataFlowAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
+    <classNode dependClassName="testCustomAnalyzer.dataFlow.ChildRule" />
+    <classNode dependClassName="testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructorAnalyzerRunner" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
+  </dependency>
+  <dependency className="testCustomAnalyzer.dataFlow.Root_DataFlow" file="Root_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionInstruction" file="counterInstructionInstruction.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
+  </dependency>
+</dependenciesRoot>
+

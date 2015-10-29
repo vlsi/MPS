@@ -7128,10 +7128,10 @@
               </node>
             </node>
             <node concept="2OqwBi" id="34EJa6aInlV" role="37vLTx">
-              <node concept="2YIFZM" id="34EJa6aInkw" role="2Oq$k0">
-                <ref role="37wK5l" to="pa15:~IdHelper.getLanguageId(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguageId" />
-                <ref role="1Pybhc" to="pa15:~IdHelper" resolve="IdHelper" />
-                <node concept="37vLTw" id="34EJa6aInkx" role="37wK5m">
+              <node concept="2YIFZM" id="2ztrlDPhWMW" role="2Oq$k0">
+                <ref role="37wK5l" to="e8bb:~MetaIdHelper.getLanguage(org.jetbrains.mps.openapi.language.SLanguage):jetbrains.mps.smodel.adapter.ids.SLanguageId" resolve="getLanguage" />
+                <ref role="1Pybhc" to="e8bb:~MetaIdHelper" resolve="MetaIdHelper" />
+                <node concept="37vLTw" id="2ztrlDPhWMX" role="37wK5m">
                   <ref role="3cqZAo" node="34EJa6aIcO6" resolve="language" />
                 </node>
               </node>
@@ -7221,6 +7221,29 @@
         </node>
       </node>
       <node concept="10P_77" id="1_xVpohXRzk" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1KHvivZHjZJ">
+    <property role="3GE5qa" value="operation.model" />
+    <ref role="13h7C2" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
+    <node concept="13i0hz" id="1KHvivZHjZM" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="applicableToModel" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" node="1653mnvAf1y" resolve="applicableToModel" />
+      <node concept="3Tm1VV" id="1KHvivZHjZN" role="1B3o_S" />
+      <node concept="10P_77" id="1KHvivZHjZO" role="3clF45" />
+      <node concept="3clFbS" id="1KHvivZHjZP" role="3clF47">
+        <node concept="3cpWs6" id="1KHvivZHjZQ" role="3cqZAp">
+          <node concept="3clFbT" id="1KHvivZHjZR" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1KHvivZHjZK" role="13h7CW">
+      <node concept="3clFbS" id="1KHvivZHjZL" role="2VODD2" />
     </node>
   </node>
 </model>

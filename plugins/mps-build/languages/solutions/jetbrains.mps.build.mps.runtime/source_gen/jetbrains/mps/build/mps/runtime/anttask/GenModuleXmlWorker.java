@@ -30,10 +30,6 @@ public class GenModuleXmlWorker extends MpsWorker {
 
   private Project myProject;
 
-  public GenModuleXmlWorker(Script whatToDo) {
-    super(whatToDo);
-  }
-
   public GenModuleXmlWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }

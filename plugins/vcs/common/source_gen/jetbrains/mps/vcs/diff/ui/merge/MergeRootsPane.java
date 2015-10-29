@@ -219,11 +219,11 @@ public class MergeRootsPane {
       }
     }).toListSequence();
     for (ModelChange change : ListSequence.fromList(changesForRoot)) {
-      higlightChange(myResultEditor, myMergeSession.getResultModel(), change);
+      higlightChange(myResultEditor, myMergeSession.getResultModel(), true, change);
       if (myMergeSession.isMyChange(change)) {
-        higlightChange(myMineEditor, myMergeSession.getMyModel(), change);
+        higlightChange(myMineEditor, myMergeSession.getMyModel(), false, change);
       } else {
-        higlightChange(myRepositoryEditor, myMergeSession.getRepositoryModel(), change);
+        higlightChange(myRepositoryEditor, myMergeSession.getRepositoryModel(), false, change);
       }
     }
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
@@ -240,10 +240,10 @@ public class MergeRootsPane {
         return Sequence.fromIterable(myMergeSession.getConflictedWith(ch)).isNotEmpty();
       }
     }).count();
-    myStatusBar.setText(MergeModelsDialog.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
+    myStatusBar.setText(MergeModelsPanel.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
   }
-  private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
-    diffEditor.highlightChange(model, change, myConflictChecker);
+  private void higlightChange(DiffEditor diffEditor, SModel model, boolean isOldEditor, ModelChange change) {
+    diffEditor.highlightChange(model, change, isOldEditor, myConflictChecker);
   }
   private void linkEditors(boolean mine, boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 

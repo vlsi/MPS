@@ -15,6 +15,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myRule__BehaviorDescriptor = new Rule__BehaviorDescriptor();
   private final BHDescriptor myApplicableCondition__BehaviorDescriptor = new ApplicableCondition__BehaviorDescriptor();
   private final BHDescriptor myPatternCondition__BehaviorDescriptor = new PatternCondition__BehaviorDescriptor();
+  private final BHDescriptor myAnalyzerConstructorParameterReference__BehaviorDescriptor = new AnalyzerConstructorParameterReference__BehaviorDescriptor();
   private final BHDescriptor myEmitInstruction__BehaviorDescriptor = new EmitInstruction__BehaviorDescriptor();
   private final BHDescriptor myInstructionReference__BehaviorDescriptor = new InstructionReference__BehaviorDescriptor();
   private final BHDescriptor myAnalyzerInitialFunction__BehaviorDescriptor = new AnalyzerInitialFunction__BehaviorDescriptor();
@@ -27,18 +28,19 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[11];
+    myConceptBehaviorIds = new long[12];
     myConceptBehaviorIds[0] = 0x5faaa6bbd57b6c8L;
     myConceptBehaviorIds[1] = 0x2e25b6b7919dd6d8L;
     myConceptBehaviorIds[2] = 0x2e25b6b7919e0b63L;
-    myConceptBehaviorIds[3] = 0x3a887e9da0b3e894L;
-    myConceptBehaviorIds[4] = 0x3a887e9da0b4cedcL;
-    myConceptBehaviorIds[5] = 0x41dd50940e1dd4c8L;
-    myConceptBehaviorIds[6] = 0x41dd50940e1dd4c9L;
-    myConceptBehaviorIds[7] = 0x449938e788e9b9deL;
-    myConceptBehaviorIds[8] = 0x58ba0a6689e9c309L;
-    myConceptBehaviorIds[9] = 0x5bd9e43c93f46789L;
-    myConceptBehaviorIds[10] = 0x5bd9e43c93f4678aL;
+    myConceptBehaviorIds[3] = 0x376a4d52f8c421f8L;
+    myConceptBehaviorIds[4] = 0x3a887e9da0b3e894L;
+    myConceptBehaviorIds[5] = 0x3a887e9da0b4cedcL;
+    myConceptBehaviorIds[6] = 0x41dd50940e1dd4c8L;
+    myConceptBehaviorIds[7] = 0x41dd50940e1dd4c9L;
+    myConceptBehaviorIds[8] = 0x449938e788e9b9deL;
+    myConceptBehaviorIds[9] = 0x58ba0a6689e9c309L;
+    myConceptBehaviorIds[10] = 0x5bd9e43c93f46789L;
+    myConceptBehaviorIds[11] = 0x5bd9e43c93f4678aL;
   }
 
   @Deprecated
@@ -59,20 +61,22 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 2:
         return myPatternCondition__BehaviorDescriptor;
       case 3:
-        return myEmitInstruction__BehaviorDescriptor;
+        return myAnalyzerConstructorParameterReference__BehaviorDescriptor;
       case 4:
-        return myInstructionReference__BehaviorDescriptor;
+        return myEmitInstruction__BehaviorDescriptor;
       case 5:
-        return myAnalyzerInitialFunction__BehaviorDescriptor;
+        return myInstructionReference__BehaviorDescriptor;
       case 6:
-        return myAnalyzerFunFunction__BehaviorDescriptor;
+        return myAnalyzerInitialFunction__BehaviorDescriptor;
       case 7:
-        return myConceptCondition__BehaviorDescriptor;
+        return myAnalyzerFunFunction__BehaviorDescriptor;
       case 8:
-        return myAnalyzerMergeFunction__BehaviorDescriptor;
+        return myConceptCondition__BehaviorDescriptor;
       case 9:
-        return myAnalyzer__BehaviorDescriptor;
+        return myAnalyzerMergeFunction__BehaviorDescriptor;
       case 10:
+        return myAnalyzer__BehaviorDescriptor;
+      case 11:
         return myInstruction__BehaviorDescriptor;
       default:
         return null;

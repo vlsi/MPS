@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -95,14 +96,20 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SReference create(String role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId, String resolveInfo) {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, resolveInfo);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SReference create(String role, SNode sourceNode, SNodeReference pointer, String resolveInfo) {
     return create(role, sourceNode, pointer.getModelReference(), pointer.getNodeId(), resolveInfo);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SReference create(String role, SNode sourceNode, SNode targetNode, String resolveInfo) {
     SReference ref = create(role, sourceNode, targetNode);
     ref.setResolveInfo(resolveInfo);
@@ -209,24 +216,35 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   protected abstract SNode getTargetNode_internal();
 
-  protected final void error(String message, ProblemDescription... problems) {
-    if (ourLoggingOff.get()) return;
-    //skip errors in java stubs because they can have reference to classes that doesn't present
-    //in class path
-    SModel model = getSourceNode().getModel();
-    if (model != null && SModelStereotype.isStubModel(model)) return;
+  /**
+   * prints error to log
+   * @param onlyWarn if true then warning must be printed out. Must be true almost always.
+   */
+  protected final void error(String message, boolean onlyWarn, ProblemDescription... problems) {
+    if (!ourLoggingOff.get()) {
+      //skip errors in java stubs because they can have reference to classes that doesn't present in the class path
+      SModel model = getSourceNode().getModel();
+      if (model != null && SModelStereotype.isStubModel(model)) {
+        return;
+      }
 
-    synchronized (ourErrorReportedRefs) {
-      if (ourErrorReportedRefs.contains(this)) return;
-      ourErrorReportedRefs.add(this);
+      synchronized (ourErrorReportedRefs) {
+        if (!ourErrorReportedRefs.contains(this)) {
+          ourErrorReportedRefs.add(this);
 
-      Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
-      log.error(String.format("\ncouldn't resolve reference '%s' from %s", getRole(), getSourceNode()),
-          getSourceNode().getReference());
-      if (message != null) log.error(" -- " + message);
-      if (problems != null) {
-        for (ProblemDescription pd : problems) {
-          log.error(pd.getMessage(), pd.getNode());
+          String msg = String.format("Could not resolve reference '%s' from %s.", getRole(), getSourceNode());
+          msg += "\n" + getSourceNode().getReference();
+          if (message != null) {
+            msg += "\n" + " -- " + message;
+          }
+          // fixme AP: multiline log messages is a bad style
+          Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
+          if (onlyWarn) log.warning(msg); else log.error(msg);
+          if (problems != null) {
+            for (ProblemDescription pd : problems) {
+              if (onlyWarn) log.warning(pd.getMessage(), pd.getNode()); else log.error(pd.getMessage(), pd.getNode());
+            }
+          }
         }
       }
     }

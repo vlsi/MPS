@@ -92,6 +92,10 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     INSTANCE = null;
   }
 
+  /**
+   * Please use one of the constructors instead
+   */
+  @Deprecated
   public static ModuleRepositoryFacade getInstance() {
     return INSTANCE;
   }

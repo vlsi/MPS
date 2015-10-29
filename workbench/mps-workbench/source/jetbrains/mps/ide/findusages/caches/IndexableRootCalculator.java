@@ -61,7 +61,7 @@ class IndexableRootCalculator {
     return files;
   }
 
-  private static Collection<String> getIndexablePaths(@NotNull SModule module) {
+  public static Collection<String> getIndexablePaths(@NotNull SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
     Set<String> result = new TreeSet<String>();
 

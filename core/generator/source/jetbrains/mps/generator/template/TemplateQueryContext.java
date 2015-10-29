@@ -150,6 +150,12 @@ public class TemplateQueryContext {
     myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
   }
 
+  /**
+   * @deprecated use {@link ReferenceMacroContext#getOutputNodeByInputNodeAndMappingLabel(SNode, String)} instead.
+   *             No need to expose this function in general TQC. Left for compatibility with existing generators in MPS 3.2.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     throw new UnsupportedOperationException("use this method only in reference macros");
   }
@@ -168,7 +174,7 @@ public class TemplateQueryContext {
 
   public SNode getOriginalCopiedInputNode(SNode node) {
     if (node == null) return null;
-    SRepository repo = myGenerator.getGeneratorSessionContext().getProject().getRepository();
+    SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
     SNode result = TracingUtil.getInputNode(node, repo);
     return result != null ? result : node;
   }
@@ -264,7 +270,7 @@ public class TemplateQueryContext {
    */
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();
-    SRepository repo = myGenerator.getGeneratorSessionContext().getProject().getRepository();
+    SRepository repo = myGenerator.getGeneratorSessionContext().getRepository();
     return tnr == null ? null : tnr.resolve(repo);
   }
 

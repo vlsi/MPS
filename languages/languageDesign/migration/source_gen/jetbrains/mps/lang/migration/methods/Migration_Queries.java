@@ -12,9 +12,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.lang.migration.behavior.MigrationScript__BehaviorDescriptor;
+import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -24,24 +24,24 @@ public class Migration_Queries {
     SModule module = futureModel.getModule();
     if (LanguageAspect.MIGRATION.is(futureModel)) {
       Language lang = (Language) module;
-      int currentVersion = (lang).getLanguageVersion();
+      int currentVersion = lang.getLanguageVersion();
       SPropertyOperations.set(c, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"), "" + (currentVersion));
 
-      lang.setLanguageVersion(lang.getLanguageVersion() + 1);
+      lang.setLanguageVersion(currentVersion + 1);
     }
 
-    SModelInternal m = ((SModelInternal) (SModel) futureModel);
-    AbstractModule mod = ((AbstractModule) module);
+    SModelInternal m = (SModelInternal) (SModel) futureModel;
+    AbstractModule mod = (AbstractModule) module;
 
     m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin"));
     m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L), "jetbrains.mps.lang.pattern"));
 
-    m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
-    m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);
+    m.addModelImport(new ModuleRepositoryFacade(module.getRepository()).getModelByName("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
+    m.addModelImport(new ModuleRepositoryFacade(module.getRepository()).getModelByName("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);
     mod.addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
   }
   public static SNode execute_ret(SNode point) {
-    SNode typeNode = MigrationScript__BehaviorDescriptor.getProducedData_id7s$_UJMVDH8.invoke(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
+    SNode typeNode = IMigrationUnit__BehaviorDescriptor.getProducedData_id7s$_UJMVDH8.invoke(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
     return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0g() : _quotation_createNode_9iwezb_a0b0a0g_0(typeNode));
   }
   private static SNode _quotation_createNode_9iwezb_a0b0a0g() {

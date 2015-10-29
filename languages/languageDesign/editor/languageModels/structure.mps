@@ -1173,6 +1173,10 @@
       <property role="1uS6qv" value="comment_out_action_id" />
       <property role="1uS6qo" value="COMMENT" />
     </node>
+    <node concept="M4N5e" id="1FSxSwWqMNJ" role="M5hS2">
+      <property role="1uS6qv" value="click_action_id" />
+      <property role="1uS6qo" value="CLICK" />
+    </node>
   </node>
   <node concept="1TIwiD" id="g_hAIk0">
     <property role="R5$K7" value="false" />
@@ -2055,7 +2059,7 @@
     <property role="TrG5h" value="QueryFunction_ImagePath" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="QueryFunction" />
-    <property role="34LRSv" value="string" />
+    <property role="34LRSv" value="query" />
     <property role="1pbfSe" value="78309912" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>

@@ -432,20 +432,22 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/3013115976262163896">
     <file name="BaseStyles_StyleSheet.java">
-      <node id="3013115976262163896" at="11,5,12,23" concept="6" />
-      <node id="3013115976262163896" at="12,23,13,72" concept="2" />
-      <node id="3013115976262163896" at="13,72,14,34" concept="2" />
-      <node id="3013115976262163896" at="10,83,15,5" concept="0" />
-      <node id="3013115976262163896" at="10,0,17,0" concept="9" trace="apply_StubImplementation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <scope id="3013115976262163896" at="11,5,14,34">
+      <node id="3013115976262163896" at="12,5,13,78" concept="6" />
+      <node id="3013115976262163896" at="14,31,15,37" concept="2" />
+      <node id="3013115976262163896" at="16,7,17,34" concept="2" />
+      <node id="3013115976262163896" at="13,78,16,7" concept="4" />
+      <node id="3013115976262163896" at="11,83,18,5" concept="0" />
+      <node id="3013115976262163896" at="11,0,20,0" concept="9" trace="apply_StubImplementation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <scope id="3013115976262163896" at="14,31,15,37" />
+      <scope id="3013115976262163896" at="12,5,17,34">
         <var name="styleToPut" id="3013115976262163896" />
       </scope>
-      <scope id="3013115976262163896" at="10,83,15,5" />
-      <scope id="3013115976262163896" at="10,0,17,0">
+      <scope id="3013115976262163896" at="11,83,18,5" />
+      <scope id="3013115976262163896" at="11,0,20,0">
         <var name="editorCell" id="3013115976262163896" />
         <var name="style" id="3013115976262163896" />
       </scope>
-      <unit id="3013115976262163896" at="9,0,19,0" name="jetbrains.mps.lang.core.editor.BaseStyles_StyleSheet" />
+      <unit id="3013115976262163896" at="10,0,22,0" name="jetbrains.mps.lang.core.editor.BaseStyles_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/3078666699043620377">
@@ -577,20 +579,22 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/4532554318124207509">
     <file name="BaseStyleSheet_StyleSheet.java">
-      <node id="4532554318124207509" at="11,5,12,23" concept="6" />
-      <node id="4532554318124207509" at="12,23,13,72" concept="2" />
-      <node id="4532554318124207509" at="13,72,14,34" concept="2" />
-      <node id="4532554318124207509" at="10,72,15,5" concept="0" />
-      <node id="4532554318124207509" at="10,0,17,0" concept="9" trace="apply_Comment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <scope id="4532554318124207509" at="11,5,14,34">
+      <node id="4532554318124207509" at="12,5,13,78" concept="6" />
+      <node id="4532554318124207509" at="14,31,15,37" concept="2" />
+      <node id="4532554318124207509" at="16,7,17,34" concept="2" />
+      <node id="4532554318124207509" at="13,78,16,7" concept="4" />
+      <node id="4532554318124207509" at="11,72,18,5" concept="0" />
+      <node id="4532554318124207509" at="11,0,20,0" concept="9" trace="apply_Comment#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <scope id="4532554318124207509" at="14,31,15,37" />
+      <scope id="4532554318124207509" at="12,5,17,34">
         <var name="styleToPut" id="4532554318124207509" />
       </scope>
-      <scope id="4532554318124207509" at="10,72,15,5" />
-      <scope id="4532554318124207509" at="10,0,17,0">
+      <scope id="4532554318124207509" at="11,72,18,5" />
+      <scope id="4532554318124207509" at="11,0,20,0">
         <var name="editorCell" id="4532554318124207509" />
         <var name="style" id="4532554318124207509" />
       </scope>
-      <unit id="4532554318124207509" at="9,0,19,0" name="jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet" />
+      <unit id="4532554318124207509" at="10,0,22,0" name="jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/5169995583184591171">
@@ -744,7 +748,7 @@
       <node id="6549307287717964107" at="32,0,33,0" concept="3" trace="myNode" />
       <node id="6549307287717964107" at="33,61,34,25" concept="2" />
       <node id="6549307287717964107" at="36,54,37,56" concept="2" />
-      <node id="4798716566569680749" at="39,75,40,61" concept="2" />
+      <node id="4798716566569680749" at="39,75,40,60" concept="2" />
       <node id="6549307287717964107" at="44,0,45,0" concept="3" trace="myNode" />
       <node id="6549307287717964107" at="45,63,46,25" concept="2" />
       <node id="6549307287717964107" at="48,54,49,56" concept="2" />
@@ -764,7 +768,7 @@
       <scope id="7145276374228779684" at="27,75,28,39" />
       <scope id="6549307287717964107" at="33,61,34,25" />
       <scope id="6549307287717964107" at="36,54,37,56" />
-      <scope id="4798716566569680683" at="39,75,40,61" />
+      <scope id="4798716566569680683" at="39,75,40,60" />
       <scope id="6549307287717964107" at="45,63,46,25" />
       <scope id="6549307287717964107" at="48,54,49,56" />
       <scope id="7145276374228779684" at="51,75,52,39" />
@@ -901,8 +905,8 @@
       <node id="8383079901755562146" at="37,83,38,81" concept="2" />
       <node id="8383079901755562146" at="38,81,39,22" concept="7" />
       <node id="8383079901755562467" at="41,88,42,88" concept="6" />
-      <node id="8383079901755562467" at="42,88,43,47" concept="2" />
-      <node id="8383079901755562467" at="43,47,44,34" concept="6" />
+      <node id="8383079901755562467" at="42,88,43,48" concept="2" />
+      <node id="8383079901755562467" at="43,48,44,34" concept="6" />
       <node id="8383079901755562467" at="44,34,45,58" concept="2" />
       <node id="8383079901755562467" at="45,58,46,40" concept="2" />
       <node id="8383079901755562467" at="46,40,47,34" concept="2" />
@@ -913,8 +917,8 @@
       <node id="6509644740689890742" at="55,127,56,26" concept="7" />
       <node id="6509644740689890742" at="58,15,59,54" concept="2" />
       <node id="4532554318124178911" at="62,88,63,88" concept="6" />
-      <node id="4532554318124178911" at="63,88,64,47" concept="2" />
-      <node id="4532554318124178911" at="64,47,65,34" concept="6" />
+      <node id="4532554318124178911" at="63,88,64,49" concept="2" />
+      <node id="4532554318124178911" at="64,49,65,34" concept="6" />
       <node id="4532554318124178911" at="65,34,66,57" concept="2" />
       <node id="4532554318124178911" at="66,57,67,40" concept="2" />
       <node id="4532554318124178911" at="67,40,68,34" concept="2" />

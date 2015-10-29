@@ -27,7 +27,6 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="migration" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
     <orderEntry type="library" name="Trove" level="project" />

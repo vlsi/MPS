@@ -18,26 +18,38 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 1:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor()));
       case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor()));
       case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor()));
       case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor()));
       case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MigrationScript_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor()));
       case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MigrationScript_Editor()));
       case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OrderDependency_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoveNode_Editor()));
       case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor()));
       case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OrderDependency_Editor()));
       case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor()));
       case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor()));
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor()));
       case 12:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor()));
+      case 13:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor()));
+      case 14:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor()));
+      case 15:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor()));
+      case 16:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor()));
+      case 17:
+        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor()));
+      case 18:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TransformStatement_Editor()));
       default:
     }
@@ -49,5 +61,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.DirectNodeReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MoveNode", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.PureMigrationScript", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RefactoringLog", "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency", "jetbrains.mps.lang.migration.structure.ReflectionNodeReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformStatement"};
 }

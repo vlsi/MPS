@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ import jetbrains.mps.findUsages.FindUsagesUtil;
 import jetbrains.mps.findUsages.NodeUsageFinder;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -99,7 +99,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SAbstractConcept, String>() {
       @Override
       public String value(SAbstractConcept key) {
-        return IdHelper.getConceptId(key).getIdValue()+"";
+        return String.valueOf(MetaIdHelper.getConcept(key).getIdValue());
       }
     });
     for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {

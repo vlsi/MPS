@@ -25,7 +25,7 @@ public class PropertyAttributeId extends MigrationScriptBase {
   public boolean isRerunnable() {
     return false;
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     Iterable<SModel> models = m.getModels();
     Iterable<SNode> propertyAttributes = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {

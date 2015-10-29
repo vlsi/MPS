@@ -23,6 +23,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -179,6 +181,11 @@ public class JarEntryFile implements IFileEx {
 
   @Override
   public void refresh() {
+  }
+
+  @Override
+  public URL getUrl() throws MalformedURLException {
+    return new URL("jar:" + getPath());
   }
 
   @Override

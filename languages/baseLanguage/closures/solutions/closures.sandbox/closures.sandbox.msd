@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="closures.sandbox" uuid="5e0a5bb4-5765-4a7f-b9ee-615f63ada8a1" compileInMPS="true">
+<solution name="closures.sandbox" uuid="5e0a5bb4-5765-4a7f-b9ee-615f63ada8a1" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
@@ -22,5 +22,11 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" fqName="jetbrains.mps.lang.typesystem" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" version="0" />
+    <module reference="5e0a5bb4-5765-4a7f-b9ee-615f63ada8a1(closures.sandbox)" version="0" />
+    <module reference="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" version="0" />
+  </dependencyVersions>
 </solution>
 

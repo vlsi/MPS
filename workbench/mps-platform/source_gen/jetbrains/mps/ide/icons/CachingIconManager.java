@@ -10,9 +10,9 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,9 +31,8 @@ import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import javax.swing.ImageIcon;
-import java.io.InputStream;
-import java.io.IOException;
+import com.intellij.openapi.util.IconLoader;
+import java.net.MalformedURLException;
 
 public class CachingIconManager {
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
@@ -43,7 +42,7 @@ public class CachingIconManager {
 
   public Icon getConceptIcon(SAbstractConcept concept) {
     if (concept instanceof SConcept) {
-      Icon icon = getIcon(SNodeOperations.asNode(concept));
+      Icon icon = getIcon(SNodeOperations.cast(SNodeOperations.asNode(concept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
       if (icon != null) {
         return icon;
       }
@@ -59,15 +58,14 @@ public class CachingIconManager {
     boolean withoutAdditional = false;
     Icon mainIcon = null;
 
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
+    SNode concept = SNodeOperations.asNode(SNodeOperations.getConcept(node));
     if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-      SNode cd = ((SNode) concept);
       String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getAlternativeIcon(node);
       if (alternativeIconPath != null) {
         mainIcon = getIcon(SModelUtil.getDeclaringLanguage(concept), alternativeIconPath);
       }
       if (mainIcon == null) {
-        mainIcon = getIcon(concept);
+        mainIcon = getIcon(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
       }
     }
 
@@ -138,37 +136,10 @@ public class CachingIconManager {
   }
 
   private Icon getIcon(IFile file) {
-    ImageIcon icon = null;
-    if (file.exists()) {
-      byte[] image = new byte[(int) file.length()];
-      InputStream is = null;
-      try {
-        is = file.openInputStream();
-        int current = 0;
-        while (true) {
-          int result = is.read(image, current, image.length - current);
-          if (result == -1 || result == 0) {
-            break;
-          } else {
-            current += result;
-          }
-        }
-      } catch (IOException e) {
-        IconManager.LOG.error(null, e);
-      } finally {
-        try {
-          if (is != null) {
-            is.close();
-          }
-        } catch (IOException e) {
-          IconManager.LOG.error(null, e);
-        }
-      }
-      icon = new ImageIcon(image);
-      if ((icon.getImageLoadStatus() & IMAGE_LOADED) == 0) {
-        icon = null;
-      }
+    try {
+      return IconLoader.findIcon(file.getUrl(), false);
+    } catch (MalformedURLException e) {
+      return null;
     }
-    return icon;
   }
 }

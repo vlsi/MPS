@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
@@ -30,6 +31,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -180,6 +182,14 @@ public final class GeneratorMappings {
     return !(o instanceof List);
   }
 
+  // expose internal structure, to build GeneratorDebug_Mappings with MPS-coded DebugMappingsBuilder
+  /*package*/ Collection<String> getAvailableLabels() {
+    return myMappingNameAndInputNodeToOutputNodeMap.keySet();
+  }
+  /*package*/Map<SNode,Object> getMappings(String label) {
+    return myMappingNameAndInputNodeToOutputNodeMap.get(label);
+  }
+
   // serialization
 
   public void export(TransientModelWithMetainfo model, DependenciesBuilder builder) {
@@ -207,6 +217,30 @@ public final class GeneratorMappings {
         SNodeId targetId = ((List<SNode>) value).get(0).getNodeId();
         MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getContainingRoot()), true);
         mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, false);
+      }
+    }
+  }
+
+  public void export(CheckpointState cp) {
+    for (Entry<String, Map<SNode, Object>> o : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
+      String label = o.getKey();
+      for (Entry<SNode, Object> i : o.getValue().entrySet()) {
+        SNode inputNode = i.getKey();
+        if (inputNode == null) {
+          // FIXME shall I track nodes newly introduced at the given checkpoint step? Likely yes,
+          // need a way to register them into the state
+          continue;
+        }
+        // perhaps, would be useful to record mappings even without original node (marked as 'useless')
+        // to ease debug (once there's mechanism to show mapping labels as part of transient model/module)
+        Object value = i.getValue();
+        if (value instanceof SNode) {
+          cp.record(inputNode, label, (SNode) value);
+        } else if (value instanceof Collection) {
+          @SuppressWarnings("unchecked")
+          Collection<SNode> collection = (Collection<SNode>) value;
+          cp.record(inputNode, label, collection);
+        }
       }
     }
   }

@@ -16,8 +16,7 @@ public class RegexpStylesheet_StyleSheet {
   }
   public static void apply_LeftRegexpBrace(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       RegexpStylesheet_StyleSheet.apply_RegexpBrace(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }
@@ -25,8 +24,7 @@ public class RegexpStylesheet_StyleSheet {
   }
   public static void apply_RightRegexpBrace(Style style, EditorCell editorCell) {
     {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
+      Style styleToPut = new StyleImpl();
       RegexpStylesheet_StyleSheet.apply_RegexpBrace(styleToPut, editorCell);
       style.putAll(styleToPut, 0);
     }

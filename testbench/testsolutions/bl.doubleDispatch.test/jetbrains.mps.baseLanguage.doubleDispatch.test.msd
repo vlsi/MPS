@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.doubleDispatch.test" uuid="0528d773-6535-46f8-89a2-16a3751e6ab5" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.baseLanguage.doubleDispatch.test" uuid="0528d773-6535-46f8-89a2-16a3751e6ab5" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -19,5 +19,8 @@
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" fqName="jetbrains.mps.lang.test" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="0528d773-6535-46f8-89a2-16a3751e6ab5(jetbrains.mps.baseLanguage.doubleDispatch.test)" version="0" />
+  </dependencyVersions>
 </solution>
 

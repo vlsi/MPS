@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.xmlPersistence.ideaPlugin" uuid="c5acfe9f-68f7-4748-bd01-8f9f42e607b7" compileInMPS="true">
+<solution name="jetbrains.mps.samples.xmlPersistence.ideaPlugin" uuid="c5acfe9f-68f7-4748-bd01-8f9f42e607b7" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -11,5 +11,8 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="c5acfe9f-68f7-4748-bd01-8f9f42e607b7(jetbrains.mps.samples.xmlPersistence.ideaPlugin)" version="0" />
+  </dependencyVersions>
 </solution>
 

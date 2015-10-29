@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -66,6 +67,15 @@ public final class ReferenceMacroContext extends TemplateQueryContextWithMacro {
 
   @Override
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
+    return getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(inputNode, label);
+  }
+
+  /**
+   * "pick output <mapping label> for ( <input node> )"
+   * GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope
+   */
+  @Nullable
+  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label) {
     List<SNode> outputNodes = this.getAllOutputNodesByInputNodeAndMappingLabel(inputNode, label);
     if(outputNodes == null) {
       return null;

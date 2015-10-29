@@ -19,6 +19,6 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="persistence" scope="TEST" />
+    <orderEntry type="module" module-name="environment" scope="TEST" />
   </component>
 </module>
-

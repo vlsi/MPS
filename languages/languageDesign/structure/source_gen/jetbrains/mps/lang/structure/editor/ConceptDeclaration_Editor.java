@@ -53,6 +53,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
@@ -903,12 +905,26 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return FileSystem.getInstance().getFileByPath(s).exists();
   }
   private EditorCell createImage_ueqr71_a2a(final EditorContext editorContext, final SNode node) {
-    EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
-      public String invoke() {
-        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"));
+    SModule imageModule;
+    String imagePath;
+    {
+      Object image = ((_FunctionTypes._return_P0_E0<? extends Object>) new _FunctionTypes._return_P0_E0<String>() {
+        public String invoke() {
+          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"));
+        }
+      }).invoke();
+      if (image instanceof String) {
+        imageModule = SNodeOperations.getModel(node).getModule();
+        imagePath = (String) image;
+      } else {
+        {
+          Tuples._2<SModule, String> _tmp_ueqr71_a0a1a2a75 = (Tuples._2<SModule, String>) image;
+          imageModule = _tmp_ueqr71_a0a1a2a75._0();
+          imagePath = _tmp_ueqr71_a0a1a2a75._1();
+        }
       }
-    }).invoke());
+    }
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
     editorCell.setCellId("Image_ueqr71_a2a");
     editorCell.setDescent(0);
     return editorCell;

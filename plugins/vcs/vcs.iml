@@ -38,5 +38,6 @@
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="components" />
     <orderEntry type="module" module-name="kernel-resources" />
+    <orderEntry type="module" module-name="mps-core" />
   </component>
 </module>

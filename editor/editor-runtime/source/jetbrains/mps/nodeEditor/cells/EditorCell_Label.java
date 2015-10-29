@@ -153,6 +153,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     getStyle().set(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR, color);
   }
 
+  @Override
   public int getCaretPosition() {
     return myTextLine.getCaretPosition();
   }

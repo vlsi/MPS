@@ -3189,7 +3189,7 @@
                 <ref role="37wK5l" node="1i9nLvh04zY" resolve="error" />
                 <node concept="10Nm6u" id="4O1dS63QDCW" role="37wK5m" />
                 <node concept="Xl_RD" id="4O1dS63QDHG" role="37wK5m">
-                  <property role="Xl_RC" value="No make facets requested, nothing to make" />
+                  <property role="Xl_RC" value="No make facets found, nothing to make. This may have been caused by a language module failed to load." />
                 </node>
               </node>
             </node>

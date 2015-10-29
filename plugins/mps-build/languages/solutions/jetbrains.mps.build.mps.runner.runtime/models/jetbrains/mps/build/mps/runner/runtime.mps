@@ -199,24 +199,6 @@
   </registry>
   <node concept="312cEu" id="3H7CugYdV9b">
     <property role="TrG5h" value="MpsRunnerWorker" />
-    <node concept="3clFbW" id="3H7CugYdXu$" role="jymVt">
-      <node concept="3Tm1VV" id="3H7CugYdXu_" role="1B3o_S" />
-      <node concept="3cqZAl" id="3H7CugYdXuA" role="3clF45" />
-      <node concept="37vLTG" id="3H7CugYdXuB" role="3clF46">
-        <property role="TrG5h" value="whatToDo" />
-        <node concept="3uibUv" id="3H7CugYdXuC" role="1tU5fm">
-          <ref role="3uigEE" to="asz6:KL8Aql8enO" resolve="Script" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3H7CugYdXuD" role="3clF47">
-        <node concept="XkiVB" id="3H7CugYdXuE" role="3cqZAp">
-          <ref role="37wK5l" to="hhlx:3GGnItM97pk" resolve="GeneratorWorker" />
-          <node concept="37vLTw" id="3H7CugYdXuF" role="37wK5m">
-            <ref role="3cqZAo" node="3H7CugYdXuB" resolve="whatToDo" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFbW" id="3H7CugYdXuG" role="jymVt">
       <node concept="3Tm1VV" id="3H7CugYdXuH" role="1B3o_S" />
       <node concept="3cqZAl" id="3H7CugYdXuI" role="3clF45" />

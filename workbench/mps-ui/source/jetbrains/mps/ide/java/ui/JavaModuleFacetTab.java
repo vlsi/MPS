@@ -70,9 +70,8 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private JavaModuleFacetImpl myJavaModuleFacet;
 
   public JavaModuleFacetTab(JavaModuleFacet javaModuleFacet) {
-    super(((ModuleFacetBase)javaModuleFacet).getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.module.javatab.tip"));
+    super(((ModuleFacetBase)javaModuleFacet).getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("facet.java.tip"));
     myJavaModuleFacet = (JavaModuleFacetImpl)javaModuleFacet;
-    init();
   }
 
   @Override
@@ -85,7 +84,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     if(myJavaModuleFacet.getModule() instanceof Solution) {
       SolutionDescriptor descriptor = ((Solution) myJavaModuleFacet.getModule()).getModuleDescriptor();
 
-      JBLabel solutionKindLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.solutionkind"));
+      JBLabel solutionKindLabel = new JBLabel(PropertiesBundle.message("facet.java.solutionkind"));
       myComboBox = new ComboBox(new DefaultComboBoxModel(SolutionKind.values()));
       myComboBox.setSelectedItem(descriptor.getKind());
       myComboBox.setPreferredSize(new Dimension(300,20));
@@ -93,7 +92,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       advancedTab.add(solutionKindLabel, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
       advancedTab.add(myComboBox, new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-      myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.module.javatab.compileinmps"), descriptor.getCompileInMPS());
+      myCheckBox = new JBCheckBox(PropertiesBundle.message("facet.java.compileinmps"), descriptor.getCompileInMPS());
       advancedTab.add(myCheckBox, new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
@@ -131,7 +130,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     decorator.setPreferredSize(new Dimension(500, 100));
 
     JPanel table = decorator.createPanel();
-    table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.javatab.sourcepathborder"), false));
+    table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("facet.java.sourcepath"), false));
     return table;
   }
 
@@ -164,7 +163,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     decorator.setPreferredSize(new Dimension(500, 100));
 
     JPanel table = decorator.createPanel();
-    table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("mps.properties.configurable.module.javatab.librariesborder"), false));
+    table.setBorder(IdeBorderFactory.createTitledBorder(PropertiesBundle.message("facet.java.libraries"), false));
     return table;
   }
 

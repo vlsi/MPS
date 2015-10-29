@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -75,6 +75,8 @@
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
     <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
     <import index="hcvu" ref="r:0204c664-b836-4137-bb87-42caecd8a4e3(jetbrains.mps.lang.editor.folding.test)" />
+    <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
+    <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -535,16 +537,19 @@
       <ref role="lpD7u" to="e6od:5fIuys0cK74" resolve="Comment_BetweenTwoComments" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdbq" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cQ7i" resolve="Comment_CommentUncommentTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cQ7i" resolve="Comment_CommentUncomment" />
+    </node>
+    <node concept="lpD6D" id="1OLuskJsISq" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1OLuskJsHlT" resolve="Comment_CommentUncommentWithSelection" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdcV" role="lpD6w">
-      <ref role="lpD7u" to="e6od:3FNxLZIq6le" resolve="Comment_EditInsideComment_Test" />
+      <ref role="lpD7u" to="e6od:3FNxLZIq6le" resolve="Comment_EditInsideComment" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdeu" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cPl5" resolve="Comment_ExpressionStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cPl5" resolve="Comment_ExpressionStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdhE" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cGoI" resolve="Comment_FirstStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cGoI" resolve="Comment_FirstStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdjj" role="lpD6w">
       <ref role="lpD7u" to="e6od:3FNxLZIq69L" resolve="Comment_InsertAfterComment" />
@@ -556,40 +561,49 @@
       <ref role="lpD7u" to="e6od:5fIuys0cJIH" resolve="Comment_InsideComment" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdoq" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cHEt" resolve="Comment_LastStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cHEt" resolve="Comment_LastStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdqb" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cPyE" resolve="Comment_NodeWithComment" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdrY" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cI7w" resolve="Comment_SecondStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cI7w" resolve="Comment_SecondStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdtN" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cPm4" resolve="Comment_SecondTypeTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cPm4" resolve="Comment_SecondType" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdvE" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0c9kv" resolve="Comment_TypeTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0c9kv" resolve="Comment_Type" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdxz" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cI6e" resolve="Uncomment_FirstStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cI6e" resolve="Uncomment_FirstStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdzu" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cI6R" resolve="Uncomment_LastStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cI6R" resolve="Uncomment_LastStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCd_r" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cKzo" resolve="Uncomment_MethodTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cKzo" resolve="Uncomment_Method" />
+    </node>
+    <node concept="lpD6D" id="1OLuskJsITC" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1OLuskJsGTG" resolve="Uncomment_NodeAtFirstPosition" />
+    </node>
+    <node concept="lpD6D" id="1OLuskJsIUR" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1OLuskJsHkY" resolve="Uncomment_NodeAtLastPosition" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdBq" role="lpD6w">
       <ref role="lpD7u" to="e6od:3FNxLZIqrJI" resolve="Uncomment_NodeWithComment" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdDr" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cFvu" resolve="Uncomment_SecondStatementTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cFvu" resolve="Uncomment_SecondStatement" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdFu" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cPG7" resolve="Uncomment_SecondTypeTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cPG7" resolve="Uncomment_SecondType" />
+    </node>
+    <node concept="lpD6D" id="1OLuskJsIW7" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1OLuskJsGhT" resolve="Uncomment_StatementAtFirstPosition" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdHz" role="lpD6w">
-      <ref role="lpD7u" to="e6od:5fIuys0cJ7d" resolve="Uncomment_TypeTest" />
+      <ref role="lpD7u" to="e6od:5fIuys0cJ7d" resolve="Uncomment_Type" />
     </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61DD">
@@ -1122,9 +1136,6 @@
     </node>
     <node concept="lpD6D" id="3FJ0r$qO2HP" role="lpD6w">
       <ref role="lpD7u" to="tpej:5dHXnb3qyzv" resolve="NullableAnalyzer" />
-    </node>
-    <node concept="lpD6D" id="1eGlc3_p$q7" role="lpD6w">
-      <ref role="lpD7u" to="tpej:1eGlc3_m1cS" resolve="ExtendingNullableAnalyzer" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO2HQ" role="lpD6w">
       <ref role="lpD7u" to="tpej:7SKJuJJPA7s" resolve="ForBreakUnreachable" />
@@ -1758,6 +1769,18 @@
     </node>
     <node concept="lpD6D" id="2axhso1Go$x" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5dui9Yb8pWF" resolve="EditStringProperty" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58RzJo" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0ekf8" resolve="ShowReflectiveEditor" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58RzVy" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0fmZB" resolve="ShowReflectiveEditorAndMove" />
+    </node>
+    <node concept="lpD6D" id="wACy6P0Ptq" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:wACy6P0PjQ" resolve="ShowReflectiveEditorForAttribute" />
+    </node>
+    <node concept="lpD6D" id="5EVBM58R$7H" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2orW$Z0fPO9" resolve="ShowReflectiveThenRegularEditor" />
     </node>
     <node concept="lpD6D" id="2axhso1GoGU" role="lpD6w">
       <ref role="lpD7u" to="ryl9:O7qdvf4DFS" resolve="TypeName" />
@@ -4033,6 +4056,45 @@
     </node>
     <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
       <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="7ez5JvPiiEK">
+    <node concept="2R4zua" id="7ez5JvPiiGM" role="2R4z3u">
+      <property role="2R4zub" value="analyzers.test" />
+      <property role="2R4zu8" value="f9665e4e-baa4-42c6-b97d-c49dfa9f7381" />
+    </node>
+    <node concept="lpD6D" id="7ez5JvPiiGO" role="lpD6w">
+      <ref role="lpD7u" to="ma4t:7ez5JvPib_b" resolve="TestAnalyzerWithConstructorParameters" />
+    </node>
+    <node concept="lpD6D" id="1PSwCEWmZrN" role="lpD6w">
+      <ref role="lpD7u" to="ma4t:1eGlc3_m1cS" resolve="ExtendingNullableAnalyzer" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="a692rlEAtV">
+    <node concept="2R4zua" id="a692rlEAtX" role="2R4z3u">
+      <property role="2R4zub" value="jetbrains.mps.lang.editor.forms.tests" />
+      <property role="2R4zu8" value="cfb148cb-f798-4362-89a2-56938bf6c92f" />
+    </node>
+    <node concept="lpD6D" id="a692rlEAtZ" role="lpD6w">
+      <ref role="lpD7u" to="ya75:4CPWB7pYUNz" resolve="ImageCheckbox_CLICK_Toggles" />
+    </node>
+    <node concept="lpD6D" id="a692rlEAu4" role="lpD6w">
+      <ref role="lpD7u" to="ya75:4CPWB7pYBJc" resolve="ImageCheckbox_SPACE_Toggles" />
+    </node>
+    <node concept="lpD6D" id="a692rlEAub" role="lpD6w">
+      <ref role="lpD7u" to="ya75:4CPWB7q248w" resolve="TextCheckbox_CLICK_Toggles" />
+    </node>
+    <node concept="lpD6D" id="a692rlEAuk" role="lpD6w">
+      <ref role="lpD7u" to="ya75:4CPWB7q24hP" resolve="TextCheckbox_SPACE_KeepsSelection" />
+    </node>
+    <node concept="lpD6D" id="a692rlEAuv" role="lpD6w">
+      <ref role="lpD7u" to="ya75:4CPWB7pWCi9" resolve="TextCheckbox_SPACE_Toggles" />
+    </node>
+    <node concept="lpD6D" id="4fy9ApAcQ9T" role="lpD6w">
+      <ref role="lpD7u" to="ya75:65lbGMleZau" resolve="PlatformCheckbox_SPACE_InImage_Toggles" />
+    </node>
+    <node concept="lpD6D" id="4fy9ApAcQaa" role="lpD6w">
+      <ref role="lpD7u" to="ya75:65lbGMlf28I" resolve="PlatformCheckbox_SPACE_InLabel_Toggles" />
     </node>
   </node>
 </model>

@@ -14,7 +14,9 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptAnalysisDirection = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptAnalyzer = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(4746038179140588765L, "initialFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L), false, false, false), new ConceptDescriptorBuilder.Link(4746038179140586188L, "mergeFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L), false, false, false), new ConceptDescriptorBuilder.Link(4746038179140588766L, "funFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L), false, false, false), new ConceptDescriptorBuilder.Link(9177062368042220440L, "direction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L), false, false, false), new ConceptDescriptorBuilder.Link(9177062368042359739L, "latticeElementType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false), new ConceptDescriptorBuilder.Link(3325264799421088056L, "instruction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL), true, true, false)).children(new String[]{"initialFunction", "mergeFunction", "funFunction", "direction", "latticeElementType", "instruction"}, new boolean[]{false, false, false, false, false, true}).create();
+  /*package*/ final ConceptDescriptor myConceptAnalyzer = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(4746038179140588765L, "initialFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c8L), false, false, false), new ConceptDescriptorBuilder.Link(4746038179140586188L, "mergeFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x58ba0a6689e9c309L), false, false, false), new ConceptDescriptorBuilder.Link(4746038179140588766L, "funFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L), false, false, false), new ConceptDescriptorBuilder.Link(9177062368042220440L, "direction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x7f5b799a00c2fb86L), false, false, false), new ConceptDescriptorBuilder.Link(9177062368042359739L, "latticeElementType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false), new ConceptDescriptorBuilder.Link(3325264799421088056L, "instruction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f4678aL), true, true, false), new ConceptDescriptorBuilder.Link(3993089038373544707L, "constructorParameters", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L), true, true, false)).children(new String[]{"initialFunction", "mergeFunction", "funFunction", "direction", "latticeElementType", "instruction", "constructorParameters"}, new boolean[]{false, false, false, false, false, true, true}).create();
+  /*package*/ final ConceptDescriptor myConceptAnalyzerConstructorParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c420b0L)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L)).create();
+  /*package*/ final ConceptDescriptor myConceptAnalyzerConstructorParameterReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L)).super_("jetbrains.mps.baseLanguage.structure.BaseVariableReference").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L)).parents("jetbrains.mps.baseLanguage.structure.BaseVariableReference").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L)).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4c9L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("fun", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunParameterInput = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d4L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("input", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerFunParameterProgramState = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1dd4d2L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("state", "").staticScope(StaticScope.NONE).create();
@@ -25,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAnalyzerParameterProgram = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x41dd50940e1d7ebcL)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL)).alias("program", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerRunnerAnalyzeOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a11L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).alias("analyze", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerRunnerClassKeeper = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x13ac225cc9e9f5bfL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(4445029770708541867L, "member", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL), true, true, false)).children(new String[]{"member"}, new boolean[]{true}).create();
-  /*package*/ final ConceptDescriptor myConceptAnalyzerRunnerCreator = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(95073643532950039L, "analyzer", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L), false)).references("analyzer").childDescriptors(new ConceptDescriptorBuilder.Link(178770917832625312L, "nodeToCheck", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"nodeToCheck"}, new boolean[]{false}).alias("runner", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptAnalyzerRunnerCreator = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(95073643532950039L, "analyzer", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L), false)).references("analyzer").childDescriptors(new ConceptDescriptorBuilder.Link(178770917832625312L, "nodeToCheck", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false), new ConceptDescriptorBuilder.Link(3993089038374473158L, "parameters", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), true, true, false)).children(new String[]{"nodeToCheck", "parameters"}, new boolean[]{false, true}).alias("runner", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptAnalyzerRunnerType = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x1c63af9d2f3a7f23L)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).alias("analyzerRunner", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptApplicableCondition = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x2e25b6b7919dd6d8L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptApplicableNodeReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(4943044633102057745L, "applicableNode", MetaIdFactory.conceptId(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL), false)).references("applicableNode").staticScope(StaticScope.NONE).create();
@@ -47,78 +49,82 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAnalysisDirection, myConceptAnalyzer, myConceptAnalyzerFunFunction, myConceptAnalyzerFunParameterInput, myConceptAnalyzerFunParameterProgramState, myConceptAnalyzerFunctionResultType, myConceptAnalyzerInitialFunction, myConceptAnalyzerMergeFunction, myConceptAnalyzerMergeParameterInput, myConceptAnalyzerParameterProgram, myConceptAnalyzerRunnerAnalyzeOperation, myConceptAnalyzerRunnerClassKeeper, myConceptAnalyzerRunnerCreator, myConceptAnalyzerRunnerType, myConceptApplicableCondition, myConceptApplicableNodeReference, myConceptBackwardDirection, myConceptConceptCondition, myConceptEmitInstruction, myConceptForwardDirection, myConceptInsertAfterPosition, myConceptInsertBeforePosition, myConceptInsertPosition, myConceptInstruction, myConceptInstructionClassKeeper, myConceptInstructionParameter, myConceptInstructionReference, myConceptIsOperation, myConceptPatternCondition, myConceptRule, myConceptRuleReference);
+    return Arrays.asList(myConceptAnalysisDirection, myConceptAnalyzer, myConceptAnalyzerConstructorParameter, myConceptAnalyzerConstructorParameterReference, myConceptAnalyzerFunFunction, myConceptAnalyzerFunParameterInput, myConceptAnalyzerFunParameterProgramState, myConceptAnalyzerFunctionResultType, myConceptAnalyzerInitialFunction, myConceptAnalyzerMergeFunction, myConceptAnalyzerMergeParameterInput, myConceptAnalyzerParameterProgram, myConceptAnalyzerRunnerAnalyzeOperation, myConceptAnalyzerRunnerClassKeeper, myConceptAnalyzerRunnerCreator, myConceptAnalyzerRunnerType, myConceptApplicableCondition, myConceptApplicableNodeReference, myConceptBackwardDirection, myConceptConceptCondition, myConceptEmitInstruction, myConceptForwardDirection, myConceptInsertAfterPosition, myConceptInsertBeforePosition, myConceptInsertPosition, myConceptInstruction, myConceptInstructionClassKeeper, myConceptInstructionParameter, myConceptInstructionReference, myConceptIsOperation, myConceptPatternCondition, myConceptRule, myConceptRuleReference);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0lb, conceptFqName)) {
       case 0:
         return myConceptAnalysisDirection;
       case 1:
         return myConceptAnalyzer;
       case 2:
-        return myConceptAnalyzerFunFunction;
+        return myConceptAnalyzerConstructorParameter;
       case 3:
-        return myConceptAnalyzerFunParameterInput;
+        return myConceptAnalyzerConstructorParameterReference;
       case 4:
-        return myConceptAnalyzerFunParameterProgramState;
+        return myConceptAnalyzerFunFunction;
       case 5:
-        return myConceptAnalyzerFunctionResultType;
+        return myConceptAnalyzerFunParameterInput;
       case 6:
-        return myConceptAnalyzerInitialFunction;
+        return myConceptAnalyzerFunParameterProgramState;
       case 7:
-        return myConceptAnalyzerMergeFunction;
+        return myConceptAnalyzerFunctionResultType;
       case 8:
-        return myConceptAnalyzerMergeParameterInput;
+        return myConceptAnalyzerInitialFunction;
       case 9:
-        return myConceptAnalyzerParameterProgram;
+        return myConceptAnalyzerMergeFunction;
       case 10:
-        return myConceptAnalyzerRunnerAnalyzeOperation;
+        return myConceptAnalyzerMergeParameterInput;
       case 11:
-        return myConceptAnalyzerRunnerClassKeeper;
+        return myConceptAnalyzerParameterProgram;
       case 12:
-        return myConceptAnalyzerRunnerCreator;
+        return myConceptAnalyzerRunnerAnalyzeOperation;
       case 13:
-        return myConceptAnalyzerRunnerType;
+        return myConceptAnalyzerRunnerClassKeeper;
       case 14:
-        return myConceptApplicableCondition;
+        return myConceptAnalyzerRunnerCreator;
       case 15:
-        return myConceptApplicableNodeReference;
+        return myConceptAnalyzerRunnerType;
       case 16:
-        return myConceptBackwardDirection;
+        return myConceptApplicableCondition;
       case 17:
-        return myConceptConceptCondition;
+        return myConceptApplicableNodeReference;
       case 18:
-        return myConceptEmitInstruction;
+        return myConceptBackwardDirection;
       case 19:
-        return myConceptForwardDirection;
+        return myConceptConceptCondition;
       case 20:
-        return myConceptInsertAfterPosition;
+        return myConceptEmitInstruction;
       case 21:
-        return myConceptInsertBeforePosition;
+        return myConceptForwardDirection;
       case 22:
-        return myConceptInsertPosition;
+        return myConceptInsertAfterPosition;
       case 23:
-        return myConceptInstruction;
+        return myConceptInsertBeforePosition;
       case 24:
-        return myConceptInstructionClassKeeper;
+        return myConceptInsertPosition;
       case 25:
-        return myConceptInstructionParameter;
+        return myConceptInstruction;
       case 26:
-        return myConceptInstructionReference;
+        return myConceptInstructionClassKeeper;
       case 27:
-        return myConceptIsOperation;
+        return myConceptInstructionParameter;
       case 28:
-        return myConceptPatternCondition;
+        return myConceptInstructionReference;
       case 29:
-        return myConceptRule;
+        return myConceptIsOperation;
       case 30:
+        return myConceptPatternCondition;
+      case 31:
+        return myConceptRule;
+      case 32:
         return myConceptRuleReference;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
+  private static String[] stringSwitchCases_1htk8d_a0a0lb = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalysisDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionClassKeeper", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
 }

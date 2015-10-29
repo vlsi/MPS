@@ -3686,35 +3686,34 @@
       <node id="1219064125377" at="15,80,16,111" concept="2" />
       <node id="1219064125377" at="16,111,17,60" concept="2" />
       <node id="1219064125377" at="19,77,20,111" concept="2" />
-      <node id="1219064125377" at="23,5,24,23" concept="5" />
-      <node id="1219064125377" at="24,23,25,35" concept="2" />
-      <node id="1219064125377" at="25,35,26,73" concept="2" />
-      <node id="1219064125377" at="26,73,27,34" concept="2" />
-      <node id="1219064125377" at="28,5,29,61" concept="2" />
-      <node id="1219064125377" at="29,61,30,52" concept="2" />
+      <node id="1219064125377" at="23,5,24,41" concept="5" />
+      <node id="1219064125377" at="24,41,25,73" concept="2" />
+      <node id="1219064125377" at="25,73,26,34" concept="2" />
+      <node id="1219064125377" at="27,5,28,61" concept="2" />
+      <node id="1219064125377" at="28,61,29,52" concept="2" />
       <node id="1219064125377" at="19,0,22,0" concept="8" trace="apply_InternalName#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="1219064125377" at="15,0,19,0" concept="8" trace="apply_InternalKeyword#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1219064125377" at="22,78,28,5" concept="0" />
-      <node id="1219064125377" at="22,0,32,0" concept="8" trace="apply_SquareBracket#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1219064125377" at="22,78,27,5" concept="0" />
+      <node id="1219064125377" at="22,0,31,0" concept="8" trace="apply_SquareBracket#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <scope id="1219064125377" at="19,77,20,111" />
       <scope id="1219064125377" at="15,80,17,60" />
       <scope id="1219064125377" at="19,0,22,0">
         <var name="editorCell" id="1219064125377" />
         <var name="style" id="1219064125377" />
       </scope>
+      <scope id="1219064125377" at="23,5,26,34">
+        <var name="styleToPut" id="1219064125377" />
+      </scope>
       <scope id="1219064125377" at="15,0,19,0">
         <var name="editorCell" id="1219064125377" />
         <var name="style" id="1219064125377" />
       </scope>
-      <scope id="1219064125377" at="23,5,27,34">
-        <var name="styleToPut" id="1219064125377" />
-      </scope>
-      <scope id="1219064125377" at="22,78,30,52" />
-      <scope id="1219064125377" at="22,0,32,0">
+      <scope id="1219064125377" at="22,78,29,52" />
+      <scope id="1219064125377" at="22,0,31,0">
         <var name="editorCell" id="1219064125377" />
         <var name="style" id="1219064125377" />
       </scope>
-      <unit id="1219064125377" at="14,0,34,0" name="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet" />
+      <unit id="1219064125377" at="14,0,33,0" name="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903aa(jetbrains.mps.baseLanguageInternal.editor)/1238251459193">

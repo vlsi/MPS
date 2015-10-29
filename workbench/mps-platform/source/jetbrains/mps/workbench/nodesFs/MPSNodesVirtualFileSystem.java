@@ -73,6 +73,7 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
   private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private boolean myDisposed = false;
+  private NiceReferenceSerializer myPathFacility;
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return getFileFor(node.getReference());
@@ -116,11 +117,13 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
     // FIXME use mpsProject.getRepository or myRepository once it's capable to send module add/remove events
     assert myRepository == MPSModuleRepository.getInstance();
     new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
+    myPathFacility = new NiceReferenceSerializer(myRepository);
   }
 
   @Override
   public void disposeComponent() {
     new RepoListenerRegistrar(myRepository, myRepositoryListener).detach();
+    myPathFacility = null;
 
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
@@ -142,14 +145,13 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
       public VirtualFile compute() {
         try {
           if (path.startsWith(MPSNodeVirtualFile.NODE_PREFIX)) {
-            SNode node = NiceReferenceSerializer.deserializeNode(myRepository, path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
+            SNode node = getPathFacility().deserializeNode(path.substring(MPSNodeVirtualFile.NODE_PREFIX.length()));
             if (node == null) {
               return null;
             }
             return getFileFor(node);
           } else if (path.startsWith(MPSModelVirtualFile.MODEL_PREFIX)) {
-            SModel model =
-                NiceReferenceSerializer.deserializeModel(myRepository, path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
+            SModel model = getPathFacility().deserializeModel(path.substring(MPSModelVirtualFile.MODEL_PREFIX.length()));
             if (model == null) {
               return null;
             }
@@ -201,6 +203,10 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
     return myRepository;
   }
 
+  /*package*/ NiceReferenceSerializer getPathFacility() {
+    return myPathFacility;
+  }
+
   @Override
   protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
@@ -217,18 +223,18 @@ public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem
   }
 
   @Override
-  protected VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
+  public VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
   @NotNull
-  protected VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
+  public VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
   @Override
-  protected VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws
+  public VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws
       IOException {
     throw new UnsupportedOperationException();
   }

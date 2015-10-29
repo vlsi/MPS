@@ -2,9 +2,9 @@
 <model ref="r:8bdc9cf5-28de-48ab-8b85-36b2d96bc635(jetbrains.mps.ide.newModuleDialogs)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -22,6 +22,9 @@
     <import index="nos0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project.ex(MPS.IDEA/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="dz3k" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components.impl.stores(MPS.IDEA/)" />
+    <import index="btn2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.impl(MPS.IDEA/)" />
+    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" implicit="true" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -43,10 +46,6 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
-      </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -359,34 +358,17 @@
                     <node concept="3K4zz7" id="3sOM1a1bh5g" role="37wK5m">
                       <node concept="1eOMI4" id="577ABRc4mKf" role="3K4E3e">
                         <node concept="3K4zz7" id="577ABRc4smG" role="1eOMHV">
-                          <node concept="3y3z36" id="577ABRc5OQ1" role="3K4Cdx">
-                            <node concept="2OqwBi" id="577ABRc5OQ4" role="3uHU7B">
-                              <node concept="liA8E" id="577ABRc5OQ5" role="2OqNvi">
-                                <ref role="37wK5l" to="dz3k:~IProjectStore.getStorageScheme():com.intellij.openapi.components.StorageScheme" resolve="getStorageScheme" />
-                              </node>
-                              <node concept="2OqwBi" id="577ABRc5OQ6" role="2Oq$k0">
-                                <node concept="liA8E" id="577ABRc5OQ7" role="2OqNvi">
-                                  <ref role="37wK5l" to="nos0:~ProjectEx.getStateStore():com.intellij.openapi.components.impl.stores.IProjectStore" resolve="getStateStore" />
-                                </node>
-                                <node concept="1eOMI4" id="577ABRc5OQ8" role="2Oq$k0">
-                                  <node concept="10QFUN" id="577ABRc5OQ9" role="1eOMHV">
-                                    <node concept="2YIFZM" id="577ABRc62bv" role="10QFUP">
-                                      <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                      <node concept="37vLTw" id="577ABRc63ce" role="37wK5m">
-                                        <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
-                                      </node>
-                                    </node>
-                                    <node concept="3uibUv" id="577ABRc5OQb" role="10QFUM">
-                                      <ref role="3uigEE" to="nos0:~ProjectEx" resolve="ProjectEx" />
-                                    </node>
-                                  </node>
+                          <node concept="3fqX7Q" id="7C$AW5VA7jZ" role="3K4Cdx">
+                            <node concept="2YIFZM" id="7C$AW5VA7k1" role="3fr31v">
+                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                              <node concept="2YIFZM" id="7C$AW5VA7k2" role="37wK5m">
+                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                                <node concept="37vLTw" id="7C$AW5VA7k3" role="37wK5m">
+                                  <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
                                 </node>
                               </node>
-                            </node>
-                            <node concept="Rm8GO" id="577ABRc5OQ3" role="3uHU7w">
-                              <ref role="Rm8GQ" to="1m72:~StorageScheme.DIRECTORY_BASED" resolve="DIRECTORY_BASED" />
-                              <ref role="1Px2BO" to="1m72:~StorageScheme" resolve="StorageScheme" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="577ABRc4mKg" role="3K4E3e">
@@ -839,6 +821,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3cgI2eK3Hh9" role="jymVt" />
     <node concept="3uibUv" id="7iZR6YlW8CS" role="1zkMxy">
       <ref role="3uigEE" to="jkm4:~DialogWrapper" resolve="DialogWrapper" />
     </node>
@@ -875,34 +858,17 @@
                     <node concept="3K4zz7" id="577ABRc5zSY" role="37wK5m">
                       <node concept="1eOMI4" id="577ABRc5zSZ" role="3K4E3e">
                         <node concept="3K4zz7" id="577ABRc5zT0" role="1eOMHV">
-                          <node concept="3y3z36" id="577ABRc5Jhn" role="3K4Cdx">
-                            <node concept="2OqwBi" id="577ABRc5Jhq" role="3uHU7B">
-                              <node concept="liA8E" id="577ABRc5Jhr" role="2OqNvi">
-                                <ref role="37wK5l" to="dz3k:~IProjectStore.getStorageScheme():com.intellij.openapi.components.StorageScheme" resolve="getStorageScheme" />
-                              </node>
-                              <node concept="2OqwBi" id="577ABRc5Jhs" role="2Oq$k0">
-                                <node concept="liA8E" id="577ABRc5Jht" role="2OqNvi">
-                                  <ref role="37wK5l" to="nos0:~ProjectEx.getStateStore():com.intellij.openapi.components.impl.stores.IProjectStore" resolve="getStateStore" />
-                                </node>
-                                <node concept="1eOMI4" id="577ABRc5Jhu" role="2Oq$k0">
-                                  <node concept="10QFUN" id="577ABRc5Jhv" role="1eOMHV">
-                                    <node concept="3uibUv" id="577ABRc5Jhx" role="10QFUM">
-                                      <ref role="3uigEE" to="nos0:~ProjectEx" resolve="ProjectEx" />
-                                    </node>
-                                    <node concept="2YIFZM" id="577ABRc6gI3" role="10QFUP">
-                                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                      <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                                      <node concept="37vLTw" id="577ABRc6gI4" role="37wK5m">
-                                        <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
-                                      </node>
-                                    </node>
-                                  </node>
+                          <node concept="3fqX7Q" id="7C$AW5VA7uw" role="3K4Cdx">
+                            <node concept="2YIFZM" id="7C$AW5VA7ux" role="3fr31v">
+                              <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                              <ref role="37wK5l" to="btn2:~ProjectUtil.isDirectoryBased(com.intellij.openapi.project.Project):boolean" resolve="isDirectoryBased" />
+                              <node concept="2YIFZM" id="7C$AW5VA7uy" role="37wK5m">
+                                <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
+                                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                                <node concept="37vLTw" id="7C$AW5VA7uz" role="37wK5m">
+                                  <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
                                 </node>
                               </node>
-                            </node>
-                            <node concept="Rm8GO" id="577ABRc5Jhp" role="3uHU7w">
-                              <ref role="Rm8GQ" to="1m72:~StorageScheme.DIRECTORY_BASED" resolve="DIRECTORY_BASED" />
-                              <ref role="1Px2BO" to="1m72:~StorageScheme" resolve="StorageScheme" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="577ABRc5zTb" role="3K4E3e">
@@ -1000,6 +966,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="3cgI2eK3IKM" role="jymVt" />
     <node concept="3clFb_" id="7iZR6YlXZJo" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -1025,6 +992,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="7iZR6YlY6P$" role="3cqZAp" />
+        <node concept="3SKdUt" id="3cgI2eK4juS" role="3cqZAp">
+          <node concept="3SKdUq" id="3cgI2eK4jJh" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: reuse runnable in DefaultLanguageProjectTemplate" />
+          </node>
+        </node>
         <node concept="3clFbF" id="7iZR6YlY6P_" role="3cqZAp">
           <node concept="2YIFZM" id="7iZR6YlY6PA" role="3clFbG">
             <ref role="37wK5l" to="tprr:4okGtcfGMgq" resolve="runModuleCreation" />
@@ -1160,6 +1132,34 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="3clFbF" id="3cgI2eK4hMZ" role="3cqZAp">
+                          <node concept="2OqwBi" id="3cgI2eK4hN0" role="3clFbG">
+                            <node concept="2OqwBi" id="3cgI2eK4hN1" role="2Oq$k0">
+                              <node concept="2OqwBi" id="3cgI2eK4hN2" role="2Oq$k0">
+                                <node concept="37vLTw" id="3cgI2eK4hN3" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7iZR6YlZWj7" resolve="language" />
+                                </node>
+                                <node concept="liA8E" id="3cgI2eK4hN4" role="2OqNvi">
+                                  <ref role="37wK5l" to="w1kc:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="3cgI2eK4hN5" role="2OqNvi">
+                                <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getRuntimeModules():java.util.Set" resolve="getRuntimeModules" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="3cgI2eK4hN6" role="2OqNvi">
+                              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                              <node concept="2OqwBi" id="3cgI2eK4hN7" role="37wK5m">
+                                <node concept="37vLTw" id="3cgI2eK4hN8" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="11lofnnYF6_" resolve="runtimeSolution" />
+                                </node>
+                                <node concept="liA8E" id="3cgI2eK4hN9" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                     <node concept="3clFbJ" id="4u8Td12FLue" role="3cqZAp">
@@ -1275,6 +1275,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3cgI2eK3GLj" role="jymVt" />
     <node concept="3clFb_" id="7iZR6YlY1td" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -1321,6 +1322,7 @@
         <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3cgI2eK3JgG" role="jymVt" />
     <node concept="3clFb_" id="7iZR6YlWSAA" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />

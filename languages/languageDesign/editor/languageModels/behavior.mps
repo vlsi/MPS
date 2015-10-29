@@ -42,8 +42,14 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
+    <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
   </imports>
   <registry>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
+        <child id="1238852204892" name="componentType" index="1Lm7xW" />
+      </concept>
+    </language>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
       <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
@@ -322,6 +328,9 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
+      <concept id="1179479408386" name="jetbrains.mps.lang.typesystem.structure.JoinType" flags="ng" index="2usRSg">
+        <child id="1179479418730" name="argument" index="2usUpS" />
+      </concept>
       <concept id="1177514343197" name="jetbrains.mps.lang.typesystem.structure.MatchStatement" flags="nn" index="DkJCf">
         <child id="1177514345236" name="ifFalseStatement" index="DkK86" />
         <child id="1177514347409" name="item" index="DkKE3" />
@@ -12560,7 +12569,15 @@
       <node concept="3clFbS" id="2wC_gGKDODy" role="3clF47">
         <node concept="3cpWs6" id="2wC_gGKDOPa" role="3cqZAp">
           <node concept="2c44tf" id="2wC_gGKDOPb" role="3cqZAk">
-            <node concept="17QB3L" id="2wC_gGKDOQ1" role="2c44tc" />
+            <node concept="2usRSg" id="5qWBW6VxQ5o" role="2c44tc">
+              <node concept="17QB3L" id="5qWBW6VxQ70" role="2usUpS" />
+              <node concept="1LlUBW" id="XW4E1$KHCW" role="2usUpS">
+                <node concept="3uibUv" id="XW4E1$KHDC" role="1Lm7xW">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+                <node concept="17QB3L" id="XW4E1$KHDI" role="1Lm7xW" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

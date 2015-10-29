@@ -14,6 +14,7 @@ import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -25,7 +26,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -89,20 +89,20 @@ public final class IconManager {
     if (!(node.getConcept().isValid())) {
       return IdeIcons.UNKNOWN_ICON;
     }
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
-    if ((concept != null)) {
+    SNode concept = SNodeOperations.asNode(SNodeOperations.getConcept(node));
+    if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       Icon alternativeIcon = null;
       try {
         String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getAlternativeIcon(node);
         if (alternativeIconPath != null) {
-          alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
+          alternativeIcon = IconManager.getIconForConcept(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), alternativeIconPath);
         }
       } catch (Exception ignore) {
       }
       if (alternativeIcon != null) {
         mainIcon = alternativeIcon;
       } else {
-        mainIcon = IconManager.getIconForConcept(concept);
+        mainIcon = IconManager.getIconForConcept(SNodeOperations.cast(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")));
       }
     }
     if (mainIcon == null) {

@@ -56,7 +56,7 @@ class UpdaterModelListener extends ModelsEventsCollector {
      * the end of the command. Used to allow editor memento (saved inside undo stack in the end of the command) tracking
      * _updated_ position of scroll pane view port.
      */
-    myUpdater.getEditorComponent().getExternalComponent().validate();
+    myUpdater.getEditorComponent().validateExternalComponent();
   }
 
   @Override

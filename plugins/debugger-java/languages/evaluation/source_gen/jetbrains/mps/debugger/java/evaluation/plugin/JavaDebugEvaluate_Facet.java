@@ -25,7 +25,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
@@ -79,9 +79,9 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                 // The code below was copied from TransformingGenerationHandler 
                 final Wrappers._T<SNode> evaluator = new Wrappers._T<SNode>();
                 if (originalModel != null) {
-                  TransientModelsModule module = Target_configure.vars(pa.global()).transientModelsProvider().getModule(res.module());
+                  final TransientModelsModule module = Target_configure.vars(pa.global()).transientModelsProvider().getModule(res.module());
                   final SModel newModel = module.createTransientModel(PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), SModelId.generate(), res.model().getModelName() + "@evaluate"));
-                  ModelAccess.instance().runReadAction(new Runnable() {
+                  Target_checkParameters.vars(pa.global()).makeSession().getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       CopyUtil.copyModelContent(originalModel, newModel);
                       SModelOperations.validateLanguagesAndImports(newModel, false, false);
@@ -90,6 +90,10 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                         try {
                           assert SNodeOperations.getModel(evaluator.value) != null;
                           TransformatorBuilder.getInstance().build(evaluator.value, true).transformEvaluator();
+                          // TextGen would use model's repository to obtain read lock, and if model is not registered, there'd be no lock 
+                          // which is fine for the transient model itself, but once there's reference outside of the model, e.g. to a java stub elsewhere, 
+                          // there would be a lock violation exception 
+                          module.addModelToKeep(newModel.getReference(), true);
                         } catch (Throwable ex) {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(ex)));
                         }
@@ -97,6 +101,7 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                     }
                   });
                   if (evaluator.value != null) {
+                    Target_configure.vars(pa.global()).transientModelsProvider().publishAll();
                     res.status(new GenerationStatus(res.status().getInputModel(), newModel, res.status().getDependencies(), res.status().isError(), res.status().hasWarnings(), res.status().isCanceled()));
                   }
                 }

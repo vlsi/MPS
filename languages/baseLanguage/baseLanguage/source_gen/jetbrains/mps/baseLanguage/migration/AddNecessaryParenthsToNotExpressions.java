@@ -36,7 +36,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
   public boolean isRerunnable() {
     return false;
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -46,6 +46,10 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode node) {
@@ -60,7 +64,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_fbexqr_a0a0f(((SNode) pattern.getFieldValue("patternVar_expr")));
+              return _quotation_createNode_fbexqr_a0a0f(MigrationScriptBase.detachNodePatternVariable(((SNode) pattern.getFieldValue("patternVar_expr"))));
             }
           }, null);
         }

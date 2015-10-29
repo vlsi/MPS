@@ -299,6 +299,9 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     });
     flushEDT();
 
+    //In ModuleRenameHandler method resetFacet(MPSFacet) dispose parametr facet and return new instance
+    myFacet = (MPSFacet) FacetManager.getInstance(myModule).getFacetByType(myFacet.getTypeId());
+
     assertEquals(newModuleName, myModule.getName());
     assertEquals(newModuleName, myFacet.getSolution().getModuleDescriptor().getNamespace());
   }

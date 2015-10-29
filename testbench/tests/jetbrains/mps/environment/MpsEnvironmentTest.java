@@ -18,6 +18,7 @@ package jetbrains.mps.environment;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
+import org.junit.Test;
 
 public class MpsEnvironmentTest extends EnvironmentTest {
   @Override

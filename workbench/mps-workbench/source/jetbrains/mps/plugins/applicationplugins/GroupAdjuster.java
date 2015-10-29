@@ -70,7 +70,7 @@ public class GroupAdjuster {
 
     addPlace(ModuleActions_ActionGroup.ID, ActionPlace.MODULE_DEPENDENCIES);
 
-    DefaultActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(EditorComponent.EDITOR_POPUP_MENU_ACTIONS);
+    DefaultActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_POPUP_GROUP);
     List<AnAction> actionList = Arrays.asList(editorPopupGroup.getChildren(null));
     BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
 

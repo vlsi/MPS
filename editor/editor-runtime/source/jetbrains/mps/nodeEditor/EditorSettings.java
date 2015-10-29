@@ -56,36 +56,40 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Color DEFAULT_SELECTION_FOREGROUND_COLOR = Color.WHITE;
   private static final Color DEFAULT_HYPERLINK_COLOR = Color.BLUE;
 
-  private final EditorColorsManager myColorsManager;
-
   public static EditorSettings getInstance() {
     return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);
   }
 
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
 
+  private final EditorColorsManager myColorsManager;
+
   private MyState myState = new MyState();
+  private boolean myPresentationMode;
+  private int myPresentationModeFontSize = 24;
   private Font myDefaultEditorFont;
   private int mySpaceWidth = -1;
 
-  private EditorSettingsPreferencesPage myPreferencesPage;
-
-  public EditorSettings(EditorColorsManager colorsManager) {
+  public EditorSettings(EditorColorsManager colorsManager, UISettings uiSettings) {
     myColorsManager = colorsManager;
-    updateCachedValue();
-    registerUIListener();
+    myPresentationMode = uiSettings.PRESENTATION_MODE;
+    myPresentationModeFontSize = uiSettings.PRESENTATION_MODE_FONT_SIZE;
+    registerUIListener(uiSettings);
   }
 
   private EditorSettings() {
     myColorsManager = null;
-    updateCachedValue();
-    registerUIListener();
   }
 
-  private void registerUIListener() {
-    UISettings.getInstance().addUISettingsListener(new UISettingsListener() {
+  private void registerUIListener(UISettings uiSettings) {
+    uiSettings.addUISettingsListener(new UISettingsListener() {
       @Override
       public void uiSettingsChanged(UISettings source) {
+        if (myPresentationMode == source.PRESENTATION_MODE && myPresentationModeFontSize == source.PRESENTATION_MODE_FONT_SIZE) {
+          return;
+        }
+        myPresentationMode = source.PRESENTATION_MODE;
+        myPresentationModeFontSize = source.PRESENTATION_MODE_FONT_SIZE;
         updateCachedValue();
         fireEditorSettingsChanged();
       }
@@ -97,17 +101,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   public Font getDefaultEditorFont() {
+    if (myDefaultEditorFont == null) {
+      myDefaultEditorFont = FontRegistry.getInstance().getFont(myState.myFontFamily, 0, getFontSize());
+    }
     return myDefaultEditorFont;
   }
 
   public int getFontSize() {
-    int fontSize;
-    if (UISettings.getInstance().PRESENTATION_MODE) {
-      fontSize = UISettings.getInstance().PRESENTATION_MODE_FONT_SIZE;
-    } else {
-      fontSize = myState.myFontSize;
-    }
-    return fontSize;
+    return myPresentationMode ? myPresentationModeFontSize : myState.myFontSize;
   }
 
   public String getFontFamily() {
@@ -240,20 +241,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     }
   }
 
-  /*package private*/ EditorSettingsPreferencesPage getPreferencesPage() {
-    if (myPreferencesPage == null) {
-      myPreferencesPage = new EditorSettingsPreferencesPage(this);
-    }
-    return myPreferencesPage;
-  }
-
-  /*package private*/ void disposeUi() {
-    if (myPreferencesPage != null) {
-      myPreferencesPage.dispose();
-    }
-    myPreferencesPage = null;
-  }
-
   @Override
   public MyState getState() {
     return myState;
@@ -277,7 +264,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   void updateCachedValue() {
-    myDefaultEditorFont = FontRegistry.getInstance().getFont(myState.myFontFamily, 0, getFontSize());
+    myDefaultEditorFont = null;
     mySpaceWidth = -1;
   }
 

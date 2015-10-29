@@ -14,15 +14,6 @@ public class MigrationScript_Behavior {
   public static SNode call_getDescription_8585153554445641526(SNode __thisNode__) {
     return MigrationScript__BehaviorDescriptor.getDescription_id7s$_UJMUysQ(__thisNode__);
   }
-  public static Iterable<SNode> call_getExecuteAfter_2521103492728978905(SNode __thisNode__) {
-    return MigrationScript__BehaviorDescriptor.getExecuteAfter_id2bWK$jI6RRp(__thisNode__);
-  }
-  public static Iterable<SNode> call_getRequiredData_8585153554445862713(SNode __thisNode__) {
-    return MigrationScript__BehaviorDescriptor.getRequiredData_id7s$_UJMVosT(__thisNode__);
-  }
-  public static SNode call_getProducedData_8585153554445933384(SNode __thisNode__) {
-    return MigrationScript__BehaviorDescriptor.getProducedData_id7s$_UJMVDH8(__thisNode__);
-  }
   public static boolean call_isRerunnable_2016543223706345758(SNode __thisNode__) {
     return MigrationScript__BehaviorDescriptor.isRerunnable_id1JWcQ2Vfe4u(__thisNode__);
   }

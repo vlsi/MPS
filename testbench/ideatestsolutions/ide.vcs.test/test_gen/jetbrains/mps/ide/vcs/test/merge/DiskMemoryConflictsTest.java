@@ -36,6 +36,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
@@ -183,18 +184,26 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
+    final Reference<Throwable> refThrowable = new Reference<Throwable>();
     ourModelAccess.executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode theField = getField();
-        Assert.assertNotNull(theField);
-        if (nameToWrite == null) {
-          result[0] = SPropertyOperations.getString(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-        } else {
-          SPropertyOperations.set(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), nameToWrite);
+        try {
+          SNode theField = getField();
+          Assert.assertNotNull(theField);
+          if (nameToWrite == null) {
+            result[0] = SPropertyOperations.getString(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          } else {
+            SPropertyOperations.set(theField, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), nameToWrite);
+          }
+        } catch (Throwable t) {
+          refThrowable.set(t);
         }
       }
     });
+    if (!(refThrowable.isNull())) {
+      throw new RuntimeException(refThrowable.get());
+    }
     DiskMemoryConflictsTest.waitEDT();
     return result[0];
   }
@@ -202,9 +211,11 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private void setFieldNameInModel(String value) {
     processFieldNameInModel(value);
   }
+
   private String getFieldNameFromModel() {
     return processFieldNameInModel(null);
   }
+
   private String processFieldNameInFile(final String nameToWrite) {
     //  File stuff 
     if (!(DiskMemoryConflictsTest.MODEL_FILE.exists())) {
@@ -271,28 +282,40 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private String getFieldNameFromFile() {
     return processFieldNameInFile(null);
   }
+
   private void setFieldNameInFile(String name) {
     processFieldNameInFile(name);
   }
+
   private void checkInitialState() {
     checkSynchronizedState(DiskMemoryConflictsTest.FIELD_DEFAULT_NAME);
   }
+
   private void checkSynchronizedState(@Nullable final String fieldName) {
     Assert.assertEquals(fieldName, getFieldNameFromModel());
     Assert.assertEquals(fieldName, getFieldNameFromFile());
+    final Reference<Throwable> refThrowable = new Reference<Throwable>();
     ourModelAccess.runReadAction(new Runnable() {
       public void run() {
-        EditableSModel model = getModel();
-        if (fieldName == null) {
-          Assert.assertNull(model);
-        } else {
-          Assert.assertFalse(model.isChanged());
+        try {
+          EditableSModel model = getModel();
+          if (fieldName == null) {
+            Assert.assertNull(model);
+          } else {
+            Assert.assertFalse(model.isChanged());
+          }
+        } catch (Throwable t) {
+          refThrowable.set(t);
         }
       }
     });
+    if (!(refThrowable.isNull())) {
+      throw new RuntimeException(refThrowable.get());
+    }
   }
 
   private void refreshVfs() {
+    // AP: simple IFile#refresh will do, won't it? 
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(DiskMemoryConflictsTest.MODEL_FILE);
     if (vf == null || !(vf.exists())) {
       vf = LocalFileSystem.getInstance().findFileByIoFile(DiskMemoryConflictsTest.MODEL_FILE.getParentFile());
@@ -303,23 +326,33 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     rs.launch();
     waitEDT();
   }
+
   private void restoreModel() {
+    final Reference<Throwable> refThrowable = new Reference<Throwable>();
     //  Restore model 
     ourModelAccess.executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         try {
-          ModelPersistence.saveModel(myModelBackup, myOriginalModelDataSource, myModelBackup.getSModelHeader().getPersistenceVersion());
-        } catch (IOException e) {
-          e.printStackTrace();
-          Assert.fail();
+          try {
+            ModelPersistence.saveModel(myModelBackup, myOriginalModelDataSource, myModelBackup.getSModelHeader().getPersistenceVersion());
+          } catch (IOException e) {
+            e.printStackTrace();
+            Assert.fail();
+          }
+          getSolution().updateModelsSet();
+          getModel().reloadFromSource();
+        } catch (Throwable t) {
+          refThrowable.set(t);
         }
-        getSolution().updateModelsSet();
-        getModel().reloadFromSource();
       }
     });
+    if (!(refThrowable.isNull())) {
+      throw new RuntimeException(refThrowable.get());
+    }
     waitEDT();
   }
+
   private static File getModelFile() {
     File modelFile = new File(DiskMemoryConflictsTest.DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
     try {
@@ -329,6 +362,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     return modelFile;
   }
+
   private static void setLastModified(long timeStamp) {
     //  this is a workaround of JRE bug #4243868 
     //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
@@ -345,6 +379,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     Assert.assertTrue(count < 10);
   }
+
   private static void delete() {
     //  this is a workaround of JRE bug similar to #4243868 
     //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 

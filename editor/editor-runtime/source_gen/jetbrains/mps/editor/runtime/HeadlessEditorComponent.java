@@ -7,17 +7,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
- * This editor component was designed to be used in headless mode. Instance of this editor component can be created
- * in order to: part
+ * \This editor component was designed to be used in headless mode. Instance of this editor component can be created
+ * in order to:
  * 
  * - render the node tree as projection-specific text
  * - render the node tree as a picture
- * - call some editor-specific aciotns - e.g. substitute
+ * - call some editor-specific actions - e.g. substitute
  * - ...
  */
 public class HeadlessEditorComponent extends EditorComponent {
   public HeadlessEditorComponent(SNode node, SRepository repository) {
-    super(repository);
+    super(repository, false, false, false);
+    setNoVirtualFile(true);
     editNode(node);
   }
 

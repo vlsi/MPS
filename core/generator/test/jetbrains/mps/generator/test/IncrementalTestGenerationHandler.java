@@ -28,7 +28,6 @@ import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.generator.impl.textgen.TextFacility2;
 import jetbrains.mps.messages.IMessageHandler.LogHandler;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.text.TextGenResult;
@@ -48,6 +47,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.Assert;
 
@@ -66,7 +66,7 @@ import java.util.Map;
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private final Map<String, String> generatedContent = new HashMap<String, String>();
-  private final Project myProject;
+  private final SRepository myRepository;
   private Map<String, String> existingContent;
   private IFile myFilesDir;
   private int timesCalled = 0;
@@ -75,12 +75,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private GenerationOptions myGenOptions;
 
-  public IncrementalTestGenerationHandler(Project project) {
-    myProject = project;
+  public IncrementalTestGenerationHandler(SRepository repository) {
+    myRepository = repository;
   }
 
-  public IncrementalTestGenerationHandler(Project project, Map<String, String> existingContent) {
-    myProject = project;
+  public IncrementalTestGenerationHandler(SRepository repository, Map<String, String> existingContent) {
+    myRepository = repository;
     this.existingContent = existingContent;
   }
 
@@ -138,7 +138,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       if (dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
         IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenOptions.getIncrementalStrategy(), new PlanSignature(inputModel, new GenerationPlan(inputModel)), new NullPerformanceTracer());
-        new IncrementalGenerationHandler(inputModel, myProject, myGenOptions, cacheHelper, new IncrementalReporter() {
+        new IncrementalGenerationHandler(inputModel, myRepository, myGenOptions, cacheHelper, new IncrementalReporter() {
           @Override
           public void report(String message) {
             sb.append(message);

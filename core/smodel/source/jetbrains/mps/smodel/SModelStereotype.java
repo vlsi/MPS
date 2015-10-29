@@ -95,12 +95,16 @@ public class SModelStereotype {
     }
   }
 
-  public static String withoutStereotype(String modelName) {
-    int atIndex = modelName.lastIndexOf('@');
+  /**
+   * @param name not null
+   * @return name without stereotype (if any)
+   */
+  public static String withoutStereotype(String name) {
+    int atIndex = name.lastIndexOf('@');
     if (atIndex == -1) {
-      return modelName;
+      return name;
     } else {
-      return modelName.substring(0, atIndex);
+      return name.substring(0, atIndex);
     }
   }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.mindmaps.figures" uuid="3368d218-0562-4953-8c2f-d10609f72361" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.samples.mindmaps.figures" uuid="3368d218-0562-4953-8c2f-d10609f72361" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -18,5 +18,10 @@
     <language id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" fqName="jetbrains.mps.lang.editor.figures" version="0" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" version="0" />
+    <module reference="3368d218-0562-4953-8c2f-d10609f72361(jetbrains.mps.samples.mindmaps.figures)" version="0" />
+  </dependencyVersions>
 </solution>
 

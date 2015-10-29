@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="12,0,30,0" name="jetbrains.mps.lang.editor.imageGen.generator.template.main.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:7bf33aca-3b5f-450a-baea-d52813bdb88b(jetbrains.mps.lang.editor.imageGen.generator.template.main@generator)/3245637733310290136">
+    <file name="QueriesGenerated.java">
+      <node id="3245637733310315980" at="14,110,15,194" concept="0" />
+      <scope id="3245637733310315909" at="14,110,15,194" />
+    </file>
+  </root>
+  <root nodeRef="r:7bf33aca-3b5f-450a-baea-d52813bdb88b(jetbrains.mps.lang.editor.imageGen.generator.template.main@generator)/3245637733310315750">
+    <file name="QueriesGenerated.java">
+      <node id="3245637733310317379" at="17,112,18,189" concept="0" />
+      <node id="3245637733310319058" at="20,112,21,246" concept="0" />
+      <node id="1380214350863108414" at="23,112,24,186" concept="0" />
+      <node id="1380214350863109998" at="26,112,27,192" concept="0" />
+      <scope id="3245637733310317297" at="17,112,18,189" />
+      <scope id="3245637733310318547" at="20,112,21,246" />
+      <scope id="1380214350863106266" at="23,112,24,186" />
+      <scope id="1380214350863109721" at="26,112,27,192" />
+    </file>
+  </root>
+</debug-info>
+

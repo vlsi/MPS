@@ -72,8 +72,9 @@ public class StringChooserDialog extends RefactoringDialog {
   public String getResultString() {
     return myResultString;
   }
+  @NotNull
   protected String getCurrentValue() {
-    return this.myTextField.getText();
+    return (this.myTextField.getText() != null ? this.myTextField.getText() : "");
   }
   @Override
   protected void doRefactoringAction() {

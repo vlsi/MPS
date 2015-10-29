@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.tests.TestModule_analyzers_test" file="TestModule_analyzers_test.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_closures_test" file="TestModule_closures_test.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
@@ -93,6 +97,10 @@
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>
   <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_diagram_tests" file="TestModule_jetbrains_mps_lang_editor_diagram_tests.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
+  <dependency className="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_forms_tests" file="TestModule_jetbrains_mps_lang_editor_forms_tests.java">
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite" />
     <classNode dependClassName="org.junit.runner.RunWith" />
   </dependency>

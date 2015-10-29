@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,16,0" name="testCustomAnalyzer.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:6ac8df16-203b-470e-8af3-57784a2fb1f4(testCustomAnalyzer.typesystem)/6628579460233842869">
+    <file name="check_Counter_NonTypesystemRule.java">
+      <node id="6628579460233854452" at="26,117,27,274" concept="5" />
+      <node id="6628579460233858815" at="27,274,28,54" concept="5" />
+      <node id="6628579460233866846" at="28,54,29,75" concept="5" />
+      <node id="6628579460233869948" at="30,73,31,54" concept="5" />
+      <node id="5783684243118792873" at="31,54,32,55" concept="5" />
+      <node id="6628579460233872871" at="34,9,35,62" concept="5" />
+      <node id="6628579460233872871" at="35,62,36,393" concept="5" />
+      <node id="6628579460233842869" at="41,50,42,141" concept="6" />
+      <node id="6628579460233842869" at="44,68,45,102" concept="0" />
+      <node id="6628579460233842869" at="44,68,45,102" concept="6" />
+      <node id="6628579460233842869" at="47,30,48,17" concept="6" />
+      <node id="6628579460233842869" at="24,0,26,0" concept="1" trace="check_Counter_NonTypesystemRule#()V" />
+      <node id="6628579460233842869" at="41,0,44,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="6628579460233842869" at="44,0,47,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="6628579460233842869" at="47,0,50,0" concept="4" trace="overrides#()Z" />
+      <node id="6628579460233872871" at="33,216,37,9" concept="0" />
+      <node id="6628579460233871022" at="32,55,38,7" concept="3" />
+      <node id="6628579460233868255" at="29,75,39,5" concept="2" />
+      <node id="6628579460233842869" at="26,0,41,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="6628579460233842869" at="24,44,24,44" />
+      <scope id="6628579460233842869" at="41,50,42,141" />
+      <scope id="6628579460233842869" at="44,68,45,102" />
+      <scope id="6628579460233842869" at="47,30,48,17" />
+      <scope id="6628579460233842869" at="24,0,26,0" />
+      <scope id="6628579460233872871" at="34,9,36,393">
+        <var name="_reporter_2309309498" id="6628579460233872871" />
+        <var name="errorTarget" id="6628579460233872871" />
+      </scope>
+      <scope id="6628579460233842869" at="41,0,44,0" />
+      <scope id="6628579460233842869" at="44,0,47,0">
+        <var name="argument" id="6628579460233842869" />
+      </scope>
+      <scope id="6628579460233842869" at="47,0,50,0" />
+      <scope id="6628579460233871024" at="33,216,37,9" />
+      <scope id="6628579460233868259" at="30,73,38,7">
+        <var name="resultCounter" id="6628579460233869949" />
+        <var name="source" id="5783684243118792874" />
+      </scope>
+      <scope id="6628579460233868255" at="29,75,39,5">
+        <var name="instruction" id="6628579460233868257" />
+      </scope>
+      <scope id="6628579460233842870" at="26,117,39,5">
+        <var name="instructions" id="6628579460233866847" />
+        <var name="result" id="6628579460233858816" />
+        <var name="runner" id="6628579460233854453" />
+      </scope>
+      <scope id="6628579460233842869" at="26,0,41,0">
+        <var name="root" id="6628579460233842869" />
+        <var name="status" id="6628579460233842869" />
+        <var name="typeCheckingContext" id="6628579460233842869" />
+      </scope>
+      <unit id="6628579460233842869" at="23,0,51,0" name="testCustomAnalyzer.typesystem.check_Counter_NonTypesystemRule" />
+    </file>
+  </root>
+</debug-info>
+

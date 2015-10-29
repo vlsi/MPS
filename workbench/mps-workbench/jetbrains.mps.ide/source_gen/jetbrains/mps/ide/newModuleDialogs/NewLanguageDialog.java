@@ -9,8 +9,7 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JComponent;
-import com.intellij.openapi.project.ex.ProjectEx;
-import com.intellij.openapi.components.StorageScheme;
+import com.intellij.ide.impl.ProjectUtil;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.MPSProject;
@@ -41,10 +40,11 @@ public class NewLanguageDialog extends DialogWrapper {
 
     init();
   }
+
   @Nullable
   protected JComponent createCenterPanel() {
     if (myLanguageSettings == null) {
-      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((((ProjectEx) ProjectHelper.toIdeaProject(myProject)).getStateStore().getStorageScheme() != StorageScheme.DIRECTORY_BASED ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
+      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((!(ProjectUtil.isDirectoryBased(ProjectHelper.toIdeaProject(myProject))) ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
       myLanguageSettings.setListener(new NewLanguageSettings.LangSettingsChangedListener() {
         @Override
         public void changed() {
@@ -54,6 +54,7 @@ public class NewLanguageDialog extends DialogWrapper {
     }
     return myLanguageSettings;
   }
+
   @Override
   protected void doOKAction() {
     if (!(check())) {
@@ -62,6 +63,7 @@ public class NewLanguageDialog extends DialogWrapper {
 
     super.doOKAction();
 
+    // TODO: reuse runnable in DefaultLanguageProjectTemplate 
     NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
@@ -71,6 +73,7 @@ public class NewLanguageDialog extends DialogWrapper {
           if (myLanguageSettings.isRuntimeSolutionNeeded()) {
             Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
             ((StandaloneMPSProject) myProject).setFolderFor(runtimeSolution, myVirtualFolder);
+            language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
           }
           if (myLanguageSettings.isSandboxSolutionNeeded()) {
             Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), (MPSProject) myProject);
@@ -87,6 +90,7 @@ public class NewLanguageDialog extends DialogWrapper {
       }
     });
   }
+
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
@@ -96,6 +100,7 @@ public class NewLanguageDialog extends DialogWrapper {
   public Language getLangauge() {
     return myResult;
   }
+
   private boolean check() {
     myError = NewModuleUtil.check(MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
     setErrorText(myError);

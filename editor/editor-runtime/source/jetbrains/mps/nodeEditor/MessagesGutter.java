@@ -68,14 +68,11 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   private boolean myRightToLeft;
   private MergingUpdateQueue myUpdateQueue;
   private Object myUpdateIdentity = new Object();
+  private boolean myDisposed;
 
   public MessagesGutter(EditorComponent editorComponent, boolean rightToLeft) {
     myEditorComponent = editorComponent;
     myRightToLeft = rightToLeft;
-
-    myUpdateQueue = new MergingUpdateQueue("MessagesGutter", 500, true, editorComponent, null, null, true);
-    myUpdateQueue.setRestartTimerOnAdd(true);
-    // TODO add update queue to the disposables tree
   }
 
   @Override
@@ -216,7 +213,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     if (scrollbar == null) {
       return;
     }
-    myUpdateQueue.queue(new Update(myUpdateIdentity) {
+    getUpdateQueue().queue(new Update(myUpdateIdentity) {
       @Override
       public void run() {
         GutterStatus status = GutterStatus.OK;
@@ -260,6 +257,16 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
         }
       }
     });
+  }
+
+  private MergingUpdateQueue getUpdateQueue() {
+    assert !myDisposed;
+    if (myUpdateQueue == null) {
+      myUpdateQueue = new MergingUpdateQueue("MessagesGutter", 500, true, myEditorComponent, null, null, true);
+      myUpdateQueue.setRestartTimerOnAdd(true);
+      // TODO add update queue to the disposables tree
+    }
+    return myUpdateQueue;
   }
 
   @Override
@@ -308,8 +315,11 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   public void dispose() {
-    // TODO unsure if this is the right way to dispose the queue
-    myUpdateQueue.dispose();
+    myDisposed = true;
+    if (myUpdateQueue != null) {
+      // TODO unsure if this is the right way to dispose the queue
+      myUpdateQueue.dispose();
+    }
   }
 
   private void drawMarks(Graphics graphics) {

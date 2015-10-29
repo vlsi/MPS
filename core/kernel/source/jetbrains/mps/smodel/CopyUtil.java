@@ -101,6 +101,17 @@ public final class CopyUtil {
     return result;
   }
 
+  public static List<SNode> copyAndPreserveId(List<SNode> nodes, Map<SNode, SNode> mapping) {
+    List<SNode> result = clone(nodes, mapping);
+    for (SNode sourceNode : mapping.keySet()) {
+      ((jetbrains.mps.smodel.SNode) mapping.get(sourceNode)).setId(sourceNode.getNodeId());
+    }
+    for (SNode node : nodes) {
+      addReferences(node, mapping, false);
+    }
+    return result;
+  }
+
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     if (node == null) return null;
 
@@ -126,7 +137,7 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
+  public static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if (root == null) return;
     Iterable<SNode> thisAndDesc = SNodeUtil.getDescendants(root);
     for (SNode inputNode : thisAndDesc) {

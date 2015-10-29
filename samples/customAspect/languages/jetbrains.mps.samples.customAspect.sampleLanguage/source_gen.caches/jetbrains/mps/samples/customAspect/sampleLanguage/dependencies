@@ -8,9 +8,7 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.sampleLanguage.constraints.ConstraintsAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.samples.customAspect.sampleLanguage.documentation.DocumentationDescriptor" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.sampleLanguage.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.samples.customAspect.sampleLanguage.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

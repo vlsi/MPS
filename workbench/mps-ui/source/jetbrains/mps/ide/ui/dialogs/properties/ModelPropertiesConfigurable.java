@@ -115,19 +115,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     });
     myInPlugin = inPlugin;
 
-    //addTab(new ModelCommonTab());
-    addTab(new ModelDependenciesComponent());
-    addTab(new ModelUsedLanguagesTab());
-    addTab(new InfoTab());
+    registerTabs(/*new ModelCommonTab(),*/ new ModelDependenciesComponent(), new ModelUsedLanguagesTab(), new InfoTab());
   }
 
   @Nls
   @Override
   public String getDisplayName() {
-    StringBuilder builder = new StringBuilder();
-    builder.append(PropertiesBundle.message("mps.properties.configurable.model.title"));
-    builder.append(myModelDescriptor.getModelName());
-    return builder.toString();
+    return String.format(PropertiesBundle.message("model.title"), myModelDescriptor.getModelName());
   }
 
   @Override
@@ -202,7 +196,6 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       super(PropertiesBundle.message("mps.properties.dependencies.title"), General.Dependencies,
           PropertiesBundle.message("mps.properties.dependencies.tip"));
       myImportedModels = new ModelImportedModelsTableModel(myModelProperties);
-      init();
     }
 
     protected boolean confirmRemove(final Object value) {
@@ -416,10 +409,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     private UsedLangsTableModel myEngagedLanguagesModel;
 
     public InfoTab() {
-      super(PropertiesBundle.message("mps.properties.model.info.title"), IdeIcons.DEFAULT_ICON,
-          PropertiesBundle.message("mps.properties.model.info.tip"));
+      super(PropertiesBundle.message("model.info.title"), IdeIcons.DEFAULT_ICON,
+          PropertiesBundle.message("model.info.tip"));
       myIsDefSModelDescr = myInPlugin && myModelDescriptor instanceof DefaultSModelDescriptor;
-      init();
     }
 
     @Override
@@ -430,13 +422,13 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final JPanel panel = new JPanel();
       panel.setLayout(new GridLayoutManager(rowsCount, 1, INSETS, -1, -1));
 
-      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.model.info.checkboxDNG"),
+      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("model.info.checkboxDNG"),
           myModelProperties.isDoNotGenerate());
       panel.add(myDoNotGenerateCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
           GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       if (myIsDefSModelDescr) {
-        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.model.info.checkboxGIMF"),
+        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("model.info.checkboxGIMF"),
             myModelProperties.isGenerateIntoModelFolder());
         panel.add(myGenerateIntoModelFolderCheckBox,
             new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
@@ -470,7 +462,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       languagesTable.setAutoscrolls(true);
       languagesTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-      myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), "Languages engaged on generation");
+      myEngagedLanguagesModel = new UsedLangsTableModel(myProject.getRepository(), PropertiesBundle.message("model.info.engaged.title"));
       ArrayList<SLanguage> engagedLanguages = new ArrayList<SLanguage>();
       for (SModuleReference moduleReference : myModelProperties.getLanguagesEngagedOnGeneration()) {
         engagedLanguages.add(MetaAdapterFactory.getLanguage(moduleReference));
@@ -492,7 +484,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
           ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
           myProject.getModelAccess().runReadAction(c);
-          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose languages", c.getResult());
+          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, PropertiesBundle.message("model.into.engaged.add.title"), c.getResult());
           for (SModuleReference reference : list) {
             myEngagedLanguagesModel.addItem(reference);
           }

@@ -46,6 +46,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   private final Project myProject;
   private List<MPSFavoritesListener> myListeners = new ArrayList<MPSFavoritesListener>();
 
+  // Do not delete this attribute!!
+  // It was added here to save at least some information into XML element inside writeExternal() method.
+  // Without this HACK new IDEA platform will remove misc.xml file (nothing to save there)
+  // and later fail with the exception: misc.xml file not found.
+  public boolean keepMe = true;
+
   public interface MPSFavoritesListener {
     void rootsChanged(String listName);
 

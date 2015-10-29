@@ -31,7 +31,7 @@ public class TeamCityParameterizedRunner extends BaseMpsRunner {
     children = createChildRunners(klass, builder);
   }
 
-  private List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws Throwable {
+  private List<Runner> createChildRunners(Class<?> aClass, RunnerBuilder builder) throws Throwable {
     List<Runner> runners = new ArrayList<Runner>();
     List<Object[]> parametersList = getParametersList(getTestClass());
     for (int i = 0; i < parametersList.size(); i++) {

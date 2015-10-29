@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.languagePatterns.Basic.sandbox" uuid="08303ddb-9320-4ba9-8f32-547df6e155b7" compileInMPS="true">
+<solution name="jetbrains.mps.samples.languagePatterns.Basic.sandbox" uuid="08303ddb-9320-4ba9-8f32-547df6e155b7" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -16,5 +16,9 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="7a6f7ef7-3988-464b-8cc5-1182671c136e" fqName="jetbrains.mps.samples.languagePatterns.Basic" version="-1" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="08303ddb-9320-4ba9-8f32-547df6e155b7(jetbrains.mps.samples.languagePatterns.Basic.sandbox)" version="0" />
+  </dependencyVersions>
 </solution>
 

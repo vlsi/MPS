@@ -1,20 +1,18 @@
 <component name="libraryTable">
   <library name="IDEA runtime jars">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-httpclient-3.1-patched.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-net-3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/guava-17.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/idea_rt.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/docs/apidocs" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/src/commons-codec-1.8-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.1.3-src.zip!/commons-logging-1.1.3-src/src/main/java" />
-      <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.1.3-src.zip!/commons-logging-1.1.3-src/src/test/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/test" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/contrib" />
@@ -22,6 +20,9 @@
       <root url="jar://$PROJECT_DIR$/lib/src/commons-net-3.1-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/guava-17.0-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3.1-src.jar!/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/commons-logging-1.2-src.zip!/commons-logging-1.2-src/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/commons-codec-1.9-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

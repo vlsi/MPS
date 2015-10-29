@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GenerationTaskPool;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
-import jetbrains.mps.smodel.GlobalModelAccess;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.apache.log4j.LogManager;
@@ -129,7 +128,7 @@ public class ParallelPoolTest extends TestCase {
     LOG.info("Work amount: " + amountFor2secs + " ticks");
 
     long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(4, new GlobalModelAccess());
+    GenerationTaskPool pool = new GenerationTaskPool(4);
     final CustomTask[] generationTasks = createTasks(amountFor2secs, 4);
     for (GenerationTask t : generationTasks) {
       pool.addTask(t);
@@ -185,7 +184,7 @@ public class ParallelPoolTest extends TestCase {
   private long doCancelTest(long taskWork, long cancelDelayWork, long msPoolWaitDelay) {
 
     final long start = System.currentTimeMillis();
-    GenerationTaskPool pool = new GenerationTaskPool(4, new GlobalModelAccess());
+    GenerationTaskPool pool = new GenerationTaskPool(4);
     final CustomTask[] generationTasks = createTasks(taskWork, 4);
     pool.addTask(new CancelTask(cancelDelayWork));
     for (GenerationTask t : generationTasks) {

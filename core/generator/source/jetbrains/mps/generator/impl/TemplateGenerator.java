@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.impl.CloneUtil.Factory;
 import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
@@ -31,6 +32,9 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
+import jetbrains.mps.generator.impl.plan.CheckpointState;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
+import jetbrains.mps.generator.impl.plan.ModelCheckpoints;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.DynamicReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
@@ -500,6 +504,47 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return super.findOutputNodeById(nodeId);
   }
 
+  @Override
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+    SNode existing = super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    if (existing != null) {
+      // XXX apparently, there are models that use input nodes from a model other than that being transformed
+      // e.g. in build.workflow, bl.closures, bl.collections. Shall revert the change and try to rebuild
+      // to find out particular uses, as it's potential error (i.e. MLs between different models).
+      // For now, though, just check if there's mapping, and use it.
+      return existing;
+    }
+    if (inputNode == null) {
+      // there are models e.g. bl.plugin, debugger.api.ui.icons, d.java.runtime.ui that pass null as inputNode
+      return null;
+    }
+    SModel inputNodeModel = inputNode.getModel();
+    if (inputNodeModel == getInputModel()) {
+//      return super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+      return null; // code down there deals with xModel references only
+    }
+    if (inputNodeModel == null) {
+      return null;
+    }
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    if (!env.hasState(inputNodeModel.getReference())) {
+      return null;
+    }
+    ModelCheckpoints modelHistory = env.getState(inputNodeModel.getReference());
+    // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
+    Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    CheckpointState cp = modelHistory.find(lastPoint, targetPoint);
+    if (cp == null) {
+      return null;
+    }
+    Collection<SNode> output = cp.resolve(cp.getOutput(mappingName, inputNode.getNodeId()));
+    if (output.size() == 1) {
+      return output.iterator().next();
+    }
+    return null;
+
+  }
 
   // in fact, it's reasonable to keep this method in TEEI (in ReductionTrack, actually), to reflect narrowing scope of
   // generator -> TEEI -> TemplateProcessor. This would take another round of refactoring, though

@@ -2028,30 +2028,8 @@
     <property role="TrG5h" value="RemoveTransientModels" />
     <property role="2uzpH1" value="Remove Transient Models" />
     <property role="3GE5qa" value="Menu.ProjectPane.TransientModules" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="hGoIdF9" role="tncku">
       <node concept="3clFbS" id="hGoIdFa" role="2VODD2">
-        <node concept="3clFbF" id="hGoI_4q" role="3cqZAp">
-          <node concept="2OqwBi" id="hGoIE07" role="3clFbG">
-            <node concept="2OqwBi" id="hGoI_iS" role="2Oq$k0">
-              <node concept="2OqwBi" id="hGoI_4r" role="2Oq$k0">
-                <node concept="2WthIp" id="hGoI_4s" role="2Oq$k0" />
-                <node concept="1DTwFV" id="hHNVdYE" role="2OqNvi">
-                  <ref role="2WH_rO" node="hHNVdYD" resolve="project" />
-                </node>
-              </node>
-              <node concept="liA8E" id="hGoI_Kt" role="2OqNvi">
-                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="hGoICTT" role="37wK5m">
-                  <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
-                </node>
-              </node>
-            </node>
-            <node concept="liA8E" id="hGoIEpO" role="2OqNvi">
-              <ref role="37wK5l" to="57ty:~MessagesViewTool.clear():void" resolve="clear" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="hGoIHpJ" role="3cqZAp">
           <node concept="3cpWsn" id="hGoIHpK" role="3cpWs9">
             <property role="TrG5h" value="component" />
@@ -2074,13 +2052,26 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="17NoJcExtaH" role="3cqZAp">
-          <node concept="2OqwBi" id="17NoJcExtaJ" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTx2q" role="2Oq$k0">
-              <ref role="3cqZAo" node="hGoIHpK" resolve="component" />
+        <node concept="3clFbJ" id="1GEYNBNWuA$" role="3cqZAp">
+          <node concept="3clFbS" id="1GEYNBNWuAA" role="3clFbx">
+            <node concept="3clFbF" id="17NoJcExtaH" role="3cqZAp">
+              <node concept="2OqwBi" id="17NoJcExtaJ" role="3clFbG">
+                <node concept="37vLTw" id="3GM_nagTx2q" role="2Oq$k0">
+                  <ref role="3cqZAo" node="hGoIHpK" resolve="component" />
+                </node>
+                <node concept="liA8E" id="17NoJcExtaN" role="2OqNvi">
+                  <ref role="37wK5l" to="ap4t:~TransientModelsProvider.removeAllTransients(boolean):void" resolve="removeAllTransients" />
+                  <node concept="3clFbT" id="1GEYNBNWutJ" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="17NoJcExtaN" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~TransientModelsProvider.removeAllTransient():void" resolve="removeAllTransient" />
+          </node>
+          <node concept="3y3z36" id="1GEYNBNWuE0" role="3clFbw">
+            <node concept="10Nm6u" id="1GEYNBNWuEK" role="3uHU7w" />
+            <node concept="37vLTw" id="1GEYNBNWuCO" role="3uHU7B">
+              <ref role="3cqZAo" node="hGoIHpK" resolve="component" />
             </node>
           </node>
         </node>
@@ -2168,7 +2159,7 @@
                     </node>
                     <node concept="2ShNRf" id="6Ls2pCjnnG8" role="33vP2m">
                       <node concept="1pGfFk" id="6Ls2pCjnnG9" role="2ShVmc">
-                        <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.Project)" resolve="ModulePropertiesConfigurable" />
+                        <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.MPSProject)" resolve="ModulePropertiesConfigurable" />
                         <node concept="2OqwBi" id="6Ls2pCjnnGa" role="37wK5m">
                           <node concept="2WthIp" id="6Ls2pCjnnGb" role="2Oq$k0" />
                           <node concept="1DTwFV" id="6Ls2pCjnnGc" role="2OqNvi">
@@ -3934,7 +3925,7 @@
             </node>
             <node concept="2ShNRf" id="3GE7ucjMMtk" role="33vP2m">
               <node concept="1pGfFk" id="3GE7ucjMNJ9" role="2ShVmc">
-                <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.Project)" resolve="ModulePropertiesConfigurable" />
+                <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.MPSProject)" resolve="ModulePropertiesConfigurable" />
                 <node concept="2OqwBi" id="6L4KMkepMvA" role="37wK5m">
                   <node concept="2WthIp" id="6L4KMkepMvB" role="2Oq$k0" />
                   <node concept="1DTwFV" id="6L4KMkepMvC" role="2OqNvi">
@@ -22026,7 +22017,7 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="TrG5h" value="IDE" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <property role="9BnSO" value="139.1" />
+    <property role="9BnSO" value="142.1" />
     <property role="9BnSK" value="3.3" />
   </node>
   <node concept="sE7Ow" id="1JAxb5h3N20">

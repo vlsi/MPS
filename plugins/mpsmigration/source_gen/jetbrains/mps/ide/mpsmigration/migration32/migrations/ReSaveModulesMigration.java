@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ReSaveModulesMigration extends BaseProjectMigration {
-  public static final String ID = "jetbrains.mps.resaveModules";
+  public static final String ID = "jetbrains.mps.mps33.resaveModules";
 
   public ReSaveModulesMigration() {
     super(ReSaveModulesMigration.ID);
@@ -28,9 +28,7 @@ public class ReSaveModulesMigration extends BaseProjectMigration {
         return !(it.isReadOnly());
       }
     })) {
-      if (!(module.getModuleDescriptor().hasLanguageVersions())) {
-        module.setChanged();
-      }
+      module.setChanged();
     }
     MPSModuleRepository.getInstance().saveAll();
     return true;

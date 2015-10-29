@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,10 +29,12 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -45,6 +47,7 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -64,13 +67,13 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private Set<SDependency> myCachedDependencies = null;
 
-  private final Map<String,GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
+  private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
 
-  public TransientModelsModule(SModule original, TransientModelsProvider component) {
+  public TransientModelsModule(@NotNull SModule original, @NotNull TransientModelsProvider component) {
     assert !(original instanceof TransientModelsModule) :
         "create TransientModelsModule based on another TransientModelsModule with name " + original.getModuleName();
     myComponent = component;
@@ -78,6 +81,16 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();
     SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
+  }
+
+  /*package*/ TransientModelsModule(@NotNull TransientModelsProvider tmProvider, @NotNull SModuleReference moduleReference) {
+    // I could have used custom subclass of AbstractModule and regular models (instanceof extapi.TransientSModel, not necessarily
+    // the same as generator.TransientSModel this class produces), there's no true need in TransientModelsModule, however,
+    // (a) don't want to refactor right now; (b) perhaps, could use swap mechanism of TransientModelsModule in future to keep checkpoint models
+    // (though later could be addressed with extra consumer for TransientSwapOwner, not to mix the two kinds of transient models into single module kind).
+    myComponent = tmProvider;
+    myOriginalModule = null;
+    setModuleReference(moduleReference);
   }
 
   public boolean hasPublished() {
@@ -170,6 +183,13 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     return getName() + " [transient models module]";
   }
 
+  /**
+   * @deprecated need for the method is dubious, though the method itself is ok (transient module could be associated with an origin module).
+   * This is a reminder to refactor StaticMethodCall.eval() not to use this method
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  @Nullable
   public SModule getOriginalModule() {
     return myOriginalModule;
   }
@@ -205,16 +225,21 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return myOriginalModule.getUsedLanguages();
+    return myOriginalModule == null ? Collections.<SLanguage>emptySet() : myOriginalModule.getUsedLanguages();
   }
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     if (myCachedDependencies == null) {
       // could be invoked from multiple threads. Don't want synchronization, and hope extra iteration won't hurt that much
-      HashSet<SDependency> deps = new HashSet<SDependency>();
-      for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
-        deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
+      Set<SDependency> deps;
+      if (myOriginalModule == null) {
+        deps = Collections.emptySet();
+      } else {
+        deps = new HashSet<SDependency>();
+        for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
+          deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
+        }
       }
       myCachedDependencies = deps;
     }
