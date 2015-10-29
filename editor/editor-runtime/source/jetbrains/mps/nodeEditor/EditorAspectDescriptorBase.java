@@ -36,62 +36,105 @@ import java.util.Map;
  */
 public abstract class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private Map<ConceptDescriptor, Collection<ConceptEditor>> myEditorsCache = new HashMap<ConceptDescriptor, Collection<ConceptEditor>>();
-  private Map<Pair<ConceptDescriptor, String>, Collection<ConceptEditorComponent>> myEditorComponentsCache = new HashMap<Pair<ConceptDescriptor, String>, Collection<ConceptEditorComponent>>();
+  private Map<Pair<ConceptDescriptor, String>, Collection<ConceptEditorComponent>> myEditorComponentsCache =
+      new HashMap<Pair<ConceptDescriptor, String>, Collection<ConceptEditorComponent>>();
 
-  protected synchronized Collection<ConceptEditor> collectEditors(final ConceptDescriptor descriptor, final List<ConceptEditor> initialEditors) {
-    if (!ValidEditorDescriptorsCache.getInstance().isDescriptorValid(this)) {
-      myEditorsCache.clear();
-    } else {
-      if (myEditorsCache.containsKey(descriptor)) {
-        return myEditorsCache.get(descriptor);
-      }
-    }
-    Collection<ConceptEditor> allEditors = getAllEditors(descriptor, initialEditors, new EditorComputable<Collection<ConceptEditor>>() {
+  @Override
+  public Collection<ConceptEditor> getEditors(final ConceptDescriptor descriptor) {
+    return getCachedEditors(descriptor, myEditorsCache, descriptor, new EditorCollectionComputable<ConceptEditor>() {
       @Override
       public Collection<ConceptEditor> compute(EditorAspectDescriptor editorDescriptor) {
-        return editorDescriptor.getEditors(descriptor);
+        return editorDescriptor.getDeclaredEditors(descriptor);
       }
     });
-    myEditorsCache.put(descriptor, allEditors);
-    ValidEditorDescriptorsCache.getInstance().cacheDescriptor(this);
-    return allEditors;
   }
 
-  protected synchronized Collection<ConceptEditorComponent> collectEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId, final List<ConceptEditorComponent> initialEditors) {
-    Pair<ConceptDescriptor, String> key = new Pair<ConceptDescriptor, String>(descriptor, editorComponentId);
+
+  @Override
+  public Collection<ConceptEditorComponent> getEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId) {
+    return getCachedEditors(descriptor, myEditorComponentsCache, new Pair<ConceptDescriptor, String>(descriptor, editorComponentId),
+        new EditorCollectionComputable<ConceptEditorComponent>() {
+          @Override
+          public Collection<ConceptEditorComponent> compute(EditorAspectDescriptor editorDescriptor) {
+            return editorDescriptor.getDeclaredEditorComponents(descriptor, editorComponentId);
+          }
+        });
+  }
+
+  private <T extends BaseConceptEditor, KeyT> Collection<T> getCachedEditors(final ConceptDescriptor descriptor,
+      final Map<KeyT, Collection<T>> editorsCache, final KeyT key,
+      EditorCollectionComputable<T> editorComputable) {
     if (!ValidEditorDescriptorsCache.getInstance().isDescriptorValid(this)) {
-      myEditorComponentsCache.clear();
+      editorsCache.clear();
     } else {
-      if (myEditorComponentsCache.containsKey(key)) {
-        return myEditorComponentsCache.get(key);
+      if (editorsCache.containsKey(key)) {
+        return editorsCache.get(key);
       }
     }
-    Collection<ConceptEditorComponent> allEditors = getAllEditors(descriptor, initialEditors, new EditorComputable<Collection<ConceptEditorComponent>>() {
-      @Override
-      public Collection<ConceptEditorComponent> compute(EditorAspectDescriptor editorDescriptor) {
-        return editorDescriptor.getEditorComponents(descriptor, editorComponentId);
-      }
-    });
-    myEditorComponentsCache.put(key, allEditors);
+    Collection<T> allEditors = getAllEditors(descriptor, editorComputable);
+    editorsCache.put(key, allEditors);
     ValidEditorDescriptorsCache.getInstance().cacheDescriptor(this);
     return allEditors;
   }
 
-  private <T extends BaseConceptEditor> Collection<T> getAllEditors(ConceptDescriptor descriptor, List<T> initialEditors,
-                                                      EditorComputable<Collection<T>> editorsComputable) {
-    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(descriptor.getConceptFqName()));
+  private <T extends BaseConceptEditor> Collection<T> getAllEditors(ConceptDescriptor descriptor,
+      EditorCollectionComputable<T> editorsComputable) {
     List<T> result = new ArrayList<T>();
-    result.addAll(initialEditors);
-    for(LanguageRuntime extendingLanguage : language.getExtendingLanguages()) {
+    result.addAll(editorsComputable.compute(this));
+    String languageName = NameUtil.namespaceFromConceptFQName(descriptor.getConceptFqName());
+    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageName);
+    if (language == null) {
+      throw new IllegalStateException("No language found: " + languageName);
+    }
+    for (LanguageRuntime extendingLanguage : language.getExtendingLanguages()) {
       EditorAspectDescriptor editorAspect = extendingLanguage.getAspect(EditorAspectDescriptor.class);
-      if (editorAspect == null) { continue; }
+      if (editorAspect == null) {
+        continue;
+      }
       Collection<T> editors = editorsComputable.compute(editorAspect);
       result.addAll(editors);
     }
     return result;
   }
 
-  private static interface EditorComputable<T> {
-    T compute(EditorAspectDescriptor descriptor);
+  @Override
+  public Collection<ConceptEditor> getDeclaredEditors(ConceptDescriptor concept) {
+    return new ArrayList<ConceptEditor>();
+  }
+
+  @Override
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(ConceptDescriptor concept, String editorComponentId) {
+    return new ArrayList<ConceptEditorComponent>();
+  }
+
+  @Deprecated
+  protected synchronized Collection<ConceptEditor> collectEditors(final ConceptDescriptor descriptor, final List<ConceptEditor> initialEditors) {
+    return getCachedEditors(descriptor, myEditorsCache, descriptor, new EditorCollectionComputable<ConceptEditor>() {
+      @Override
+      public Collection<ConceptEditor> compute(EditorAspectDescriptor editorDescriptor) {
+        if (editorDescriptor == EditorAspectDescriptorBase.this) {
+          return initialEditors;
+        }
+        return editorDescriptor.getEditors(descriptor);
+      }
+    });
+  }
+
+  @Deprecated
+  protected synchronized Collection<ConceptEditorComponent> collectEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId,
+      final List<ConceptEditorComponent> initialEditors) {
+    return getCachedEditors(descriptor, myEditorComponentsCache, new Pair<ConceptDescriptor, String>(descriptor, editorComponentId), new EditorCollectionComputable<ConceptEditorComponent>() {
+      @Override
+      public Collection<ConceptEditorComponent> compute(EditorAspectDescriptor editorDescriptor) {
+        if (editorDescriptor == EditorAspectDescriptorBase.this) {
+          return initialEditors;
+        }
+        return editorDescriptor.getEditorComponents(descriptor, editorComponentId);
+      }
+    });
+  }
+
+  private static interface EditorCollectionComputable<T> {
+    Collection<T> compute(EditorAspectDescriptor descriptor);
   }
 }
