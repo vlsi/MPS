@@ -364,15 +364,6 @@
           <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
-      <node concept="37vLTG" id="_Qgg$$utwD" role="3clF46">
-        <property role="TrG5h" value="nodes" />
-        <property role="3TUv4t" value="true" />
-        <node concept="A3Dl8" id="_Qgg$$utwE" role="1tU5fm">
-          <node concept="3uibUv" id="_Qgg$$utwF" role="A3Ik2">
-            <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-          </node>
-        </node>
-      </node>
       <node concept="37vLTG" id="_Qgg$$uSnO" role="3clF46">
         <property role="TrG5h" value="chooseByNameModel" />
         <node concept="3uibUv" id="_Qgg$$uSqD" role="1tU5fm">
@@ -407,7 +398,10 @@
             </node>
             <node concept="2YIFZM" id="_Qgg$$utxV" role="37vLTx">
               <ref role="1Pybhc" to="cuxm:~MpsPopupFactory" resolve="MpsPopupFactory" />
-              <ref role="37wK5l" to="cuxm:~MpsPopupFactory.createPanelForNode(com.intellij.ide.util.gotoByName.ChooseByNameModel,boolean):jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" resolve="createPanelForNode" />
+              <ref role="37wK5l" to="cuxm:~MpsPopupFactory.createPanelForNode(com.intellij.openapi.project.Project,com.intellij.ide.util.gotoByName.ChooseByNameModel,boolean):jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" resolve="createPanelForNode" />
+              <node concept="37vLTw" id="2nHUN3y_p9t" role="37wK5m">
+                <ref role="3cqZAo" node="_Qgg$$utwB" resolve="project" />
+              </node>
               <node concept="37vLTw" id="_Qgg$$uSM7" role="37wK5m">
                 <ref role="3cqZAo" node="_Qgg$$uSnO" resolve="chooseByNameModel" />
               </node>
@@ -502,9 +496,6 @@
           <ref role="37wK5l" node="_Qgg$$utwA" resolve="NodeChooserDialog" />
           <node concept="37vLTw" id="_Qgg$$uVdH" role="37wK5m">
             <ref role="3cqZAo" node="m2MuEX6ocd" resolve="project" />
-          </node>
-          <node concept="37vLTw" id="_Qgg$$uVhg" role="37wK5m">
-            <ref role="3cqZAo" node="m2MuEX6ocA" resolve="nodes" />
           </node>
           <node concept="2ShNRf" id="m2MuEX6ofj" role="37wK5m">
             <node concept="YeOm9" id="m2MuEX6oNJ" role="2ShVmc">

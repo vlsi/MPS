@@ -77,7 +77,7 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
   @Override
   public NodeChooserDialog createNodeChooserDialog(final List<SNodeReference> nodesList) {
     // todo: rewrite 
-    return new NodeChooserDialog(myProject, nodesList, new BaseNodePointerModel(myProject) {
+    return new NodeChooserDialog(myProject, new BaseNodePointerModel(myProject) {
       @Override
       public NavigationItem doGetNavigationItem(final SNodeReference nodeReference) {
         return new BaseNodePointerItem(nodeReference) {

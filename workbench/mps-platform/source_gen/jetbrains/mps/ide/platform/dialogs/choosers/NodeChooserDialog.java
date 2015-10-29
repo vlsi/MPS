@@ -5,11 +5,11 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem;
@@ -26,11 +26,11 @@ import java.awt.Dimension;
 
 public class NodeChooserDialog extends DialogWrapper {
   private ChooseByNamePanel myChooser;
-  public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes, ChooseByNameModel chooseByNameModel) {
+  public NodeChooserDialog(Project project, ChooseByNameModel chooseByNameModel) {
     super(project, true);
     setTitle("Choose Node");
 
-    myChooser = MpsPopupFactory.createPanelForNode(chooseByNameModel, false);
+    myChooser = MpsPopupFactory.createPanelForNode(project, chooseByNameModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object element) {
@@ -41,7 +41,7 @@ public class NodeChooserDialog extends DialogWrapper {
     init();
   }
   public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
-    this(project, nodes, new BaseNodePointerModel(project) {
+    this(project, new BaseNodePointerModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(SNodeReference node) {
         return new BaseNodePointerItem(node) {

@@ -60,7 +60,7 @@ public class ChooseModuleDialog extends RefactoringDialog {
         return false;
       }
     };
-    myChooser = MpsPopupFactory.createPanelForPackage(goToModuleModel, false);
+    myChooser = MpsPopupFactory.createPanelForPackage(myProject, goToModuleModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object p0) {
