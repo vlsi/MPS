@@ -21,10 +21,12 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -44,18 +46,19 @@ public class IdeaMPSFacade implements MPSModuleFacade, ProjectComponent {
   }
 
   @Override
-  public DefaultModelRoot getModelRoot(Module module) {
-    for (ModelRoot modelRoot: getSolution(module).getModelRoots()) {
-      if (modelRoot instanceof DefaultModelRoot) {
-        return (DefaultModelRoot) modelRoot;
+  public VirtualFile rootForModel(Module module, VirtualFile dir) {
+    for (ModelRoot modelRoot : getSolution(module).getModelRoots()) {
+      if (!(modelRoot instanceof DefaultModelRoot)) {
+        continue;
+      }
+      String path = dir.getPath();
+      for (String sourceRoot: ((DefaultModelRoot) modelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        if (FileUtil.isSubPath(sourceRoot, path)) {
+          return VirtualFileManager.getInstance().findFileByUrl("file://" + sourceRoot);
+        }
       }
     }
     return null;
-  }
-
-  @Override
-  public boolean canCreateModel(Module module, VirtualFile dir) {
-    return false;
   }
 
   @Override

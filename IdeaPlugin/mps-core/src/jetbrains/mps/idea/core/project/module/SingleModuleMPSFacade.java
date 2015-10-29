@@ -33,6 +33,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -60,19 +61,15 @@ public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent 
   }
 
   @Override
-  public DefaultModelRoot getModelRoot(Module module) {
-    for (ModelRoot modelRoot: mySolution.getModelRoots()) {
-      if (modelRoot instanceof DefaultModelRoot) {
-        return (DefaultModelRoot) modelRoot;
+  public VirtualFile rootForModel(Module module, VirtualFile dir) {
+    for (VirtualFile root : ModuleRootManager.getInstance(module).getSourceRoots()) {
+      if (FileUtil.isSubPath(root.getPath(), dir.getPath())) {
+        return root;
       }
     }
-    return null;
-  }
-
-  @Override
-  public boolean canCreateModel(Module module, VirtualFile dir) {
     // source roots are not explicit, so we allow creating model anywhere
-    return true;
+    VirtualFile contentRoot = ModuleRootManager.getInstance(module).getContentRoots()[0];
+    return contentRoot;
   }
 
   @Override

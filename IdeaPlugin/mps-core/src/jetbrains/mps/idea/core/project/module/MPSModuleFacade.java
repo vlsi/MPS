@@ -30,7 +30,5 @@ public interface MPSModuleFacade {
 
   Solution getSolution(Module module);
 
-  DefaultModelRoot getModelRoot(Module module);
-
-  boolean canCreateModel(Module module, VirtualFile dir);
+  VirtualFile rootForModel(Module module, VirtualFile dir);
 }
