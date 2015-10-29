@@ -48,7 +48,7 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
 
   @Override
   protected void doInit() {
-    SModelsSubtree.create(this, getModule());
+    new SModelsSubtree(this).create(getModule());
     myInitialized = true;
   }
 

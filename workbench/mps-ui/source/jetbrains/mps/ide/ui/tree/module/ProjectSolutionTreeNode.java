@@ -16,11 +16,19 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private boolean myShortNameOnly;
@@ -58,7 +66,34 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
 
   @Override
   protected void doInit() {
-    SModelsSubtree.create(this, getModule());
+    List<SModel> regularModels = new ArrayList<SModel>();
+    List<SModel> tests = new ArrayList<SModel>();
+    List<SModel> stubs = new ArrayList<SModel>();
+
+    for (SModel modelDescriptor : getModule().getModels()) {
+      if (TemporaryModels.isTemporary(modelDescriptor)) continue;
+
+      if (SModelStereotype.isStubModel(modelDescriptor)) {
+        stubs.add(modelDescriptor);
+      } else if (SModelStereotype.isTestModel(modelDescriptor)) {
+        tests.add(modelDescriptor);
+      } else {
+        regularModels.add(modelDescriptor);
+      }
+    }
+    if (!regularModels.isEmpty()) {
+      new SModelsSubtree(this).create(regularModels);
+    }
+    if (!tests.isEmpty()) {
+      TestsTreeNode testsNode = new TestsTreeNode();
+      new SModelsSubtree(testsNode).create(tests);
+      add(testsNode);
+    }
+    if (!stubs.isEmpty()) {
+      StubsTreeNode stubsNode = new StubsTreeNode();
+      new SModelsSubtree(stubsNode).create(stubs);
+      add(stubsNode);
+    }
     myInitialized = true;
   }
 
