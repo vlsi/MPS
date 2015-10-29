@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,13 @@
 package jetbrains.mps.ide.ui.tree.module;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.ToStringComparator;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
 
 public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPSTreeNode> {
   private T myRootNamespace;
@@ -31,6 +33,9 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     myRootNamespace = myBuilder.createNamespaceNode("");
   }
 
+  /**
+   * @return never <code>null</code>, empty string for root namespace
+   */
   protected abstract String getNamespace(N node);
 
   public void addNode(N node) {
@@ -69,8 +74,10 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     for (int i = 0; i < node.getChildCount(); i++) {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
       if (myBuilder.isNamespaceNode(child)) {
-        sortTree((T) child);
-        namespaces.add((T) child);
+        @SuppressWarnings("unchecked")
+        T nsNode = (T) child;
+        sortTree(nsNode);
+        namespaces.add(nsNode);
       } else {
         nodes.add(child);
       }
@@ -94,13 +101,16 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     for (int i = 0; i < node.getChildCount(); i++) {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
       if (myBuilder.isNamespaceNode(child)) {
-        compactNodes((T) child);
+        @SuppressWarnings("unchecked")
+        T nsNode = (T) child;
+        compactNodes(nsNode);
       }
     }
 
 
     if (node.getParent() != null && //skip root
       node.getChildCount() == 1 && myBuilder.isNamespaceNode((MPSTreeNode) node.getChildAt(0))) {
+      @SuppressWarnings("unchecked")
       T child = (T) node.getChildAt(0);
       myBuilder.setName(node, myBuilder.getName(node) + "." + myBuilder.getName(child));
 
@@ -126,6 +136,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
 
     for (int i = 0; i < sourceNode.getChildCount(); i++) {
       if (myBuilder.isNamespaceNode((MPSTreeNode) sourceNode.getChildAt(i))) {
+        @SuppressWarnings("unchecked")
         T child = (T) sourceNode.getChildAt(i);
         if (first.equals(myBuilder.getName(child))) {
           return getSubnamespace(child, otherElements);
@@ -140,14 +151,14 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     return getSubnamespace(newChild, otherElements);
   }
 
-  public static interface NamespaceNodeBuilder<N extends MPSTreeNode> {
-    public N createNamespaceNode(String text);
+  public interface NamespaceNodeBuilder<N extends MPSTreeNode> {
+    N createNamespaceNode(String text);
 
-    public abstract String getName(N node);
+    String getName(N node);
 
-    public abstract void setName(N node, String name);
+    void setName(N node, String name);
 
-    public abstract boolean isNamespaceNode(MPSTreeNode n);
+    boolean isNamespaceNode(MPSTreeNode n);
   }
 
 }

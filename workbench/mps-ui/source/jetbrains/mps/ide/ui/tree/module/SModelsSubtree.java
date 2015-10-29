@@ -20,7 +20,10 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.SortUtil.SModelComparator;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeNodeTextSource;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.LongModelNameText;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.ShortModelNameText;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
@@ -43,6 +46,8 @@ public class SModelsSubtree {
   private final MPSTreeNode myRootTreeNode;
   private final boolean myWithNamespaceNodes;
   private final boolean myWithModelsAsNamespace;
+  private TreeNodeTextSource<SModelTreeNode> myRootModelsText;
+  private TreeNodeTextSource<SModelTreeNode> myChildModelsText;
 
   public SModelsSubtree(@NotNull MPSTreeNode rootTreeNode) {
     this(rootTreeNode, true, true);
@@ -64,6 +69,10 @@ public class SModelsSubtree {
   }
 
   public void create(Collection<SModel> models) {
+    ModelUnderNamespaceText nsText = new ModelUnderNamespaceText();
+    ShortModelNameText shortText = new ShortModelNameText();
+    myRootModelsText = myWithNamespaceNodes ? nsText : shortText;
+    myChildModelsText = myWithModelsAsNamespace ? nsText : shortText;
     List<SModelTreeNode> treeNodes = getRootModelTreeNodes(models);
     if (treeNodes.isEmpty()) {
       return;
@@ -89,9 +98,7 @@ public class SModelsSubtree {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
         SModel rootModelDescriptor = sortedModels.get(rootIndex);
-        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(
-            SModelStereotype.withoutStereotype(rootModelDescriptor.getReference().getModelName())));
-        SModelTreeNode treeNode = new SModelTreeNode(rootModelDescriptor, null, countNamePart);
+        SModelTreeNode treeNode = new SModelTreeNode(rootModelDescriptor, myRootModelsText);
         result.add(treeNode);
         rootIndex = myWithModelsAsNamespace ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
       }
@@ -99,13 +106,12 @@ public class SModelsSubtree {
     return result;
   }
 
-  private static int buildChildModels(SModelTreeNode treeNode, List<SModel> candidates, int rootIndex) {
+  private int buildChildModels(SModelTreeNode treeNode, List<SModel> candidates, int rootIndex) {
     int index = rootIndex + 1;
     while (index < candidates.size()) {
       SModel candidate = candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
-        int countNamePart = getCountNamePart(candidate, NameUtil.getModelLongName(treeNode.getModel()));
-        SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, countNamePart);
+        SModelTreeNode newChildModel = new SModelTreeNode(candidate, myChildModelsText);
         treeNode.addChildModel(newChildModel);
         index = buildChildModels(newChildModel, candidates, index);
       } else {
@@ -156,6 +162,36 @@ public class SModelsSubtree {
     @Override
     public boolean isStrict() {
       return true;
+    }
+  }
+
+  private static class ModelUnderNamespaceText implements TreeNodeTextSource<SModelTreeNode> {
+    private final LongModelNameText myFullText = new LongModelNameText();
+
+    @Override
+    public String calculateText(SModelTreeNode treeNode) {
+      String longName = myFullText.calculateText(treeNode);
+      if (treeNode.getModel() instanceof TransientSModel) {
+        // this is a hack derived from legacy code, shall configure TreeNodeTextSource from TransientModelsTreeNode instead
+        return longName;
+      }
+      String namespace;
+      // FIXME Perhaps, shall introduce interface NamespaceNode, which either gives a string or is capable to tell text for a given child
+      if (treeNode.getParent() instanceof NamespaceTextNode) {
+        NamespaceTextNode parent = (NamespaceTextNode) treeNode.getParent();
+        namespace = parent.getNamespace();
+      } else if (treeNode.getParent() instanceof SModelTreeNode) {
+        SModelTreeNode parent = (SModelTreeNode) treeNode.getParent();
+        // code inspired by #getCountNamePart()
+        namespace = NameUtil.getModelLongName(parent.getModel());
+      } else {
+        return longName;
+      }
+      // if namespace + '.' + non empty tail fits into longName
+      if (longName.length() > namespace.length() + 1 && longName.startsWith(namespace) && longName.charAt(namespace.length()) == '.') {
+        return longName.substring(namespace.length() + 1);
+      }
+      return longName;
     }
   }
 }
