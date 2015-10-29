@@ -4899,6 +4899,9 @@
       <node concept="3clFbS" id="1uIykzNJYQC" role="3clF47">
         <node concept="XkiVB" id="1uIykzNJYQE" role="3cqZAp">
           <ref role="37wK5l" to="xk9i:1DeqbSMDT0S" resolve="ListPanel" />
+          <node concept="37vLTw" id="65jjYivhkYI" role="37wK5m">
+            <ref role="3cqZAo" node="4txA6m0E95T" resolve="project" />
+          </node>
           <node concept="Xl_RD" id="1uIykzNK0Ch" role="37wK5m">
             <property role="Xl_RC" value="Tests" />
           </node>
@@ -4910,14 +4913,6 @@
             </node>
             <node concept="37vLTw" id="4txA6m0Ea6K" role="37vLTJ">
               <ref role="3cqZAo" node="5gyVhZ1blXC" resolve="myIsTestMethods" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4txA6m0E9g6" role="3cqZAp">
-          <node concept="1rXfSq" id="4txA6m0E9g5" role="3clFbG">
-            <ref role="37wK5l" to="xk9i:1DeqbSMDT4S" resolve="setProject" />
-            <node concept="37vLTw" id="4txA6m0Ea0s" role="37wK5m">
-              <ref role="3cqZAo" node="4txA6m0E95T" resolve="project" />
             </node>
           </node>
         </node>

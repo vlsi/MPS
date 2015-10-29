@@ -442,10 +442,9 @@
       <node id="1895567659271608089" at="80,33,81,56" concept="6" />
       <node id="1895567659271608118" at="83,56,84,32" concept="13" />
       <node id="1895567659271608107" at="87,58,88,34" concept="13" />
-      <node id="1706452255240089002" at="97,64,98,19" concept="18" />
-      <node id="5143559811151471025" at="98,19,99,36" concept="6" />
-      <node id="5143559811151467526" at="99,36,100,24" concept="6" />
-      <node id="5143559811151476245" at="100,24,101,76" concept="6" />
+      <node id="1706452255240089002" at="97,64,98,28" concept="18" />
+      <node id="5143559811151471025" at="98,28,99,36" concept="6" />
+      <node id="5143559811151476245" at="99,36,100,76" concept="6" />
       <node id="1895567659271608149" at="65,82,68,13" concept="10" />
       <node id="1895567659271608114" at="83,0,86,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
       <node id="1895567659271608103" at="87,0,90,0" concept="11" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
@@ -454,7 +453,7 @@
       <node id="1895567659271608162" at="72,9,76,7" concept="20" />
       <node id="1895567659271112920" at="33,0,38,0" concept="11" trace="wrap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
       <node id="1895567659271608044" at="51,25,56,9" concept="9" />
-      <node id="1706452255240088996" at="97,0,103,0" concept="3" trace="TestListPanel#(Lcom/intellij/openapi/project/Project;Z)V" />
+      <node id="1706452255240088996" at="97,0,102,0" concept="3" trace="TestListPanel#(Lcom/intellij/openapi/project/Project;Z)V" />
       <node id="8928180329700464602" at="51,0,58,0" concept="11" trace="run#()V" />
       <node id="1895567659271608139" at="63,27,70,11" concept="9" />
       <node id="8928180329700464600" at="49,83,58,7" concept="6" />
@@ -484,13 +483,13 @@
       <scope id="1895567659271608103" at="87,0,90,0">
         <var name="it" id="1895567659271608103" />
       </scope>
+      <scope id="1706452255240089000" at="97,64,100,76" />
       <scope id="1895567659271793239" at="38,0,42,0">
         <var name="element" id="1895567659271793240" />
       </scope>
       <scope id="1895567659271112935" at="42,0,46,0">
         <var name="element" id="1895567659271112943" />
       </scope>
-      <scope id="1706452255240089000" at="97,64,101,76" />
       <scope id="1895567659271112920" at="33,0,38,0">
         <var name="node" id="1895567659271112933" />
       </scope>
@@ -501,7 +500,7 @@
       <scope id="1895567659271608143" at="64,44,69,108">
         <var name="wrapper" id="1895567659271608145" />
       </scope>
-      <scope id="1706452255240088996" at="97,0,103,0">
+      <scope id="1706452255240088996" at="97,0,102,0">
         <var name="isTestMethods" id="5143559811151470645" />
         <var name="project" id="5143559811151466873" />
       </scope>
@@ -528,7 +527,7 @@
       <unit id="8928180329700464602" at="50,44,58,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$1" />
       <unit id="8928180329700473126" at="62,46,72,7" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$3" />
       <unit id="1423104411234692401" at="78,46,93,7" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2" />
-      <unit id="1895567659270719476" at="30,0,104,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel" />
+      <unit id="1895567659270719476" at="30,0,103,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel" />
     </file>
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/3211742604627632145">

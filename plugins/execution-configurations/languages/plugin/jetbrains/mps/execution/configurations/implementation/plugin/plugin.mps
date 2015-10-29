@@ -600,15 +600,19 @@
         <reference id="946964771156066609" name="editorOperationDeclaration" index="yHkD0" />
         <child id="946964771156066607" name="arguments" index="yHkDu" />
       </concept>
-      <concept id="946964771156066579" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate" flags="ng" index="yHkDy" />
+      <concept id="946964771156066579" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate" flags="ng" index="yHkDy">
+        <child id="946964771156066581" name="templateParameter" index="yHkD$" />
+      </concept>
       <concept id="946964771156066582" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer" flags="nn" index="yHkDB">
         <reference id="946964771156066583" name="template" index="yHkDA" />
         <child id="946964771156066584" name="parameter" index="yHkDD" />
       </concept>
       <concept id="946964771156066585" name="jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration" flags="ng" index="yHkDC" />
+      <concept id="946964771156066586" name="jetbrains.mps.execution.settings.structure.TemplateParameter" flags="ng" index="yHkDF" />
       <concept id="946964771156066588" name="jetbrains.mps.execution.settings.structure.EditorExpression" flags="nn" index="yHkDH">
         <reference id="946964771156066589" name="persistentPropertyDeclaration" index="yHkDG" />
       </concept>
+      <concept id="946964771156066561" name="jetbrains.mps.execution.settings.structure.TemplateParameterReference" flags="nn" index="yHkDK" />
       <concept id="946964771156066563" name="jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement" flags="nn" index="yHkDM">
         <child id="946964771156066565" name="expression" index="yHkDO" />
       </concept>
@@ -4015,6 +4019,10 @@
       <node concept="2ShNRf" id="5Y5HnE726H4" role="33vP2m">
         <node concept="yHkDB" id="5Y5HnE728yK" role="2ShVmc">
           <ref role="yHkDA" node="5Y5HnE6ZHnq" resolve="DeployPluginsSettings" />
+          <node concept="2OqwBi" id="65jjYivhJ5G" role="yHkDD">
+            <node concept="2WthIp" id="65jjYivhIH9" role="2Oq$k0" />
+            <node concept="3a8Xsn" id="65jjYivhJy8" role="2OqNvi" />
+          </node>
         </node>
       </node>
     </node>
@@ -7744,9 +7752,18 @@
       <node concept="3clFbS" id="4sYvxkKHIaX" role="3clF47">
         <node concept="XkiVB" id="4sYvxkKHIaZ" role="3cqZAp">
           <ref role="37wK5l" to="xk9i:1DeqbSMDT0S" resolve="ListPanel" />
+          <node concept="37vLTw" id="65jjYivhzon" role="37wK5m">
+            <ref role="3cqZAo" node="65jjYivhyHk" resolve="p" />
+          </node>
           <node concept="Xl_RD" id="4sYvxkKHQtK" role="37wK5m">
             <property role="Xl_RC" value="Plugins to deploy" />
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="65jjYivhyHk" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="65jjYivhyHj" role="1tU5fm">
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
         </node>
       </node>
     </node>
@@ -8473,6 +8490,9 @@
               <node concept="2ShNRf" id="5Y5HnE70mtt" role="37vLTx">
                 <node concept="1pGfFk" id="5Y5HnE70mts" role="2ShVmc">
                   <ref role="37wK5l" node="4sYvxkKHIaT" resolve="PluginsListPanel" />
+                  <node concept="yHkDK" id="65jjYivhEg6" role="37wK5m">
+                    <ref role="3cqZAo" node="65jjYivhDUT" resolve="p" />
+                  </node>
                 </node>
               </node>
               <node concept="yHkD2" id="5Y5HnE70kXO" role="37vLTJ">
@@ -8609,6 +8629,12 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="yHkDF" id="65jjYivhDUT" role="yHkD$">
+      <property role="TrG5h" value="p" />
+      <node concept="3uibUv" id="65jjYivhEfY" role="1tU5fm">
+        <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
       </node>
     </node>
   </node>
@@ -11096,6 +11122,10 @@
       <node concept="2ShNRf" id="1Kl1LtkdZRJ" role="33vP2m">
         <node concept="yHkDB" id="1Kl1LtkdZRK" role="2ShVmc">
           <ref role="yHkDA" node="5Y5HnE6ZHnq" resolve="DeployPluginsSettings" />
+          <node concept="2OqwBi" id="65jjYivhH$J" role="yHkDD">
+            <node concept="2WthIp" id="65jjYivhHho" role="2Oq$k0" />
+            <node concept="3a8Xsn" id="65jjYivhHVk" role="2OqNvi" />
+          </node>
         </node>
       </node>
     </node>
