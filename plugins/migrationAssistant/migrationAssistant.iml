@@ -24,5 +24,6 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="smodelquery-runtime" />
   </component>
 </module>

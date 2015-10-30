@@ -70,7 +70,7 @@
     <import index="yo81" ref="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model()" />
     <import index="ngmm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.findusages.view()" />
-    <import index="kxzb" ref="r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)" />
+    <import index="moux" ref="r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -8774,8 +8774,8 @@
       <node concept="3clFbS" id="7L2VFB5mjvk" role="3clF47" />
     </node>
     <node concept="3Tm1VV" id="jysm2GDsTM" role="1B3o_S" />
-    <node concept="3uibUv" id="WMsS6mDoBi" role="3HQHJm">
-      <ref role="3uigEE" to="kxzb:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+    <node concept="3uibUv" id="5nAnrpAvAFW" role="3HQHJm">
+      <ref role="3uigEE" to="moux:1ycrhFMLI_B" resolve="QueryExecutionContext" />
     </node>
   </node>
   <node concept="3HP615" id="5WpmwkrQPPk">
