@@ -128,6 +128,9 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-findUsages-runtime-models">
       <fileset dir="${mps_home}/core/findUsages-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-smodelquery-runtime-models">
+      <fileset dir="${mps_home}/core/smodelquery-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-refactoring-runtime-models">
       <fileset dir="${mps_home}/core/refactoring-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -200,6 +203,9 @@
       <zipfileset file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-findUsages-runtime-models" prefix="modules/jetbrains.mps.findUsages.runtime/models" />
+      <zipfileset file="${mps_home}/core/smodelquery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" prefix="modules/jetbrains.mps.lang.smodel.query.runtime" />
+      <zipfileset dir="${mps_home}/core/smodelquery-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.smodel.query.runtime" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-smodelquery-runtime-models" prefix="modules/jetbrains.mps.lang.smodel.query.runtime/models" />
       <zipfileset file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${mps_home}/core/refactoring-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-refactoring-runtime-models" prefix="modules/jetbrains.mps.refactoring.runtime/models" />
@@ -1257,6 +1263,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -1657,6 +1664,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -2340,6 +2348,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -2395,6 +2404,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -2698,6 +2708,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -3922,6 +3933,7 @@
         <module file="${mps_home}/languages/languageDesign/sharedConcepts/jetbrains.mps.lang.sharedConcepts.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/smodel/jetbrains.mps.lang.smodel.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/smodel.query/jetbrains.mps.lang.smodel.query.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/smodelquery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/traceable/jetbrains.mps.lang.traceable.mpl" bootstrap="true" />
@@ -4113,6 +4125,8 @@
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
+        <pathelement path="${mps_home}/core/smodelquery-runtime/source" />
+        <pathelement path="${mps_home}/core/smodelquery-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/core/scripts-runtime/source" />
@@ -4242,6 +4256,8 @@
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
+        <pathelement path="${mps_home}/core/smodelquery-runtime/source" />
+        <pathelement path="${mps_home}/core/smodelquery-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/core/scripts-runtime/source" />
@@ -4273,6 +4289,8 @@
       <fileset dir="${mps_home}/core/typesystemEngine/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/findUsages-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/findUsages-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/smodelquery-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/smodelquery-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/refactoring-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/scripts-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
