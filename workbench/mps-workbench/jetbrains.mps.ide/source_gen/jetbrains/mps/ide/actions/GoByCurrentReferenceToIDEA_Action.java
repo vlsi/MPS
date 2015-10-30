@@ -10,25 +10,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.io.File;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,7 +45,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     if (targetNode == ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
       return false;
     }
-    String targetSter = SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode));
+    String targetSter = SModelStereotype.getStereotype(SNodeOperations.getModel(targetNode));
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     return eq_xgilk9_a0f0d(stubSter, targetSter);
   }
@@ -64,16 +59,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       return false;
     }
     {
-      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
-      if (editorComponent != null && editorComponent.isInvalid()) {
-        editorComponent = null;
-      }
-      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-      if (editorComponent == null) {
-        return false;
-      }
-    }
-    {
       EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
       MapSequence.fromMap(_params).put("cell", p);
       if (p == null) {
@@ -81,15 +66,8 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -100,24 +78,14 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
     final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-    SModel model = node.getModel();
-    SModule module = model.getModule();
-    assert module != null;
-    if (module instanceof Generator) {
-      module = ((Generator) module).getSourceLanguage();
-    } else if (!(module instanceof AbstractModule) || ((AbstractModule) module).getModuleSourceDir() == null) {
-      assert false;
-    }
-    final String modulePath = ((AbstractModule) module).getModuleSourceDir().getPath();
-
+    final String projectPath = check_ygbrs1_a0c0a(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectFile());
     new Thread() {
       @Override
       public void run() {
         // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteInEDT(new Runnable() {
           public void run() {
-            if (!(GoByCurrentReferenceToIDEA_Action.this.navigateToJavaStub(modulePath, targetNode, _params))) {
+            if (!(GoByCurrentReferenceToIDEA_Action.this.navigateToJavaStub(projectPath, targetNode, _params))) {
               // TODO show popup notification "cannot navigate" 
             }
           }
@@ -125,17 +93,17 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     }.start();
   }
-  private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
-    SModelReference ref = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode).getReference();
-    boolean isClassifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-    boolean isConstructor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
-    boolean isMethod = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
-    boolean isField = (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+  private boolean navigateToJavaStub(String projectPath, SNode targetNode, final Map<String, Object> _params) {
+    SModelReference ref = SNodeOperations.getModel(targetNode).getReference();
+    boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    boolean isConstructor = SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+    boolean isMethod = SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    boolean isField = (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) || SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     if (!((isClassifier || isConstructor || isMethod || isField))) {
       return false;
     }
     if (isClassifier) {
-      String fqName = SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      String fqName = SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, fqName)) {
           return true;
@@ -143,7 +111,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     } else if (isConstructor) {
       String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      int paramCount = ListSequence.fromList(SLinkOperations.getChildren(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
+      int paramCount = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, classifierName)) {
           if (np.openConstructor(projectPath, classifierName, paramCount)) {
@@ -153,7 +121,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     } else if (isMethod) {
       String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      SNode method = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+      SNode method = SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count())) {
           return true;
@@ -170,9 +138,15 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     return false;
   }
   private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
-    SNode classifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(targetNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     assert classifier != null;
     return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+  }
+  private static String check_ygbrs1_a0c0a(File checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getAbsolutePath();
+    }
+    return null;
   }
   private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
