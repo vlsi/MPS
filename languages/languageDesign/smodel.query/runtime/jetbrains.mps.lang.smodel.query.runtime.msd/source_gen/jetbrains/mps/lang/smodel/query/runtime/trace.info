@@ -7,14 +7,14 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <root nodeRef="r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)/1768908716159461735">
+  <root nodeRef="r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)/1768908716159461735">
     <file name="QueryExecutionContext.java">
       <node id="3842191445091237663" at="8,0,9,0" concept="2" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <scope id="3842191445091237663" at="8,0,9,0" />
-      <unit id="1768908716159461735" at="7,0,10,0" name="jetbrains.mps.smodel.query.QueryExecutionContext" />
+      <unit id="1768908716159461735" at="7,0,10,0" name="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     </file>
   </root>
-  <root nodeRef="r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)/313482946808721508">
+  <root nodeRef="r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)/313482946808721508">
     <file name="CommandUtil.java">
       <node id="6322385757206087378" at="40,51,41,48" concept="4" />
       <node id="1915462833256354217" at="48,55,49,49" concept="4" />
@@ -102,7 +102,7 @@
       <node id="8433118097516021444" at="211,73,214,5" concept="1" />
       <node id="8433118097516021734" at="217,79,220,5" concept="1" />
       <node id="8433118097516022984" at="223,81,226,5" concept="1" />
-      <node id="4307205004142786686" at="138,0,142,0" concept="6" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/smodel/query/QueryExecutionContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="4307205004142786686" at="138,0,142,0" concept="6" trace="createConsoleScope#(Lorg/jetbrains/mps/openapi/module/SearchScope;ZLjetbrains/mps/lang/smodel/query/runtime/QueryExecutionContext;)Lorg/jetbrains/mps/openapi/module/SearchScope;" />
       <node id="3820104862372919953" at="38,58,43,7" concept="4" />
       <node id="6864030874026229328" at="46,68,51,7" concept="4" />
       <node id="8433118097516181695" at="163,0,169,0" concept="6" trace="check_1pinza_a0a0a0a0b0a0a21#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/module/SRepository;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -324,18 +324,18 @@
         <var name="modules" id="1125969196844632260" />
         <var name="repository" id="3501374812260697537" />
       </scope>
-      <unit id="6322385757206087376" at="39,62,43,5" name="jetbrains.mps.smodel.query.CommandUtil$1" />
-      <unit id="1915462833256353669" at="47,61,51,5" name="jetbrains.mps.smodel.query.CommandUtil$2" />
-      <unit id="8433118097516179211" at="74,47,78,9" name="jetbrains.mps.smodel.query.CommandUtil$4" />
-      <unit id="1125969196844649929" at="78,24,82,9" name="jetbrains.mps.smodel.query.CommandUtil$4" />
-      <unit id="8433118097516119746" at="92,48,96,9" name="jetbrains.mps.smodel.query.CommandUtil$5" />
-      <unit id="1125969196844733229" at="96,24,100,9" name="jetbrains.mps.smodel.query.CommandUtil$5" />
-      <unit id="8433118097516189137" at="110,49,114,9" name="jetbrains.mps.smodel.query.CommandUtil$6" />
-      <unit id="1125969196844733369" at="114,24,118,9" name="jetbrains.mps.smodel.query.CommandUtil$6" />
-      <unit id="1597470200014229947" at="71,15,85,5" name="jetbrains.mps.smodel.query.CommandUtil$3" />
-      <unit id="1597470200014090902" at="89,15,103,5" name="jetbrains.mps.smodel.query.CommandUtil$4" />
-      <unit id="1597470200014094812" at="107,15,121,5" name="jetbrains.mps.smodel.query.CommandUtil$5" />
-      <unit id="313482946808721508" at="37,0,230,0" name="jetbrains.mps.smodel.query.CommandUtil" />
+      <unit id="6322385757206087376" at="39,62,43,5" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$1" />
+      <unit id="1915462833256353669" at="47,61,51,5" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$2" />
+      <unit id="8433118097516179211" at="74,47,78,9" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$4" />
+      <unit id="1125969196844649929" at="78,24,82,9" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$4" />
+      <unit id="8433118097516119746" at="92,48,96,9" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$5" />
+      <unit id="1125969196844733229" at="96,24,100,9" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$5" />
+      <unit id="8433118097516189137" at="110,49,114,9" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$6" />
+      <unit id="1125969196844733369" at="114,24,118,9" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$6" />
+      <unit id="1597470200014229947" at="71,15,85,5" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$3" />
+      <unit id="1597470200014090902" at="89,15,103,5" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$4" />
+      <unit id="1597470200014094812" at="107,15,121,5" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil$5" />
+      <unit id="313482946808721508" at="37,0,230,0" name="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     </file>
   </root>
 </debug-info>
