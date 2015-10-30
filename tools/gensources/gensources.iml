@@ -1145,5 +1145,6 @@
     <orderEntry type="module" module-name="behavior-api" />
     <orderEntry type="module" module-name="behavior-runtime" />
     <orderEntry type="module" module-name="mps-ant" />
+    <orderEntry type="module" module-name="smodelquery-runtime" />
   </component>
 </module>
