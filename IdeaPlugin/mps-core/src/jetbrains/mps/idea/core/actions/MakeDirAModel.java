@@ -19,7 +19,6 @@ package jetbrains.mps.idea.core.actions;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
@@ -71,19 +70,15 @@ public class MakeDirAModel extends NewModelAction {
       @Override
       public EditableSModel compute() {
         final PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-//    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
-//      //Can be used only on directories
-//      return null;
-//    }
         final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
-        final String modelName = deriveModelName(myRootForModel, targetDir);
+        final String modelName = myModelPrefix;
         EditableSModel model = null;
         try {
           model = (EditableSModel) myModelRoot.createModel(modelName, targetDir.getPath(), null,
             PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
         } catch (IOException ioException) {
-          LOG.error("Can't create per-root model " + modelName + " under " + myRootForModel.getPath(), ioException);
+          LOG.error("Can't create per-root model " + modelName + " under " + myRootForModel, ioException);
         }
 
         model.setChanged(true);
@@ -99,24 +94,16 @@ public class MakeDirAModel extends NewModelAction {
     });
   }
 
-  private String deriveModelName(VirtualFile root, VirtualFile modelDir) {
-    String relPath = VfsUtilCore.getRelativePath(modelDir, root);
-    return relPath.replace('/', '.').replace('\\', '.');
-  }
-
   @Override
   protected boolean isEnabled(AnActionEvent e) {
     if (!super.isEnabled(e)) {
       return false;
     }
     PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-    // fixme: either assert or remove alltogether; it duplicates super.isEnabled
     if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
       return false;
     }
     boolean modelExists = MPSCommonDataKeys.CONTEXT_MODEL.getData(e.getDataContext()) != null;
-    // we must not be directly under source root because we would derive empty model name in that case
-    boolean directlyUnderSourceRoot = myRootForModel.equals(((PsiDirectory) psiElement).getVirtualFile());
-    return !directlyUnderSourceRoot && !modelExists;
+    return myModelPrefix != null && !myModelPrefix.isEmpty() && !modelExists;
   }
 }

@@ -21,11 +21,15 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -33,20 +37,24 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+
+import java.io.File;
 
 /**
  * Created by danilla on 26/10/15.
  */
-public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent {
+public class SingleModuleMPSSupport extends ModuleMPSSupport implements ProjectComponent {
+  @NonNls
+  private static final String SOURCE_GEN = "src_gen";
+
   private Project myProject;
   private Solution mySolution;
 
-  public SingleModuleMPSFacade(Project project) {
+  public SingleModuleMPSSupport(Project project) {
     myProject = project;
   }
 
@@ -58,18 +66,6 @@ public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent 
   @Override
   public Solution getSolution(Module module) {
     return mySolution;
-  }
-
-  @Override
-  public VirtualFile rootForModel(Module module, VirtualFile dir) {
-    for (VirtualFile root : ModuleRootManager.getInstance(module).getSourceRoots()) {
-      if (FileUtil.isSubPath(root.getPath(), dir.getPath())) {
-        return root;
-      }
-    }
-    // source roots are not explicit, so we allow creating model anywhere
-    VirtualFile contentRoot = ModuleRootManager.getInstance(module).getContentRoots()[0];
-    return contentRoot;
   }
 
   @Override
@@ -87,12 +83,13 @@ public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent 
     repository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        Solution solution = new SolutionIdea(singleModule, makeDescriptor(singleModule));
+        SolutionDescriptor solutionDescriptor = makeDescriptor(singleModule);
+        Solution solution = new SolutionIdea(singleModule, solutionDescriptor);
 
-//    if (repository.getModule(solution.getModuleId()) != null) {
-//      MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
-//      return;
-//    }
+        if (repository.getModule(solution.getModuleId()) != null) {
+          MessagesViewTool.log(myProject, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+          return;
+        }
 
         ((SRepositoryExt) repository).registerModule(solution, mpsProject);
         mpsProject.addModule(solution.getModuleReference());
@@ -104,18 +101,22 @@ public class SingleModuleMPSFacade implements MPSModuleFacade, ProjectComponent 
 
   private SolutionDescriptor makeDescriptor(Module module) {
     VirtualFile moduleContentRoot = ModuleRootManager.getInstance(module).getContentRoots()[0];
-    // fixme
-    String outputPath = moduleContentRoot.getPath() + "/" + "src_gen";
+    String outputPath = moduleContentRoot.getPath() + File.separator + SOURCE_GEN;
 
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setId(ModuleId.foreign(module.getName()));
     descriptor.setOutputPath(outputPath);
     descriptor.setCompileInMPS(false);
-//    descriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
 
     FileBasedModelRoot root = new DefaultModelRoot();
-
     root.setContentRoot(moduleContentRoot.getPath());
+
+    for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots()) {
+      if (!VfsUtilCore.isAncestor(moduleContentRoot, sourceRoot, true)) {
+        continue;
+      }
+      root.addFile(FileBasedModelRoot.SOURCE_ROOTS, sourceRoot.getPath());
+    }
     root.addFile(FileBasedModelRoot.SOURCE_ROOTS, moduleContentRoot.getPath());
     Memento m = new MementoImpl();
     root.save(m);

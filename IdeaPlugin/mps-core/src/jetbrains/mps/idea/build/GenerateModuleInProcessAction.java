@@ -21,7 +21,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.module.Module;
 import jetbrains.mps.fileTypes.FileIcons;
-import jetbrains.mps.idea.core.project.module.MPSModuleFacade;
+import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.project.Solution;
 
 /**
@@ -47,7 +47,7 @@ public class GenerateModuleInProcessAction extends AnAction {
   @Override
   public void actionPerformed(AnActionEvent anActionEvent) {
     Module module = LangDataKeys.MODULE.getData(anActionEvent.getDataContext());
-    Solution solution = module.getProject().getComponent(MPSModuleFacade.class).getSolution(module);
+    Solution solution = module.getProject().getComponent(ModuleMPSSupport.class).getSolution(module);
     new GenerateModelsInProcess(module.getProject(), solution.getModels()).generate();
   }
 }

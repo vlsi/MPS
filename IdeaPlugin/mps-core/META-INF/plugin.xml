@@ -103,6 +103,10 @@
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
+    <!-- coped from MPSUI.xml -->
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>

@@ -17,8 +17,8 @@
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <project-components>
     <component>
-      <interface-class>jetbrains.mps.idea.core.project.module.MPSModuleFacade</interface-class>
-      <implementation-class>jetbrains.mps.idea.core.project.module.SingleModuleMPSFacade</implementation-class>
+      <interface-class>jetbrains.mps.idea.core.project.module.ModuleMPSSupport</interface-class>
+      <implementation-class>jetbrains.mps.idea.core.project.module.SingleModuleMPSSupport</implementation-class>
     </component>
   </project-components>
 </idea-plugin>

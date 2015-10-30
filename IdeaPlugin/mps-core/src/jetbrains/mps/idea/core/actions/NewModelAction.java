@@ -23,25 +23,25 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.idea.core.project.module.MPSModuleFacade;
+import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.Icon;
 
 public abstract class NewModelAction extends AnAction {
+  protected String myRootForModel;
   protected String myModelPrefix;
-  protected VirtualFile myRootForModel;
   protected Project myProject;
   protected DefaultModelRoot myModelRoot;
-  protected Solution mySolution;
+  protected String myRelativePath;
 
   protected NewModelAction(String text, String desctiption, Icon icon) {
     super(text, desctiption, icon);
@@ -61,7 +61,6 @@ public abstract class NewModelAction extends AnAction {
     if (myProject == null) {
       return;
     }
-    mySolution = null;
     myModelRoot = null;
     myModelPrefix = null;
     final Module module = e.getData(LangDataKeys.MODULE);
@@ -69,48 +68,64 @@ public abstract class NewModelAction extends AnAction {
     if (module == null || vFiles == null || vFiles.length != 1 || !vFiles[0].isDirectory()) {
       return;
     }
+    final VirtualFile targetDir = vFiles[0];
 
-    final MPSModuleFacade mpsFacade = module.getProject().getComponent(MPSModuleFacade.class);
+    final ModuleMPSSupport mpsFacade = module.getProject().getComponent(ModuleMPSSupport.class);
     if (!mpsFacade.isMPSEnabled(module)) {
       return;
     }
 
-    String url = vFiles[0].getUrl();
+    String url = targetDir.getUrl();
     if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) {
       return;
     }
-    //TODO: clean up this
-    final String path = VirtualFileManager.extractPath(url);
+
     ProjectHelper.toMPSProject(module.getProject()).getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myRootForModel = mpsFacade.rootForModel(module, vFiles[0]);
 
-        for (ModelRoot root : mpsFacade.getSolution(module).getModelRoots()) {
-          if (!(root instanceof DefaultModelRoot)) continue;
-          DefaultModelRoot modelRoot = (DefaultModelRoot) root;
-          for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-            if (FileUtil.isSubPath(sourceRoot, path)) {
-              mySolution = mpsFacade.getSolution(module);
-              myModelRoot = modelRoot;
-              myModelPrefix = path.substring(sourceRoot.length());
-              while (myModelPrefix.startsWith("/") || myModelPrefix.startsWith("\\")) {
-                myModelPrefix = myModelPrefix.substring(1);
-              }
-              while (myModelPrefix.endsWith("/") || myModelPrefix.endsWith("\\")) {
-                myModelPrefix = myModelPrefix.substring(0, myModelPrefix.length());
-              }
-              myModelPrefix = myModelPrefix.replaceAll("/", ".");
-              myModelPrefix = myModelPrefix.replaceAll("\\\\", ".");
-              if (!myModelPrefix.isEmpty()) {
-                myModelPrefix += ".";
-              }
-              return;
-            }
+        myModelRoot = mpsFacade.getModelRoot(module);
+        if (myModelRoot == null) {
+          return;
+        }
+        myRootForModel = rootToUse(targetDir.getPath());
+        if (myRootForModel == null) {
+          return;
+        }
+
+        myRelativePath = VfsUtilCore.getRelativePath(targetDir, VirtualFileManager.getInstance().findFileByUrl("file://" + myRootForModel));
+        String prefix = myRelativePath;
+        prefix = prefix.replace('/', '.').replace('\\', '.');
+        // in case in the future idea leaves some dangling slashes
+        while (prefix.startsWith(".")) {
+          prefix = prefix.substring(1);
+        }
+        while (prefix.endsWith(".")) {
+          prefix = prefix.substring(0, prefix.length());
+        }
+
+        myModelPrefix = prefix;
+
+        for (ModelRoot modelRoot: mpsFacade.getSolution(module).getModelRoots()) {
+          if (modelRoot instanceof DefaultModelRoot) {
+            myModelRoot = (DefaultModelRoot) modelRoot;
+            break;
           }
         }
       }
     });
+  }
+
+  private String rootToUse(String path) {
+    String longestRoot = null;
+    for (String root: myModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+      if (FileUtil.isSubPath(root, path)) {
+        if (longestRoot == null || longestRoot.length() < root.length()) {
+          longestRoot = root;
+        }
+      }
+    }
+    return longestRoot;
   }
 
   protected boolean isEnabled(AnActionEvent e) {

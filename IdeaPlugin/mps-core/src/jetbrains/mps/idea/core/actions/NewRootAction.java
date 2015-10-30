@@ -31,7 +31,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.project.module.MPSModuleFacade;
+import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -130,7 +130,7 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    final MPSModuleFacade mpsFacade = module.getProject().getComponent(MPSModuleFacade.class);
+    final ModuleMPSSupport mpsFacade = module.getProject().getComponent(ModuleMPSSupport.class);
     if (!mpsFacade.isMPSEnabled(module)) {
       return;
     }

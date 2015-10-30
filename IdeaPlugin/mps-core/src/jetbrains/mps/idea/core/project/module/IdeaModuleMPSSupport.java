@@ -17,23 +17,17 @@
 package jetbrains.mps.idea.core.project.module;
 
 import com.intellij.facet.FacetManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
  * Created by danilla on 26/10/15.
  */
-public class IdeaMPSFacade implements MPSModuleFacade, ProjectComponent {
+public class IdeaModuleMPSSupport extends ModuleMPSSupport implements ProjectComponent {
   @Override
   public boolean isMPSEnabled(Module module) {
     MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
@@ -43,22 +37,6 @@ public class IdeaMPSFacade implements MPSModuleFacade, ProjectComponent {
   @Override
   public Solution getSolution(Module module) {
     return FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
-  }
-
-  @Override
-  public VirtualFile rootForModel(Module module, VirtualFile dir) {
-    for (ModelRoot modelRoot : getSolution(module).getModelRoots()) {
-      if (!(modelRoot instanceof DefaultModelRoot)) {
-        continue;
-      }
-      String path = dir.getPath();
-      for (String sourceRoot: ((DefaultModelRoot) modelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-        if (FileUtil.isSubPath(sourceRoot, path)) {
-          return VirtualFileManager.getInstance().findFileByUrl("file://" + sourceRoot);
-        }
-      }
-    }
-    return null;
   }
 
   @Override

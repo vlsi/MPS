@@ -17,18 +17,28 @@
 package jetbrains.mps.idea.core.project.module;
 
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
  * Created by danilla on 26/10/15.
  */
-public interface MPSModuleFacade {
+public abstract class ModuleMPSSupport {
+  public abstract boolean isMPSEnabled(Module module);
 
-  boolean isMPSEnabled(Module module);
+  public abstract Solution getSolution(Module module);
 
-  Solution getSolution(Module module);
-
-  VirtualFile rootForModel(Module module, VirtualFile dir);
+  /**
+   * Later may have params: dir where the model should be created and persistence kind (then it will not be
+   * DefaultModelRoot, rather FileBasedModelRoot, and corresponding createModel method will have to be added to it)
+   */
+  public DefaultModelRoot getModelRoot(Module module) {
+    for (ModelRoot root: getSolution(module).getModelRoots()) {
+      if (root instanceof DefaultModelRoot) {
+        return (DefaultModelRoot) root;
+      }
+    }
+    return null;
+  }
 }

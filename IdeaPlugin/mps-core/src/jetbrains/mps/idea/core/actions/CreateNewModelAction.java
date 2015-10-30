@@ -26,33 +26,26 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelListener;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.lang.model.SourceVersion;
 import javax.swing.Icon;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -71,7 +64,8 @@ public class CreateNewModelAction extends NewModelAction {
       @Override
       protected void doOKAction() {
         final ModelTemplates template = ModelTemplates.valueOf(getKindCombo().getSelectedName());
-        final String modelName = getNameField().getText().trim();
+        String shortModelName = getNameField().getText().trim();
+        final String modelName = myModelPrefix.isEmpty() ? shortModelName : myModelPrefix + "." + shortModelName;
         if (!isModelNameValid(modelName)) {
           return;
         }
@@ -79,19 +73,18 @@ public class CreateNewModelAction extends NewModelAction {
         final SModel newModel = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
-            // TODO create model in myModelRoot/mySourceRoot, fix literal
             final String path = ((PsiDirectory) anActionEvent.getData(LangDataKeys.PSI_ELEMENT)).getVirtualFile().getPath();
 
             EditableSModel model = null;
             try {
-              model = (EditableSModel) ((DefaultModelRoot) myModelRoot).createModel(modelName, path, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+              model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
             } catch (IOException e) {
               LOG.error("Can't create per-root model " + modelName + " under " + path, e);
             }
 
             // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
             // model.getSModel() ?
-            template.preConfigure(model, mySolution);
+            template.preConfigure(model);
 
             //Hack for update ProjectView
             model.addModelListener(new SModelListener() {
@@ -178,7 +171,6 @@ public class CreateNewModelAction extends NewModelAction {
       dialog.getKindCombo().addItem(template.getPresentation(), template.getIcon(), template.name());
       dialog.setTemplateKindComponentsVisible(true);
     }
-    dialog.getNameField().setText(myModelPrefix);
     dialog.show();
   }
 
@@ -189,16 +181,16 @@ public class CreateNewModelAction extends NewModelAction {
 
     private final String myPresentation;
     private final Icon myIcon;
-    private List<SModuleReference> myLanguagesToImport = new ArrayList<SModuleReference>();
+    private List<SLanguage> myLanguagesToImport = new ArrayList<SLanguage>();
 
     private ModelTemplates(String presentation, Icon icon, String... languagesToImport) {
       myPresentation = presentation;
       myIcon = icon;
 
       for (String languageNamespace : languagesToImport) {
-        Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+        SLanguage language = MetaAdapterFactoryByName.getLanguage(languageNamespace);
         assert language != null : "Language required by model template is not in repository";
-        myLanguagesToImport.add(language.getModuleReference());
+        myLanguagesToImport.add(language);
       }
     }
 
@@ -210,15 +202,9 @@ public class CreateNewModelAction extends NewModelAction {
       return myIcon;
     }
 
-    public void preConfigure(SModel smodel, SModule module) {
-      Collection<Language> languages = new GlobalModuleDependenciesManager(module).getUsedLanguages();
-      for (SModuleReference languageReference : myLanguagesToImport) {
-        Language l = ((Language) languageReference.resolve(MPSModuleRepository.getInstance()));
-        if (l == null) continue;
-        if (languages.contains(l)) {
-          ((AbstractModule) module).addUsedLanguage(languageReference);
-        }
-        ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(languageReference);
+    public void preConfigure(SModel smodel) {
+      for (SLanguage language : myLanguagesToImport) {
+        ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(language);
       }
     }
   }
