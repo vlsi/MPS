@@ -139,9 +139,9 @@
   </root>
   <root nodeRef="r:443bf6a4-9266-4251-8983-0f2d347a9c11(jetbrains.mps.lang.smodel.query.generator.template.main@generator)/7738379549905438724">
     <file name="QueriesGenerated.java">
-      <node id="4307205004144966848" at="22,108,23,193" concept="4" />
+      <node id="6189737775852024269" at="22,108,23,193" concept="4" />
       <node id="7738379549905474462" at="25,108,26,188" concept="4" />
-      <scope id="4307205004144966847" at="22,108,23,193" />
+      <scope id="6189737775852024268" at="22,108,23,193" />
       <scope id="7738379549905474171" at="25,108,26,188" />
     </file>
   </root>
