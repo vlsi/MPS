@@ -877,14 +877,10 @@
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="uyj83GeVll" role="iGT6I">
             <property role="2Ry0Am" value="core" />
-            <node concept="2Ry0Ak" id="uyj83GeVRN" role="2Ry0An">
-              <property role="2Ry0Am" value="smodelquery-runtime" />
+            <node concept="2Ry0Ak" id="5mdbChILa5g" role="2Ry0An">
+              <property role="2Ry0Am" value="squery-runtime" />
             </node>
           </node>
-        </node>
-        <node concept="nFU4i" id="uyj83GeVln" role="nFU4p">
-          <property role="nFU4j" value="source" />
-          <property role="3LZaj6" value="source" />
         </node>
         <node concept="nFU4i" id="uyj83GeVlo" role="nFU4p">
           <property role="nFU4j" value="source_gen" />
@@ -4296,7 +4292,7 @@
           <node concept="2Ry0Ak" id="uyj83GeNPt" role="iGT6I">
             <property role="2Ry0Am" value="core" />
             <node concept="2Ry0Ak" id="uyj83GeNPu" role="2Ry0An">
-              <property role="2Ry0Am" value="smodelquery-runtime" />
+              <property role="2Ry0Am" value="squery-runtime" />
               <node concept="2Ry0Ak" id="uyj83GeOY$" role="2Ry0An">
                 <property role="2Ry0Am" value="jetbrains.mps.lang.smodel.query.runtime.msd" />
               </node>

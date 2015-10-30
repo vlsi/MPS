@@ -128,8 +128,8 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-findUsages-runtime-models">
       <fileset dir="${mps_home}/core/findUsages-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-smodelquery-runtime-models">
-      <fileset dir="${mps_home}/core/smodelquery-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-squery-runtime-models">
+      <fileset dir="${mps_home}/core/squery-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-refactoring-runtime-models">
       <fileset dir="${mps_home}/core/refactoring-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -203,9 +203,9 @@
       <zipfileset file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-findUsages-runtime-models" prefix="modules/jetbrains.mps.findUsages.runtime/models" />
-      <zipfileset file="${mps_home}/core/smodelquery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" prefix="modules/jetbrains.mps.lang.smodel.query.runtime" />
-      <zipfileset dir="${mps_home}/core/smodelquery-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.smodel.query.runtime" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-smodelquery-runtime-models" prefix="modules/jetbrains.mps.lang.smodel.query.runtime/models" />
+      <zipfileset file="${mps_home}/core/squery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" prefix="modules/jetbrains.mps.lang.smodel.query.runtime" />
+      <zipfileset dir="${mps_home}/core/squery-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.smodel.query.runtime" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-squery-runtime-models" prefix="modules/jetbrains.mps.lang.smodel.query.runtime/models" />
       <zipfileset file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${mps_home}/core/refactoring-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-refactoring-runtime-models" prefix="modules/jetbrains.mps.refactoring.runtime/models" />
@@ -3933,7 +3933,7 @@
         <module file="${mps_home}/languages/languageDesign/sharedConcepts/jetbrains.mps.lang.sharedConcepts.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/smodel/jetbrains.mps.lang.smodel.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/smodel.query/jetbrains.mps.lang.smodel.query.mpl" bootstrap="true" />
-        <module file="${mps_home}/core/smodelquery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/squery-runtime/jetbrains.mps.lang.smodel.query.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/traceable/jetbrains.mps.lang.traceable.mpl" bootstrap="true" />
@@ -4125,8 +4125,7 @@
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
-        <pathelement path="${mps_home}/core/smodelquery-runtime/source" />
-        <pathelement path="${mps_home}/core/smodelquery-runtime/source_gen" />
+        <pathelement path="${mps_home}/core/squery-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/core/scripts-runtime/source" />
@@ -4256,8 +4255,7 @@
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source" />
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
-        <pathelement path="${mps_home}/core/smodelquery-runtime/source" />
-        <pathelement path="${mps_home}/core/smodelquery-runtime/source_gen" />
+        <pathelement path="${mps_home}/core/squery-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/core/scripts-runtime/source" />
@@ -4289,8 +4287,7 @@
       <fileset dir="${mps_home}/core/typesystemEngine/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/findUsages-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/findUsages-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/core/smodelquery-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/core/smodelquery-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/squery-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/refactoring-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/scripts-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
