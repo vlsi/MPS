@@ -17828,6 +17828,12 @@
             <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5mdbChITL1q" role="3bR37C">
+          <node concept="3bR9La" id="5mdbChITL1r" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="uyj83GeNPj" resolve="jetbrains.mps.lang.smodel.query.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1SiIV0" id="6bxzCAfre6O" role="3bR37C">
         <node concept="3bR9La" id="6bxzCAfre6P" role="1SiIV1">
@@ -17879,6 +17885,12 @@
         <node concept="1Busua" id="WMsS6mDlpd" role="1SiIV1">
           <ref role="1Busuk" node="3ZgZ1njKuFL" resolve="jetbrains.mps.lang.smodel.query" />
         </node>
+      </node>
+      <node concept="1E0d5M" id="5mdbChITL1o" role="1E1XAP">
+        <ref role="1E0d5P" node="1TaHNgiIbIQ" resolve="MPS.Core" />
+      </node>
+      <node concept="1E0d5M" id="5mdbChITL1p" role="1E1XAP">
+        <ref role="1E0d5P" node="uyj83GeNPj" resolve="jetbrains.mps.lang.smodel.query.runtime" />
       </node>
     </node>
     <node concept="1E1JtA" id="5Ve$VbUJDaP" role="3989C9">
@@ -18382,6 +18394,12 @@
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="5mdbChITL5t" role="3bR37C">
+          <node concept="3bR9La" id="5mdbChITL5u" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="uyj83GeNPj" resolve="jetbrains.mps.lang.smodel.query.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1SiIV0" id="6g2V7OQGaKA" role="3bR37C">
         <node concept="3bR9La" id="6g2V7OQGaKB" role="1SiIV1">
@@ -18456,6 +18474,12 @@
         <node concept="1Busua" id="WMsS6mDlZx" role="1SiIV1">
           <ref role="1Busuk" node="3ZgZ1njKuFL" resolve="jetbrains.mps.lang.smodel.query" />
         </node>
+      </node>
+      <node concept="1E0d5M" id="5mdbChITL5r" role="1E1XAP">
+        <ref role="1E0d5P" node="1TaHNgiIbIQ" resolve="MPS.Core" />
+      </node>
+      <node concept="1E0d5M" id="5mdbChITL5s" role="1E1XAP">
+        <ref role="1E0d5P" node="uyj83GeNPj" resolve="jetbrains.mps.lang.smodel.query.runtime" />
       </node>
     </node>
     <node concept="1E1JtA" id="5xAm1dXBy5N" role="3989C9">
