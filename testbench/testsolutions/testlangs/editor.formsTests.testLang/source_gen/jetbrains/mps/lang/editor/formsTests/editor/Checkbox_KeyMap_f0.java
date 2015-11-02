@@ -13,15 +13,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
-public class Checkbox_KeyMap_d0 extends KeyMapImpl {
-  public Checkbox_KeyMap_d0() {
+public class Checkbox_KeyMap_f0 extends KeyMapImpl {
+  public Checkbox_KeyMap_f0() {
     this.setApplicableToEveryModel(false);
     KeyMapAction action;
-    action = new Checkbox_KeyMap_d0.Checkbox_KeyMap_d0_Action0();
+    action = new Checkbox_KeyMap_f0.Checkbox_KeyMap_f0_Action0();
     this.putAction("none", "VK_SPACE", action);
   }
-  public static class Checkbox_KeyMap_d0_Action0 extends KeyMapActionImpl {
-    public Checkbox_KeyMap_d0_Action0() {
+  public static class Checkbox_KeyMap_f0_Action0 extends KeyMapActionImpl {
+    public Checkbox_KeyMap_f0_Action0() {
       this.setShownInPopupMenu(false);
     }
     public String getDescriptionText() {
@@ -52,7 +52,7 @@ public class Checkbox_KeyMap_d0 extends KeyMapImpl {
       return editorContext.getContextCell() instanceof EditorCell_Collection;
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      new ToggleCheckboxAction_d0(node).execute(editorContext);
+      new ToggleCheckboxAction_f0(node).execute(editorContext);
     }
     public String getKeyStroke() {
       return "none SPACE";

@@ -21,9 +21,6 @@
     <file name="CellModel_Checkbox_BehaviorDescriptor.java">
       <unit at="13,0,28,0" name="jetbrains.mps.lang.editor.forms.behavior.CellModel_Checkbox_BehaviorDescriptor" />
     </file>
-    <file name="CheckboxUI_Image_BehaviorDescriptor.java">
-      <unit at="13,0,25,0" name="jetbrains.mps.lang.editor.forms.behavior.CheckboxUI_Image_BehaviorDescriptor" />
-    </file>
     <file name="CheckboxUI_Platform_BehaviorDescriptor.java">
       <unit at="11,0,20,0" name="jetbrains.mps.lang.editor.forms.behavior.CheckboxUI_Platform_BehaviorDescriptor" />
     </file>

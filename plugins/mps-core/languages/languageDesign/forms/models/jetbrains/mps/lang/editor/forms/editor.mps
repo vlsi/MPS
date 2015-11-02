@@ -22,7 +22,6 @@
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
-      <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -36,9 +35,6 @@
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" flags="ln" index="VPXOz" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
-      <concept id="1103016434866" name="jetbrains.mps.lang.editor.structure.CellModel_JComponent" flags="sg" stub="8104358048506731196" index="3gTLQM">
-        <child id="1176475119347" name="componentProvider" index="3FoqZy" />
-      </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
@@ -64,37 +60,8 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
-      <concept id="1176474535556" name="jetbrains.mps.lang.editor.structure.QueryFunction_JComponent" flags="in" index="3Fmcul" />
-      <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
-      </concept>
-    </language>
-    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
-        <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
-        <child id="1068580123156" name="expression" index="3clFbG" />
-      </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
-        <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
-      </concept>
-      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
-        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
-        <child id="1068499141038" name="actualArgument" index="37wK5m" />
-      </concept>
-    </language>
-    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="5253134957341870583" name="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" flags="nn" index="pqAIu">
-        <reference id="5253134957341870585" name="propertyDeclaration" index="pqAIg" />
-        <reference id="5253134957341870584" name="conceptDeclaration" index="pqAIh" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -229,102 +196,6 @@
       <node concept="2EHx9g" id="1aoPJ1nwf02" role="2iSdaV" />
     </node>
     <node concept="PMmxH" id="1$0KR3zcAwU" role="2wV5jI">
-      <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="1aoPJ1nweZU">
-    <property role="3GE5qa" value="ui" />
-    <ref role="1XX52x" to="f55a:1aoPJ1nweYS" resolve="CheckboxUI_Image" />
-    <node concept="3EZMnI" id="1aoPJ1nwf05" role="6VMZX">
-      <node concept="3F0ifn" id="783I1NXrKD2" role="3EZMnx">
-        <property role="3F0ifm" value="Style:" />
-        <ref role="1k5W1q" to="tpc5:hF4yUZ8" resolve="header" />
-      </node>
-      <node concept="PMmxH" id="783I1NXrKD3" role="3EZMnx">
-        <ref role="PMmxG" to="tpc5:1cEk0X7pP35" resolve="CellStyle_Component" />
-      </node>
-      <node concept="3F0ifn" id="783I1NXrrOb" role="3EZMnx" />
-      <node concept="3F0ifn" id="4CPWB7q33L9" role="3EZMnx">
-        <property role="3F0ifm" value="Image checkbox:" />
-        <ref role="1k5W1q" to="tpc5:hF4yUZ8" resolve="header" />
-      </node>
-      <node concept="3EZMnI" id="1aoPJ1nwf06" role="3EZMnx">
-        <node concept="VPM3Z" id="1aoPJ1nwf07" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F0ifn" id="1aoPJ1nwf08" role="3EZMnx">
-          <property role="3F0ifm" value="true image" />
-          <ref role="1k5W1q" to="tpc5:hF4H1c8" resolve="property" />
-        </node>
-        <node concept="3F0A7n" id="1aoPJ1nwf09" role="3EZMnx">
-          <ref role="1NtTu8" to="f55a:1aoPJ1nweYV" resolve="trueIconPath" />
-          <node concept="VPXOz" id="hF4HgsF" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="2iRfu4" id="1aoPJ1nwf0a" role="2iSdaV" />
-        <node concept="3gTLQM" id="3iIS9LP30I3" role="3EZMnx">
-          <node concept="3Fmcul" id="3iIS9LP30I5" role="3FoqZy">
-            <node concept="3clFbS" id="3iIS9LP30I7" role="2VODD2">
-              <node concept="3clFbF" id="3iIS9LP30Lq" role="3cqZAp">
-                <node concept="2YIFZM" id="3iIS9LP30Ok" role="3clFbG">
-                  <ref role="37wK5l" to="hhnx:~EditorUtil.createSelectIconButton(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.openapi.editor.EditorContext,boolean):javax.swing.JComponent" resolve="createSelectIconButton" />
-                  <ref role="1Pybhc" to="hhnx:~EditorUtil" resolve="EditorUtil" />
-                  <node concept="pncrf" id="3iIS9LP30PQ" role="37wK5m" />
-                  <node concept="pqAIu" id="3iIS9LP30XD" role="37wK5m">
-                    <ref role="pqAIh" to="f55a:1aoPJ1nweYS" resolve="CheckboxUI_Image" />
-                    <ref role="pqAIg" to="f55a:1aoPJ1nweYV" resolve="trueIconPath" />
-                  </node>
-                  <node concept="1Q80Hx" id="3iIS9LP31jr" role="37wK5m" />
-                  <node concept="3clFbT" id="3iIS9LP31sA" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3EZMnI" id="1aoPJ1nwf0b" role="3EZMnx">
-        <node concept="VPM3Z" id="1aoPJ1nwf0c" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="3F0ifn" id="1aoPJ1nwf0d" role="3EZMnx">
-          <property role="3F0ifm" value="false image" />
-          <ref role="1k5W1q" to="tpc5:hF4H1c8" resolve="property" />
-        </node>
-        <node concept="3F0A7n" id="1aoPJ1nwf0e" role="3EZMnx">
-          <ref role="1NtTu8" to="f55a:1aoPJ1nweYX" resolve="falseIconPath" />
-          <node concept="VPXOz" id="1aoPJ1nwiTE" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-        </node>
-        <node concept="2iRfu4" id="1aoPJ1nwf0f" role="2iSdaV" />
-        <node concept="3gTLQM" id="3iIS9LP30JI" role="3EZMnx">
-          <node concept="3Fmcul" id="3iIS9LP30JK" role="3FoqZy">
-            <node concept="3clFbS" id="3iIS9LP30JM" role="2VODD2">
-              <node concept="3clFbF" id="3iIS9LP31yi" role="3cqZAp">
-                <node concept="2YIFZM" id="3iIS9LP31yj" role="3clFbG">
-                  <ref role="1Pybhc" to="hhnx:~EditorUtil" resolve="EditorUtil" />
-                  <ref role="37wK5l" to="hhnx:~EditorUtil.createSelectIconButton(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.openapi.editor.EditorContext,boolean):javax.swing.JComponent" resolve="createSelectIconButton" />
-                  <node concept="pncrf" id="3iIS9LP31yk" role="37wK5m" />
-                  <node concept="pqAIu" id="3iIS9LP31yl" role="37wK5m">
-                    <ref role="pqAIh" to="f55a:1aoPJ1nweYS" resolve="CheckboxUI_Image" />
-                    <ref role="pqAIg" to="f55a:1aoPJ1nweYX" resolve="falseIconPath" />
-                  </node>
-                  <node concept="1Q80Hx" id="3iIS9LP31ym" role="37wK5m" />
-                  <node concept="3clFbT" id="3iIS9LP31yn" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2EHx9g" id="1aoPJ1nwf0g" role="2iSdaV" />
-    </node>
-    <node concept="PMmxH" id="1$0KR3zcAth" role="2wV5jI">
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>

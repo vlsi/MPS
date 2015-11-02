@@ -18,15 +18,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_a_1" file="Checkbox_Actions_a_1.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_a_1" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_b0" file="Checkbox_Actions_b0.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
@@ -45,10 +36,10 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_d0" file="Checkbox_Actions_d0.java">
+  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_f0" file="Checkbox_Actions_f0.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_d0" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_f0" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -58,24 +49,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_g0" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_h0" file="Checkbox_Actions_h0.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_h0" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_i0" file="Checkbox_Actions_i0.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_i0" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -100,20 +73,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_a_0" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_a_1" file="Checkbox_KeyMap_a_1.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_a_1" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -151,11 +110,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_d0" file="Checkbox_KeyMap_d0.java">
+  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_f0" file="Checkbox_KeyMap_f0.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_d0" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_f0" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
@@ -179,40 +138,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_h0" file="Checkbox_KeyMap_h0.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_h0" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_i0" file="Checkbox_KeyMap_i0.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.KeyMapActionImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_i0" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMapAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.KeyMapImpl" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.editor.formsTests.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.UsesImageCheckbox_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.UsesPlatformCheckbox_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.UsesTextCheckbox_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.VariousCheckboxes_Editor" />
@@ -225,17 +155,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_a_0" file="ToggleCheckboxAction_a_0.java">
-    <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -244,7 +163,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_a_1" file="ToggleCheckboxAction_a_1.java">
+  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_a_0" file="ToggleCheckboxAction_a_0.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
@@ -271,14 +190,15 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_d0" file="ToggleCheckboxAction_d0.java">
+  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_f0" file="ToggleCheckboxAction_f0.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
@@ -294,52 +214,12 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Label" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_h0" file="ToggleCheckboxAction_h0.java">
-    <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.ToggleCheckboxAction_i0" file="ToggleCheckboxAction_i0.java">
-    <classNode dependClassName="jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.CellSelector" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.formsTests.editor.UsesImageCheckbox_Editor" file="UsesImageCheckbox_Editor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_a" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_a" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Image" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.formsTests.editor.UsesPlatformCheckbox_Editor" file="UsesPlatformCheckbox_Editor.java">
     <classNode dependClassName="java.lang.String" />
@@ -347,8 +227,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_a_1" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_a_1" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_a_0" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_a_0" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -365,8 +245,8 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.formsTests.editor.UsesTextCheckbox_Editor" file="UsesTextCheckbox_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_a_0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_a_0" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_a" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_a" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -389,17 +269,12 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_b0" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_c0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_d0" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_f0" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_g0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_h0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_Actions_i0" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_b0" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_c0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_d0" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_f0" />
     <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_g0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_h0" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.formsTests.editor.Checkbox_KeyMap_i0" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />

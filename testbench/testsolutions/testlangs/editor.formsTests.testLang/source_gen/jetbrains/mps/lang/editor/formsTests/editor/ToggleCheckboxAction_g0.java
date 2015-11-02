@@ -8,8 +8,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox;
 import jetbrains.mps.nodeEditor.selectionRestoring.CellSelector;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
+import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -23,8 +22,7 @@ public class ToggleCheckboxAction_g0 {
     EditorCell selectedCell = editorContext.getSelectedCell();
     RestorableSelection selection = new SaveSelectionForCheckbox(selectedCell) {
       protected CellSelector createCellSelector() {
-        EditorCell_Label label = (EditorCell_Label) mySelectedCell;
-        return new LabelCellSelector(label.getCaretPosition(), label.getSelectionStart(), label.getSelectionEnd());
+        return new WholeCellSelector();
       }
     }.save();
 

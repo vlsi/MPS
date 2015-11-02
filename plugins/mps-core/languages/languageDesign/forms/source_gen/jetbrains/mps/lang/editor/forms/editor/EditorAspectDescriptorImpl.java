@@ -16,12 +16,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CellModel_Checkbox_Editor()));
       case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CheckboxUI_Image_Editor()));
-      case 2:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CheckboxUI_Platform_Editor()));
-      case 3:
+      case 2:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CheckboxUI_Text_Editor()));
-      case 4:
+      case 3:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StubCellModel_Checkbox_Editor()));
       default:
     }
@@ -33,5 +31,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Image", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Platform", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text", "jetbrains.mps.lang.editor.forms.structure.StubCellModel_Checkbox"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Platform", "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text", "jetbrains.mps.lang.editor.forms.structure.StubCellModel_Checkbox"};
 }

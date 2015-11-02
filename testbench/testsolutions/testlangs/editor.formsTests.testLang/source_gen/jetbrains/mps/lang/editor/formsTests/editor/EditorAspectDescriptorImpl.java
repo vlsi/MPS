@@ -14,12 +14,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
       case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UsesImageCheckbox_Editor()));
-      case 1:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UsesPlatformCheckbox_Editor()));
-      case 2:
+      case 1:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UsesTextCheckbox_Editor()));
-      case 3:
+      case 2:
         return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VariousCheckboxes_Editor()));
       default:
     }
@@ -31,5 +29,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.formsTests.structure.UsesImageCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"};
 }

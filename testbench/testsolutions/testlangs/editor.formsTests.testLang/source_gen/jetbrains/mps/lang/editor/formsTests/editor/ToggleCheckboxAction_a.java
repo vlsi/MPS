@@ -8,7 +8,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox;
 import jetbrains.mps.nodeEditor.selectionRestoring.CellSelector;
-import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -22,11 +23,12 @@ public class ToggleCheckboxAction_a {
     EditorCell selectedCell = editorContext.getSelectedCell();
     RestorableSelection selection = new SaveSelectionForCheckbox(selectedCell) {
       protected CellSelector createCellSelector() {
-        return new WholeCellSelector();
+        EditorCell_Label label = (EditorCell_Label) mySelectedCell;
+        return new LabelCellSelector(label.getCaretPosition(), label.getSelectionStart(), label.getSelectionEnd());
       }
     }.save();
 
-    SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e85L, 0x4a35f271d9f26e86L, "property"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e85L, 0x4a35f271d9f26e86L, "property")))));
+    SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, 0x4a35f271d9f26e95L, "property"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, 0x4a35f271d9f26e95L, "property")))));
 
     if (selection != null) {
       editorContext.flushEvents();
