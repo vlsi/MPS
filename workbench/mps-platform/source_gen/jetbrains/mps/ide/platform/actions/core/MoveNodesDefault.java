@@ -223,7 +223,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
 
     final Map<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> changes = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>());
     final Map<SNodeReference, SNodeReference> nodeRoots = MapSequence.fromMap(new HashMap<SNodeReference, SNodeReference>());
-    final Wrappers._T<List<String>> options = new Wrappers._T<List<String>>();
+    final Wrappers._T<List<RefactoringParticipant.Option>> options = new Wrappers._T<List<RefactoringParticipant.Option>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SNodeReference nodeToMove : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
@@ -242,11 +242,11 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
             MapSequence.fromMap(participantStates).put(nodeRef, MoveNodeRefactoringParticipant.MoveNodeParticipantState.create(participant, resolveNode(nodeRef, project)));
           }
         }
-        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>, String>() {
-          public Iterable<String> translate(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> it) {
-            return MapSequence.fromMap(it.value()).translate(new ITranslator2<IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>, String>() {
-              public Iterable<String> translate(IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> it) {
-                return it.value().getOptions(project.getRepository());
+        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>, RefactoringParticipant.Option>() {
+          public Iterable<RefactoringParticipant.Option> translate(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> it) {
+            return MapSequence.fromMap(it.value()).translate(new ITranslator2<IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>, RefactoringParticipant.Option>() {
+              public Iterable<RefactoringParticipant.Option> translate(IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> it) {
+                return it.value().getAvaliableOptions(project.getRepository());
               }
             });
           }
@@ -254,10 +254,19 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
 
-    final Map<String, Boolean> selectedOptions = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), options.value, "Select Participants");
-    if (selectedOptions == null) {
+    List<Integer> selectedOptionIndices = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(options.value).select(new ISelector<RefactoringParticipant.Option, String>() {
+      public String select(RefactoringParticipant.Option it) {
+        return it.getDescription();
+      }
+    }).toListSequence(), "Select Participants");
+    if (selectedOptionIndices == null) {
       return;
     }
+    final List<RefactoringParticipant.Option> selectedOptions = ListSequence.fromList(selectedOptionIndices).select(new ISelector<Integer, RefactoringParticipant.Option>() {
+      public RefactoringParticipant.Option select(Integer i) {
+        return ListSequence.fromList(options.value).getElement(i);
+      }
+    }).toListSequence();
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
