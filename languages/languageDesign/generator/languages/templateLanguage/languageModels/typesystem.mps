@@ -226,10 +226,17 @@
       </concept>
       <concept id="1216383170661" name="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" flags="ng" index="Q5z_Y">
         <child id="1216383424566" name="executeBlock" index="Q6x$H" />
+        <child id="1216383476350" name="quickFixArgument" index="Q6Id_" />
         <child id="1216391046856" name="descriptionBlock" index="QzAvj" />
       </concept>
       <concept id="1216383287005" name="jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock" flags="in" index="Q5ZZ6" />
       <concept id="1216383337216" name="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node" flags="nn" index="Q6c8r" />
+      <concept id="1216383482742" name="jetbrains.mps.lang.typesystem.structure.QuickFixArgument" flags="ng" index="Q6JDH">
+        <child id="1216383511839" name="argumentType" index="Q6QK4" />
+      </concept>
+      <concept id="1216390348809" name="jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference" flags="nn" index="QwW4i">
+        <reference id="1216390348810" name="quickFixArgument" index="QwW4h" />
+      </concept>
       <concept id="1216390987552" name="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" flags="in" index="QznSV" />
       <concept id="1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" flags="ig" index="18hYwZ">
         <property id="1195213689297" name="overrides" index="18ip37" />
@@ -238,6 +245,11 @@
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
       <concept id="1210784285454" name="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" flags="ng" index="3Cnw8n">
         <reference id="1216388525179" name="quickFix" index="QpYPw" />
+        <child id="1210784493590" name="actualArgument" index="3Coj4f" />
+      </concept>
+      <concept id="1210784384552" name="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" flags="ng" index="3CnSsL">
+        <reference id="1216386999476" name="quickFixArgument" index="QkamJ" />
+        <child id="1210784642750" name="value" index="3CoRuB" />
       </concept>
       <concept id="1176543928247" name="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" flags="nn" index="3JuTUA">
         <child id="1176543945045" name="subtypeExpression" index="3JuY14" />
@@ -287,6 +299,7 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
@@ -4305,6 +4318,42 @@
               </node>
               <node concept="3x8VRR" id="6j1nfBdBP2e" role="2OqNvi" />
             </node>
+            <node concept="9aQIb" id="6lTMuI_3xcS" role="9aQIa">
+              <node concept="3clFbS" id="6lTMuI_3xcT" role="9aQI4">
+                <node concept="a7r0C" id="6lTMuI_3xhd" role="3cqZAp">
+                  <node concept="3Cnw8n" id="6lTMuI_4lAK" role="2OEOjU">
+                    <ref role="QpYPw" node="6lTMuI_4lqL" resolve="FixRootTemplateAnnotation" />
+                    <node concept="3CnSsL" id="6lTMuI_4m6Q" role="3Coj4f">
+                      <ref role="QkamJ" node="6lTMuI_4lPD" resolve="rule" />
+                      <node concept="1YBJjd" id="6lTMuI_4m73" role="3CoRuB">
+                        <ref role="1YBMHb" node="6j1nfBdBP2i" resolve="rule" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="6lTMuI_3xUV" role="a7wSD">
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                    <node concept="Xl_RD" id="6lTMuI_3xVm" role="37wK5m">
+                      <property role="Xl_RC" value="Root template %s misses annotation" />
+                    </node>
+                    <node concept="2OqwBi" id="6lTMuI_3y57" role="37wK5m">
+                      <node concept="37vLTw" id="6lTMuI_3y2A" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6j1nfBdBP1m" resolve="template" />
+                      </node>
+                      <node concept="3TrcHB" id="6lTMuI_3y8Q" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="1YBJjd" id="6lTMuI_4j52" role="2OEOjV">
+                    <ref role="1YBMHb" node="6j1nfBdBP2i" resolve="rule" />
+                  </node>
+                  <node concept="2OE7Q9" id="6lTMuI_4j7c" role="2OEWyd">
+                    <ref role="2OEe5H" to="tpf8:gZlhOrt" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node concept="2OqwBi" id="6j1nfBdBP2f" role="3clFbw">
@@ -4950,6 +4999,86 @@
         <node concept="3clFbF" id="rez4bFGrQ4" role="3cqZAp">
           <node concept="Xl_RD" id="rez4bFGrQ3" role="3clFbG">
             <property role="Xl_RC" value="Match parameters of modified switch" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="6lTMuI_4lqL">
+    <property role="TrG5h" value="FixRootTemplateAnnotation" />
+    <node concept="Q6JDH" id="6lTMuI_4lPD" role="Q6Id_">
+      <property role="TrG5h" value="rule" />
+      <node concept="3Tqbb2" id="6lTMuI_4lPM" role="Q6QK4">
+        <ref role="ehGHo" to="tpf8:gZlhOrr" resolve="Root_MappingRule" />
+      </node>
+    </node>
+    <node concept="Q5ZZ6" id="6lTMuI_4lqM" role="Q6x$H">
+      <node concept="3clFbS" id="6lTMuI_4lqN" role="2VODD2">
+        <node concept="3cpWs8" id="6lTMuI_4mhH" role="3cqZAp">
+          <node concept="3cpWsn" id="6lTMuI_4mhI" role="3cpWs9">
+            <property role="TrG5h" value="template" />
+            <node concept="3Tqbb2" id="6lTMuI_4mhD" role="1tU5fm">
+              <ref role="ehGHo" to="tpck:h0TrEE$" resolve="INamedConcept" />
+            </node>
+            <node concept="2OqwBi" id="6lTMuI_4mhJ" role="33vP2m">
+              <node concept="QwW4i" id="6lTMuI_4mhK" role="2Oq$k0">
+                <ref role="QwW4h" node="6lTMuI_4lPD" resolve="rule" />
+              </node>
+              <node concept="3TrEf2" id="6lTMuI_4mhL" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:gZlhOrt" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6lTMuI_4m$Q" role="3cqZAp">
+          <node concept="2OqwBi" id="6lTMuI_4mI8" role="3clFbG">
+            <node concept="2OqwBi" id="6lTMuI_4mAy" role="2Oq$k0">
+              <node concept="37vLTw" id="6lTMuI_4m$O" role="2Oq$k0">
+                <ref role="3cqZAo" node="6lTMuI_4mhI" resolve="template" />
+              </node>
+              <node concept="3CFZ6_" id="6lTMuI_4mD1" role="2OqNvi">
+                <node concept="3CFYIy" id="6lTMuI_4mDx" role="3CFYIz">
+                  <ref role="3CFYIx" to="tpf8:h0n94ik" resolve="RootTemplateAnnotation" />
+                </node>
+              </node>
+            </node>
+            <node concept="zfrQC" id="6lTMuI_4mWR" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6lTMuI_4m8q" role="3cqZAp">
+          <node concept="37vLTI" id="6lTMuI_4n7m" role="3clFbG">
+            <node concept="2OqwBi" id="6lTMuI_4ncZ" role="37vLTx">
+              <node concept="QwW4i" id="6lTMuI_4n9T" role="2Oq$k0">
+                <ref role="QwW4h" node="6lTMuI_4lPD" resolve="rule" />
+              </node>
+              <node concept="3TrEf2" id="6lTMuI_4nm1" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:gZ0HIsK" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6lTMuI_4mrd" role="37vLTJ">
+              <node concept="2OqwBi" id="6lTMuI_4mls" role="2Oq$k0">
+                <node concept="37vLTw" id="6lTMuI_4mhM" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6lTMuI_4mhI" resolve="template" />
+                </node>
+                <node concept="3CFZ6_" id="6lTMuI_4mnV" role="2OqNvi">
+                  <node concept="3CFYIy" id="6lTMuI_4mor" role="3CFYIz">
+                    <ref role="3CFYIx" to="tpf8:h0n94ik" resolve="RootTemplateAnnotation" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3TrEf2" id="6lTMuI_4myG" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:h0n9lNf" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="6lTMuI_4lrr" role="QzAvj">
+      <node concept="3clFbS" id="6lTMuI_4lrs" role="2VODD2">
+        <node concept="3clFbF" id="6lTMuI_4ls_" role="3cqZAp">
+          <node concept="Xl_RD" id="6lTMuI_4ls$" role="3clFbG">
+            <property role="Xl_RC" value="Fix root template annotation" />
           </node>
         </node>
       </node>
