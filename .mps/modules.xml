@@ -134,6 +134,7 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/scopes/runtime/jetbrains.mps.lang.scopes.runtime.msd" folder="core.aspects.constraints" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/script/jetbrains.mps.lang.script.mpl" folder="core.aspects.script" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/sharedConcepts/jetbrains.mps.lang.sharedConcepts.mpl" folder="core.languages" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/slanguage/jetbrains.mps.lang.slanguage.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel.query/jetbrains.mps.lang.smodel.query.mpl" folder="core.languages.smodel.query" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel/jetbrains.mps.lang.smodel.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel/solutions/samples/jetbrains.mps.samples.smodelLanguage-samples.msd" folder="samples" />
