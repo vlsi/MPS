@@ -459,68 +459,73 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590300(jetbrains.mps.lang.smodel.scripts)/5426775851424578122">
     <file name="EscapeSpecialCharactersInProperties_MigrationScript.java">
-      <node id="5426775851424578122" at="20,64,21,58" concept="10" />
-      <node id="5426775851424580246" at="24,31,25,62" concept="8" />
-      <node id="5426775851424580246" at="28,41,29,62" concept="8" />
-      <node id="5426775851424580246" at="32,54,33,152" concept="8" />
-      <node id="8787754327920838375" at="38,125,39,24" concept="8" />
+      <node id="5426775851424578122" at="19,64,20,58" concept="10" />
+      <node id="5426775851424580246" at="23,31,24,62" concept="8" />
+      <node id="5426775851424580246" at="27,41,28,62" concept="8" />
+      <node id="5426775851424580246" at="31,54,32,152" concept="8" />
+      <node id="3677143326026741530" at="36,80,37,69" concept="7" />
+      <node id="8787754327920838375" at="38,92,39,24" concept="8" />
       <node id="5426775851424580282" at="41,9,42,21" concept="8" />
-      <node id="5426775851424580980" at="47,41,48,21" concept="2" />
-      <node id="7662630262432996502" at="49,11,50,85" concept="7" />
-      <node id="5426775851424581009" at="51,57,52,76" concept="3" />
-      <node id="5426775851424580246" at="57,42,58,20" concept="8" />
-      <node id="5426775851424578122" at="65,41,66,160" concept="8" />
-      <node id="8787754327920838368" at="37,108,40,11" concept="5" />
-      <node id="5426775851424580966" at="46,108,49,11" concept="5" />
-      <node id="5426775851424580941" at="50,85,53,11" concept="5" />
-      <node id="5426775851424580246" at="23,0,27,0" concept="6" trace="getName#()Ljava/lang/String;" />
-      <node id="5426775851424580246" at="27,0,31,0" concept="6" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="5426775851424580246" at="31,0,35,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5426775851424580246" at="56,0,60,0" concept="6" trace="isShowAsIntention#()Z" />
-      <node id="5426775851424580878" at="36,59,41,9" concept="4" />
-      <node id="5426775851424578122" at="63,0,68,0" concept="6" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="5426775851424580246" at="35,0,44,0" concept="6" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5426775851424580938" at="45,52,54,9" concept="4" />
-      <node id="5426775851424580246" at="44,0,56,0" concept="6" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5426775851424578122" at="21,58,60,7" concept="0" />
-      <node id="5426775851424580246" at="21,58,60,7" concept="3" />
-      <node id="5426775851424578122" at="20,0,62,0" concept="1" trace="EscapeSpecialCharactersInProperties_MigrationScript#()V" />
-      <scope id="5426775851424580246" at="24,31,25,62" />
-      <scope id="5426775851424580246" at="28,41,29,62" />
-      <scope id="5426775851424580246" at="32,54,33,152" />
-      <scope id="8787754327920838369" at="38,125,39,24" />
-      <scope id="5426775851424580967" at="47,41,48,21" />
-      <scope id="5426775851424580942" at="51,57,52,76" />
-      <scope id="5426775851424580246" at="57,42,58,20" />
-      <scope id="5426775851424578122" at="65,41,66,160" />
-      <scope id="5426775851424580881" at="37,108,40,11" />
-      <scope id="5426775851424580246" at="23,0,27,0" />
-      <scope id="5426775851424580246" at="27,0,31,0" />
-      <scope id="5426775851424580246" at="31,0,35,0" />
-      <scope id="5426775851424580246" at="56,0,60,0" />
-      <scope id="5426775851424580878" at="36,59,41,9">
+      <node id="3677143326026744972" at="46,80,47,69" concept="7" />
+      <node id="3677143326026747783" at="48,30,49,21" concept="2" />
+      <node id="3677143326026748272" at="50,11,51,74" concept="7" />
+      <node id="3677143326026748281" at="52,46,53,70" concept="3" />
+      <node id="5426775851424580246" at="58,42,59,20" concept="8" />
+      <node id="5426775851424578122" at="66,41,67,160" concept="8" />
+      <node id="8787754327920838368" at="37,69,40,11" concept="5" />
+      <node id="3677143326026746602" at="47,69,50,11" concept="5" />
+      <node id="3677143326026748279" at="51,74,54,11" concept="5" />
+      <node id="5426775851424580246" at="22,0,26,0" concept="6" trace="getName#()Ljava/lang/String;" />
+      <node id="5426775851424580246" at="26,0,30,0" concept="6" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="5426775851424580246" at="30,0,34,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5426775851424580246" at="57,0,61,0" concept="6" trace="isShowAsIntention#()Z" />
+      <node id="5426775851424578122" at="64,0,69,0" concept="6" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5426775851424580878" at="35,59,41,9" concept="4" />
+      <node id="5426775851424580246" at="34,0,44,0" concept="6" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3677143326026744969" at="45,52,55,9" concept="4" />
+      <node id="5426775851424580246" at="44,0,57,0" concept="6" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5426775851424578122" at="20,58,61,7" concept="0" />
+      <node id="5426775851424580246" at="20,58,61,7" concept="3" />
+      <node id="5426775851424578122" at="19,0,63,0" concept="1" trace="EscapeSpecialCharactersInProperties_MigrationScript#()V" />
+      <scope id="5426775851424580246" at="23,31,24,62" />
+      <scope id="5426775851424580246" at="27,41,28,62" />
+      <scope id="5426775851424580246" at="31,54,32,152" />
+      <scope id="8787754327920838369" at="38,92,39,24" />
+      <scope id="3677143326026746604" at="48,30,49,21" />
+      <scope id="3677143326026748280" at="52,46,53,70" />
+      <scope id="5426775851424580246" at="58,42,59,20" />
+      <scope id="5426775851424578122" at="66,41,67,160" />
+      <scope id="5426775851424580246" at="22,0,26,0" />
+      <scope id="5426775851424580246" at="26,0,30,0" />
+      <scope id="5426775851424580246" at="30,0,34,0" />
+      <scope id="5426775851424580881" at="36,80,40,11">
+        <var name="value" id="3677143326026741531" />
+      </scope>
+      <scope id="5426775851424580246" at="57,0,61,0" />
+      <scope id="5426775851424578122" at="64,0,69,0" />
+      <scope id="5426775851424580878" at="35,59,41,9">
         <var name="property" id="5426775851424580879" />
       </scope>
-      <scope id="5426775851424578122" at="63,0,68,0" />
-      <scope id="5426775851424580250" at="36,59,42,21" />
-      <scope id="5426775851424580940" at="46,108,53,11">
-        <var name="escapedValue" id="7662630262432996503" />
+      <scope id="5426775851424580250" at="35,59,42,21" />
+      <scope id="3677143326026744971" at="46,80,54,11">
+        <var name="escapedValue" id="3677143326026748273" />
+        <var name="value" id="3677143326026744973" />
       </scope>
-      <scope id="5426775851424580246" at="35,0,44,0">
+      <scope id="5426775851424580246" at="34,0,44,0">
         <var name="node" id="5426775851424580246" />
       </scope>
-      <scope id="5426775851424580248" at="45,52,54,9" />
-      <scope id="5426775851424580938" at="45,52,54,9">
-        <var name="property" id="5426775851424580939" />
+      <scope id="3677143326026744969" at="45,52,55,9">
+        <var name="property" id="3677143326026744970" />
       </scope>
-      <scope id="5426775851424580246" at="44,0,56,0">
+      <scope id="5426775851424580248" at="45,52,55,9" />
+      <scope id="5426775851424580246" at="44,0,57,0">
         <var name="node" id="5426775851424580246" />
       </scope>
-      <scope id="5426775851424580246" at="21,58,60,7" />
-      <scope id="5426775851424578122" at="20,64,60,7" />
-      <scope id="5426775851424578122" at="20,0,62,0" />
-      <unit id="5426775851424580246" at="22,28,60,5" name="jetbrains.mps.lang.smodel.scripts.EscapeSpecialCharactersInProperties_MigrationScript$1" />
-      <unit id="5426775851424578122" at="19,0,69,0" name="jetbrains.mps.lang.smodel.scripts.EscapeSpecialCharactersInProperties_MigrationScript" />
+      <scope id="5426775851424580246" at="20,58,61,7" />
+      <scope id="5426775851424578122" at="19,64,61,7" />
+      <scope id="5426775851424578122" at="19,0,63,0" />
+      <unit id="5426775851424580246" at="21,28,61,5" name="jetbrains.mps.lang.smodel.scripts.EscapeSpecialCharactersInProperties_MigrationScript$1" />
+      <unit id="5426775851424578122" at="18,0,70,0" name="jetbrains.mps.lang.smodel.scripts.EscapeSpecialCharactersInProperties_MigrationScript" />
     </file>
   </root>
 </debug-info>

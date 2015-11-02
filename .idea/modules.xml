@@ -76,7 +76,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/scripts-runtime/scripts-runtime.iml" filepath="$PROJECT_DIR$/core/scripts-runtime/scripts-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/smodel/smodel.iml" filepath="$PROJECT_DIR$/core/smodel/smodel.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/squery-runtime/smodelquery-runtime.iml" filepath="$PROJECT_DIR$/core/squery-runtime/smodelquery-runtime.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/languages/languageDesign/smodel.query/runtime/smodelquery-runtime.iml" filepath="$PROJECT_DIR$/languages/languageDesign/smodel.query/runtime/smodelquery-runtime.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/startup/startup.iml" filepath="$PROJECT_DIR$/startup/startup.iml" />
       <module fileurl="file://$PROJECT_DIR$/testbench/testbench.iml" filepath="$PROJECT_DIR$/testbench/testbench.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/textgen/textgen.iml" filepath="$PROJECT_DIR$/core/textgen/textgen.iml" group="core" />

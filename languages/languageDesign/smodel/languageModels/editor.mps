@@ -2,7 +2,6 @@
 <model ref="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -14,20 +13,14 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tpd3" ref="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" />
-    <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
-    <import index="csvn" ref="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
-    <import index="wr1s" ref="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)" />
     <import index="tp2u" ref="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
@@ -4347,7 +4340,7 @@
     <node concept="3EZMnI" id="625yo8RZFQV" role="2wV5jI">
       <node concept="3F0ifn" id="625yo8RZFQW" role="3EZMnx">
         <property role="3F0ifm" value="module qualified name" />
-        <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
         <node concept="VPxyj" id="625yo8RZFQX" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -4916,10 +4909,10 @@
                   </node>
                 </node>
                 <node concept="tyxLq" id="v3WHCwUqIz" role="2OqNvi">
-                  <node concept="2YIFZM" id="791rit5f63$" role="tz02z">
-                    <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-                    <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                    <node concept="3GLrbK" id="791rit5f63_" role="37wK5m" />
+                  <node concept="2YIFZM" id="3c7P_XC1v4V" role="tz02z">
+                    <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+                    <ref role="37wK5l" to="18ew:~NameUtil.getModelLongName(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getModelLongName" />
+                    <node concept="3GLrbK" id="3c7P_XC1vae" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -5163,7 +5156,7 @@
         <node concept="3F0ifn" id="34EJa6aIp3_" role="3EZMnx">
           <property role="3F0ifm" value="module uid" />
           <property role="1cu_pB" value="0" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
           <node concept="VPM3Z" id="34EJa6aIp3A" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
@@ -5177,7 +5170,7 @@
         <node concept="2iRfu4" id="34EJa6aIp3D" role="2iSdaV" />
         <node concept="3F0ifn" id="34EJa6aIp3E" role="3EZMnx">
           <property role="3F0ifm" value="version" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
           <node concept="VPM3Z" id="34EJa6aIp3F" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
@@ -5202,7 +5195,7 @@
         <node concept="3F0ifn" id="34EJa6aJI4l" role="3EZMnx">
           <property role="3F0ifm" value="module uid" />
           <property role="1cu_pB" value="0" />
-          <ref role="1k5W1q" to="wr1s:eY0iPzB7gM" resolve="KeyWord" />
+          <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
           <node concept="VPM3Z" id="34EJa6aJI4m" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
