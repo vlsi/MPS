@@ -1826,13 +1826,6 @@
         <ref role="v9R2y" node="3wj3sjzR0Cm" resolve="reduce_ModuleReferenceExpression" />
       </node>
     </node>
-    <node concept="3aamgX" id="3wj3sjzR0Co" role="3acgRq">
-      <property role="3GE5qa" value="reference.module" />
-      <ref role="30HIoZ" to="tp25:5m$620fQi1E" resolve="AspectModelRefExpression" />
-      <node concept="j$656" id="5m$620fQnz_" role="1lVwrX">
-        <ref role="v9R2y" node="5m$620fQjSz" resolve="reduce_AspectModelExpression" />
-      </node>
-    </node>
     <node concept="3aamgX" id="3wj3sjzR1u4" role="3acgRq">
       <ref role="30HIoZ" to="tp25:3wj3sjzR1ta" resolve="LanguageReferenceExpression" />
       <node concept="j$656" id="3wj3sjzR1u5" role="1lVwrX">
@@ -3950,55 +3943,6 @@
                       <node concept="30H73N" id="1KHvivZHkhh" role="2Oq$k0" />
                       <node concept="3TrEf2" id="1KHvivZHkhi" role="2OqNvi">
                         <ref role="3Tt5mk" to="tp25:hzBYID2" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3aamgX" id="hzC5$Ln" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
-      <node concept="gft3U" id="hzC5DN2" role="1lVwrX">
-        <node concept="2YIFZM" id="1KHvivZHtOG" role="gfFT$">
-          <ref role="37wK5l" to="i8bi:5m$620fQtAI" resolve="isAspect" />
-          <ref role="1Pybhc" to="i8bi:5m$620fQrjY" resolve="SModuleOperations" />
-          <node concept="10Nm6u" id="1KHvivZHtOH" role="37wK5m">
-            <node concept="29HgVG" id="1KHvivZHtOI" role="lGtFl">
-              <node concept="3NFfHV" id="1KHvivZHtOJ" role="3NFExx">
-                <node concept="3clFbS" id="1KHvivZHtOK" role="2VODD2">
-                  <node concept="3clFbF" id="1KHvivZHtOL" role="3cqZAp">
-                    <node concept="2OqwBi" id="1KHvivZHtOM" role="3clFbG">
-                      <node concept="30H73N" id="1KHvivZHtON" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="1KHvivZHtOO" role="2OqNvi">
-                        <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="Xl_RD" id="1KHvivZHu3b" role="37wK5m">
-            <property role="Xl_RC" value="name" />
-            <node concept="17Uvod" id="1KHvivZHu7G" role="lGtFl">
-              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-              <property role="2qtEX9" value="value" />
-              <node concept="3zFVjK" id="1KHvivZHu7H" role="3zH0cK">
-                <node concept="3clFbS" id="1KHvivZHu7I" role="2VODD2">
-                  <node concept="3clFbF" id="1KHvivZHub4" role="3cqZAp">
-                    <node concept="2OqwBi" id="1KHvivZHuwi" role="3clFbG">
-                      <node concept="2OqwBi" id="1KHvivZHue9" role="2Oq$k0">
-                        <node concept="30H73N" id="1KHvivZHub3" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="1KHvivZHunJ" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp25:1KHvivZHjYS" />
-                        </node>
-                      </node>
-                      <node concept="3TrcHB" id="1KHvivZHuFo" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
                   </node>
@@ -19851,83 +19795,26 @@
       </node>
     </node>
   </node>
-  <node concept="13MO4I" id="5m$620fQjSz">
-    <property role="TrG5h" value="reduce_AspectModelExpression" />
-    <property role="3GE5qa" value="reference" />
-    <ref role="3gUMe" to="tp25:5m$620fQi1E" resolve="AspectModelRefExpression" />
-    <node concept="2YIFZL" id="5m$620fQnEg" role="13RCb5">
-      <property role="TrG5h" value="method" />
-      <node concept="3cqZAl" id="5m$620fQnEi" role="3clF45" />
-      <node concept="3Tm1VV" id="5m$620fQnEj" role="1B3o_S" />
-      <node concept="3clFbS" id="5m$620fQnEk" role="3clF47">
-        <node concept="3clFbF" id="5m$620fQv_a" role="3cqZAp">
-          <node concept="2YIFZM" id="5m$620fQv_p" role="3clFbG">
-            <ref role="37wK5l" to="i8bi:5m$620fQtAI" resolve="isAspect" />
-            <ref role="1Pybhc" to="i8bi:5m$620fQrjY" resolve="SModuleOperations" />
-            <node concept="10Nm6u" id="5m$620fQvA6" role="37wK5m">
-              <node concept="29HgVG" id="5m$620fQvCz" role="lGtFl">
-                <node concept="3NFfHV" id="5m$620fQvDq" role="3NFExx">
-                  <node concept="3clFbS" id="5m$620fQvDr" role="2VODD2">
-                    <node concept="3clFbF" id="5m$620fQvFi" role="3cqZAp">
-                      <node concept="2OqwBi" id="5m$620fQvHx" role="3clFbG">
-                        <node concept="30H73N" id="5m$620fQvFh" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="5m$620fQvOV" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tp25:5m$620fQi1F" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+  <node concept="13MO4I" id="1t9Fffggr$f">
+    <property role="3GE5qa" value="reference.module" />
+    <property role="TrG5h" value="reduce_ModuleRefExpression" />
+    <ref role="3gUMe" to="tp25:1t9FffgebJy" resolve="ModuleRefExpression" />
+    <node concept="2VYdi" id="1t9Fffggr$g" role="13RCb5">
+      <node concept="raruj" id="1t9Fffggr$h" role="lGtFl" />
+      <node concept="1sPUBX" id="1t9Fffggr$k" role="lGtFl">
+        <ref role="v9R2y" node="1t9Fffge5JS" resolve="switch_ModuleIdentity_SModuleReference" />
+        <node concept="3NFfHV" id="1t9Fffggr$q" role="1sPUBK">
+          <node concept="3clFbS" id="1t9Fffggr$r" role="2VODD2">
+            <node concept="3clFbF" id="1t9Fffggr_4" role="3cqZAp">
+              <node concept="2OqwBi" id="1t9FffggrC3" role="3clFbG">
+                <node concept="30H73N" id="1t9Fffggr_3" role="2Oq$k0" />
+                <node concept="3TrEf2" id="1t9FffggrGk" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tp25:1t9FffgebJ_" />
                 </node>
               </node>
             </node>
-            <node concept="Xl_RD" id="5m$620fQvB0" role="37wK5m">
-              <property role="Xl_RC" value="name" />
-              <node concept="17Uvod" id="5m$620fQvSf" role="lGtFl">
-                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                <property role="2qtEX9" value="value" />
-                <node concept="3zFVjK" id="5m$620fQvSg" role="3zH0cK">
-                  <node concept="3clFbS" id="5m$620fQvSh" role="2VODD2">
-                    <node concept="3clFbF" id="5m$620fQvYa" role="3cqZAp">
-                      <node concept="2OqwBi" id="5m$620fQwc8" role="3clFbG">
-                        <node concept="2OqwBi" id="5m$620fQw0P" role="2Oq$k0">
-                          <node concept="30H73N" id="5m$620fQvY9" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="5m$620fRj$1" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp25:5m$620fRjo7" />
-                          </node>
-                        </node>
-                        <node concept="3TrcHB" id="5m$620fQwiH" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="raruj" id="5m$620fQvBO" role="lGtFl" />
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="jVnub" id="1t9Fffge5JS">
-    <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="switch_ModuleIdentity_SModuleReference" />
-    <node concept="3aamgX" id="1t9Fffge5JT" role="3aUrZf">
-      <property role="36QftV" value="true" />
-      <ref role="30HIoZ" to="tp25:nJmxU5cSyN" resolve="ModulePointer" />
-      <node concept="j$656" id="1t9Fffge9le" role="1lVwrX">
-        <ref role="v9R2y" node="1t9Fffge6ZL" resolve="reduce_ModulePointer_SModuleReference" />
-      </node>
-    </node>
-    <node concept="1lLz0L" id="1t9Fffge5JX" role="28wCFW">
-      <property role="1lMjX7" value="error" />
-      <property role="1lLB17" value="&quot;Need an instance of ModuleIdentity&quot;" />
-    </node>
-    <node concept="j$LIH" id="1t9Fffge5JZ" role="jxRDz">
-      <node concept="1lLz0L" id="1t9Fffge5K1" role="1lHHLF">
-        <property role="1lMjX7" value="error" />
-        <property role="1lLB17" value="&quot;Unsupported ModuleIdentity kind&quot;" />
       </node>
     </node>
   </node>
@@ -19994,26 +19881,24 @@
       <node concept="raruj" id="1t9Fffge8mv" role="lGtFl" />
     </node>
   </node>
-  <node concept="13MO4I" id="1t9Fffggr$f">
-    <property role="3GE5qa" value="reference.module" />
-    <property role="TrG5h" value="reduce_ModuleRefExpression" />
-    <ref role="3gUMe" to="tp25:1t9FffgebJy" resolve="ModuleRefExpression" />
-    <node concept="2VYdi" id="1t9Fffggr$g" role="13RCb5">
-      <node concept="raruj" id="1t9Fffggr$h" role="lGtFl" />
-      <node concept="1sPUBX" id="1t9Fffggr$k" role="lGtFl">
-        <ref role="v9R2y" node="1t9Fffge5JS" resolve="switch_ModuleIdentity_SModuleReference" />
-        <node concept="3NFfHV" id="1t9Fffggr$q" role="1sPUBK">
-          <node concept="3clFbS" id="1t9Fffggr$r" role="2VODD2">
-            <node concept="3clFbF" id="1t9Fffggr_4" role="3cqZAp">
-              <node concept="2OqwBi" id="1t9FffggrC3" role="3clFbG">
-                <node concept="30H73N" id="1t9Fffggr_3" role="2Oq$k0" />
-                <node concept="3TrEf2" id="1t9FffggrGk" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp25:1t9FffgebJ_" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+  <node concept="jVnub" id="1t9Fffge5JS">
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="switch_ModuleIdentity_SModuleReference" />
+    <node concept="3aamgX" id="1t9Fffge5JT" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tp25:nJmxU5cSyN" resolve="ModulePointer" />
+      <node concept="j$656" id="1t9Fffge9le" role="1lVwrX">
+        <ref role="v9R2y" node="1t9Fffge6ZL" resolve="reduce_ModulePointer_SModuleReference" />
+      </node>
+    </node>
+    <node concept="1lLz0L" id="1t9Fffge5JX" role="28wCFW">
+      <property role="1lMjX7" value="error" />
+      <property role="1lLB17" value="&quot;Need an instance of ModuleIdentity&quot;" />
+    </node>
+    <node concept="j$LIH" id="1t9Fffge5JZ" role="jxRDz">
+      <node concept="1lLz0L" id="1t9Fffge5K1" role="1lHHLF">
+        <property role="1lMjX7" value="error" />
+        <property role="1lLB17" value="&quot;Unsupported ModuleIdentity kind&quot;" />
       </node>
     </node>
   </node>
