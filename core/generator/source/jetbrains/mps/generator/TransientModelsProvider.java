@@ -142,7 +142,7 @@ public class TransientModelsProvider {
       myRepository.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          SModuleReference cpModuleRef = new ModuleReference(null, ModuleId.regular());
+          SModuleReference cpModuleRef = new ModuleReference("checkpoints", ModuleId.regular());
           myCheckpointsModule = new TransientModelsModule(TransientModelsProvider.this, cpModuleRef);
           myRepository.registerModule(myCheckpointsModule, myOwner);
         }
