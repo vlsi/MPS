@@ -21,4 +21,15 @@
       <implementation-class>jetbrains.mps.idea.core.project.module.SingleModuleMPSSupport</implementation-class>
     </component>
   </project-components>
+
+  <actions>
+    <action id="jetbrains.mps.idea.build.GenerateModuleInProcessAction"
+            class="jetbrains.mps.idea.build.GenerateModuleInProcessAction">
+      <add-to-group group-id="ProjectViewPopupMenu"/>
+    </action>
+    <action id="jetbrains.mps.idea.build.GenerateModelInProcessAction"
+            class="jetbrains.mps.idea.build.GenerateModelInProcessAction">
+      <add-to-group group-id="ProjectViewPopupMenu"/>
+    </action>
+  </actions>
 </idea-plugin>

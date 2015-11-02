@@ -22,6 +22,9 @@ import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
+ * This class encapsulates the way an MPS solution is tied to Idea module. It may be either via a module facet
+ * or by automatically creating the solution at startup. See sub-classes.
+ *
  * Created by danilla on 26/10/15.
  */
 public abstract class ModuleMPSSupport {

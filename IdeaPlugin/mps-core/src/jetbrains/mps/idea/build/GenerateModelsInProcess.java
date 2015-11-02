@@ -22,7 +22,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
-import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -51,7 +50,8 @@ public class GenerateModelsInProcess {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     Iterable<IResource> resources = new ModelsToResources(myModels).resources(false);
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
-    final MakeSession makeSession = new MakeSession(ProjectHelper.toMPSProject(myProject), messagesView.newHandler("MPS generator"), true);
+    IMessageHandler msgHandler = messagesView.newHandler("MPS generator");
+    final MakeSession makeSession = new MakeSession(ProjectHelper.toMPSProject(myProject), msgHandler, true);
     BuildMakeService makeService = new BuildMakeService();
     IScriptController controller = new IScriptController.Stub() {
       @Override
@@ -60,15 +60,8 @@ public class GenerateModelsInProcess {
         new JavaCompileFacetInitializer().skipCompilation(true).populate(ppool);
       }
     };
-    long start = System.currentTimeMillis();
+    msgHandler.clear();
     Future<IResult> future = makeService.make(makeSession, resources, null, controller);
-    try {
-      IResult result = future.get();
-      long end = System.currentTimeMillis();
-      System.out.println("Time: " + (end - start));
-      System.out.println(result.isSucessful() ? "SUCCESS" : "FAILURE");
-    } catch (Exception e) {
-      System.out.println(e.getMessage());
-    }
+    // todo write message at the botoom of the window like idea does after compilation
   }
 }

@@ -37,10 +37,12 @@ public class GenerateModuleInProcessAction extends AnAction {
   public void update(AnActionEvent e) {
     Module module = LangDataKeys.MODULE.getData(e.getDataContext());
     if (module == null) {
-      e.getPresentation().setEnabled(false);
+      e.getPresentation().setVisible(false);
       return;
     } else {
-      e.getPresentation().setEnabled(true);
+      ModuleMPSSupport mpsSupport = e.getProject().getComponent(ModuleMPSSupport.class);
+      boolean thereAreModels = mpsSupport != null && mpsSupport.isMPSEnabled(module) && mpsSupport.getSolution(module).getModels().iterator().hasNext();
+      e.getPresentation().setEnabled(thereAreModels);
     }
   }
 

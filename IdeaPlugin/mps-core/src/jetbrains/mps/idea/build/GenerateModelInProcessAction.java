@@ -16,17 +16,13 @@
 
 package jetbrains.mps.idea.build;
 
-import com.intellij.facet.FacetManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Collections;
@@ -43,12 +39,7 @@ public class GenerateModelInProcessAction extends AnAction {
   @Override
   public void update(AnActionEvent e) {
     SModel model = MPSCommonDataKeys.CONTEXT_MODEL.getData(e.getDataContext());
-    if (model == null) {
-      e.getPresentation().setEnabled(false);
-      return;
-    } else {
-      e.getPresentation().setEnabled(true);
-    }
+    e.getPresentation().setVisible(model instanceof GeneratableSModel);
   }
 
   @Override
