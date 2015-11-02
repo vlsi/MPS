@@ -391,7 +391,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), this, getManager());
       }
       replaceChild(rootNode, replacementRoot);
-      ((PsiManagerImpl) getManager()).getFileManager().setViewProvider(rootNode.getVirtualFile(), null);
+      ((PsiManagerEx) getManager()).getFileManager().setViewProvider(rootNode.getVirtualFile(), null);
       replacementRoot.addChildLast(replacement);
     } else {
       ((MPSPsiNodeBase) mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
