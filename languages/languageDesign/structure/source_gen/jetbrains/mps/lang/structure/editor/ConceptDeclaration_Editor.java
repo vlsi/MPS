@@ -907,12 +907,12 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     SModule imageModule;
     String imagePath;
     imageModule = SNodeOperations.getModel(node).getModule();
-    imagePath = ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
+    imagePath = (new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"));
       }
     }).invoke();
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_ueqr71_a2a");
     editorCell.setDescent(0);
     return editorCell;

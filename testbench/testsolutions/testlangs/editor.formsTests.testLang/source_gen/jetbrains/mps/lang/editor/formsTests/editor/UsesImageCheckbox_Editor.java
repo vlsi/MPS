@@ -48,7 +48,7 @@ public class UsesImageCheckbox_Editor extends DefaultNodeEditor {
     String imagePath;
     imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
     imagePath = "${module}/icons/dialog-ok-3.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_h1lpb1_a0a");
     editorCell.setDescent(0);
     return editorCell;
@@ -58,7 +58,7 @@ public class UsesImageCheckbox_Editor extends DefaultNodeEditor {
     String imagePath;
     imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
     imagePath = "${module}/icons/dialog-close.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_h1lpb1_a0a_0");
     editorCell.setDescent(0);
     return editorCell;

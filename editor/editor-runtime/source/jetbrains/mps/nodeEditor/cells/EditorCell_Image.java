@@ -19,10 +19,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -48,16 +46,12 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
-    return createImageCell(editorContext, node, null, imageFileName, false);
+    return createImageCell(editorContext, node, null, imageFileName);
   }
 
-  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @Nullable SModule imageModule, String imagePath, boolean isIcon) {
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @Nullable SModule imageModule, String imagePath) {
     EditorCell_Image result = new EditorCell_Image(editorContext, node);
-    if (isIcon) {
-      result.setIcon(loadIcon(editorContext, imageModule, imagePath));
-    } else {
-      result.setImageFileName(expandImagePath(imageModule, imagePath, node));
-    }
+    result.setIcon(loadIcon(editorContext, imageModule, imagePath));
     return result;
   }
 
@@ -161,35 +155,12 @@ public class EditorCell_Image extends EditorCell_Basic {
     return APICellAdapter.getIconManager(context).getIcon(toAbstractModule(module), iconPath);
   }
 
-  private static String expandImagePath(SModule module, String path, SNode sourceNode) {
-    AbstractModule abstractModule = findAnchorModule(module, sourceNode);
-    return abstractModule != null ? MacrosFactory.forModule(abstractModule).expandPath(path) : path;
-  }
-
-  @Nullable
-  private static AbstractModule findAnchorModule(SModule module, SNode sourceNode) {
-    if (module == null) {
-      module = getModelModule(sourceNode);
-    }
-
-    return toAbstractModule(module);
-  }
-
   @Nullable
   private static AbstractModule toAbstractModule(SModule module) {
     if (!(module instanceof AbstractModule)) {
       return null;
     }
     return (AbstractModule) module;
-  }
-
-  private static SModule getModelModule(SNode sourceNode) {
-    SModel model = sourceNode.getModel();
-    if (model == null) {
-      return null;
-    }
-
-    return model.getModule();
   }
 
   protected void setImage(Image image) {

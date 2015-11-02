@@ -5791,23 +5791,20 @@
               <node concept="3uibUv" id="g_ulJfn" role="1tU5fm">
                 <ref role="3uigEE" to="g51k:~EditorCell_Image" resolve="EditorCell_Image" />
               </node>
-              <node concept="2YIFZM" id="5qWBW6V$AHS" role="33vP2m">
-                <ref role="37wK5l" to="g51k:~EditorCell_Image.createImageCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SModule,java.lang.String,boolean):jetbrains.mps.nodeEditor.cells.EditorCell_Image" resolve="createImageCell" />
+              <node concept="2YIFZM" id="vz_mJRvBn_" role="33vP2m">
+                <ref role="37wK5l" to="g51k:~EditorCell_Image.createImageCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.module.SModule,java.lang.String):jetbrains.mps.nodeEditor.cells.EditorCell_Image" resolve="createImageCell" />
                 <ref role="1Pybhc" to="g51k:~EditorCell_Image" resolve="EditorCell_Image" />
-                <node concept="37vLTw" id="5qWBW6V$AHT" role="37wK5m">
+                <node concept="37vLTw" id="vz_mJRvBnA" role="37wK5m">
                   <ref role="3cqZAo" node="g_ulJgy" resolve="editorContext" />
                 </node>
-                <node concept="37vLTw" id="5qWBW6V$AHU" role="37wK5m">
+                <node concept="37vLTw" id="vz_mJRvBnB" role="37wK5m">
                   <ref role="3cqZAo" node="g_ulJg$" resolve="node" />
                 </node>
-                <node concept="37vLTw" id="5qWBW6V$AHV" role="37wK5m">
+                <node concept="37vLTw" id="vz_mJRvBnC" role="37wK5m">
                   <ref role="3cqZAo" node="1sQfZYrfYoE" resolve="imageModule" />
                 </node>
-                <node concept="37vLTw" id="5qWBW6V$BpI" role="37wK5m">
+                <node concept="37vLTw" id="vz_mJRvBnD" role="37wK5m">
                   <ref role="3cqZAo" node="5qWBW6V$qHA" resolve="imagePath" />
-                </node>
-                <node concept="3clFbT" id="5qWBW6V$AI4" role="37wK5m">
-                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>

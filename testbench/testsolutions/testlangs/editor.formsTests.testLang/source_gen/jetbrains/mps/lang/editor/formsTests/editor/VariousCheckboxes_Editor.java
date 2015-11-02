@@ -130,7 +130,7 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     String imagePath;
     imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
     imagePath = "${module}/icons/dialog-ok-3.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_3jyf1k_a0c0");
     editorCell.setDescent(0);
     return editorCell;
@@ -140,7 +140,7 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     String imagePath;
     imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
     imagePath = "${module}/icons/dialog-close.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_3jyf1k_a0c0_0");
     editorCell.setDescent(0);
     return editorCell;
@@ -280,7 +280,7 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     String imagePath;
     imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
     imagePath = "${module}/icons/dialog-ok-3.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_3jyf1k_a0h0");
     editorCell.setDescent(0);
     return editorCell;
@@ -290,7 +290,7 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     String imagePath;
     imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
     imagePath = "${module}/icons/dialog-close.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_3jyf1k_a0h0_0");
     editorCell.setDescent(0);
     return editorCell;
@@ -336,7 +336,7 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
       imageModule = _tmp_3jyf1k_a0c0mb._0();
       imagePath = _tmp_3jyf1k_a0c0mb._1();
     }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_3jyf1k_a0i0");
     editorCell.setDescent(-1);
     return editorCell;
@@ -353,7 +353,7 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
       imageModule = _tmp_3jyf1k_a0c0nb._0();
       imagePath = _tmp_3jyf1k_a0c0nb._1();
     }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_3jyf1k_a0i0_0");
     editorCell.setDescent(-1);
     return editorCell;

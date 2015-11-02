@@ -61,7 +61,7 @@ public class UsesPlatformCheckbox_Editor extends DefaultNodeEditor {
       imageModule = _tmp_7xa7wl_a0c0e._0();
       imagePath = _tmp_7xa7wl_a0c0e._1();
     }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_7xa7wl_a0a");
     editorCell.setDescent(-1);
     return editorCell;
@@ -78,7 +78,7 @@ public class UsesPlatformCheckbox_Editor extends DefaultNodeEditor {
       imageModule = _tmp_7xa7wl_a0c0f._0();
       imagePath = _tmp_7xa7wl_a0c0f._1();
     }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_7xa7wl_a0a_0");
     editorCell.setDescent(-1);
     return editorCell;
