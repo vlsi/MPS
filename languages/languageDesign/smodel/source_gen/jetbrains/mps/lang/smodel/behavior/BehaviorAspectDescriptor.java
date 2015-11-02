@@ -82,6 +82,8 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySEnumMemberType__BehaviorDescriptor = new SEnumMemberType__BehaviorDescriptor();
   private final BHDescriptor mySEnumOperation__BehaviorDescriptor = new SEnumOperation__BehaviorDescriptor();
   private final BHDescriptor myAsSConcept__BehaviorDescriptor = new AsSConcept__BehaviorDescriptor();
+  private final BHDescriptor myModulePointer__BehaviorDescriptor = new ModulePointer__BehaviorDescriptor();
+  private final BHDescriptor myModuleIdentity__BehaviorDescriptor = new ModuleIdentity__BehaviorDescriptor();
   private final BHDescriptor myModelReferenceExpression__BehaviorDescriptor = new ModelReferenceExpression__BehaviorDescriptor();
   private final BHDescriptor myChildNodeRefExpression__BehaviorDescriptor = new ChildNodeRefExpression__BehaviorDescriptor();
   private final BHDescriptor myChildAttributeQualifier__BehaviorDescriptor = new ChildAttributeQualifier__BehaviorDescriptor();
@@ -114,7 +116,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[98];
+    myConceptBehaviorIds = new long[100];
     myConceptBehaviorIds[0] = 0x108f968b3caL;
     myConceptBehaviorIds[1] = 0x108f96cca6fL;
     myConceptBehaviorIds[2] = 0x108f96ea2caL;
@@ -185,34 +187,36 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[67] = 0x120bfe51421L;
     myConceptBehaviorIds[68] = 0x120ed37273dL;
     myConceptBehaviorIds[69] = 0x4a4d7215f163131L;
-    myConceptBehaviorIds[70] = 0x7c3f2da20e92b62L;
-    myConceptBehaviorIds[71] = 0x84baf20c71f8a79L;
-    myConceptBehaviorIds[72] = 0x9d98713f24a0e5bL;
-    myConceptBehaviorIds[73] = 0x1a228da1357e4a49L;
-    myConceptBehaviorIds[74] = 0x1b35e18a1a3b2c9aL;
-    myConceptBehaviorIds[75] = 0x1c2d7d27ffb53efbL;
-    myConceptBehaviorIds[76] = 0x312a67f61731e269L;
-    myConceptBehaviorIds[77] = 0x312abca18ab8c318L;
-    myConceptBehaviorIds[78] = 0x312abca18ab8c8c0L;
-    myConceptBehaviorIds[79] = 0x319fd776da5d8e3cL;
-    myConceptBehaviorIds[80] = 0x32187d80f5b88800L;
-    myConceptBehaviorIds[81] = 0x37d97a5712d396cbL;
-    myConceptBehaviorIds[82] = 0x38130dc4e3db5af1L;
-    myConceptBehaviorIds[83] = 0x38130dc4e3dc174aL;
-    myConceptBehaviorIds[84] = 0x3e6a40ba27dd70f3L;
-    myConceptBehaviorIds[85] = 0x4604033d54faa023L;
-    myConceptBehaviorIds[86] = 0x47bb2de70d00ff8cL;
-    myConceptBehaviorIds[87] = 0x50c63f2cd5142697L;
-    myConceptBehaviorIds[88] = 0x58ea5217b045a3b2L;
-    myConceptBehaviorIds[89] = 0x58ea5217b045b9abL;
-    myConceptBehaviorIds[90] = 0x58ea5217b045b9b5L;
-    myConceptBehaviorIds[91] = 0x58ea5217b045b9b7L;
-    myConceptBehaviorIds[92] = 0x58ea5217b045c9b9L;
-    myConceptBehaviorIds[93] = 0x5cab42cd97571ceeL;
-    myConceptBehaviorIds[94] = 0x61168e34226eec71L;
-    myConceptBehaviorIds[95] = 0x6771eac6c5cbe7d2L;
-    myConceptBehaviorIds[96] = 0x798c0d67da9045abL;
-    myConceptBehaviorIds[97] = 0x7b0da3c650be8558L;
+    myConceptBehaviorIds[70] = 0x5ef5a1e853388b3L;
+    myConceptBehaviorIds[71] = 0x5ef5a1e85338e1eL;
+    myConceptBehaviorIds[72] = 0x7c3f2da20e92b62L;
+    myConceptBehaviorIds[73] = 0x84baf20c71f8a79L;
+    myConceptBehaviorIds[74] = 0x9d98713f24a0e5bL;
+    myConceptBehaviorIds[75] = 0x1a228da1357e4a49L;
+    myConceptBehaviorIds[76] = 0x1b35e18a1a3b2c9aL;
+    myConceptBehaviorIds[77] = 0x1c2d7d27ffb53efbL;
+    myConceptBehaviorIds[78] = 0x312a67f61731e269L;
+    myConceptBehaviorIds[79] = 0x312abca18ab8c318L;
+    myConceptBehaviorIds[80] = 0x312abca18ab8c8c0L;
+    myConceptBehaviorIds[81] = 0x319fd776da5d8e3cL;
+    myConceptBehaviorIds[82] = 0x32187d80f5b88800L;
+    myConceptBehaviorIds[83] = 0x37d97a5712d396cbL;
+    myConceptBehaviorIds[84] = 0x38130dc4e3db5af1L;
+    myConceptBehaviorIds[85] = 0x38130dc4e3dc174aL;
+    myConceptBehaviorIds[86] = 0x3e6a40ba27dd70f3L;
+    myConceptBehaviorIds[87] = 0x4604033d54faa023L;
+    myConceptBehaviorIds[88] = 0x47bb2de70d00ff8cL;
+    myConceptBehaviorIds[89] = 0x50c63f2cd5142697L;
+    myConceptBehaviorIds[90] = 0x58ea5217b045a3b2L;
+    myConceptBehaviorIds[91] = 0x58ea5217b045b9abL;
+    myConceptBehaviorIds[92] = 0x58ea5217b045b9b5L;
+    myConceptBehaviorIds[93] = 0x58ea5217b045b9b7L;
+    myConceptBehaviorIds[94] = 0x58ea5217b045c9b9L;
+    myConceptBehaviorIds[95] = 0x5cab42cd97571ceeL;
+    myConceptBehaviorIds[96] = 0x61168e34226eec71L;
+    myConceptBehaviorIds[97] = 0x6771eac6c5cbe7d2L;
+    myConceptBehaviorIds[98] = 0x798c0d67da9045abL;
+    myConceptBehaviorIds[99] = 0x7b0da3c650be8558L;
   }
 
   @Deprecated
@@ -367,60 +371,64 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 69:
         return myAsSConcept__BehaviorDescriptor;
       case 70:
-        return myModelReferenceExpression__BehaviorDescriptor;
+        return myModulePointer__BehaviorDescriptor;
       case 71:
-        return myChildNodeRefExpression__BehaviorDescriptor;
+        return myModuleIdentity__BehaviorDescriptor;
       case 72:
-        return myChildAttributeQualifier__BehaviorDescriptor;
+        return myModelReferenceExpression__BehaviorDescriptor;
       case 73:
-        return myIfInstanceOfVariable__BehaviorDescriptor;
+        return myChildNodeRefExpression__BehaviorDescriptor;
       case 74:
-        return myNode_GetContainingRoleOperation__BehaviorDescriptor;
+        return myChildAttributeQualifier__BehaviorDescriptor;
       case 75:
-        return myModel_IsAspectOperation__BehaviorDescriptor;
+        return myIfInstanceOfVariable__BehaviorDescriptor;
       case 76:
-        return myILinkAccessQualifierContainer__BehaviorDescriptor;
+        return myNode_GetContainingRoleOperation__BehaviorDescriptor;
       case 77:
-        return myLanguageIdentity__BehaviorDescriptor;
+        return myModel_IsAspectOperation__BehaviorDescriptor;
       case 78:
-        return myLanguageId__BehaviorDescriptor;
+        return myILinkAccessQualifierContainer__BehaviorDescriptor;
       case 79:
-        return myAbstractNodeRefExpression__BehaviorDescriptor;
+        return myLanguageIdentity__BehaviorDescriptor;
       case 80:
-        return myNode_GetReferenceOperation__BehaviorDescriptor;
+        return myLanguageId__BehaviorDescriptor;
       case 81:
-        return myILinkAccess__BehaviorDescriptor;
+        return myAbstractNodeRefExpression__BehaviorDescriptor;
       case 82:
-        return myModuleReferenceExpression__BehaviorDescriptor;
+        return myNode_GetReferenceOperation__BehaviorDescriptor;
       case 83:
-        return myLanguageReferenceExpression__BehaviorDescriptor;
+        return myILinkAccess__BehaviorDescriptor;
       case 84:
-        return myLanguageRefExpression__BehaviorDescriptor;
+        return myModuleReferenceExpression__BehaviorDescriptor;
       case 85:
-        return myNode_PointerOperation__BehaviorDescriptor;
+        return myLanguageReferenceExpression__BehaviorDescriptor;
       case 86:
-        return myOperationParm_LinkQualifier__BehaviorDescriptor;
+        return myLanguageRefExpression__BehaviorDescriptor;
       case 87:
-        return myNode_GetContainingLinkOperation__BehaviorDescriptor;
+        return myNode_PointerOperation__BehaviorDescriptor;
       case 88:
-        return myAttributeAccess__BehaviorDescriptor;
+        return myOperationParm_LinkQualifier__BehaviorDescriptor;
       case 89:
-        return myAttributeQualifier__BehaviorDescriptor;
+        return myNode_GetContainingLinkOperation__BehaviorDescriptor;
       case 90:
-        return myNodeAttributeQualifier__BehaviorDescriptor;
+        return myAttributeAccess__BehaviorDescriptor;
       case 91:
-        return myLinkAttributeQualifier__BehaviorDescriptor;
+        return myAttributeQualifier__BehaviorDescriptor;
       case 92:
-        return myPropertyAttributeQualifier__BehaviorDescriptor;
+        return myNodeAttributeQualifier__BehaviorDescriptor;
       case 93:
-        return mySConceptType__BehaviorDescriptor;
+        return myLinkAttributeQualifier__BehaviorDescriptor;
       case 94:
-        return myModel_GetModule__BehaviorDescriptor;
+        return myPropertyAttributeQualifier__BehaviorDescriptor;
       case 95:
-        return myNode_GetSConceptOperation__BehaviorDescriptor;
+        return mySConceptType__BehaviorDescriptor;
       case 96:
-        return myNode_GetReferencesOperation__BehaviorDescriptor;
+        return myModel_GetModule__BehaviorDescriptor;
       case 97:
+        return myNode_GetSConceptOperation__BehaviorDescriptor;
+      case 98:
+        return myNode_GetReferencesOperation__BehaviorDescriptor;
+      case 99:
         return myAsNodeOperation__BehaviorDescriptor;
       default:
         return null;
