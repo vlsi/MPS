@@ -29,10 +29,10 @@
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" flags="nn" index="0IXxy" />
-      <concept id="1176899348742" name="jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath" flags="in" index="4EIwk" />
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
+      <concept id="5841812207174188445" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath" flags="in" index="sezjt" />
       <concept id="1136916919141" name="jetbrains.mps.lang.editor.structure.CellKeyMapItem" flags="lg" index="2PxR9H">
         <property id="1136916941877" name="description" index="2PxWOX" />
         <child id="1136916998332" name="keystroke" index="2PyaAO" />
@@ -667,8 +667,8 @@
           <property role="1QpmdY" value="true" />
           <node concept="1u4HXA" id="65VHHDM1OpO" role="1QoS34">
             <property role="1$Qi42" value="-1" />
-            <node concept="4EIwk" id="XW4E1$KGx6" role="4GRq3">
-              <node concept="3clFbS" id="XW4E1$KGx7" role="2VODD2">
+            <node concept="sezjt" id="VPy5S3jo$7" role="4GRq3">
+              <node concept="3clFbS" id="VPy5S3jo$e" role="2VODD2">
                 <node concept="3clFbF" id="XW4E1$NBUP" role="3cqZAp">
                   <node concept="1Ls8ON" id="XW4E1$NBUO" role="3clFbG">
                     <node concept="3rM5sP" id="XW4E1$NCi3" role="1Lso8e">
@@ -721,8 +721,8 @@
           </node>
           <node concept="1u4HXA" id="65VHHDM1Oqd" role="1QoVPY">
             <property role="1$Qi42" value="-1" />
-            <node concept="4EIwk" id="XW4E1$NCFL" role="4GRq3">
-              <node concept="3clFbS" id="XW4E1$NCFM" role="2VODD2">
+            <node concept="sezjt" id="VPy5S3jp2N" role="4GRq3">
+              <node concept="3clFbS" id="VPy5S3jp2Q" role="2VODD2">
                 <node concept="3clFbF" id="XW4E1$NCGy" role="3cqZAp">
                   <node concept="1Ls8ON" id="XW4E1$NCG$" role="3clFbG">
                     <node concept="3rM5sP" id="XW4E1$NCG_" role="1Lso8e">

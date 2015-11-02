@@ -131,6 +131,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myStyleKey__BehaviorDescriptor = new StyleKey__BehaviorDescriptor();
   private final BHDescriptor myConceptFunctionParameter_StyledText__BehaviorDescriptor = new ConceptFunctionParameter_StyledText__BehaviorDescriptor();
   private final BHDescriptor myAbstractStyledTextOperation__BehaviorDescriptor = new AbstractStyledTextOperation__BehaviorDescriptor();
+  private final BHDescriptor myQueryFunction_ModuleAndPath__BehaviorDescriptor = new QueryFunction_ModuleAndPath__BehaviorDescriptor();
   private final BHDescriptor myConceptEditorHintDeclaration__BehaviorDescriptor = new ConceptEditorHintDeclaration__BehaviorDescriptor();
   private final BHDescriptor myQueryHintsSpecification__BehaviorDescriptor = new QueryHintsSpecification__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_IsMethodCurrent__BehaviorDescriptor = new QueryFunction_IsMethodCurrent__BehaviorDescriptor();
@@ -146,7 +147,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[130];
+    myConceptBehaviorIds = new long[131];
     myConceptBehaviorIds[0] = 0xf9845363abL;
     myConceptBehaviorIds[1] = 0xf9eafb9a39L;
     myConceptBehaviorIds[2] = 0xf9eaff2517L;
@@ -266,17 +267,18 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[116] = 0x399cb6c68aa9aeaaL;
     myConceptBehaviorIds[117] = 0x3ed01d37608fe0afL;
     myConceptBehaviorIds[118] = 0x3ee423fc2ad10eceL;
-    myConceptBehaviorIds[119] = 0x527faacef50d095eL;
-    myConceptBehaviorIds[120] = 0x555cb285f801e1a1L;
-    myConceptBehaviorIds[121] = 0x5917043ba8fab771L;
-    myConceptBehaviorIds[122] = 0x696ed29ebd7c142bL;
-    myConceptBehaviorIds[123] = 0x69c06896a0e42a51L;
-    myConceptBehaviorIds[124] = 0x6a67a319ce06ae0fL;
-    myConceptBehaviorIds[125] = 0x6a692c170d1b09d8L;
-    myConceptBehaviorIds[126] = 0x6a692c170d1d584eL;
-    myConceptBehaviorIds[127] = 0x72908ac6c78618c8L;
-    myConceptBehaviorIds[128] = 0x7456aec153c7f5a2L;
-    myConceptBehaviorIds[129] = 0x79b75ced2c4a134dL;
+    myConceptBehaviorIds[119] = 0x511249404d287d9dL;
+    myConceptBehaviorIds[120] = 0x527faacef50d095eL;
+    myConceptBehaviorIds[121] = 0x555cb285f801e1a1L;
+    myConceptBehaviorIds[122] = 0x5917043ba8fab771L;
+    myConceptBehaviorIds[123] = 0x696ed29ebd7c142bL;
+    myConceptBehaviorIds[124] = 0x69c06896a0e42a51L;
+    myConceptBehaviorIds[125] = 0x6a67a319ce06ae0fL;
+    myConceptBehaviorIds[126] = 0x6a692c170d1b09d8L;
+    myConceptBehaviorIds[127] = 0x6a692c170d1d584eL;
+    myConceptBehaviorIds[128] = 0x72908ac6c78618c8L;
+    myConceptBehaviorIds[129] = 0x7456aec153c7f5a2L;
+    myConceptBehaviorIds[130] = 0x79b75ced2c4a134dL;
   }
 
   @Deprecated
@@ -529,26 +531,28 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 118:
         return myAbstractStyledTextOperation__BehaviorDescriptor;
       case 119:
-        return myConceptEditorHintDeclaration__BehaviorDescriptor;
+        return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
       case 120:
-        return myQueryHintsSpecification__BehaviorDescriptor;
+        return myConceptEditorHintDeclaration__BehaviorDescriptor;
       case 121:
-        return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
+        return myQueryHintsSpecification__BehaviorDescriptor;
       case 122:
-        return myQueryFunction_SNode__BehaviorDescriptor;
+        return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
       case 123:
-        return myDefaultBaseLine__BehaviorDescriptor;
+        return myQueryFunction_SNode__BehaviorDescriptor;
       case 124:
-        return myQueryFunction_ParametersList__BehaviorDescriptor;
+        return myDefaultBaseLine__BehaviorDescriptor;
       case 125:
-        return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
+        return myQueryFunction_ParametersList__BehaviorDescriptor;
       case 126:
-        return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
+        return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
       case 127:
-        return myScriptKindClassItem__BehaviorDescriptor;
+        return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
       case 128:
-        return myCellModel_NextEditor__BehaviorDescriptor;
+        return myScriptKindClassItem__BehaviorDescriptor;
       case 129:
+        return myCellModel_NextEditor__BehaviorDescriptor;
+      case 130:
         return mySynchronizeable__BehaviorDescriptor;
       default:
         return null;
