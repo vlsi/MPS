@@ -27,4 +27,8 @@
       <implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>
     </component>
   </project-components>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.core.refactoring.PackageRenameListener"/>
+  </extensions>
 </idea-plugin>

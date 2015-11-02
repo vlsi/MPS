@@ -14969,8 +14969,8 @@
                       <property role="2Ry0Am" value="mps-core" />
                       <node concept="2Ry0Ak" id="rfGKhuSVYe" role="2Ry0An">
                         <property role="2Ry0Am" value="META-INF" />
-                        <node concept="2Ry0Ak" id="rfGKhuSVZ6" role="2Ry0An">
-                          <property role="2Ry0Am" value="otherIdes-support.xml" />
+                        <node concept="2Ry0Ak" id="2pYKUPHkIVb" role="2Ry0An">
+                          <property role="2Ry0Am" value="intellij-ides-support.xml" />
                         </node>
                       </node>
                     </node>

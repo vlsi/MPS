@@ -24,7 +24,7 @@
   <idea-version since-build="142.1" until-build="143.1"/>
 
   <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
-  <depends optional="true" config-file="otherIdes-support.xml">com.intellij.modules.ultimate</depends>
+  <depends optional="true" config-file="intellij-ides-support.xml">com.intellij.modules.ultimate</depends>
 
   <application-components>
     <component>
@@ -184,7 +184,6 @@
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
                     overrides="true"/>
-    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.core.refactoring.PackageRenameListener"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

@@ -64,16 +64,9 @@ public class ModelRenameHandler implements RenameHandler {
   public boolean isAvailableOnDataContext(DataContext dataContext) {
     IFile modelFile = getModelFile(dataContext);
     PsiElement psiElement = PlatformDataKeys.PSI_ELEMENT.getData(dataContext);
-    if (modelFile == null || psiElement == null) return false;
+    if (modelFile == null || modelFile.isDirectory() || psiElement == null) return false;
     SModel model = SModelFileTracker.getInstance().findModel(modelFile);
-    return (model instanceof EditableSModel && !(isJavaPackage(modelFile, psiElement.getProject())));
-  }
-
-  private boolean isJavaPackage(IFile dir, Project project) {
-    if (!dir.isDirectory()) return false;
-    VirtualFile vFile = VirtualFileUtils.getVirtualFile(dir);
-    PsiDirectory psiDir = PsiManager.getInstance(project).findDirectory(vFile);
-    return JavaDirectoryService.getInstance().getPackage(psiDir) != null;
+    return model instanceof EditableSModel;
   }
 
   @Override
