@@ -50,7 +50,8 @@ public class CheckedModuleReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5d1rsq_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.EDITABLE, 0, true);
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -1639,12 +1639,17 @@
     <property role="TrG5h" value="CheckedModuleReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="module reference" />
+    <property role="34LRSv" value="checked module reference" />
     <property role="1pbfSe" value="908168577" />
+    <property role="R4oN_" value="module reference tied to modules from global repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="3LUBoMdoXjO" role="1TKVEl">
       <property role="TrG5h" value="moduleId" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="asaX9" id="3WF9HwEZbzR" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="Uses global repository to ensure reference points to an existing module" />
     </node>
   </node>
   <node concept="1TIwiD" id="1lvHLgR6tlS">

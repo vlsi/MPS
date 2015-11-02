@@ -11635,5 +11635,37 @@
       <ref role="1YaFvo" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
     </node>
   </node>
+  <node concept="1YbPZF" id="3WF9HwEZbbj">
+    <property role="TrG5h" value="typeof_ModuleRefExpression" />
+    <property role="3GE5qa" value="reference.module" />
+    <node concept="3clFbS" id="3WF9HwEZbbk" role="18ibNy">
+      <node concept="1Z5TYs" id="3WF9HwEZbx1" role="3cqZAp">
+        <node concept="mw_s8" id="3WF9HwEZby$" role="1ZfhKB">
+          <node concept="2pJPEk" id="3WF9HwEZbyw" role="mwGJk">
+            <node concept="2pJPED" id="3WF9HwEZbyJ" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="3WF9HwEZbze" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="3WF9HwEZbzL" role="2pJxcZ">
+                  <ref role="36bGnp" to="lui2:~SModuleReference" resolve="SModuleReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3WF9HwEZbx4" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3WF9HwEZbuz" role="mwGJk">
+            <node concept="1YBJjd" id="3WF9HwEZbuZ" role="1Z2MuG">
+              <ref role="1YBMHb" node="3WF9HwEZbbm" resolve="expr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3WF9HwEZbbm" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="tp25:1t9FffgebJy" resolve="ModuleRefExpression" />
+    </node>
+  </node>
 </model>
 
