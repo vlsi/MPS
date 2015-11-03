@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.ide.devkit.help;
 
+import com.intellij.openapi.application.ApplicationInfo;
+
 public class ShowTutorialAction extends ShowSiteAction {
+
+  private final String myMajorMinorVersion = ApplicationInfo.getInstance().getMajorVersion() + ApplicationInfo.getInstance().getMajorVersion();
+
   public ShowTutorialAction() {
     super("Tutorial");
   }
 
+  @Override
   protected String getSiteURL() {
-    return "https://confluence.jetbrains.com/display/MPSD32/Fast+Track+to+MPS";
+    return String.format("https://confluence.jetbrains.com/display/MPSD%s/Fast+Track+to+MPS", myMajorMinorVersion);
   }
 }

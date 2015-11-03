@@ -27,6 +27,11 @@
       <add-to-group group-id="MainMenu" anchor="before" relative-to-action="RunMenu"/>
     </group>
 
+    <!-- Help -->
+    <action id="WhatsNewAction" class="com.intellij.ide.actions.WhatsNewAction">
+      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="OnlineDocAction"/>
+    </action>
+
   </actions>
 
 </component>
