@@ -1683,9 +1683,6 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-lightweightdsl-generator-template">
       <fileset dir="${mps_home}/languages/baseLanguage/lightweightdsl/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-lightweightdsl-languageAccessories">
-      <fileset dir="${mps_home}/languages/baseLanguage/lightweightdsl/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-lightweightdsl-languageModels">
       <fileset dir="${mps_home}/languages/baseLanguage/lightweightdsl/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -1700,7 +1697,6 @@
       </fileset>
       <zipfileset file="${mps_home}/languages/baseLanguage/lightweightdsl/jetbrains.mps.baseLanguage.lightweightdsl.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-lightweightdsl-generator-template" prefix="module/generator/template" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-lightweightdsl-languageAccessories" prefix="module/languageAccessories" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-lightweightdsl-languageModels" prefix="module/languageModels" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-migration-runtime-models">
