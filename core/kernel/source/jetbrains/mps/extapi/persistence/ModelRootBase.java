@@ -66,7 +66,7 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
 
-    @Override
+  @Override
   public final Iterable<SModel> getModels() {
     assertCanRead();
 
@@ -92,13 +92,10 @@ public abstract class ModelRootBase implements ModelRoot {
     SModuleBase module = (SModuleBase) getModule();
 
     for (SModel model : myModels) {
-      if (model.getReference().resolve(myRepository) != null) {
-        LOG.error("Trying to dispose model `" + model.getModelName() + "` which was not previously removed from repository.");
-        continue;
-      }
-      if (module != null) {
-        module.unregisterModel((SModelBase) model);
-      }
+      assert module != null;
+      assert module.getModel(model.getModelId()) != null;
+
+      module.unregisterModel((SModelBase) model);
     }
     myModels.clear();
     myRepository = null;
