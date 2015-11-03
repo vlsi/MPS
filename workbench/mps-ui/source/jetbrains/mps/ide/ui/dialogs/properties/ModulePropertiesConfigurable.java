@@ -290,6 +290,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     protected JComponent getBottomComponent() {
       if (myModule instanceof DevKit) {
         myModuleDependenciesTab = new ModuleDependenciesTab();
+        myModuleDependenciesTab.init(); // init to avoid myModuleDependenciesTab.getTabComponent() == null
         return myModuleDependenciesTab.getTabComponent();
       } else {
         myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor, myProject.getRepository());
