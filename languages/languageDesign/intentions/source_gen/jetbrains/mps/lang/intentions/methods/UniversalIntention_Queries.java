@@ -5,7 +5,7 @@ package jetbrains.mps.lang.intentions.methods;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.intentions.util.TypeCalculator;
 
-public class IntentionDeclaration_Queries {
+public class UniversalIntention_Queries {
   public static SNode isApplicable_node_type(SNode point) {
     return TypeCalculator.calculateType(point);
   }
