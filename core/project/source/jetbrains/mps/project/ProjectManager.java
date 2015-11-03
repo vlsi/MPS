@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -36,12 +37,10 @@ public final class ProjectManager {
 
   private final List<Project> myOpenedProjects = new ArrayList<Project>();
 
-  public Project[] getOpenProjects() {
-    Project[] result;
+  public List<Project> getOpenProjects() {
     synchronized (myOpenedProjects) {
-      result = myOpenedProjects.toArray(new Project[myOpenedProjects.size()]);
+      return Collections.unmodifiableList(myOpenedProjects);
     }
-    return result;
   }
 
   void projectOpened(Project p) {
