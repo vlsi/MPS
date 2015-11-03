@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
+import com.intellij.openapi.vfs.SavingRequestor;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -40,7 +41,7 @@ import java.util.List;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystemProvider extends FileSystemProviderComponent implements FileSystemProvider, SafeWriteRequestor {
+public class IdeaFileSystemProvider extends FileSystemProviderComponent implements FileSystemProvider, SafeWriteRequestor, SavingRequestor {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
