@@ -269,6 +269,9 @@
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -303,7 +306,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
@@ -592,8 +595,8 @@
             <node concept="2YIFZM" id="gVddlT4OEk" role="3cqZAk">
               <ref role="37wK5l" to="fnmy:gVddlT4OnQ" resolve="forVariables" />
               <ref role="1Pybhc" to="fnmy:gVddlT4OnK" resolve="MigrationScopes" />
-              <node concept="3TUQnm" id="7dh1A5Zc6u1" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
+              <node concept="35c_gC" id="2bkB2xUnH_X" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               </node>
               <node concept="2rP1CM" id="gVddlT4OEm" role="37wK5m" />
               <node concept="$OBgH" id="gVddlT4OEn" role="37wK5m" />
@@ -1632,8 +1635,8 @@
             <node concept="2YIFZM" id="gVddlT4OEt" role="3cqZAk">
               <ref role="37wK5l" to="fnmy:gVddlT4OnQ" resolve="forVariables" />
               <ref role="1Pybhc" to="fnmy:gVddlT4OnK" resolve="MigrationScopes" />
-              <node concept="3TUQnm" id="7dh1A5Zc8lC" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+              <node concept="35c_gC" id="2bkB2xUnHLU" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
               </node>
               <node concept="2rP1CM" id="gVddlT4OEv" role="37wK5m" />
               <node concept="$OBgH" id="gVddlT4OEw" role="37wK5m" />
@@ -1774,8 +1777,8 @@
             <node concept="2YIFZM" id="gVddlT4OEa" role="3cqZAk">
               <ref role="37wK5l" to="fnmy:gVddlT4OnQ" resolve="forVariables" />
               <ref role="1Pybhc" to="fnmy:gVddlT4OnK" resolve="MigrationScopes" />
-              <node concept="3TUQnm" id="7dh1A5Zc05n" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+              <node concept="35c_gC" id="2bkB2xUnHx9" role="37wK5m">
+                <ref role="35c_gD" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
               </node>
               <node concept="2rP1CM" id="gVddlT4OEc" role="37wK5m" />
               <node concept="$OBgH" id="gVddlT4OEd" role="37wK5m" />
@@ -1797,8 +1800,8 @@
             <node concept="2YIFZM" id="vVNmRdLC$9" role="3cqZAk">
               <ref role="37wK5l" to="fnmy:vVNmRdKs_u" resolve="forMethods" />
               <ref role="1Pybhc" to="fnmy:gVddlT4OnK" resolve="MigrationScopes" />
-              <node concept="3TUQnm" id="7dh1A5Zc2yd" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+              <node concept="35c_gC" id="2bkB2xUnHYN" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
               </node>
               <node concept="2rP1CM" id="vVNmRdLC$b" role="37wK5m" />
               <node concept="$OBgH" id="vVNmRdLC$c" role="37wK5m" />
@@ -2830,8 +2833,8 @@
             <node concept="2YIFZM" id="vVNmRdLC$h" role="3cqZAk">
               <ref role="37wK5l" to="fnmy:vVNmRdKs_u" resolve="forMethods" />
               <ref role="1Pybhc" to="fnmy:gVddlT4OnK" resolve="MigrationScopes" />
-              <node concept="3TUQnm" id="7dh1A5ZbYhh" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+              <node concept="35c_gC" id="2bkB2xUnHTU" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
               </node>
               <node concept="2rP1CM" id="vVNmRdLC$j" role="37wK5m" />
               <node concept="$OBgH" id="vVNmRdLC$k" role="37wK5m" />
@@ -2853,8 +2856,8 @@
             <node concept="2YIFZM" id="gVddlT4ODN" role="3cqZAk">
               <ref role="37wK5l" to="fnmy:gVddlT4OnQ" resolve="forVariables" />
               <ref role="1Pybhc" to="fnmy:gVddlT4OnK" resolve="MigrationScopes" />
-              <node concept="3TUQnm" id="7dh1A5ZbWn7" role="37wK5m">
-                <ref role="3TV0OU" to="tpee:fz12cDC" resolve="FieldDeclaration" />
+              <node concept="35c_gC" id="2bkB2xUnHs6" role="37wK5m">
+                <ref role="35c_gD" to="tpee:fz12cDC" resolve="FieldDeclaration" />
               </node>
               <node concept="2rP1CM" id="gVddlT4OE0" role="37wK5m" />
               <node concept="$OBgH" id="gVddlT4OE2" role="37wK5m" />

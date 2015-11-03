@@ -90,7 +90,8 @@ class IdeaFile implements IFileEx {
         // Fix incorrect URLs that VirtualFile#getUrl() returns for local files on Windows: file://C:/f.txt instead of file:/C:/f.txt (note the extra slash).
         // URL.openStream() does not work properly on such URLs. Fix them only on Windows, however, since fixIDEAUrl breaks valid URLs on Mac OS.
         //
-        // See https://youtrack.jetbrains.com/issue/IDEA-146869
+        // See https://youtrack.jetbrains.com/issue/IDEA-146869.
+        // FIXME the issue has been fixed after Idea 15 has been released, we need to get back to this code once MPS platform is updated.
         ideaUrl = VfsUtilCore.fixIDEAUrl(ideaUrl);
       }
       return new URL(ideaUrl);
