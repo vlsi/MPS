@@ -143,18 +143,6 @@ public class Binaries_Facet extends IFacet.Stub {
                 });
                 ListSequence.fromList(filesToCopy).removeSequence(Sequence.fromIterable(noSource));
 
-                Iterable<Tuples._2<IFile, IFile>> noTarget = ListSequence.fromList(filesToCopy).where(new IWhereFilter<Tuples._2<IFile, IFile>>() {
-                  public boolean accept(Tuples._2<IFile, IFile> it) {
-                    return !(it._1().exists()) && !(it._1().createNewFile());
-                  }
-                });
-                Sequence.fromIterable(noTarget).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
-                  public void visit(Tuples._2<IFile, IFile> it) {
-                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("cannot write to file " + it._1())));
-                  }
-                });
-                ListSequence.fromList(filesToCopy).removeSequence(Sequence.fromIterable(noTarget));
-
                 _output_8acy7z_a0a = Sequence.fromIterable(_output_8acy7z_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(deltaList))));
                 progressMonitor.advance(1);
                 progressMonitor.step("Copying content");
@@ -163,7 +151,11 @@ public class Binaries_Facet extends IFacet.Stub {
                   public void run() {
                     ListSequence.fromList(filesToCopy).visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
                       public void visit(Tuples._2<IFile, IFile> ftc) {
-                        IFileUtils.copyFileContent(ftc._0(), ftc._1());
+                        if (!(ftc._1().exists()) && !(ftc._1().createNewFile())) {
+                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("cannot write to file " + ftc._1())));
+                        } else {
+                          IFileUtils.copyFileContent(ftc._0(), ftc._1());
+                        }
                       }
                     });
                   }
