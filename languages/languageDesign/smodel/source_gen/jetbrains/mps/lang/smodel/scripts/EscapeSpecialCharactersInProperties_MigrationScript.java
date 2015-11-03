@@ -7,11 +7,10 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -34,8 +33,9 @@ public final class EscapeSpecialCharactersInProperties_MigrationScript extends B
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        for (IMapping<String, String> property : MapSequence.fromMap(SNodeOperations.getProperties(node))) {
-          if (property.value() != null && !(property.value().equals(NameUtil.escapeInvisibleCharacters(property.value())))) {
+        for (SProperty property : Sequence.fromIterable(node.getProperties())) {
+          String value = SNodeAccessUtil.getProperty(node, property);
+          if (value != null && !(value.equals(NameUtil.escapeInvisibleCharacters(value)))) {
             return true;
           }
         }
@@ -43,13 +43,14 @@ public final class EscapeSpecialCharactersInProperties_MigrationScript extends B
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        for (IMapping<String, String> property : MapSequence.fromMap(SNodeOperations.getProperties(node))) {
-          if (property.value() == null) {
+        for (SProperty property : Sequence.fromIterable(node.getProperties())) {
+          String value = SNodeAccessUtil.getProperty(node, property);
+          if (value == null) {
             continue;
           }
-          String escapedValue = NameUtil.escapeInvisibleCharacters(property.value());
-          if (!(property.value().equals(escapedValue))) {
-            SNodeAccessUtil.setProperty(node, property.key(), escapedValue);
+          String escapedValue = NameUtil.escapeInvisibleCharacters(value);
+          if (!(value.equals(escapedValue))) {
+            SNodeAccessUtil.setProperty(node, property, escapedValue);
           }
         }
       }

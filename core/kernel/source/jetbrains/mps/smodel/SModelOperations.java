@@ -111,10 +111,6 @@ public class SModelOperations {
     importedModels.clear();
   }
 
-  public static boolean hasLanguage(SModel model, @NotNull SModuleReference ref) {
-    return getAllImportedLanguages(model).contains(ref);
-  }
-
   /**
    * All languages visible for the model, including imported and languages they extend
    * @deprecated 'visible' is vague, whether it's module dependencies or used languages; use SLanguage instead of Language; replace with <code>new SLanguageHierarchy(SModelOperations.getAllLanguageImports()).getExtended()</code>

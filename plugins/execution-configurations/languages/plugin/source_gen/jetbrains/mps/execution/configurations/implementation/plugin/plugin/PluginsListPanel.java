@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.lib.ui.ListPanel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -36,8 +37,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class PluginsListPanel extends ListPanel<SNodeReference> {
 
-  public PluginsListPanel() {
-    super("Plugins to deploy");
+  public PluginsListPanel(Project p) {
+    super(p, "Plugins to deploy");
   }
   @Override
   protected SNodeReference wrap(SNode node) {

@@ -18,7 +18,6 @@ package jetbrains.mps.idea.core.psi;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -27,6 +26,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
+import com.intellij.psi.SingleRootFileViewProvider;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
@@ -45,12 +45,16 @@ import java.util.Set;
 /**
  * Created by danilla on 12/19/14.
  */
-public class MPSNodeFileViewProvider implements FileViewProvider {
+public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
+  private final static boolean EVENT_SYSTEM_ENABLED = false;
+  private final static Language LANGUAGE = MPSLanguage.INSTANCE;
+
   private static final String emptyString = "";
   private PsiManager myManager;
   private MPSNodeVirtualFile myNodeFile;
 
   public MPSNodeFileViewProvider(@NotNull PsiManager manager, @NotNull MPSNodeVirtualFile nodeFile) {
+    super(manager, nodeFile, EVENT_SYSTEM_ENABLED, LANGUAGE);
     myManager = manager;
     myNodeFile = nodeFile;
   }
@@ -82,7 +86,7 @@ public class MPSNodeFileViewProvider implements FileViewProvider {
   @NotNull
   @Override
   public Language getBaseLanguage() {
-    return MPSLanguage.INSTANCE;
+    return LANGUAGE;
   }
 
   @NotNull
@@ -92,7 +96,7 @@ public class MPSNodeFileViewProvider implements FileViewProvider {
   }
 
   @Override
-  public PsiFile getPsi(Language target) {
+  public PsiFile getPsiInner(Language target) {
     // todo assert idea read
 
     if (target != getBaseLanguage()) {
@@ -130,7 +134,7 @@ public class MPSNodeFileViewProvider implements FileViewProvider {
 
   @Override
   public boolean isEventSystemEnabled() {
-    return false;
+    return EVENT_SYSTEM_ENABLED;
   }
 
   @Override
@@ -197,7 +201,7 @@ public class MPSNodeFileViewProvider implements FileViewProvider {
 
   @NotNull
   @Override
-  public FileViewProvider createCopy(VirtualFile copy) {
+  public SingleRootFileViewProvider createCopy(VirtualFile copy) {
     if (!(copy instanceof MPSNodeVirtualFile)) {
       throw new IllegalStateException();
     }
@@ -210,12 +214,6 @@ public class MPSNodeFileViewProvider implements FileViewProvider {
     PsiFile psi = getPsi(getBaseLanguage());
     assert psi != null;
     return psi;
-  }
-
-  @NotNull
-  @Override
-  public FileType getFileType() {
-    return myNodeFile.getFileType();
   }
 
   @Nullable

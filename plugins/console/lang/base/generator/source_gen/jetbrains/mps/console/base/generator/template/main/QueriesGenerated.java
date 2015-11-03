@@ -59,35 +59,35 @@ public class QueriesGenerated {
     }
     return null;
   }
-  public static Object referenceMacro_GetReferent_1597470200014435807(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6164634611270886092(final ReferenceMacroContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")));
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a1a7())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "1125969196844631948");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "1125969196844631948");
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a2a7())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "1125969196844631948");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "1125969196844631948");
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a3a7())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "1125969196844632137");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "1125969196844632137");
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a4a7())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "1125969196844632254");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "1125969196844632254");
     }
     return null;
   }
-  public static Object referenceMacro_GetReferent_3501374812263511250(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6164634611270907798(final ReferenceMacroContext _context) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")));
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a1a8())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "3501374812263258755");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "3501374812263258755");
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a2a8())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "3501374812263262593");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "3501374812263262593");
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a3a8())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "3501374812263265578");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "3501374812263265578");
     }
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_x583g4_b0a4a8())) {
-      return SNodeOperations.getNode("r:06575848-210a-49ab-af5f-1e6972a4fc8d(jetbrains.mps.smodel.query)", "3501374812263268620");
+      return SNodeOperations.getNode("r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)", "3501374812263268620");
     }
     return null;
   }

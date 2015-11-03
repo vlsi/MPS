@@ -26,6 +26,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -143,6 +144,23 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     return true;
   }
 
+  // to remove published model, one needs write access to a repository,
+  // which is not always possible e.g. when a new checkpoint model replaces existing
+  public void forgetModel(SModelReference modelReference, boolean forgetDependants) {
+    assert isMyTransientModel(modelReference);
+    myModelVault.forget(modelReference);
+    if (forgetDependants) {
+      for (TransientSModelDescriptor tm : myModelVault.allModels()) {
+        for (ImportElement importElement : tm.importedModels()) {
+          if (modelReference.equals(importElement.getModelReference())) {
+            myModelVault.forget(tm.getReference());
+            break;
+          }
+        }
+      }
+    }
+  }
+
   public void removeModel(SModel md) {
     // FNF is poor in tracking transients models (unpublished models do not show up in a repository)
     // This code might need reconsideration once we have a distinct repository for transient modules (we'll either
@@ -163,9 +181,14 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   public void publishAll() {
-    for (SModel model : myModelVault.modelsToPublish()) {
+    for (TransientSModelDescriptor model : myModelVault.modelsToPublish()) {
       if (myPublished.add(model)) {
-        registerModel((SModelBase) model);
+        registerModel(model);
+      }
+    }
+    for (TransientSModelDescriptor model : myModelVault.modelsNotToPublish()) {
+      if (myPublished.contains(model)) {
+        removeModel(model);
       }
     }
   }

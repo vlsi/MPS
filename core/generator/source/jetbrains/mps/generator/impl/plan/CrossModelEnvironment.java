@@ -19,6 +19,7 @@ import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.CloneUtil;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -107,20 +108,35 @@ public class CrossModelEnvironment {
     final String transientModelName = longName + '@' + stereotype;
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
     SModel checkpointModel = myModule.createTransientModel(mr);
-    new CloneUtil(transientModel, checkpointModel).cloneModelWithImports();
-    myModule.addModelToKeep(mr, true);
+    new CloneUtil(transientModel, checkpointModel).cloneModel();
+    // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
+    // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well
+    SModelOperations.validateLanguagesAndImports(checkpointModel, false, true);
     CheckpointState cpState = new CheckpointState(checkpointModel, step, transientModel.getReference());
     publishCheckpoint(originalModel.getReference(), cpState);
     return cpState;
   }
 
   private void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
+    myModule.addModelToKeep(cpState.getCheckpointModel().getReference(), true);
     List<CheckpointState> checkpoints = myCheckpoints.get(originalModel);
     if (checkpoints == null) {
       myCheckpoints.put(originalModel, checkpoints = new ArrayList<CheckpointState>(3));
     } else {
       for (Iterator<CheckpointState> it = checkpoints.iterator(); it.hasNext(); ) {
-        if (it.next().getCheckpoint().equals(cpState.getCheckpoint())) {
+        CheckpointState next = it.next();
+        if (next.getCheckpoint().equals(cpState.getCheckpoint())) {
+          // XXX once checkpoint model is removed, any other checkpoint model referencing it is broken, i.e.
+          // m1@cp1 and m2@cp1, latter referencing the former, and we rebuild m1. Once we get here, we'd schedule m1@cp1 for removal
+          // and at the end of the day we've got m1'@sp1 and m2@cp1 with references pointing to no-longer-existing m1@cp1.
+          // Then, if there'd m3 to generate with the same plan, which references both m1 and m2, it's not clear how to match the two.
+          // The question is, do we need to update references in other @cp1 models, shall we keep all models to preserve any other
+          // checkpoint models (i.e. no forgetModel), or perhaps a dedicated SModelReference that resolves to whatever checkpoint is there.
+          //
+          // Present approach is to drop any model that depends on the one re-generated (resolve to latest CP model might still leave
+          // broken references if m1 is changed, and it's not easy to match nodes of old m1@cp1 versus new m1@cp1, model reference won't suffice
+          // as node id might be different, and we got no control over nodes as they are outcome of black-box ReferenceResolver code.
+          myModule.forgetModel(next.getCheckpointModel().getReference(), true);
           it.remove();
           break;
         }

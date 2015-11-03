@@ -21,7 +21,10 @@
   <description>MPS Core</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
-  <idea-version since-build="142.1" until-build="143.1"/>
+  <idea-version since-build="142.1" until-build="144.1"/>
+
+  <depends optional="true" config-file="idea-support.xml">com.intellij.modules.java</depends>
+  <depends optional="true" config-file="intellij-ides-support.xml">com.intellij.modules.ultimate</depends>
 
   <application-components>
     <component>
@@ -66,9 +69,9 @@
       JDKclasses for now.In future should be uncommented and modified if necessary.
     -->
 
-        <component>
-          <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
-        </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
+    </component>
 
     <component>
       <implementation-class>jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer</implementation-class>
@@ -100,6 +103,10 @@
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
+    <!-- coped from MPSUI.xml -->
+    <component>
+      <implementation-class>jetbrains.mps.ide.messages.MessagesViewTool</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
@@ -110,9 +117,6 @@
     -->
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
@@ -129,29 +133,38 @@
   </project-components>
 
   <extensionPoints>
-    <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor" beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.renameRefactoringContributor" beanClass="jetbrains.mps.idea.core.refactoring.RenameRefactoringContributorEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.moveRefactoringContributor" beanClass="jetbrains.mps.idea.core.refactoring.MoveRefactoringContributorEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.psiFactory" interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
-    <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder" interface="jetbrains.mps.idea.core.psi.MPS2PsiMapper"/>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor"
+                    beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.renameRefactoringContributor"
+                    beanClass="jetbrains.mps.idea.core.refactoring.RenameRefactoringContributorEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.moveRefactoringContributor"
+                    beanClass="jetbrains.mps.idea.core.refactoring.MoveRefactoringContributorEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.psiFactory"
+                    interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
+    <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder"
+                    interface="jetbrains.mps.idea.core.psi.MPS2PsiMapper"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootContributor className="jetbrains.mps.idea.core.project.stubs.ModuleLibStubProvider"/>
-    <editorOptionsProvider instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable$EditorSettingsConfigurableOptionsProvider"/>
+    <editorOptionsProvider
+            instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable$EditorSettingsConfigurableOptionsProvider"/>
     <facetType implementation="jetbrains.mps.idea.core.facet.MPSFacetType"/>
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
-    <mps.renameRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultRenameContributor" id="mps-core-rename" order="last"/>
-    <mps.moveRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultMoveContributor" id="mps-core-move" order="last"/>
+    <mps.renameRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultRenameContributor"
+                                      id="mps-core-rename" order="last"/>
+    <mps.moveRefactoringContributor className="jetbrains.mps.idea.core.refactoring.DefaultMoveContributor"
+                                    id="mps-core-move" order="last"/>
 
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
-    <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
+    <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.MPSRenameRefactoringHandler"/>
-    <refactoring.moveHandler implementation="jetbrains.mps.idea.core.refactoring.MPSMoveHandlerDelegate" order="first"/> <!-- isn't first a bit too much -->
+    <refactoring.moveHandler implementation="jetbrains.mps.idea.core.refactoring.MPSMoveHandlerDelegate"
+                             order="first"/> <!-- isn't first a bit too much -->
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
     <!-- FIXME: mps-editor-api.jar doesn't look good in jps classpath -->
     <!-- FIXME: added mps-platform.jar to avoid NoClassDefFound for VisibilityUtil from baseLanguage.search
@@ -164,11 +177,14 @@
 
       mps-editor.jar added :( due to NoClassDef for IntentionAspectDescriptor
     -->
-    <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar"/>
+    <compileServer.plugin
+            classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar"/>
     <buildProcess.parametersProvider implementation="jetbrains.mps.idea.build.MPSBuildProcessParametersProvider"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
-    <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable" order="after colors"/>
-    <projectConfigurable instance="jetbrains.mps.idea.core.compiler.MpsCompilerSettingsConfigurable" order="after colors"/>
+    <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable"
+                         order="after colors"/>
+    <projectConfigurable instance="jetbrains.mps.idea.core.compiler.MpsCompilerSettingsConfigurable"
+                         order="after colors"/>
     <lang.fileViewProviderFactory language="MPS"
                                   implementationClass="jetbrains.mps.idea.core.psi.impl.file.MPSFileViewProviderFactory"/>
     <analyzeStacktraceFilter implementation="jetbrains.mps.ide.platform.actions.MPSStackTraceFilter" order="first"/>
@@ -180,7 +196,6 @@
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
                     overrides="true"/>
-    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.core.refactoring.PackageRenameListener"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
@@ -190,9 +205,9 @@
 
   <actions>
     <action
-        id="test.modelRepository"
-        class="jetbrains.mps.idea.core.actions.TestRepository"
-        description="Test MPS model repository">
+            id="test.modelRepository"
+            class="jetbrains.mps.idea.core.actions.TestRepository"
+            description="Test MPS model repository">
       <add-to-group group-id="ToolsMenu" relative-to-action="GenerateJavadoc" anchor="after"/>
     </action>
     <action id="jetbrains.mps.idea.core.actions.MarkModelRootAction"
@@ -216,12 +231,16 @@
       <keyboard-shortcut first-keystroke="ctrl alt shift M" keymap="$default"/>
     </action>
 
+
+
     <group id="jetbrains.mps.NewGroup">
       <add-to-group group-id="NewGroup" anchor="first"/>
       <action id="jetbrains.mps.idea.core.actions.NewRootAction"
               class="jetbrains.mps.idea.core.actions.NewRootAction"/>
-      <action id="jetbrains.mps.idea.core.actions.NewModelAction"
-              class="jetbrains.mps.idea.core.actions.NewModelAction"/>
+      <action id="jetbrains.mps.idea.core.actions.CreateNewModelAction"
+              class="jetbrains.mps.idea.core.actions.CreateNewModelAction"/>
+      <action id="jetbrains.mps.idea.core.actions.MakeDirAModel"
+              class="jetbrains.mps.idea.core.actions.MakeDirAModel"/>
       <separator/>
     </group>
   </actions>

@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;
@@ -82,6 +83,21 @@ public abstract class PersistenceFacade {
   public abstract Set<String> getModelFactoryExtensions();
 
   /**
+   * @return module identity object created from persistence text
+   * @throws IllegalArgumentException if the text could not be parsed
+   * @since 3.3
+   */
+  @NotNull
+  public abstract SModuleId createModuleId(@NotNull String text);
+
+  /**
+   * @return textual representation of the identifier ready for persistence
+   * @since 3.3
+   */
+  @NotNull
+  public abstract String asString(@NotNull SModuleId moduleId);
+
+  /**
    * Serialize counterpart for {@link #createModuleReference(String)}.
    * @param reference module reference to serialize
    * @return persistence-ready presentation of a module identifier
@@ -90,6 +106,12 @@ public abstract class PersistenceFacade {
   public abstract String asString(@NotNull SModuleReference reference);
 
   public abstract SModuleReference createModuleReference(@NotNull String text);
+
+  /**
+   * @return module identity constructed from the fragments supplied
+   * @since 3.3
+   */
+  public abstract SModuleReference createModuleReference(@NotNull SModuleId moduleId, String moduleName);
 
   /**
    * Creates an SModelId from a given text identifier.
@@ -172,8 +194,18 @@ public abstract class PersistenceFacade {
    */
   public abstract Set<FindUsagesParticipant> getFindUsagesParticipants();
 
+  /**
+   * @deprecated add/remove methods shall move to PersistenceRegistry (implementation class), instead,
+   *             as components that perform registration may access PersistenceRegistry instance directly.
+   *             I don't see a need to add/remove participants dynamically.
+   */
+  @Deprecated
   public abstract void addFindUsagesParticipant(FindUsagesParticipant participant);
 
+  /**
+   * @deprecated see {@link #addFindUsagesParticipant(FindUsagesParticipant)} for reasons
+   */
+  @Deprecated
   public abstract void removeFindUsagesParticipant(FindUsagesParticipant participant);
 
   /**
@@ -182,8 +214,16 @@ public abstract class PersistenceFacade {
    */
   public abstract Set<NavigationParticipant> getNavigationParticipants();
 
+  /**
+   * @deprecated see {@link #addFindUsagesParticipant(FindUsagesParticipant)} for reasons
+   */
+  @Deprecated
   public abstract void addNavigationParticipant(NavigationParticipant participant);
 
+  /**
+   * @deprecated see {@link #addFindUsagesParticipant(FindUsagesParticipant)} for reasons
+   */
+  @Deprecated
   public abstract void removeNavigationParticipant(NavigationParticipant participant);
 
 }

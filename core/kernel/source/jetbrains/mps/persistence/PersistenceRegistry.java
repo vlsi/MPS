@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
@@ -27,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -107,14 +109,31 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return myExtensionToModelFactoryMap.keySet();
   }
 
+  @NotNull
+  @Override
+  public SModuleId createModuleId(@NotNull String text) {
+    return ModuleId.fromString(text);
+  }
+
+  @NotNull
+  @Override
+  public String asString(@NotNull SModuleId moduleId) {
+    return moduleId.toString();
+  }
+
   @Override
   public String asString(@NotNull SModuleReference reference) {
     return reference.toString();
   }
 
   @Override
-  public SModuleReference createModuleReference(String text) {
+  public SModuleReference createModuleReference(@NotNull String text) {
     return ModuleReference.parseReference(text);
+  }
+
+  @Override
+  public SModuleReference createModuleReference(@NotNull SModuleId moduleId, String moduleName) {
+    return new ModuleReference(moduleName, moduleId);
   }
 
   @Override

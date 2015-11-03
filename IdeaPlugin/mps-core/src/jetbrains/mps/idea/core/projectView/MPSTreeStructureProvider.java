@@ -356,7 +356,20 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   }
 
   private EditableSModel getModel(AbstractTreeNode selectedNode) {
-    return selectedNode instanceof MPSPsiModelTreeNode ? getContextModel(selectedNode) : null;
+    if (selectedNode instanceof MPSPsiElementTreeNode) {
+      MPSPsiNodeBase value = ((MPSPsiElementTreeNode) selectedNode).getValue();
+      return getModel(value);
+    } else if (selectedNode instanceof MPSPsiModelTreeNode) {
+      MPSPsiModel psiModel = ((MPSPsiModelTreeNode) selectedNode).getModel();
+      SModel sModel = psiModel.getSModelReference().resolve(MPSModuleRepository.getInstance());
+      return (EditableSModel) sModel;
+    } else if (selectedNode instanceof PsiDirectoryNode) {
+      SModel sModel = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(((PsiDirectoryNode) selectedNode).getVirtualFile()));
+      if (sModel instanceof EditableSModel) {
+        return (EditableSModel) sModel;
+      }
+    }
+    return null;
   }
 
   private EditableSModel getContextModel(AbstractTreeNode selectedNode) {

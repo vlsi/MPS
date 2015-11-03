@@ -4,7 +4,6 @@
   <languages>
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -19,22 +18,15 @@
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util()" />
-    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel()" />
     <import index="k6ay" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.search()" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules()" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project()" />
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference()" />
     <import index="ghoz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.newTypesystem()" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model()" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module()" />
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
-    <import index="tp2v" ref="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
-    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -11565,74 +11557,36 @@
       <ref role="1YaFvo" to="tp25:4o40NPkYE0z" resolve="Node_PointerOperation" />
     </node>
   </node>
-  <node concept="1YbPZF" id="5m$620fQiLN">
-    <property role="TrG5h" value="typeof_AspectModelRefExpression" />
-    <property role="3GE5qa" value="reference" />
-    <node concept="3clFbS" id="5m$620fQiLO" role="18ibNy">
-      <node concept="1Z5TYs" id="5m$620fQjFf" role="3cqZAp">
-        <node concept="mw_s8" id="5m$620fQjFz" role="1ZfhKB">
-          <node concept="2c44tf" id="5m$620fQjFv" role="mwGJk">
-            <node concept="H_c77" id="5m$620fQjFT" role="2c44tc" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="5m$620fQjFi" role="1ZfhK$">
-          <node concept="1Z2H0r" id="5m$620fQjCV" role="mwGJk">
-            <node concept="1YBJjd" id="5m$620fQjDn" role="1Z2MuG">
-              <ref role="1YBMHb" node="5m$620fQiLQ" resolve="e" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2NvLDW" id="5m$620fQjQd" role="3cqZAp">
-        <property role="3wDh2S" value="true" />
-        <node concept="mw_s8" id="5m$620fQjQG" role="1ZfhKB">
-          <node concept="2c44tf" id="5m$620fQjQC" role="mwGJk">
-            <node concept="3uibUv" id="5m$620fQjRu" role="2c44tc">
-              <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="5m$620fQjQg" role="1ZfhK$">
-          <node concept="1Z2H0r" id="5m$620fQjGr" role="mwGJk">
-            <node concept="2OqwBi" id="5m$620fQjID" role="1Z2MuG">
-              <node concept="1YBJjd" id="5m$620fQjGO" role="2Oq$k0">
-                <ref role="1YBMHb" node="5m$620fQiLQ" resolve="e" />
-              </node>
-              <node concept="3TrEf2" id="5m$620fQjMZ" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp25:5m$620fQi1F" />
+  <node concept="1YbPZF" id="3WF9HwEZbbj">
+    <property role="TrG5h" value="typeof_ModuleRefExpression" />
+    <property role="3GE5qa" value="reference.module" />
+    <node concept="3clFbS" id="3WF9HwEZbbk" role="18ibNy">
+      <node concept="1Z5TYs" id="3WF9HwEZbx1" role="3cqZAp">
+        <node concept="mw_s8" id="3WF9HwEZby$" role="1ZfhKB">
+          <node concept="2pJPEk" id="3WF9HwEZbyw" role="mwGJk">
+            <node concept="2pJPED" id="3WF9HwEZbyJ" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="3WF9HwEZbze" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="3WF9HwEZbzL" role="2pJxcZ">
+                  <ref role="36bGnp" to="lui2:~SModuleReference" resolve="SModuleReference" />
+                </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="5m$620fQiLQ" role="1YuTPh">
-      <property role="TrG5h" value="e" />
-      <ref role="1YaFvo" to="tp25:5m$620fQi1E" resolve="AspectModelRefExpression" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="1KHvivZHrF7">
-    <property role="TrG5h" value="typeof_Model_IsAspectOperation" />
-    <property role="3GE5qa" value="operation.model" />
-    <node concept="3clFbS" id="1KHvivZHrF8" role="18ibNy">
-      <node concept="1Z5TYs" id="1KHvivZHspd" role="3cqZAp">
-        <node concept="mw_s8" id="1KHvivZHspx" role="1ZfhKB">
-          <node concept="2c44tf" id="1KHvivZHspt" role="mwGJk">
-            <node concept="10P_77" id="1KHvivZHspO" role="2c44tc" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="1KHvivZHspg" role="1ZfhK$">
-          <node concept="1Z2H0r" id="1KHvivZHsmL" role="mwGJk">
-            <node concept="1YBJjd" id="1KHvivZHsns" role="1Z2MuG">
-              <ref role="1YBMHb" node="1KHvivZHrFa" resolve="op" />
+        <node concept="mw_s8" id="3WF9HwEZbx4" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3WF9HwEZbuz" role="mwGJk">
+            <node concept="1YBJjd" id="3WF9HwEZbuZ" role="1Z2MuG">
+              <ref role="1YBMHb" node="3WF9HwEZbbm" resolve="expr" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1YaCAy" id="1KHvivZHrFa" role="1YuTPh">
-      <property role="TrG5h" value="op" />
-      <ref role="1YaFvo" to="tp25:1KHvivZHjVV" resolve="Model_IsAspectOperation" />
+    <node concept="1YaCAy" id="3WF9HwEZbbm" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="tp25:1t9FffgebJy" resolve="ModuleRefExpression" />
     </node>
   </node>
 </model>

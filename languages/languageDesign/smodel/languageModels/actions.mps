@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -11,10 +10,8 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
-    <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
@@ -251,7 +248,7 @@
       <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt">
         <reference id="1139877738879" name="concept" index="1A0vxQ" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -284,7 +281,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
     </language>
@@ -446,7 +443,7 @@
                     <node concept="1UaxmW" id="h$JTN2P" role="3uHU7B">
                       <node concept="1YaCAy" id="h$JTOTM" role="1Ub_4A">
                         <property role="TrG5h" value="v" />
-                        <ref role="1YaFvo" to="tp25:h3THzq0" resolve="SConceptType" />
+                        <ref role="1YaFvo" to="tp25:h3THzq0" resolve="ConceptNodeType" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTzXI" role="1Ub_4B">
                         <ref role="3cqZAo" node="hzxIEKm" resolve="leftType" />
@@ -503,7 +500,7 @@
                   </node>
                   <node concept="1YaCAy" id="R4b7RlkpK9" role="1Ub_4A">
                     <property role="TrG5h" value="v" />
-                    <ref role="1YaFvo" to="tp25:h3THzq0" resolve="SConceptType" />
+                    <ref role="1YaFvo" to="tp25:h3THzq0" resolve="ConceptNodeType" />
                   </node>
                 </node>
               </node>
@@ -534,7 +531,7 @@
                   </node>
                   <node concept="1YaCAy" id="hzxIEKC" role="1Ub_4A">
                     <property role="TrG5h" value="sConceptTypeSConcept" />
-                    <ref role="1YaFvo" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+                    <ref role="1YaFvo" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                   </node>
                 </node>
               </node>
@@ -2541,7 +2538,7 @@
               </node>
               <node concept="1mIQ4w" id="hzeLFbr" role="2OqNvi">
                 <node concept="chp4Y" id="hzeLGB0" role="cj9EA">
-                  <ref role="cht4Q" to="tp25:h3THzq0" resolve="SConceptType" />
+                  <ref role="cht4Q" to="tp25:h3THzq0" resolve="ConceptNodeType" />
                 </node>
               </node>
             </node>

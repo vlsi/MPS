@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @Generated
 public class QueriesGenerated {
-  public static SNode sourceNodeQuery_4307205004144966846(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6189737775852024267(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, 0x3bc644217616e548L, "parameter"));
   }
   public static SNode sourceNodeQuery_7738379549905474169(final SourceSubstituteMacroNodeContext _context) {

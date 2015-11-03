@@ -4,7 +4,6 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
@@ -43,10 +42,7 @@
     <import index="ao3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.text(MPS.Core/)" />
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" />
-    <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="yy4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textGen(MPS.Core/)" />
-    <import index="gevi" ref="r:33cde0a0-dbcb-4270-bdee-9b4160731fdf(jetbrains.mps.lang.aspect.plugin)" />
-    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -3028,6 +3024,18 @@
                 </node>
               </node>
             </node>
+            <node concept="3cpWs8" id="nJmxU5bcdp" role="3cqZAp">
+              <node concept="3cpWsn" id="nJmxU5bcds" role="3cpWs9">
+                <property role="TrG5h" value="ownTransientsProvider" />
+                <node concept="10P_77" id="nJmxU5bcdn" role="1tU5fm" />
+                <node concept="3clFbC" id="nJmxU5bbO$" role="33vP2m">
+                  <node concept="10Nm6u" id="nJmxU5bbVr" role="3uHU7w" />
+                  <node concept="37vLTw" id="nJmxU5bbHw" role="3uHU7B">
+                    <ref role="3cqZAo" node="suC6ndRIIF" resolve="tmc" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="1sTai73x1y9" role="3cqZAp">
               <node concept="37vLTI" id="1sTai73x1yd" role="3clFbG">
                 <node concept="1aIXbY" id="1sTai73x1ya" role="37vLTJ">
@@ -3037,10 +3045,10 @@
                   </node>
                 </node>
                 <node concept="3K4zz7" id="3ZXMS57C5T8" role="37vLTx">
-                  <node concept="37vLTw" id="3GM_nagTw_X" role="3K4E3e">
-                    <ref role="3cqZAo" node="suC6ndRIIF" resolve="tmc" />
+                  <node concept="37vLTw" id="nJmxU5bcqi" role="3K4Cdx">
+                    <ref role="3cqZAo" node="nJmxU5bcds" resolve="ownTransientsProvider" />
                   </node>
-                  <node concept="2ShNRf" id="3ZXMS57C5Ti" role="3K4GZi">
+                  <node concept="2ShNRf" id="3ZXMS57C5Ti" role="3K4E3e">
                     <node concept="1pGfFk" id="3ZXMS57C5Tk" role="2ShVmc">
                       <ref role="37wK5l" to="ap4t:~TransientModelsProvider.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.generator.TransientModelsProvider$TransientSwapOwner)" resolve="TransientModelsProvider" />
                       <node concept="2OqwBi" id="3spdfaK_t03" role="37wK5m">
@@ -3054,11 +3062,8 @@
                       <node concept="10Nm6u" id="3ZXMS57C8UO" role="37wK5m" />
                     </node>
                   </node>
-                  <node concept="3y3z36" id="3ZXMS57C5ql" role="3K4Cdx">
-                    <node concept="37vLTw" id="3GM_nagTyk6" role="3uHU7B">
-                      <ref role="3cqZAo" node="suC6ndRIIF" resolve="tmc" />
-                    </node>
-                    <node concept="10Nm6u" id="3ZXMS57C5T7" role="3uHU7w" />
+                  <node concept="37vLTw" id="nJmxU5bcvu" role="3K4GZi">
+                    <ref role="3cqZAo" node="suC6ndRIIF" resolve="tmc" />
                   </node>
                 </node>
               </node>
@@ -3075,6 +3080,64 @@
                 <node concept="liA8E" id="1sTai73x1yT" role="2OqNvi">
                   <ref role="37wK5l" to="ap4t:~TransientModelsProvider.removeAllTransient():void" resolve="removeAllTransient" />
                 </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="nJmxU5bbyk" role="3cqZAp">
+              <node concept="3clFbS" id="nJmxU5bbym" role="3clFbx">
+                <node concept="ElOAg" id="nJmxU5bcB1" role="3cqZAp">
+                  <node concept="2ShNRf" id="nJmxU5bcBd" role="ElOA9">
+                    <node concept="YeOm9" id="nJmxU5bd3z" role="2ShVmc">
+                      <node concept="1Y3b0j" id="nJmxU5bd3A" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="1Y3XeK" to="fn29:72EPOrtLkP6" resolve="CleanupActivityResource" />
+                        <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                        <node concept="3Tm1VV" id="nJmxU5bd3B" role="1B3o_S" />
+                        <node concept="3clFb_" id="nJmxU5bd6n" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="describe" />
+                          <node concept="17QB3L" id="nJmxU5bd6o" role="3clF45" />
+                          <node concept="3Tm1VV" id="nJmxU5bd6p" role="1B3o_S" />
+                          <node concept="3clFbS" id="nJmxU5bd6u" role="3clF47">
+                            <node concept="3clFbF" id="nJmxU5bd9Q" role="3cqZAp">
+                              <node concept="Xl_RD" id="nJmxU5bd9P" role="3clFbG">
+                                <property role="Xl_RC" value="Dispose provider of transient models" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFb_" id="nJmxU5bd6v" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="run" />
+                          <property role="DiZV1" value="false" />
+                          <property role="od$2w" value="false" />
+                          <node concept="3Tm1VV" id="nJmxU5bd6w" role="1B3o_S" />
+                          <node concept="3cqZAl" id="nJmxU5bd6y" role="3clF45" />
+                          <node concept="3clFbS" id="nJmxU5bd6A" role="3clF47">
+                            <node concept="3clFbF" id="nJmxU5bdc4" role="3cqZAp">
+                              <node concept="2OqwBi" id="nJmxU5bdhn" role="3clFbG">
+                                <node concept="1aIXbY" id="nJmxU5bdc0" role="2Oq$k0">
+                                  <node concept="1aIXbZ" id="nJmxU5bdbZ" role="2Oq$k0" />
+                                  <node concept="2sxana" id="nJmxU5bdc3" role="2OqNvi">
+                                    <ref role="2sxfKC" node="1sTai73x1y1" resolve="transientModelsProvider" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="nJmxU5bdiS" role="2OqNvi">
+                                  <ref role="37wK5l" to="ap4t:~TransientModelsProvider.removeAllTransients(boolean):void" resolve="removeAllTransients" />
+                                  <node concept="3clFbT" id="nJmxU5bdjO" role="37wK5m">
+                                    <property role="3clFbU" value="true" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="37vLTw" id="nJmxU5bcws" role="3clFbw">
+                <ref role="3cqZAo" node="nJmxU5bcds" resolve="ownTransientsProvider" />
               </node>
             </node>
             <node concept="3D7k6m" id="5L5h3brvz9S" role="3cqZAp">
