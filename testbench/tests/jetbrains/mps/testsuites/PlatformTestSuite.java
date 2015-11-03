@@ -15,8 +15,18 @@
  */
 package jetbrains.mps.testsuites;
 
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.runner.RunWith;
+import org.junit.runner.Runner;
 import org.junit.runners.Suite;
+import org.junit.runners.model.InitializationError;
+import org.junit.runners.model.RunnerBuilder;
+
+import java.util.List;
 
 /**
  * These are the tests which DO require the idea platform
@@ -24,7 +34,7 @@ import org.junit.runners.Suite;
  * NB: the test which prints errors to output (apache Logger#error) is considered failed.
  * Further the level will be lowered so that any warning will fail the test.
  */
-@RunWith(OutputWatchingTestSuite.class)
+@RunWith(PlatformTestSuite.class)
 @Suite.SuiteClasses({
     jetbrains.mps.environment.IdeaEnvironmentTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
@@ -40,8 +50,12 @@ import org.junit.runners.Suite;
     jetbrains.mps.vfs.VfsTest.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class  //TODO: move this test to closed repository
     jetbrains.mps.generator.impl.plan.CheckpointModelTest.class
-    // VM: TODO: in the end, cause dispose environment - need to fix tearDown
-    // AP: no, we do not need to do that in suite, check BaseMpsSuite
 })
-public class PlatformTestSuite {
+public class PlatformTestSuite extends OutputWatchingTestSuite {
+  // creating the platform environment for the first time
+  public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+
+  public PlatformTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
+    super(aClass, builder);
+  }
 }

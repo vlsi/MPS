@@ -22,16 +22,11 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
-import jetbrains.mps.project.structure.project.Path;
+import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -40,20 +35,20 @@ import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.TestOnly;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.ArrayList;
+import java.io.File;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
+ * FIXME: AP what is the difference with the MPSProject? Both are based on the idea platform... Merge?
+ *
+ * It must save/load its state only via the platform methods #saveState, #loadState
+ * The project may be changed externally via addModule/removeModule methods,
+ *
  * evgeny, 11/10/11
  */
 @State(
@@ -66,189 +61,87 @@ import java.util.Set;
 public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
-  // project data
-  private String myErrors = null;
-  private Element myProjectElement;
-  protected ProjectDescriptor myProjectDescriptor;
-  private volatile boolean isOpened = false;
-
-  private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
+  private static FileSystem ourFileSystem = FileSystem.getInstance();
 
   public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
     super(project);
   }
 
   @Override
-  public List<String> getWatchedModulesPaths() {
-    List<String> result = new ArrayList<String>();
-    for (Path p : getAllModulePaths()) {
-      result.add(p.getPath());
-    }
-    return result;
-  }
-
-  @Override
   public Element getState() {
-    if (myProject.getPresentableUrl() == null || myProjectDescriptor == null) {
-      return myProjectElement;
+    if (getProject().isDefault()) {
+      return null;
     }
-
     return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<Element>() {
       @Override
       public Element compute() {
         ProjectDescriptor descriptor = getProjectDescriptor();
-        return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor,
-            FileSystem.getInstance().getFileByPath(myProject.getPresentableUrl()));
+
+        String presentableUrl = getProject().getPresentableUrl();
+        assert presentableUrl != null; // by contract the project is default <=> url == null
+        File projectFile = new File(presentableUrl);
+        return new ProjectDescriptorPersistence(projectFile).saveProjectDescriptor(descriptor);
       }
     });
   }
 
   @Override
   public void loadState(Element state) {
-    myProjectElement = state.clone(); // it can be changed by platform later, so need to store copy
-    if(isOpened) {
-      initProject();
+    LOG.info("Initializing project");
+    if (!getProject().isDefault()) {
+      if (state == null) {
+        throw new IllegalArgumentException("State is null");
+      }
+      loadDescriptor(new ElementProjectDataSource(state, getProjectFile()));
     }
   }
 
   @Override
+  public void initComponent() {
+  }
+
+  @Override
+  public void disposeComponent() {
+    dispose();
+  }
+
+
+  @Override
   public void projectOpened() {
-    LOG.info("Project '" + getName() + "' opened");
+    LOG.info("Project '" + getName() + "' is opened");
     super.projectOpened();
-    initProject();
-    isOpened = true;
+    if (getFileToListen() != null) {
+      ourFileSystem.addListener(this);
+    }
   }
 
   @Override
   public void projectClosed() {
-    LOG.info("Project '" + getName() + "' closing");
+    LOG.info("Project '" + getName() + "' is closing");
     if (getFileToListen() != null) {
-      FileSystem.getInstance().removeListener(this);
+      ourFileSystem.removeListener(this);
     }
     super.projectClosed();
   }
 
-  private void initProject() {
-    String url = myProject.getPresentableUrl();
-    ProjectDescriptor descriptor = new ProjectDescriptor();
-    if (url != null) {
-      final IFile projectFile = FileSystem.getInstance().getFileByPath(url);
-      ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
-    }
-    init(descriptor);
-    if (getFileToListen() != null) {
-      FileSystem.getInstance().addListener(this);
-    }
-  }
-
-  @TestOnly
-  public void init(final ProjectDescriptor projectDescriptor) {
-    LOG.info("Initializing project");
-    if (myProject.isDefault()) return;
-
-    assert !isDisposed();
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        myProjectDescriptor = projectDescriptor;
-
-        readModules();
-
-        // TODO FIXME get rid of onModuleLoad
-        for (SModule m : getModules()) {
-          ((AbstractModule) m).onModuleLoad();
-        }
-      }
-    });
-  }
-
   @NotNull
-  public List<Path> getAllModulePaths() {
-    return Collections.unmodifiableList(myProjectDescriptor.getModules());
+  public List<ModulePath> getAllModulePaths() {
+    return Collections.unmodifiableList(myProjectDescriptor.getModulePaths());
   }
 
-  @Override
-  public void addModule(SModuleReference ref) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-    if (module != null) {
-      super.addModule(ref);
-      IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
-      assert descriptorFile != null;
-      myProjectDescriptor.addModule(descriptorFile.getPath());
-    }
-  }
-
-  @Override
-  public void removeModule(SModuleReference ref) {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-    if (module != null) {
-      super.removeModule(ref);
-      IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
-      assert descriptorFile != null;
-      myProjectDescriptor.removeModule(descriptorFile.getPath());
-    }
-
-    myModuleToPath.remove(ref);
-  }
-
-  protected void readModules() {
-    LOG.info("Reading modules");
-    myErrors = null;
-
-    // load solutions
-    Set<SModuleReference> existingModules = getModuleReferences();
-    final ModulesMiner modulesMiner = new ModulesMiner();
-    for (Path modulePath : myProjectDescriptor.getModules()) {
-      String path = modulePath.getPath();
-      IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
-      if (descriptorFile.exists()) {
-        ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
-        if (handle.getDescriptor() != null) {
-          SModule module = ModuleRepositoryFacade.createModule(handle, this);
-          SModuleReference moduleReference = module.getModuleReference();
-          if (!existingModules.remove(moduleReference)) {
-            super.addModule(moduleReference);
-          }
-        } else {
-          error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
-        }
-      } else {
-        // TODO listen to file location ...
-        error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
-      }
-    }
-    for (SModuleReference ref : existingModules) {
-      super.removeModule(ref);
-      final SRepository repository =  getRepository();
-      if(repository instanceof SRepositoryExt) {
-        ((SRepositoryExt)repository).unregisterModule(ref.resolve(repository), this);
-      }
-    }
-  }
-
-  private void error(String text) {
-    if (myErrors == null) {
-      myErrors = text;
-    } else {
-      myErrors += "\n" + text;
-    }
-    LOG.error(text);
-  }
-
-  public String getErrors() {
-    return myErrors;
-  }
-
+  // todo remove; project descriptor is its internal substance which represents the persistence data
   @NotNull
   public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
 
+  // todo remove
   public void setProjectDescriptor(ProjectDescriptor projectDescriptor) {
     myProjectDescriptor = projectDescriptor;
     update();
   }
 
+  // AP fixme : public update exposes the project internals too much (as it looks for me)
   public void update() {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
@@ -259,61 +152,31 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   @Nullable
-  public String getFolderFor(SModule module) {
-    Path path = getPathForModule(module);
-    if (path != null) {
-      return path.getMPSFolder();
+  public String getFolderFor(@NotNull SModule module) {
+    SModuleReference reference = module.getModuleReference();
+    ModulePath modulePath = getPath(reference);
+    if (modulePath != null) {
+      return modulePath.getVirtualFolder();
     } else {
+      LOG.warn("Could not find module path for the module " + module);
       return null;
     }
   }
 
-  public void setFolderFor(SModule module, String newFolder) {
-    Path path = getPathForModule(module);
-    if (path != null) {
-      path.setMPSFolder(newFolder);
-    }
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
-      }
-    });
-  }
-
-  private Path getPathForModule(SModule module) {
+  public void setFolderFor(@NotNull SModule module, String newFolder) {
     SModuleReference reference = module.getModuleReference();
-    if (myModuleToPath.containsKey(reference)) {
-      return myModuleToPath.get(reference);
+    ModulePath modulePath = getPath(reference);
+    if (modulePath != null) {
+      modulePath.setVirtualFolder(newFolder);
     } else {
-      Path result = getPathForModule_Internal(module);
-      myModuleToPath.put(reference, result);
-      return result;
+      LOG.warn("Could not set virtual folder for the module " + module + ", module could not be found");
     }
-  }
-
-  private Path getPathForModule_Internal(SModule module) {
-    if (!(module instanceof AbstractModule)) return null;
-    IFile file = ((AbstractModule) module).getDescriptorFile();
-    assert file != null;
-    String path = file.getPath();
-    for (Path sp : getAllModulePaths()) {
-      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
-        return sp;
-      }
-    }
-    return null;
   }
 
   @Nullable
   @Override
   public IFile getFileToListen() {
-    VirtualFile projectFile = myProject.getProjectFile();
+    VirtualFile projectFile = getProject().getProjectFile();
     return projectFile != null ? FileSystem.getInstance().getFileByPath(projectFile.getPath()) : null;
   }
 
@@ -324,7 +187,8 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
-    if (IterableUtil.asSet(event.getCreated()).isEmpty()) return;
-    readModules();
+    if (!event.getCreated().isEmpty()) {
+      update();
+    }
   }
 }

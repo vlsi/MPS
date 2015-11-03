@@ -5314,19 +5314,6 @@
                     <property role="Xl_RC" value="." />
                   </node>
                   <node concept="3cpWs3" id="4zIz0VbYUHO" role="3uHU7B">
-                    <node concept="2YIFZM" id="4zIz0VbYUHP" role="3uHU7w">
-                      <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
-                      <ref role="37wK5l" to="33ny:~Arrays.toString(java.lang.Object[]):java.lang.String" resolve="toString" />
-                      <node concept="2OqwBi" id="4zIz0VbYUHQ" role="37wK5m">
-                        <node concept="liA8E" id="4zIz0VbYUHR" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():jetbrains.mps.project.Project[]" resolve="getOpenProjects" />
-                        </node>
-                        <node concept="2YIFZM" id="4zIz0VbYUHS" role="2Oq$k0">
-                          <ref role="37wK5l" to="z1c3:~ProjectManager.getInstance():jetbrains.mps.project.ProjectManager" resolve="getInstance" />
-                          <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3cpWs3" id="4zIz0VbYUHT" role="3uHU7B">
                       <node concept="3cpWs3" id="4zIz0VbYUHU" role="3uHU7B">
                         <node concept="37vLTw" id="4zIz0VbYUHV" role="3uHU7w">
@@ -5338,6 +5325,15 @@
                       </node>
                       <node concept="Xl_RD" id="4zIz0VbYUHX" role="3uHU7w">
                         <property role="Xl_RC" value=" in projects " />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="4zIz0VbYUHQ" role="3uHU7w">
+                      <node concept="liA8E" id="4zIz0VbYUHR" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
+                      </node>
+                      <node concept="2YIFZM" id="4zIz0VbYUHS" role="2Oq$k0">
+                        <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
+                        <ref role="37wK5l" to="z1c3:~ProjectManager.getInstance():jetbrains.mps.project.ProjectManager" resolve="getInstance" />
                       </node>
                     </node>
                   </node>
@@ -5550,7 +5546,7 @@
               <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
             </node>
             <node concept="liA8E" id="51zp1jJr3VU" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():jetbrains.mps.project.Project[]" resolve="getOpenProjects" />
+              <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
             </node>
           </node>
         </node>
@@ -8990,7 +8986,7 @@
                         <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
                       </node>
                       <node concept="liA8E" id="5Jy6yRTPETE" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():jetbrains.mps.project.Project[]" resolve="getOpenProjects" />
+                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
                       </node>
                     </node>
                   </node>

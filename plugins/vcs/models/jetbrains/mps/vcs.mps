@@ -60,6 +60,7 @@
     <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
     <import index="ok99" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.diff(MPS.IDEA/)" />
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
+    <import index="z1c4" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.project(MPS.Workbench/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -73,6 +74,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
@@ -3053,6 +3055,7 @@
         <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMGyv7" role="jymVt" />
     <node concept="Wx3nA" id="OGpfRfwdMo" role="jymVt">
       <property role="TrG5h" value="___init" />
       <node concept="3Tm6S6" id="OGpfRfwdMp" role="1B3o_S" />
@@ -3084,6 +3087,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMGyea" role="jymVt" />
     <node concept="Wx3nA" id="6m1MVDkVd2k" role="jymVt">
       <property role="TrG5h" value="ourProject" />
       <property role="3TUv4t" value="false" />
@@ -3189,6 +3193,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMGxXe" role="jymVt" />
     <node concept="Wx3nA" id="6m1MVDkVd34" role="jymVt">
       <property role="TrG5h" value="ourMPSProject" />
       <property role="3TUv4t" value="false" />
@@ -3198,19 +3203,22 @@
       <node concept="3Tm6S6" id="6m1MVDkVd36" role="1B3o_S" />
       <node concept="2ShNRf" id="6m1MVDkVd37" role="33vP2m">
         <node concept="1pGfFk" id="6m1MVDkVd38" role="2ShVmc">
-          <ref role="37wK5l" to="z1c3:~MPSProject.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="MPSProject" />
+          <ref role="37wK5l" to="z1c4:~StandaloneMPSProject.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.ProjectLibraryManager)" resolve="StandaloneMPSProject" />
           <node concept="10M0yZ" id="7Psq8BycfpK" role="37wK5m">
             <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
             <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
           </node>
+          <node concept="10Nm6u" id="XZsBAoNACb" role="37wK5m" />
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMGxGj" role="jymVt" />
     <node concept="3clFbW" id="6m1MVDkVd3a" role="jymVt">
       <node concept="3Tm1VV" id="6m1MVDkVd3b" role="1B3o_S" />
       <node concept="3cqZAl" id="6m1MVDkVd3c" role="3clF45" />
       <node concept="3clFbS" id="6m1MVDkVd3d" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="15VbAzMGxxg" role="jymVt" />
     <node concept="2YIFZL" id="6m1MVDkVd3e" role="jymVt">
       <property role="TrG5h" value="main" />
       <property role="DiZV1" value="false" />

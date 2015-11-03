@@ -313,7 +313,7 @@
   </root>
   <root nodeRef="r:de44096e-4e5d-49b5-9935-e04d24a272d2(jetbrains.mps.build.mps.testManifest.pluginSolution.plugin)/8645252814069730936">
     <file name="TestModuleBuildProjectTemplate.java">
-      <node id="8645252814070519272" at="33,73,34,27" concept="3" />
+      <node id="8645252814070519272" at="33,76,34,27" concept="3" />
       <node id="8645252814070520324" at="34,27,35,25" concept="3" />
       <node id="8645252814070062336" at="41,65,42,33" concept="8" />
       <node id="8645252814070065596" at="42,33,43,30" concept="8" />
@@ -542,7 +542,7 @@
       <node id="8645252814070173058" at="285,40,288,5" concept="6" />
       <node id="8645252814070173058" at="292,180,295,173" concept="0" />
       <node id="8645252814070173058" at="292,180,295,173" concept="0" />
-      <node id="8645252814070517462" at="33,0,37,0" concept="2" trace="TestModuleBuildProjectTemplate#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="8645252814070517462" at="33,0,37,0" concept="2" trace="TestModuleBuildProjectTemplate#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="8645252814070173058" at="284,183,288,5" concept="0" />
       <node id="8645252814070173058" at="284,183,288,5" concept="0" />
       <node id="8645252814070084866" at="121,0,126,5" concept="5" />
@@ -612,7 +612,7 @@
       <scope id="8645252814070173058" at="261,33,262,196" />
       <scope id="8645252814070173058" at="274,33,275,196" />
       <scope id="8645252814070173058" at="286,32,287,201" />
-      <scope id="8645252814070517466" at="33,73,35,25" />
+      <scope id="8645252814070517466" at="33,76,35,25" />
       <scope id="8645252814070173058" at="229,467,231,178" />
       <scope id="8645252814070173058" at="234,467,236,178" />
       <scope id="8645252814070173058" at="242,174,244,180" />

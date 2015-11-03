@@ -28,8 +28,9 @@ public class BaseMpsSuite extends Suite {
       RuntimeFlags.setTestMode(TestMode.SUITE);
       super.run(notifier);
     } finally {
-      Environment env = EnvironmentContainer.get();
-      if (env != null) {
+      Environment env;
+      while ((env = EnvironmentContainer.get()) != null) {
+        // dispose works as #release for now 
         env.dispose();
       }
       RuntimeFlags.setTestMode(TestMode.NONE);

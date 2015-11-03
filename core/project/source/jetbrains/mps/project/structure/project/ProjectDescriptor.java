@@ -15,74 +15,65 @@
  */
 package jetbrains.mps.project.structure.project;
 
+import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class ProjectDescriptor {
-  private static final Comparator<Path> MODULE_BY_PATH_COMPARATOR = new Comparator<Path>() {
+public final class ProjectDescriptor {
+  private static final Comparator<ModulePath> MODULE_BY_PATH_COMPARATOR = new Comparator<ModulePath>() {
     @Override
-    public int compare(Path p1, Path p2) {
-      return p1.isSamePath(p2) ? 0 : -1;
+    public int compare(@NotNull ModulePath p1, @NotNull ModulePath p2) {
+      return p1.getPath().equals(p2.getPath()) ? 0 : -1;
     }
   };
 
-  private String myName = "";
-  private List<Path> myModules = new ArrayList<Path>();
+  private final String myName;
+  private final Map<ModulePath, String> myPath2VFolderMap = new TreeMap<ModulePath, String>(MODULE_BY_PATH_COMPARATOR);
 
+  public ProjectDescriptor(@Nullable String name) {
+    myName = name;
+  }
+
+  @Nullable
   public String getName() {
     return myName;
   }
 
-  public void setName(String name) {
-    myName = name;
+  public List<ModulePath> getModulePaths() {
+    return new ArrayList<ModulePath>(myPath2VFolderMap.keySet());
   }
 
-  public List<Path> getModules() {
-    return myModules;
+  public boolean contains(@NotNull ModulePath path) {
+    return myPath2VFolderMap.containsKey(path);
   }
 
-  public void addModule(String path) {
-    addModule(new Path(path));
+  private static boolean isEmpty(String s) {
+    return s == null || s.equals("");
   }
 
-  public void addModule(Path path) {
-    add(myModules, path, MODULE_BY_PATH_COMPARATOR);
-  }
-
-  public void removeModule(String path) {
-    remove(myModules, new Path(path), MODULE_BY_PATH_COMPARATOR);
-  }
-
-  private static <T> T add(List<T> list, T object, Comparator<T> comp) {
-    int i = 0;
-    for (; i < list.size(); i++) {
-      T item = list.get(i);
-      if (comp.compare(item, object) == 0) {
-        list.set(i, object);
-        return object;
-      }
+  @Nullable
+  public String addModulePath(@NotNull ModulePath path) {
+    if (contains(path) && isEmpty(path.getVirtualFolder())) {
+      LogManager.getLogger(ProjectDescriptor.class).warn("Not adding module path with an empty virtual folder; already have one");
+      return null;
+    } else {
+      return myPath2VFolderMap.put(path, path.getVirtualFolder());
     }
-    if (i == list.size()) {
-      list.add(object);
-      return object;
-    }
-
-    throw new RuntimeException("can't happen");
   }
 
-  private static <T> T remove(List<T> list, T object, Comparator<T> comp) {
-    int index = -1;
-    for (int i = 0; i < list.size(); i++) {
-      T item = list.get(i);
-      if (comp.compare(item, object) == 0) {
-        index = i;
-        break;
-      }
-    }
-    if (index != -1) {
-      return list.remove(index);
-    }
-    return null;
+  @Nullable
+  public String removeModulePath(@NotNull ModulePath path) {
+    return myPath2VFolderMap.remove(path);
+  }
+
+  @Nullable
+  public String getVirtualFolder(@NotNull ModulePath path) {
+    return myPath2VFolderMap.get(path);
   }
 }

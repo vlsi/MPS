@@ -33,6 +33,7 @@ public class MpsEnvironment extends EnvironmentBase {
   public static Environment getOrCreate(@NotNull EnvironmentConfig config) {
     Environment currentEnv = EnvironmentContainer.get();
     if (currentEnv != null) {
+      currentEnv.retain();
       return currentEnv;
     } else {
       MpsEnvironment mpsEnv = new MpsEnvironment(config);
@@ -78,7 +79,6 @@ public class MpsEnvironment extends EnvironmentBase {
   @NotNull
   public Project doOpenProject(@NotNull File projectFile) {
     FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(projectFile));
     return project;
   }
 
@@ -89,7 +89,7 @@ public class MpsEnvironment extends EnvironmentBase {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating an empty project");
     }
-    File projectFile = FileUtil.createTmpFile();
+    File projectFile = FileUtil.createTmpDir();
     projectFile.deleteOnExit();
     Project project = openProject(projectFile);
     return project;

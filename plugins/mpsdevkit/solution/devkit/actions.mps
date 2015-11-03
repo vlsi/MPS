@@ -5440,8 +5440,8 @@
                               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                             </node>
                             <node concept="2YIFZM" id="5Scu6nd7khL" role="33vP2m">
-                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                               <node concept="2OqwBi" id="5Scu6nd7kiN" role="37wK5m">
                                 <node concept="2WthIp" id="5Scu6nd7kiQ" role="2Oq$k0">
                                   <ref role="32nkFo" node="1TFxXPONz$F" resolve="ReloadAll" />
@@ -11778,8 +11778,8 @@
             <node concept="3cpWsn" id="5wEedBsg2zO" role="3cpWs9">
               <property role="TrG5h" value="project" />
               <node concept="2YIFZM" id="5wEedBsgihw" role="33vP2m">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="37vLTw" id="5wEedBsgkve" role="37wK5m">
                   <ref role="3cqZAo" node="2erTeUVF2gO" resolve="ideaProject" />
                 </node>

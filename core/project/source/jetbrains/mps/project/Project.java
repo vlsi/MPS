@@ -16,11 +16,18 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.structure.project.ModulePath;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,46 +36,57 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
- * Core MPS Project.
+ * MPS Project abstraction. Project may rely on the idea Project or it may not.
+ *
+ * Stores a set of module references (AP: why?), resolves them each the time.
+ * Supported always by a {@link ProjectDescriptor}, which stores paths to the module descriptors
  */
-public abstract class Project implements MPSModuleOwner {
-  private final File myProjectFile;
-  private final Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
-  private final ProjectScope myScope = new ProjectScope();
-  private boolean isDisposed;
-  private final SRepository myRepository;
+public abstract class Project implements MPSModuleOwner, IProject {
+  private static final Logger LOG = LogManager.getLogger(Project.class);
+  private static final FileSystem FS = FileSystem.getInstance();
 
-  /**
-   * Contract -- projectFile may be null in the case of JpsMpsProject from idea plugin
-   */
-  protected Project(@Nullable File projectFile) {
-    myRepository = new ProjectRepository(this);
-    myProjectFile = projectFile;
-  }
+  // AP fixme must be final
+  protected ProjectDescriptor myProjectDescriptor = new ProjectDescriptor(null);
+  private final Map<SModuleReference, ModulePath> myRefToPathMap = new LinkedHashMap<SModuleReference, ModulePath>();
+  private final ProjectScope myScope = new ProjectScope();
+  private final SRepositoryBase myRepository;
+  private final StringBuilder myErrors = new StringBuilder();
+
+  private boolean myDisposed;
 
   protected Project() {
-    this(null);
+    myRepository = new ProjectRepository(this); // 'this' should not be used here
   }
 
+  @NotNull
+  public String getErrors() {
+    return myErrors.toString();
+  }
+
+  @Nullable
+  protected final ModulePath getPath(@NotNull SModuleReference mRef) {
+    return myRefToPathMap.get(mRef);
+  }
+
+  @NotNull
+  @Override
   public ProjectScope getScope() {
     return myScope;
   }
 
-  // What is this? Is it used in the idea plugin? why is it here in project?
-  public abstract List<String> getWatchedModulesPaths();
-
+  @Override
   @NotNull
-  public SRepository getRepository() {
+  public final SRepository getRepository() {
     return myRepository;
   }
 
@@ -76,16 +94,18 @@ public abstract class Project implements MPSModuleOwner {
    * Shorthand for <code>getRepository().getModelAccess()</code>
    * @return access facility to models coming from a {@link #getRepository() repository} associated with this project.
    */
+  @Override
   @NotNull
-  public ModelAccess getModelAccess() {
+  public final ModelAccess getModelAccess() {
     return myRepository.getModelAccess();
   }
 
+  // AP fixme : why to return Iterable<? extends>? isn't it easier to give out a collection, e.g. a list?
   @NotNull
-  public Iterable<? extends SModule> getModules() {
+  public final Iterable<? extends SModule> getModules() {
     List<SModule> result = new ArrayList<SModule>();
-    for (SModuleReference ref : myModules) {
-      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    for (SModuleReference ref : myRefToPathMap.keySet()) {
+      SModule module = new ModuleRepositoryFacade(myRepository).getModule(ref);
       if (module != null) {
         result.add(module);
       }
@@ -93,8 +113,8 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  public Set<SModuleReference> getModuleReferences() {
-    return new HashSet<SModuleReference>(myModules);
+  private Set<SModuleReference> getModuleReferences() {
+    return Collections.unmodifiableSet(myRefToPathMap.keySet());
   }
 
   public Iterable<? extends SModule> getModulesWithGenerators() {
@@ -108,29 +128,23 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  @Nullable
-  public File getProjectFile() {
-    return myProjectFile;
-  }
-
-  public boolean isProjectModule(@NotNull SModule module) {
-    return myModules.contains(module.getModuleReference());
+  public final boolean isProjectModule(@NotNull SModule module) {
+    return myRefToPathMap.containsKey(module.getModuleReference());
   }
 
   @NotNull
-  public <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
+  public final <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
     List<T> result = new ArrayList<T>();
-    for (SModuleReference mr : myModules) {
-      SModule module = ModuleRepositoryFacade.getInstance().getModule(mr);
-      if (module == null) continue;
-      if (!moduleClass.isInstance(module)) continue;
-
-      result.add((T) module);
+    for (SModuleReference mRef : myRefToPathMap.keySet()) {
+      SModule module = new ModuleRepositoryFacade(myRepository).getModule(mRef);
+      if (module != null && moduleClass.isInstance(module)) {
+        result.add(moduleClass.cast(module));
+      }
     }
     return result;
   }
 
-  public Iterable<SModel> getProjectModels() {
+  public final Iterable<SModel> getProjectModels() {
     List<SModel> result = new ArrayList<SModel>();
 
     for (SModule module : getModules()) {
@@ -146,36 +160,163 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  public void addModule(SModuleReference module) {
-    myModules.add(module);
+  /**
+   * api for the external project change
+   */
+  // AP fixme : one can remove module reference and the state will change however cannot add module reference (nothing happens)
+  public final void addModule(@NotNull SModuleReference ref) {
+    SModule module = new ModuleRepositoryFacade(getRepository()).getModule(ref);
+    if (module == null) {
+      LOG.warn("Module could be found in the repository " + ref);
+      return;
+    }
+    IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+    if (descriptorFile == null) {
+      LOG.warn("Descriptor file path is null in the module " + module);
+      return;
+    }
+    ModulePath path = new ModulePath(descriptorFile.getPath());
+    myRefToPathMap.put(ref, path);
+    myProjectDescriptor.addModulePath(path);
   }
 
-  public void removeModule(SModuleReference module) {
-    myModules.remove(module);
+  public final void removeModule(@NotNull SModuleReference ref) {
+    if (!myRefToPathMap.containsKey(ref)) {
+      LOG.warn("Module references has not been registered in the project: " + ref);
+    }
+    myRefToPathMap.remove(ref);
+    SModule module = new ModuleRepositoryFacade(getRepository()).getModule(ref);
+    if (module == null) {
+      LOG.warn("Module could be found in the repository " + ref);
+      return;
+    }
+    IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+    if (descriptorFile == null) {
+      LOG.warn("Descriptor file path is null in the module " + module);
+      return;
+    }
+    myProjectDescriptor.removeModulePath(new ModulePath(descriptorFile.getPath()));
+  }
+
+  private void error(String text) {
+    if (myErrors.length() > 0) {
+      myErrors.append(System.getProperty("line.separator"));
+    }
+    myErrors.append(text);
+    LOG.error(text);
+  }
+
+  private void fireModulesLoad() {
+    //  TODO FIXME get rid of onModuleLoad
+    for (SModule m : getModules()) {
+      ((AbstractModule) m).onModuleLoad();
+    }
   }
 
   /**
-   * Generic extension mechanism
-   * @return component instance or <code>null</code> if no extension of specified kind found.
+   * AP todo : this logic must be redone alongside with filling the libraries with modules.
+   * filling libraries and projects with modules externally seems to me the best solution
    */
-  public abstract <T> T getComponent(Class<T> t);
+  protected final void readModules() {
+    LOG.info("Loading modules");
+    myErrors.setLength(0); // clear
 
-  public abstract String getName();
+    Set<SModuleReference> existingModules = new HashSet<SModuleReference>(getModuleReferences());
+    for (ModulePath modulePath : myProjectDescriptor.getModulePaths()) {
+      String path = modulePath.getPath();
+      IFile descriptorFile = FS.getFileByPath(path);
+      if (descriptorFile.exists()) {
+        final ModulesMiner modulesMiner = new ModulesMiner();
+        ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
+        if (handle.getDescriptor() != null) {
+          SModule module = ModuleRepositoryFacade.createModule(handle, this);
+          SModuleReference moduleReference = module.getModuleReference();
+          if (!existingModules.remove(moduleReference)) {
+            myRefToPathMap.put(moduleReference, modulePath);
+          }
+        } else {
+          error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
+        }
+      } else {
+        // TODO listen to file location ...
+        error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
+      }
+    }
+    removeNonExistingModules(existingModules);
+    LOG.info("Modules are loaded");
+  }
+
+  private void removeNonExistingModules(Set<SModuleReference> existingModules) {
+    for (SModuleReference ref : existingModules) {
+      myRefToPathMap.remove(ref);
+      new ModuleRepositoryFacade(myRepository).unregisterModules(this);
+    }
+  }
 
   @Override
   public boolean isHidden() {
     return false;
   }
 
-  public void save() {
-    throw new UnsupportedOperationException();
+  public abstract void save();
+
+  /**
+   * these are our own project opened/closed events.
+   * in the case of idea platform presence they are triggered from the corresponding idea project opened/closed events.
+   * in the other case they are triggered at the init/dispose methods
+   */
+  public void projectOpened() {
+    getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        readModules();
+        fireModulesLoad();
+      }
+    });
+    ProjectManager.getInstance().projectOpened(this);
+  }
+
+  public void projectClosed() {
+    checkNotDisposed();
+    ProjectManager.getInstance().projectClosed(this);
+    getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        new ModuleRepositoryFacade(myRepository).unregisterModules(Project.this);
+      }
+    });
+  }
+
+  @NotNull
+  public String toString() {
+    return "MPS Project [" + myProjectDescriptor + "] " + (myDisposed ? ", disposed]" : "]");
+  }
+
+  protected final void loadDescriptor(@NotNull ProjectDataSource dataSource) {
+    checkNotDisposed();
+    myProjectDescriptor = dataSource.loadDescriptor();
+  }
+
+  public void dispose() {
+    myRepository.dispose();
+    myDisposed = true;
+  }
+
+  private void checkNotDisposed() {
+    if (isDisposed()) {
+      throw new IllegalStateException("Cannot proceed with disposed project " + this);
+    }
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
   }
 
   public class ProjectScope extends DefaultScope {
     @Override
     protected Set<SModule> getInitialModules() {
-      Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
-      assert Arrays.asList(openProjects).contains(Project.this) : "trying to get scope on a not-yet-loaded project";
+      List<Project> openProjects = ProjectManager.getInstance().getOpenProjects();
+      assert openProjects.contains(Project.this) : "trying to get scope on a not-yet-loaded project";
 
       Set<SModule> result = new HashSet<SModule>();
       result.addAll(getProjectModules(SModule.class));
@@ -185,34 +326,5 @@ public abstract class Project implements MPSModuleOwner {
       }
       return result;
     }
-  }
-
-  /**
-   * these are our own project opened/closed events.
-   * in the case of idea platform presence they are triggered from the corresponding idea project opened/closed events.
-   * in the other case they are triggered at the init/dispose methods
-   *
-   * @see FileMPSProject
-   */
-  protected void projectOpened() {
-    ProjectManager.getInstance().projectOpened(this);
-  }
-
-  protected void projectClosed() {
-    ProjectManager.getInstance().projectClosed(this);
-  }
-
-  @NotNull
-  public String toString() {
-    return "MPS Project [file=" + (myProjectFile == null ? "<none>" : myProjectFile.toString()) + (isDisposed ? ", disposed]" : "]");
-  }
-
-  public void dispose() {
-    ((SRepositoryBase) myRepository).dispose();
-    isDisposed = true;
-  }
-
-  public boolean isDisposed() {
-    return isDisposed;
   }
 }

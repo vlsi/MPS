@@ -16,29 +16,33 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.ProjectManager;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.List;
 
-public class MPSProject extends Project implements ProjectComponent {
-  protected com.intellij.openapi.project.Project myProject;
+/**
+ * Represents a project based on the idea platform project
+ */
+public abstract class MPSProject extends Project implements FileBasedProject, ProjectComponent {
+  private final com.intellij.openapi.project.Project myProject;
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
-    super(new File(project.getPresentableUrl()));
     myProject = project;
   }
 
+  @NotNull
   @Override
-  public void projectOpened() {
-    super.projectOpened();
-  }
-
-  @Override
-  public void projectClosed() {
-    super.projectClosed();
+  public File getProjectFile() {
+    String presentableUrl = myProject.getPresentableUrl();
+    if (presentableUrl == null) {
+      assert myProject.isDefault() : "Broken contract : url is null whenever the project is default!";
+      throw new IllegalArgumentException("The project url is null (default project?)");
+    }
+    return new File(presentableUrl);
   }
 
   @Override
@@ -49,21 +53,14 @@ public class MPSProject extends Project implements ProjectComponent {
   }
 
   @Override
-  public void initComponent() {
-  }
-
-  @Override
-  public void disposeComponent() {
-    dispose();
-  }
-
-  //-----------project holder end
-
-  @Override
   public boolean isDisposed() {
     return super.isDisposed() || myProject.isDisposed();
   }
 
+  /**
+   * @return the backing idea project
+   */
+  @NotNull
   public com.intellij.openapi.project.Project getProject() {
     return myProject;
   }
@@ -78,9 +75,25 @@ public class MPSProject extends Project implements ProjectComponent {
     getProject().save();
   }
 
+  /**
+   * closing the project if it has not already been closed
+   */
   @Override
-  public List<String> getWatchedModulesPaths() {
-    return Collections.emptyList();
+  public void dispose() {
+    Exception result = null;
+    List<Project> openProjects = jetbrains.mps.project.ProjectManager.getInstance().getOpenProjects();
+    if (openProjects.contains(this)) {
+      result = ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        @Override
+        public void run() {
+          ProjectManager.getInstance().closeProject(getProject());
+        }
+      });
+    }
+    super.dispose();
+    if (result != null) {
+      throw new RuntimeException(result);
+    }
   }
 
   @Override

@@ -84,6 +84,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -510,7 +511,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected static Logger LOG = LogManager.getLogger(BaseConsoleTab.class);
-  private static SRepository check_6q36mf_a0a0a0a82(Project checkedDotOperand) {
+  private static SRepository check_6q36mf_a0a0a0a82(MPSProject checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRepository();
     }

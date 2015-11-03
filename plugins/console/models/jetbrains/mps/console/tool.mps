@@ -2245,8 +2245,8 @@
             </node>
             <node concept="2OqwBi" id="2mWP9pMvBD0" role="33vP2m">
               <node concept="2YIFZM" id="2mWP9pMvBjE" role="2Oq$k0">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="1rXfSq" id="2mWP9pMvBy$" role="37wK5m">
                   <ref role="37wK5l" node="6ysF3v1ncGk" resolve="getProject" />
                 </node>
@@ -4942,7 +4942,7 @@
                   <node concept="2EnYce" id="2wDkRIgd1wc" role="37wK5m">
                     <node concept="2YIFZM" id="6ysF3v1j_dg" role="2Oq$k0">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                       <node concept="2OqwBi" id="6ysF3v1p5tC" role="37wK5m">
                         <node concept="37vLTw" id="6ysF3v1pk9A" role="2Oq$k0">
                           <ref role="3cqZAo" node="6ysF3v1l7YE" resolve="myTool" />
@@ -5797,8 +5797,8 @@
                   <node concept="3clFbS" id="6ysF3v1j_nb" role="3clF47">
                     <node concept="3clFbF" id="6ysF3v1j_nc" role="3cqZAp">
                       <node concept="2YIFZM" id="6ysF3v1j_nd" role="3clFbG">
-                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                         <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                         <node concept="2OqwBi" id="6ysF3v1j_ne" role="37wK5m">
                           <node concept="37vLTw" id="6ysF3v1uLxZ" role="2Oq$k0">
                             <ref role="3cqZAo" node="6ysF3v1l7YE" resolve="myTool" />
@@ -6857,8 +6857,8 @@
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
             <node concept="2YIFZM" id="7a2y7OsK4io" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="2OqwBi" id="7a2y7OsK4ip" role="37wK5m">
                 <node concept="2OqwBi" id="7a2y7OsK4iq" role="2Oq$k0">
                   <node concept="Xjq3P" id="7a2y7OsK4ir" role="2Oq$k0" />
@@ -8443,7 +8443,7 @@
                 <ref role="3cqZAo" node="3wGjY11t7jE" resolve="project" />
               </node>
               <node concept="liA8E" id="7USPsgtR$Mq" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c3:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="7USPsgtROJC" role="37wK5m">
                   <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
                 </node>

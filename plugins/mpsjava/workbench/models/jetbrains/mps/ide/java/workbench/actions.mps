@@ -923,8 +923,8 @@
         <node concept="3clFbF" id="5wEedBrIrNc" role="3cqZAp">
           <node concept="37vLTI" id="5wEedBrIrTx" role="3clFbG">
             <node concept="2YIFZM" id="5wEedBrIt$7" role="37vLTx">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="5wEedBrIuoI" role="37wK5m">
                 <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
               </node>

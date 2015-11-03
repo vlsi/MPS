@@ -44,7 +44,7 @@ public abstract class EnvironmentTest extends BaseMpsTest {
 
   @After
   public void afterTest() {
-    myEnvironment.dispose();
+//    myEnvironment.dispose(); cannot restart idea environment for now
   }
 
   @Test

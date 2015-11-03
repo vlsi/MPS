@@ -6462,7 +6462,7 @@
             <property role="TrG5h" value="mpsProject" />
             <node concept="2YIFZM" id="3pNk_u$axi$" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="3pNk_u$axi_" role="37wK5m">
                 <ref role="3cqZAo" node="3etVqSRK$aq" resolve="myProject" />
               </node>
@@ -6888,8 +6888,8 @@
           <node concept="3cpWsn" id="3etVqSRK$eV" role="3cpWs9">
             <property role="TrG5h" value="mpsProject" />
             <node concept="2YIFZM" id="2K4NeDxDzzt" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="2K4NeDxD_kq" role="37wK5m">
                 <ref role="3cqZAo" node="3etVqSRK$aq" resolve="myProject" />
               </node>
@@ -6937,7 +6937,7 @@
                   <ref role="3cqZAo" node="3etVqSRK$eV" resolve="mpsProject" />
                 </node>
                 <node concept="liA8E" id="3pNk_u$5YAY" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
+                  <ref role="37wK5l" to="z1c3:~IProject.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
             </node>
@@ -6954,7 +6954,7 @@
                 <ref role="3cqZAo" node="3etVqSRK$eV" resolve="mpsProject" />
               </node>
               <node concept="liA8E" id="3pNk_u$63N5" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
+                <ref role="37wK5l" to="z1c3:~IProject.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
             <node concept="10M0yZ" id="3etVqSRK$fh" role="37wK5m">
@@ -7756,8 +7756,8 @@
         <node concept="3clFbF" id="2K4NeDxB9Lz" role="3cqZAp">
           <node concept="37vLTI" id="2K4NeDxBavK" role="3clFbG">
             <node concept="2YIFZM" id="2K4NeDxBb2L" role="37vLTx">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="2K4NeDxBb56" role="37wK5m">
                 <ref role="3cqZAo" node="3etVqSRRNub" resolve="project" />
               </node>

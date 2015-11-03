@@ -14,11 +14,11 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
-import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.module.ReloadableModule;
@@ -109,7 +109,7 @@ public class TransformationTestRunner implements TestRunner {
     SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
 
     if (modelDescriptor == null) {
-      Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
+      Assert.fail("Can't find model " + modelName + " in projects " + ProjectManager.getInstance().getOpenProjects() + ".");
     }
     return modelDescriptor;
   }
@@ -139,7 +139,7 @@ public class TransformationTestRunner implements TestRunner {
    * hacky place to run transformation tests with cached project
    */
   private Project anyOpenedProject() {
-    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+    for (Project project : ListSequence.fromList(ProjectManager.getInstance().getOpenProjects())) {
       if (project != null && !(project.isDisposed())) {
         return project;
       }

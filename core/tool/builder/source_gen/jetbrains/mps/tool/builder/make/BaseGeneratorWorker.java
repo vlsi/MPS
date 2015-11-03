@@ -146,7 +146,6 @@ public class BaseGeneratorWorker extends MpsWorker {
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
       FileMPSProject p = new FileMPSProject(file);
-      p.init(new FileMPSProject.ProjectDescriptor(file));
       makeProject();
 
       info("Loaded project " + p);

@@ -15,8 +15,13 @@
  */
 package jetbrains.mps.testsuites;
 
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import org.junit.runners.model.InitializationError;
+import org.junit.runners.model.RunnerBuilder;
 
 /**
  * These are the tests which DO NOT require the idea platform
@@ -24,7 +29,7 @@ import org.junit.runners.Suite;
  * NB: the test which prints errors to output (apache Logger#error) is considered failed.
  * Further the level will be lowered so that any warning will fail the test.
  */
-@RunWith(OutputWatchingTestSuite.class)
+@RunWith(CoreTestSuite.class)
 @Suite.SuiteClasses({
     jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest.class,
     jetbrains.mps.dataFlow.lang.LivenessAnalysisTest.class,
@@ -63,5 +68,11 @@ import org.junit.runners.Suite;
     jetbrains.mps.java.stub.StubModelLazyLoadStressTest.class,
     jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class
 })
-public class CoreTestSuite {
+public class CoreTestSuite extends OutputWatchingTestSuite {
+  // creating the platform environment for the first time
+  public static final Environment ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+
+  public CoreTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
+    super(aClass, builder);
+  }
 }

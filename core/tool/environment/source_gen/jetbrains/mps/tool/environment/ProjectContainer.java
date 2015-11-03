@@ -11,6 +11,7 @@ import jetbrains.mps.project.ProjectManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.io.File;
+import jetbrains.mps.project.FileBasedProject;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.EqualUtil;
 import java.io.IOException;
@@ -50,7 +51,7 @@ import org.apache.log4j.LogManager;
   public Project getProject(@NotNull File projectFile) {
     assert myProjects != null;
     for (Project project : SetSequence.fromSet(myProjects)) {
-      if (ProjectContainer.projectHasPath(project, projectFile)) {
+      if (projectHasPath(((FileBasedProject) project), projectFile)) {
         return project;
       }
     }
@@ -76,11 +77,8 @@ import org.apache.log4j.LogManager;
     return SetSequence.fromSet(myProjects).count();
   }
 
-  private static boolean projectHasPath(Project project, @NotNull File path) {
+  private static boolean projectHasPath(FileBasedProject project, @NotNull File path) {
     File projectFile = project.getProjectFile();
-    if (projectFile == null) {
-      throw new IllegalStateException("The project file is null " + project);
-    }
     try {
       String myProjectPath = projectFile.getCanonicalPath();
       return EqualUtil.equals(myProjectPath, path.getCanonicalPath());

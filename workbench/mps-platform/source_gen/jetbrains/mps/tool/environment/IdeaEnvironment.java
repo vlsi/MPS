@@ -50,6 +50,7 @@ public class IdeaEnvironment extends EnvironmentBase {
       if (!(currentEnv instanceof IdeaEnvironment)) {
         throw new IllegalStateException("Still no support for interchanging lightweight and heavyweight environments");
       }
+      currentEnv.retain();
       return currentEnv;
     } else {
       IdeaEnvironment ideaEnv = new IdeaEnvironment(config);

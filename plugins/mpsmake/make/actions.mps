@@ -1578,8 +1578,8 @@
         <node concept="3clFbF" id="769DNvT2cWZ" role="3cqZAp">
           <node concept="37vLTI" id="769DNvT2eeB" role="3clFbG">
             <node concept="2YIFZM" id="769DNvT2k8a" role="37vLTx">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="769DNvT2kbY" role="37wK5m">
                 <ref role="3cqZAo" node="47QEcUfsm5$" resolve="project" />
               </node>

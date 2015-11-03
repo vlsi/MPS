@@ -25,6 +25,7 @@ import javax.swing.event.HyperlinkEvent;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import com.intellij.notification.Notifications;
 import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.List;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -152,9 +153,9 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     Project project = ProjectHelper.getProject(repository);
     if (project == null) {
       // Note: the following code can be removed after proper implementation of project repositories 
-      Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
-      if (openProjects != null && openProjects.length == 1) {
-        project = openProjects[0];
+      List<Project> openProjects = ProjectManager.getInstance().getOpenProjects();
+      if (openProjects.size() == 1) {
+        project = openProjects.get(0);
       }
     }
     return project;

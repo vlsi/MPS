@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.structure.project.ModulePath;
 
 public class RenameModuleDialog extends RenameDialog {
   private AbstractModule myModule;
@@ -21,6 +22,7 @@ public class RenameModuleDialog extends RenameDialog {
     myModule = module;
     setTitle("Rename Module");
   }
+
   @Override
   protected void doRefactoringAction() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -49,8 +51,9 @@ public class RenameModuleDialog extends RenameDialog {
               final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
               if (mpsProject instanceof StandaloneMPSProject) {
                 final ProjectDescriptor projectDescriptor = ((StandaloneMPSProject) mpsProject).getProjectDescriptor();
-                projectDescriptor.removeModule(oldModuleName);
-                projectDescriptor.addModule(myModule.getDescriptorFile().getPath());
+                String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldModuleName));
+                ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().getPath(), virtualFolder);
+                projectDescriptor.addModulePath(modulePath);
               }
             }
           });

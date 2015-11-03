@@ -86,6 +86,7 @@ public class ProjectFactory {
 
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
+    assert mpsProject != null;
 
     StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
       @Override

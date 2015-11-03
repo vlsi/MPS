@@ -1918,7 +1918,7 @@
                     <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                     <node concept="2YIFZM" id="6Sxc5MiBujQ" role="37wK5m">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                       <node concept="37vLTw" id="6Sxc5MiBujR" role="37wK5m">
                         <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                       </node>
@@ -2304,7 +2304,7 @@
                     <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                     <node concept="2YIFZM" id="2hu8fhm43dA" role="37wK5m">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                       <node concept="37vLTw" id="2hu8fhm43dB" role="37wK5m">
                         <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                       </node>
@@ -2876,8 +2876,8 @@
                 <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
               </node>
               <node concept="2YIFZM" id="2htE_P_LHc5" role="33vP2m">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="37vLTw" id="2htE_P_LHc6" role="37wK5m">
                   <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                 </node>
@@ -2979,7 +2979,7 @@
               </node>
               <node concept="2YIFZM" id="2htE_P_LEqk" role="33vP2m">
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="37vLTw" id="2htE_P_LEW0" role="37wK5m">
                   <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                 </node>
@@ -3824,7 +3824,7 @@
                             <ref role="37wK5l" to="bdll:~ProjectMigration.shouldBeExecuted(jetbrains.mps.project.Project):boolean" resolve="shouldBeExecuted" />
                             <node concept="2YIFZM" id="1u4Xg2YAFd5" role="37wK5m">
                               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                               <node concept="37vLTw" id="1u4Xg2YAFd6" role="37wK5m">
                                 <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                               </node>

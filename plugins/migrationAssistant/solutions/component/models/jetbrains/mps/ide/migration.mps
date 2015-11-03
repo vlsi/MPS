@@ -3983,7 +3983,7 @@
                       <ref role="37wK5l" node="6CdT9mpAR4u" resolve="getProjectMigrationsToApply" />
                       <node concept="2YIFZM" id="6CdT9mpDfwQ" role="37wK5m">
                         <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                         <node concept="37vLTw" id="6CdT9mpDfwR" role="37wK5m">
                           <ref role="3cqZAo" node="6CdT9mpAKsb" resolve="p" />
                         </node>
@@ -5991,7 +5991,7 @@
                     <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                     <node concept="2YIFZM" id="2htE_P_RHQo" role="37wK5m">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                       <node concept="37vLTw" id="2htE_P_RHQp" role="37wK5m">
                         <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
                       </node>
@@ -7840,8 +7840,8 @@
                       <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                       <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
                       <node concept="2YIFZM" id="7_bOiTKCdH8" role="37wK5m">
-                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                         <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                         <node concept="37vLTw" id="7_bOiTKCdH9" role="37wK5m">
                           <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
                         </node>

@@ -3017,7 +3017,7 @@
                     <ref role="3cqZAo" node="5jLBleAj6wp" resolve="mpsProject" />
                   </node>
                   <node concept="liA8E" id="suC6ndRIIL" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <ref role="37wK5l" to="z1c3:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                     <node concept="3VsKOn" id="4XrQe5XE3kY" role="37wK5m">
                       <ref role="3VsUkX" to="ap4t:~TransientModelsProvider" resolve="TransientModelsProvider" />
                     </node>
