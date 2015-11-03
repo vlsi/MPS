@@ -6,12 +6,15 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
+    <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
@@ -541,17 +544,10 @@
     <property role="34LRSv" value="idea branding" />
     <property role="1pbfSe" value="1943377822" />
     <ref role="1TJDcQ" to="3ior:6qcrfIJFdK8" resolve="BuildProjectPart" />
-    <node concept="1TJgyj" id="5j4USBYFOGk" role="1TKVEi">
+    <node concept="1TJgyj" id="328lVm4LQW3" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="splashScreen" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYFOGl" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="aboutScreen" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+      <property role="20kJfa" value="codename" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
     </node>
     <node concept="1TJgyj" id="FnaIS$F2cd" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -570,96 +566,11 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
     </node>
-    <node concept="1TJgyj" id="5VYK1npHWR4" role="1TKVEi">
+    <node concept="1TJgyj" id="5j4USBYFOGk" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="5VYK1npKdVC" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="iconToolWindow" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYG00q" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon32" />
+      <property role="20kJfa" value="splashScreen" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYG00r" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon16" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYG00s" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon32opaque" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="FnaIS$EsJY" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="icon128" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="ES2LjlW$nI" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="welcomeLogo" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="7273ZJHyYNO" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="dialogImage" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYGpRd" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="updateWebsite" />
-      <ref role="20lvS9" node="6Iq8148fiO7" resolve="BuildMps_BrandingUpdateSite" />
-    </node>
-    <node concept="1TJgyj" id="FnaIS$EsWD" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="plugins" />
-      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYGz2J" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="shortName" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
-    </node>
-    <node concept="1TJgyj" id="5j4USBYGz2K" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="fullName" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
-    </node>
-    <node concept="1TJgyj" id="328lVm4LQW3" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="codename" />
-      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
-    </node>
-    <node concept="1TJgyj" id="FnaIS$F0iy" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="whatsnew" />
-      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
-    </node>
-    <node concept="1TJgyj" id="ohKnhBYC6p" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="help" />
-      <ref role="20lvS9" node="6Iq8148fiO8" resolve="BuildMps_BrandingHelp" />
-    </node>
-    <node concept="1TJgyj" id="FnaIS$Fb9d" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="stats" />
-      <ref role="20lvS9" node="FnaIS$Et1J" resolve="BuildMps_BrandingStats" />
-    </node>
-    <node concept="1TJgyj" id="7GO0VN9rfeQ" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="feedbackUrl" />
-      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
     </node>
     <node concept="1TJgyj" id="7CfYQDnCB_D" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -676,11 +587,127 @@
       <property role="20kJfa" value="progressY" />
       <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
     </node>
+    <node concept="1TJgyj" id="5j4USBYFOGl" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="aboutScreen" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5j4USBYG00r" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon16" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5j4USBYG00q" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon32" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5j4USBYG00s" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon32opaque" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="FnaIS$EsJY" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon128" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5VYK1npHWR4" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5VYK1npKdVC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="iconToolWindow" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="7273ZJHyYNO" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dialogImage" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+      <node concept="asaX9" id="57dcfYPsA0j" role="lGtFl">
+        <property role="YLPcu" value="3.3" />
+        <property role="YLQ7P" value="To remove in 3.4" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="5j4USBYGz2J" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="shortName" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="5j4USBYGz2K" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="fullName" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="ES2LjlW$nI" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="welcomeLogo" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="FnaIS$EsWD" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="plugins" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="5j4USBYGpRd" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="updateWebsite" />
+      <ref role="20lvS9" node="6Iq8148fiO7" resolve="BuildMps_BrandingUpdateSite" />
+    </node>
+    <node concept="1TJgyj" id="ohKnhBYC6p" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="help" />
+      <ref role="20lvS9" node="6Iq8148fiO8" resolve="BuildMps_BrandingHelp" />
+    </node>
+    <node concept="1TJgyj" id="57dcfYPt82M" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="documentation" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="57dcfYPuyAl" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="support" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="7GO0VN9rfeQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="feedbackUrl" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="FnaIS$F0iy" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="whatsnew" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="57dcfYPvTaT" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="keymap" />
+      <ref role="20lvS9" node="57dcfYPvT7f" resolve="BuildMps_BrandingKeymap" />
+    </node>
+    <node concept="1TJgyj" id="57dcfYPxbjk" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="thirdparty" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
     <node concept="1TJgyj" id="5VYK1npIw0m" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="customXmlElement" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
+    </node>
+    <node concept="1TJgyj" id="FnaIS$Fb9d" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="stats" />
+      <ref role="20lvS9" node="FnaIS$Et1J" resolve="BuildMps_BrandingStats" />
     </node>
     <node concept="1TJgyi" id="328lVm4LOT4" role="1TKVEl">
       <property role="TrG5h" value="major" />
@@ -1152,6 +1179,25 @@
     <property role="TrG5h" value="BuildMpsLayout_ModuleJarContent" />
     <property role="R4oN_" value="Control/augment content of mps module jar (either deployment or source)" />
     <ref role="1TJDcQ" to="3ior:2xHpXR_cEa4" resolve="BuildLayout_TransparentContainer" />
+  </node>
+  <node concept="1TIwiD" id="57dcfYPvT7f">
+    <property role="1pbfSe" value="122471118" />
+    <property role="3GE5qa" value="Project.Branding" />
+    <property role="TrG5h" value="BuildMps_BrandingKeymap" />
+    <property role="34LRSv" value="keymap" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="57dcfYPvT7j" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="win" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="57dcfYPvT7o" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="mac" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
   </node>
 </model>
 
