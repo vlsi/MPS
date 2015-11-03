@@ -188,7 +188,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     registerTabs(new ModuleCommonTab());
 
-    addTab(new ModuleCommonTab());
     if (!(myModule instanceof DevKit)) {
       final ModuleDependenciesTab moduleDependenciesTab = new ModuleDependenciesTab();
       registerTabs(moduleDependenciesTab, new ModuleUsedLanguagesTab());
