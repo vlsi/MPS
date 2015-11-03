@@ -154,6 +154,7 @@ public class NewModuleUtil {
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     Language language = (Language) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
+    descriptor = language.getModuleDescriptor();
 
     if (createMainAspectModels) {
       try {

@@ -1333,6 +1333,21 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3vpD6nowLzS" role="3cqZAp">
+          <node concept="37vLTI" id="3vpD6nowM7u" role="3clFbG">
+            <node concept="2OqwBi" id="3vpD6nowM_v" role="37vLTx">
+              <node concept="37vLTw" id="3vpD6nowMyn" role="2Oq$k0">
+                <ref role="3cqZAo" node="7BBl3KI$P2v" resolve="language" />
+              </node>
+              <node concept="liA8E" id="3vpD6nowN0S" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="3vpD6nowLzQ" role="37vLTJ">
+              <ref role="3cqZAo" node="1Yd98ZZnqH$" resolve="descriptor" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="7BBl3KI$QtF" role="3cqZAp" />
         <node concept="3clFbJ" id="7BBl3KI$VN8" role="3cqZAp">
           <node concept="37vLTw" id="7BBl3KI$W1Z" role="3clFbw">
