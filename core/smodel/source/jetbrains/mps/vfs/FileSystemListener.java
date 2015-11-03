@@ -18,6 +18,8 @@ package jetbrains.mps.vfs;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.Set;
+
 /**
  * evgeny, 11/2/12
  */
@@ -25,14 +27,15 @@ public interface FileSystemListener {
   @Nullable
   IFile getFileToListen();
 
+  // todo remove it, too complicated
   Iterable<FileSystemListener> getListenerDependencies();
 
   void update(ProgressMonitor monitor, FileSystemEvent event);
 
-  public interface FileSystemEvent {
-    Iterable<IFile> getCreated();
-    Iterable<IFile> getRemoved();
-    Iterable<IFile> getChanged();
+  interface FileSystemEvent {
+    Set<IFile> getCreated();
+    Set<IFile> getRemoved();
+    Set<IFile> getChanged();
     void notify(FileSystemListener listener);
   }
 }
