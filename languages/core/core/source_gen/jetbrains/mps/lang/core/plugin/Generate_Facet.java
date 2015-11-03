@@ -34,6 +34,7 @@ import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.smodel.resources.MResource;
@@ -51,7 +52,6 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.cleanup.CleanupManager;
 
 public class Generate_Facet extends IFacet.Stub {
@@ -210,9 +210,20 @@ public class Generate_Facet extends IFacet.Stub {
 
               Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
               TransientModelsProvider tmc = mpsProject.getComponent(TransientModelsProvider.class);
-              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(mpsProject.getRepository(), null)));
+              boolean ownTransientsProvider = tmc == null;
+              vars(pa.global()).transientModelsProvider((ownTransientsProvider ? new TransientModelsProvider(mpsProject.getRepository(), null) : tmc));
 
               vars(pa.global()).transientModelsProvider().removeAllTransient();
+              if (ownTransientsProvider) {
+                _output_fi61u2_a0b = Sequence.fromIterable(_output_fi61u2_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CleanupActivityResource() {
+                  public String describe() {
+                    return "Dispose provider of transient models";
+                  }
+                  public void run() {
+                    vars(pa.global()).transientModelsProvider().removeAllTransients(true);
+                  }
+                })));
+              }
               return new IResult.SUCCESS(_output_fi61u2_a0b);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0b);

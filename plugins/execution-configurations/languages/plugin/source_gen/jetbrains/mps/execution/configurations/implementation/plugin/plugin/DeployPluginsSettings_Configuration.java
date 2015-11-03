@@ -15,6 +15,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
 import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -71,14 +72,16 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
       return state;
     }
   }
-  public DeployPluginsSettings_Configuration() {
+  public DeployPluginsSettings_Configuration(Project p) {
+    myp = p;
   }
+  private final Project myp;
   private SettingsEditorEx<DeployPluginsSettings_Configuration> myEditorEx;
   public DeployPluginsSettings_Configuration createCloneTemplate() {
-    return new DeployPluginsSettings_Configuration();
+    return new DeployPluginsSettings_Configuration(myp);
   }
   public DeployPluginsSettings_Configuration_Editor getEditor() {
-    return new DeployPluginsSettings_Configuration_Editor();
+    return new DeployPluginsSettings_Configuration_Editor(myp);
   }
   public SettingsEditorEx<DeployPluginsSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {

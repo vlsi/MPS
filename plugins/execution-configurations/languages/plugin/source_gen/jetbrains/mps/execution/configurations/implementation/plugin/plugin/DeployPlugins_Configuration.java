@@ -35,7 +35,7 @@ import org.apache.log4j.LogManager;
 public class DeployPlugins_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private DeployPlugins_Configuration.MyState myState = new DeployPlugins_Configuration.MyState();
-  private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration();
+  private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration(this.getProject());
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getPluginsSettings().checkConfiguration();
     if (ListSequence.fromList(this.getPluginsSettings().getPluginsListToDeploy()).isEmpty()) {

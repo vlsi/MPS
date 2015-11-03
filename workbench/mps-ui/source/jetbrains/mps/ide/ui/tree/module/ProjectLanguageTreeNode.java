@@ -21,22 +21,19 @@ import jetbrains.mps.ide.ui.tree.SortUtil;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelReferenceTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.LongModelNameText;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.ShortModelNameText;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.util.Condition;
 
-import java.util.Collection;
 import java.util.List;
 
 public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
@@ -81,8 +78,9 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
+    ShortModelNameText textSource = new ShortModelNameText();
     for (SModel m: LanguageAspectSupport.getAspectModels(getModule())){
-      add(new SModelTreeNode(m, null, false));
+      add(new SModelTreeNode(m, textSource));
     }
 
     // language accessory models
@@ -90,13 +88,14 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       TextTreeNode accessories = new AccessoriesModelTreeNode(this);
 
       List<SModel> sortedModels = SortUtil.sortModels(getModule().getAccessoryModels());
+      LongModelNameText modelText = new LongModelNameText();
       for (SModel model : sortedModels) {
         SModule m = model.getModule();
         boolean currentModule = m == null || m == getModule();
         if (!currentModule) {
           accessories.add(new SModelReferenceTreeNode(model, myProject));
         } else {
-          accessories.add(new SModelTreeNode(model, null));
+          accessories.add(new SModelTreeNode(model, modelText));
         }
       }
       this.add(accessories);
@@ -117,14 +116,14 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     if (getModule().getUtilModels().size() > 0) {
       TextTreeNode utilModels = new SModelGroupTreeNode();
-      SModelsSubtree.create(utilModels, getModule(), getModule().getUtilModels(), false);
+      new SModelsSubtree(utilModels).create(getModule().getUtilModels());
       this.add(utilModels);
     }
 
     TextTreeNode allModels = new AllModelsTreeNode();
     allModels.setIcon(IdeIcons.PROJECT_MODELS_ICON, false);
     allModels.setIcon(IdeIcons.PROJECT_MODELS_EXPANDED_ICON, true);
-    SModelsSubtree.create(allModels, getModule());
+    new SModelsSubtree(allModels, false, false).create(getModule());
     add(allModels);
   }
 

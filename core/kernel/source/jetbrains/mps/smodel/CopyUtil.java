@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class CopyUtil {
     }
   }
 
-  public static void copyModelContentAndPreserveIds(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  private static void copyModelContentAndPreserveIds(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     for (SNode root : from.getRootNodes()) {
       to.addRootNode(copyAndPreserveId(root, true));
     }
   }
 
-  public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  private static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     from.copyPropertiesTo(to);
   }
 

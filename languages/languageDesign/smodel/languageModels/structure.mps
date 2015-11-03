@@ -1186,6 +1186,10 @@
     <property role="34LRSv" value="node/&lt;name&gt;/" />
     <property role="1pbfSe" value="417966249" />
     <ref role="1TJDcQ" node="36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
+    <node concept="asaX9" id="1t9Fffggnzf" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="This reference has no information where to resolve it. Unless we introduce SRepository parameter here, use NodePointerExpression instead." />
+    </node>
     <node concept="1TJgyj" id="hJB5MUc" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="referentNode" />
@@ -1635,9 +1639,14 @@
     <property role="TrG5h" value="CheckedModuleReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="module reference" />
+    <property role="34LRSv" value="checked module reference" />
     <property role="1pbfSe" value="908168577" />
+    <property role="R4oN_" value="module reference tied to modules from global repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="asaX9" id="3WF9HwEZbzR" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="Uses global repository to ensure reference points to an existing module" />
+    </node>
     <node concept="1TJgyi" id="3LUBoMdoXjO" role="1TKVEl">
       <property role="TrG5h" value="moduleId" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -1911,7 +1920,12 @@
     <property role="3GE5qa" value="reference.module" />
     <property role="34LRSv" value="module" />
     <property role="1pbfSe" value="468609205" />
+    <property role="R4oN_" value="instance of a module from global repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="asaX9" id="1t9FffgewUl" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="Global module repository shall cease soon. Use ModuleRefExpression instead." />
+    </node>
     <node concept="1TJgyi" id="3wj3sjzQPFM" role="1TKVEl">
       <property role="TrG5h" value="name" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -1931,6 +1945,10 @@
     <property role="R4oN_" value="Access Language module instance" />
     <property role="1pbfSe" value="468657422" />
     <ref role="1TJDcQ" node="3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
+    <node concept="asaX9" id="1t9FffgewUn" role="lGtFl">
+      <property role="YLQ7P" value="Module instance is accessed through global repository which would cease soon. Use LanguageRefExpression instead" />
+      <property role="YLPcu" value="MPS 3.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="v3WHCwUiHy">
     <property role="R5$K7" value="false" />
@@ -2351,39 +2369,40 @@
     <property role="1pbfSe" value="1694588064" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
-  <node concept="1TIwiD" id="5m$620fQi1E">
-    <property role="1pbfSe" value="1702705290" />
-    <property role="3GE5qa" value="reference" />
-    <property role="TrG5h" value="AspectModelRefExpression" />
-    <property role="34LRSv" value="aspectModel" />
+  <node concept="1TIwiD" id="1t9FffgebJy">
+    <property role="1pbfSe" value="410883883" />
+    <property role="3GE5qa" value="reference.module" />
+    <property role="TrG5h" value="ModuleRefExpression" />
+    <property role="34LRSv" value="module-reference" />
+    <property role="R4oN_" value="reference/pointer to an SModule" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="5m$620fRjo7" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="aspect" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
-    </node>
-    <node concept="1TJgyj" id="5m$620fQi1F" role="1TKVEi">
+    <node concept="1TJgyj" id="1t9FffgebJ_" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="lang" />
+      <property role="20kJfa" value="moduleId" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <ref role="20lvS9" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1KHvivZHjVV">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="Model_IsAspectOperation" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="operation.model" />
-    <property role="1pbfSe" value="467844130" />
-    <property role="34LRSv" value="isAspectModel" />
-    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
-    <node concept="1TJgyj" id="1KHvivZHjYS" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="aspect" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+  <node concept="PlHQZ" id="nJmxU5cSSu">
+    <property role="1pbfSe" value="1960646596" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="ModuleIdentity" />
+  </node>
+  <node concept="1TIwiD" id="nJmxU5cSyN">
+    <property role="1pbfSe" value="1960647983" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="ModulePointer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="nJmxU5cSSp" role="1TKVEl">
+      <property role="TrG5h" value="moduleName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="nJmxU5cSSr" role="1TKVEl">
+      <property role="TrG5h" value="moduleId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="nJmxU5cSTH" role="PzmwI">
+      <ref role="PrY4T" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
   </node>
 </model>

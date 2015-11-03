@@ -135,6 +135,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/slanguage/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/slanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/generator/source_gen" isTestSource="false" />
@@ -297,6 +299,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/slanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/slanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel.query/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/classes_gen" />
@@ -1145,5 +1149,7 @@
     <orderEntry type="module" module-name="behavior-api" />
     <orderEntry type="module" module-name="behavior-runtime" />
     <orderEntry type="module" module-name="mps-ant" />
+    <orderEntry type="module" module-name="smodelquery-runtime" />
   </component>
 </module>
+

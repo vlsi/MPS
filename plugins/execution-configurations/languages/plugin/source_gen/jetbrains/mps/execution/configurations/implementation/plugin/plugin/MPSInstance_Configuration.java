@@ -30,7 +30,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   @NotNull
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
   private MpsStartupSettings_Configuration myMpsSettings = new MpsStartupSettings_Configuration();
-  private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration();
+  private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration(this.getProject());
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getMpsSettings().checkConfiguration();
     this.getPluginsSettings().checkConfiguration();

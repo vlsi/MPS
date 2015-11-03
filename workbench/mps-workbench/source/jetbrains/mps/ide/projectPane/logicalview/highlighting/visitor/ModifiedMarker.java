@@ -17,14 +17,14 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
-import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import javax.swing.*;
+import javax.swing.Icon;
 
 public class ModifiedMarker extends TreeUpdateVisitor {
   public ModifiedMarker(Project mpsProject) {
@@ -42,7 +42,14 @@ public class ModifiedMarker extends TreeUpdateVisitor {
 
         boolean changed = ((EditableSModel) md).isChanged();
 
-        final Icon icon = changed ? new LayeredIcon(node.getDefaultIcon(), General.Modified) : node.getDefaultIcon();
+        Icon icon = node.getBaseIcon();
+        if (icon == null) {
+          // XXX perhaps, I shall not update icon if there's no icon for the model?
+          icon = General.IjLogo;
+        }
+        if (changed) {
+          icon = new LayeredIcon(icon, General.Modified);
+        }
         addUpdate(node, new IconNodeUpdate(icon));
       }
     });

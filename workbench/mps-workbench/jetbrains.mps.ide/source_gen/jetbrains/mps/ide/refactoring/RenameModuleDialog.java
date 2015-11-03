@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 
 public class RenameModuleDialog extends RenameDialog {
@@ -39,18 +39,22 @@ public class RenameModuleDialog extends RenameDialog {
         if (!((fqName.equals(myModule.getModuleName())))) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              // save old module path for project descriptor change 
-              final String oldModuleName = myModule.getDescriptorFile().getPath();
-
-              Renamer.renameModule(myModule, fqName);
-
-              // TODO: add moduleRenamed to SRepositoryListener? 
-              // update module path in project descriptor 
               final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
               if (mpsProject instanceof StandaloneMPSProject) {
-                final ProjectDescriptor projectDescriptor = ((StandaloneMPSProject) mpsProject).getProjectDescriptor();
-                projectDescriptor.removeModule(oldModuleName);
+                StandaloneMPSProject smp = (StandaloneMPSProject) mpsProject;
+                String folder = smp.getFolderFor(myModule);
+                String oldName = myModule.getDescriptorFile().getPath();
+
+                Renamer.renameModule(myModule, fqName);
+
+                // TODO: add moduleRenamed to SRepositoryListener? 
+                // update module path in project descriptor 
+                final ProjectDescriptor projectDescriptor = smp.getProjectDescriptor();
+                projectDescriptor.removeModule(oldName);
                 projectDescriptor.addModule(myModule.getDescriptorFile().getPath());
+                smp.setFolderFor(myModule, folder);
+              } else {
+                Renamer.renameModule(myModule, fqName);
               }
             }
           });

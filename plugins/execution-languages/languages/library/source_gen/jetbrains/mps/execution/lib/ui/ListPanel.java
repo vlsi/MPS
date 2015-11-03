@@ -50,7 +50,8 @@ public abstract class ListPanel<T> extends JPanel {
   protected Project myProject;
   private final String myTitle;
   private boolean isEditable = true;
-  public ListPanel(String title) {
+  public ListPanel(Project p, String title) {
+    myProject = p;
     myTitle = title;
 
     setLayout(new GridBagLayout());
@@ -117,9 +118,6 @@ public abstract class ListPanel<T> extends JPanel {
         }
       }).toListSequence();
     }
-  }
-  public void setProject(Project project) {
-    myProject = project;
   }
   public void setEditable(boolean editable) {
     isEditable = editable;

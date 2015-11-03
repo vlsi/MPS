@@ -34,7 +34,7 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
   public MPSTreeNode createTreeNode() {
     SModel md = getValue().resolve(myProject.getRepository());
     if (md == null) return null;
-    return new SModelTreeNode(md, null);
+    return new SModelTreeNode(md);
   }
 
   @Override
