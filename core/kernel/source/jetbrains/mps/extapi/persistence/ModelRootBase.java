@@ -22,12 +22,12 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleAdapter;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -40,6 +40,7 @@ public abstract class ModelRootBase implements ModelRoot {
   private SModule myModule;
   private volatile SRepository myRepository;
   private final Set<SModel> myModels = new HashSet<SModel>();
+  private ModuleListener myModuleListener;
 
   @Override
   public SModule getModule() {
@@ -47,6 +48,7 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void setModule(SModule module) {
+    assert myModule == null;
     checkNotRegistered();
     myModule = module;
   }
@@ -65,11 +67,9 @@ public abstract class ModelRootBase implements ModelRoot {
     }
   }
 
-
   @Override
   public final Iterable<SModel> getModels() {
     assertCanRead();
-
     return new ArrayList<SModel>(myModels);
   }
 
@@ -84,20 +84,20 @@ public abstract class ModelRootBase implements ModelRoot {
 
   public void attach() {
     assert myModule != null;
+    assert myModuleListener == null;
     myRepository = myModule.getRepository();
+    myModule.addModuleListener(myModuleListener = new ModuleListener());
     update();
   }
 
   public void dispose() {
-    SModuleBase module = (SModuleBase) getModule();
-
-    for (SModel model : myModels) {
-      assert module != null;
-      assert module.getModel(model.getModelId()) != null;
-
-      module.unregisterModel((SModelBase) model);
+    for (SModel model : getModels()) {
+      unregister(model);
     }
-    myModels.clear();
+    if (myModuleListener != null) {
+      myModule.removeModuleListener(myModuleListener);
+    }
+    assert myModels.isEmpty();
     myRepository = null;
   }
 
@@ -127,7 +127,6 @@ public abstract class ModelRootBase implements ModelRoot {
     assert myModels.contains(model);
 
     module.unregisterModel((SModelBase) model);
-    myModels.remove(model);
   }
 
   public void update() {
@@ -152,16 +151,21 @@ public abstract class ModelRootBase implements ModelRoot {
       }
       loaded.add(model.getModelId());
     }
-    Iterator<SModel> it = myModels.iterator();
-    while (it.hasNext()) {
-      SModel model = it.next();
+    for (SModel model : getModels()) {
       if (loaded.contains(model.getModelId())) continue;
       if (model instanceof EditableSModelBase && ((EditableSModelBase) model).isChanged()) {
         ((EditableSModelBase) model).resolveDiskConflict();
       } else {
         module.unregisterModel((SModelBase) model);
-        it.remove();
       }
+    }
+  }
+
+  private class ModuleListener extends SModuleAdapter {
+    @Override
+    public void beforeModelRemoved(SModule module, SModel model) {
+      assert myModule == module;
+      myModels.remove(model);
     }
   }
 }
