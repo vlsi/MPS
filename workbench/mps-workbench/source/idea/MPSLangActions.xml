@@ -520,8 +520,8 @@
       <reference ref="ShowFilePath"/>
       <action id="GoToLinkTarget" class="com.intellij.ide.actions.GoToLinkTargetAction"/>
       <separator/>
-      -->
       <reference ref="CompareTwoFiles"/>
+      -->
       <reference ref="CompareFileWithEditor"/>
       <!--
       <separator/>
@@ -622,8 +622,8 @@
       <reference ref="RunContextPopupGroup"/>
       <reference ref="VersionControlsGroup"/>
       <separator/>
-      -->
       <reference ref="CompareTwoFiles"/>
+      -->
     </group>
 
     <!--
