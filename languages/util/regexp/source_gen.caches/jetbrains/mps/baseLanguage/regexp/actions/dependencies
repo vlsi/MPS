@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.actions.regexps_node_factories" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.actions.QueriesGenerated" file="QueriesGenerated.java">

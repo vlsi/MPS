@@ -8,7 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.lang.behavior.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,28,0" name="jetbrains.mps.lang.behavior.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
       <unit at="38,42,43,9" name="jetbrains.mps.lang.behavior.actions.QueriesGenerated$1" />

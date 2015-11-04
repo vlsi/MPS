@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.actions.ConvertLinesToRectAndBack" />
     <classNode dependClassName="jetbrains.mps.samples.languagePatterns.Basic.actions.Converters" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.languagePatterns.Basic.actions.ConvertLinesToRectAndBack" file="ConvertLinesToRectAndBack.java">

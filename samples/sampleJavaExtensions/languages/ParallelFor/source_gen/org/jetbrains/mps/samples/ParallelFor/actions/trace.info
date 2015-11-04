@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="12,0,27,0" name="org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,28,0" name="org.jetbrains.mps.samples.ParallelFor.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
       <unit at="145,126,149,5" name="org.jetbrains.mps.samples.ParallelFor.actions.QueriesGenerated$5" />

@@ -10,7 +10,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.UUID" />
-    <classNode dependClassName="jetbrains.mps.actions.descriptor.AbstractActionAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguageInternal.editor.EditorAspectDescriptorImpl" />

@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="12,0,41,0" name="jetbrains.mps.lang.typesystem.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,42,0" name="jetbrains.mps.lang.typesystem.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
       <unit at="86,43,90,9" name="jetbrains.mps.lang.typesystem.actions.QueriesGenerated$2" />

@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.actions.ParallelLoopVariable_Factory" />
+    <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.actions.ParallelLoopVariable_Factory" file="ParallelLoopVariable_Factory.java">
