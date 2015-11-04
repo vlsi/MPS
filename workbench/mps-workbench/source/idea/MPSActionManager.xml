@@ -23,13 +23,6 @@
       <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
     </group>
 
-    <group id="EditorFix">
-      <!--We need this only cause platform requires this action, and NPE is thrown if
-                the action is not in its place (see MPS-2081 for further details) -->
-      <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
-      <add-to-group group-id="EditMenu" anchor="last"/>
-    </group>
-
     <group id="VcsMappingsFix">
       <!--fix MPS-2142-->
       <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>

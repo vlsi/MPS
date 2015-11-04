@@ -388,7 +388,9 @@
     <editorTabTitleProvider implementation="com.intellij.ide.scratch.ScratchFileServiceImpl$FilePresentation"/>
     <syntaxHighlighter factoryClass="com.intellij.ide.scratch.ScratchFileServiceImpl$Highlighter" order="first"/>
 
+    -->
     <scratch.rootType implementation="com.intellij.ide.scratch.ScratchRootType" />
+    <!--
     <scratch.rootType implementation="com.intellij.execution.console.HistoryRootType"/>
     <scratch.rootType implementation="com.intellij.execution.console.IdeConsoleRootType"/>
 
@@ -1006,9 +1008,9 @@
     -->
     <!-- MPS Patch-->
     <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
-    <!--
 
     <applicationService serviceImplementation="com.intellij.openapi.editor.richcopy.settings.RichCopySettings"/>
+    <!--
     <copyPastePostProcessor implementation="com.intellij.openapi.editor.richcopy.TextWithMarkupProcessor"/>
     &lt;!&ndash;the following binding uses 'first' order to make sure it captures raw text before any other processor modifies it &ndash;&gt;
     <copyPastePreProcessor implementation="com.intellij.openapi.editor.richcopy.TextWithMarkupProcessor$RawTextSetter" order="first" id="richcopy"/>

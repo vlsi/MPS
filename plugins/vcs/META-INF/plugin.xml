@@ -83,7 +83,7 @@
       <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
               text="Show In File System View"/>
       <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
-      <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditorFix"/>
+      <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditMenu"/>
     </group>
     <action id="LocalHistory.ShowHistory" class="jetbrains.mps.history.integration.ui.actions.ShowMpsHistoryAction">
       <add-to-group group-id="LocalHistory" anchor="before" relative-to-action="LocalHistory.PutLabel"/>
