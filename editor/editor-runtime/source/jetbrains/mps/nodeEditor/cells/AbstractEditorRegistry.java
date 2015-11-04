@@ -18,26 +18,20 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.util.BreadthConceptHierarchyIterator;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -54,18 +48,18 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   protected AbstractEditorRegistry(EditorCellFactory cellFactory) {
     myCellFactory = cellFactory;
   }
-  T getEditor(ConceptDescriptor conceptDescriptor) {
-    return getEditor(conceptDescriptor, new HashSet<Class<? extends BaseConceptEditor>>());
+  T getEditor(SAbstractConcept concept) {
+    return getEditor(concept, new HashSet<Class<? extends BaseConceptEditor>>());
   }
-  T getEditor(ConceptDescriptor conceptDescriptor, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
-    Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
-    Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
-    queue.add(conceptDescriptor);
-    processedConcepts.add(conceptDescriptor.getId());
+  T getEditor(SAbstractConcept concept, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
+    Set<SAbstractConcept> processedConcepts = new HashSet<SAbstractConcept>();
+    BreadthConceptHierarchyIterator ancestorsIterable = new BreadthConceptHierarchyIterator(concept);
     List<T> resultList = new ArrayList<T>();
-    while (!queue.isEmpty()) {
-      ConceptDescriptor nextConcept = queue.remove();
-      T conceptEditor = getEditorForConcept(nextConcept, excludedEditors);
+    for (SAbstractConcept next : ancestorsIterable) {
+      if (processedConcepts.contains(next)) {
+        continue;
+      }
+      T conceptEditor = getEditorForConcept(next, excludedEditors);
       if (conceptEditor != null) {
         if (isEnoughForCurrentContext(conceptEditor)) {
           return conceptEditor;
@@ -73,13 +67,7 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
           resultList.add(conceptEditor);
         }
       }
-      for (SConceptId ancestorId : nextConcept.getParentsIds()) {
-        if (processedConcepts.contains(ancestorId)) {
-          continue;
-        }
-        processedConcepts.add(ancestorId);
-        queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorId));
-      }
+      processedConcepts.add(next);
     }
     if (resultList.isEmpty()) {
       return null;
@@ -89,8 +77,8 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
   }
 
 
-  private T getEditorForConcept(ConceptDescriptor conceptDescriptor, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
-    List<T> conceptEditors = collectApplicableEditors(conceptDescriptor);
+  private T getEditorForConcept(SAbstractConcept concept, @NotNull Collection<Class<? extends BaseConceptEditor>> excludedEditors) {
+    List<T> conceptEditors = collectApplicableEditors(concept);
     if (conceptEditors.isEmpty()) {
       return null;
     }
@@ -110,15 +98,15 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     return result;
   }
 
-  private List<T> collectApplicableEditors(ConceptDescriptor conceptDescriptor) {
+  private List<T> collectApplicableEditors(SAbstractConcept concept) {
     List<T> result = new ArrayList<T>();
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(conceptDescriptor.getConceptFqName()));
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(concept.getLanguage());
     if (languageRuntime == null) {
       return result;
     }
     EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
     if (aspectDescriptor != null) {
-      for (T conceptEditor : getEditors(aspectDescriptor, conceptDescriptor)) {
+      for (T conceptEditor : getEditors(aspectDescriptor, concept)) {
         if (isApplicableInCurrentContext(conceptEditor)) {
           result.add(conceptEditor);
         }
@@ -183,5 +171,5 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     return myAncestorEditorComparator;
   }
 
-  protected abstract Collection<T> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor);
+  protected abstract Collection<T> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept);
 }

@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
+import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -26,10 +27,12 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -96,9 +99,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends BaseConceptEditor>> excludedEditors) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
     boolean isPushDefaultEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT);
-    ConceptEditor editor = isPushDefaultEditorHintInContext ? null : myConceptEditorRegistry.getEditor(conceptDescriptor, excludedEditors);
+    SConcept concept = node.getConcept();
+    ConceptEditor editor = isPushDefaultEditorHintInContext ? null : myConceptEditorRegistry.getEditor(concept, excludedEditors);
     EditorCell result = null;
     if (editor != null) {
       try {
@@ -114,8 +117,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     if (result == null) {
-      editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() :
-          AbstractDefaultEditor.createEditor(node, conceptDescriptor);
+      //todo get rid of concept descriptor
+      editor = concept instanceof SInterfaceConcept || concept.isAbstract() ? new DefaultInterfaceEditor() :
+          AbstractDefaultEditor.createEditor(node, ConceptRegistry.getInstance().getConceptDescriptor(concept));
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
@@ -183,8 +187,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private ConceptEditorComponent loadEditorComponent(SNode node, String editorComponentId) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
-    ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(conceptDescriptor);
+    ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(node.getConcept());
     if (conceptEditorComponent != null) {
       return conceptEditorComponent;
     }
@@ -198,9 +201,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     @Override
-    protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
+    protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
       try {
-        return aspectDescriptor.getEditors(conceptDescriptor);
+        if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
+          return ((EditorAspectDescriptorBase) aspectDescriptor).getEditors(concept);
+        }
+        return aspectDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
       } catch (RuntimeException e) {
         LOG.error("Exception while loading editor", e);
         return new ArrayList<ConceptEditor>();
@@ -217,9 +223,12 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     @Override
-    protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, ConceptDescriptor conceptDescriptor) {
+    protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
       try {
-        return aspectDescriptor.getEditorComponents(conceptDescriptor, myEditorComponentId);
+        if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
+          return ((EditorAspectDescriptorBase) aspectDescriptor).getEditorComponents(concept, myEditorComponentId);
+        }
+        return aspectDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), myEditorComponentId);
       } catch (RuntimeException e) {
         LOG.error("Exception while loading editor component", e);
         return new ArrayList<ConceptEditorComponent>();
