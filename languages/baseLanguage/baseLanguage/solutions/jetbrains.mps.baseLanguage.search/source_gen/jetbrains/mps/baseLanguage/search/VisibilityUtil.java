@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -91,18 +90,6 @@ public final class VisibilityUtil {
       }
     }
     return false;
-  }
-  public static boolean isMember(SNode classifier, @NotNull SNode member) {
-    // hiding is not checked here 
-    return new ClassifierAndSuperClassifiersScope(classifier).getClassifierNodes().contains(SNodeOperations.getNodeAncestor(member, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false));
-  }
-  public static boolean isLocalMember(@NotNull SNode context, @NotNull final SNode member) {
-    // hiding and shadowing are not checked here 
-    return ListSequence.fromList(SNodeOperations.getNodeAncestors(context, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode cls) {
-        return isMember(cls, member);
-      }
-    });
   }
   private static SNode _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

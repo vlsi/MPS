@@ -15,28 +15,11 @@
  */
 package jetbrains.mps.ide.devkit.help;
 
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.DocumentationHelper;
-
-import java.util.Map;
 
 public class ShowUserGuideAction extends ShowSiteAction {
   public ShowUserGuideAction() {
     super("User Guide");
-
-    getTemplatePresentation().setIcon(Icons.READ_HELP_ICON);
-  }
-
-  @Override
-  protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
-    super.doUpdate(e, _params);
-
-    if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
-      e.getPresentation().setIcon(Icons.READ_HELP_ICON);
-    } else {
-      e.getPresentation().setIcon(null);
-    }
   }
 
   protected String getSiteURL() {

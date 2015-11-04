@@ -301,6 +301,10 @@
       <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
         <child id="1500819558095907806" name="modules" index="2G$12L" />
       </concept>
+      <concept id="781140262677906392" name="jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany" flags="ng" index="IuM$Q">
+        <child id="781140262677906402" name="url" index="IuM$c" />
+        <child id="781140262677906401" name="name" index="IuM$f" />
+      </concept>
       <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC">
         <property id="3335207478148060173" name="customContent" index="3PtdQa" />
         <reference id="1265949165890536425" name="module" index="L2wRA" />
@@ -354,12 +358,19 @@
         <child id="6108265972537372847" name="shortName" index="2EtHGA" />
         <child id="6108265972537372848" name="fullName" index="2EtHGT" />
         <child id="8795525031433238889" name="textColor" index="HFo83" />
+        <child id="781140262677914381" name="company" index="IuKBz" />
+        <child id="781140262677906594" name="whatsnew" index="IuMTc" />
         <child id="781140262677761022" name="icon128" index="IvI4g" />
+        <child id="781140262677761833" name="plugins" index="IvIn7" />
         <child id="8877724874822185910" name="feedbackUrl" index="2Mmf0a" />
         <child id="3497141547781549827" name="codename" index="2OjNyQ" />
         <child id="1462305029084462472" name="buildDate" index="R$TG_" />
         <child id="772379520210716142" name="welcomeLogo" index="3vi$VU" />
         <child id="437343344536486297" name="help" index="1xUO3H" />
+        <child id="5894421362118014164" name="thirdparty" index="3$iogF" />
+        <child id="5894421362117677753" name="keymap" index="3$GE96" />
+        <child id="5894421362117323157" name="support" index="3$HL_E" />
+        <child id="5894421362116952242" name="documentation" index="3$Ir1d" />
       </concept>
       <concept id="7753544965996489991" name="jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite" flags="ng" index="1zDKOm">
         <child id="6108265972537335225" name="updateUrl" index="2EtnoK" />
@@ -374,6 +385,10 @@
       <concept id="1692280246134781712" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources" flags="ng" index="3$exzU">
         <property id="7918752904808503599" name="stripImplementation" index="2IOhrw" />
         <reference id="1692280246134781713" name="module" index="3$exzV" />
+      </concept>
+      <concept id="5894421362117677519" name="jetbrains.mps.build.mps.structure.BuildMps_BrandingKeymap" flags="ng" index="3$GE4K">
+        <child id="5894421362117677528" name="mac" index="3$GE4B" />
+        <child id="5894421362117677523" name="win" index="3$GE4G" />
       </concept>
       <concept id="4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" flags="ng" index="1BurEX">
         <child id="2798275735916344703" name="customLocation" index="2gdwQb" />
@@ -16645,6 +16660,55 @@
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
       <property role="2OjLBN" value="true" />
+      <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
+        <node concept="3_J27D" id="57dcfYPs$xT" role="IuM$f">
+          <node concept="3Mxwew" id="57dcfYPs$xY" role="3MwsjC">
+            <property role="3MwjfP" value="JetBrains s.r.o." />
+          </node>
+        </node>
+        <node concept="3_J27D" id="57dcfYPs$xU" role="IuM$c">
+          <node concept="3Mxwew" id="57dcfYPs$y0" role="3MwsjC">
+            <property role="3MwjfP" value="https://www.jetbrains.com/?fromIDE" />
+          </node>
+        </node>
+      </node>
+      <node concept="NbPM2" id="57dcfYPuvRk" role="IvIn7">
+        <node concept="3Mxwew" id="57dcfYPuvRj" role="3MwsjC">
+          <property role="3MwjfP" value="http://plugins.jetbrains.com/" />
+        </node>
+      </node>
+      <node concept="NbPM2" id="57dcfYPuvRo" role="3$Ir1d">
+        <node concept="3Mxwew" id="57dcfYPuvRn" role="3MwsjC">
+          <property role="3MwjfP" value="https://www.jetbrains.com/mps/documentation" />
+        </node>
+      </node>
+      <node concept="NbPM2" id="57dcfYPvJMC" role="3$HL_E">
+        <node concept="3Mxwew" id="57dcfYPvJMB" role="3MwsjC">
+          <property role="3MwjfP" value="https://www.jetbrains.com/support/mps/index.html" />
+        </node>
+      </node>
+      <node concept="NbPM2" id="57dcfYPvOHW" role="IuMTc">
+        <node concept="3Mxwew" id="57dcfYPvOHV" role="3MwsjC">
+          <property role="3MwjfP" value="https://www.jetbrains.com/mps/whatsnew/index.html" />
+        </node>
+      </node>
+      <node concept="3$GE4K" id="57dcfYPx6EW" role="3$GE96">
+        <node concept="3_J27D" id="57dcfYPx6EX" role="3$GE4B">
+          <node concept="3Mxwew" id="57dcfYPx6F4" role="3MwsjC">
+            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD33/Default+Keymap+Reference" />
+          </node>
+        </node>
+        <node concept="3_J27D" id="57dcfYPx6EY" role="3$GE4G">
+          <node concept="3Mxwew" id="57dcfYPx6F2" role="3MwsjC">
+            <property role="3MwjfP" value="https://confluence.jetbrains.com/display/MPSD33/Default+Keymap+Reference" />
+          </node>
+        </node>
+      </node>
+      <node concept="NbPM2" id="57dcfYPyp3M" role="3$iogF">
+        <node concept="3Mxwew" id="57dcfYPyp3L" role="3MwsjC">
+          <property role="3MwjfP" value="http://www.jetbrains.org/" />
+        </node>
+      </node>
       <node concept="NbPM2" id="5VYK1npNzOH" role="27hAJg">
         <node concept="3Mxwew" id="5VYK1npNzOG" role="3MwsjC">
           <property role="3MwjfP" value="262" />
@@ -18255,7 +18319,7 @@
       </node>
       <node concept="1SiIV0" id="uyj83GeZDo" role="3bR37C">
         <node concept="3bR9La" id="uyj83GeZDp" role="1SiIV1">
-          <property role="3bR36h" value="false" />
+          <property role="3bR36h" value="true" />
           <ref role="3bR37D" node="uyj83GeNPj" resolve="jetbrains.mps.lang.smodel.query.runtime" />
         </node>
       </node>

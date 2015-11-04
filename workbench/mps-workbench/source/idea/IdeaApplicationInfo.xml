@@ -1,24 +1,35 @@
 <component>
   <version codename="MPS" major="3" minor="3" eap="true" update-channel="MPS33"/>
+  <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
+  <!--<install-over minbuild="" maxbuild="" version=""/>-->
   <logo url="/splash.png" textcolor="002387" progressColor="FDA916" progressY="262"/>
-  <about url="/mpsAbout.png"/>
+  <about url="/mpsAbout.png"/><!-- foreground="7A858F" copyrightForeground="7A858F" linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
   <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size12="/toolwindows/toolWindowProject.png" size128="/MPS_128.png" ico="MPS.ico"/>
-  <dialogs-image url="/dialogImage.png"/>
+  <dialogs-image url="/dialogImage.png"/><!--TODO: remove in 3.4-->
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
   <welcome-screen logo-url="/MPS_welcomeScreen.png"/>
+  <!--<editor background-url="/idea_logo_welcome.png"/>-->
 
-  <third-party url="http://www.jetbrains.org/"/>
-
-  <editor background-url="/idea_logo_welcome.png"/>
-
+  <plugins url="http://plugins.jetbrains.com/"/>
   <update-urls check="http://www.jetbrains.com/mps/update.xml"
                download="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page"/>
 
   <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
+  <documentation url="https://www.jetbrains.com/mps/documentation"/>
+  <support url="https://www.jetbrains.com/support/mps/index.html"/>
   <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System"
             release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
+  <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html"/>
+  <keymap win="https://confluence.jetbrains.com/display/MPSD33/Default+Keymap+Reference"
+          mac="https://confluence.jetbrains.com/display/MPSD33/Default+Keymap+Reference"/>
+  <third-party url="http://www.jetbrains.org/"/>
   <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
+
+  <!--<plugins-page category="VCS Integration" title="Select VCS Integration Plugins"/>-->
+  <!--<plugins-page title="Select Other Plugins"/>-->
+
+  <!--<statistics settings="https://www.jetbrains.com/idea/statistics/stat-assistant.xml" service="https://www.jetbrains.com/idea/statistics/index.jsp"/>-->
 </component>

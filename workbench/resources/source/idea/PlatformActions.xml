@@ -480,9 +480,7 @@
       <group id="HelpMenu" popup="true">
         <action id="GotoAction" class="com.intellij.ide.actions.GotoActionAction"/>
         <separator/>
-        <!-- MPS Patch
        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="AllIcons.Actions.Help"/>
-       -->
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <separator/>
@@ -492,11 +490,9 @@
         <action id="ShowLog" class="com.intellij.ide.actions.ShowLogAction"/>
         <separator/>
         <action id="OnlineDocAction" class="com.intellij.ide.actions.OnlineDocAction"/>
-        <!-- MPS Patch
         <action id="Help.KeymapReference" class="com.intellij.ide.actions.RefCardAction" icon="AllIcons.General.DefaultKeymap"/>
         <action id="Help.JetBrainsTV" class="com.intellij.ide.actions.JetBrainsTvAction"/>
         <separator/>
-        -->
         <action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>
         <action id="About" class="com.intellij.ide.actions.AboutAction"/>
       </group>
@@ -522,9 +518,9 @@
       <group id="MainToolBarSettings">
         <reference ref="ShowSettings"/>
       </group>
-      <!-- MPS Patch
       <separator/>
       <reference ref="HelpTopics"/>
+      <!-- MPS Patch
       <reference ref="SearchEverywhere"/>
       -->
     </group>
@@ -590,14 +586,10 @@
     </group>
 
     <group id="WelcomeScreen.Documentation">
-      <!--MPS Patch
       <reference ref="HelpTopics"/>
-      -->
       <reference ref="ShowTips"/>
-      <!--MPS Patch
       <reference ref="Help.JetBrainsTV"/>
       <reference ref="Help.KeymapReference"/>
-      -->
     </group>
 
     <group id="WelcomeScreen.Configure">

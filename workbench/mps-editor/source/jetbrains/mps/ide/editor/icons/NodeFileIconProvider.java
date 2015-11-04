@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ public class NodeFileIconProvider implements FileIconProvider, ApplicationCompon
       return new ModelComputeRunnable<Icon>(new Computable<Icon>(){
         @Override
         public Icon compute() {
-          SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
+          SModel descr = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(file.getParent()));
           if(descr == null) return null;
 
           for (SNode node : descr.getRootNodes()) {
