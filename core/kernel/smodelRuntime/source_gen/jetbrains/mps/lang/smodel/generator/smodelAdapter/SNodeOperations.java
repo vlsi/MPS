@@ -24,12 +24,6 @@ import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.scope.ErrorScope;
-import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -537,26 +531,16 @@ public class SNodeOperations {
   public static boolean isAttribute(SNode node) {
     return AttributeOperations.isAttribute(node);
   }
+
+  /**
+   * 
+   * @deprecated Resolves node in a global repository, avoid
+   */
+  @Deprecated
   public static SNode getNode(String modelUID, String nodeID) {
     return new SNodePointer(modelUID, nodeID).resolve(MPSModuleRepository.getInstance());
   }
-  /**
-   * use ModelConstraints.getScope() and ModelConstraints.getReferenceDescriptor()
-   */
-  @Deprecated
-  public static ISearchScope getReferentSearchScope(SNode referenceNode, String referenceRole, IOperationContext context) {
-    if (referenceNode == null) {
-      return null;
-    }
-    Scope scope = ModelConstraints.getReferenceDescriptor(referenceNode, referenceRole).getScope();
-    if (scope instanceof ErrorScope) {
-      return null;
-    }
-    if (scope instanceof ISearchScope.Adapter) {
-      return ((ISearchScope.Adapter) scope).getSearchScope();
-    }
-    return new ScopeAdapter(scope);
-  }
+
   public static SNode cast(SNode node, SAbstractConcept castTo) {
     if (node == null) {
       return null;
