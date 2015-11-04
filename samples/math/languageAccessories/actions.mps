@@ -16,8 +16,8 @@
     <import index="39kg" ref="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="r3rn" ref="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -29,6 +29,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -196,9 +197,16 @@
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620391345436" name="jetbrains.mps.lang.smodel.structure.ConceptShortDescriptionOperation" flags="ng" index="3neUYN" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -217,12 +225,6 @@
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -663,8 +665,8 @@
       <node concept="tYCnQ" id="6iLUnbAh3IF" role="_1QTJ">
         <ref role="uz4UX" to="tpee:fz3vP1J" resolve="Expression" />
         <node concept="CZtCh" id="6iLUnbAh3IG" role="uz6Si">
-          <node concept="3THzug" id="6iLUnbAh3JF" role="D02tZ">
-            <ref role="3qa414" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
+          <node concept="3bZ5Sz" id="1rQJladUnbX" role="D02tZ">
+            <ref role="3bZ5Sy" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
           </node>
           <node concept="CZKQA" id="6iLUnbAh3II" role="D04br">
             <node concept="3clFbS" id="6iLUnbAh3IJ" role="2VODD2">
@@ -672,14 +674,14 @@
                 <node concept="3cpWsn" id="6q8VsiEx_Ef" role="3cpWs9">
                   <property role="TrG5h" value="result" />
                   <node concept="_YKpA" id="6q8VsiEx_Eg" role="1tU5fm">
-                    <node concept="3THzug" id="6q8VsiEx_El" role="_ZDj9">
-                      <ref role="3qa414" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
+                    <node concept="3bZ5Sz" id="1rQJladUnpO" role="_ZDj9">
+                      <ref role="3bZ5Sy" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
                     </node>
                   </node>
                   <node concept="2ShNRf" id="6q8VsiEx_Ew" role="33vP2m">
                     <node concept="Tc6Ow" id="6q8VsiEx_Ex" role="2ShVmc">
-                      <node concept="3THzug" id="6q8VsiEx_Ey" role="HW$YZ">
-                        <ref role="3qa414" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
+                      <node concept="3bZ5Sz" id="1rQJladUnSn" role="HW$YZ">
+                        <ref role="3bZ5Sy" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
                       </node>
                     </node>
                   </node>
@@ -693,8 +695,8 @@
                   <node concept="3clFbJ" id="6q8VsiEx_F0" role="3cqZAp">
                     <node concept="3fqX7Q" id="6q8VsiEx_Fi" role="3clFbw">
                       <node concept="2OqwBi" id="2wdLO7KfQPY" role="3fr31v">
-                        <node concept="3TrcHB" id="2wdLO7KfQPZ" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+                        <node concept="liA8E" id="1rQJladUr3x" role="2OqNvi">
+                          <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                         </node>
                         <node concept="2GrUjf" id="2wdLO7KfQQ0" role="2Oq$k0">
                           <ref role="2Gs0qQ" node="6q8VsiEx_EF" resolve="a" />
@@ -718,8 +720,8 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="6q8VsiEx_EO" role="2GsD0m">
-                  <node concept="3TUQnm" id="6q8VsiEx_EP" role="2Oq$k0">
-                    <ref role="3TV0OU" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
+                  <node concept="35c_gC" id="1rQJladUo2h" role="2Oq$k0">
+                    <ref role="35c_gD" to="39kg:6iLUnbAhUPX" resolve="MatrixExponentialOperation" />
                   </node>
                   <node concept="LSoRf" id="6q8VsiEx_EQ" role="2OqNvi">
                     <node concept="1Q6Npb" id="6q8VsiEx_ER" role="1iTxcG" />
@@ -772,9 +774,7 @@
               <node concept="3clFbF" id="6iLUnbAh3Ko" role="3cqZAp">
                 <node concept="2OqwBi" id="6iLUnbAh3Kq" role="3clFbG">
                   <node concept="uNquD" id="6iLUnbAh3Kp" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="6iLUnbAh3Ku" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:gOOYnlO" resolve="shortDescription" />
-                  </node>
+                  <node concept="3neUYN" id="1rQJladUrf2" role="2OqNvi" />
                 </node>
               </node>
             </node>
