@@ -18319,7 +18319,7 @@
       </node>
       <node concept="1SiIV0" id="uyj83GeZDo" role="3bR37C">
         <node concept="3bR9La" id="uyj83GeZDp" role="1SiIV1">
-          <property role="3bR36h" value="false" />
+          <property role="3bR36h" value="true" />
           <ref role="3bR37D" node="uyj83GeNPj" resolve="jetbrains.mps.lang.smodel.query.runtime" />
         </node>
       </node>
