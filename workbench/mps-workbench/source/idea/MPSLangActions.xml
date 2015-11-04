@@ -1,7 +1,7 @@
 <component>
   <actions>
-    <!--
     <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
+    <!--
     <action id="AddToFavoritesPopup" class="com.intellij.ide.favoritesTreeView.actions.AddToFavoritesPopupAction"/>
     <group id="AddToFavorites" class="com.intellij.ide.favoritesTreeView.actions.AddToFavoritesActionGroup" popup="true"/>
     <group id="AddAllToFavorites" class="com.intellij.ide.favoritesTreeView.actions.AddAllToFavoritesActionGroup" popup="true"/>
@@ -383,14 +383,18 @@
     </group>
 
 
+    -->
     <group id="NewGroup" popup="true">
+      <!--
       <action id="NewFile" class="com.intellij.ide.actions.CreateFileAction"/>
       <action id="NewDir" class="com.intellij.ide.actions.CreateDirectoryOrPackageAction"/>
       <separator/>
       <action id="NewFromTemplate" class="com.intellij.ide.fileTemplates.actions.CreateFromTemplateGroup"/>
+    -->
     </group>
 
     <group id="WeighingNewGroup" class="com.intellij.ide.actions.WeighingNewActionGroup"/>
+    <!--
 
     &lt;!&ndash; Toolbar &ndash;&gt;
     &lt;!&ndash;
