@@ -90,6 +90,9 @@ public class TabbedEditor extends BaseNodeEditor {
       myProject.getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
+          if (myDisposed) {
+            return;
+          }
           installTabsComponent();
           if (node != null) {
             myTabsComponent.updateTabs();
@@ -99,7 +102,9 @@ public class TabbedEditor extends BaseNodeEditor {
       });
     }
   };
+
   private MPSNodeVirtualFile myVirtualFile;
+  private boolean myDisposed;
 
   public TabbedEditor(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, @NotNull Project mpsProject) {
     super(mpsProject);
@@ -182,6 +187,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   @Override
   public void dispose() {
+    myDisposed = true;
     myFileStatusListener.detach();
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
 
