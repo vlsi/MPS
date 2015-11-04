@@ -32,9 +32,12 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -44,13 +47,35 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.Component;
 
+// FIXME this class is in use by mbeddr, hence we can't just drop deprecated code.
 public class MPSEditorOpener {
-  private final Project myProject;
+  private final MPSProject myProject;
 
+  /**
+   * @deprecated use {@link #MPSEditorOpener(MPSProject)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public MPSEditorOpener(@NotNull Project project) {
-    myProject = project;
+    this(project.getComponent(MPSProject.class));
   }
 
+  public MPSEditorOpener(@NotNull MPSProject mpsProject) {
+    myProject = mpsProject;
+  }
+
+  /*package*/ Editor createEditorFor(SNode node) {
+    // FIXME shall refactor EditorOpenHandler API (once I understand why there's open() and why it's not in use anywhere but here
+    return createEditorFor(new ProjectOperationContext(myProject), node);
+  }
+
+  /**
+   * @deprecated <code>IOperationContext</code> has been deprecated. There's no API to replace the call,
+   * generally, {@link jetbrains.mps.openapi.navigation.NavigationSupport#openNode(jetbrains.mps.project.Project, SNode, boolean, boolean)}
+   * should be sufficient.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Editor createEditorFor(IOperationContext operationContext, SNode node) {
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
       if (handler.canOpen(operationContext, node)) {
@@ -62,24 +87,33 @@ public class MPSEditorOpener {
     return new NodeEditor(operationContext, node);
   }
 
-  /*
+  /**
    * Requires: model write, EDT.
+   * @deprecated <code>IOperationContext</code> has been deprecated and is ignored. Use {@link #openNode(SNode, boolean, boolean)} instead
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    ThreadUtils.assertEDT();
-    final jetbrains.mps.project.Project mpsProject = context.getProject();
-    mpsProject.getModelAccess().checkWriteAccess();
-
-    mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
-    /* TODO use SNodeReference instead of SNode */
-    return doOpenNode(node, context, focus, select);
+    return openNode(node, focus, select);
   }
 
-  private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
+  /**
+   * Requires: model write, EDT.
+   */
+  public Editor openNode(@NotNull final SNode node, final boolean focus, final boolean select) {
+    ThreadUtils.assertEDT();
+    myProject.getModelAccess().checkWriteAccess();
+
+    myProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
+    /* TODO use SNodeReference instead of SNode */
+    return doOpenNode(node, focus, select);
+  }
+
+  private Editor doOpenNode(final SNode node, final boolean focus, boolean select) {
     assert node.getModel() != null : "You can't edit unregistered node";
 
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return null;
-    final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
+    final Editor nodeEditor = openEditor(node.getContainingRoot(), false);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor)) {
@@ -113,9 +147,10 @@ public class MPSEditorOpener {
     return nodeCell != null && nodeCell != inspector.getRootCell();
   }
 
-  private Editor openEditor(final SNode root, IOperationContext context, boolean focus) {
+  private Editor openEditor(final SNode root, boolean focus) {
     SNode baseNode = null;
 
+    IOperationContext context = new ProjectOperationContext(myProject); // FIXME compatibility with EditorOpenHandler
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
       baseNode = handler.getBaseNode(context, root);
       if (baseNode != null) break;
@@ -129,7 +164,7 @@ public class MPSEditorOpener {
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     checkVirtualFileBaseNode(baseNode, file); // assertion for MPS-9753
 
-    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    FileEditorManager editorManager = FileEditorManager.getInstance(myProject.getProject());
     file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
 
     FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
@@ -160,7 +195,7 @@ public class MPSEditorOpener {
   //----------util
   private void focus(Editor nodeEditor, boolean cellInInspector) {
     if (!cellInInspector) {
-      final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
+      final ToolWindowManager manager = ToolWindowManager.getInstance(myProject.getProject());
       manager.activateEditorComponent();
       Component toBeFocused;
       // Workaround for: http://youtrack.jetbrains.net/issue/MPS-7882
@@ -178,7 +213,7 @@ public class MPSEditorOpener {
   }
 
   private InspectorTool getInspector() {
-    return myProject.getComponent(InspectorTool.class);
+    return myProject.getProject().getComponent(InspectorTool.class);
   }
 
   private jetbrains.mps.openapi.editor.EditorComponent getInspectorComponent() {
@@ -190,7 +225,7 @@ public class MPSEditorOpener {
   }
 
   private IdeFocusManager getFocusManager() {
-    return IdeFocusManager.getInstance(myProject);
+    return IdeFocusManager.getInstance(myProject.getProject());
   }
 
   private void selectNodeInComponent(SNode node, jetbrains.mps.openapi.editor.EditorComponent component) {

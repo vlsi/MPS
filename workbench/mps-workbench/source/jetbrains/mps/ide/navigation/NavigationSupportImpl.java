@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,11 @@ package jetbrains.mps.ide.navigation;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -51,25 +50,25 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
 
   @Override
   public Editor openNode(@NotNull Project project, @NotNull SNode node, boolean focus, boolean select) {
-    return new MPSEditorOpener(ProjectHelper.toIdeaProject(project)).openNode(node, new ProjectOperationContext(project), focus, select);
+    // cast to MPSProject is ok as we are inside IDEA-aware ApplicationComponent
+    return new MPSEditorOpener((MPSProject) project).openNode(node, focus, select);
   }
 
   @Override
   public void selectInTree(@NotNull Project project, @NotNull SNode node, boolean focus) {
-    ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
+    ProjectPane projectPane = ProjectPane.getInstance(project);
     projectPane.selectNode(node, focus);
   }
 
   @Override
   public void selectInTree(@NotNull Project project, @NotNull SModel model, boolean focus) {
-    ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
+    ProjectPane projectPane = ProjectPane.getInstance(project);
     projectPane.selectModel(model, focus);
   }
 
   @Override
   public void selectInTree(@NotNull Project project, @NotNull SModule module, boolean focus) {
-    ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
-    // TODO SModule cast
+    ProjectPane projectPane = ProjectPane.getInstance(project);
     projectPane.selectModule(module, focus);
   }
 }
