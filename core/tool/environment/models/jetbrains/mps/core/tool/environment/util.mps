@@ -3693,8 +3693,8 @@
   <node concept="312cEu" id="2doG_VG59Hc">
     <property role="TrG5h" value="FileMPSProject" />
     <node concept="3Tm1VV" id="2doG_VG59Hd" role="1B3o_S" />
-    <node concept="3uibUv" id="2doG_VG59He" role="1zkMxy">
-      <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+    <node concept="3uibUv" id="3lw7SQDAwyY" role="1zkMxy">
+      <ref role="3uigEE" to="z1c3:~ProjectBase" resolve="ProjectBase" />
     </node>
     <node concept="Wx3nA" id="2doG_VG59Hf" role="jymVt">
       <property role="TrG5h" value="LOG" />
@@ -3727,7 +3727,20 @@
       <node concept="3Tm1VV" id="2doG_VG59Hs" role="1B3o_S" />
       <node concept="3clFbS" id="2doG_VG59Ht" role="3clF47">
         <node concept="XkiVB" id="2doG_VG59Hu" role="3cqZAp">
-          <ref role="37wK5l" to="z1c3:~Project.&lt;init&gt;()" resolve="Project" />
+          <ref role="37wK5l" to="z1c3:~ProjectBase.&lt;init&gt;(jetbrains.mps.project.structure.project.ProjectDescriptor)" resolve="ProjectBase" />
+          <node concept="2ShNRf" id="3lw7SQDAxaE" role="37wK5m">
+            <node concept="1pGfFk" id="3lw7SQDABbM" role="2ShVmc">
+              <ref role="37wK5l" to="y8s3:~ProjectDescriptor.&lt;init&gt;(java.lang.String)" resolve="ProjectDescriptor" />
+              <node concept="2OqwBi" id="3lw7SQDABex" role="37wK5m">
+                <node concept="37vLTw" id="3lw7SQDABcI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2doG_VG59Hy" resolve="file" />
+                </node>
+                <node concept="liA8E" id="3lw7SQDABhf" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3clFbF" id="15VbAzMFivq" role="3cqZAp">
           <node concept="37vLTI" id="15VbAzMFixb" role="3clFbG">
@@ -3766,21 +3779,10 @@
         <ref role="3uigEE" to="wyt6:~String" resolve="String" />
       </node>
       <node concept="3clFbS" id="2doG_VG59HB" role="3clF47">
-        <node concept="3cpWs8" id="5F3eem4G8AP" role="3cqZAp">
-          <node concept="3cpWsn" id="5F3eem4G8AQ" role="3cpWs9">
-            <property role="TrG5h" value="projectFile" />
-            <node concept="3uibUv" id="5F3eem4G8AO" role="1tU5fm">
-              <ref role="3uigEE" to="guwi:~File" resolve="File" />
-            </node>
-            <node concept="1rXfSq" id="5F3eem4G8AR" role="33vP2m">
-              <ref role="37wK5l" node="15VbAzMFx6R" resolve="getProjectFile" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="2doG_VG59HC" role="3cqZAp">
           <node concept="2OqwBi" id="2doG_VG59HD" role="3clFbG">
-            <node concept="37vLTw" id="5F3eem4G8AS" role="2Oq$k0">
-              <ref role="3cqZAo" node="5F3eem4G8AQ" resolve="projectFile" />
+            <node concept="37vLTw" id="3lw7SQDAwZ9" role="2Oq$k0">
+              <ref role="3cqZAo" node="15VbAzMFhGt" resolve="myProjectFile" />
             </node>
             <node concept="liA8E" id="2doG_VG59HF" role="2OqNvi">
               <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
@@ -3790,6 +3792,9 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_p6qJ" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="3lw7SQDAx3c" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="1RTSjGsudyR" role="jymVt" />
@@ -3892,7 +3897,7 @@
       <node concept="3clFbS" id="2doG_VG59Ld" role="3clF47">
         <node concept="3clFbF" id="15VbAzMFtBY" role="3cqZAp">
           <node concept="1rXfSq" id="15VbAzMFtBX" role="3clFbG">
-            <ref role="37wK5l" to="z1c3:~Project.loadDescriptor(jetbrains.mps.project.ProjectDataSource):void" resolve="loadDescriptor" />
+            <ref role="37wK5l" to="z1c3:~ProjectBase.loadDescriptor(jetbrains.mps.project.ProjectDataSource):void" resolve="loadDescriptor" />
             <node concept="2ShNRf" id="15VbAzMFtEp" role="37wK5m">
               <node concept="1pGfFk" id="15VbAzMFu6p" role="2ShVmc">
                 <ref role="37wK5l" to="z1c3:~ElementProjectDataSource.&lt;init&gt;(org.jdom.Element,java.io.File)" resolve="ElementProjectDataSource" />
@@ -3908,7 +3913,7 @@
         </node>
         <node concept="3clFbF" id="15VbAzMFufQ" role="3cqZAp">
           <node concept="1rXfSq" id="15VbAzMFuiE" role="3clFbG">
-            <ref role="37wK5l" to="z1c3:~Project.projectOpened():void" resolve="projectOpened" />
+            <ref role="37wK5l" to="z1c3:~ProjectBase.projectOpened():void" resolve="projectOpened" />
           </node>
         </node>
       </node>
@@ -3923,7 +3928,7 @@
       <node concept="3clFbS" id="15VbAzMFwbI" role="3clF47">
         <node concept="3clFbF" id="15VbAzMFwqq" role="3cqZAp">
           <node concept="1rXfSq" id="15VbAzMFwqp" role="3clFbG">
-            <ref role="37wK5l" to="z1c3:~Project.projectClosed():void" resolve="projectClosed" />
+            <ref role="37wK5l" to="z1c3:~ProjectBase.projectClosed():void" resolve="projectClosed" />
           </node>
         </node>
         <node concept="3clFbF" id="15VbAzMFwtl" role="3cqZAp">
@@ -3943,7 +3948,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getProjectFile" />
       <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
+      <property role="DiZV1" value="true" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="15VbAzMFx6U" role="3clF47">
         <node concept="3cpWs6" id="15VbAzMFxmX" role="3cqZAp">

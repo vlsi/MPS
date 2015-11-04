@@ -36,7 +36,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
@@ -63,6 +62,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private static FileSystem ourFileSystem = FileSystem.getInstance();
 
+  @SuppressWarnings("UnusedParameters")
   public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
     super(project);
   }
@@ -146,15 +146,14 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        readModules();
+        loadModules();
       }
     });
   }
 
   @Nullable
   public String getFolderFor(@NotNull SModule module) {
-    SModuleReference reference = module.getModuleReference();
-    ModulePath modulePath = getPath(reference);
+    ModulePath modulePath = getPath(module);
     if (modulePath != null) {
       return modulePath.getVirtualFolder();
     } else {
@@ -164,8 +163,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   public void setFolderFor(@NotNull SModule module, String newFolder) {
-    SModuleReference reference = module.getModuleReference();
-    ModulePath modulePath = getPath(reference);
+    ModulePath modulePath = getPath(module);
     if (modulePath != null) {
       modulePath.setVirtualFolder(newFolder);
     } else {

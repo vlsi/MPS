@@ -2327,14 +2327,9 @@
               <ref role="3cqZAo" node="3WcIkZau4C3" resolve="project" />
             </node>
             <node concept="liA8E" id="3WcIkZau4BI" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.addModule(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addModule" />
-              <node concept="2OqwBi" id="4lzrZLcnGS0" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTxom" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3WcIkZau4AR" resolve="module" />
-                </node>
-                <node concept="liA8E" id="4lzrZLcnGS4" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                </node>
+              <ref role="37wK5l" to="z1c3:~IProject.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
+              <node concept="37vLTw" id="3GM_nagTxom" role="37wK5m">
+                <ref role="3cqZAo" node="3WcIkZau4AR" resolve="module" />
               </node>
             </node>
           </node>

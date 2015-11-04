@@ -102,7 +102,7 @@ public class DeleteModuleHelper {
 
     //remove from project
     if (project.isProjectModule(module)) {
-      project.removeModule(module.getModuleReference());
+      project.removeModule(module);
       ((StandaloneMPSProject) project).update();
       MPSModuleRepository.getInstance().unregisterModule(module, project);
       project.save();

@@ -10976,18 +10976,13 @@
                         <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
                       </node>
                       <node concept="liA8E" id="7$e6lgA3Boh" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.addModule(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addModule" />
-                        <node concept="2OqwBi" id="7$e6lgA3Boi" role="37wK5m">
-                          <node concept="2OqwBi" id="256tImPkK$P" role="2Oq$k0">
-                            <node concept="liA8E" id="256tImPkK$Q" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTuJ2" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7$e6lgA3BmF" resolve="descriptor" />
-                            </node>
+                        <ref role="37wK5l" to="z1c3:~IProject.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
+                        <node concept="2OqwBi" id="256tImPkK$P" role="37wK5m">
+                          <node concept="liA8E" id="256tImPkK$Q" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                           </node>
-                          <node concept="liA8E" id="7$e6lgA3Bok" role="2OqNvi">
-                            <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                          <node concept="37vLTw" id="3GM_nagTuJ2" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7$e6lgA3BmF" resolve="descriptor" />
                           </node>
                         </node>
                       </node>

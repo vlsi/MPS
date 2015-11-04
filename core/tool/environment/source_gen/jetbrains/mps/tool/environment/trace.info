@@ -597,7 +597,7 @@
       <node id="6450649963068211650" at="18,108,19,24" concept="3" />
       <node id="6450649963068211892" at="19,24,20,36" concept="3" />
       <node id="6450649963068964720" at="26,72,27,88" concept="8" />
-      <node id="6450649963068964725" at="27,88,28,59" concept="3" />
+      <node id="6450649963068964725" at="27,88,28,38" concept="3" />
       <node id="6450649963068964735" at="31,7,32,21" concept="9" />
       <node id="6450649963068209186" at="18,0,22,0" concept="2" trace="ProjectModulesFiller#(Ljetbrains/mps/project/Project;Ljava/lang/Iterable;)V" />
       <node id="6450649963068964716" at="25,25,29,9" concept="5" />
@@ -605,7 +605,7 @@
       <node id="6450649963068964706" at="23,25,31,7" concept="3" />
       <node id="6450649963068211075" at="23,0,34,0" concept="7" trace="load#()Ljetbrains/mps/project/Project;" />
       <scope id="6450649963068209189" at="18,108,20,36" />
-      <scope id="6450649963068964718" at="26,72,28,59">
+      <scope id="6450649963068964718" at="26,72,28,38">
         <var name="module" id="6450649963068964719" />
       </scope>
       <scope id="6450649963068209186" at="18,0,22,0">

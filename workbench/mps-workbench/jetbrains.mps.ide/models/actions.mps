@@ -4321,14 +4321,9 @@
               </node>
             </node>
             <node concept="liA8E" id="3WcIkZatvg5" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.removeModule(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="removeModule" />
-              <node concept="2OqwBi" id="4lzrZLcnGSR" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagT_g9" role="2Oq$k0">
-                  <ref role="3cqZAo" node="hGARHPh" resolve="module" />
-                </node>
-                <node concept="liA8E" id="4lzrZLcnGSV" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                </node>
+              <ref role="37wK5l" to="z1c3:~ProjectBase.removeModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="removeModule" />
+              <node concept="37vLTw" id="3GM_nagT_g9" role="37wK5m">
+                <ref role="3cqZAo" node="hGARHPh" resolve="module" />
               </node>
             </node>
           </node>
@@ -7127,14 +7122,9 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="4lzrZLcnoh3" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.addModule(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addModule" />
-                  <node concept="2OqwBi" id="4lzrZLcnoh5" role="37wK5m">
-                    <node concept="2GrUjf" id="4lzrZLcnoh4" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="i3M$gJ2" resolve="module" />
-                    </node>
-                    <node concept="liA8E" id="4lzrZLcnosr" role="2OqNvi">
-                      <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                    </node>
+                  <ref role="37wK5l" to="z1c3:~ProjectBase.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
+                  <node concept="2GrUjf" id="4lzrZLcnoh4" role="37wK5m">
+                    <ref role="2Gs0qQ" node="i3M$gJ2" resolve="module" />
                   </node>
                 </node>
               </node>
@@ -7502,7 +7492,7 @@
                       <node concept="3clFbF" id="36tV70ZqjCE" role="3cqZAp">
                         <node concept="2YIFZM" id="36tV70ZqjCF" role="3clFbG">
                           <ref role="1Pybhc" to="bmn6:~DeleteModuleHelper" resolve="DeleteModuleHelper" />
-                          <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.deleteModule(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.module.SModule,boolean,boolean):void" resolve="deleteModule" />
+                          <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.deleteModule(jetbrains.mps.project.MPSProject,org.jetbrains.mps.openapi.module.SModule,boolean,boolean):void" resolve="deleteModule" />
                           <node concept="2OqwBi" id="36tV70ZqjCG" role="37wK5m">
                             <node concept="2WthIp" id="36tV70ZqjCH" role="2Oq$k0" />
                             <node concept="1DTwFV" id="36tV70ZqjCI" role="2OqNvi">

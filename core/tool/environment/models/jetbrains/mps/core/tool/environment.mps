@@ -5722,14 +5722,9 @@
                                   <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
                                 </node>
                                 <node concept="liA8E" id="5A5jZrz7bYr" role="2OqNvi">
-                                  <ref role="37wK5l" to="z1c3:~Project.addModule(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addModule" />
-                                  <node concept="2OqwBi" id="5A5jZrz7bYy" role="37wK5m">
-                                    <node concept="37vLTw" id="5A5jZrz7bYx" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="5A5jZrz7bXJ" resolve="module" />
-                                    </node>
-                                    <node concept="liA8E" id="5A5jZrz7bYz" role="2OqNvi">
-                                      <ref role="37wK5l" to="lui2:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                                    </node>
+                                  <ref role="37wK5l" to="z1c3:~IProject.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
+                                  <node concept="37vLTw" id="5A5jZrz7bYx" role="37wK5m">
+                                    <ref role="3cqZAo" node="5A5jZrz7bXJ" resolve="module" />
                                   </node>
                                 </node>
                               </node>

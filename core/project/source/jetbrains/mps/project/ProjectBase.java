@@ -19,7 +19,6 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -28,10 +27,8 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -51,9 +48,9 @@ public abstract class ProjectBase extends Project {
   private static final FileSystem FS = FileSystem.getInstance();
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
-  // AP fixme must be final
+  // AP fixme must be final, however standalone mps project exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
-  private final Map<SModuleReference, ModulePath> myRefToPathMap = new LinkedHashMap<SModuleReference, ModulePath>();
+  private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<SModule, ModulePath>();
   private final StringBuilder myErrors = new StringBuilder();
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor) {
@@ -67,42 +64,30 @@ public abstract class ProjectBase extends Project {
   }
 
   @Nullable
-  protected final ModulePath getPath(@NotNull SModuleReference mRef) {
-    return myRefToPathMap.get(mRef);
+  protected final ModulePath getPath(@NotNull SModule module) {
+    return myModuleToPathMap.get(module);
   }
 
-  public final Set<SModuleReference> getModuleReferences() {
-    return Collections.unmodifiableSet(myRefToPathMap.keySet());
-  }
-
-  /**
-   * api for the external project change
-   *
-   * AP fixme : one can remove module reference and the state will change however cannot add module reference (nothing happens)
-   */
   @Override
-  public final void addModule(@NotNull SModuleReference ref) {
-    SModule module = getModuleChecked(ref);
-    if (module == null) return;
+  public final void addModule(@NotNull SModule module) {
     IFile descriptorFile = getDescriptorFileChecked(module);
-    if (descriptorFile == null) return;
-
-    ModulePath path = new ModulePath(descriptorFile.getPath());
-    myRefToPathMap.put(ref, path);
-    myProjectDescriptor.addModulePath(path);
-  }
-
-  @Override
-  public final void removeModule(@NotNull SModuleReference ref) {
-    if (!myRefToPathMap.containsKey(ref)) {
-      LOG.warn("Module references has not been registered in the project: " + ref);
+    if (descriptorFile != null) {
+      ModulePath path = new ModulePath(descriptorFile.getPath());
+      myModuleToPathMap.put(module, path);
+      myProjectDescriptor.addModulePath(path);
     }
-    myRefToPathMap.remove(ref);
-    SModule module = getModuleChecked(ref);
-    if (module == null) return;
+  }
+
+  @Override
+  public final void removeModule(@NotNull SModule module) {
+    if (!myModuleToPathMap.containsKey(module)) {
+      LOG.warn("Module has not been registered in the project: " + module);
+    }
     IFile descriptorFile = getDescriptorFileChecked(module);
-    if (descriptorFile == null) return;
-    myProjectDescriptor.removeModulePath(new ModulePath(descriptorFile.getPath()));
+    if (descriptorFile != null) {
+      myModuleToPathMap.remove(module);
+      myProjectDescriptor.removeModulePath(new ModulePath(descriptorFile.getPath()));
+    }
   }
 
   @Nullable
@@ -115,14 +100,9 @@ public abstract class ProjectBase extends Project {
     return descriptorFile;
   }
 
-  @Nullable
-  private SModule getModuleChecked(@NotNull SModuleReference ref) {
-    SModule module = new ModuleRepositoryFacade(getRepository()).getModule(ref);
-    if (module == null) {
-      LOG.warn("Module could be found in the repository " + ref);
-      return null;
-    }
-    return module;
+  @NotNull
+  public final List<SModule> getProjectModules() {
+    return new ArrayList<SModule>(myModuleToPathMap.keySet());
   }
 
   private void error(String text) {
@@ -133,9 +113,9 @@ public abstract class ProjectBase extends Project {
     LOG.error(text);
   }
 
-  private void fireModulesLoad() {
+  private void fireModulesLoaded() {
     //  TODO FIXME get rid of onModuleLoad
-    for (SModule m : getModules()) {
+    for (SModule m : getProjectModules()) {
       ((AbstractModule) m).onModuleLoad();
     }
   }
@@ -144,11 +124,11 @@ public abstract class ProjectBase extends Project {
    * AP todo : this logic must be redone alongside with filling the libraries with modules.
    * filling libraries and projects with modules externally seems to me the best solution
    */
-  protected final void readModules() {
+  protected final void loadModules() {
     LOG.info("Loading modules");
     myErrors.setLength(0); // clear
 
-    Set<SModuleReference> existingModules = new HashSet<SModuleReference>(getModuleReferences());
+    Set<SModule> existingModules = new HashSet<SModule>(getProjectModules());
     for (ModulePath modulePath : myProjectDescriptor.getModulePaths()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FS.getFileByPath(path);
@@ -157,31 +137,30 @@ public abstract class ProjectBase extends Project {
         ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
         if (handle.getDescriptor() != null) {
           SModule module = ModuleRepositoryFacade.createModule(handle, this);
-          SModuleReference moduleReference = module.getModuleReference();
-          if (!existingModules.remove(moduleReference)) {
-            myRefToPathMap.put(moduleReference, modulePath);
+          if (!existingModules.remove(module)) {
+            myModuleToPathMap.put(module, modulePath);
           }
         } else {
-          error("Can't load module from " + descriptorFile.getPath() + " Unknown file type.");
+          error(String.format("Can't load module from %s. Unknown file type.", descriptorFile.getPath()));
         }
       } else {
-        // TODO listen to file location ...
-        error("Can't load module from " + descriptorFile.getPath() + " File doesn't exist.");
+        // TODO listen to file location in the MPSProject
+        error(String.format("Can't load module from %s. File doesn't exist.", descriptorFile.getPath()));
       }
     }
     removeNonExistingModules(existingModules);
     LOG.info("Modules are loaded");
   }
 
-  private void removeNonExistingModules(Set<SModuleReference> existingModules) {
-    for (SModuleReference ref : existingModules) {
-      myRefToPathMap.remove(ref);
-      new ModuleRepositoryFacade(getRepository()).unregisterModules(this);
+  private void removeNonExistingModules(Set<SModule> existingModules) {
+    for (SModule ref : existingModules) {
+      myModuleToPathMap.remove(ref);
+      new ModuleRepositoryFacade(this).unregisterModules(this);
     }
   }
 
   /**
-   * must persist the state of the project to the disk
+   * persists the state of the project to the disk
    */
   public abstract void save();
 
@@ -194,8 +173,8 @@ public abstract class ProjectBase extends Project {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        readModules();
-        fireModulesLoad();
+        loadModules();
+        fireModulesLoaded();
       }
     });
     myProjectManager.projectOpened(this);
@@ -207,7 +186,7 @@ public abstract class ProjectBase extends Project {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        new ModuleRepositoryFacade(getRepository()).unregisterModules(ProjectBase.this);
+        new ModuleRepositoryFacade(ProjectBase.this).unregisterModules(ProjectBase.this);
       }
     });
   }

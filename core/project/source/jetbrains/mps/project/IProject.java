@@ -22,26 +22,25 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.List;
+
 /**
  * MPS project interface
  *
  * Created by apyshkin on 11/3/15.
  */
 public interface IProject {
-  @NotNull
-  ProjectScope getScope();
+  @NotNull ProjectScope getScope();
 
   /**
    * @return the project repository which contains all the project modules
    */
-  @NotNull
-  SRepository getRepository();
+  @NotNull SRepository getRepository();
 
   /**
    * @return a shorthand for #getRepository().getModelAccess()
    */
-  @NotNull
-  ModelAccess getModelAccess();
+  @NotNull ModelAccess getModelAccess();
 
   /**
    * Generic extension mechanism
@@ -53,16 +52,21 @@ public interface IProject {
   /**
    * @return the name of the project
    */
-  @NotNull
-  String getName();
+  @NotNull String getName();
 
   /**
    * api for the external project change : adding the module to the project
    */
-  void addModule(@NotNull SModuleReference module);
+  void addModule(@NotNull SModule module);
 
   /**
    * api for the external project change : removing the module from the project
    */
-  void removeModule(@NotNull SModuleReference module);
+  void removeModule(@NotNull SModule module);
+
+  /**
+   * @return all the modules this project owns (todo: contract to be: the same modules are in the #getRepository() repository)
+   * currently getRepository is the global repository (singleton) which hosts all the modules in the environment
+   */
+  @NotNull List<SModule> getProjectModules();
 }

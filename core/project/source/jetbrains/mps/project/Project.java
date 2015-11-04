@@ -16,33 +16,21 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.project.structure.project.ModulePath;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -85,25 +73,20 @@ public abstract class Project implements MPSModuleOwner, IProject {
     return myRepository.getModelAccess();
   }
 
-  // AP fixme : why to return Iterable<? extends>? isn't it easier to give out a collection, e.g. a list?
+  /**
+   * @deprecated use {@link #getProjectModules)} instead
+   * AP fixme : why to return Iterable<? extends>? isn't it easier to give out a collection, e.g. a list?
+   */
   @NotNull
+  @Deprecated
   public final Iterable<? extends SModule> getModules() {
-    List<SModule> result = new ArrayList<SModule>();
-    for (SModuleReference ref : getModuleReferences()) {
-      SModule module = new ModuleRepositoryFacade(myRepository).getModule(ref);
-      if (module != null) {
-        result.add(module);
-      }
-    }
-    return result;
+    return getProjectModules();
   }
 
-  public abstract Set<SModuleReference> getModuleReferences();
-
-  // AP todo remove from Project
-  public final Iterable<? extends SModule> getModulesWithGenerators() {
+  @NotNull
+  public final List<SModule> getProjectModulesWithGenerators() {
     List<SModule> result = new ArrayList<SModule>();
-    for (SModule m : getModules()) {
+    for (SModule m : getProjectModules()) {
       result.add(m);
       if (m instanceof Language) {
         result.addAll(((Language) m).getGenerators());
@@ -112,36 +95,39 @@ public abstract class Project implements MPSModuleOwner, IProject {
     return result;
   }
 
-  // AP todo remove from Project
-  public final boolean isProjectModule(@NotNull SModule module) {
-    return getModuleReferences().contains(module.getModuleReference());
+  /**
+   * @deprecated use {@link #getProjectModulesWithGenerators()} instead
+   */
+  @Deprecated
+  @NotNull
+  public final Iterable<? extends SModule> getModulesWithGenerators() {
+    return getProjectModulesWithGenerators();
   }
 
   // AP todo remove from Project
+  public final boolean isProjectModule(@NotNull SModule module) {
+    return getProjectModules().contains(module);
+  }
+
+  // AP todo transfer from Project to ProjectBase; helping method -- no need to be here
   @NotNull
   public final <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
     List<T> result = new ArrayList<T>();
-    for (SModuleReference mRef : getModuleReferences()) {
-      SModule module = new ModuleRepositoryFacade(myRepository).getModule(mRef);
-      if (module != null && moduleClass.isInstance(module)) {
+    for (SModule module : getProjectModules()) {
+      if (moduleClass.isInstance(module)) {
         result.add(moduleClass.cast(module));
       }
     }
     return result;
   }
 
-  // AP todo remove from Project
+  // AP todo transfer from Project to ProjectBase
   public final Iterable<SModel> getProjectModels() {
     List<SModel> result = new ArrayList<SModel>();
 
-    for (SModule module : getModules()) {
-      Iterable<SModel> models = module.getModels();
-      if (models instanceof Collection) {
-        result.addAll((Collection<SModel>) models);
-      } else {
-        for (SModel model : models) {
-          result.add(model);
-        }
+    for (SModule module : getProjectModules()) {
+      for (SModel model : module.getModels()) {
+        result.add(model);
       }
     }
     return result;
