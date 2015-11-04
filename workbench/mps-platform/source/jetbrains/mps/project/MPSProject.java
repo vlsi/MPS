@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,10 +28,11 @@ import java.util.List;
 /**
  * Represents a project based on the idea platform project
  */
-public abstract class MPSProject extends Project implements FileBasedProject, ProjectComponent {
+public abstract class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private final com.intellij.openapi.project.Project myProject;
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
+    super(new ProjectDescriptor(project.getName()));
     myProject = project;
   }
 
@@ -65,6 +67,7 @@ public abstract class MPSProject extends Project implements FileBasedProject, Pr
     return myProject;
   }
 
+  @NotNull
   @Override
   public String getName() {
     return getProject().getName();
@@ -99,10 +102,5 @@ public abstract class MPSProject extends Project implements FileBasedProject, Pr
   @Override
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);
-  }
-
-  @Override
-  public boolean isHidden() {
-    return false;
   }
 }

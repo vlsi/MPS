@@ -25,6 +25,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Represents a persisted project state
+ */
 public final class ProjectDescriptor {
   private static final Comparator<ModulePath> MODULE_BY_PATH_COMPARATOR = new Comparator<ModulePath>() {
     @Override
@@ -70,10 +73,5 @@ public final class ProjectDescriptor {
   @Nullable
   public String removeModulePath(@NotNull ModulePath path) {
     return myPath2VFolderMap.remove(path);
-  }
-
-  @Nullable
-  public String getVirtualFolder(@NotNull ModulePath path) {
-    return myPath2VFolderMap.get(path);
   }
 }

@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.actions.module;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -36,7 +37,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class DeleteModuleHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
 
-  public static void deleteModule(Project project, SModule module, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteModule(MPSProject project, SModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
       if (module instanceof Language) {
         for (SModule m : ((Language) module).getGenerators()) {
@@ -54,7 +55,7 @@ public class DeleteModuleHelper {
     }
   }
 
-  private static void delete(Project project, SModule module, boolean deleteFiles) {
+  private static void delete(MPSProject project, SModule module, boolean deleteFiles) {
     //HACK: generator module is not project module, so need to check it separately
     if (!project.isProjectModule(module instanceof Generator ? ((Generator) module).getSourceLanguage() : module) && !deleteFiles) {
       throw new IllegalArgumentException("Non-project modules can only be deleted with files deletion enabled");

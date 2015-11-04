@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 /**
- * a project which stores its state in the file on the disk
+ * A project which stores its state in the file on the disk
  */
 public interface FileBasedProject {
   @NotNull File getProjectFile();

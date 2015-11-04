@@ -24,7 +24,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * todo: get rid of it, stop persisting, build ui tree having only the file structure
+ * AP todo: get rid of it, stop persisting, build ui tree having only the file structure
  * path representation in the project tree, needs to be persisted
  */
 public final class ModulePath {

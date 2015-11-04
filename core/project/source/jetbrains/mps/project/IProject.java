@@ -18,6 +18,8 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.Project.ProjectScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -43,6 +45,7 @@ public interface IProject {
 
   /**
    * Generic extension mechanism
+   *
    * @return component instance or <code>null</code> if no extension of specified kind found.
    */
   <T> T getComponent(Class<T> t);
@@ -50,5 +53,16 @@ public interface IProject {
   /**
    * @return the name of the project
    */
+  @NotNull
   String getName();
+
+  /**
+   * api for the external project change : adding the module to the project
+   */
+  void addModule(@NotNull SModuleReference module);
+
+  /**
+   * api for the external project change : removing the module from the project
+   */
+  void removeModule(@NotNull SModuleReference module);
 }

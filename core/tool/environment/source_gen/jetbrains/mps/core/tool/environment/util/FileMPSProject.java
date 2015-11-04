@@ -4,6 +4,8 @@ package jetbrains.mps.core.tool.environment.util;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.FileBasedProject;
+import jetbrains.mps.project.ProjectBase;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
@@ -13,21 +15,21 @@ import org.jdom.Element;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.ElementProjectDataSource;
 
-public class FileMPSProject extends Project implements FileBasedProject {
+public class FileMPSProject extends ProjectBase implements FileBasedProject {
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
 
   private final File myProjectFile;
 
   public FileMPSProject(@NotNull File file) {
-    super();
+    super(new ProjectDescriptor(file.getName()));
     myProjectFile = file;
     init();
   }
 
+  @NotNull
   @Override
   public String getName() {
-    File projectFile = getProjectFile();
-    return projectFile.getName();
+    return myProjectFile.getName();
   }
 
   @Override
@@ -66,7 +68,7 @@ public class FileMPSProject extends Project implements FileBasedProject {
 
   @Override
   @NotNull
-  public File getProjectFile() {
+  public final File getProjectFile() {
     return myProjectFile;
   }
 }
