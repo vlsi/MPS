@@ -98,7 +98,7 @@ public final class MPSCore extends ComponentPluginBase {
     myClassLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new DebugRegistry());
 
-    init(new SModelFileTracker(repositoryRegistry));
+    init(new SModelFileTracker.Plug(repositoryRegistry));
     init(new ModuleRepositoryFacade(myModuleRepository));
     init(new ModuleFileTracker(myModuleRepository));
     CleanupManager cleanupManager = init(new CleanupManager(myClassLoaderManager));
