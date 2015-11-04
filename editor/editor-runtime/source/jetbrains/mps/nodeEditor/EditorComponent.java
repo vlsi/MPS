@@ -218,7 +218,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
 
   private static final int SCROLL_GAP = 15;
-  
+
   private String myDefaultPopupGroupId = MPSActions.EDITOR_POPUP_GROUP;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
@@ -2025,7 +2025,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         public void run() {
           final HighlighterMessage message = getHighlighterMessageFor(selectedCell);
-          if (message == null) return;
+          if (message == null || message.getErrorReporter() == null) {
+            return;
+          }
           final IErrorReporter herror = message.getErrorReporter();
           SwingUtilities.invokeLater(new Runnable() {
             @Override
