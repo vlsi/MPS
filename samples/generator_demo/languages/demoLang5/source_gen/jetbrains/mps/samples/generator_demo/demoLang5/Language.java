@@ -9,6 +9,8 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "594bd850-39e3-46a5-9ef2-40c70d782c8c(jetbrains.mps.samples.generator_demo.demoLang5)";
@@ -37,6 +39,9 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass == EditorAspectDescriptor.class) {
+      return ((T) new EditorAspectDescriptorBase());
+    }
     return super.createAspect(aspectClass);
   }
 }

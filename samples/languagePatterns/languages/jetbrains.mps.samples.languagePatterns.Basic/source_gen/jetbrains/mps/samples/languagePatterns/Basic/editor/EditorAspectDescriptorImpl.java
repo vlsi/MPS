@@ -5,102 +5,132 @@ package jetbrains.mps.samples.languagePatterns.Basic.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Address_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AddressReference_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Apple_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Car_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CombinedPerformance_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Component_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ComponentUsage_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Concert_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Container_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DrawLine_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DrawRect_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EmptyLine_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FormDescription_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FruitPlate_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IncompleteCommand_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Item_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ItemReference_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LineStyle_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ListOfDrawCommands_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OperationOnAddress_Editor()));
-      case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Orange_Editor()));
-      case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Participant_Editor()));
-      case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Performance_Editor()));
-      case 23:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PerformanceWithTitle_Editor()));
-      case 24:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RaceParticipant_Editor()));
-      case 25:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Request_Editor()));
-      case 26:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimplifiedFormDescription_Editor()));
-      case 27:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Singer_Editor()));
-      case 28:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SomeForm_Editor()));
-      case 29:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StringDescription_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f40bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Address"))) {
+        return Collections.<ConceptEditor>singletonList(new Address_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b53535L, "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference"))) {
+        return Collections.<ConceptEditor>singletonList(new AddressReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786badaL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple"))) {
+        return Collections.<ConceptEditor>singletonList(new Apple_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4defL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Car"))) {
+        return Collections.<ConceptEditor>singletonList(new Car_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance"))) {
+        return Collections.<ConceptEditor>singletonList(new CombinedPerformance_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fa2aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Component"))) {
+        return Collections.<ConceptEditor>singletonList(new Component_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"))) {
+        return Collections.<ConceptEditor>singletonList(new ComponentUsage_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c45L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert"))) {
+        return Collections.<ConceptEditor>singletonList(new Concert_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7f9fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Container"))) {
+        return Collections.<ConceptEditor>singletonList(new Container_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265dade0L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine"))) {
+        return Collections.<ConceptEditor>singletonList(new DrawLine_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb26647490L, "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect"))) {
+        return Collections.<ConceptEditor>singletonList(new DrawRect_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1a2bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine"))) {
+        return Collections.<ConceptEditor>singletonList(new EmptyLine_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2245eL, "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription"))) {
+        return Collections.<ConceptEditor>singletonList(new FormDescription_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b02dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate"))) {
+        return Collections.<ConceptEditor>singletonList(new FruitPlate_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7d09f66a13005410L, "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand"))) {
+        return Collections.<ConceptEditor>singletonList(new IncompleteCommand_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7e8fc6224ac7e021L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Item"))) {
+        return Collections.<ConceptEditor>singletonList(new Item_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7e8fc6224ac7e053L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ItemReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ItemReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L, "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle"))) {
+        return Collections.<ConceptEditor>singletonList(new LineStyle_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d07e6L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands"))) {
+        return Collections.<ConceptEditor>singletonList(new ListOfDrawCommands_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L, "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress"))) {
+        return Collections.<ConceptEditor>singletonList(new OperationOnAddress_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786bb3aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange"))) {
+        return Collections.<ConceptEditor>singletonList(new Orange_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant"))) {
+        return Collections.<ConceptEditor>singletonList(new Participant_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance"))) {
+        return Collections.<ConceptEditor>singletonList(new Performance_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae795648bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle"))) {
+        return Collections.<ConceptEditor>singletonList(new PerformanceWithTitle_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4cedL, "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant"))) {
+        return Collections.<ConceptEditor>singletonList(new RaceParticipant_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db22351L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Request"))) {
+        return Collections.<ConceptEditor>singletonList(new Request_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223f4L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription"))) {
+        return Collections.<ConceptEditor>singletonList(new SimplifiedFormDescription_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"))) {
+        return Collections.<ConceptEditor>singletonList(new Singer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f406L, "jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm"))) {
+        return Collections.<ConceptEditor>singletonList(new SomeForm_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription"))) {
+        return Collections.<ConceptEditor>singletonList(new StringDescription_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4defL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Car"))) {
         if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CarProperties()));
+          return Collections.<ConceptEditorComponent>singletonList(new CarProperties());
         }
-        break;
-      case 1:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit"))) {
         if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CommonFruitProperties".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new CommonFruitProperties()));
+          return Collections.<ConceptEditorComponent>singletonList(new CommonFruitProperties());
         }
-        break;
-      case 2:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4fc1L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"))) {
         if ("jetbrains.mps.samples.languagePatterns.Basic.editor.CarProperties".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new TruckProperties()));
+          return Collections.<ConceptEditorComponent>singletonList(new TruckProperties());
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Address", "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference", "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.Item", "jetbrains.mps.samples.languagePatterns.Basic.structure.ItemReference", "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Request", "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm", "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"};
 }

@@ -5,101 +5,137 @@ package jetbrains.mps.lang.actions.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AddMenuPart_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConceptRightTransformPart_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConceptSubstitutePart_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConceptsSubstituteMenuPart_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CopyPasteHandlers_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CopyPreProcessor_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenerateCodeAction_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenericSubstituteMenuPart_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IncludeRightTransformForNodePart_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MenuPart_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Concept_NewInstance_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewNodeOperation_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewRootNodeOperation_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeFactories_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeFactory_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSubstituteActions_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSubstituteActionsBuilder_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParameterizedSideTransformMenuPart_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParameterizedSubstituteMenuPart_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PastePostProcessor_Editor()));
-      case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PasteWrapper_Editor()));
-      case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PasteWrappers_Editor()));
-      case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveByConditionPart_Editor()));
-      case 23:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveDefaultsPart_Editor()));
-      case 24:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemovePart_Editor()));
-      case 25:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RemoveSTByConditionPart_Editor()));
-      case 26:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SNodeCreatorAndInitializer_Editor()));
-      case 27:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActions_Editor()));
-      case 28:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActionsBuilder_Editor()));
-      case 29:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransformVariableDeclaration_Editor()));
-      case 30:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SideTransform_SimpleString_Editor()));
-      case 31:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleItemSubstitutePart_Editor()));
-      case 32:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleSideTransformMenuPart_Editor()));
-      case 33:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartActionParameter_Editor()));
-      case 34:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartActionParameterReference_Editor()));
-      case 35:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SmartEditorActions_Editor()));
-      case 36:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubstituteNodeBuilderVariableDeclaration_Editor()));
-      case 37:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Substitute_SimpleString_Editor()));
-      case 38:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new WrapperSubstituteMenuPart_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121dfa84e4L, "jetbrains.mps.lang.actions.structure.AddMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new AddMenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1136583873dL, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart"))) {
+        return Collections.<ConceptEditor>singletonList(new ConceptRightTransformPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c58682cfL, "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart"))) {
+        return Collections.<ConceptEditor>singletonList(new ConceptSubstitutePart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122264243cL, "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new ConceptsSubstituteMenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3383e1eL, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"))) {
+        return Collections.<ConceptEditor>singletonList(new CopyPasteHandlers_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x528ba37dd3311946L, "jetbrains.mps.lang.actions.structure.CopyPreProcessor"))) {
+        return Collections.<ConceptEditor>singletonList(new CopyPreProcessor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eca117bL, "jetbrains.mps.lang.actions.structure.GenerateCodeAction"))) {
+        return Collections.<ConceptEditor>singletonList(new GenerateCodeAction_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1175fc5138eL, "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new GenericSubstituteMenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112c41b4114L, "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart"))) {
+        return Collections.<ConceptEditor>singletonList(new IncludeRightTransformForNodePart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122837a3cdL, "jetbrains.mps.lang.actions.structure.MenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new MenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x6bea674d717de5f4L, "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"))) {
+        return Collections.<ConceptEditor>singletonList(new NF_Concept_NewInstance_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4c0fd74709e9e128L, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewNodeOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4c0fd74709e9f70cL, "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new NF_Model_CreateNewRootNodeOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f106b2L, "jetbrains.mps.lang.actions.structure.NodeFactories"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeFactories_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, "jetbrains.mps.lang.actions.structure.NodeFactory"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeFactory_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebc25367L, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeSubstituteActions_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeSubstituteActionsBuilder_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228fddb03L, "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new ParameterizedSideTransformMenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new ParameterizedSubstituteMenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7d4ebb4f893516cL, "jetbrains.mps.lang.actions.structure.PastePostProcessor"))) {
+        return Collections.<ConceptEditor>singletonList(new PastePostProcessor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51563250L, "jetbrains.mps.lang.actions.structure.PasteWrapper"))) {
+        return Collections.<ConceptEditor>singletonList(new PasteWrapper_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51553d4eL, "jetbrains.mps.lang.actions.structure.PasteWrappers"))) {
+        return Collections.<ConceptEditor>singletonList(new PasteWrappers_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11223561225L, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart"))) {
+        return Collections.<ConceptEditor>singletonList(new RemoveByConditionPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122f4e71c0L, "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart"))) {
+        return Collections.<ConceptEditor>singletonList(new RemoveDefaultsPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart"))) {
+        return Collections.<ConceptEditor>singletonList(new RemovePart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"))) {
+        return Collections.<ConceptEditor>singletonList(new RemoveSTByConditionPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x52fd3043dd42f3a9L, "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer"))) {
+        return Collections.<ConceptEditor>singletonList(new SNodeCreatorAndInitializer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions"))) {
+        return Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActions_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"))) {
+        return Collections.<ConceptEditor>singletonList(new SideTransformHintSubstituteActionsBuilder_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d1a6565L, "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new SideTransformVariableDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1169104df47L, "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString"))) {
+        return Collections.<ConceptEditor>singletonList(new SideTransform_SimpleString_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e328443L, "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart"))) {
+        return Collections.<ConceptEditor>singletonList(new SimpleItemSubstitutePart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122859d0ecL, "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new SimpleSideTransformMenuPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8eeedcb4L, "jetbrains.mps.lang.actions.structure.SmartActionParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new SmartActionParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ef01705L, "jetbrains.mps.lang.actions.structure.SmartActionParameterReference"))) {
+        return Collections.<ConceptEditor>singletonList(new SmartActionParameterReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ec8c7e9L, "jetbrains.mps.lang.actions.structure.SmartEditorActions"))) {
+        return Collections.<ConceptEditor>singletonList(new SmartEditorActions_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11266742db0L, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new SubstituteNodeBuilderVariableDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116910ff20bL, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString"))) {
+        return Collections.<ConceptEditor>singletonList(new Substitute_SimpleString_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11222a8b06bL, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"))) {
+        return Collections.<ConceptEditor>singletonList(new WrapperSubstituteMenuPart_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.MenuPart", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
 }

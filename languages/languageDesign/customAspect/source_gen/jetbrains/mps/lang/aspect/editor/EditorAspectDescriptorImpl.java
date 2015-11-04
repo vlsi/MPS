@@ -5,35 +5,38 @@ package jetbrains.mps.lang.aspect.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LanguageReference_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, "jetbrains.mps.lang.aspect.structure.AspectMethodDescriptor"))) {
+        return Collections.<ConceptEditor>singletonList(new AspectMethodDescriptor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2abL, "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_ByInterface"))) {
+        return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_ByInterface_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c2c36f4ea0d3b2fL, "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_Class"))) {
+        return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2d72cdccef70b086L, "jetbrains.mps.lang.aspect.structure.LanguageAspectDescriptor"))) {
+        return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL, "jetbrains.mps.lang.aspect.structure.LanguageReference"))) {
+        return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, "jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor"))) {
+        return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.aspect.structure.AspectMethodDescriptor", "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_ByInterface", "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_Class", "jetbrains.mps.lang.aspect.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.aspect.structure.LanguageReference", "jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor"};
 }

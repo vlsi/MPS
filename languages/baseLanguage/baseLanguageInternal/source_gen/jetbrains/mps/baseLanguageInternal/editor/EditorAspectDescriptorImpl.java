@@ -5,71 +5,92 @@ package jetbrains.mps.baseLanguageInternal.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConstantValue_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractStatementListExpression_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractStatementListInnerExpression_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractStaticInnerClassExpression_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractStaticMethodExpression_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractStaticMethod_CallExpression_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractToConstantExpression_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtractToConstantRefExpression_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalAnonymousClass_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalAnonymousClassCreator_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalClassCreator_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalClassExpression_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalClassifierType_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalNewExpression_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalPartialFieldReference_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalPartialInstanceMethodCall_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalStaticFieldReference_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalStaticMethodCall_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalSuperMethodCallOperation_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalThisExpression_Editor()));
-      case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalTypedStaticFieldReference_Editor()));
-      case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InternalVariableReference_Editor()));
-      case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TypeHintExpression_Editor()));
-      case 23:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new WeakClassReference_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, "jetbrains.mps.baseLanguageInternal.structure.ConstantValue"))) {
+        return Collections.<ConceptEditor>singletonList(new ConstantValue_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b762fd2a7L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractStatementListExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2c5dbc7b763512c9L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractStatementListInnerExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x6b63d4344723dac8L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractStaticInnerClassExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ea0ac4L, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractStaticMethodExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractStaticMethod_CallExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1204d897032L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractToConstantExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtractToConstantRefExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalAnonymousClass_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746808L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalAnonymousClassCreator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0xf46f1c42ee50930L, "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalClassCreator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1117461827dL, "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalClassExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1118e558c6dL, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalClassifierType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalNewExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1122dd58737L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalPartialFieldReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1116962fa68L, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalPartialInstanceMethodCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalStaticFieldReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalStaticMethodCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalSuperMethodCallOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1180ebdd5b4L, "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalThisExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7232370459dfc310L, "jetbrains.mps.baseLanguageInternal.structure.InternalTypedStaticFieldReference"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalTypedStaticFieldReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x111fb5bb1f2L, "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new InternalVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11763791866L, "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new TypeHintExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x7a00a2a7a8b080daL, "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"))) {
+        return Collections.<ConceptEditor>singletonList(new WeakClassReference_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalTypedStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};
 }

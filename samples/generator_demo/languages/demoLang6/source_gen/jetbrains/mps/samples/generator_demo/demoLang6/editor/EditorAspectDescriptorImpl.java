@@ -5,27 +5,26 @@ package jetbrains.mps.samples.generator_demo.demoLang6.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Button_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Label_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d1283L, "jetbrains.mps.samples.generator_demo.demoLang6.structure.Button"))) {
+        return Collections.<ConceptEditor>singletonList(new Button_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x82fb751df7fb4b58L, 0xa16e303356f8e0afL, 0x37350ebbae8d186cL, "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label"))) {
+        return Collections.<ConceptEditor>singletonList(new Label_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label"};
 }

@@ -5,64 +5,80 @@ package jetbrains.mps.lang.refactoring.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ContextType_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelTarget_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeTarget_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Refactoring_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ee3c478L, "jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new AbstractMoveExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b61646dL, "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new ContextMemberOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x6e6245e06b65b84aL, "jetbrains.mps.lang.refactoring.structure.ContextType"))) {
+        return Collections.<ConceptEditor>singletonList(new ContextType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x335c206b02bc2de5L, "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext"))) {
+        return Collections.<ConceptEditor>singletonList(new CreateRefactoringContext_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1fe4fcef62d0186cL, "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new ExecuteRefactoringStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5b9318cd86fd917dL, "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable"))) {
+        return Collections.<ConceptEditor>singletonList(new IsRefactoringApplicable_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056aL, "jetbrains.mps.lang.refactoring.structure.ModelTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new ModelTarget_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x3c55f2dab56d441dL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault"))) {
+        return Collections.<ConceptEditor>singletonList(new ModelsToGenerateByDefault_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056bL, "jetbrains.mps.lang.refactoring.structure.ModuleTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new ModuleTarget_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174ef58749L, "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new MoveNodeToNodeExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x1174efa95a1L, "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new MoveNodesToNodeExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeTarget_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
+        return Collections.<ConceptEditor>singletonList(new Refactoring_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0664L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new RefactoringParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77cda06L, "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference"))) {
+        return Collections.<ConceptEditor>singletonList(new RefactoringParameterReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x11710c75c77L, "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"))) {
+        return Collections.<ConceptEditor>singletonList(new UpdateModelProcedure_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a0569L, "jetbrains.mps.lang.refactoring.structure.RefactoringTarget"))) {
         if ("jetbrains.mps.lang.refactoring.editor.RefactoringTarget".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget()));
+          return Collections.<ConceptEditorComponent>singletonList(new RefactoringTarget());
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", "jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ContextType", "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext", "jetbrains.mps.lang.refactoring.structure.ExecuteRefactoringStatement", "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable", "jetbrains.mps.lang.refactoring.structure.ModelTarget", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.ModuleTarget", "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression", "jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", "jetbrains.mps.lang.refactoring.structure.NodeTarget", "jetbrains.mps.lang.refactoring.structure.Refactoring", "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.refactoring.structure.RefactoringTarget"};
 }

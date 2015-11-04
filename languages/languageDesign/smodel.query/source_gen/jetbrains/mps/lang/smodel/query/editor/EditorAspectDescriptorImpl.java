@@ -5,54 +5,65 @@ package jetbrains.mps.lang.smodel.query.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CustomScope_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelScope_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModulesScope_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QueryExpression_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QueryParameter_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QueryParameterList_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QueryParameterScope_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ScopeParameter_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new WithStatement_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f98575c9L, "jetbrains.mps.lang.smodel.query.structure.CustomScope"))) {
+        return Collections.<ConceptEditor>singletonList(new CustomScope_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new InstancesExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x307931d0f952484eL, "jetbrains.mps.lang.smodel.query.structure.ModelScope"))) {
+        return Collections.<ConceptEditor>singletonList(new ModelScope_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x263c7e661fa6d53dL, "jetbrains.mps.lang.smodel.query.structure.ModulesScope"))) {
+        return Collections.<ConceptEditor>singletonList(new ModulesScope_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new QueryExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.lang.smodel.query.structure.QueryParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new QueryParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterList"))) {
+        return Collections.<ConceptEditor>singletonList(new QueryParameterList_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope"))) {
+        return Collections.<ConceptEditor>singletonList(new QueryParameterScope_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421763add4bL, "jetbrains.mps.lang.smodel.query.structure.ScopeParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new ScopeParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x75bb0160f191d6ebL, "jetbrains.mps.lang.smodel.query.structure.UsagesExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new UsagesExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3ac2ae2c0bcf368bL, "jetbrains.mps.lang.smodel.query.structure.WithStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new WithStatement_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression"))) {
         if ("jetbrains.mps.lang.smodel.query.editor.QueryExpression_EditorComponent".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new QueryExpression_EditorComponent()));
+          return Collections.<ConceptEditorComponent>singletonList(new QueryExpression_EditorComponent());
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.smodel.query.structure.CustomScope", "jetbrains.mps.lang.smodel.query.structure.InstancesExpression", "jetbrains.mps.lang.smodel.query.structure.ModelScope", "jetbrains.mps.lang.smodel.query.structure.ModulesScope", "jetbrains.mps.lang.smodel.query.structure.QueryExpression", "jetbrains.mps.lang.smodel.query.structure.QueryParameter", "jetbrains.mps.lang.smodel.query.structure.QueryParameterList", "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope", "jetbrains.mps.lang.smodel.query.structure.ScopeParameter", "jetbrains.mps.lang.smodel.query.structure.UsagesExpression", "jetbrains.mps.lang.smodel.query.structure.WithStatement"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.smodel.query.structure.QueryExpression"};
 }

@@ -5,37 +5,41 @@ package jetbrains.mps.debugger.api.lang.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DebuggerType_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb3a4L, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"))) {
+        return Collections.<ConceptEditor>singletonList(new BreakpointCreator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem"))) {
+        return Collections.<ConceptEditor>singletonList(new BreakpointableNodeItem_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL, "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ConceptDeclarationReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x23a852e9c43bcae9L, "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new CreateBreakpointOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5d457621242d16f5L, "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration"))) {
+        return Collections.<ConceptEditor>singletonList(new DebuggerConfiguration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"))) {
+        return Collections.<ConceptEditor>singletonList(new DebuggerReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912bd83L, "jetbrains.mps.debugger.api.lang.structure.DebuggerType"))) {
+        return Collections.<ConceptEditor>singletonList(new DebuggerType_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.api.lang.structure.BreakpointCreator", "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem", "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference", "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", "jetbrains.mps.debugger.api.lang.structure.DebuggerType"};
 }

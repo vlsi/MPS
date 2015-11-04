@@ -5,79 +5,101 @@ package jetbrains.mps.execution.settings.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CheckProperitesOperation_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DeprecatedAnnotation_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EditorExpression_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EditorOperationCall_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EditorPropertyDeclaration_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EditorPropertyReference_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GetEditorOperation_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GridBagConstraints_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PersistentConfiguration_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplate_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplateInitializer_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PersistentConfigurationType_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PersistentPropertyReferenceOperation_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReportConfigurationErrorStatement_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SettingsEditor_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SettingsEditorType_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TemplateParameter_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TemplateParameterReference_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TemplatePersistentConfigurationType_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011fL, "jetbrains.mps.execution.settings.structure.CheckProperitesOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new CheckProperitesOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) {
+        return Collections.<ConceptEditor>singletonList(new DeprecatedAnnotation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL, "jetbrains.mps.execution.settings.structure.EditorExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new EditorExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, "jetbrains.mps.execution.settings.structure.EditorOperationCall"))) {
+        return Collections.<ConceptEditor>singletonList(new EditorOperationCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910132L, "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new EditorPropertyDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L, "jetbrains.mps.execution.settings.structure.EditorPropertyReference"))) {
+        return Collections.<ConceptEditor>singletonList(new EditorPropertyReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x4a75ebd58602caa5L, "jetbrains.mps.execution.settings.structure.GetEditorOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new GetEditorOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb488L, "jetbrains.mps.execution.settings.structure.GridBagConstraints"))) {
+        return Collections.<ConceptEditor>singletonList(new GridBagConstraints_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"))) {
+        return Collections.<ConceptEditor>singletonList(new PersistentConfiguration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"))) {
+        return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplate_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer"))) {
+        return Collections.<ConceptEditor>singletonList(new PersistentConfigurationTemplateInitializer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType"))) {
+        return Collections.<ConceptEditor>singletonList(new PersistentConfigurationType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new PersistentPropertyDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new PersistentPropertyReferenceOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L, "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new ReportConfigurationErrorStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL, "jetbrains.mps.execution.settings.structure.SettingsEditor"))) {
+        return Collections.<ConceptEditor>singletonList(new SettingsEditor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL, "jetbrains.mps.execution.settings.structure.SettingsEditorType"))) {
+        return Collections.<ConceptEditor>singletonList(new SettingsEditorType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011aL, "jetbrains.mps.execution.settings.structure.TemplateParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new TemplateParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L, "jetbrains.mps.execution.settings.structure.TemplateParameterReference"))) {
+        return Collections.<ConceptEditor>singletonList(new TemplateParameterReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"))) {
+        return Collections.<ConceptEditor>singletonList(new TemplatePersistentConfigurationType_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a2, editorComponentId)) {
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"))) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a0c, editorComponentId)) {
           case 0:
-            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new EditorComponent()));
+            return Collections.<ConceptEditorComponent>singletonList(new EditorComponent());
           case 1:
-            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new PersistentMethodsComponent()));
+            return Collections.<ConceptEditorComponent>singletonList(new PersistentMethodsComponent());
           case 2:
-            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new PersistentPropertiesComponent()));
+            return Collections.<ConceptEditorComponent>singletonList(new PersistentPropertiesComponent());
           default:
+            return Collections.<ConceptEditorComponent>emptyList();
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.settings.structure.CheckProperitesOperation", "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation", "jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.GridBagConstraints", "jetbrains.mps.execution.settings.structure.PersistentConfiguration", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate", "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer", "jetbrains.mps.execution.settings.structure.PersistentConfigurationType", "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.SettingsEditorType", "jetbrains.mps.execution.settings.structure.TemplateParameter", "jetbrains.mps.execution.settings.structure.TemplateParameterReference", "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a2 = new String[]{"jetbrains.mps.execution.settings.editor.EditorComponent", "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent", "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.execution.settings.structure.PersistentConfiguration"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b0a0c = new String[]{"jetbrains.mps.execution.settings.editor.EditorComponent", "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent", "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent"};
 }

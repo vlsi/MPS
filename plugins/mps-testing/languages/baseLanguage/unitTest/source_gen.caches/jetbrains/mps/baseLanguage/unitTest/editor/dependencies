@@ -187,7 +187,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.AssertEquals_Editor" />
@@ -204,9 +203,12 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.PrepareMethod_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethodList_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.editor.TestMethod_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.editor.Fail_Editor" file="Fail_Editor.java">

@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * @author simon
  */
-public abstract class EditorAspectDescriptorBase implements EditorAspectDescriptor {
+public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
   private Map<SAbstractConcept, Collection<ConceptEditor>> myEditorsCache = new HashMap<SAbstractConcept, Collection<ConceptEditor>>();
   private Map<Pair<SAbstractConcept, String>, Collection<ConceptEditorComponent>> myEditorComponentsCache =
       new HashMap<Pair<SAbstractConcept, String>, Collection<ConceptEditorComponent>>();

@@ -5,57 +5,71 @@ package jetbrains.mps.console.ideCommands.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AbsractMake_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ActionCallDeclaredParameter_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ActionCallGlobalParameter_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CallActionExpression_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GlobalStatisticTarget_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelProperties_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelReference_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModelStatisticsTarget_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModuleProperties_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeReference_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OfAspectOperation_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ShowExpression_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ShowGenPlan_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StatCommand_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SubtreeStatisticsTarget_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL, "jetbrains.mps.console.ideCommands.structure.AbsractMake"))) {
+        return Collections.<ConceptEditor>singletonList(new AbsractMake_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L, "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new ActionCallDeclaredParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L, "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new ActionCallGlobalParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587adL, "jetbrains.mps.console.ideCommands.structure.CallActionExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new CallActionExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579cb8L, "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new GlobalStatisticTarget_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b0L, "jetbrains.mps.console.ideCommands.structure.ModelProperties"))) {
+        return Collections.<ConceptEditor>singletonList(new ModelProperties_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ModelReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new ModelStatisticsTarget_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587b3L, "jetbrains.mps.console.ideCommands.structure.ModuleProperties"))) {
+        return Collections.<ConceptEditor>singletonList(new ModuleProperties_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f4699443afL, "jetbrains.mps.console.ideCommands.structure.NodeReference"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, "jetbrains.mps.console.ideCommands.structure.OfAspectOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new OfAspectOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a579e36L, "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new ProjectStatisticsTarget_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0ac828cL, "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences"))) {
+        return Collections.<ConceptEditor>singletonList(new ShowBrokenReferences_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, "jetbrains.mps.console.ideCommands.structure.ShowExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ShowExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"))) {
+        return Collections.<ConceptEditor>singletonList(new ShowGenPlan_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, "jetbrains.mps.console.ideCommands.structure.StatCommand"))) {
+        return Collections.<ConceptEditor>singletonList(new StatCommand_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x1cf75b72b0b3962bL, "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"))) {
+        return Collections.<ConceptEditor>singletonList(new SubtreeStatisticsTarget_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowExpression", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
 }

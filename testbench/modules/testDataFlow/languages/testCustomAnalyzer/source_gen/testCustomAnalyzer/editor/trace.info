@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,32,0" name="testCustomAnalyzer.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,31,0" name="testCustomAnalyzer.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:ab9bdb28-46f4-4abc-86dd-ddf6694490af(testCustomAnalyzer.editor)/8332528989793324765">

@@ -5,41 +5,47 @@ package jetbrains.mps.baseLanguage.tuples.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IndexedTupleLiteral_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IndexedTupleMemberAccessExpression_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IndexedTupleType_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NamedTupleComponentAccessOperation_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NamedTupleComponentDeclaration_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NamedTupleComponentReference_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NamedTupleDeclaration_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NamedTupleLiteral_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NamedTupleType_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071708c13L, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral"))) {
+        return Collections.<ConceptEditor>singletonList(new IndexedTupleLiteral_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12071acfb50L, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new IndexedTupleMemberAccessExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"))) {
+        return Collections.<ConceptEditor>singletonList(new IndexedTupleType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new NamedTupleComponentAccessOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new NamedTupleComponentDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference"))) {
+        return Collections.<ConceptEditor>singletonList(new NamedTupleComponentReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1208fa48aa5L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new NamedTupleDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral"))) {
+        return Collections.<ConceptEditor>singletonList(new NamedTupleLiteral_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"))) {
+        return Collections.<ConceptEditor>singletonList(new NamedTupleType_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};
 }

@@ -8,7 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,45,0" name="jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl" />
+      <unit at="15,0,49,0" name="jetbrains.mps.samples.KajaSceneConstruction.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:c23c1e07-b721-429a-b911-f2771cc8a585(jetbrains.mps.samples.KajaSceneConstruction.editor)/3210697320273550868">

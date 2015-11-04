@@ -5,29 +5,29 @@ package jetbrains.mps.samples.readerConfigLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Field_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Mapping_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReaderConfiguration_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6ab7909L, "jetbrains.mps.samples.readerConfigLanguage.structure.Field"))) {
+        return Collections.<ConceptEditor>singletonList(new Field_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aabc30L, "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping"))) {
+        return Collections.<ConceptEditor>singletonList(new Mapping_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x89e26c5bfc34a60L, 0x9953f68169a4608aL, 0x103f6aa11b7L, "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"))) {
+        return Collections.<ConceptEditor>singletonList(new ReaderConfiguration_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"};
 }

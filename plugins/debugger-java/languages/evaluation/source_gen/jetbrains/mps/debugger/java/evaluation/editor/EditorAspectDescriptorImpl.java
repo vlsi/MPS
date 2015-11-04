@@ -5,45 +5,53 @@ package jetbrains.mps.debugger.java.evaluation.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DebuggedType_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DownCastToLowLevel_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Evaluator_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EvaluatorConcept_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EvaluatorsSuperMethodCall_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EvaluatorsThisExpression_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GenerationHelperAnnotation_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LowLevelVariable_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LowLevelVariableReference_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ToEvaluateAnnotation_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new UnitNode_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"))) {
+        return Collections.<ConceptEditor>singletonList(new DebuggedType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x6dd9f7bd221bb1d5L, "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"))) {
+        return Collections.<ConceptEditor>singletonList(new DownCastToLowLevel_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, "jetbrains.mps.debugger.java.evaluation.structure.Evaluator"))) {
+        return Collections.<ConceptEditor>singletonList(new Evaluator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d925L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"))) {
+        return Collections.<ConceptEditor>singletonList(new EvaluatorConcept_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1feL, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall"))) {
+        return Collections.<ConceptEditor>singletonList(new EvaluatorsSuperMethodCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b1ae1c6L, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new EvaluatorsThisExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x17b1c8f7ef7ab40cL, "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation"))) {
+        return Collections.<ConceptEditor>singletonList(new GenerationHelperAnnotation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x53c5060c6b18d926L, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable"))) {
+        return Collections.<ConceptEditor>singletonList(new LowLevelVariable_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new LowLevelVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x4135c73fbe7fc985L, "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"))) {
+        return Collections.<ConceptEditor>singletonList(new ToEvaluateAnnotation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3c2f40ee0bb3cbf5L, "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"))) {
+        return Collections.<ConceptEditor>singletonList(new UnitNode_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode"};
 }

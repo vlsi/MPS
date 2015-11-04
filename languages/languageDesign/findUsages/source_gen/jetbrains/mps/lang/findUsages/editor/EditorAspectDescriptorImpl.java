@@ -5,39 +5,44 @@ package jetbrains.mps.lang.findUsages.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FinderReference_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeStatement_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ResultStatement_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L, "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new CheckCancelledStatusStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L, "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ExecuteFinderExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L, "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults"))) {
+        return Collections.<ConceptEditor>singletonList(new ExecuteFindersGetSearchResults_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new FinderDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, "jetbrains.mps.lang.findUsages.structure.FinderReference"))) {
+        return Collections.<ConceptEditor>singletonList(new FinderReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x585a05e7f40a28d1L, "jetbrains.mps.lang.findUsages.structure.MakeResultProvider"))) {
+        return Collections.<ConceptEditor>singletonList(new MakeResultProvider_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL, "jetbrains.mps.lang.findUsages.structure.NodeStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L, "jetbrains.mps.lang.findUsages.structure.ResultStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement"};
 }

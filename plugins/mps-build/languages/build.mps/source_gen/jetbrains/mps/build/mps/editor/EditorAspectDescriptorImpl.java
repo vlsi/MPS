@@ -5,136 +5,188 @@ package jetbrains.mps.build.mps.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJarContent_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_BrandingCompany_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_BrandingKeymap_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_BrandingStats_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor()));
-      case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor()));
-      case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor()));
-      case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor()));
-      case 23:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor()));
-      case 24:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor()));
-      case 25:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor()));
-      case 26:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor()));
-      case 27:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor()));
-      case 28:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor()));
-      case 29:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor()));
-      case 30:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor()));
-      case 31:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor()));
-      case 32:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor()));
-      case 33:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor()));
-      case 34:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor()));
-      case 35:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor()));
-      case 36:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor()));
-      case 37:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor()));
-      case 38:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor()));
-      case 39:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor()));
-      case 40:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor()));
-      case 41:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJarRuntime_Editor()));
-      case 42:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor()));
-      case 43:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor()));
-      case 44:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor()));
-      case 45:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor()));
-      case 46:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor()));
-      case 47:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor()));
-      case 48:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor()));
-      case 49:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor()));
-      case 50:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor()));
-      case 51:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x127671bd5d8bb460L, "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildLayout_ToBinaryCopyProcessor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMPSPlugin_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5a408fb8c80220a9L, "jetbrains.mps.build.mps.structure.BuildMpsAspect"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsAspect_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJarContent"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJarContent_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleJars_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleSources_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_ModuleXml_CustomJarLocation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_Plugin_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4dee437cL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMpsLayout_PluginDescriptor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_AbstractModule_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, "jetbrains.mps.build.mps.structure.BuildMps_Branding"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Branding_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xad72aee24ac03d8L, "jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingCompany_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d08L, "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingHelp_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x51cd30ffb57f91cfL, "jetbrains.mps.build.mps.structure.BuildMps_BrandingKeymap"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingKeymap_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xad72aee24a9d06fL, "jetbrains.mps.build.mps.structure.BuildMps_BrandingStats"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingStats_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083d2d07L, "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_BrandingUpdateSite_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKit_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d23143L, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExport_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d6aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportLanguage_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d7aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitExportSolution_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL, "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_DevKitRef_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ExtractedModuleDependency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Generator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3ba296405b6f3b1bL, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_GeneratorOptions_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Group_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPlugin_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbebL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginContent_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginDependency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroup_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x37fdb3de482e2b27L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginGroupCustomModule_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginModule_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6cb3984bfe5b72d3L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_IdeaPluginVendor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Language_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341cb7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyExtendLanguage_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyJar_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d5bc49L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnDevKit_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnJavaModule_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyOnModule_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleDependencyUseLanguage_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJarRuntime_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleJavaSource_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c195c50L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleModelRoot_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464389f7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleRuntime_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSolutionRuntime_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleSource_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_ModuleTestSource_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))) {
+        return Collections.<ConceptEditor>singletonList(new BuildMps_Solution_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e7771cfL, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module"))) {
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildMps_Module_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL, "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath"))) {
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_BuildSourcePath_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, "jetbrains.mps.build.mps.structure.GeneratorInternal_String"))) {
+        return Collections.<ConceptEditor>singletonList(new GeneratorInternal_String_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))) {
         if ("jetbrains.mps.build.mps.editor.SourcesKindComponent".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new SourcesKindComponent()));
+          return Collections.<ConceptEditorComponent>singletonList(new SourcesKindComponent());
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJarContent", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingKeymap", "jetbrains.mps.build.mps.structure.BuildMps_BrandingStats", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExport", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginContent", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Solution"};
 }

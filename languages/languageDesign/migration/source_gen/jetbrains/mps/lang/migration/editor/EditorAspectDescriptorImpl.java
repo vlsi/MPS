@@ -5,61 +5,77 @@ package jetbrains.mps.lang.migration.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DataDependency_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MigrationScript_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoveNode_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OrderDependency_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TransformStatement_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency"))) {
+        return Collections.<ConceptEditor>singletonList(new DataDependency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, "jetbrains.mps.lang.migration.structure.DataDependencyReference"))) {
+        return Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, "jetbrains.mps.lang.migration.structure.DirectNodeReference"))) {
+        return Collections.<ConceptEditor>singletonList(new DirectNodeReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f07b404L, "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new ExecuteAfterDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730d5c47bL, "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"))) {
+        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5830221eL, "jetbrains.mps.lang.migration.structure.MoveNode"))) {
+        return Collections.<ConceptEditor>singletonList(new MoveNode_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, "jetbrains.mps.lang.migration.structure.NodePatternVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, "jetbrains.mps.lang.migration.structure.OrderDependency"))) {
+        return Collections.<ConceptEditor>singletonList(new OrderDependency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x50c63f9f4a0dacfbL, "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730cfcbccL, "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a5836cabbL, "jetbrains.mps.lang.migration.structure.PureMigrationScript"))) {
+        return Collections.<ConceptEditor>singletonList(new PureMigrationScript_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6532d41L, "jetbrains.mps.lang.migration.structure.QuotationConsequence"))) {
+        return Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d8fL, "jetbrains.mps.lang.migration.structure.RefactoringLog"))) {
+        return Collections.<ConceptEditor>singletonList(new RefactoringLog_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL, "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency"))) {
+        return Collections.<ConceptEditor>singletonList(new RefactoringOrderDependency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, "jetbrains.mps.lang.migration.structure.ReflectionNodeReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ReflectionNodeReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL, "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new TransformStatement_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.DirectNodeReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MoveNode", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.PureMigrationScript", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RefactoringLog", "jetbrains.mps.lang.migration.structure.RefactoringOrderDependency", "jetbrains.mps.lang.migration.structure.ReflectionNodeReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformStatement"};
 }

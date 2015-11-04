@@ -2,8 +2,8 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="43,21,43,56" name="jetbrains.mps.lang.migration.util.Language$1" />
-      <unit at="15,0,51,0" name="jetbrains.mps.lang.migration.util.Language" />
+      <unit at="45,21,45,56" name="jetbrains.mps.lang.migration.util.Language$1" />
+      <unit at="17,0,56,0" name="jetbrains.mps.lang.migration.util.Language" />
     </file>
   </root>
 </debug-info>

@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="16,0,65,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.editor.EditorAspectDescriptorImpl" />
+      <unit at="19,0,74,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:34f73689-316b-4d10-bb10-be0263c09014(jetbrains.mps.lang.editor.multiple.testLanguage.editor)/1217012833662056930">

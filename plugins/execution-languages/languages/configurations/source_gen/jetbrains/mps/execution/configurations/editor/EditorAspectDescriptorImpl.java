@@ -5,87 +5,109 @@ package jetbrains.mps.execution.configurations.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Arrays;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BeforeTask_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BeforeTaskCall_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BeforeTaskParameter_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BeforeTaskParameterReference_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConfigurationFromExecutorReference_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConsoleCreator_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConsoleType_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EnvironmentExpression_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeListSource_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NodeSource_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StartProcessHandlerStatement_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x61a8be33d403b7bfL, "jetbrains.mps.execution.configurations.structure.BeforeTask"))) {
+        return Collections.<ConceptEditor>singletonList(new BeforeTask_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f1fd8L, "jetbrains.mps.execution.configurations.structure.BeforeTaskCall"))) {
+        return Collections.<ConceptEditor>singletonList(new BeforeTaskCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f8014L, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter"))) {
+        return Collections.<ConceptEditor>singletonList(new BeforeTaskParameter_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781fd3c0L, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference"))) {
+        return Collections.<ConceptEditor>singletonList(new BeforeTaskParameterReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ConfigurationFromExecutorReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd24a8aL, "jetbrains.mps.execution.configurations.structure.ConsoleCreator"))) {
+        return Collections.<ConceptEditor>singletonList(new ConsoleCreator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd1ac93L, "jetbrains.mps.execution.configurations.structure.ConsoleType"))) {
+        return Collections.<ConceptEditor>singletonList(new ConsoleType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x7664b739387f64L, "jetbrains.mps.execution.configurations.structure.EnvironmentExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new EnvironmentExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5532ce3cbd91002cL, "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function"))) {
+        return Collections.<ConceptEditor>singletonList(new ExecuteConfiguration_Function_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x4bafca3d818c1d2aL, "jetbrains.mps.execution.configurations.structure.GetProjectOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new GetProjectOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf299246fL, "jetbrains.mps.execution.configurations.structure.NodeListSource"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeListSource_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6552f0adf2992471L, "jetbrains.mps.execution.configurations.structure.NodeSource"))) {
+        return Collections.<ConceptEditor>singletonList(new NodeSource_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, "jetbrains.mps.execution.configurations.structure.RunConfiguration"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfiguration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f20cd1deL, "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationCreator_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationExecutor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e4aL, "jetbrains.mps.execution.configurations.structure.RunConfigurationKind"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationKind_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationProducerPart_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84af96L, "jetbrains.mps.execution.configurations.structure.RunConfigurationSource"))) {
+        return Collections.<ConceptEditor>singletonList(new RunConfigurationSource_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new StartProcessHandlerStatement_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"))) {
         if ("jetbrains.mps.execution.configurations.editor.BeforeTasksComponent".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new BeforeTasksComponent()));
+          return Collections.<ConceptEditorComponent>singletonList(new BeforeTasksComponent());
         }
-        break;
-      case 1:
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a2, editorComponentId)) {
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"))) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c0a0c, editorComponentId)) {
           case 0:
-            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ComplexCanRunAndDebug()));
+            return Collections.<ConceptEditorComponent>singletonList(new ComplexCanRunAndDebug());
           case 1:
-            return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new SimpleCanRunAndDebug()));
+            return Collections.<ConceptEditorComponent>singletonList(new SimpleCanRunAndDebug());
           default:
+            return Collections.<ConceptEditorComponent>emptyList();
         }
-        break;
-      case 2:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L, "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"))) {
         if ("jetbrains.mps.execution.configurations.editor.StartProcessWithTool_Component".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new StartProcessWithTool_Component()));
+          return Collections.<ConceptEditorComponent>singletonList(new StartProcessWithTool_Component());
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b0a2 = new String[]{"jetbrains.mps.execution.configurations.editor.ComplexCanRunAndDebug", "jetbrains.mps.execution.configurations.editor.SimpleCanRunAndDebug"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c0a0c = new String[]{"jetbrains.mps.execution.configurations.editor.ComplexCanRunAndDebug", "jetbrains.mps.execution.configurations.editor.SimpleCanRunAndDebug"};
 }

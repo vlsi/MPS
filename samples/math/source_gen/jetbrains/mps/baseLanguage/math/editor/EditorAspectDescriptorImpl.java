@@ -5,99 +5,130 @@ package jetbrains.mps.baseLanguage.math.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AbsExpression_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new IntervalType_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LiteralI_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MathSymbol_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor()));
-      case 16:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor()));
-      case 17:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor()));
-      case 18:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor()));
-      case 19:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor()));
-      case 20:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor()));
-      case 21:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor()));
-      case 22:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor()));
-      case 23:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor()));
-      case 24:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor()));
-      case 25:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixType_Editor()));
-      case 26:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor()));
-      case 27:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MatrixZero_Editor()));
-      case 28:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PowExpression_Editor()));
-      case 29:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor()));
-      case 30:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VectorType_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12051ecbe19L, "jetbrains.mps.baseLanguage.math.structure.AbsExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new AbsExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052224b0bL, "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral"))) {
+        return Collections.<ConceptEditor>singletonList(new ComplexLiteral_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new DecimalBinaryOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"))) {
+        return Collections.<ConceptEditor>singletonList(new DivExpressionFraction_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new ExponentialOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483964L, "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new InIntervalExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483968L, "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new IntervalContainsExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral"))) {
+        return Collections.<ConceptEditor>singletonList(new IntervalLiteral_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb8483972L, "jetbrains.mps.baseLanguage.math.structure.IntervalType"))) {
+        return Collections.<ConceptEditor>singletonList(new IntervalType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new LinearSolveOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205202c5edL, "jetbrains.mps.baseLanguage.math.structure.LiteralI"))) {
+        return Collections.<ConceptEditor>singletonList(new LiteralI_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1205307b067L, "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new MathFuncExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, "jetbrains.mps.baseLanguage.math.structure.MathSymbol"))) {
+        return Collections.<ConceptEditor>singletonList(new MathSymbol_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fea765cf0L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"))) {
+        return Collections.<ConceptEditor>singletonList(new MathSymbolFromToIndex_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca6da8L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"))) {
+        return Collections.<ConceptEditor>singletonList(new MathSymbolIndex_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference"))) {
+        return Collections.<ConceptEditor>singletonList(new MathSymbolIndexReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200fb8bcedL, "jetbrains.mps.baseLanguage.math.structure.MathTypeCast"))) {
+        return Collections.<ConceptEditor>singletonList(new MathTypeCast_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixConstructor_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f432aL, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixElementAccessExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x58aab8999c8f4339L, "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixIndexWildcard_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f255L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndex_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixInitializerIndexReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixInverseOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0xcc7e1ce69847db2L, "jetbrains.mps.baseLanguage.math.structure.MatrixNorm"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixNorm_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af3c3bdfL, "jetbrains.mps.baseLanguage.math.structure.MatrixUnit"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixUnit_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x36700251396ecb7bL, "jetbrains.mps.baseLanguage.math.structure.MatrixZero"))) {
+        return Collections.<ConceptEditor>singletonList(new MatrixZero_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12052b2cdd3L, "jetbrains.mps.baseLanguage.math.structure.PowExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new PowExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"))) {
+        return Collections.<ConceptEditor>singletonList(new VectorInitializer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"))) {
+        return Collections.<ConceptEditor>singletonList(new VectorType_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e6443a20L, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"))) {
         if ("jetbrains.mps.baseLanguage.math.editor.ExponentOperation_Component".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component()));
+          return Collections.<ConceptEditorComponent>singletonList(new ExponentOperation_Component());
         }
-        break;
-      case 1:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, "jetbrains.mps.baseLanguage.math.structure.MathContext"))) {
         if ("jetbrains.mps.baseLanguage.math.editor.MathContextEditorPart".equals(editorComponentId)) {
-          return collectEditorComponents(descriptor, editorComponentId, Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart()));
+          return Collections.<ConceptEditorComponent>singletonList(new MathContextEditorPart());
         }
-        break;
-      default:
+      }
     }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MathContext"};
 }

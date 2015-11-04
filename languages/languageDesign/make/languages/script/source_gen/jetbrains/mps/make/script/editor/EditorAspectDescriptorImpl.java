@@ -5,55 +5,68 @@ package jetbrains.mps.make.script.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AdvanceWorkStatement_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AllWorkLeftExpression_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BeginWorkStatement_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExpectedOption_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FinishWorkStatement_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new JobDeclaration_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Option_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OptionExpression_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OptionType_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new OutputResources_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QueryDefinition_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new RelayQueryExpression_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ReportFeedbackStatement_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ResourceType_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ResultStatement_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Text_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L, "jetbrains.mps.make.script.structure.AdvanceWorkStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new AdvanceWorkStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL, "jetbrains.mps.make.script.structure.AllWorkLeftExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new AllWorkLeftExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, "jetbrains.mps.make.script.structure.BeginWorkStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new BeginWorkStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption"))) {
+        return Collections.<ConceptEditor>singletonList(new ExpectedOption_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L, "jetbrains.mps.make.script.structure.FinishWorkStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new FinishWorkStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7edL, "jetbrains.mps.make.script.structure.JobDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new JobDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec9L, "jetbrains.mps.make.script.structure.Option"))) {
+        return Collections.<ConceptEditor>singletonList(new Option_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L, "jetbrains.mps.make.script.structure.OptionExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new OptionExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b5L, "jetbrains.mps.make.script.structure.OptionType"))) {
+        return Collections.<ConceptEditor>singletonList(new OptionType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L, "jetbrains.mps.make.script.structure.OutputResources"))) {
+        return Collections.<ConceptEditor>singletonList(new OutputResources_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49b2bL, "jetbrains.mps.make.script.structure.QueryDefinition"))) {
+        return Collections.<ConceptEditor>singletonList(new QueryDefinition_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL, "jetbrains.mps.make.script.structure.RelayQueryExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new RelayQueryExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new ReportFeedbackStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType"))) {
+        return Collections.<ConceptEditor>singletonList(new ResourceType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL, "jetbrains.mps.make.script.structure.ResultStatement"))) {
+        return Collections.<ConceptEditor>singletonList(new ResultStatement_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ecaL, "jetbrains.mps.make.script.structure.Text"))) {
+        return Collections.<ConceptEditor>singletonList(new Text_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
 }

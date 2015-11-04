@@ -5,35 +5,38 @@ package jetbrains.mps.testbench.suite.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ITestRef_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new JUnit3TestCaseRef_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new JUnit4TestCaseRef_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ModuleSuite_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SolutionRef_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TestCaseRef_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef"))) {
+        return Collections.<ConceptEditor>singletonList(new ITestRef_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))) {
+        return Collections.<ConceptEditor>singletonList(new JUnit3TestCaseRef_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef"))) {
+        return Collections.<ConceptEditor>singletonList(new JUnit4TestCaseRef_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"))) {
+        return Collections.<ConceptEditor>singletonList(new ModuleSuite_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef"))) {
+        return Collections.<ConceptEditor>singletonList(new SolutionRef_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb7L, "jetbrains.mps.testbench.suite.structure.TestCaseRef"))) {
+        return Collections.<ConceptEditor>singletonList(new TestCaseRef_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.testbench.suite.structure.ITestRef", "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", "jetbrains.mps.testbench.suite.structure.ModuleSuite", "jetbrains.mps.testbench.suite.structure.SolutionRef", "jetbrains.mps.testbench.suite.structure.TestCaseRef"};
 }

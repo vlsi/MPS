@@ -5,55 +5,68 @@ package jetbrains.mps.samples.agreementLanguage.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AccountType_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Date_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Date_Future_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Date_Past_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Event_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EventType_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EventVariable_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Plan_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PostingRule_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Quantity_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor()));
-      case 14:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Value_Editor()));
-      case 15:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ValueReference_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc29baa2L, "jetbrains.mps.samples.agreementLanguage.structure.AccountType"))) {
+        return Collections.<ConceptEditor>singletonList(new AccountType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102fae6140bL, "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations"))) {
+        return Collections.<ConceptEditor>singletonList(new AgreementDeclarations_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbfd8dcdL, "jetbrains.mps.samples.agreementLanguage.structure.Date"))) {
+        return Collections.<ConceptEditor>singletonList(new Date_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f15b1a76L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Future"))) {
+        return Collections.<ConceptEditor>singletonList(new Date_Future_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x103f1595f54L, "jetbrains.mps.samples.agreementLanguage.structure.Date_Past"))) {
+        return Collections.<ConceptEditor>singletonList(new Date_Past_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8f094L, "jetbrains.mps.samples.agreementLanguage.structure.Event"))) {
+        return Collections.<ConceptEditor>singletonList(new Event_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc1185c3L, "jetbrains.mps.samples.agreementLanguage.structure.EventType"))) {
+        return Collections.<ConceptEditor>singletonList(new EventType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc12643eL, "jetbrains.mps.samples.agreementLanguage.structure.EventVariable"))) {
+        return Collections.<ConceptEditor>singletonList(new EventVariable_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new EventVariableReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe79bfeL, "jetbrains.mps.samples.agreementLanguage.structure.Plan"))) {
+        return Collections.<ConceptEditor>singletonList(new Plan_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc23b0daL, "jetbrains.mps.samples.agreementLanguage.structure.PostingRule"))) {
+        return Collections.<ConceptEditor>singletonList(new PostingRule_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dc2154d7L, "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"))) {
+        return Collections.<ConceptEditor>singletonList(new PostingRuleTemporalProperty_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, "jetbrains.mps.samples.agreementLanguage.structure.Quantity"))) {
+        return Collections.<ConceptEditor>singletonList(new Quantity_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbff8d6dL, "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty"))) {
+        return Collections.<ConceptEditor>singletonList(new QuantityTemporalProperty_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbe8ab0eL, "jetbrains.mps.samples.agreementLanguage.structure.Value"))) {
+        return Collections.<ConceptEditor>singletonList(new Value_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102eaa8102cL, "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ValueReference_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};
 }

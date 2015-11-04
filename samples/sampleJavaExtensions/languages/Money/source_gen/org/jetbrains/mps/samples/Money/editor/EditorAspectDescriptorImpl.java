@@ -5,43 +5,50 @@ package org.jetbrains.mps.samples.Money.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ConvertTo_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CurrencyDefTable_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CurrencyUnit_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new CurrentStockPrice_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GetAmount_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new GetCurrency_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MoneyType_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MovingAverage_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StockSymbol_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b34209aL, "org.jetbrains.mps.samples.Money.structure.ConvertTo"))) {
+        return Collections.<ConceptEditor>singletonList(new ConvertTo_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443596L, "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable"))) {
+        return Collections.<ConceptEditor>singletonList(new CurrencyDefTable_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3210b276d1443597L, "org.jetbrains.mps.samples.Money.structure.CurrencyUnit"))) {
+        return Collections.<ConceptEditor>singletonList(new CurrencyUnit_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f4808999c3L, "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice"))) {
+        return Collections.<ConceptEditor>singletonList(new CurrentStockPrice_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913c339L, "org.jetbrains.mps.samples.Money.structure.GetAmount"))) {
+        return Collections.<ConceptEditor>singletonList(new GetAmount_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x18d8e0833b32f1b1L, "org.jetbrains.mps.samples.Money.structure.GetCurrency"))) {
+        return Collections.<ConceptEditor>singletonList(new GetCurrency_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral"))) {
+        return Collections.<ConceptEditor>singletonList(new MoneyLiteral_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe55913516aL, "org.jetbrains.mps.samples.Money.structure.MoneyType"))) {
+        return Collections.<ConceptEditor>singletonList(new MoneyType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, "org.jetbrains.mps.samples.Money.structure.MovingAverage"))) {
+        return Collections.<ConceptEditor>singletonList(new MovingAverage_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480a9b18aL, "org.jetbrains.mps.samples.Money.structure.StockSymbol"))) {
+        return Collections.<ConceptEditor>singletonList(new StockSymbol_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};
 }

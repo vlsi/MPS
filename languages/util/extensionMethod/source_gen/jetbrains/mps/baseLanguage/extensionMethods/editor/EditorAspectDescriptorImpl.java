@@ -5,39 +5,44 @@ package jetbrains.mps.baseLanguage.extensionMethods.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new TypeExtension_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtensionMethodCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63365e7f9L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtensionMethodDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bc0aff7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldDeclaration_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference"))) {
+        return Collections.<ConceptEditor>singletonList(new ExtensionStaticFieldReference_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L, "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall"))) {
+        return Collections.<ConceptEditor>singletonList(new LocalExtendedMethodCall_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6f5433076532f593L, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
+        return Collections.<ConceptEditor>singletonList(new SimpleExtensionMethodsContainer_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x2e076d2695911333L, "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ThisExtensionExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1a4abaca2a94ce10L, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
+        return Collections.<ConceptEditor>singletonList(new TypeExtension_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};
 }

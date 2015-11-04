@@ -9,34 +9,36 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import java.util.Arrays;
 import jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("hidden", "Temporarily hidden", false, "jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.TabularSM_internal_hints.hidden"));
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
-      case 0:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743bL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event"))) {
         return Collections.<ConceptEditor>singletonList(new Event_hidden_Editor());
-      case 1:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457442L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State"))) {
         return Collections.<ConceptEditor>singletonList(new State_hidden_Editor());
-      case 2:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8456ba1L, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine"))) {
         return Collections.<ConceptEditor>singletonList(new StateMachine_tabular_Editor());
-      case 3:
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c845743dL, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"))) {
         return Collections.<ConceptEditor>singletonList(new Transition_tabular_Editor());
-      default:
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"};
 }

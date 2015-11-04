@@ -5,51 +5,62 @@ package jetbrains.mps.samples.lambdaCalculus.editor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
 import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import java.util.Arrays;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor()));
-      case 1:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new FunctionType_Editor()));
-      case 2:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LambdaAbstraction_Editor()));
-      case 3:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LambdaApplication_Editor()));
-      case 4:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new LetExpression_Editor()));
-      case 5:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new MultipleExpression_Editor()));
-      case 6:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NumberType_Editor()));
-      case 7:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new NumericConstant_Editor()));
-      case 8:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new ParenthesisExpression_Editor()));
-      case 9:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Program_Editor()));
-      case 10:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StringConstant_Editor()));
-      case 11:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new StringType_Editor()));
-      case 12:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new Variable_Editor()));
-      case 13:
-        return collectEditors(descriptor, Collections.<ConceptEditor>singletonList(new VariableReference_Editor()));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x1ad829a6925a095bL, "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation"))) {
+        return Collections.<ConceptEditor>singletonList(new BinaryOperation_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae8L, "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"))) {
+        return Collections.<ConceptEditor>singletonList(new FunctionType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7eccf80L, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"))) {
+        return Collections.<ConceptEditor>singletonList(new LambdaAbstraction_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"))) {
+        return Collections.<ConceptEditor>singletonList(new LambdaApplication_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edbfc79fL, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new LetExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x15b75b54f176d1a3L, "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new MultipleExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afadaL, "jetbrains.mps.samples.lambdaCalculus.structure.NumberType"))) {
+        return Collections.<ConceptEditor>singletonList(new NumberType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dd5L, "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant"))) {
+        return Collections.<ConceptEditor>singletonList(new NumericConstant_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3735fdad52687b59L, "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression"))) {
+        return Collections.<ConceptEditor>singletonList(new ParenthesisExpression_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fc0389L, "jetbrains.mps.samples.lambdaCalculus.structure.Program"))) {
+        return Collections.<ConceptEditor>singletonList(new Program_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dc8L, "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant"))) {
+        return Collections.<ConceptEditor>singletonList(new StringConstant_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x3ee0e3dd7c1afae1L, "jetbrains.mps.samples.lambdaCalculus.structure.StringType"))) {
+        return Collections.<ConceptEditor>singletonList(new StringType_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b12L, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))) {
+        return Collections.<ConceptEditor>singletonList(new Variable_Editor());
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"))) {
+        return Collections.<ConceptEditor>singletonList(new VariableReference_Editor());
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0a = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};
 }
