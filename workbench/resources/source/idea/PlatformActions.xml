@@ -244,9 +244,9 @@
           <action id="ConvertToMacLineSeparators" class="com.intellij.codeStyle.ConvertToMacLineSeparatorsAction"/>
         </group>
 
+        -->
         <action id="ToggleReadOnlyAttribute" class="com.intellij.ide.actions.ToggleReadOnlyAttributeAction"/>
         <separator/>
-        -->
         <action id="Exit" class="com.intellij.ide.actions.ExitAction"/>
       </group>
 
