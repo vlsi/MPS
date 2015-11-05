@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -29,38 +26,36 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
- * MPS Project abstraction. Project may rely on the idea Project or it may not.
- *
- * Stores a set of module references (AP: why?), resolves them each the time.
+ * MPS Project basic implementation.
+ * Stores a set of modules.
  * Supported always by a {@link ProjectDescriptor} which stores paths to the module descriptors
  *
  * @see ProjectDescriptor
  */
 public abstract class ProjectBase extends Project {
   private static final Logger LOG = LogManager.getLogger(ProjectBase.class);
-  private static final FileSystem FS = FileSystem.getInstance();
   private final ProjectManager myProjectManager = ProjectManager.getInstance();
 
   // AP fixme must be final, however standalone mps project exposes it (a client can publicly reset the project descriptor)
   protected ProjectDescriptor myProjectDescriptor;
+  // contract : each project module must have a corresponding ModulePath in this map
   private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<SModule, ModulePath>();
-  private final StringBuilder myErrors = new StringBuilder();
+  private final ModuleLoader myModuleLoader;
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor) {
     super(projectDescriptor.getName());
     myProjectDescriptor = projectDescriptor;
+    myModuleLoader = new ModuleLoader(this); // fixme: avoid
   }
 
   @NotNull
   public final String getErrors() {
-    return myErrors.toString();
+    return myModuleLoader.getErrors();
   }
 
   @Nullable
@@ -105,75 +100,12 @@ public abstract class ProjectBase extends Project {
     return new ArrayList<SModule>(myModuleToPathMap.keySet());
   }
 
-  private void error(String text) {
-    if (myErrors.length() > 0) {
-      myErrors.append(System.getProperty("line.separator"));
-    }
-    myErrors.append(text);
-    LOG.error(text);
-  }
-
-  private void fireModulesLoaded() {
-    getModelAccess().checkWriteAccess();
-    //  TODO FIXME get rid of onModuleLoad
-    for (SModule m : getProjectModules()) {
-      ((AbstractModule) m).onModuleLoad();
-    }
-  }
-
-  /**
-   * AP todo : this logic must be redone alongside with filling the libraries with modules.
-   * filling libraries and projects with modules externally seems to me the best solution
-   */
-  private void loadModules() {
-    getModelAccess().checkWriteAccess();
-    LOG.info("Loading modules");
-
-    int addedModules = 0;
-    int removedModules = 0;
-    clearErrorsBuffer();
-
-    Set<SModule> existingModules = new HashSet<SModule>(getProjectModules());
-    for (ModulePath modulePath : myProjectDescriptor.getModulePaths()) {
-      String path = modulePath.getPath();
-      IFile descriptorFile = FS.getFileByPath(path);
-      if (descriptorFile.exists()) {
-        final ModulesMiner modulesMiner = new ModulesMiner();
-        ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
-        if (handle.getDescriptor() != null) {
-          SModule module = ModuleRepositoryFacade.createModule(handle, this);
-          if (!existingModules.remove(module)) {
-            myModuleToPathMap.put(module, modulePath);
-            ++addedModules;
-          }
-        } else {
-          error(String.format("Can't load module from %s. Unknown file type.", descriptorFile.getPath()));
-        }
-      } else {
-        // TODO listen to file location in the MPSProject
-        error(String.format("Can't load module from %s. File doesn't exist.", descriptorFile.getPath()));
-      }
-    }
-    removeAbsentModules(existingModules);
-    LOG.info(String.format("Modules are loaded: %d new; %d removed", addedModules, removedModules));
-  }
-
-  private void clearErrorsBuffer() {
-    myErrors.setLength(0);
-  }
-
-  private void removeAbsentModules(Set<SModule> absentModules) {
-    for (SModule ref : absentModules) {
-      myModuleToPathMap.remove(ref);
-      new ModuleRepositoryFacade(this).unregisterModules(this);
-    }
-  }
-
   /**
    * persists the state of the project to the disk
    */
   public abstract void save();
 
+  // AP: todo make final
   protected void update() {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
@@ -182,6 +114,23 @@ public abstract class ProjectBase extends Project {
         fireModulesLoaded();
       }
     });
+  }
+
+  /**
+   * AP todo : this logic must be redone alongside with filling the SLibraries with modules.
+   * filling libraries and projects with modules externally seems to me the best solution
+   */
+  private void loadModules() {
+    getModelAccess().checkWriteAccess();
+    myModuleLoader.updateModule2PathMap(myModuleToPathMap, myProjectDescriptor.getModulePaths());
+  }
+
+  private void fireModulesLoaded() {
+    getModelAccess().checkWriteAccess();
+    //  TODO FIXME get rid of onModuleLoad
+    for (SModule m : getProjectModules()) {
+      ((AbstractModule) m).onModuleLoad();
+    }
   }
 
   /**
@@ -210,8 +159,22 @@ public abstract class ProjectBase extends Project {
     return "MPS Project [" + myProjectDescriptor + "] " + (isDisposed() ? ", disposed]" : "]");
   }
 
+  /**
+   * calls {@link ProjectDataSource#loadDescriptor()} and set the new project descriptor
+   * makes sense to use this method with the {@link #update()} together
+   * to avoid the inconsistency between the project modules and the descriptor state.
+   */
   protected final void loadDescriptor(@NotNull ProjectDataSource dataSource) {
     checkNotDisposed();
     myProjectDescriptor = dataSource.loadDescriptor();
+
+  }
+
+  public final void addListener(@NotNull ProjectModuleLoadingListener listener) {
+    myModuleLoader.addListener(listener);
+  }
+
+  public final void removeListener(@NotNull ProjectModuleLoadingListener listener) {
+    myModuleLoader.removeListener(listener);
   }
 }

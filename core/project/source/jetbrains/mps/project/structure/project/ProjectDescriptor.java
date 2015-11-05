@@ -27,6 +27,7 @@ import java.util.TreeMap;
 
 /**
  * Represents a persisted project state
+ * TODO make immutable
  */
 public final class ProjectDescriptor {
   private static final Comparator<ModulePath> MODULE_BY_PATH_COMPARATOR = new Comparator<ModulePath>() {
@@ -73,5 +74,9 @@ public final class ProjectDescriptor {
   @Nullable
   public String removeModulePath(@NotNull ModulePath path) {
     return myPath2VFolderMap.remove(path);
+  }
+
+  public String toString() {
+    return String.format("%s:%d modules", myName, myPath2VFolderMap.size());
   }
 }

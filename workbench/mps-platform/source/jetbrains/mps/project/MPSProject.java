@@ -23,13 +23,29 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Represents a project based on the idea platform project
+ * TODO merge with StandaloneMPSProject
  */
 public abstract class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private final com.intellij.openapi.project.Project myProject;
+  private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<ProjectModuleLoadingListener>();
+
+  @Override
+  public void initComponent() {
+    NotFoundModulesListener listener = new NotFoundModulesListener(this);
+    myListeners.add(listener);
+    addListener(listener);
+  }
+
+  public void disposeComponent() {
+    for (ProjectModuleLoadingListener listener : myListeners) {
+      removeListener(listener);
+    }
+  }
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
     super(new ProjectDescriptor(project.getName()));

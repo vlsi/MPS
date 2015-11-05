@@ -44,6 +44,8 @@ import java.util.List;
  * It must save/load its state only via the platform methods #saveState, #loadState
  * The project may be changed externally via addModule/removeModule methods,
  *
+ * ProjectDescriptor of the Project is supposed to be always in sync with the project state.
+ *
  * evgeny, 11/10/11
  */
 @State(
@@ -92,11 +94,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   }
 
   @Override
-  public void initComponent() {
-  }
-
-  @Override
   public void disposeComponent() {
+    super.disposeComponent();
     dispose();
   }
 
@@ -137,6 +136,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     super.update();
   }
 
+  // AP: fixme these two methods are working with the UI virtual paths; I want them to be extracted somewhere else
   @Nullable
   public String getFolderFor(@NotNull SModule module) {
     ModulePath modulePath = getPath(module);
