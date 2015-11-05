@@ -8,10 +8,11 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelRepositoryListener;
+import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -41,19 +42,24 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry.MyEventsCollector myEventsCollector = new CurrentDifferenceRegistry.MyEventsCollector();
   private final CurrentDifferenceBroadcaster myGlobalBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
   private final CurrentDifferenceRegistry.MyFileStatusListener myFileStatusListener = new CurrentDifferenceRegistry.MyFileStatusListener();
-  public CurrentDifferenceRegistry(@NotNull Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager) {
+  private final FileStatusManager myFileStatusManager;
+  private final MPSProject myMpsProject;
+
+  public CurrentDifferenceRegistry(@NotNull Project project, MPSProject mpsProject, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager) {
     super(project);
+    myFileStatusManager = fileStatusManager;
+    myMpsProject = mpsProject;
   }
   @Override
   public void projectOpened() {
-    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
+    myFileStatusManager.addFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
 
     updateLoadedModels();
   }
   @Override
   public void projectClosed() {
-    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
+    myFileStatusManager.removeFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     synchronized (myCurrentDifferences) {
       for (CurrentDifference modelChangesManager : Sequence.fromIterable(MapSequence.fromMap(myCurrentDifferences).values())) {
@@ -78,7 +84,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       MapSequence.fromMap(myCurrentDifferences).put(modelRef, cd);
     }
   }
-  private void updateModel(@Nullable VirtualFile file) {
+  /*package*/ void updateModel(@Nullable VirtualFile file) {
     if (file == null) {
       return;
     }
@@ -86,12 +92,13 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     if (iFile == null) {
       return;
     }
-    SModel modelDescriptor = SModelFileTracker.getInstance().findModel(iFile);
+    SModel modelDescriptor = SModelFileTracker.getInstance(myMpsProject.getRepository()).findModel(iFile);
     if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
       return;
     }
     updateModel(modelDescriptor);
   }
+
   public void updateLoadedModels() {
     for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
       if (md instanceof EditableSModel && !(md.isReadOnly())) {
@@ -140,6 +147,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   public static CurrentDifferenceRegistry getInstance(Project project) {
     return project.getComponent(CurrentDifferenceRegistry.class);
   }
+
   private class MyFileStatusListener implements FileStatusListener {
     public MyFileStatusListener() {
     }
@@ -152,6 +160,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       updateModel(vf);
     }
   }
+
   private class MySModelRepositoryListener extends SModelRepositoryAdapter {
     public MySModelRepositoryListener() {
     }
@@ -180,6 +189,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
     }
   }
+
   private static class MyEventsCollector extends ModelsEventsCollector {
     private final MultiMap<SModelReference, SModelCommandListener> myListeners = new MultiMap<SModelReference, SModelCommandListener>();
     public void addListener(SModel model, SModelCommandListener listener) {

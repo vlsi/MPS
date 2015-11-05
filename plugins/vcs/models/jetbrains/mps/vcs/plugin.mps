@@ -2215,6 +2215,30 @@
             </node>
           </node>
           <node concept="3clFbS" id="78RbNhWi9PW" role="3clFbx">
+            <node concept="3cpWs8" id="6y_kxB1V8Kv" role="3cqZAp">
+              <node concept="3cpWsn" id="6y_kxB1V8Kw" role="3cpWs9">
+                <property role="TrG5h" value="modelFileTracker" />
+                <property role="3TUv4t" value="true" />
+                <node concept="3uibUv" id="6y_kxB1V8Ku" role="1tU5fm">
+                  <ref role="3uigEE" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
+                </node>
+                <node concept="2YIFZM" id="6y_kxB1V8Kx" role="33vP2m">
+                  <ref role="1Pybhc" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
+                  <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
+                  <node concept="2OqwBi" id="6y_kxB1Vh91" role="37wK5m">
+                    <node concept="2OqwBi" id="6y_kxB1Vgiz" role="2Oq$k0">
+                      <node concept="2WthIp" id="6y_kxB1VgiA" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="6y_kxB1VgiC" role="2OqNvi">
+                        <ref role="2WH_rO" node="7iCFfvQyOHZ" resolve="mpsProject" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="6y_kxB1VhDs" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs6" id="78RbNhWi9PX" role="3cqZAp">
               <node concept="2OqwBi" id="78RbNhWi9PY" role="3cqZAk">
                 <node concept="2OqwBi" id="78RbNhWi9PZ" role="2Oq$k0">
@@ -2305,9 +2329,8 @@
                         <node concept="3clFbS" id="78RbNhWi9Qp" role="1bW5cS">
                           <node concept="3clFbF" id="2tkR5cH5dml" role="3cqZAp">
                             <node concept="2OqwBi" id="5ORmSV01Zol" role="3clFbG">
-                              <node concept="2YIFZM" id="5ORmSV01Zom" role="2Oq$k0">
-                                <ref role="1Pybhc" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
-                                <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance():jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
+                              <node concept="37vLTw" id="6y_kxB1V8Ky" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6y_kxB1V8Kw" resolve="modelFileTracker" />
                               </node>
                               <node concept="liA8E" id="5ORmSV01Zon" role="2OqNvi">
                                 <ref role="37wK5l" to="w1kc:~SModelFileTracker.findModel(jetbrains.mps.vfs.IFile):org.jetbrains.mps.openapi.model.SModel" resolve="findModel" />

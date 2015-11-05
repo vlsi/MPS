@@ -6,10 +6,11 @@ import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -28,12 +29,13 @@ public class ShowInLogicalView extends AbstractVcsAction {
       return;
     }
     assert project != null;
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     ProjectPane projectPane = ProjectPane.getInstance(project);
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
-      SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+      SModel model = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModel>() {
         @Override
         public SModel compute() {
-          return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
+          return SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(selectedFile));
         }
       });
       if (model != null) {
@@ -41,7 +43,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
       }
     } else
     if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
-      SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
+      SModule module = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SModule>() {
         @Override
         public SModule compute() {
           return ModuleFileTracker.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));

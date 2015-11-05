@@ -23,8 +23,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Logger;
@@ -127,9 +125,10 @@ public class MergeBackupUtil {
     return models;
   }
   public static File chooseZipFileForModelFile(IFile file) {
+    // FIXME Please, please! Year 2015, two static classes, one set static fields of another?! 
     MergeDriverBackupUtil.setMergeBackupDirPath(getMergeBackupDirPath());
-    org.jetbrains.mps.openapi.model.SModel model = SModelFileTracker.getInstance().findModel(file);
-    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), (model != null ? SModelStereotype.withoutStereotype(model.getModelName()) : null));
+    // What was the reason to alter name of the backup file with model name? 
+    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), null);
   }
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
     File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {

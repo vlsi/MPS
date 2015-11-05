@@ -314,6 +314,11 @@ class GenerationSession {
       printMappingConfigurations("apply mapping configurations:", mappingConfigurations);
     }
 
+    if (mappingConfigurations.isEmpty() && inputModel.getRootNodes().iterator().hasNext()) {
+      myLogger.warning("No mapping configurations for the step, skip generation of the model");
+      return inputModel;
+    }
+
     // -- replace context
     mySessionContext = new GenerationSessionContext(mySessionContext);
 
@@ -331,8 +336,8 @@ class GenerationSession {
     mappingConfigurations.removeAll(drop);
     if (mappingConfigurations.isEmpty()) {
       // no applicable configurations found
-      if (inputModel.getRootNodes().iterator().hasNext()) {
-        myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
+      if (myLogger.needsInfo() && inputModel.getRootNodes().iterator().hasNext()) {
+        myLogger.info("No generators left, skip generation of the model");
       }
       return inputModel;
     }
