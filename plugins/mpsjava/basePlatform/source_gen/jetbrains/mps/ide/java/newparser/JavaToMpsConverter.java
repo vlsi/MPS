@@ -22,8 +22,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -153,8 +151,6 @@ public class JavaToMpsConverter {
       public void run() {
 
         if (myModel == null) {
-          ((AbstractModule) myModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
-
           for (String pakage : MapSequence.fromMap(classesPerPackage).keySet()) {
             final SModel model = getModel(pakage, MapSequence.fromMap(packageDirs).get(pakage));
             if (model == null) {

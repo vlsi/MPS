@@ -432,10 +432,6 @@
       <concept id="1196866233735" name="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" flags="ng" index="2EMmih" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="427659576753752243" name="jetbrains.mps.lang.smodel.structure.ModulePointer" flags="ng" index="20RdaH">
-        <property id="427659576753753627" name="moduleId" index="20Rdg5" />
-        <property id="427659576753753625" name="moduleName" index="20Rdg7" />
-      </concept>
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
@@ -488,9 +484,6 @@
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
-      <concept id="1678062499342629858" name="jetbrains.mps.lang.smodel.structure.ModuleRefExpression" flags="ng" index="37shsh">
-        <child id="1678062499342629861" name="moduleId" index="37shsm" />
-      </concept>
       <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
         <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
       </concept>
@@ -28292,33 +28285,6 @@
                 <node concept="3clFbH" id="7_N_OfthR5y" role="3cqZAp" />
                 <node concept="3clFbJ" id="7_N_Ofti3i6" role="3cqZAp">
                   <node concept="3clFbS" id="7_N_Ofti3i9" role="3clFbx">
-                    <node concept="3clFbF" id="7x85$2l2w78" role="3cqZAp">
-                      <node concept="2OqwBi" id="7x85$2l50R_" role="3clFbG">
-                        <node concept="1eOMI4" id="7x85$2l4Mh1" role="2Oq$k0">
-                          <node concept="10QFUN" id="7x85$2l44q1" role="1eOMHV">
-                            <node concept="3uibUv" id="7x85$2l4jXF" role="10QFUM">
-                              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-                            </node>
-                            <node concept="37vLTw" id="7x85$2l2w77" role="10QFUP">
-                              <ref role="3cqZAo" node="2Uk7YSyHXeC" resolve="myModule" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="7x85$2l5960" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~AbstractModule.addDependency(org.jetbrains.mps.openapi.module.SModuleReference,boolean):jetbrains.mps.project.structure.modules.Dependency" resolve="addDependency" />
-                          <node concept="37shsh" id="7ESDA_ipW4H" role="37wK5m">
-                            <node concept="20RdaH" id="7ESDA_ipW4I" role="37shsm">
-                              <property role="20Rdg5" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-                              <property role="20Rdg7" value="JDK" />
-                            </node>
-                          </node>
-                          <node concept="3clFbT" id="7x85$2l64P0" role="37wK5m">
-                            <property role="3clFbU" value="false" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbH" id="5Y5UecXpk_b" role="3cqZAp" />
                     <node concept="2Gpval" id="2Uk7YSyH7xQ" role="3cqZAp">
                       <node concept="2GrKxI" id="2Uk7YSyH7xS" role="2Gsz3X">
                         <property role="TrG5h" value="pakage" />
