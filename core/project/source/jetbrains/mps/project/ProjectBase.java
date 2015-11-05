@@ -114,6 +114,7 @@ public abstract class ProjectBase extends Project {
   }
 
   private void fireModulesLoaded() {
+    getModelAccess().checkWriteAccess();
     //  TODO FIXME get rid of onModuleLoad
     for (SModule m : getProjectModules()) {
       ((AbstractModule) m).onModuleLoad();
@@ -124,9 +125,13 @@ public abstract class ProjectBase extends Project {
    * AP todo : this logic must be redone alongside with filling the libraries with modules.
    * filling libraries and projects with modules externally seems to me the best solution
    */
-  protected final void loadModules() {
+  private void loadModules() {
+    getModelAccess().checkWriteAccess();
     LOG.info("Loading modules");
-    myErrors.setLength(0); // clear
+
+    int addedModules = 0;
+    int removedModules = 0;
+    clearErrorsBuffer();
 
     Set<SModule> existingModules = new HashSet<SModule>(getProjectModules());
     for (ModulePath modulePath : myProjectDescriptor.getModulePaths()) {
@@ -139,6 +144,7 @@ public abstract class ProjectBase extends Project {
           SModule module = ModuleRepositoryFacade.createModule(handle, this);
           if (!existingModules.remove(module)) {
             myModuleToPathMap.put(module, modulePath);
+            ++addedModules;
           }
         } else {
           error(String.format("Can't load module from %s. Unknown file type.", descriptorFile.getPath()));
@@ -148,12 +154,16 @@ public abstract class ProjectBase extends Project {
         error(String.format("Can't load module from %s. File doesn't exist.", descriptorFile.getPath()));
       }
     }
-    removeNonExistingModules(existingModules);
-    LOG.info("Modules are loaded");
+    removeAbsentModules(existingModules);
+    LOG.info(String.format("Modules are loaded: %d new; %d removed", addedModules, removedModules));
   }
 
-  private void removeNonExistingModules(Set<SModule> existingModules) {
-    for (SModule ref : existingModules) {
+  private void clearErrorsBuffer() {
+    myErrors.setLength(0);
+  }
+
+  private void removeAbsentModules(Set<SModule> absentModules) {
+    for (SModule ref : absentModules) {
       myModuleToPathMap.remove(ref);
       new ModuleRepositoryFacade(this).unregisterModules(this);
     }
@@ -164,12 +174,7 @@ public abstract class ProjectBase extends Project {
    */
   public abstract void save();
 
-  /**
-   * these are our own project opened/closed events.
-   * in the case of idea platform presence they are triggered from the corresponding idea project opened/closed events.
-   * in the other case they are triggered at the init/dispose methods
-   */
-  public void projectOpened() {
+  protected void update() {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -177,6 +182,15 @@ public abstract class ProjectBase extends Project {
         fireModulesLoaded();
       }
     });
+  }
+
+  /**
+   * these are our own project opened/closed events.
+   * in the case of idea platform presence they are triggered from the corresponding idea project opened/closed events.
+   * in the other case they are triggered at the init/dispose methods
+   */
+  public void projectOpened() {
+    update();
     myProjectManager.projectOpened(this);
   }
 

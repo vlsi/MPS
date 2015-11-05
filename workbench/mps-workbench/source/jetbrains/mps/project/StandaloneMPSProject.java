@@ -21,22 +21,18 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemListener;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.Collections;
@@ -57,10 +53,8 @@ import java.util.List;
         @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/modules.xml", scheme = StorageScheme.DIRECTORY_BASED)
     }
 )
-public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
+public class StandaloneMPSProject extends MPSProject implements PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
-
-  private static FileSystem ourFileSystem = FileSystem.getInstance();
 
   @SuppressWarnings("UnusedParameters")
   public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
@@ -87,12 +81,13 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void loadState(Element state) {
-    LOG.info("Initializing project");
+    LOG.info("Loading the project from disk");
     if (!getProject().isDefault()) {
       if (state == null) {
         throw new IllegalArgumentException("State is null");
       }
       loadDescriptor(new ElementProjectDataSource(state, getProjectFile()));
+      update();
     }
   }
 
@@ -110,17 +105,11 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   public void projectOpened() {
     LOG.info("Project '" + getName() + "' is opened");
     super.projectOpened();
-    if (getFileToListen() != null) {
-      ourFileSystem.addListener(this);
-    }
   }
 
   @Override
   public void projectClosed() {
     LOG.info("Project '" + getName() + "' is closing");
-    if (getFileToListen() != null) {
-      ourFileSystem.removeListener(this);
-    }
     super.projectClosed();
   }
 
@@ -131,24 +120,21 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   // todo remove; project descriptor is its internal substance which represents the persistence data
   @NotNull
+  @ToRemove(version = 3.3)
   public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
   }
 
   // todo remove
+  @ToRemove(version = 3.3)
   public void setProjectDescriptor(ProjectDescriptor projectDescriptor) {
     myProjectDescriptor = projectDescriptor;
     update();
   }
 
   // AP fixme : public update exposes the project internals too much (as it looks for me)
-  public void update() {
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        loadModules();
-      }
-    });
+  public final void update() {
+    super.update();
   }
 
   @Nullable
@@ -168,25 +154,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
       modulePath.setVirtualFolder(newFolder);
     } else {
       LOG.warn("Could not set virtual folder for the module " + module + ", module could not be found");
-    }
-  }
-
-  @Nullable
-  @Override
-  public IFile getFileToListen() {
-    VirtualFile projectFile = getProject().getProjectFile();
-    return projectFile != null ? FileSystem.getInstance().getFileByPath(projectFile.getPath()) : null;
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    return null;
-  }
-
-  @Override
-  public void update(ProgressMonitor monitor, FileSystemEvent event) {
-    if (!event.getCreated().isEmpty()) {
-      update();
     }
   }
 }
