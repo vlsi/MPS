@@ -202,15 +202,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     @Override
     protected Collection<ConceptEditor> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
-      try {
-        if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
-          return ((EditorAspectDescriptorBase) aspectDescriptor).getEditors(concept);
-        }
-        return aspectDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
-      } catch (RuntimeException e) {
-        LOG.error("Exception while loading editor", e);
-        return new ArrayList<ConceptEditor>();
+      if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
+        return ((EditorAspectDescriptorBase) aspectDescriptor).getEditors(concept);
       }
+      return aspectDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
     }
   }
 
@@ -224,15 +219,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     @Override
     protected Collection<ConceptEditorComponent> getEditors(EditorAspectDescriptor aspectDescriptor, SAbstractConcept concept) {
-      try {
-        if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
-          return ((EditorAspectDescriptorBase) aspectDescriptor).getEditorComponents(concept, myEditorComponentId);
-        }
-        return aspectDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), myEditorComponentId);
-      } catch (RuntimeException e) {
-        LOG.error("Exception while loading editor component", e);
-        return new ArrayList<ConceptEditorComponent>();
+      if (aspectDescriptor instanceof EditorAspectDescriptorBase) {
+        return ((EditorAspectDescriptorBase) aspectDescriptor).getEditorComponents(concept, myEditorComponentId);
       }
+      return aspectDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), myEditorComponentId);
     }
   }
 
