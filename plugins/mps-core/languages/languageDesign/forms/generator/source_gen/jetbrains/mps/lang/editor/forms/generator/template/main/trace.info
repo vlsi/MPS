@@ -46,13 +46,13 @@
   </root>
   <root nodeRef="r:4d41399e-188a-4eca-90a3-97c5f1c5b668(jetbrains.mps.lang.editor.forms.generator.template.main@generator)/1801654740563707537">
     <file name="QueriesGenerated.java">
-      <node id="1801654740563707872" at="30,112,31,67" concept="0" />
+      <node id="1801654740563707872" at="30,112,31,81" concept="0" />
       <node id="1801654740563727957" at="63,109,64,235" concept="0" />
       <node id="1801654740563718059" at="66,109,67,235" concept="0" />
       <node id="1801654740563710769" at="69,109,70,200" concept="0" />
       <node id="1801654740563710779" at="72,109,73,200" concept="0" />
       <node id="1322445664742972991" at="81,108,82,185" concept="0" />
-      <scope id="1801654740563707791" at="30,112,31,67" />
+      <scope id="1801654740563707791" at="30,112,31,81" />
       <scope id="1801654740563725846" at="63,109,64,235" />
       <scope id="1801654740563717867" at="66,109,67,235" />
       <scope id="1801654740563710768" at="69,109,70,200" />
@@ -62,17 +62,17 @@
   </root>
   <root nodeRef="r:4d41399e-188a-4eca-90a3-97c5f1c5b668(jetbrains.mps.lang.editor.forms.generator.template.main@generator)/1943452258409327848">
     <file name="QueriesGenerated.java">
-      <node id="1801654740563537200" at="27,112,28,63" concept="0" />
+      <node id="1801654740563537200" at="27,112,28,77" concept="0" />
       <node id="1801654740563540350" at="57,109,58,235" concept="0" />
-      <scope id="1801654740563537122" at="27,112,28,63" />
+      <scope id="1801654740563537122" at="27,112,28,77" />
       <scope id="1801654740563540344" at="57,109,58,235" />
     </file>
   </root>
   <root nodeRef="r:4d41399e-188a-4eca-90a3-97c5f1c5b668(jetbrains.mps.lang.editor.forms.generator.template.main@generator)/4319657350469937001">
     <file name="QueriesGenerated.java">
-      <node id="4319657350469949311" at="24,112,25,62" concept="0" />
+      <node id="4319657350469949311" at="24,112,25,76" concept="0" />
       <node id="4319657350469950796" at="54,109,55,235" concept="0" />
-      <scope id="4319657350469949101" at="24,112,25,62" />
+      <scope id="4319657350469949101" at="24,112,25,76" />
       <scope id="4319657350469950790" at="54,109,55,235" />
     </file>
   </root>

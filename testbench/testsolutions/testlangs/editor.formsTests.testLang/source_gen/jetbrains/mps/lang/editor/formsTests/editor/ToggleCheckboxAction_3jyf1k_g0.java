@@ -12,10 +12,10 @@ import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ToggleCheckboxAction_a_0 {
+public class ToggleCheckboxAction_3jyf1k_g0 {
   private final SNode myNode;
 
-  public ToggleCheckboxAction_a_0(SNode node) {
+  public ToggleCheckboxAction_3jyf1k_g0(SNode node) {
     myNode = node;
   }
   public void execute(EditorContext editorContext) {
@@ -26,7 +26,7 @@ public class ToggleCheckboxAction_a_0 {
       }
     }.save();
 
-    SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, 0x61552ecc953bf2aaL, "property"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, 0x61552ecc953bf2aaL, "property")))));
+    SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2")))));
 
     if (selection != null) {
       editorContext.flushEvents();

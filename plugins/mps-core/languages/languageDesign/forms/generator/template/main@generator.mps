@@ -268,6 +268,7 @@
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
       <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
         <child id="1218047638032" name="baseName" index="2piZGb" />
+        <child id="1218049772449" name="contextNode" index="2pr8EU" />
       </concept>
       <concept id="1216860049627" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" flags="nn" index="1iwH70">
         <reference id="1216860049628" name="label" index="1iwH77" />
@@ -735,6 +736,7 @@
                 <node concept="Xl_RD" id="3JMwn_6aDyX" role="2piZGb">
                   <property role="Xl_RC" value="Checkbox_KeyMap" />
                 </node>
+                <node concept="30H73N" id="6a2EaFHg1pf" role="2pr8EU" />
               </node>
             </node>
           </node>
@@ -800,6 +802,7 @@
                 <node concept="Xl_RD" id="1$0KR3zc2TI" role="2piZGb">
                   <property role="Xl_RC" value="Checkbox_Actions" />
                 </node>
+                <node concept="30H73N" id="6a2EaFHg1bi" role="2pr8EU" />
               </node>
             </node>
           </node>
@@ -1278,6 +1281,7 @@
                 <node concept="Xl_RD" id="1$0KR3zcGv$" role="2piZGb">
                   <property role="Xl_RC" value="ToggleCheckboxAction" />
                 </node>
+                <node concept="30H73N" id="6a2EaFHg24V" role="2pr8EU" />
               </node>
             </node>
           </node>

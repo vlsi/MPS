@@ -22,13 +22,13 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e840L, "falseText"));
   }
   public static Object propertyMacro_GetPropertyValue_4319657350469949100(final PropertyMacroContext _context) {
-    return _context.createUniqueName("Checkbox_KeyMap", null);
+    return _context.createUniqueName("Checkbox_KeyMap", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1801654740563537121(final PropertyMacroContext _context) {
-    return _context.createUniqueName("Checkbox_Actions", null);
+    return _context.createUniqueName("Checkbox_Actions", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1801654740563707790(final PropertyMacroContext _context) {
-    return _context.createUniqueName("ToggleCheckboxAction", null);
+    return _context.createUniqueName("ToggleCheckboxAction", _context.getNode());
   }
   public static Object referenceMacro_GetReferent_8215612579904195389(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "actions");

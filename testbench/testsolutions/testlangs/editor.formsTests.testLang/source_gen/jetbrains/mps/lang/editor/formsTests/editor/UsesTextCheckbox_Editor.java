@@ -22,8 +22,8 @@ public class UsesTextCheckbox_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_c4zoug_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
-    Checkbox_Actions_a.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_a());
+    Checkbox_Actions_c4zoug_a.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_c4zoug_a());
     editorCell.addEditorCell(this.createAlternation_c4zoug_a0(editorContext, node));
     return editorCell;
   }
