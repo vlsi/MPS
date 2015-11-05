@@ -5,16 +5,16 @@ package jetbrains.mps;
 import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.tool.environment.Environment;
 import org.junit.BeforeClass;
-import jetbrains.mps.tool.environment.MpsEnvironment;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import org.junit.AfterClass;
 
-public class CoreMpsTest extends BaseMpsTest {
+public class PlatformMpsTest extends BaseMpsTest {
   public static Environment ENV;
 
   @BeforeClass
   public static void setUpBase() {
-    ENV = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    ENV = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @AfterClass

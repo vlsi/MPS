@@ -17,7 +17,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/1884528325076767136">
     <file name="MpsTestsSuite.java">
       <node id="7535322034160451297" at="39,0,40,0" concept="12" trace="PROPERTY_LIBRARY" />
@@ -316,19 +315,18 @@
       <node id="6944172844332268345" at="21,88,22,26" concept="14" />
       <node id="6944172844332282133" at="27,9,28,47" concept="3" />
       <node id="6944172844332279487" at="28,47,29,26" concept="3" />
-      <node id="3921194758207197204" at="30,15,31,22" concept="8" />
-      <node id="1116737099191615191" at="32,58,33,45" concept="10" />
-      <node id="1259651549063429616" at="33,45,34,22" concept="3" />
-      <node id="6944172844332288847" at="35,7,36,46" concept="3" />
+      <node id="2565415864125403073" at="29,26,30,51" concept="8" />
+      <node id="2565415864125407131" at="31,24,32,22" concept="3" />
+      <node id="6944172844332288847" at="34,15,35,46" concept="3" />
       <node id="6944172844332524419" at="17,0,20,0" concept="1" trace="BaseMpsSuite#(Ljava/lang/Class;Lorg/junit/runners/model/RunnerBuilder;)V" />
       <node id="6944172844332268336" at="21,0,24,0" concept="1" trace="BaseMpsSuite#(Ljava/lang/Class;Ljava/util/List;)V" />
-      <node id="1259651549063429613" at="31,22,35,7" concept="17" />
-      <node id="24659993290902377" at="26,41,37,5" concept="16" />
-      <node id="6944172844332279475" at="25,0,39,0" concept="7" trace="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
+      <node id="2565415864125458505" at="30,51,33,7" concept="6" />
+      <node id="24659993290902377" at="26,41,36,5" concept="16" />
+      <node id="6944172844332279475" at="25,0,38,0" concept="7" trace="run#(Lorg/junit/runner/notification/RunNotifier;)V" />
       <scope id="6944172844332524422" at="17,90,18,27" />
       <scope id="6944172844332268344" at="21,88,22,26" />
-      <scope id="24659993290902379" at="27,9,29,26" />
-      <scope id="1259651549063429623" at="32,58,34,22" />
+      <scope id="2565415864125458507" at="31,24,32,22" />
+      <scope id="24659993290902380" at="34,15,35,46" />
       <scope id="6944172844332524419" at="17,0,20,0">
         <var name="aClass" id="6944172844332524629" />
         <var name="builder" id="6491495583556615115" />
@@ -337,14 +335,14 @@
         <var name="klass" id="6944172844332268339" />
         <var name="runners" id="6944172844332462525" />
       </scope>
-      <scope id="24659993290902380" at="30,15,36,46">
-        <var name="env" id="3921194758207197205" />
+      <scope id="24659993290902379" at="27,9,33,7">
+        <var name="env" id="2565415864125403074" />
       </scope>
-      <scope id="6944172844332279483" at="26,41,37,5" />
-      <scope id="6944172844332279475" at="25,0,39,0">
+      <scope id="6944172844332279483" at="26,41,36,5" />
+      <scope id="6944172844332279475" at="25,0,38,0">
         <var name="notifier" id="6944172844332279479" />
       </scope>
-      <unit id="6944172844332268314" at="16,0,40,0" name="jetbrains.mps.testbench.junit.suites.BaseMpsSuite" />
+      <unit id="6944172844332268314" at="16,0,39,0" name="jetbrains.mps.testbench.junit.suites.BaseMpsSuite" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/9170334376386357053">

@@ -55,10 +55,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -167,9 +163,6 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
-        <property id="8355037393041754995" name="isNative" index="2aFKle" />
-      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -204,22 +197,12 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
-        <child id="2546654756694997556" name="reference" index="92FcQ" />
-        <child id="3106559687488913694" name="line" index="2XjZqd" />
-      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
-        <reference id="2217234381367530213" name="classifier" index="VXe09" />
-      </concept>
-      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
-        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -932,94 +915,6 @@
   <node concept="312cEu" id="3eUNqOk3QI8">
     <property role="TrG5h" value="BaseMpsTest" />
     <property role="1sVAO0" value="true" />
-    <node concept="2YIFZL" id="61uE6zXmDxE" role="jymVt">
-      <property role="TrG5h" value="tearDownBase" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="61uE6zXmDxH" role="3clF47">
-        <node concept="3SKdUt" id="5CmrdrYYECQ" role="3cqZAp">
-          <node concept="3SKdUq" id="5CmrdrYYED0" role="3SKWNk">
-            <property role="3SKdUp" value="it is possible we are inside suite run, no need to recreate an environment then" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="61uE6zXmDAO" role="3cqZAp">
-          <node concept="3clFbS" id="61uE6zXmDAP" role="3clFbx">
-            <node concept="3cpWs8" id="3pEStHM450k" role="3cqZAp">
-              <node concept="3cpWsn" id="3pEStHM450l" role="3cpWs9">
-                <property role="TrG5h" value="env" />
-                <node concept="3uibUv" id="3pEStHM450m" role="1tU5fm">
-                  <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-                </node>
-                <node concept="2YIFZM" id="3pEStHM452h" role="33vP2m">
-                  <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
-                  <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="3pEStHM4549" role="3cqZAp">
-              <node concept="3clFbS" id="3pEStHM454b" role="3clFbx">
-                <node concept="3clFbF" id="3pEStHM457s" role="3cqZAp">
-                  <node concept="2OqwBi" id="3pEStHM458q" role="3clFbG">
-                    <node concept="37vLTw" id="3pEStHM457q" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3pEStHM450l" resolve="env" />
-                    </node>
-                    <node concept="liA8E" id="3pEStHM4594" role="2OqNvi">
-                      <ref role="37wK5l" to="79ha:6rx4kZDk5rd" resolve="dispose" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3y3z36" id="3pEStHM455U" role="3clFbw">
-                <node concept="10Nm6u" id="3pEStHM456A" role="3uHU7w" />
-                <node concept="37vLTw" id="3pEStHM4550" role="3uHU7B">
-                  <ref role="3cqZAo" node="3pEStHM450l" resolve="env" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="61uE6zXmDWZ" role="3clFbw">
-            <node concept="Rm8GO" id="61uE6zXmDYs" role="3uHU7w">
-              <ref role="Rm8GQ" to="fyhk:~TestMode.USUAL" resolve="USUAL" />
-              <ref role="1Px2BO" to="fyhk:~TestMode" resolve="TestMode" />
-            </node>
-            <node concept="2YIFZM" id="61uE6zXmDRl" role="3uHU7B">
-              <ref role="37wK5l" to="fyhk:~RuntimeFlags.getTestMode():jetbrains.mps.TestMode" resolve="getTestMode" />
-              <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="61uE6zXmDsS" role="1B3o_S" />
-      <node concept="3cqZAl" id="61uE6zXmDxA" role="3clF45" />
-      <node concept="2AHcQZ" id="5CmrdrYUA2f" role="2AJF6D">
-        <ref role="2AI5Lk" to="rjhg:~AfterClass" resolve="AfterClass" />
-      </node>
-      <node concept="P$JXv" id="1jWEngOH53A" role="lGtFl">
-        <node concept="TZ5HA" id="1jWEngOH53B" role="TZ5H$">
-          <node concept="1dT_AC" id="1jWEngOH53C" role="1dT_Ay">
-            <property role="1dT_AB" value="This is the common way to dispose an environment in tests (which operate " />
-          </node>
-          <node concept="1dT_AA" id="1jWEngOH54b" role="1dT_Ay">
-            <node concept="92FcH" id="1jWEngOH54h" role="qph3F">
-              <node concept="VXe08" id="1jWEngOH9C3" role="92FcQ">
-                <ref role="VXe09" to="79ha:HKKzfMjqRV" resolve="Environment" />
-              </node>
-              <node concept="TZ5HA" id="1jWEngOH54l" role="2XjZqd" />
-            </node>
-          </node>
-          <node concept="1dT_AC" id="1jWEngOH54a" role="1dT_Ay">
-            <property role="1dT_AB" value=" directly)" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="1jWEngOH9OJ" role="TZ5H$">
-          <node concept="1dT_AC" id="1jWEngOH9OK" role="1dT_Ay">
-            <property role="1dT_AB" value="You need to check for the current TestMode to avoid unnecessary environment disposal during tests suite run" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="61uE6zXmDof" role="jymVt" />
     <node concept="2YIFZL" id="5A5jZrz6eRi" role="jymVt">
       <property role="TrG5h" value="getEnvironment" />
       <property role="IEkAT" value="false" />

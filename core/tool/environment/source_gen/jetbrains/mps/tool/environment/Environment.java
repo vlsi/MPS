@@ -39,7 +39,7 @@ public interface Environment extends Retainable {
   public void init();
 
   /**
-   * disposes the environment, uses ref counting (!)
+   * disposes the environment for real, does not consider ref counts
    */
   public void dispose();
 

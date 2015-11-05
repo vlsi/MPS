@@ -3421,7 +3421,7 @@
     </node>
     <node concept="2tJIrI" id="7iTTs2Ugotp" role="jymVt" />
     <node concept="3uibUv" id="1w0tHxVavin" role="1zkMxy">
-      <ref role="3uigEE" to="yyt9:Az_EN8Pv6h" resolve="WorkbenchMpsTest" />
+      <ref role="3uigEE" to="yyt9:Az_EN8Pv6h" resolve="PlatformMpsTest" />
     </node>
     <node concept="3Tm1VV" id="6m1MVDkUPWX" role="1B3o_S" />
     <node concept="3UR2Jj" id="6m1MVDkUQcZ" role="lGtFl">
@@ -3599,16 +3599,6 @@
         <ref role="2AI5Lk" to="rjhg:~BeforeClass" resolve="BeforeClass" />
       </node>
       <node concept="3clFbS" id="6N6R05mYqLA" role="3clF47">
-        <node concept="3clFbF" id="6LlhC3WKFkt" role="3cqZAp">
-          <node concept="2YIFZM" id="6LlhC3WKFux" role="3clFbG">
-            <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-            <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-            <node concept="2YIFZM" id="6LlhC3WKF$z" role="37wK5m">
-              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="67LP2QC2B0O" role="3cqZAp">
           <node concept="37vLTI" id="67LP2QC2Bby" role="3clFbG">
             <node concept="37vLTw" id="67LP2QC2B0M" role="37vLTJ">

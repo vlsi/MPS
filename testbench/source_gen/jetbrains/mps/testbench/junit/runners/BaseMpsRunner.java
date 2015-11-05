@@ -16,7 +16,7 @@ public abstract class BaseMpsRunner extends ParentRunner<Runner> {
 
   @Override
   public void run(RunNotifier notifier) {
-    RuntimeFlags.setTestMode(TestMode.SUITE);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     super.run(notifier);
     RuntimeFlags.setTestMode(TestMode.NONE);
   }

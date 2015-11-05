@@ -25,14 +25,13 @@ public class BaseMpsSuite extends Suite {
   @Override
   public void run(RunNotifier notifier) {
     try {
-      RuntimeFlags.setTestMode(TestMode.SUITE);
+      RuntimeFlags.setTestMode(TestMode.USUAL);
       super.run(notifier);
-    } finally {
-      Environment env;
-      while ((env = EnvironmentContainer.get()) != null) {
-        // dispose works as #release for now 
+      Environment env = EnvironmentContainer.get();
+      if (env != null) {
         env.dispose();
       }
+    } finally {
       RuntimeFlags.setTestMode(TestMode.NONE);
     }
   }

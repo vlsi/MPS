@@ -60,9 +60,6 @@
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
-        <child id="1076505808688" name="condition" index="2$JKZa" />
-      </concept>
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -5936,8 +5933,8 @@
               <node concept="2YIFZM" id="61uE6zXlJdJ" role="3clFbG">
                 <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
                 <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
-                <node concept="Rm8GO" id="61uE6zXlJkK" role="37wK5m">
-                  <ref role="Rm8GQ" to="fyhk:~TestMode.SUITE" resolve="SUITE" />
+                <node concept="Rm8GO" id="7tyinJyaAuI" role="37wK5m">
+                  <ref role="Rm8GQ" to="fyhk:~TestMode.USUAL" resolve="USUAL" />
                   <ref role="1Px2BO" to="fyhk:~TestMode" resolve="TestMode" />
                 </node>
               </node>
@@ -5950,49 +5947,40 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3clFbS" id="1nB28sh8HG" role="2GVbov">
-            <node concept="3cpWs8" id="3pEStHM450k" role="3cqZAp">
-              <node concept="3cpWsn" id="3pEStHM450l" role="3cpWs9">
+            <node concept="3cpWs8" id="2eqc2bymaZ1" role="3cqZAp">
+              <node concept="3cpWsn" id="2eqc2bymaZ2" role="3cpWs9">
                 <property role="TrG5h" value="env" />
-                <node concept="3uibUv" id="3pEStHM450m" role="1tU5fm">
+                <node concept="3uibUv" id="2eqc2bymaZ0" role="1tU5fm">
                   <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+                </node>
+                <node concept="2YIFZM" id="2eqc2bymaZ3" role="33vP2m">
+                  <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
+                  <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
                 </node>
               </node>
             </node>
-            <node concept="2$JKZl" id="15VbAzMGzRH" role="3cqZAp">
-              <node concept="3clFbS" id="15VbAzMGzRR" role="2LFqv$">
-                <node concept="3SKdUt" id="XZsBAoOfVn" role="3cqZAp">
-                  <node concept="3SKdUq" id="XZsBAoOfVE" role="3SKWNk">
-                    <property role="3SKdUp" value="dispose works as #release for now" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="15VbAzMGzRK" role="3cqZAp">
-                  <node concept="2OqwBi" id="15VbAzMGzRL" role="3clFbG">
-                    <node concept="37vLTw" id="15VbAzMGzRM" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3pEStHM450l" resolve="env" />
+            <node concept="3clFbJ" id="2eqc2bymox9" role="3cqZAp">
+              <node concept="3clFbS" id="2eqc2bymoxb" role="3clFbx">
+                <node concept="3clFbF" id="2eqc2bymbYr" role="3cqZAp">
+                  <node concept="2OqwBi" id="2eqc2bymc2b" role="3clFbG">
+                    <node concept="37vLTw" id="2eqc2bymbYp" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2eqc2bymaZ2" resolve="env" />
                     </node>
-                    <node concept="liA8E" id="15VbAzMGzRN" role="2OqNvi">
+                    <node concept="liA8E" id="2eqc2bymc3U" role="2OqNvi">
                       <ref role="37wK5l" to="79ha:6rx4kZDk5rd" resolve="dispose" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3y3z36" id="15VbAzMGzRT" role="2$JKZa">
-                <node concept="10Nm6u" id="15VbAzMGzRU" role="3uHU7w" />
-                <node concept="1eOMI4" id="15VbAzMGzTJ" role="3uHU7B">
-                  <node concept="37vLTI" id="15VbAzMGzX4" role="1eOMHV">
-                    <node concept="2YIFZM" id="15VbAzMG$3N" role="37vLTx">
-                      <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
-                      <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-                    </node>
-                    <node concept="37vLTw" id="15VbAzMGzTK" role="37vLTJ">
-                      <ref role="3cqZAo" node="3pEStHM450l" resolve="env" />
-                    </node>
-                  </node>
+              <node concept="3y3z36" id="2eqc2bymoBF" role="3clFbw">
+                <node concept="10Nm6u" id="2eqc2bymoE0" role="3uHU7w" />
+                <node concept="37vLTw" id="2eqc2bymo$r" role="3uHU7B">
+                  <ref role="3cqZAo" node="2eqc2bymaZ2" resolve="env" />
                 </node>
               </node>
             </node>
+          </node>
+          <node concept="3clFbS" id="1nB28sh8HG" role="2GVbov">
             <node concept="3clFbF" id="61uE6zXlKHf" role="3cqZAp">
               <node concept="2YIFZM" id="61uE6zXlKIT" role="3clFbG">
                 <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />

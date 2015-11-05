@@ -83,7 +83,7 @@ public class GenerationTestBase {
   @AfterClass
   public static void clean() throws Exception {
     if (CREATED_ENV != null) {
-      CREATED_ENV.dispose();
+      CREATED_ENV.release();
       CREATED_ENV = null;
     }
     // uncomment to get teamcity-info.xml file with 'parallelGeneration' key and percent value, indicating time spent in parallel generation

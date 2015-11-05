@@ -175,12 +175,14 @@ public abstract class EnvironmentBase implements Environment {
   protected abstract Project doOpenProject(@NotNull File projectFile);
 
   @Override
-  public synchronized void dispose() {
+  public final synchronized void dispose() {
     checkInitialized();
     if (LOG.isDebugEnabled()) {
       LOG.debug("Disposing environment");
     }
-    release();
+    myRefCount = 0;
+    doDispose();
+    EnvironmentContainer.clear();
   }
 
   protected static void setSystemProperties(boolean loadIdeaPlugins) {

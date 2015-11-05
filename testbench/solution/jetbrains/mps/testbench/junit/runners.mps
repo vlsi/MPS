@@ -4073,8 +4073,8 @@
           <node concept="2YIFZM" id="61uE6zXm5Vb" role="3clFbG">
             <ref role="37wK5l" to="fyhk:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
             <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
-            <node concept="Rm8GO" id="61uE6zXm64Y" role="37wK5m">
-              <ref role="Rm8GQ" to="fyhk:~TestMode.SUITE" resolve="SUITE" />
+            <node concept="Rm8GO" id="7tyinJyaAlp" role="37wK5m">
+              <ref role="Rm8GQ" to="fyhk:~TestMode.USUAL" resolve="USUAL" />
               <ref role="1Px2BO" to="fyhk:~TestMode" resolve="TestMode" />
             </node>
           </node>

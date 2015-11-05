@@ -53,7 +53,7 @@ public class TemplateModelScanTest {
 
   @AfterClass
   public static void tearDown() {
-    ourEnvironment.dispose();
+    ourEnvironment.release();
   }
 
   @Test

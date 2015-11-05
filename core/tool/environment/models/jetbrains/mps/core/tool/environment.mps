@@ -489,44 +489,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="4YCIFw5b46n" role="jymVt" />
-    <node concept="2YIFZL" id="4YCIFw5b4i1" role="jymVt">
-      <property role="TrG5h" value="dispose" />
-      <property role="od$2w" value="true" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="4YCIFw5b4i4" role="3clF47">
-        <node concept="3clFbJ" id="4YCIFw5b4ju" role="3cqZAp">
-          <node concept="3clFbS" id="4YCIFw5b4jv" role="3clFbx">
-            <node concept="3clFbF" id="4YCIFw5b4mM" role="3cqZAp">
-              <node concept="2OqwBi" id="4YCIFw5b4nx" role="3clFbG">
-                <node concept="37vLTw" id="4YCIFw5b4mL" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3Pdq2IL$rf2" resolve="ourCurrent" />
-                </node>
-                <node concept="liA8E" id="4YCIFw5b4ut" role="2OqNvi">
-                  <ref role="37wK5l" node="6rx4kZDk5rd" resolve="dispose" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="4YCIFw5b4ll" role="3clFbw">
-            <node concept="10Nm6u" id="4YCIFw5b4lU" role="3uHU7w" />
-            <node concept="37vLTw" id="4YCIFw5b4jS" role="3uHU7B">
-              <ref role="3cqZAo" node="3Pdq2IL$rf2" resolve="ourCurrent" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4YCIFw5bKyw" role="3cqZAp">
-          <node concept="37vLTI" id="4YCIFw5bKzx" role="3clFbG">
-            <node concept="10Nm6u" id="4YCIFw5bK$d" role="37vLTx" />
-            <node concept="37vLTw" id="4YCIFw5bKyu" role="37vLTJ">
-              <ref role="3cqZAo" node="3Pdq2IL$rf2" resolve="ourCurrent" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="4YCIFw5b4hZ" role="3clF45" />
-    </node>
     <node concept="3Tm1VV" id="3Pdq2IL$qR4" role="1B3o_S" />
     <node concept="3UR2Jj" id="6LlhC3WKHuj" role="lGtFl">
       <node concept="TZ5HA" id="6LlhC3WKHuk" role="TZ5H$">
@@ -640,7 +602,7 @@
       <node concept="P$JXv" id="3pEStHM5KfL" role="lGtFl">
         <node concept="TZ5HA" id="3pEStHM5KfM" role="TZ5H$">
           <node concept="1dT_AC" id="3pEStHM5KfN" role="1dT_Ay">
-            <property role="1dT_AB" value="disposes the environment, uses ref counting (!)" />
+            <property role="1dT_AB" value="disposes the environment for real, does not consider ref counts" />
           </node>
         </node>
       </node>
@@ -3376,7 +3338,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dispose" />
       <property role="od$2w" value="true" />
-      <property role="DiZV1" value="false" />
+      <property role="DiZV1" value="true" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3eUNqOk4$fj" role="3clF47">
         <node concept="3clFbF" id="6LlhC3WLI61" role="3cqZAp">
@@ -3390,9 +3352,25 @@
             <property role="Xl_RC" value="Disposing environment" />
           </node>
         </node>
-        <node concept="3clFbF" id="3pEStHM4vxk" role="3cqZAp">
-          <node concept="1rXfSq" id="3pEStHM4vxi" role="3clFbG">
-            <ref role="37wK5l" node="3pEStHM4qEb" resolve="release" />
+        <node concept="3clFbF" id="2eqc2bym503" role="3cqZAp">
+          <node concept="37vLTI" id="2eqc2bym5bQ" role="3clFbG">
+            <node concept="3cmrfG" id="2eqc2bym5dg" role="37vLTx">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="2eqc2bym501" role="37vLTJ">
+              <ref role="3cqZAo" node="3pEStHM4mO8" resolve="myRefCount" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2eqc2bym5Cz" role="3cqZAp">
+          <node concept="1rXfSq" id="2eqc2bym5C$" role="3clFbG">
+            <ref role="37wK5l" node="3pEStHM4yBP" resolve="doDispose" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2eqc2bym5C_" role="3cqZAp">
+          <node concept="2YIFZM" id="2eqc2bym5CA" role="3clFbG">
+            <ref role="37wK5l" node="3Pdq2IL$A69" resolve="clear" />
+            <ref role="1Pybhc" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
           </node>
         </node>
       </node>

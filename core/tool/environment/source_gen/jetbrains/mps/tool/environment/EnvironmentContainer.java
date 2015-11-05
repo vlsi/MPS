@@ -33,11 +33,4 @@ public final class EnvironmentContainer {
     }
     EnvironmentContainer.ourCurrent = null;
   }
-
-  /*package*/ static synchronized void dispose() {
-    if (ourCurrent != null) {
-      ourCurrent.dispose();
-    }
-    ourCurrent = null;
-  }
 }

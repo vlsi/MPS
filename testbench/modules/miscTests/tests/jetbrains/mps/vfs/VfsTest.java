@@ -17,7 +17,7 @@ package jetbrains.mps.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
@@ -39,17 +39,12 @@ import java.util.Collections;
  *
  * @author Evgeny Gerashchenko
  */
-public class VfsTest extends WorkbenchMpsTest {
+public class VfsTest extends PlatformMpsTest {
   private static final String SUBSUBDIR = "subdir" + File.separator + "subsubdir";
   private static final int FILE_SIZE = 20000;
 
   private static final String JAR_NAME = "testjar.zip";
   private static final String JAR_SUFFIX = "!/testjar";
-
-  @BeforeClass
-  public static void setUp() {
-    IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-  }
 
   private static final TestInvoker IO_TEST_INVOKER = new TestInvoker() {
     @Override

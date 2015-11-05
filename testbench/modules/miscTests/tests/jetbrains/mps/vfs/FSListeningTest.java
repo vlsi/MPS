@@ -17,23 +17,18 @@ package jetbrains.mps.vfs;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.junit.After;
@@ -48,7 +43,7 @@ import java.util.Collections;
  * Pretending that idea FS is a black box for now.
  * Testing MPS response for direct changes in the file system
  */
-public class FSListeningTest extends WorkbenchMpsTest {
+public class FSListeningTest extends PlatformMpsTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testFS");
   private static final File PROJECT_LOCATION = new File("testbench/modules/testFS");
   private static final File MODULE_FILE = new File(PROJECT_LOCATION, "solutions/solution1/solution1.msd");

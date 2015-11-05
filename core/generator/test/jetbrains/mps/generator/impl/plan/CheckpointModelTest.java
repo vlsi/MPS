@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
@@ -61,9 +62,7 @@ import java.util.List;
 /**
  * @author Artem Tikhomirov
  */
-public class CheckpointModelTest {
-
-  private static Environment ourEnvironment;
+public class CheckpointModelTest extends PlatformMpsTest {
   private static Project mpsProject;
 
   @Rule
@@ -71,14 +70,12 @@ public class CheckpointModelTest {
 
   @BeforeClass
   public static void setup() {
-    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    mpsProject = ourEnvironment.openProject(new File(PathManager.getUserDir()));
+    mpsProject = ENV.openProject(new File(PathManager.getUserDir()));
   }
 
   @AfterClass
   public static void tearDown() {
     mpsProject.dispose();
-    ourEnvironment.dispose();
   }
 
   @Test

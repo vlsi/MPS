@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.junit.After;
@@ -32,8 +30,7 @@ import java.io.File;
 
 import static org.junit.Assert.assertTrue;
 
-public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
-
+public class ClassLoadingDescriptorChangedTest extends PlatformMpsTest {
   private Project myProject;
 
   @Before
