@@ -133,7 +133,10 @@ public class GlobalModuleDependenciesManager {
     return directlyUsedModules0(module, includeNonReexport, runtimes, true);
   }
 
-  private static Collection<SModule> directlyUsedModules0(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+  /**
+   * AP: plugin use only!
+   */
+  public static Collection<SModule> directlyUsedModules0(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
     try {
       return directlyUsedModules0(module, includeNonReexport, runtimes, false);
     } catch (AbsentDependencyException e) {

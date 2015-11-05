@@ -1,6 +1,7 @@
 package jetbrains.mps.jps.project;
 
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.ProjectBase;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.JpsProject;
 
@@ -11,17 +12,18 @@ import java.util.List;
  * danilla 12/10/12
  */
 
-public class JpsMPSProject extends Project {
+public class JpsMPSProject extends ProjectBase {
 
   JpsProject myProject;
 
   public JpsMPSProject(@NotNull JpsProject project) {
+    super(new ProjectDescriptor(project.getName()));
     myProject = project;
   }
 
   @Override
-  public List<String> getWatchedModulesPaths() {
-    return new ArrayList<String>();
+  public void save() {
+
   }
 
   @Override
