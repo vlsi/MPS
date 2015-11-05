@@ -30,6 +30,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -508,13 +509,13 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Regexp_1177531335474(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          final List<SNode> excludeList = ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp").getDeclarationNode());
-          List<SNode> regexps = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp").getDeclarationNode(), _context.getModel());
-          return ListSequence.fromList(regexps).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              for (SNode exclude : ListSequence.fromList(excludeList)) {
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          final List<SAbstractConcept> excludeList = ListSequence.fromListAndArray(new ArrayList<SAbstractConcept>(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c56bf9L, "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"));
+          List<SAbstractConcept> regexps = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), _context.getModel());
+          return ListSequence.fromList(regexps).where(new IWhereFilter<SAbstractConcept>() {
+            public boolean accept(SAbstractConcept it) {
+              for (SAbstractConcept exclude : ListSequence.fromList(excludeList)) {
                 if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(it), SNodeOperations.asSConcept(exclude))) {
                   return false;
                 }
@@ -525,7 +526,7 @@ public class QueriesGenerated {
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a06efdL, "jetbrains.mps.baseLanguage.regexp.structure.Regexp").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               SNode newRegexp = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), null);

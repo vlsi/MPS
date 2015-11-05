@@ -61,7 +61,7 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
 
     BaseMPSChooseModel<T> goToModuleModel = getMPSChooseModel();
 
-    myChooser = MpsPopupFactory.createPanelForPackage(goToModuleModel, !myNonProjectReferences.isEmpty());
+    myChooser = MpsPopupFactory.createPanelForPackage(myProject, goToModuleModel, !myNonProjectReferences.isEmpty());
     myChooser.invoke(new MultiElementsCallback() {
       @Override
       public void elementsChosen(List<Object> elements) {

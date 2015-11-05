@@ -70,19 +70,19 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     return new ArrayList<SNode>(ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFields());
   }
-  public SNode getFieldByName(String name) {
+  /*package*/ SNode getFieldByName(String name) {
     if (this.myTopClassifier == null) {
       return null;
     }
     return ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getFieldByName(name);
   }
-  public SNode getStaticFieldByName(String name) {
+  /*package*/ SNode getStaticFieldByName(String name) {
     if (this.myTopClassifier == null) {
       return null;
     }
     return ClassifierAndSuperClassifiersCache.getInstance(this.myTopClassifier).getStaticFieldByName(name);
   }
-  public SNode getEnumConstantByName(String name) {
+  /*package*/ SNode getEnumConstantByName(String name) {
     if (myTopClassifier == null) {
       return null;
     }

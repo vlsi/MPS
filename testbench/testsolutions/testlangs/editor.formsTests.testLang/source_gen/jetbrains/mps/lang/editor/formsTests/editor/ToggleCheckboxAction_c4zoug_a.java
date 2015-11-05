@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ToggleCheckboxAction_a_0 {
+public class ToggleCheckboxAction_c4zoug_a {
   private final SNode myNode;
 
-  public ToggleCheckboxAction_a_0(SNode node) {
+  public ToggleCheckboxAction_c4zoug_a(SNode node) {
     myNode = node;
   }
   public void execute(EditorContext editorContext) {

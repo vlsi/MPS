@@ -8,10 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new CheckboxUI_Image_validity_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
       NonTypesystemRule_Runtime nonTypesystemRule = new CheckboxUI_Text_validity_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

@@ -5,7 +5,6 @@ package jetbrains.mps.ide.platform.actions.core;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
-import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -39,14 +38,14 @@ public interface MoveNodeRefactoringParticipant<InitialDataObject, FinalDataObje
       this.myParticipant = participant;
       myInitialState = this.myParticipant.getDataCollector().beforeMove(oldNode);
     }
-    public List<String> getOptions(SRepository repository) {
-      return myParticipant.getOptions(myInitialState, repository);
+    public List<RefactoringParticipant.Option> getAvaliableOptions(SRepository repository) {
+      return myParticipant.getAvailableOptions(myInitialState, repository);
     }
-    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
-      return changes = initChanges(repository, options, searchScope);
+    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+      return changes = initChanges(repository, selectedOptions, searchScope);
     }
-    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
-      return myParticipant.getChanges(myInitialState, repository, options, searchScope);
+    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+      return myParticipant.getChanges(myInitialState, repository, selectedOptions, searchScope);
     }
     public void confirm(SNode newNode, final SRepository repository, final RefactoringSession session) {
       final F finalState = this.myParticipant.getDataCollector().afterMove(newNode);

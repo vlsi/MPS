@@ -256,7 +256,7 @@
       <unit id="8928180329700588904" at="65,44,75,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel$2" />
       <unit id="1003308155967147060" at="90,23,105,13" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel$5" />
       <unit id="397101727194124269" at="83,19,107,9" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel$4" />
-      <unit id="397101727194123504" at="80,59,125,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel$3" />
+      <unit id="397101727194123504" at="80,48,125,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel$3" />
       <unit id="1706452255240565482" at="38,0,128,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.PluginsListPanel" />
     </file>
   </root>

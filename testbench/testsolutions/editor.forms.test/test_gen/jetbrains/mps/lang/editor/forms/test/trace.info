@@ -27,60 +27,6 @@
       <unit id="5347446703374107785" at="12,0,32,0" name="jetbrains.mps.lang.editor.forms.test.TextCheckbox_SPACE_Toggles_Test" />
     </file>
   </root>
-  <root nodeRef="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)/5347446703374629836">
-    <file name="ImageCheckbox_SPACE_Toggles_Test.java">
-      <node id="5347446703374629836" at="17,67,18,119" concept="2" />
-      <node id="5347446703374629836" at="18,119,19,120" concept="2" />
-      <node id="5347446703374629836" at="26,51,27,63" concept="2" />
-      <node id="5347446703374629842" at="27,63,28,87" concept="2" />
-      <node id="5347446703374629836" at="14,0,16,0" concept="1" trace="ImageCheckbox_SPACE_Toggles_Test#()V" />
-      <node id="5347446703374629836" at="23,0,25,0" concept="1" trace="TestBody#()V" />
-      <node id="5347446703374629836" at="16,0,21,0" concept="3" trace="test_ImageCheckbox_SPACE_Toggles#()V" />
-      <node id="5347446703374629836" at="25,0,30,0" concept="3" trace="testMethodImpl#()V" />
-      <scope id="5347446703374629836" at="14,45,14,45" />
-      <scope id="5347446703374629836" at="23,23,23,23" />
-      <scope id="5347446703374629836" at="14,0,16,0" />
-      <scope id="5347446703374629836" at="17,67,19,120" />
-      <scope id="5347446703374629836" at="23,0,25,0" />
-      <scope id="5347446703374629836" at="26,51,28,87" />
-      <scope id="5347446703374629836" at="16,0,21,0" />
-      <scope id="5347446703374629836" at="25,0,30,0" />
-      <unit id="5347446703374629836" at="21,0,31,0" name="jetbrains.mps.lang.editor.forms.test.ImageCheckbox_SPACE_Toggles_Test$TestBody" />
-      <unit id="5347446703374629836" at="12,0,32,0" name="jetbrains.mps.lang.editor.forms.test.ImageCheckbox_SPACE_Toggles_Test" />
-    </file>
-  </root>
-  <root nodeRef="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)/5347446703374707939">
-    <file name="ImageCheckbox_CLICK_Toggles_Test.java">
-      <node id="5347446703374707939" at="17,67,18,119" concept="2" />
-      <node id="5347446703374707939" at="18,119,19,120" concept="2" />
-      <node id="5347446703374707939" at="26,51,27,63" concept="2" />
-      <node id="5347446703374708322" at="28,7,29,28" concept="4" />
-      <node id="5347446703374708322" at="29,28,30,28" concept="4" />
-      <node id="5347446703374708322" at="30,28,31,126" concept="4" />
-      <node id="5347446703374708322" at="31,126,32,125" concept="2" />
-      <node id="5347446703374708322" at="32,125,33,124" concept="2" />
-      <node id="5347446703374707939" at="14,0,16,0" concept="1" trace="ImageCheckbox_CLICK_Toggles_Test#()V" />
-      <node id="5347446703374707939" at="23,0,25,0" concept="1" trace="TestBody#()V" />
-      <node id="5347446703374707939" at="16,0,21,0" concept="3" trace="test_ImageCheckbox_CLICK_Toggles#()V" />
-      <node id="5347446703374708322" at="27,63,34,7" concept="0" />
-      <node id="5347446703374707939" at="25,0,36,0" concept="3" trace="testMethodImpl#()V" />
-      <scope id="5347446703374707939" at="14,45,14,45" />
-      <scope id="5347446703374707939" at="23,23,23,23" />
-      <scope id="5347446703374707939" at="14,0,16,0" />
-      <scope id="5347446703374707939" at="17,67,19,120" />
-      <scope id="5347446703374707939" at="23,0,25,0" />
-      <scope id="5347446703374707939" at="16,0,21,0" />
-      <scope id="5347446703374708322" at="28,7,33,124">
-        <var name="eventTargetComponent_47fs83_a0" id="5347446703374708322" />
-        <var name="x_47fs83_a0" id="5347446703374708322" />
-        <var name="y_47fs83_a0" id="5347446703374708322" />
-      </scope>
-      <scope id="5347446703374707939" at="26,51,34,7" />
-      <scope id="5347446703374707939" at="25,0,36,0" />
-      <unit id="5347446703374707939" at="21,0,37,0" name="jetbrains.mps.lang.editor.forms.test.ImageCheckbox_CLICK_Toggles_Test$TestBody" />
-      <unit id="5347446703374707939" at="12,0,38,0" name="jetbrains.mps.lang.editor.forms.test.ImageCheckbox_CLICK_Toggles_Test" />
-    </file>
-  </root>
   <root nodeRef="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)/5347446703375532576">
     <file name="TextCheckbox_CLICK_Toggles_Test.java">
       <node id="5347446703375532576" at="17,66,18,119" concept="2" />

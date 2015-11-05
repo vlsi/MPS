@@ -6,6 +6,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 
 /**
  * Will be removed after 3.3
@@ -66,6 +67,7 @@ public class Classifier_Behavior {
     return Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0(__thisConcept__, expr);
   }
   @Deprecated
+  @ToRemove(version = 3.3)
   public static List<SNode> call_getAccessibleMembers_669019847198843527(SAbstractConcept __thisConcept__, SNode contextNode, int constraint) {
     return Classifier__BehaviorDescriptor.getAccessibleMembers_id_8Pw6zYia7(__thisConcept__, contextNode, constraint);
   }

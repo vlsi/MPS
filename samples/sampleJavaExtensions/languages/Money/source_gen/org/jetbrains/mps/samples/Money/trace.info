@@ -2,7 +2,6 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="50,21,50,56" name="org.jetbrains.mps.samples.Money.Language$1" />
       <unit at="22,0,70,0" name="org.jetbrains.mps.samples.Money.Language" />
     </file>
   </root>

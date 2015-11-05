@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.extensionMethods.actions.EM_node_factories" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.extensionMethods.actions.EM_node_factories" file="EM_node_factories.java">

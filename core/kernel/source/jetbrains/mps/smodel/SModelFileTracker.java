@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,21 +19,145 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ModelComputeRunnable;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class SModelFileTracker implements CoreComponent {
-  private static SModelFileTracker INSTANCE;
+/**
+ * Bridge VFS and Model worlds in MPS.
+ * Capable to tell {@link SModel} for a {@link IFile}
+ * Models are tied to repository, same file may get loaded into few distinct repositories, that's why
+ * instances of the tracker are per-repository.
+ *
+ * IMPLEMENTATION: now it tracks all model files and {@link #findModel(IFile) answers} quickly. Do we care to do it really fast at expense of huge
+ * (there are thousands of models in a project) memory footprint? FIXME Shall measure footprint first, then re-consider
+ *
+ * XXX CoreComponent: what if we introduce notion of 'services' for an SRepository, so that there's no need to use static accessor (getInstance(SRepo))?
+ *                    i.e. instead we'd have smth like SRepo.getService(SModelFileTracker.class)
+ */
+public class SModelFileTracker {
+  private static final List<SModelFileTracker> ourModelTrackers = new CopyOnWriteArrayList<SModelFileTracker>();
 
-  private final Map<IFile, SModel> myPathsToModelDescriptorMap = new ConcurrentHashMap<IFile, SModel>();
-  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
+  private final RepositoryModelTracker myListener = new RepositoryModelTracker();
+  private final SRepository myRepository;
+
+  private SModelFileTracker(SRepository repository) {
+    myRepository = repository;
+  }
+
+  /**
+   * @deprecated use {@link #getInstance(SRepository)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static SModelFileTracker getInstance() {
+    return getInstance(MPSModuleRepository.getInstance());
+  }
+
+  @NotNull
+  public static SModelFileTracker getInstance(SRepository repository) {
+    SModelFileTracker t = findInstance(repository);
+    if (t != null) {
+      return t;
+    }
+    synchronized (ourModelTrackers) {
+      // despite ourModelTrackers is COW list, we don't want two parallel threads to add two identical SModelFileTracker instances,
+      // hence we lock for modifications and check again prior to adding a new one.
+      t = findInstance(repository);
+      if (t != null) {
+        return t;
+      }
+      ourModelTrackers.add(t = new SModelFileTracker(repository));
+    }
+    t.attach();
+    return t;
+  }
+
+  private static SModelFileTracker findInstance(SRepository repository) {
+    for (SModelFileTracker t : ourModelTrackers) {
+      if (t.myRepository == repository) {
+        return t;
+      }
+    }
+    return null;
+  }
+
+  /*package*/ void attach() {
+    new RepoListenerRegistrar(myRepository, myListener).attach();
+  }
+
+  /*package*/ void detach() {
+    new RepoListenerRegistrar(myRepository, myListener).detach();
+    // FIXME At the moment, there's no notification mechanism to find out about repository gone.
+  }
+
+  @Nullable
+  public SModel findModel(@Nullable IFile modelFile) {
+    if (modelFile == null) {
+      return null;
+    }
+    SModelReference mr = myListener.findModel(modelFile);
+    if (mr == null) {
+      return null;
+    }
+    // FIXME shall I extract this class, similar to RepoListenerRegistrar? Or shall I demand model read provided clients are gonna read model anyway?
+    class ModelResolve implements Computable<SModel> {
+      private final SModelReference myModelReference;
+      private final SRepository myRepository;
+
+      public ModelResolve(SModelReference modelReference, SRepository repository) {
+        myModelReference = modelReference;
+        myRepository = repository;
+      }
+
+      @Override
+      public SModel compute() {
+        return myModelReference.resolve(myRepository);
+      }
+
+      public SModel resolve() {
+        if (myRepository.getModelAccess().canRead()) {
+          return compute();
+        } else {
+          return new ModelComputeRunnable<SModel>(this).runRead(myRepository.getModelAccess());
+        }
+      }
+    }
+    return new ModelResolve(mr, myRepository).resolve();
+  }
+
+  public static class Plug implements CoreComponent {
+    public Plug(SRepositoryRegistry repositoryRegistry) {
+      // FIXME may listen to repositories come and go, instantiate (and dispose!) trackers as appropriate
+    }
+
+    @Override
+    public void init() {
+    }
+
+    @Override
+    public void dispose() {
+      ourModelTrackers.clear();
+    }
+  }
+
+  private static class RepositoryModelTracker extends SRepositoryContentAdapter {
+    private final Map<IFile, SModelReference> myPathsToModels = new HashMap<IFile, SModelReference>(256);
+
     @Override
     protected void startListening(SModel model) {
       addModelToFileCache(model);
@@ -53,64 +177,31 @@ public class SModelFileTracker implements CoreComponent {
     public void modelRenamed(SModule module, org.jetbrains.mps.openapi.model.SModel model, SModelReference oldRef) {
       addModelToFileCache(model);
     }
-  };
 
-  public SModelFileTracker(SRepositoryRegistry registry) {
-  }
+    private void addModelToFileCache(SModel md) {
+      DataSource source = md.getSource();
+      if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) {
+        return;
+      }
 
-  public static SModelFileTracker getInstance() {
-    return INSTANCE;
-  }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
+      IFile file = source instanceof FileDataSource
+          ? ((FileDataSource) source).getFile()
+          : ((FolderDataSource) source).getFolder();
+      myPathsToModels.put(file, md.getReference());
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SRepositoryRegistry.getInstance().addGlobalListener(myListener);
-      }
-    });
+    private void removeModelFromFileCache(SModel md) {
+      DataSource source = md.getSource();
+      if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
 
-    INSTANCE = this;
-  }
+      IFile file = source instanceof FileDataSource
+          ? ((FileDataSource) source).getFile()
+          : ((FolderDataSource) source).getFolder();
+      myPathsToModels.remove(file);
+    }
 
-  @Override
-  public void dispose() {
-    INSTANCE = null;
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
-      }
-    });
-  }
-
-  public SModel findModel(IFile modelFile) {
-    return myPathsToModelDescriptorMap.get(modelFile);
-  }
-
-  private void addModelToFileCache(SModel md) {
-    DataSource source = md.getSource();
-    if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
-
-    IFile file = source instanceof FileDataSource
-        ? ((FileDataSource) source).getFile()
-        : ((FolderDataSource) source).getFolder();
-    myPathsToModelDescriptorMap.put(file, md);
-  }
-
-  private void removeModelFromFileCache(SModel md) {
-    DataSource source = md.getSource();
-    if (!(source instanceof FileDataSource || source instanceof FolderDataSource)) return;
-
-    IFile file = source instanceof FileDataSource
-        ? ((FileDataSource) source).getFile()
-        : ((FolderDataSource) source).getFolder();
-    myPathsToModelDescriptorMap.remove(file);
+    /*package*/ SModelReference findModel(IFile modelFile) {
+      return myPathsToModels.get(modelFile);
+    }
   }
 }

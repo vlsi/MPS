@@ -21,13 +21,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.query.behavior.HelpProvider__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
 import java.util.LinkedList;
@@ -58,32 +56,32 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static void doExecute_id2SpVAIqougW(@NotNull SNode __thisNode__, ConsoleContext context, ConsoleStream console) {
     if ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")) == null)) {
-      Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider").getDeclarationNode(), ((BaseConsoleTab) context.getOutputWindow()).getConsoleModel())).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
+      Iterable<SAbstractConcept> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getInterfaceConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x690b986730edd07L, "jetbrains.mps.lang.smodel.query.structure.HelpProvider"), context.getOutputWindow().getConsoleModel())).where(new IWhereFilter<SAbstractConcept>() {
+        public boolean accept(SAbstractConcept it) {
           return SNodeOperations.isInstanceOf(SNodeOperations.asNode(it), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) && (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isDefaultSubstitutable_id6spw4TQeyqh.invoke(SNodeOperations.asNode(it));
         }
-      }).sort(new ISelector<SNode, String>() {
-        public String select(SNode it) {
+      }).sort(new ISelector<SAbstractConcept, String>() {
+        public String select(SAbstractConcept it) {
           return (String) HelpProvider__BehaviorDescriptor.getGroup_id60B$833p9Uj.invoke(SNodeOperations.asSConcept(it));
         }
-      }, true).alsoSort(new ISelector<SNode, String>() {
-        public String select(SNode it) {
+      }, true).alsoSort(new ISelector<SAbstractConcept, String>() {
+        public String select(SAbstractConcept it) {
           return (String) HelpProvider__BehaviorDescriptor.getKind_id64VftqEenf4.invoke(SNodeOperations.asSConcept(it));
         }
-      }, true).alsoSort(new ISelector<SNode, String>() {
-        public String select(SNode it) {
-          return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      }, true).alsoSort(new ISelector<SAbstractConcept, String>() {
+        public String select(SAbstractConcept it) {
+          return it.getName();
         }
       }, true);
-      Deque<SNode> groupedConstructions = LinkedListSequence.fromLinkedListNew(new LinkedList<SNode>());
-      for (SNode e : Sequence.fromIterable(constructions)) {
+      Deque<SAbstractConcept> groupedConstructions = LinkedListSequence.fromLinkedListNew(new LinkedList<SAbstractConcept>());
+      for (SAbstractConcept e : Sequence.fromIterable(constructions)) {
         if (HelpProvider__BehaviorDescriptor.getGroup_id60B$833p9Uj.invoke(SNodeOperations.asSConcept(e)) != check_x46ur7_a0a0c0a0a(LinkedListSequence.fromLinkedListNew(groupedConstructions).last())) {
           LinkedListSequence.fromLinkedListNew(groupedConstructions).addElement(null);
         }
         LinkedListSequence.fromLinkedListNew(groupedConstructions).addElement(e);
       }
-      List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedListNew(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
-        public IListSequence<String> select(SNode it) {
+      List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedListNew(groupedConstructions).select(new ISelector<SAbstractConcept, IListSequence<String>>() {
+        public IListSequence<String> select(SAbstractConcept it) {
           try {
             return ListSequence.fromListAndArray(new ArrayList<String>(), HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(it)), HelpProvider__BehaviorDescriptor.getShortHelp_idqgIopNa9Hb.invoke(SNodeOperations.asSConcept(it)));
           } catch (RuntimeException e) {
@@ -93,7 +91,7 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
             try {
               return ListSequence.fromListAndArray(new ArrayList<String>(), HelpProvider__BehaviorDescriptor.getShortDisplayString_id64VftqEenfn.invoke(SNodeOperations.asSConcept(it)), "");
             } catch (RuntimeException e1) {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), it.getName(), "");
             }
           }
         }
@@ -135,7 +133,7 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
     } else if ((boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command")), SNodeOperations.getNode("r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.lang.smodel.query.structure)", "473081947981012231"))) {
       String helpPage;
       try {
-        SNode chp = (SNode) (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command"));
+        SAbstractConcept chp = (SAbstractConcept) SNodeOperations.asSConcept(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730a1f80L, 0x60279080c2f4192bL, "target")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, 0x60279080c2f3f8d6L, "command")));
         helpPage = HelpProvider__BehaviorDescriptor.getHelpPage_id64VftqEen2L.invoke(SNodeOperations.asSConcept(chp));
         String helpHead = HelpProvider__BehaviorDescriptor.getDisplayString_id5YxQmqOFZEf.invoke(SNodeOperations.asSConcept(chp)) + " : " + HelpProvider__BehaviorDescriptor.getKind_id64VftqEenf4.invoke(SNodeOperations.asSConcept(chp)) + "\n" + HelpProvider__BehaviorDescriptor.getShortHelp_idqgIopNa9Hb.invoke(SNodeOperations.asSConcept(chp));
         if ((helpPage != null && helpPage.length() > 0)) {
@@ -206,7 +204,7 @@ public final class HelpCommand__BehaviorDescriptor extends BaseBHDescriptor {
     return CONCEPT;
   }
   protected static Logger LOG = LogManager.getLogger(HelpCommand__BehaviorDescriptor.class);
-  private static String check_x46ur7_a0a0c0a0a(SNode checkedDotOperand) {
+  private static String check_x46ur7_a0a0c0a0a(SAbstractConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return HelpProvider__BehaviorDescriptor.getGroup_id60B$833p9Uj.invoke(SNodeOperations.asSConcept(checkedDotOperand));
     }

@@ -49,9 +49,6 @@
       <concept id="5347446703374102164" name="jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox" flags="ng" index="2jLTN_">
         <property id="5347446703374102165" name="property" index="2jLTN$" />
       </concept>
-      <concept id="5347446703374102149" name="jetbrains.mps.lang.editor.formsTests.structure.UsesImageCheckbox" flags="ng" index="2jLTNO">
-        <property id="5347446703374102150" name="property" index="2jLTNR" />
-      </concept>
       <concept id="312429380032619373" name="jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes" flags="ng" index="2yq9IK">
         <property id="312429380032619374" name="booleanProperty1" index="2yq9IN" />
         <property id="4319657350470028071" name="booleanProperty2" index="1XQkDu" />
@@ -103,58 +100,9 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="4CPWB7pYBJc">
-    <property role="TrG5h" value="ImageCheckbox_SPACE_Toggles" />
-    <property role="3YCmrE" value="When inside a checkbox, pressing SPACE will toggle it" />
-    <node concept="2jLTNO" id="4CPWB7pYBJu" role="LiZbd">
-      <property role="2jLTNR" value="true" />
-      <node concept="LIFWc" id="4CPWB7pYBJA" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="LIFWd" value="Image_h1lpb1_a0a" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="4CPWB7pYBJh" role="LjaKd">
-      <node concept="yd1bK" id="4CPWB7pYBJi" role="3cqZAp">
-        <node concept="pLAjd" id="4CPWB7pYBJj" role="yd6KS">
-          <property role="pLAjf" value="VK_SPACE" />
-        </node>
-      </node>
-    </node>
-    <node concept="2jLTNO" id="4CPWB7pYBJp" role="LiRBU">
-      <node concept="LIFWc" id="4CPWB7pYBJ$" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="LIFWd" value="Image_h1lpb1_a0a_0" />
-      </node>
-    </node>
-  </node>
   <node concept="2yq9IK" id="6$bUG5eJZfJ">
     <property role="2yq9IN" value="true" />
     <property role="1XQkDu" value="false" />
-  </node>
-  <node concept="LiM7Y" id="4CPWB7pYUNz">
-    <property role="TrG5h" value="ImageCheckbox_CLICK_Toggles" />
-    <property role="3YCmrE" value="Clicking on a checkbox toggles it" />
-    <node concept="2jLTNO" id="4CPWB7pYUN_" role="LiRBU">
-      <property role="2jLTNR" value="true" />
-      <node concept="LIFWc" id="4CPWB7pZ_pH" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="LIFWd" value="Image_h1lpb1_a0a" />
-      </node>
-    </node>
-    <node concept="2jLTNO" id="4CPWB7pYUNC" role="LiZbd">
-      <property role="2jLTNR" value="false" />
-      <node concept="LIFWc" id="4CPWB7pZ_pJ" role="lGtFl">
-        <property role="LIFWa" value="0" />
-        <property role="LIFWd" value="Image_h1lpb1_a0a_0" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="4CPWB7pYUT$" role="LjaKd">
-      <node concept="37Q87h" id="4CPWB7pYUTy" role="3cqZAp">
-        <property role="37OD1f" value="0" />
-        <property role="37OD10" value="0" />
-        <node concept="3clFbS" id="4CPWB7pYUTz" role="9aQI4" />
-      </node>
-    </node>
   </node>
   <node concept="LiM7Y" id="4CPWB7q248w">
     <property role="TrG5h" value="TextCheckbox_CLICK_Toggles" />

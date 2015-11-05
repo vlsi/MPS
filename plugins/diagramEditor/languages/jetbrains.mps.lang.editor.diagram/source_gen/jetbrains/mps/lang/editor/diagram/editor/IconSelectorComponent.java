@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -70,24 +69,13 @@ public class IconSelectorComponent implements ConceptEditorComponent {
   private EditorCell createImage_6g738i_a0a(final EditorContext editorContext, final SNode node) {
     SModule imageModule;
     String imagePath;
-    {
-      Object image = ((_FunctionTypes._return_P0_E0<? extends Object>) new _FunctionTypes._return_P0_E0<String>() {
-        public String invoke() {
-          return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath"));
-        }
-      }).invoke();
-      if (image instanceof String) {
-        imageModule = SNodeOperations.getModel(node).getModule();
-        imagePath = (String) image;
-      } else {
-        {
-          Tuples._2<SModule, String> _tmp_6g738i_a0a1a2a5 = (Tuples._2<SModule, String>) image;
-          imageModule = _tmp_6g738i_a0a1a2a5._0();
-          imagePath = _tmp_6g738i_a0a1a2a5._1();
-        }
+    imageModule = SNodeOperations.getModel(node).getModule();
+    imagePath = (new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath"));
       }
-    }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
+    }).invoke();
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
     editorCell.setCellId("Image_6g738i_a0a");
     editorCell.setDescent(0);
     return editorCell;

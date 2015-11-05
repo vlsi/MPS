@@ -24,6 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -177,11 +178,11 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7255837154369265165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-          for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e647ad7dL, "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation").getDeclarationNode(), _context.getModel()))) {
-            if (!(SPropertyOperations.getBoolean(a, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")))) {
+      Iterable<SAbstractConcept> parameterObjects = new Computable<Iterable<SAbstractConcept>>() {
+        public Iterable<SAbstractConcept> compute() {
+          List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
+          for (SAbstractConcept a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x64b1e972e647ad7dL, "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), _context.getModel()))) {
+            if (!(a.isAbstract())) {
               ListSequence.fromList(result).addElement(a);
             }
           }
@@ -189,7 +190,7 @@ public class QueriesGenerated {
         }
       }.compute();
       if (parameterObjects != null) {
-        for (final SNode item : parameterObjects) {
+        for (final SAbstractConcept item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression").getDeclarationNode(), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
               return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept((item)), _context.getSourceNode()));
@@ -201,7 +202,7 @@ public class QueriesGenerated {
               return getMatchingText(pattern);
             }
             public String getDescriptionText(String pattern) {
-              return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"));
+              return SConceptOperations.shortDescription((item));
             }
             @Override
             protected boolean isEnabled() {

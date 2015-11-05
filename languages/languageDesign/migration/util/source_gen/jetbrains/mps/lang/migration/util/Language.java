@@ -9,9 +9,9 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
-import jetbrains.mps.actions.descriptor.AbstractActionAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.nodeEditor.EditorAspectDescriptorBase;
+import jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
@@ -42,7 +42,7 @@ public class Language extends LanguageRuntime {
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass == ActionAspectDescriptor.class) {
-      return (T) new AbstractActionAspectDescriptor() {};
+      return (T) new BaseActionAspectDescriptor();
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return ((T) new EditorAspectDescriptorBase());

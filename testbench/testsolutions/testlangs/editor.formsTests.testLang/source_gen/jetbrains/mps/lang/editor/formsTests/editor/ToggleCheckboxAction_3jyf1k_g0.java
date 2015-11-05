@@ -8,27 +8,25 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.lang.editor.forms.runtime.SaveSelectionForCheckbox;
 import jetbrains.mps.nodeEditor.selectionRestoring.CellSelector;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
+import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class ToggleCheckboxAction_d0 {
+public class ToggleCheckboxAction_3jyf1k_g0 {
   private final SNode myNode;
 
-  public ToggleCheckboxAction_d0(SNode node) {
+  public ToggleCheckboxAction_3jyf1k_g0(SNode node) {
     myNode = node;
   }
   public void execute(EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     RestorableSelection selection = new SaveSelectionForCheckbox(selectedCell) {
       protected CellSelector createCellSelector() {
-        EditorCell_Label label = (EditorCell_Label) mySelectedCell;
-        return new LabelCellSelector(label.getCaretPosition(), label.getSelectionStart(), label.getSelectionEnd());
+        return new WholeCellSelector();
       }
     }.save();
 
-    SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x455f8dda63d636eL, "booleanProperty1"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x455f8dda63d636eL, "booleanProperty1")))));
+    SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2")))));
 
     if (selection != null) {
       editorContext.flushEvents();

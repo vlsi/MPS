@@ -3759,13 +3759,8 @@
                         <ref role="16sUi3" node="1XXGcSTYzmt" resolve="T" />
                       </node>
                       <node concept="2ShNRf" id="4UrKinLivJN" role="10QFUP">
-                        <node concept="YeOm9" id="4UrKinLi$k1" role="2ShVmc">
-                          <node concept="1Y3b0j" id="4UrKinLi$k4" role="YeSDq">
-                            <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="w386:~AbstractActionAspectDescriptor" resolve="AbstractActionAspectDescriptor" />
-                            <ref role="37wK5l" to="w386:~AbstractActionAspectDescriptor.&lt;init&gt;()" resolve="AbstractActionAspectDescriptor" />
-                            <node concept="3Tm1VV" id="4UrKinLi$k5" role="1B3o_S" />
-                          </node>
+                        <node concept="1pGfFk" id="5Ha3bNHxstC" role="2ShVmc">
+                          <ref role="37wK5l" to="w386:~BaseActionAspectDescriptor.&lt;init&gt;()" resolve="BaseActionAspectDescriptor" />
                         </node>
                       </node>
                     </node>

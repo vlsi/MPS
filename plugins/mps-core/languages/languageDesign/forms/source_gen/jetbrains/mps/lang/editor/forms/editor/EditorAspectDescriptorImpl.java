@@ -18,9 +18,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"))) {
         return Collections.<ConceptEditor>singletonList(new CellModel_Checkbox_Editor());
       }
-      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780efb8L, "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Image"))) {
-        return Collections.<ConceptEditor>singletonList(new CheckboxUI_Image_Editor());
-      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x617bb6da72073973L, "jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Platform"))) {
         return Collections.<ConceptEditor>singletonList(new CheckboxUI_Platform_Editor());
       }

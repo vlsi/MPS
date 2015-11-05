@@ -174,6 +174,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
+  // FIXME perhaps, shall be explicit about parameter type, seems that it's always invoked with MPSProject anyway
+  // and there's hardly need to access ProjectPane without knowledge about IDE.
   public static ProjectPane getInstance(jetbrains.mps.project.Project mpsProject) {
     if (mpsProject instanceof MPSProject) {
       return getInstance(((MPSProject) mpsProject).getProject());
@@ -209,7 +211,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public SelectInTarget createSelectInTarget() {
-    return new ProjectPaneSelectInTarget(this.myProject, true);
+    return new ProjectPaneSelectInTarget(getMPSProject(), true);
   }
 
   @Override

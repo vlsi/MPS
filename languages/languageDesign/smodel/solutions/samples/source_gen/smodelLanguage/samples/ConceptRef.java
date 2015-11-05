@@ -74,8 +74,8 @@ public class ConceptRef {
     SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(concept), SNodeOperations.asSConcept(concept));
   }
   public void concept_hierarchy2(SModel model) {
-    List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation").getDeclarationNode(), model);
+    List<SAbstractConcept> subConcepts = SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), model);
     SNode n = null;
-    List<SNode> subConcepts1 = SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(n), model);
+    List<SAbstractConcept> subConcepts1 = SConceptOperations.getAllSubConcepts(SNodeOperations.getConcept(n), model);
   }
 }

@@ -53,10 +53,6 @@
         <child id="8215612579904156902" name="label" index="2fqkNU" />
         <child id="1340057216891284122" name="ui" index="1563LE" />
       </concept>
-      <concept id="1340057216891285432" name="jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Image" flags="ng" index="1563_8">
-        <property id="1340057216891285435" name="trueIconPath" index="1563_b" />
-        <property id="1340057216891285437" name="falseIconPath" index="1563_d" />
-      </concept>
       <concept id="1340057216891283515" name="jetbrains.mps.lang.editor.forms.structure.CheckboxUI_Text" flags="ng" index="1563Vb">
         <property id="1340057216891283520" name="falseText" index="1563UK" />
         <property id="1340057216891283518" name="trueText" index="1563Ve" />
@@ -84,16 +80,6 @@
           </node>
         </node>
         <node concept="3F0ifn" id="783I1NXqS7f" role="2fqkNU">
-          <property role="3F0ifm" value="booleanProperty1" />
-        </node>
-      </node>
-      <node concept="2yq9I_" id="1$0KR3zct_M" role="3EZMnx">
-        <ref role="225u1j" to="629a:hlYdQAfmdI" resolve="booleanProperty1" />
-        <node concept="1563_8" id="1$0KR3zctAS" role="1563LE">
-          <property role="1563_b" value="${module}/icons/dialog-ok-3.png" />
-          <property role="1563_d" value="${module}/icons/dialog-close.png" />
-        </node>
-        <node concept="3F0ifn" id="783I1NXqS7k" role="2fqkNU">
           <property role="3F0ifm" value="booleanProperty1" />
         </node>
       </node>
@@ -125,32 +111,12 @@
           <node concept="Vb9p2" id="783I1NXrl7c" role="3F10Kt" />
         </node>
       </node>
-      <node concept="2yq9I_" id="3JMwn_6aX3p" role="3EZMnx">
-        <ref role="225u1j" to="629a:3JMwn_6aWGB" resolve="booleanProperty2" />
-        <node concept="1563_8" id="1$0KR3zcy13" role="1563LE">
-          <property role="1563_b" value="${module}/icons/dialog-ok-3.png" />
-          <property role="1563_d" value="${module}/icons/dialog-close.png" />
-        </node>
-        <node concept="3F0ifn" id="783I1NXridj" role="2fqkNU">
-          <property role="3F0ifm" value="booleanProperty2" />
-        </node>
-      </node>
       <node concept="2yq9I_" id="GK0kbOwjL_" role="3EZMnx">
         <ref role="225u1j" to="629a:3JMwn_6aWGB" resolve="booleanProperty2" />
         <node concept="jv8YD" id="GK0kbOwo5I" role="1563LE" />
         <node concept="3F0ifn" id="GK0kbOwo5L" role="2fqkNU">
           <property role="3F0ifm" value="platform checkbox" />
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="24kQdi" id="4CPWB7pWAUd">
-    <ref role="1XX52x" to="629a:4CPWB7pWAU5" resolve="UsesImageCheckbox" />
-    <node concept="2yq9I_" id="4CPWB7pWAUf" role="2wV5jI">
-      <ref role="225u1j" to="629a:4CPWB7pWAU6" resolve="property" />
-      <node concept="1563_8" id="4CPWB7pWAUm" role="1563LE">
-        <property role="1563_b" value="${module}/icons/dialog-ok-3.png" />
-        <property role="1563_d" value="${module}/icons/dialog-close.png" />
       </node>
     </node>
   </node>

@@ -392,6 +392,11 @@
     <property role="19KtqR" value="true" />
     <property role="1pbfSe" value="1130715346" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="37Il31hWzcW" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="options" />
+      <ref role="20lvS9" node="37Il31hWzd0" resolve="RefactoringOptions" />
+    </node>
     <node concept="1TJgyj" id="1JTUOcBqQQg" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20lbJX" value="0..n" />
@@ -489,6 +494,32 @@
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="37Il31hWzd0">
+    <property role="1pbfSe" value="2082437264" />
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="RefactoringOptions" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="37Il31hWzd6" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="0..n" />
+      <property role="20kJfa" value="options" />
+      <ref role="20lvS9" node="37Il31hWzd3" resolve="RefactoringOption" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="37Il31hWzd3">
+    <property role="1pbfSe" value="2082437261" />
+    <property role="3GE5qa" value="refactoring" />
+    <property role="TrG5h" value="RefactoringOption" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="37Il31hWzd4" role="1TKVEl">
+      <property role="TrG5h" value="optionId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="37Il31hWKtO" role="1TKVEl">
+      <property role="TrG5h" value="description" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

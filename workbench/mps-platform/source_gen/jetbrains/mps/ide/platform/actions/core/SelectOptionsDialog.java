@@ -7,7 +7,6 @@ import java.util.List;
 import javax.swing.JCheckBox;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Map;
 import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -15,15 +14,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import java.util.Iterator;
 
 public class SelectOptionsDialog extends RefactoringDialog {
 
   private List<String> myOptions;
   private List<JCheckBox> myCheckBoxes = ListSequence.fromList(new ArrayList<JCheckBox>());
-  private Map<String, Boolean> mySelected;
+  private List<Integer> mySelected;
   public SelectOptionsDialog(Project project, List<String> options, String title) {
     super(project, true);
     myOptions = options;
@@ -65,21 +61,15 @@ public class SelectOptionsDialog extends RefactoringDialog {
   }
   @Override
   protected void doRefactoringAction() {
-    mySelected = MapSequence.fromMap(new HashMap<String, Boolean>());
-    {
-      Iterator<String> option_it = ListSequence.fromList(myOptions).iterator();
-      Iterator<JCheckBox> checkBox_it = ListSequence.fromList(myCheckBoxes).iterator();
-      String option_var;
-      JCheckBox checkBox_var;
-      while (option_it.hasNext() && checkBox_it.hasNext()) {
-        option_var = option_it.next();
-        checkBox_var = checkBox_it.next();
-        MapSequence.fromMap(mySelected).put(option_var, checkBox_var.isSelected());
+    mySelected = ListSequence.fromList(new ArrayList<Integer>());
+    for (int i = 0; i < ListSequence.fromList(myCheckBoxes).count(); i++) {
+      if (ListSequence.fromList(myCheckBoxes).getElement(i).isSelected()) {
+        ListSequence.fromList(mySelected).addElement(i);
       }
     }
     super.doRefactoringAction();
   }
-  public static Map<String, Boolean> selectOptions(Project project, List<String> options, String title) {
+  public static List<Integer> selectOptions(Project project, List<String> options, String title) {
     SelectOptionsDialog dialog = new SelectOptionsDialog(project, options, title);
     dialog.show();
     return dialog.mySelected;

@@ -4,16 +4,39 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
-import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
 
-  public List<String> getOptions(InitialDataObject initialState, SRepository repository);
+  public static class Option {
+    private String myId;
+    private String myDescription;
+    public Option(String id, String description) {
+      myId = id;
+      myDescription = description;
+    }
+    public String getId() {
+      return myId;
+    }
+    public String getDescription() {
+      return myDescription;
+    }
+    public int hashCode() {
+      return myId.hashCode();
+    }
+    public boolean equals(Object object) {
+      return object instanceof RefactoringParticipant.Option && eq_g5nieh_a0a0a6b(((RefactoringParticipant.Option) object).getId(), this.getId());
+    }
+    private static boolean eq_g5nieh_a0a0a6b(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
+  }
 
-  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope);
+  public List<RefactoringParticipant.Option> getAvailableOptions(InitialDataObject initialState, SRepository repository);
+
+  public List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>> getChanges(InitialDataObject initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope);
 
   public static interface Change<InitialDataObject, FinalDataObject> {
     public SearchResults getSearchResults();

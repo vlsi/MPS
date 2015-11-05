@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.actions.StyleClassItem" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.NodeFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode extendsClassName="jetbrains.mps.actions.descriptor.BaseActionAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.actions.EDTL_node_factories" file="EDTL_node_factories.java">

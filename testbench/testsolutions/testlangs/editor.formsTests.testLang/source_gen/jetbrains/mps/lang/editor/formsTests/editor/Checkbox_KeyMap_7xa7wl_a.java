@@ -13,15 +13,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
-public class Checkbox_KeyMap_g0 extends KeyMapImpl {
-  public Checkbox_KeyMap_g0() {
+public class Checkbox_KeyMap_7xa7wl_a extends KeyMapImpl {
+  public Checkbox_KeyMap_7xa7wl_a() {
     this.setApplicableToEveryModel(false);
     KeyMapAction action;
-    action = new Checkbox_KeyMap_g0.Checkbox_KeyMap_g0_Action0();
+    action = new Checkbox_KeyMap_7xa7wl_a.Checkbox_KeyMap_7xa7wl_a_Action0();
     this.putAction("none", "VK_SPACE", action);
   }
-  public static class Checkbox_KeyMap_g0_Action0 extends KeyMapActionImpl {
-    public Checkbox_KeyMap_g0_Action0() {
+  public static class Checkbox_KeyMap_7xa7wl_a_Action0 extends KeyMapActionImpl {
+    public Checkbox_KeyMap_7xa7wl_a_Action0() {
       this.setShownInPopupMenu(false);
     }
     public String getDescriptionText() {
@@ -39,7 +39,7 @@ public class Checkbox_KeyMap_g0 extends KeyMapImpl {
       if (contextNode == null) {
         return false;
       }
-      if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes")))) {
+      if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox")))) {
         return false;
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
@@ -52,7 +52,7 @@ public class Checkbox_KeyMap_g0 extends KeyMapImpl {
       return editorContext.getContextCell() instanceof EditorCell_Collection;
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      new ToggleCheckboxAction_g0(node).execute(editorContext);
+      new ToggleCheckboxAction_7xa7wl_a(node).execute(editorContext);
     }
     public String getKeyStroke() {
       return "none SPACE";

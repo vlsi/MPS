@@ -41,16 +41,6 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4CPWB7pWAU5">
-    <property role="1pbfSe" value="606626038" />
-    <property role="TrG5h" value="UsesImageCheckbox" />
-    <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="4CPWB7pWAU6" role="1TKVEl">
-      <property role="TrG5h" value="property" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="4CPWB7pWAUk">
     <property role="1pbfSe" value="606626053" />
     <property role="TrG5h" value="UsesTextCheckbox" />

@@ -12,31 +12,28 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptUsesImageCheckbox = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesImageCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e85L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5347446703374102150L, "property")).properties("property").create();
   /*package*/ final ConceptDescriptor myConceptUsesPlatformCheckbox = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7013563450911355562L, "property")).properties("property").create();
   /*package*/ final ConceptDescriptor myConceptUsesTextCheckbox = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5347446703374102165L, "property")).properties("property").create();
   /*package*/ final ConceptDescriptor myConceptVariousCheckboxes = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes", MetaIdFactory.conceptId(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(312429380032619374L, "booleanProperty1"), new ConceptDescriptorBuilder.Prop(4319657350470028071L, "booleanProperty2")).properties("booleanProperty1", "booleanProperty2").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptUsesImageCheckbox, myConceptUsesPlatformCheckbox, myConceptUsesTextCheckbox, myConceptVariousCheckboxes);
+    return Arrays.asList(myConceptUsesPlatformCheckbox, myConceptUsesTextCheckbox, myConceptVariousCheckboxes);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
-        return myConceptUsesImageCheckbox;
-      case 1:
         return myConceptUsesPlatformCheckbox;
-      case 2:
+      case 1:
         return myConceptUsesTextCheckbox;
-      case 3:
+      case 2:
         return myConceptVariousCheckboxes;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.lang.editor.formsTests.structure.UsesImageCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.editor.formsTests.structure.UsesPlatformCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.UsesTextCheckbox", "jetbrains.mps.lang.editor.formsTests.structure.VariousCheckboxes"};
 }

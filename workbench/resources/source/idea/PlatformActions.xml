@@ -169,7 +169,9 @@
 
     <group id="Diff.KeymapGroup" text="Diff">
       <action id="Diff.ShowDiff" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Actions.Diff"/> <!-- CommonShortcuts.getDiff() -->
+      <!-- MPS Patch to avoid collision with Duplicate Node action TODO: find way to avoid this!!!
       <action id="CompareTwoFiles" class="com.intellij.diff.actions.CompareFilesAction" icon="AllIcons.Actions.Diff"/>
+      -->
       <action id="CompareFileWithEditor" class="com.intellij.diff.actions.CompareFileWithEditorAction"/>
       <action id="CompareClipboardWithSelection" class="com.intellij.diff.actions.CompareClipboardWithSelectionAction"/>
 
@@ -193,7 +195,7 @@
       <action id="Diff.IgnoreRightSide" class="com.intellij.openapi.actionSystem.EmptyAction" icon="AllIcons.Diff.Remove"/>
       <separator/>
 
-      <action id="CompareDirs" class="com.intellij.openapi.diff.actions.CompareDirectoriesAction" text="Compare Directories" use-shortcut-of="CompareTwoFiles"/>
+      <action id="CompareDirs" class="com.intellij.openapi.diff.actions.CompareDirectoriesAction" text="Compare Directories"/> <!--use-shortcut-of="CompareTwoFiles"-->
 
       <separator/>
       <add-to-group group-id="Vcs.KeymapGroup"/>
@@ -244,9 +246,9 @@
           <action id="ConvertToMacLineSeparators" class="com.intellij.codeStyle.ConvertToMacLineSeparatorsAction"/>
         </group>
 
+        -->
         <action id="ToggleReadOnlyAttribute" class="com.intellij.ide.actions.ToggleReadOnlyAttributeAction"/>
         <separator/>
-        -->
         <action id="Exit" class="com.intellij.ide.actions.ExitAction"/>
       </group>
 
@@ -340,7 +342,9 @@
         <!-- MPS Patch End-->
         <group id="CompareActions">
           <group id="PairFileActions">
+            <!--
             <reference ref="CompareTwoFiles"/>
+            -->
             <reference ref="CompareFileWithEditor"/>
           </group>
           <reference ref="CompareClipboardWithSelection"/>

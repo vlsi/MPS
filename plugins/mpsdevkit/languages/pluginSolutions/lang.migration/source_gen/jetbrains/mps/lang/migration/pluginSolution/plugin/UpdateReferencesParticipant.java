@@ -14,9 +14,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
@@ -33,6 +31,7 @@ import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -73,9 +72,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public String getId() {
     return "moveNode.updateReferences";
   }
-  public String getDescription() {
-    return "Update references in current project";
-  }
+  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references in current project");
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference>() {
     public NamedNodeReference beforeMove(SNode nodeToMove) {
       return new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove));
@@ -88,12 +85,12 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
     return myDataCollector;
   }
 
-  public List<String> getOptions(NamedNodeReference initialState, SRepository repository) {
-    return ListSequence.fromListAndArray(new ArrayList<String>(), getDescription());
+  public List<RefactoringParticipant.Option> getAvailableOptions(NamedNodeReference initialState, SRepository repository) {
+    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
   }
 
-  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, Map<String, Boolean> options, SearchScope searchScope) {
-    if (!(MapSequence.fromMap(options).get(getDescription()))) {
+  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+    if (!(ListSequence.fromList(selectedOptions).contains(myOption))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>());
     }
     {

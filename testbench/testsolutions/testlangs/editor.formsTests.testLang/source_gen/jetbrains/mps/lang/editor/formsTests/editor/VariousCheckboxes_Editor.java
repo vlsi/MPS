@@ -19,16 +19,15 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 
 public class VariousCheckboxes_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -42,12 +41,10 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_3jyf1k_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3jyf1k_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3jyf1k_c0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_3jyf1k_d0(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_3jyf1k_e0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3jyf1k_f0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_3jyf1k_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3jyf1k_e0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_3jyf1k_f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3jyf1k_g0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_3jyf1k_h0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_3jyf1k_i0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_3jyf1k_a0(EditorContext editorContext, SNode node) {
@@ -59,8 +56,8 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3jyf1k_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jyf1k_b0");
-    Checkbox_Actions_b0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_b0());
+    Checkbox_Actions_3jyf1k_b0.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_b0());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b1a(editorContext, node));
     return editorCell;
@@ -105,8 +102,11 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3jyf1k_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jyf1k_c0");
-    Checkbox_Actions_c0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_c0());
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, 0, true);
+    editorCell.getStyle().putAll(style);
+    Checkbox_Actions_3jyf1k_c0.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_c0());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b2a(editorContext, node));
     return editorCell;
@@ -116,103 +116,95 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     alternationCondition = VariousCheckboxes_Editor.renderingCondition_3jyf1k_a0c0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createImage_3jyf1k_a0c0(editorContext, node);
+      editorCell = this.createConstant_3jyf1k_a0c0(editorContext, node);
     } else {
-      editorCell = this.createImage_3jyf1k_a0c0_0(editorContext, node);
+      editorCell = this.createConstant_3jyf1k_a0c0_0(editorContext, node);
     }
     return editorCell;
   }
   private static boolean renderingCondition_3jyf1k_a0c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x455f8dda63d636eL, "booleanProperty1"));
   }
-  private EditorCell createImage_3jyf1k_a0c0(final EditorContext editorContext, final SNode node) {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
-    imagePath = "${module}/icons/dialog-ok-3.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
-    editorCell.setCellId("Image_3jyf1k_a0c0");
-    editorCell.setDescent(0);
+  private EditorCell createConstant_3jyf1k_a0c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true");
+    editorCell.setCellId("Constant_3jyf1k_a0c0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createImage_3jyf1k_a0c0_0(final EditorContext editorContext, final SNode node) {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
-    imagePath = "${module}/icons/dialog-close.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
-    editorCell.setCellId("Image_3jyf1k_a0c0_0");
-    editorCell.setDescent(0);
+  private EditorCell createConstant_3jyf1k_a0c0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false");
+    editorCell.setCellId("Constant_3jyf1k_a0c0_0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_3jyf1k_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "booleanProperty1");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with a style (border)");
     editorCell.setCellId("Constant_3jyf1k_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_3jyf1k_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3jyf1k_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, 0, true);
-    editorCell.getStyle().putAll(style);
-    Checkbox_Actions_d0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_d0());
-    editorCell.addEditorCell(this.createAlternation_3jyf1k_a3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3jyf1k_b3a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createAlternation_3jyf1k_a3a(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = VariousCheckboxes_Editor.renderingCondition_3jyf1k_a0d0(node, editorContext);
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_3jyf1k_a0d0(editorContext, node);
-    } else {
-      editorCell = this.createConstant_3jyf1k_a0d0_0(editorContext, node);
-    }
-    return editorCell;
-  }
-  private static boolean renderingCondition_3jyf1k_a0d0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x455f8dda63d636eL, "booleanProperty1"));
-  }
-  private EditorCell createConstant_3jyf1k_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true");
-    editorCell.setCellId("Constant_3jyf1k_a0d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_3jyf1k_a0d0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false");
-    editorCell.setCellId("Constant_3jyf1k_a0d0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_3jyf1k_b3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with a style (border)");
-    editorCell.setCellId("Constant_3jyf1k_b3a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createEmpty_3jyf1k_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_3jyf1k_d0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
-    editorCell.setCellId("Empty_3jyf1k_e0");
+    editorCell.setCellId("Empty_3jyf1k_d0");
     return editorCell;
   }
-  private EditorCell createConstant_3jyf1k_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3jyf1k_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "booleanProperty2:");
-    editorCell.setCellId("Constant_3jyf1k_f0");
+    editorCell.setCellId("Constant_3jyf1k_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_3jyf1k_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_3jyf1k_f0");
+    Checkbox_Actions_3jyf1k_f0.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_f0());
+    editorCell.addEditorCell(this.createAlternation_3jyf1k_a5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3jyf1k_b5a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createAlternation_3jyf1k_a5a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = VariousCheckboxes_Editor.renderingCondition_3jyf1k_a0f0(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createConstant_3jyf1k_a0f0(editorContext, node);
+    } else {
+      editorCell = this.createConstant_3jyf1k_a0f0_0(editorContext, node);
+    }
+    return editorCell;
+  }
+  private static boolean renderingCondition_3jyf1k_a0f0(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2"));
+  }
+  private EditorCell createConstant_3jyf1k_a0f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[x]");
+    editorCell.setCellId("Constant_3jyf1k_a0f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_3jyf1k_a0f0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[ ]");
+    editorCell.setCellId("Constant_3jyf1k_a0f0_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_3jyf1k_b5a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "booleanProperty2");
+    editorCell.setCellId("Constant_3jyf1k_b5a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_3jyf1k_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3jyf1k_g0");
-    Checkbox_Actions_g0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_g0());
+    Checkbox_Actions_3jyf1k_g0.setCellActions(editorCell, node, editorContext);
+    editorCell.addKeyMap(new Checkbox_KeyMap_3jyf1k_g0());
     editorCell.addEditorCell(this.createAlternation_3jyf1k_a6a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3jyf1k_b6a(editorContext, node));
     return editorCell;
@@ -222,161 +214,52 @@ public class VariousCheckboxes_Editor extends DefaultNodeEditor {
     alternationCondition = VariousCheckboxes_Editor.renderingCondition_3jyf1k_a0g0(node, editorContext);
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_3jyf1k_a0g0(editorContext, node);
+      editorCell = this.createImage_3jyf1k_a0g0(editorContext, node);
     } else {
-      editorCell = this.createConstant_3jyf1k_a0g0_0(editorContext, node);
+      editorCell = this.createImage_3jyf1k_a0g0_0(editorContext, node);
     }
     return editorCell;
   }
   private static boolean renderingCondition_3jyf1k_a0g0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2"));
   }
-  private EditorCell createConstant_3jyf1k_a0g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[x]");
-    editorCell.setCellId("Constant_3jyf1k_a0g0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_3jyf1k_a0g0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[ ]");
-    editorCell.setCellId("Constant_3jyf1k_a0g0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_3jyf1k_b6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "booleanProperty2");
-    editorCell.setCellId("Constant_3jyf1k_b6a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_3jyf1k_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3jyf1k_h0");
-    Checkbox_Actions_h0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_h0());
-    editorCell.addEditorCell(this.createAlternation_3jyf1k_a7a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3jyf1k_b7a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createAlternation_3jyf1k_a7a(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = VariousCheckboxes_Editor.renderingCondition_3jyf1k_a0h0(node, editorContext);
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createImage_3jyf1k_a0h0(editorContext, node);
-    } else {
-      editorCell = this.createImage_3jyf1k_a0h0_0(editorContext, node);
-    }
-    return editorCell;
-  }
-  private static boolean renderingCondition_3jyf1k_a0h0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2"));
-  }
-  private EditorCell createImage_3jyf1k_a0h0(final EditorContext editorContext, final SNode node) {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
-    imagePath = "${module}/icons/dialog-ok-3.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
-    editorCell.setCellId("Image_3jyf1k_a0h0");
-    editorCell.setDescent(0);
-    return editorCell;
-  }
-  private EditorCell createImage_3jyf1k_a0h0_0(final EditorContext editorContext, final SNode node) {
-    SModule imageModule;
-    String imagePath;
-    imageModule = SNodeOperations.getConcept(node).getLanguage().getSourceModule();
-    imagePath = "${module}/icons/dialog-close.png";
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
-    editorCell.setCellId("Image_3jyf1k_a0h0_0");
-    editorCell.setDescent(0);
-    return editorCell;
-  }
-  private EditorCell createConstant_3jyf1k_b7a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "booleanProperty2");
-    editorCell.setCellId("Constant_3jyf1k_b7a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_3jyf1k_i0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3jyf1k_i0");
-    Checkbox_Actions_i0.setCellActions(editorCell, node, editorContext);
-    editorCell.addKeyMap(new Checkbox_KeyMap_i0());
-    editorCell.addEditorCell(this.createAlternation_3jyf1k_a8a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3jyf1k_b8a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createAlternation_3jyf1k_a8a(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = VariousCheckboxes_Editor.renderingCondition_3jyf1k_a0i0(node, editorContext);
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createImage_3jyf1k_a0i0(editorContext, node);
-    } else {
-      editorCell = this.createImage_3jyf1k_a0i0_0(editorContext, node);
-    }
-    return editorCell;
-  }
-  private static boolean renderingCondition_3jyf1k_a0i0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x455f8dda63d636dL, 0x3bf28179462bcb27L, "booleanProperty2"));
-  }
-  private EditorCell createImage_3jyf1k_a0i0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createImage_3jyf1k_a0g0(final EditorContext editorContext, final SNode node) {
     SModule imageModule;
     String imagePath;
     {
-      Object image = ((_FunctionTypes._return_P0_E0<? extends Object>) new _FunctionTypes._return_P0_E0<Tuples._2<SModule, String>>() {
+      Tuples._2<SModule, String> _tmp_3jyf1k_a0c0ab = (new _FunctionTypes._return_P0_E0<Tuples._2<SModule, String>>() {
         public Tuples._2<SModule, String> invoke() {
           return MultiTuple.<SModule,String>from(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)")), "${module}/icons/checkBoxSelected.png");
         }
       }).invoke();
-      if (image instanceof String) {
-        imageModule = SNodeOperations.getModel(node).getModule();
-        imagePath = (String) image;
-      } else {
-        {
-          Tuples._2<SModule, String> _tmp_3jyf1k_a0a1a2a83 = (Tuples._2<SModule, String>) image;
-          imageModule = _tmp_3jyf1k_a0a1a2a83._0();
-          imagePath = _tmp_3jyf1k_a0a1a2a83._1();
-        }
-      }
+      imageModule = _tmp_3jyf1k_a0c0ab._0();
+      imagePath = _tmp_3jyf1k_a0c0ab._1();
     }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
-    editorCell.setCellId("Image_3jyf1k_a0i0");
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
+    editorCell.setCellId("Image_3jyf1k_a0g0");
     editorCell.setDescent(-1);
     return editorCell;
   }
-  private EditorCell createImage_3jyf1k_a0i0_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createImage_3jyf1k_a0g0_0(final EditorContext editorContext, final SNode node) {
     SModule imageModule;
     String imagePath;
     {
-      Object image = ((_FunctionTypes._return_P0_E0<? extends Object>) new _FunctionTypes._return_P0_E0<Tuples._2<SModule, String>>() {
+      Tuples._2<SModule, String> _tmp_3jyf1k_a0c0bb = (new _FunctionTypes._return_P0_E0<Tuples._2<SModule, String>>() {
         public Tuples._2<SModule, String> invoke() {
           return MultiTuple.<SModule,String>from(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)")), "${module}/icons/checkBox.png");
         }
       }).invoke();
-      if (image instanceof String) {
-        imageModule = SNodeOperations.getModel(node).getModule();
-        imagePath = (String) image;
-      } else {
-        {
-          Tuples._2<SModule, String> _tmp_3jyf1k_a0a1a2a93 = (Tuples._2<SModule, String>) image;
-          imageModule = _tmp_3jyf1k_a0a1a2a93._0();
-          imagePath = _tmp_3jyf1k_a0a1a2a93._1();
-        }
-      }
+      imageModule = _tmp_3jyf1k_a0c0bb._0();
+      imagePath = _tmp_3jyf1k_a0c0bb._1();
     }
-    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath, true);
-    editorCell.setCellId("Image_3jyf1k_a0i0_0");
+    EditorCell_Image editorCell = EditorCell_Image.createImageCell(editorContext, node, imageModule, imagePath);
+    editorCell.setCellId("Image_3jyf1k_a0g0_0");
     editorCell.setDescent(-1);
     return editorCell;
   }
-  private EditorCell createConstant_3jyf1k_b8a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3jyf1k_b6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "platform checkbox");
-    editorCell.setCellId("Constant_3jyf1k_b8a");
+    editorCell.setCellId("Constant_3jyf1k_b6a");
     editorCell.setDefaultText("");
     return editorCell;
   }

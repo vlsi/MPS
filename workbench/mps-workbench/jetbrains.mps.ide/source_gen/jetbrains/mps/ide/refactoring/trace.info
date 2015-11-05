@@ -408,7 +408,7 @@
       <node id="2864517217434136753" at="43,56,44,68" concept="14" />
       <node id="2864517217434136847" at="55,60,56,85" concept="8" />
       <node id="2864517217434136864" at="59,49,60,21" concept="8" />
-      <node id="2864517217434136869" at="62,6,63,77" concept="2" />
+      <node id="2864517217434136869" at="62,6,63,88" concept="2" />
       <node id="3125670498081663595" at="66,44,67,30" concept="2" />
       <node id="2864517217434137901" at="69,60,70,17" concept="2" />
       <node id="382243931051629616" at="73,52,74,52" concept="8" />
@@ -429,7 +429,7 @@
       <node id="2864517217434136735" at="47,87,52,10" concept="8" />
       <node id="2864517217434137907" at="84,0,89,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
       <node id="2864517217434137952" at="89,0,94,0" concept="12" trace="getSelectedModel#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="2864517217434138349" at="63,77,69,60" concept="2" />
+      <node id="2864517217434138349" at="63,88,69,60" concept="2" />
       <node id="2864517217433560584" at="28,0,35,0" concept="1" trace="SModelReferenceDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
       <node id="2864517217434136692" at="46,0,54,0" concept="6" trace="doGetNavigationItem#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lcom/intellij/navigation/NavigationItem;" />
       <node id="2864517217434137903" at="76,0,84,0" concept="6" trace="doRefactoringAction#()V" />
@@ -807,7 +807,7 @@
       <node id="8047970061511974407" at="43,57,44,68" concept="14" />
       <node id="8047970061511974434" at="55,61,56,87" concept="8" />
       <node id="8047970061511974445" at="59,49,60,21" concept="8" />
-      <node id="8047970061511915171" at="62,6,63,78" concept="2" />
+      <node id="8047970061511915171" at="62,6,63,89" concept="2" />
       <node id="8047970061511915191" at="66,44,67,30" concept="2" />
       <node id="8047970061511915197" at="69,60,70,17" concept="2" />
       <node id="8047970061511915203" at="73,52,74,52" concept="8" />
@@ -828,7 +828,7 @@
       <node id="8047970061511974416" at="47,88,52,10" concept="8" />
       <node id="8047970061511915236" at="84,0,89,0" concept="6" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
       <node id="8047970061511915246" at="89,0,94,0" concept="12" trace="getSelectedModule#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="8047970061511915177" at="63,78,69,60" concept="2" />
+      <node id="8047970061511915177" at="63,89,69,60" concept="2" />
       <node id="8047970061511915071" at="28,0,35,0" concept="1" trace="ChooseModuleDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
       <node id="8047970061511974412" at="46,0,54,0" concept="6" trace="doGetNavigationItem#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lcom/intellij/navigation/NavigationItem;" />
       <node id="8047970061511915209" at="76,0,84,0" concept="6" trace="doRefactoringAction#()V" />

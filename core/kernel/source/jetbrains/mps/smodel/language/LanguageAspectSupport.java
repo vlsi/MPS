@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -61,10 +62,14 @@ public class LanguageAspectSupport {
       result.add(aspectModel);
     }
 
-    for (LanguageAspectDescriptor d : SNodeUtil.collectAspects()) {
+    for (LanguageAspectDescriptor d : collectAspects()) {
       result.addAll(d.getAspectModels(language));
     }
     return result;
+  }
+
+  public static Iterable<LanguageAspectDescriptor> collectAspects() {
+    return new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects();
   }
 
   @Nullable
@@ -75,18 +80,18 @@ public class LanguageAspectSupport {
       if (la.is(model)) return la.getHelpURL();
     }
 
-    for (LanguageAspectDescriptor d : SNodeUtil.collectAspects()) {
+    for (LanguageAspectDescriptor d : collectAspects()) {
       if (d.getAspectModels(model.getModule()).contains(model)) return d.getHelpUrl();
     }
 
     return null;
   }
 
-  public static Collection<SLanguage> getMainLanguages(SModel model){
+  public static Collection<SLanguage> getMainLanguages(SModel model) {
     LanguageAspect oldAspect = getOldAspect(model);
-    if (oldAspect !=null) return Collections.singleton(MetaAdapterFactory.getLanguage(oldAspect.getMainLanguage()));
+    if (oldAspect != null) return Collections.singleton(MetaAdapterFactory.getLanguage(oldAspect.getMainLanguage()));
     LanguageAspectDescriptor newAspect = getNewAspect(model);
-    if (newAspect!=null) return newAspect.getMainLanguages();
+    if (newAspect != null) return newAspect.getMainLanguages();
     return Collections.emptyList();
   }
 
@@ -97,7 +102,7 @@ public class LanguageAspectSupport {
         return true;
       }
     }
-    for (LanguageAspectDescriptor ad:SNodeUtil.collectAspects()){
+    for (LanguageAspectDescriptor ad : collectAspects()) {
       if (shortName.equals(ad.getPresentableAspectName())) {
         return true;
       }
@@ -127,8 +132,7 @@ public class LanguageAspectSupport {
   @ToRemove(version = 3.3)
   //for internal use only
   public static LanguageAspectDescriptor getNewAspect(SModel model) {
-    Collection<LanguageAspectDescriptor> newAspects = SNodeUtil.collectAspects();
-    for (LanguageAspectDescriptor d : newAspects) {
+    for (LanguageAspectDescriptor d : collectAspects()) {
       if (d.getAspectModels(model.getModule()).contains(model)) return d;
     }
     return null;

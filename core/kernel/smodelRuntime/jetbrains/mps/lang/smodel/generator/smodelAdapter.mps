@@ -10665,6 +10665,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="pigfKOeqZh" role="jymVt" />
     <node concept="2YIFZL" id="5IkW5anFez3" role="jymVt">
       <property role="TrG5h" value="getNode" />
       <node concept="3clFbS" id="5IkW5anFeza" role="3clF47">
@@ -10707,132 +10708,20 @@
           <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
-    </node>
-    <node concept="2YIFZL" id="5IkW5anFezi" role="jymVt">
-      <property role="TrG5h" value="getReferentSearchScope" />
-      <node concept="3clFbS" id="5IkW5anFezr" role="3clF47">
-        <node concept="3clFbJ" id="5IkW5anFezs" role="3cqZAp">
-          <node concept="3clFbS" id="5IkW5anFezw" role="3clFbx">
-            <node concept="3cpWs6" id="5IkW5anFezx" role="3cqZAp">
-              <node concept="10Nm6u" id="5IkW5anFezy" role="3cqZAk" />
-            </node>
-          </node>
-          <node concept="3clFbC" id="5IkW5anFezt" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxgm7ly" role="3uHU7B">
-              <ref role="3cqZAo" node="5IkW5anFezl" resolve="referenceNode" />
-            </node>
-            <node concept="10Nm6u" id="5IkW5anFezv" role="3uHU7w" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="3Kn7SWWY9CU" role="3cqZAp">
-          <node concept="3cpWsn" id="3Kn7SWWY9CV" role="3cpWs9">
-            <property role="TrG5h" value="scope" />
-            <node concept="2OqwBi" id="3n123GgV8Do" role="33vP2m">
-              <node concept="2YIFZM" id="3n123GgV8D2" role="2Oq$k0">
-                <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,java.lang.String):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
-                <node concept="37vLTw" id="2BHiRxgm7M1" role="37wK5m">
-                  <ref role="3cqZAo" node="5IkW5anFezl" resolve="referenceNode" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgm6D5" role="37wK5m">
-                  <ref role="3cqZAo" node="5IkW5anFezn" resolve="referenceRole" />
-                </node>
-              </node>
-              <node concept="liA8E" id="3n123GgV8Du" role="2OqNvi">
-                <ref role="37wK5l" to="ykok:~ReferenceDescriptor.getScope():jetbrains.mps.scope.Scope" resolve="getScope" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="3Kn7SWWY9CW" role="1tU5fm">
-              <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="3Kn7SWWY9I4" role="3cqZAp">
-          <node concept="2ZW3vV" id="3Kn7SWWY9I9" role="3clFbw">
-            <node concept="3uibUv" id="3Kn7SWWY9Ic" role="2ZW6by">
-              <ref role="3uigEE" to="o8zo:6G8eME5$OpJ" resolve="ErrorScope" />
-            </node>
-            <node concept="37vLTw" id="3GM_nagTye6" role="2ZW6bz">
-              <ref role="3cqZAo" node="3Kn7SWWY9CV" resolve="scope" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="3Kn7SWWY9I5" role="3clFbx">
-            <node concept="3cpWs6" id="3Kn7SWWY9Id" role="3cqZAp">
-              <node concept="10Nm6u" id="3Kn7SWWY9If" role="3cqZAk" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="3Kn7SWWY9Ih" role="3cqZAp">
-          <node concept="2ZW3vV" id="3Kn7SWWY9Im" role="3clFbw">
-            <node concept="37vLTw" id="3GM_nagT_od" role="2ZW6bz">
-              <ref role="3cqZAo" node="3Kn7SWWY9CV" resolve="scope" />
-            </node>
-            <node concept="3uibUv" id="3Kn7SWWY9S8" role="2ZW6by">
-              <ref role="3uigEE" to="inbo:7ipADkTfn4p" resolve="ISearchScope.Adapter" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="3Kn7SWWY9Ii" role="3clFbx">
-            <node concept="3cpWs6" id="3Kn7SWWYeJY" role="3cqZAp">
-              <node concept="2OqwBi" id="3Kn7SWWYeK4" role="3cqZAk">
-                <node concept="liA8E" id="3Kn7SWWYeK8" role="2OqNvi">
-                  <ref role="37wK5l" to="inbo:7ipADkTfqGL" resolve="getSearchScope" />
-                </node>
-                <node concept="1eOMI4" id="3Kn7SWWYeK0" role="2Oq$k0">
-                  <node concept="10QFUN" id="3Kn7SWWYeK1" role="1eOMHV">
-                    <node concept="3uibUv" id="3Kn7SWWYeK2" role="10QFUM">
-                      <ref role="3uigEE" to="inbo:7ipADkTfn4p" resolve="ISearchScope.Adapter" />
-                    </node>
-                    <node concept="37vLTw" id="3GM_nagTsGG" role="10QFUP">
-                      <ref role="3cqZAo" node="3Kn7SWWY9CV" resolve="scope" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5IkW5anFe$f" role="3cqZAp">
-          <node concept="2ShNRf" id="3Kn7SWWYeK9" role="3cqZAk">
-            <node concept="1pGfFk" id="3Kn7SWWYeKb" role="2ShVmc">
-              <ref role="37wK5l" to="o8zo:7ipADkTewRQ" resolve="ScopeAdapter" />
-              <node concept="37vLTw" id="3GM_nagTubG" role="37wK5m">
-                <ref role="3cqZAo" node="3Kn7SWWY9CV" resolve="scope" />
-              </node>
+      <node concept="P$JXv" id="pigfKOerSn" role="lGtFl">
+        <node concept="TZ5HI" id="pigfKOerSo" role="3nqlJM">
+          <node concept="TZ5HA" id="pigfKOerSp" role="3HnX3l">
+            <node concept="1dT_AC" id="pigfKOerTC" role="1dT_Ay">
+              <property role="1dT_AB" value="Resolves node in a global repository, avoid" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="5IkW5anFezl" role="3clF46">
-        <property role="TrG5h" value="referenceNode" />
-        <node concept="3uibUv" id="5IkW5anFezm" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="5IkW5anFezj" role="1B3o_S" />
-      <node concept="P$JXv" id="5RQ13JxrmFS" role="lGtFl">
-        <node concept="TZ5HA" id="5RQ13JxrmFT" role="TZ5H$">
-          <node concept="1dT_AC" id="5RQ13JxrmG4" role="1dT_Ay">
-            <property role="1dT_AB" value="use ModelConstraints.getScope() and ModelConstraints.getReferenceDescriptor()" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5RQ13JxrmFO" role="2AJF6D">
+      <node concept="2AHcQZ" id="pigfKOerSq" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
       </node>
-      <node concept="3uibUv" id="tyT6pgwX7j" role="3clF45">
-        <ref role="3uigEE" to="inbo:41J4moeY$b5" resolve="ISearchScope" />
-      </node>
-      <node concept="37vLTG" id="5IkW5anFezn" role="3clF46">
-        <property role="TrG5h" value="referenceRole" />
-        <node concept="17QB3L" id="1Q0YJjO4s6l" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="5IkW5anFezp" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="5IkW5anFezq" role="1tU5fm">
-          <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-        </node>
-      </node>
     </node>
+    <node concept="2tJIrI" id="pigfKOeq6c" role="jymVt" />
     <node concept="2YIFZL" id="5IkW5anFe$h" role="jymVt">
       <property role="TrG5h" value="cast" />
       <node concept="3Tm1VV" id="5IkW5anFe$i" role="1B3o_S" />

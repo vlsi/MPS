@@ -90,6 +90,12 @@
     <file name="RefactoringLog_BehaviorDescriptor.java">
       <unit at="15,0,27,0" name="jetbrains.mps.lang.migration.behavior.RefactoringLog_BehaviorDescriptor" />
     </file>
+    <file name="RefactoringOption_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.migration.behavior.RefactoringOption_BehaviorDescriptor" />
+    </file>
+    <file name="RefactoringOptions_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.migration.behavior.RefactoringOptions_BehaviorDescriptor" />
+    </file>
     <file name="RefactoringOrderDependency_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.migration.behavior.RefactoringOrderDependency_BehaviorDescriptor" />
     </file>

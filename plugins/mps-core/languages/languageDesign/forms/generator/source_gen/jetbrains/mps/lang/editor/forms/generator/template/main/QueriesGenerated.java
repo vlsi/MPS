@@ -21,20 +21,14 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3248205251337162527(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780e83bL, 0x1298d6f05780e840L, "falseText"));
   }
-  public static Object propertyMacro_GetPropertyValue_3796218498503159440(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780efb8L, 0x1298d6f05780efbbL, "trueIconPath"));
-  }
-  public static Object propertyMacro_GetPropertyValue_3796218498503159596(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x1298d6f05780efb8L, 0x1298d6f05780efbdL, "falseIconPath"));
-  }
   public static Object propertyMacro_GetPropertyValue_4319657350469949100(final PropertyMacroContext _context) {
-    return _context.createUniqueName("Checkbox_KeyMap", null);
+    return _context.createUniqueName("Checkbox_KeyMap", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1801654740563537121(final PropertyMacroContext _context) {
-    return _context.createUniqueName("Checkbox_Actions", null);
+    return _context.createUniqueName("Checkbox_Actions", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1801654740563707790(final PropertyMacroContext _context) {
-    return _context.createUniqueName("ToggleCheckboxAction", null);
+    return _context.createUniqueName("ToggleCheckboxAction", _context.getNode());
   }
   public static Object referenceMacro_GetReferent_8215612579904195389(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "actions");
@@ -49,12 +43,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"), false, false), MetaAdapterFactory.getReferenceLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x334adf8cb15f3fdfL, "propertyDeclaration"));
   }
   public static Object referenceMacro_GetReferent_8215612579904436045(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, 0x132a500f473d9055L, "parentStyleClass"));
-  }
-  public static Object referenceMacro_GetReferent_3796218498503158513(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"), false, false), MetaAdapterFactory.getReferenceLink(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, 0x334adf8cb15f3fdfL, "propertyDeclaration"));
-  }
-  public static Object referenceMacro_GetReferent_8215612579904437329(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x132a500f473d6174L, 0x132a500f473d9055L, "parentStyleClass"));
   }
   public static Object referenceMacro_GetReferent_7024409093146625667(final ReferenceMacroContext _context) {
@@ -97,9 +85,6 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
   }
   public static Iterable<SNode> sourceNodesQuery_8215612579904434461(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
-  }
-  public static Iterable<SNode> sourceNodesQuery_8215612579904438427(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"));
   }
   public static Iterable<SNode> sourceNodesQuery_7024409093146625694(final SourceSubstituteMacroNodesContext _context) {

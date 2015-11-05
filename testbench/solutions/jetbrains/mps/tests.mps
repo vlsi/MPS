@@ -4075,12 +4075,6 @@
       <property role="2R4zub" value="jetbrains.mps.lang.editor.forms.tests" />
       <property role="2R4zu8" value="cfb148cb-f798-4362-89a2-56938bf6c92f" />
     </node>
-    <node concept="lpD6D" id="a692rlEAtZ" role="lpD6w">
-      <ref role="lpD7u" to="ya75:4CPWB7pYUNz" resolve="ImageCheckbox_CLICK_Toggles" />
-    </node>
-    <node concept="lpD6D" id="a692rlEAu4" role="lpD6w">
-      <ref role="lpD7u" to="ya75:4CPWB7pYBJc" resolve="ImageCheckbox_SPACE_Toggles" />
-    </node>
     <node concept="lpD6D" id="a692rlEAub" role="lpD6w">
       <ref role="lpD7u" to="ya75:4CPWB7q248w" resolve="TextCheckbox_CLICK_Toggles" />
     </node>

@@ -22,8 +22,8 @@
     <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -246,6 +246,12 @@
       </concept>
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
+      </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
       <concept id="1182511038748" name="jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation" flags="nn" index="1j9C0f">
         <reference id="1182511038750" name="concept" index="1j9C0d" />
@@ -1472,8 +1478,8 @@
       <node concept="tYCnQ" id="h8El$cN" role="_1QTJ">
         <ref role="uz4UX" to="tpfo:h5OC6VX" resolve="Regexp" />
         <node concept="CZtCh" id="hdDKffD" role="uz6Si">
-          <node concept="3THzug" id="hdDKnaj" role="D02tZ">
-            <ref role="3qa414" to="tpfo:h5OC6VX" resolve="Regexp" />
+          <node concept="3bZ5Sz" id="1rQJladUBb6" role="D02tZ">
+            <ref role="3bZ5Sy" to="tpfo:h5OC6VX" resolve="Regexp" />
           </node>
           <node concept="CZKQA" id="hdDKffF" role="D04br">
             <node concept="3clFbS" id="hdDKffG" role="2VODD2">
@@ -1481,26 +1487,26 @@
                 <node concept="3cpWsn" id="hdDKyGj" role="3cpWs9">
                   <property role="TrG5h" value="excludeList" />
                   <node concept="_YKpA" id="hdDKyGk" role="1tU5fm">
-                    <node concept="3THzug" id="hdDKzrl" role="_ZDj9" />
+                    <node concept="3bZ5Sz" id="1rQJladUBpE" role="_ZDj9" />
                   </node>
                   <node concept="2ShNRf" id="hdDKBqG" role="33vP2m">
                     <node concept="Tc6Ow" id="hdDKBVy" role="2ShVmc">
-                      <node concept="3TUQnm" id="hdDMONv" role="HW$Y0">
-                        <ref role="3TV0OU" to="tpfo:h5OLmJT" resolve="BinaryRegexp" />
+                      <node concept="35c_gC" id="1rQJladUCIt" role="HW$Y0">
+                        <ref role="35c_gD" to="tpfo:h5OLmJT" resolve="BinaryRegexp" />
                       </node>
-                      <node concept="3TUQnm" id="hdDMQv_" role="HW$Y0">
-                        <ref role="3TV0OU" to="tpfo:h5OLByH" resolve="UnaryRegexp" />
+                      <node concept="35c_gC" id="1rQJladUCpo" role="HW$Y0">
+                        <ref role="35c_gD" to="tpfo:h5OLByH" resolve="UnaryRegexp" />
                       </node>
-                      <node concept="3TUQnm" id="hdDMSdB" role="HW$Y0">
-                        <ref role="3TV0OU" to="tpfo:h5SYyCo" resolve="PredefinedSymbolClassRegexp" />
+                      <node concept="35c_gC" id="1rQJladUCZq" role="HW$Y0">
+                        <ref role="35c_gD" to="tpfo:h5SYyCo" resolve="PredefinedSymbolClassRegexp" />
                       </node>
-                      <node concept="3TUQnm" id="hdDMUl4" role="HW$Y0">
-                        <ref role="3TV0OU" to="tpfo:h5ZmeCE" resolve="RegexpDeclarationReferenceRegexp" />
+                      <node concept="35c_gC" id="1rQJladUDup" role="HW$Y0">
+                        <ref role="35c_gD" to="tpfo:h5ZmeCE" resolve="RegexpDeclarationReferenceRegexp" />
                       </node>
-                      <node concept="3TUQnm" id="hdDMVLj" role="HW$Y0">
-                        <ref role="3TV0OU" to="tpfo:h6e2xLl" resolve="MatchVariableReferenceRegexp" />
+                      <node concept="35c_gC" id="1rQJladUDfg" role="HW$Y0">
+                        <ref role="35c_gD" to="tpfo:h6e2xLl" resolve="MatchVariableReferenceRegexp" />
                       </node>
-                      <node concept="3THzug" id="hdDKCAU" role="HW$YZ" />
+                      <node concept="3bZ5Sz" id="1rQJladUC7v" role="HW$YZ" />
                     </node>
                   </node>
                 </node>
@@ -1509,13 +1515,13 @@
                 <node concept="3cpWsn" id="hdDLgdi" role="3cpWs9">
                   <property role="TrG5h" value="regexps" />
                   <node concept="_YKpA" id="hdDLgdj" role="1tU5fm">
-                    <node concept="3THzug" id="hdDLgdk" role="_ZDj9">
-                      <ref role="3qa414" to="tpfo:h5OC6VX" resolve="Regexp" />
+                    <node concept="3bZ5Sz" id="1rQJladUDGP" role="_ZDj9">
+                      <ref role="3bZ5Sy" to="tpfo:h5OC6VX" resolve="Regexp" />
                     </node>
                   </node>
                   <node concept="2OqwBi" id="hxx_3lI" role="33vP2m">
-                    <node concept="3TUQnm" id="hdDL4mm" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tpfo:h5OC6VX" resolve="Regexp" />
+                    <node concept="35c_gC" id="1rQJladUE3E" role="2Oq$k0">
+                      <ref role="35c_gD" to="tpfo:h5OC6VX" resolve="Regexp" />
                     </node>
                     <node concept="LSoRf" id="hdDL6tM" role="2OqNvi">
                       <node concept="1Q6Npb" id="hdDL7Mp" role="1iTxcG" />

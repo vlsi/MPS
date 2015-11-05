@@ -34,7 +34,7 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
         return false;
       }
     };
-    myPanel = MpsPopupFactory.createPanelForNode(myModel, false);
+    myPanel = MpsPopupFactory.createPanelForNode(project, myModel, false);
     myPanel.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object element) {
