@@ -40,6 +40,7 @@ import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
@@ -252,7 +253,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         ModelChangeSet changeSet = (rootId == null ? myMetadataChangeSet : myChangeSet);
         SNodeId nodeId = (rootId == null ? ListSequence.fromList(SModelOperations.roots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() : rootId);
         if (myRootDifferencePane == null) {
-          myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
+          myRootDifferencePane = new RootDifferencePane(myProject.getComponent(MPSProject.class), changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
           DefaultActionGroup actionGroup = new DefaultActionGroup();
           actionGroup.addAll(myRootDifferencePane.getActions());
           ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);

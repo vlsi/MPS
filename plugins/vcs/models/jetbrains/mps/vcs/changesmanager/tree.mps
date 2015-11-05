@@ -4841,8 +4841,11 @@
               </node>
               <node concept="2OqwBi" id="X3XwAyvKD" role="33vP2m">
                 <node concept="2YIFZM" id="2tkR5cH5duP" role="2Oq$k0">
-                  <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance():jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
                   <ref role="1Pybhc" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
+                  <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
+                  <node concept="1rXfSq" id="6y_kxB1YfBW" role="37wK5m">
+                    <ref role="37wK5l" node="6PFPFsw4QFY" resolve="getProjectRepository" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="X3XwAyvKF" role="2OqNvi">
                   <ref role="37wK5l" to="w1kc:~SModelFileTracker.findModel(jetbrains.mps.vfs.IFile):org.jetbrains.mps.openapi.model.SModel" resolve="findModel" />

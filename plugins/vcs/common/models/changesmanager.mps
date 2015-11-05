@@ -2364,6 +2364,23 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="6y_kxB1UoDL" role="jymVt">
+      <property role="TrG5h" value="myFileStatusManager" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6y_kxB1UoDM" role="1B3o_S" />
+      <node concept="3uibUv" id="6y_kxB1UoDO" role="1tU5fm">
+        <ref role="3uigEE" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
+      </node>
+    </node>
+    <node concept="312cEg" id="6y_kxB1UvQg" role="jymVt">
+      <property role="TrG5h" value="myMpsProject" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6y_kxB1UvQh" role="1B3o_S" />
+      <node concept="3uibUv" id="6y_kxB1UvQj" role="1tU5fm">
+        <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6y_kxB1UqtT" role="jymVt" />
     <node concept="3clFbW" id="2JwSLRbyYWL" role="jymVt">
       <node concept="3cqZAl" id="2JwSLRbyYWM" role="3clF45" />
       <node concept="3Tm1VV" id="2JwSLRbyYWN" role="1B3o_S" />
@@ -2374,6 +2391,26 @@
             <ref role="3cqZAo" node="2JwSLRbyYWR" resolve="project" />
           </node>
         </node>
+        <node concept="3clFbF" id="6y_kxB1UoDP" role="3cqZAp">
+          <node concept="37vLTI" id="6y_kxB1UoDR" role="3clFbG">
+            <node concept="37vLTw" id="6y_kxB1UvHJ" role="37vLTJ">
+              <ref role="3cqZAo" node="6y_kxB1UoDL" resolve="myFileStatusManager" />
+            </node>
+            <node concept="37vLTw" id="6y_kxB1UoDZ" role="37vLTx">
+              <ref role="3cqZAo" node="TEj4K5KI2B" resolve="fileStatusManager" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6y_kxB1UvQk" role="3cqZAp">
+          <node concept="37vLTI" id="6y_kxB1UvQm" role="3clFbG">
+            <node concept="37vLTw" id="6y_kxB1U_6t" role="37vLTJ">
+              <ref role="3cqZAo" node="6y_kxB1UvQg" resolve="myMpsProject" />
+            </node>
+            <node concept="37vLTw" id="6y_kxB1UvQu" role="37vLTx">
+              <ref role="3cqZAo" node="6y_kxB1UvNc" resolve="mpsProject" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="2JwSLRbyYWR" role="3clF46">
         <property role="TrG5h" value="project" />
@@ -2382,6 +2419,12 @@
         </node>
         <node concept="2AHcQZ" id="2JwSLRbyYWT" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6y_kxB1UvNc" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="6y_kxB1UvPp" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="TEj4K5KHRC" role="3clF46">
@@ -2404,12 +2447,8 @@
       <node concept="3clFbS" id="2JwSLRbyYPM" role="3clF47">
         <node concept="3clFbF" id="6GHSGUzdIPH" role="3cqZAp">
           <node concept="2OqwBi" id="6GHSGUzdIPN" role="3clFbG">
-            <node concept="2YIFZM" id="6GHSGUzdIPL" role="2Oq$k0">
-              <ref role="37wK5l" to="jlcu:~FileStatusManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.FileStatusManager" resolve="getInstance" />
-              <ref role="1Pybhc" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
-              <node concept="37vLTw" id="2BHiRxeuhfH" role="37wK5m">
-                <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
-              </node>
+            <node concept="37vLTw" id="6y_kxB1UvKI" role="2Oq$k0">
+              <ref role="3cqZAo" node="6y_kxB1UoDL" resolve="myFileStatusManager" />
             </node>
             <node concept="liA8E" id="6GHSGUzdIUq" role="2OqNvi">
               <ref role="37wK5l" to="jlcu:~FileStatusManager.addFileStatusListener(com.intellij.openapi.vcs.FileStatusListener):void" resolve="addFileStatusListener" />
@@ -2451,18 +2490,14 @@
       <node concept="3clFbS" id="2JwSLRbyYQe" role="3clF47">
         <node concept="3clFbF" id="2JwSLRbyYQp" role="3cqZAp">
           <node concept="2OqwBi" id="2JwSLRbyYQq" role="3clFbG">
-            <node concept="2YIFZM" id="2JwSLRbyYQr" role="2Oq$k0">
-              <ref role="1Pybhc" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
-              <ref role="37wK5l" to="jlcu:~FileStatusManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.vcs.FileStatusManager" resolve="getInstance" />
-              <node concept="37vLTw" id="2BHiRxeuNnm" role="37wK5m">
-                <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
-              </node>
-            </node>
             <node concept="liA8E" id="2JwSLRbyYQt" role="2OqNvi">
               <ref role="37wK5l" to="jlcu:~FileStatusManager.removeFileStatusListener(com.intellij.openapi.vcs.FileStatusListener):void" resolve="removeFileStatusListener" />
               <node concept="37vLTw" id="2BHiRxeumZv" role="37wK5m">
                 <ref role="3cqZAo" node="1D7R$zlPUG7" resolve="myFileStatusListener" />
               </node>
+            </node>
+            <node concept="37vLTw" id="6y_kxB1UvLW" role="2Oq$k0">
+              <ref role="3cqZAo" node="6y_kxB1UoDL" resolve="myFileStatusManager" />
             </node>
           </node>
         </node>
@@ -2674,7 +2709,6 @@
     <node concept="3clFb_" id="2JwSLRbyYRK" role="jymVt">
       <property role="TrG5h" value="updateModel" />
       <node concept="3cqZAl" id="2JwSLRbyYRL" role="3clF45" />
-      <node concept="3Tm6S6" id="2JwSLRbyYRM" role="1B3o_S" />
       <node concept="3clFbS" id="2JwSLRbyYRN" role="3clF47">
         <node concept="3clFbJ" id="2JwSLRbyYRO" role="3cqZAp">
           <node concept="3clFbS" id="2JwSLRbyYRP" role="3clFbx">
@@ -2721,8 +2755,16 @@
             </node>
             <node concept="2OqwBi" id="2tkR5cH5drr" role="33vP2m">
               <node concept="2YIFZM" id="2tkR5cH5drs" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance():jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
                 <ref role="1Pybhc" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
+                <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
+                <node concept="2OqwBi" id="6y_kxB1UE3X" role="37wK5m">
+                  <node concept="37vLTw" id="6y_kxB1UDYH" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6y_kxB1UvQg" resolve="myMpsProject" />
+                  </node>
+                  <node concept="liA8E" id="6y_kxB1UEcI" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
               </node>
               <node concept="liA8E" id="2tkR5cH5drt" role="2OqNvi">
                 <ref role="37wK5l" to="w1kc:~SModelFileTracker.findModel(jetbrains.mps.vfs.IFile):org.jetbrains.mps.openapi.model.SModel" resolve="findModel" />
@@ -2775,6 +2817,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6y_kxB1UD1M" role="jymVt" />
     <node concept="3clFb_" id="2JwSLRbyYSy" role="jymVt">
       <property role="TrG5h" value="updateLoadedModels" />
       <node concept="3cqZAl" id="2JwSLRbyYSz" role="3clF45" />
@@ -3172,6 +3215,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6y_kxB1UARC" role="jymVt" />
     <node concept="312cEu" id="1D7R$zlPUFY" role="jymVt">
       <property role="TrG5h" value="MyFileStatusListener" />
       <property role="2bfB8j" value="true" />
@@ -3233,6 +3277,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6y_kxB1UA0l" role="jymVt" />
     <node concept="312cEu" id="2JwSLRbyYX8" role="jymVt">
       <property role="TrG5h" value="MySModelRepositoryListener" />
       <property role="2bfB8j" value="true" />
@@ -3397,6 +3442,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6y_kxB1U_7F" role="jymVt" />
     <node concept="312cEu" id="6h1S4muEXWg" role="jymVt">
       <property role="2bfB8j" value="false" />
       <property role="TrG5h" value="MyEventsCollector" />

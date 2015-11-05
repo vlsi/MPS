@@ -3712,12 +3712,12 @@
               <ref role="3uigEE" to="rvbb:~ProjectPane" resolve="ProjectPane" />
             </node>
             <node concept="2YIFZM" id="6oBe0ilSkdm" role="33vP2m">
-              <ref role="37wK5l" to="rvbb:~ProjectPane.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolve="getInstance" />
               <ref role="1Pybhc" to="rvbb:~ProjectPane" resolve="ProjectPane" />
+              <ref role="37wK5l" to="rvbb:~ProjectPane.getInstance(jetbrains.mps.project.Project):jetbrains.mps.ide.projectPane.ProjectPane" resolve="getInstance" />
               <node concept="2OqwBi" id="6oBe0ilSkdp" role="37wK5m">
                 <node concept="2WthIp" id="6oBe0ilSkdq" role="2Oq$k0" />
-                <node concept="1DTwFV" id="6oBe0ilSkdr" role="2OqNvi">
-                  <ref role="2WH_rO" node="6oBe0ilSkdo" resolve="project" />
+                <node concept="1DTwFV" id="6y_kxB1WSfH" role="2OqNvi">
+                  <ref role="2WH_rO" node="wTMLDYGhnk" resolve="mpsProject" />
                 </node>
               </node>
             </node>
@@ -3776,20 +3776,10 @@
         </node>
       </node>
     </node>
-    <node concept="1DS2jV" id="6oBe0ilSkdo" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7HZe2EwZDlm" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="wTMLDYGhnk" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="wTMLDYGhnl" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="hHNVdyj" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDoC" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="hHNVe9W" role="1NuT2Z">
       <property role="TrG5h" value="node" />

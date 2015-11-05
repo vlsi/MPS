@@ -2266,6 +2266,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="nQhvklQRWf" role="3clF47">
+        <node concept="3SKdUt" id="6y_kxB21e6r" role="3cqZAp">
+          <node concept="3SKdUq" id="6y_kxB21ekw" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME Please, please! Year 2015, two static classes, one set static fields of another?!" />
+          </node>
+        </node>
         <node concept="3clFbF" id="nQhvklQS2$" role="3cqZAp">
           <node concept="2YIFZM" id="nQhvklQS2A" role="3clFbG">
             <ref role="37wK5l" to="ur19:nQhvklQRTc" resolve="setMergeBackupDirPath" />
@@ -2275,24 +2280,9 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="3rSv5iRtv4T" role="3cqZAp">
-          <node concept="3cpWsn" id="3rSv5iRtv4U" role="3cpWs9">
-            <property role="TrG5h" value="model" />
-            <node concept="3uibUv" id="3rSv5iRtv4R" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-            </node>
-            <node concept="2OqwBi" id="3rSv5iRtv4V" role="33vP2m">
-              <node concept="2YIFZM" id="3rSv5iRtv4W" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
-                <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance():jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="3rSv5iRtv4X" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~SModelFileTracker.findModel(jetbrains.mps.vfs.IFile):org.jetbrains.mps.openapi.model.SModel" resolve="findModel" />
-                <node concept="37vLTw" id="2BHiRxglIGK" role="37wK5m">
-                  <ref role="3cqZAo" node="nQhvklQRWd" resolve="file" />
-                </node>
-              </node>
-            </node>
+        <node concept="3SKdUt" id="6y_kxB21cM7" role="3cqZAp">
+          <node concept="3SKdUq" id="6y_kxB21dEJ" role="3SKWNk">
+            <property role="3SKdUp" value="What was the reason to alter name of the backup file with model name?" />
           </node>
         </node>
         <node concept="3cpWs6" id="nQhvklQRWg" role="3cqZAp">
@@ -2307,27 +2297,7 @@
                 <ref role="37wK5l" to="3ju5:~IFile.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
-            <node concept="3K4zz7" id="3rSv5iRtw$R" role="37wK5m">
-              <node concept="10Nm6u" id="3rSv5iRty9w" role="3K4GZi" />
-              <node concept="2YIFZM" id="3rSv5iRtwQz" role="3K4E3e">
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.withoutStereotype(java.lang.String):java.lang.String" resolve="withoutStereotype" />
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <node concept="2OqwBi" id="3rSv5iRtxdN" role="37wK5m">
-                  <node concept="liA8E" id="3rSv5iRtxVG" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
-                  </node>
-                  <node concept="37vLTw" id="3rSv5iRtx03" role="2Oq$k0">
-                    <ref role="3cqZAo" node="3rSv5iRtv4U" resolve="model" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3y3z36" id="3rSv5iRtwbz" role="3K4Cdx">
-                <node concept="10Nm6u" id="3rSv5iRtwn6" role="3uHU7w" />
-                <node concept="37vLTw" id="3rSv5iRtvZ7" role="3uHU7B">
-                  <ref role="3cqZAo" node="3rSv5iRtv4U" resolve="model" />
-                </node>
-              </node>
-            </node>
+            <node concept="10Nm6u" id="6y_kxB21dsL" role="37wK5m" />
           </node>
         </node>
       </node>

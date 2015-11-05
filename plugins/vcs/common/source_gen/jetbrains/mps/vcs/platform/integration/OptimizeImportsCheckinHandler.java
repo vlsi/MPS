@@ -14,14 +14,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.SModelFileTracker;
 import java.util.Collection;
 import java.io.File;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -64,29 +64,30 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
   }
   @Override
   public CheckinHandler.ReturnResult beforeCheckin() {
-    if (getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT) {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    if (getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT && mpsProject != null) {
+      SModelFileTracker modelFileTracker = SModelFileTracker.getInstance(mpsProject.getRepository());
       Collection<File> affectedFiles = myPanel.getFiles();
       final List<SModel> affectedModels = new ArrayList<SModel>();
       for (File file : affectedFiles) {
-        SModel model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+        SModel model = modelFileTracker.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
         if (model == null) {
           continue;
         }
         affectedModels.add(model);
       }
-      final jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
       ThreadUtils.assertEDT();
       try {
-        if (project != null) {
-          project.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
-            public void run() {
-              new OptimizeImportsHelper().optimizeModelsImports(affectedModels);
-              for (SModel affectedModel : affectedModels) {
-                ((EditableSModel) affectedModel).save();
-              }
+        // here used to be delayed executeInEDT, which looked odd after explicit assertEDT check 
+        // it seems the right way is to have imports optimized before the method returns. 
+        mpsProject.getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            new OptimizeImportsHelper().optimizeModelsImports(affectedModels);
+            for (SModel affectedModel : affectedModels) {
+              ((EditableSModel) affectedModel).save();
             }
-          });
-        }
+          }
+        });
       } catch (Throwable e) {
         LOG.error("Couldn't optimize imports before commit", e);
       }

@@ -25,9 +25,9 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.generator.GenerationFacade;
 
@@ -109,13 +109,14 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   }
   private List<SModel> getModels2Build(VirtualFile[] virtualFiles, final AnActionEvent event) {
     if (virtualFiles != null) {
+      final SModelFileTracker modelFileTracker = SModelFileTracker.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository());
       return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
         public boolean accept(VirtualFile vf) {
           return vf.isInLocalFileSystem() && vf.exists() && !(vf.isDirectory());
         }
       }).select(new ISelector<VirtualFile, SModel>() {
         public SModel select(VirtualFile vf) {
-          return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf));
+          return modelFileTracker.findModel(VirtualFileUtils.toIFile(vf));
         }
       }).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel m) {

@@ -169,7 +169,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3297,9 +3297,6 @@
             </node>
             <node concept="liA8E" id="2jv$fqwevds" role="2OqNvi">
               <ref role="37wK5l" to="hdhb:4$Wo$6lALaX" resolve="editRoot" />
-              <node concept="37vLTw" id="2jv$fqwevdt" role="37wK5m">
-                <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
-              </node>
               <node concept="1rXfSq" id="2jv$fqwevdu" role="37wK5m">
                 <ref role="37wK5l" node="2jv$fqwevjZ" resolve="getRootNodeId" />
                 <node concept="2OqwBi" id="2jv$fqwevdv" role="37wK5m">
@@ -3329,9 +3326,6 @@
             </node>
             <node concept="liA8E" id="2jv$fqwevdC" role="2OqNvi">
               <ref role="37wK5l" to="hdhb:4$Wo$6lALaX" resolve="editRoot" />
-              <node concept="37vLTw" id="2jv$fqwevdD" role="37wK5m">
-                <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
-              </node>
               <node concept="1rXfSq" id="2jv$fqwevdE" role="37wK5m">
                 <ref role="37wK5l" node="2jv$fqwevjZ" resolve="getRootNodeId" />
                 <node concept="2OqwBi" id="2jv$fqwevdF" role="37wK5m">
@@ -3361,9 +3355,6 @@
             </node>
             <node concept="liA8E" id="2jv$fqwevdO" role="2OqNvi">
               <ref role="37wK5l" to="hdhb:4$Wo$6lALaX" resolve="editRoot" />
-              <node concept="37vLTw" id="2jv$fqwevdP" role="37wK5m">
-                <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
-              </node>
               <node concept="1rXfSq" id="2jv$fqwevdQ" role="37wK5m">
                 <ref role="37wK5l" node="2jv$fqwevjZ" resolve="getRootNodeId" />
                 <node concept="2OqwBi" id="2jv$fqwevdR" role="37wK5m">
@@ -3761,9 +3752,6 @@
                     </node>
                     <node concept="liA8E" id="2jv$fqwevg8" role="2OqNvi">
                       <ref role="37wK5l" to="hdhb:4$Wo$6lALaX" resolve="editRoot" />
-                      <node concept="37vLTw" id="2jv$fqwevg9" role="37wK5m">
-                        <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
-                      </node>
                       <node concept="37vLTw" id="3GM_nagTw1x" role="37wK5m">
                         <ref role="3cqZAo" node="2jv$fqwevfZ" resolve="nodeId" />
                       </node>

@@ -18,10 +18,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
@@ -66,13 +65,13 @@ public class DiffEditor implements EditorMessageOwner {
   public SNode getEditedNode() {
     return getMainEditor().getEditedNode();
   }
-  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
+  public void editRoot(@Nullable SNodeId rootId, @NotNull SModel model) {
     SNode root = (rootId == null ? null : model.getNode(rootId));
     if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root);
     }
   }
-  public void editNode(@NotNull Project project, @NotNull SNodeId nodeId, @NotNull SModel model) {
+  public void editNode(@NotNull SNodeId nodeId, @NotNull SModel model) {
     SNode node = model.getNode(nodeId);
     assert node != null;
     getMainEditor().editNode(node);
