@@ -56,6 +56,8 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
         coreTask.getMessageHandler().handle(msg);
       }
     };
+    // the flag "daemon" must be set in order for ThreadGroup to be garbage-collected 
+    tg.setDaemon(true);
     Thread makeThread = new Thread(tg, new Runnable() {
       @Override
       public void run() {
