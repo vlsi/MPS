@@ -28,9 +28,10 @@ import java.util.List;
 
 /**
  * Represents a project based on the idea platform project
- * TODO merge with StandaloneMPSProject
+ * Used in the idea plugin
+ * TODO find what are the actual differences between it and a standalone mps project
  */
-public abstract class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
+public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private final com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<ProjectModuleLoadingListener>();
 
