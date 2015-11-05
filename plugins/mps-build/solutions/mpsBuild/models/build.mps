@@ -1522,6 +1522,10 @@
       <node concept="nCB5N" id="1nB28s4YPj" role="nCB5Z">
         <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
       </node>
+      <node concept="nCB5N" id="5mffBJ2Z2Nv" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
+        <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
+      </node>
       <node concept="nCB5N" id="1nB28s5yeB" role="nCB5Z">
         <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
       </node>
@@ -1531,16 +1535,9 @@
       <node concept="nCB5N" id="1nB28s6goM" role="nCB5Z">
         <ref role="nCB5Y" node="6C2IEmQCfZN" resolve="mps-make-rt" />
       </node>
-      <node concept="nCB5N" id="5mffBJ2Z2Nv" role="nCB5Z">
-        <property role="1Sh$E4" value="false" />
-        <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
-      </node>
     </node>
     <node concept="398b33" id="1FaKCGJSzMQ" role="3989C9">
       <property role="TrG5h" value="mps-tool" />
-      <node concept="nCB5N" id="5mffBJ30LTm" role="nCB5Z">
-        <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
-      </node>
       <node concept="nCB5N" id="1nB28rXQQT" role="nCB5Z">
         <ref role="nCB5Y" node="1nB28rXacP" resolve="mps-environment" />
       </node>
@@ -1637,9 +1634,11 @@
         </node>
       </node>
       <node concept="nCB5N" id="5StVQ8qcSwe" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1WZWsoqJkkn" resolve="mps-core" />
       </node>
       <node concept="nCB5N" id="5StVQ8qcTYx" role="nCB5Z">
+        <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="3dkXFAFkSFA" resolve="mps-persistence" />
       </node>
       <node concept="nCB5N" id="5StVQ8qcVsR" role="nCB5Z">
@@ -1732,9 +1731,6 @@
       <node concept="nCB5N" id="1nB28s96Ko" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="1nB28rXacP" resolve="mps-environment" />
-      </node>
-      <node concept="nCB5N" id="5mffBJ31V0H" role="nCB5Z">
-        <ref role="nCB5Y" node="5StVQ8qcPeV" resolve="platform" />
       </node>
       <node concept="25zrj4" id="1ePifXyAvse" role="nCB5Z">
         <node concept="2HycW7" id="1ePifXyAvsa" role="25zrj5">
@@ -12406,7 +12402,7 @@
         </node>
         <node concept="1SiIV0" id="1nB28s3Q_o" role="3bR37C">
           <node concept="3bR9La" id="1nB28s3Q_p" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
