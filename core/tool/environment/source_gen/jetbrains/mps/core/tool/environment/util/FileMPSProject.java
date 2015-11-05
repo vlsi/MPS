@@ -56,6 +56,7 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
 
   private void init() {
     loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile()));
+    update();
     projectOpened();
   }
 

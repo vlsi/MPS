@@ -3911,6 +3911,11 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="7tyinJya3wk" role="3cqZAp">
+          <node concept="1rXfSq" id="7tyinJya3wi" role="3clFbG">
+            <ref role="37wK5l" to="z1c3:~ProjectBase.update():void" resolve="update" />
+          </node>
+        </node>
         <node concept="3clFbF" id="15VbAzMFufQ" role="3cqZAp">
           <node concept="1rXfSq" id="15VbAzMFuiE" role="3clFbG">
             <ref role="37wK5l" to="z1c3:~ProjectBase.projectOpened():void" resolve="projectOpened" />

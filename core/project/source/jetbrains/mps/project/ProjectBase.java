@@ -139,7 +139,6 @@ public abstract class ProjectBase extends Project {
    * in the other case they are triggered at the init/dispose methods
    */
   public void projectOpened() {
-    update();
     myProjectManager.projectOpened(this);
   }
 
