@@ -46,7 +46,6 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     return new ArrayList<ConceptEditor>();
   }
 
-
   @Override
   public Collection<ConceptEditorComponent> getEditorComponents(final ConceptDescriptor descriptor, final String editorComponentId) {
     return new ArrayList<ConceptEditorComponent>();
@@ -59,7 +58,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
         if (editorDescriptor instanceof EditorAspectDescriptorBase) {
           return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditors(concept);
         }
-        return getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
+        return editorDescriptor.getEditors(ConceptRegistry.getInstance().getConceptDescriptor(concept));
       }
     });
   }
@@ -76,7 +75,7 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
             if (editorDescriptor instanceof EditorAspectDescriptorBase) {
               return ((EditorAspectDescriptorBase) editorDescriptor).getDeclaredEditorComponents(concept, editorComponentId);
             }
-            return getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), editorComponentId);
+            return editorDescriptor.getEditorComponents(ConceptRegistry.getInstance().getConceptDescriptor(concept), editorComponentId);
           }
         });
   }
