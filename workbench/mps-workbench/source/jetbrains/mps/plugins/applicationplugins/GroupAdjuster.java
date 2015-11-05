@@ -102,8 +102,6 @@ public class GroupAdjuster {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        CustomActionsSchema schema = CustomActionsSchema.getInstance();
-        schema.resetMainActionGroups();
         setCustomizationSchemaForCurrentProjects();
       }
     });
