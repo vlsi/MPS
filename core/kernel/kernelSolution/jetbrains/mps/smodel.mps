@@ -170,12 +170,6 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
-    <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
-      <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
-        <reference id="6626851894249712469" name="extensionPoint" index="2O5UnU" />
-      </concept>
-      <concept id="3175313036448560967" name="jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation" flags="nn" index="SfwO_" />
-    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
@@ -300,13 +294,8 @@
       <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
         <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
-      <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
-      <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
-        <child id="5686963296372573084" name="elementType" index="3O5elw" />
-      </concept>
     </language>
   </registry>
   <node concept="312cEu" id="4pBxc6EfAk4">
@@ -3358,32 +3347,6 @@
         <property role="TrG5h" value="metaclass" />
         <node concept="17QB3L" id="4teNS_e2Jnk" role="1tU5fm" />
       </node>
-    </node>
-    <node concept="2tJIrI" id="4r8JClTnoBw" role="jymVt" />
-    <node concept="2YIFZL" id="4r8JClTnq_6" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <property role="TrG5h" value="collectAspects" />
-      <node concept="3clFbS" id="4r8JClTnq92" role="3clF47">
-        <node concept="3cpWs6" id="4r8JClTnr5H" role="3cqZAp">
-          <node concept="2OqwBi" id="4r8JClTnrrI" role="3cqZAk">
-            <node concept="2OqwBi" id="4r8JClTnrc1" role="2Oq$k0">
-              <node concept="2O5UvJ" id="4r8JClTnra1" role="2Oq$k0">
-                <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
-              </node>
-              <node concept="SfwO_" id="4r8JClTnrfa" role="2OqNvi" />
-            </node>
-            <node concept="ANE8D" id="4r8JClTnrRt" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-      <node concept="3vKaQO" id="4r8JClTnr18" role="3clF45">
-        <node concept="3uibUv" id="4r8JClTnr1j" role="3O5elw">
-          <ref role="3uigEE" to="vndm:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="4r8JClTnq91" role="1B3o_S" />
     </node>
   </node>
   <node concept="312cEu" id="1_AoIA$Ubcc">

@@ -496,12 +496,6 @@
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
-    <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
-      <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
-        <reference id="6626851894249712469" name="extensionPoint" index="2O5UnU" />
-      </concept>
-      <concept id="3175313036448560967" name="jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation" flags="nn" index="SfwO_" />
-    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
@@ -3331,11 +3325,9 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="7IH442cRrsL" role="1DdaDG">
-              <node concept="2O5UvJ" id="7IH442cRro$" role="2Oq$k0">
-                <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
-              </node>
-              <node concept="SfwO_" id="7IH442cRrDX" role="2OqNvi" />
+            <node concept="2YIFZM" id="6lMTJPe4ja3" role="1DdaDG">
+              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
+              <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
             </node>
             <node concept="3cpWsn" id="7IH442cReHt" role="1Duv9x">
               <property role="TrG5h" value="ad" />
@@ -13754,11 +13746,9 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="7IH442cRLzY" role="2GsD0m">
-            <node concept="2O5UvJ" id="7IH442cRLzZ" role="2Oq$k0">
-              <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
-            </node>
-            <node concept="SfwO_" id="7IH442cRL$0" role="2OqNvi" />
+          <node concept="2YIFZM" id="6lMTJPe4jqy" role="2GsD0m">
+            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
+            <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
           </node>
         </node>
         <node concept="3cpWs6" id="7IH442cRK2k" role="3cqZAp">

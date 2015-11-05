@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 
 /**
  * This is not to held LanguageAspectDescriptors in actions, which can lead to memleaks
@@ -15,7 +15,7 @@ public class NewAspectModelActionHelper {
   }
 
   public static LanguageAspectDescriptor getAspectById(String id) {
-    for (LanguageAspectDescriptor ad : Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects())) {
+    for (LanguageAspectDescriptor ad : Sequence.fromIterable(LanguageAspectSupport.collectAspects())) {
       if (eq_u0fml6_a0a0a0c(ad.getClass().getName(), id)) {
         return ad;
       }
