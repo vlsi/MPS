@@ -66,6 +66,27 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
   private Icon myBaseIcon;
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public SModelTreeNode(SModel model,
+      String label,
+      boolean showLongName,
+      Condition<SNode> condition,
+      int countNamePart) {
+    myTextSource = showLongName ? new LongModelNameText() : new ShortModelNameText();
+    myModelDescriptor = model;
+    myNodesCondition = condition;
+    setUserObject(NameUtil.getModelLongName(model));
+    if (myModelDescriptor != null) {
+      setNodeIdentifier(myModelDescriptor.toString());
+    } else {
+      setNodeIdentifier("");
+    }
+    setText(myTextSource.calculateText(this));
+    setBaseIcon(IconManager.getIconFor(model));
+    setIcon(IconManager.getIconFor(model));
+  }
+
   public SModelTreeNode(@NotNull SModel model) {
     this(model, new LongModelNameText());
   }
@@ -90,6 +111,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
   /**
    * Base/default icon is not necessarily the one actually displayed, which may include different overlays,
    * like 'modified' indicator.
+   *
    * @return base icon, if any
    */
   @Nullable
@@ -393,7 +415,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
 
       int index = -1;
       Integer lastPosition = lastPositions.get(targetNode);
-      if(lastPosition==null) lastPosition = 0;
+      if (lastPosition == null) lastPosition = 0;
 
       for (int i = lastPosition; i < targetNode.getChildCount(); i++) {
         if (!(targetNode.getChildAt(i) instanceof SNodeTreeNode)) {
@@ -410,7 +432,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       if (index == -1) {
         index = targetNode.getChildCount();
       }
-      lastPositions.put(targetNode, index+1);
+      lastPositions.put(targetNode, index + 1);
       treeModel.insertNodeInto(nodeToInsert, targetNode, index);
     }
   }
