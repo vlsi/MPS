@@ -133,6 +133,8 @@
   </project-components>
 
   <extensionPoints>
+    <!-- copied from recently created MPSUI.xml; consider splitting it into MPSUIplatfrom.xml and workbench -->
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor"
                     beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.renameRefactoringContributor"

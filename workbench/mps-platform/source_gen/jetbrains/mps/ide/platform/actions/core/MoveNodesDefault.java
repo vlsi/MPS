@@ -161,6 +161,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     if (newLocation instanceof NodeLocation.NodeLocationChild) {
       ((NodeLocation.NodeLocationChild) newLocation).setRole(role.value);
     }
+    if (newLocation == null) {
+      return;
+    }
     Map<SNodeReference, NodeLocation> moveMap = MapSequence.fromMap(new HashMap<SNodeReference, NodeLocation>());
     for (SNode node : ListSequence.fromList(nodesToMove)) {
       MapSequence.fromMap(moveMap).put(node.getReference(), newLocation);
@@ -250,7 +253,11 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
               }
             });
           }
-        }).distinct().toListSequence();
+        }).distinct().sort(new ISelector<RefactoringParticipant.Option, String>() {
+          public String select(RefactoringParticipant.Option it) {
+            return it.getDescription();
+          }
+        }, true).toListSequence();
       }
     });
 

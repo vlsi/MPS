@@ -40,7 +40,9 @@ public class IdeaNodeEditor extends NodeEditor {
         @Override
         public SNodeReference compute() {
           SNode node = (SNode) getCurrentEditorComponent().getData(MPSCommonDataKeys.NODE.getName());
-          assert node != null;
+          if (node == null) {
+            return null;
+          }
           return node.getReference();
         }
       });
@@ -55,7 +57,9 @@ public class IdeaNodeEditor extends NodeEditor {
         @Override
         public PsiElement[] compute() {
           List<SNode> nodes = (List<SNode>) getCurrentEditorComponent().getData(MPSCommonDataKeys.NODES.getName());
-          assert nodes != null;
+          if (nodes == null) {
+            return null;
+          }
 
           Project project = getOperationContext().getProject();
           MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(((MPSProject) project).getProject());
