@@ -11589,5 +11589,28 @@
       <ref role="1YaFvo" to="tp25:1t9FffgebJy" resolve="ModuleRefExpression" />
     </node>
   </node>
+  <node concept="3aFulz" id="1vuB6ljjikF">
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="SConceptType_comparable_SConcept" />
+    <node concept="3clFbS" id="1vuB6ljjikG" role="2sgrp5">
+      <node concept="3clFbF" id="1vuB6ljjGSm" role="3cqZAp">
+        <node concept="3clFbT" id="1vuB6ljjGSl" role="3clFbG">
+          <property role="3clFbU" value="true" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Yb3XT" id="1vuB6ljjio0" role="3bfgSz">
+      <property role="TrG5h" value="SConceptClassifier" />
+      <node concept="2DMOqp" id="1vuB6ljjio2" role="1YbcFS">
+        <node concept="3uibUv" id="1vuB6ljjjfv" role="2DMOqq">
+          <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1vuB6ljjikJ" role="1YuTPh">
+      <property role="TrG5h" value="sConceptType" />
+      <ref role="1YaFvo" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
+    </node>
+  </node>
 </model>
 
