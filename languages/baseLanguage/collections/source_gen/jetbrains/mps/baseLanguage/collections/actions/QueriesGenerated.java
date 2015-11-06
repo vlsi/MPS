@@ -24,6 +24,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.collections.behavior.IApplicableToNothing__BehaviorDescriptor;
@@ -176,7 +177,7 @@ public class QueriesGenerated {
       public Iterable<SAbstractConcept> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4baf9d4L, "jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
-            return !((it.isAbstract()));
+            return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
         });
       }
@@ -185,7 +186,7 @@ public class QueriesGenerated {
       public Iterable<SAbstractConcept> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d95148c3eL, "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
-            return !((it.isAbstract()));
+            return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
         });
       }
@@ -194,7 +195,7 @@ public class QueriesGenerated {
       public Iterable<SAbstractConcept> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x117aea47a16L, "jetbrains.mps.baseLanguage.collections.structure.MapOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
-            return !((it.isAbstract()));
+            return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
         });
       }
@@ -203,7 +204,7 @@ public class QueriesGenerated {
       public Iterable<SAbstractConcept> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4060180L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
-            return !((it.isAbstract()));
+            return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
         });
       }
@@ -212,7 +213,7 @@ public class QueriesGenerated {
       public Iterable<SAbstractConcept> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getInterfaceConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x53310200e8d9eaf6L, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
-            return !((it.isAbstract()));
+            return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
         });
       }
@@ -221,7 +222,7 @@ public class QueriesGenerated {
       public Iterable<SAbstractConcept> compute() {
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c26c9a2d9L, "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
           public boolean accept(SAbstractConcept it) {
-            return !((it.isAbstract()));
+            return it instanceof SConcept && !(((SConcept) it).isAbstract());
           }
         });
       }
@@ -278,7 +279,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020925ee9L, "jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
             public boolean accept(SAbstractConcept it) {
-              return !(it.isAbstract());
+              return it instanceof SConcept && !(((SConcept) it).isAbstract());
             }
           }).select(new ISelector<SAbstractConcept, SNode>() {
             public SNode select(SAbstractConcept it) {
@@ -305,7 +306,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f00ef75L, "jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
             public boolean accept(SAbstractConcept it) {
-              return !(it.isAbstract());
+              return it instanceof SConcept && !(((SConcept) it).isAbstract());
             }
           }).select(new ISelector<SAbstractConcept, SNode>() {
             public SNode select(SAbstractConcept it) {
@@ -340,7 +341,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120e6ea9ddcL, "jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation"), _context.getModel())).where(new IWhereFilter<SAbstractConcept>() {
             public boolean accept(SAbstractConcept it) {
-              return !(it.isAbstract());
+              return it instanceof SConcept && !(((SConcept) it).isAbstract());
             }
           }).select(new ISelector<SAbstractConcept, SNode>() {
             public SNode select(SAbstractConcept it) {
