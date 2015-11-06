@@ -253,7 +253,11 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
               }
             });
           }
-        }).distinct().toListSequence();
+        }).distinct().sort(new ISelector<RefactoringParticipant.Option, String>() {
+          public String select(RefactoringParticipant.Option it) {
+            return it.getDescription();
+          }
+        }, true).toListSequence();
       }
     });
 
