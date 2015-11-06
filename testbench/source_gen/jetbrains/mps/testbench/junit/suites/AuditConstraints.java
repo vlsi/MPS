@@ -9,15 +9,22 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.checkers.LanguageChecker;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 
 public class AuditConstraints extends BaseCheckModulesTest {
   public AuditConstraints(SModule module) {
     super(module);
   }
+
   @Test
   public void checkConstraints() {
     Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
     List<String> errors = CheckingTestsUtil.applyChecker(new LanguageChecker(), models, BaseCheckModulesTest.getStatistic());
     Assert.assertTrue("Constraints and scopes errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  }
+
+  @BeforeClass
+  public static void initStatistic() {
+    BaseCheckModulesTest.initStatistic("Constraints");
   }
 }

@@ -9,15 +9,22 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 
 public class AuditTypeSystem extends BaseCheckModulesTest {
   public AuditTypeSystem(SModule module) {
     super(module);
   }
+
   @Test
   public void checkTypeSystem() {
     Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
     List<String> errors = CheckingTestsUtil.applyChecker(new TypesystemChecker(), models, BaseCheckModulesTest.getStatistic());
     Assert.assertTrue("Type system errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  }
+
+  @BeforeClass
+  public static void initStatistic() {
+    BaseCheckModulesTest.initStatistic("TypeSystem");
   }
 }

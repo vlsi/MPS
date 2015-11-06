@@ -49,11 +49,13 @@ public class PerformanceMessenger {
       }
       File file = new File(System.getProperty("user.dir") + "/teamcity-info.xml");
       Element build;
+      Document document;
       if (file.exists()) {
-        Document document = JDOMUtil.loadDocument(file);
+        document = JDOMUtil.loadDocument(file);
         build = document.getRootElement();
       } else {
         build = new Element("build");
+        document = new Document(build);
       }
 
       for (Map.Entry<String, Long> e : mySingleValues.entrySet()) {
@@ -70,7 +72,7 @@ public class PerformanceMessenger {
         child.setAttribute("value", Long.toString(amount * 100 / total));
         build.addContent(child);
       }
-      JDOMUtil.writeDocument(new Document(build), file);
+      JDOMUtil.writeDocument(document, file);
     } catch (IOException ex) {
       Assert.fail(ex.getMessage());
     } catch (JDOMException ex) {
