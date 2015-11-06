@@ -658,17 +658,6 @@
         </node>
         <node concept="2GUZhq" id="6pV9atI0Jd" role="3cqZAp">
           <node concept="3clFbS" id="6pV9atI0Je" role="2GVbov">
-            <node concept="3clFbF" id="6pV9atI0Jf" role="3cqZAp">
-              <node concept="2OqwBi" id="6pV9atI0Jg" role="3clFbG">
-                <node concept="2YIFZM" id="6pV9atI0Jh" role="2Oq$k0">
-                  <ref role="37wK5l" to="3ebz:4_TMdeLkPOl" resolve="getInstance" />
-                  <ref role="1Pybhc" to="3ebz:4_TMdeLkPNQ" resolve="PerformanceMessenger" />
-                </node>
-                <node concept="liA8E" id="6pV9atI0Ji" role="2OqNvi">
-                  <ref role="37wK5l" to="3ebz:4_TMdeLkPPM" resolve="generateReport" />
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="6pV9atI0Jj" role="3cqZAp">
               <node concept="2OqwBi" id="6pV9atI0Jk" role="3clFbG">
                 <node concept="37vLTw" id="6pV9atI0Jl" role="2Oq$k0">

@@ -32,10 +32,10 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.junit.Assert" />
   </dependency>
 </dependenciesRoot>

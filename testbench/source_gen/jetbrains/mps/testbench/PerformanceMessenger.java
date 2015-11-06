@@ -6,11 +6,11 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import org.junit.Assert;
 import java.io.File;
-import jetbrains.mps.util.FileUtil;
 import org.jdom.Element;
-import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
+import org.jdom.JDOMException;
 
 /**
  * Evgeny Gryaznov, Oct 7, 2010
@@ -44,12 +44,18 @@ public class PerformanceMessenger {
   }
   public synchronized void generateReport() {
     try {
-      File file = new File(System.getProperty("user.dir") + "/teamcity-info.xml");
       if (mySingleValues.isEmpty() && myPercentValues.isEmpty()) {
-        FileUtil.delete(file);
         return;
       }
-      Element build = new Element("build");
+      File file = new File(System.getProperty("user.dir") + "/teamcity-info.xml");
+      Element build;
+      if (file.exists()) {
+        Document document = JDOMUtil.loadDocument(file);
+        build = document.getRootElement();
+      } else {
+        build = new Element("build");
+      }
+
       for (Map.Entry<String, Long> e : mySingleValues.entrySet()) {
         Element child = new Element("statisticValue");
         child.setAttribute("key", e.getKey());
@@ -66,6 +72,8 @@ public class PerformanceMessenger {
       }
       JDOMUtil.writeDocument(new Document(build), file);
     } catch (IOException ex) {
+      Assert.fail(ex.getMessage());
+    } catch (JDOMException ex) {
       Assert.fail(ex.getMessage());
     }
   }
