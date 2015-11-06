@@ -61,8 +61,10 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
     }
 
     GlobalSearchScope scope = (GlobalSearchScope) someScope;
-    final Project project = scope.getProject();
     final PsiClass base = queryParameters.getClassToProcess();
+    // regarding scope.getPropject() == null see
+    // above todo: use ref index, otherwise it's hard to search against models having just SearchScope and no project
+    final Project project = scope.getProject() != null ? scope.getProject() : base.getProject();
 
     for (Module module : ModuleManager.getInstance(project).getModules()) {
       if (!scope.isSearchInModuleContent(module)) continue;
