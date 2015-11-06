@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
-import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
@@ -26,6 +25,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
