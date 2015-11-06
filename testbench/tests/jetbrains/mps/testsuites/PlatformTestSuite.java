@@ -18,15 +18,10 @@ package jetbrains.mps.testsuites;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
-import org.junit.ClassRule;
-import org.junit.Rule;
 import org.junit.runner.RunWith;
-import org.junit.runner.Runner;
 import org.junit.runners.Suite;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
-
-import java.util.List;
 
 /**
  * These are the tests which DO require the idea platform
@@ -49,7 +44,8 @@ import java.util.List;
     jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
     jetbrains.mps.vfs.VfsTest.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class  //TODO: move this test to closed repository
-    jetbrains.mps.generator.impl.plan.CheckpointModelTest.class
+    jetbrains.mps.generator.impl.plan.CheckpointModelTest.class,
+    jetbrains.mps.workbench.ProjectPlatformTest.class
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time

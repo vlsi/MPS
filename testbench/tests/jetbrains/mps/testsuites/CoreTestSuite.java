@@ -66,7 +66,8 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.environment.MpsEnvironmentTest.class,
     jetbrains.mps.repo.RepoListenerTest.class,
     jetbrains.mps.java.stub.StubModelLazyLoadStressTest.class,
-    jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class
+    jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class,
+    jetbrains.mps.workbench.ProjectMpsTest.class
 })
 public class CoreTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time

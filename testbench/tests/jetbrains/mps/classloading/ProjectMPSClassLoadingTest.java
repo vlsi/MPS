@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.PlatformMpsTest;
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -28,11 +28,8 @@ import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -44,7 +41,7 @@ import java.util.TreeMap;
 
 import static org.junit.Assert.fail;
 
-public class ProjectMPSClassLoadingTest extends PlatformMpsTest {
+public class ProjectMPSClassLoadingTest extends CoreMpsTest {
   private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]",
       "TestBehaviorReflective [solution]"));
 
@@ -52,14 +49,14 @@ public class ProjectMPSClassLoadingTest extends PlatformMpsTest {
   private Project project;
 
   @Test
-  public void ClassesAreLoaded() {
+  public void classesAreLoaded() {
     project = openProject(new File(PathManager.getHomePath()));
     doTest();
     project.dispose();
   }
 
   @Test
-  public void ClassesAreLoadedStress() {
+  public void classesAreLoadedStress() {
     project = openProject(new File(PathManager.getHomePath()));
     project.getRepository().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
     doTest();

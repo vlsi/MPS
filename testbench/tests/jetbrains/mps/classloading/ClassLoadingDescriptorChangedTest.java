@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.PlatformMpsTest;
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -30,7 +30,7 @@ import java.io.File;
 
 import static org.junit.Assert.assertTrue;
 
-public class ClassLoadingDescriptorChangedTest extends PlatformMpsTest {
+public class ClassLoadingDescriptorChangedTest extends CoreMpsTest {
   private Project myProject;
 
   @Before

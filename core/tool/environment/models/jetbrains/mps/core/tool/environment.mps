@@ -652,17 +652,57 @@
       </node>
       <node concept="TZ5HA" id="3eUNqOk4hap" role="TZ5H$">
         <node concept="1dT_AC" id="3eUNqOk4haq" role="1dT_Ay">
-          <property role="1dT_AB" value="To initialize environment in a lazy way (trying to get cached environment if available) please" />
+          <property role="1dT_AB" value="To initialize environment in a lazy way (trying to get cached environment if available)" />
         </node>
       </node>
-      <node concept="TZ5HA" id="6ylsT8BFrWk" role="TZ5H$">
-        <node concept="1dT_AC" id="6ylsT8BFrWl" role="1dT_Ay">
+      <node concept="TZ5HA" id="1dHdErKvTsJ" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTsK" role="1dT_Ay">
+          <property role="1dT_AB" value="use MPSEnvironment or IdeaEnvironment #getOrCreate methods." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTsV" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTsW" role="1dT_Ay">
+          <property role="1dT_AB" value="Use MPSEnvironment if you do not need the idea platform, IdeaEnvironment otherwise." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTt9" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTta" role="1dT_Ay">
+          <property role="1dT_AB" value="These methods use ref counting to dispose the environment in the right time (at the end of suite or at the end of the test);" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTSC" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTSD" role="1dT_Ay">
+          <property role="1dT_AB" value="they call the method #retain to increase the reference counter." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTT$" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTT_" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTSU" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTSV" role="1dT_Ay">
+          <property role="1dT_AB" value="The common pattern in tests is to call #getOrCreate method in the @BeforeClass section," />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTTW" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTTX" role="1dT_Ay">
+          <property role="1dT_AB" value="and call #release method in the @AfterClass section." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTUm" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTUn" role="1dT_Ay">
+          <property role="1dT_AB" value="There are helping base classes: PlatformMpsTest and CoreMpsTest for the IdeaEnvironment and MpsEnvironment correspondingly." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="1dHdErKvTTe" role="TZ5H$">
+        <node concept="1dT_AC" id="1dHdErKvTTf" role="1dT_Ay">
           <property role="1dT_AB" value="" />
         </node>
       </node>
       <node concept="TZ5HA" id="6ylsT8BFrWu" role="TZ5H$">
         <node concept="1dT_AC" id="6ylsT8BFrWv" role="1dT_Ay">
-          <property role="1dT_AB" value="TODO consider merging all the project creation methods" />
+          <property role="1dT_AB" value="AP: TODO consider merging all the project creation methods" />
         </node>
       </node>
       <node concept="VUp57" id="3eUNqOk4I2U" role="3nqlJM">
@@ -3058,7 +3098,7 @@
                 <node concept="1pGfFk" id="3pEStHM4B1L" role="2ShVmc">
                   <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
                   <node concept="Xl_RD" id="3pEStHM4B2w" role="37wK5m">
-                    <property role="Xl_RC" value="Referece counter is set to zero -- cannot release!" />
+                    <property role="Xl_RC" value="Reference counter is set to zero -- cannot release!" />
                   </node>
                 </node>
               </node>

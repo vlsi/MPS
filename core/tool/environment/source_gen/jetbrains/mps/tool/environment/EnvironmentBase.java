@@ -125,7 +125,7 @@ public abstract class EnvironmentBase implements Environment {
   @Override
   public void release() {
     if (myRefCount == 0) {
-      throw new IllegalStateException("Referece counter is set to zero -- cannot release!");
+      throw new IllegalStateException("Reference counter is set to zero -- cannot release!");
     }
     --myRefCount;
     if (myRefCount == 0) {

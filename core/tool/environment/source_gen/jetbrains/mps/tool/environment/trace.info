@@ -96,7 +96,7 @@
       <node id="1719780477680356987" at="107,5,108,39" concept="3" />
       <node id="2654128911716928656" at="108,39,109,23" concept="9" />
       <node id="3921194758207271751" at="121,37,122,17" concept="3" />
-      <node id="3921194758207334622" at="127,26,128,92" concept="15" />
+      <node id="3921194758207334622" at="127,26,128,93" concept="15" />
       <node id="3921194758207295926" at="129,5,130,17" concept="3" />
       <node id="3921194758207320622" at="131,26,132,18" concept="3" />
       <node id="3921194758207306186" at="132,18,133,35" concept="3" />
@@ -188,7 +188,7 @@
       <scope id="8154634502137117574" at="102,63,103,90" />
       <scope id="8154634502137124232" at="105,66,106,93" />
       <scope id="3921194758207217160" at="121,37,122,17" />
-      <scope id="3921194758207332797" at="127,26,128,92" />
+      <scope id="3921194758207332797" at="127,26,128,93" />
       <scope id="487413975935072680" at="160,32,161,51" />
       <scope id="1729512929061187173" at="165,32,166,42" />
       <scope id="3921194758207318517" at="173,0,174,0" />
@@ -969,25 +969,25 @@
   </root>
   <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/824372260173098491">
     <file name="Environment.java">
-      <node id="3727517784852370751" at="39,0,40,0" concept="7" trace="init#()V" />
-      <node id="7413225496542992077" at="44,0,45,0" concept="7" trace="dispose#()V" />
-      <node id="3727517784852200801" at="49,0,50,0" concept="7" trace="flushAllEvents#()V" />
-      <node id="159136682922574629" at="55,0,56,0" concept="7" trace="getPlatform#()Ljetbrains/mps/core/platform/Platform;" />
-      <node id="3021026760599947043" at="25,0,27,0" concept="7" trace="createEmptyProject#()Ljetbrains/mps/project/Project;" />
-      <node id="7413225496542991933" at="33,0,35,0" concept="7" trace="createProject#(Ljetbrains/mps/tool/environment/ProjectStrategy;)Ljetbrains/mps/project/Project;" />
-      <node id="7413225496542954500" at="36,0,38,0" concept="7" trace="openProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
-      <scope id="3727517784852370751" at="39,0,40,0" />
-      <scope id="7413225496542992077" at="44,0,45,0" />
-      <scope id="3727517784852200801" at="49,0,50,0" />
-      <scope id="159136682922574629" at="55,0,56,0" />
-      <scope id="3021026760599947043" at="25,0,27,0" />
-      <scope id="7413225496542991933" at="33,0,35,0">
+      <node id="3727517784852370751" at="47,0,48,0" concept="7" trace="init#()V" />
+      <node id="7413225496542992077" at="52,0,53,0" concept="7" trace="dispose#()V" />
+      <node id="3727517784852200801" at="57,0,58,0" concept="7" trace="flushAllEvents#()V" />
+      <node id="159136682922574629" at="63,0,64,0" concept="7" trace="getPlatform#()Ljetbrains/mps/core/platform/Platform;" />
+      <node id="3021026760599947043" at="33,0,35,0" concept="7" trace="createEmptyProject#()Ljetbrains/mps/project/Project;" />
+      <node id="7413225496542991933" at="41,0,43,0" concept="7" trace="createProject#(Ljetbrains/mps/tool/environment/ProjectStrategy;)Ljetbrains/mps/project/Project;" />
+      <node id="7413225496542954500" at="44,0,46,0" concept="7" trace="openProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
+      <scope id="3727517784852370751" at="47,0,48,0" />
+      <scope id="7413225496542992077" at="52,0,53,0" />
+      <scope id="3727517784852200801" at="57,0,58,0" />
+      <scope id="159136682922574629" at="63,0,64,0" />
+      <scope id="3021026760599947043" at="33,0,35,0" />
+      <scope id="7413225496542991933" at="41,0,43,0">
         <var name="strategy" id="3021026760599182919" />
       </scope>
-      <scope id="7413225496542954500" at="36,0,38,0">
+      <scope id="7413225496542954500" at="44,0,46,0">
         <var name="projectFile" id="7413225496542981766" />
       </scope>
-      <unit id="824372260173098491" at="19,0,57,0" name="jetbrains.mps.tool.environment.Environment" />
+      <unit id="824372260173098491" at="27,0,65,0" name="jetbrains.mps.tool.environment.Environment" />
     </file>
   </root>
 </debug-info>

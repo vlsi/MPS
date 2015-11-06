@@ -10,9 +10,17 @@ import jetbrains.mps.core.platform.Platform;
 /**
  * Intended to be used in headless runs, represents working MPS environment.
  * Currently it is cached for all tests in the case of group test runs (suites).
- * To initialize environment in a lazy way (trying to get cached environment if available) please
+ * To initialize environment in a lazy way (trying to get cached environment if available)
+ * use MPSEnvironment or IdeaEnvironment #getOrCreate methods.
+ * Use MPSEnvironment if you do not need the idea platform, IdeaEnvironment otherwise.
+ * These methods use ref counting to dispose the environment in the right time (at the end of suite or at the end of the test);
+ * they call the method #retain to increase the reference counter.
  * 
- * TODO consider merging all the project creation methods
+ * The common pattern in tests is to call #getOrCreate method in the @BeforeClass section,
+ * and call #release method in the @AfterClass section.
+ * There are helping base classes: PlatformMpsTest and CoreMpsTest for the IdeaEnvironment and MpsEnvironment correspondingly.
+ * 
+ * AP: TODO consider merging all the project creation methods
  * 
  * @see jetbrains.mps.tool.environment.EnvironmentContainer 
  */
