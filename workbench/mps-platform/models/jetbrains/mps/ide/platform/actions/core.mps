@@ -2374,6 +2374,17 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="2FJyzikJhOR" role="3cqZAp">
+          <node concept="3clFbS" id="2FJyzikJhOT" role="3clFbx">
+            <node concept="3cpWs6" id="2FJyzikJiXf" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="2FJyzikJisO" role="3clFbw">
+            <node concept="10Nm6u" id="2FJyzikJiDJ" role="3uHU7w" />
+            <node concept="37vLTw" id="2FJyzikJifA" role="3uHU7B">
+              <ref role="3cqZAo" node="55uxGWy8qs7" resolve="newLocation" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="FLkVtyCy_J" role="3cqZAp">
           <node concept="3cpWsn" id="FLkVtyCy_M" role="3cpWs9">
             <property role="TrG5h" value="moveMap" />
