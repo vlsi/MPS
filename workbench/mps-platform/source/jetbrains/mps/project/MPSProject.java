@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.ThreadUtils;
@@ -106,7 +107,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
       result = ThreadUtils.runInUIThreadAndWait(new Runnable() {
         @Override
         public void run() {
-          ProjectManager.getInstance().closeProject(getProject());
+          ProjectUtil.closeAndDispose(getProject());
         }
       });
     }
