@@ -159,7 +159,7 @@ public class NewModelFromSource_Action extends BaseAction {
     for (VirtualFile vfile : chosen) {
       ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
     }
-    final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
+    final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.flattenDirs(chosenIFiles)).toListSequence();
 
     final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), repository);
     final Ref<JavaParseException> parseException = new Ref<JavaParseException>();

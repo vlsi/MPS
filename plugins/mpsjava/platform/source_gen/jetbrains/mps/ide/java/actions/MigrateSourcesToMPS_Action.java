@@ -98,7 +98,7 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
     }
 
     final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
-    final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(sourcePaths)).toListSequence();
+    final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.flattenDirs(sourcePaths)).toListSequence();
 
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       public void run(@NotNull ProgressIndicator indicator) {

@@ -2367,10 +2367,10 @@
               </node>
             </node>
             <node concept="2OqwBi" id="5Wd5tR1DcLs" role="33vP2m">
-              <node concept="2YIFZM" id="5Wd5tR1D9qB" role="2Oq$k0">
+              <node concept="2YIFZM" id="jG9QpLadH5" role="2Oq$k0">
+                <ref role="37wK5l" to="rkxj:3jGGvHIjLMv" resolve="flattenDirs" />
                 <ref role="1Pybhc" to="rkxj:3jGGvHIjBRr" resolve="JavaConvertUtil" />
-                <ref role="37wK5l" to="rkxj:3jGGvHIjLMv" resolve="openDirs" />
-                <node concept="37vLTw" id="5Wd5tR1Da7j" role="37wK5m">
+                <node concept="37vLTw" id="jG9QpLadH6" role="37wK5m">
                   <ref role="3cqZAo" node="3jGGvHIlLKW" resolve="chosenIFiles" />
                 </node>
               </node>

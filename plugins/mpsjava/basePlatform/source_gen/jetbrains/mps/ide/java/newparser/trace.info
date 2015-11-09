@@ -3867,73 +3867,72 @@
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3813618677921512923">
     <file name="JavaConvertUtil.java">
-      <node id="3813618677921583494" at="15,72,16,66" concept="12" />
+      <node id="3813618677921583494" at="15,75,16,66" concept="12" />
       <node id="3813618677921587623" at="16,66,17,0" concept="15" />
-      <node id="3813618677921591735" at="19,52,20,54" concept="6" />
-      <node id="3813618677921619418" at="20,54,21,17" concept="4" />
-      <node id="3813618677921894078" at="24,27,25,55" concept="6" />
-      <node id="3813618677921619915" at="28,5,29,0" concept="15" />
-      <node id="3813618677921620582" at="29,0,30,18" concept="13" />
-      <node id="3813618677921806931" at="33,45,34,39" concept="14" />
-      <node id="3813618677921796070" at="34,39,35,44" concept="13" />
-      <node id="3052931191599906172" at="40,39,41,32" concept="13" />
-      <node id="7938339394764890158" at="43,8,44,68" concept="12" />
-      <node id="3052931191599946704" at="44,68,45,0" concept="15" />
-      <node id="3052931191599984118" at="46,51,47,38" concept="12" />
-      <node id="7938339394764933831" at="48,55,49,57" concept="6" />
-      <node id="3052931191599939973" at="51,5,52,0" concept="15" />
-      <node id="3052931191599944450" at="52,0,53,78" concept="13" />
-      <node id="3813618677921893594" at="23,79,26,9" concept="10" />
-      <node id="3052931191599905732" at="40,0,43,0" concept="11" trace="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
-      <node id="3052931191599992023" at="47,38,50,7" concept="10" />
-      <node id="3813618677921588363" at="18,73,22,7" concept="10" />
-      <node id="3813618677921795247" at="33,0,37,0" concept="17" trace="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
-      <node id="3813618677921889834" at="22,7,27,7" concept="9" />
-      <node id="3052931191599879756" at="38,66,43,8" concept="12" />
-      <node id="3052931191599979564" at="45,0,51,5" concept="9" />
+      <node id="3813618677921894078" at="21,29,22,57" concept="6" />
+      <node id="3813618677921591735" at="25,33,26,54" concept="6" />
+      <node id="3813618677921620582" at="28,5,29,18" concept="13" />
+      <node id="3813618677921806931" at="32,45,33,39" concept="14" />
+      <node id="3813618677921796070" at="33,39,34,44" concept="13" />
+      <node id="3052931191599906172" at="45,39,46,32" concept="13" />
+      <node id="7938339394764890158" at="48,8,49,68" concept="12" />
+      <node id="3052931191599946704" at="49,68,50,0" concept="15" />
+      <node id="3052931191599984118" at="51,51,52,38" concept="12" />
+      <node id="7938339394764933831" at="53,55,54,57" concept="6" />
+      <node id="3052931191599939973" at="56,5,57,0" concept="15" />
+      <node id="3052931191599944450" at="57,0,58,78" concept="13" />
+      <node id="3813618677921893594" at="20,81,23,11" concept="10" />
+      <node id="3052931191599905732" at="45,0,48,0" concept="11" trace="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="3052931191599992023" at="52,38,55,7" concept="10" />
+      <node id="3813618677921795247" at="32,0,36,0" concept="17" trace="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="3813618677921889834" at="19,32,24,9" concept="9" />
+      <node id="3052931191599879756" at="43,66,48,8" concept="12" />
+      <node id="3052931191599979564" at="50,0,56,5" concept="9" />
+      <node id="3813618677921588363" at="18,73,27,7" concept="10" />
       <node id="3813618677921587803" at="17,0,28,5" concept="9" />
-      <node id="3813618677921553567" at="15,0,32,0" concept="17" trace="openDirs#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-      <node id="3052931191600039401" at="38,0,55,0" concept="17" trace="onlyLeaves#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-      <scope id="3813618677921893595" at="24,27,25,55" />
-      <scope id="3052931191599905733" at="40,39,41,32" />
-      <scope id="3052931191599992026" at="48,55,49,57" />
-      <scope id="3813618677921588364" at="19,52,21,17" />
-      <scope id="3813618677921795250" at="33,45,35,44" />
-      <scope id="3813618677921889840" at="23,79,26,9" />
-      <scope id="3052931191599905732" at="40,0,43,0">
+      <node id="3813618677921553567" at="15,0,31,0" concept="17" trace="flattenDirs#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <node id="3052931191600039401" at="43,0,60,0" concept="17" trace="onlyLeaves#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <scope id="3813618677921893595" at="21,29,22,57" />
+      <scope id="354701791594082556" at="25,33,26,54" />
+      <scope id="3052931191599905733" at="45,39,46,32" />
+      <scope id="3052931191599992026" at="53,55,54,57" />
+      <scope id="3813618677921795250" at="32,45,34,44" />
+      <scope id="3813618677921889840" at="20,81,23,11" />
+      <scope id="3052931191599905732" at="45,0,48,0">
         <var name="it" id="3052931191599905732" />
       </scope>
-      <scope id="3813618677921795247" at="33,0,37,0">
+      <scope id="3813618677921795247" at="32,0,36,0">
         <var name="file" id="3813618677921795962" />
       </scope>
-      <scope id="3052931191599979570" at="46,51,50,7">
+      <scope id="3052931191599979570" at="51,51,55,7">
         <var name="parent" id="3052931191599984119" />
       </scope>
-      <scope id="3813618677921889834" at="22,7,27,7">
+      <scope id="3813618677921588364" at="19,32,24,9" />
+      <scope id="3813618677921889834" at="19,32,24,9">
         <var name="file" id="3813618677921889836" />
       </scope>
-      <scope id="3052931191599979564" at="45,0,51,5">
+      <scope id="3052931191599979564" at="50,0,56,5">
         <var name="item" id="3052931191599979566" />
       </scope>
       <scope id="3813618677921587809" at="18,73,27,7" />
       <scope id="3813618677921587803" at="17,0,28,5">
         <var name="entry" id="3813618677921587805" />
       </scope>
-      <scope id="3813618677921553570" at="15,72,30,18">
+      <scope id="3813618677921553570" at="15,75,29,18">
         <var name="result" id="3813618677921583497" />
       </scope>
-      <scope id="3052931191599795356" at="38,66,53,78">
+      <scope id="3052931191599795356" at="43,66,58,78">
         <var name="dirs" id="3052931191599879759" />
         <var name="excluded" id="7938339394764890161" />
       </scope>
-      <scope id="3813618677921553567" at="15,0,32,0">
+      <scope id="3813618677921553567" at="15,0,31,0">
         <var name="filesAndDirs" id="3813618677921553594" />
       </scope>
-      <scope id="3052931191600039401" at="38,0,55,0">
+      <scope id="3052931191600039401" at="43,0,60,0">
         <var name="all" id="3052931191599795578" />
       </scope>
-      <unit id="3052931191599905732" at="39,111,43,5" name="jetbrains.mps.ide.java.newparser.JavaConvertUtil$1" />
-      <unit id="3813618677921512923" at="14,0,56,0" name="jetbrains.mps.ide.java.newparser.JavaConvertUtil" />
+      <unit id="3052931191599905732" at="44,111,48,5" name="jetbrains.mps.ide.java.newparser.JavaConvertUtil$1" />
+      <unit id="3813618677921512923" at="14,0,61,0" name="jetbrains.mps.ide.java.newparser.JavaConvertUtil" />
     </file>
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/5646944109420325187">

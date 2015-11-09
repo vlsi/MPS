@@ -12,21 +12,20 @@ import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class JavaConvertUtil {
-  public static Iterable<IFile> openDirs(Iterable<IFile> filesAndDirs) {
+  public static Iterable<IFile> flattenDirs(Iterable<IFile> filesAndDirs) {
     Set<IFile> result = SetSequence.fromSet(new HashSet<IFile>());
 
     for (IFile entry : Sequence.fromIterable(onlyLeaves(filesAndDirs))) {
-      if (!(entry.isDirectory()) && accept(entry)) {
-        SetSequence.fromSet(result).addElement(entry);
-        continue;
-      }
-      for (IFile file : ListSequence.fromList(IFileUtils.getAllFiles(entry))) {
-        if (accept(file)) {
-          SetSequence.fromSet(result).addElement(file);
+      if (entry.isDirectory()) {
+        for (IFile file : ListSequence.fromList(IFileUtils.getAllFiles(entry))) {
+          if (accept(file)) {
+            SetSequence.fromSet(result).addElement(file);
+          }
         }
+      } else if (accept(entry)) {
+        SetSequence.fromSet(result).addElement(entry);
       }
     }
-
     return result;
   }
 
@@ -35,6 +34,12 @@ public class JavaConvertUtil {
     return file.getName().endsWith(".java");
   }
 
+  /**
+   * Throw away directories whose files are explicitly mentioned
+   * It allows to select a vertical range in the tree without worrying
+   * that too much will be included.
+   * E.g. we select dir 'parent' and its 2 files out of 10. Only the 2 files will be taken
+   */
   private static Iterable<IFile> onlyLeaves(Iterable<IFile> all) {
     Set<IFile> dirs = SetSequence.fromSetWithValues(new HashSet<IFile>(), Sequence.fromIterable(all).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile it) {
