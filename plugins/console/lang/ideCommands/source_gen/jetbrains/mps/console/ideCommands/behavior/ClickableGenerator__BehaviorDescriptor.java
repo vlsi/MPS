@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
@@ -50,7 +50,7 @@ public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescript
   }
 
   /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, final Project project) {
-    final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(ModuleId.fromString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
+    final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(PersistenceFacade.getInstance().createModuleId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
 
     final MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(module, ProjectHelper.toMPSProject(project));
     Iterable<Tab> tabs = Sequence.fromClosure(new ISequenceClosure<Tab>() {

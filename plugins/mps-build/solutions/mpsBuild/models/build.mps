@@ -18361,6 +18361,12 @@
           <ref role="3bR37D" node="71aLKqdKvPp" resolve="jetbrains.mps.ide.make" />
         </node>
       </node>
+      <node concept="1SiIV0" id="47ROElKEDt2" role="3bR37C">
+        <node concept="3bR9La" id="47ROElKEDt3" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+        </node>
+      </node>
     </node>
     <node concept="1E1JtA" id="1whNchE_L1C" role="3989C9">
       <property role="BnDLt" value="true" />

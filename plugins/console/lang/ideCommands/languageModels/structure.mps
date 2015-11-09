@@ -209,6 +209,10 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="6M9lfhD$0$C" resolve="ModelReference" />
     </node>
+    <node concept="1TJgyi" id="2Lh2Nufzent" role="1TKVEl">
+      <property role="TrG5h" value="ignoreExternalPlan" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3ob4OZ0hBPN">
     <property role="TrG5h" value="ClickableGenerator" />
