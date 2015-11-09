@@ -22007,7 +22007,7 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="TrG5h" value="IDE" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <property role="9BnSO" value="142.1" />
+    <property role="9BnSO" value="143.1" />
     <property role="9BnSK" value="3.3" />
   </node>
   <node concept="sE7Ow" id="1JAxb5h3N20">
