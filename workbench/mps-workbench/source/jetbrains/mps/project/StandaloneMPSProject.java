@@ -89,7 +89,9 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         throw new IllegalArgumentException("State is null");
       }
       loadDescriptor(new ElementProjectDataSource(state, getProjectFile()));
-      update();
+      if (ProjectManager.getInstance().getOpenProjects().contains(this)) {
+        update();
+      }
     }
   }
 
@@ -103,6 +105,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   @Override
   public void projectOpened() {
     LOG.info("Project '" + getName() + "' is opened");
+    update();
     super.projectOpened();
   }
 
