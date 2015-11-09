@@ -48,19 +48,18 @@ public class RulesManager {
   private RuleSet<SubstituteType_Runtime> mySubstituteTypeRules = new RuleSet<SubstituteType_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
+  private RuleSet<NonTypesystemRule_Runtime> myNonTypeSystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
+
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
 
   private OverloadedOperationsManager myOverloadedOperationsManager;
 
-  private RulesManagerNew myRulesManagerNew;
   private static final Logger LOG = LogManager.getLogger(RulesManager.class);
-
   private volatile boolean myNeedsLoading = false;
   private Set<LanguageRuntime> myLoadedLanguages = new HashSet<LanguageRuntime>();
   private Set<LanguageRuntime> myLanguagesToLoad = new HashSet<LanguageRuntime>();
 
   public RulesManager(TypeChecker typeChecker) {
-    myRulesManagerNew = new RulesManagerNew(typeChecker);
     myOverloadedOperationsManager = new OverloadedOperationsManager(typeChecker);
   }
 
@@ -104,6 +103,7 @@ public class RulesManager {
           myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
           myReplacementRules.addRuleSetItem(typesystem.getEliminationRules());
           myVariableConverters.addAll(typesystem.getVariableConverters());
+          myNonTypeSystemRules.addRuleSetItem(typesystem.getNonTypesystemRules());
           myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystem.getOverloadedOperationsTypesProviders());
         } catch (RuntimeException t) {
         }
@@ -122,8 +122,6 @@ public class RulesManager {
       myLanguagesToLoad.remove(language);
       myNeedsLoading = true;
     }
-
-    myRulesManagerNew.clear();
   }
 
   private void unloadLoadedAllLoaded() {
@@ -139,6 +137,7 @@ public class RulesManager {
     myReplacementRules.clear();
     myVariableConverters.clear();
     myOverloadedOperationsManager.clear();
+    myNonTypeSystemRules.clear();
   }
 
   public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {
@@ -166,9 +165,17 @@ public class RulesManager {
     return result;
   }
 
-
-  public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
-    return myRulesManagerNew.getNonTypesystemRules(node);
+  public List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(SNode node) {
+    List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
+    Set<NonTypesystemRule_Runtime> ruleSet;
+    ruleSet = myNonTypeSystemRules.getRules(node);
+    for (NonTypesystemRule_Runtime rule : ruleSet) {
+      IsApplicableStatus status = rule.isApplicableAndPattern(node);
+      if (status.isApplicable()) {
+        result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
+      }
+    }
+    return result;
   }
 
   public List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
@@ -184,20 +191,6 @@ public class RulesManager {
     }
     return result;
   }
-
-  /*
-    public boolean subtypingRulesByNodeAreAllByConcept(final SNode node, boolean isWeak) {
-      loadLanguage(node.getLanguageNamespace());
-      for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
-        if (!isWeak && rule.isWeak()) {
-          continue;
-        }
-        if (!rule.isApplicableAndPattern(node).isApplicable()) {
-          return false;
-        }
-      }
-      return true;
-    }       */
 
   public List<Pair<SubstituteType_Runtime, IsApplicableStatus>> getSubstituteTypeRules(final SNode node) {
     ensureAllRulesLoaded();
