@@ -28,6 +28,7 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.editor.BaseNodeEditor.BaseEditorState;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.MPSProject;
@@ -194,6 +195,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
           state.setEditorState(myNodeEditor.saveState());
         }
       });
+    } else {
+      state.setEditorState(new BaseEditorState());
     }
     state.setLevel(level);
     return state;
