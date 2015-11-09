@@ -6,7 +6,6 @@
   </languages>
   <imports>
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
-    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="x4nc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selectionRestoring(MPS.Editor/)" />
   </imports>
   <registry>
@@ -143,10 +142,10 @@
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="mySelectedCell" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tmbuc" id="19qhldhKtMd" role="1B3o_S" />
       <node concept="3uibUv" id="19qhldhKtk2" role="1tU5fm">
         <ref role="3uigEE" to="f4zo:~EditorCell" resolve="EditorCell" />
       </node>
+      <node concept="3Tmbuc" id="19qhldhKtMd" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="19qhldhKqRT" role="jymVt" />
     <node concept="3clFbW" id="19qhldhKr4F" role="jymVt">
