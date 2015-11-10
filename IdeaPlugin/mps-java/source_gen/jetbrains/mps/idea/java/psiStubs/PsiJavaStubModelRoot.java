@@ -90,6 +90,10 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
 
     for (VirtualFile root : sourceRoots) {
       PsiDirectory dir = psiMgr.findDirectory(root);
+      // judging by RootModelBase.getSourceRoots() only valid source roots will be returned, but we'll be paranoid 
+      if (dir == null) {
+        continue;
+      }
       collectPackagesInDir(dir, dir, packageToDirs);
     }
 

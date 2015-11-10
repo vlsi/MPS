@@ -8710,6 +8710,22 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="3SUkCk9h8ba" role="3cqZAp">
+              <node concept="3SKdUq" id="3SUkCk9h8bM" role="3SKWNk">
+                <property role="3SKdUp" value="judging by RootModelBase.getSourceRoots() only valid source roots will be returned, but we'll be paranoid" />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3SUkCk9h7LO" role="3cqZAp">
+              <node concept="3clFbS" id="3SUkCk9h7LQ" role="3clFbx">
+                <node concept="3N13vt" id="3SUkCk9h843" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="3SUkCk9h7VQ" role="3clFbw">
+                <node concept="10Nm6u" id="3SUkCk9h7Zb" role="3uHU7w" />
+                <node concept="37vLTw" id="3SUkCk9h7QX" role="3uHU7B">
+                  <ref role="3cqZAo" node="624K0zKIQrY" resolve="dir" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="624K0zKIViy" role="3cqZAp">
               <node concept="1rXfSq" id="624K0zKIVix" role="3clFbG">
                 <ref role="37wK5l" node="624K0zKIVc_" resolve="collectPackagesInDir" />
