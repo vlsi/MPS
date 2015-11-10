@@ -21,8 +21,7 @@ package jetbrains.mps;
 public enum TestMode {
   NONE,
   USUAL, // supposed to be set during ide runs and non-suite platform runs
-  IN_PROCESS,
-  SUITE; // marker to show that there is a specific state which is almost good as USUAL but very few components care to change their behaviour during IN_PROCESS RUN
+  IN_PROCESS; // marker to show that there is a specific state which is almost good as USUAL but very few components care to change their behaviour during IN_PROCESS RUN
 
   public boolean isInsideTestEnvironment() {
     return this.equals(USUAL) || this.equals(IN_PROCESS);
