@@ -17,6 +17,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.GeneratableSModel" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" />

@@ -446,7 +446,6 @@ public class Generate_Facet extends IFacet.Stub {
                       if (facet == null) {
                         continue;
                       }
-                      facet.getPlanModelReference();
                       for (SModel m : Sequence.fromIterable(res.models())) {
                         ModelGenerationPlan plan = facet.getPlan(m);
                         if (plan != null) {

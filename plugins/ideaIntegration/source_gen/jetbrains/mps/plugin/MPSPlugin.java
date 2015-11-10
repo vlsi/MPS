@@ -4,12 +4,6 @@ package jetbrains.mps.plugin;
 
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.components.impl.stores.IProjectStore;
-import com.intellij.openapi.components.ComponentsPackage;
-import java.io.File;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.components.StorageScheme;
 import java.rmi.RemoteException;
 import java.rmi.Naming;
 import jetbrains.mps.ide.ThreadUtils;
@@ -20,15 +14,6 @@ public class MPSPlugin {
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
   private MPSPlugin() {
-  }
-  @Deprecated
-  public IProjectHandler getProjectHandler(Project project) {
-    MPSPlugin.assertNotInEDT();
-    IProjectStore projectStore = (IProjectStore) ComponentsPackage.getStateStore(project);
-    File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
-    File projectFile = (projectStore.getStorageScheme() == StorageScheme.DEFAULT ? mpsProject.getParentFile() : mpsProject);
-    String projectPath = projectFile.getAbsolutePath();
-    return getProjectHandler(projectPath);
   }
   public IProjectHandler getProjectHandler(String projectPath) {
     try {

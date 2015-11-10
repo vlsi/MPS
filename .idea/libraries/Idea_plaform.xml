@@ -14,7 +14,6 @@
       <root url="jar://$PROJECT_DIR$/lib/cglib-2.2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jgoodies-forms.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jh.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/jna-utils.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jna.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/microba.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/nanoxml-2.2.3.jar!/" />
@@ -34,6 +33,7 @@
       <root url="jar://$PROJECT_DIR$/lib/kotlin-reflect.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/kotlin-runtime.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/imgscalr-lib-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jna-platform.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -102,8 +102,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/cglib-src-2.2.2.jar!/src/test" />
       <root url="jar://$PROJECT_DIR$/lib/src/cglib-src-2.2.2.jar!/src/proxy" />
       <root url="jar://$PROJECT_DIR$/lib/src/jgoodies-forms-src.zip!/" />
-      <root url="jar://$PROJECT_DIR$/lib/src/jna-src.zip!/contrib/platform/src" />
-      <root url="jar://$PROJECT_DIR$/lib/src/jna-src.zip!/src" />
       <root url="jar://$PROJECT_DIR$/lib/src/microba-src.zip!/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/nanoxml.zip!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/sanselan-0.98-snapshot-src.jar!/" />
@@ -227,6 +225,8 @@
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/xml-psi-impl" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/xml-structure-view-api" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/xml-structure-view-impl" />
+      <root url="jar://$PROJECT_DIR$/lib/src/jna-platform.zip!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/jna.zip!/" />
     </SOURCES>
   </library>
 </component>

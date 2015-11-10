@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
@@ -158,8 +159,15 @@ public abstract class LanguageRuntime {
       }
     }
     // generally, should never happen, but doesn't hurt to ensure exclusive contract of getExtended/getExtendingLanguages()
-    myExtendedLanguages.remove(this);
     myExtendingLanguages.remove(this);
+    myExtendedLanguages.remove(this);
+    // Here's a copy of the hack from smodel.Language#getExtendedLanguageRefs(). We used to manifest lang.core
+    // as extended language for any other language module, and once we switched to SLanguage, shall do the same at least for compatibility reasons.
+    // Once we generate this extends inside #getExtendedLanguageIDs() (better the new one that yield SLanguage instead of String),
+    // AND there are no old LanguageRuntime classes (i.e. past MPS 3.3), the hack shall cease to exist.
+    LanguageRuntime langCore = registry.getLanguage(BootstrapLanguages.getLangCore());
+    assert langCore != null;
+    myExtendedLanguages.add(langCore);
   }
 
   void deinitialize() {

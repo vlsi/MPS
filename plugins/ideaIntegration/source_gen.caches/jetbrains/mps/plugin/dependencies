@@ -37,12 +37,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.navigation.NavigationProvider" />
   </dependency>
   <dependency className="jetbrains.mps.plugin.MPSPlugin" file="MPSPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.components.ComponentsPackage" />
-    <classNode dependClassName="com.intellij.openapi.components.StorageScheme" />
-    <classNode dependClassName="com.intellij.openapi.components.impl.stores.IProjectStore" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.rmi.Naming" />
@@ -52,7 +46,6 @@
     <classNode dependClassName="jetbrains.mps.plugin.IIDEAHandler" />
     <classNode dependClassName="jetbrains.mps.plugin.IMPSPlugin" />
     <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
   </dependency>
   <dependency className="jetbrains.mps.plugin.MPSProjectIDEHandler" file="MPSProjectIDEHandler.java">

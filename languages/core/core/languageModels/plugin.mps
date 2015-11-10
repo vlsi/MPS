@@ -3547,16 +3547,6 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3clFbF" id="9HhvY0Q24a" role="3cqZAp">
-                                      <node concept="2OqwBi" id="9HhvY0Q27b" role="3clFbG">
-                                        <node concept="37vLTw" id="9HhvY0Q248" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="9HhvY0Q1V3" resolve="facet" />
-                                        </node>
-                                        <node concept="liA8E" id="9HhvY0Q28S" role="2OqNvi">
-                                          <ref role="37wK5l" to="ap4t:~CustomGenerationModuleFacet.getPlanModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getPlanModelReference" />
-                                        </node>
-                                      </node>
-                                    </node>
                                     <node concept="2Gpval" id="9HhvY0Q2cc" role="3cqZAp">
                                       <node concept="2GrKxI" id="9HhvY0Q2ce" role="2Gsz3X">
                                         <property role="TrG5h" value="m" />

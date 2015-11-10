@@ -446,4 +446,9 @@ public class SolutionIdea extends Solution {
     public void afterLibraryRemoved(Library library) {
     }
   }
+
+  @Override
+  public String toString() {
+    return getModuleName() + " [idea module derived solution]";
+  }
 }

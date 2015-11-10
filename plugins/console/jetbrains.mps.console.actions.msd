@@ -14,6 +14,7 @@
     <dependency reexport="false">a5e4de53-46a3-44da-aab3-68fdf1c34ed0(jetbrains.mps.console.ideCommands)</dependency>
     <dependency reexport="false">8f6725be-608d-433b-98fd-844f816eb05f(jetbrains.mps.ide.make)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <languageVersions>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="3" />

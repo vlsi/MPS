@@ -20,7 +20,7 @@
   <description>VCS features in MPS</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="142.1" until-build="143.1"/>
+  <idea-version since-build="143.1" until-build="144.1"/>
 
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
@@ -92,6 +92,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages"/>
+    <mps.LanguageLibrary dir="/solutions"/>
 
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
     <mps.TabColorProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider"/>

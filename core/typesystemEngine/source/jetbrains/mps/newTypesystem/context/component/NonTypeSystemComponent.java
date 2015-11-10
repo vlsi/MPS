@@ -21,10 +21,12 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.Cancellable;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -281,8 +283,18 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     addDependentNodes(sNode, rule, nodesToDependOn, false);
   }
 
-  public void applyNonTypeSystemRulesToRoot(TypeCheckingContext typeCheckingContext, SNode rootNode, Cancellable c) {
+  public void applyNonTypeSystemRulesToRoot(final TypeCheckingContext typeCheckingContext, final SNode rootNode, final Cancellable c) {
     if (rootNode == null) return;
+    LanguageScopeExecutor.execWithModelScope(rootNode.getModel(), new Computable<Object>() {
+      @Override
+      public Object compute() {
+        applyRulesToRoot(typeCheckingContext, rootNode, c);
+        return null;
+      }
+    });
+  }
+
+  private void applyRulesToRoot(TypeCheckingContext typeCheckingContext, SNode rootNode, Cancellable c) {
     doInvalidate();
     try {
       Queue<SNode> frontier = new LinkedList<SNode>();
@@ -306,6 +318,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     getTypechecking().runApplyRulesTo(node, new Runnable() {
       @Override
       public void run() {
+
         List<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = TypeChecker.getInstance().getRulesManager().getNonTypesystemRules(node);
         MyEventsReadListener nodesReadListener = new MyEventsReadListener();
         if (nonTypesystemRules == null) return;

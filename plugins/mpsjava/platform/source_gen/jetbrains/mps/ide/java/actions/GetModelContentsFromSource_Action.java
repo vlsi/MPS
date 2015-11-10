@@ -107,7 +107,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     for (VirtualFile vfile : chosen) {
       ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
     }
-    final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
+    final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.flattenDirs(chosenIFiles)).toListSequence();
 
     final JavaToMpsConverter parser = new JavaToMpsConverter(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {

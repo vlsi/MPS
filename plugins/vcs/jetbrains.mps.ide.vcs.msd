@@ -8,9 +8,6 @@
   <facets>
     <facet pluginId="jetbrains.mps.vcs" type="ideaPlugin" />
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${module}/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

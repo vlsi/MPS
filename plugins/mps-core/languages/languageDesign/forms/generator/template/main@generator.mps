@@ -17,7 +17,6 @@
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="y8bk" ref="r:035b816f-5496-4daa-904b-836c78191509(jetbrains.mps.lang.editor.forms.runtime)" />
     <import index="x4nc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.selectionRestoring(MPS.Editor/)" />
-    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -908,10 +907,10 @@
                     <node concept="3clFb_" id="65VHHDM1NJ4" role="jymVt">
                       <property role="TrG5h" value="createCellSelector" />
                       <property role="1EzhhJ" value="false" />
-                      <node concept="3Tmbuc" id="65VHHDM1NJ5" role="1B3o_S" />
                       <node concept="3uibUv" id="65VHHDM1NJ6" role="3clF45">
                         <ref role="3uigEE" to="x4nc:~CellSelector" resolve="CellSelector" />
                       </node>
+                      <node concept="3Tmbuc" id="65VHHDM1NJ5" role="1B3o_S" />
                       <node concept="3clFbS" id="65VHHDM1NJ7" role="3clF47">
                         <node concept="3clFbF" id="65VHHDM1NJ8" role="3cqZAp">
                           <node concept="2ShNRf" id="65VHHDM1NJ9" role="3clFbG">
@@ -962,10 +961,10 @@
                     <node concept="3clFb_" id="19qhldhKy1F" role="jymVt">
                       <property role="TrG5h" value="createCellSelector" />
                       <property role="1EzhhJ" value="false" />
-                      <node concept="3Tmbuc" id="19qhldhKy1G" role="1B3o_S" />
                       <node concept="3uibUv" id="19qhldhKy1H" role="3clF45">
                         <ref role="3uigEE" to="x4nc:~CellSelector" resolve="CellSelector" />
                       </node>
+                      <node concept="3Tmbuc" id="19qhldhKy1G" role="1B3o_S" />
                       <node concept="3clFbS" id="19qhldhKy1J" role="3clF47">
                         <node concept="3cpWs8" id="19qhldhKybY" role="3cqZAp">
                           <node concept="3cpWsn" id="19qhldhKybZ" role="3cpWs9">
@@ -974,11 +973,11 @@
                               <ref role="3uigEE" to="f4zo:~EditorCell_Label" resolve="EditorCell_Label" />
                             </node>
                             <node concept="10QFUN" id="19qhldhKyc1" role="33vP2m">
-                              <node concept="37vLTw" id="19qhldhKyil" role="10QFUP">
-                                <ref role="3cqZAo" to="y8bk:19qhldhKsmm" resolve="mySelectedCell" />
-                              </node>
                               <node concept="3uibUv" id="19qhldhKyc3" role="10QFUM">
                                 <ref role="3uigEE" to="f4zo:~EditorCell_Label" resolve="EditorCell_Label" />
+                              </node>
+                              <node concept="37vLTw" id="19qhldhKyil" role="10QFUP">
+                                <ref role="3cqZAo" to="y8bk:19qhldhKsmm" resolve="mySelectedCell" />
                               </node>
                             </node>
                           </node>
