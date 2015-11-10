@@ -51,6 +51,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.ClassRule;
+import org.junit.Rule;
+import org.junit.rules.TestName;
 
 import java.io.File;
 import java.io.IOException;
@@ -75,6 +78,12 @@ public class GenerationTestBase {
 
   private static Environment CREATED_ENV;
 
+  @ClassRule
+  public static final PerformanceMessenger ourStats = new PerformanceMessenger("Generator.");
+  @Rule
+  public final TestName myTestName = new TestName();
+
+
   @BeforeClass
   public static void init() throws Exception {
     CREATED_ENV = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
@@ -86,9 +95,6 @@ public class GenerationTestBase {
       CREATED_ENV.dispose();
       CREATED_ENV = null;
     }
-    // uncomment to get teamcity-info.xml file with 'parallelGeneration' key and percent value, indicating time spent in parallel generation
-    // against single-threaded generation
-//    PerformanceMessenger.getInstance().generateReport();
   }
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
@@ -132,7 +138,10 @@ public class GenerationTestBase {
         new TransientModelsProvider(repo, null));
     long severalThreads = System.nanoTime() - start;
 
-    PerformanceMessenger.getInstance().reportPercent("parallelGeneration", severalThreads / 1000000, singleThread / 1000000);
+    String prefix = myTestName.getMethodName();
+    ourStats.report(prefix + ".single", singleThread);
+    ourStats.report(prefix + ".parallel", severalThreads);
+    ourStats.reportPercent(prefix + ".parallelVsSingle", severalThreads / 1000000, singleThread / 1000000);
 
     if (DEBUG) {
       System.out.println("Single thread: " + singleThread / 1000000 / 1000. + ", 4 threads: " + severalThreads / 1000000 / 1000.);
@@ -258,7 +267,7 @@ public class GenerationTestBase {
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
 
-      PerformanceMessenger.getInstance().reportPercent("incrementalGeneration", (time.get(time.size() - 2)) / 1000000,
+      ourStats.reportPercent(myTestName.getMethodName() + ".incrementalGeneration", (time.get(time.size() - 2)) / 1000000,
           (time.get(time.size() - 1)) / 1000000);
 
       if (DEBUG) {
