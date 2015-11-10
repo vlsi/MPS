@@ -17,6 +17,8 @@ package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.editor.runtime.impl.cellActions.CommentMultipleNodesAction;
+import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -209,6 +211,12 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (type == CellActionType.BACKSPACE || type == CellActionType.DELETE) {
       performDeleteAction(type);
       return;
+    } else if (type == CellActionType.COMMENT) {
+      CommentMultipleNodesAction action = new CommentMultipleNodesAction(getSelectedNodes());
+      EditorContext editorContext = getEditorComponent().getEditorContext();
+      if (action.canExecute(editorContext)) {
+        action.execute(editorContext);
+      }
     }
     super.executeAction(type);
   }
