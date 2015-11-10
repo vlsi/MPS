@@ -341,7 +341,6 @@
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
-        <property id="3497141547781541446" name="eap" index="2OjLBN" />
         <child id="6845119683729874664" name="iconToolWindow" index="27fxVX" />
         <child id="6845119683729424406" name="customXmlElement" index="27hc03" />
         <child id="6845119683729337285" name="progressY" index="27hAJg" />
@@ -16637,7 +16636,6 @@
       <property role="2OjLBK" value="3" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="3" />
-      <property role="2OjLBN" value="true" />
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
         <node concept="3_J27D" id="57dcfYPs$xT" role="IuM$f">
           <node concept="3Mxwew" id="57dcfYPs$xY" role="3MwsjC">
@@ -16800,7 +16798,7 @@
         </node>
         <node concept="3_J27D" id="6Iq8148f_YV" role="2EtnoK">
           <node concept="3Mxwew" id="6Iq8148f_YZ" role="3MwsjC">
-            <property role="3MwjfP" value="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
+            <property role="3MwjfP" value="http://www.jetbrains.com/mps/download/" />
           </node>
         </node>
         <node concept="NbPM2" id="6Iq8148f_YW" role="HFWMp">
