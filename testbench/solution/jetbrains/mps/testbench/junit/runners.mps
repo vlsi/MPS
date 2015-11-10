@@ -7,6 +7,9 @@
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="3ebz" ref="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)" />
@@ -323,6 +326,14 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1640,6 +1651,16 @@
                       <node concept="SfApY" id="5uM03Adt3gE" role="3cqZAp">
                         <node concept="TDmWw" id="5uM03Adt3gF" role="TEbGg">
                           <node concept="3clFbS" id="5uM03Adt3gG" role="TDEfX">
+                            <node concept="34ab3g" id="6BLo1Mghipw" role="3cqZAp">
+                              <property role="35gtTG" value="error" />
+                              <property role="34fQS0" value="true" />
+                              <node concept="Xl_RD" id="6BLo1Mghipy" role="34bqiv">
+                                <property role="Xl_RC" value="Error while looking for the test class" />
+                              </node>
+                              <node concept="37vLTw" id="6BLo1Mghip$" role="34bMjA">
+                                <ref role="3cqZAo" node="5uM03Adt3gJ" resolve="e" />
+                              </node>
+                            </node>
                             <node concept="3cpWs6" id="5uM03Adt4bf" role="3cqZAp">
                               <node concept="10Nm6u" id="5uM03Adt4hQ" role="3cqZAk" />
                             </node>
@@ -1647,8 +1668,8 @@
                           <node concept="3cpWsn" id="5uM03Adt3gJ" role="TDEfY">
                             <property role="3TUv4t" value="false" />
                             <property role="TrG5h" value="e" />
-                            <node concept="3uibUv" id="5uM03Adt3gK" role="1tU5fm">
-                              <ref role="3uigEE" to="wyt6:~ClassNotFoundException" resolve="ClassNotFoundException" />
+                            <node concept="3uibUv" id="6BLo1Mghhp3" role="1tU5fm">
+                              <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
                             </node>
                           </node>
                         </node>

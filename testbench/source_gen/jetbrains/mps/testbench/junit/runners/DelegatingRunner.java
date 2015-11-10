@@ -14,6 +14,9 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.module.ReloadableModule;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class DelegatingRunner extends Runner {
   private final Project myProject;
@@ -50,7 +53,10 @@ public class DelegatingRunner extends Runner {
           ReloadableModule module = ((ReloadableModule) resolved);
           try {
             return module.getClass(myClassName);
-          } catch (ClassNotFoundException e) {
+          } catch (Exception e) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Error while looking for the test class", e);
+            }
             return null;
           }
         } else {
@@ -60,4 +66,5 @@ public class DelegatingRunner extends Runner {
     });
   }
 
+  protected static Logger LOG = LogManager.getLogger(DelegatingRunner.class);
 }
