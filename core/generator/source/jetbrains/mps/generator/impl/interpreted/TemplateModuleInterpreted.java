@@ -20,41 +20,42 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.Generator;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.language.LanguageRuntime;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 /**
+ * Lifecycle of the module is not quite well defined now, it's assumed instances are not kept too long
+ * for us to care about model changes (i.e. addition of a new template model or change in used languages)
  * evgeny, 3/10/11
  */
 public class TemplateModuleInterpreted extends TemplateModuleBase {
 
-  private LanguageRuntime sourceLanguage;
-  private Generator generator;
-  private Collection<TemplateModel> models;
+  private final LanguageRuntime sourceLanguage;
+  private final Generator generator;
+  private Collection<TemplateModel> myModels;
+  private Collection<SLanguage> myTargetLanguages;
 
   public TemplateModuleInterpreted(LanguageRuntime sourceLanguage, @NotNull Generator generator) {
     this.sourceLanguage = sourceLanguage;
     this.generator = generator;
-    this.models = new ArrayList<TemplateModel>();
-    for (SModel sModelDescriptor : generator.getOwnTemplateModels()) {
-      SModel sModel = sModelDescriptor;
-      if (sModel != null) {
-        models.add(new TemplateModelInterpreted(this, sModel));
-      }
-    }
   }
 
   @Override
@@ -74,7 +75,20 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
 
   @Override
   public Collection<TemplateModel> getModels() {
-    return Collections.unmodifiableCollection(models);
+    if (myModels != null) {
+      return myModels;
+    }
+    synchronized (this) {
+      if (myModels != null) {
+        return myModels;
+      }
+      ArrayList<TemplateModelInterpreted> rv = new ArrayList<TemplateModelInterpreted>();
+      for (SModel m : generator.getOwnTemplateModels()) {
+        rv.add(new TemplateModelInterpreted(this, m));
+      }
+      myModels = Arrays.<TemplateModel>asList(rv.toArray(new TemplateModelInterpreted[rv.size()]));
+    }
+    return myModels;
   }
 
   @Override
@@ -129,11 +143,16 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
 
   @Override
   public Collection<SLanguage> getTargetLanguages() {
-    ModelScanner ms = new ModelScanner();
-    for (SModel m : generator.getOwnTemplateModels()) {
-      ms.scan(m);
+    if (myTargetLanguages == null) {
+      ModelScanner ms = new ModelScanner();
+      for (SModel m : generator.getOwnTemplateModels()) {
+        ms.scan(m);
+      }
+      // I don't care if I calculate languages twice, hence no synchronization. Most of the time languages are queried
+      // from single thread anyway, and the primary idea for the caching is to improve performance of subsequent query.
+      myTargetLanguages = ms.getTargetLanguages();
     }
-    return ms.getTargetLanguages();
+    return myTargetLanguages;
   }
 
   private Collection<Pair<SDependencyScope, TemplateModule>> getReferencedGenerators() {
