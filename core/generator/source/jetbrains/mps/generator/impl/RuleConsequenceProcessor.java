@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,8 @@ public abstract class RuleConsequenceProcessor {
    */
   public static RuleConsequenceProcessor prepare(@NotNull SNode ruleConsequence) {
     ConsequenceHandler h = new ConsequenceHandler();
-    return h.dispatch(ruleConsequence);
+    RuleConsequenceProcessor rv = h.dispatch(ruleConsequence);
+    return rv;
   }
 
   @NotNull
@@ -114,30 +115,27 @@ public abstract class RuleConsequenceProcessor {
     }
   }
 
-  private static class ControlFlowConsequence extends RuleConsequenceProcessor {
-    private final AbandonRuleInputException myAbandonInputException;
-    private final DismissTopMappingRuleException myDismissRuleException;
-
-    public ControlFlowConsequence(@NotNull AbandonRuleInputException ex) {
-      myAbandonInputException = ex;
-      myDismissRuleException = null;
+  private static class AbandonRuleControlFlowConsequence extends RuleConsequenceProcessor {
+    @NotNull
+    @Override
+    public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws AbandonRuleInputException {
+      throw new AbandonRuleInputException();
     }
-    ControlFlowConsequence(@NotNull DismissTopMappingRuleException ex) {
-      myAbandonInputException = null;
-      myDismissRuleException = ex;
+  }
+
+  private static class DismissRuleControlFlowConsequence extends RuleConsequenceProcessor {
+    private final DismissTopMappingRuleException.MessageType myMessageType;
+    private final String myText;
+
+    public DismissRuleControlFlowConsequence(DismissTopMappingRuleException.MessageType messageType, String text) {
+      myMessageType = messageType;
+      myText = text;
     }
 
     @NotNull
     @Override
-    public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws AbandonRuleInputException, DismissTopMappingRuleException {
-      if (myAbandonInputException != null) {
-        throw myAbandonInputException;
-      }
-      if (myDismissRuleException != null) {
-        myDismissRuleException.setTemplateContext(context);
-        throw myDismissRuleException;
-      }
-      throw new IllegalStateException();
+    public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws DismissTopMappingRuleException {
+      throw new DismissTopMappingRuleException(myMessageType, myText);
     }
   }
 
@@ -235,7 +233,7 @@ public abstract class RuleConsequenceProcessor {
 
     @Override
     public void abandonInput(SNode ruleConsequence) {
-      myConsequence = new ControlFlowConsequence(new AbandonRuleInputException());
+      myConsequence = new AbandonRuleControlFlowConsequence();
     }
 
     @Override
@@ -243,7 +241,7 @@ public abstract class RuleConsequenceProcessor {
       SNode message = RuleUtil.getDismissTopRule_message(ruleConsequence);
       DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);
       String text = GeneratorUtilEx.getGeneratorMessage_text(message);
-      myConsequence = new ControlFlowConsequence(new DismissTopMappingRuleException(messageType, text));
+      myConsequence = new DismissRuleControlFlowConsequence(messageType, text);
     }
 
     @Override
