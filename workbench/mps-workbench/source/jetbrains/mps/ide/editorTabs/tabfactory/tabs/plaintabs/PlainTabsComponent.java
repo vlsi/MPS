@@ -251,19 +251,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
         }
       }
     }
-    if (!selectionRestored && selectedAspect != null) {
-      for (PlainEditorTab tab : myRealTabs) {
-        if (tab.getTab() == selectedAspect) {
-          myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(tab)), true);
-          selectionRestored = true;
-          break;
-        }
-      }
-    }
+
     if (!selectionRestored && myTabs.getTabCount() > 0) {
       myTabs.select(myTabs.getTabAt(0), true);
       selectionRestored = true;
     }
+
     if (selectionRestored) {
       //this is needed as Idea component sends no events if we've just removed all tabs and added one new and then are trying to select it
       //see http://youtrack.jetbrains.com/issue/MPS-17943
