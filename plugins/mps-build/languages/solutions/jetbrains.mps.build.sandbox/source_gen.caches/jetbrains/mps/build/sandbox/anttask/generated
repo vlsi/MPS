@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="aryfihamuvvkunbyw8aj8k51kcmdxm6" />
+<dependencies version="2" modelHash="aryfihamuvvkunbyw8aj8k51kcmdxm6">
+  <common hash="-55mszwl2qnlgxbzy06vstln304wt2sd" />
+  <source id="5738701198683704599" name="genxmltest" hash="-d7l6qw9wicgeoec6lvzzgwx97laqqyp">
+    <file name="genxmltest.xml" />
+  </source>
+</dependencies>
 

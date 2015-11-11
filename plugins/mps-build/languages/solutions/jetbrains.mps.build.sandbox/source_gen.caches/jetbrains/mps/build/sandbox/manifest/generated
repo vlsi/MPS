@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="e3c9z4ohu0tpgqzuhb72uvitdejy75m" />
+<dependencies version="2" modelHash="e3c9z4ohu0tpgqzuhb72uvitdejy75m">
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="ex21nsr9tyz1kvv53sq3546avmcic6b" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-ao893wybwq5m2h36x2uedtu1mj8xbyj" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="31kmi7kpewdu2zaezag2xx3iv1tp2wb" />
+  <common hash="-cro3534uw7ywpxol4ffhdnkmd9g3czp" />
+  <source id="7471276865246050739" name="testmanifest" hash="-8m1ed8bpu1q832gpd17gh3o9z2s3l01">
+    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
+    <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
+    <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
+    <file name="testmanifest.xml" />
+  </source>
+</dependencies>
 
