@@ -2272,10 +2272,23 @@
           <node concept="Saw0i" id="1nB28rXfiB" role="39821P">
             <ref role="Saw0g" node="1nB28rXacP" resolve="mps-environment" />
           </node>
+          <node concept="398223" id="1cej1P1K6oh" role="39821P">
+            <node concept="3_J27D" id="1cej1P1K6oi" role="Nbhlr">
+              <node concept="3Mxwew" id="1cej1P1K6oj" role="3MwsjC">
+                <property role="3MwjfP" value="META-INF" />
+              </node>
+            </node>
+            <node concept="1kK7hY" id="1cej1P1K6ok" role="39821P">
+              <ref role="1kK7hZ" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
+              <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
+                <property role="1cIVw0" value="mps-environment.jar" />
+              </node>
+            </node>
+          </node>
           <node concept="398223" id="1nB28rXgfj" role="39821P">
             <node concept="3_J27D" id="1nB28rXgfl" role="Nbhlr">
               <node concept="3Mxwew" id="1nB28rXgfr" role="3MwsjC">
-                <property role="3MwjfP" value="modules" />
+                <property role="3MwjfP" value="module" />
               </node>
             </node>
             <node concept="1bldCd" id="1nB28rXi8N" role="39821P">
