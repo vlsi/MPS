@@ -701,7 +701,11 @@ public class SModel implements SModelData {
     }
     SModule module = modelDescriptor.getModule();
     if (module != null && module instanceof AbstractModule) {
-      ((AbstractModule) module).validateLanguageVersions();
+      // this check is a hack needed for generation process where we do not have write access and getRepository() returns null
+      // but getModelDescriptor().getModule().getRepository() is MPSModuleRepository
+      if (getRepository() != null) {
+        ((AbstractModule) module).validateLanguageVersions();
+      }
     }
   }
 
