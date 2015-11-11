@@ -6,6 +6,9 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -25,7 +28,8 @@ public abstract class BaseTransformationTest implements TransformationTest {
     if (isExecutionInProcess()) {
       setTestRunner(new TransformationTestLightRunner());
     } else {
-      setTestRunner(new TransformationTestRunner());
+      Environment ideaEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+      setTestRunner(new TransformationTestRunner(ideaEnv));
     }
   }
 

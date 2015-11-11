@@ -1008,64 +1008,149 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="5UWB9tiBhf" role="3clF47">
-        <node concept="3cpWs6" id="4KgFbPVmerv" role="3cqZAp">
-          <node concept="2OqwBi" id="3FVfMMI0rTe" role="3cqZAk">
-            <node concept="2OqwBi" id="5aJ2JHVPKj9" role="2Oq$k0">
-              <node concept="2OqwBi" id="hEPAoIDWHj" role="2Oq$k0">
-                <node concept="2OqwBi" id="4KgFbPVmerB" role="2Oq$k0">
-                  <node concept="1rXfSq" id="4KgFbPVmerC" role="2Oq$k0">
-                    <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-                    <node concept="Xl_RD" id="3FVfMMI10_k" role="37wK5m">
-                      <property role="Xl_RC" value="mpsmake" />
-                    </node>
-                    <node concept="Xl_RD" id="4KgFbPVmerD" role="37wK5m">
-                      <property role="Xl_RC" value="jetbrains.mps.ide.make" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4KgFbPVmerE" role="2OqNvi">
-                    <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-                    <node concept="Xl_RD" id="3FVfMMI13ky" role="37wK5m">
-                      <property role="Xl_RC" value="vcs" />
-                    </node>
-                    <node concept="Xl_RD" id="4KgFbPVmerF" role="37wK5m">
-                      <property role="Xl_RC" value="jetbrains.mps.vcs" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="hEPAoIDZuy" role="2OqNvi">
-                  <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-                  <node concept="Xl_RD" id="3FVfMMI15cz" role="37wK5m">
-                    <property role="Xl_RC" value="mps-testing" />
-                  </node>
-                  <node concept="Xl_RD" id="hEPAoIEsUh" role="37wK5m">
-                    <property role="Xl_RC" value="jetbrains.mps.testing" />
-                  </node>
-                </node>
+        <node concept="3cpWs6" id="6BLo1Mgs4lk" role="3cqZAp">
+          <node concept="2OqwBi" id="6BLo1Mgs66X" role="3cqZAk">
+            <node concept="2OqwBi" id="6BLo1Mgs5ld" role="2Oq$k0">
+              <node concept="1rXfSq" id="6BLo1Mgs4WY" role="2Oq$k0">
+                <ref role="37wK5l" node="6BLo1MgryYq" resolve="withMakePlugin" />
               </node>
-              <node concept="liA8E" id="5aJ2JHVPLPc" role="2OqNvi">
-                <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-                <node concept="Xl_RD" id="3FVfMMI17ca" role="37wK5m">
-                  <property role="Xl_RC" value="git4idea" />
-                </node>
-                <node concept="Xl_RD" id="5aJ2JHVQ1dR" role="37wK5m">
-                  <property role="Xl_RC" value="Git4Idea" />
-                </node>
+              <node concept="liA8E" id="6BLo1Mgs5Is" role="2OqNvi">
+                <ref role="37wK5l" node="6BLo1MgrFYe" resolve="withCorePlugin" />
               </node>
             </node>
-            <node concept="liA8E" id="3FVfMMI0sfq" role="2OqNvi">
-              <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-              <node concept="Xl_RD" id="3FVfMMI18cS" role="37wK5m">
-                <property role="Xl_RC" value="mps-core" />
-              </node>
-              <node concept="Xl_RD" id="3FVfMMI0sB6" role="37wK5m">
-                <property role="Xl_RC" value="jetbrains.mps.core" />
-              </node>
+            <node concept="liA8E" id="6BLo1Mgs6ww" role="2OqNvi">
+              <ref role="37wK5l" node="6BLo1MgrCMb" resolve="withTestingPlugin" />
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="5UWB9tiBfe" role="1B3o_S" />
       <node concept="3uibUv" id="5UWB9tiBha" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6BLo1MgrxLw" role="jymVt" />
+    <node concept="3clFb_" id="6BLo1MgryYq" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="withMakePlugin" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6BLo1MgryYt" role="3clF47">
+        <node concept="3cpWs6" id="6BLo1MgrzpS" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrzHr" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6BLo1Mgr$8r" role="37wK5m">
+              <property role="Xl_RC" value="mpsmake" />
+            </node>
+            <node concept="Xl_RD" id="6BLo1Mgr_yD" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.ide.make" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6BLo1MgryyX" role="1B3o_S" />
+      <node concept="3uibUv" id="6BLo1MgryXS" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6BLo1MgrCpe" role="jymVt" />
+    <node concept="3clFb_" id="6BLo1MgrCpf" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="withVcsPlugin" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6BLo1MgrCpg" role="3clF47">
+        <node concept="3cpWs6" id="6BLo1MgrCph" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrCpi" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6BLo1MgrCpj" role="37wK5m">
+              <property role="Xl_RC" value="vcs" />
+            </node>
+            <node concept="Xl_RD" id="6BLo1MgrCpk" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.vcs" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6BLo1MgrCpl" role="1B3o_S" />
+      <node concept="3uibUv" id="6BLo1MgrCpm" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6BLo1MgrCMa" role="jymVt" />
+    <node concept="3clFb_" id="6BLo1MgrCMb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="withTestingPlugin" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6BLo1MgrCMc" role="3clF47">
+        <node concept="3cpWs6" id="6BLo1MgrCMd" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrCMe" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6BLo1MgrCMf" role="37wK5m">
+              <property role="Xl_RC" value="mps-testing" />
+            </node>
+            <node concept="Xl_RD" id="6BLo1MgrCMg" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.testing" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6BLo1MgrCMh" role="1B3o_S" />
+      <node concept="3uibUv" id="6BLo1MgrCMi" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6BLo1MgrFYd" role="jymVt" />
+    <node concept="3clFb_" id="6BLo1MgrFYe" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="withCorePlugin" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6BLo1MgrFYf" role="3clF47">
+        <node concept="3cpWs6" id="6BLo1MgrFYg" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrFYh" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6BLo1MgrFYi" role="37wK5m">
+              <property role="Xl_RC" value="mps-core" />
+            </node>
+            <node concept="Xl_RD" id="6BLo1MgrFYj" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.core" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6BLo1MgrFYk" role="1B3o_S" />
+      <node concept="3uibUv" id="6BLo1MgrFYl" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6BLo1MgrGor" role="jymVt" />
+    <node concept="3clFb_" id="6BLo1MgrGos" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="withGit4IdeaPlugin" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="6BLo1MgrGot" role="3clF47">
+        <node concept="3cpWs6" id="6BLo1MgrGou" role="3cqZAp">
+          <node concept="1rXfSq" id="6BLo1MgrOXz" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="6BLo1MgrPn1" role="37wK5m">
+              <property role="Xl_RC" value="git4idea" />
+            </node>
+            <node concept="Xl_RD" id="6BLo1MgrSoh" role="37wK5m">
+              <property role="Xl_RC" value="Git4Idea" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6BLo1MgrGoy" role="1B3o_S" />
+      <node concept="3uibUv" id="6BLo1MgrGoz" role="3clF45">
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
     </node>
@@ -4343,10 +4428,13 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2Koq9V0qGPu" role="3clF47">
         <node concept="3cpWs6" id="2Koq9V0rXbG" role="3cqZAp">
-          <node concept="2YIFZM" id="3eUNqOk8ImS" role="3cqZAk">
-            <ref role="1Pybhc" to="v9gs:57xhZj4tkXA" resolve="SetLibraryContributor" />
+          <node concept="2YIFZM" id="2ky3Rs1tnLI" role="3cqZAk">
             <ref role="37wK5l" to="v9gs:3eUNqOk8DM1" resolve="fromSet" />
-            <node concept="1rXfSq" id="3eUNqOk94bQ" role="37wK5m">
+            <ref role="1Pybhc" to="v9gs:57xhZj4tkXA" resolve="SetLibraryContributor" />
+            <node concept="Xl_RD" id="2ky3Rs1tnLJ" role="37wK5m">
+              <property role="Xl_RC" value="Plugin contributor" />
+            </node>
+            <node concept="1rXfSq" id="2ky3Rs1tnLK" role="37wK5m">
               <ref role="37wK5l" node="3eUNqOk927J" resolve="getPluginLibDescriptors" />
             </node>
           </node>
@@ -4432,6 +4520,9 @@
           <node concept="2YIFZM" id="3eUNqOk8Kbw" role="3cqZAk">
             <ref role="1Pybhc" to="v9gs:57xhZj4tkXA" resolve="SetLibraryContributor" />
             <ref role="37wK5l" to="v9gs:3eUNqOk8vfn" resolve="fromMap" />
+            <node concept="Xl_RD" id="2ky3Rs1tqla" role="37wK5m">
+              <property role="Xl_RC" value="Library contributor" />
+            </node>
             <node concept="37vLTw" id="3eUNqOk8KD5" role="37wK5m">
               <ref role="3cqZAo" node="2Koq9V0rHfu" resolve="libToCLMap" />
             </node>

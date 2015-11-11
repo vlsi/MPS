@@ -3477,6 +3477,14 @@
     <node concept="3uibUv" id="57xhZj4tkXC" role="EKbjA">
       <ref role="3uigEE" to="je6q:~LibraryContributor" resolve="LibraryContributor" />
     </node>
+    <node concept="312cEg" id="2ky3Rs1thTi" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myName" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2ky3Rs1thLC" role="1B3o_S" />
+      <node concept="17QB3L" id="2ky3Rs1thTg" role="1tU5fm" />
+    </node>
     <node concept="312cEg" id="57xhZj4tkXD" role="jymVt">
       <property role="TrG5h" value="myLibraryPaths" />
       <property role="3TUv4t" value="true" />
@@ -3493,19 +3501,30 @@
       <node concept="3cqZAl" id="57xhZj4tkXI" role="3clF45" />
       <node concept="3Tm6S6" id="3eUNqOk8Gj4" role="1B3o_S" />
       <node concept="3clFbS" id="57xhZj4tkXK" role="3clF47">
+        <node concept="3clFbF" id="2ky3Rs1ti4y" role="3cqZAp">
+          <node concept="37vLTI" id="2ky3Rs1ti7Y" role="3clFbG">
+            <node concept="37vLTw" id="2ky3Rs1ti8K" role="37vLTx">
+              <ref role="3cqZAo" node="2ky3Rs1thgt" resolve="name" />
+            </node>
+            <node concept="37vLTw" id="2ky3Rs1ti4w" role="37vLTJ">
+              <ref role="3cqZAo" node="2ky3Rs1thTi" resolve="myName" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="57xhZj4tkXL" role="3cqZAp">
           <node concept="37vLTI" id="57xhZj4tkXM" role="3clFbG">
-            <node concept="2OqwBi" id="57xhZj4tkXN" role="37vLTJ">
-              <node concept="Xjq3P" id="57xhZj4tkXO" role="2Oq$k0" />
-              <node concept="2OwXpG" id="57xhZj4tkXP" role="2OqNvi">
-                <ref role="2Oxat5" node="57xhZj4tkXD" resolve="myLibraryPaths" />
-              </node>
+            <node concept="37vLTw" id="2ky3Rs1th5j" role="37vLTJ">
+              <ref role="3cqZAo" node="57xhZj4tkXD" resolve="myLibraryPaths" />
             </node>
             <node concept="37vLTw" id="2BHiRxgm8Ya" role="37vLTx">
               <ref role="3cqZAo" node="57xhZj4tkXR" resolve="libraryPaths" />
             </node>
           </node>
         </node>
+      </node>
+      <node concept="37vLTG" id="2ky3Rs1thgt" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="2ky3Rs1thlk" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="57xhZj4tkXR" role="3clF46">
         <property role="TrG5h" value="libraryPaths" />
@@ -3568,6 +3587,10 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="2ky3Rs1ticC" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="2ky3Rs1tio3" role="1tU5fm" />
+      </node>
       <node concept="37vLTG" id="2Koq9V0qXbf" role="3clF46">
         <property role="TrG5h" value="libToClassLoader" />
         <node concept="3uibUv" id="2Koq9V0qXbe" role="1tU5fm">
@@ -3645,6 +3668,9 @@
           <node concept="2ShNRf" id="2Koq9V0qYzD" role="3clFbG">
             <node concept="1pGfFk" id="2Koq9V0qYzE" role="2ShVmc">
               <ref role="37wK5l" node="57xhZj4tkXH" resolve="SetLibraryContributor" />
+              <node concept="37vLTw" id="2ky3Rs1tmgV" role="37wK5m">
+                <ref role="3cqZAo" node="2ky3Rs1ticC" resolve="name" />
+              </node>
               <node concept="37vLTw" id="2Koq9V0qYzF" role="37wK5m">
                 <ref role="3cqZAo" node="2Koq9V0qYzj" resolve="libs" />
               </node>
@@ -3668,6 +3694,9 @@
           <node concept="2ShNRf" id="3eUNqOk8DXF" role="3clFbG">
             <node concept="1pGfFk" id="3eUNqOk8Eki" role="2ShVmc">
               <ref role="37wK5l" node="57xhZj4tkXH" resolve="SetLibraryContributor" />
+              <node concept="37vLTw" id="2ky3Rs1thf1" role="37wK5m">
+                <ref role="3cqZAo" node="2ky3Rs1th88" resolve="name" />
+              </node>
               <node concept="37vLTw" id="3eUNqOk8EnY" role="37wK5m">
                 <ref role="3cqZAo" node="3eUNqOk8DTE" resolve="libs" />
               </node>
@@ -3678,6 +3707,10 @@
       <node concept="3Tm1VV" id="3eUNqOk8DC2" role="1B3o_S" />
       <node concept="3uibUv" id="3eUNqOk8DKA" role="3clF45">
         <ref role="3uigEE" node="57xhZj4tkXA" resolve="SetLibraryContributor" />
+      </node>
+      <node concept="37vLTG" id="2ky3Rs1th88" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="17QB3L" id="2ky3Rs1thdK" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="3eUNqOk8DTE" role="3clF46">
         <property role="TrG5h" value="libs" />

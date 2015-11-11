@@ -667,9 +667,14 @@
             <node concept="2YIFZM" id="6LlhC3WLdhP" role="37vLTx">
               <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
               <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-              <node concept="2YIFZM" id="6LlhC3WLdhR" role="37wK5m">
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+              <node concept="2OqwBi" id="6BLo1MgsBwA" role="37wK5m">
+                <node concept="2YIFZM" id="6LlhC3WLdhR" role="2Oq$k0">
+                  <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+                </node>
+                <node concept="liA8E" id="6BLo1MgsBzW" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:6BLo1MgrCpf" resolve="withVcsPlugin" />
+                </node>
               </node>
             </node>
           </node>

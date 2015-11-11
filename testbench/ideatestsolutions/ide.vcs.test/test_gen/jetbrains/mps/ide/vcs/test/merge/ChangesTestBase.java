@@ -74,7 +74,7 @@ public abstract class ChangesTestBase {
 
   @BeforeClass
   public static void setUp() {
-    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin());
     SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
 

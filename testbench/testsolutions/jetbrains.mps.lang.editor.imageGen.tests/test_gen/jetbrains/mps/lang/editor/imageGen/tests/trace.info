@@ -14,10 +14,10 @@
   </root>
   <root nodeRef="r:57812925-2ef0-43c6-8314-0222b2c13acf(jetbrains.mps.lang.editor.imageGen.tests@tests)/5244026788026549053">
     <file name="ImageExport_Test.java">
-      <node id="5244026788026549053" at="16,61,17,130" concept="1" />
-      <node id="5244026788026549053" at="17,130,18,123" concept="1" />
-      <node id="5244026788026549053" at="21,64,22,130" concept="1" />
-      <node id="5244026788026549053" at="22,130,23,126" concept="1" />
+      <node id="5244026788026549053" at="16,61,17,134" concept="1" />
+      <node id="5244026788026549053" at="17,134,18,123" concept="1" />
+      <node id="5244026788026549053" at="21,64,22,134" concept="1" />
+      <node id="5244026788026549053" at="22,134,23,126" concept="1" />
       <node id="5244026788026559032" at="27,63,28,77" concept="4" />
       <node id="5244026788026564435" at="29,11,30,53" concept="4" />
       <node id="5244026788026564797" at="30,53,31,36" concept="1" />

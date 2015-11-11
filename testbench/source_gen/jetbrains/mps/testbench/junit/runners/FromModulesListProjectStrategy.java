@@ -15,7 +15,7 @@ import jetbrains.mps.vfs.FileSystem;
  * todo: merge with "modules collected from dir", or specify here paths to msd/mpl files
  */
 public class FromModulesListProjectStrategy extends ProjectStrategyBase {
-  private static final String MODULES_PATHS_PROPERTY = "mps.test.modules";
+  public static final String MODULES_PATHS_PROPERTY = "mps.test.modules";
   private final String myModulesPath;
 
   public FromModulesListProjectStrategy(@Nullable String modulesPath) {

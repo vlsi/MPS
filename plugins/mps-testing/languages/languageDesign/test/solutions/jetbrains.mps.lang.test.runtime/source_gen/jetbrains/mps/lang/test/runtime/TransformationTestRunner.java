@@ -6,8 +6,6 @@ import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -40,9 +38,10 @@ public class TransformationTestRunner implements TestRunner {
   private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
-  private Environment myEnvironment;
+  private final Environment myEnvironment;
 
-  public TransformationTestRunner() {
+  public TransformationTestRunner(@NotNull Environment environment) {
+    myEnvironment = environment;
   }
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName) throws Exception {
@@ -57,7 +56,6 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   private void startMps() {
-    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     clearSystemClipboard();
     readSystemMacro();
   }

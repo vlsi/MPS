@@ -1106,10 +1106,10 @@
           <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-testing">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
       </classpath>
       

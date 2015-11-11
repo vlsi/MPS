@@ -72,7 +72,7 @@ import java.util.LinkedHashMap;
   }
 
   public LibraryContributor createLibContributorForPlugins() {
-    return SetLibraryContributor.fromSet(getPluginLibDescriptors());
+    return SetLibraryContributor.fromSet("Plugin contributor", getPluginLibDescriptors());
   }
 
   public LibraryContributor createLibContributorForLibs() {
@@ -82,7 +82,7 @@ import java.util.LinkedHashMap;
       libToCLMap.put(lib, defaultCL);
     }
 
-    return SetLibraryContributor.fromMap(libToCLMap);
+    return SetLibraryContributor.fromMap("Library contributor", libToCLMap);
   }
 
 }

@@ -182,6 +182,7 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
       <library file="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
+      <library file="${artifacts.mpsEditor}/languages/testMoveElements.jar" />
       <library file="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <library file="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -507,6 +508,7 @@
   <target name="test.execution" depends="assemble">
     <path id="mps.libraries.path">
       <pathelement location="${artifacts.mpsEditor}/languages/testDefaultEditor.jar" />
+      <pathelement location="${artifacts.mpsEditor}/languages/testMoveElements.jar" />
       <pathelement location="${artifacts.mpsEditor}/languages/testSpaceCompletion.jar" />
       <pathelement location="${artifacts.mpsEditor}/tests/jetbrains.mps.baseLanguage.test.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -630,28 +632,28 @@
           <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-build">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-testing">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
       </classpath>
       

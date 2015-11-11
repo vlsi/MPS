@@ -92,7 +92,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
     for (String path : paths) {
       libraryPaths.add(new LibDescriptor(path));
     }
-    addContributor(SetLibraryContributor.fromSet(libraryPaths));
+    addContributor(SetLibraryContributor.fromSet("Library paths", libraryPaths));
   }
 
   private void addContributor(LibraryContributor contributor) {

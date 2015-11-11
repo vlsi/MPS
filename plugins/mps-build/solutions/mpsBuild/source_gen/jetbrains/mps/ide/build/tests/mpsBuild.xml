@@ -497,28 +497,28 @@
           <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-build">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-testing">
-          <include name="**/lib/*.jar" />
+          <include name="**/*.jar" />
         </fileset>
       </classpath>
       

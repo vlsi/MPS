@@ -22,6 +22,7 @@
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" fqName="jetbrains.mps.lang.test" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="b124c25e-1e16-4432-ad5e-0ac0ecae98f5" fqName="testCustomAnalyzer" version="0" />
+    <language id="3ac033a0-bffa-48e3-a843-a40cbdd89859" fqName="testExtendingAnalyzer" version="0" />
   </languageVersions>
 </solution>
 

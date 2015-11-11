@@ -847,7 +847,6 @@ public class QueriesGenerated {
         if ((SLinkOperations.getTarget(rdep, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x26d578f4b6e3757eL, "customLocation")) == null)) {
           ListSequence.fromList(result).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(rdep, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c192890L, 0x3b60c4a45c192894L, "path"))));
         }
-
       }
     }
     for (SNode module : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(((MPSModulesClosure) _context.getVariable("var:mdeps")).getInitial()))).where(new IWhereFilter<SNode>() {
