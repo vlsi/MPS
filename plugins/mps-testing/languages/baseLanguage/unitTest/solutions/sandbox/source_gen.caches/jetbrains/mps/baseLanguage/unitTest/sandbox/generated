@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8rhk5hfj8r8xou0lriyzgfpe3n69nle" />
+<dependencies version="2" modelHash="8rhk5hfj8r8xou0lriyzgfpe3n69nle">
+  <dep model="a3e4657f-a76c-45bb-bbda-c764596ecc65/java:org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="9s4qjllf7k4sdgb1xf6zx4ujrumk0xz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-88zmvbrj6oqfvgu0oulnnfpbgis2n6l" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="1ftbuo3ajwq20b119fza4isyzu6ykgq" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ckzjyccgduwqjstc0ftd1eqzfnnd67a" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="56y22u25z77tsl94a1qh5a8jsnaodko" />
+  <common hash="-1houbmc2iu4a3fii7tcoy2hfwk4704y" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="3669442855016276711" name="Test_Test" hash="3oc7v6o5i72u13dc8khjde6wkm1by3b">
+    <dep model="a3e4657f-a76c-45bb-bbda-c764596ecc65/java:org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <file name="Test_Test.java" />
+  </source>
+  <source id="3669442855016277665" name="Test3" hash="-ei45j6s6bqxsjak29wnfequ5ixcijp4">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Test3.java" />
+  </source>
+  <source id="4347343044614079991" name="Test4" hash="-c63e7uvq5zy95vav43nsr6pa6ojmguh">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Test4.java" />
+  </source>
+  <source id="8923434991440662525" name="SimpleRunner" hash="-bjab186eixxmmplft00uwnncci2e0ce">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SimpleRunner.java" />
+  </source>
+  <source id="6829399386646795190" name="TestMain" hash="2zgld0qfswwr3tz4i1ud0bnadcgipk6">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TestMain.java" />
+  </source>
+  <source id="2213297802761044209" name="AbstractTestClass" hash="-23lf1i4qd3rcb9cq05bojisek8lw6tr">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AbstractTestClass.java" />
+  </source>
+  <source id="2213297802761100201" name="AbstractTest4Class" hash="-cy7rqh005h1e11lvps1vz2yow7ueof8">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AbstractTest4Class.java" />
+  </source>
+</dependencies>
 
