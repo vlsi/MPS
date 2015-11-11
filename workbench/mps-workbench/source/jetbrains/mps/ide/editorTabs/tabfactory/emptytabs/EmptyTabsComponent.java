@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.emptytabs;
 
 import com.intellij.openapi.editor.Document;
+import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
@@ -27,11 +28,23 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Class for 'Do not show tabs' option in Editor 'Aspect tabs' setting.
+ * Only store SNodeReference to current editing node and calls myCallback.changeNode() when it changed.
+ *
+ * Does not have own JComponent. It just delegate everything.
+ */
 public class EmptyTabsComponent implements TabsComponent {
   private SNodeReference myNode;
+  private final NodeChangeCallback myCallback;
 
-  public EmptyTabsComponent(SNodeReference node) {
+  /**
+   * @param node Node to show.
+   * @param callback Callback to call TabbedEditor.showNodeInternal()
+   */
+  public EmptyTabsComponent(SNodeReference node, NodeChangeCallback callback) {
     myNode = node;
+    myCallback = callback;
   }
 
   @Override
@@ -57,6 +70,8 @@ public class EmptyTabsComponent implements TabsComponent {
 
   @Override
   public void editNode(SNodeReference sNodePointer) {
+    myNode = sNodePointer;
+    myCallback.changeNode(sNodePointer);
   }
 
   @Override
