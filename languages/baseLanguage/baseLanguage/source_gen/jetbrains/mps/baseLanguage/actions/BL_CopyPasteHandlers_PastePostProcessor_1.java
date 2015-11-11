@@ -61,17 +61,12 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
             if (nextClassConcept != containingClass) {
               SLinkOperations.setTarget(pastedNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"), nextClassConcept);
             } else if (SNodeOperations.getReference(pastedNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept")) != null) {
-              SReference reference = SNodeOperations.getReference(pastedNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"));
               SLinkOperations.setTarget(pastedNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"), null);
-              (as_nqjmzz_a0a0c0a0a0a01a1a5a1(reference, jetbrains.mps.smodel.SReference.class)).setRole(null);
             }
             break;
           }
         }
       }
     }
-  }
-  private static <T> T as_nqjmzz_a0a0c0a0a0a01a1a5a1(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

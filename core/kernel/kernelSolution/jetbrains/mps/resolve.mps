@@ -35,6 +35,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -828,11 +829,34 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="2uxkWp9Y5Ax" role="3clFbw">
-            <node concept="37vLTw" id="2uxkWp9Y5Ay" role="3uHU7B">
-              <ref role="3cqZAo" node="2uxkWp9Y5Ap" resolve="sourceNode" />
+          <node concept="22lmx$" id="2_3pruS5Rln" role="3clFbw">
+            <node concept="3y3z36" id="2_3pruS5RMV" role="3uHU7w">
+              <node concept="37vLTw" id="2_3pruS5RQ5" role="3uHU7w">
+                <ref role="3cqZAo" node="2uxkWp9Y2ba" resolve="reference" />
+              </node>
+              <node concept="2OqwBi" id="2_3pruS5R_1" role="3uHU7B">
+                <node concept="37vLTw" id="2_3pruS5Rzm" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2uxkWp9Y5Ap" resolve="sourceNode" />
+                </node>
+                <node concept="liA8E" id="2_3pruS5RCU" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
+                  <node concept="2OqwBi" id="2_3pruS5RHp" role="37wK5m">
+                    <node concept="37vLTw" id="2_3pruS5RFn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2uxkWp9Y2ba" resolve="reference" />
+                    </node>
+                    <node concept="liA8E" id="2_3pruS5RJX" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="10Nm6u" id="2uxkWp9Y5Az" role="3uHU7w" />
+            <node concept="3clFbC" id="2uxkWp9Y5Ax" role="3uHU7B">
+              <node concept="37vLTw" id="2uxkWp9Y5Ay" role="3uHU7B">
+                <ref role="3cqZAo" node="2uxkWp9Y5Ap" resolve="sourceNode" />
+              </node>
+              <node concept="10Nm6u" id="2uxkWp9Y5Az" role="3uHU7w" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs6" id="2uxkWp9YaiZ" role="3cqZAp">
