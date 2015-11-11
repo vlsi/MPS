@@ -67,9 +67,6 @@
       <layout class="org.apache.log4j.PatternLayout">
           <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
       </layout>
-      <filter class="org.apache.log4j.varia.LevelRangeFilter">
-          <param name="LevelMin" value="INFO"/>
-      </filter>
   </appender>
 
   <appender name="FILE-LOCAL" class="org.apache.log4j.RollingFileAppender">
