@@ -17,8 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -61,7 +61,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class SModel implements SModelData {
@@ -658,6 +657,7 @@ public class SModel implements SModelData {
   public void deleteLanguage(@NotNull SLanguage id) {
     assertLegalChange();
     if (myLanguagesIds.remove(id) != null) {
+      validateModuleLanguageVersions();
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(id);
       markChanged();
@@ -684,9 +684,25 @@ public class SModel implements SModelData {
     }
 
     myLanguagesIds.put(id, version);
+    validateModuleLanguageVersions();
     invalidateModelDepsManager();
     fireLanguageAddedEvent(id);
     markChanged();
+  }
+
+  /**
+   * todo: this is a temporary method helping to keep set of imported languages stored in module in sync with models
+   */
+  @Deprecated
+  private void validateModuleLanguageVersions() {
+    SModelBase modelDescriptor = getModelDescriptor();
+    if (modelDescriptor == null) {
+      return;
+    }
+    SModule module = modelDescriptor.getModule();
+    if (module != null && module instanceof AbstractModule) {
+      ((AbstractModule) module).validateLanguageVersions();
+    }
   }
 
   //devkit
@@ -699,6 +715,7 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     if (myDevKits.add(ref)) {
+      validateModuleLanguageVersions();
       invalidateModelDepsManager();
       fireDevKitAddedEvent(ref);
       markChanged();
@@ -709,6 +726,7 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     if (myDevKits.remove(ref)) {
+      validateModuleLanguageVersions();
       invalidateModelDepsManager();
       fireDevKitRemovedEvent(ref);
       markChanged();
