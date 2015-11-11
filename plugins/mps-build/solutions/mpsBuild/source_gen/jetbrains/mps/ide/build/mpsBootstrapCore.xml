@@ -7,6 +7,8 @@
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -20,6 +22,7 @@
   
   <path id="path.jdk.classpath">
     <pathelement path="${java.home}/../Classes/classes.jar" />
+    <pathelement path="${jdk.home}/lib/tools.jar" />
     <fileset dir="${java.home}">
       <include name="lib/*.jar" />
     </fileset>
@@ -57,10 +60,6 @@
     <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
   </path>
   
-  <path id="path.java.library.tools">
-    <fileset file="${mps_home}/lib/tools.jar" />
-  </path>
-  
   <path id="path.mps.ant.path">
     <pathelement location="${build.tmp}/antTasks/ant/lib/ant-mps.jar" />
     <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
@@ -73,9 +72,6 @@
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
       <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
-    </copy>
-    <copy todir="${build.layout}/lib">
-      <fileset file="${mps_home}/lib/tools.jar" />
     </copy>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-tuples-runtime-jetbrains">
       <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />

@@ -20,7 +20,6 @@ import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.java.stub.PackageScopeControl;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -30,8 +29,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -57,6 +54,7 @@ public class Solution extends ReloadableModuleBase {
   private static Map<SModuleReference, ClasspathReader.ClassType> initBootstrapSolutions() {
     Map<SModuleReference, ClasspathReader.ClassType> result = new HashMap<SModuleReference, ClasspathReader.ClassType>();
     result.put(BootstrapLanguages.jdkRef(), ClasspathReader.ClassType.JDK);
+    result.put(BootstrapLanguages.jdkToolsRef(), ClasspathReader.ClassType.JDK_TOOLS);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("Annotations",
         ModuleId.fromString("3f233e7f-b8a6-46d2-a57f-795d56775243")), ClasspathReader.ClassType.ANNOTATIONS);
     result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.OpenAPI",
@@ -78,29 +76,47 @@ public class Solution extends ReloadableModuleBase {
 
   private static void populateModelRoot(ClassType classType, ModelRootDescriptor javaStubsModelRoot) {
     PackageScopeControl psc = null;
-    if (classType == ClassType.JDK) {
-      PackageScopeControl jdkPackages = new PackageScopeControl();
-      jdkPackages.setSkipPrivate(true);
-      jdkPackages.includeWithPrefix("java.");
-      jdkPackages.includeWithPrefix("javax.");
-      jdkPackages.includeWithPrefix("org.");
-      // sun.awt used in mbeddr
-      jdkPackages.includeWithPrefix("sun.");
-      jdkPackages.includeWithPrefix("sun.awt.");
-      psc = jdkPackages;
-    } else if (classType == ClassType.PLATFORM || classType == ClassType.IDEA) {
-      PackageScopeControl platformPackages = new PackageScopeControl();
-      // mbeddr uses reflection (though custom dsl) to access MPS internals
-      // hence we need to expose private methods unless this reflection language and its uses are removed
-//      platformPackages.setSkipPrivate(true);
-      psc = platformPackages;
+    switch (classType) {
+      case JDK:
+        PackageScopeControl jdkPackages = new PackageScopeControl();
+        jdkPackages.setSkipPrivate(true);
+        jdkPackages.includeWithPrefix("java.");
+        jdkPackages.includeWithPrefix("javax.");
+        jdkPackages.includeWithPrefix("org.");
+        // sun.awt used in mbeddr
+        jdkPackages.includeWithPrefix("sun.awt.");
+        psc = jdkPackages;
+        break;
+      case JDK_TOOLS:
+        psc = new PackageScopeControl();
+        psc.isSkipPrivate();
+        psc.includeWithPrefix("com.sun.codemodel.");
+        psc.includeWithPrefix("com.sun.source.");
+        psc.includeWithPrefix("com.sun.tools.");
+        psc.includeWithPrefix("com.sun.jarsigner.");
+        psc.includeWithPrefix("com.sun.javadoc.");
+        psc.includeWithPrefix("com.sun.jdi.");
+        psc.includeWithPrefix("org.relaxng.");
+        psc.includeWithPrefix("sun.jvmstat.");
+        psc.includeWithPrefix("sun.rmi.rmic.");
+        psc.includeWithPrefix("sun.tools.");
+        psc.includeWithPrefix("sun.applet.");
+        break;
+      case PLATFORM:
+      case IDEA:
+        PackageScopeControl platformPackages = new PackageScopeControl();
+        // mbeddr uses reflection (though custom dsl) to access MPS internals
+        // hence we need to expose private methods unless this reflection language and its uses are removed
+        //      platformPackages.setSkipPrivate(true);
+        psc = platformPackages;
+        break;
     }
+
     if (psc != null) {
       final Memento m = javaStubsModelRoot.getMemento().createChild("PackageScope");
       psc.save(m);
     }
   }
-
 
 
   /* TODO make package local, move to appropriate package */
@@ -175,7 +191,9 @@ public class Solution extends ReloadableModuleBase {
         modelRootDescriptors.add(javaStubsModelRoot);
         populateModelRoot(classType, javaStubsModelRoot);
       }
-      descriptor.getAdditionalJavaStubPaths().add(path);
+      if (classType.hasOwnJavaStubs()) {
+        descriptor.getAdditionalJavaStubPaths().add(path);
+      }
     }
   }
 

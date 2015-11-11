@@ -15,6 +15,8 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -28,6 +30,7 @@
   
   <path id="path.jdk.classpath">
     <pathelement path="${java.home}/../Classes/classes.jar" />
+    <pathelement path="${jdk.home}/lib/tools.jar" />
     <fileset dir="${java.home}">
       <include name="lib/*.jar" />
     </fileset>
@@ -686,7 +689,6 @@
         <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/tools.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -1059,7 +1061,6 @@
         <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/tools.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

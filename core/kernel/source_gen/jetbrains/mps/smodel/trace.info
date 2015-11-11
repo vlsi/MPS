@@ -449,6 +449,7 @@
       <node id="5512160570053008241" at="148,57,149,135" concept="5" />
       <node id="4173418906129968441" at="151,56,152,142" concept="5" />
       <node id="4551774558264448695" at="154,43,155,110" concept="5" />
+      <node id="7223845917415567190" at="157,48,158,116" concept="5" />
       <node id="5073169472575923462" at="55,0,58,0" concept="0" trace="BootstrapLanguages#()V" />
       <node id="4599227844726258198" at="58,0,61,0" concept="8" trace="getLangCore#()Lorg/jetbrains/mps/openapi/language/SLanguage;" />
       <node id="5290480597749205298" at="61,0,64,0" concept="8" trace="getGeneratorLang#()Lorg/jetbrains/mps/openapi/language/SLanguage;" />
@@ -483,6 +484,7 @@
       <node id="5512160570053008239" at="148,0,151,0" concept="8" trace="migrationLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
       <node id="4173418906129968439" at="151,0,154,0" concept="8" trace="unitTestLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
       <node id="9198229506099365564" at="154,0,157,0" concept="8" trace="jdkRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="7223845917415567188" at="157,0,160,0" concept="8" trace="jdkToolsRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
       <scope id="5073169472575923465" at="56,32,56,32" />
       <scope id="4599227844726258202" at="58,41,59,133" />
       <scope id="5290480597749205302" at="61,46,62,138" />
@@ -517,6 +519,7 @@
       <scope id="5512160570053008240" at="148,57,149,135" />
       <scope id="4173418906129968440" at="151,56,152,142" />
       <scope id="9198229506099365565" at="154,43,155,110" />
+      <scope id="7223845917415567189" at="157,48,158,116" />
       <scope id="5073169472575923462" at="55,0,58,0" />
       <scope id="4599227844726258198" at="58,0,61,0" />
       <scope id="5290480597749205298" at="61,0,64,0" />
@@ -551,7 +554,8 @@
       <scope id="5512160570053008239" at="148,0,151,0" />
       <scope id="4173418906129968439" at="151,0,154,0" />
       <scope id="9198229506099365564" at="154,0,157,0" />
-      <unit id="5073169472575923460" at="13,0,158,0" name="jetbrains.mps.smodel.BootstrapLanguages" />
+      <scope id="7223845917415567188" at="157,0,160,0" />
+      <unit id="5073169472575923460" at="13,0,162,0" name="jetbrains.mps.smodel.BootstrapLanguages" />
     </file>
   </root>
 </debug-info>

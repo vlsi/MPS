@@ -25,6 +25,7 @@ import java.util.List;
  * Manage access to a subset of packages available from a source (e.g. model root) and classes in these packages.
  * Comes handy when we want to control set of packages coming from a well-known classpath item, e.g. Java SDK
  * classes, when we want to expose only specific, public APIs.
+ *
  * @author Artem Tikhomirov
  */
 public final class PackageScopeControl {
@@ -64,6 +65,7 @@ public final class PackageScopeControl {
   /**
    * Package name prefix. To match exact package, not any starting with the prefix, don't forget
    * to put dot in the end of the prefix (e.g. "org.com." not to match "org.common")
+   *
    * @param packageNamePrefix qualified package name prefix to match
    */
   public void includeWithPrefix(@NotNull String packageNamePrefix) {
@@ -103,17 +105,34 @@ public final class PackageScopeControl {
    * @return true if package deemed part of the scope
    */
   public boolean isIncluded(@NotNull String qualifiedPackageName) {
-    boolean included = myIncludePrefix == null || matchPrefix(myIncludePrefix, qualifiedPackageName);
-    boolean excluded = myExcludePrefix != null && matchPrefix(myExcludePrefix, qualifiedPackageName);
+    boolean included = myIncludePrefix == null || matchPrefix(myIncludePrefix, qualifiedPackageName, false);
+    boolean excluded = myExcludePrefix != null && matchPrefix(myExcludePrefix, qualifiedPackageName, false);
     return included && !excluded;
   }
 
-  private static boolean matchPrefix(List<String> prefixes, String name) {
+  /**
+   * Checking if any of sub-packages of this package is included by {@link #myIncludePrefix}
+   *
+   * @param qualifiedPackageName package to check for scope
+   * @return true if at least one of child packages may be included
+   */
+  public boolean isAnyChildIncluded(@NotNull String qualifiedPackageName) {
+    return myIncludePrefix != null && matchPrefix(myIncludePrefix, qualifiedPackageName, true);
+  }
+
+  /**
+   * @param prefixes              - the list of prefixes
+   * @param name                  - the name of the package
+   * @param checkingChildPrefixes - true the name is a name of potential parent package for any of included packages (prefixes),
+   *                              used from {@link #isAnyChildIncluded(String)}
+   * @return boolean if package name starts with any of specified prefixes of vice versa (if <code>checkingChildPrefixes</code> is true)
+   */
+  private static boolean matchPrefix(List<String> prefixes, String name, boolean checkingChildPrefixes) {
     // prefix may indicate exact package, thus we make sure name looks 'complete'
     // e.g. prefix "org.com." shall match name == "org.com"
     name = name + '.';
     for (String prefix : prefixes) {
-      if (name.startsWith(prefix)) {
+      if (checkingChildPrefixes ? prefix.startsWith(name) : name.startsWith(prefix)) {
         return true;
       }
     }

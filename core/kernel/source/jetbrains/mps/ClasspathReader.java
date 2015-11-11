@@ -15,6 +15,7 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.FileUtil;
 
@@ -56,6 +57,7 @@ public class ClasspathReader {
 
   public enum ClassType {
     JDK("jdk"),
+    JDK_TOOLS("jdk-tools"),
     ANNOTATIONS("annotations"),
     OPENAPI("openapi"),
     CORE("core"),
@@ -74,6 +76,10 @@ public class ClasspathReader {
 
     public String getTypeString() {
       return myTypeString;
+    }
+
+    public boolean hasOwnJavaStubs() {
+      return this != JDK_TOOLS || CommonPaths.isJDK_ToolsInSeparateJar();
     }
   }
 }

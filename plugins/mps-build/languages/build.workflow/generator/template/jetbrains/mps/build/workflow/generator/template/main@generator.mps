@@ -179,6 +179,9 @@
         <property id="2059109515400477502" name="classname" index="3fwhof" />
         <reference id="2059109515400477503" name="classpath" index="3fwhoe" />
       </concept>
+      <concept id="6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" flags="ng" index="1_4tnW">
+        <property id="6896005762093571402" name="defaultValue" index="1_4tnY" />
+      </concept>
     </language>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
       <concept id="6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" flags="ng" index="2pMbU2">
@@ -2989,6 +2992,130 @@
         <node concept="2VaFvD" id="1Mjrj7j4Bzg" role="1Koe22">
           <property role="TrG5h" value="aaaa" />
           <property role="1LnyFq" value="aaaa" />
+          <node concept="1_4tnW" id="1VaRiz_CjIm" role="2VaxJS">
+            <property role="TrG5h" value="env.JAVA_HOME" />
+            <property role="1_4tnY" value="${java.home}/.." />
+            <node concept="raruj" id="1VaRiz_CuRr" role="lGtFl" />
+            <node concept="1W57fq" id="1VaRiz_C_RO" role="lGtFl">
+              <node concept="3IZrLx" id="1VaRiz_C_RQ" role="3IZSJc">
+                <node concept="3clFbS" id="1VaRiz_C_RS" role="2VODD2">
+                  <node concept="3clFbF" id="1VaRiz_CA_1" role="3cqZAp">
+                    <node concept="2OqwBi" id="1VaRiz_CA_3" role="3clFbG">
+                      <node concept="2OqwBi" id="1VaRiz_CA_4" role="2Oq$k0">
+                        <node concept="30H73N" id="1VaRiz_CA_5" role="2Oq$k0" />
+                        <node concept="2TvwIu" id="1VaRiz_CA_6" role="2OqNvi" />
+                      </node>
+                      <node concept="2HwmR7" id="1VaRiz_CA_7" role="2OqNvi">
+                        <node concept="1bVj0M" id="1VaRiz_CA_8" role="23t8la">
+                          <node concept="3clFbS" id="1VaRiz_CA_9" role="1bW5cS">
+                            <node concept="3clFbF" id="1VaRiz_CA_a" role="3cqZAp">
+                              <node concept="1Wc70l" id="1VaRiz_CA_b" role="3clFbG">
+                                <node concept="2OqwBi" id="1VaRiz_CA_c" role="3uHU7B">
+                                  <node concept="37vLTw" id="1VaRiz_CA_d" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="1VaRiz_CA_n" resolve="it" />
+                                  </node>
+                                  <node concept="1mIQ4w" id="1VaRiz_CA_e" role="2OqNvi">
+                                    <node concept="chp4Y" id="1VaRiz_CA_f" role="cj9EA">
+                                      <ref role="cht4Q" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="1VaRiz_CA_g" role="3uHU7w">
+                                  <node concept="Xl_RD" id="1VaRiz_CA_h" role="2Oq$k0">
+                                    <property role="Xl_RC" value="IntelliJ" />
+                                  </node>
+                                  <node concept="liA8E" id="1VaRiz_CA_i" role="2OqNvi">
+                                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                    <node concept="2OqwBi" id="1VaRiz_CA_j" role="37wK5m">
+                                      <node concept="1PxgMI" id="1VaRiz_CA_k" role="2Oq$k0">
+                                        <ref role="1PxNhF" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
+                                        <node concept="37vLTw" id="1VaRiz_CA_l" role="1PxMeX">
+                                          <ref role="3cqZAo" node="1VaRiz_CA_n" resolve="it" />
+                                        </node>
+                                      </node>
+                                      <node concept="3TrcHB" id="1VaRiz_CA_m" role="2OqNvi">
+                                        <ref role="3TsBF5" to="8xvf:1Mjrj7j3XYo" resolve="compiler" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="1VaRiz_CA_n" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="1VaRiz_CA_o" role="1tU5fm" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1_4tnW" id="1VaRiz_ClIB" role="2VaxJS">
+            <property role="TrG5h" value="jdk.home" />
+            <property role="1_4tnY" value="${env.JAVA_HOME}" />
+            <node concept="raruj" id="1VaRiz_Cv4l" role="lGtFl" />
+            <node concept="1W57fq" id="1VaRiz_CAG0" role="lGtFl">
+              <node concept="3IZrLx" id="1VaRiz_CAG2" role="3IZSJc">
+                <node concept="3clFbS" id="1VaRiz_CAG4" role="2VODD2">
+                  <node concept="3clFbF" id="1VaRiz_CAHe" role="3cqZAp">
+                    <node concept="2OqwBi" id="1VaRiz_CAHg" role="3clFbG">
+                      <node concept="2OqwBi" id="1VaRiz_CAHh" role="2Oq$k0">
+                        <node concept="30H73N" id="1VaRiz_CAHi" role="2Oq$k0" />
+                        <node concept="2TvwIu" id="1VaRiz_CAHj" role="2OqNvi" />
+                      </node>
+                      <node concept="2HwmR7" id="1VaRiz_CAHk" role="2OqNvi">
+                        <node concept="1bVj0M" id="1VaRiz_CAHl" role="23t8la">
+                          <node concept="3clFbS" id="1VaRiz_CAHm" role="1bW5cS">
+                            <node concept="3clFbF" id="1VaRiz_CAHn" role="3cqZAp">
+                              <node concept="1Wc70l" id="1VaRiz_CAHo" role="3clFbG">
+                                <node concept="2OqwBi" id="1VaRiz_CAHp" role="3uHU7B">
+                                  <node concept="37vLTw" id="1VaRiz_CAHq" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="1VaRiz_CAH$" resolve="it" />
+                                  </node>
+                                  <node concept="1mIQ4w" id="1VaRiz_CAHr" role="2OqNvi">
+                                    <node concept="chp4Y" id="1VaRiz_CAHs" role="cj9EA">
+                                      <ref role="cht4Q" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="1VaRiz_CAHt" role="3uHU7w">
+                                  <node concept="Xl_RD" id="1VaRiz_CAHu" role="2Oq$k0">
+                                    <property role="Xl_RC" value="IntelliJ" />
+                                  </node>
+                                  <node concept="liA8E" id="1VaRiz_CAHv" role="2OqNvi">
+                                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                    <node concept="2OqwBi" id="1VaRiz_CAHw" role="37wK5m">
+                                      <node concept="1PxgMI" id="1VaRiz_CAHx" role="2Oq$k0">
+                                        <ref role="1PxNhF" to="8xvf:47XTuiHNzyV" resolve="BwfJavaModule" />
+                                        <node concept="37vLTw" id="1VaRiz_CAHy" role="1PxMeX">
+                                          <ref role="3cqZAo" node="1VaRiz_CAH$" resolve="it" />
+                                        </node>
+                                      </node>
+                                      <node concept="3TrcHB" id="1VaRiz_CAHz" role="2OqNvi">
+                                        <ref role="3TsBF5" to="8xvf:1Mjrj7j3XYo" resolve="compiler" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="1VaRiz_CAH$" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="1VaRiz_CAH_" role="1tU5fm" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="10O78W" id="1Mjrj7j4Bzk" role="2VaxJS">
             <property role="TrG5h" value="javac2.classpath" />
             <node concept="raruj" id="1Mjrj7j4Bzm" role="lGtFl" />
@@ -3251,6 +3378,16 @@
                 <property role="2pNUuO" value="path" />
                 <node concept="2pMdtt" id="6Eoy9qioAjV" role="2pMdts">
                   <property role="2pMdty" value="${java.home}/../Classes/classes.jar" />
+                </node>
+              </node>
+            </node>
+            <node concept="2pNNFK" id="1VaRiz_Ckho" role="10O6PF">
+              <property role="2pNNFO" value="pathelement" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="1VaRiz_CkmP" role="2pNNFR">
+                <property role="2pNUuO" value="path" />
+                <node concept="2pMdtt" id="1VaRiz_CkmR" role="2pMdts">
+                  <property role="2pMdty" value="${jdk.home}/lib/tools.jar" />
                 </node>
               </node>
             </node>
