@@ -172,6 +172,7 @@
     </group>
 
     &lt;!&ndash; View &ndash;&gt;
+    -->
     <group id="QuickActions">
       <separator/>
       <action id="QuickImplementations" class="com.intellij.codeInsight.hint.actions.ShowImplementationsAction"/>
@@ -179,7 +180,7 @@
 
       <add-to-group group-id="ViewMenu" anchor="after" relative-to-action="ToolWindowsGroup"/>
     </group>
-
+    <!--
     <group id="CodeEditorBaseGroup">
       <group id="CodeEditorViewGroup">
         <action id="ExternalJavaDoc" class="com.intellij.ide.actions.ExternalJavaDocAction"/>
