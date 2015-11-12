@@ -31,7 +31,7 @@ public class CellAction_Comment extends AbstractCommentOutAction {
     return !(selection instanceof EditorCellLabelSelection) || ((EditorCellLabelSelection) selection).hasNonTrivialSelection();
   }
 
-  protected SNode getNodeToComment(EditorContext editroContext) {
+  protected SNode getNodeToComment(EditorContext editorContext) {
     return myNode;
   }
 }
