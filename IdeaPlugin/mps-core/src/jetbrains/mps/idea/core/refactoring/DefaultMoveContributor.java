@@ -14,11 +14,15 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.smodel.structure.Extension;
+import jetbrains.mps.smodel.structure.ExtensionDescriptor;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +35,37 @@ import java.util.Map;
 public class DefaultMoveContributor implements MoveRefactoringContributor {
   static String REFACTORING_CLASS = "jetbrains.mps.lang.core.refactorings.MoveNodes";
 
+  public static class UpdatePsiReferencesParticipant_extension extends Extension.Default<UpdatePsiReferencesMoveParticipant> {
+    private Project myProject;
+    private UpdatePsiReferencesMoveParticipant myParticipant;
+
+    public UpdatePsiReferencesParticipant_extension(Project project) {
+      super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
+      myProject = project;
+    }
+
+    public UpdatePsiReferencesMoveParticipant get() {
+      if (myParticipant == null) {
+        myParticipant = new UpdatePsiReferencesMoveParticipant(MPSPsiProvider.getInstance(myProject));
+      }
+      return myParticipant;
+    }
+  }
+
+  public static final ExtensionDescriptor extDescriptor(final Project project) {
+    return new ExtensionDescriptor() {
+      @Override
+      public Iterable<? extends ExtensionPoint> getExtensionPoints() {
+        return Collections.emptyList();
+      }
+
+      @Override
+      public Iterable<? extends Extension> getExtensions() {
+        return Collections.singletonList(new UpdatePsiReferencesParticipant_extension(project));
+      }
+    };
+  }
+
   @Override
   public boolean isAvailableFor(@NotNull List<SNode> nodes) {
     IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(REFACTORING_CLASS);
@@ -41,67 +76,6 @@ public class DefaultMoveContributor implements MoveRefactoringContributor {
   public void invoke(@NotNull Project project, @NotNull final List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
     MoveNodesDefault.moveNodes(nodes, mpsProject);
-  }
-
-  class DefaultMoveRefactoring extends PsiAwareRefactoring {
-    private List<SNode> myNodes;
-    private Object myLocation;
-
-    public DefaultMoveRefactoring(List<SNode> nodes, Object location) {
-      super(RefactoringUtil.getRefactoringByClassName(REFACTORING_CLASS));
-      myNodes = nodes;
-      myLocation = location;
-    }
-
-    @Override
-    public void refactor(RefactoringContext context) {
-      MPSProject mpsProject = (MPSProject) context.getSelectedProject();
-      MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(mpsProject.getProject());
-
-      Map<SNode, PsiElement> sourcePsiElements = new HashMap<SNode, PsiElement>();
-      for (SNode node : myNodes) {
-        sourcePsiElements.put(node, psiProvider.getPsi(node));
-      }
-
-      List<UsageInfo> usageInfos = new ArrayList<UsageInfo>();
-      SearchResults<SNode> usages = (SearchResults<SNode>) context.getUsages();
-      for (SearchResult<SNode> result : usages.getSearchResults()) {
-        if (!((result instanceof PsiSearchResult))) {
-          continue;
-        }
-        PsiReference psiRef = ((PsiSearchResult) result).getReference();
-        usageInfos.add(new MoveRenameUsageInfo(psiRef, psiRef.resolve()));
-      }
-
-      super.refactor(context);
-
-      SModel targetModel;
-      Iterable<? extends SNode> children;
-      if (myLocation instanceof SModel) {
-        targetModel = (SModel) myLocation;
-        children = targetModel.getRootNodes();
-      } else if (myLocation instanceof SNode) {
-        targetModel = ((SNode) myLocation).getModel();
-        children = ((SNode) myLocation).getChildren();
-      } else {
-        return;
-      }
-      psiProvider.getPsi(targetModel).reloadAll();
-
-      Map<PsiElement, PsiElement> oldToNew = new HashMap<PsiElement, PsiElement>();
-      for (SNode node : myNodes) {
-        String name = node.getName();
-        if (name == null) continue;
-        for (SNode candidate : children) {
-          if (name.equals(candidate.getName())) {
-            oldToNew.put(sourcePsiElements.get(node), psiProvider.getPsi(candidate));
-            break;
-          }
-        }
-      }
-
-      CommonMoveUtil.retargetUsages(usageInfos.toArray(UsageInfo.EMPTY_ARRAY), oldToNew);
-    }
   }
 }
 
