@@ -282,7 +282,11 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
       // this check is a hack needed for generation process where we do not have write access and getRepository() returns null
       // but getModelDescriptor().getModule().getRepository() is MPSModuleRepository
       if (getRepository() != null) {
-        ((AbstractModule) module).validateLanguageVersions();
+        // this check is for not to call validateLanguageVersions() where we do not have write access
+        // this can happen if isLoaded() is false, e. g. in textgen
+        if (getRepository().getModelAccess().canWrite()) {
+          ((AbstractModule) module).validateLanguageVersions();
+        }
       }
     }
   }
