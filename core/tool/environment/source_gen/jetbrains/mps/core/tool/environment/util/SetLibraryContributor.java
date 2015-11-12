@@ -40,4 +40,9 @@ public class SetLibraryContributor implements LibraryContributor {
   public static SetLibraryContributor fromSet(String name, Set<LibDescriptor> libs) {
     return new SetLibraryContributor(name, libs);
   }
+
+  @Override
+  public String toString() {
+    return "LibraryContributor " + myName;
+  }
 }

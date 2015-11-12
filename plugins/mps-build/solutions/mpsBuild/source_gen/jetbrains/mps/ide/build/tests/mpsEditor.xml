@@ -1180,7 +1180,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.baseLanguage.test" depends="java.compile.testDefaultEditor, java.compile.testMoveElements, java.compile.testSpaceCompletion, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.baseLanguage.test" depends="java.compile.testDefaultEditor, java.compile.testSpaceCompletion, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/bl.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -1203,7 +1203,6 @@
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/testDefaultEditor" />
-        <pathelement path="${build.tmp}/java/out/testMoveElements" />
         <pathelement path="${build.tmp}/java/out/testSpaceCompletion" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />

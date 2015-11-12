@@ -6,6 +6,7 @@ import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.ProjectStrategy;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.core.platform.Platform;
 import java.io.File;
 
@@ -28,6 +29,11 @@ public class LightEnvironment implements Environment {
 
   @Override
   public void flushAllEvents() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        return;
+      }
+    });
   }
 
   @Override

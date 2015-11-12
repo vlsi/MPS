@@ -1663,7 +1663,7 @@
                   <node concept="2Ry0Ak" id="53PdBITeUcN" role="iGT6I">
                     <property role="2Ry0Am" value="build" />
                     <node concept="2Ry0Ak" id="6DW_AMABfBy" role="2Ry0An">
-                      <property role="2Ry0Am" value="testModules" />
+                      <property role="2Ry0Am" value="tests" />
                     </node>
                   </node>
                 </node>

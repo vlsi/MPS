@@ -166,6 +166,7 @@ public abstract class EnvironmentBase implements Environment {
         LOG.info("Opening a new project");
       }
       Project project = doOpenProject(projectFile);
+      flushAllEvents();
       return project;
     }
   }

@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
@@ -80,20 +81,23 @@ public class TransformationTestRunner implements TestRunner {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Recaching the model again");
       }
-      testProject.getModelAccess().executeCommandInEDT(new Runnable() {
-        @Override
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
-          initialize(test, modelName);
-        }
+          testProject.getModelAccess().executeCommand(new Runnable() {
+            @Override
+            public void run() {
+              initialize(test, modelName);
+            }
 
-        private void initialize(final TransformationTest test, final String modelName) {
-          SModel modelDescriptor = findModel(modelName);
-          test.setModelDescriptor(modelDescriptor);
-          test.init();
-        }
+            private void initialize(final TransformationTest test, final String modelName) {
+              SModel modelDescriptor = findModel(modelName);
+              test.setModelDescriptor(modelDescriptor);
+              test.init();
+            }
 
+          });
+        }
       });
-      myEnvironment.flushAllEvents();
       TestModelSaver.getInstance().clean();
       TestModelSaver.getInstance().setTest(test);
     }
@@ -171,9 +175,13 @@ public class TransformationTestRunner implements TestRunner {
     clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
     clazz.value.getField("myProject").set(obj, projectTest.getProject());
     if (runInCommand) {
-      projectTest.getProject().getModelAccess().executeCommandInEDT(new Runnable() {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
-          error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+          projectTest.getProject().getModelAccess().executeCommand(new Runnable() {
+            public void run() {
+              error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+            }
+          });
         }
       });
       myEnvironment.flushAllEvents();

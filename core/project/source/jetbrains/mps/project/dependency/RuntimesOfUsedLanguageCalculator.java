@@ -17,6 +17,7 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
+import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -55,7 +56,7 @@ class RuntimesOfUsedLanguageCalculator {
   }
 
   private boolean isPackaged() {
-    return !(myModule instanceof TempModule) && myModule.isPackaged();
+    return !(myModule instanceof TempModule) && !(myModule instanceof ProjectStructureModule) && myModule.isPackaged();
   }
 
   /**
@@ -87,7 +88,7 @@ class RuntimesOfUsedLanguageCalculator {
       }
       DeploymentDescriptor descriptor = moduleDescriptor.getDeploymentDescriptor();
       if (descriptor == null) {
-        LOG.warn("The deployment descriptor could not be found for the module " + myModule + "; falling back to the SourceStrategy.");
+        LOG.debug("The deployment descriptor could not be found for the module " + myModule + "; falling back to the SourceStrategy.");
         return new SourceStrategy().findRuntimes();
       }
       Collection<Dependency> dependencies = descriptor.getDependencies();

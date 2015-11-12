@@ -959,9 +959,6 @@
             <ref role="3bR37D" node="374E0BAhSlA" resolve="testSpaceCompletion" />
           </node>
         </node>
-        <node concept="3bR9La" id="6BLo1Mgrfnl" role="3bR37C">
-          <ref role="3bR37D" node="2tTgVY$TuKU" resolve="testMoveElements" />
-        </node>
       </node>
       <node concept="1E1JtA" id="4BLpc15ezHv" role="2G$12L">
         <property role="BnDLt" value="true" />
