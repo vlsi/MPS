@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.Language;
@@ -36,6 +37,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
@@ -206,6 +208,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public final void deleteLanguage(@NotNull SModuleReference ref) {
     getSModelInternal().deleteLanguage(MetaAdapterFactory.getLanguage(ref));
+    validateModuleLanguageVersions();
   }
 
   @Override
@@ -214,6 +217,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     // while SModelLegacy may need to survive few releases as it deals with smodel.SModel instances directly.
     // Users of this class, however, have access to full power of SModel and therefore much more freedom what to do.
     getSModelInternal().addLanguage(MetaAdapterFactory.getLanguage(ref));
+    validateModuleLanguageVersions();
   }
 
   @Override
@@ -224,26 +228,31 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public void deleteLanguageId(@NotNull SLanguage ref) {
     getSModel().deleteLanguage(ref);
+    validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(Language language) {
     getSModel().addLanguage(MetaAdapterByDeclaration.getLanguage(language));
+    validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(@NotNull SLanguage language) {
     getSModel().addLanguage(language);
+    validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguage(@NotNull SLanguage language, int version) {
     getSModel().addLanguage(language, version);
+    validateModuleLanguageVersions();
   }
 
   @Override
   public void addLanguageId(SLanguage ref, int version) {
     getSModelInternal().addLanguage(ref, version);
+    validateModuleLanguageVersions();
   }
 
   @Override
@@ -254,11 +263,28 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public final void addDevKit(SModuleReference ref) {
     getSModelInternal().addDevKit(ref);
+    validateModuleLanguageVersions();
   }
 
   @Override
   public final void deleteDevKit(@NotNull SModuleReference ref) {
     getSModelInternal().deleteDevKit(ref);
+    validateModuleLanguageVersions();
+  }
+
+  /**
+   * todo: this is a temporary method helping to keep set of imported languages stored in module in sync with models
+   */
+  @Deprecated
+  private void validateModuleLanguageVersions() {
+    SModule module = getModule();
+    if (module != null && module instanceof AbstractModule) {
+      // this check is a hack needed for generation process where we do not have write access and getRepository() returns null
+      // but getModelDescriptor().getModule().getRepository() is MPSModuleRepository
+      if (getRepository() != null) {
+        ((AbstractModule) module).validateLanguageVersions();
+      }
+    }
   }
 
   @Override

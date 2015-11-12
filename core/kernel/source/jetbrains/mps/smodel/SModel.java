@@ -657,7 +657,6 @@ public class SModel implements SModelData {
   public void deleteLanguage(@NotNull SLanguage id) {
     assertLegalChange();
     if (myLanguagesIds.remove(id) != null) {
-      validateModuleLanguageVersions();
       invalidateModelDepsManager();
       fireLanguageRemovedEvent(id);
       markChanged();
@@ -684,29 +683,9 @@ public class SModel implements SModelData {
     }
 
     myLanguagesIds.put(id, version);
-    validateModuleLanguageVersions();
     invalidateModelDepsManager();
     fireLanguageAddedEvent(id);
     markChanged();
-  }
-
-  /**
-   * todo: this is a temporary method helping to keep set of imported languages stored in module in sync with models
-   */
-  @Deprecated
-  private void validateModuleLanguageVersions() {
-    SModelBase modelDescriptor = getModelDescriptor();
-    if (modelDescriptor == null) {
-      return;
-    }
-    SModule module = modelDescriptor.getModule();
-    if (module != null && module instanceof AbstractModule) {
-      // this check is a hack needed for generation process where we do not have write access and getRepository() returns null
-      // but getModelDescriptor().getModule().getRepository() is MPSModuleRepository
-      if (getRepository() != null) {
-        ((AbstractModule) module).validateLanguageVersions();
-      }
-    }
   }
 
   //devkit
@@ -719,7 +698,6 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     if (myDevKits.add(ref)) {
-      validateModuleLanguageVersions();
       invalidateModelDepsManager();
       fireDevKitAddedEvent(ref);
       markChanged();
@@ -730,7 +708,6 @@ public class SModel implements SModelData {
     assertLegalChange();
 
     if (myDevKits.remove(ref)) {
-      validateModuleLanguageVersions();
       invalidateModelDepsManager();
       fireDevKitRemovedEvent(ref);
       markChanged();
