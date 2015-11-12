@@ -20,7 +20,6 @@ import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiBinaryFile;
 import com.intellij.psi.PsiDirectory;
@@ -30,7 +29,6 @@ import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.search.PsiElementProcessor;
-import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
@@ -38,7 +36,6 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
@@ -68,12 +65,12 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   private MPSPsiModel myModel;
   private VirtualFile mySeparateFile;
 
-  public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
+  public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
     this(nodeId, name, containingModel, manager, null);
     mySeparateFile = null;
   }
 
-  public MPSPsiRootNode (SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @Nullable VirtualFile virtualFile) {
+  public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @Nullable VirtualFile virtualFile) {
     super(manager);
     myNodeId = nodeId;
     myModel = containingModel;
@@ -90,7 +87,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
       @Override
       public Icon compute() {
         final SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
-        if(node == null) return IdeIcons.UNKNOWN_ICON;
+        if (node == null) return IdeIcons.UNKNOWN_ICON;
         return IconManager.getIconFor(node, true);
       }
     });
@@ -151,8 +148,9 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Nullable
   @Override
   public PsiDirectory getParent() {
-    if(myViewProvider.getVirtualFile().getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE && super.getParent() instanceof MPSPsiModel)
+    if (myViewProvider.getVirtualFile().getFileType() == MPSFileTypeFactory.MPS_ROOT_FILE_TYPE && super.getParent() instanceof MPSPsiModel) {
       return ((MPSPsiModel) super.getParent()).getParentDirectory();
+    }
     return (PsiDirectory) super.getParent();
   }
 
@@ -193,7 +191,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @NotNull
   @Override
   public PsiFile[] getPsiRoots() {
-    return new PsiFile[] {this};
+    return new PsiFile[]{this};
   }
 
   @NotNull
