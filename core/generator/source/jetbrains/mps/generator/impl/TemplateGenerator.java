@@ -76,6 +76,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.util.InstanceOfCondition;
 
 import java.util.ArrayList;
@@ -130,17 +131,32 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final PostponedReferenceUpdate myPostponedRefs;
   private final DynamicReferenceUpdate myDynamicRefs;
   private final GenerationTrace myNewTrace;
+  private final TransitionTrace myTransitionTrace;
 
   static final class StepArguments {
     public final DependenciesBuilder dependenciesBuilder;
     public final GenPlanActiveStep planStep;
     public final GenerationTrace genTrace;
     public final GeneratorMappings mappingLabels;
-    public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
+    public final TransitionTrace transitionTrace;
+
+    public StepArguments(DependenciesBuilder dependenciesBuilder) {
+      // FIXME refactor TMC.isApplicable call not to take ITemplateGenerator, or use dedicated ITemplateGenerator implementation
+      // that doesn't need anything we could not provide here anyway.
+      // DependenciesBuilder is in use from ITemplateGenerator#isDirty()
+      // Alternative is to initialize StepArguments once prior to isApplicable check, which we can't do now as isApplicable gives us GenPlanActiveStep
+      // If refactored (e.g. GPAS made TG's argument or use of dedicated fake GPAS for isApplicable), could drop this cons altogether.
+      // I.e. if anyone would like to query e.g. mapping label from isApplicable(), it's a chance not to fail with NPE (and to let the error go unnoticed)
+      this(null, dependenciesBuilder, null, null, null);
+    }
+
+    public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels,
+        TransitionTrace transitionTrace) {
       this.dependenciesBuilder = dependenciesBuilder;
       this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
+      this.transitionTrace = transitionTrace;
     }
   }
 
@@ -160,6 +176,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myPostponedRefs = new PostponedReferenceUpdate(this);
     myDynamicRefs = new DynamicReferenceUpdate(this);
     myNewTrace = stepArgs.genTrace;
+    myTransitionTrace = stepArgs.transitionTrace;
   }
 
   public boolean apply(@NotNull ProgressMonitor progressMonitor, boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
@@ -386,6 +403,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
 
       copyNodeAttributes(templateContext, outputNodes);
+      recordTransformInputTrace(inputNode, outputNodes);
 
       env.getTrace().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
 
@@ -504,6 +522,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return super.findOutputNodeById(nodeId);
   }
 
+  /**
+   * For a cross-mode reference, we expect inputNode to point either at original model or one of checkpoint models.
+   * There's no evidence one could get anything but that for a node referenced from another model during generation.
+   */
   @Override
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     SNode existing = super.findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
@@ -749,6 +771,37 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
+  /**
+   * Indicates a node of output model originates from given node of input model by means of mere copy.
+   *
+   * Both parameters are not null. Both may point to the same node (e.g. when it's partial copy
+   * and we just record the 'would-be' copy of a node. Even though the node itself doesn't change (provided
+   * we modify model in-place), we shall record the fact its original input is from last checkpoint state
+   */
+  /*package*/ void recordCopyInputTrace(SNode inputNode, SNode outputNode) {
+    myTransitionTrace.deriveOrigin(inputNode, outputNode);
+  }
+
+  /**
+   * Indicates output nodes originate from given input node by means of transformation by a rule.
+   * FIXME Input node is likely not null, though not sure what to do with create root rules. Perhaps, they don't need trace as there's no origin to trace to?
+   */
+  /*package*/ void recordTransformInputTrace(SNode inputNode, @Nullable Collection<SNode> outputNodes) {
+    if (outputNodes == null) {
+      return;
+    }
+    if (inputNode == null || !myTransitionTrace.hasOrigin(inputNode)) {
+      return;
+    }
+    for (SNode output : outputNodes) {
+      if (output == null) {
+        continue;
+      }
+      myTransitionTrace.deriveOrigin(inputNode, new DescendantsTreeIterator(output));
+    }
+  }
+
+
   public SNode getOriginalRootByGenerated(SNode root) {
     SNode node = myNewToOldRoot.get(root);
     if (node == null) return null;
@@ -838,7 +891,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private class PartialCopyFacility extends  NodeCopyFacility {
+  private static class PartialCopyFacility extends  NodeCopyFacility {
     private final DeltaBuilder myDeltaBuilder;
 
     public PartialCopyFacility(@NotNull TemplateExecutionEnvironmentImpl env, @NotNull DeltaBuilder deltaBuilder) {
@@ -867,6 +920,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+      myEnv.getGenerator().recordCopyInputTrace(inputNode, inputNode);
       myEnv.blockReductionsForCopiedNode(inputNode, inputNode); // prevent infinite applying of the same reduction to the 'same' node.
       for (SNode inputChildNode : inputNode.getChildren()) {
         SContainmentLink childRole = inputChildNode.getContainmentLink();
@@ -927,6 +981,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       } else {
         outputNode = myEnv.getOutputModel().createNode(inputNode.getConcept());
       }
+      myEnv.getGenerator().recordCopyInputTrace(inputNode, outputNode);
       myEnv.blockReductionsForCopiedNode(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
       // output node should be accessible via 'findCopiedNode'

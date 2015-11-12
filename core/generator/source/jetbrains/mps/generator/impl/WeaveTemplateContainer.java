@@ -76,6 +76,7 @@ public class WeaveTemplateContainer {
             SNode anchor = myAnchorQuery.getAnchorNode(context, contextParentNode, outputNodeToWeave);
             weaveSupport.weave(contextParentNode, childRole, outputNodeToWeave, anchor);
           }
+          env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
         } catch (DismissTopMappingRuleException e) {
           env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",
               GeneratorUtil.describe(myTemplateNode, "template node"),

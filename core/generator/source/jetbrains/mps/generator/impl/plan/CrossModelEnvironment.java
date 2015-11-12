@@ -102,6 +102,7 @@ public class CrossModelEnvironment {
     return null;
   }
 
+  // originalModel is just to construct name/reference of the checkpoint model
   public CheckpointState createCheckpoint(SModel originalModel, SModel transientModel, Checkpoint step) {
     String longName = NameUtil.getModelLongName(originalModel);
     String stereotype = "cp-" + step.getName();
