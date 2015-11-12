@@ -40,9 +40,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
@@ -1185,14 +1182,8 @@
                   <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
                   <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
                 </node>
-                <node concept="liA8E" id="47fY$PLJDII" role="2OqNvi">
-                  <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-                  <node concept="Xl_RD" id="3FVfMMI1WBL" role="37wK5m">
-                    <property role="Xl_RC" value="mps-build" />
-                  </node>
-                  <node concept="Xl_RD" id="47fY$PLJDIJ" role="37wK5m">
-                    <property role="Xl_RC" value="jetbrains.mps.build" />
-                  </node>
+                <node concept="liA8E" id="ECLZhkqH_i" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:ECLZhkqBgM" resolve="withBuildPlugin" />
                 </node>
               </node>
             </node>

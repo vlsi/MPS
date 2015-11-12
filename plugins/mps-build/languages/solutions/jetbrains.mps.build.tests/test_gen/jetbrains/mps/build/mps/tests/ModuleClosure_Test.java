@@ -96,7 +96,7 @@ public class ModuleClosure_Test extends TestCase {
     });
   }
   public void setUp() {
-    myEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().addPlugin("mps-build", "jetbrains.mps.build"));
+    myEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withBuildPlugin());
     myProject = myEnv.createEmptyProject();
   }
   public void tearDown() {

@@ -49,7 +49,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
     return SPropertyOperations.getBoolean(__thisNode__, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x14d3fb6fb84ac614L, "doNotCompile")) == false;
   }
   /*package*/ static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    MPSModulesClosure closure = new MPSModulesClosure(__thisNode__).closure();
+    MPSModulesClosure closure = new MPSModulesClosure(__thisNode__, new MPSModulesClosure.ModuleDependenciesOptions()).closure();
 
     boolean needsFetch = false;
     List<SNode> requiredJars = new ArrayList<SNode>();
@@ -153,7 +153,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     // fetch generation time dependencies 
-    MPSModulesClosure genClosure = new MPSModulesClosure(__thisNode__).trackDevkits().runtimeClosure().generationDependenciesClosure();
+    MPSModulesClosure genClosure = new MPSModulesClosure(__thisNode__, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).runtimeClosure().generationDependenciesClosure();
     for (SNode m : Sequence.fromIterable(genClosure.getAllModules())) {
       SNode artifact;
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(__thisNode__)) {

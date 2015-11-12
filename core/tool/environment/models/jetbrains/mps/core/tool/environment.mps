@@ -1154,6 +1154,31 @@
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
     </node>
+    <node concept="2tJIrI" id="ECLZhkqBgL" role="jymVt" />
+    <node concept="3clFb_" id="ECLZhkqBgM" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="withBuildPlugin" />
+      <node concept="3clFbS" id="ECLZhkqBgN" role="3clF47">
+        <node concept="3cpWs6" id="ECLZhkqBgO" role="3cqZAp">
+          <node concept="1rXfSq" id="ECLZhkqBgP" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="ECLZhkqBgQ" role="37wK5m">
+              <property role="Xl_RC" value="mps-build" />
+            </node>
+            <node concept="Xl_RD" id="ECLZhkqBgR" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.build" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="ECLZhkqBgS" role="1B3o_S" />
+      <node concept="3uibUv" id="ECLZhkqBgT" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="MVJ1IE6A6O" role="jymVt" />
     <node concept="3clFb_" id="5mza6QqhjgL" role="jymVt">
       <property role="1EzhhJ" value="false" />

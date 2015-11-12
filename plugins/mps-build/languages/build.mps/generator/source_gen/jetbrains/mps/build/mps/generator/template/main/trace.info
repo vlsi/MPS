@@ -273,8 +273,8 @@
       <node id="8986357566212685835" at="1487,102,1488,75" concept="6" />
       <node id="8986357566212685841" at="1488,75,1489,29" concept="2" />
       <node id="8986357566212685845" at="1489,29,1490,113" concept="6" />
-      <node id="8986357566212685853" at="1490,113,1491,231" concept="6" />
-      <node id="8986357566212685860" at="1491,231,1492,268" concept="6" />
+      <node id="8986357566212685853" at="1490,113,1491,282" concept="6" />
+      <node id="8986357566212685860" at="1491,282,1492,268" concept="6" />
       <node id="8986357566212773837" at="1492,268,1493,78" concept="7" />
       <node id="6354776497085480750" at="1495,102,1496,142" concept="6" />
       <node id="6354776497085480771" at="1498,56,1499,95" concept="7" />
@@ -958,7 +958,7 @@
       <node id="4743026300739052467" at="993,37,994,288" concept="6" />
       <node id="4964617264469340938" at="994,288,995,182" concept="2" />
       <node id="4743026300739052483" at="995,182,996,24" concept="7" />
-      <node id="8252715012761560348" at="1286,102,1287,63" concept="7" />
+      <node id="8252715012761560348" at="1286,102,1287,114" concept="7" />
       <node id="609978641554545752" at="1289,101,1290,226" concept="6" />
       <node id="609978641554545762" at="1291,26,1292,82" concept="2" />
       <node id="609978641554545768" at="1292,82,1293,18" concept="7" />
@@ -1097,7 +1097,7 @@
       <scope id="4743026300739027033" at="981,37,982,575" />
       <scope id="4743026300739052447" at="985,39,986,185" />
       <scope id="4743026300739052447" at="989,37,990,175" />
-      <scope id="4267986820121148966" at="1286,102,1287,63" />
+      <scope id="4267986820121148966" at="1286,102,1287,114" />
       <scope id="609978641554577546" at="1297,196,1298,49" />
       <scope id="4356762679305801270" at="1540,74,1541,46" />
       <scope id="7259033139236507288" at="476,109,478,169">
@@ -1326,7 +1326,7 @@
       <unit id="202934866058978583" at="947,256,951,7" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$26" />
       <unit id="202934866058978599" at="951,19,955,7" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$27" />
       <unit id="202934866058978616" at="955,20,959,7" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$28" />
-      <unit id="4743026300738934516" at="973,277,977,5" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$31" />
+      <unit id="4743026300738934516" at="973,328,977,5" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$31" />
       <unit id="4743026300739027032" at="980,436,984,5" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$32" />
       <unit id="4743026300739052447" at="984,178,988,5" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$33" />
       <unit id="4743026300739052447" at="988,18,992,5" name="jetbrains.mps.build.mps.generator.template.main.QueriesGenerated$34" />

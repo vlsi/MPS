@@ -83,6 +83,10 @@ public class EnvironmentConfig {
     return addPlugin("git4idea", "Git4Idea");
   }
 
+  public EnvironmentConfig withBuildPlugin() {
+    return addPlugin("mps-build", "jetbrains.mps.build");
+  }
+
   public EnvironmentConfig withBootstrapLibraries() {
     for (String path : PathManager.getBootstrapPaths()) {
       addLib(path);
