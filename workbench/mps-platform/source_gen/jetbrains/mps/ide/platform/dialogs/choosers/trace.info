@@ -1036,7 +1036,7 @@
       <unit id="121110127371514465" at="256,67,261,13" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$9" />
       <unit id="121110127371515656" at="560,10,565,7" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$16" />
       <unit id="121110127371513750" at="838,30,843,11" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$1" />
-      <unit id="121110127371514288" at="212,345,218,5" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$4" />
+      <unit id="121110127371514288" at="212,367,218,5" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$4" />
       <unit id="121110127371513637" at="789,32,795,7" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$2" />
       <unit id="121110127371514356" at="232,35,239,5" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$6" />
       <unit id="121110127371515047" at="409,32,416,5" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$11" />
