@@ -2749,6 +2749,20 @@
                         <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
                         <node concept="1bVj0M" id="1AzqgyAhmlf" role="37wK5m">
                           <node concept="3clFbS" id="1AzqgyAhmlg" role="1bW5cS">
+                            <node concept="1QHqEM" id="1wiUmEB9NYx" role="3cqZAp">
+                              <node concept="1QHqEC" id="1wiUmEB9NYz" role="1QHqEI">
+                                <node concept="3clFbS" id="1wiUmEB9NY_" role="1bW5cS">
+                                  <node concept="3clFbF" id="14SMZxSi7RQ" role="3cqZAp">
+                                    <node concept="1rXfSq" id="14SMZxSi7RR" role="3clFbG">
+                                      <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+                                      <node concept="37vLTw" id="14SMZxSifDV" role="37wK5m">
+                                        <ref role="3cqZAo" node="285c2S_YhOL" resolve="allModules" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3cpWs8" id="1AzqgyAiIN9" role="3cqZAp">
                               <node concept="3cpWsn" id="1AzqgyAiINa" role="3cpWs9">
                                 <property role="TrG5h" value="migrate" />
