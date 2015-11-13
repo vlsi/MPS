@@ -40,6 +40,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -254,11 +255,10 @@
         <node concept="2ShNRf" id="hIfNBwY" role="gfFT$">
           <node concept="1pGfFk" id="hIfNBx0" role="2ShVmc">
             <ref role="37wK5l" to="m5an:3ld3pDuecqw" resolve="Currency" />
-            <node concept="3cmrfG" id="hhNqEqA" role="37wK5m">
-              <property role="3cmrfH" value="0" />
-              <node concept="29HgVG" id="hhNqQoZ" role="lGtFl">
-                <node concept="3NFfHV" id="hhNqQp0" role="3NFExx">
-                  <node concept="3clFbS" id="hhNqQp1" role="2VODD2">
+            <node concept="10Nm6u" id="1PbBbzhO8BY" role="37wK5m">
+              <node concept="29HgVG" id="1PbBbzhO8Fz" role="lGtFl">
+                <node concept="3NFfHV" id="1PbBbzhO8F$" role="3NFExx">
+                  <node concept="3clFbS" id="1PbBbzhO8F_" role="2VODD2">
                     <node concept="3clFbF" id="hhNINct" role="3cqZAp">
                       <node concept="2OqwBi" id="hxx$BuM" role="3clFbG">
                         <node concept="1PxgMI" id="hhNISnA" role="2Oq$k0">
@@ -279,11 +279,11 @@
                 </node>
               </node>
             </node>
-            <node concept="3cmrfG" id="hhNqI6i" role="37wK5m">
-              <property role="3cmrfH" value="0" />
-              <node concept="29HgVG" id="hhNqL0P" role="lGtFl">
-                <node concept="3NFfHV" id="hhNqL0Q" role="3NFExx">
-                  <node concept="3clFbS" id="hhNqL0R" role="2VODD2">
+            <node concept="Xl_RD" id="1PbBbzhO8gu" role="37wK5m">
+              <property role="Xl_RC" value="" />
+              <node concept="29HgVG" id="1PbBbzhO8oU" role="lGtFl">
+                <node concept="3NFfHV" id="1PbBbzhO8oV" role="3NFExx">
+                  <node concept="3clFbS" id="1PbBbzhO8oW" role="2VODD2">
                     <node concept="3clFbF" id="hhNIX7q" role="3cqZAp">
                       <node concept="2OqwBi" id="hxx$D10" role="3clFbG">
                         <node concept="1PxgMI" id="hhNIYHk" role="2Oq$k0">
