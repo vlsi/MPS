@@ -30193,6 +30193,17 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="5d7cDYKUKKM" role="3cqZAp">
+                <node concept="2YIFZM" id="5d7cDYKUKZN" role="3clFbG">
+                  <ref role="1Pybhc" to="tpen:5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
+                  <ref role="37wK5l" to="tpen:5d7cDYKUJMp" resolve="rewireMethodReferences" />
+                  <node concept="Cj7Ep" id="5d7cDYKVXhm" role="37wK5m" />
+                  <node concept="37vLTw" id="5d7cDYKVWV8" role="37wK5m">
+                    <ref role="3cqZAo" node="5kmCgHY8Yds" resolve="staticMethod" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="5d7cDYKVWF4" role="3cqZAp" />
               <node concept="3clFbF" id="5kmCgHY8YsS" role="3cqZAp">
                 <node concept="2OqwBi" id="5kmCgHY8YsT" role="3clFbG">
                   <node concept="1OKiuA" id="5kmCgHY8YsU" role="2OqNvi">
@@ -31111,6 +31122,16 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="5d7cDYKX26o" role="3cqZAp">
+                <node concept="2YIFZM" id="5d7cDYKX28x" role="3clFbG">
+                  <ref role="37wK5l" to="tpen:5d7cDYKWZmG" resolve="rewireFieldReferences" />
+                  <ref role="1Pybhc" to="tpen:5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
+                  <node concept="Cj7Ep" id="5d7cDYKX2pi" role="37wK5m" />
+                  <node concept="37vLTw" id="5d7cDYKX2sK" role="37wK5m">
+                    <ref role="3cqZAo" node="1yvohCNXbKc" resolve="replacing" />
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="1yvohCNXbCl" role="3cqZAp">
                 <node concept="2OqwBi" id="1yvohCNXbCm" role="3clFbG">
                   <node concept="37vLTw" id="1yvohCNXbSW" role="2Oq$k0">
@@ -31627,6 +31648,19 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="5d7cDYKZGfV" role="3cqZAp">
+                <node concept="2YIFZM" id="5d7cDYKZGfW" role="3clFbG">
+                  <ref role="37wK5l" to="tpen:5d7cDYKUJMp" resolve="rewireMethodReferences" />
+                  <ref role="1Pybhc" to="tpen:5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
+                  <node concept="37vLTw" id="5d7cDYKZG_t" role="37wK5m">
+                    <ref role="3cqZAo" node="6jGHGcKmHQy" resolve="method" />
+                  </node>
+                  <node concept="37vLTw" id="5d7cDYKZGfY" role="37wK5m">
+                    <ref role="3cqZAo" node="6jGHGcKmHQD" resolve="staticMethod" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="5d7cDYKZGbG" role="3cqZAp" />
               <node concept="3clFbF" id="5kmCgHXRXRk" role="3cqZAp">
                 <node concept="2OqwBi" id="5kmCgHXRXRl" role="3clFbG">
                   <node concept="1OKiuA" id="5kmCgHXRXRm" role="2OqNvi">
@@ -31825,6 +31859,19 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="5d7cDYKZGS$" role="3cqZAp">
+                <node concept="2YIFZM" id="5d7cDYKZGXU" role="3clFbG">
+                  <ref role="37wK5l" to="tpen:5d7cDYKWZmG" resolve="rewireFieldReferences" />
+                  <ref role="1Pybhc" to="tpen:5d7cDYKUJE_" resolve="MemberDeclarationRefactoringUtil" />
+                  <node concept="37vLTw" id="5d7cDYKZH50" role="37wK5m">
+                    <ref role="3cqZAo" node="2bl07wF6AAW" resolve="field" />
+                  </node>
+                  <node concept="37vLTw" id="5d7cDYKZHaa" role="37wK5m">
+                    <ref role="3cqZAo" node="2bl07wF6DFj" resolve="staticField" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="5d7cDYKZGQK" role="3cqZAp" />
               <node concept="3clFbF" id="1vCYg$Wd1$f" role="3cqZAp">
                 <node concept="2OqwBi" id="1vCYg$Wd1$g" role="3clFbG">
                   <node concept="37vLTw" id="1vCYg$Wd1Y4" role="2Oq$k0">
