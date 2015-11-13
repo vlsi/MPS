@@ -167,7 +167,6 @@ public enum JUnitRunTypes {
   JUnitRunTypes() {
   }
 
-
   public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project) {
     final Wrappers._T<Iterable<ITestNodeWrapper>> result = new Wrappers._T<Iterable<ITestNodeWrapper>>();
     ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(project), "Collecting Tests to Run", true) {

@@ -3266,9 +3266,19 @@
       </node>
       <node concept="3clFbS" id="2BGPXkExlGr" role="3clF47">
         <node concept="3cpWs6" id="2BGPXkExlGM" role="3cqZAp">
-          <node concept="2YIFZM" id="2BGPXkExlGO" role="3cqZAk">
-            <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-            <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+          <node concept="2OqwBi" id="5Ks7c$vgfcM" role="3cqZAk">
+            <node concept="2OqwBi" id="5Ks7c$vgf5P" role="2Oq$k0">
+              <node concept="2YIFZM" id="2BGPXkExlGO" role="2Oq$k0">
+                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+              </node>
+              <node concept="liA8E" id="5Ks7c$vgfbh" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:ECLZhkqBgM" resolve="withBuildPlugin" />
+              </node>
+            </node>
+            <node concept="liA8E" id="5Ks7c$vgfgl" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:6BLo1MgrCpf" resolve="withVcsPlugin" />
+            </node>
           </node>
         </node>
       </node>

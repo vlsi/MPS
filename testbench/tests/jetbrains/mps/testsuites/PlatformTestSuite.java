@@ -49,7 +49,7 @@ import org.junit.runners.model.RunnerBuilder;
 })
 public class PlatformTestSuite extends OutputWatchingTestSuite {
   // creating the platform environment for the first time
-  public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+  public static final Environment ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().withVcsPlugin().withBuildPlugin());
 
   public PlatformTestSuite(Class<?> aClass, RunnerBuilder builder) throws InitializationError {
     super(aClass, builder);
