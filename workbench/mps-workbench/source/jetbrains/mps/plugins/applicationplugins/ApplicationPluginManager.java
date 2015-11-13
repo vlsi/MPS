@@ -153,7 +153,19 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
     synchronized (myPluginsLock) {
       unregister();
       if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
-        unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+        final List<PluginContributor> loadedContributors = myPluginLoaderRegistry.getLoadedContributors();
+        myRepository.getModelAccess().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
+            final long beginTime = System.nanoTime();
+            LOG.debug(String.format("Unloading application plugins from %d contributors", loadedContributors.size()));
+            try {
+              unloadPlugins(loadedContributors);
+            } finally {
+              LOG.info(String.format("Unloading of %d application plugins took %.3f s", loadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
+            }
+          }
+        });
       }
     }
   }

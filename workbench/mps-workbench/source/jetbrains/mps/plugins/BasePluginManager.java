@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.util.containers.HashMap;
+import jetbrains.mps.ide.ThreadUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -68,14 +69,16 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   }
 
   public void loadPlugins(final List<PluginContributor> contributors) {
+    ThreadUtils.assertEDT();
     synchronized (myPluginsLock) {
       LOG.debug("Loading plugins from " + contributors.size() + " contributors");
-      List<T> plugins = createPlugins(contributors);
+      final List<T> plugins = createPlugins(contributors);
       afterPluginsCreated(plugins);
     }
   }
 
   public void unloadPlugins(final List<PluginContributor> contributors) {
+    ThreadUtils.assertEDT();
     synchronized (myPluginsLock) {
       LOG.debug("Unloading plugins from " + contributors.size() + " contributors");
       final List<T> plugins = new ArrayList<T>();
@@ -93,9 +96,9 @@ public abstract class BasePluginManager<T> implements PluginLoader {
         }
       }
 
+      mySortedPlugins.removeAll(plugins);
       beforePluginsDisposed(plugins);
       disposePlugins(plugins);
-      mySortedPlugins.removeAll(plugins);
     }
   }
 
