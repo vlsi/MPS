@@ -4,9 +4,14 @@ package jetbrains.mps.baseLanguage.search;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BaseLanguageUtil {
   public BaseLanguageUtil() {
@@ -21,8 +26,11 @@ public class BaseLanguageUtil {
     if ("java.lang.Object".equals(NameUtil.nodeFQName(toClassifier))) {
       return true;
     }
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(fromClassifier);
-    return scope.getClassifiers().contains(toClassifier);
+    return ListSequence.fromList(((List<SNode>) BHReflection.invoke(fromClassifier, SMethodTrimmedId.create("getExtendedClassifierTypes", null, "1UeCwxlWKny")))).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
+      }
+    }).contains(toClassifier);
   }
   public static SNode getSuperclass(SNode subClass) {
     return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
