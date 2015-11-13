@@ -22,6 +22,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
+import jetbrains.mps.lang.test.runtime.LightEnvironment;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -146,6 +147,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     private Method myTestMethod;
 
     public SimpleTransformationTestRunner(SNode root, Method testMethod) {
+      super(new LightEnvironment());
       myRoot = root;
       myTestMethod = testMethod;
     }

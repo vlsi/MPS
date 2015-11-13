@@ -14,13 +14,13 @@ public class LightEnvironment implements Environment {
   @NotNull
   @Override
   public Project createEmptyProject() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @NotNull
   @Override
   public Project createProject(@NotNull ProjectStrategy strategy) {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -48,7 +48,7 @@ public class LightEnvironment implements Environment {
   @NotNull
   @Override
   public Project openProject(@NotNull File projectFile) {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override
