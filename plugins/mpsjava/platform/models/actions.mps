@@ -75,6 +75,7 @@
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="2mml" ref="r:74ecf5af-2b45-470e-b13c-a863221987cf(jetbrains.mps.ide.editor.util.renderer)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
+    <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" implicit="true" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" implicit="true" />
   </imports>
@@ -1361,6 +1362,22 @@
                     <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
+                <node concept="2OqwBi" id="2ETmHUYtHk0" role="37wK5m">
+                  <node concept="2OqwBi" id="2ETmHUYtGqS" role="2Oq$k0">
+                    <node concept="37vLTw" id="2ETmHUYtIR7" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5Lde3eorD7f" resolve="ideaProject" />
+                    </node>
+                    <node concept="liA8E" id="2ETmHUYtGIm" role="2OqNvi">
+                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                      <node concept="3VsKOn" id="2ETmHUYtH4e" role="37wK5m">
+                        <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2ETmHUYtHJ9" role="2OqNvi">
+                    <ref role="37wK5l" to="57ty:~MessagesViewTool.newHandler():jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -1723,6 +1740,11 @@
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDmD" role="1oa70y" />
     </node>
+    <node concept="1DS2jV" id="2ETmHUYua_V" role="1NuT2Z">
+      <property role="TrG5h" value="ideaProject" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <node concept="1oajcY" id="2ETmHUYua_W" role="1oa70y" />
+    </node>
     <node concept="tnohg" id="3Kb8mGRKsmX" role="tncku">
       <node concept="3clFbS" id="3Kb8mGRKsmY" role="2VODD2">
         <node concept="3cpWs8" id="2MAobxbXsqk" role="3cqZAp">
@@ -1857,6 +1879,25 @@
                   </node>
                   <node concept="liA8E" id="3WFlNYtCvXu" role="2OqNvi">
                     <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2ETmHUYtJZg" role="37wK5m">
+                  <node concept="2OqwBi" id="2ETmHUYtJZh" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2ETmHUYudRa" role="2Oq$k0">
+                      <node concept="2WthIp" id="2ETmHUYudRd" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="2ETmHUYudRf" role="2OqNvi">
+                        <ref role="2WH_rO" node="2ETmHUYua_V" resolve="ideaProject" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2ETmHUYtJZi" role="2OqNvi">
+                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                      <node concept="3VsKOn" id="2ETmHUYtJZj" role="37wK5m">
+                        <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2ETmHUYtJZk" role="2OqNvi">
+                    <ref role="37wK5l" to="57ty:~MessagesViewTool.newHandler():jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
                   </node>
                 </node>
               </node>

@@ -28,6 +28,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.newparser.JavaConvertUtil;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -109,7 +110,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     }
     final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.flattenDirs(chosenIFiles)).toListSequence();
 
-    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
+    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository(), ideaProject.getComponent(MessagesViewTool.class).newHandler());
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       public void run(@NotNull ProgressIndicator indicator) {
 

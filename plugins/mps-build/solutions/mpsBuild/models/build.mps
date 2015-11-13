@@ -17835,6 +17835,12 @@
           <ref role="3bR37D" node="7KapL9OABnm" resolve="jetbrains.mps.ide.ui" />
         </node>
       </node>
+      <node concept="1SiIV0" id="1jur8MZMEzP" role="3bR37C">
+        <node concept="3bR9La" id="1jur8MZMEzQ" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="5xwbQ0eEV3x" resolve="jetbrains.mps.ide.java.platform" />
+        </node>
+      </node>
     </node>
     <node concept="398b33" id="7gQEwkA7l8u" role="3989C9">
       <property role="TrG5h" value="consoleTool" />
