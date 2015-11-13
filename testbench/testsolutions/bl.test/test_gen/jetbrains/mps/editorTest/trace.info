@@ -6616,6 +6616,28 @@
       <unit id="4177017564823046256" at="10,0,32,0" name="jetbrains.mps.editorTest.TrickyUndoTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4242233825490051353">
+    <file name="TernaryToIfInVariableInitializer_Test.java">
+      <node id="4242233825490051353" at="15,72,16,107" concept="2" />
+      <node id="4242233825490051353" at="16,107,17,113" concept="2" />
+      <node id="4242233825490051353" at="24,51,25,63" concept="2" />
+      <node id="4242233825490051374" at="25,63,26,117" concept="2" />
+      <node id="4242233825490051353" at="12,0,14,0" concept="1" trace="TernaryToIfInVariableInitializer_Test#()V" />
+      <node id="4242233825490051353" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4242233825490051353" at="14,0,19,0" concept="5" trace="test_TernaryToIfInVariableInitializer#()V" />
+      <node id="4242233825490051353" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4242233825490051353" at="12,50,12,50" />
+      <scope id="4242233825490051353" at="21,23,21,23" />
+      <scope id="4242233825490051353" at="12,0,14,0" />
+      <scope id="4242233825490051353" at="15,72,17,113" />
+      <scope id="4242233825490051353" at="21,0,23,0" />
+      <scope id="4242233825490051353" at="24,51,26,117" />
+      <scope id="4242233825490051353" at="14,0,19,0" />
+      <scope id="4242233825490051353" at="23,0,28,0" />
+      <unit id="4242233825490051353" at="19,0,29,0" name="jetbrains.mps.editorTest.TernaryToIfInVariableInitializer_Test$TestBody" />
+      <unit id="4242233825490051353" at="10,0,30,0" name="jetbrains.mps.editorTest.TernaryToIfInVariableInitializer_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4246727699196031257">
     <file name="RT_toStaticFieldReference_Test.java">
       <node id="4246727699196031257" at="15,65,16,107" concept="2" />

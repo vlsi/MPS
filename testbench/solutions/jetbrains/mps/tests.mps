@@ -2223,6 +2223,9 @@
     <node concept="lpD6D" id="2TdQhrRPT6g" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5X9wbI6ZBkI" resolve="SwapTernaryBranches5" />
     </node>
+    <node concept="lpD6D" id="3Fvsj0uuUe3" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3Fvsj0uuM4p" resolve="TernaryToIfInVariableInitializer" />
+    </node>
     <node concept="lpD6D" id="7JhGHKoVuZA" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6HxYJhjTkE2" resolve="TestConvertAssignmentToTernaryOperatorIntention" />
     </node>
