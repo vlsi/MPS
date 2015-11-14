@@ -81,7 +81,7 @@ public class TransformationTestRunner implements TestRunner {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Recaching the model again");
       }
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           testProject.getModelAccess().executeCommand(new Runnable() {
             @Override
@@ -94,10 +94,12 @@ public class TransformationTestRunner implements TestRunner {
               test.setModelDescriptor(modelDescriptor);
               test.init();
             }
-
           });
         }
       });
+      if (exception != null) {
+        throw new RuntimeException(exception);
+      }
       TestModelSaver.getInstance().clean();
       TestModelSaver.getInstance().setTest(test);
     }

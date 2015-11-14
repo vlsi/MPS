@@ -21,6 +21,8 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
@@ -183,6 +185,16 @@ public class IdeaEnvironment extends EnvironmentBase {
         return;
       }
     });
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+        }
+      });
+    } catch (InvocationTargetException e) {
+      throw new RuntimeException(e);
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
   }
 
 
