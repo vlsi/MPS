@@ -545,6 +545,9 @@
     <node concept="lpD6D" id="4IrZ8JbCdcV" role="lpD6w">
       <ref role="lpD7u" to="e6od:3FNxLZIq6le" resolve="Comment_EditInsideComment" />
     </node>
+    <node concept="lpD6D" id="3sPLHkUeriK" role="lpD6w">
+      <ref role="lpD7u" to="e6od:3sPLHkUeqzO" resolve="Comment_EmptyStatementList" />
+    </node>
     <node concept="lpD6D" id="4IrZ8JbCdeu" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cPl5" resolve="Comment_ExpressionStatement" />
     </node>
@@ -574,6 +577,9 @@
     </node>
     <node concept="lpD6D" id="4T4PEv8Hauv" role="lpD6w">
       <ref role="lpD7u" to="e6od:4T4PEv8H0DI" resolve="Comment_LineOutsideCommentedNode" />
+    </node>
+    <node concept="lpD6D" id="3sPLHkUerlB" role="lpD6w">
+      <ref role="lpD7u" to="e6od:3sPLHkUeqFG" resolve="Comment_MultipleStatements" />
     </node>
     <node concept="lpD6D" id="4T4PEv8Hax8" role="lpD6w">
       <ref role="lpD7u" to="e6od:4T4PEv8GY8C" resolve="Comment_Node" />
@@ -610,6 +616,9 @@
     </node>
     <node concept="lpD6D" id="4IrZ8JbCd_r" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cKzo" resolve="Uncomment_Method" />
+    </node>
+    <node concept="lpD6D" id="3sPLHkUerow" role="lpD6w">
+      <ref role="lpD7u" to="e6od:3sPLHkUer5v" resolve="Uncomment_MultipleStatements" />
     </node>
     <node concept="lpD6D" id="1OLuskJsITC" role="lpD6w">
       <ref role="lpD7u" to="e6od:1OLuskJsGTG" resolve="Uncomment_NodeAtFirstPosition" />
