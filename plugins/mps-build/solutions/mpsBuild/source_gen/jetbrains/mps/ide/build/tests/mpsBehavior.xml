@@ -1396,10 +1396,12 @@
           <include name="**/*.jar" />
         </fileset>
         <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="**/*.jar" />
+          <include name="lib/**/*.jar" />
+          <include name="languages/**/*.jar" />
         </fileset>
         <fileset dir="${build.layout}/behavior-tests/test.behavior.plugin">
-          <include name="**/*.jar" />
+          <include name="lib/**/*.jar" />
+          <include name="languages/**/*.jar" />
         </fileset>
       </classpath>
       

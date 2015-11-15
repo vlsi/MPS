@@ -1067,7 +1067,17 @@
                       <node concept="2pNUuL" id="6u4p9jnZkNr" role="2pNNFR">
                         <property role="2pNUuO" value="name" />
                         <node concept="2pMdtt" id="6u4p9jnZm4D" role="2pMdts">
-                          <property role="2pMdty" value="**/*.jar" />
+                          <property role="2pMdty" value="lib/**/*.jar" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2pNNFK" id="5QGPY0GdXPO" role="3o6s8t">
+                      <property role="qg3DV" value="true" />
+                      <property role="2pNNFO" value="include" />
+                      <node concept="2pNUuL" id="5QGPY0GdXPP" role="2pNNFR">
+                        <property role="2pNUuO" value="name" />
+                        <node concept="2pMdtt" id="5QGPY0GdXPQ" role="2pMdts">
+                          <property role="2pMdty" value="languages/**/*.jar" />
                         </node>
                       </node>
                     </node>
