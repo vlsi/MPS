@@ -22,23 +22,31 @@ public class CellAction_CommentChildLine extends AbstractCommentOutAction {
 
   @Override
   public boolean canExecute(EditorContext editorContext) {
-    SNode childToComment = getNodeToComment(editorContext);
-    if (childToComment == null) {
-      return false;
-    }
     Selection selection = editorContext.getSelectionManager().getSelection();
     if (selection == null || !(selection instanceof SingularSelection)) {
       return false;
     }
-    return (selection instanceof EditorCellLabelSelection && !(((EditorCellLabelSelection) selection).hasNonTrivialSelection()));
+    if (!(selection instanceof EditorCellLabelSelection) || ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) {
+      return false;
+    }
+    if (eq_thdavw_a0d0g(editorContext.getSelectedNode(), myNode)) {
+      return true;
+    }
+    SNode childToComment = getNodeToComment(editorContext);
+    return childToComment != null;
   }
 
+  @Override
+  public void execute(EditorContext editorContext) {
+    if (!((eq_thdavw_a0a0a0i(editorContext.getSelectedNode(), myNode)))) {
+      super.execute(editorContext);
+    }
+  }
   protected SNode getNodeToComment(EditorContext editorContext) {
-    SNode selectedNode = editorContext.getSelectedCell().getSNode();
-    SNode currentNode = selectedNode;
+    SNode currentNode = editorContext.getSelectedNode();
     while (currentNode != null) {
-      if (eq_thdavw_a0a0c0i(currentNode.getParent(), myNode)) {
-        if (eq_thdavw_a0a0a0c0i(currentNode.getContainmentLink(), myLink)) {
+      if (eq_thdavw_a0a0b0j(currentNode.getParent(), myNode)) {
+        if (eq_thdavw_a0a0a0b0j(currentNode.getContainmentLink(), myLink)) {
           return currentNode;
         } else {
           return null;
@@ -48,10 +56,16 @@ public class CellAction_CommentChildLine extends AbstractCommentOutAction {
     }
     return null;
   }
-  private static boolean eq_thdavw_a0a0a0c0i(Object a, Object b) {
+  private static boolean eq_thdavw_a0d0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_thdavw_a0a0c0i(Object a, Object b) {
+  private static boolean eq_thdavw_a0a0a0i(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_thdavw_a0a0a0b0j(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_thdavw_a0a0b0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
