@@ -3394,8 +3394,12 @@
                                     <ref role="3Tt5mk" to="tpc2:fBF2Hej" />
                                   </node>
                                 </node>
-                                <node concept="3TrEf2" id="42crM4xywQB" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                                <node concept="2Xjw5R" id="6MWs_XbenM1" role="2OqNvi">
+                                  <node concept="1xMEDy" id="6MWs_XbenM3" role="1xVPHs">
+                                    <node concept="chp4Y" id="6MWs_XbenT6" role="ri$Ld">
+                                      <ref role="cht4Q" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
