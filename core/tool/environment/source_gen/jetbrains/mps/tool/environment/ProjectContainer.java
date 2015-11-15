@@ -6,7 +6,7 @@ import jetbrains.mps.project.ProjectManagerListener;
 import java.util.Set;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import jetbrains.mps.project.ProjectManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +22,7 @@ import org.apache.log4j.LogManager;
   private Set<Project> myProjects;
 
   public ProjectContainer() {
-    myProjects = SetSequence.fromSet(new HashSet<Project>());
+    myProjects = SetSequence.fromSet(new LinkedHashSet<Project>());
     ProjectManager.getInstance().addProjectListener(this);
   }
 

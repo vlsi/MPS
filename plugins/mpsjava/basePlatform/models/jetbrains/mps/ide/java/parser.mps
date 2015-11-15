@@ -13416,18 +13416,8 @@
         </node>
         <node concept="3clFbF" id="37zweLaBIHe" role="3cqZAp">
           <node concept="37vLTI" id="37zweLaBIMa" role="3clFbG">
-            <node concept="2OqwBi" id="37zweLaBSHS" role="37vLTx">
-              <node concept="2OqwBi" id="37zweLaBONA" role="2Oq$k0">
-                <node concept="37vLTw" id="37zweLaBLBk" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6Hs6LV6q$pQ" resolve="project" />
-                </node>
-                <node concept="liA8E" id="37zweLaBSBF" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
-              </node>
-              <node concept="liA8E" id="37zweLaBW9P" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
+            <node concept="37vLTw" id="5QGPY0GbdiJ" role="37vLTx">
+              <ref role="3cqZAo" node="6Hs6LV6q$pQ" resolve="modelAccess" />
             </node>
             <node concept="37vLTw" id="37zweLaBIHd" role="37vLTJ">
               <ref role="3cqZAo" node="37zweLaBhSw" resolve="myModelAccess" />
@@ -13442,9 +13432,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="6Hs6LV6q$pQ" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6Hs6LV6q$q0" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <property role="TrG5h" value="modelAccess" />
+        <node concept="3uibUv" id="5QGPY0Gbd81" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
         </node>
       </node>
     </node>
@@ -13458,7 +13448,7 @@
             <ref role="3cqZAo" node="SOxJblqP5B" resolve="module" />
           </node>
           <node concept="37vLTw" id="6Hs6LV6qOIR" role="37wK5m">
-            <ref role="3cqZAo" node="6Hs6LV6qO_W" resolve="project" />
+            <ref role="3cqZAo" node="6Hs6LV6qO_W" resolve="modelAccess" />
           </node>
         </node>
         <node concept="3clFbF" id="SOxJblqO_p" role="3cqZAp">
@@ -13500,9 +13490,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="6Hs6LV6qO_W" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6Hs6LV6qOAa" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <property role="TrG5h" value="modelAccess" />
+        <node concept="3uibUv" id="5QGPY0Gbdlz" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
         </node>
       </node>
       <node concept="37vLTG" id="SOxJblqO_m" role="3clF46">

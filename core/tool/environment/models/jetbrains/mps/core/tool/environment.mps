@@ -313,7 +313,6 @@
       <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
-      <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -1981,8 +1980,8 @@
         <node concept="3clFbF" id="yBZlauH8zO" role="3cqZAp">
           <node concept="37vLTI" id="yBZlauH8zP" role="3clFbG">
             <node concept="2ShNRf" id="yBZlauH8zQ" role="37vLTx">
-              <node concept="2i4dXS" id="yBZlauH8zR" role="2ShVmc">
-                <node concept="3uibUv" id="yBZlauH8zS" role="HW$YZ">
+              <node concept="32HrFt" id="5QGPY0Gd635" role="2ShVmc">
+                <node concept="3uibUv" id="5QGPY0Gd6mb" role="HW$YZ">
                   <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                 </node>
               </node>

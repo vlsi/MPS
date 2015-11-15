@@ -19,6 +19,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectRepository;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -35,6 +36,7 @@ public class ProjectHelper {
     if (p instanceof MPSProject) {
       return ((MPSProject) p).getProject();
     }
+    LogManager.getLogger(ProjectHelper.class).debug("The project " + p + " is not an instance of MPSProject");
     return null;
   }
 

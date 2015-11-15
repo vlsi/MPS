@@ -473,8 +473,8 @@
   <root nodeRef="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)/623745604705880298">
     <file name="ProjectContainer.java">
       <node id="623745604705880300" at="22,0,23,0" concept="4" trace="myProjects" />
-      <node id="623745604705880308" at="24,29,25,61" concept="3" />
-      <node id="7536056623042471320" at="25,61,26,58" concept="3" />
+      <node id="623745604705880308" at="24,29,25,67" concept="3" />
+      <node id="7536056623042471320" at="25,67,26,58" concept="3" />
       <node id="623745604705880318" at="29,25,30,12" concept="3" />
       <node id="7536056623042471821" at="30,12,31,61" concept="3" />
       <node id="623745604705880337" at="36,48,37,96" concept="0" />

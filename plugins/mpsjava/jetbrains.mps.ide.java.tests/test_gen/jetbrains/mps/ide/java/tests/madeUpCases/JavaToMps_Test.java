@@ -105,7 +105,7 @@ public class JavaToMps_Test extends BaseTransformationTest {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/statements", SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.java.testMaterial.singleFiles"));
+      Utils.checkSourceModel(this.myProject, PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/statements", SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.java.testMaterial.singleFiles"));
     }
   }
 }
