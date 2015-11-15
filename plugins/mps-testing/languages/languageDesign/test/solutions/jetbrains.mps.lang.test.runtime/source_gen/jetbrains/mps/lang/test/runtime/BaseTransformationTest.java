@@ -6,10 +6,10 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -20,25 +20,28 @@ public abstract class BaseTransformationTest implements TransformationTest {
   private SModel myTransientModel;
   private TestRunner myRunner;
 
-  public boolean isExecutionInProcess() {
+  public static boolean isExecutionInProcess() {
     return RuntimeFlags.getTestMode() == TestMode.IN_PROCESS;
   }
 
-  private void initTestRunner() {
+  @NotNull
+  private static TestRunner defaultTestRunner() {
     if (isExecutionInProcess()) {
-      setTestRunner(new TransformationTestLightRunner());
+      return new TransformationTestLightRunner();
     } else {
       Environment ideaEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-      setTestRunner(new TransformationTestRunner(ideaEnv));
+      return new TransformationTestRunner(ideaEnv);
     }
   }
 
   public BaseTransformationTest() {
-    initTestRunner();
+  }
+
+  public BaseTransformationTest(@NotNull TestRunner runner) {
+    setTestRunner(runner);
   }
 
   public BaseTransformationTest(Project project, SModel modelDescriptor) {
-    this();
     myProject = project;
     myModel = modelDescriptor;
   }
@@ -58,6 +61,9 @@ public abstract class BaseTransformationTest implements TransformationTest {
   }
 
   public void initTest(@NotNull String projectName, final String model, boolean reOpenProject) throws Exception {
+    if (myRunner == null) {
+      setTestRunner(defaultTestRunner());
+    }
     myRunner.initTest(this, projectName, model, reOpenProject);
   }
 

@@ -62,6 +62,9 @@
     <file name="BuildMps_BrandingHelp_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingHelp_BehaviorDescriptor" />
     </file>
+    <file name="BuildMps_BrandingKeymap_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingKeymap_BehaviorDescriptor" />
+    </file>
     <file name="BuildMps_BrandingStats_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.build.mps.behavior.BuildMps_BrandingStats_BehaviorDescriptor" />
     </file>

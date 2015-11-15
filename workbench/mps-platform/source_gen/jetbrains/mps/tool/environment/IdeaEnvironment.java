@@ -37,6 +37,10 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   private IdeaTestApplication myIdeaApplication;
 
+  static {
+    EnvironmentBase.initializeLog4j();
+  }
+
   protected IdeaEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
   }

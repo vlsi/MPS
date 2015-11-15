@@ -92,7 +92,7 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport implements ProjectC
         }
 
         ((SRepositoryExt) repository).registerModule(solution, mpsProject);
-        mpsProject.addModule(solution.getModuleReference());
+        mpsProject.addModule(solution);
 
         mySolution = solution;
       }

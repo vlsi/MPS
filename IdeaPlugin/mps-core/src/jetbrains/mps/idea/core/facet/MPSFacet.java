@@ -87,11 +87,13 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     if (!wasInitialized()) {
       return;
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleName()));
-        MPSModuleRepository.getInstance().unregisterModule(mySolution, myMpsProject);
+        if (!myMpsProject.isDisposed()) {
+          MPSModuleRepository.getInstance().unregisterModule(mySolution, myMpsProject);
+        }
         mySolution = null;
       }
     });

@@ -22,6 +22,10 @@ import org.apache.log4j.LogManager;
 public class MpsEnvironment extends EnvironmentBase {
   private Platform myPlatform;
 
+  static {
+    EnvironmentBase.initializeLog4j();
+  }
+
   protected MpsEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
   }

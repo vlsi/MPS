@@ -195,7 +195,7 @@ public class ModuleUpdater {
         continue;
       }
       for (ReloadableModule dep : deps) {
-        if (allRefs.contains(ref)) {
+        if (allRefs.contains(dep.getModuleReference())) {
           myDepGraph.addEdge(ref, dep.getModuleReference());
         } else {
 //        valid if somebody calls reloadModule in moduleAdded() listener before us

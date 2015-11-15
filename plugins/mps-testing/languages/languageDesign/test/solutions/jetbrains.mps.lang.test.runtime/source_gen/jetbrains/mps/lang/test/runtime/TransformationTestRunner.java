@@ -50,15 +50,11 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
-    startMps();
+    clearSystemClipboard();
+    readSystemMacro();
     final Project testProject = openTestProject(projectPath, reopenProject);
     doInitTest(test, testProject, modelName);
     myEnvironment.flushAllEvents();
-  }
-
-  private void startMps() {
-    clearSystemClipboard();
-    readSystemMacro();
   }
 
   protected void doInitTest(@NotNull final TransformationTest test, @NotNull final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
@@ -68,9 +64,9 @@ public class TransformationTestRunner implements TestRunner {
     test.setProject(testProject);
     TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
 
-    SModel cachedModel = check_ovzmet_a0e0n(cachedTest);
-    SModel cachedTransientModel = check_ovzmet_a0f0n(cachedTest);
-    String cachedModelName = check_ovzmet_a0g0n(check_ovzmet_a0a6a31(cachedModel));
+    SModel cachedModel = check_ovzmet_a0e0l(cachedTest);
+    SModel cachedTransientModel = check_ovzmet_a0f0l(cachedTest);
+    String cachedModelName = check_ovzmet_a0g0l(check_ovzmet_a0a6a11(cachedModel));
     if (cachedModelName != null && cachedModelName.equals(modelName)) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Using cached model");
@@ -245,25 +241,25 @@ public class TransformationTestRunner implements TestRunner {
     return exception;
   }
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
-  private static SModel check_ovzmet_a0e0n(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
-  private static SModel check_ovzmet_a0f0n(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0f0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTransientModelDescriptor();
     }
     return null;
   }
-  private static String check_ovzmet_a0g0n(SModelReference checkedDotOperand) {
+  private static String check_ovzmet_a0g0l(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
-  private static SModelReference check_ovzmet_a0a6a31(SModel checkedDotOperand) {
+  private static SModelReference check_ovzmet_a0a6a11(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

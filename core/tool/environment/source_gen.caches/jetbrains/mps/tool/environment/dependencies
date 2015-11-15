@@ -108,7 +108,6 @@
   <dependency className="jetbrains.mps.tool.environment.Log4jInitializer" file="Log4jInitializer.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.StringReader" />
-    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />

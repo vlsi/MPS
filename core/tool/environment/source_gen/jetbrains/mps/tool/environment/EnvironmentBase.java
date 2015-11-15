@@ -46,7 +46,7 @@ public abstract class EnvironmentBase implements Environment {
   private PathMacrosProvider myMacrosProvider;
   private final ProjectContainer myContainer = new ProjectContainer();
 
-  static {
+  public static void initializeLog4j() {
     new Log4jInitializer().init();
     LogManager.getLogger(EnvironmentBase.class).info("Initializing environment");
   }

@@ -198,6 +198,9 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
+        <child id="1221737317278" name="statementList" index="1Pe0a2" />
+      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -279,6 +282,17 @@
       <node concept="3Tm6S6" id="2jln2VraAlF" role="1B3o_S" />
       <node concept="3uibUv" id="2jln2VraK9n" role="1tU5fm">
         <ref role="3uigEE" to="1wbl:~IdeaTestApplication" resolve="IdeaTestApplication" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5mza6Qqm4lm" role="jymVt" />
+    <node concept="1Pe0a1" id="2VDNdDcdQaX" role="jymVt">
+      <node concept="3clFbS" id="2VDNdDcdQaY" role="1Pe0a2">
+        <node concept="3clFbF" id="2VDNdDcdQsw" role="3cqZAp">
+          <node concept="2YIFZM" id="2VDNdDcdQxK" role="3clFbG">
+            <ref role="1Pybhc" to="79ha:3eUNqOk4feo" resolve="EnvironmentBase" />
+            <ref role="37wK5l" to="79ha:2VDNdDcdNbx" resolve="initializeLog4j" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="6rx4kZDl$K1" role="jymVt" />

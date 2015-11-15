@@ -1380,6 +1380,17 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5mza6Qqm4lm" role="jymVt" />
+    <node concept="1Pe0a1" id="2VDNdDcdQaX" role="jymVt">
+      <node concept="3clFbS" id="2VDNdDcdQaY" role="1Pe0a2">
+        <node concept="3clFbF" id="2VDNdDcdQsw" role="3cqZAp">
+          <node concept="2YIFZM" id="2VDNdDcdQxK" role="3clFbG">
+            <ref role="37wK5l" node="2VDNdDcdNbx" resolve="initializeLog4j" />
+            <ref role="1Pybhc" node="3eUNqOk4feo" resolve="EnvironmentBase" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2VDNdDcdPEp" role="jymVt" />
     <node concept="3clFbW" id="6rx4kZDkRyV" role="jymVt">
       <node concept="3cqZAl" id="6rx4kZDkRz7" role="3clF45" />
       <node concept="3clFbS" id="6rx4kZDkRz9" role="3clF47">
@@ -2589,8 +2600,12 @@
       </node>
     </node>
     <node concept="2tJIrI" id="5A5jZrz7xWD" role="jymVt" />
-    <node concept="1Pe0a1" id="3Pdq2ILxfaD" role="jymVt">
-      <node concept="3clFbS" id="3Pdq2ILxfaE" role="1Pe0a2">
+    <node concept="2YIFZL" id="2VDNdDcdNbx" role="jymVt">
+      <property role="TrG5h" value="initializeLog4j" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="2VDNdDcdNb$" role="3clF47">
         <node concept="3clFbF" id="2HmhDwzjP4z" role="3cqZAp">
           <node concept="2OqwBi" id="5A5jZrz5DZF" role="3clFbG">
             <node concept="2ShNRf" id="5A5jZrz5CLa" role="2Oq$k0">
@@ -2621,6 +2636,8 @@
           </node>
         </node>
       </node>
+      <node concept="3Tm1VV" id="2VDNdDcdMHZ" role="1B3o_S" />
+      <node concept="3cqZAl" id="2VDNdDcdNNp" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="2HmhDwzk30X" role="jymVt" />
     <node concept="3clFbW" id="3eUNqOk4feY" role="jymVt">
@@ -4642,23 +4659,32 @@
           </node>
         </node>
         <node concept="3clFbJ" id="5A5jZrz5c1b" role="3cqZAp">
-          <node concept="3clFbC" id="5A5jZrz5c1c" role="3clFbw">
-            <node concept="37vLTw" id="5A5jZrz5c1d" role="3uHU7B">
-              <ref role="3cqZAo" node="5A5jZrz5c11" resolve="logXmlFile" />
+          <node concept="3fqX7Q" id="2VDNdDcdZ0t" role="3clFbw">
+            <node concept="2OqwBi" id="2VDNdDcdZ0v" role="3fr31v">
+              <node concept="37vLTw" id="2VDNdDcdZ0w" role="2Oq$k0">
+                <ref role="3cqZAo" node="5A5jZrz5c11" resolve="logXmlFile" />
+              </node>
+              <node concept="liA8E" id="2VDNdDcdZ0x" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.exists():boolean" resolve="exists" />
+              </node>
             </node>
-            <node concept="10Nm6u" id="5A5jZrz5c1e" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="5A5jZrz5c1g" role="3clFbx">
-            <node concept="YS8fn" id="5A5jZrz5c1j" role="3cqZAp">
-              <node concept="2ShNRf" id="5A5jZrz5dwc" role="YScLw">
-                <node concept="1pGfFk" id="5A5jZrz5dwC" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.String)" resolve="RuntimeException" />
+            <node concept="3clFbF" id="2VDNdDcdZ9X" role="3cqZAp">
+              <node concept="2OqwBi" id="2VDNdDcdZbZ" role="3clFbG">
+                <node concept="10M0yZ" id="2VDNdDcdZ9W" role="2Oq$k0">
+                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                  <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+                </node>
+                <node concept="liA8E" id="2VDNdDcdZgQ" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
                   <node concept="Xl_RD" id="5A5jZrz5c1i" role="37wK5m">
-                    <property role="Xl_RC" value="log.xml file does not exist! Path: [ $home/bin/log.xml]" />
+                    <property role="Xl_RC" value="log.xml file does not exist! Path: [$home/bin/log.xml]" />
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="3cpWs6" id="2VDNdDce12k" role="3cqZAp" />
           </node>
         </node>
         <node concept="3cpWs8" id="5A5jZrz5c1l" role="3cqZAp">
