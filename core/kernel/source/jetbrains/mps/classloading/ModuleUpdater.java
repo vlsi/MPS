@@ -151,14 +151,16 @@ public class ModuleUpdater {
 
   private void updateAdded(final Set<? extends ReloadableModule> modulesToAdd) {
     updateAddedVertices(modulesToAdd);
-    updateAddedEdges(modulesToAdd);
+    updateAllEdges();
   }
 
   /**
    * @return true if actual update happened
    */
   private boolean updateReloaded(final Set<? extends ReloadableModule> modulesToReload) {
-    if (modulesToReload.isEmpty()) return false;
+    if (modulesToReload.isEmpty()) {
+      return false;
+    }
     boolean updated = updateReloadedVertices(modulesToReload);
     updated |= updateReloadedEdges(modulesToReload);
     return updated;
@@ -173,12 +175,34 @@ public class ModuleUpdater {
     }
   }
 
-  private void updateAddedEdges(Set<? extends ReloadableModule> modulesToAdd) {
+  /**
+   * Here we are updating references from all the existing modules
+   * Also we are going through all the modules in the repository and checking that their dependencies do exist.
+   * It checks every module in the current graph and tracks whether it has some unresolved dependencies.
+   * If so it puts it to the map {@link #myModulesWithAbsentDeps}.
+   */
+  private void updateAllEdges() {
     myRepository.getModelAccess().checkReadAccess();
-    for (ReloadableModule moduleToAdd : modulesToAdd) {
-      putModuleDeps(moduleToAdd);
+    Collection<? extends SModuleReference> allRefs = myDepGraph.getVertices();
+    for (SModuleReference ref : allRefs) {
+      ReloadableModule module = myRefStorage.resolveRef(ref);
+      assert module != null;
+      Collection<? extends ReloadableModule> deps;
+      try {
+        deps = getModuleDeps(module);
+      } catch (AbsentDependencyException e) {
+        myModulesWithAbsentDeps.put(module, e);
+        continue;
+      }
+      for (ReloadableModule dep : deps) {
+        if (allRefs.contains(ref)) {
+          myDepGraph.addEdge(ref, dep.getModuleReference());
+        } else {
+//        valid if somebody calls reloadModule in moduleAdded() listener before us
+          LOG.warn("The dependent module " + dep + " of the " + module + " is not registered");
+        }
+      }
     }
-    updateBackDepsAndReviewDependencies(modulesToAdd);
   }
 
   private boolean updateReloadedVertices(Set<? extends ReloadableModule> modulesToReload) {
@@ -196,6 +220,9 @@ public class ModuleUpdater {
     return updated;
   }
 
+  /**
+   * calculates difference in the outgoing edges for each given module
+   */
   private boolean updateReloadedEdges(Set<? extends ReloadableModule> modulesToReload) {
     boolean updated = false;
     myRepository.getModelAccess().checkReadAccess();
@@ -227,53 +254,6 @@ public class ModuleUpdater {
       }
     }
     return updated;
-  }
-
-  private void putModuleDeps(@NotNull ReloadableModule module) {
-    Collection<? extends SModuleReference> allRefs = myDepGraph.getVertices();
-    SModuleReference refToAdd = module.getModuleReference();
-    Collection<? extends SModule> deps;
-    try {
-      deps = getModuleDeps(module);
-    } catch (AbsentDependencyException e) {
-      return;
-    }
-    for (SModule dep : deps) {
-      SModuleReference depRef = dep.getModuleReference();
-      if (allRefs.contains(depRef)) {
-        myDepGraph.addEdge(refToAdd, depRef);
-      } else {
-//        valid if somebody calls reloadModule in moduleAdded() listener before us
-        throw new IllegalStateException("The dependent module " + dep + " of " + module + " is not registered");
-      }
-    }
-  }
-
-  /**
-   * Here we are updating references from existing modules to the newly added modules
-   * Also we are going through all the modules in the repository and checking that their dependencies do exist.
-   * It checks every module in the current graph and tracks whether it has some unresolved dependencies.
-   * If so it puts it to the map {@link #myModulesWithAbsentDeps}.
-   *
-   * @param modules -- newly added modules
-   */
-  private void updateBackDepsAndReviewDependencies(Set<? extends ReloadableModule> modules) {
-    for (SModuleReference backRef : myDepGraph.getVertices()) {
-      ReloadableModule reloadableModule = myRefStorage.resolveRef(backRef);
-      assert reloadableModule != null;
-      Collection<? extends ReloadableModule> deps;
-      try {
-        deps = getModuleDeps(reloadableModule);
-      } catch (AbsentDependencyException e) {
-        myModulesWithAbsentDeps.put(reloadableModule, e);
-        continue;
-      }
-      for (ReloadableModule dep : deps) {
-        if (modules.contains(dep)) {
-          myDepGraph.addEdge(backRef, dep.getModuleReference());
-        }
-      }
-    }
   }
 
   private Collection<ReloadableModule> getModuleDeps(@NotNull ReloadableModule module) throws AbsentDependencyException {
