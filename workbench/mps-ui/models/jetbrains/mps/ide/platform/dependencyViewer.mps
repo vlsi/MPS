@@ -1859,25 +1859,21 @@
             </node>
           </node>
         </node>
-        <node concept="1DcWWT" id="7ctIhG_bUwQ" role="3cqZAp">
-          <node concept="3clFbS" id="7ctIhG_bUwR" role="2LFqv$">
-            <node concept="3cpWs8" id="7ctIhG_bUwS" role="3cqZAp">
-              <node concept="3cpWsn" id="7ctIhG_bUwT" role="3cpWs9">
-                <property role="TrG5h" value="node" />
-                <node concept="3uibUv" id="3Ik6ReeVah$" role="1tU5fm">
-                  <ref role="3uigEE" to="xr52:~SModelTreeNode" resolve="SModelTreeNode" />
-                </node>
-                <node concept="2ShNRf" id="7ctIhG_bUwV" role="33vP2m">
-                  <node concept="1pGfFk" id="7ctIhG_bUwW" role="2ShVmc">
-                    <ref role="37wK5l" to="xr52:~SModelTreeNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,java.lang.String)" resolve="SModelTreeNode" />
-                    <node concept="37vLTw" id="3GM_nagTwLa" role="37wK5m">
-                      <ref role="3cqZAo" node="7ctIhG_bUxa" resolve="model" />
-                    </node>
-                    <node concept="10Nm6u" id="7ctIhG_bUwY" role="37wK5m" />
-                  </node>
-                </node>
+        <node concept="3cpWs8" id="7_zYD8_pYeg" role="3cqZAp">
+          <node concept="3cpWsn" id="7_zYD8_pYeh" role="3cpWs9">
+            <property role="TrG5h" value="modelText" />
+            <node concept="3uibUv" id="7_zYD8_pYei" role="1tU5fm">
+              <ref role="3uigEE" to="xr52:~SModelTreeNode$LongModelNameText" resolve="SModelTreeNode.LongModelNameText" />
+            </node>
+            <node concept="2ShNRf" id="7_zYD8_pZiH" role="33vP2m">
+              <node concept="1pGfFk" id="7_zYD8_qbiA" role="2ShVmc">
+                <ref role="37wK5l" to="xr52:~SModelTreeNode$LongModelNameText.&lt;init&gt;()" resolve="SModelTreeNode.LongModelNameText" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="7ctIhG_bUwQ" role="3cqZAp">
+          <node concept="3clFbS" id="7ctIhG_bUwR" role="2LFqv$">
             <node concept="3clFbF" id="7ctIhG_bUx5" role="3cqZAp">
               <node concept="2OqwBi" id="7ctIhG_bUx6" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTyQe" role="2Oq$k0">
@@ -1885,8 +1881,16 @@
                 </node>
                 <node concept="liA8E" id="7ctIhG_bUx8" role="2OqNvi">
                   <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
-                  <node concept="37vLTw" id="3GM_nagTrqj" role="37wK5m">
-                    <ref role="3cqZAo" node="7ctIhG_bUwT" resolve="node" />
+                  <node concept="2ShNRf" id="7_zYD8_qcCH" role="37wK5m">
+                    <node concept="1pGfFk" id="7_zYD8_qcCI" role="2ShVmc">
+                      <ref role="37wK5l" to="xr52:~SModelTreeNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.ide.ui.tree.TreeNodeTextSource)" resolve="SModelTreeNode" />
+                      <node concept="37vLTw" id="7_zYD8_qcCJ" role="37wK5m">
+                        <ref role="3cqZAo" node="7ctIhG_bUxa" resolve="model" />
+                      </node>
+                      <node concept="37vLTw" id="7_zYD8_qcCK" role="37wK5m">
+                        <ref role="3cqZAo" node="7_zYD8_pYeh" resolve="modelText" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1909,23 +1913,6 @@
         </node>
         <node concept="1DcWWT" id="7ctIhG_bUxf" role="3cqZAp">
           <node concept="3clFbS" id="7ctIhG_bUxg" role="2LFqv$">
-            <node concept="3cpWs8" id="7ctIhG_bUxh" role="3cqZAp">
-              <node concept="3cpWsn" id="7ctIhG_bUxi" role="3cpWs9">
-                <property role="TrG5h" value="treeNode" />
-                <node concept="3uibUv" id="7ctIhG_bUxj" role="1tU5fm">
-                  <ref role="3uigEE" to="xr52:~SNodeTreeNode" resolve="SNodeTreeNode" />
-                </node>
-                <node concept="2ShNRf" id="7ctIhG_bUxk" role="33vP2m">
-                  <node concept="1pGfFk" id="7ctIhG_bUxl" role="2ShVmc">
-                    <ref role="37wK5l" to="xr52:~SNodeTreeNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="SNodeTreeNode" />
-                    <node concept="37vLTw" id="3GM_nagT$V$" role="37wK5m">
-                      <ref role="3cqZAo" node="7ctIhG_bUxB" resolve="node" />
-                    </node>
-                    <node concept="10Nm6u" id="7ctIhG_bUxn" role="37wK5m" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="7ctIhG_bUxy" role="3cqZAp">
               <node concept="2OqwBi" id="7ctIhG_bUxz" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTtqI" role="2Oq$k0">
@@ -1933,8 +1920,14 @@
                 </node>
                 <node concept="liA8E" id="7ctIhG_bUx_" role="2OqNvi">
                   <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
-                  <node concept="37vLTw" id="3GM_nagTBQp" role="37wK5m">
-                    <ref role="3cqZAo" node="7ctIhG_bUxi" resolve="treeNode" />
+                  <node concept="2ShNRf" id="7_zYD8_qcFf" role="37wK5m">
+                    <node concept="1pGfFk" id="7_zYD8_qcFg" role="2ShVmc">
+                      <ref role="37wK5l" to="xr52:~SNodeTreeNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String)" resolve="SNodeTreeNode" />
+                      <node concept="37vLTw" id="7_zYD8_qcFh" role="37wK5m">
+                        <ref role="3cqZAo" node="7ctIhG_bUxB" resolve="node" />
+                      </node>
+                      <node concept="10Nm6u" id="7_zYD8_qcFi" role="37wK5m" />
+                    </node>
                   </node>
                 </node>
               </node>

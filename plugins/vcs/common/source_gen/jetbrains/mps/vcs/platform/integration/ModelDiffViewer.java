@@ -4,10 +4,10 @@ package jetbrains.mps.vcs.platform.integration;
 
 import com.intellij.diff.FrameDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceViewer;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.diff.DiffContext;
 import com.intellij.diff.requests.ContentDiffRequest;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import com.intellij.diff.contents.DiffContent;
 import com.intellij.openapi.fileTypes.FileType;
@@ -28,9 +28,10 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -40,23 +41,21 @@ import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 public class ModelDiffViewer implements FrameDiffTool.DiffViewer {
   private ModelDifferenceViewer myViewer;
 
-  private Project myProject;
-
   public ModelDiffViewer(@NotNull DiffContext context, @NotNull ContentDiffRequest request) {
-    myProject = context.getProject();
+    MPSProject mpsProject = context.getProject().getComponent(MPSProject.class);
 
     List<DiffContent> contents = request.getContents();
     FileType type = (contents.get(0).getContentType() != null ? contents.get(0).getContentType() : contents.get(1).getContentType());
 
     if (MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(type) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(type)) {
-      Tuples._2<SModel, SNodeId> oldModel = getModelAndRoot(contents.get(0), type);
-      Tuples._2<SModel, SNodeId> newModel = getModelAndRoot(contents.get(1), type);
+      Tuples._2<SModel, SNodeId> oldModel = getModelAndRoot(mpsProject, contents.get(0), type);
+      Tuples._2<SModel, SNodeId> newModel = getModelAndRoot(mpsProject, contents.get(1), type);
       SNodeId rootId = (newModel._1() != null ? newModel._1() : oldModel._1());
-      myViewer = new ModelDifferenceViewer(myProject, oldModel._0(), newModel._0(), rootId, false);
+      myViewer = new ModelDifferenceViewer(mpsProject, oldModel._0(), newModel._0(), rootId, false);
     } else {
-      SModel oldModel = ModelDiffViewer.getModel(contents.get(0), type);
-      SModel newModel = ModelDiffViewer.getModel(contents.get(1), type);
-      myViewer = new ModelDifferenceViewer(myProject, oldModel, newModel, null, true);
+      SModel oldModel = ModelDiffViewer.getModel(mpsProject, contents.get(0), type);
+      SModel newModel = ModelDiffViewer.getModel(mpsProject, contents.get(1), type);
+      myViewer = new ModelDifferenceViewer(mpsProject, oldModel, newModel, null, true);
     }
     List<String> titles = request.getContentTitles();
     myViewer.setContentTitles(titles.get(0), titles.get(1));
@@ -140,7 +139,7 @@ public class ModelDiffViewer implements FrameDiffTool.DiffViewer {
   private static IFile getFileByContent(@NotNull DiffContent content) {
     VirtualFile vfile = null;
     if ((content instanceof com.intellij.openapi.diff.DocumentContent || content instanceof com.intellij.openapi.diff.FileContent)) {
-      vfile = check_qg7y9c_a0a0b0s(content.getOpenFileDescriptor());
+      vfile = check_qg7y9c_a0a0b0q(content.getOpenFileDescriptor());
     }
     // ? is it necessary? 
     if (vfile == null && content instanceof FileContent) {
@@ -149,11 +148,11 @@ public class ModelDiffViewer implements FrameDiffTool.DiffViewer {
     return (vfile == null ? null : VirtualFileUtils.toIFile(vfile));
   }
   @Nullable
-  private static SModel getModel(@NotNull DiffContent content, FileType type) {
+  private static SModel getModel(Project mpsProject, @NotNull DiffContent content, FileType type) {
     // first try to find model in repository 
     IFile file = getFileByContent(content);
     if (file != null) {
-      SModel model = SModelFileTracker.getInstance().findModel(file);
+      SModel model = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(file);
       if (model != null) {
         return model;
       }
@@ -163,12 +162,12 @@ public class ModelDiffViewer implements FrameDiffTool.DiffViewer {
   }
 
   @Nullable
-  private static Tuples._2<SModel, SNodeId> getModelAndRoot(DiffContent content, FileType type) {
+  private static Tuples._2<SModel, SNodeId> getModelAndRoot(Project mpsProject, DiffContent content, FileType type) {
     final Wrappers._T<SModel> model = new Wrappers._T<SModel>(null);
     // first try to find model in repository 
     IFile file = getFileByContent(content);
     if (file != null) {
-      model.value = SModelFileTracker.getInstance().findModel(file.getParent());
+      model.value = SModelFileTracker.getInstance(mpsProject.getRepository()).findModel(file.getParent());
     }
     if (model.value == null) {
       model.value = readModel(content, type);
@@ -177,23 +176,18 @@ public class ModelDiffViewer implements FrameDiffTool.DiffViewer {
       return null;
     }
 
-    SNodeId nodeId = null;
-    int size = ModelAccess.instance().runReadAction(new Computable<Integer>() {
-      public Integer compute() {
-        return ListSequence.fromList(SModelOperations.roots(model.value, null)).count();
-      }
-    });
-    // todo: find root for models in repository by filename (important when new root added int per-root persistence) 
-    if (size == 1) {
-      nodeId = ModelAccess.instance().runReadAction(new Computable<SNodeId>() {
-        public SNodeId compute() {
+    SNodeId nodeId = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<SNodeId>() {
+      public SNodeId compute() {
+        // todo: find root for models in repository by filename (important when new root added int per-root persistence) 
+        if (ListSequence.fromList(SModelOperations.roots(model.value, null)).count() == 1) {
           return ListSequence.fromList(SModelOperations.roots(model.value, null)).getElement(0).getNodeId();
         }
-      });
-    }
+        return null;
+      }
+    });
     return MultiTuple.<SModel,SNodeId>from(model.value, nodeId);
   }
-  private static VirtualFile check_qg7y9c_a0a0b0s(OpenFileDescriptor checkedDotOperand) {
+  private static VirtualFile check_qg7y9c_a0a0b0q(OpenFileDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getFile();
     }

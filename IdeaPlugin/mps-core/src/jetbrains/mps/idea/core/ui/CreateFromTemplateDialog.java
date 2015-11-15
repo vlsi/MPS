@@ -23,8 +23,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-
 public class CreateFromTemplateDialog extends CreateFileFromTemplateDialog {
 
     private Project myProject;
@@ -50,10 +48,5 @@ public class CreateFromTemplateDialog extends CreateFileFromTemplateDialog {
     @Override
     public TemplateKindCombo getKindCombo() {
         return super.getKindCombo();
-    }
-
-    @Override
-    public JTextField getNameField() {
-        return super.getNameField();
     }
 }

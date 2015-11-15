@@ -8,7 +8,6 @@ import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.project.Project;
 import java.io.File;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -34,8 +33,7 @@ public abstract class BaseMpsTest {
   }
 
   protected static <T extends SModule> T getModule(String moduleFqName, Class<T> cls) {
-    SRepository moduleRepository = getEnvironment().getPlatform().getCore().getModuleRepository();
-    return new ModuleRepositoryFacade(moduleRepository).getModule(moduleFqName, cls);
+    return ModuleRepositoryFacade.getInstance().getModule(moduleFqName, cls);
   }
 
   protected static Solution getSolution(String moduleFqName) {

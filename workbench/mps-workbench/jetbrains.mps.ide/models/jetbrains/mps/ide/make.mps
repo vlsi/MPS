@@ -776,6 +776,24 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="5PAD3FJPbQw" role="3cqZAp">
+          <node concept="3SKdUq" id="5PAD3FJPbY0" role="3SKWNk">
+            <property role="3SKdUp" value="the flag &quot;daemon&quot; must be set in order for ThreadGroup to be garbage-collected" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5PAD3FJPaNI" role="3cqZAp">
+          <node concept="2OqwBi" id="5PAD3FJPb5P" role="3clFbG">
+            <node concept="37vLTw" id="5PAD3FJPaNG" role="2Oq$k0">
+              <ref role="3cqZAo" node="9D0Ba05uBM" resolve="tg" />
+            </node>
+            <node concept="liA8E" id="5PAD3FJPbbb" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~ThreadGroup.setDaemon(boolean):void" resolve="setDaemon" />
+              <node concept="3clFbT" id="5PAD3FJPboq" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="9D0Ba05uBR" role="3cqZAp">
           <node concept="3cpWsn" id="9D0Ba05uBS" role="3cpWs9">
             <property role="TrG5h" value="makeThread" />

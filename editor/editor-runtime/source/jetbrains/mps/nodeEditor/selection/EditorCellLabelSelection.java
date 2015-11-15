@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
@@ -240,7 +241,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       }
 
-      if (target == null) return false;
+      if (target == null || ReadOnlyUtil.isCellReadOnly(target)) return false;
       /*
         Was commented out (again) to let some of our unit-tests be green.
         in particular - pressing BackSpace at this situation:

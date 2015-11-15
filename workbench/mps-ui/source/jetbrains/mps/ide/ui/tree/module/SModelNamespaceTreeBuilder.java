@@ -26,11 +26,4 @@ public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SMod
     SModel d = node.getModel();
     return NameUtil.namespaceFromLongName(SModelStereotype.withoutStereotype(d.getReference().getModelName()));
   }
-
-  @Override
-  protected void addNode(SModelTreeNode node, NamespaceTextNode namespace) {
-    int count = SModelsSubtree.getCountNamePart(node.getModel(), namespace.getNamespace());
-    node.setCountAdditionalNamePart(count);
-    super.addNode(node, namespace);
-  }
 }

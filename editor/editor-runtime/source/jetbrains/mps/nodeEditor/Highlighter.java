@@ -24,7 +24,6 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -160,7 +159,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
    * MPSProject was used as a parameter of this constructor because corresponding component should be initialised after
    * MPSProject and un-initialized before it.
    */
-  public Highlighter(MPSProject mpsProject, Project project, ProjectManager projectManager, FileEditorManager fileEditorManager, InspectorTool inspector,
+  public Highlighter(@SuppressWarnings("UnusedParameters") MPSProject mpsProject, Project project, FileEditorManager fileEditorManager, InspectorTool inspector,
       MPSCoreComponents coreComponents) {
     myProject = project;
     myFileEditorManager = fileEditorManager;
@@ -426,7 +425,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         list.addAll(myAdditionalEditors);
       }
     }
-    final List<EditorComponent> editorComponents = new ArrayList();
+    final List<EditorComponent> editorComponents = new ArrayList<EditorComponent>();
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -518,8 +517,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {
-    if (editorComponent instanceof InspectorEditorComponent) return true;
-    return myCheckedOnceEditors.contains(editorComponent);
+    return editorComponent instanceof InspectorEditorComponent || myCheckedOnceEditors.contains(editorComponent);
   }
 
   public void resetCheckedState(final EditorComponent editorComponent) {
@@ -563,17 +561,15 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
 
           EditorContext editorContext = editor.getEditorContext();
-          if (editorContext != null) {
-            IOperationContext operationContext = editor.getOperationContext();
-            if (operationContext.isValid()) {
-              try {
-                messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext, myCancellable, applyQuickFixes));
-                return checker.areMessagesChangedProtected();
-              } catch (IndexNotReadyException ex) {
-                highlightManager.clearForOwner(checker, true);
-                checker.clearProtected(node, editor);
-                throw ex;
-              }
+          IOperationContext operationContext = editor.getOperationContext();
+          if (operationContext.isValid()) {
+            try {
+              messages.addAll(checker.createMessagesProtected(node, events, wasCheckedOnce, editorContext, myCancellable, applyQuickFixes));
+              return checker.areMessagesChangedProtected();
+            } catch (IndexNotReadyException ex) {
+              highlightManager.clearForOwner(checker, true);
+              checker.clearProtected(node, editor);
+              throw ex;
             }
           }
 
@@ -619,6 +615,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return anyMessageChanged;
   }
 
+  @NotNull
   private static <T> T runLoPrioRead(final Computable<T> computable) {
     assert !ModelAccess.instance().canRead() : "Lo-prio read with acquired read can be a reason of a deadlock";
     T result;
@@ -626,7 +623,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       while (IMakeService.INSTANCE.isSessionActive()) {
         try {
           Thread.sleep(600);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException ignored) {
         }
       }
       result = ModelAccess.instance().runReadAction(new Computable<T>() {

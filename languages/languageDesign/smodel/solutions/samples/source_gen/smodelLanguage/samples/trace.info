@@ -817,8 +817,8 @@
       <node id="1206654587116" at="71,364,72,392" concept="5" />
       <node id="1206661620799" at="72,392,73,112" concept="1" />
       <node id="1206663146746" at="73,112,74,114" concept="1" />
-      <node id="1181953543593" at="76,48,77,239" concept="5" />
-      <node id="1181953582963" at="77,239,78,19" concept="5" />
+      <node id="1181953543593" at="76,48,77,229" concept="5" />
+      <node id="1181953582963" at="77,229,78,19" concept="5" />
       <node id="1181953605568" at="78,19,79,117" concept="5" />
       <node id="1173133630403" at="19,65,21,5" concept="3" />
       <node id="1180482960664" at="35,0,38,0" concept="4" trace="concept_conceptProperties#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

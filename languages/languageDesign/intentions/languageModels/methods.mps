@@ -88,7 +88,7 @@
     </language>
   </registry>
   <node concept="q3mft" id="6yt8uwrpQZP">
-    <property role="TrG5h" value="IntentionDeclaration" />
+    <property role="TrG5h" value="UniversalIntention" />
     <ref role="2qG0Lo" to="tp3j:77ZFhhOGiCb" resolve="Intention" />
     <node concept="q3mfq" id="6yt8uwrpTKe" role="QNr5C">
       <property role="TrG5h" value="isApplicable" />

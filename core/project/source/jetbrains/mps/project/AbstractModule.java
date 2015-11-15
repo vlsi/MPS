@@ -276,6 +276,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void save() {
     assertCanChange();
     validateLanguageVersions();
+    validateDependencyVersions();
     myChanged = false;
   }
 
@@ -629,6 +630,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myDescriptorFile;
   }
 
+  public void setModuleVersion(int version) {
+    getModuleDescriptor().setModuleVersion(version);
+    fireChanged();
+    setChanged();
+  }
+
+  public int getModuleVersion() {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    return descriptor == null ? 0 : descriptor.getModuleVersion();
+  }
+
   public void rename(String newName) {
     renameModels(getModuleName(), newName, true);
 
@@ -920,6 +932,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void validateLanguageVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
+    if (md == null) {
+      return;
+    }
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
     if (!md.hasLanguageVersions()) {
@@ -933,11 +948,56 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
         } else {
           newLanguageVersions.put(lang, lang.getLanguageVersion());
+          // this check is needed to avoid numerous changes in msd/mpl files when opening project without dependency versions
+          // here we assume that validateLanguageVersions() is called before validateDependencyVersions()
+          // todo: remove this hack after 3.3
+          if (md.hasDependencyVersions()) {
+            setChanged();
+          }
+        }
+      }
+      if (oldLanguageVersions.size() != newLanguageVersions.size()) {
+        // todo: remove this hack after 3.3
+        if (md.hasDependencyVersions()) {
+          setChanged();
         }
       }
     }
     oldLanguageVersions.clear();
     oldLanguageVersions.putAll(newLanguageVersions);
+  }
+
+  public void validateDependencyVersions() {
+    assertCanChange();
+    ModuleDescriptor md = getModuleDescriptor();
+    if (md == null) {
+      return;
+    }
+    Map<SModuleReference, Integer> oldDepVersions = md.getDependencyVersions();
+    Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
+    List<SModule> visible = new ArrayList<SModule>();
+    visible.add(this);
+    visible.addAll(new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE));
+    if (!md.hasDependencyVersions()) {
+      for (SModule dep : visible) {
+        newDepVersions.put(dep.getModuleReference(), 0);
+      }
+      md.setHasDependencyVersions(true);
+    } else {
+      for (SModule dep : visible) {
+        if (oldDepVersions.containsKey(dep.getModuleReference())) {
+          newDepVersions.put(dep.getModuleReference(), oldDepVersions.get(dep.getModuleReference()));
+        } else {
+          newDepVersions.put(dep.getModuleReference(), ((AbstractModule) dep).getModuleVersion());
+          setChanged();
+        }
+      }
+      if (oldDepVersions.size() != newDepVersions.size()) {
+        setChanged();
+      }
+    }
+    oldDepVersions.clear();
+    oldDepVersions.putAll(newDepVersions);
   }
 
   @Override
@@ -948,9 +1008,23 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           "getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
               " in module " + getModuleName() + "." +
               " This can either mean that the language is not imported into this module or that " +
-              "validateLanguageVersions was not called on this module in appropriate moment.",
+              "validateLanguageVersions() was not called on this module in appropriate moment.",
           new Throwable());
       return usedLanguage.getLanguageVersion();
+    }
+    return res;
+  }
+
+  public int getDependencyVersion(SModule dependency) {
+    Integer res = getModuleDescriptor().getDependencyVersions().get(dependency.getModuleReference());
+    if (res == null) {
+      LOG.error(
+          "getDependencyVersion can't find a version for module " + dependency.getModuleName() +
+              " in module " + getModuleName() + "." +
+              " This can either mean that the module is not visible from this module or that " +
+              "validateDependencyVersions() was not called on this module in appropriate moment.",
+          new Throwable());
+      return ((AbstractModule) dependency).getModuleVersion();
     }
     return res;
   }

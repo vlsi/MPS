@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="12,0,27,0" name="jetbrains.mps.console.base.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,28,0" name="jetbrains.mps.console.base.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="PasteWrappers.java">
       <unit at="21,49,31,5" name="jetbrains.mps.console.base.actions.PasteWrappers$1" />

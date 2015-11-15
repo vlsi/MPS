@@ -21,12 +21,11 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.Button_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_Editor" />
@@ -40,7 +39,8 @@
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.TargetDataType_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.TextField_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.SwingBuilder.editor.Transformers_Editor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_Editor" file="ElementReference_Editor.java">

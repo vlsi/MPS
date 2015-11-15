@@ -25,7 +25,10 @@ import java.util.Collections;
 /**
  * User: shatalin
  * Date: 30/01/15
+ *
+ * @deprecated since MPS 3.3 use {@link BaseActionAspectDescriptor}
  */
+@Deprecated
 public abstract class AbstractActionAspectDescriptor implements ActionAspectDescriptor {
   @Override
   public Collection<NodeFactory> getFactories(SAbstractConcept concept) {

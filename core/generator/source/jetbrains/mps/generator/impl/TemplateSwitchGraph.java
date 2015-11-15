@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,19 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.FlattenIterable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class TemplateSwitchGraph {
 
-  private Map<SNodeReference, Node> mySwitchToNode = new HashMap<SNodeReference, Node>();
+  private final Map<SNodeReference, Node> mySwitchToNode = new HashMap<SNodeReference, Node>();
 
   public TemplateSwitchGraph(Collection<TemplateModel> templateModels) throws GenerationFailureException {
     for (TemplateModel templateModel : templateModels) {
@@ -60,11 +65,6 @@ public class TemplateSwitchGraph {
       }
       bottom.myRules.add(node.mySwitch);
     }
-    for (Node node : mySwitchToNode.values()) {
-      if (node.myModified == null) {
-        node.createFinder();
-      }
-    }
   }
 
   public FastRuleFinder getRuleFinder(SNodeReference baseSwitch) {
@@ -72,7 +72,7 @@ public class TemplateSwitchGraph {
     while (bottom.myModified != null) {
       bottom = bottom.myModified;
     }
-    return bottom.finder;
+    return bottom.getFinder();
   }
 
   public TemplateSwitchMapping getSwitch(SNodeReference switch_) {
@@ -84,20 +84,29 @@ public class TemplateSwitchGraph {
     final TemplateSwitchMapping mySwitch;
     Node myModified;
     List<TemplateSwitchMapping> myRules;
-    FastRuleFinder finder;
+    private FastRuleFinder myFinder;
 
     public Node(TemplateSwitchMapping switch_) {
       this.mySwitch = switch_;
     }
 
-    private void createFinder() {
+    public FastRuleFinder getFinder() {
+      if (myFinder == null) {
+        createFinder();
+      }
+      return myFinder;
+    }
+
+    private synchronized void createFinder() {
+      if (myFinder != null) {
+        return;
+      }
       FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>(new ArrayList<Iterable<TemplateReductionRule>>());
       for (TemplateSwitchMapping sw : myRules) {
         rules.add(sw.getReductionRules());
       }
-
-      this.myRules = null;
-      this.finder = new FastRuleFinder(rules);
+      myRules = null;
+      myFinder = new FastRuleFinder<TemplateReductionRule>(rules);
     }
   }
 }

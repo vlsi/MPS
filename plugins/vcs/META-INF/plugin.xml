@@ -20,7 +20,7 @@
   <description>VCS features in MPS</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="142.1" until-build="143.1"/>
+  <idea-version since-build="143.1" until-build="144.1"/>
 
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
@@ -83,7 +83,7 @@
       <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
               text="Show In File System View"/>
       <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
-      <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditorFix"/>
+      <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditMenu"/>
     </group>
     <action id="LocalHistory.ShowHistory" class="jetbrains.mps.history.integration.ui.actions.ShowMpsHistoryAction">
       <add-to-group group-id="LocalHistory" anchor="before" relative-to-action="LocalHistory.PutLabel"/>
@@ -92,9 +92,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages"/>
-
-    <diff.DiffTool implementation="jetbrains.mps.vcs.platform.integration.ModelDiffTool"/>
-    <diff.merge.MergeTool implementation="jetbrains.mps.vcs.platform.integration.ModelMergeTool"/>
+    <mps.LanguageLibrary dir="/solutions"/>
 
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
     <mps.TabColorProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider"/>

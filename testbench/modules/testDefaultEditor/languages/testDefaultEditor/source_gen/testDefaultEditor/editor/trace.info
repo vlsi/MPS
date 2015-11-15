@@ -7,7 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,34,0" name="testDefaultEditor.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,34,0" name="testDefaultEditor.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:d1210bb2-885b-42ea-aaec-fbe9b5a5e2ba(testDefaultEditor.editor)/2870455723671203561">

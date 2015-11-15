@@ -95,9 +95,8 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   }
 
   public TestListPanel(Project project, boolean isTestMethods) {
-    super("Tests");
+    super(project, "Tests");
     myIsTestMethods = isTestMethods;
-    setProject(project);
     super.setData(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
   }
 }

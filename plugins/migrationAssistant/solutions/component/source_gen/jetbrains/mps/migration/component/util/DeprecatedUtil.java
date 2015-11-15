@@ -8,8 +8,8 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.query.CommandUtil;
-import jetbrains.mps.smodel.query.QueryExecutionContext;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -41,7 +41,7 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> usagesOfDeprecatedNodes(SearchScope depScope, SearchScope s) {
     {
-      final SearchScope scope = CommandUtil.createScope(s.getModules());
+      final SearchScope scope = CommandUtil.createScope(s);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -61,7 +61,7 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> usagesOfDeprecatedMeta(SearchScope depScope, SearchScope s) {
     {
-      final SearchScope scope = CommandUtil.createScope(s.getModules());
+      final SearchScope scope = CommandUtil.createScope(s);
       final QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -147,7 +147,7 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depNodes(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope.getModules());
+      final SearchScope scope = CommandUtil.createScope(depScope);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -167,7 +167,7 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depLinks(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope.getModules());
+      final SearchScope scope = CommandUtil.createScope(depScope);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -183,7 +183,7 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depProps(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope.getModules());
+      final SearchScope scope = CommandUtil.createScope(depScope);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -199,7 +199,7 @@ public class DeprecatedUtil {
 
   private static Iterable<SNode> depConcepts(SearchScope depScope) {
     {
-      final SearchScope scope = CommandUtil.createScope(depScope.getModules());
+      final SearchScope scope = CommandUtil.createScope(depScope);
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;

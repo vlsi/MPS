@@ -34,19 +34,19 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.attribute.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.editor.CommentAttribute2_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.editor.CommentAttribute_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.editor.HandlerAsChild_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.editor.HandlerAsRoot_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.editor.SubConceptToTransformNested_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.editor.SubConceptToTransform_Editor" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.attribute.editor.HandlerAsChild_Editor" file="HandlerAsChild_Editor.java">

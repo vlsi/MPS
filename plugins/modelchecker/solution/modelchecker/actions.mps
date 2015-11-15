@@ -356,6 +356,10 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="427659576753752243" name="jetbrains.mps.lang.smodel.structure.ModulePointer" flags="ng" index="20RdaH">
+        <property id="427659576753753627" name="moduleId" index="20Rdg5" />
+        <property id="427659576753753625" name="moduleName" index="20Rdg7" />
+      </concept>
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
@@ -377,9 +381,6 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="4357968816427488499" name="jetbrains.mps.lang.smodel.structure.CheckedModuleReference" flags="nn" index="2L6k_Z">
-        <property id="4357968816427488500" name="moduleId" index="2L6k_S" />
-      </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
@@ -387,6 +388,9 @@
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7" />
       <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
+      <concept id="1678062499342629858" name="jetbrains.mps.lang.smodel.structure.ModuleRefExpression" flags="ng" index="37shsh">
+        <child id="1678062499342629861" name="moduleId" index="37shsm" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -494,7 +498,7 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="Model Checker" />
-    <property role="9BnSO" value="142.1" />
+    <property role="9BnSO" value="143.1" />
     <property role="9BnSK" value="3.3" />
   </node>
   <node concept="Zd50a" id="1gEYwydCqV1">
@@ -2143,8 +2147,11 @@
               <node concept="Xjq3P" id="1MEKy$8pRWc" role="2Oq$k0" />
             </node>
             <node concept="2OqwBi" id="PIFYWx4v05" role="37vLTx">
-              <node concept="2L6k_Z" id="PIFYWx4uUO" role="2Oq$k0">
-                <property role="2L6k_S" value="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+              <node concept="37shsh" id="7ESDA_ioyED" role="2Oq$k0">
+                <node concept="20RdaH" id="7ESDA_ioyEE" role="37shsm">
+                  <property role="20Rdg5" value="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea" />
+                  <property role="20Rdg7" value="MPS.Core" />
+                </node>
               </node>
               <node concept="liA8E" id="PIFYWx4v7j" role="2OqNvi">
                 <ref role="37wK5l" to="lui2:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
@@ -2163,8 +2170,11 @@
         <node concept="3clFbF" id="1MEKy$8pRWp" role="3cqZAp">
           <node concept="37vLTI" id="1MEKy$8pRWw" role="3clFbG">
             <node concept="2OqwBi" id="PIFYWx4vOI" role="37vLTx">
-              <node concept="2L6k_Z" id="PIFYWx4vNv" role="2Oq$k0">
-                <property role="2L6k_S" value="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+              <node concept="37shsh" id="7ESDA_ioyDG" role="2Oq$k0">
+                <node concept="20RdaH" id="7ESDA_ioyDH" role="37shsm">
+                  <property role="20Rdg5" value="1ed103c3-3aa6-49b7-9c21-6765ee11f224" />
+                  <property role="20Rdg7" value="MPS.Editor" />
+                </node>
               </node>
               <node concept="liA8E" id="PIFYWx4vRx" role="2OqNvi">
                 <ref role="37wK5l" to="lui2:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />

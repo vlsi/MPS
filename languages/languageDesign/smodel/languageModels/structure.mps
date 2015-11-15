@@ -3,15 +3,13 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
-    <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
-    <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.customAspect.structure)" />
+    <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1192,6 +1190,10 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="1t9Fffggnzf" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="This reference has no information where to resolve it. Unless we introduce SRepository parameter here, use NodePointerExpression instead." />
+    </node>
   </node>
   <node concept="1TIwiD" id="hLiUZJy">
     <property role="R5$K7" value="false" />
@@ -1635,12 +1637,17 @@
     <property role="TrG5h" value="CheckedModuleReference" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="reference" />
-    <property role="34LRSv" value="module reference" />
+    <property role="34LRSv" value="checked module reference" />
     <property role="1pbfSe" value="908168577" />
+    <property role="R4oN_" value="module reference tied to modules from global repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="3LUBoMdoXjO" role="1TKVEl">
       <property role="TrG5h" value="moduleId" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="asaX9" id="3WF9HwEZbzR" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="Uses global repository to ensure reference points to an existing module" />
     </node>
   </node>
   <node concept="1TIwiD" id="1lvHLgR6tlS">
@@ -1911,6 +1918,7 @@
     <property role="3GE5qa" value="reference.module" />
     <property role="34LRSv" value="module" />
     <property role="1pbfSe" value="468609205" />
+    <property role="R4oN_" value="instance of a module from global repository" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyi" id="3wj3sjzQPFM" role="1TKVEl">
       <property role="TrG5h" value="name" />
@@ -1919,6 +1927,10 @@
     <node concept="1TJgyi" id="3wj3sjzQPFN" role="1TKVEl">
       <property role="TrG5h" value="moduleId" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="asaX9" id="1t9FffgewUl" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="Global module repository shall cease soon. Use ModuleRefExpression instead." />
     </node>
   </node>
   <node concept="1TIwiD" id="3wj3sjzR1ta">
@@ -1931,6 +1943,10 @@
     <property role="R4oN_" value="Access Language module instance" />
     <property role="1pbfSe" value="468657422" />
     <ref role="1TJDcQ" node="3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
+    <node concept="asaX9" id="1t9FffgewUn" role="lGtFl">
+      <property role="YLQ7P" value="Module instance is accessed through global repository which would cease soon. Use LanguageRefExpression instead" />
+      <property role="YLPcu" value="MPS 3.3" />
+    </node>
   </node>
   <node concept="1TIwiD" id="v3WHCwUiHy">
     <property role="R5$K7" value="false" />
@@ -2351,39 +2367,40 @@
     <property role="1pbfSe" value="1694588064" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
-  <node concept="1TIwiD" id="5m$620fQi1E">
-    <property role="1pbfSe" value="1702705290" />
-    <property role="3GE5qa" value="reference" />
-    <property role="TrG5h" value="AspectModelRefExpression" />
-    <property role="34LRSv" value="aspectModel" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="5m$620fRjo7" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="aspect" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+  <node concept="1TIwiD" id="nJmxU5cSyN">
+    <property role="1pbfSe" value="1960647983" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="ModulePointer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="nJmxU5cSSp" role="1TKVEl">
+      <property role="TrG5h" value="moduleName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="5m$620fQi1F" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="lang" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyi" id="nJmxU5cSSr" role="1TKVEl">
+      <property role="TrG5h" value="moduleId" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="nJmxU5cSTH" role="PzmwI">
+      <ref role="PrY4T" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1KHvivZHjVV">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="Model_IsAspectOperation" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="operation.model" />
-    <property role="1pbfSe" value="467844130" />
-    <property role="34LRSv" value="isAspectModel" />
-    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
-    <node concept="1TJgyj" id="1KHvivZHjYS" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="aspect" />
+  <node concept="PlHQZ" id="nJmxU5cSSu">
+    <property role="1pbfSe" value="1960646596" />
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="ModuleIdentity" />
+  </node>
+  <node concept="1TIwiD" id="1t9FffgebJy">
+    <property role="1pbfSe" value="410883883" />
+    <property role="3GE5qa" value="reference.module" />
+    <property role="TrG5h" value="ModuleRefExpression" />
+    <property role="34LRSv" value="module-reference" />
+    <property role="R4oN_" value="reference/pointer to an SModule" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="1t9FffgebJ_" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="moduleId" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+      <ref role="20lvS9" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
   </node>
 </model>

@@ -11,8 +11,9 @@ import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.smodel.query.CommandUtil;
-import jetbrains.mps.smodel.query.QueryExecutionContext;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -50,7 +51,7 @@ public class RunMigration_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     {
-      final SearchScope scope = CommandUtil.createScope(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+      final SearchScope scope = CommandUtil.createScope(((Project) event.getData(MPSCommonDataKeys.MPS_PROJECT)));
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;

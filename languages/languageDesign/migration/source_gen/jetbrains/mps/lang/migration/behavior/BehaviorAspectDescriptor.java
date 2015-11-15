@@ -12,25 +12,51 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myRefactoringLog__BehaviorDescriptor = new RefactoringLog__BehaviorDescriptor();
+  private final BHDescriptor myReflectionNodeReference__BehaviorDescriptor = new ReflectionNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myAbstractNodeReference__BehaviorDescriptor = new AbstractNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myMoveNodeSpecialization__BehaviorDescriptor = new MoveNodeSpecialization__BehaviorDescriptor();
+  private final BHDescriptor myMoveConcept__BehaviorDescriptor = new MoveConcept__BehaviorDescriptor();
+  private final BHDescriptor myMoveReferenceLink__BehaviorDescriptor = new MoveReferenceLink__BehaviorDescriptor();
+  private final BHDescriptor myMoveConceptMember__BehaviorDescriptor = new MoveConceptMember__BehaviorDescriptor();
+  private final BHDescriptor myMoveProperty__BehaviorDescriptor = new MoveProperty__BehaviorDescriptor();
+  private final BHDescriptor myMoveContainmentLink__BehaviorDescriptor = new MoveContainmentLink__BehaviorDescriptor();
   private final BHDescriptor myExecuteAfterDeclaration__BehaviorDescriptor = new ExecuteAfterDeclaration__BehaviorDescriptor();
   private final BHDescriptor myRequiredDataDeclaration__BehaviorDescriptor = new RequiredDataDeclaration__BehaviorDescriptor();
   private final BHDescriptor myDataDependency__BehaviorDescriptor = new DataDependency__BehaviorDescriptor();
+  private final BHDescriptor myIMigrationUnit__BehaviorDescriptor = new IMigrationUnit__BehaviorDescriptor();
   private final BHDescriptor myTransformStatement__BehaviorDescriptor = new TransformStatement__BehaviorDescriptor();
   private final BHDescriptor myProducedDataDeclaration__BehaviorDescriptor = new ProducedDataDeclaration__BehaviorDescriptor();
   private final BHDescriptor myDataDependencyReference__BehaviorDescriptor = new DataDependencyReference__BehaviorDescriptor();
+  private final BHDescriptor myMoveNode__BehaviorDescriptor = new MoveNode__BehaviorDescriptor();
+  private final BHDescriptor myDirectNodeReference__BehaviorDescriptor = new DirectNodeReference__BehaviorDescriptor();
+  private final BHDescriptor myPureMigrationScript__BehaviorDescriptor = new PureMigrationScript__BehaviorDescriptor();
   private final BHDescriptor myMigrationScript__BehaviorDescriptor = new MigrationScript__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[7];
-    myConceptBehaviorIds[0] = 0x398343344f07b404L;
-    myConceptBehaviorIds[1] = 0x3d90e8d384845a8fL;
-    myConceptBehaviorIds[2] = 0x44b28148e401c891L;
-    myConceptBehaviorIds[3] = 0x4e382b39b6529ec9L;
-    myConceptBehaviorIds[4] = 0x50c63f9f4a0dacfbL;
-    myConceptBehaviorIds[5] = 0x63476c2ad9bcd736L;
-    myConceptBehaviorIds[6] = 0x73e8a2c68b62c6a3L;
+    myConceptBehaviorIds = new long[20];
+    myConceptBehaviorIds[0] = 0x1bf9eb43276b6d8fL;
+    myConceptBehaviorIds[1] = 0x27bf3263be23f0dfL;
+    myConceptBehaviorIds[2] = 0x2b3f57492c1648ccL;
+    myConceptBehaviorIds[3] = 0x2b3f57492c165c5dL;
+    myConceptBehaviorIds[4] = 0x2b3f57492c1741b6L;
+    myConceptBehaviorIds[5] = 0x2b3f57492c1741b7L;
+    myConceptBehaviorIds[6] = 0x2b3f57492c1741b8L;
+    myConceptBehaviorIds[7] = 0x2b3f57492c1741b9L;
+    myConceptBehaviorIds[8] = 0x2b3f57492c1741baL;
+    myConceptBehaviorIds[9] = 0x398343344f07b404L;
+    myConceptBehaviorIds[10] = 0x3d90e8d384845a8fL;
+    myConceptBehaviorIds[11] = 0x44b28148e401c891L;
+    myConceptBehaviorIds[12] = 0x47bb811da2acc4d6L;
+    myConceptBehaviorIds[13] = 0x4e382b39b6529ec9L;
+    myConceptBehaviorIds[14] = 0x50c63f9f4a0dacfbL;
+    myConceptBehaviorIds[15] = 0x63476c2ad9bcd736L;
+    myConceptBehaviorIds[16] = 0x67236d4a5830221eL;
+    myConceptBehaviorIds[17] = 0x67236d4a58303771L;
+    myConceptBehaviorIds[18] = 0x67236d4a5836cabbL;
+    myConceptBehaviorIds[19] = 0x73e8a2c68b62c6a3L;
   }
 
   @Deprecated
@@ -45,18 +71,44 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     int behaviorIndex = Arrays.binarySearch(myConceptBehaviorIds, conceptId.getIdValue());
     switch (behaviorIndex) {
       case 0:
-        return myExecuteAfterDeclaration__BehaviorDescriptor;
+        return myRefactoringLog__BehaviorDescriptor;
       case 1:
-        return myRequiredDataDeclaration__BehaviorDescriptor;
+        return myReflectionNodeReference__BehaviorDescriptor;
       case 2:
-        return myDataDependency__BehaviorDescriptor;
+        return myAbstractNodeReference__BehaviorDescriptor;
       case 3:
-        return myTransformStatement__BehaviorDescriptor;
+        return myMoveNodeSpecialization__BehaviorDescriptor;
       case 4:
-        return myProducedDataDeclaration__BehaviorDescriptor;
+        return myMoveConcept__BehaviorDescriptor;
       case 5:
-        return myDataDependencyReference__BehaviorDescriptor;
+        return myMoveReferenceLink__BehaviorDescriptor;
       case 6:
+        return myMoveConceptMember__BehaviorDescriptor;
+      case 7:
+        return myMoveProperty__BehaviorDescriptor;
+      case 8:
+        return myMoveContainmentLink__BehaviorDescriptor;
+      case 9:
+        return myExecuteAfterDeclaration__BehaviorDescriptor;
+      case 10:
+        return myRequiredDataDeclaration__BehaviorDescriptor;
+      case 11:
+        return myDataDependency__BehaviorDescriptor;
+      case 12:
+        return myIMigrationUnit__BehaviorDescriptor;
+      case 13:
+        return myTransformStatement__BehaviorDescriptor;
+      case 14:
+        return myProducedDataDeclaration__BehaviorDescriptor;
+      case 15:
+        return myDataDependencyReference__BehaviorDescriptor;
+      case 16:
+        return myMoveNode__BehaviorDescriptor;
+      case 17:
+        return myDirectNodeReference__BehaviorDescriptor;
+      case 18:
+        return myPureMigrationScript__BehaviorDescriptor;
+      case 19:
         return myMigrationScript__BehaviorDescriptor;
       default:
         return null;

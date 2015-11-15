@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 
+// FIXME why 'util models' is namespace node? Won't this lead to children namespace nodes prepending 'util models' to any of its namespace?
 public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {
   public SModelGroupTreeNode() {
     super("util models");

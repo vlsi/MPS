@@ -249,4 +249,9 @@ public abstract class StubSolutionIdea extends StubSolution {
       return Collections.<SDependency>singleton(new SDependencyImpl(baseJdkSolution, SDependencyScope.DEFAULT, false));
     }
   }
+
+  @Override
+  public String toString() {
+    return getModuleName() + " [idea stub solution]";
+  }
 }

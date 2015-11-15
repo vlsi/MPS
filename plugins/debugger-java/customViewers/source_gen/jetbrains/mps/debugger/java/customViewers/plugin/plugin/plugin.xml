@@ -6,7 +6,7 @@
   <description>Debugger support for baseLanguage extensions</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="142.1" />
+  <idea-version since-build="143.1" />
   
   <depends>jetbrains.mps.debugger.java</depends>
   <application-components>

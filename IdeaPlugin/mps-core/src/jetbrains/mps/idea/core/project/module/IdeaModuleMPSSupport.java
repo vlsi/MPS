@@ -1,0 +1,63 @@
+/*
+ * Copyright 2003-2015 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package jetbrains.mps.idea.core.project.module;
+
+import com.intellij.facet.FacetManager;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.module.Module;
+import jetbrains.mps.idea.core.facet.MPSFacet;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.project.Solution;
+import org.jetbrains.annotations.NotNull;
+
+/**
+ * Created by danilla on 26/10/15.
+ */
+public class IdeaModuleMPSSupport extends ModuleMPSSupport implements ProjectComponent {
+  @Override
+  public boolean isMPSEnabled(Module module) {
+    MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+    return facet != null && facet.wasInitialized();
+  }
+
+  @Override
+  public Solution getSolution(Module module) {
+    return FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
+  }
+
+  @Override
+  public void initComponent() {
+  }
+
+  @Override
+  public void disposeComponent() {
+  }
+
+  @Override
+  public void projectOpened() {
+  }
+
+  @Override
+  public void projectClosed() {
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "MPS facade specific to Idea";
+  }
+}

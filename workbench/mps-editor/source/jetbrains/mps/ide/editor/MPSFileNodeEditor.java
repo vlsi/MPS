@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,16 +28,17 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.editor.BaseNodeEditor.BaseEditorState;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -46,8 +47,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -60,63 +60,86 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   private Editor myNodeEditor;
   private JPanel myComponent = new MPSFileNodeEditorComponent();
-  private Project myProject;
+  private MPSProject myProject;
   private MPSNodeVirtualFile myFile;
-  private IOperationContext myContext;
-  private boolean myIsValid = true;
   private boolean myDisposed = false;
 
+  /**
+   * @deprecated IOperationContext has been deprecated
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public MPSFileNodeEditor(IOperationContext context, final MPSNodeVirtualFile file) {
-    this(ProjectHelper.toIdeaProject(context.getProject()), file, context);
+    this((MPSProject) context.getProject(), file);
   }
 
-  public MPSFileNodeEditor(final Project project, final VirtualFile file) {
-    this(project, null);
-    // FIXME seems like if this ctor is called after model has been loaded, myFile will never get proper value
-    // because startListening() will not be called.
-    final SRepositoryContentAdapter adapter = new SRepositoryContentAdapter() {
-      @Override
-      protected void startListening(final SModel model) {
-        MPSNodeVirtualFile mpsNodeVirtualFile = ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
-          @Override
-          public MPSNodeVirtualFile compute() {
-            SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
-            if (descr != null && descr.equals(model)) {
-              for (SNode node : descr.getRootNodes()) {
-                if (node.getName().equals(file.getNameWithoutExtension()) || node.getNodeId().toString().equals(file.getNameWithoutExtension())) {
-                  return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-                }
-              }
-            }
-            return null;
+  /**
+   * @deprecated use {@link #MPSFileNodeEditor(MPSProject, VirtualFile)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public MPSFileNodeEditor(Project project, VirtualFile file) {
+    this(project.getComponent(MPSProject.class), file);
+  }
+
+  // do not duplicate code that obtains MPSNodeVirtualFile from regular IDEA VirtualFile
+  // in MPSFileNodeEditorProvider and MPSFileNodeEditor
+  /*package*/ static class NodeFileComputable implements Computable<MPSNodeVirtualFile> {
+    private final SRepository myRepository;
+    private final IFile myFile;
+    private final String myNameToMatch;
+
+    public NodeFileComputable(SRepository repository, VirtualFile file) {
+      myRepository = repository;
+      myFile = VirtualFileUtils.toIFile(file.getParent());
+      myNameToMatch = file.getNameWithoutExtension();
+    }
+    @Override
+    public MPSNodeVirtualFile compute() {
+      SModel model = SModelFileTracker.getInstance(myRepository).findModel(myFile);
+      if (model != null) {
+        for (SNode node : model.getRootNodes()) {
+          if (myNameToMatch.equals(node.getName()) || myNameToMatch.equals(node.getNodeId().toString())) {
+            return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
           }
-        });
+        }
+      }
+      return null;
+    }
+  }
+
+  public MPSFileNodeEditor(final MPSProject project, final VirtualFile file) {
+    this(project, null);
+    final SRepository repository = project.getRepository();
+    final NodeFileComputable nodeFileComputable = new NodeFileComputable(repository, file);
+    // we expect new models (that may come from the file) could show up in the repository only as a command(repository modification) result
+    repository.getModelAccess().addCommandListener(new CommandListenerAdapter() {
+      @Override
+      public void commandFinished() {
+        MPSNodeVirtualFile mpsNodeVirtualFile = nodeFileComputable.compute();
         if (mpsNodeVirtualFile != null) {
           myFile = mpsNodeVirtualFile;
           MPSFileNodeEditor.this.recreateEditor();
-          SRepositoryRegistry.getInstance().removeGlobalListener(this);
+          repository.getModelAccess().removeCommandListener(this);
         }
-      }
-    };
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SRepositoryRegistry.getInstance().addGlobalListener(adapter);
       }
     });
   }
 
+  /**
+   * @deprecated use {@link #MPSFileNodeEditor(MPSProject, MPSNodeVirtualFile)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file) {
-    this(project, file, null);
+    this(project.getComponent(MPSProject.class), file);
   }
 
-  private MPSFileNodeEditor(final Project project, final MPSNodeVirtualFile file, IOperationContext context) {
+  public MPSFileNodeEditor(MPSProject project, MPSNodeVirtualFile file) {
     myProject = project;
     myFile = file;
-    myContext = context;
-    assert context == null || context.getModule() != null;
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         recreateEditor();
@@ -153,7 +176,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @NonNls
   @NotNull
   public String getName() {
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<String>() {
       @Override
       public String compute() {
         return !waitingForNodeFile() ? myFile.getNode().getName() : "Editor waiting for node";
@@ -166,12 +189,14 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
     if (!isDisposed() && myNodeEditor != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myProject.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           state.setEditorState(myNodeEditor.saveState());
         }
       });
+    } else {
+      state.setEditorState(new BaseEditorState());
     }
     state.setLevel(level);
     return state;
@@ -185,7 +210,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     if (wrapper.getLevel() == FileEditorStateLevel.UNDO) {
       //we need it here since undo might need to flush events which requires write action
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      myProject.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
           myNodeEditor.loadState(wrapper.getEditorState());
@@ -199,7 +224,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @Override
   public boolean isModified() {
     if (waitingForNodeFile()) return false;
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         SModel md = myFile.getNode().getModel();
@@ -212,7 +237,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   public boolean isValid() {
     // allowing myFile==null as it currently designates delayed editor: waiting for the model to become ready
     // in the repo and then becoming a normal fully-fledged editor
-    return (waitingForNodeFile() || myFile.isValid()) && myIsValid && !myDisposed;
+    return (waitingForNodeFile() || myFile.isValid()) && !myDisposed;
   }
 
   @Override
@@ -246,13 +271,18 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
   @Override
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
-    if (waitingForNodeFile()) return null;
-    return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
+    if (waitingForNodeFile()) {
+      return null;
+    }
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<StructureViewBuilder>() {
       @Override
       public StructureViewBuilder compute() {
         for (NodeStructureViewProvider provider : NodeStructureViewProvider.EP_NODE_STRUCTURE_VIEW_PROVIDER.getExtensions()) {
-          StructureViewBuilder builder = provider.getStructureViewBuilder(myFile, myProject);
-          if (builder != null) return builder;
+          // FIXME NodeStructureViewProvider shall not be shy to accept MPSProject directly, as it's what the only implementation out there does.
+          StructureViewBuilder builder = provider.getStructureViewBuilder(myFile, myProject.getProject());
+          if (builder != null) {
+            return builder;
+          }
         }
         return null;
       }
@@ -272,17 +302,18 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return myDisposed;
   }
 
+  // expects model read, and likely EDT?
   public void recreateEditor() {
-    if (myProject.isDisposed() || !isValid() || waitingForNodeFile()) return;
-    IOperationContext context = createOperationContext();
-    if (context == null) return;
+    if (myProject.isDisposed() || !isValid() || waitingForNodeFile()) {
+      return;
+    }
 
     myComponent.removeAll();
 
     FileEditorState state = myNodeEditor != null ? getState(FileEditorStateLevel.FULL) : null;
 
     Editor oldNodeEditor = myNodeEditor;
-    myNodeEditor = new MPSEditorOpener(myProject).createEditorFor(context, myFile.getNode());
+    myNodeEditor = new MPSEditorOpener(myProject).createEditorFor(myFile.getNode());
     if (oldNodeEditor != null) {
       oldNodeEditor.dispose();
     }
@@ -293,24 +324,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     myComponent.add(((BaseNodeEditor) myNodeEditor).getComponent(), BorderLayout.CENTER);
     myComponent.validate();
-  }
-
-  protected IOperationContext createOperationContext() {
-    if (myContext != null) {
-      return myContext;
-    }
-
-    assert isValid() : "createOperationContext() was called for MPSFileNodeEditor with invalid file: " + myFile;
-    SNode node = myFile.getNode();
-    if (node == null || !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
-      myIsValid = false;
-      return null;
-    }
-    SModel sm = node.getModel();
-
-    IOperationContext result = new ModuleContext(sm.getModule(), ProjectHelper.toMPSProject(myProject));
-    assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();
-    return result;
   }
 
   @Override
@@ -338,11 +351,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
           return MPSFileNodeEditor.this;
         }
         if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
-          return myProject;
+          return myProject.getProject();
         }
       } else {
         if (!myProject.isDisposed() && !waitingForNodeFile()) {
-          final Object data = FileEditorDataProviderManager.getInstance(myProject).getData(dataId, MPSFileNodeEditor.this, myFile);
+          final Object data = FileEditorDataProviderManager.getInstance(myProject.getProject()).getData(dataId, MPSFileNodeEditor.this, myFile);
           if (data != null) return data;
         }
       }

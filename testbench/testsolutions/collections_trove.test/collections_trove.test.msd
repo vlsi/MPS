@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />
@@ -20,5 +20,10 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
+    <module reference="fb186431-2788-490b-9e84-c2b84ef0ca77(collections_trove.test)" version="0" />
+    <module reference="b5660d3a-8a0d-4815-881b-7c884f61c9c7(internalCollections.test)" version="0" />
+  </dependencyVersions>
 </solution>
 

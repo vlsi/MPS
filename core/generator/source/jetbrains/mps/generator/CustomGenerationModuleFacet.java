@@ -16,6 +16,8 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.generator.impl.GenPlanBuilder;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,6 +32,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class CustomGenerationModuleFacet extends ModuleFacetBase {
   public static final String FACET_TYPE = "generator";
   private SModelReference myPlanModel;
+  private ModelGenerationPlan myCachedPlanInstance;
 
   @Override
   public String getFacetType() {
@@ -46,10 +49,17 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase {
     if (myPlanModel == null) {
       return null;
     }
+    if (myCachedPlanInstance != null) {
+      // as long as there's single plan per module, no need to create MGP instance for each model, reuse.
+      return myCachedPlanInstance;
+    }
     SModel planModel = myPlanModel.resolve(model.getRepository());
-    return null;
-//    return new ModelGenerationPlan(planModel) {
-//    };
+    if (planModel == null || !planModel.getRootNodes().iterator().hasNext()) {
+      return null;
+    }
+
+    myCachedPlanInstance = new GenPlanBuilder(LanguageRegistry.getInstance()).create(planModel.getRootNodes().iterator().next());
+    return myCachedPlanInstance;
   }
 
   // despite public, these methods are not part of the contract.
@@ -62,15 +72,19 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase {
 
   public void setPlanModelReference(@Nullable SModelReference modelRef) {
     myPlanModel = modelRef;
+    myCachedPlanInstance = null;
   }
 
   @Override
   public void load(Memento memento) {
-    myPlanModel = PersistenceFacade.getInstance().createModelReference(memento.get("planModel"));
+    String value = memento.get("planModel");
+    myPlanModel = value == null ? null : PersistenceFacade.getInstance().createModelReference(value);
   }
 
   @Override
   public void save(Memento memento) {
-    memento.put("planModel", myPlanModel == null ? null : PersistenceFacade.getInstance().asString(myPlanModel));
+    if (myPlanModel != null) {
+      memento.put("planModel", PersistenceFacade.getInstance().asString(myPlanModel));
+    }
   }
 }

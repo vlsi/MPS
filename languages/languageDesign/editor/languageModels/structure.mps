@@ -1216,7 +1216,7 @@
     <node concept="1TJgyj" id="h84GRuh" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="imagePathProvider" />
-      <ref role="20lvS9" node="h84EI$6" resolve="QueryFunction_ImagePath" />
+      <ref role="20lvS9" node="54iik1dcchE" resolve="ImagePathProvider" />
     </node>
     <node concept="1TJgyi" id="g_ubRTz" role="1TKVEl">
       <property role="TrG5h" value="imageFile" />
@@ -2059,9 +2059,12 @@
     <property role="TrG5h" value="QueryFunction_ImagePath" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="QueryFunction" />
-    <property role="34LRSv" value="string" />
+    <property role="34LRSv" value="path" />
     <property role="1pbfSe" value="78309912" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="54iik1dcchF" role="PzmwI">
+      <ref role="PrY4T" node="54iik1dcchE" resolve="ImagePathProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hbyc0Ja">
     <property role="R5$K7" value="false" />
@@ -4324,6 +4327,25 @@
       <property role="20kJfa" value="removeHints" />
       <ref role="20lvS9" node="42lfqf__buC" resolve="ContextHintsSpecification" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="54iik1da7Qt">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="embedded block of code" />
+    <property role="TrG5h" value="QueryFunction_ModuleAndPath" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="QueryFunction" />
+    <property role="34LRSv" value="module and path" />
+    <property role="1pbfSe" value="1640315171" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="54iik1dcchH" role="PzmwI">
+      <ref role="PrY4T" node="54iik1dcchE" resolve="ImagePathProvider" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="54iik1dcchE">
+    <property role="1pbfSe" value="1639772758" />
+    <property role="3GE5qa" value="QueryFunction" />
+    <property role="TrG5h" value="ImagePathProvider" />
   </node>
 </model>
 

@@ -660,17 +660,6 @@
         </node>
         <node concept="2GUZhq" id="6pV9atI0Jd" role="3cqZAp">
           <node concept="3clFbS" id="6pV9atI0Je" role="2GVbov">
-            <node concept="3clFbF" id="6pV9atI0Jf" role="3cqZAp">
-              <node concept="2OqwBi" id="6pV9atI0Jg" role="3clFbG">
-                <node concept="2YIFZM" id="6pV9atI0Jh" role="2Oq$k0">
-                  <ref role="37wK5l" to="3ebz:4_TMdeLkPOl" resolve="getInstance" />
-                  <ref role="1Pybhc" to="3ebz:4_TMdeLkPNQ" resolve="PerformanceMessenger" />
-                </node>
-                <node concept="liA8E" id="6pV9atI0Ji" role="2OqNvi">
-                  <ref role="37wK5l" to="3ebz:4_TMdeLkPPM" resolve="generateReport" />
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="6pV9atI0Jj" role="3cqZAp">
               <node concept="2OqwBi" id="6pV9atI0Jk" role="3clFbG">
                 <node concept="37vLTw" id="6pV9atI0Jl" role="2Oq$k0">
@@ -1387,11 +1376,11 @@
     <node concept="312cEg" id="5ICuv4IMclZ" role="jymVt">
       <property role="TrG5h" value="myTestClass" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="5ICuv4IMcm0" role="1B3o_S" />
       <node concept="3uibUv" id="ECLZhkniQf" role="1tU5fm">
         <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
         <node concept="3qTvmN" id="ECLZhknjab" role="11_B2D" />
       </node>
+      <node concept="3Tm6S6" id="5ICuv4IMcm0" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="5uM03AdsSn6" role="jymVt" />
     <node concept="3clFbW" id="5ICuv4IMcm5" role="jymVt">
@@ -1427,12 +1416,12 @@
       </node>
       <node concept="37vLTG" id="5ICuv4IMcmp" role="3clF46">
         <property role="TrG5h" value="testClass" />
+        <node concept="2AHcQZ" id="ECLZhknkBR" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
         <node concept="3uibUv" id="ECLZhkniK$" role="1tU5fm">
           <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
           <node concept="3qTvmN" id="ECLZhkniMW" role="11_B2D" />
-        </node>
-        <node concept="2AHcQZ" id="ECLZhknkBR" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
     </node>
@@ -1917,9 +1906,6 @@
         <node concept="3cpWs8" id="2BGPXkExbjW" role="3cqZAp">
           <node concept="3cpWsn" id="2BGPXkExbjX" role="3cpWs9">
             <property role="TrG5h" value="openedProject" />
-            <node concept="3uibUv" id="2BGPXkExbjY" role="1tU5fm">
-              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-            </node>
             <node concept="2OqwBi" id="2BGPXkExdcT" role="33vP2m">
               <node concept="37vLTw" id="2BGPXkExgQI" role="2Oq$k0">
                 <ref role="3cqZAo" node="2BGPXkExge2" resolve="env" />
@@ -1930,6 +1916,9 @@
                   <ref role="3cqZAo" node="2BGPXkExbjR" resolve="projectFile" />
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="2BGPXkExbjY" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
           </node>
         </node>

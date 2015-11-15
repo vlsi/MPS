@@ -34,6 +34,7 @@ import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
+import com.intellij.psi.impl.source.tree.JavaSourceUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiModifierListOwner;
@@ -406,7 +407,7 @@ public class ASTConverter {
     SNode clsType = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
     String resolveInfo;
     if (t instanceof PsiClassReferenceType) {
-      resolveInfo = ((PsiClassReferenceType) t).getReference().getQualifiedName();
+      resolveInfo = JavaSourceUtil.getReferenceText(((PsiClassReferenceType) t).getReference());
     } else {
       resolveInfo = t.getClassName();
     }

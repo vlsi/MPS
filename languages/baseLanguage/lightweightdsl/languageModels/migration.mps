@@ -10,8 +10,8 @@
   <imports>
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="oubp" ref="r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -93,6 +93,7 @@
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -123,6 +124,9 @@
       </concept>
       <concept id="1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" flags="nn" index="2es0OD" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
+      <concept id="4611582986551314327" name="jetbrains.mps.baseLanguage.collections.structure.OfTypeOperation" flags="nn" index="UnYns">
+        <child id="4611582986551314344" name="requestedType" index="UnYnz" />
+      </concept>
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
     </language>
   </registry>
@@ -161,11 +165,16 @@
               <node concept="2OqwBi" id="2bGkMJy0VS2" role="3clFbG">
                 <node concept="2OqwBi" id="2bGkMJy0XpE" role="2Oq$k0">
                   <node concept="2OqwBi" id="2bGkMJy0W$E" role="2Oq$k0">
-                    <node concept="qVDSY" id="2bGkMJy0VIO" role="2Oq$k0">
-                      <node concept="chp4Y" id="2bGkMJy0VJp" role="qVDSX">
-                        <ref role="cht4Q" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
+                    <node concept="2OqwBi" id="WXYRQNPVJ1" role="2Oq$k0">
+                      <node concept="qVDSY" id="2bGkMJy0VIO" role="2Oq$k0">
+                        <node concept="chp4Y" id="2bGkMJy0VJp" role="qVDSX">
+                          <ref role="cht4Q" to="oubp:UBgfI9exfH" resolve="AutoInitDSLClass" />
+                        </node>
+                        <node concept="1dO9Bo" id="2bGkMJy0VIQ" role="1dOa5D" />
                       </node>
-                      <node concept="1dO9Bo" id="2bGkMJy0VIQ" role="1dOa5D" />
+                      <node concept="UnYns" id="WXYRQNPW9c" role="2OqNvi">
+                        <node concept="3Tqbb2" id="WXYRQNPWh1" role="UnYnz" />
+                      </node>
                     </node>
                     <node concept="v3k3i" id="2bGkMJy0X3f" role="2OqNvi">
                       <node concept="chp4Y" id="2bGkMJy0X5h" role="v3oSu">

@@ -36,7 +36,7 @@ public class MPSPsiParameterList extends MPSPsiNodeBase implements PsiParameterL
 
   @Override
   public String toString() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return "MPSPsiParameterList";
   }
 
   @NotNull

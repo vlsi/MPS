@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.build.stripping.tests" uuid="c9bc8834-ad52-4c80-83d0-64827cf13fae" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.build.stripping.tests" uuid="c9bc8834-ad52-4c80-83d0-64827cf13fae" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -28,5 +28,9 @@
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
     <language id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" fqName="jetbrains.mps.samples.Kaja" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="c9bc8834-ad52-4c80-83d0-64827cf13fae(jetbrains.mps.build.stripping.tests)" version="0" />
+    <module reference="5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)" version="0" />
+  </dependencyVersions>
 </solution>
 

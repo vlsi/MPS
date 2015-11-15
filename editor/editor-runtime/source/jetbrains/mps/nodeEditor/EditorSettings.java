@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.PowerSaveMode;
 import com.intellij.ide.ui.UISettings;
 import com.intellij.ide.ui.UISettingsListener;
 import com.intellij.openapi.application.ApplicationManager;
@@ -157,7 +158,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   public boolean isPowerSaveMode() {
-    return myState.myPowerSaveMode;
+    return PowerSaveMode.isEnabled();
   }
 
   public boolean isAutoQuickFix() {
@@ -165,7 +166,8 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   public void setPowerSaveMode(boolean powerSaveMode) {
-    myState.myPowerSaveMode = powerSaveMode;
+    //TODO: add PowerSaveModeNotifier.notifyOnPowerSaveMode(e.getData(CommonDataKeys.PROJECT));
+    PowerSaveMode.setEnabled(powerSaveMode);
   }
 
   public void setAutoQuickFix(boolean autoQuickFix) {
@@ -281,7 +283,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     private int myIndentSize = 2;
     private int myVerticalBound = 120;
 
-    private boolean myPowerSaveMode = false;
     private boolean myHighlightChanges = false;
     private boolean myAutoQuickFix = false;
 
@@ -312,9 +313,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
         return false;
       }
 
-      if (myPowerSaveMode != otherState.myPowerSaveMode) {
-        return false;
-      }
 
       if (myAutoQuickFix != otherState.myAutoQuickFix) {
         return false;
@@ -338,7 +336,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       result = 31 * result + myTextWidth;
       result = 31 * result + myIndentSize;
       result = 31 * result + myVerticalBound;
-      result = 31 * result + (myPowerSaveMode ? 1 : 0);
       result = 31 * result + (myAutoQuickFix ? 1 : 0);
       result = 31 * result + (myHighlightChanges ? 1 : 0);
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
@@ -408,14 +405,6 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     public void setLineSpacing(double lineSpacing) {
       myLineSpacing = lineSpacing;
-    }
-
-    public boolean isPowerSaveMode() {
-      return myPowerSaveMode;
-    }
-
-    public void setPowerSaveMode(boolean powerSaveMode) {
-      myPowerSaveMode = powerSaveMode;
     }
 
     public boolean isAutoQuickFix() {

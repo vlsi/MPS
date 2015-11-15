@@ -157,9 +157,9 @@ public class MergeRootsPane {
   public void setRootId(SNodeId rootId) {
     myRootId = rootId;
     myStateToRestore = myMergeSession.getCurrentState();
-    myMineEditor.editRoot(myProject, getRootNodeId(myMergeSession.getMyModel()), myMergeSession.getMyModel());
-    myResultEditor.editRoot(myProject, getRootNodeId(myMergeSession.getResultModel()), myMergeSession.getResultModel());
-    myRepositoryEditor.editRoot(myProject, getRootNodeId(myMergeSession.getRepositoryModel()), myMergeSession.getRepositoryModel());
+    myMineEditor.editRoot(getRootNodeId(myMergeSession.getMyModel()), myMergeSession.getMyModel());
+    myResultEditor.editRoot(getRootNodeId(myMergeSession.getResultModel()), myMergeSession.getResultModel());
+    myRepositoryEditor.editRoot(getRootNodeId(myMergeSession.getRepositoryModel()), myMergeSession.getRepositoryModel());
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
@@ -198,7 +198,7 @@ public class MergeRootsPane {
       SModel resultModel = myMergeSession.getResultModel();
       SNodeId nodeId = getRootNodeId(resultModel);
       if (nodeId != null) {
-        myResultEditor.editRoot(myProject, nodeId, resultModel);
+        myResultEditor.editRoot(nodeId, resultModel);
       }
     }
 

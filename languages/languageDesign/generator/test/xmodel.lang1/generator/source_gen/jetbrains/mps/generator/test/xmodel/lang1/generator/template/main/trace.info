@@ -3,31 +3,33 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="14,0,41,0" name="jetbrains.mps.generator.test.xmodel.lang1.generator.template.main.QueriesGenerated" />
+      <unit at="16,0,46,0" name="jetbrains.mps.generator.test.xmodel.lang1.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:06b98b6d-2ef4-49b7-9d4f-0a66fc8410dc(jetbrains.mps.generator.test.xmodel.lang1.generator.template.main@generator)/7618674748894117489">
     <file name="QueriesGenerated.java">
-      <node id="7618674748894125419" at="16,112,17,183" concept="0" />
-      <node id="7618674748894126999" at="19,112,20,183" concept="0" />
-      <node id="7618674748894145418" at="22,112,23,186" concept="0" />
-      <node id="7618674748894146553" at="28,109,29,250" concept="0" />
-      <node id="7618674748894149677" at="31,109,32,255" concept="0" />
-      <scope id="7618674748894125241" at="16,112,17,183" />
-      <scope id="7618674748894126993" at="19,112,20,183" />
-      <scope id="7618674748894145121" at="22,112,23,186" />
-      <scope id="7618674748894146217" at="28,109,29,250" />
-      <scope id="7618674748894149154" at="31,109,32,255" />
+      <node id="7618674748894125419" at="18,112,19,183" concept="0" />
+      <node id="7618674748894126999" at="21,112,22,183" concept="0" />
+      <node id="7618674748894145418" at="24,112,25,186" concept="0" />
+      <node id="7618674748894146553" at="30,109,31,250" concept="0" />
+      <node id="7618674748894149677" at="33,109,34,255" concept="0" />
+      <scope id="7618674748894125241" at="18,112,19,183" />
+      <scope id="7618674748894126993" at="21,112,22,183" />
+      <scope id="7618674748894145121" at="24,112,25,186" />
+      <scope id="7618674748894146217" at="30,109,31,250" />
+      <scope id="7618674748894149154" at="33,109,34,255" />
     </file>
   </root>
   <root nodeRef="r:06b98b6d-2ef4-49b7-9d4f-0a66fc8410dc(jetbrains.mps.generator.test.xmodel.lang1.generator.template.main@generator)/7618674748894117955">
     <file name="QueriesGenerated.java">
-      <node id="7618674748894159240" at="25,112,26,175" concept="0" />
-      <node id="7618674748894120663" at="34,120,35,191" concept="0" />
-      <node id="7618674748894122350" at="37,120,38,189" concept="0" />
-      <scope id="7618674748894158982" at="25,112,26,175" />
-      <scope id="7618674748894120657" at="34,120,35,191" />
-      <scope id="7618674748894122344" at="37,120,38,189" />
+      <node id="7618674748894159240" at="27,112,28,175" concept="0" />
+      <node id="854562898223523402" at="36,93,37,225" concept="0" />
+      <node id="7618674748894120663" at="39,120,40,191" concept="0" />
+      <node id="7618674748894122350" at="42,120,43,189" concept="0" />
+      <scope id="7618674748894158982" at="27,112,28,175" />
+      <scope id="854562898223523201" at="36,93,37,225" />
+      <scope id="7618674748894120657" at="39,120,40,191" />
+      <scope id="7618674748894122344" at="42,120,43,189" />
     </file>
   </root>
 </debug-info>

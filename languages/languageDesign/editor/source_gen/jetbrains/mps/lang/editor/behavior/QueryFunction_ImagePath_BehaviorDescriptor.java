@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class QueryFunction_ImagePath_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
+public class QueryFunction_ImagePath_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ImagePathProvider_BehaviorDescriptor {
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept __thisConcept__) {
     return null;
   }

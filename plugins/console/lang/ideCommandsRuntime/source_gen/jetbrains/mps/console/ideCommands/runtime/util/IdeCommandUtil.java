@@ -21,6 +21,7 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.project.SModuleOperations;
@@ -103,7 +104,7 @@ public class IdeCommandUtil {
 
   public static void cleanCaches(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
-    if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
+    if (models == null && modules == null) {
       project.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           modelsToClean.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
@@ -118,7 +119,7 @@ public class IdeCommandUtil {
     }
     ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return SNodeOperations.isGeneratable(it);
+        return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
       }
     }).visitAll(new IVisitor<SModel>() {
       public void visit(SModel it) {

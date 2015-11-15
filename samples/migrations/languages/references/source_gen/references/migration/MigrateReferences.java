@@ -34,7 +34,7 @@ public class MigrateReferences extends MigrationScriptBase {
   public boolean isRerunnable() {
     return false;
   }
-  public SNode execute(SModule m) {
+  public SNode execute(final SModule m) {
     {
       final GeneratedMatchingPattern pattern = new MigrateReferences.Pattern_w5820p_a0a0a0a2();
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
@@ -44,6 +44,10 @@ public class MigrateReferences extends MigrationScriptBase {
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return pattern.match(it);
+        }
+      }).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(isInTransformPattern(it));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode n) {

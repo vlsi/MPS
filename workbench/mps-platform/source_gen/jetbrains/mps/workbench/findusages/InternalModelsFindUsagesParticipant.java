@@ -11,10 +11,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.project.structure.ProjectStructureModule;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -32,7 +34,7 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
       if (model instanceof ProjectStructureModule.ProjectStructureSModelDescriptor) {
         hasProjectModels = true;
       }
-      if (model instanceof TransientModelsModule.TransientSModelDescriptor) {
+      if (model instanceof TransientSModel) {
         hasTransientModels = true;
       }
     }
@@ -42,7 +44,7 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
           processedConsumer.consume(model);
         }
       } else
-      if (model instanceof TransientModelsModule.TransientSModelDescriptor) {
+      if (model instanceof TransientSModel) {
         if (!(hasTransientModels)) {
           processedConsumer.consume(model);
         }
@@ -56,9 +58,11 @@ public class InternalModelsFindUsagesParticipant implements ApplicationComponent
   @Override
   public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
     boolean hasProjectLanguageConcepts = false;
+    SLanguage langProject = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project");
     for (SAbstractConcept n : concepts) {
-      if (PersistenceFacade.getInstance().createModuleReference("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)").getModuleName().equals(n.getLanguage().getQualifiedName())) {
+      if (langProject.equals(n.getLanguage())) {
         hasProjectLanguageConcepts = true;
+        break;
       }
     }
     for (SModel model : scope) {

@@ -249,8 +249,11 @@
     <dependency org="lib.src" name="jhsrc.jar" rev="${idea.platform.version}">
       <artifact name="jhsrc.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib.src" name="jna-src.zip" rev="${idea.platform.version}">
-      <artifact name="jna-src.zip" ext="zip"/>
+    <dependency org="lib.src" name="jna.zip" rev="${idea.platform.version}">
+      <artifact name="jna.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="jna-platform.zip" rev="${idea.platform.version}">
+      <artifact name="jna-platform.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="jsch-agent-proxy.zip" rev="${idea.platform.version}">
       <artifact name="jsch-agent-proxy.zip" ext="zip"/>
@@ -372,9 +375,6 @@
     <dependency org="lib" name="hamcrest-core-1.3.jar" rev="${idea.platform.version}">
       <artifact name="hamcrest-core-1.3.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="hamcrest-library-1.3.jar" rev="${idea.platform.version}">
-      <artifact name="hamcrest-library-1.3.jar" ext="jar"/>
-    </dependency>
     <dependency org="lib" name="httpclient-4.4.1.jar" rev="${idea.platform.version}">
       <artifact name="httpclient-4.4.1.jar" ext="jar"/>
     </dependency>
@@ -408,8 +408,8 @@
     <dependency org="lib" name="jh.jar" rev="${idea.platform.version}">
       <artifact name="jh.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="jna-utils.jar" rev="${idea.platform.version}">
-      <artifact name="jna-utils.jar" ext="jar"/>
+    <dependency org="lib" name="jna-platform.jar" rev="${idea.platform.version}">
+      <artifact name="jna-platform.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="jna.jar" rev="${idea.platform.version}">
       <artifact name="jna.jar" ext="jar"/>
@@ -662,55 +662,55 @@
     plugins
       svn4idea
         lib-->
-    <dependency org="plugins.svn4idea.lib" name="ANTLR-LICENSE" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="ANTLR-LICENSE" rev="${idea.platform.version}">
       <artifact name="ANTLR-LICENSE" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="CHANGES.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="CHANGES.txt" rev="${idea.platform.version}">
       <artifact name="CHANGES.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="COPYING" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="COPYING" rev="${idea.platform.version}">
       <artifact name="COPYING" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE-ANTLR.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE-ANTLR.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE-ANTLR.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE-JAVAHL.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE-JAVAHL.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE-JAVAHL.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE-JNA.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE-JNA.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE-JNA.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE-SEQUENCE.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE-SEQUENCE.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE-SEQUENCE.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE-SQLJET.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE-SQLJET.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE-SQLJET.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE-TRILEAD.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE-TRILEAD.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE-TRILEAD.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="LICENSE.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="LICENSE.txt" rev="${idea.platform.version}">
       <artifact name="LICENSE.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="README.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="README.txt" rev="${idea.platform.version}">
       <artifact name="README.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="SEQUENCE-LICENSE" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="SEQUENCE-LICENSE" rev="${idea.platform.version}">
       <artifact name="SEQUENCE-LICENSE" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="SQLJET-LICENSE" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="SQLJET-LICENSE" rev="${idea.platform.version}">
       <artifact name="SQLJET-LICENSE" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="SQLJET-README.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="SQLJET-README.txt" rev="${idea.platform.version}">
       <artifact name="SQLJET-README.txt" ext="txt"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="TRILEAD-LICENSE" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="TRILEAD-LICENSE" rev="${idea.platform.version}">
       <artifact name="TRILEAD-LICENSE" ext="txt"/>
     </dependency>
     <dependency org="plugins.svn4idea.lib" name="antlr.jar" rev="${idea.platform.version}">
       <artifact name="antlr.jar" ext="jar"/>
     </dependency>
-    <dependency org="plugins.svn4idea.lib" name="changelog.txt" rev="${idea.platform.version}">
+    <dependency org="plugins.svn4idea.lib.licenses" name="changelog.txt" rev="${idea.platform.version}">
       <artifact name="changelog.txt" ext="txt"/>
     </dependency>
     <dependency org="plugins.svn4idea.lib" name="jsch.agentproxy.svnkit-trilead-ssh2.jar" rev="${idea.platform.version}">

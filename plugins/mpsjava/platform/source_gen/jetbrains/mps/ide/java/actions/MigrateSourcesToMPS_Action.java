@@ -15,12 +15,15 @@ import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.java.newparser.JavaConvertUtil;
 import com.intellij.openapi.progress.ProgressManager;
@@ -83,6 +86,13 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
         return false;
       }
     }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
@@ -97,8 +107,8 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
       ListSequence.fromList(sourcePaths).addElement(FileSystem.getInstance().getFileByPath(path));
     }
 
-    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
-    final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(sourcePaths)).toListSequence();
+    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository(), ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(MessagesViewTool.class).newHandler());
+    final List<IFile> filesToParse = Sequence.fromIterable(JavaConvertUtil.flattenDirs(sourcePaths)).toListSequence();
 
     ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
       public void run(@NotNull ProgressIndicator indicator) {

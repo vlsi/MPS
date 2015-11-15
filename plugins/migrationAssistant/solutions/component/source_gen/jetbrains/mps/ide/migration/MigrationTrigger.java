@@ -185,6 +185,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
         it.validateLanguageVersions();
+        it.validateDependencyVersions();
       }
     });
   }
@@ -257,7 +258,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
     updateUsedLanguagesVersions(modules);
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (!(MigrationComponent.isMigrationRequired(myMpsProject, modules2Check))) {
+    if (!(MigrationManagerImpl.isMigrationRequired(myMpsProject, modules2Check))) {
       return;
     }
 
@@ -290,7 +291,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       }
     });
     updateUsedLanguagesVersions(modules2Check);
-    if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
+    if (!(MigrationManagerImpl.isModuleMigrationRequired(modules2Check))) {
       return;
     }
 
@@ -312,6 +313,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                updateUsedLanguagesVersions(allModules);
+              }
+            });
             boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myProject, allModules, myMigrationManager);
             restoreTipsState();
 

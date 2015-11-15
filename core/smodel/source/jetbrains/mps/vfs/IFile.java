@@ -21,6 +21,8 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -31,6 +33,7 @@ public interface IFile {
   String getName();
 
   @NotNull String getPath();
+  URL getUrl() throws MalformedURLException;
 
   /**
    * @return null iff the instance is root and has no parent

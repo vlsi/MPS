@@ -38,6 +38,7 @@
     <import index="67vb" ref="~IDEA IC/java:com.intellij.psi.impl.source()" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
+    <import index="xuj9" ref="~IDEA IC/java:com.intellij.psi.impl.source.tree(IDEA IC/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="qwe6" ref="~IDEA IC/java:com.intellij.navigation(IDEA IC/)" implicit="true" />
@@ -5859,24 +5860,23 @@
                 <node concept="37vLTw" id="1ZRH$cN01ww" role="37vLTJ">
                   <ref role="3cqZAo" node="1ZRH$cMVTGg" resolve="resolveInfo" />
                 </node>
-                <node concept="2OqwBi" id="1ZRH$cN03dD" role="37vLTx">
-                  <node concept="2OqwBi" id="1ZRH$cN028$" role="2Oq$k0">
-                    <node concept="1eOMI4" id="1ZRH$cN01X_" role="2Oq$k0">
-                      <node concept="10QFUN" id="1ZRH$cN01Xy" role="1eOMHV">
-                        <node concept="3uibUv" id="1ZRH$cN01XB" role="10QFUM">
+                <node concept="2YIFZM" id="3YHAPI$fCkW" role="37vLTx">
+                  <ref role="1Pybhc" to="xuj9:~JavaSourceUtil" resolve="JavaSourceUtil" />
+                  <ref role="37wK5l" to="xuj9:~JavaSourceUtil.getReferenceText(com.intellij.psi.PsiJavaCodeReferenceElement):java.lang.String" resolve="getReferenceText" />
+                  <node concept="2OqwBi" id="3YHAPI$fClA" role="37wK5m">
+                    <node concept="1eOMI4" id="3YHAPI$fClB" role="2Oq$k0">
+                      <node concept="10QFUN" id="3YHAPI$fClC" role="1eOMHV">
+                        <node concept="3uibUv" id="3YHAPI$fClD" role="10QFUM">
                           <ref role="3uigEE" to="67vb:~PsiClassReferenceType" resolve="PsiClassReferenceType" />
                         </node>
-                        <node concept="37vLTw" id="1ZRH$cN01XC" role="10QFUP">
+                        <node concept="37vLTw" id="3YHAPI$fClE" role="10QFUP">
                           <ref role="3cqZAo" node="4dhvpwib_dT" resolve="t" />
                         </node>
                       </node>
                     </node>
-                    <node concept="liA8E" id="1ZRH$cN02Mx" role="2OqNvi">
+                    <node concept="liA8E" id="3YHAPI$fClF" role="2OqNvi">
                       <ref role="37wK5l" to="67vb:~PsiClassReferenceType.getReference():com.intellij.psi.PsiJavaCodeReferenceElement" resolve="getReference" />
                     </node>
-                  </node>
-                  <node concept="liA8E" id="1ZRH$cN04g3" role="2OqNvi">
-                    <ref role="37wK5l" to="dj18:~PsiJavaCodeReferenceElement.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                   </node>
                 </node>
               </node>
@@ -8707,6 +8707,22 @@
                       <ref role="3cqZAo" node="7GJnXJjDRWu" resolve="root" />
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="3SUkCk9h8ba" role="3cqZAp">
+              <node concept="3SKdUq" id="3SUkCk9h8bM" role="3SKWNk">
+                <property role="3SKdUp" value="judging by RootModelBase.getSourceRoots() only valid source roots will be returned, but we'll be paranoid" />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="3SUkCk9h7LO" role="3cqZAp">
+              <node concept="3clFbS" id="3SUkCk9h7LQ" role="3clFbx">
+                <node concept="3N13vt" id="3SUkCk9h843" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="3SUkCk9h7VQ" role="3clFbw">
+                <node concept="10Nm6u" id="3SUkCk9h7Zb" role="3uHU7w" />
+                <node concept="37vLTw" id="3SUkCk9h7QX" role="3uHU7B">
+                  <ref role="3cqZAo" node="624K0zKIQrY" resolve="dir" />
                 </node>
               </node>
             </node>

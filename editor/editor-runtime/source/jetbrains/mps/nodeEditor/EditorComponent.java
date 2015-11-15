@@ -46,6 +46,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
@@ -218,7 +219,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
 
   private static final int SCROLL_GAP = 15;
-  
+
   private String myDefaultPopupGroupId = MPSActions.EDITOR_POPUP_GROUP;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
@@ -233,6 +234,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
       }
+      g.setRenderingHint(RenderingHints.KEY_TEXT_LCD_CONTRAST, UIUtil.getLcdContrastValue());
     }
   }
 
@@ -2025,7 +2027,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         public void run() {
           final HighlighterMessage message = getHighlighterMessageFor(selectedCell);
-          if (message == null) return;
+          if (message == null || message.getErrorReporter() == null) {
+            return;
+          }
           final IErrorReporter herror = message.getErrorReporter();
           SwingUtilities.invokeLater(new Runnable() {
             @Override

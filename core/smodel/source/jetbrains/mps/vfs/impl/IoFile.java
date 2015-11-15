@@ -20,6 +20,8 @@ import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -56,6 +58,11 @@ public class IoFile implements IFileEx {
   @Override
   public String getPath() {
     return myFile.getAbsolutePath();
+  }
+
+  @Override
+  public URL getUrl() throws MalformedURLException {
+    return myFile.toURI().toURL();
   }
 
   @Override

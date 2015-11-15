@@ -42,7 +42,7 @@ public class LocalInstanceFieldReference_Constraints extends BaseConstraintsDesc
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return MigrationScopes.forVariables(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration").getDeclarationNode(), _context.getContextNode(), _context.getContextRole(), _context.getPosition());
+            return MigrationScopes.forVariables(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getContextNode(), _context.getContextRole(), _context.getPosition());
           }
         };
       }

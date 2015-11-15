@@ -7,15 +7,15 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import javax.swing.JComboBox;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTextField;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Insets;
@@ -31,8 +31,8 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   private List<String> myExistingLabels;
   private String myResultLabelName = "";
   private JComboBox myNameCombo;
-  public AttachMappingLabelDialog(SNode templateNode, List<String> existingLabels, EditorContext editorContext) {
-    super(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()));
+  public AttachMappingLabelDialog(SNode templateNode, List<String> existingLabels, EditorContext editorContext, MPSProject mpsProject) {
+    super(mpsProject.getProject());
     setTitle("Attach Mapping Label");
     this.myExistingLabels = existingLabels;
     this.myEditorContext = editorContext;
@@ -51,18 +51,22 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     myNameCombo = new JComboBox(ListSequence.fromList(this.myExistingLabels).toGenericArray(String.class));
     myNameCombo.setEditable(true);
     namePanel.add(myNameCombo, c);
+    if (ListSequence.fromList(this.myExistingLabels).isNotEmpty()) {
+      String selectedItem = ListSequence.fromList(this.myExistingLabels).first();
+      myNameCombo.setSelectedItem(selectedItem);
+      setResultLabelName(selectedItem);
+      JTextField textField = ((JTextField) myNameCombo.getEditor().getEditorComponent());
+      textField.setSelectionStart(0);
+      textField.setSelectionEnd(selectedItem.length());
+    }
+    // myNameCombo.setSelectedItem above triggers actionPerformed event, attach listener once combo is initialized 
     myNameCombo.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent p0) {
-        AttachMappingLabelDialog.this.myResultLabelName = (String) myNameCombo.getSelectedItem();
+        AttachMappingLabelDialog.this.setResultLabelName((String) myNameCombo.getSelectedItem());
+        AttachMappingLabelDialog.this.getOKAction().actionPerformed(p0);
       }
     });
-    if (ListSequence.fromList(this.myExistingLabels).isNotEmpty()) {
-      myNameCombo.setSelectedItem(ListSequence.fromList(this.myExistingLabels).first());
-      JTextField textField = ((JTextField) myNameCombo.getEditor().getEditorComponent());
-      textField.setSelectionStart(0);
-      textField.setSelectionEnd(ListSequence.fromList(this.myExistingLabels).first().length());
-    }
     return namePanel;
   }
   @Nullable
@@ -91,6 +95,11 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   public JComponent getPreferredFocusedComponent() {
     return myNameCombo;
   }
+
+  /*package*/ void setResultLabelName(String labelName) {
+    myResultLabelName = labelName;
+  }
+
   protected void doAttachMappingLabel() {
     myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {

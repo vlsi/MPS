@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 /**
  * Facility to bridge {@link jetbrains.mps.util.Computable} with openapi's {@link org.jetbrains.mps.openapi.module.ModelAccess} methods.
  * As long as {@link jetbrains.mps.util.Computable} is not openapi, we can't expose it in ModelAccess and have to wrap <code>Computable</code> with <code>Runnable</code>.
+ *
+ * @see jetbrains.mps.util.ModelComputeRunnable
  * @author Artem Tikhomirov
  */
 public final class ModelAccessHelper {

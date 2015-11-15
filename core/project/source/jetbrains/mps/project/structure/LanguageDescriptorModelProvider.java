@@ -328,6 +328,9 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       for (SModel aspect : LanguageAspectSupport.getAspectModels(myModule)) {
         for (SLanguage aspectLanguage : LanguageAspectSupport.getMainLanguages(aspect)) {
           model.addEngagedOnGenerationLanguage(aspectLanguage);
+
+          //todo this line is a hack, fixing that the runtime solutions of languages engaged on generations are ignored at compilation
+          model.addLanguage(aspectLanguage);
         }
       }
     }

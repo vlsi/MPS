@@ -6,6 +6,7 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileEvent;
@@ -19,15 +20,18 @@ import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vcs.AbstractVcs;
 
 public class GeneratedFileConflictResolving extends AbstractProjectComponent {
-  private ProjectLevelVcsManager myVcsManager;
-  private FileStatusManager myFileStatusManager;
-  private VcsDirtyScopeManager myDirtyScopeManager;
-  private GeneratedFileConflictResolving.MyFileListener myFileListener = new GeneratedFileConflictResolving.MyFileListener();
-  public GeneratedFileConflictResolving(Project project, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager, VcsDirtyScopeManager dirtyScopeManager) {
+  private final ProjectLevelVcsManager myVcsManager;
+  private final FileStatusManager myFileStatusManager;
+  private final VcsDirtyScopeManager myDirtyScopeManager;
+  private final MPSProject myMpsProject;
+  private final GeneratedFileConflictResolving.MyFileListener myFileListener = new GeneratedFileConflictResolving.MyFileListener();
+
+  public GeneratedFileConflictResolving(Project project, MPSProject mpsProject, ProjectLevelVcsManager vcsManager, FileStatusManager fileStatusManager, VcsDirtyScopeManager dirtyScopeManager) {
     super(project);
     myVcsManager = vcsManager;
     myFileStatusManager = fileStatusManager;
     myDirtyScopeManager = dirtyScopeManager;
+    myMpsProject = mpsProject;
   }
   @Override
   public void initComponent() {
@@ -40,11 +44,11 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
   private void resolveIfNeeded(VirtualFileEvent e) {
     if (e.getRequestor() instanceof IdeaFileSystemProvider) {
       VirtualFile file = e.getFile();
-      if (SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file)) != null) {
+      if (SModelFileTracker.getInstance(myMpsProject.getRepository()).findModel(VirtualFileUtils.toIFile(file)) != null) {
         return;
       }
 
-      MergeProvider mergeProvider = check_tqtyvq_a0d0a0h(myVcsManager.getVcsFor(file));
+      MergeProvider mergeProvider = check_tqtyvq_a0d0a0j(myVcsManager.getVcsFor(file));
       if (mergeProvider != null) {
         FileStatus status = myFileStatusManager.getStatus(file);
         if (status == FileStatus.MERGED_WITH_CONFLICTS || status == FileStatus.MERGED_WITH_BOTH_CONFLICTS || status == FileStatus.MERGED_WITH_PROPERTY_CONFLICTS) {
@@ -66,7 +70,7 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
       resolveIfNeeded(event);
     }
   }
-  private static MergeProvider check_tqtyvq_a0d0a0h(AbstractVcs checkedDotOperand) {
+  private static MergeProvider check_tqtyvq_a0d0a0j(AbstractVcs checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getMergeProvider();
     }

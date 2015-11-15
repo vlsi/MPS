@@ -137,7 +137,16 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     myToolbar = actionToolbar;
     setContent(myToolbar.getComponent());
     if (getEditedNode() != null) {
-      editNode(getEditedNode());
+      // MPS-22337: getEditedNode() exists even if node was deleted.
+      // So we need to check if tab created for such node as tabs was created only for non deleted aspects.
+      boolean isTabExists = false;
+      for (ButtonEditorTab  tab : myRealTabs) {
+        if(tab.isEditingTabFor(getEditedNode())) {
+          isTabExists = true;
+          break;
+        }
+      }
+      editNode(isTabExists ? getEditedNode() : myBaseNode);
     }
   }
 

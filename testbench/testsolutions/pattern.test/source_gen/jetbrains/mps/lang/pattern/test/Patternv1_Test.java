@@ -120,9 +120,7 @@ public class Patternv1_Test extends BaseTransformationTest {
                 {
                   SContainmentLink childRole_o71ow3__1 = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument");
                   this.patternVar_list = ListSequence.fromList(new ArrayList<SNode>());
-                  patternVar_ignore = null;
                   for (SNode childVar : nodeToMatch_o71ow3_a0a0b0c2_0.getChildren(childRole_o71ow3__1)) {
-                    patternVar_ignore = childVar;
                     ListSequence.fromList(this.patternVar_list).addElement(childVar);
                   }
                 }

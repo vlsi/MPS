@@ -6,7 +6,7 @@
   <description>Allows to develop new MPS languages</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="142.1" />
+  <idea-version since-build="143.1" />
   
   <application-components>
     <component>

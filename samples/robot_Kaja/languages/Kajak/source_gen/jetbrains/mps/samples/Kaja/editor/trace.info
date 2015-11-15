@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,80,0" name="jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl" />
+      <unit at="14,0,103,0" name="jetbrains.mps.samples.Kaja.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)/3210697320273763057">

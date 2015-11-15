@@ -235,13 +235,12 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockInstance_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Block_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorInstance_diagram_Editor" />
@@ -249,6 +248,7 @@
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.Diagram_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor" />
     <classNode dependClassName="jetbrains.mps.testHybridEditor.diagram.generated.editor.OutputPort_diagram_Editor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorAspectDescriptorBase" />
   </dependency>
   <dependency className="jetbrains.mps.testHybridEditor.diagram.generated.editor.InputPort_diagram_Editor" file="InputPort_diagram_Editor.java">

@@ -21,17 +21,26 @@ import com.intellij.openapi.application.WriteAction;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.FileSystemProvider;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -42,6 +51,8 @@ import java.util.List;
  */
 class IdeaFile implements IFileEx {
   private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
+  public static final String FILE_PROTOCOL_PREFIX = "file://";
+  public static final int FILE_PROTOCOL_PREFIX_LENGTH = FILE_PROTOCOL_PREFIX.length();
 
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
@@ -65,6 +76,15 @@ class IdeaFile implements IFileEx {
       return myVirtualFile.getPath();
     } else {
       return myPath;
+    }
+  }
+
+  @Override
+  public URL getUrl() throws MalformedURLException {
+    if (findVirtualFile()) {
+      return VfsUtilCore.convertToURL(myVirtualFile.getUrl());
+    } else {
+      return new File(myPath).toURI().toURL();
     }
   }
 

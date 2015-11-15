@@ -9,36 +9,39 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import java.util.Arrays;
 import jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
   private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("diagram", "Diagram View", true, "jetbrains.mps.samples.componentDependencies.editor.views.diagram"), new ConceptEditorHintImpl("table", "Table View", true, "jetbrains.mps.samples.componentDependencies.editor.views.table"));
-  public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
-    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
-      case 0:
-        return collectEditors(descriptor, Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()}));
-      case 1:
-        return collectEditors(descriptor, Arrays.asList(new ConceptEditor[]{new ComponentSet_Editor(), new ComponentSet_diagram_Editor(), new ComponentSet_table_Editor()}));
-      case 2:
-        return collectEditors(descriptor, Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()}));
-      case 3:
-        return collectEditors(descriptor, Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()}));
-      case 4:
-        return collectEditors(descriptor, Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()}));
-      default:
+  public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
+    {
+      SAbstractConcept cncpt = ((SAbstractConcept) concept);
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814f144L, "jetbrains.mps.samples.componentDependencies.structure.Component"))) {
+        return Arrays.asList(new ConceptEditor[]{new Component_Editor(), new Component_diagram_Editor(), new Component_table_Editor()});
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e19763814242bL, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet"))) {
+        return Arrays.asList(new ConceptEditor[]{new ComponentSet_Editor(), new ComponentSet_diagram_Editor(), new ComponentSet_table_Editor()});
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, "jetbrains.mps.samples.componentDependencies.structure.Dependency"))) {
+        return Arrays.asList(new ConceptEditor[]{new Dependency_Editor(), new Dependency_diagram_Editor(), new Dependency_table_Editor()});
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381be166L, "jetbrains.mps.samples.componentDependencies.structure.InPort"))) {
+        return Arrays.asList(new ConceptEditor[]{new InPort_Editor(), new InPort_diagram_Editor(), new InPort_table_Editor()});
+      }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381be145L, "jetbrains.mps.samples.componentDependencies.structure.OutPort"))) {
+        return Arrays.asList(new ConceptEditor[]{new OutPort_Editor(), new OutPort_diagram_Editor(), new OutPort_table_Editor()});
+      }
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
-  public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
-    return Collections.<ConceptEditorComponent>emptyList();
-  }
 
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.componentDependencies.structure.Component", "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "jetbrains.mps.samples.componentDependencies.structure.Dependency", "jetbrains.mps.samples.componentDependencies.structure.InPort", "jetbrains.mps.samples.componentDependencies.structure.OutPort"};
 }

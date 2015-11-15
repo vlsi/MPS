@@ -15,11 +15,11 @@ import java.util.List;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.migration.MigrationComponent;
+import jetbrains.mps.ide.migration.MigrationManagerImpl;
 import jetbrains.mps.ide.migration.MigrationManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.smodel.query.CommandUtil;
-import jetbrains.mps.smodel.query.QueryExecutionContext;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -70,9 +70,9 @@ public class RunPreUpdateCheck_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
 
-    final MigrationComponent mc = ((MigrationComponent) event.getData(CommonDataKeys.PROJECT).getComponent(MigrationManager.class));
+    final MigrationManagerImpl mc = ((MigrationManagerImpl) event.getData(CommonDataKeys.PROJECT).getComponent(MigrationManager.class));
     {
-      final SearchScope scope = CommandUtil.createScope(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+      final SearchScope scope = CommandUtil.createScope(((jetbrains.mps.project.Project) event.getData(MPSCommonDataKeys.MPS_PROJECT)));
       QueryExecutionContext context = new QueryExecutionContext() {
         public SearchScope getDefaultSearchScope() {
           return scope;
@@ -126,7 +126,7 @@ __switch__:
                           this.__CP__ = 2;
                           break;
                         case 4:
-                          this._7_script = mc.fetchScript(new MigrationScriptReference(it, _2_ver), true);
+                          this._7_script = mc.getMigrationComponent().fetchMigrationScript(new MigrationScriptReference(it, _2_ver), true);
                           this.__CP__ = 8;
                           break;
                         case 9:

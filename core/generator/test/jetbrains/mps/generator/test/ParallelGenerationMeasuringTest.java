@@ -27,6 +27,7 @@ import java.io.IOException;
  */
 public class ParallelGenerationMeasuringTest extends GenerationTestBase {
 
+
   @Test
   public void testParallelEditor() throws IOException {
     final Project p = loadProject(new File(System.getProperty("user.dir")));

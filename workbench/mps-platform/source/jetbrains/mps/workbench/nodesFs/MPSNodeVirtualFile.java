@@ -72,7 +72,7 @@ public final class MPSNodeVirtualFile extends VirtualFile {
               myPresentationName = myName + '@' + s;
             }
           }
-          myPath = NODE_PREFIX + NiceReferenceSerializer.serializeNode(node);
+          myPath = NODE_PREFIX + myFileSystem.getPathFacility().serializeNode(node);
           myTimeStamp = node.getModel().getSource().getTimestamp();
         }
       }

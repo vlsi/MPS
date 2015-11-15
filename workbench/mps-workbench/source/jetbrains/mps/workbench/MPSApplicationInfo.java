@@ -35,6 +35,7 @@ import java.net.URL;
 public class MPSApplicationInfo implements ApplicationComponent {
 
   private String myDialogsImage = null;
+  @Deprecated/*TODO: remove in 3.4*/
   @NonNls
   private static final String DIALOGS_IMAGE = "dialogs-image";
   @NonNls

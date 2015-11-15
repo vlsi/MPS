@@ -60,7 +60,9 @@ public class ProjectCreationTest {
   private static final String PROJECT_PROPERTIES_DIR = PROJECT_NAME + "/.mps";
   private static final List<String> PROJECT_PROPERTIES_DIR_CONTENT = Arrays.asList(
       PROJECT_PROPERTIES_DIR + "/workspace.xml",
-      PROJECT_PROPERTIES_DIR + "/version.xml");
+      PROJECT_PROPERTIES_DIR + "/version.xml",
+      PROJECT_PROPERTIES_DIR + "/misc.xml",
+      PROJECT_PROPERTIES_DIR + "/encodings.xml");
 
   private static final List<String> EMPTY_PROJECT_PATH_LIST_FB = Arrays.asList(
       PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT);

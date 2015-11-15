@@ -29,12 +29,12 @@ import java.util.Set;
 public class LanguageDescriptor extends ModuleDescriptor {
   private String myGenPath;
 
+  private int myLanguageVersion;
+
   private Set<SModelReference> myAccessoryModels;
   private List<GeneratorDescriptor> myGenerators;
   private Set<SModuleReference> myExtendedLanguages;
   private Set<SModuleReference> myRuntimeModules;
-
-  private int myVersion;
 
   public LanguageDescriptor() {
     super();
@@ -98,7 +98,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   @Override
   public void save(ModelOutputStream stream) throws IOException {
     super.save(stream);
-    stream.writeInt(myVersion);
+    stream.writeInt(myLanguageVersion);
     stream.writeString(myGenPath);
 
     stream.writeInt(myAccessoryModels.size());
@@ -127,7 +127,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   @Override
   public void load(ModelInputStream stream) throws IOException {
     super.load(stream);
-    myVersion = stream.readInt();
+    myLanguageVersion = stream.readInt();
     myGenPath = stream.readString();
 
     myAccessoryModels.clear();
@@ -155,12 +155,11 @@ public class LanguageDescriptor extends ModuleDescriptor {
     if (stream.readByte() != 0x1e) throw new IOException("bad stream");
   }
 
-  public int getVersion() {
-    return myVersion;
+  public int getLanguageVersion() {
+    return myLanguageVersion;
   }
 
-  public void setVersion(int version) {
-    myVersion = version;
+  public void setLanguageVersion(int languageVersion) {
+    myLanguageVersion = languageVersion;
   }
-
 }

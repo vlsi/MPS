@@ -34,13 +34,16 @@ import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.make.script.IConfigMonitor;
+import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.generator.CustomGenerationModuleFacet;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.resources.GResource;
@@ -49,7 +52,6 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.smodel.resources.CleanupActivityResource;
 import jetbrains.mps.cleanup.CleanupManager;
 
 public class Generate_Facet extends IFacet.Stub {
@@ -208,9 +210,20 @@ public class Generate_Facet extends IFacet.Stub {
 
               Project mpsProject = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getProject();
               TransientModelsProvider tmc = mpsProject.getComponent(TransientModelsProvider.class);
-              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(mpsProject.getRepository(), null)));
+              boolean ownTransientsProvider = tmc == null;
+              vars(pa.global()).transientModelsProvider((ownTransientsProvider ? new TransientModelsProvider(mpsProject.getRepository(), null) : tmc));
 
               vars(pa.global()).transientModelsProvider().removeAllTransient();
+              if (ownTransientsProvider) {
+                _output_fi61u2_a0b = Sequence.fromIterable(_output_fi61u2_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new CleanupActivityResource() {
+                  public String describe() {
+                    return "Dispose provider of transient models";
+                  }
+                  public void run() {
+                    vars(pa.global()).transientModelsProvider().removeAllTransients(true);
+                  }
+                })));
+              }
               return new IResult.SUCCESS(_output_fi61u2_a0b);
             default:
               return new IResult.SUCCESS(_output_fi61u2_a0b);
@@ -269,7 +282,7 @@ public class Generate_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._4) t).assign((Tuples._4) copyFrom);
+        ((Tuples._5) t).assign((Tuples._5) copyFrom);
       }
       return t;
     }
@@ -279,12 +292,12 @@ public class Generate_Facet extends IFacet.Stub {
     public static Generate_Facet.Target_configure.Variables vars(IPropertiesPool ppool) {
       return ppool.properties(name, Generate_Facet.Target_configure.Variables.class);
     }
-    public static class Variables extends MultiTuple._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> {
+    public static class Variables extends MultiTuple._5<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider, ModelGenerationPlan> {
       public Variables() {
         super();
       }
-      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions, DefaultGenerationParametersProvider parametersProvider, TransientModelsProvider transientModelsProvider) {
-        super(saveTransient, generationOptions, parametersProvider, transientModelsProvider);
+      public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions, DefaultGenerationParametersProvider parametersProvider, TransientModelsProvider transientModelsProvider, ModelGenerationPlan customPlan) {
+        super(saveTransient, generationOptions, parametersProvider, transientModelsProvider, customPlan);
       }
       public Boolean saveTransient(Boolean value) {
         return super._0(value);
@@ -298,6 +311,9 @@ public class Generate_Facet extends IFacet.Stub {
       public TransientModelsProvider transientModelsProvider(TransientModelsProvider value) {
         return super._3(value);
       }
+      public ModelGenerationPlan customPlan(ModelGenerationPlan value) {
+        return super._4(value);
+      }
       public Boolean saveTransient() {
         return super._0();
       }
@@ -309,6 +325,9 @@ public class Generate_Facet extends IFacet.Stub {
       }
       public TransientModelsProvider transientModelsProvider() {
         return super._3();
+      }
+      public ModelGenerationPlan customPlan() {
+        return super._4();
       }
     }
   }
@@ -418,6 +437,25 @@ public class Generate_Facet extends IFacet.Stub {
                   retainedModels.value = RetainedUtil.collectModelsToRetain(input);
                 }
               });
+
+              if (Generate_Facet.Target_configure.vars(pa.global()).customPlan() == null) {
+                mpsProject.getModelAccess().runReadAction(new Runnable() {
+                  public void run() {
+                    for (MResource res : Sequence.fromIterable(input)) {
+                      CustomGenerationModuleFacet facet = res.module().getFacet(CustomGenerationModuleFacet.class);
+                      if (facet == null) {
+                        continue;
+                      }
+                      for (SModel m : Sequence.fromIterable(res.models())) {
+                        ModelGenerationPlan plan = facet.getPlan(m);
+                        if (plan != null) {
+                          Generate_Facet.Target_configure.vars(pa.global()).generationOptions().customPlan(m, plan);
+                        }
+                      }
+                    }
+                  }
+                });
+              }
 
               IGenerationHandler gh = new MakeGenerationHandler(new _FunctionTypes._return_P1_E0<Boolean, GResource>() {
                 public Boolean invoke(GResource data) {
@@ -534,6 +572,7 @@ public class Generate_Facet extends IFacet.Stub {
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.generationOptions", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.parametersProvider", null);
           MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.transientModelsProvider", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.lang.core.Generate.configure.customPlan", null);
         }
       }
     }
@@ -563,6 +602,9 @@ public class Generate_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.transientModelsProvider")) {
             props.transientModelsProvider(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.lang.core.Generate.configure.customPlan")) {
+            props.customPlan(null);
           }
         }
       } catch (RuntimeException re) {

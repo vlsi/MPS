@@ -51,6 +51,6 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    SModelsSubtree.create(this, getModule());
+    new SModelsSubtree(this, true, false).create(getModule());
   }
 }

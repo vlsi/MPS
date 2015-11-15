@@ -15,6 +15,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -64,8 +65,8 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
 
     return ModelCheckerTool.getInstance(myProject).checkModelsBeforeCommit(getModelsByFiles(myPanel.getFiles()));
   }
-  private static List<SModel> getModelsByFiles(Iterable<File> files) {
-    final SModelFileTracker ft = SModelFileTracker.getInstance();
+  private List<SModel> getModelsByFiles(Iterable<File> files) {
+    final SModelFileTracker ft = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(myProject));
     return ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(files).select(new ISelector<File, SModel>() {
       public SModel select(File file) {
         return ft.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));

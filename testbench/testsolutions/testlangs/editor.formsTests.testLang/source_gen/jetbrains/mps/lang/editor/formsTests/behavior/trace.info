@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="UsesPlatformCheckbox_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.formsTests.behavior.UsesPlatformCheckbox_BehaviorDescriptor" />
+    </file>
+    <file name="UsesTextCheckbox_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.formsTests.behavior.UsesTextCheckbox_BehaviorDescriptor" />
+    </file>
+    <file name="VariousCheckboxes_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="jetbrains.mps.lang.editor.formsTests.behavior.VariousCheckboxes_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

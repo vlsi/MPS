@@ -79,5 +79,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_FunctionType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
+    {
+      InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_Object_InequationReplacementRule();
+      this.myInequationReplacementRules.add(eliminationRule);
+    }
   }
 }

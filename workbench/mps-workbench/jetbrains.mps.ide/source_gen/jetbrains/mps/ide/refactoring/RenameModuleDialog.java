@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.structure.project.ModulePath;
 
@@ -41,19 +41,22 @@ public class RenameModuleDialog extends RenameDialog {
         if (!((fqName.equals(myModule.getModuleName())))) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              // save old module path for project descriptor change 
-              final String oldModuleName = myModule.getDescriptorFile().getPath();
-
-              Renamer.renameModule(myModule, fqName);
-
-              // TODO: add moduleRenamed to SRepositoryListener? 
-              // update module path in project descriptor 
               final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
               if (mpsProject instanceof StandaloneMPSProject) {
-                final ProjectDescriptor projectDescriptor = ((StandaloneMPSProject) mpsProject).getProjectDescriptor();
-                String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldModuleName));
+                StandaloneMPSProject smp = (StandaloneMPSProject) mpsProject;
+                String folder = smp.getFolderFor(myModule);
+                String oldName = myModule.getDescriptorFile().getPath();
+
+                Renamer.renameModule(myModule, fqName);
+
+                // TODO: add moduleRenamed to SRepositoryListener? 
+                // update module path in project descriptor 
+                final ProjectDescriptor projectDescriptor = smp.getProjectDescriptor();
+                String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldName));
                 ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().getPath(), virtualFolder);
                 projectDescriptor.addModulePath(modulePath);
+              } else {
+                Renamer.renameModule(myModule, fqName);
               }
             }
           });

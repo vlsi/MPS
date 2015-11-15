@@ -51,11 +51,13 @@ import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Level;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -596,22 +598,12 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.getNodeAncestor(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
   }
   @Deprecated
+  @ToRemove(version = 3.3)
   /*package*/ static List<SNode> getAccessibleMembers_id_8Pw6zYia7(@NotNull SAbstractConcept __thisConcept__, SNode contextNode, int constraint) {
-    SNode classifier = ClassConcept__BehaviorDescriptor.getContextClass_id6WzWPTX2$6q.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), contextNode);
-    List<SNode> result = new ArrayList<SNode>();
-    while (classifier != null) {
-      ListSequence.fromList(result).addSequence(Sequence.fromIterable(IClassifiersSearchScopeAdapter.filterMembers(IClassifierType__BehaviorDescriptor.getVisibleMembers_id5laDzmpBPtZ.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier), contextNode), constraint)).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.as(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
-        }
-      }));
-      if (!((boolean) IClassifierMember__BehaviorDescriptor.isStatic_id6r77ob2USS8.invoke(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
-        classifier = SNodeOperations.getNodeAncestor(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-      } else {
-        break;
-      }
+    if (LOG.isEnabledFor(Level.ERROR)) {
+      LOG.error("The method Classifier.getAccessibleMembers() has been deprecated for years. No-op now, scheduled for removal");
     }
-    return result;
+    return new ArrayList<SNode>();
   }
 
   /*package*/ Classifier__BehaviorDescriptor() {
@@ -742,6 +734,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
+  protected static Logger LOG = LogManager.getLogger(Classifier__BehaviorDescriptor.class);
   public static class Pattern_hx1769_a1a0a0a37 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
@@ -768,9 +761,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
         {
           SContainmentLink childRole_qw8l7c_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter");
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
-          patternVar_foo = null;
           for (SNode childVar : nodeToMatch_qw8l7c_a0a0a0a42.getChildren(childRole_qw8l7c_)) {
-            patternVar_foo = childVar;
             ListSequence.fromList(this.patternVar_l).addElement(childVar);
           }
         }

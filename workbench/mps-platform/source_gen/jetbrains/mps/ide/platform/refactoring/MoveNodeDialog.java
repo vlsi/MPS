@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import javax.swing.JOptionPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
@@ -32,10 +32,11 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
       return;
     }
     final Wrappers._boolean doRefactoring = new Wrappers._boolean(false);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ProjectHelper.toMPSProject(getProject()).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        if (myNodeFilter == null || myNodeFilter.checkForObject(((NodeLocation.NodeLocationChild) selectedObject).getNode(), myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
-          mySelectedObject = ((NodeLocation.NodeLocationChild) selectedObject).getNode();
+        SNode node = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(ProjectHelper.toMPSProject(getProject()).getRepository());
+        if (myNodeFilter == null || myNodeFilter.checkForObject(node, myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
+          mySelectedObject = node;
           doRefactoring.value = true;
         }
       }
@@ -50,7 +51,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ProjectHelper.toMPSProject(getProject()).getModelAccess().runReadAction(new Runnable() {
       public void run() {
         myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myNodeToMove);
       }

@@ -2,8 +2,8 @@
 <model ref="r:0bb5e892-3294-41a6-b5db-b1bdf3480f53(jetbrains.mps.debugger.java.runtime.ui.breakpoints)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
@@ -382,8 +382,11 @@
         <node concept="3clFbF" id="6fjy$CJMXxO" role="3cqZAp">
           <node concept="37vLTI" id="6fjy$CJMXxQ" role="3clFbG">
             <node concept="2YIFZM" id="5mI2DYCqLar" role="37vLTx">
-              <ref role="37wK5l" to="cuxm:~MpsPopupFactory.createPanelForNode(com.intellij.ide.util.gotoByName.ChooseByNameModel,boolean):jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" resolve="createPanelForNode" />
               <ref role="1Pybhc" to="cuxm:~MpsPopupFactory" resolve="MpsPopupFactory" />
+              <ref role="37wK5l" to="cuxm:~MpsPopupFactory.createPanelForNode(com.intellij.openapi.project.Project,com.intellij.ide.util.gotoByName.ChooseByNameModel,boolean):jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" resolve="createPanelForNode" />
+              <node concept="37vLTw" id="2nHUN3y_7iD" role="37wK5m">
+                <ref role="3cqZAo" node="6VqS2ffws0V" resolve="project" />
+              </node>
               <node concept="37vLTw" id="2BHiRxeuofj" role="37wK5m">
                 <ref role="3cqZAo" node="DdPZ52JrJV" resolve="myModel" />
               </node>

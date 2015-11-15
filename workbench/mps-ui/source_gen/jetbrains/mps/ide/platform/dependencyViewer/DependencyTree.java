@@ -8,8 +8,8 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import com.intellij.openapi.actionSystem.ActionGroup;
@@ -34,13 +34,12 @@ public class DependencyTree extends MPSTree {
     for (SModule module : myScope.getModules()) {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
+    SModelTreeNode.LongModelNameText modelText = new SModelTreeNode.LongModelNameText();
     for (SModel model : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode(model, null);
-      root.add(node);
+      root.add(new SModelTreeNode(model, modelText));
     }
     for (SNode node : myScope.getRoots()) {
-      SNodeTreeNode treeNode = new SNodeTreeNode(node, null);
-      root.add(treeNode);
+      root.add(new SNodeTreeNode(node, null));
     }
     setRootVisible(false);
     setShowsRootHandles(true);

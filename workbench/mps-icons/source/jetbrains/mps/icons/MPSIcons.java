@@ -83,14 +83,6 @@ public class MPSIcons {
     public static final Icon Template = IconLoader.getIcon("/generator/template.png");
   }
 
-  public static class Help {
-    public static final Icon Documentation = IconLoader.getIcon("/help/documentation.png");
-    public static final Icon JetbrainsTvMPS = IconLoader.getIcon("/help/jetbrainsTvMPS.png");
-    public static final Icon ReadHelp = IconLoader.getIcon("/help/readHelp.png");
-    public static final Icon ScreenCast = IconLoader.getIcon("/help/screencast.png");
-    public static final Icon Tutorial = IconLoader.getIcon("/help/tutorial.png");
-  }
-
   public static class IdeaIntegration {
     public static final Icon Connected = IconLoader.getIcon("/ideaIntegration/connected.png");
     public static final Icon ConnectedWithErrors = IconLoader.getIcon("/ideaIntegration/connected_with_errors.png");

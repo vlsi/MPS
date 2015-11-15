@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,20 +24,17 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor.NodeFileComputable;
 import jetbrains.mps.openapi.editor.EditorState;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware {
   private static final Logger LOG = LogManager.getLogger(MPSFileNodeEditorProvider.class);
@@ -52,23 +49,12 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
   @Override
   @NotNull
   public FileEditor createEditor(@NotNull Project project, @NotNull final VirtualFile file) {
+    final MPSProject mpsProject = project.getComponent(MPSProject.class);
+    SRepository repository = mpsProject.getRepository();
     MPSNodeVirtualFile mpsNodeVirtualFile = file instanceof MPSNodeVirtualFile
       ? (MPSNodeVirtualFile) file
-      : ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
-      @Override
-      public MPSNodeVirtualFile compute() {
-        SModel descr = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file.getParent()));
-        if(descr != null) {
-          for(SNode node : descr.getRootNodes()) {
-            if(node.getName().equals(file.getNameWithoutExtension())) {
-              return MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-            }
-          }
-        }
-        return null;
-      }
-    });
-    return mpsNodeVirtualFile != null ? new MPSFileNodeEditor(project,  mpsNodeVirtualFile) : new MPSFileNodeEditor(project,  file);
+      : new ModelAccessHelper(repository).runReadAction(new NodeFileComputable(repository, file));
+    return mpsNodeVirtualFile != null ? new MPSFileNodeEditor(mpsProject,  mpsNodeVirtualFile) : new MPSFileNodeEditor(mpsProject,  file);
   }
 
   @Override

@@ -11,7 +11,6 @@ import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import org.junit.runner.manipulation.Sorter;
 import jetbrains.mps.testbench.junit.OrderComparator;
-import jetbrains.mps.testbench.PerformanceMessenger;
 import org.junit.runners.model.TestClass;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.Parameterized;
@@ -55,7 +54,6 @@ public class TeamCityParameterizedRunner extends BaseMpsRunner {
       new Sorter(new OrderComparator()).apply(runner);
       runner.run(runNotifier);
     } finally {
-      PerformanceMessenger.getInstance().generateReport();
       runNotifier.dispose();
     }
   }

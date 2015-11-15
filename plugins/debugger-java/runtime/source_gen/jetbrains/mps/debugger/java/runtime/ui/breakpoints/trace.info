@@ -221,7 +221,7 @@
       <node id="2354786670710845961" at="25,19,26,19" concept="1" />
       <node id="742486944792820868" at="29,45,30,58" concept="7" />
       <node id="4178917246951644852" at="33,39,34,21" concept="7" />
-      <node id="7193245081074915444" at="36,6,37,65" concept="1" />
+      <node id="7193245081074915444" at="36,6,37,74" concept="1" />
       <node id="742486944792820879" at="40,49,41,21" concept="1" />
       <node id="2816410937773814690" at="43,39,44,63" concept="1" />
       <node id="2354786670710845973" at="44,63,45,0" concept="8" />
@@ -238,7 +238,7 @@
       <node id="4178917246951644848" at="32,0,36,0" concept="5" trace="willOpenEditor#()Z" />
       <node id="742486944792820776" at="39,0,43,0" concept="5" trace="elementChosen#(Ljava/lang/Object;)V" />
       <node id="2354786670710845893" at="48,0,53,0" concept="5" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="742486944792820769" at="37,65,43,39" concept="1" />
+      <node id="742486944792820769" at="37,74,43,39" concept="1" />
       <node id="2354786670710846009" at="56,0,64,0" concept="5" trace="doOKAction#()V" />
       <node id="742486944792820745" at="26,19,36,6" concept="1" />
       <node id="742486944792820734" at="24,0,48,0" concept="0" trace="StubsClassChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;)V" />

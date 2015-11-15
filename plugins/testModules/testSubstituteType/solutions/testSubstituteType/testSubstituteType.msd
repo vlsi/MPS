@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="testSubstituteType" uuid="f4227833-0d14-4ab5-8560-70880fd9d5ef" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="testSubstituteType" uuid="f4227833-0d14-4ab5-8560-70880fd9d5ef" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -22,5 +22,8 @@
     <language id="394e3857-3256-4e8b-9601-5abe7ad354d9" fqName="testOverridingType" version="0" />
     <language id="9290638e-635b-4ec6-bcad-945ecb88a928" fqName="testWrappedType" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="f4227833-0d14-4ab5-8560-70880fd9d5ef(testSubstituteType)" version="0" />
+  </dependencyVersions>
 </solution>
 

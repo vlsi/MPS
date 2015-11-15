@@ -34,12 +34,10 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SpeedSearchComparator;
-import com.intellij.ui.TabbedPaneWrapper.TabWrapper;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.table.JBTable;
-import com.intellij.ui.tabs.impl.JBTabsImpl;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
@@ -123,14 +121,12 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.ui.Modifiable;
-import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultCellEditor;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -142,7 +138,6 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
@@ -159,7 +154,6 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.EventObject;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -170,17 +164,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private final ModuleDescriptor myModuleDescriptor;
   private AbstractModule myModule;
-  private final Set<JCheckBox> myCheckBoxes = new TreeSet<JCheckBox>(new Comparator<JCheckBox>() {
-    @Override
-    public int compare(JCheckBox o1, JCheckBox o2) {
-      return o1.getText().toLowerCase().compareTo(o2.getText().toLowerCase());
-    }
-  });
+  private final List<FacetCheckBox> myCheckBoxes = new ArrayList<FacetCheckBox>();
   private final FacetTabsPersistence myFacetTabsPersistence;
 
   /**
@@ -198,15 +186,17 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     myModuleDescriptor = myModule.getModuleDescriptor();
     myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
 
-    addTab(new ModuleCommonTab());
+    registerTabs(new ModuleCommonTab());
+
     if (!(myModule instanceof DevKit)) {
       final ModuleDependenciesTab moduleDependenciesTab = new ModuleDependenciesTab();
-      addTab(moduleDependenciesTab);
-      addTab(new ModuleUsedLanguagesTab());
-      if (myModule instanceof Language)
-        addTab(new RuntimeTab());
-      if (myModule instanceof Generator)
-        addTab(new GeneratorAdvancesTab((Generator) myModule, new GeneratorDependencyProvider(moduleDependenciesTab)));
+      registerTabs(moduleDependenciesTab, new ModuleUsedLanguagesTab());
+      if (myModule instanceof Language) {
+        registerTabs(new RuntimeTab());
+      }
+      if (myModule instanceof Generator) {
+        registerTabs(new GeneratorAdvancesTab((Generator) myModule, new GeneratorDependencyProvider(moduleDependenciesTab)));
+      }
     }
     for (SModuleFacet moduleFacet : myModule.getFacets()) {
       if (!(moduleFacet instanceof ModuleFacetBase)) {
@@ -215,11 +205,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       ModuleFacetBase moduleFacetBase = (ModuleFacetBase) moduleFacet;
       Tab facetTab = myFacetTabsPersistence.getFacetTab(moduleFacetBase.getFacetType(), moduleFacetBase);
       if (facetTab != null) {
-        addTab(facetTab);
+        registerTabs(facetTab);
       }
     }
 
-    addTab(new AddFacetsTab());
+    registerTabs(new AddFacetsTab());
   }
 
   @Override
@@ -238,7 +228,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   @Nls
   @Override
   public String getDisplayName() {
-    return String.format(PropertiesBundle.message("mps.properties.module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
+    return String.format(PropertiesBundle.message("module.title"), myModule.getClass().getSimpleName(), myModule.getModuleName());
   }
 
   private FindUsagesScope getModuleAndOwnedModelsScope() {
@@ -279,7 +269,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModuleDependenciesTab myModuleDependenciesTab;
     private ContentEntriesEditor myEntriesEditor;
     private JTextField myGenOut;
-    private JSpinner myVersion;
+    private JSpinner myLanguageVersion;
+    private JSpinner myModuleVersion;
 
     @Override
     protected String getConfigItemName() {
@@ -299,9 +290,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     protected JComponent getBottomComponent() {
       if (myModule instanceof DevKit) {
         myModuleDependenciesTab = new ModuleDependenciesTab();
+        myModuleDependenciesTab.init(); // init to avoid myModuleDependenciesTab.getTabComponent() == null
         return myModuleDependenciesTab.getTabComponent();
       } else {
-        myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor);
+        myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor, myProject.getRepository());
         Disposer.register(ModulePropertiesConfigurable.this, myEntriesEditor);
         return myEntriesEditor.getComponent();
       }
@@ -309,22 +301,29 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     //null=not supported
     @Nullable
-    protected Integer getVersion() {
+    protected Integer getLanguageVersion() {
       if (!(myModule instanceof Language)) return null;
       return ((Language) myModule).getLanguageVersion();
+    }
+
+    @Nullable
+    protected Integer getModuleVersion() {
+      if (myModule instanceof DevKit) return null;
+      return myModule.getModuleVersion();
     }
 
     @Override
     protected JComponent getTopComponent() {
       if (myModule instanceof Language || myModule instanceof Solution) {
 
-        boolean hasVersion = getVersion() != null;
+        boolean hasLanguageVersion = getLanguageVersion() != null;
+        boolean hasModuleVersion = getModuleVersion() != null;
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayoutManager(hasVersion ? 2 : 1, 2, JBUI.emptyInsets(), -1, -1));
+        panel.setLayout(new GridLayoutManager(1 + (hasLanguageVersion ? 1 : 0) + (hasModuleVersion ? 1 : 0), 2, JBUI.emptyInsets(), -1, -1));
 
         int row = 0;
 
-        JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
+        JBLabel label = new JBLabel(PropertiesBundle.message("module.genoutput.title"));
         panel.add(label, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
@@ -342,18 +341,31 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
                 GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-        if (hasVersion) {
+        if (hasLanguageVersion) {
+          JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.language.version"));
+          panel.add(verLabel,
+              new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                  GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+          myLanguageVersion = new JSpinner(new SpinnerNumberModel((int) getLanguageVersion(), 0, getLanguageVersion() + 10000, 1));
+          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) myLanguageVersion.getEditor();
+          DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
+          formatter.setAllowsInvalid(false);
+          panel.add(myLanguageVersion,
+              new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                  GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
+        }
+        if (hasModuleVersion) {
           JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.version"));
           panel.add(verLabel,
               new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
                   GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-
-          myVersion = new JSpinner(new SpinnerNumberModel((int) getVersion(), 0, getVersion() + 10000, 1));
-          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor)myVersion.getEditor();
+          myModuleVersion = new JSpinner(new SpinnerNumberModel((int) getModuleVersion(), 0, getModuleVersion() + 10000, 1));
+          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) myModuleVersion.getEditor();
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
-          panel.add(myVersion,
+          panel.add(myModuleVersion,
               new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                   GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
@@ -375,10 +387,18 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (!(myModule instanceof DevKit) && myEntriesEditor.isModified()) return true;
       if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) return true;
 
-      if (myVersion != null) {
+      if (myLanguageVersion != null) {
         try {
-          int newVersion = ((Integer) myVersion.getValue());
-          if (!EqualUtil.equals(newVersion, getVersion())) return false;
+          int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
+          if (!EqualUtil.equals(newLanguageVersion, getLanguageVersion())) return true;
+        } catch (NumberFormatException e) {
+          //just continue omitting this field
+        }
+      }
+      if (myModuleVersion != null) {
+        try {
+          int newModuleVersion = ((Integer) myModuleVersion.getValue());
+          if (!EqualUtil.equals(newModuleVersion, getModuleVersion())) return true;
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
@@ -404,10 +424,18 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
           }
         }
-        if (myVersion != null) {
+        if (myLanguageVersion != null) {
           try {
-            int newVersion = ((Integer) myVersion.getValue());
-            ((Language) myModule).setLanguageVersion(newVersion);
+            int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
+            ((Language) myModule).setLanguageVersion(newLanguageVersion);
+          } catch (NumberFormatException e) {
+            //just continue omitting this field
+          }
+        }
+        if (myModuleVersion != null) {
+          try {
+            int newModuleVersion = ((Integer) myModuleVersion.getValue());
+            myModule.setModuleVersion(newModuleVersion);
           } catch (NumberFormatException e) {
             //just continue omitting this field
           }
@@ -569,9 +597,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private AccessoriesModelsTableModel myAccessoriesModelsTableModel;
 
     public RuntimeTab() {
-      super(PropertiesBundle.message("mps.properties.runtime.title"), General.Runtime,
-          PropertiesBundle.message("mps.properties.runtime.tip"));
-      init();
+      super(PropertiesBundle.message("mps.properties.runtime.title"), General.Runtime, PropertiesBundle.message("mps.properties.runtime.tip"));
     }
 
     @Override
@@ -900,11 +926,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
-      super(PropertiesBundle.message("mps.properties.module.generator.title"), IdeIcons.DEFAULT_ICON,
-          PropertiesBundle.message("mps.properties.module.generator.tip"));
+      super(PropertiesBundle.message("module.generator.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("module.generator.tip"));
       myGenerator = generator;
       myDepGenerators = depGenerators;
-      init();
     }
 
     @Override
@@ -1104,8 +1128,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       JPanel generationOptions = new JPanel();
       generationOptions.setLayout(new FlowLayout(FlowLayout.LEFT));
-      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("mps.properties.module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
-      myGenerateTemplates.setToolTipText(PropertiesBundle.message("mps.properties.module.generator.gentemplates.tip"));
+      myGenerateTemplates = new JBCheckBox(PropertiesBundle.message("module.generator.gentemplates.name"), genDescr.isGenerateTemplates());
+      myGenerateTemplates.setToolTipText(PropertiesBundle.message("module.generator.gentemplates.tip"));
       myReflectiveQueries = new JBCheckBox("Reflective queries", genDescr.isReflectiveQueries());
       myReflectiveQueries.setToolTipText("Invoke generated queries via reflection. Compatibility option, turn off and rebuild generator");
       generationOptions.add(myGenerateTemplates);
@@ -1250,70 +1274,54 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   public class AddFacetsTab extends BaseTab {
 
-    private static final String CHECKBOX_PROPERTY_KEY = "facet";
-
     public AddFacetsTab() {
-      super("Facets", AllIcons.General.Settings, "Add facets");
-      init();
-
-      addChangeListener(new ChangeListener() {
-        @Override
-        public void stateChanged(ChangeEvent e) {
-          if (!(e.getSource() instanceof JBTabsImpl && ((JBTabsImpl) e.getSource()).getSelectedInfo().getComponent() instanceof TabWrapper))
-            return;
-
-          final JComponent component = ((JBTabsImpl) e.getSource()).getSelectedInfo().getComponent();
-          if (component.getComponentCount() == 0) return;
-          if (component.getComponent(0).equals(getTabComponent())) {
-//            ModulePropertiesConfigurable.this.selectTab(ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this) - 1);
-
-          }
-        }
-      });
+      super(PropertiesBundle.message("module.facets.title"), AllIcons.General.Settings, PropertiesBundle.message("module.facets.tip"));
     }
 
     @Override
     public void init() {
-      final HashMap<String, ModuleFacetBase> facetsTypes = new HashMap<String, ModuleFacetBase>();
+      final HashMap<String, ModuleFacetBase> existingFacetTypes = new HashMap<String, ModuleFacetBase>();
       for (final SModuleFacet moduleFacet : myModule.getFacets()) {
         if (!(moduleFacet instanceof ModuleFacetBase)) continue;
-        facetsTypes.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
+        existingFacetTypes.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
       }
 
-      Set<String> usedLangs = new HashSet<String>();
-      for (SModuleReference reference : myModuleDescriptor.getUsedLanguages()) {
-        usedLangs.add(reference.getModuleName());
-      }
+      Set<String> usedLangs = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Set<String>>() {
+        @Override
+        public Set<String> compute() {
+          HashSet<String> rv = new HashSet<String>();
+          for (SLanguage reference : myModule.getUsedLanguages()) {
+            rv.add(reference.getQualifiedName());
+          }
+          return rv;
+        }
+      });
       Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
 
       for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
-        ModuleFacetBase sModuleFacet = facetsTypes.get(facet);
+        ModuleFacetBase sModuleFacet = existingFacetTypes.get(facet);
         if (sModuleFacet == null) {
-          // i.e. !facetsTypes.contains(facet)
+          // i.e. !existingFacetTypes.contains(facet)
           SModuleFacet newInstance = FacetsFacade.getInstance().getFacetFactory(facet).create();
-          if (newInstance instanceof ModuleFacetBase) {
-            sModuleFacet = (ModuleFacetBase) newInstance;
-            // FIXME It's not smart to establish one-way association (facet->module)
-            // as facet may get confused (i.e. getModule().getFacets().contains(this) == false)
-            // but this is the easiest way to comply with @NotNull Facet.getModule().
-            // The right way, though bit longer, is not to instantiate facet unless truly created
-            sModuleFacet.setModule(myModule);
-          }
+          sModuleFacet = (ModuleFacetBase) newInstance;
         }
-        final String facetPresentation = applicableFacetTypes.contains(facet)
-            ? sModuleFacet.getFacetPresentation() + " (recommended)"
-            : sModuleFacet.getFacetPresentation();
-        final JBCheckBox checkBox = new JBCheckBox(facetPresentation, facetsTypes.keySet().contains(facet));
-        checkBox.putClientProperty(CHECKBOX_PROPERTY_KEY, sModuleFacet);
+        String facetPresentation = sModuleFacet.getFacetPresentation();
+        String fmt = PropertiesBundle.message("module.facets.checkbox.title");
+        facetPresentation = applicableFacetTypes.contains(facet)
+            ? String.format(fmt, facetPresentation) : facetPresentation;
+        FacetCheckBox checkBox = existingFacetTypes.containsKey(facet)
+            ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(facet, sModuleFacet), facetPresentation)
+            : new FacetCheckBox(AddFacetsTab.this, facet, facetPresentation);
+
         myCheckBoxes.add(checkBox);
-        checkBox.addItemListener(new FacetCheckBoxItemListener(checkBox));
       }
+      Collections.sort(myCheckBoxes);
       final JPanel panel = new JPanel();
       panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
       final int i = 5;
       panel.setBorder(BorderFactory.createEmptyBorder(i, i, i, i));
-      for (JCheckBox checkBox : myCheckBoxes) {
-        panel.add(checkBox);
+      for (FacetCheckBox checkBox : myCheckBoxes) {
+        checkBox.addTo(panel);
       }
 
       setTabComponent(panel);
@@ -1321,84 +1329,139 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
-      Set<String> facetsTypes = new HashSet<String>();
-      for (SModuleFacet moduleFacet : myModule.getFacets()) {
-        if (!(moduleFacet instanceof ModuleFacetBase))
-          continue;
-        facetsTypes.add(((ModuleFacetBase) moduleFacet).getFacetType());
-      }
-
-      Set<String> newFacetsTypes = new HashSet<String>();
-      for (JCheckBox checkBox : myCheckBoxes) {
-        if (checkBox.isSelected()) {
-          final SModuleFacet facet = (SModuleFacet) checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
-          if (!(facet instanceof ModuleFacetBase)) continue;
-          newFacetsTypes.add(((ModuleFacetBase) facet).getFacetType());
+      for (FacetCheckBox checkBox : myCheckBoxes) {
+        if (checkBox.isExistingToRemove() || checkBox.isNewlyCreated()) {
+          return true;
         }
       }
-
-      return facetsTypes.addAll(newFacetsTypes) && newFacetsTypes.containsAll(facetsTypes);
+      return false;
     }
 
     @Override
     public void apply() {
-      final HashMap<String, ModuleFacetBase> moduleFacets = new HashMap<String, ModuleFacetBase>();
-      for (final SModuleFacet moduleFacet : myModule.getFacets()) {
-        if (!(moduleFacet instanceof ModuleFacetBase)) continue;
-        moduleFacets.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
-      }
-
-      for (JCheckBox checkBox : myCheckBoxes) {
-        if (!(checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY) instanceof ModuleFacetBase)) continue;
-
-        ModuleFacetBase facet = (ModuleFacetBase) checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
-
-        if (checkBox.isSelected() && !moduleFacets.keySet().contains(facet.getFacetType())) {
+      for (FacetCheckBox checkBox : myCheckBoxes) {
+        Collection<ModuleFacetDescriptor> moduleFacetDescriptors = myModuleDescriptor.getModuleFacetDescriptors();
+        ModuleFacetBase facet = checkBox.getFacet();
+        if (checkBox.isNewlyCreated()) {
+          Tab tab = checkBox.getTab();
+          if (tab != null) {
+            // not all facets necessarily feature UI component, but in case they do, let the tab populate facet with updated values.
+            // The reason is that apply() for AddFacetsTab comes earlier than apply to any newly added tab (due to natural order of tab addition).
+            // Should not be an issue to apply twice (here and subsequently from MPSPropertiesConfigurable#apply())
+            tab.apply();
+          }
           Memento memento = new MementoImpl();
           facet.save(memento);
-          myModuleDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
-        } else if (!checkBox.isSelected() && moduleFacets.keySet().contains(facet.getFacetType())) {
-          Iterator<ModuleFacetDescriptor> it = myModuleDescriptor.getModuleFacetDescriptors().iterator();
-          while (it.hasNext()) {
-            ModuleFacetDescriptor facetDescriptor = it.next();
-            if (facetDescriptor.getType().equals(facet.getFacetType())) {
-              myModuleDescriptor.getModuleFacetDescriptors().remove(facetDescriptor);
+          // some facets may register themselves into descriptors
+          // e.g. due to need to keep actual facet intact (idea plugin facet shall answer
+          // old id for classloading purposes. FIXME instead, facet shall keep both value,
+          // return old but serialize new once. Even in that case, however, this check won't hurt
+          boolean alreadyThere = false;
+          for (ModuleFacetDescriptor d : moduleFacetDescriptors) {
+            if (facet.getFacetType().equals(d.getType())) {
+              alreadyThere = true;
               break;
             }
           }
-
+          if (!alreadyThere) {
+            moduleFacetDescriptors.add(new ModuleFacetDescriptor(facet.getFacetType(), memento));
+          }
+        } else if (checkBox.isExistingToRemove()) {
+          for (Iterator<ModuleFacetDescriptor> it = moduleFacetDescriptors.iterator(); it.hasNext(); ) {
+            ModuleFacetDescriptor facetDescriptor = it.next();
+            if (facetDescriptor.getType().equals(facet.getFacetType())) {
+              moduleFacetDescriptors.remove(facetDescriptor);
+              break;
+            }
+          }
         }
       }
     }
 
-    private class FacetCheckBoxItemListener implements ItemListener {
-      private final JBCheckBox myCheckBox;
+  }
 
-      public FacetCheckBoxItemListener(JBCheckBox checkBox) {
-        myCheckBox = checkBox;
+  /*package*/ class FacetCheckBox implements ItemListener, Comparable<FacetCheckBox> {
+    private final JBCheckBox myCheckBox;
+    private final String myFacetType;
+    private final boolean myExisting;
+    private final Tab myAnchorTab;
+    private Tab myFacetTab;
+    private ModuleFacetBase myFacet;
+
+    public FacetCheckBox(@NotNull Tab anchorTab, @NotNull ModuleFacetBase facet, @Nullable Tab tab, @NotNull String label) {
+      myAnchorTab = anchorTab;
+      myCheckBox = new JBCheckBox(label, myExisting = true);
+      myCheckBox.addItemListener(this);
+      myFacet = facet;
+      myFacetType = facet.getFacetType();
+      myFacetTab = tab;
+    }
+
+    public FacetCheckBox(@NotNull Tab anchorTab, @NotNull String facetType, @NotNull String label) {
+      myAnchorTab = anchorTab;
+      myFacetType = facetType;
+      myCheckBox = new JBCheckBox(label, myExisting = false);
+      myCheckBox.addItemListener(this);
+      myFacetTab = null;
+    }
+
+    public boolean isExistingToRemove() {
+      // unchecked ==> scheduled for removal
+      return myExisting && !myCheckBox.isSelected();
+    }
+
+    public boolean isNewlyCreated() {
+      // created and still checked in UI
+      // (myFacet stays != null once created, even if newly created facet is unchecked, to preserve page values)
+      return !myExisting && myFacet != null && myCheckBox.isSelected();
+    }
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+      if (!e.getSource().equals(myCheckBox)) {
+        return;
       }
-
-      @Override
-      public void itemStateChanged(ItemEvent e) {
-        if (!e.getSource().equals(myCheckBox)) return;
-        if (myCheckBox.isSelected()) {
-          final ModuleFacetBase moduleFacetBase = (ModuleFacetBase) myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
-          Tab facetTab = myFacetTabsPersistence.getFacetTab(
-              moduleFacetBase.getFacetType(), moduleFacetBase);
-          if (facetTab != null) {
-            ModulePropertiesConfigurable.this.insertTab(facetTab, ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this));
-//            ModulePropertiesConfigurable.this.selectTab(facetTab);
-          }
-
-        } else {
-          for (int i = 0; i < ModulePropertiesConfigurable.this.getTabsCount(); i++) {
-            Tab tab = ModulePropertiesConfigurable.this.getTab(i);
-            if (!(tab instanceof FacetTab)) continue;
-            if (((FacetTab) tab).getFacet().equals(myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY)))
-              ModulePropertiesConfigurable.this.removeTab(tab);
+      if (myCheckBox.isSelected()) {
+        if (myFacet == null) {
+          myFacet = (ModuleFacetBase) FacetsFacade.getInstance().getFacetFactory(myFacetType).create();
+          myFacet.setModule(myModule);
+        }
+        if (myFacetTab == null) {
+          myFacetTab = myFacetTabsPersistence.getFacetTab(myFacetType, myFacet);
+          if (myFacetTab != null) {
+            // perhaps, would be better if MPSPropertiesConfigurable is responsible for tab intialization,
+            // and keeps track of which one is already initialized to avoid multiple initializations.
+            myFacetTab.init();
           }
         }
+        if (myFacetTab != null) {
+          ModulePropertiesConfigurable.this.insertTab(myFacetTab, ModulePropertiesConfigurable.this.indexOfTab(myAnchorTab));
+        }
+      } else {
+        if (myFacetTab != null) {
+          ModulePropertiesConfigurable.this.removeTab(myFacetTab);
+        }
       }
+    }
+
+    /*package*/ ModuleFacetBase getFacet() {
+      return myFacet;
+    }
+
+    /*package*/ void addTo(JPanel panel) {
+      panel.add(myCheckBox);
+    }
+
+    /**
+     * @return <code>null</code> if there's no UI component (Tab) for the facet.
+     */
+    /*package*/ Tab getTab() {
+      return myFacetTab;
+    }
+
+    @Override
+    public int compareTo(FacetCheckBox o) {
+      return myCheckBox.getText().toLowerCase().compareTo(o.myCheckBox.getText().toLowerCase());
     }
   }
 

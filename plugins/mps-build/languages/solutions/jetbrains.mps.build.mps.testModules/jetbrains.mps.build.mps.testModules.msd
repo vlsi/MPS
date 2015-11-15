@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.build.mps.testModules" uuid="e2309f95-1261-44f8-a001-ea5c9cf826d7" compileInMPS="true">
+<solution name="jetbrains.mps.build.mps.testModules" uuid="e2309f95-1261-44f8-a001-ea5c9cf826d7" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -22,5 +22,12 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="2" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
+  <dependencyVersions>
+    <module reference="709a7100-da7a-45a1-948b-53fdd43f5421(jetbrains.mps.baseLanguage.closures.test)" version="0" />
+    <module reference="e2309f95-1261-44f8-a001-ea5c9cf826d7(jetbrains.mps.build.mps.testModules)" version="0" />
+    <module reference="422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)" version="0" />
+    <module reference="f4227833-0d14-4ab5-8560-70880fd9d5ef(testSubstituteType)" version="0" />
+    <module reference="b3170ec7-82d9-4e10-a3f0-31baa75ffc0c(testSubtypingTest)" version="0" />
+  </dependencyVersions>
 </solution>
 

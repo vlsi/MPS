@@ -51,8 +51,10 @@ public class Language extends LanguageRuntime {
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.customAspect.sampleLanguage.structure.StructureAspectDescriptor();
     }
-    if (aspectClass == DocumentationAspectDescriptor.class) {
-      return (T) new DocumentationDescriptor();
+    if (aspectClass.getName().equals("jetbrains.mps.samples.customAspect.documentation.runtime.DocumentationAspectDescriptor")) {
+      if (aspectClass == DocumentationAspectDescriptor.class) {
+        return (T) new DocumentationDescriptor();
+      }
     }
     return super.createAspect(aspectClass);
   }

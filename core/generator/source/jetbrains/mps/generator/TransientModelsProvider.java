@@ -63,7 +63,7 @@ public class TransientModelsProvider {
     myTransientSwapOwner = swapOwner;
   }
 
-  protected void clearAll() {
+  protected void clearAll(final boolean dropCheckpoint) {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -71,6 +71,11 @@ public class TransientModelsProvider {
         myModuleMap.clear();
         for (TransientModelsModule m : toRemove) {
           myRepository.unregisterModule(m, myOwner);
+        }
+        if (dropCheckpoint && myCheckpointsModule != null) {
+          myRepository.unregisterModule(myCheckpointsModule, myOwner);
+          myCheckpointsModule = null;
+          myEnvTemp = null;
         }
       }
     });
@@ -137,7 +142,16 @@ public class TransientModelsProvider {
       myRepository.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          SModuleReference cpModuleRef = new ModuleReference(null, ModuleId.regular());
+          final String checkpointModuleName = "checkpoints";
+          // HACK. Though Make disposes TMP if creates one, there's distinct TMP for each model generated during the session.
+          // We can't dispose all transients right after generation (need them for textgen), hence we re-use checkpoints module here
+          for (SModule m : myRepository.getModules()) {
+            if (checkpointModuleName.equals(m.getModuleName()) && m instanceof TransientModelsModule) {
+              myCheckpointsModule = (TransientModelsModule) m;
+              return;
+            }
+          }
+          SModuleReference cpModuleRef = new ModuleReference(checkpointModuleName, ModuleId.regular());
           myCheckpointsModule = new TransientModelsModule(TransientModelsProvider.this, cpModuleRef);
           myRepository.registerModule(myCheckpointsModule, myOwner);
         }
@@ -181,7 +195,11 @@ public class TransientModelsProvider {
   }
 
   public void removeAllTransient() {
-    clearAll();
+    clearAll(false);
+  }
+
+  public void removeAllTransients(boolean includeCheckpoints) {
+    clearAll(includeCheckpoints);
   }
 
   public Iterable<TransientModelsModule> getModules() {

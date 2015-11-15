@@ -24,6 +24,9 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
  *
  * Although these methods might be part of {@link jetbrains.mps.util.ComputeRunnable} itself,
  * they were moved here to keep <code>ComputeRunnable</code> clear of any model-aware code
+ *
+ * FIXME {@link jetbrains.mps.smodel.ModelAccessHelper} - "There can be only one", you know.
+ *
  * @author Artem Tikhomirov
  */
 public class ModelComputeRunnable<T> extends ComputeRunnable<T> {

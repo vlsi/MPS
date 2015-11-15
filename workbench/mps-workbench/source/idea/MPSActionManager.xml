@@ -5,11 +5,6 @@
       <add-to-group group-id="ToolbarRunGroup" relative-to-action="RunConfiguration" anchor="before"/>
     </group>
 
-    <group id="MPSProjectActions" text="MPSProjectActions">
-      <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
-      <add-to-group anchor="first" group-id="FileMenu"/>
-    </group>
-
     <group id="MPSWelcomeGettingStartedMenu">
       <action id="CreateNewProjectAction"
               class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
@@ -20,32 +15,7 @@
               class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
               text="Open Project"
               description="You can open existing project with this action"/>
-
-      <!--<action id="OpenRecenProjectAciton"-->
-      <!--class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"-->
-      <!--text="Reopen Recent Project"-->
-      <!--description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."-->
-      <!--icon="/general/reopenRecentProject.png"/>-->
-
       <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
-    </group>
-
-    <group id="EditorFix">
-      <!--We need this only cause platform requires this action, and NPE is thrown if
-                the action is not in its place (see MPS-2081 for further details) -->
-      <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
-      <add-to-group group-id="EditMenu" anchor="last"/>
-    </group>
-
-    <group id="VcsMappingsFix">
-      <!--fix MPS-2142-->
-      <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
-      <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
-    </group>
-
-    <!--fix MPS-2156 after fixing MPS-2142-->
-    <group id="WeighingNewGroup" class="com.intellij.ide.actions.WeighingNewActionGroup"/>
-    <group id="NewGroup" popup="true">
     </group>
 
     <group id="FindMenuGroup" popup="true">

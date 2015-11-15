@@ -5,12 +5,11 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="i30" ref="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)" />
+    <import index="80j5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -229,12 +228,12 @@
                   <node concept="3Tqbb2" id="35IRynHaxA$" role="1tU5fm">
                     <ref role="ehGHo" to="tpf8:gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
                   </node>
-                  <node concept="2YIFZM" id="35IRynHaxAC" role="33vP2m">
-                    <ref role="1Pybhc" to="i30:1wehcMpUt27" resolve="RuleUtil" />
-                    <ref role="37wK5l" to="i30:4QkEfp6rmVY" resolve="getSourceNodeQuery" />
-                    <node concept="1PxgMI" id="35IRynHaxAD" role="37wK5m">
-                      <ref role="1PxNhF" to="tpf8:fP7Vmt2" resolve="NodeMacro" />
-                      <node concept="1r4N5L" id="35IRynHaxAE" role="1PxMeX" />
+                  <node concept="1PxgMI" id="6ZLZOmPFOIO" role="33vP2m">
+                    <ref role="1PxNhF" to="tpf8:gZNFfDO" resolve="SourceSubstituteMacro_SourceNodeQuery" />
+                    <node concept="2YIFZM" id="6ZLZOmPFOaB" role="1PxMeX">
+                      <ref role="37wK5l" to="80j5:~RuleUtil.getSourceNodeQuery(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="getSourceNodeQuery" />
+                      <ref role="1Pybhc" to="80j5:~RuleUtil" resolve="RuleUtil" />
+                      <node concept="1r4N5L" id="6ZLZOmPFOaD" role="37wK5m" />
                     </node>
                   </node>
                 </node>

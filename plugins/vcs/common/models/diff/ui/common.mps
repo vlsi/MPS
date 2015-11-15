@@ -8639,15 +8639,6 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="4$Wo$6lALOE" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="4$Wo$6lAOeJ" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-        </node>
-        <node concept="2AHcQZ" id="4$Wo$6lAOfO" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
       <node concept="37vLTG" id="4$Wo$6lALb1" role="3clF46">
         <property role="TrG5h" value="rootId" />
         <node concept="2AHcQZ" id="4$Wo$6lAOfM" role="2AJF6D">
@@ -8709,15 +8700,6 @@
               <ref role="37wK5l" node="42hl10VHaA0" resolve="getMainEditor" />
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="nl1eAq3ah2" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="nl1eAq3ah3" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-        </node>
-        <node concept="2AHcQZ" id="nl1eAq3ah4" role="2AJF6D">
-          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="37vLTG" id="nl1eAq3ah5" role="3clF46">

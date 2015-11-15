@@ -18,147 +18,100 @@ package jetbrains.mps.ide.ui.tree.module;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.SortUtil;
+import jetbrains.mps.ide.ui.tree.SortUtil.SModelComparator;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.TreeNodeTextSource;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.LongModelNameText;
+import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode.ShortModelNameText;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.tree.MutableTreeNode;
 import java.util.ArrayList;
-import java.util.Enumeration;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * Facility to build set of tree nodes to represent SModel.
+ * Could be configured to group tree nodes by model namespace (default),
+ * and to utilize model qualified name as namespace for other models.
+ */
 public class SModelsSubtree {
+  private final MPSTreeNode myRootTreeNode;
+  private final boolean myWithNamespaceNodes;
+  private final boolean myWithModelsAsNamespace;
+  private TreeNodeTextSource<SModelTreeNode> myRootModelsText;
+  private TreeNodeTextSource<SModelTreeNode> myChildModelsText;
 
-  public static void create(MPSTreeNode rootTreeNode, SModule module) {
-    create(rootTreeNode, module, IterableUtil.asList(module.getModels()), false);
+  public SModelsSubtree(@NotNull MPSTreeNode rootTreeNode) {
+    this(rootTreeNode, true, true);
   }
 
-  public static void create(MPSTreeNode rootTreeNode, SModule contextModule, List<SModel> models, boolean dropMiddleNodes) {
-    List<SModel> regularModels = new ArrayList<SModel>();
-    List<SModel> tests = new ArrayList<SModel>();
-    List<SModel> stubs = new ArrayList<SModel>();
+  /**
+   * @param rootTreeNode tree node to populate with children
+   * @param withNamespaceNodes <code>true</code> to group models according to their namespace under dedicated text (aka namespace) nodes
+   * @param withModelsAsNamespace <code>true</code> group models according to their namespace under model with shorter namespace
+   */
+  public SModelsSubtree(@NotNull MPSTreeNode rootTreeNode, boolean withNamespaceNodes, boolean withModelsAsNamespace) {
+    myRootTreeNode = rootTreeNode;
+    myWithNamespaceNodes = withNamespaceNodes;
+    myWithModelsAsNamespace = withModelsAsNamespace;
+  }
 
-    //todo this subdivision should be eliminated later
-    for (SModel modelDescriptor : models) {
-      if (TemporaryModels.isTemporary(modelDescriptor)) continue;
+  public void create(SModule module) {
+    create(IterableUtil.asCollection(module.getModels()));
+  }
 
-      String stereotype = SModelStereotype.getStereotype(modelDescriptor);
-
-      if (stereotype == null || stereotype.length() == 0) {
-        stereotype = ".";
-      }
-
-      if (SModelStereotype.isStubModelStereotype(stereotype)) {
-        stubs.add(modelDescriptor);
-      } else if (SModelStereotype.TESTS.equals(stereotype)) {
-        tests.add(modelDescriptor);
-      } else {
-        regularModels.add(modelDescriptor);
-      }
+  public void create(Collection<SModel> models) {
+    ModelUnderNamespaceText nsText = new ModelUnderNamespaceText();
+    ShortModelNameText shortText = new ShortModelNameText();
+    myRootModelsText = myWithNamespaceNodes ? nsText : shortText;
+    myChildModelsText = myWithModelsAsNamespace ? nsText : shortText;
+    List<SModelTreeNode> treeNodes = getRootModelTreeNodes(models);
+    if (treeNodes.isEmpty()) {
+      return;
     }
-
-    List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, isNeedBuildChildModels(rootTreeNode));
-    if (!regularModelNodes.isEmpty()) {
-      if (contextModule instanceof Language) {
-        for (SModelTreeNode treeNode : regularModelNodes) {
-          rootTreeNode.add(treeNode);
-        }
-        if (!rootTreeNode.equals(rootTreeNode)) {
-          rootTreeNode.add(rootTreeNode);
-        }
-      } else {
-        SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-        for (SModelTreeNode treeNode : regularModelNodes) {
-          builder.addNode(treeNode);
-        }
-        builder.fillNode(rootTreeNode);
-      }
-    }
-
-    if (!tests.isEmpty()) {
+    if (myWithNamespaceNodes) {
       SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-
-      List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, isNeedBuildChildModels(rootTreeNode));
-      for (SModelTreeNode testNode : testNodes) {
-        builder.addNode(testNode);
-      }
-
-      TestsTreeNode testsNode = new TestsTreeNode();
-      builder.fillNode(testsNode);
-
-      if (!dropMiddleNodes) {
-        rootTreeNode.add(testsNode);
-      } else {
-        Enumeration children = testsNode.children();
-        while (children.hasMoreElements()) {
-          rootTreeNode.add((MutableTreeNode) children.nextElement());
-        }
-      }
-    }
-
-    if (!stubs.isEmpty()) {
-      SModelNamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
-      List<SModelTreeNode> stubNodes = getRootModelTreeNodes(stubs, isNeedBuildChildModels(rootTreeNode));
-      for (SModelTreeNode treeNode : stubNodes) {
+      for (SModelTreeNode treeNode : treeNodes) {
         builder.addNode(treeNode);
       }
-
-      StubsTreeNode stubsNode = new StubsTreeNode();
-      builder.fillNode(stubsNode);
-
-      if (!dropMiddleNodes) {
-        rootTreeNode.add(stubsNode);
-      } else {
-        Enumeration children = stubsNode.children();
-        List<MutableTreeNode> tmpList = new ArrayList<MutableTreeNode>();
-        while (children.hasMoreElements()) {
-          tmpList.add((MutableTreeNode) children.nextElement());
-        }
-
-        for (MutableTreeNode child : tmpList) {
-          rootTreeNode.add(child);
-        }
+      builder.fillNode(myRootTreeNode);
+    } else {
+      for (SModelTreeNode treeNode : treeNodes) {
+        myRootTreeNode.add(treeNode);
       }
     }
   }
 
-  private static boolean isNeedBuildChildModels(MPSTreeNode rootTreeNode) {
-    return !(rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
-  }
-
-  private static List<SModelTreeNode> getRootModelTreeNodes(List<SModel> models, boolean isNeedBuildChildModels) {
+  private List<SModelTreeNode> getRootModelTreeNodes(Collection<SModel> models) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
-    List<SModel> sortedModels = SortUtil.sortModels(models);
+    ArrayList<SModel> sortedModels = new ArrayList<SModel>(models);
+    Collections.sort(sortedModels, new SModelComparator());
     if (!sortedModels.isEmpty()) {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
         SModel rootModelDescriptor = sortedModels.get(rootIndex);
-        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(
-            SModelStereotype.withoutStereotype(rootModelDescriptor.getReference().getModelName())));
-        SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, countNamePart);
+        SModelTreeNode treeNode = new SModelTreeNode(rootModelDescriptor, myRootModelsText);
         result.add(treeNode);
-        rootIndex = (isNeedBuildChildModels) ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
+        rootIndex = myWithModelsAsNamespace ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
       }
     }
     return result;
   }
 
-  private static int buildChildModels(SModelTreeNode treeNode, List<SModel> candidates, int rootIndex) {
+  private int buildChildModels(SModelTreeNode treeNode, List<SModel> candidates, int rootIndex) {
     int index = rootIndex + 1;
     while (index < candidates.size()) {
       SModel candidate = candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
-        int countNamePart = getCountNamePart(candidate, SNodeOperations.getModelLongName(treeNode.getModel()));
-        SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, countNamePart);
+        SModelTreeNode newChildModel = new SModelTreeNode(candidate, myChildModelsText);
         treeNode.addChildModel(newChildModel);
         index = buildChildModels(newChildModel, candidates, index);
       } else {
@@ -209,6 +162,36 @@ public class SModelsSubtree {
     @Override
     public boolean isStrict() {
       return true;
+    }
+  }
+
+  private static class ModelUnderNamespaceText implements TreeNodeTextSource<SModelTreeNode> {
+    private final LongModelNameText myFullText = new LongModelNameText();
+
+    @Override
+    public String calculateText(SModelTreeNode treeNode) {
+      String longName = myFullText.calculateText(treeNode);
+      if (treeNode.getModel() instanceof TransientSModel) {
+        // this is a hack derived from legacy code, shall configure TreeNodeTextSource from TransientModelsTreeNode instead
+        return longName;
+      }
+      String namespace;
+      // FIXME Perhaps, shall introduce interface NamespaceNode, which either gives a string or is capable to tell text for a given child
+      if (treeNode.getParent() instanceof NamespaceTextNode) {
+        NamespaceTextNode parent = (NamespaceTextNode) treeNode.getParent();
+        namespace = parent.getNamespace();
+      } else if (treeNode.getParent() instanceof SModelTreeNode) {
+        SModelTreeNode parent = (SModelTreeNode) treeNode.getParent();
+        // code inspired by #getCountNamePart()
+        namespace = NameUtil.getModelLongName(parent.getModel());
+      } else {
+        return longName;
+      }
+      // if namespace + '.' + non empty tail fits into longName
+      if (longName.length() > namespace.length() + 1 && longName.startsWith(namespace) && longName.charAt(namespace.length()) == '.') {
+        return longName.substring(namespace.length() + 1);
+      }
+      return longName;
     }
   }
 }

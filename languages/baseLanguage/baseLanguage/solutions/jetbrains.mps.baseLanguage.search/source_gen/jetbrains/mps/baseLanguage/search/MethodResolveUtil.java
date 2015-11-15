@@ -38,7 +38,7 @@ import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 
 public class MethodResolveUtil {
-  public MethodResolveUtil() {
+  private MethodResolveUtil() {
   }
 
   public static Tuples._2<SNode, Boolean> resolveMethod(SNode methodCall, String name) {
@@ -95,17 +95,18 @@ public class MethodResolveUtil {
       }
     }
   }
+
   private static Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
     return ((Map<SNode, SNode>) BHReflection.invoke(methodCall, SMethodTrimmedId.create("getTypesByTypeVars", null, "JfLh5LDMrj")));
   }
-  public static Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
+
+  private static Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
     Iterable<SNode> availableMethodDeclarations = ((Iterable<SNode>) BHReflection.invoke(methodCall, SMethodTrimmedId.create("getAvailableMethodDeclarations", null, "50EF2fWdwEN"), methodName));
     assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + SNodeOperations.getConcept(methodCall).getQualifiedName();
     return availableMethodDeclarations;
   }
 
-
-  public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
+  private static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
     int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
     boolean[] varargs = new boolean[ListSequence.fromList(methods).count()];
@@ -143,7 +144,8 @@ public class MethodResolveUtil {
     }
     return new Pair<List<SNode>, Boolean>(result, good);
   }
-  public static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
+
+  private static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
     List<SNode> goodMethods = new ArrayList<SNode>();
     List<SNode> badMethods = new ArrayList<SNode>();
     for (SNode method : methods) {
@@ -186,10 +188,12 @@ public class MethodResolveUtil {
       return new Pair<List<SNode>, Boolean>(goodMethods, true);
     }
   }
+
   private static boolean hasEqualsFQName(SModel model1, SModel model2) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(model1).equals(jetbrains.mps.util.SNodeOperations.getModelLongName(model2));
   }
-  public static Pair<SNode, Boolean> chooseByParameterTypeReportNoGoodMethodNode(SNode current, List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
+
+  private static Pair<SNode, Boolean> chooseByParameterTypeReportNoGoodMethodNode(SNode current, List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     Map<SNode, SNode> nodesAndTypes = new HashMap<SNode, SNode>();
     int i = 1;
     Boolean good = true;
@@ -229,6 +233,7 @@ public class MethodResolveUtil {
     }
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
+
   private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();

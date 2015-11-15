@@ -40,7 +40,8 @@ public interface Tab extends Modifiable {
   public String getToolTip();
 
   /**
-   * Custom UI component that will be shown in tab
+   * Custom UI component that will be shown in tab.
+   * This method is invoked after {@link #init()}
    */
   public JComponent getTabComponent();
 }

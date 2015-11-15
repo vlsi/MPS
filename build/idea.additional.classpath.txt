@@ -14,6 +14,7 @@ core/persistence/classes
 core/java-stub/classes
 core/smodel/classes
 core/findUsages-runtime/classes
+core/squery-runtime/classes
 core/refactoring-runtime/classes
 core/typesystemEngine/classes
 core/generator/classes
@@ -52,5 +53,4 @@ workbench/typesystemUi/classes
 workbench/mps-workbench/jetbrains.mps.ide/classes
 MPSPlugin/apiclasses
 :test
-core/tool/environment/classes
 testbench/classes

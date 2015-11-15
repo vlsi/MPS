@@ -206,7 +206,7 @@ public class StructDifferencePane {
     myOldEditor.unhighlightAllChanges();
 
     if (myNewEditor.getEditedNode() == null) {
-      myNewEditor.editNode(myProject, myChangeSet.getNewNodeId(), myChangeSet.getNewModel());
+      myNewEditor.editNode(myChangeSet.getNewNodeId(), myChangeSet.getNewModel());
     }
 
     myNewEditor.getMainEditor().rebuildEditorContent();

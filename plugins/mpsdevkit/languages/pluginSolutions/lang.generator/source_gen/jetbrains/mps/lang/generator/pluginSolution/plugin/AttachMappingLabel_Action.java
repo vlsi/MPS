@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -104,6 +105,12 @@ public class AttachMappingLabel_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
@@ -180,7 +187,7 @@ __switch__:
     }).toListSequence();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+        AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), event.getData(MPSCommonDataKeys.MPS_PROJECT));
         dialog.show();
       }
     });

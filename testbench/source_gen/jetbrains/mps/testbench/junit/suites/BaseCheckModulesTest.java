@@ -21,13 +21,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.HashSet;
-import org.junit.AfterClass;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseCheckModulesTest {
-  private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
   protected final SModule myModule;
+
   public BaseCheckModulesTest(SModule module) {
     this.myModule = module;
   }
@@ -47,7 +46,6 @@ public class BaseCheckModulesTest {
   protected static void initEnvironment() throws InvocationTargetException, InterruptedException {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
 
-    ourStatistic = new CheckingTestStatistic();
     ProjectStrategy strategy = new MPSCompositeProjectStrategy();
     ourContextProject = env.createProject(strategy);
   }
@@ -79,14 +77,5 @@ public class BaseCheckModulesTest {
 
   public static Project getContextProject() {
     return ourContextProject;
-  }
-
-  public static CheckingTestStatistic getStatistic() {
-    return ourStatistic;
-  }
-
-  @AfterClass
-  public static void cleanUp() {
-    ourStatistic.printStatistic();
   }
 }

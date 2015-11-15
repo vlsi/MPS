@@ -48,9 +48,11 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -79,6 +81,7 @@ public class ContentEntriesEditor implements Disposable {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
+  private final SRepository myRepository;
   private final ModelRootEntryPersistence myRootEntryPersistence;
   private List<ModelRootEntryContainer> myModelRootEntries = new ArrayList<ModelRootEntryContainer>();
   private ModelRootEntryContainer myFocucedModelRootEntryContainer;
@@ -89,8 +92,9 @@ public class ContentEntriesEditor implements Disposable {
   private JBPanel myMainPanel;
   private String myDefaultFolder;
 
-  public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
+  public ContentEntriesEditor(ModuleDescriptor moduleDescriptor, SRepository repository) {
     myModuleDescriptor = moduleDescriptor;
+    myRepository = repository;
     myRootEntryPersistence = new ModelRootEntryPersistence().initFromEP();
     for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(descriptor);
@@ -109,13 +113,13 @@ public class ContentEntriesEditor implements Disposable {
     }
 
     AnAction action = new IconWithTextAction(
-        PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
-        PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
+        PropertiesBundle.message("module.common.roots.add.title"),
+        PropertiesBundle.message("module.common.roots.add.tip"),
         Modules.AddContentEntry) {
       @Override
       public void actionPerformed(final AnActionEvent e) {
         if(list.size() == 1) {
-          MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+          myRepository.getModelAccess().runReadAction(new Runnable() {
             @Override
             public void run() {
               list.get(0).actionPerformed(e);
@@ -314,17 +318,16 @@ public class ContentEntriesEditor implements Disposable {
 
     private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
       String contentRoot = myDefaultFolder != null ? myDefaultFolder : "";
-      final SModule[] module = new SModule[1];
-      MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+      final SModule module = new ModelAccessHelper(myRepository).runReadAction(new Computable<SModule>() {
         @Override
-        public void run() {
-          module[0] = MPSModuleRepository.getInstance().getModule(myModuleDescriptor.getId());
+        public SModule compute() {
+          return myRepository.getModule(myModuleDescriptor.getId());
         }
       });
-      if (module[0] instanceof AbstractModule) {
-        contentRoot = ((AbstractModule) module[0]).getModuleSourceDir() == null
-            ? ((AbstractModule) module[0]).getDescriptorFile().getParent().getPath()
-            : ((AbstractModule) module[0]).getModuleSourceDir().getPath();
+      if (module instanceof AbstractModule) {
+        contentRoot = ((AbstractModule) module).getModuleSourceDir() == null
+            ? ((AbstractModule) module).getDescriptorFile().getParent().getPath()
+            : ((AbstractModule) module).getModuleSourceDir().getPath();
       }
 
       Set<String> strings = new HashSet<String>();

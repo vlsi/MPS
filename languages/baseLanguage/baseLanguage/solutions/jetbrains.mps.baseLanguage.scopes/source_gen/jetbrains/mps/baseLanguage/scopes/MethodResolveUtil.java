@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -30,12 +29,12 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MethodResolveUtil {
-  public MethodResolveUtil() {
+  private MethodResolveUtil() {
   }
   public static List<SNode> selectByParmCount(List<SNode> methods, List<SNode> actualArgs) {
     return selectByParmCountReportNoGoodMethodNode(methods, actualArgs).o1;
   }
-  public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
+  private static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
     int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
     boolean[] varargs = new boolean[ListSequence.fromList(methods).count()];
@@ -72,49 +71,6 @@ public class MethodResolveUtil {
       }
     }
     return new Pair<List<SNode>, Boolean>(result, good);
-  }
-  public static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
-    List<SNode> goodMethods = new ArrayList<SNode>();
-    List<SNode> badMethods = new ArrayList<SNode>();
-    for (SNode method : methods) {
-      if (SNodeOperations.isInstanceOf(method, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible"))) {
-        SNode visibility = SLinkOperations.getTarget(SNodeOperations.cast(method, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
-        if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
-          goodMethods.add(method);
-        } else if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
-          if (SNodeOperations.getContainingRoot(methodCall) == SNodeOperations.getContainingRoot(method)) {
-            goodMethods.add(method);
-          } else {
-            badMethods.add(method);
-          }
-        } else if (SNodeOperations.isInstanceOf(visibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
-          if (SNodeOperations.getModel(methodCall) == SNodeOperations.getModel(method)) {
-            goodMethods.add(method);
-          } else {
-            SNode desc = SNodeOperations.getNodeAncestor(methodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-            SNode anc = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-            if ((boolean) Classifier__BehaviorDescriptor.isDescendant_id6dL7A1DpKo1.invoke(desc, anc)) {
-              goodMethods.add(method);
-            } else {
-              badMethods.add(method);
-            }
-          }
-        } else {
-          if (SNodeOperations.getModel(methodCall) == SNodeOperations.getModel(method)) {
-            goodMethods.add(method);
-          } else {
-            badMethods.add(method);
-          }
-        }
-      } else {
-        goodMethods.add(method);
-      }
-    }
-    if (goodMethods.isEmpty()) {
-      return new Pair<List<SNode>, Boolean>(badMethods, false);
-    } else {
-      return new Pair<List<SNode>, Boolean>(goodMethods, true);
-    }
   }
   public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     return MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(null, candidates, actualArgs, typeByTypeVar).o1;

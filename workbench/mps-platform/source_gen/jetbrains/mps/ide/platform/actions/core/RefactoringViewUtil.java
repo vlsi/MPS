@@ -10,7 +10,6 @@ import java.util.Set;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,10 +21,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RefactoringViewUtil {
 
+  @Deprecated
   public static void refactor(final MPSProject mpsProject, final SearchResults<SNode> usagesToShow, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header) {
     RefactoringAccessEx.getInstance().showRefactoringView(mpsProject.getProject(), new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        mpsProject.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
             Iterable<SNode> includedNodes;
             if (refactoringViewItem instanceof RefactoringViewItem.RefactoringViewItemEx) {

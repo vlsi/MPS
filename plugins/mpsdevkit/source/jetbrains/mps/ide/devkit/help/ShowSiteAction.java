@@ -30,7 +30,7 @@ public abstract class ShowSiteAction extends BaseAction implements DumbAware {
   }
 
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-    BrowserUtil.launchBrowser(getSiteURL());
+    BrowserUtil.browse(getSiteURL(), e.getProject());
   }
 
   protected abstract String getSiteURL();

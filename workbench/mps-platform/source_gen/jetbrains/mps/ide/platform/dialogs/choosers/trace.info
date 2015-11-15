@@ -1123,10 +1123,10 @@
   <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/397101727194120959">
     <file name="NodeChooserDialog.java">
       <node id="397101727194125937" at="28,0,29,0" concept="5" trace="myChooser" />
-      <node id="681803901115684911" at="29,120,30,25" concept="16" />
+      <node id="681803901115684911" at="29,82,30,25" concept="16" />
       <node id="681803901115684914" at="30,25,31,28" concept="4" />
       <node id="681803901115684917" at="31,28,32,0" concept="13" />
-      <node id="681803901115684984" at="32,0,33,77" concept="4" />
+      <node id="681803901115684984" at="32,0,33,86" concept="4" />
       <node id="681803901115685004" at="36,49,37,21" concept="4" />
       <node id="681803901115685010" at="39,60,40,0" concept="13" />
       <node id="681803901115685011" at="40,0,41,11" concept="4" />
@@ -1156,13 +1156,13 @@
       <node id="397101727194123993" at="46,70,51,10" concept="11" />
       <node id="884095344014786713" at="71,70,76,8" concept="17" />
       <node id="2476433916569952370" at="100,0,105,0" concept="9" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-      <node id="681803901115684990" at="33,77,39,60" concept="4" />
+      <node id="681803901115684990" at="33,86,39,60" concept="4" />
       <node id="397101727194120966" at="78,0,84,0" concept="9" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
       <node id="884095344014786581" at="71,0,78,0" concept="2" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
       <node id="397101727194123986" at="45,0,53,0" concept="9" trace="doGetNavigationItem#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lcom/intellij/navigation/NavigationItem;" />
       <node id="397101727194137651" at="84,0,92,0" concept="9" trace="getResultNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="884095344014661250" at="92,0,100,0" concept="9" trace="getResult#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="681803901115684902" at="29,0,43,0" concept="2" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/Iterable;Lcom/intellij/ide/util/gotoByName/ChooseByNameModel;)V" />
+      <node id="681803901115684902" at="29,0,43,0" concept="2" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Lcom/intellij/ide/util/gotoByName/ChooseByNameModel;)V" />
       <node id="681803901115806563" at="43,83,69,7" concept="17" />
       <node id="397101727194120961" at="43,0,71,0" concept="2" trace="NodeChooserDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/Iterable;)V" />
       <scope id="397101727194124276" at="49,54,49,54" />
@@ -1212,10 +1212,9 @@
       </scope>
       <scope id="397101727194137651" at="84,0,92,0" />
       <scope id="884095344014661250" at="92,0,100,0" />
-      <scope id="681803901115684910" at="29,120,41,11" />
+      <scope id="681803901115684910" at="29,82,41,11" />
       <scope id="681803901115684902" at="29,0,43,0">
         <var name="chooseByNameModel" id="681803901115794932" />
-        <var name="nodes" id="681803901115684905" />
         <var name="project" id="681803901115684903" />
       </scope>
       <scope id="397101727194120964" at="43,83,69,7" />
@@ -1226,7 +1225,7 @@
       <unit id="397101727194124269" at="47,19,51,9" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
       <unit id="884095344014786762" at="72,58,76,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$3" />
       <unit id="681803901115684996" at="34,25,39,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$1" />
-      <unit id="397101727194123504" at="44,29,69,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
+      <unit id="397101727194123504" at="44,22,69,5" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog$2" />
       <unit id="397101727194120959" at="27,0,106,0" name="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
     </file>
   </root>

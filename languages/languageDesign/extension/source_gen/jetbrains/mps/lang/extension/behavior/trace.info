@@ -41,7 +41,7 @@
       <unit at="13,0,25,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
     </file>
     <file name="Extension_BehaviorDescriptor.java">
-      <unit at="15,0,27,0" name="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
+      <unit at="14,0,26,0" name="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
     </file>
     <file name="GetExtensionObjectsOperation_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />

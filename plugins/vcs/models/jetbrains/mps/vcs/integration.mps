@@ -90,7 +90,10 @@
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
-      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
+      <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
+        <property id="8606350594693632173" name="isTransient" index="eg7rD" />
+        <property id="1240249534625" name="isVolatile" index="34CwA1" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -1051,6 +1054,7 @@
     </node>
     <node concept="312cEg" id="5ooWrzQB92r" role="jymVt">
       <property role="TrG5h" value="myVcsManager" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="5ooWrzQB92s" role="1B3o_S" />
       <node concept="3uibUv" id="2LiDtbYeDwe" role="1tU5fm">
         <ref role="3uigEE" to="jlcu:~ProjectLevelVcsManager" resolve="ProjectLevelVcsManager" />
@@ -1058,6 +1062,7 @@
     </node>
     <node concept="312cEg" id="5ooWrzQBcRK" role="jymVt">
       <property role="TrG5h" value="myFileStatusManager" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="5ooWrzQBcRL" role="1B3o_S" />
       <node concept="3uibUv" id="2LiDtbYeDwf" role="1tU5fm">
         <ref role="3uigEE" to="jlcu:~FileStatusManager" resolve="FileStatusManager" />
@@ -1065,13 +1070,25 @@
     </node>
     <node concept="312cEg" id="5ooWrzQBcSO" role="jymVt">
       <property role="TrG5h" value="myDirtyScopeManager" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="5ooWrzQBcSP" role="1B3o_S" />
       <node concept="3uibUv" id="2LiDtbYeDwg" role="1tU5fm">
         <ref role="3uigEE" to="1037:~VcsDirtyScopeManager" resolve="VcsDirtyScopeManager" />
       </node>
     </node>
+    <node concept="312cEg" id="6y_kxB1UVmN" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myMpsProject" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6y_kxB1UVbF" role="1B3o_S" />
+      <node concept="3uibUv" id="6y_kxB1UVlU" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+      </node>
+    </node>
     <node concept="312cEg" id="5ooWrzQBdaN" role="jymVt">
       <property role="TrG5h" value="myFileListener" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="5ooWrzQBdaO" role="1B3o_S" />
       <node concept="3uibUv" id="5ooWrzQBdaQ" role="1tU5fm">
         <ref role="3uigEE" node="5ooWrzQB8Df" resolve="GeneratedFileConflictResolving.MyFileListener" />
@@ -1082,6 +1099,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="6y_kxB1UUOY" role="jymVt" />
     <node concept="3clFbW" id="5ooWrzQBcSS" role="jymVt">
       <node concept="3cqZAl" id="5ooWrzQBcST" role="3clF45" />
       <node concept="3Tm1VV" id="5ooWrzQBcSU" role="1B3o_S" />
@@ -1122,11 +1140,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6y_kxB1UVyr" role="3cqZAp">
+          <node concept="37vLTI" id="6y_kxB1UV_$" role="3clFbG">
+            <node concept="37vLTw" id="6y_kxB1UVBk" role="37vLTx">
+              <ref role="3cqZAo" node="6y_kxB1UTey" resolve="mpsProject" />
+            </node>
+            <node concept="37vLTw" id="6y_kxB1UVyp" role="37vLTJ">
+              <ref role="3cqZAo" node="6y_kxB1UVmN" resolve="myMpsProject" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="5ooWrzQBcSY" role="3clF46">
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="2LiDtbYeDIL" role="1tU5fm">
           <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6y_kxB1UTey" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="6y_kxB1UULR" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="5ooWrzQBcT2" role="3clF46">
@@ -1247,7 +1281,15 @@
                 <node concept="2OqwBi" id="2tkR5cH5dng" role="3uHU7B">
                   <node concept="2YIFZM" id="2tkR5cH5dmF" role="2Oq$k0">
                     <ref role="1Pybhc" to="w1kc:~SModelFileTracker" resolve="SModelFileTracker" />
-                    <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance():jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
+                    <ref role="37wK5l" to="w1kc:~SModelFileTracker.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.SModelFileTracker" resolve="getInstance" />
+                    <node concept="2OqwBi" id="6y_kxB1UVR1" role="37wK5m">
+                      <node concept="37vLTw" id="6y_kxB1UVOf" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6y_kxB1UVmN" resolve="myMpsProject" />
+                      </node>
+                      <node concept="liA8E" id="6y_kxB1UVTR" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                   <node concept="liA8E" id="2tkR5cH5dnE" role="2OqNvi">
                     <ref role="37wK5l" to="w1kc:~SModelFileTracker.findModel(jetbrains.mps.vfs.IFile):org.jetbrains.mps.openapi.model.SModel" resolve="findModel" />

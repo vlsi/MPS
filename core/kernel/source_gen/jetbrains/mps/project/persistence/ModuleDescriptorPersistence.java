@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.persistence.MementoImpl;
+import org.apache.log4j.Level;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -43,7 +44,6 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
-import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -72,6 +72,13 @@ public class ModuleDescriptorPersistence {
         SLanguageId id = SLanguageId.deserialize(it.getAttributeValue("id"));
         String name = it.getAttributeValue("fqName");
         descriptor.getLanguageVersions().put(MetaAdapterFactory.getLanguage(id, name), Integer.parseInt(it.getAttributeValue("version")));
+      }
+    });
+    descriptor.setHasDependencyVersions(!(root.getChildren("dependencyVersions").isEmpty()));
+    Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "dependencyVersions"), "module")).visitAll(new IVisitor<Element>() {
+      public void visit(Element it) {
+        SModuleReference id = PersistenceFacade.getInstance().createModuleReference(it.getAttributeValue("reference"));
+        descriptor.getDependencyVersions().put(id, Integer.parseInt(it.getAttributeValue("version")));
       }
     });
 
@@ -122,6 +129,21 @@ public class ModuleDescriptorPersistence {
       languageVersions.addContent(languageVersion);
     }
     result.addContent(languageVersions);
+    Map<SModuleReference, Integer> depVer = descriptor.getDependencyVersions();
+    ArrayList<SModuleReference> deps = new ArrayList<SModuleReference>(depVer.keySet());
+    Collections.sort(deps, new Comparator<SModuleReference>() {
+      public int compare(SModuleReference p0, SModuleReference p1) {
+        return p0.getModuleName().compareTo(p1.getModuleName());
+      }
+    });
+    Element dependencyVersions = new Element("dependencyVersions");
+    for (SModuleReference ref : deps) {
+      Element moduleVersion = new Element("module");
+      moduleVersion.setAttribute("reference", ref.toString());
+      moduleVersion.setAttribute("version", String.valueOf(depVer.get(ref)));
+      dependencyVersions.addContent(moduleVersion);
+    }
+    result.addContent(dependencyVersions);
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
@@ -182,6 +204,14 @@ public class ModuleDescriptorPersistence {
       Memento m = new MementoImpl();
       readMemento(m, element, macroHelper);
       String type = element.getAttributeValue("type");
+      if (type == null) {
+        // This is debug code to find out cause of https://youtrack.jetbrains.com/issue/MPS-22589. 
+        String msg = String.format("Unsupported model root detected in module at %s. Likely outdated module is being loaded, please check your environment", macroHelper.expandPath("${module}"));
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(msg);
+        }
+        throw new IllegalStateException(msg);
+      }
       ModelRootDescriptor descriptor = createDescriptor(type, m, moduleContentRoot, cache);
       if (descriptor != null) {
         ListSequence.fromList(result).addElement(descriptor);

@@ -42,8 +42,14 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
+    <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
   </imports>
   <registry>
+    <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
+      <concept id="1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" flags="in" index="1LlUBW">
+        <child id="1238852204892" name="componentType" index="1Lm7xW" />
+      </concept>
+    </language>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
       <concept id="6496299201655527393" name="jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall" flags="nn" index="BsUDl" />
       <concept id="1225194240794" name="jetbrains.mps.lang.behavior.structure.ConceptBehavior" flags="ng" index="13h7C7">
@@ -12560,7 +12566,7 @@
       <node concept="3clFbS" id="2wC_gGKDODy" role="3clF47">
         <node concept="3cpWs6" id="2wC_gGKDOPa" role="3cqZAp">
           <node concept="2c44tf" id="2wC_gGKDOPb" role="3cqZAk">
-            <node concept="17QB3L" id="2wC_gGKDOQ1" role="2c44tc" />
+            <node concept="17QB3L" id="54iik1dacDX" role="2c44tc" />
           </node>
         </node>
       </node>
@@ -16381,6 +16387,95 @@
         </node>
       </node>
       <node concept="10P_77" id="4YHrdUcAhyF" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="54iik1da7Tw">
+    <ref role="13h7C2" to="tpc2:54iik1da7Qt" resolve="QueryFunction_ModuleAndPath" />
+    <node concept="13hLZK" id="54iik1da7Tx" role="13h7CW">
+      <node concept="3clFbS" id="54iik1da7Ty" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="54iik1da7Tz" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+      <node concept="3Tm1VV" id="54iik1da7T$" role="1B3o_S" />
+      <node concept="_YKpA" id="54iik1da7T_" role="3clF45">
+        <node concept="3Tqbb2" id="54iik1da7TA" role="_ZDj9">
+          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="54iik1da7TB" role="3clF47">
+        <node concept="3cpWs8" id="54iik1da7TC" role="3cqZAp">
+          <node concept="3cpWsn" id="54iik1da7TD" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="_YKpA" id="54iik1da7TE" role="1tU5fm">
+              <node concept="3Tqbb2" id="54iik1da7TF" role="_ZDj9">
+                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="54iik1da7TG" role="33vP2m">
+              <node concept="13iAh5" id="54iik1da7TH" role="2Oq$k0">
+                <ref role="3eA5LN" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+              </node>
+              <node concept="2qgKlT" id="54iik1da7TI" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="54iik1da7TJ" role="3cqZAp">
+          <node concept="2OqwBi" id="54iik1da7TK" role="3clFbG">
+            <node concept="37vLTw" id="54iik1da7TL" role="2Oq$k0">
+              <ref role="3cqZAo" node="54iik1da7TD" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="54iik1da7TM" role="2OqNvi">
+              <node concept="3B5_sB" id="54iik1da7TN" role="25WWJ7">
+                <ref role="3B5MYn" to="tpc2:gCpncv5" resolve="ConceptFunctionParameter_node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="54iik1da7TO" role="3cqZAp">
+          <node concept="2OqwBi" id="54iik1da7TP" role="3clFbG">
+            <node concept="37vLTw" id="54iik1da7TQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="54iik1da7TD" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="54iik1da7TR" role="2OqNvi">
+              <node concept="3B5_sB" id="54iik1da7TS" role="25WWJ7">
+                <ref role="3B5MYn" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="54iik1da7TT" role="3cqZAp">
+          <node concept="37vLTw" id="54iik1da7TU" role="3cqZAk">
+            <ref role="3cqZAo" node="54iik1da7TD" resolve="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="54iik1da7TV" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="54iik1da7TW" role="1B3o_S" />
+      <node concept="3Tqbb2" id="54iik1da7TX" role="3clF45" />
+      <node concept="3clFbS" id="54iik1da7TY" role="3clF47">
+        <node concept="3cpWs6" id="54iik1da7TZ" role="3cqZAp">
+          <node concept="2c44tf" id="54iik1da7U0" role="3cqZAk">
+            <node concept="1LlUBW" id="54iik1da7U3" role="2c44tc">
+              <node concept="3uibUv" id="54iik1da7U4" role="1Lm7xW">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+              <node concept="17QB3L" id="54iik1da7U5" role="1Lm7xW" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

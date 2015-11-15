@@ -16,49 +16,26 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.MacrosFactory;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.SwingUtilities;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.image.ImageObserver;
 
 public class EditorCell_Image extends EditorCell_Basic {
 
   private ImageAlignment myAlignment = ImageAlignment.justify;
-  private Image myImage;
-  private ImageObserver mySizeObserver = new ImageObserver() {
-    @Override
-    public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
-      int mask = ImageObserver.HEIGHT | ImageObserver.WIDTH;
-      boolean done = (infoflags & mask) == mask;
-      if (done) {
-        SwingUtilities.invokeLater(new Runnable() {
-
-          @Override
-          public void run() {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                getEditor().rebuildEditorContent();
-              }
-            });
-          }
-        });
-      }
-      return done;
-    }
-  };
+  private Icon myIcon;
 
   private int myDescent = -1;
 
@@ -69,8 +46,12 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
+    return createImageCell(editorContext, node, null, imageFileName);
+  }
+
+  public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, @Nullable SModule imageModule, String imagePath) {
     EditorCell_Image result = new EditorCell_Image(editorContext, node);
-    result.setImageFileName(expandIconPath(imageFileName, node));
+    result.setIcon(loadIcon(editorContext, imageModule, imagePath));
     return result;
   }
 
@@ -82,16 +63,21 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   @Override
   protected void paintContent(Graphics g, ParentSettings parentSettings) {
-    if (myImage == null) return;
+    if (myIcon == null) return;
     switch (myAlignment) {
       case justify: {
-        g.drawImage(myImage, myX, myY, myWidth, myHeight, getEditor());
+        if ((myWidth != -1 && myWidth != myIcon.getIconWidth())
+            || (myHeight != -1 && myHeight != myIcon.getIconHeight())) {
+          paintIconScaled(g);
+        } else {
+          myIcon.paintIcon(getEditor(), g, myX, myY);
+        }
         break;
       }
       case center: {
-        int x = myX + (myWidth - myImage.getWidth(getEditor())) / 2;
-        int y = myY + (myHeight - myImage.getHeight(getEditor())) / 2;
-        g.drawImage(myImage, x, y, getEditor());
+        int x = myX + (myWidth - myIcon.getIconWidth()) / 2;
+        int y = myY + (myHeight - myIcon.getIconHeight()) / 2;
+        myIcon.paintIcon(getEditor(), g, x, y);
         break;
       }
       case title: {
@@ -100,19 +86,43 @@ public class EditorCell_Image extends EditorCell_Basic {
     }
   }
 
+  private void paintIconScaled(Graphics g) {
+    int iconWidth = myIcon.getIconWidth();
+    int iconHeight = myIcon.getIconHeight();
+
+    if (iconWidth <= 0 || iconHeight <= 0) {
+      return;
+    }
+
+    double sx = (double) myWidth / (double) iconWidth;
+    double sy = (double) myHeight / (double) iconHeight;
+    Graphics2D gscaled = (Graphics2D) g.create();
+    gscaled.translate(myX, myY);
+    gscaled.scale(sx, sy);
+    myIcon.paintIcon(getEditor(), gscaled, 0, 0);
+  }
+
   @Override
   protected void relayoutImpl() {
-    if (myImage == null) return;
+    if (myIcon == null) return;
     if (myAlignment == ImageAlignment.justify) {
-      int width = myImage.getWidth(mySizeObserver);
+      int width = myIcon.getIconWidth();
       if (width != -1) {
         myWidth = width;
       }
-      int height = myImage.getHeight(mySizeObserver);
+      int height = myIcon.getIconHeight();
       if (height != -1) {
         myHeight = height;
       }
     }
+
+    if (myDescent < 0) {
+      myDescent = getFontMetrics().getDescent();
+    }
+  }
+
+  private FontMetrics getFontMetrics() {
+    return FontRegistry.getInstance().getFontMetrics(EditorSettings.getInstance().getDefaultEditorFont());
   }
 
   @Override
@@ -135,26 +145,30 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   protected void setImageFileName(String fileName) {
     if (fileName != null && FileSystem.getInstance().getFileByPath(fileName).exists()) {
-      myImage = Toolkit.getDefaultToolkit().getImage(fileName);
+      setImage(Toolkit.getDefaultToolkit().getImage(fileName));
+    } else {
+      setImage(null);
     }
   }
 
-  private static String expandIconPath(String path, SNode sourceNode) {
-    AbstractModule module = findAnchorModule(sourceNode.getModel());
-    return module != null ? MacrosFactory.forModule(module).expandPath(path) : path;
+  private static Icon loadIcon(EditorContext context, SModule module, String iconPath) {
+    return APICellAdapter.getIconManager(context).getIcon(toAbstractModule(module), iconPath);
   }
 
-  private static AbstractModule findAnchorModule(SModel model) {
-    SModule module = model.getModule();
-    if (module instanceof Language || module instanceof Solution) {
-      return (AbstractModule) module;
-    } else {
+  @Nullable
+  private static AbstractModule toAbstractModule(SModule module) {
+    if (!(module instanceof AbstractModule)) {
       return null;
     }
+    return (AbstractModule) module;
   }
 
   protected void setImage(Image image) {
-    myImage = image;
+    setIcon(image == null ? null : new ImageIcon(image));
+  }
+
+  protected void setIcon(Icon icon) {
+    myIcon = icon;
   }
 
   public static enum ImageAlignment {
