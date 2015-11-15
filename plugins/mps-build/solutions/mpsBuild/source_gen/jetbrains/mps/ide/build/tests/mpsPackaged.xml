@@ -400,6 +400,19 @@
       <pathelement location="${build.layout}/testPackagedLanguage.test.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <path id="long.class.path" />
+    <pathconvert pathsep=" " targetos="unix" property="manifest.classpath">
+      <path refid="long.class.path" />
+      <chainedmapper>
+        <regexpmapper from="(.*) (.*)" to="\1%20\2" />
+        <globmapper from="*" to="file:///*" />
+      </chainedmapper>
+    </pathconvert>
+    <jar jarfile="${build.tmp}/mps.class.path.jar">
+      <manifest>
+        <attribute name="Class-Path" value="${manifest.classpath}" />
+      </manifest>
+    </jar>
     <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
@@ -410,6 +423,9 @@
       <classpath>
         <fileset dir="${artifacts.mps}/lib">
           <include name="**/*.jar" />
+        </fileset>
+        <fileset dir="${build.tmp}">
+          <include name="mps.class.path.jar" />
         </fileset>
       </classpath>
       

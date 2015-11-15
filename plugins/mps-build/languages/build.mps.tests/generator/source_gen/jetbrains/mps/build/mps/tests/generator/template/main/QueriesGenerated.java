@@ -41,6 +41,12 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4608161086086019487(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"));
   }
+  public static Object propertyMacro_GetPropertyValue_7459197473276946301(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"));
+  }
+  public static Object propertyMacro_GetPropertyValue_7459197473276744078(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"));
+  }
   public static Object propertyMacro_GetPropertyValue_7206546315287713492(final PropertyMacroContext _context) {
     SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     MacroHelper macroHelper = new MacroHelper.MacroContext(project, _context).getMacros(project);
@@ -62,12 +68,6 @@ public class QueriesGenerated {
       return BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(mpsTestJar, helper, artifact);
     }
     return _context.getTemplateValue();
-  }
-  public static Object propertyMacro_GetPropertyValue_7459197473276946301(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"));
-  }
-  public static Object propertyMacro_GetPropertyValue_7459197473276744078(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L, 0xd94b027412f0827L, "path"));
   }
   public static Object propertyMacro_GetPropertyValue_149846544984625626(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
