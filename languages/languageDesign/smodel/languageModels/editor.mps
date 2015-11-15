@@ -5489,5 +5489,30 @@
       <node concept="2EHx9g" id="3WF9HwEZM_J" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="6MWs_Xbdngr">
+    <property role="3GE5qa" value="operation.node" />
+    <ref role="1XX52x" to="tp25:6MWs_Xbdj5c" resolve="Node_ChildAndAttributesAccessOperation" />
+    <node concept="3EZMnI" id="6MWs_Xbdngt" role="2wV5jI">
+      <node concept="PMmxH" id="6wdJvF5dKv$" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+      </node>
+      <node concept="3F0ifn" id="6MWs_XbdngE" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;" />
+      </node>
+      <node concept="1iCGBv" id="6MWs_Xbdnh1" role="3EZMnx">
+        <ref role="1NtTu8" to="tp25:6MWs_XbdngM" />
+        <node concept="1sVBvm" id="6MWs_Xbdnh3" role="1sWHZn">
+          <node concept="3F0A7n" id="6MWs_Xbdnhc" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpce:fA0kJcN" resolve="role" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="6MWs_Xbdnhm" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+      </node>
+      <node concept="l2Vlx" id="6MWs_Xbdngw" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

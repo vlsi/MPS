@@ -109,13 +109,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySConceptType__BehaviorDescriptor = new SConceptType__BehaviorDescriptor();
   private final BHDescriptor myModel_GetModule__BehaviorDescriptor = new Model_GetModule__BehaviorDescriptor();
   private final BHDescriptor myNode_GetSConceptOperation__BehaviorDescriptor = new Node_GetSConceptOperation__BehaviorDescriptor();
+  private final BHDescriptor myNode_ChildAndAttributesAccessOperation__BehaviorDescriptor = new Node_ChildAndAttributesAccessOperation__BehaviorDescriptor();
   private final BHDescriptor myNode_GetReferencesOperation__BehaviorDescriptor = new Node_GetReferencesOperation__BehaviorDescriptor();
   private final BHDescriptor myAsNodeOperation__BehaviorDescriptor = new AsNodeOperation__BehaviorDescriptor();
 
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[99];
+    myConceptBehaviorIds = new long[100];
     myConceptBehaviorIds[0] = 0x108f968b3caL;
     myConceptBehaviorIds[1] = 0x108f96cca6fL;
     myConceptBehaviorIds[2] = 0x108f96ea2caL;
@@ -213,8 +214,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[94] = 0x5cab42cd97571ceeL;
     myConceptBehaviorIds[95] = 0x61168e34226eec71L;
     myConceptBehaviorIds[96] = 0x6771eac6c5cbe7d2L;
-    myConceptBehaviorIds[97] = 0x798c0d67da9045abL;
-    myConceptBehaviorIds[98] = 0x7b0da3c650be8558L;
+    myConceptBehaviorIds[97] = 0x6cbc725f4b35314cL;
+    myConceptBehaviorIds[98] = 0x798c0d67da9045abL;
+    myConceptBehaviorIds[99] = 0x7b0da3c650be8558L;
   }
 
   @Deprecated
@@ -423,8 +425,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 96:
         return myNode_GetSConceptOperation__BehaviorDescriptor;
       case 97:
-        return myNode_GetReferencesOperation__BehaviorDescriptor;
+        return myNode_ChildAndAttributesAccessOperation__BehaviorDescriptor;
       case 98:
+        return myNode_GetReferencesOperation__BehaviorDescriptor;
+      case 99:
         return myAsNodeOperation__BehaviorDescriptor;
       default:
         return null;

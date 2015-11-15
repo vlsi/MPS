@@ -2403,5 +2403,18 @@
       <ref role="20lvS9" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6MWs_Xbdj5c">
+    <property role="1pbfSe" value="1208900693" />
+    <property role="3GE5qa" value="operation.node" />
+    <property role="TrG5h" value="Node_ChildAndAttributesAccessOperation" />
+    <property role="R4oN_" value="children joint with child attributes of certain role" />
+    <property role="34LRSv" value="!" />
+    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="1TJgyj" id="6MWs_XbdngM" role="1TKVEi">
+      <property role="20kJfa" value="link" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+  </node>
 </model>
 
