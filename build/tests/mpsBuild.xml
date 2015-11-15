@@ -485,49 +485,71 @@
       <pathelement location="${build.layout}/runner.test/jetbrains.mps.build.mps.runner.test.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <path id="long.class.path">
+      <fileset dir="${artifacts.mps}/plugins/mps-build">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-testing">
+      <include name="lib/**/*.jar" />
+      <include name="languages/**/*.jar" />
+      </fileset>
+    </path>
+
+    <pathconvert property="manifest.classpath" targetos="unix" pathsep=" ">
+    <path refid="long.class.path"/>
+    <regexpmapper from="(.*) (.*)" to="\1%20\2" />
+    </pathconvert>
+    <echo>
+    ${manifest.classpath}
+    </echo>
+
+
+    <jar jarfile="${build.tmp}/path.jar">
+    <manifest>
+    <attribute name="Class-Path" value="${manifest.classpath}"/>
+    </manifest>
+    </jar>
+
     <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
-      <jvmarg value="-Xmx1024m" />
-      <jvmarg value="-XX:MaxPermSize=256m" />
+      <jvmarg value="-Xmx2024m" />
+      <jvmarg value="-XX:MaxPermSize=356m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
+      <jvmarg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5022" />
       
       <classpath>
-        <fileset dir="${artifacts.mps}/lib">
-          <include name="**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-build">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-testing">
-          <include name="lib/**/*.jar" />
-          <include name="languages/**/*.jar" />
-        </fileset>
+      <fileset dir="${artifacts.mps}/lib">
+      <include name="**/*.jar" />
+      </fileset>
+      <fileset dir="${build.tmp}">
+      <include name="path.jar" />
+      </fileset>
       </classpath>
       
       <sysproperty key="plugin.path" value="${mps.plugins.path.string}" />

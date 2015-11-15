@@ -45,18 +45,26 @@ public class MpsTestsSuite extends BaseMpsSuite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
   private static final String MPS_MACRO_PREFIX = "mps.macro.";
 
-  private final Project myContextProject;
-  private final Environment myEnvironment;
-  private final URLClassLoader myClassLoader;
-  private final List<Runner> myChildren;
+  private Project myContextProject;
+  private Environment myEnvironment;
+  private URLClassLoader myClassLoader;
+  private List<Runner> myChildren;
 
   public MpsTestsSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     super(klass, Collections.<Runner>emptyList());
-    // todo: read config from annotations before start (project / ?) 
-    myEnvironment = initIdeaEnvironment();
-    myContextProject = myEnvironment.createProject(new FromModulesListProjectStrategy());
-    myClassLoader = createClassLoader();
-    myChildren = createChildRunners(myContextProject, builder);
+    // todo: read config from annotations before start (project / ?)
+    try {
+      LOG.info("1");
+      myEnvironment = initIdeaEnvironment();
+      LOG.info("2");
+      myContextProject = myEnvironment.createProject(new FromModulesListProjectStrategy());
+      LOG.info("3");
+      myClassLoader = createClassLoader();
+      LOG.info("4");
+      myChildren = createChildRunners(myContextProject, builder);
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
   }
 
   private URLClassLoader createClassLoader() {

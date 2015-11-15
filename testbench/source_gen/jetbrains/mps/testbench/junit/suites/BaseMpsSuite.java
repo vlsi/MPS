@@ -31,6 +31,9 @@ public class BaseMpsSuite extends Suite {
       if (env != null) {
         env.dispose();
       }
+    } catch (Throwable t) {
+      t.printStackTrace(System.err);
+      t.printStackTrace(System.out);
     } finally {
       RuntimeFlags.setTestMode(TestMode.NONE);
     }

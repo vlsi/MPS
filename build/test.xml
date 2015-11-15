@@ -57,73 +57,73 @@
   </target>
 
   <target name="module-tests" depends="unpack">
-    <ant antfile="build/tests/mpsTestModules.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsEditorDiagram.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsImplementationStripping.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsGenerator.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsSModel.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsBaseLanguage.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsJava.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
+    <!--<ant antfile="build/tests/mpsTestModules.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsEditor.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsEditorDiagram.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsImplementationStripping.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsGenerator.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsSModel.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsBaseLanguage.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsJava.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
     <ant antfile="build/tests/mpsBuild.xml" inheritAll="true" useNativeBasedir="true">
       <target name="build"/>
       <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
-    <ant antfile="build/tests/mpsActions.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsPackaged.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
-    <ant antfile="build/tests/mpsEditorImageGen.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="generate"/>
-      <target name="build"/>
-      <target name="check"/>
-      <property name="mps_home" value="${mps_build_home}"/>
-    </ant>
+    <!--<ant antfile="build/tests/mpsActions.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsExecution.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsPackaged.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="build/tests/mpsEditorImageGen.xml" inheritAll="true" useNativeBasedir="true">-->
+      <!--<target name="generate"/>-->
+      <!--<target name="build"/>-->
+      <!--<target name="check"/>-->
+      <!--<property name="mps_home" value="${mps_build_home}"/>-->
+    <!--</ant>-->
   </target>
 
-  <target name="default" depends="check-project-structure, module-tests"/>
+  <target name="default" depends="module-tests"/>
 </project>
