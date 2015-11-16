@@ -165,7 +165,7 @@ public class MethodResolveUtil {
           } else {
             SNode desc = SNodeOperations.getNodeAncestor(methodCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
             SNode anc = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
-            if (((boolean) (Boolean) BHReflection.invoke(desc, SMethodTrimmedId.create("isDescendant", null, "6dL7A1DpKo1"), anc))) {
+            if (desc != null && anc != null && ((boolean) (Boolean) BHReflection.invoke(desc, SMethodTrimmedId.create("isDescendant", null, "6dL7A1DpKo1"), anc))) {
               goodMethods.add(method);
             } else {
               badMethods.add(method);
