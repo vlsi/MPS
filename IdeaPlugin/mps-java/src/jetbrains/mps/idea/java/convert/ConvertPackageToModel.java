@@ -18,6 +18,7 @@ package jetbrains.mps.idea.java.convert;
 
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetTypeRegistry;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -245,6 +246,11 @@ public class ConvertPackageToModel extends AnAction {
         ReloadManager.getInstance().flush();
       }
     });
+
+    // if the package wasn't a model before then we want our MPSTreeStructureProvider to do its work with
+    // the directory node for the package
+    ProjectView projectView = ProjectView.getInstance(project);
+    projectView.refresh();
   }
 
   private boolean containsJavaThings(PsiElement[] elements) {
