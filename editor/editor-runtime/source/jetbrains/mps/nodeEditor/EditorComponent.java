@@ -46,6 +46,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
@@ -233,6 +234,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
       }
+      g.setRenderingHint(RenderingHints.KEY_TEXT_LCD_CONTRAST, UIUtil.getLcdContrastValue());
     }
   }
 

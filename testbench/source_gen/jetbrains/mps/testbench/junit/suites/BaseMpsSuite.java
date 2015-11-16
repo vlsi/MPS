@@ -10,6 +10,7 @@ import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class BaseMpsSuite extends Suite {
@@ -24,10 +25,13 @@ public class BaseMpsSuite extends Suite {
   @Override
   public void run(RunNotifier notifier) {
     try {
-      RuntimeFlags.setTestMode(TestMode.SUITE);
+      RuntimeFlags.setTestMode(TestMode.USUAL);
       super.run(notifier);
+      Environment env = EnvironmentContainer.get();
+      if (env != null) {
+        env.dispose();
+      }
     } finally {
-      EnvironmentContainer.dispose();
       RuntimeFlags.setTestMode(TestMode.NONE);
     }
   }

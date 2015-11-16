@@ -18,6 +18,7 @@ package jetbrains.mps.plugins.applicationplugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginContributor;
@@ -29,6 +30,8 @@ import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 /**
@@ -153,7 +156,24 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
     synchronized (myPluginsLock) {
       unregister();
       if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
-        unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+        final List<PluginContributor> loadedContributors = myPluginLoaderRegistry.getLoadedContributors();
+        if (ThreadUtils.isInEDT()) {
+          myRepository.getModelAccess().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+              final long beginTime = System.nanoTime();
+              LOG.debug(String.format("Unloading application plugins from %d contributors", loadedContributors.size()));
+              try {
+                unloadPlugins(loadedContributors);
+              } finally {
+                LOG.info(
+                    String.format("Unloading of %d application plugins took %.3f s", loadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
+              }
+            }
+          });
+        } else {
+          LOG.warn("Not in EDT: cannot dispose the rest of the application plugins!");
+        }
       }
     }
   }

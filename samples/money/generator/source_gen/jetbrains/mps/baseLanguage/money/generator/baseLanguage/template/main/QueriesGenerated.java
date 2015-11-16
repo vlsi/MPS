@@ -40,10 +40,10 @@ public class QueriesGenerated {
     SPropertyOperations.set(new_node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x1144ae7606aL, 0x1144aebdf40L, "currency")));
     return new_node;
   }
-  public static SNode sourceNodeQuery_1187347392064(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2110953167961230052(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator")), MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473383db1L, "amount"));
   }
-  public static SNode sourceNodeQuery_1187347370038(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2110953167961228859(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), MetaAdapterFactory.getConcept(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, "jetbrains.mps.baseLanguage.money.structure.MoneyCreator")), MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473390f4aL, "currency"));
   }
   public static SNode sourceNodeQuery_1217888347510(final SourceSubstituteMacroNodeContext _context) {

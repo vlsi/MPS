@@ -74,6 +74,13 @@ public class Solution extends ReloadableModuleBase {
     return result;
   }
 
+  /* TODO make package local, move to appropriate package */
+  public Solution(SolutionDescriptor descriptor, IFile file) {
+    super(file);
+    mySolutionDescriptor = descriptor;
+    setModuleReference(descriptor.getModuleReference());
+  }
+
   private static void populateModelRoot(ClassType classType, ModelRootDescriptor javaStubsModelRoot) {
     PackageScopeControl psc = null;
     switch (classType) {
@@ -116,14 +123,6 @@ public class Solution extends ReloadableModuleBase {
       final Memento m = javaStubsModelRoot.getMemento().createChild("PackageScope");
       psc.save(m);
     }
-  }
-
-
-  /* TODO make package local, move to appropriate package */
-  public Solution(SolutionDescriptor descriptor, IFile file) {
-    super(file);
-    mySolutionDescriptor = descriptor;
-    setModuleReference(descriptor.getModuleReference());
   }
 
   @Override

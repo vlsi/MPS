@@ -66,6 +66,6 @@ public class MigrationAssistant_Test extends TestCase {
   }
 
   private EnvironmentConfig createConfig() {
-    return EnvironmentConfig.emptyEnvironment().addPlugin(MIGRATION_ASSISTANT_PLUGIN);
+    return EnvironmentConfig.defaultConfig().addPlugin("migrationAssistant", MIGRATION_ASSISTANT_PLUGIN);
   }
 }

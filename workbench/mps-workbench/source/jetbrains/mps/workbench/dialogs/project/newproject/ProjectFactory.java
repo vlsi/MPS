@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
 import com.intellij.ide.startup.StartupManagerEx;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -25,17 +26,21 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
-import jetbrains.mps.migration.global.ProjectMigrationUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.project.*;
+import jetbrains.mps.migration.global.ProjectMigrationUtil;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProjectVersion;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 
 import java.io.File;
 
@@ -60,15 +65,21 @@ public class ProjectFactory {
         indicator.setIndeterminate(true);
         error[0] = createDirs();
         if (error[0] != null) return;
-        String projectFilePath = myOptions.getProjectPath();
         String suffix;
         if (myOptions.getStorageScheme().equals(StorageScheme.DIRECTORY_BASED)) {
           suffix = Project.DIRECTORY_STORE_FOLDER;
         } else {
           suffix = myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT;
         }
-        projectFilePath += File.separator + suffix;
-        myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
+
+        final String projectFilePath = myOptions.getProjectPath() + File.separator + suffix;
+        //MPS-22895 need to run in EDT
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+          @Override
+          public void run() {
+            myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), projectFilePath, true, false);
+          }
+        }, indicator.getModalityState());
       }
     });
 
@@ -86,6 +97,7 @@ public class ProjectFactory {
 
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
+    assert mpsProject != null;
 
     StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
       @Override
@@ -95,12 +107,12 @@ public class ProjectFactory {
           public void run() {
             if (myOptions.getCreateNewLanguage()) {
               myCreatedLanguage = NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
-              mpsProject.addModule(myCreatedLanguage.getModuleReference());
+              mpsProject.addModule(myCreatedLanguage);
             }
 
             if (myOptions.getCreateNewSolution()) {
               myCreatedSolution = NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
-              mpsProject.addModule(myCreatedSolution.getModuleReference());
+              mpsProject.addModule(myCreatedSolution);
             }
 
             if (myCreatedSolution != null && myCreatedLanguage != null) {

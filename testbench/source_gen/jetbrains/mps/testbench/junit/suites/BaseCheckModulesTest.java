@@ -15,20 +15,18 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.ProjectStrategy;
-import jetbrains.mps.testbench.junit.runners.AntProjectStrategy;
+import jetbrains.mps.testbench.junit.runners.MPSCompositeProjectStrategy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.HashSet;
-import org.junit.Assert;
-import org.junit.AfterClass;
 
 @RunWith(value = TeamCityParameterizedRunner.class)
 public class BaseCheckModulesTest {
-  private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
   protected final SModule myModule;
+
   public BaseCheckModulesTest(SModule module) {
     this.myModule = module;
   }
@@ -48,7 +46,7 @@ public class BaseCheckModulesTest {
   protected static void initEnvironment() throws InvocationTargetException, InterruptedException {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
 
-    ProjectStrategy strategy = new AntProjectStrategy();
+    ProjectStrategy strategy = new MPSCompositeProjectStrategy();
     ourContextProject = env.createProject(strategy);
   }
 
@@ -79,21 +77,5 @@ public class BaseCheckModulesTest {
 
   public static Project getContextProject() {
     return ourContextProject;
-  }
-
-  public static CheckingTestStatistic getStatistic() {
-    return ourStatistic;
-  }
-
-  protected static void initStatistic(String name) {
-    Assert.assertNull(ourStatistic);
-    ourStatistic = new CheckingTestStatistic(name);
-  }
-
-  @AfterClass
-  public static void cleanUp() {
-    if (ourStatistic != null) {
-      ourStatistic.printStatistic();
-    }
   }
 }

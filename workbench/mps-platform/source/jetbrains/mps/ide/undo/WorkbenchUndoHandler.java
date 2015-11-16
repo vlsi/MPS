@@ -73,7 +73,11 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
       myActions.clear();
       return;
     }
-    UndoManager undoManager = UndoManager.getInstance(ProjectHelper.toIdeaProject(project));
+    com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
+    if (ideaProject == null) {
+      throw new IllegalStateException("Cannot find idea project for the mps project " + project);
+    }
+    UndoManager undoManager = UndoManager.getInstance(ideaProject);
 
     undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, myActions));
     myActions = new LinkedList<SNodeUndoableAction>();

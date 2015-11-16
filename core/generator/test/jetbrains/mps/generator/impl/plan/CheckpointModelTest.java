@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationOptions.OptionsBuilder;
@@ -39,6 +40,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.PathManager;
 import org.hamcrest.CoreMatchers;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -62,9 +64,7 @@ import java.util.List;
 /**
  * @author Artem Tikhomirov
  */
-public class CheckpointModelTest {
-
-  private static Environment ourEnvironment;
+public class CheckpointModelTest extends PlatformMpsTest {
   private static Project mpsProject;
 
   @Rule
@@ -72,14 +72,12 @@ public class CheckpointModelTest {
 
   @BeforeClass
   public static void setup() {
-    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries().withWorkbenchPath());
-    mpsProject = ourEnvironment.openProject(new File(System.getProperty("user.dir")));
+    mpsProject = ENV.openProject(new File(PathManager.getUserDir()));
   }
 
   @AfterClass
   public static void tearDown() {
-    ourEnvironment.closeProject(mpsProject);
-//    ourEnvironment.dispose(); FIXME implement environment use count mechanism so that tests could dispose it gracefully
+    mpsProject.dispose();
   }
 
   @Test

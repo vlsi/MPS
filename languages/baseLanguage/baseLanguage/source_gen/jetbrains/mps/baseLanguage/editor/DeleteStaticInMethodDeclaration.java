@@ -29,6 +29,8 @@ public class DeleteStaticInMethodDeclaration {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      MemberDeclarationRefactoringUtil.rewireMethodReferences(node, replacing);
+
       if (SPropertyOperations.getBoolean(replacing, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x3b576cda23612c7aL, "isSynchronized"))) {
         SelectionUtil.selectCell(editorContext, replacing, "synchronizedModifier");
       } else if (SPropertyOperations.getBoolean(replacing, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"))) {
@@ -48,6 +50,8 @@ public class DeleteStaticInMethodDeclaration {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+      MemberDeclarationRefactoringUtil.rewireMethodReferences(node, replacing);
+
       if (SPropertyOperations.getBoolean(replacing, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal"))) {
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, replacing, "finalModifier", -1);
       } else {

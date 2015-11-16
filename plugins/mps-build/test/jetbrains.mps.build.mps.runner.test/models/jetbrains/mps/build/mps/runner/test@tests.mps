@@ -643,9 +643,9 @@
             <node concept="3uibUv" id="2UQRFFqpy6e" role="1tU5fm">
               <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
-            <node concept="2YIFZM" id="1ZVcZhrXrpA" role="33vP2m">
+            <node concept="2YIFZM" id="63LKn8yO9qH" role="33vP2m">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
             </node>
           </node>
         </node>

@@ -19,6 +19,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -137,6 +138,7 @@ public class ModuleDescriptor {
     return mySourcePaths;
   }
 
+  @Nullable
   public DeploymentDescriptor getDeploymentDescriptor() {
     return myDeploymentDescriptor;
   }

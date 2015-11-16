@@ -228,7 +228,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   @Nullable
   @Override
   public PsiFile findFile(@NotNull @NonNls String name) {
-    throw new IncorrectOperationException("Not implemented");
+    return null;
   }
 
   @Override

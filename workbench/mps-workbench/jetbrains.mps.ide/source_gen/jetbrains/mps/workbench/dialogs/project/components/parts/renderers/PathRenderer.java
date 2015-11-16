@@ -5,7 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 import java.awt.Component;
 import javax.swing.JList;
 import javax.swing.JLabel;
-import jetbrains.mps.project.structure.project.Path;
+import jetbrains.mps.project.structure.project.ModulePath;
 
 public class PathRenderer extends StringPathRenderer {
   public PathRenderer() {
@@ -15,7 +15,7 @@ public class PathRenderer extends StringPathRenderer {
     if (value == null) {
       return new JLabel();
     }
-    String path = ((Path) value).getPath();
+    String path = ((ModulePath) value).getPath();
     return super.getListCellRendererComponent(list, path, index, isSelected, cellHasFocus);
   }
 }

@@ -43,7 +43,7 @@ public class XmlConverterTest extends CoreMpsTest {
 
   @AfterClass
   public static void tearDownProject() {
-    BaseMpsTest.getEnvironment().closeProject(ourProject);
+    ourProject.dispose();
   }
 
   @Test

@@ -17,8 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -61,7 +61,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class SModel implements SModelData {

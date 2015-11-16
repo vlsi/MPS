@@ -313,6 +313,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                updateUsedLanguagesVersions(allModules);
+              }
+            });
             boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myProject, allModules, myMigrationManager);
             restoreTipsState();
 

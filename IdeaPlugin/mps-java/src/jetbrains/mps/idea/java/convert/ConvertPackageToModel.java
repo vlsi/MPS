@@ -42,6 +42,7 @@ import com.intellij.psi.PsiMethod;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
@@ -132,7 +133,7 @@ public class ConvertPackageToModel extends AnAction {
       }
     }
 
-    final JavaToMpsConverter parser = new JavaToMpsConverter(mpsModule, mpsProject.getRepository(), true, true);
+    final JavaToMpsConverter parser = new JavaToMpsConverter(mpsModule, mpsProject.getRepository(), true, true, project.getComponent(MessagesViewTool.class).newHandler());
     final List<IFile> javaFiles = toIFiles(psiJavaFiles);
 
     ApplicationManager.getApplication().saveAll();

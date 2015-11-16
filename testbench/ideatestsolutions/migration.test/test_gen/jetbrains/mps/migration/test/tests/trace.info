@@ -201,7 +201,7 @@
       <node id="8423788195542918652" at="60,106,61,50" concept="1" />
       <node id="3021026760600095739" at="63,23,64,66" concept="4" />
       <node id="8150591076113152345" at="64,66,65,54" concept="1" />
-      <node id="6450649963067131644" at="68,44,69,86" concept="5" />
+      <node id="6450649963067131644" at="68,44,69,105" concept="5" />
       <node id="8423788195542778079" at="42,0,45,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/language/SProperty;)Ljava/lang/String;" />
       <node id="6450649963067131726" at="68,0,71,0" concept="3" trace="createConfig#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
       <node id="8423788195543264367" at="53,0,57,0" concept="3" trace="run#()V" />
@@ -212,7 +212,7 @@
       <node id="8423788195543111121" at="34,61,47,7" concept="1" />
       <node id="8150591076113153069" at="30,0,63,0" concept="3" trace="test_test#()V" />
       <scope id="8423788195542778080" at="42,46,43,32" />
-      <scope id="6450649963067131570" at="68,44,69,86" />
+      <scope id="6450649963067131570" at="68,44,69,105" />
       <scope id="8423788195543264369" at="53,25,55,101" />
       <scope id="8150591076113041524" at="63,23,65,54">
         <var name="env" id="3021026760600095740" />

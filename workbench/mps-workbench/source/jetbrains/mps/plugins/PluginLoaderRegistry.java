@@ -29,6 +29,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
@@ -51,13 +52,15 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class PluginLoaderRegistry implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginLoaderRegistry.class);
 
-  private ClassLoaderManager myClassLoaderManager;
+  private final ClassLoaderManager myClassLoaderManager;
+  private final ModelAccess myModelAccess;
   private MPSClassesListener myClassesListener = new MyReloadAdapter();
   private List<PluginContributor> myLoadedContributors = new ArrayList<PluginContributor>(); // modules
   private final List<PluginLoader> myPluginLoaders = new CopyOnWriteArrayList<PluginLoader>(); // components
 
   public PluginLoaderRegistry(MPSCoreComponents coreComponents) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
+    myModelAccess = coreComponents.getModuleRepository().getModelAccess();
   }
 
   public List<PluginContributor> getLoadedContributors() {
@@ -98,27 +101,39 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   private void unloadPlugins(List<PluginContributor> contributors) {
     LOG.debug(String.format("Unloading plugins from %d contributors", contributors.size()));
     if (contributors.isEmpty()) return;
-    long beginTime = System.nanoTime();
-    try {
-      for (PluginLoader listener : myPluginLoaders) {
-        listener.unloadPlugins(contributors);
+    final List<PluginContributor> contributorsToUnload = new ArrayList<PluginContributor>(contributors);
+    myModelAccess.runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        long beginTime = System.nanoTime();
+        try {
+          for (final PluginLoader listener : myPluginLoaders) {
+            listener.unloadPlugins(contributorsToUnload);
+          }
+        } finally {
+          LOG.info(String.format("Unloading of %d plugins took %.3f s", contributorsToUnload.size(), (System.nanoTime() - beginTime) / 1e9));
+        }
       }
-    } finally {
-      LOG.info(String.format("Unloading of %d plugins took %.3f s", contributors.size(), (System.nanoTime() - beginTime) / 1e9));
-    }
+    });
   }
 
-  private void loadPlugins(List<PluginContributor> contributors) {
-    LOG.debug(String.format("Loading plugins from %d contributors", contributors.size()));
+  private void loadPlugins(final List<PluginContributor> contributors) {
     if (contributors.isEmpty()) return;
-    long beginTime = System.nanoTime();
-    try {
-      for (PluginLoader listener : myPluginLoaders) {
-        listener.loadPlugins(contributors);
+    final List<PluginContributor> contributorsToLoad = new ArrayList<PluginContributor>(contributors);
+    myModelAccess.runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        final long beginTime = System.nanoTime();
+        LOG.debug(String.format("Loading plugins from %d contributors", contributorsToLoad.size()));
+        try {
+          for (final PluginLoader listener : myPluginLoaders) {
+            listener.loadPlugins(contributorsToLoad);
+          }
+        } finally {
+          LOG.info(String.format("Loading of %d plugins took %.3f s", contributorsToLoad.size(), (System.nanoTime() - beginTime) / 1e9));
+        }
       }
-    } finally {
-      LOG.info(String.format("Loading of %d plugins took %.3f s", contributors.size(), (System.nanoTime() - beginTime) / 1e9));
-    }
+    });
   }
 
   private List<PluginContributor> calcContributorsToUnload(Set<ReloadableModule> toUnload) {

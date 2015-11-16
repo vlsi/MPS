@@ -31,6 +31,7 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
@@ -40,9 +41,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import java.util.Collections;
 import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.core.tool.environment.util.FileMPSProject;
-import java.io.File;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
@@ -165,7 +163,7 @@ public class Utils {
 
     compare(models, expected);
   }
-  public static void checkSourceModel(String dirPath, SModel expected) {
+  public static void checkSourceModel(Project project, String dirPath, SModel expected) {
     try {
       SModule testMaterials = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
 
@@ -183,7 +181,7 @@ public class Utils {
       TempModuleOptions tempModOpts = TempModuleOptions.forNewModule(Collections.singleton(mrDesc), false, true);
       testMaterials = tempModOpts.createModule();
 
-      DirParser dirParser = new DirParser(testMaterials, new FileMPSProject(new File(PathManager.getHomePath())), FileSystem.getInstance().getFileByPath(dirPath));
+      DirParser dirParser = new DirParser(testMaterials, project.getModelAccess(), FileSystem.getInstance().getFileByPath(dirPath));
 
       dirParser.parseDirs();
 
@@ -200,7 +198,6 @@ public class Utils {
 
       boolean wereErrors = compare2models(resultModel, expected, referentMap);
       Assert.assertFalse(wereErrors);
-
 
     } catch (JavaParseException e) {
       throw new RuntimeException(e);

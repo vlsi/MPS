@@ -56,13 +56,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -282,19 +282,12 @@ public class CreateProjectWizard extends DialogWrapper {
     });
 
     //Change project path if project name changed
-    myProjectName.addFocusListener(new FocusAdapter() {
-      private String value = myProjectName.getText();
+    myProjectName.addCaretListener(new CaretListener() {
+      private String myValue = myProjectName.getText();
       @Override
-      public void focusGained(FocusEvent e) {
-        super.focusGained(e);
-        value = myProjectName.getText();
-      }
-
-      @Override
-      public void focusLost(FocusEvent e) {
-        super.focusLost(e);
-        //Only need to update if name changed
-        if(!value.equals(myProjectName.getText())) {
+      public void caretUpdate(CaretEvent e) {
+        if(myValue != myProjectName.getText()) {
+          myValue = myProjectName.getText();
           updateProjectPath();
         }
       }
@@ -373,7 +366,7 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void updateProjectPath() {
-    if (myProjectPath.getPath() == null || myProjectPath.getPath().length() == 0 || myProjectPath.getPath().startsWith(PROJECTS_DIR)) {
+    if (myProjectPath.getPath() == null || myProjectPath.getPath().length() == 0 || (myProjectPath.getPath().startsWith(PROJECTS_DIR) && !myProjectPath.isPathChangedByUser())) {
       myProjectPath.setPath(PROJECTS_DIR + File.separator + myProjectName.getText());
     }
   }

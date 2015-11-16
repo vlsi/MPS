@@ -38,6 +38,12 @@ public class PathField extends JPanel {
   private int myMode;
   private final List<PathChangedListner> myListners = new ArrayList<PathChangedListner>();
 
+  /**
+   * flag if path was changed by user
+   * if changed by user need to be careful with auto update path
+   * */
+  private boolean myIsPathChangedByUser = false;
+
   public PathField() {
     setLayout(new BorderLayout());
     add(myPathField = createPathField(), BorderLayout.CENTER);
@@ -50,10 +56,19 @@ public class PathField extends JPanel {
     component.getDocument().addDocumentListener(new DocumentAdapter() {
       @Override
       protected void textChanged(DocumentEvent e) {
+        myIsPathChangedByUser = true;
         pathFromField();
       }
     });
     return component;
+  }
+
+  /**
+   * getter
+   * @return flag that path was changed by user
+   * */
+  public boolean isPathChangedByUser() {
+    return myIsPathChangedByUser;
   }
 
   private JButton createButton() {
@@ -77,7 +92,9 @@ public class PathField extends JPanel {
 
   public void setPath(String newValue) {
     myPath = newValue;
+    final boolean isPathChangedByUser = myIsPathChangedByUser; //Save current flag state.
     myPathField.setText(newValue);
+    myIsPathChangedByUser = isPathChangedByUser; //Reset state. It was not user action.
     for (PathChangedListner listner : myListners) {
       listner.firePathChanged(myPath);
     }
@@ -104,6 +121,7 @@ public class PathField extends JPanel {
     IFile result = chooser.showDialog(this);
     if (result != null) {
       setPath(IFileUtils.getCanonicalPath(result));
+      myIsPathChangedByUser = true; //User change path only if dialog has result.
     }
   }
 

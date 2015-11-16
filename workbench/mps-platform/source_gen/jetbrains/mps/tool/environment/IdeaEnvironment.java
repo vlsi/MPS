@@ -10,7 +10,6 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.util.FileUtil;
@@ -21,9 +20,11 @@ import java.io.IOException;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.smodel.ModelAccess;
+import javax.swing.SwingUtilities;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.core.platform.Platform;
+import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -34,8 +35,11 @@ import org.apache.log4j.LogManager;
 public class IdeaEnvironment extends EnvironmentBase {
   private static final String MISC_XML_URI = "/jetbrains/mps/testbench/junit/runners/misc.xml";
 
-  private final ProjectContainer myContainer = new ProjectContainer();
   private IdeaTestApplication myIdeaApplication;
+
+  static {
+    EnvironmentBase.initializeLog4j();
+  }
 
   protected IdeaEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
@@ -51,6 +55,7 @@ public class IdeaEnvironment extends EnvironmentBase {
       if (!(currentEnv instanceof IdeaEnvironment)) {
         throw new IllegalStateException("Still no support for interchanging lightweight and heavyweight environments");
       }
+      currentEnv.retain();
       return currentEnv;
     } else {
       IdeaEnvironment ideaEnv = new IdeaEnvironment(config);
@@ -93,22 +98,8 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   @Override
   @NotNull
-  public Project openProject(@NotNull File projectFile) {
-    checkInitialized();
-    Project lastUsedProject = getOpenedProject(projectFile);
-    if (lastUsedProject != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Using the last created project");
-      }
-      return lastUsedProject;
-    } else {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Opening a new project");
-      }
-      Project project = openProjectInIdeaEnvironment(projectFile);
-      myContainer.addProject(project);
-      return project;
-    }
+  public Project doOpenProject(@NotNull File projectFile) {
+    return openProjectInIdeaEnvironment(projectFile);
   }
 
   @NotNull
@@ -124,25 +115,7 @@ public class IdeaEnvironment extends EnvironmentBase {
   }
 
   @Override
-  public void closeProject(@NotNull final Project project) {
-    checkInitialized();
-    if (LOG.isDebugEnabled()) {
-      LOG.debug("Closing the project " + project);
-    }
-    myContainer.closeProject(project);
-  }
-
-  @Nullable
-  @Override
-  public Project getOpenedProject(@NotNull File projectFile) {
-    checkInitialized();
-    return myContainer.getProject(projectFile);
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    myContainer.dispose();
+  public void doDispose() {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
@@ -210,16 +183,22 @@ public class IdeaEnvironment extends EnvironmentBase {
   @Override
   public void flushAllEvents() {
     checkInitialized();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-      }
-    }, ModalityState.NON_MODAL);
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         return;
       }
     });
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+        }
+      });
+    } catch (InvocationTargetException e) {
+      throw new RuntimeException(e);
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
   }
 
 

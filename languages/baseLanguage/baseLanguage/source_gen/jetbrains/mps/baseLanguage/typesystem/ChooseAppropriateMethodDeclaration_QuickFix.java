@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.ResolveUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 
 public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtime {
   public ChooseAppropriateMethodDeclaration_QuickFix() {
@@ -94,9 +93,14 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         return;
       }
       SNode instanceType = SNodeOperations.cast(operandType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
-      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(SLinkOperations.getTarget(instanceType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
-      List<SNode> mDecls = scope.getMethodsByName(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-      for (SNode methodDecl : mDecls) {
+
+      Iterable<SNode> methodsByName = Sequence.fromIterable(Members.visibleInstanceMethods(instanceType, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_8qmp5s_a0a0a0a0a0a4a2b0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        }
+      });
+
+      for (SNode methodDecl : methodsByName) {
         List<SNode> parameterTypes = ResolveUtil.parameterTypes(methodDecl, instanceType, ((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("classifier")[0]));
         boolean good = ResolveUtil.goodArguments(parameterTypes, SLinkOperations.getChildren(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")));
         if (good) {
@@ -105,5 +109,8 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         }
       }
     }
+  }
+  private static boolean eq_8qmp5s_a0a0a0a0a0a4a2b0c(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

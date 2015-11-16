@@ -184,8 +184,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.testbench.BaseMpsTest" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.Reference" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
@@ -203,7 +201,7 @@
     <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.BeforeClass" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.WorkbenchMpsTest" />
+    <classNode extendsClassName="jetbrains.mps.PlatformMpsTest" />
   </dependency>
   <dependency className="jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model" file="IncrementalChangeUpdateTest_Model.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />

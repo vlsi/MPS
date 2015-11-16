@@ -35,11 +35,8 @@ public class FromProjectPathProjectStrategy extends ProjectStrategyBase {
   @NotNull
   private Project openProjectIfNotAlreadyOpened(Environment env) {
     File projectFile = new File(myProjectPath);
-    Project openedProject = env.getOpenedProject(projectFile);
-    if (openedProject == null) {
-      openedProject = env.openProject(projectFile);
-      makeOnFirstTimeOpened(openedProject);
-    }
+    Project openedProject = env.openProject(projectFile);
+    makeOnFirstTimeOpened(openedProject);
     return openedProject;
   }
 

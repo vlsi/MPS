@@ -16,7 +16,7 @@ import javax.swing.ListSelectionModel;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.AnActionButton;
-import jetbrains.mps.project.structure.project.Path;
+import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import java.awt.Dimension;
 import javax.swing.JPanel;
@@ -59,10 +59,10 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     decorator.setAddAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton button) {
-        Path path = new ModulePathChooser().compute();
+        ModulePath path = new ModulePathChooser().compute();
         if (path != null) {
-          for (Path p : ((ProjectPropertiesComponent.PathsListModel) list.getModel()).getPaths()) {
-            if (p.isSamePath(path)) {
+          for (ModulePath p : ((ProjectPropertiesComponent.PathsListModel) list.getModel()).getPaths()) {
+            if (p.getPath().equals(path.getPath())) {
               list.setSelectedValue(p, true);
               return;
             }
@@ -133,15 +133,15 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     public Object getElementAt(int i) {
       return myProperties.getModules().get(i);
     }
-    public List<Path> getPaths() {
+    public List<ModulePath> getPaths() {
       return myProperties.getModules();
     }
-    public void addPath(Path path) {
+    public void addPath(ModulePath path) {
       int i = myProperties.add(path);
       fireIntervalAdded(this, i, i);
     }
     public void removePath(Object path) {
-      int i = myProperties.remove((Path) path);
+      int i = myProperties.remove((ModulePath) path);
       fireIntervalRemoved(this, i, i);
     }
   }

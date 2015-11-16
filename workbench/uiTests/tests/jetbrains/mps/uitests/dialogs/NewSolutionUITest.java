@@ -18,6 +18,7 @@ package jetbrains.mps.uitests.dialogs;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
@@ -29,7 +30,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class NewSolutionUITest extends NewDialogsUITestsBase {
   public void testSolutionCreation() throws InvocationTargetException, InterruptedException {
-    Project project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+    MPSProject project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main project not found", project);
 
     final NewSolutionDialog dialog = new NewSolutionDialog(project, null);

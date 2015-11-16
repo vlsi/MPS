@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.test.blame.command;
 
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
@@ -29,7 +29,7 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-public class AffectedVersionTest extends WorkbenchMpsTest {
+public class AffectedVersionTest extends PlatformMpsTest {
   @Test
   public void testVersion() throws IOException {
     String version = Command.getVersion();

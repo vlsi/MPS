@@ -6,7 +6,6 @@ import java.util.List;
 import jetbrains.mps.checkers.INodeChecker;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -21,50 +20,50 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CheckingTestsUtil {
-  public CheckingTestsUtil() {
-  }
-  public static List<String> applyChecker(final INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
-    final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SModel sm : models) {
-          if (!(SModelStereotype.isUserModel(sm))) {
-            continue;
-          }
-          if (SModelStereotype.isGeneratorModel(sm)) {
-            continue;
-          }
-          for (SNode root : SModelOperations.roots(((SModel) sm), null)) {
-            Set<IErrorReporter> errorReporters = null;
-            try {
-              errorReporters = checker.getErrors(root, sm.getRepository());
-            } catch (IllegalStateException e) {
-              errors.add(e.getMessage());
-            }
-            for (IErrorReporter reporter : errorReporters) {
-              if (!(ErrorReportUtil.shouldReportError(reporter.getSNode()))) {
-                continue;
-              }
+  private final CheckingTestStatistic myStats;
 
-              if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
-                if (reporter.reportError().startsWith("a class should have")) {
-                  continue;
-                }
-                SNode node = reporter.getSNode();
-                if (!(CheckingTestsUtil.filterIssue(node))) {
-                  continue;
-                }
-                statistic.reportError();
-                errors.add("Error message: " + reporter.reportError() + "   model: " + SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
-              }
-              if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
-                statistic.reportWarning();
-              }
+  public CheckingTestsUtil(CheckingTestStatistic statistic) {
+    myStats = statistic;
+  }
+
+  public List<String> applyChecker(final INodeChecker checker, final Iterable<SModel> models) {
+    final List<String> errors = new ArrayList<String>();
+    for (SModel sm : models) {
+      if (!(SModelStereotype.isUserModel(sm))) {
+        continue;
+      }
+      if (SModelStereotype.isGeneratorModel(sm)) {
+        continue;
+      }
+      for (SNode root : SModelOperations.roots(((SModel) sm), null)) {
+        Set<IErrorReporter> errorReporters = null;
+        try {
+          errorReporters = checker.getErrors(root, sm.getRepository());
+        } catch (IllegalStateException e) {
+          errors.add(e.getMessage());
+        }
+        for (IErrorReporter reporter : errorReporters) {
+          if (!(ErrorReportUtil.shouldReportError(reporter.getSNode()))) {
+            continue;
+          }
+
+          if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
+            if (reporter.reportError().startsWith("a class should have")) {
+              continue;
             }
+            SNode node = reporter.getSNode();
+            if (!(CheckingTestsUtil.filterIssue(node))) {
+              continue;
+            }
+            myStats.reportError();
+            errors.add("Error message: " + reporter.reportError() + "   model: " + SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
+          }
+          if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
+            myStats.reportWarning();
           }
         }
       }
-    });
+    }
     return errors;
   }
   public static boolean filterIssue(SNode node) {

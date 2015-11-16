@@ -1872,6 +1872,15 @@
     <node concept="lpD6D" id="2x0Kh215aNE" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2x0Kh20ZG9m" resolve="FieldTypeCellEditing2" />
     </node>
+    <node concept="lpD6D" id="5d7cDYKZDQa" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5d7cDYKZ9OE" resolve="MakeFieldNonStaticAndHaveReferencesUpdated" />
+    </node>
+    <node concept="lpD6D" id="5d7cDYKZE2s" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5d7cDYKZ9tt" resolve="MakeFieldStaticAndHaveReferencesUpdatedPositionedOnType" />
+    </node>
+    <node concept="lpD6D" id="5d7cDYKZEeJ" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5d7cDYKZ6cM" resolve="MakeFieldStaticAndHaveReferencesUpdatedPositionedOnVisibility" />
+    </node>
     <node concept="lpD6D" id="5Jf1oRj7b0w" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2o160AxalE9" resolve="RemoveFinalInStaticFieldBackspace" />
     </node>
@@ -2223,6 +2232,9 @@
     <node concept="lpD6D" id="2TdQhrRPT6g" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5X9wbI6ZBkI" resolve="SwapTernaryBranches5" />
     </node>
+    <node concept="lpD6D" id="3Fvsj0uuUe3" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3Fvsj0uuM4p" resolve="TernaryToIfInVariableInitializer" />
+    </node>
     <node concept="lpD6D" id="7JhGHKoVuZA" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6HxYJhjTkE2" resolve="TestConvertAssignmentToTernaryOperatorIntention" />
     </node>
@@ -2291,6 +2303,15 @@
     </node>
     <node concept="lpD6D" id="40dJAnltRgW" role="lpD6w">
       <ref role="lpD7u" to="ryl9:40dJAnltMo$" resolve="FinalOnType" />
+    </node>
+    <node concept="lpD6D" id="5d7cDYKZDa$" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5d7cDYKZbJh" resolve="MakeMethodNonStaticAndHaveReferencesUpdated" />
+    </node>
+    <node concept="lpD6D" id="5d7cDYKZDmN" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5d7cDYKZdgY" resolve="MakeMethodStaticAndHaveReferencesUpdatedPositionedOnFinal" />
+    </node>
+    <node concept="lpD6D" id="5d7cDYKZDz3" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:5d7cDYKZcKO" resolve="MakeMethodStaticAndHaveReferencesUpdatedPositionedOnType" />
     </node>
     <node concept="lpD6D" id="2TdQhrRPT5y" role="lpD6w">
       <ref role="lpD7u" to="ryl9:7fnnP3fV2VJ" resolve="NativeAbstract" />

@@ -9,10 +9,14 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.IClassifier__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -20,13 +24,33 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
   }
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> ownMethods = Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(classifier);
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
-    for (SNode ownMethod : ownMethods) {
-      List<SNode> namesakes = scope.getMethodsByName(SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-      if (namesakes.size() < 2) {
+
+    Iterable<SNode> methods = Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+      }
+    }).ofType(SNode.class);
+
+    for (final SNode ownMethod : ownMethods) {
+      Iterable<SNode> ownDuplicates = ListSequence.fromList(Classifier__BehaviorDescriptor.getOwnMethods_id1DPgsAlM_WC.invoke(classifier)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_a1zes8_a0a0a0a0a0a0a4a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        }
+      });
+      if (Sequence.fromIterable(ownDuplicates).count() > 1) {
+        RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, ownMethod, classifier, Sequence.fromIterable(ownDuplicates).toListSequence());
+      }
+
+      Iterable<SNode> namesakes = Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_a1zes8_a0a0a0a0a0a3a4a1(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        }
+      });
+      if (Sequence.fromIterable(namesakes).count() < 2) {
         continue;
       }
-      RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, ownMethod, classifier, namesakes);
+      RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, ownMethod, classifier, Sequence.fromIterable(namesakes).toListSequence());
+
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -37,5 +61,11 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
   }
   public boolean overrides() {
     return false;
+  }
+  private static boolean eq_a1zes8_a0a0a0a0a0a0a4a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_a1zes8_a0a0a0a0a0a3a4a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

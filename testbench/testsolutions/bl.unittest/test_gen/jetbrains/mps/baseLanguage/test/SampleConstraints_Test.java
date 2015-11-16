@@ -14,9 +14,14 @@ import jetbrains.mps.lang.test.behavior.NodeCheckOperation__BehaviorDescriptor;
 @MPSLaunch
 public class SampleConstraints_Test extends BaseTransformationTest {
   @Test
-  public void test_NodeUnknownRuleCheck7638302724810915733() throws Throwable {
+  public void test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeUnknownRuleCheck7638302724810915733", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724", true);
+  }
+  @Test
+  public void test_NodeUnknownRuleCheck2675718132411786726() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SampleConstraints_Test$TestBody", "test_NodeUnknownRuleCheck2675718132411786726", true);
   }
   @Test
   public void test_ErrorMessagesCheck7638302724810894630() throws Throwable {
@@ -25,8 +30,12 @@ public class SampleConstraints_Test extends BaseTransformationTest {
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_NodeUnknownRuleCheck7638302724810915733() throws Exception {
-      SNode operation = SNodeOperations.cast(this.getRealNodeById("7638302724810915733"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+    public void test_NodeVariableHasNotBeenInitializedErrorCheck2675718132411786724() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("2675718132411786724"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7638302724810915512"));
+    }
+    public void test_NodeUnknownRuleCheck2675718132411786726() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("2675718132411786726"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("7638302724810915512"));
     }
     public void test_ErrorMessagesCheck7638302724810894630() throws Exception {

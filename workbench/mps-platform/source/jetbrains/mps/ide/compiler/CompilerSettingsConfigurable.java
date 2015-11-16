@@ -34,7 +34,6 @@ public class CompilerSettingsConfigurable implements SearchableConfigurable {
     myProject = project;
   }
 
-
   @NotNull
   @Override
   public String getId() {

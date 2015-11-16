@@ -21,8 +21,9 @@ public final class Log4jInitializer {
   public void init() {
     System.setProperty("log4j.defaultInitOverride", "true");
     File logXmlFile = new File(PathManager.getHomePath() + "/bin/log.xml");
-    if (logXmlFile == null) {
-      throw new RuntimeException("log.xml file does not exist! Path: [ $home/bin/log.xml]");
+    if (!(logXmlFile.exists())) {
+      System.err.println("log.xml file does not exist! Path: [$home/bin/log.xml]");
+      return;
     }
     String text = FileUtil.read(logXmlFile);
     text = StringUtil.replace(text, SYSTEM_MACRO, StringUtil.replace(PathManager.getSystemPath(), "\\", "\\\\"));

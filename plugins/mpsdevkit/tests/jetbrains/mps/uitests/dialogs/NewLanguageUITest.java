@@ -20,6 +20,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Computable;
@@ -34,7 +35,7 @@ import java.util.Set;
 
 public class NewLanguageUITest extends NewDialogsUITestsBase {
   public void testLanguageCreation() throws InvocationTargetException, InterruptedException {
-    Project project = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+    MPSProject project = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
     assertNotNull("Main project not found", project);
 
     final NewLanguageDialog dialog = new NewLanguageDialog(project, null);

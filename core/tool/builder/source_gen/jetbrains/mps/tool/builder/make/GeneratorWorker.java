@@ -41,7 +41,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
   public void work() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
 
     for (String jar : myWhatToDo.getLibraryJars()) {
       File jarFile = new File(jar);

@@ -15631,8 +15631,8 @@
                   <ref role="3cqZAo" node="7dV9$tm6ISP" resolve="myTestState" />
                 </node>
                 <node concept="2YIFZM" id="6c8gobjG0Qy" role="37wK5m">
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                   <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                   <node concept="37vLTw" id="6c8gobjG1od" role="37wK5m">
                     <ref role="3cqZAo" node="7dV9$tm6IVH" resolve="project" />
                   </node>

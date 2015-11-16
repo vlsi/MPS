@@ -40,6 +40,8 @@ public class PathManager {
   @NonNls
   private static final String PROPERTY_LOG_PATH = "idea.log.path";
   @NonNls
+  public static final String PROPERTY_PATHS_SELECTOR = "idea.paths.selector";
+  @NonNls
   private static String ourHomePath;
   @NonNls
   private static String ourSystemPath;
@@ -62,13 +64,15 @@ public class PathManager {
   @NonNls
   private static final String LIB_FOLDER = "lib";
   @NonNls
-  public static final String PLUGINS_DIRECTORY = "plugins";
+  public static final String PLUGINS_FOLDER = "plugins";
   @NonNls
   private static final String BIN_FOLDER = "bin";
   @NonNls
   private static final String LOG_DIRECTORY = "log";
   @NonNls
   private static final String OPTIONS_FOLDER = "options";
+
+  private static final String PATHS_SELECTOR = System.getProperty(PROPERTY_PATHS_SELECTOR);
 
   private PathManager() {
   }
@@ -190,14 +194,23 @@ public class PathManager {
   }
 
   public static String getPluginsPath() {
-    if (PathManager.ourPluginsPath == null) {
-      if (System.getProperty(PathManager.PROPERTY_PLUGINS_PATH) != null) {
-        PathManager.ourPluginsPath = PathUtil.getAbsolutePath(PathUtil.trimPathQuotes(System.getProperty(PathManager.PROPERTY_PLUGINS_PATH)));
-      } else {
-        PathManager.ourPluginsPath = PathManager.getConfigPath() + File.separatorChar + PathManager.PLUGINS_DIRECTORY;
-      }
+    if (ourPluginsPath != null) {
+      return ourPluginsPath;
     }
-    return PathManager.ourPluginsPath;
+    if (System.getProperty(PROPERTY_PLUGINS_PATH) != null) {
+      ourPluginsPath = System.getProperty(PROPERTY_PLUGINS_PATH);
+    } else
+    if (SystemInfo.isMac && PATHS_SELECTOR != null) {
+      ourPluginsPath = System.getProperty("user.home") + File.separator + "Library/Application Support" + File.separator + PATHS_SELECTOR;
+    } else {
+      ourPluginsPath = getConfigPath() + File.separatorChar + PLUGINS_FOLDER;
+    }
+
+    return ourPluginsPath;
+  }
+
+  public static String getPreInstalledPluginsPath() {
+    return jetbrains.mps.util.PathManager.getPreInstalledPluginsPath();
   }
 
   public static String getLogPath() {
@@ -336,7 +349,7 @@ public class PathManager {
 
   public static String getPluginTempPath() {
     String systemPath = PathManager.getSystemPath();
-    return systemPath + File.separator + PathManager.PLUGINS_DIRECTORY;
+    return systemPath + File.separator + PathManager.PLUGINS_FOLDER;
   }
 
   public static File findFileInLibDirectory(@NotNull String relativePath) {

@@ -7,9 +7,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.LinkedHashSet;
+import java.util.Arrays;
+import jetbrains.mps.core.tool.environment.util.PathManager;
 import java.io.File;
 import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
-import jetbrains.mps.util.PathManager;
 import java.util.Collections;
 import java.util.List;
 import java.net.URL;
@@ -33,18 +34,23 @@ import java.util.LinkedHashMap;
 
   private Set<LibDescriptor> getPluginLibDescriptors() {
     Set<LibDescriptor> paths = new LinkedHashSet<LibDescriptor>();
-    for (String plugin : myConfig.getPlugins()) {
-      File libFolder = new File(plugin + File.separator + "lib");
-      UrlClassLoader pluginCL = null;
-      if (libFolder.exists() && libFolder.isDirectory()) {
-        pluginCL = createPluginClassLoader(libFolder);
-        for (File jar : libFolder.listFiles(PathManager.JAR_FILE_FILTER)) {
-          paths.add(new LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
+
+    for (PluginDescriptor descriptor : myConfig.getPlugins()) {
+      String pluginFolder = descriptor.getPath();
+      for (String pluginsPath : Arrays.asList(PathManager.getPluginsPath(), PathManager.getPreInstalledPluginsPath())) {
+        File pluginDirectory = new File(pluginsPath, pluginFolder);
+        File libFolder = new File(pluginDirectory, "lib");
+        UrlClassLoader pluginCL = null;
+        if (libFolder.exists() && libFolder.isDirectory()) {
+          pluginCL = createPluginClassLoader(libFolder);
+          for (File jar : libFolder.listFiles(jetbrains.mps.util.PathManager.JAR_FILE_FILTER)) {
+            paths.add(new LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
+          }
         }
-      }
-      File languagesFolder = new File(plugin + File.separator + "languages");
-      if (languagesFolder.exists() && languagesFolder.isDirectory()) {
-        paths.add(new LibDescriptor(languagesFolder.getAbsolutePath(), pluginCL));
+        File languagesFolder = new File(pluginDirectory, "languages");
+        if (languagesFolder.exists() && languagesFolder.isDirectory()) {
+          paths.add(new LibDescriptor(languagesFolder.getAbsolutePath(), pluginCL));
+        }
       }
     }
     return Collections.unmodifiableSet(paths);
@@ -52,7 +58,7 @@ import java.util.LinkedHashMap;
 
   private static UrlClassLoader createPluginClassLoader(File lib) {
     List<URL> urls = new ArrayList<URL>();
-    File[] files = lib.listFiles(PathManager.JAR_FILE_FILTER);
+    File[] files = lib.listFiles(jetbrains.mps.util.PathManager.JAR_FILE_FILTER);
     if (files == null) {
       return null;
     }
@@ -66,7 +72,7 @@ import java.util.LinkedHashMap;
   }
 
   public LibraryContributor createLibContributorForPlugins() {
-    return SetLibraryContributor.fromSet(getPluginLibDescriptors());
+    return SetLibraryContributor.fromSet("Plugin contributor", getPluginLibDescriptors());
   }
 
   public LibraryContributor createLibContributorForLibs() {
@@ -76,7 +82,7 @@ import java.util.LinkedHashMap;
       libToCLMap.put(lib, defaultCL);
     }
 
-    return SetLibraryContributor.fromMap(libToCLMap);
+    return SetLibraryContributor.fromMap("Library contributor", libToCLMap);
   }
 
 }

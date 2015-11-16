@@ -11,10 +11,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 
 public class SetLibraryContributor implements LibraryContributor {
+  private final String myName;
   private final Set<LibDescriptor> myLibraryPaths;
 
-  private SetLibraryContributor(Set<LibDescriptor> libraryPaths) {
-    this.myLibraryPaths = libraryPaths;
+  private SetLibraryContributor(String name, Set<LibDescriptor> libraryPaths) {
+    myName = name;
+    myLibraryPaths = libraryPaths;
   }
 
   @Override
@@ -27,15 +29,20 @@ public class SetLibraryContributor implements LibraryContributor {
     return false;
   }
 
-  public static SetLibraryContributor fromMap(Map<String, ClassLoader> libToClassLoader) {
+  public static SetLibraryContributor fromMap(String name, Map<String, ClassLoader> libToClassLoader) {
     Set<LibDescriptor> libs = SetSequence.fromSet(new LinkedHashSet<LibDescriptor>());
     for (String libPath : libToClassLoader.keySet()) {
       SetSequence.fromSet(libs).addElement(new LibDescriptor(libPath, libToClassLoader.get(libPath)));
     }
-    return new SetLibraryContributor(libs);
+    return new SetLibraryContributor(name, libs);
   }
 
-  public static SetLibraryContributor fromSet(Set<LibDescriptor> libs) {
-    return new SetLibraryContributor(libs);
+  public static SetLibraryContributor fromSet(String name, Set<LibDescriptor> libs) {
+    return new SetLibraryContributor(name, libs);
+  }
+
+  @Override
+  public String toString() {
+    return "LibraryContributor " + myName;
   }
 }

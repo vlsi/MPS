@@ -31,7 +31,7 @@ public class FileProcessor extends ReloadParticipant {
   private Map<FileSystemListener, FileProcessor.ListenerData> dataMap = MapSequence.fromMap(new HashMap<FileSystemListener, FileProcessor.ListenerData>());
   private Queue<FileSystemListener> postNotify = QueueSequence.fromQueue(new LinkedList<FileSystemListener>());
   public FileProcessor() {
-    this.listenersContainer = ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).getListenersContainer();
+    listenersContainer = ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).getListenersContainer();
   }
   @Override
   public void update(ProgressMonitor monitor) {
@@ -181,20 +181,25 @@ public class FileProcessor extends ReloadParticipant {
     private Set<IFile> removed = new HashSet<IFile>();
     private Set<IFile> changed = new HashSet<IFile>();
     private boolean isNotified;
+
     private ListenerData() {
     }
+
     @Override
-    public Iterable<IFile> getCreated() {
+    public Set<IFile> getCreated() {
       return added;
     }
+
     @Override
-    public Iterable<IFile> getRemoved() {
+    public Set<IFile> getRemoved() {
       return removed;
     }
+
     @Override
-    public Iterable<IFile> getChanged() {
+    public Set<IFile> getChanged() {
       return changed;
     }
+
     @Override
     public void notify(FileSystemListener listener) {
       FileProcessor.this.notify(listener, this);

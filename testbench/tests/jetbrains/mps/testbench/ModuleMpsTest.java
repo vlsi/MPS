@@ -19,26 +19,19 @@ import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.TestLanguage;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.After;
-
-import java.util.UUID;
 
 /**
  * Currently represents CoreMpsTest, which creates some platform to operate with modules
@@ -49,31 +42,30 @@ import java.util.UUID;
  * @see jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest
  */
 public class ModuleMpsTest extends CoreMpsTest {
-  private static final String TEST_PREFIX_LANG = "TEST_LNG";
-  private static final String TEST_PREFIX_SOLUTION = "TEST_SLN";
-  private static final String TEST_PREFIX_DEVKIT = "TEST_DVK";
-  private static final String TEST_PREFIX_GENERATOR = "TEST_GEN";
-  private static int ourId = 0;
+  private final static Logger LOG = LogManager.getLogger(ModuleMpsTest.class);
+  private final TestModuleFactory myTestModuleFactory;
 
-  private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner();
+  public ModuleMpsTest() {
+    myTestModuleFactory = new TestModuleFactoryBase(getTestRepository());
+  }
+
+  public ModuleMpsTest(@NotNull TestModuleFactory testModuleFactory) {
+    myTestModuleFactory = testModuleFactory;
+  }
 
   @After
   public void afterTest() {
-    org.apache.log4j.LogManager.getLogger(ModuleMpsTest.class).info("Cleaning up after the test");
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
-      }
-    });
+    LOG.info("Cleaning up after the test");
+    myTestModuleFactory.removeRegisteredModules();
   }
 
   /**
    * This is the repository test modules get created/registered in.
    * At the moment, bound to be instance of MPSModuleRepository (the only way to register/unregister module)
    */
+  @NotNull
   protected final SRepositoryExt getTestRepository() {
-    return MPSModuleRepository.getInstance();
+    return ENV.getPlatform().getCore().getModuleRepository();
   }
 
   protected final ModelAccess getModelAccess() {
@@ -83,101 +75,54 @@ public class ModuleMpsTest extends CoreMpsTest {
   /**
    * methods create modules and register it in the repository (assuming it is the only one)
    */
-  protected Solution createSolution() {
-    final Solution[] solutions = new Solution[1];
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        SolutionDescriptor descriptor = new SolutionDescriptor();
-        String uuid = UUID.randomUUID().toString();
-        descriptor.setNamespace(TEST_PREFIX_SOLUTION + "_" + getNewId() + "_" + uuid);
-        descriptor.setId(ModuleId.fromString(uuid));
-        solutions[0] = StubSolution.newInstance(getTestRepository(), descriptor, OWNER);
-        populate(solutions[0]);
-      }
-    });
-    return solutions[0];
+  public Solution createSolution() {
+    return myTestModuleFactory.createSolution(null);
   }
 
-  // invoked in write action once new module is created
-  protected void populate(AbstractModule module) {
-    // no-op, subclasses may add whatever appropriate to the newly created module
-  }
-
-  private int getNewId() {
-    return (++ourId);
-  }
-
-  protected Language createLanguageWithGenerator() {
-    GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
-    String uuid = UUID.randomUUID().toString();
-    generatorDescriptor.setNamespace(TEST_PREFIX_GENERATOR + "_" + getNewId() + "_" + uuid);
-    generatorDescriptor.setId(ModuleId.fromString(uuid));
-    LanguageDescriptor languageDescriptor = createLanguageDescriptor();
-    languageDescriptor.getGenerators().add(generatorDescriptor);
-    return createLanguageFromDescriptor(languageDescriptor);
-  }
-
-  private LanguageDescriptor createLanguageDescriptor(final ModuleId id, final String name) {
-    LanguageDescriptor descriptor = new LanguageDescriptor();
-    descriptor.setNamespace(name);
-    descriptor.setId(id);
-    return descriptor;
-  }
-
-  private LanguageDescriptor createLanguageDescriptor() {
-    String id = UUID.randomUUID().toString();
-    return createLanguageDescriptor(ModuleId.fromString(id), TEST_PREFIX_LANG + "_" + getNewId() + "_" + id);
-  }
-
-  protected Language createLanguage() {
-    return createLanguageFromDescriptor(createLanguageDescriptor());
-  }
-
-  protected Language createLanguage(final ModuleId id, final String name) {
-    return createLanguageFromDescriptor(createLanguageDescriptor(id, name));
-  }
-
-  private Language createLanguageFromDescriptor(final LanguageDescriptor descriptor) {
-    final Language[] languages = new Language[1];
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        languages[0] = TestLanguage.newInstance(getTestRepository(), descriptor, OWNER);
-        populate(languages[0]);
-      }
-    });
-    return languages[0];
-  }
-
-  protected DevKit createDevKit() {
-    final DevKit[] devKits = new DevKit[1];
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        DevkitDescriptor d = new DevkitDescriptor();
-        String uuid = UUID.randomUUID().toString();
-        d.setNamespace(TEST_PREFIX_DEVKIT + "_" + getNewId() + "_" + uuid);
-        d.setId(ModuleId.fromString(uuid));
-        devKits[0] = getTestRepository().registerModule(new DevKit(d, null), OWNER);
-        populate(devKits[0]);
-      }
-    });
-    return devKits[0];
+  public Language createLanguageWithGenerator() {
+    return myTestModuleFactory.createLanguageWithGenerator();
   }
 
   @NotNull
-  protected Generator createGenerator() {
-    Language sourceLang = createLanguageWithGenerator();
-    return sourceLang.getGenerators().toArray(new Generator[1])[0];
+  public LanguageDescriptor createLanguageDescriptor(final SModuleId id, final String name, SModuleReference... runtimes) {
+    return myTestModuleFactory.createLanguageDescriptor(id, name, runtimes);
   }
 
-  protected void removeModule(final SModule module) {
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        getTestRepository().unregisterModule(module, OWNER);
-      }
-    });
+  @NotNull
+  public LanguageDescriptor createLanguageDescriptor(SModuleReference... runtimes) {
+    return myTestModuleFactory.createLanguageDescriptor(runtimes);
+  }
+
+  public Language createLanguage() {
+    return myTestModuleFactory.createLanguage();
+  }
+
+  public Language createLanguage(SModuleReference... runtimes) {
+    return myTestModuleFactory.createLanguage(runtimes);
+  }
+
+  public Language createLanguage(final SModuleId id, final String name, SModuleReference... runtimes) {
+    return myTestModuleFactory.createLanguage(id, name, runtimes);
+  }
+
+  public DevKit createDevKit() {
+    return myTestModuleFactory.createDevKit();
+  }
+
+  @NotNull
+  public Generator createGenerator() {
+    return myTestModuleFactory.createGenerator();
+  }
+
+  public void removeModule(final SModule module) {
+    myTestModuleFactory.removeModule(module);
+  }
+
+  public void addUsedLanguage(AbstractModule client, Language toUse) {
+    myTestModuleFactory.addUsedLanguage(client, toUse);
+  }
+
+  public void addUsedDevKit(AbstractModule client, DevKit toUse) {
+    myTestModuleFactory.addUsedDevKit(client, toUse);
   }
 }

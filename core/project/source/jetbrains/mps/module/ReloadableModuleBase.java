@@ -111,8 +111,9 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   @Override
   protected void dependenciesChanged() {
     super.dependenciesChanged();
-    if (!willLoad()) return;
-    fireDependenciesChanged();
+    if (willLoad()) {
+      fireDependenciesChanged();
+    }
   }
 
   protected final void fireDependenciesChanged() {
@@ -136,7 +137,7 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   // NOTE: for internal use
   // notifies about ANY changes in deps, used languages, etc.
   // designed specifically for the class loading client
-  public static interface SModuleDependenciesListener {
-    public void dependenciesChanged(@NotNull ReloadableModuleBase module);
+  public interface SModuleDependenciesListener {
+    void dependenciesChanged(@NotNull ReloadableModuleBase module);
   }
 }

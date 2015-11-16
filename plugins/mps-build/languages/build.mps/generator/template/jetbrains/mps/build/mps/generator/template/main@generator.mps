@@ -60,6 +60,9 @@
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -1430,7 +1433,6 @@
                                   <node concept="3w_OXm" id="bgY2XVZaix" role="2OqNvi" />
                                 </node>
                               </node>
-                              <node concept="3clFbH" id="bgY2XVZahg" role="3cqZAp" />
                             </node>
                             <node concept="3cpWsn" id="3elU8iQ8oYd" role="1Duv9x">
                               <property role="TrG5h" value="runtime" />
@@ -2587,6 +2589,11 @@
                           <node concept="1pGfFk" id="6xJrZo0GWel" role="2ShVmc">
                             <ref role="37wK5l" to="tken:1jjYQYSjidB" resolve="MPSModulesClosure" />
                             <node concept="30H73N" id="4egE2DStpdn" role="37wK5m" />
+                            <node concept="2ShNRf" id="7QNcMbqvrOY" role="37wK5m">
+                              <node concept="HV5vD" id="7QNcMbqvs31" role="2ShVmc">
+                                <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                              </node>
+                            </node>
                           </node>
                         </node>
                         <node concept="liA8E" id="6xJrZo0GWen" role="2OqNvi">
@@ -2882,6 +2889,11 @@
                                     <node concept="30H73N" id="41K1b4v5ZzI" role="2Oq$k0" />
                                     <node concept="3TrEf2" id="41K1b4v5Z$7" role="2OqNvi">
                                       <ref role="3Tt5mk" to="kdzh:6CY5wCYZA9P" />
+                                    </node>
+                                  </node>
+                                  <node concept="2ShNRf" id="7QNcMbqvmYp" role="37wK5m">
+                                    <node concept="HV5vD" id="7QNcMbqvnkQ" role="2ShVmc">
+                                      <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
                                     </node>
                                   </node>
                                 </node>
@@ -13770,6 +13782,11 @@
                                   <ref role="1PxNhF" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
                                   <node concept="37vLTw" id="7MPX9wYK40z" role="1PxMeX">
                                     <ref role="3cqZAo" node="7MPX9wYK40m" resolve="gentest" />
+                                  </node>
+                                </node>
+                                <node concept="2ShNRf" id="7QNcMbqvsxR" role="37wK5m">
+                                  <node concept="HV5vD" id="7QNcMbqvsQI" role="2ShVmc">
+                                    <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
                                   </node>
                                 </node>
                               </node>

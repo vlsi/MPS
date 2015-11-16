@@ -120,7 +120,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
 
     if ((gentest != null)) {
       if (SNodeOperations.getContainingRoot(gentest) != SNodeOperations.getContainingRoot(__thisNode__)) {
-        MPSModulesClosure closure = new MPSModulesClosure(gentest);
+        MPSModulesClosure closure = new MPSModulesClosure(gentest, new MPSModulesClosure.ModuleDependenciesOptions());
         Iterable<SNode> gentestDeps = Sequence.fromIterable(closure.runtimeClosure().getAllModules()).union(Sequence.fromIterable(Sequence.<SNode>singleton(gentest)));
 
         for (SNode gentestDep : Sequence.fromIterable(gentestDeps)) {

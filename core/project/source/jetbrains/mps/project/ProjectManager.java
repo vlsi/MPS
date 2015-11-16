@@ -15,15 +15,21 @@
  */
 package jetbrains.mps.project;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Evgeny Gryaznov, 9/29/11
+ *
+ * TODO must be core component not singleton
  */
-public class ProjectManager {
-
+public final class ProjectManager {
   private static final ProjectManager INSTANCE = new ProjectManager();
+  private final List<ProjectManagerListener> myListeners = new CopyOnWriteArrayList<ProjectManagerListener>();
 
   public static ProjectManager getInstance() {
     return INSTANCE;
@@ -31,23 +37,35 @@ public class ProjectManager {
 
   private final List<Project> myOpenedProjects = new ArrayList<Project>();
 
-  public Project[] getOpenProjects() {
-    Project[] result;
+  public List<Project> getOpenProjects() {
     synchronized (myOpenedProjects) {
-      result = myOpenedProjects.toArray(new Project[myOpenedProjects.size()]);
+      return Collections.unmodifiableList(myOpenedProjects);
     }
-    return result;
   }
 
   void projectOpened(Project p) {
     synchronized (myOpenedProjects) {
       myOpenedProjects.add(p);
+      for (ProjectManagerListener listener : myListeners) {
+        listener.projectOpened(p);
+      }
     }
   }
 
   void projectClosed(Project p) {
     synchronized (myOpenedProjects) {
+      for (ProjectManagerListener listener : myListeners) {
+        listener.projectClosed(p);
+      }
       myOpenedProjects.remove(p);
     }
+  }
+
+  public void addProjectListener(@NotNull ProjectManagerListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeProjectListener(@NotNull ProjectManagerListener listener) {
+    myListeners.remove(listener);
   }
 }

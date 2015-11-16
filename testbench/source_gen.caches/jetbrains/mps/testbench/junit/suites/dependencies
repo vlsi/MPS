@@ -9,12 +9,16 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageChecker" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.ModelsExtractor" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.Assert" />
-    <classNode dependClassName="org.junit.BeforeClass" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
   </dependency>
@@ -22,13 +26,17 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
+    <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.ModelsExtractor" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.junit.Assert" />
-    <classNode dependClassName="org.junit.BeforeClass" />
+    <classNode dependClassName="org.junit.ClassRule" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
   </dependency>
@@ -47,17 +55,14 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccessHelper" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.AntProjectStrategy" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MPSCompositeProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.junit.AfterClass" />
-    <classNode dependClassName="org.junit.Assert" />
     <classNode dependClassName="org.junit.runner.RunWith" />
     <classNode dependClassName="org.junit.runners.Parameterized" />
   </dependency>
@@ -67,6 +72,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.TestMode" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="org.junit.runner.Runner" />
     <classNode dependClassName="org.junit.runner.notification.RunNotifier" />
@@ -108,15 +114,10 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.testbench.junit.suites.BaseCheckModulesTest" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" file="CheckingTestStatistic.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.testbench.PerformanceMessenger" />
-  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" file="CheckingTestStatistic.java" />
   <dependency className="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" file="CheckingTestsUtil.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -131,7 +132,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
@@ -153,11 +153,15 @@
   <dependency className="jetbrains.mps.testbench.junit.suites.MpsTestsSuite" file="MpsTestsSuite.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.net.MalformedURLException" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.net.URLClassLoader" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -174,11 +178,14 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.AntProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.DelegatingRunner" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
     <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

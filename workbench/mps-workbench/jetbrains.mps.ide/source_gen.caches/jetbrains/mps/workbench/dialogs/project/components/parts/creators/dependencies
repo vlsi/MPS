@@ -4,7 +4,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.ModulePath" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>

@@ -122,14 +122,19 @@ public final class TextGenSupport implements TextArea {
     if (!SNodeUtil.link_BaseConcept_smodelAttribute.equals(currentNode.getContainmentLink())) {
       throw new IllegalStateException("Attempt to reference attributed node from a non-attribute node");
     }
-    SNode attributedNode = currentNode.getParent();
+    final SNode attributeParent = currentNode.getParent();
+    assert attributeParent != null; // just to get rid of idea warning, getContainmentLink.notNull above guaranties that
+    // if no more attributes with TextGen present left, just do the attributed node itself
+    SNode attributedNode = attributeParent;
     boolean found = false;
-    for (SNode attribute : attributedNode.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
+    for (SNode attribute : attributeParent.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
       if (attribute == currentNode) {
         found = true;
         break;
       }
-      attributedNode = attribute;
+      if (TextGenRegistry.getInstance().hasTextGen(attribute)) {
+        attributedNode = attribute;
+      }
     }
     assert found;
     // shall we process attribute of an attribute?

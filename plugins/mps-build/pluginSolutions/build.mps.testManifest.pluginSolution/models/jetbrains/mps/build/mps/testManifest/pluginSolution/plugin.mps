@@ -37,6 +37,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
   <registry>
@@ -1353,8 +1354,8 @@
     <node concept="3clFbW" id="7vU6U507CVm" role="jymVt">
       <node concept="37vLTG" id="7vU6U507DaS" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="7vU6U507Dnp" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <node concept="3uibUv" id="XZsBAoLuOg" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="7vU6U507DdZ" role="3clF46">
@@ -1662,7 +1663,7 @@
                   <node concept="2Ry0Ak" id="53PdBITeUcN" role="iGT6I">
                     <property role="2Ry0Am" value="build" />
                     <node concept="2Ry0Ak" id="6DW_AMABfBy" role="2Ry0An">
-                      <property role="2Ry0Am" value="testModules" />
+                      <property role="2Ry0Am" value="tests" />
                     </node>
                   </node>
                 </node>
@@ -1713,7 +1714,7 @@
                 <ref role="3cqZAo" node="7vU6U507Dn$" resolve="project" />
               </node>
               <node concept="liA8E" id="1w$c60CMRJk" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
               </node>
             </node>
           </node>
@@ -1992,7 +1993,7 @@
                 <ref role="3cqZAo" node="7vU6U507Dn$" resolve="project" />
               </node>
               <node concept="liA8E" id="7vU6U505wtD" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
               </node>
             </node>
           </node>
@@ -2555,8 +2556,8 @@
     <node concept="312cEg" id="7vU6U507Dn$" role="jymVt">
       <property role="TrG5h" value="project" />
       <node concept="3Tm6S6" id="7vU6U507Dn_" role="1B3o_S" />
-      <node concept="3uibUv" id="7vU6U507DnB" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="3uibUv" id="XZsBAoLmQv" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
     <node concept="312cEg" id="7vU6U507DC0" role="jymVt">

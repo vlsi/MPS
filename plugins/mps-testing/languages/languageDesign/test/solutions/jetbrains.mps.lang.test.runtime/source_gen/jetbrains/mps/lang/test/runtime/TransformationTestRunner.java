@@ -6,19 +6,17 @@ import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
-import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import junit.framework.Assert;
-import java.util.Arrays;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.util.MacrosFactory;
 import java.io.File;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.module.ReloadableModule;
@@ -41,9 +39,10 @@ public class TransformationTestRunner implements TestRunner {
   private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
-  private Environment myEnvironment;
+  private final Environment myEnvironment;
 
-  public TransformationTestRunner() {
+  public TransformationTestRunner(@NotNull Environment environment) {
+    myEnvironment = environment;
   }
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName) throws Exception {
@@ -51,16 +50,11 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
-    startMps();
+    clearSystemClipboard();
+    readSystemMacro();
     final Project testProject = openTestProject(projectPath, reopenProject);
     doInitTest(test, testProject, modelName);
     myEnvironment.flushAllEvents();
-  }
-
-  private void startMps() {
-    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withDefaultPlugins());
-    clearSystemClipboard();
-    readSystemMacro();
   }
 
   protected void doInitTest(@NotNull final TransformationTest test, @NotNull final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
@@ -70,9 +64,9 @@ public class TransformationTestRunner implements TestRunner {
     test.setProject(testProject);
     TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
 
-    SModel cachedModel = check_ovzmet_a0e0n(cachedTest);
-    SModel cachedTransientModel = check_ovzmet_a0f0n(cachedTest);
-    String cachedModelName = check_ovzmet_a0g0n(check_ovzmet_a0a6a31(cachedModel));
+    SModel cachedModel = check_ovzmet_a0e0l(cachedTest);
+    SModel cachedTransientModel = check_ovzmet_a0f0l(cachedTest);
+    String cachedModelName = check_ovzmet_a0g0l(check_ovzmet_a0a6a11(cachedModel));
     if (cachedModelName != null && cachedModelName.equals(modelName)) {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Using cached model");
@@ -83,7 +77,7 @@ public class TransformationTestRunner implements TestRunner {
       if (LOG.isDebugEnabled()) {
         LOG.debug("Recaching the model again");
       }
-      SwingUtilities.invokeAndWait(new Runnable() {
+      Exception exception = ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           testProject.getModelAccess().executeCommand(new Runnable() {
             @Override
@@ -96,10 +90,12 @@ public class TransformationTestRunner implements TestRunner {
               test.setModelDescriptor(modelDescriptor);
               test.init();
             }
-
           });
         }
       });
+      if (exception != null) {
+        throw new RuntimeException(exception);
+      }
       TestModelSaver.getInstance().clean();
       TestModelSaver.getInstance().setTest(test);
     }
@@ -109,7 +105,7 @@ public class TransformationTestRunner implements TestRunner {
     SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
 
     if (modelDescriptor == null) {
-      Assert.fail("Can't find model " + modelName + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
+      Assert.fail("Can't find model " + modelName + " in projects " + ProjectManager.getInstance().getOpenProjects() + ".");
     }
     return modelDescriptor;
   }
@@ -124,16 +120,12 @@ public class TransformationTestRunner implements TestRunner {
       }
       Project openedProject = anyOpenedProject();
       if (reopenProject) {
-        projectToOpen = openedProject.getProjectFile();
-        assert myEnvironment.getOpenedProject(projectToOpen) != null;
-        myEnvironment.closeProject(openedProject);
+        openedProject.dispose();
       }
     } else {
       if (reopenProject) {
-        Project openedProject = myEnvironment.getOpenedProject(projectToOpen);
-        if (openedProject != null) {
-          myEnvironment.closeProject(openedProject);
-        }
+        Project openedProject = myEnvironment.openProject(projectToOpen);
+        openedProject.dispose();
       }
     }
     return myEnvironment.openProject(projectToOpen);
@@ -143,7 +135,7 @@ public class TransformationTestRunner implements TestRunner {
    * hacky place to run transformation tests with cached project
    */
   private Project anyOpenedProject() {
-    for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+    for (Project project : ListSequence.fromList(ProjectManager.getInstance().getOpenProjects())) {
       if (project != null && !(project.isDisposed())) {
         return project;
       }
@@ -181,7 +173,7 @@ public class TransformationTestRunner implements TestRunner {
     clazz.value.getField("myModel").set(obj, projectTest.getTransientModelDescriptor());
     clazz.value.getField("myProject").set(obj, projectTest.getProject());
     if (runInCommand) {
-      SwingUtilities.invokeAndWait(new Runnable() {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
         public void run() {
           projectTest.getProject().getModelAccess().executeCommand(new Runnable() {
             public void run() {
@@ -190,6 +182,7 @@ public class TransformationTestRunner implements TestRunner {
           });
         }
       });
+      myEnvironment.flushAllEvents();
     } else {
       error[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
     }
@@ -248,25 +241,25 @@ public class TransformationTestRunner implements TestRunner {
     return exception;
   }
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
-  private static SModel check_ovzmet_a0e0n(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0e0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
-  private static SModel check_ovzmet_a0f0n(TransformationTest checkedDotOperand) {
+  private static SModel check_ovzmet_a0f0l(TransformationTest checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTransientModelDescriptor();
     }
     return null;
   }
-  private static String check_ovzmet_a0g0n(SModelReference checkedDotOperand) {
+  private static String check_ovzmet_a0g0l(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
-  private static SModelReference check_ovzmet_a0a6a31(SModel checkedDotOperand) {
+  private static SModelReference check_ovzmet_a0a6a11(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

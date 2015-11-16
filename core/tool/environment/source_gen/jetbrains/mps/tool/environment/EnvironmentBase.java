@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 
@@ -39,11 +40,13 @@ public abstract class EnvironmentBase implements Environment {
   private static final String PLUGINS_PATH = "plugin.path";
 
   private boolean myInitialized;
+  private int myRefCount;
   protected final EnvironmentConfig myConfig;
   private LibraryInitializer myLibInitializer;
   private PathMacrosProvider myMacrosProvider;
+  private final ProjectContainer myContainer = new ProjectContainer();
 
-  static {
+  public static void initializeLog4j() {
     new Log4jInitializer().init();
     LogManager.getLogger(EnvironmentBase.class).info("Initializing environment");
   }
@@ -56,10 +59,14 @@ public abstract class EnvironmentBase implements Environment {
   }
 
   public void init(@NotNull MPSCore mpsCore) {
+    if (myInitialized) {
+      throw new IllegalStateException("Double initialization " + this);
+    }
     myLibInitializer = mpsCore.getLibraryInitializer();
     initMacros();
     initLibraries();
     EnvironmentContainer.setCurrent(this);
+    retain();
     myInitialized = true;
   }
 
@@ -111,17 +118,71 @@ public abstract class EnvironmentBase implements Environment {
   protected abstract ClassLoader rootClassLoader();
 
   @Override
+  public synchronized void retain() {
+    ++myRefCount;
+  }
+
+  @Override
+  public void release() {
+    if (myRefCount == 0) {
+      throw new IllegalStateException("Reference counter is set to zero -- cannot release!");
+    }
+    --myRefCount;
+    if (myRefCount == 0) {
+      doDispose();
+      EnvironmentContainer.clear();
+    }
+  }
+
+  @Override
   @NotNull
   public Project createProject(@NotNull ProjectStrategy strategy) {
     checkInitialized();
     return strategy.create(this);
   }
 
-  public void dispose() {
+  /**
+   * Contract:
+   * Returns null if there is no opened project with such File
+   */
+  @Nullable
+  protected final Project getOpenedProject(@NotNull File projectFile) {
+    checkInitialized();
+    return myContainer.getProject(projectFile);
+  }
+
+  @Override
+  @NotNull
+  public Project openProject(@NotNull File projectFile) {
+    checkInitialized();
+    Project lastUsedProject = getOpenedProject(projectFile);
+    if (lastUsedProject != null) {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Using the last created project");
+      }
+      return lastUsedProject;
+    } else {
+      if (LOG.isInfoEnabled()) {
+        LOG.info("Opening a new project");
+      }
+      Project project = doOpenProject(projectFile);
+      flushAllEvents();
+      return project;
+    }
+  }
+
+  protected abstract void doDispose();
+
+  protected abstract Project doOpenProject(@NotNull File projectFile);
+
+  @Override
+  public final synchronized void dispose() {
     checkInitialized();
     if (LOG.isDebugEnabled()) {
       LOG.debug("Disposing environment");
     }
+    myRefCount = 0;
+    doDispose();
     EnvironmentContainer.clear();
   }
 
@@ -138,7 +199,11 @@ public abstract class EnvironmentBase implements Environment {
     if (isEmptyString(System.getProperty(PLUGINS_PATH))) {
       setPluginPath();
       // Value of this property is comma-separated list of plugin IDs intended to load by platform 
-      System.setProperty("idea.load.plugins.id", IterableUtils.join(config.getPlugins(), ","));
+      System.setProperty("idea.load.plugins.id", IterableUtils.join(SetSequence.fromSet(config.getPlugins()).select(new ISelector<PluginDescriptor, String>() {
+        public String select(PluginDescriptor it) {
+          return it.getId();
+        }
+      }), ","));
     }
   }
 

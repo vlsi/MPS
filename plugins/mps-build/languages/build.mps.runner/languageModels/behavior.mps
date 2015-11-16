@@ -40,6 +40,9 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -152,7 +155,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -325,17 +328,22 @@
               </node>
               <node concept="2OqwBi" id="2whOjLMv80B" role="2Oq$k0">
                 <node concept="2OqwBi" id="2whOjLMv80P" role="2Oq$k0">
-                  <node concept="2OqwBi" id="2whOjLMv80R" role="2Oq$k0">
-                    <node concept="2ShNRf" id="2whOjLMv80T" role="2Oq$k0">
-                      <node concept="1pGfFk" id="2whOjLMv80V" role="2ShVmc">
-                        <ref role="37wK5l" to="tken:2pk5iwY3nSs" resolve="MPSModulesClosure" />
-                        <node concept="37vLTw" id="2whOjLMv7ZF" role="37wK5m">
-                          <ref role="3cqZAo" node="2whOjLMv7Zx" resolve="originalModules" />
+                  <node concept="2ShNRf" id="2whOjLMv80T" role="2Oq$k0">
+                    <node concept="1pGfFk" id="2whOjLMv80V" role="2ShVmc">
+                      <ref role="37wK5l" to="tken:2pk5iwY3nSs" resolve="MPSModulesClosure" />
+                      <node concept="37vLTw" id="2whOjLMv7ZF" role="37wK5m">
+                        <ref role="3cqZAo" node="2whOjLMv7Zx" resolve="originalModules" />
+                      </node>
+                      <node concept="2OqwBi" id="7QNcMbqvtvZ" role="37wK5m">
+                        <node concept="2ShNRf" id="7QNcMbqvsxR" role="2Oq$k0">
+                          <node concept="HV5vD" id="7QNcMbqvsQI" role="2ShVmc">
+                            <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="7QNcMbqvtDQ" role="2OqNvi">
+                          <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="trackDevkits" />
                         </node>
                       </node>
-                    </node>
-                    <node concept="liA8E" id="2whOjLMv813" role="2OqNvi">
-                      <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="trackDevkits" />
                     </node>
                   </node>
                   <node concept="liA8E" id="2whOjLMv811" role="2OqNvi">

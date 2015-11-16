@@ -16,13 +16,13 @@
 package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.ide.navigation.NavigationProvider;
+import jetbrains.mps.project.FileBasedProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.io.File;
 import java.lang.reflect.Method;
 
 public class GeneratedQueriesOpener {
@@ -53,6 +53,6 @@ public class GeneratedQueriesOpener {
 
   private static String getProjectPath(Project p) {
     if (p == null) return null;
-    return p.getProjectFile().getAbsolutePath();
+    return ((FileBasedProject) p).getProjectFile().getAbsolutePath();
   }
 }

@@ -637,7 +637,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public int getModuleVersion() {
-    return getModuleDescriptor().getModuleVersion();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    return descriptor == null ? 0 : descriptor.getModuleVersion();
   }
 
   public void rename(String newName) {
@@ -931,6 +932,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void validateLanguageVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
+    if (md == null) {
+      return;
+    }
     Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
     if (!md.hasLanguageVersions()) {
@@ -952,6 +956,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           }
         }
       }
+      if (oldLanguageVersions.size() != newLanguageVersions.size()) {
+        // todo: remove this hack after 3.3
+        if (md.hasDependencyVersions()) {
+          setChanged();
+        }
+      }
     }
     oldLanguageVersions.clear();
     oldLanguageVersions.putAll(newLanguageVersions);
@@ -960,6 +970,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void validateDependencyVersions() {
     assertCanChange();
     ModuleDescriptor md = getModuleDescriptor();
+    if (md == null) {
+      return;
+    }
     Map<SModuleReference, Integer> oldDepVersions = md.getDependencyVersions();
     Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
     List<SModule> visible = new ArrayList<SModule>();
@@ -978,6 +991,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           newDepVersions.put(dep.getModuleReference(), ((AbstractModule) dep).getModuleVersion());
           setChanged();
         }
+      }
+      if (oldDepVersions.size() != newDepVersions.size()) {
+        setChanged();
       }
     }
     oldDepVersions.clear();

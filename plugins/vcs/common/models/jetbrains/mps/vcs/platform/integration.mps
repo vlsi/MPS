@@ -3006,8 +3006,8 @@
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
             <node concept="2YIFZM" id="4CjKsJms83k" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="2BHiRxeuM$p" role="37wK5m">
                 <ref role="3cqZAo" node="4CjKsJms80U" resolve="myProject" />
               </node>
@@ -3015,6 +3015,22 @@
           </node>
         </node>
         <node concept="3clFbJ" id="4CjKsJms82t" role="3cqZAp">
+          <node concept="1Wc70l" id="6y_kxB20CRU" role="3clFbw">
+            <node concept="3y3z36" id="6y_kxB20D5e" role="3uHU7w">
+              <node concept="10Nm6u" id="6y_kxB20D72" role="3uHU7w" />
+              <node concept="37vLTw" id="6y_kxB20D1K" role="3uHU7B">
+                <ref role="3cqZAo" node="4CjKsJms83h" resolve="mpsProject" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4CjKsJms82u" role="3uHU7B">
+              <node concept="1rXfSq" id="4hiugqyz9UF" role="2Oq$k0">
+                <ref role="37wK5l" node="4CjKsJms81k" resolve="getSettings" />
+              </node>
+              <node concept="2OwXpG" id="4CjKsJms82v" role="2OqNvi">
+                <ref role="2Oxat5" to="jlcu:~VcsConfiguration.OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" resolve="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbS" id="4CjKsJms82x" role="3clFbx">
             <node concept="3cpWs8" id="6y_kxB20BG2" role="3cqZAp">
               <node concept="3cpWsn" id="6y_kxB20BG3" role="3cpWs9">
@@ -3253,22 +3269,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-          <node concept="1Wc70l" id="6y_kxB20CRU" role="3clFbw">
-            <node concept="3y3z36" id="6y_kxB20D5e" role="3uHU7w">
-              <node concept="10Nm6u" id="6y_kxB20D72" role="3uHU7w" />
-              <node concept="37vLTw" id="6y_kxB20D1K" role="3uHU7B">
-                <ref role="3cqZAo" node="4CjKsJms83h" resolve="mpsProject" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4CjKsJms82u" role="3uHU7B">
-              <node concept="1rXfSq" id="4hiugqyz9UF" role="2Oq$k0">
-                <ref role="37wK5l" node="4CjKsJms81k" resolve="getSettings" />
-              </node>
-              <node concept="2OwXpG" id="4CjKsJms82v" role="2OqNvi">
-                <ref role="2Oxat5" to="jlcu:~VcsConfiguration.OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" resolve="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" />
               </node>
             </node>
           </node>
@@ -4254,8 +4254,9 @@
             <node concept="3cpWs8" id="72HFhk0JSak" role="3cqZAp">
               <node concept="3cpWsn" id="72HFhk0JSal" role="3cpWs9">
                 <property role="TrG5h" value="openProjects" />
-                <node concept="10Q1$e" id="72HFhk0JSam" role="1tU5fm">
-                  <node concept="3uibUv" id="72HFhk0JSan" role="10Q1$1">
+                <node concept="3uibUv" id="15VbAzMGoUZ" role="1tU5fm">
+                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
+                  <node concept="3uibUv" id="15VbAzMGq4g" role="11_B2D">
                     <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                   </node>
                 </node>
@@ -4265,45 +4266,42 @@
                     <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
                   </node>
                   <node concept="liA8E" id="72HFhk0JSaq" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():jetbrains.mps.project.Project[]" resolve="getOpenProjects" />
+                    <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="3clFbJ" id="72HFhk0JSar" role="3cqZAp">
-              <node concept="3clFbS" id="72HFhk0JSas" role="3clFbx">
-                <node concept="3clFbF" id="72HFhk0JSat" role="3cqZAp">
-                  <node concept="37vLTI" id="72HFhk0JSau" role="3clFbG">
-                    <node concept="37vLTw" id="72HFhk0JSav" role="37vLTJ">
-                      <ref role="3cqZAo" node="72HFhk0JSac" resolve="project" />
-                    </node>
-                    <node concept="AH0OO" id="72HFhk0JSaw" role="37vLTx">
-                      <node concept="3cmrfG" id="72HFhk0JSax" role="AHEQo">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                      <node concept="37vLTw" id="72HFhk0JSay" role="AHHXb">
-                        <ref role="3cqZAo" node="72HFhk0JSal" resolve="openProjects" />
-                      </node>
-                    </node>
+              <node concept="3clFbC" id="72HFhk0JSaB" role="3clFbw">
+                <node concept="3cmrfG" id="72HFhk0JSaC" role="3uHU7w">
+                  <property role="3cmrfH" value="1" />
+                </node>
+                <node concept="2OqwBi" id="72HFhk0JSaD" role="3uHU7B">
+                  <node concept="37vLTw" id="72HFhk0JSaE" role="2Oq$k0">
+                    <ref role="3cqZAo" node="72HFhk0JSal" resolve="openProjects" />
+                  </node>
+                  <node concept="liA8E" id="XZsBAoN9pP" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
                   </node>
                 </node>
               </node>
-              <node concept="1Wc70l" id="72HFhk0JSaz" role="3clFbw">
-                <node concept="3y3z36" id="72HFhk0JSa$" role="3uHU7B">
-                  <node concept="37vLTw" id="72HFhk0JSa_" role="3uHU7B">
-                    <ref role="3cqZAo" node="72HFhk0JSal" resolve="openProjects" />
-                  </node>
-                  <node concept="10Nm6u" id="72HFhk0JSaA" role="3uHU7w" />
-                </node>
-                <node concept="3clFbC" id="72HFhk0JSaB" role="3uHU7w">
-                  <node concept="3cmrfG" id="72HFhk0JSaC" role="3uHU7w">
-                    <property role="3cmrfH" value="1" />
-                  </node>
-                  <node concept="2OqwBi" id="72HFhk0JSaD" role="3uHU7B">
-                    <node concept="37vLTw" id="72HFhk0JSaE" role="2Oq$k0">
-                      <ref role="3cqZAo" node="72HFhk0JSal" resolve="openProjects" />
+              <node concept="3clFbS" id="72HFhk0JSas" role="3clFbx">
+                <node concept="3clFbF" id="72HFhk0JSat" role="3cqZAp">
+                  <node concept="37vLTI" id="72HFhk0JSau" role="3clFbG">
+                    <node concept="2OqwBi" id="15VbAzMGqHA" role="37vLTx">
+                      <node concept="37vLTw" id="72HFhk0JSay" role="2Oq$k0">
+                        <ref role="3cqZAo" node="72HFhk0JSal" resolve="openProjects" />
+                      </node>
+                      <node concept="liA8E" id="15VbAzMGqX8" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
+                        <node concept="3cmrfG" id="15VbAzMGruN" role="37wK5m">
+                          <property role="3cmrfH" value="0" />
+                        </node>
+                      </node>
                     </node>
-                    <node concept="1Rwk04" id="72HFhk0JSaF" role="2OqNvi" />
+                    <node concept="37vLTw" id="72HFhk0JSav" role="37vLTJ">
+                      <ref role="3cqZAo" node="72HFhk0JSac" resolve="project" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -10253,6 +10251,12 @@
     </node>
     <node concept="2YIFZL" id="5zPLqcHMCgg" role="jymVt">
       <property role="TrG5h" value="getModel" />
+      <node concept="37vLTG" id="6y_kxB1Z0M8" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="6y_kxB1Z0M9" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
       <node concept="H_c77" id="5zPLqcHMCgh" role="3clF45" />
       <node concept="3Tm6S6" id="5zPLqcHMCgi" role="1B3o_S" />
       <node concept="3clFbS" id="5zPLqcHMCgj" role="3clF47">
@@ -10342,12 +10346,6 @@
               <ref role="3cqZAo" node="5zPLqcHNmW$" resolve="type" />
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6y_kxB1Z0M8" role="3clF46">
-        <property role="TrG5h" value="mpsProject" />
-        <node concept="3uibUv" id="6y_kxB1Z0M9" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
       <node concept="37vLTG" id="5zPLqcHMCgW" role="3clF46">

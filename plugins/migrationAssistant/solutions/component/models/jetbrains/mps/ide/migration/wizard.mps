@@ -2,14 +2,14 @@
 <model ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
   </languages>
   <imports>
     <import index="uxeh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.wizard(MPS.IDEA/)" />
@@ -174,7 +174,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -1911,7 +1911,7 @@
                     <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                     <node concept="2YIFZM" id="6Sxc5MiBujQ" role="37wK5m">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                       <node concept="37vLTw" id="6Sxc5MiBujR" role="37wK5m">
                         <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                       </node>
@@ -2135,7 +2135,7 @@
                 <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
               </node>
               <node concept="liA8E" id="7rK8qWGIaEy" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="moduleStepsCount" />
+                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="languageStepsCount" />
               </node>
             </node>
           </node>
@@ -2192,7 +2192,7 @@
                 <ref role="3cqZAo" node="5SsFeroaavX" resolve="myManager" />
               </node>
               <node concept="liA8E" id="25gV4Lszl1p" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextModuleStep" />
+                <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextLanguageStep" />
               </node>
             </node>
           </node>
@@ -2297,7 +2297,7 @@
                     <ref role="37wK5l" to="auc7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
                     <node concept="2YIFZM" id="2hu8fhm43dA" role="37wK5m">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                       <node concept="37vLTw" id="2hu8fhm43dB" role="37wK5m">
                         <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                       </node>
@@ -2869,8 +2869,8 @@
                 <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
               </node>
               <node concept="2YIFZM" id="2htE_P_LHc5" role="33vP2m">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="37vLTw" id="2htE_P_LHc6" role="37wK5m">
                   <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                 </node>
@@ -2972,7 +2972,7 @@
               </node>
               <node concept="2YIFZM" id="2htE_P_LEqk" role="33vP2m">
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="37vLTw" id="2htE_P_LEW0" role="37wK5m">
                   <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                 </node>
@@ -4117,7 +4117,7 @@
                             <ref role="37wK5l" to="bdll:~ProjectMigration.shouldBeExecuted(jetbrains.mps.project.Project):boolean" resolve="shouldBeExecuted" />
                             <node concept="2YIFZM" id="1u4Xg2YAFd5" role="37wK5m">
                               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                               <node concept="37vLTw" id="1u4Xg2YAFd6" role="37wK5m">
                                 <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
                               </node>

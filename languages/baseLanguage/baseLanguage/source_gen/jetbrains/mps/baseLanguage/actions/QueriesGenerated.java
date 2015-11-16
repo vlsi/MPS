@@ -76,6 +76,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Interface__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.editor.MemberDeclarationRefactoringUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -6019,6 +6020,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireMethodReferences(_context.getSourceNode(), staticMethod);
+
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, staticMethod, "staticModifier", -1);
         return null;
       }
@@ -6247,6 +6250,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode replacing = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireFieldReferences(_context.getSourceNode(), replacing);
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, replacing, "staticModifier", -1);
         return null;
       }
@@ -6423,6 +6427,8 @@ __switch__:
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(method, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireMethodReferences(method, staticMethod);
+
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, staticMethod, "staticModifier", -1);
         return null;
       }
@@ -6493,6 +6499,8 @@ __switch__:
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         SNode staticField = SNodeFactoryOperations.replaceWithNewChild(field, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireFieldReferences(field, staticField);
+
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, staticField, "staticModifier", -1);
         return null;
 

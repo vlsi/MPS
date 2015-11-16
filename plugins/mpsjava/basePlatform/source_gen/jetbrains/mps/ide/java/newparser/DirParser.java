@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.project.Project;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -36,12 +35,12 @@ public class DirParser {
   private ModelAccess myModelAccess;
   private JavaParser myJavaParser = new JavaParser();
 
-  public DirParser(SModule module, Project project) {
+  public DirParser(SModule module, ModelAccess modelAccess) {
     myModule = module;
-    myModelAccess = project.getRepository().getModelAccess();
+    myModelAccess = modelAccess;
   }
-  public DirParser(SModule module, Project project, IFile sourceDir) {
-    this(module, project);
+  public DirParser(SModule module, ModelAccess modelAccess, IFile sourceDir) {
+    this(module, modelAccess);
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<IFile>(), sourceDir);
     mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
   }

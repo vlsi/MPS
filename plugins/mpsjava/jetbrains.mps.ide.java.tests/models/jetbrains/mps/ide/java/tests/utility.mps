@@ -37,6 +37,7 @@
     <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -1478,6 +1479,12 @@
     </node>
     <node concept="2YIFZL" id="LfG6aZ8Ic$" role="jymVt">
       <property role="TrG5h" value="checkSourceModel" />
+      <node concept="37vLTG" id="5QGPY0GdmsC" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3uibUv" id="5QGPY0GdmNf" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
       <node concept="37vLTG" id="LfG6aZ8IcC" role="3clF46">
         <property role="TrG5h" value="dirPath" />
         <node concept="17QB3L" id="LfG6aZ8IcD" role="1tU5fm" />
@@ -1672,18 +1679,12 @@
                     <node concept="37vLTw" id="37zweLarUMV" role="37wK5m">
                       <ref role="3cqZAo" node="37zweLarDXC" resolve="testMaterials" />
                     </node>
-                    <node concept="2ShNRf" id="18t6ep5L01n" role="37wK5m">
-                      <node concept="1pGfFk" id="18t6ep5LaLe" role="2ShVmc">
-                        <ref role="37wK5l" to="v9gs:2doG_VG59Hq" resolve="FileMPSProject" />
-                        <node concept="2ShNRf" id="18t6ep5LdaL" role="37wK5m">
-                          <node concept="1pGfFk" id="18t6ep5LdaM" role="2ShVmc">
-                            <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                            <node concept="2YIFZM" id="18t6ep5LdiJ" role="37wK5m">
-                              <ref role="37wK5l" to="18ew:~PathManager.getHomePath():java.lang.String" resolve="getHomePath" />
-                              <ref role="1Pybhc" to="18ew:~PathManager" resolve="PathManager" />
-                            </node>
-                          </node>
-                        </node>
+                    <node concept="2OqwBi" id="5QGPY0GbJhM" role="37wK5m">
+                      <node concept="37vLTw" id="5QGPY0GdoDV" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5QGPY0GdmsC" resolve="project" />
+                      </node>
+                      <node concept="liA8E" id="5QGPY0GbJ_S" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="37zweLaoGnZ" role="37wK5m">
@@ -1839,7 +1840,6 @@
               </node>
             </node>
             <node concept="3clFbH" id="7uak3TMvLmZ" role="3cqZAp" />
-            <node concept="3clFbH" id="1mbB$5PHin9" role="3cqZAp" />
           </node>
           <node concept="TDmWw" id="1mbB$5PHina" role="TEbGg">
             <node concept="3clFbS" id="1mbB$5PHind" role="TDEfX">

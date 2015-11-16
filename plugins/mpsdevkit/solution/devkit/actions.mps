@@ -10,10 +10,10 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
   </languages>
   <imports>
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
@@ -3311,6 +3311,10 @@
             </node>
           </node>
           <node concept="1DcWWT" id="7IH442cReHn" role="3cqZAp">
+            <node concept="2YIFZM" id="6lMTJPe4ja3" role="1DdaDG">
+              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
+              <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+            </node>
             <node concept="3clFbS" id="7IH442cReHo" role="2LFqv$">
               <node concept="2JFkCU" id="7IH442cReHp" role="3cqZAp">
                 <node concept="tCFHf" id="7IH442cReHq" role="2JFLmv">
@@ -3324,10 +3328,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="2YIFZM" id="6lMTJPe4ja3" role="1DdaDG">
-              <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
-              <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
             </node>
             <node concept="3cpWsn" id="7IH442cReHt" role="1Duv9x">
               <property role="TrG5h" value="ad" />
@@ -5431,8 +5431,8 @@
                               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
                             </node>
                             <node concept="2YIFZM" id="5Scu6nd7khL" role="33vP2m">
-                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                               <node concept="2OqwBi" id="5Scu6nd7kiN" role="37wK5m">
                                 <node concept="2WthIp" id="5Scu6nd7kiQ" role="2Oq$k0">
                                   <ref role="32nkFo" node="1TFxXPONz$F" resolve="ReloadAll" />
@@ -11769,8 +11769,8 @@
             <node concept="3cpWsn" id="5wEedBsg2zO" role="3cpWs9">
               <property role="TrG5h" value="project" />
               <node concept="2YIFZM" id="5wEedBsgihw" role="33vP2m">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
                 <node concept="37vLTw" id="5wEedBsgkve" role="37wK5m">
                   <ref role="3cqZAo" node="2erTeUVF2gO" resolve="ideaProject" />
                 </node>
@@ -13714,6 +13714,10 @@
       <node concept="3Tm1VV" id="7IH442cRK2i" role="1B3o_S" />
       <node concept="3clFbS" id="7IH442cRK2j" role="3clF47">
         <node concept="2Gpval" id="7IH442cRKFg" role="3cqZAp">
+          <node concept="2YIFZM" id="6lMTJPe4jqy" role="2GsD0m">
+            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
+            <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+          </node>
           <node concept="2GrKxI" id="7IH442cRKFi" role="2Gsz3X">
             <property role="TrG5h" value="ad" />
           </node>
@@ -13745,10 +13749,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="2YIFZM" id="6lMTJPe4jqy" role="2GsD0m">
-            <ref role="37wK5l" to="vndm:~LanguageAspectSupport.collectAspects():java.lang.Iterable" resolve="collectAspects" />
-            <ref role="1Pybhc" to="vndm:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
           </node>
         </node>
         <node concept="3cpWs6" id="7IH442cRK2k" role="3cqZAp">

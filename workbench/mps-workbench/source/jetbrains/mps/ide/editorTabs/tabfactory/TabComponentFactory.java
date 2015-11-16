@@ -32,7 +32,7 @@ import java.util.Set;
 public abstract class TabComponentFactory {
   public static TabsComponent createTabsComponent(final SNodeReference baseNode, final Set<RelationDescriptor> possibleTabs, JComponent component, NodeChangeCallback callback, CreateModeCallback createModeCallback, Project project) {
     MyState state = ApplicationManager.getApplication().getComponent(EditorSettings.class).getState();
-    if (!state.isShow()) return new EmptyTabsComponent(baseNode);
+    if (!state.isShow()) return new EmptyTabsComponent(baseNode, callback);
 
     if (state.isShowPlain()) {
       return new PlainTabsComponent(baseNode, possibleTabs, component, callback, state.isShowGrayed(), createModeCallback, project);

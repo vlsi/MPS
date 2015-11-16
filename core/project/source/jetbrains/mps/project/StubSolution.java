@@ -28,7 +28,11 @@ public class StubSolution extends Solution {
 
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SRepositoryExt repo, SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    return register(repo, moduleOwner, new StubSolution(descriptor, null));
+    return newInstance(repo, descriptor, moduleOwner, null);
+  }
+
+  public static Solution newInstance(SRepositoryExt repo, SolutionDescriptor descriptor, MPSModuleOwner moduleOwner, @Nullable IFile descriptorFile) {
+    return register(repo, moduleOwner, new StubSolution(descriptor, descriptorFile));
   }
 
   // there's StubSolutionIdea that uses this method

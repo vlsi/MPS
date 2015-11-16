@@ -27,6 +27,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSFileNodeEditor" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
@@ -87,6 +88,9 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
@@ -173,6 +177,18 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="junit.framework.Assert" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.LightEnvironment" file="LightEnvironment.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.ProjectStrategy" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.tool.environment.Environment" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.MouseEventsDispatcher" file="MouseEventsDispatcher.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Point" />
@@ -228,18 +244,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TestModelSaver" file="TestModelSaver.java">
-    <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.MpsRunListener" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.RunEventsDispatcher" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TestRunner" file="TestRunner.java">
     <classNode dependClassName="java.lang.Exception" />
@@ -285,6 +295,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.LightEnvironment" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
@@ -313,18 +324,19 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.CanonicalPath" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider" />
+    <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestModelSaver" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TransformationTest" />
@@ -335,8 +347,6 @@
     <classNode dependClassName="jetbrains.mps.project.ProjectManager" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.apache.log4j.Level" />

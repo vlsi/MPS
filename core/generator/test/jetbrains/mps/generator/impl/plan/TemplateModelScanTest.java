@@ -48,12 +48,12 @@ public class TemplateModelScanTest {
 
   @BeforeClass
   public static void setup() {
-    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment().withBootstrapLibraries());
+    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @AfterClass
   public static void tearDown() {
-    ourEnvironment.dispose();
+    ourEnvironment.release();
   }
 
   @Test
@@ -138,7 +138,7 @@ public class TemplateModelScanTest {
             7823		  3139
       */
     } finally {
-      ourEnvironment.closeProject(mpsProject);
+      mpsProject.dispose();
     }
   }
 
