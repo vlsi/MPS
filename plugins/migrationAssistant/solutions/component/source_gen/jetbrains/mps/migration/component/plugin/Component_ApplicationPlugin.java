@@ -20,12 +20,16 @@ public class Component_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowDeprecatedStuff_Action());
     addAction(new ShowDeprecatedUsages_Action());
     // groups 
+    addGroup(new LanguageMigrations_ActionGroup());
     addGroup(new MigrationsMenu_ActionGroup());
     addGroup(new Migrations_ActionGroup());
+    addGroup(new ProjectMigrations_ActionGroup());
   }
   public void adjustInterfaceGroups() {
   }
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(LanguageMigrations_ActionGroup.ID, Migrations_ActionGroup.ID, Migrations_ActionGroup.LABEL_ID_languageMigrations);
+    insertGroupIntoAnother(ProjectMigrations_ActionGroup.ID, Migrations_ActionGroup.ID, Migrations_ActionGroup.LABEL_ID_projectMigrations);
     insertGroupIntoAnother(MigrationsMenu_ActionGroup.ID, "Migration", null);
     insertGroupIntoAnother(Migrations_ActionGroup.ID, MigrationsMenu_ActionGroup.ID, null);
   }
