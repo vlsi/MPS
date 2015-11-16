@@ -544,10 +544,6 @@
         </node>
       </node>
     </node>
-    <node concept="3lhOvk" id="4uVwhQyzcsF" role="3lj3bC">
-      <ref role="30HIoZ" to="53vh:6szrkDodGEV" resolve="PureMigrationScript" />
-      <ref role="3lhOvi" node="4uVwhQyzcsQ" resolve="map_PureMigrationScript" />
-    </node>
     <node concept="3aamgX" id="6d7r2FpJB_n" role="3acgRq">
       <ref role="30HIoZ" to="53vh:6d7r2FpJdsQ" resolve="DataDependencyReference" />
       <node concept="gft3U" id="6d7r2FpJBJ1" role="1lVwrX">
@@ -615,12 +611,6 @@
       <ref role="30HIoZ" to="53vh:4SSaNAQkDV9" resolve="TransformStatement" />
       <node concept="j$656" id="4SSaNAQmYk1" role="1lVwrX">
         <ref role="v9R2y" node="4SSaNAQmYjZ" resolve="reduce_TransformStatement" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="4uVwhQyzAw5" role="3acgRq">
-      <ref role="30HIoZ" to="53vh:6szrkDoc28u" resolve="MoveNode" />
-      <node concept="j$656" id="6y_T1N80b_x" role="1lVwrX">
-        <ref role="v9R2y" node="4uVwhQyzAw3" resolve="reduce_MoveNode" />
       </node>
     </node>
   </node>
@@ -3799,6 +3789,19 @@
       <node concept="3Tqbb2" id="4uVwhQyzBAS" role="1N15GL">
         <ref role="ehGHo" to="53vh:2GZlO$G5$zc" resolve="AbstractNodeReference" />
       </node>
+    </node>
+  </node>
+  <node concept="bUwia" id="zYDcsy$esk">
+    <property role="TrG5h" value="pureMugrations" />
+    <node concept="3aamgX" id="4uVwhQyzAw5" role="3acgRq">
+      <ref role="30HIoZ" to="53vh:6szrkDoc28u" resolve="MoveNode" />
+      <node concept="j$656" id="6y_T1N80b_x" role="1lVwrX">
+        <ref role="v9R2y" node="4uVwhQyzAw3" resolve="reduce_MoveNode" />
+      </node>
+    </node>
+    <node concept="3lhOvk" id="4uVwhQyzcsF" role="3lj3bC">
+      <ref role="30HIoZ" to="53vh:6szrkDodGEV" resolve="PureMigrationScript" />
+      <ref role="3lhOvi" node="4uVwhQyzcsQ" resolve="map_PureMigrationScript" />
     </node>
   </node>
 </model>
