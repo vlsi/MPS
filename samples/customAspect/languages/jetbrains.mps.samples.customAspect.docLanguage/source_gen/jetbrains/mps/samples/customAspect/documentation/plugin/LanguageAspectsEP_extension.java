@@ -80,7 +80,6 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
       private final Icon ICON = IconUtil.getIcon("documentation.png");
 
-
     };
   }
   private static boolean eq_ecu8yf_a0b0a0a0a0a0b0b0a0a0b(Object a, Object b) {
