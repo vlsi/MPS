@@ -47,17 +47,23 @@ public final class StaticFieldReference__BehaviorDescriptor extends BaseBHDescri
 
     SModule m = check_o8sx3d_a0d0a(SNodeOperations.getModel(f));
     if (m != null) {
-      Object c = null;
       try {
-        c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        final Object c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        if (c != null) {
+          return c;
+        }
       } catch (Throwable t) {
         // do nothing 
       }
-      if (c != null) {
-        return c;
-      }
     }
-    return ReflectionUtil.getConstant(module, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    if (module == null) {
+      return null;
+    }
+    try {
+      return ReflectionUtil.getConstant(module, classifier, SPropertyOperations.getString(f, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    } catch (Throwable t) {
+      return null;
+    }
   }
   /*package*/ static boolean isCompileTimeConstant_idi1LOPRp(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"));
