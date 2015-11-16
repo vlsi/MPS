@@ -29,6 +29,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.lang.reflect.Array;
@@ -155,6 +156,16 @@ public abstract class MPSPsiNodeBase extends LightElement {
         return aClass.cast(child);
       }
     }
+    return null;
+  }
+
+  /**
+   * Enables PSI nodes to have a different parent-child structure than that of MPS nodes they're built upon
+   * @param child about to be added
+   * @return Null if this node will be the parent (default) or some other child (or maybe even grandchild) node
+   */
+  @Nullable
+  protected MPSPsiNodeBase getParentFor(MPSPsiNode child) {
     return null;
   }
 

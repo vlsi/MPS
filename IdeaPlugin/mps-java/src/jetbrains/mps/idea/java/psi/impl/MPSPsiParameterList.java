@@ -42,18 +42,8 @@ public class MPSPsiParameterList extends MPSPsiNodeBase implements PsiParameterL
   @NotNull
   @Override
   public PsiParameter[] getParameters() {
-    PsiElement parent = getParent();
-    if (!(parent instanceof MPSPsiMethod)) {
-      return PsiParameter.EMPTY_ARRAY;
-    }
-
-    MPSPsiMethod mpsMethod = (MPSPsiMethod) parent;
-    MPSPsiParameter[] params = mpsMethod.getChildrenOfType("parameter", MPSPsiParameter.class);
-    if (params == null) {
-      return PsiParameter.EMPTY_ARRAY;
-    } else {
-      return params;
-    }
+    PsiParameter[] result = getChildrenOfType("parameter", MPSPsiParameter.class);
+    return result == null ? PsiParameter.EMPTY_ARRAY : result;
   }
 
   @Override

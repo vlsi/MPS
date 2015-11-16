@@ -54,6 +54,7 @@ import com.intellij.ui.RowIcon;
 import com.intellij.util.IncorrectOperationException;
 import com.intellij.util.PlatformIcons;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NonNls;
@@ -101,6 +102,15 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   @Override
   public PsiParameterList getParameterList() {
     return getChildOfType(MPSPsiParameterList.class);
+  }
+
+  @Nullable
+  @Override
+  protected MPSPsiNodeBase getParentFor(MPSPsiNode child) {
+    if (child instanceof MPSPsiParameter) {
+      return getChildOfType(MPSPsiParameterList.class);
+    }
+    return super.getParentFor(child);
   }
 
   @NotNull

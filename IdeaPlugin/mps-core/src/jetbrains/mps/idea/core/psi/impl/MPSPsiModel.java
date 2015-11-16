@@ -511,11 +511,11 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     }
 
     // children
-    MPSPsiNode last = null;
     for (SNode root : node.getChildren()) {
       MPSPsiNode psiChild = convert(root);
-      psiNode.addChild(last, psiChild);
-      last = psiChild;
+      MPSPsiNodeBase artificialParent = psiNode.getParentFor(psiChild);
+      MPSPsiNodeBase wouldBeParent = artificialParent == null ? psiNode : artificialParent;
+      wouldBeParent.addChildLast(psiChild);
     }
     return psiNode;
   }
