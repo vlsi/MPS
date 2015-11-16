@@ -3310,7 +3310,7 @@
                   <property role="Xl_RC" value="Concept id is not defined.\n" />
                 </node>
                 <node concept="Xl_RD" id="1o9qxtfaLrv" role="3uHU7w">
-                  <property role="Xl_RC" value="Please run \&quot;add concept ids\&quot; migration or invoke Migrations-&gt;3.3-&gt;Add Concept Ids.\n" />
+                  <property role="Xl_RC" value="Please run MainMenu-&gt;Migration-&gt;Migrations-&gt;Language Migrations-&gt;Copy Concept Ids from Node Ids.\n" />
                 </node>
               </node>
               <node concept="Xl_RD" id="1o9qxtfaLrx" role="3uHU7w">
