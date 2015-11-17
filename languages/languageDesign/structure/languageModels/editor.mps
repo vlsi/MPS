@@ -1668,7 +1668,7 @@
                             <node concept="1Y3b0j" id="6kjnJfQJwoM" role="YeSDq">
                               <property role="2bfB8j" value="true" />
                               <ref role="1Y3XeK" to="w1kc:~UndoRunnable$Base" resolve="UndoRunnable.Base" />
-                              <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                              <ref role="37wK5l" to="w1kc:~UndoRunnable$Base.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="UndoRunnable.Base" />
                               <node concept="10Nm6u" id="6kjnJfQJwtz" role="37wK5m" />
                               <node concept="3cpWs3" id="6kjnJfQJx21" role="37wK5m">
                                 <node concept="2OqwBi" id="6kjnJfQJxZ7" role="3uHU7w">

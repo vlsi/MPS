@@ -162,14 +162,14 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNodeList_rpszz1_b1b1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_Editor.mainLanguageListHandler_rpszz1_b1b1a(node, "mainLanguage", editorContext);
+    AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_Editor.mainLanguagesListHandler_rpszz1_b1b1a(node, "mainLanguages", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_mainLanguage");
+    editorCell.setCellId("refNodeList_mainLanguages");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class mainLanguageListHandler_rpszz1_b1b1a extends RefNodeListHandler {
-    public mainLanguageListHandler_rpszz1_b1b1a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class mainLanguagesListHandler_rpszz1_b1b1a extends RefNodeListHandler {
+    public mainLanguagesListHandler_rpszz1_b1b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -183,9 +183,12 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     }
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_rpszz1_a1b1b0(editorContext, node);
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
@@ -198,6 +201,12 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+    private EditorCell createConstant_rpszz1_a1b1b0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_rpszz1_a1b1b0");
+      editorCell.setDefaultText("<no languages>");
+      return editorCell;
     }
   }
   private EditorCell createCollection_rpszz1_c1b0(EditorContext editorContext, SNode node) {
@@ -258,12 +267,12 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
       }
     }
     private EditorCell createConstant_rpszz1_a1c1b0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no languages>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_rpszz1_a1c1b0");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<no languages>");
       return editorCell;
     }
   }

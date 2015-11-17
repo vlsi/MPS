@@ -73,7 +73,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2Y$EcRKMr2k" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="mainLanguage" />
+      <property role="20kJfa" value="mainLanguages" />
       <property role="20lbJX" value="1..n" />
       <ref role="20lvS9" node="2Y$EcRKMsxU" resolve="LanguageReference" />
     </node>

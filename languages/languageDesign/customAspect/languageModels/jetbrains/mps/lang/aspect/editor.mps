@@ -98,6 +98,7 @@
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
+        <property id="1082639509531" name="nullText" index="ilYzB" />
         <property id="1073389577007" name="text" index="3F0ifm" />
       </concept>
       <concept id="1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" flags="sg" stub="730538219796134133" index="3F0A7n" />
@@ -411,6 +412,9 @@
           <node concept="3F2HdR" id="5LFbgO_wI61" role="3EZMnx">
             <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2k" />
             <node concept="2iRkQZ" id="5LFbgO_wI68" role="2czzBx" />
+            <node concept="3F0ifn" id="1qO9DUnuMUe" role="2czzBI">
+              <property role="ilYzB" value="&lt;no languages&gt;" />
+            </node>
           </node>
           <node concept="2iRfu4" id="2Y$EcRKMt3u" role="2iSdaV" />
         </node>
@@ -425,7 +429,7 @@
             <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2m" />
             <node concept="2iRkQZ" id="2Y$EcRKMt4d" role="2czzBx" />
             <node concept="3F0ifn" id="5KGdJjE3t_8" role="2czzBI">
-              <property role="3F0ifm" value="&lt;no languages&gt;" />
+              <property role="ilYzB" value="&lt;no languages&gt;" />
               <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
             </node>
           </node>
