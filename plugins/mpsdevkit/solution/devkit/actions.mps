@@ -10833,24 +10833,22 @@
         <node concept="3cpWs8" id="2N3bPQ3DobU" role="3cqZAp">
           <node concept="3cpWsn" id="2N3bPQ3DobV" role="3cpWs9">
             <property role="TrG5h" value="popup" />
-            <node concept="3uibUv" id="2Z99pDCKPOE" role="1tU5fm">
-              <ref role="3uigEE" to="qfni:6IhgjCFAMm" resolve="FileStructurePopup" />
+            <node concept="3uibUv" id="7hPfx88rFr$" role="1tU5fm">
+              <ref role="3uigEE" to="jmi8:~FileStructurePopup" resolve="FileStructurePopup" />
             </node>
             <node concept="2ShNRf" id="2N3bPQ3DobY" role="33vP2m">
               <node concept="1pGfFk" id="2N3bPQ3Doc0" role="2ShVmc">
-                <ref role="37wK5l" to="qfni:6IhgjCFB1o" resolve="FileStructurePopup" />
-                <node concept="2OqwBi" id="2N3bPQ3Doc1" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagTuzc" role="2Oq$k0">
-                    <ref role="3cqZAo" node="12Xh7Jlcco9" resolve="structureView" />
-                  </node>
-                  <node concept="liA8E" id="2N3bPQ3Doc3" role="2OqNvi">
-                    <ref role="37wK5l" to="2ymi:~StructureView.getTreeModel():com.intellij.ide.structureView.StructureViewModel" resolve="getTreeModel" />
-                  </node>
-                </node>
+                <ref role="37wK5l" to="jmi8:~FileStructurePopup.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.fileEditor.FileEditor,com.intellij.ide.structureView.StructureView,boolean)" resolve="FileStructurePopup" />
                 <node concept="2OqwBi" id="2N3bPQ3Doc$" role="37wK5m">
                   <node concept="2WthIp" id="2N3bPQ3Docf" role="2Oq$k0" />
                   <node concept="1DTwFV" id="2N3bPQ3Dodm" role="2OqNvi">
                     <ref role="2WH_rO" node="12Xh7JlccnL" resolve="project" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7hPfx88rJTT" role="37wK5m">
+                  <node concept="2WthIp" id="7hPfx88rJTW" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="7hPfx88rJTY" role="2OqNvi">
+                    <ref role="2WH_rO" node="12Xh7JlccnN" resolve="fileEditor" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="3GM_nagTsYh" role="37wK5m">
@@ -10885,7 +10883,7 @@
                   <ref role="3cqZAo" node="2N3bPQ3DobV" resolve="popup" />
                 </node>
                 <node concept="liA8E" id="12Xh7JlccoM" role="2OqNvi">
-                  <ref role="37wK5l" to="qfni:6IhgjCFBtJ" resolve="setTitle" />
+                  <ref role="37wK5l" to="jmi8:~FileStructurePopup.setTitle(java.lang.String):void" resolve="setTitle" />
                   <node concept="2OqwBi" id="12Xh7JlccoN" role="37wK5m">
                     <node concept="2OqwBi" id="12Xh7JlccoO" role="2Oq$k0">
                       <node concept="2WthIp" id="12Xh7JlccoP" role="2Oq$k0" />
@@ -10908,7 +10906,7 @@
               <ref role="3cqZAo" node="2N3bPQ3DobV" resolve="popup" />
             </node>
             <node concept="liA8E" id="12Xh7JlccoV" role="2OqNvi">
-              <ref role="37wK5l" to="qfni:6IhgjCFB5H" resolve="show" />
+              <ref role="37wK5l" to="jmi8:~FileStructurePopup.show():void" resolve="show" />
             </node>
           </node>
         </node>
