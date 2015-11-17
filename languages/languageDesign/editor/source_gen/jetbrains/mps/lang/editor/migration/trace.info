@@ -14,8 +14,8 @@
     </file>
   </root>
   <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/1110928002290223181">
-    <file name="MigrateShowIfConditionRespectingChildAttributes.java">
-      <node id="1110928002290223181" at="26,30,27,61" concept="6" />
+    <file name="Migrate_ShowIfConditionConsideringChildAttributes.java">
+      <node id="1110928002290223181" at="26,30,27,63" concept="6" />
       <node id="1110928002290223181" at="30,33,31,17" concept="6" />
       <node id="1110928002290397037" at="34,5,35,59" concept="5" />
       <node id="1110928002290397037" at="37,52,38,23" concept="6" />
@@ -73,7 +73,7 @@
       <node id="1110928002290230493" at="45,9,68,7" concept="2" />
       <node id="1110928002290397037" at="33,41,69,5" concept="0" />
       <node id="1110928002290223181" at="33,0,72,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1110928002290223181" at="26,30,27,61" />
+      <scope id="1110928002290223181" at="26,30,27,63" />
       <scope id="1110928002290223181" at="30,33,31,17" />
       <scope id="1110928002290397037" at="37,52,38,23" />
       <scope id="1110928002290228946" at="42,41,43,191" />
@@ -157,15 +157,15 @@
       <scope id="1110928002290223181" at="33,0,72,0">
         <var name="m" id="1110928002290223181" />
       </scope>
-      <unit id="1110928002290397037" at="36,42,40,7" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$1" />
-      <unit id="1110928002290228945" at="41,299,45,7" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$2" />
-      <unit id="2420890806621334736" at="49,218,53,9" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$3" />
-      <unit id="2420890806621336135" at="53,15,57,9" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$4" />
-      <unit id="2420890806621300749" at="58,222,62,9" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$5" />
-      <unit id="2420890806621348789" at="62,15,66,9" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$6" />
-      <unit id="1004332727004128884" at="76,268,80,5" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$7" />
-      <unit id="1004332727004163650" at="80,275,84,5" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$8" />
-      <unit id="1110928002290223181" at="25,0,119,0" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes" />
+      <unit id="1110928002290397037" at="36,42,40,7" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$1" />
+      <unit id="1110928002290228945" at="41,299,45,7" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$2" />
+      <unit id="2420890806621334736" at="49,218,53,9" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$3" />
+      <unit id="2420890806621336135" at="53,15,57,9" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$4" />
+      <unit id="2420890806621300749" at="58,222,62,9" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$5" />
+      <unit id="2420890806621348789" at="62,15,66,9" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$6" />
+      <unit id="1004332727004128884" at="76,268,80,5" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$7" />
+      <unit id="1004332727004163650" at="80,275,84,5" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes$8" />
+      <unit id="1110928002290223181" at="25,0,119,0" name="jetbrains.mps.lang.editor.migration.Migrate_ShowIfConditionConsideringChildAttributes" />
     </file>
   </root>
 </debug-info>

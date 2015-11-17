@@ -22,9 +22,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class MigrateShowIfConditionRespectingChildAttributes extends MigrationScriptBase {
+public class Migrate_ShowIfConditionConsideringChildAttributes extends MigrationScriptBase {
   public String getCaption() {
-    return "MigrateShowIfConditionRespectingChildAttributes";
+    return "Migrate_ShowIfConditionConsideringChildAttributes";
   }
   @Override
   public boolean isRerunnable() {

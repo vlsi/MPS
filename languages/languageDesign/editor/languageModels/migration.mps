@@ -239,7 +239,7 @@
   </registry>
   <node concept="3SyAh_" id="XENM7jyKxd">
     <property role="qMTe8" value="0" />
-    <property role="TrG5h" value="MigrateShowIfConditionRespectingChildAttributes" />
+    <property role="TrG5h" value="Migrate_ShowIfConditionConsideringChildAttributes" />
     <node concept="3clFb_" id="RK6OH5ohWp" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="linkCellsInsideCellModel" />
