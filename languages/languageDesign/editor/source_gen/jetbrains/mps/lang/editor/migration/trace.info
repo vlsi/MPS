@@ -164,7 +164,7 @@
       <unit id="2420890806621300749" at="58,222,62,9" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$5" />
       <unit id="2420890806621348789" at="62,15,66,9" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$6" />
       <unit id="1004332727004128884" at="76,268,80,5" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$7" />
-      <unit id="1004332727004163650" at="80,276,84,5" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$8" />
+      <unit id="1004332727004163650" at="80,275,84,5" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes$8" />
       <unit id="1110928002290223181" at="25,0,119,0" name="jetbrains.mps.lang.editor.migration.MigrateShowIfConditionRespectingChildAttributes" />
     </file>
   </root>
