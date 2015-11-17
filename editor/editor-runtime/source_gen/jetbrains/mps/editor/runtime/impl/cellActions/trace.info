@@ -414,10 +414,10 @@
     </file>
   </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/5783684243119878690">
-    <file name="CellAction_CommentChildLine.java">
+    <file name="CellAction_CommentChild.java">
       <node id="5783684243119878691" at="14,0,15,0" concept="4" trace="myNode" />
       <node id="4651214703254062338" at="15,0,16,0" concept="4" trace="myLink" />
-      <node id="5783684243119878701" at="18,91,19,18" concept="3" />
+      <node id="5783684243119878701" at="18,87,19,18" concept="3" />
       <node id="4651214703254062345" at="19,18,20,23" concept="3" />
       <node id="5783684243119878715" at="24,58,25,77" concept="8" />
       <node id="4651214703254056370" at="26,73,27,19" concept="9" />
@@ -440,11 +440,11 @@
       <node id="9100558062448875674" at="28,5,31,5" concept="6" />
       <node id="9100558062448856975" at="31,5,34,5" concept="6" />
       <node id="9100558062448881973" at="40,52,43,5" concept="6" />
-      <node id="9100558062448857854" at="59,0,62,0" concept="12" trace="eq_thdavw_a0d0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="9100558062448882350" at="62,0,65,0" concept="12" trace="eq_thdavw_a0a0a0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4651214703254101975" at="65,0,68,0" concept="12" trace="eq_thdavw_a0a0a0b0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4651214703254101984" at="68,0,71,0" concept="12" trace="eq_thdavw_a0a0b0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="5783684243119878697" at="18,0,22,0" concept="2" trace="CellAction_CommentChildLine#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
+      <node id="9100558062448857854" at="59,0,62,0" concept="12" trace="eq_kculhu_a0d0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="9100558062448882350" at="62,0,65,0" concept="12" trace="eq_kculhu_a0a0a0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="4651214703254101975" at="65,0,68,0" concept="12" trace="eq_kculhu_a0a0a0b0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="4651214703254101984" at="68,0,71,0" concept="12" trace="eq_kculhu_a0a0b0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="5783684243119878697" at="18,0,22,0" concept="2" trace="CellAction_CommentChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
       <node id="4651214703254101971" at="48,63,53,9" concept="6" />
       <node id="9100558062448881150" at="39,0,45,0" concept="7" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4651214703254101969" at="47,33,54,7" concept="6" />
@@ -461,7 +461,7 @@
       <scope id="9100558062448882350" at="62,64,63,46" />
       <scope id="4651214703254101975" at="65,66,66,46" />
       <scope id="4651214703254101984" at="68,64,69,46" />
-      <scope id="5783684243119878700" at="18,91,20,23" />
+      <scope id="5783684243119878700" at="18,87,20,23" />
       <scope id="9100558062448881174" at="40,52,43,5" />
       <scope id="9100558062448857854" at="59,0,62,0">
         <var name="a" id="9100558062448857854" />
@@ -501,7 +501,7 @@
       <scope id="5783684243119878709" at="23,0,38,0">
         <var name="editorContext" id="5783684243119878712" />
       </scope>
-      <unit id="5783684243119878690" at="13,0,72,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentChildLine" />
+      <unit id="5783684243119878690" at="13,0,72,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentChild" />
     </file>
   </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/6549307287717228796">

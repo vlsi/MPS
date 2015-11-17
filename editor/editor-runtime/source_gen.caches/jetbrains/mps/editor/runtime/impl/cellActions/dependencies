@@ -35,7 +35,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.impl.cellActions.AbstractCommentOutAction" />
   </dependency>
-  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentChildLine" file="CellAction_CommentChildLine.java">
+  <dependency className="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentChild" file="CellAction_CommentChild.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection" />

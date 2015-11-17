@@ -73,7 +73,7 @@ public class MigrateShowIfConditionRespectingChildAttributes extends MigrationSc
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0);
   }
   private Iterable<SNode> linkCellsInsideCellModel(SNode cellModel) {
-    return ListSequence.fromList(SNodeOperations.getNodeDescendants(cellModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), false, new SAbstractConcept[]{})).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SNodeOperations.getNodeDescendants(cellModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), true, new SAbstractConcept[]{})).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
       }

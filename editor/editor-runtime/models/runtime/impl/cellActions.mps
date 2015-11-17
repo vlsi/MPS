@@ -3506,7 +3506,7 @@
     <node concept="3Tm1VV" id="2VTQtA8$j_d" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="513LyO4bN8y">
-    <property role="TrG5h" value="CellAction_CommentChildLine" />
+    <property role="TrG5h" value="CellAction_CommentChild" />
     <node concept="312cEg" id="513LyO4bN8z" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />

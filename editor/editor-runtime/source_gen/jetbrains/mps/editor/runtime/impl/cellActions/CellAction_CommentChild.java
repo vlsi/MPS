@@ -10,12 +10,12 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 
-public class CellAction_CommentChildLine extends AbstractCommentOutAction {
+public class CellAction_CommentChild extends AbstractCommentOutAction {
   private final SNode myNode;
   private final SContainmentLink myLink;
 
 
-  public CellAction_CommentChildLine(@NotNull SNode node, @NotNull SContainmentLink link) {
+  public CellAction_CommentChild(@NotNull SNode node, @NotNull SContainmentLink link) {
     myNode = node;
     this.myLink = link;
   }
@@ -29,7 +29,7 @@ public class CellAction_CommentChildLine extends AbstractCommentOutAction {
     if (!(selection instanceof EditorCellLabelSelection) || ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) {
       return false;
     }
-    if (eq_thdavw_a0d0g(editorContext.getSelectedNode(), myNode)) {
+    if (eq_kculhu_a0d0g(editorContext.getSelectedNode(), myNode)) {
       return true;
     }
     SNode childToComment = getNodeToComment(editorContext);
@@ -38,15 +38,15 @@ public class CellAction_CommentChildLine extends AbstractCommentOutAction {
 
   @Override
   public void execute(EditorContext editorContext) {
-    if (!((eq_thdavw_a0a0a0i(editorContext.getSelectedNode(), myNode)))) {
+    if (!((eq_kculhu_a0a0a0i(editorContext.getSelectedNode(), myNode)))) {
       super.execute(editorContext);
     }
   }
   protected SNode getNodeToComment(EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
     while (currentNode != null) {
-      if (eq_thdavw_a0a0b0j(currentNode.getParent(), myNode)) {
-        if (eq_thdavw_a0a0a0b0j(currentNode.getContainmentLink(), myLink)) {
+      if (eq_kculhu_a0a0b0j(currentNode.getParent(), myNode)) {
+        if (eq_kculhu_a0a0a0b0j(currentNode.getContainmentLink(), myLink)) {
           return currentNode;
         } else {
           return null;
@@ -56,16 +56,16 @@ public class CellAction_CommentChildLine extends AbstractCommentOutAction {
     }
     return null;
   }
-  private static boolean eq_thdavw_a0d0g(Object a, Object b) {
+  private static boolean eq_kculhu_a0d0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_thdavw_a0a0a0i(Object a, Object b) {
+  private static boolean eq_kculhu_a0a0a0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_thdavw_a0a0a0b0j(Object a, Object b) {
+  private static boolean eq_kculhu_a0a0a0b0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_thdavw_a0a0b0j(Object a, Object b) {
+  private static boolean eq_kculhu_a0a0b0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
