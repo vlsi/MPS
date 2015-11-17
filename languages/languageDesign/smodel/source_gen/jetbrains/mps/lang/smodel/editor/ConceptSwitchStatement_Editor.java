@@ -164,6 +164,7 @@ public class ConceptSwitchStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9ahxcc_g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_9ahxcc_a6a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9ahxcc_b6a(editorContext, node));
