@@ -349,7 +349,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)/1587916991969778163">
     <file name="check_AbstractConceptDeclaration_Id_NonTypesystemRule.java">
       <node id="1587916991969781666" at="24,7,25,60" concept="11" />
-      <node id="1587916991969781666" at="25,60,26,420" concept="11" />
+      <node id="1587916991969781666" at="25,60,26,432" concept="11" />
       <node id="1587916991969781666" at="27,9,28,153" concept="11" />
       <node id="1587916991969781666" at="28,153,29,50" concept="6" />
       <node id="1587916991969781666" at="29,50,30,71" concept="6" />
@@ -366,7 +366,7 @@
       <node id="1587916991969778163" at="45,0,48,0" concept="10" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1587916991969778163" at="48,0,51,0" concept="10" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1587916991969778163" at="51,0,54,0" concept="10" trace="overrides#()Z" />
-      <node id="1587916991969781666" at="26,420,31,9" concept="1" />
+      <node id="1587916991969781666" at="26,432,31,9" concept="1" />
       <node id="2841134663538255676" at="36,305,41,9" concept="1" />
       <node id="1587916991969781666" at="23,175,32,7" concept="1" />
       <node id="2841134663538255676" at="33,208,42,7" concept="1" />

@@ -16,6 +16,9 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
@@ -46,6 +49,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -84,9 +88,17 @@
       <property role="20kJfa" value="icon" />
       <ref role="20lvS9" to="1oap:7Mb2akaesqV" resolve="IconResource" />
     </node>
+    <node concept="1TJgyj" id="4voYo4rtpI9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="httpHelpUrl" />
+      <ref role="20lvS9" node="4voYo4rsXen" resolve="HelpURL" />
+    </node>
     <node concept="1TJgyi" id="2Y$EcRKMr2p" role="1TKVEl">
       <property role="TrG5h" value="helpUrl" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="4voYo4rtzoS" role="lGtFl">
+        <property role="YLQ7P" value="use httpHelp" />
+      </node>
     </node>
     <node concept="PrWs8" id="1LJzqOWhe8r" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -167,6 +179,16 @@
   <node concept="PlHQZ" id="7Jfx5bwQG39">
     <property role="TrG5h" value="IAspectConcept" />
     <property role="1pbfSe" value="1554662683" />
+  </node>
+  <node concept="1TIwiD" id="4voYo4rsXen">
+    <property role="1pbfSe" value="1665977624" />
+    <property role="TrG5h" value="HelpURL" />
+    <property role="3GE5qa" value="url" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4voYo4rsXeo" role="1TKVEl">
+      <property role="TrG5h" value="url" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
 </model>
 

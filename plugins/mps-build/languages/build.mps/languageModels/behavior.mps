@@ -60,6 +60,9 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -241,7 +244,7 @@
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="6973815483243445083" name="jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression" flags="nn" index="3f7Wdw">
         <reference id="6973815483243565416" name="member" index="3f7u_j" />
         <reference id="6973815483243564601" name="enum" index="3f7vo2" />
@@ -795,6 +798,11 @@
                 <node concept="1pGfFk" id="6xJrZo0GWcq" role="2ShVmc">
                   <ref role="37wK5l" to="tken:1jjYQYSjidB" resolve="MPSModulesClosure" />
                   <node concept="13iPFW" id="4egE2DStoE1" role="37wK5m" />
+                  <node concept="2ShNRf" id="7QNcMbqvTAH" role="37wK5m">
+                    <node concept="HV5vD" id="7QNcMbqvUoO" role="2ShVmc">
+                      <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                    </node>
+                  </node>
                 </node>
               </node>
               <node concept="liA8E" id="6xJrZo0GWcu" role="2OqNvi">
@@ -1727,15 +1735,20 @@
             <property role="TrG5h" value="genClosure" />
             <node concept="2OqwBi" id="5bqm540Mqjw" role="33vP2m">
               <node concept="2OqwBi" id="5bqm540MqiZ" role="2Oq$k0">
-                <node concept="2OqwBi" id="6qlcPcv9WBT" role="2Oq$k0">
-                  <node concept="2ShNRf" id="5bqm540Mqj0" role="2Oq$k0">
-                    <node concept="1pGfFk" id="5bqm540Mqj1" role="2ShVmc">
-                      <ref role="37wK5l" to="tken:1jjYQYSjidB" resolve="MPSModulesClosure" />
-                      <node concept="13iPFW" id="5bqm540Mqj5" role="37wK5m" />
+                <node concept="2ShNRf" id="5bqm540Mqj0" role="2Oq$k0">
+                  <node concept="1pGfFk" id="5bqm540Mqj1" role="2ShVmc">
+                    <ref role="37wK5l" to="tken:1jjYQYSjidB" resolve="MPSModulesClosure" />
+                    <node concept="13iPFW" id="5bqm540Mqj5" role="37wK5m" />
+                    <node concept="2OqwBi" id="7QNcMbqvSN3" role="37wK5m">
+                      <node concept="2ShNRf" id="7QNcMbqvSvv" role="2Oq$k0">
+                        <node concept="HV5vD" id="7QNcMbqvSKQ" role="2ShVmc">
+                          <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="7QNcMbqvSRJ" role="2OqNvi">
+                        <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="trackDevkits" />
+                      </node>
                     </node>
-                  </node>
-                  <node concept="liA8E" id="6qlcPcv9WC6" role="2OqNvi">
-                    <ref role="37wK5l" to="tken:6qlcPcv9UhQ" resolve="trackDevkits" />
                   </node>
                 </node>
                 <node concept="liA8E" id="5bqm540Mqj6" role="2OqNvi">
@@ -4220,6 +4233,11 @@
                         <ref role="37wK5l" to="tken:1jjYQYSjidB" resolve="MPSModulesClosure" />
                         <node concept="37vLTw" id="7MPX9wYD9om" role="37wK5m">
                           <ref role="3cqZAo" node="27eOSzOUT$6" resolve="gentest" />
+                        </node>
+                        <node concept="2ShNRf" id="7QNcMbqvQII" role="37wK5m">
+                          <node concept="HV5vD" id="7QNcMbqvR3X" role="2ShVmc">
+                            <ref role="HV5vE" to="tken:ECLZhkrFpC" resolve="MPSModulesClosure.ModuleDependenciesOptions" />
+                          </node>
                         </node>
                       </node>
                     </node>

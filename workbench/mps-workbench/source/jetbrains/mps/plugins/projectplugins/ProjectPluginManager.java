@@ -24,6 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
@@ -95,10 +96,23 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     });
   }
 
-  private void runStartupActivity(List<PluginContributor> loadedContributors) {
+  private void runStartupActivity(final List<PluginContributor> loadedContributors) {
     synchronized (myPluginsLock) {
-      loadPlugins(loadedContributors);
-      register();
+      myRepository.getModelAccess().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          if (!myProject.isDisposed()) {
+            final long beginTime = System.nanoTime();
+            LOG.debug(String.format("Loading project plugins from %d contributors", loadedContributors.size()));
+            try {
+              loadPlugins(loadedContributors);
+            } finally {
+              LOG.info(String.format("Loading of %d project plugins took %.3f s", loadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
+            }
+            register();
+          }
+        }
+      });
     }
   }
 
@@ -112,7 +126,23 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   private void runShutDownActivity() {
     synchronized (myPluginsLock) {
       unregister();
-      unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+      final List<PluginContributor> loadedContributors = myPluginLoaderRegistry.getLoadedContributors();
+      if (ThreadUtils.isInEDT()) {
+        myRepository.getModelAccess().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            final long beginTime = System.nanoTime();
+            LOG.debug(String.format("Unloading project plugins from %d contributors", loadedContributors.size()));
+            try {
+              unloadPlugins(loadedContributors);
+            } finally {
+              LOG.info(String.format("Unloading of %d project plugins took %.3f s", loadedContributors.size(), (System.nanoTime() - beginTime) / 1e9));
+            }
+          }
+        });
+      } else {
+        LOG.warn("Not in EDT: cannot dispose the rest of the project plugins!");
+      }
     }
   }
 
@@ -186,12 +216,6 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
     return plugin;
   }
 
-  private void checkProjectIsNotDisposed() {
-    if (myProject.isDisposed()) {
-      throw new IllegalStateException(String.format("The project '%s' is disposed", myProject));
-    }
-  }
-
   @Override
   public final void unloadPlugins(List<PluginContributor> contributors) {
     fireBeforePluginsUnloaded(contributors);
@@ -218,20 +242,22 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
 
   @Override
   protected void afterPluginsCreated(List<BaseProjectPlugin> plugins) {
-    checkProjectIsNotDisposed();
-    spreadState(plugins);
-    for (BaseProjectPlugin plugin : plugins) {
-      if (!plugin.getTabDescriptors().isEmpty()) {
-        recreateTabbedEditors();
-        break;
+    if (!myProject.isDisposed()) {
+      spreadState(plugins);
+      for (BaseProjectPlugin plugin : plugins) {
+        if (!plugin.getTabDescriptors().isEmpty()) {
+          recreateTabbedEditors();
+          break;
+        }
       }
     }
   }
 
   @Override
   protected void beforePluginsDisposed(List<BaseProjectPlugin> plugins) {
-    checkProjectIsNotDisposed();
-    collectState(plugins);
+    if (!myProject.isDisposed()) {
+      collectState(plugins);
+    }
   }
 
   @Override

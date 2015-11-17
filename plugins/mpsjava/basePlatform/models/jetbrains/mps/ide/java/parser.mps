@@ -13414,18 +13414,8 @@
         </node>
         <node concept="3clFbF" id="37zweLaBIHe" role="3cqZAp">
           <node concept="37vLTI" id="37zweLaBIMa" role="3clFbG">
-            <node concept="2OqwBi" id="37zweLaBSHS" role="37vLTx">
-              <node concept="2OqwBi" id="37zweLaBONA" role="2Oq$k0">
-                <node concept="37vLTw" id="37zweLaBLBk" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6Hs6LV6q$pQ" resolve="project" />
-                </node>
-                <node concept="liA8E" id="37zweLaBSBF" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
-              </node>
-              <node concept="liA8E" id="37zweLaBW9P" role="2OqNvi">
-                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
-              </node>
+            <node concept="37vLTw" id="5QGPY0GbdiJ" role="37vLTx">
+              <ref role="3cqZAo" node="6Hs6LV6q$pQ" resolve="modelAccess" />
             </node>
             <node concept="37vLTw" id="37zweLaBIHd" role="37vLTJ">
               <ref role="3cqZAo" node="37zweLaBhSw" resolve="myModelAccess" />
@@ -13440,9 +13430,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="6Hs6LV6q$pQ" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6Hs6LV6q$q0" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <property role="TrG5h" value="modelAccess" />
+        <node concept="3uibUv" id="5QGPY0Gbd81" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
         </node>
       </node>
     </node>
@@ -13456,7 +13446,7 @@
             <ref role="3cqZAo" node="SOxJblqP5B" resolve="module" />
           </node>
           <node concept="37vLTw" id="6Hs6LV6qOIR" role="37wK5m">
-            <ref role="3cqZAo" node="6Hs6LV6qO_W" resolve="project" />
+            <ref role="3cqZAo" node="6Hs6LV6qO_W" resolve="modelAccess" />
           </node>
         </node>
         <node concept="3clFbF" id="SOxJblqO_p" role="3cqZAp">
@@ -13498,9 +13488,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="6Hs6LV6qO_W" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6Hs6LV6qOAa" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <property role="TrG5h" value="modelAccess" />
+        <node concept="3uibUv" id="5QGPY0Gbdlz" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~ModelAccess" resolve="ModelAccess" />
         </node>
       </node>
       <node concept="37vLTG" id="SOxJblqO_m" role="3clF46">
@@ -36182,6 +36172,36 @@
           </node>
           <node concept="3clFbS" id="3jGGvHIjU9x" role="2LFqv$">
             <node concept="3clFbJ" id="3jGGvHIjUib" role="3cqZAp">
+              <node concept="3eNFk2" id="jG9QpLaf3U" role="3eNLev">
+                <node concept="1rXfSq" id="jG9QpLafnJ" role="3eO9$A">
+                  <ref role="37wK5l" node="3jGGvHIkGMJ" resolve="accept" />
+                  <node concept="2GrUjf" id="jG9QpLafrk" role="37wK5m">
+                    <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="jG9QpLaf3W" role="3eOfB_">
+                  <node concept="3clFbF" id="3jGGvHIjV6R" role="3cqZAp">
+                    <node concept="2OqwBi" id="3jGGvHIjVMF" role="3clFbG">
+                      <node concept="37vLTw" id="3jGGvHIjV6Q" role="2Oq$k0">
+                        <ref role="3cqZAo" node="3jGGvHIjT69" resolve="result" />
+                      </node>
+                      <node concept="TSZUe" id="3jGGvHIk1HY" role="2OqNvi">
+                        <node concept="2GrUjf" id="3jGGvHIk1KG" role="25WWJ7">
+                          <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="2jRxXPGKuyj" role="3clFbw">
+                <node concept="2GrUjf" id="2jRxXPGKuyk" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
+                </node>
+                <node concept="liA8E" id="2jRxXPGKuyl" role="2OqNvi">
+                  <ref role="37wK5l" to="3ju5:~IFile.isDirectory():boolean" resolve="isDirectory" />
+                </node>
+              </node>
               <node concept="3clFbS" id="3jGGvHIjUic" role="3clFbx">
                 <node concept="2Gpval" id="3jGGvHIl3SE" role="3cqZAp">
                   <node concept="2GrKxI" id="3jGGvHIl3SG" role="2Gsz3X">
@@ -36216,36 +36236,6 @@
                     <ref role="1Pybhc" to="3ju5:~IFileUtils" resolve="IFileUtils" />
                     <node concept="2GrUjf" id="3jGGvHIl43P" role="37wK5m">
                       <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2jRxXPGKuyj" role="3clFbw">
-                <node concept="2GrUjf" id="2jRxXPGKuyk" role="2Oq$k0">
-                  <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
-                </node>
-                <node concept="liA8E" id="2jRxXPGKuyl" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.isDirectory():boolean" resolve="isDirectory" />
-                </node>
-              </node>
-              <node concept="3eNFk2" id="jG9QpLaf3U" role="3eNLev">
-                <node concept="1rXfSq" id="jG9QpLafnJ" role="3eO9$A">
-                  <ref role="37wK5l" node="3jGGvHIkGMJ" resolve="accept" />
-                  <node concept="2GrUjf" id="jG9QpLafrk" role="37wK5m">
-                    <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
-                  </node>
-                </node>
-                <node concept="3clFbS" id="jG9QpLaf3W" role="3eOfB_">
-                  <node concept="3clFbF" id="3jGGvHIjV6R" role="3cqZAp">
-                    <node concept="2OqwBi" id="3jGGvHIjVMF" role="3clFbG">
-                      <node concept="37vLTw" id="3jGGvHIjV6Q" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3jGGvHIjT69" resolve="result" />
-                      </node>
-                      <node concept="TSZUe" id="3jGGvHIk1HY" role="2OqNvi">
-                        <node concept="2GrUjf" id="3jGGvHIk1KG" role="25WWJ7">
-                          <ref role="2Gs0qQ" node="3jGGvHIjU9t" resolve="entry" />
-                        </node>
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -36319,6 +36309,28 @@
       <property role="IEkAT" value="false" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
+      <node concept="P$JXv" id="jG9QpLaez5" role="lGtFl">
+        <node concept="TZ5HA" id="jG9QpLaez6" role="TZ5H$">
+          <node concept="1dT_AC" id="jG9QpLaez7" role="1dT_Ay">
+            <property role="1dT_AB" value="Throw away directories whose files are explicitly mentioned" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="jG9QpLaeAl" role="TZ5H$">
+          <node concept="1dT_AC" id="jG9QpLaeAm" role="1dT_Ay">
+            <property role="1dT_AB" value="It allows to select a vertical range in the tree without worrying" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="jG9QpLaeAJ" role="TZ5H$">
+          <node concept="1dT_AC" id="jG9QpLaeAK" role="1dT_Ay">
+            <property role="1dT_AB" value="that too much will be included." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="jG9QpLaeBS" role="TZ5H$">
+          <node concept="1dT_AC" id="jG9QpLaeBT" role="1dT_Ay">
+            <property role="1dT_AB" value="E.g. we select dir 'parent' and its 2 files out of 10. Only the 2 files will be taken" />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbS" id="2DucbTv10Ms" role="3clF47">
         <node concept="3cpWs8" id="2DucbTv1lpc" role="3cqZAp">
           <node concept="3cpWsn" id="2DucbTv1lpf" role="3cpWs9">
@@ -36460,28 +36472,6 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="2DucbTv10JP" role="1B3o_S" />
-      <node concept="P$JXv" id="jG9QpLaez5" role="lGtFl">
-        <node concept="TZ5HA" id="jG9QpLaez6" role="TZ5H$">
-          <node concept="1dT_AC" id="jG9QpLaez7" role="1dT_Ay">
-            <property role="1dT_AB" value="Throw away directories whose files are explicitly mentioned" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="jG9QpLaeAl" role="TZ5H$">
-          <node concept="1dT_AC" id="jG9QpLaeAm" role="1dT_Ay">
-            <property role="1dT_AB" value="It allows to select a vertical range in the tree without worrying" />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="jG9QpLaeAJ" role="TZ5H$">
-          <node concept="1dT_AC" id="jG9QpLaeAK" role="1dT_Ay">
-            <property role="1dT_AB" value="that too much will be included." />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="jG9QpLaeBS" role="TZ5H$">
-          <node concept="1dT_AC" id="jG9QpLaeBT" role="1dT_Ay">
-            <property role="1dT_AB" value="E.g. we select dir 'parent' and its 2 files out of 10. Only the 2 files will be taken" />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="3Tm1VV" id="3jGGvHIjBRs" role="1B3o_S" />
   </node>

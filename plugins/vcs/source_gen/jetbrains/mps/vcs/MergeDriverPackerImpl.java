@@ -32,7 +32,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
       }
     }));
 
-    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "smodel", "mps-core", "make-runtime", "kernel" + fsep + "dataFlowRuntime", "project", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub");
+    final Iterable<String> CLASSPATHS = Arrays.asList("kernel", "openapi", "smodel", "mps-core", "make-runtime", "kernel" + fsep + "dataFlowRuntime", "project", "generator", "typesystemEngine", "findUsages-runtime", "refactoring-runtime", "analyzers", "persistence", "platform", "components", "migration-runtime", "textgen", "java-stub", "aspects" + fsep + "behavior" + fsep + "behavior-api", "aspects" + fsep + "behavior" + fsep + "behavior-runtime", "aspects" + fsep + "behavior" + fsep + "behavior-legacy-api", "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets");
     String homePath = PathManager.getHomePath();
     final String corePath = homePath + fsep + "core";
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(CLASSPATHS).select(new ISelector<String, String>() {
@@ -50,8 +50,6 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
     }));
     SetSequence.fromSet(classpathItems).addElement(languagesPath + fsep + "baseLanguage" + fsep + "baseLanguage" + fsep + "solutions" + fsep + "jetbrains.mps.baseLanguage.search" + fsep + "classes");
     SetSequence.fromSet(classpathItems).addElement(languagesPath + fsep + "baseLanguage" + fsep + "baseLanguage" + fsep + "solutions" + fsep + "jetbrains.mps.baseLanguage.util" + fsep + "classes");
-
-    SetSequence.fromSet(classpathItems).addElement(corePath + fsep + "make-runtime" + fsep + "solutions" + fsep + "jetbrains.mps.make.facets" + fsep + "classes");
 
     SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + fsep + "lib" + fsep + "classes");
     return classpathItems;

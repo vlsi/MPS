@@ -4,8 +4,10 @@
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.Migrations_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ProjectMigrations_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action" />
@@ -80,14 +82,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup" file="MigrationsMenu_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
-  </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.Migrations_ActionGroup" file="Migrations_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup" file="LanguageMigrations_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -100,7 +95,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
@@ -108,10 +102,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunMigration_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" />
     <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
-    <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
-    <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
@@ -122,6 +113,44 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup" file="MigrationsMenu_ActionGroup.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.migration.component.plugin.Migrations_ActionGroup" file="Migrations_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.migration.component.plugin.ProjectMigrations_ActionGroup" file="ProjectMigrations_ActionGroup.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="com.intellij.openapi.util.Pair" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
+    <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
+    <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
+    <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>

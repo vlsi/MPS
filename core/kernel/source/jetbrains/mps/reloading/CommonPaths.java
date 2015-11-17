@@ -18,16 +18,21 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.util.Callback;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.URLUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import sun.misc.Launcher;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CommonPaths {
@@ -36,7 +41,6 @@ public class CommonPaths {
 
   public static final boolean isMac = OS_NAME.startsWith("mac");
   public static final int jdkVersion;
-  public static final boolean isToolsJarNeeded;
 
   private static final Logger LOG = LogManager.getLogger(CommonPaths.class);
 
@@ -50,12 +54,14 @@ public class CommonPaths {
       LOG.error("Unexpected java version format " + JAVA_VERSION + ".");
       jdkVersion = 0;
     }
-
-    isToolsJarNeeded = !(isMac && jdkVersion < 7);
   }
 
   //--------paths-----------
 
+  /**
+   * @deprecated Since MPS 3.3 use {@link #getMPSPaths(ClassType)}
+   */
+  @Deprecated
   public static List<String> getMPSPaths(ClassType... types) {
     final CompositeClassPathItem result = new CompositeClassPathItem();
     ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
@@ -85,7 +91,45 @@ public class CommonPaths {
         addTestJars(result);
       } else if (type == ClassType.JDK) {
         return getJDKPath();
+      } else if (type == ClassType.JDK_TOOLS) {
+        return getJDK_ToolsPath();
       }
+    }
+    return itemToPath(result);
+  }
+
+  public static List<String> getMPSPaths(ClassType type) {
+    if (type == ClassType.JDK) {
+      return getJDKPath();
+    } else if (type == ClassType.JDK_TOOLS) {
+      return getJDK_ToolsPath();
+    }
+
+    final CompositeClassPathItem result = new CompositeClassPathItem();
+    ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
+      @Override
+      public void call(String param) {
+        addIfExists(result, File.separator + param);
+      }
+    }, type);
+    if (type == ClassType.ANNOTATIONS) {
+      addAnnotations(result);
+    } else if (type == ClassType.OPENAPI) {
+      addOpenAPIJars(result);
+    } else if (type == ClassType.CORE) {
+      addCoreJars(result);
+    } else if (type == ClassType.EDITOR) {
+      addEditorJars(result);
+    } else if (type == ClassType.IDEA_PLATFORM) {
+      addRepackedIdeaJars(result);
+    } else if (type == ClassType.IDEA) {
+      addIdeaJars(result);
+    } else if (type == ClassType.PLATFORM) {
+      addPlatformJars(result);
+    } else if (type == ClassType.WORKBENCH) {
+      addWorkbenchJars(result);
+    } else if (type == ClassType.TEST) {
+      addTestJars(result);
     }
     return itemToPath(result);
   }
@@ -94,8 +138,43 @@ public class CommonPaths {
     return itemToPath(getJDKClassPath());
   }
 
+  private static List<String> getJDK_ToolsPath() {
+    String jarLocation = getJarFileLocation("com.sun.jdi.Field");
+    if (jarLocation != null) {
+      File file = new File(jarLocation);
+      if (file.exists()) {
+        return Collections.singletonList(file.getAbsolutePath());
+      }
+    }
+    return Collections.emptyList();
+  }
+
+  private static String getJarFileLocation(@NotNull String classFQName) {
+    try {
+      Class cls = Class.forName(classFQName);
+      String classFileResourceLocation = "/" + classFQName.replaceAll("\\.", "/") + ".class";
+      String classFileResourceURL = cls.getResource(classFileResourceLocation).toString();
+      Pair<String, String> urls = URLUtil.splitJarUrl(classFileResourceURL);
+      if (urls == null) {
+        return null;
+      }
+      return URLDecoder.decode(urls.o1).replace('/', File.separatorChar);
+    } catch (ClassNotFoundException e) {
+      return null;
+    }
+  }
+
+  /**
+   * @deprecated since MPS 3.3 use {@link CommonPaths#getMPSPaths(ClassType)} with {@link ClassType#JDK_TOOLS} as a parameter
+   */
+  @Deprecated
   public static String getToolsJar() {
     return PathManager.getHomePath() + File.separator + "lib" + File.separator + "tools.jar";
+  }
+
+  public static boolean isJDK_ToolsInSeparateJar() {
+    // on Mac & jdkVersion < 7 classes from tools jar are located inside classes.jar
+    return !(isMac && jdkVersion < 7);
   }
 
   public static String getBaseMPSPath() {
@@ -128,12 +207,15 @@ public class CommonPaths {
     return result;
   }
 
+  /**
+   * @deprecated Since MPS 3.3 used only inside this class, so should become private.
+   */
+  @Deprecated
   public static IClassPathItem getJDKClassPath() {
     CompositeClassPathItem composite = new CompositeClassPathItem();
     for (String s : getJDKJars()) {
       addJarForName(composite, s);
     }
-    addToolsJar(composite);
     return composite;
   }
 
@@ -234,12 +316,6 @@ public class CommonPaths {
   private static void addTestJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-test.jar");
     addIfExists(result, "/lib/junit-4.12.jar");
-  }
-
-  private static void addToolsJar(CompositeClassPathItem result) {
-    if (isToolsJarNeeded) {
-      addIfExists(result, "/lib/tools.jar");
-    }
   }
 
   public static void addClasses(final CompositeClassPathItem result, final String homePath) {

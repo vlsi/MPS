@@ -209,7 +209,7 @@ public class FileStructurePopup implements Disposable {
     new MnemonicHelper().register(panel);
     boolean shouldSetWidth = DimensionService.getInstance().getSize(FileStructurePopup.getDimensionServiceKey(), myProject) == null;
     // .setCancelOnClickOutside(false) //for debug and snapshots 
-    myPopup = JBPopupFactory.getInstance().createComponentPopupBuilder(panel, null).setTitle(myTitle).setResizable(true).setModalContext(false).setFocusable(true).setMovable(true).setBelongsToGlobalPopupStack(true).setCancelKeyEnabled(false).setDimensionServiceKey(null, FileStructurePopup.getDimensionServiceKey(), false).setCancelCallback(new Computable<Boolean>() {
+    myPopup = JBPopupFactory.getInstance().createComponentPopupBuilder(panel, null).setTitle(myTitle).setResizable(true).setModalContext(false).setFocusable(true).setRequestFocus(true).setMovable(true).setBelongsToGlobalPopupStack(true).setCancelKeyEnabled(false).setDimensionServiceKey(null, FileStructurePopup.getDimensionServiceKey(), false).setCancelCallback(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         DimensionService.getInstance().setLocation(FileStructurePopup.getDimensionServiceKey(), myPopup.getLocationOnScreen(), myProject);

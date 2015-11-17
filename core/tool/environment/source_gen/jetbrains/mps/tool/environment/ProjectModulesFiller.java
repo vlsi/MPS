@@ -25,7 +25,7 @@ public final class ProjectModulesFiller {
       public void run() {
         for (ModulesMiner.ModuleHandle moduleHandle : myHandlesToLoad) {
           SModule module = ModuleRepositoryFacade.createModule(moduleHandle, myProject);
-          myProject.addModule(module.getModuleReference());
+          myProject.addModule(module);
         }
       }
     });

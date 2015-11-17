@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.mock.MockProjectEx;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
+import jetbrains.mps.project.StandaloneMPSProject;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -34,11 +35,13 @@ import org.apache.log4j.LogManager;
 public class TestMergeDialog {
   private static Environment ENV;
   private static Disposable myParentDisposable = Disposer.newDisposable();
+
   private static Object ___init = new Object() {
     {
       Extensions.registerAreaClass("IDEA_PROJECT", null);
     }
   };
+
   private static Project ourProject = new MockProjectEx(TestMergeDialog.myParentDisposable) {
     @Override
     public <T> T getComponent(Class<T> interfaceClass) {
@@ -51,9 +54,12 @@ public class TestMergeDialog {
       return null;
     }
   };
-  private static MPSProject ourMPSProject = new MPSProject(TestMergeDialog.ourProject);
+
+  private static MPSProject ourMPSProject = new StandaloneMPSProject(TestMergeDialog.ourProject, null);
+
   public TestMergeDialog() {
   }
+
   public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");

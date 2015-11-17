@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.vfs;
+package jetbrains.mps.project;
 
-import com.intellij.openapi.vfs.SavingRequestor;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * Created by victor on 22.01.15.
+ * describes a data source for a project: may be file, may be url, may be image, etc.
  */
-public class IdeaFileSystemProviderSR extends IdeaFileSystemProvider implements SavingRequestor {
+public interface ProjectDataSource {
+  @NotNull
+  ProjectDescriptor loadDescriptor();
 }

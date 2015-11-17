@@ -137,6 +137,9 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     })) {
       String pack = ((prefix.length() == 0 ? subdir.getName() : prefix + '.' + subdir.getName()));
       if (myPackageScope != null && !(myPackageScope.isIncluded(pack))) {
+        if (myPackageScope.isAnyChildIncluded(pack)) {
+          getModelDescriptors(result, subdir, pack, module);
+        }
         continue;
       }
 

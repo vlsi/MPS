@@ -41,7 +41,7 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     Set<MPSModuleOwner> moduleOwners = new ModelAccessHelper(module.getRepository()).runReadAction(new Computable<Set<MPSModuleOwner>>() {
       @Override
       public Set<MPSModuleOwner> compute() {
-        return ModuleRepositoryFacade.getInstance().getModuleOwners(module);
+        return new ModuleRepositoryFacade(module.getRepository()).getModuleOwners(module);
       }
     });
     for (MPSModuleOwner owner : moduleOwners) {

@@ -2205,47 +2205,55 @@
                   <node concept="2OqwBi" id="6IhgjCFB6f" role="2Oq$k0">
                     <node concept="2OqwBi" id="6IhgjCFB6g" role="2Oq$k0">
                       <node concept="2OqwBi" id="6IhgjCFB6h" role="2Oq$k0">
-                        <node concept="2OqwBi" id="6IhgjCFB6i" role="2Oq$k0">
-                          <node concept="2OqwBi" id="6IhgjCFB6j" role="2Oq$k0">
-                            <node concept="2OqwBi" id="6IhgjCFB6k" role="2Oq$k0">
-                              <node concept="2OqwBi" id="6IhgjCFB6l" role="2Oq$k0">
-                                <node concept="2OqwBi" id="6IhgjCFB6m" role="2Oq$k0">
-                                  <node concept="2YIFZM" id="6IhgjCFB6n" role="2Oq$k0">
-                                    <ref role="37wK5l" to="gspm:~JBPopupFactory.getInstance():com.intellij.openapi.ui.popup.JBPopupFactory" resolve="getInstance" />
-                                    <ref role="1Pybhc" to="gspm:~JBPopupFactory" resolve="JBPopupFactory" />
-                                  </node>
-                                  <node concept="liA8E" id="6IhgjCFB6o" role="2OqNvi">
-                                    <ref role="37wK5l" to="gspm:~JBPopupFactory.createComponentPopupBuilder(javax.swing.JComponent,javax.swing.JComponent):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="createComponentPopupBuilder" />
-                                    <node concept="37vLTw" id="3GM_nagTtCI" role="37wK5m">
-                                      <ref role="3cqZAo" node="6IhgjCFB5O" resolve="panel" />
+                        <node concept="2OqwBi" id="ECLZhktp15" role="2Oq$k0">
+                          <node concept="2OqwBi" id="6IhgjCFB6i" role="2Oq$k0">
+                            <node concept="2OqwBi" id="6IhgjCFB6j" role="2Oq$k0">
+                              <node concept="2OqwBi" id="6IhgjCFB6k" role="2Oq$k0">
+                                <node concept="2OqwBi" id="6IhgjCFB6l" role="2Oq$k0">
+                                  <node concept="2OqwBi" id="6IhgjCFB6m" role="2Oq$k0">
+                                    <node concept="2YIFZM" id="6IhgjCFB6n" role="2Oq$k0">
+                                      <ref role="37wK5l" to="gspm:~JBPopupFactory.getInstance():com.intellij.openapi.ui.popup.JBPopupFactory" resolve="getInstance" />
+                                      <ref role="1Pybhc" to="gspm:~JBPopupFactory" resolve="JBPopupFactory" />
                                     </node>
-                                    <node concept="10Nm6u" id="6IhgjCFB6q" role="37wK5m" />
+                                    <node concept="liA8E" id="6IhgjCFB6o" role="2OqNvi">
+                                      <ref role="37wK5l" to="gspm:~JBPopupFactory.createComponentPopupBuilder(javax.swing.JComponent,javax.swing.JComponent):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="createComponentPopupBuilder" />
+                                      <node concept="37vLTw" id="3GM_nagTtCI" role="37wK5m">
+                                        <ref role="3cqZAo" node="6IhgjCFB5O" resolve="panel" />
+                                      </node>
+                                      <node concept="10Nm6u" id="6IhgjCFB6q" role="37wK5m" />
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="6IhgjCFB6r" role="2OqNvi">
+                                    <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setTitle(java.lang.String):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setTitle" />
+                                    <node concept="37vLTw" id="2BHiRxeufRs" role="37wK5m">
+                                      <ref role="3cqZAo" node="6IhgjCFB0J" resolve="myTitle" />
+                                    </node>
                                   </node>
                                 </node>
-                                <node concept="liA8E" id="6IhgjCFB6r" role="2OqNvi">
-                                  <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setTitle(java.lang.String):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setTitle" />
-                                  <node concept="37vLTw" id="2BHiRxeufRs" role="37wK5m">
-                                    <ref role="3cqZAo" node="6IhgjCFB0J" resolve="myTitle" />
+                                <node concept="liA8E" id="6IhgjCFB6t" role="2OqNvi">
+                                  <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setResizable(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setResizable" />
+                                  <node concept="3clFbT" id="6IhgjCFB6u" role="37wK5m">
+                                    <property role="3clFbU" value="true" />
                                   </node>
                                 </node>
                               </node>
-                              <node concept="liA8E" id="6IhgjCFB6t" role="2OqNvi">
-                                <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setResizable(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setResizable" />
-                                <node concept="3clFbT" id="6IhgjCFB6u" role="37wK5m">
-                                  <property role="3clFbU" value="true" />
+                              <node concept="liA8E" id="6IhgjCFB6v" role="2OqNvi">
+                                <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setModalContext(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setModalContext" />
+                                <node concept="3clFbT" id="6IhgjCFB6w" role="37wK5m">
+                                  <property role="3clFbU" value="false" />
                                 </node>
                               </node>
                             </node>
-                            <node concept="liA8E" id="6IhgjCFB6v" role="2OqNvi">
-                              <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setModalContext(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setModalContext" />
-                              <node concept="3clFbT" id="6IhgjCFB6w" role="37wK5m">
-                                <property role="3clFbU" value="false" />
+                            <node concept="liA8E" id="6IhgjCFB6x" role="2OqNvi">
+                              <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setFocusable(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setFocusable" />
+                              <node concept="3clFbT" id="6IhgjCFB6y" role="37wK5m">
+                                <property role="3clFbU" value="true" />
                               </node>
                             </node>
                           </node>
-                          <node concept="liA8E" id="6IhgjCFB6x" role="2OqNvi">
-                            <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setFocusable(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setFocusable" />
-                            <node concept="3clFbT" id="6IhgjCFB6y" role="37wK5m">
+                          <node concept="liA8E" id="ECLZhktp9$" role="2OqNvi">
+                            <ref role="37wK5l" to="gspm:~ComponentPopupBuilder.setRequestFocus(boolean):com.intellij.openapi.ui.popup.ComponentPopupBuilder" resolve="setRequestFocus" />
+                            <node concept="3clFbT" id="ECLZhktpku" role="37wK5m">
                               <property role="3clFbU" value="true" />
                             </node>
                           </node>

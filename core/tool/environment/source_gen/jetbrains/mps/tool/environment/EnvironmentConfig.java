@@ -20,14 +20,15 @@ import jetbrains.mps.core.tool.environment.util.PathManager;
  * @see jetbrains.mps.tool.environment.EnvironmentContainer 
  */
 public class EnvironmentConfig {
-  private final Set<String> myPlugins = SetSequence.fromSet(new LinkedHashSet<String>());
+
+  private final Set<PluginDescriptor> myPlugins = SetSequence.fromSet(new LinkedHashSet<PluginDescriptor>());
   private final Map<String, File> myMacros = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
   private final Set<String> myLibs = SetSequence.fromSet(new LinkedHashSet<String>());
 
   private EnvironmentConfig() {
   }
 
-  public Set<String> getPlugins() {
+  public Set<PluginDescriptor> getPlugins() {
     return SetSequence.fromSet(myPlugins).asUnmodifiable();
   }
 
@@ -39,8 +40,8 @@ public class EnvironmentConfig {
     return SetSequence.fromSet(myLibs).asUnmodifiable();
   }
 
-  public EnvironmentConfig addPlugin(String plugin) {
-    SetSequence.fromSet(myPlugins).addElement(plugin);
+  public EnvironmentConfig addPlugin(String path, String id) {
+    SetSequence.fromSet(myPlugins).addElement(new PluginDescriptor(path, id));
     return this;
   }
 
@@ -59,7 +60,31 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withDefaultPlugins() {
-    return addPlugin("jetbrains.mps.ide.make").addPlugin("jetbrains.mps.vcs").addPlugin("jetbrains.mps.testing").addPlugin("Git4Idea");
+    return withMakePlugin().withCorePlugin().withTestingPlugin();
+  }
+
+  public EnvironmentConfig withMakePlugin() {
+    return addPlugin("mpsmake", "jetbrains.mps.ide.make");
+  }
+
+  public EnvironmentConfig withVcsPlugin() {
+    return addPlugin("vcs", "jetbrains.mps.vcs").withGit4IdeaPlugin();
+  }
+
+  public EnvironmentConfig withTestingPlugin() {
+    return addPlugin("mps-testing", "jetbrains.mps.testing");
+  }
+
+  public EnvironmentConfig withCorePlugin() {
+    return addPlugin("mps-core", "jetbrains.mps.core");
+  }
+
+  public EnvironmentConfig withGit4IdeaPlugin() {
+    return addPlugin("git4idea", "Git4Idea");
+  }
+
+  public EnvironmentConfig withBuildPlugin() {
+    return addPlugin("mps-build", "jetbrains.mps.build");
   }
 
   public EnvironmentConfig withBootstrapLibraries() {
@@ -72,9 +97,7 @@ public class EnvironmentConfig {
 
   public EnvironmentConfig withWorkbenchPath() {
     String workbenchPath = PathManager.getHomePath() + File.separator + "workbench";
-    if (workbenchPath != null) {
-      addLib(workbenchPath);
-    }
+    addLib(workbenchPath);
     return this;
   }
 
@@ -82,7 +105,11 @@ public class EnvironmentConfig {
     return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries().withWorkbenchPath();
   }
 
-  public static EnvironmentConfig emptyEnvironment() {
+  /**
+   * fixme: currently the repository within the 'empty environment' is inconsistent (mps-core plugin is needed),
+   * so use defaultConfig
+   */
+  public static EnvironmentConfig emptyConfig() {
     return new EnvironmentConfig();
   }
 }

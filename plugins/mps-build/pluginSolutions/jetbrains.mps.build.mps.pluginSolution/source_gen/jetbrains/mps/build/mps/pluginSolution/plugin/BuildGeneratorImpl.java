@@ -97,7 +97,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           NavigationSupport.getInstance().openNode(myProject, node, true, true);
         }
 
-        myProject.addModule(descriptor.getModule().getModuleReference());
+        myProject.addModule(descriptor.getModule());
       }
     });
 

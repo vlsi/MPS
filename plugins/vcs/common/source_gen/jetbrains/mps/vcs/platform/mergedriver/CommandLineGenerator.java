@@ -15,6 +15,7 @@ public class CommandLineGenerator {
     String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
     if (SystemInfo.isWindows) {
       javaExecutable = adaptPathForMsysGit(javaExecutable + ".exe");
+      classpathString = classpathString + ";";
     }
     String escapedLogPath = (PathManager.getLogPath() + File.separator + "mergedriver.log").replace("\\", "\\\\");
     return String.format("\"%s\" -ea -D%s=\"%s\" -cp \"%s\" %s", javaExecutable, MergeDriverMain.LOG_PROPERTY, escapedLogPath, classpathString, MergeDriverMain.class.getName());

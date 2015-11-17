@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
@@ -3013,7 +3013,7 @@
                     <ref role="3cqZAo" node="5jLBleAj6wp" resolve="mpsProject" />
                   </node>
                   <node concept="liA8E" id="suC6ndRIIL" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <ref role="37wK5l" to="z1c3:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                     <node concept="3VsKOn" id="4XrQe5XE3kY" role="37wK5m">
                       <ref role="3VsUkX" to="ap4t:~TransientModelsProvider" resolve="TransientModelsProvider" />
                     </node>
@@ -3048,6 +3048,9 @@
                   <node concept="37vLTw" id="nJmxU5bcqi" role="3K4Cdx">
                     <ref role="3cqZAo" node="nJmxU5bcds" resolve="ownTransientsProvider" />
                   </node>
+                  <node concept="37vLTw" id="nJmxU5bcvu" role="3K4GZi">
+                    <ref role="3cqZAo" node="suC6ndRIIF" resolve="tmc" />
+                  </node>
                   <node concept="2ShNRf" id="3ZXMS57C5Ti" role="3K4E3e">
                     <node concept="1pGfFk" id="3ZXMS57C5Tk" role="2ShVmc">
                       <ref role="37wK5l" to="ap4t:~TransientModelsProvider.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,jetbrains.mps.generator.TransientModelsProvider$TransientSwapOwner)" resolve="TransientModelsProvider" />
@@ -3061,9 +3064,6 @@
                       </node>
                       <node concept="10Nm6u" id="3ZXMS57C8UO" role="37wK5m" />
                     </node>
-                  </node>
-                  <node concept="37vLTw" id="nJmxU5bcvu" role="3K4GZi">
-                    <ref role="3cqZAo" node="suC6ndRIIF" resolve="tmc" />
                   </node>
                 </node>
               </node>

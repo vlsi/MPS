@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
@@ -26,15 +26,10 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -46,32 +41,27 @@ import java.util.TreeMap;
 
 import static org.junit.Assert.fail;
 
-public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
+public class ProjectMPSClassLoadingTest extends CoreMpsTest {
   private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]",
       "TestBehaviorReflective [solution]"));
 
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
   private Project project;
 
-  @BeforeClass
-  public static void setUp() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
-  }
-
   @Test
-  public void ClassesAreLoaded() {
+  public void classesAreLoaded() {
     project = openProject(new File(PathManager.getHomePath()));
     doTest();
-    closeProject(project);
+    project.dispose();
   }
 
   @Test
-  public void ClassesAreLoadedStress() {
+  public void classesAreLoadedStress() {
     project = openProject(new File(PathManager.getHomePath()));
     project.getRepository().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
     doTest();
     project.getRepository().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
-    closeProject(project);
+    project.dispose();
   }
 
   private void doTest() {

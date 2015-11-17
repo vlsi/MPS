@@ -1235,6 +1235,26 @@
         <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
       </node>
     </node>
+    <node concept="2YIFZL" id="6h0gpqrHuXk" role="jymVt">
+      <property role="TrG5h" value="jdkToolsRef" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="6h0gpqrHuXl" role="3clF47">
+        <node concept="3clFbF" id="6h0gpqrHuXm" role="3cqZAp">
+          <node concept="37shsh" id="6h0gpqrHuXn" role="3clFbG">
+            <node concept="20RdaH" id="6h0gpqrHvdq" role="37shsm">
+              <property role="20Rdg5" value="b387285c-3448-452c-b3bb-a3f8de8eaf08" />
+              <property role="20Rdg7" value="JDK-tools" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6h0gpqrHuXp" role="1B3o_S" />
+      <node concept="3uibUv" id="6h0gpqrHuXq" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6h0gpqrHuP_" role="jymVt" />
     <node concept="2AHcQZ" id="4fSpAVATV_d" role="2AJF6D">
       <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>

@@ -7,8 +7,7 @@ import com.intellij.ide.impl.DataManagerImpl;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
-import javax.swing.SwingUtilities;
-import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,6 +26,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -38,6 +38,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.SwingUtilities;
 import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
 import org.apache.log4j.Logger;
@@ -60,22 +61,16 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       LOG.info("Initializing editor");
     }
     final Throwable[] ts = new Throwable[1];
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            BaseEditorTestBody.this.doInitEditor(before, after);
-          } catch (Throwable t) {
-            ts[0] = t;
-          }
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          BaseEditorTestBody.this.doInitEditor(before, after);
+        } catch (Throwable t) {
+          ts[0] = t;
         }
-      });
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
-    } catch (InvocationTargetException e) {
-      throw new RuntimeException(e);
-    }
+      }
+    });
     if (ts[0] != null) {
       throw new RuntimeException("Exception while initializing the editor", ts[0]);
     }
@@ -122,21 +117,25 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     flushEvents();
     // FIXME why do we need model write here? 
-    myProject.getModelAccess().runWriteInEDT(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        if (BaseEditorTestBody.this.myResult != null) {
-          try {
-            SNode editedNode = myEditor.getCurrentlyEditedNode().resolve(myProject.getRepository());
-            NodesMatcher nm = new NodesMatcher();
-            List<NodeDifference> diff = nm.match(Collections.singletonList(editedNode), Collections.singletonList(myResult));
-            Assert.assertEquals(null, diff);
-            if (myFinish != null) {
-              myFinish.assertEditor(myEditor, (Map<SNode, SNode>) nm.getMap());
+        myProject.getModelAccess().runWriteAction(new Runnable() {
+          public void run() {
+            if (BaseEditorTestBody.this.myResult != null) {
+              try {
+                SNode editedNode = myEditor.getCurrentlyEditedNode().resolve(myProject.getRepository());
+                NodesMatcher nm = new NodesMatcher();
+                List<NodeDifference> diff = nm.match(Collections.singletonList(editedNode), Collections.singletonList(myResult));
+                Assert.assertEquals(null, diff);
+                if (myFinish != null) {
+                  myFinish.assertEditor(myEditor, (Map<SNode, SNode>) nm.getMap());
+                }
+              } catch (Throwable t) {
+                throwable.value = t;
+              }
             }
-          } catch (Throwable t) {
-            throwable.value = t;
           }
-        }
+        });
       }
     });
     flushEvents();
@@ -177,7 +176,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   private void dispose() throws InterruptedException, InvocationTargetException {
     final Throwable[] ts = new Throwable[1];
-    SwingUtilities.invokeAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         myProject.getModelAccess().runWriteAction(new Runnable() {
           public void run() {
@@ -197,7 +196,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   private MPSFileNodeEditor openEditor() {
-    assert ModelAccess.instance().isInEDT();
+    assert ThreadUtils.isInEDT();
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myBefore);
     return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(myProject), file);
   }
@@ -285,7 +284,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       }
     });
     final Throwable[] ts = new Throwable[1];
-    SwingUtilities.invokeAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
           runnable.run();

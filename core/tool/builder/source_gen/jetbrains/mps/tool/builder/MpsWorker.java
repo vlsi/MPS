@@ -86,7 +86,7 @@ public abstract class MpsWorker {
   }
 
   public static EnvironmentConfig createEnvConfig(Script whatToDo) {
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    EnvironmentConfig config = EnvironmentConfig.defaultConfig();
     for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }

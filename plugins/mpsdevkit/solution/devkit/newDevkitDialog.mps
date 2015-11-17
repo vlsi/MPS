@@ -17,6 +17,7 @@
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -186,8 +187,8 @@
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="5G4JuOnd1MX" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="3uibUv" id="15VbAzMFY92" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
       <node concept="3Tm6S6" id="5qUkmeYC_mm" role="1B3o_S" />
     </node>
@@ -248,8 +249,8 @@
         <node concept="3clFbF" id="5G4JuOncW3X" role="3cqZAp">
           <node concept="37vLTI" id="5G4JuOncWbK" role="3clFbG">
             <node concept="2YIFZM" id="5G4JuOncWw4" role="37vLTx">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="5G4JuOncWCT" role="37wK5m">
                 <ref role="3cqZAo" node="5qUkmeYCtfQ" resolve="project" />
               </node>
@@ -474,7 +475,7 @@
                           <ref role="3cqZAo" node="5qUkmeYC_mj" resolve="myProject" />
                         </node>
                         <node concept="liA8E" id="1y9$ePCdJFg" role="2OqNvi">
-                          <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                          <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1y9$ePCdJFh" role="2OqNvi">

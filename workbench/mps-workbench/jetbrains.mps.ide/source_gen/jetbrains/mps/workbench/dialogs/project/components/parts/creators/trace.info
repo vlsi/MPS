@@ -7,15 +7,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499497434">
     <file name="ModulePathChooser.java">
-      <node id="1560298786499497467" at="13,25,14,52" concept="3" />
+      <node id="1560298786499497467" at="13,31,14,52" concept="3" />
       <node id="1560298786499497472" at="14,52,15,144" concept="0" />
       <node id="1560298786499497479" at="15,144,16,38" concept="3" />
       <node id="1560298786499497495" at="17,23,18,18" concept="4" />
-      <node id="1560298786499497497" at="19,5,20,36" concept="4" />
+      <node id="1560298786499497497" at="19,5,20,42" concept="4" />
       <node id="1560298786499497490" at="16,38,19,5" concept="1" />
-      <node id="1560298786499497463" at="12,0,22,0" concept="2" trace="compute#()Ljetbrains/mps/project/structure/project/Path;" />
+      <node id="1560298786499497463" at="12,0,22,0" concept="2" trace="compute#()Ljetbrains/mps/project/structure/project/ModulePath;" />
       <scope id="1560298786499497494" at="17,23,18,18" />
-      <scope id="1560298786499497466" at="13,25,20,36">
+      <scope id="1560298786499497466" at="13,31,20,42">
         <var name="chooser" id="1560298786499497468" />
         <var name="file" id="1560298786499497480" />
       </scope>

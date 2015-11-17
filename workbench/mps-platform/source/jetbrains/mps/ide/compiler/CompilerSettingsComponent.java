@@ -26,9 +26,8 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.ide.compiler.CompilerSettingsComponent.CompilerState;
-import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 @State(
     name = "CompilerSettings",
@@ -40,12 +39,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class CompilerSettingsComponent implements PersistentStateComponent<CompilerState>, ProjectComponent {
   private CompilerState myState = new CompilerState();
-  private Project myProject;
-  public CompilerSettingsComponent(Project project) {
+  private final MPSProject myProject;
+
+  public CompilerSettingsComponent(@NotNull MPSProject project) {
     myProject = project;
   }
 
-  public static CompilerSettingsComponent getInstance(Project project) {
+  public static CompilerSettingsComponent getInstance(@NotNull Project project) {
     return project.getComponent(CompilerSettingsComponent.class);
   }
 
@@ -81,20 +81,12 @@ public class CompilerSettingsComponent implements PersistentStateComponent<Compi
   }
 
   private void registerOptions() {
-    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
-    if (project == null) {
-      return;
-    }
-    JavaCompilerOptionsComponent.getInstance().setJavaCompilerOptions(project, createOptions());
+    JavaCompilerOptionsComponent.getInstance().setJavaCompilerOptions(myProject, createOptions());
   }
 
   @Override
   public void disposeComponent() {
-    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
-    if (project == null) {
-      return;
-    }
-    JavaCompilerOptionsComponent.getInstance().removeJavaCompilerOptions(project);
+    JavaCompilerOptionsComponent.getInstance().removeJavaCompilerOptions(myProject);
   }
 
   @NotNull

@@ -25,6 +25,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.CollectionUtil;
@@ -34,6 +35,7 @@ import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -73,6 +75,7 @@ public class ProjectCreationTest {
 
   // project/root/module/...
   private static final String PATH_IN_PROJECT = "%s/%s/%s/%s/%s.%s";
+  private static Environment ourEnvironment;
 
   private static List<String> languageModels(String projectName, String languageNamespace) {
     final LanguageAspect[] aspects = new LanguageAspect[] {
@@ -97,7 +100,7 @@ public class ProjectCreationTest {
 
   @BeforeClass
   public static void init() {
-    IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<String>();
     final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
     final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
@@ -109,6 +112,11 @@ public class ProjectCreationTest {
         Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
         PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
     PROJECT_WITH_MODULES_PATH_LIST_DB = CollectionUtil.union(PROJECT_PROPERTIES_DIR_CONTENT, PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
+  }
+
+  @AfterClass
+  public static void dispose() {
+    ourEnvironment.release();
   }
 
   @Test

@@ -34,7 +34,7 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
   }
   @Override
   public boolean isDumbAware() {
-    return true;
+    return false;
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

@@ -20,6 +20,7 @@ import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.TokenSet;
 
 public class JavaDocTokenTypes implements DocCommentTokenTypes {
+  public static final DocCommentTokenTypes INSTANCE = new JavaDocTokenTypes();
   private final TokenSet mySpaceCommentsSet = TokenSet.create(JavaDocTokenType.DOC_SPACE, JavaDocTokenType.DOC_COMMENT_DATA);
 
   @Override

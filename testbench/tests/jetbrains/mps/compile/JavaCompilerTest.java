@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.compile;
 
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent.JavaVersion;
 import jetbrains.mps.make.MPSCompilationResult;
@@ -25,11 +25,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Reference;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
@@ -41,23 +37,22 @@ import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class JavaCompilerTest extends WorkbenchMpsTest {
+public class JavaCompilerTest extends CoreMpsTest {
   private static final File PROJECT_PATH = new File("testbench/modules/testCompilation");
-  private static Environment ourEnvironment;
   private static Project ourProject;
   private static Solution ourSolution;
 
   @BeforeClass
   public static void setUp() {
-    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     ourProject = openProject(PROJECT_PATH);
     ourSolution = getSolution("TestCompileSolution");
   }
 
   @AfterClass
   public static void tearDown() {
-    if (ourProject == null) return;
-    ourEnvironment.closeProject(ourProject);
+    if (ourProject != null) {
+      ourProject.dispose();
+    }
   }
 
   @Test

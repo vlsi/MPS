@@ -51,8 +51,8 @@
     <import index="jh37" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.classpath(MPS.Workbench/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
-    <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
+    <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
   </imports>
   <registry>
@@ -926,8 +926,8 @@
         <node concept="3clFbF" id="5wEedBrIrNc" role="3cqZAp">
           <node concept="37vLTI" id="5wEedBrIrTx" role="3clFbG">
             <node concept="2YIFZM" id="5wEedBrIt$7" role="37vLTx">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="5wEedBrIuoI" role="37wK5m">
                 <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
               </node>
@@ -2371,7 +2371,7 @@
             </node>
             <node concept="2OqwBi" id="5Wd5tR1DcLs" role="33vP2m">
               <node concept="2YIFZM" id="jG9QpLadH5" role="2Oq$k0">
-                <ref role="37wK5l" to="rkxj:3jGGvHIjLMv" resolve="flattenDirs" />
+                <ref role="37wK5l" to="rkxj:3jGGvHIjLMv" resolve="openDirs" />
                 <ref role="1Pybhc" to="rkxj:3jGGvHIjBRr" resolve="JavaConvertUtil" />
                 <node concept="37vLTw" id="jG9QpLadH6" role="37wK5m">
                   <ref role="3cqZAo" node="3jGGvHIlLKW" resolve="chosenIFiles" />

@@ -14,19 +14,17 @@ import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.execution.lib.PointerUtils;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
 public class JUnitTests_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration_Factory";
@@ -75,38 +73,12 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODULE);
       configuration.getJUnitSettings().setModule(source.getModuleName());
-      Project project = ProjectHelper.toMPSProject(getContext().getProject());
-      if (project != null) {
-        boolean canExecuteInProcess = true;
-        List<ITestNodeWrapper> list = configuration.getJUnitSettings().getTests(project);
-        if (ListSequence.fromList(list).isEmpty()) {
-          return null;
-        }
-        for (ITestNodeWrapper testNode : ListSequence.fromList(list)) {
-          SNode testRoot = check_f2w1m9_a0a0d0f0a1(testNode.getNode());
-          if (testRoot != null && SNodeOperations.isInstanceOf(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
-              canExecuteInProcess = false;
-            }
-          } else {
-            canExecuteInProcess = false;
-          }
-        }
-        configuration.getJUnitSettings().setLightExec(canExecuteInProcess);
-      } else {
-        configuration.getJUnitSettings().setLightExec(false);
-      }
+      configuration.getJUnitSettings().setLightExec(false);
       return configuration;
     }
     @Override
     public JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b clone() {
       return (JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b) super.clone();
-    }
-    private static SNode check_f2w1m9_a0a0d0f0a1(SNode checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return SNodeOperations.getContainingRoot(checkedDotOperand);
-      }
-      return null;
     }
   }
   public static class ProducerPart_SModel_f2w1m9_c extends BaseMpsProducer<SModel> {
@@ -122,38 +94,12 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
       configuration.getJUnitSettings().setModel(source.getModelName());
-      Project project = ProjectHelper.toMPSProject(getContext().getProject());
-      if (project != null) {
-        boolean canExecuteInProcess = true;
-        List<ITestNodeWrapper> list = configuration.getJUnitSettings().getTests(project);
-        if (ListSequence.fromList(list).isEmpty()) {
-          return null;
-        }
-        for (ITestNodeWrapper testNode : ListSequence.fromList(list)) {
-          SNode testRoot = check_f2w1m9_a0a0d0f0a2(testNode.getNode());
-          if (testRoot != null && SNodeOperations.isInstanceOf(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            if (!(((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(testRoot, MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SMethodTrimmedId.create("canRunInProcess", null, "5_jSk8paieB"))))) {
-              canExecuteInProcess = false;
-            }
-          } else {
-            canExecuteInProcess = false;
-          }
-        }
-        configuration.getJUnitSettings().setLightExec(canExecuteInProcess);
-      } else {
-        configuration.getJUnitSettings().setLightExec(false);
-      }
+      configuration.getJUnitSettings().setLightExec(false);
       return configuration;
     }
     @Override
     public JUnitTests_Producer.ProducerPart_SModel_f2w1m9_c clone() {
       return (JUnitTests_Producer.ProducerPart_SModel_f2w1m9_c) super.clone();
-    }
-    private static SNode check_f2w1m9_a0a0d0f0a2(SNode checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return SNodeOperations.getContainingRoot(checkedDotOperand);
-      }
-      return null;
     }
   }
   public static class ProducerPart_Node_f2w1m9_d extends BaseMpsProducer<SNode> {

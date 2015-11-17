@@ -433,7 +433,7 @@
                     <ref role="3cqZAo" node="ES8jtOrHPj" resolve="mpsProject" />
                   </node>
                   <node concept="liA8E" id="ES8jtOrHDb" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <ref role="37wK5l" to="z1c3:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                     <node concept="3VsKOn" id="ES8jtOrIjY" role="37wK5m">
                       <ref role="3VsUkX" to="exr9:~InspectorTool" resolve="InspectorTool" />
                     </node>
@@ -1424,8 +1424,8 @@
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
             <node concept="2YIFZM" id="2rUHgdX2y3F" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
               <node concept="37vLTw" id="2BHiRxgm8DF" role="37wK5m">
                 <ref role="3cqZAo" node="2rUHgdX3hbE" resolve="project" />
               </node>

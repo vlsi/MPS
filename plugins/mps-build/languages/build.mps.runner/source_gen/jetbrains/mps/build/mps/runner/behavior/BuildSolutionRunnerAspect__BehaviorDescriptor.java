@@ -60,7 +60,7 @@ public final class BuildSolutionRunnerAspect__BehaviorDescriptor extends BaseBHD
     TemplateQueryContext genContext = artifacts.getGenContext();
 
     Iterable<SNode> originalModules = Sequence.<SNode>singleton(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")));
-    Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(originalModules).trackDevkits().designtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));
+    Iterable<SNode> modules = Sequence.fromIterable(new MPSModulesClosure(originalModules, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).designtimeClosure().getAllModules()).union(Sequence.fromIterable(originalModules));
     for (SNode m : Sequence.fromIterable(modules)) {
       SNode artifact;
       SNode originalModule = DependenciesHelper.getOriginalNode(m, genContext);

@@ -14,6 +14,8 @@
   <property name="mps.teamcity.buildConfName" value="${import.mps.mps.teamcity.buildConfName}" />
   <property name="mps.idea.platform.build.number" value="${import.mps.mps.idea.platform.build.number}" />
   <property name="mpsBootstrapCore.version" value="${import.mps.mpsBootstrapCore.version}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -27,6 +29,7 @@
   
   <path id="path.jdk.classpath">
     <pathelement path="${java.home}/../Classes/classes.jar" />
+    <pathelement path="${jdk.home}/lib/tools.jar" />
     <fileset dir="${java.home}">
       <include name="lib/*.jar" />
     </fileset>
@@ -41,8 +44,7 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes, declare-mps-tasks">
-    <mkdir dir="${build.layout}/type-tests" />
-    <mkdir dir="${build.layout}/type-tests/languages" />
+    <mkdir dir="${build.layout}/languages" />
     <mkdir dir="${build.tmp}/default/testAnnotatedType.jar" />
     <mkdir dir="${build.tmp}/default/testAnnotatedType.jar/META-INF" />
     <echoxml file="${build.tmp}/default/testAnnotatedType.jar/META-INF/module.xml">
@@ -66,32 +68,21 @@
         <sources jar="testAnnotatedType-src.jar" descriptor="testAnnotatedType.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/languages/testAnnotatedType.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/testAnnotatedType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testAnnotatedType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testAnnotatedType.jar" />
     </jar>
-    <jar destfile="${build.layout}/type-tests/languages/testAnnotatedType-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testAnnotatedType#6405009306797628759" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testAnnotatedType-generator-template">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testAnnotatedType-languageModels">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/languages/testAnnotatedType-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
+    <jar destfile="${build.layout}/languages/testAnnotatedType-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/testAnnotatedType.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testAnnotatedType-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testAnnotatedType-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/testOverridingType.jar" />
@@ -117,32 +108,21 @@
         <sources jar="testOverridingType-src.jar" descriptor="testOverridingType.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/languages/testOverridingType.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/testOverridingType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testOverridingType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testOverridingType.jar" />
     </jar>
-    <jar destfile="${build.layout}/type-tests/languages/testOverridingType-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testOverridingType#6572489169071277907" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testOverridingType-generator-template">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testOverridingType-models">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/languages/testOverridingType-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
+    <jar destfile="${build.layout}/languages/testOverridingType-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/testOverridingType.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testOverridingType-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testOverridingType-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/testWrappedType.jar" />
@@ -168,32 +148,21 @@
         <sources jar="testWrappedType-src.jar" descriptor="testWrappedType.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/languages/testWrappedType.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/testWrappedType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testWrappedType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testWrappedType.jar" />
     </jar>
-    <jar destfile="${build.layout}/type-tests/languages/testWrappedType-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testWrappedType#1252378774017429256" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testWrappedType-generator-template">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testWrappedType-languageModels">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/languages/testWrappedType-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
+    <jar destfile="${build.layout}/languages/testWrappedType-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/testWrappedType.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testWrappedType-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-languages-testWrappedType-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/testPrimitiveType.jar" />
@@ -219,32 +188,21 @@
         <sources jar="testPrimitiveType-src.jar" descriptor="testPrimitiveType.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/languages/testPrimitiveType.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/testPrimitiveType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testPrimitiveType" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testPrimitiveType.jar" />
     </jar>
-    <jar destfile="${build.layout}/type-tests/languages/testPrimitiveType-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testPrimitiveType#706089536801030402" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testPrimitiveType-generator-template">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testPrimitiveType-languageModels">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/languages/testPrimitiveType-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
+    <jar destfile="${build.layout}/languages/testPrimitiveType-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/testPrimitiveType.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testPrimitiveType-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testPrimitiveType-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/testSubtypingA.jar" />
@@ -270,32 +228,21 @@
         <sources jar="testSubtypingA-src.jar" descriptor="testSubtypingA.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/languages/testSubtypingA.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/testSubtypingA.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubtypingA" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testSubtypingA.jar" />
     </jar>
-    <jar destfile="${build.layout}/type-tests/languages/testSubtypingA-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testSubtypingA#2078093584692769750" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingA-generator-template">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingA-languageModels">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/languages/testSubtypingA-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
+    <jar destfile="${build.layout}/languages/testSubtypingA-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingA-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingA-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/testSubtypingB.jar" />
@@ -321,35 +268,24 @@
         <sources jar="testSubtypingB-src.jar" descriptor="testSubtypingB.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/languages/testSubtypingB.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/languages/testSubtypingB.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubtypingB" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testSubtypingB.jar" />
     </jar>
-    <jar destfile="${build.layout}/type-tests/languages/testSubtypingB-generator.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/testSubtypingB#2078093584692983110" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingB-generator-template">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingB-languageModels">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/languages/testSubtypingB-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/generator/source_gen">
-        <exclude name="**/trace.info" />
-        <exclude name="**/exports" />
-      </fileset>
+    <jar destfile="${build.layout}/languages/testSubtypingB-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/testSubtypingB.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingB-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-languages-testSubtypingB-languageModels" prefix="module/languageModels" />
     </jar>
-    <mkdir dir="${build.layout}/type-tests/tests" />
+    <mkdir dir="${build.layout}/tests" />
     <mkdir dir="${build.tmp}/default/testSubstituteType.jar" />
     <mkdir dir="${build.tmp}/default/testSubstituteType.jar/META-INF" />
     <echoxml file="${build.tmp}/default/testSubstituteType.jar/META-INF/module.xml">
@@ -370,7 +306,7 @@
         <sources jar="testSubstituteType-src.jar" descriptor="testSubstituteType.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/tests/testSubstituteType.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/tests/testSubstituteType.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubstituteType" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" includes="**/trace.info, **/exports" />
@@ -379,7 +315,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubstituteType-solutions-testSubstituteType-models">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/tests/testSubstituteType-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/tests/testSubstituteType-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -413,7 +349,7 @@
         <sources jar="testSubtypingTest-src.jar" descriptor="testSubtypingTest.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/type-tests/tests/testSubtypingTest.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/tests/testSubtypingTest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testSubtypingTest" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includes="**/trace.info, **/exports" />
@@ -422,13 +358,51 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-solutions-testSubtypingTest-models">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/type-tests/tests/testSubtypingTest-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/tests/testSubtypingTest-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testSubtyping-solutions-testSubtypingTest-models" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.test.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.test.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.test.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.closures.test" type="solution" uuid="709a7100-da7a-45a1-948b-53fdd43f5421">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="e55e6749-03cb-4ea7-9695-2322bab791c1(jetbrains.mps.lang.test.matcher)" />
+          <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.baseLanguage.closures.test-src.jar" descriptor="jetbrains.mps.baseLanguage.closures.test.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.closures.test.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" />
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.test.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testClosures-solutions-jetbrains.mps.baseLanguage.closures.test-models">
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/tests/jetbrains.mps.baseLanguage.closures.test-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+      </fileset>
+      <zipfileset file="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/jetbrains.mps.baseLanguage.closures.test.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-testModules-testClosures-solutions-jetbrains.mps.baseLanguage.closures.test-models" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -444,7 +418,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.testAnnotatedType, java.compile.testAnnotatedType#6405009306797628759, java.compile.testOverridingType, java.compile.testOverridingType#6572489169071277907, java.compile.testWrappedType, java.compile.testWrappedType#1252378774017429256, java.compile.testPrimitiveType, java.compile.testPrimitiveType#706089536801030402, java.compile.testSubtypingA, java.compile.testSubtypingA#2078093584692769750, java.compile.testSubtypingB, java.compile.testSubtypingB#2078093584692983110, java.compile.testSubstituteType, java.compile.testSubtypingTest" />
+  <target name="compileJava" depends="java.compile.testAnnotatedType, java.compile.testOverridingType, java.compile.testWrappedType, java.compile.testPrimitiveType, java.compile.testSubtypingA, java.compile.testSubtypingB, java.compile.testSubstituteType, java.compile.testSubtypingTest, java.compile.jetbrains.mps.baseLanguage.closures.test" />
   
   <target name="processResources" />
   
@@ -476,11 +450,11 @@
       <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.aspect.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.customAspect.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
@@ -491,7 +465,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.runtime.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.util.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
@@ -503,6 +476,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.query.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
@@ -530,6 +504,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk bootstrap="true">
+        <module file="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/jetbrains.mps.baseLanguage.closures.test.msd" />
         <module file="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/testAnnotatedType.mpl" bootstrap="true" />
         <module file="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/testPrimitiveType.mpl" />
         <module file="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" />
@@ -604,52 +579,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.testAnnotatedType#6405009306797628759" depends="java.compile.testAnnotatedType, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testAnnotatedType#6405009306797628759" />
-    <javac2 destdir="${build.tmp}/java/out/testAnnotatedType#6405009306797628759" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testAnnotatedType" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testAnnotatedType#6405009306797628759">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testAnnotatedType/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.testOverridingType" depends="java.compile.testAnnotatedType, fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testOverridingType" />
@@ -693,53 +622,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/testOverridingType">
       <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.testOverridingType#6572489169071277907" depends="java.compile.testAnnotatedType, java.compile.testOverridingType, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testOverridingType#6572489169071277907" />
-    <javac2 destdir="${build.tmp}/java/out/testOverridingType#6572489169071277907" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testAnnotatedType" />
-        <pathelement path="${build.tmp}/java/out/testOverridingType" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testOverridingType#6572489169071277907">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -788,52 +670,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.testWrappedType#1252378774017429256" depends="java.compile.testWrappedType, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testWrappedType#1252378774017429256" />
-    <javac2 destdir="${build.tmp}/java/out/testWrappedType#1252378774017429256" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testWrappedType" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testWrappedType#1252378774017429256">
-      <fileset dir="${basedir}/plugins/testModules/testSubstituteType/languages/testWrappedType/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.testPrimitiveType" depends="fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testPrimitiveType" />
@@ -876,52 +712,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/testPrimitiveType">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.testPrimitiveType#706089536801030402" depends="java.compile.testPrimitiveType, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testPrimitiveType#706089536801030402" />
-    <javac2 destdir="${build.tmp}/java/out/testPrimitiveType#706089536801030402" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testPrimitiveType" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testPrimitiveType#706089536801030402">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testPrimitiveType/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -970,52 +760,6 @@
     </copy>
   </target>
   
-  <target name="java.compile.testSubtypingA#2078093584692769750" depends="java.compile.testSubtypingA, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testSubtypingA#2078093584692769750" />
-    <javac2 destdir="${build.tmp}/java/out/testSubtypingA#2078093584692769750" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testSubtypingA" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testSubtypingA#2078093584692769750">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingA/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="java.compile.testSubtypingB" depends="java.compile.testSubtypingA, fetchDependencies">
     <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSubtypingB" />
@@ -1059,53 +803,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/testSubtypingB">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.testSubtypingB#2078093584692983110" depends="java.compile.testSubtypingA, java.compile.testSubtypingB, fetchDependencies">
-    <mkdir dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/generator/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/testSubtypingB#2078093584692983110" />
-    <javac2 destdir="${build.tmp}/java/out/testSubtypingB#2078093584692983110" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/generator/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <pathelement path="${build.tmp}/java/out/testSubtypingA" />
-        <pathelement path="${build.tmp}/java/out/testSubtypingB" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/testSubtypingB#2078093584692983110">
-      <fileset dir="${basedir}/plugins/testModules/testSubtyping/languages/testSubtypingB/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1159,7 +856,6 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
@@ -1227,7 +923,6 @@
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
@@ -1242,6 +937,73 @@
     <copy todir="${build.tmp}/java/out/testSubtypingTest">
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${basedir}/plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.baseLanguage.closures.test" depends="fetchDependencies">
+    <mkdir dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" />
+        <pathelement path="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/test_gen/" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-test.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/bsh-core-2.0b4.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/cglib-nodep-2.1_3.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-library-1.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-2.5.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/objenesis-1.0.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/junit-4.12.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.test">
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${basedir}/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1270,7 +1032,6 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.customAspect.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
@@ -1279,7 +1040,6 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.runtime.jar" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.util.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
@@ -1291,6 +1051,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.query.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
@@ -1315,12 +1076,12 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
-      <pathelement location="${build.layout}/type-tests/languages/testAnnotatedType.jar" />
-      <pathelement location="${build.layout}/type-tests/languages/testOverridingType.jar" />
-      <pathelement location="${build.layout}/type-tests/languages/testPrimitiveType.jar" />
-      <pathelement location="${build.layout}/type-tests/languages/testSubtypingA.jar" />
-      <pathelement location="${build.layout}/type-tests/languages/testSubtypingB.jar" />
-      <pathelement location="${build.layout}/type-tests/languages/testWrappedType.jar" />
+      <pathelement location="${build.layout}/languages/testAnnotatedType.jar" />
+      <pathelement location="${build.layout}/languages/testOverridingType.jar" />
+      <pathelement location="${build.layout}/languages/testPrimitiveType.jar" />
+      <pathelement location="${build.layout}/languages/testSubtypingA.jar" />
+      <pathelement location="${build.layout}/languages/testSubtypingB.jar" />
+      <pathelement location="${build.layout}/languages/testWrappedType.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
@@ -1329,10 +1090,33 @@
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
     <path id="mps.tests.path">
-      <pathelement location="${build.layout}/type-tests/tests/testSubstituteType.jar" />
-      <pathelement location="${build.layout}/type-tests/tests/testSubtypingTest.jar" />
+      <pathelement location="${build.layout}/tests/jetbrains.mps.baseLanguage.closures.test.jar" />
+      <pathelement location="${build.layout}/tests/testSubstituteType.jar" />
+      <pathelement location="${build.layout}/tests/testSubtypingTest.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <path id="long.class.path">
+      <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-testing">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+    </path>
+    <pathconvert pathsep=" " targetos="unix" property="manifest.classpath">
+      <path refid="long.class.path" />
+      <chainedmapper>
+        <regexpmapper from="(.*) (.*)" to="\1%20\2" />
+        <globmapper from="*" to="file:///*" />
+      </chainedmapper>
+    </pathconvert>
+    <jar jarfile="${build.tmp}/mps.class.path.jar">
+      <manifest>
+        <attribute name="Class-Path" value="${manifest.classpath}" />
+      </manifest>
+    </jar>
     <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
@@ -1344,11 +1128,9 @@
         <fileset dir="${artifacts.mps}/lib">
           <include name="**/*.jar" />
         </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-testing">
-          <include name="**/lib/*.jar" />
+        <pathelement path="${jdk.home}/lib/tools.jar" />
+        <fileset dir="${build.tmp}">
+          <include name="mps.class.path.jar" />
         </fileset>
       </classpath>
       
@@ -1362,7 +1144,6 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/plugins/testModules/testSubstituteType/languages/testOverridingType/generator/source_gen" />
     <delete dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/source_gen" />
     <delete dir="${basedir}/plugins/testModules/testSubstituteType/solutions/testSubstituteType/test_gen" />
   </target>

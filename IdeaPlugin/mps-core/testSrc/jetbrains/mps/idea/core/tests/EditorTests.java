@@ -22,6 +22,8 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
+import jetbrains.mps.lang.test.runtime.LightEnvironment;
+import jetbrains.mps.lang.test.runtime.TestRunner;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -34,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -87,7 +90,8 @@ public class EditorTests extends DataMPSFixtureTestCase {
               Class<?> cls = Class.forName(jetbrains.mps.util.SNodeOperations.getModelLongName(model) + "." + r.getName() + "_Test");
               Method mth = cls.getMethod("test_" + r.getName());
               TransformationTest btt = (TransformationTest) cls.newInstance();
-              btt.setTestRunner(new SimpleTransformationTestRunner(r, mth));
+              final TestRunner testRunner = new SimpleTransformationTestRunner(r, mth);
+              btt.setTestRunner(testRunner);
               tests.add(btt);
             } catch (Exception e) {
               thrown[0] = e;
@@ -146,6 +150,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     private Method myTestMethod;
 
     public SimpleTransformationTestRunner(SNode root, Method testMethod) {
+      super(new LightEnvironment());
       myRoot = root;
       myTestMethod = testMethod;
     }

@@ -236,7 +236,7 @@ public class NewModuleUtil {
   private static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, Project project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super Project> creator) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
     T module = creator.invoke(namespace, descriptorFile, project);
-    project.addModule(module.getModuleReference());
+    project.addModule(module);
     module.save();
     return module;
   }

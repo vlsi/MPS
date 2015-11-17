@@ -5,27 +5,36 @@ package jetbrains.mps.tool.environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.platform.Platform;
 
 /**
  * Intended to be used in headless runs, represents working MPS environment.
  * Currently it is cached for all tests in the case of group test runs (suites).
- * To initialize environment in a lazy way (trying to get cached environment if available) please
+ * To initialize environment in a lazy way (trying to get cached environment if available)
+ * use MPSEnvironment or IdeaEnvironment #getOrCreate methods.
+ * Use MPSEnvironment if you do not need the idea platform, IdeaEnvironment otherwise.
+ * These methods use ref counting to dispose the environment in the right time (at the end of suite or at the end of the test);
+ * they call the method #retain to increase the reference counter.
+ * 
+ * The common pattern in tests is to call #getOrCreate method in the @BeforeClass section,
+ * and call #release method in the @AfterClass section.
+ * There are helping base classes: PlatformMpsTest and CoreMpsTest for the IdeaEnvironment and MpsEnvironment correspondingly.
+ * 
+ * AP: TODO consider merging all the project creation methods
  * 
  * @see jetbrains.mps.tool.environment.EnvironmentContainer 
  */
-public interface Environment {
+public interface Environment extends Retainable {
   /**
-   * Creates an empty project
+   * Creates and opens an empty project
    * 
-   * @return newly created Project. Must be already opened.
+   * @return newly created Project.
    */
   @NotNull
   public Project createEmptyProject();
 
   /**
-   * Creates a project and constructs it according to the given strategy
+   * Creates a project and opens it according to the given strategy
    * 
    * @return newly created Project constructed as the strategy suggests. It is already opened.
    */
@@ -35,17 +44,11 @@ public interface Environment {
   @NotNull
   public Project openProject(@NotNull File projectFile);
 
-  /**
-   * Contract:
-   * Returns null if there is no opened project with such File
-   */
-  @Nullable
-  public Project getOpenedProject(@NotNull File projectFile);
-
-  public void closeProject(@NotNull Project project);
-
   public void init();
 
+  /**
+   * disposes the environment for real, does not consider ref counts
+   */
   public void dispose();
 
   /**

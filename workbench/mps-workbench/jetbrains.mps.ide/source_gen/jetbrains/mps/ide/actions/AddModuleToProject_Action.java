@@ -65,7 +65,7 @@ public class AddModuleToProject_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addModule(module.getModuleReference());
+      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).addModule(module);
     }
     if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")) instanceof StandaloneMPSProject) {
       ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).update();

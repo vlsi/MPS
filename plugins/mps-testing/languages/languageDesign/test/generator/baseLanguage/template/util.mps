@@ -19,6 +19,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -31,6 +32,10 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -65,6 +70,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -112,6 +120,7 @@
       <node concept="3Tm1VV" id="L0xQjiTXbr" role="1B3o_S" />
       <node concept="3clFbS" id="L0xQjiTXbs" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="XZsBAoV_cZ" role="jymVt" />
     <node concept="2YIFZL" id="L0xQjiTXbx" role="jymVt">
       <property role="TrG5h" value="getProjectPath" />
       <node concept="17QB3L" id="L0xQjiTXb_" role="3clF45" />
@@ -155,16 +164,23 @@
             <node concept="17QB3L" id="L0xQjiTXbZ" role="1tU5fm" />
             <node concept="2EnYce" id="1HTSAFIvreA" role="33vP2m">
               <node concept="2EnYce" id="1HTSAFIvreu" role="2Oq$k0">
-                <node concept="2OqwBi" id="L0xQjiTXc1" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxgmxna" role="2Oq$k0">
-                    <ref role="3cqZAo" node="L0xQjiTXcm" resolve="operationContext" />
-                  </node>
-                  <node concept="liA8E" id="L0xQjiTXc3" role="2OqNvi">
-                    <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                <node concept="1eOMI4" id="XZsBAoVyEE" role="2Oq$k0">
+                  <node concept="10QFUN" id="XZsBAoVy$I" role="1eOMHV">
+                    <node concept="3uibUv" id="XZsBAoV$KG" role="10QFUM">
+                      <ref role="3uigEE" to="z1c3:~FileBasedProject" resolve="FileBasedProject" />
+                    </node>
+                    <node concept="2OqwBi" id="L0xQjiTXc1" role="10QFUP">
+                      <node concept="37vLTw" id="2BHiRxgmxna" role="2Oq$k0">
+                        <ref role="3cqZAo" node="L0xQjiTXcm" resolve="operationContext" />
+                      </node>
+                      <node concept="liA8E" id="L0xQjiTXc3" role="2OqNvi">
+                        <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="NZresA9fk0" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                  <ref role="37wK5l" to="z1c3:~FileBasedProject.getProjectFile():java.io.File" resolve="getProjectFile" />
                 </node>
               </node>
               <node concept="liA8E" id="H3LclcScvU" role="2OqNvi">
@@ -214,6 +230,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="XZsBAoV_bI" role="jymVt" />
     <node concept="2YIFZL" id="L0xQjiUFHd" role="jymVt">
       <property role="TrG5h" value="getTestBodyClassName" />
       <node concept="17QB3L" id="L0xQjiUFHh" role="3clF45" />

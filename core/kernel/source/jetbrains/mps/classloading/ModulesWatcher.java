@@ -16,12 +16,13 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
+import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.annotations.TestOnly;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -70,7 +71,6 @@ public class ModulesWatcher {
   private Collection<SModuleReference> myCurrentInvalidModules;
   private final ReferenceStorage<ReloadableModule> myRefStorage = new ReferenceStorage<ReloadableModule>();
   private final ModuleUpdater myModuleUpdater;
-
 
   public ModulesWatcher(SRepository repository, final Condition<ReloadableModule> watchableCondition) {
     myRepository = repository;
@@ -148,9 +148,13 @@ public class ModulesWatcher {
   private void refillStatusMap(Collection<? extends SModuleReference> invalidModules) {
     synchronized (myStatusMapLock) {
       myStatusMap.clear();
-      for (SModuleReference mRef : getAllModules()) myStatusMap.put(mRef, VALID);
+      for (SModuleReference mRef : getAllModules()) {
+        myStatusMap.put(mRef, VALID);
+      }
       Collection<? extends SModuleReference> allInvalidModules = getBackDependencies(invalidModules);
-      for (SModuleReference mRef : allInvalidModules) myStatusMap.put(mRef, INVALID);
+      for (SModuleReference mRef : allInvalidModules) {
+        myStatusMap.put(mRef, INVALID);
+      }
       LOG.debug(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() +
           " modules [totally in the repository]");
       LOG.debug("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
@@ -175,40 +179,56 @@ public class ModulesWatcher {
   }
 
   private Collection<SModuleReference> findInvalidModules() {
+    return findInvalidModules0(false);
+  }
+
+  @TestOnly
+  Collection<SModuleReference> findInvalidModulesAndReport() {
+    return findInvalidModules0(true);
+  }
+
+  @NotNull
+  private Collection<SModuleReference> findInvalidModules0(boolean errorLevel) {
     myRepository.getModelAccess().checkReadAccess();
 
+    Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps = myModuleUpdater.getModulesWithAbsentDeps();
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
     Collection<? extends SModuleReference> allModuleRefs = getAllModules();
     for (SModuleReference mRef : allModuleRefs) {
-      if (isModuleInvalid(mRef, false)) result.add(mRef);
+      if (!result.contains(mRef)) {
+        String msg = getModuleProblemMessage(mRef, modulesWithAbsentDeps);
+        if (msg == null) {
+          continue;
+        }
+        if (errorLevel) LOG.error(msg); else LOG.debug(msg);
+        result.add(mRef);
+      }
     }
     return result;
   }
 
-  // FIXME rewrite!! need to extract some common API class for validity checking (errorMode looks very hacky)
+  // FIXME rewrite!! need to extract some common API class for validity checking
   // FIXME currently Migration also wants to know which languages are invalid for loading and why
   // FIXME probably makes sense to transfer part of this functionality to the project.dependency package
-  boolean isModuleInvalid(SModuleReference mRef, boolean errorMode) {
+  /**
+   * @return message with the problem description or null if the module is valid
+   */
+  @Nullable
+  @Hack
+  private String getModuleProblemMessage(SModuleReference mRef, Map<ReloadableModule, AbsentDependencyException> modulesWithAbsentDeps) {
     assert !isChanged();
     if (isModuleDisposed(mRef)) {
-      String message = "Module " + mRef.getModuleName() + " is disposed and therefore was marked invalid for class loading";
-      if (errorMode) LOG.error(message); else LOG.trace(message);
-      return true;
+      return String.format("Module %s is disposed and therefore was marked invalid for class loading", mRef.getModuleName());
     }
 
     ReloadableModule module = (ReloadableModule) mRef.resolve(myRepository);
     assert module != null;
-    for (SDependency dep : module.getDeclaredDependencies()) {
-      if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {
-        continue;
-      }
-      if (isModuleDisposed(dep.getTargetModule())) {
-        String message = String.format("%s depends on a disposed module %s and therefore was marked invalid for class loading", module, dep.getTargetModule());
-        if (errorMode) LOG.error(message); else LOG.trace(message);
-        return true;
-      }
+
+    if (modulesWithAbsentDeps.containsKey(module)) {
+      AbsentDependencyException exception = modulesWithAbsentDeps.get(module);
+      return String.format("%s has got an absent dependency problem and therefore was marked invalid for class loading: %s", module, exception.getMessage());
     }
-    return false;
+    return null;
   }
 
   private void checkStatusMapCorrectness() {
@@ -239,7 +259,9 @@ public class ModulesWatcher {
 
   Collection<ReloadableModule> getResolvedDependencies(Iterable<? extends ReloadableModule> modules) {
     Collection<SModuleReference> refs = new LinkedHashSet<SModuleReference>();
-    for (ReloadableModule module : modules) refs.add(module.getModuleReference());
+    for (ReloadableModule module : modules) {
+      refs.add(module.getModuleReference());
+    }
     Collection<SModuleReference> referencedDeps = getDependencies(refs);
     Collection<ReloadableModule> resolvedDeps = resolveRefs(referencedDeps);
     assert (resolvedDeps.size() == referencedDeps.size());
@@ -257,7 +279,9 @@ public class ModulesWatcher {
 
   Set<SModuleReference> getModuleRefs(Iterable<? extends ReloadableModule> modules) {
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    for (ReloadableModule module : modules) result.add(module.getModuleReference());
+    for (ReloadableModule module : modules) {
+      result.add(module.getModuleReference());
+    }
     return result;
   }
 
