@@ -14,7 +14,6 @@
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-platform" />
-    <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="debugger-java-api" />
     <orderEntry type="module" module-name="Closures-runtime" />

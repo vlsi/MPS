@@ -26,7 +26,6 @@
     <orderEntry type="module" module-name="mps-debugger" />
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />

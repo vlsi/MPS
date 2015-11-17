@@ -58,7 +58,6 @@
     <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="IDEA runtime jars" level="project" />
