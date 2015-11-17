@@ -86,13 +86,14 @@ public class ModuleUpdater {
 
   public void removeModules(@NotNull Collection<? extends SModuleReference> mRefs) {
     synchronized (LOCK) {
-      myChangedFlag = true;
       for (SModuleReference mRef : mRefs) {
-        // need to clean up myModulesToLoad and myModulesToReload
-        removeMRefFromModules(mRef, myModulesToAdd);
-        removeMRefFromModules(mRef, myModulesToReload);
-        myModulesToRemove.add(mRef);
-        myRefStorage.moduleRemoved(mRef);
+        if (myRefStorage.moduleRemoved(mRef) != null) {
+          // need to clean up myModulesToLoad and myModulesToReload
+          removeMRefFromModules(mRef, myModulesToAdd);
+          removeMRefFromModules(mRef, myModulesToReload);
+          myModulesToRemove.add(mRef);
+          myChangedFlag = true;
+        }
       }
     }
   }
