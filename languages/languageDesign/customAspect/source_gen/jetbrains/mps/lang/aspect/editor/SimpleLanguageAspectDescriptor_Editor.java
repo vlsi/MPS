@@ -287,7 +287,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_rpszz1_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "helpUrl:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "help url:");
     editorCell.setCellId("Constant_rpszz1_a3b1a");
     editorCell.setDefaultText("");
     return editorCell;

@@ -440,7 +440,7 @@
             <property role="VOm3f" value="false" />
           </node>
           <node concept="3F0ifn" id="2Y$EcRKMt7b" role="3EZMnx">
-            <property role="3F0ifm" value="helpUrl:" />
+            <property role="3F0ifm" value="help url:" />
           </node>
           <node concept="1QoScp" id="4voYo4rtpIi" role="3EZMnx">
             <property role="1QpmdY" value="true" />
