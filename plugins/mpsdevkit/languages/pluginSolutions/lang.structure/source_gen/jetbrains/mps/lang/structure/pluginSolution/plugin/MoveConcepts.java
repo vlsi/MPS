@@ -26,6 +26,8 @@ import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelOperations;
@@ -106,14 +108,18 @@ public class MoveConcepts extends MoveNodesDefault {
       }
     });
 
-    MoveNodesDefault.doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationRoot(targetModel.value))), new Runnable() {
-      public void run() {
-        for (IMapping<LanguageAspect, List<SNode>> aspectItem : MapSequence.fromMap(aspectsMap.value)) {
-          SModelOperations.validateLanguagesAndImports(aspectItem.key().get(targetLanguage.value), true, true);
-        }
+    MoveNodesDefault.doMove(project, ListSequence.fromListAndArray(new ArrayList<ToMoveItem>(), new ToMoveItem(nodesToMove, new NodeLocation.NodeLocationRoot(targetModel.value))), new _FunctionTypes._void_P1_E0<RefactoringSession>() {
+      public void invoke(RefactoringSession refactoringSession) {
         sourceLanguage.addDependency(targetLanguage.value.getModuleReference(), false);
         targetLanguage.value.addDependency(sourceLanguage.getModuleReference(), false);
         MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage.value);
+        refactoringSession.registerChange(new Runnable() {
+          public void run() {
+            for (IMapping<LanguageAspect, List<SNode>> aspectItem : MapSequence.fromMap(aspectsMap.value)) {
+              SModelOperations.validateLanguagesAndImports(aspectItem.key().get(targetLanguage.value), true, true);
+            }
+          }
+        });
       }
     });
   }
