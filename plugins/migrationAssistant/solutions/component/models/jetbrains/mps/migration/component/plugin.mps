@@ -101,6 +101,12 @@
       <concept id="1227013049127" name="jetbrains.mps.lang.plugin.structure.AddStatement" flags="nn" index="2JFkCU">
         <child id="1227013166210" name="item" index="2JFLmv" />
       </concept>
+      <concept id="1512255007353869535" name="jetbrains.mps.lang.plugin.structure.ActionReference" flags="ln" index="2JRCWP">
+        <reference id="1512255007353869536" name="actionDeclaration" index="2JRCWa" />
+      </concept>
+      <concept id="1512255007353869532" name="jetbrains.mps.lang.plugin.structure.NonDumbAwareActions" flags="ng" index="2JRCWQ">
+        <child id="1512255007353869533" name="actions" index="2JRCWR" />
+      </concept>
       <concept id="1227019068586" name="jetbrains.mps.lang.plugin.structure.ToStringConceptFunction" flags="in" index="2K2imR" />
       <concept id="1227019310584" name="jetbrains.mps.lang.plugin.structure.ToStringParameter" flags="nn" index="2K3dj_" />
       <concept id="1239975356883" name="jetbrains.mps.lang.plugin.structure.UpdateGroupBlock" flags="ng" index="2OiAzN">
@@ -1965,6 +1971,27 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="2JRCWQ" id="4voYo4rvlmK">
+    <property role="TrG5h" value="NonDumbAware" />
+    <node concept="2JRCWP" id="4voYo4rvlGM" role="2JRCWR">
+      <ref role="2JRCWa" node="51adnVzU34y" resolve="ShowDeprecatedStuff" />
+    </node>
+    <node concept="2JRCWP" id="4voYo4rvlGR" role="2JRCWR">
+      <ref role="2JRCWa" node="5$zfhXzhGml" resolve="ShowDeprecatedUsages" />
+    </node>
+    <node concept="2JRCWP" id="4voYo4rvlGZ" role="2JRCWR">
+      <ref role="2JRCWa" node="5$zfhXzhIiu" resolve="RunPreUpdateCheck" />
+    </node>
+    <node concept="2JRCWP" id="4voYo4rvlH9" role="2JRCWR">
+      <ref role="2JRCWa" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
+    </node>
+    <node concept="2JRCWP" id="4voYo4rvlHl" role="2JRCWR">
+      <ref role="2JRCWa" node="5$zfhXzqWk6" resolve="RunMigration" />
+    </node>
+    <node concept="2JRCWP" id="4voYo4rvlHz" role="2JRCWR">
+      <ref role="2JRCWa" node="5$zfhXzrxUf" resolve="RunProjectMigration" />
     </node>
   </node>
 </model>
