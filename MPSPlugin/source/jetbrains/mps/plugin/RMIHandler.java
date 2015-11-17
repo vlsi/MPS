@@ -15,15 +15,9 @@
  */
 package jetbrains.mps.plugin;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.util.PathUtil;
-
-import java.net.InetAddress;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
 
 public class RMIHandler {
   public static final int REGISTRY_PORT = 2390;

@@ -2,13 +2,17 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.util.PathUtil;
+import com.intellij.openapi.util.io.FileUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.net.InetAddress;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 public class MPSPluginImpl extends UnicastRemoteObject implements IMPSPlugin {
+
+  private static final Logger LOG = LogManager.getLogger(MPSPluginImpl.class);
 
   public MPSPluginImpl() throws RemoteException {
     super();
@@ -42,15 +46,22 @@ public class MPSPluginImpl extends UnicastRemoteObject implements IMPSPlugin {
     if (projectPath == null) {
       return null;
     }
-    projectPath = PathUtil.toSystemIndependentName(projectPath); // canonical path
     checkAccess();
 
     ProjectManager projectManager = ProjectManager.getInstance();
     for (Project project : projectManager.getOpenProjects()) {
       ProjectHandler handler = project.getComponent(ProjectHandler.class);
-      String ideaProjectPath = PathUtil.toSystemIndependentName(project.getBasePath());
-      if (handler != null && ideaProjectPath != null && ideaProjectPath.equals(projectPath)) {
+      if (handler != null && FileUtil.pathsEqual(projectPath, project.getBasePath())) {
         return handler;
+      }
+    }
+
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Handler for " + projectPath + " not found. Open projects:");
+      for (Project project : projectManager.getOpenProjects()) {
+        String ideaProjectPath = project.getBasePath();
+        ProjectHandler handler = project.getComponent(ProjectHandler.class);
+        LOG.debug("  " + ideaProjectPath + (handler != null ? " (has handler)" : " (no handler)" ));
       }
     }
 
