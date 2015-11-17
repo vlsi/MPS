@@ -23,6 +23,8 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -224,9 +226,18 @@ public class ModulesWatcher {
     ReloadableModule module = (ReloadableModule) mRef.resolve(myRepository);
     assert module != null;
 
+    // FIXME does not work for now, enable in the 3.4
     if (modulesWithAbsentDeps.containsKey(module)) {
       AbsentDependencyException exception = modulesWithAbsentDeps.get(module);
       return String.format("%s has got an absent dependency problem and therefore was marked invalid for class loading: %s", module, exception.getMessage());
+    }
+    for (SDependency dep : module.getDeclaredDependencies()) {
+      if (dep.getScope() == SDependencyScope.DESIGN || dep.getScope() == SDependencyScope.GENERATES_INTO) {
+        continue;
+      }
+      if (isModuleDisposed(dep.getTargetModule())) {
+        return String.format("%s depends on a disposed module %s and therefore was marked invalid for class loading", module, dep.getTargetModule());
+      }
     }
     return null;
   }
