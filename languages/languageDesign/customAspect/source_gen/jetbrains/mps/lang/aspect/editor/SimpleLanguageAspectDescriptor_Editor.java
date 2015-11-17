@@ -27,8 +27,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
@@ -273,7 +274,7 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_rpszz1_a3b1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_rpszz1_b3b1a(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_rpszz1_b3b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_rpszz1_a3b1a(EditorContext editorContext, SNode node) {
@@ -282,7 +283,21 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_rpszz1_b3b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_rpszz1_b3b1a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = SimpleLanguageAspectDescriptor_Editor.renderingCondition_rpszz1_a1d1b0(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_rpszz1_a1d1b0(editorContext, node);
+    } else {
+      editorCell = this.createRefNode_rpszz1_a1d1b0(editorContext, node);
+    }
+    return editorCell;
+  }
+  private static boolean renderingCondition_rpszz1_a1d1b0(SNode node, EditorContext editorContext) {
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl")));
+  }
+  private EditorCell createProperty_rpszz1_a1d1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("helpUrl");
     provider.setNoTargetText("<no help URL>");
@@ -298,6 +313,40 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+  private EditorCell createRefNode_rpszz1_a1d1b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_Editor.httpHelpUrlSingleRoleHandler_rpszz1_a1d1b0(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "httpHelpUrl"), editorContext);
+    return provider.createCell();
+  }
+  private class httpHelpUrlSingleRoleHandler_rpszz1_a1d1b0 extends SingleRoleCellProvider {
+    public httpHelpUrlSingleRoleHandler_rpszz1_a1d1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("httpHelpUrl");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_httpHelpUrl");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "<no httpHelpUrl>";
+    }
+
   }
   private EditorCell createCollection_rpszz1_e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -362,5 +411,8 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   }
   private static boolean renderingCondition_rpszz1_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
 }
