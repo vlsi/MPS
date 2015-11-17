@@ -2487,16 +2487,16 @@
               <node concept="Xl_RD" id="6gjr9XnnBSw" role="37wK5m">
                 <property role="Xl_RC" value="make-runtime" />
               </node>
-              <node concept="3cpWs3" id="19Elvrq0Lvo" role="37wK5m">
-                <node concept="3cpWs3" id="19Elvrq1osT" role="3uHU7B">
-                  <node concept="37vLTw" id="19Elvrq1qqH" role="3uHU7w">
+              <node concept="3cpWs3" id="4J5nzKIHq$n" role="37wK5m">
+                <node concept="3cpWs3" id="4J5nzKIHrdo" role="3uHU7B">
+                  <node concept="37vLTw" id="4J5nzKIHH2P" role="3uHU7w">
                     <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
                   </node>
-                  <node concept="Xl_RD" id="19Elvrq1gkO" role="3uHU7B">
+                  <node concept="Xl_RD" id="4J5nzKIHq$t" role="3uHU7B">
                     <property role="Xl_RC" value="kernel" />
                   </node>
                 </node>
-                <node concept="Xl_RD" id="7vZVanSp7dC" role="3uHU7w">
+                <node concept="Xl_RD" id="4J5nzKIHq$v" role="3uHU7w">
                   <property role="Xl_RC" value="dataFlowRuntime" />
                 </node>
               </node>
@@ -2535,6 +2535,98 @@
               </node>
               <node concept="Xl_RD" id="55$LBuYmD0y" role="37wK5m">
                 <property role="Xl_RC" value="java-stub" />
+              </node>
+              <node concept="3cpWs3" id="4J5nzKIHHyD" role="37wK5m">
+                <node concept="3cpWs3" id="4J5nzKIHJvF" role="3uHU7B">
+                  <node concept="37vLTw" id="4J5nzKIHJMs" role="3uHU7w">
+                    <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                  </node>
+                  <node concept="3cpWs3" id="4J5nzKIHHjM" role="3uHU7B">
+                    <node concept="3cpWs3" id="4J5nzKIHIEp" role="3uHU7B">
+                      <node concept="37vLTw" id="4J5nzKIHJ5_" role="3uHU7w">
+                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                      </node>
+                      <node concept="Xl_RD" id="4J5nzKIHHjS" role="3uHU7B">
+                        <property role="Xl_RC" value="aspects" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="4J5nzKIHHyJ" role="3uHU7w">
+                      <property role="Xl_RC" value="behavior" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="4J5nzKIHHyL" role="3uHU7w">
+                  <property role="Xl_RC" value="behavior-api" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="4J5nzKIHKjk" role="37wK5m">
+                <node concept="3cpWs3" id="4J5nzKIHL3k" role="3uHU7B">
+                  <node concept="37vLTw" id="4J5nzKIHLpO" role="3uHU7w">
+                    <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                  </node>
+                  <node concept="3cpWs3" id="4J5nzKIHK0H" role="3uHU7B">
+                    <node concept="3cpWs3" id="4J5nzKIHLZX" role="3uHU7B">
+                      <node concept="37vLTw" id="4J5nzKIHMj4" role="3uHU7w">
+                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                      </node>
+                      <node concept="Xl_RD" id="4J5nzKIHK0N" role="3uHU7B">
+                        <property role="Xl_RC" value="aspects" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="4J5nzKIHKjq" role="3uHU7w">
+                      <property role="Xl_RC" value="behavior" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="4J5nzKIHKjs" role="3uHU7w">
+                  <property role="Xl_RC" value="behavior-runtime" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="4J5nzKIHMSG" role="37wK5m">
+                <node concept="3cpWs3" id="4J5nzKIHNZr" role="3uHU7B">
+                  <node concept="37vLTw" id="4J5nzKIHOmb" role="3uHU7w">
+                    <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                  </node>
+                  <node concept="3cpWs3" id="4J5nzKIHMv8" role="3uHU7B">
+                    <node concept="3cpWs3" id="4J5nzKIHP9Z" role="3uHU7B">
+                      <node concept="37vLTw" id="4J5nzKIHPqn" role="3uHU7w">
+                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                      </node>
+                      <node concept="Xl_RD" id="4J5nzKIHMve" role="3uHU7B">
+                        <property role="Xl_RC" value="aspects" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="4J5nzKIHMSM" role="3uHU7w">
+                      <property role="Xl_RC" value="behavior" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="4J5nzKIHMSO" role="3uHU7w">
+                  <property role="Xl_RC" value="behavior-legacy-api" />
+                </node>
+              </node>
+              <node concept="3cpWs3" id="4J5nzKIHPY3" role="37wK5m">
+                <node concept="3cpWs3" id="4J5nzKIHSPo" role="3uHU7B">
+                  <node concept="37vLTw" id="4J5nzKIHTiP" role="3uHU7w">
+                    <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                  </node>
+                  <node concept="3cpWs3" id="4J5nzKIHPH2" role="3uHU7B">
+                    <node concept="3cpWs3" id="4J5nzKIHRd4" role="3uHU7B">
+                      <node concept="37vLTw" id="4J5nzKIHREy" role="3uHU7w">
+                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
+                      </node>
+                      <node concept="Xl_RD" id="4J5nzKIHPH8" role="3uHU7B">
+                        <property role="Xl_RC" value="make-runtime" />
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="4J5nzKIHPY9" role="3uHU7w">
+                      <property role="Xl_RC" value="solutions" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="4J5nzKIHQvs" role="3uHU7w">
+                  <property role="Xl_RC" value="jetbrains.mps.make.facets" />
+                </node>
               </node>
             </node>
           </node>
@@ -2853,59 +2945,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="6kmsk4KDJ2D" role="3cqZAp" />
-        <node concept="3clFbF" id="72KL6q62YYi" role="3cqZAp">
-          <node concept="2OqwBi" id="72KL6q62YYj" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTrX3" role="2Oq$k0">
-              <ref role="3cqZAo" node="2CUenDktZkp" resolve="classpathItems" />
-            </node>
-            <node concept="TSZUe" id="72KL6q62YYl" role="2OqNvi">
-              <node concept="3cpWs3" id="72KL6q62YYm" role="25WWJ7">
-                <node concept="Xl_RD" id="72KL6q62YYn" role="3uHU7w">
-                  <property role="Xl_RC" value="classes" />
-                </node>
-                <node concept="3cpWs3" id="72KL6q62YYo" role="3uHU7B">
-                  <node concept="3cpWs3" id="72KL6q62YYp" role="3uHU7B">
-                    <node concept="3cpWs3" id="72KL6q62YYq" role="3uHU7B">
-                      <node concept="3cpWs3" id="72KL6q62YYr" role="3uHU7B">
-                        <node concept="3cpWs3" id="72KL6q62YYs" role="3uHU7B">
-                          <node concept="3cpWs3" id="72KL6q62YYv" role="3uHU7B">
-                            <node concept="3cpWs3" id="72KL6q62YYw" role="3uHU7B">
-                              <node concept="37vLTw" id="72KL6q64LNs" role="3uHU7B">
-                                <ref role="3cqZAo" node="6gjr9XnnBW7" resolve="corePath" />
-                              </node>
-                              <node concept="37vLTw" id="19ElvrpZnoz" role="3uHU7w">
-                                <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                              </node>
-                            </node>
-                            <node concept="Xl_RD" id="72KL6q62YYz" role="3uHU7w">
-                              <property role="Xl_RC" value="make-runtime" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="19ElvrpZno$" role="3uHU7w">
-                            <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="72KL6q62YYB" role="3uHU7w">
-                          <property role="Xl_RC" value="solutions" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="19ElvrpZno_" role="3uHU7w">
-                        <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                      </node>
-                    </node>
-                    <node concept="Xl_RD" id="72KL6q62YYD" role="3uHU7w">
-                      <property role="Xl_RC" value="jetbrains.mps.make.facets" />
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="19ElvrpZnoA" role="3uHU7w">
-                    <ref role="3cqZAo" node="19ElvrpZnoe" resolve="fsep" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="72KL6q62Lp$" role="3cqZAp" />
         <node concept="3clFbF" id="6kmsk4KDJ1C" role="3cqZAp">
           <node concept="2OqwBi" id="6kmsk4KDJ1D" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagTv8O" role="2Oq$k0">
