@@ -105,7 +105,6 @@ class RuntimesOfUsedLanguageCalculator {
             LOG.warn(message);
           }
         }
-        result.add(runtime);
       }
       return result;
     }
