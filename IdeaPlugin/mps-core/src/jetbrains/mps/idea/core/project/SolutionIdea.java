@@ -52,12 +52,19 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleAdapter;
+import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -91,10 +98,14 @@ public class SolutionIdea extends Solution {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
+        for (SModel model : getModels()) {
+          ((SModelInternal) model).addModelListener(MODEL_RUNTIME_IMPORTER);
+        }
       }
     });
     projectLibraryTable.addListener(myLibrariesListener);
     addModuleListener(myModule.getProject().getComponent(PsiModelReloadListener.class));
+    addModuleListener(MODULE_RUNTIME_IMPORTER);
   }
 
   @Override
@@ -150,7 +161,6 @@ public class SolutionIdea extends Solution {
 
   @Override
   protected Iterable<ModelRoot> loadRoots() {
-
     if (myContributedModelRoots == null) {
       myContributedModelRoots = new HashSet<ModelRoot>();
       for (ModelRootContributorEP e : ModelRootContributorEP.EP_NAME.getExtensions()) {
@@ -269,14 +279,6 @@ public class SolutionIdea extends Solution {
     }
     modifiableModel.commit();
     return null;
-  }
-
-  @Override
-  public void addUsedLanguage(SModuleReference langRef) {
-    super.addUsedLanguage(langRef);
-    ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    ModuleRuntimeLibrariesImporter.importForUsedLanguages(myModule, Collections.<SModuleReference>singleton(langRef), modifiableModel);
-    modifiableModel.commit();
   }
 
   @Override
@@ -451,4 +453,22 @@ public class SolutionIdea extends Solution {
   public String toString() {
     return getModuleName() + " [idea module derived solution]";
   }
+
+  private final SModuleListener MODULE_RUNTIME_IMPORTER = new SModuleAdapter() {
+    @Override
+    public void modelAdded(SModule module, SModel model) {
+      if (!(model instanceof SModelInternal)) return;
+      ((SModelInternal) model).addModelListener(MODEL_RUNTIME_IMPORTER);
+    }
+  };
+
+  private final SModelListener MODEL_RUNTIME_IMPORTER = new SModelAdapter() {
+    @Override
+    public void languageAdded(SModelLanguageEvent event) {
+      SModuleReference langRef = event.getLanguageNamespace();
+      ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
+      ModuleRuntimeLibrariesImporter.importForUsedLanguages(myModule, Collections.singleton(langRef), modifiableModel);
+      modifiableModel.commit();
+    }
+  };
 }
