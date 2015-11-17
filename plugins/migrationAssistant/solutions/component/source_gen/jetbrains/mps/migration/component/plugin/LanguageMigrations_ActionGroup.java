@@ -48,8 +48,18 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
     try {
       LanguageMigrations_ActionGroup.this.removeAll();
       Project project = event.getData(MPSCommonDataKeys.PROJECT);
+      if (project == null) {
+        return;
+      }
       jetbrains.mps.project.Project mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (mpsProject == null) {
+        return;
+      }
       final MigrationManager mm = project.getComponent(MigrationManager.class);
+      if (mm == null) {
+        return;
+      }
+
       Set<SLanguage> languages = SetSequence.fromSet(new HashSet<SLanguage>());
       {
         final SearchScope scope = CommandUtil.createScope(mpsProject);
