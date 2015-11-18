@@ -34,7 +34,7 @@ public class NewDevKitDialog extends DialogWrapper {
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
 
-    myProject = ProjectHelper.toMPSProject(project);
+    myProject = ProjectHelper.fromIdeaProject(project);
     createMainComponent();
 
     init();

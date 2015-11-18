@@ -4566,7 +4566,7 @@
                 <node concept="2OqwBi" id="3nxgM2zyqWZ" role="37wK5m">
                   <node concept="2YIFZM" id="5foWEVqQrTP" role="2Oq$k0">
                     <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                    <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+                    <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                     <node concept="37vLTw" id="2BHiRxeukuz" role="37wK5m">
                       <ref role="3cqZAo" node="2jv$fqwev73" resolve="myProject" />
                     </node>

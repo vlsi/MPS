@@ -248,10 +248,10 @@
         <node concept="3clFbH" id="269UQAkZC$V" role="3cqZAp" />
         <node concept="3clFbF" id="5G4JuOncW3X" role="3cqZAp">
           <node concept="37vLTI" id="5G4JuOncWbK" role="3clFbG">
-            <node concept="2YIFZM" id="5G4JuOncWw4" role="37vLTx">
+            <node concept="2YIFZM" id="19iE5pnHP8v" role="37vLTx">
+              <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
-              <node concept="37vLTw" id="5G4JuOncWCT" role="37wK5m">
+              <node concept="37vLTw" id="19iE5pnHP8w" role="37wK5m">
                 <ref role="3cqZAo" node="5qUkmeYCtfQ" resolve="project" />
               </node>
             </node>

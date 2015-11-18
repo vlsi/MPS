@@ -6472,7 +6472,7 @@
             <property role="TrG5h" value="mpsProject" />
             <node concept="2YIFZM" id="3pNk_u$axi$" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="3pNk_u$axi_" role="37wK5m">
                 <ref role="3cqZAo" node="3etVqSRK$aq" resolve="myProject" />
               </node>
@@ -6899,7 +6899,7 @@
             <property role="TrG5h" value="mpsProject" />
             <node concept="2YIFZM" id="2K4NeDxDzzt" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="2K4NeDxD_kq" role="37wK5m">
                 <ref role="3cqZAo" node="3etVqSRK$aq" resolve="myProject" />
               </node>
@@ -7767,7 +7767,7 @@
           <node concept="37vLTI" id="2K4NeDxBavK" role="3clFbG">
             <node concept="2YIFZM" id="2K4NeDxBb2L" role="37vLTx">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="2K4NeDxBb56" role="37wK5m">
                 <ref role="3cqZAo" node="3etVqSRRNub" resolve="project" />
               </node>

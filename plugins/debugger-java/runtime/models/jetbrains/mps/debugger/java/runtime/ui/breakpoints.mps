@@ -326,7 +326,7 @@
                   <ref role="37wK5l" node="DdPZ52JrNZ" resolve="ChooseFromStubsByNameModel" />
                   <node concept="2YIFZM" id="6PvmaE3rCZL" role="37wK5m">
                     <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                    <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+                    <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                     <node concept="37vLTw" id="6PvmaE3rD0q" role="37wK5m">
                       <ref role="3cqZAo" node="6VqS2ffws0V" resolve="project" />
                     </node>
@@ -1682,7 +1682,7 @@
             </node>
             <node concept="2YIFZM" id="2inpOcaxtDr" role="37vLTx">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="2inpOcaxtDs" role="37wK5m">
                 <ref role="3cqZAo" node="6VqS2ffws1a" resolve="project" />
               </node>
