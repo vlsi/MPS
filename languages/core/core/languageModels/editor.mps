@@ -161,10 +161,16 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
@@ -529,6 +535,7 @@
       <ref role="1k5W1q" node="3VARyd8XcQs" resolve="Comment" />
       <node concept="3F0ifn" id="7hmFG5jQPBz" role="3EZMnx">
         <property role="3F0ifm" value="/*" />
+        <ref role="1ERwB7" node="3kgLzc6vspC" resolve="BaseConcept_comment_Actions" />
         <node concept="2SqB2G" id="6EsXCvAxypg" role="2SqHTX">
           <property role="TrG5h" value="LEFT_COMMENT_ANCHOR" />
         </node>
@@ -538,6 +545,7 @@
       </node>
       <node concept="l2Vlx" id="7hmFG5jQPBv" role="2iSdaV" />
       <node concept="B$lHz" id="5DmTQrINSQQ" role="3EZMnx">
+        <ref role="1ERwB7" node="3kgLzc6vspC" resolve="BaseConcept_comment_Actions" />
         <node concept="2w$q5c" id="5FS0W4V2r66" role="B$lH_">
           <node concept="2aJ2om" id="5FS0W4V2r67" role="2w$qW5">
             <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
@@ -546,6 +554,7 @@
       </node>
       <node concept="3F0ifn" id="3VARyd8X5Rv" role="3EZMnx">
         <property role="3F0ifm" value="*/" />
+        <ref role="1ERwB7" node="3kgLzc6vspC" resolve="BaseConcept_comment_Actions" />
         <node concept="2SqB2G" id="6EsXCvAxypj" role="2SqHTX">
           <property role="TrG5h" value="RIGHT_COMMENT_ANCHOR" />
         </node>
@@ -556,6 +565,92 @@
     </node>
     <node concept="2aJ2om" id="7hmFG5jQPBm" role="CpUAK">
       <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="3kgLzc6vspC">
+    <property role="TrG5h" value="BaseConcept_comment_Actions" />
+    <ref role="1h_SK9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1hA7zw" id="3kgLzc6vspD" role="1h_SK8">
+      <property role="1hAc7j" value="backspace_action_id" />
+      <node concept="1hAIg9" id="3kgLzc6vspE" role="1hA7z_">
+        <node concept="3clFbS" id="3kgLzc6vspF" role="2VODD2">
+          <node concept="3clFbF" id="3kgLzc6vsIA" role="3cqZAp">
+            <node concept="2OqwBi" id="3kgLzc6vu4R" role="3clFbG">
+              <node concept="2ShNRf" id="3kgLzc6vsI$" role="2Oq$k0">
+                <node concept="1pGfFk" id="3kgLzc6vtXI" role="2ShVmc">
+                  <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_Uncomment" />
+                  <node concept="2OqwBi" id="3kgLzc6vtZU" role="37wK5m">
+                    <node concept="0IXxy" id="3kgLzc6vtXS" role="2Oq$k0" />
+                    <node concept="1mfA1w" id="3kgLzc6vu3_" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3kgLzc6vu8d" role="2OqNvi">
+                <ref role="37wK5l" to="b3bi:~AbstractCommentAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <node concept="1Q80Hx" id="3kgLzc6vu8Q" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="jK8Ss" id="3kgLzc6vspJ" role="jK8aL">
+        <node concept="3clFbS" id="3kgLzc6vspK" role="2VODD2">
+          <node concept="3clFbF" id="3kgLzc6vsqP" role="3cqZAp">
+            <node concept="2OqwBi" id="3kgLzc6vs_c" role="3clFbG">
+              <node concept="2OqwBi" id="3kgLzc6vss$" role="2Oq$k0">
+                <node concept="0IXxy" id="3kgLzc6vsqO" role="2Oq$k0" />
+                <node concept="1mfA1w" id="3kgLzc6vsxc" role="2OqNvi" />
+              </node>
+              <node concept="1mIQ4w" id="3kgLzc6vsE1" role="2OqNvi">
+                <node concept="chp4Y" id="3kgLzc6vsGd" role="cj9EA">
+                  <ref role="cht4Q" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="3kgLzc6vu9I" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="3kgLzc6vu9J" role="1hA7z_">
+        <node concept="3clFbS" id="3kgLzc6vu9K" role="2VODD2">
+          <node concept="3clFbF" id="3kgLzc6vufL" role="3cqZAp">
+            <node concept="2OqwBi" id="3kgLzc6vufM" role="3clFbG">
+              <node concept="2ShNRf" id="3kgLzc6vufN" role="2Oq$k0">
+                <node concept="1pGfFk" id="3kgLzc6vufO" role="2ShVmc">
+                  <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_Uncomment" />
+                  <node concept="2OqwBi" id="3kgLzc6vufP" role="37wK5m">
+                    <node concept="0IXxy" id="3kgLzc6vufQ" role="2Oq$k0" />
+                    <node concept="1mfA1w" id="3kgLzc6vufR" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="3kgLzc6vufS" role="2OqNvi">
+                <ref role="37wK5l" to="b3bi:~AbstractCommentAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <node concept="1Q80Hx" id="3kgLzc6vufT" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="jK8Ss" id="3kgLzc6vud3" role="jK8aL">
+        <node concept="3clFbS" id="3kgLzc6vud4" role="2VODD2">
+          <node concept="3clFbF" id="3kgLzc6vud5" role="3cqZAp">
+            <node concept="2OqwBi" id="3kgLzc6vud6" role="3clFbG">
+              <node concept="2OqwBi" id="3kgLzc6vud7" role="2Oq$k0">
+                <node concept="0IXxy" id="3kgLzc6vud8" role="2Oq$k0" />
+                <node concept="1mfA1w" id="3kgLzc6vud9" role="2OqNvi" />
+              </node>
+              <node concept="1mIQ4w" id="3kgLzc6vuda" role="2OqNvi">
+                <node concept="chp4Y" id="3kgLzc6vudb" role="cj9EA">
+                  <ref role="cht4Q" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

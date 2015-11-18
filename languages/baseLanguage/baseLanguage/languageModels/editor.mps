@@ -29052,8 +29052,8 @@
                 <node concept="1mfA1w" id="3$ZLRFrpqBF" role="2OqNvi" />
               </node>
               <node concept="1mIQ4w" id="3$ZLRFrprr$" role="2OqNvi">
-                <node concept="chp4Y" id="3$ZLRFrprsu" role="cj9EA">
-                  <ref role="cht4Q" to="m373:4CW56HZFB3j" resolve="BaseDocComment" />
+                <node concept="chp4Y" id="3o7dcFhCHJP" role="cj9EA">
+                  <ref role="cht4Q" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
                 </node>
               </node>
             </node>
@@ -29806,7 +29806,7 @@
             <node concept="2OqwBi" id="7seBbfiyEn$" role="3clFbG">
               <node concept="2ShNRf" id="7seBbfiyEn_" role="2Oq$k0">
                 <node concept="1pGfFk" id="7seBbfiyEnA" role="2ShVmc">
-                  <ref role="37wK5l" to="wcxw:513LyO4bN8D" resolve="CellAction_CommentChild" />
+                  <ref role="37wK5l" to="wcxw:513LyO4bN8D" resolve="CellAction_CommentOrUncommentChild" />
                   <node concept="0IXxy" id="7seBbfiyEnB" role="37wK5m" />
                   <node concept="359W_D" id="7seBbfiyEnC" role="37wK5m">
                     <ref role="359W_F" to="tpee:fzclF7Y" />
@@ -29828,7 +29828,7 @@
             <node concept="2OqwBi" id="7seBbfiyE9K" role="3clFbG">
               <node concept="2ShNRf" id="7seBbfiypnZ" role="2Oq$k0">
                 <node concept="1pGfFk" id="7seBbfiyDKu" role="2ShVmc">
-                  <ref role="37wK5l" to="wcxw:513LyO4bN8D" resolve="CellAction_CommentChild" />
+                  <ref role="37wK5l" to="wcxw:513LyO4bN8D" resolve="CellAction_CommentOrUncommentChild" />
                   <node concept="0IXxy" id="7seBbfiyDM5" role="37wK5m" />
                   <node concept="359W_D" id="7seBbfiyE0Q" role="37wK5m">
                     <ref role="359W_E" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
