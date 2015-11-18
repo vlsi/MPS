@@ -43,7 +43,7 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
 
     List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>();
     for (RelationDescriptor tab : mpsProject.getProject().getComponent(ProjectPluginManager.class).getTabDescriptors()) {
-      if (!tab.isApplicable(node)) continue;
+      if (tab.getBaseNode(node)==null && !tab.isApplicable(node)) continue;
       tabs.add(tab);
     }
 
