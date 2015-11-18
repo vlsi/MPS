@@ -105,7 +105,7 @@ public class TransformationTestRunner implements TestRunner {
     SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
 
     if (modelDescriptor == null) {
-      Assert.fail("Can't find model " + modelName + " in projects " + ProjectManager.getInstance().getOpenProjects() + ".");
+      Assert.fail("Can't find model " + modelName + " in projects " + ProjectManager.getInstance().getOpenedProjects() + ".");
     }
     return modelDescriptor;
   }
@@ -135,7 +135,7 @@ public class TransformationTestRunner implements TestRunner {
    * hacky place to run transformation tests with cached project
    */
   private Project anyOpenedProject() {
-    for (Project project : ListSequence.fromList(ProjectManager.getInstance().getOpenProjects())) {
+    for (Project project : ListSequence.fromList(ProjectManager.getInstance().getOpenedProjects())) {
       if (project != null && !(project.isDisposed())) {
         return project;
       }

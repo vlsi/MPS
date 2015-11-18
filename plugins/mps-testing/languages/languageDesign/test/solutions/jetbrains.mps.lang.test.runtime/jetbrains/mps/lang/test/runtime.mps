@@ -5307,7 +5307,7 @@
                     </node>
                     <node concept="2OqwBi" id="4zIz0VbYUHQ" role="3uHU7w">
                       <node concept="liA8E" id="4zIz0VbYUHR" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
+                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
                       </node>
                       <node concept="2YIFZM" id="4zIz0VbYUHS" role="2Oq$k0">
                         <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
@@ -5524,7 +5524,7 @@
               <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
             </node>
             <node concept="liA8E" id="51zp1jJr3VU" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
+              <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
             </node>
           </node>
         </node>
@@ -9041,7 +9041,7 @@
                         <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
                       </node>
                       <node concept="liA8E" id="5Jy6yRTPETE" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
+                        <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
                       </node>
                     </node>
                   </node>

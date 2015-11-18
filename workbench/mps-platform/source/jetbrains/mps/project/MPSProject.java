@@ -102,7 +102,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   @Override
   public void dispose() {
     Exception result = null;
-    List<Project> openProjects = jetbrains.mps.project.ProjectManager.getInstance().getOpenProjects();
+    List<Project> openProjects = jetbrains.mps.project.ProjectManager.getInstance().getOpenedProjects();
     if (openProjects.contains(this)) {
       result = ThreadUtils.runInUIThreadAndWait(new Runnable() {
         @Override

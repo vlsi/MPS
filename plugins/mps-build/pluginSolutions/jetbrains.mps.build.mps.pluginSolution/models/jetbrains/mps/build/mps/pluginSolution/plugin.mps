@@ -10696,7 +10696,7 @@
                 <node concept="Xjq3P" id="7$e6lgA3Bjd" role="2Oq$k0" />
               </node>
               <node concept="liA8E" id="7$e6lgA3Bje" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~IProject.getName():java.lang.String" resolve="getName" />
+                <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
           </node>

@@ -2033,7 +2033,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="4dzOCaryA3R" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="4dzOCaryA3S" role="37wK5m">
                   <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
                 </node>

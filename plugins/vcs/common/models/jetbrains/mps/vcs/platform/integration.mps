@@ -4266,7 +4266,7 @@
                     <ref role="1Pybhc" to="z1c3:~ProjectManager" resolve="ProjectManager" />
                   </node>
                   <node concept="liA8E" id="72HFhk0JSaq" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenProjects():java.util.List" resolve="getOpenProjects" />
+                    <ref role="37wK5l" to="z1c3:~ProjectManager.getOpenedProjects():java.util.List" resolve="getOpenedProjects" />
                   </node>
                 </node>
               </node>

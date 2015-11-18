@@ -6947,7 +6947,7 @@
                   <ref role="3cqZAo" node="3etVqSRK$eV" resolve="mpsProject" />
                 </node>
                 <node concept="liA8E" id="3pNk_u$5YAY" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~IProject.getName():java.lang.String" resolve="getName" />
+                  <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
             </node>
@@ -6964,7 +6964,7 @@
                 <ref role="3cqZAo" node="3etVqSRK$eV" resolve="mpsProject" />
               </node>
               <node concept="liA8E" id="3pNk_u$63N5" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~IProject.getName():java.lang.String" resolve="getName" />
+                <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
             <node concept="10M0yZ" id="3etVqSRK$fh" role="37wK5m">

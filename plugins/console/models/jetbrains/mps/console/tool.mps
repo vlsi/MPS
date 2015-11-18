@@ -8450,7 +8450,7 @@
                 <ref role="3cqZAo" node="3wGjY11t7jE" resolve="project" />
               </node>
               <node concept="liA8E" id="7USPsgtR$Mq" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="7USPsgtROJC" role="37wK5m">
                   <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
                 </node>

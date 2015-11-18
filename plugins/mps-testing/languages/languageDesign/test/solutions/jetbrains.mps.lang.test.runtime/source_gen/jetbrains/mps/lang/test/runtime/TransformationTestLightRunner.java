@@ -45,7 +45,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     return ModelAccess.instance().runReadAction(new Computable<Project>() {
       public Project compute() {
         Collection<SModule> runtimeDeps = new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
-        for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+        for (Project project : ProjectManager.getInstance().getOpenedProjects()) {
           SRepository repo = project.getRepository();
           boolean found = true;
           for (SModule module : CollectionSequence.fromCollection(runtimeDeps)) {

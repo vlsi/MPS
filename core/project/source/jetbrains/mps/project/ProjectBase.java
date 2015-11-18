@@ -54,7 +54,7 @@ public abstract class ProjectBase extends Project {
   }
 
   @NotNull
-  public final String getErrors() {
+  public String getErrors() {
     return myModuleLoader.getErrors();
   }
 
