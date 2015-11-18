@@ -12,9 +12,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.LanguageAspect;
 
 public class Textgen_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.TextGen;
@@ -51,8 +55,17 @@ public class Textgen_TabDescriptor extends RelationDescriptor {
     return true;
   }
   public SNode getNode(SNode node) {
-    List<SNode> nodes = ((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.TEXT_GEN));
-    return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
+    SModule module = SNodeOperations.getModel(node).getModule();
+    if (!((module instanceof Language))) {
+      return null;
+    }
+
+    SModel aspectModel = LanguageAspect.TEXT_GEN.get(((Language) module));
+    if (aspectModel == null) {
+      return null;
+    }
+
+    return Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspects", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "4G9PD8$NvPM"), aspectModel))).first();
   }
   public List<SNode> getConcepts(final SNode node) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration").getDeclarationNode());
