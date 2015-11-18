@@ -7,11 +7,11 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.openapi.editor.selection.SingularSelection;
-import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
+import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByNode;
+import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionComposite;
 
-public class CellAction_Comment extends AbstractCommentOutAction {
+public class CellAction_Comment extends AbstractCommentAction {
   private final SNode myNode;
 
 
@@ -24,14 +24,17 @@ public class CellAction_Comment extends AbstractCommentOutAction {
     if (SNodeOperations.getParent(this.myNode) == null || SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
       return false;
     }
-    Selection selection = editorContext.getSelectionManager().getSelection();
-    if (selection == null || !(selection instanceof SingularSelection)) {
-      return false;
-    }
-    return !(selection instanceof EditorCellLabelSelection) || ((EditorCellLabelSelection) selection).hasNonTrivialSelection();
+    return isNonTrivialSingleSelection(editorContext);
   }
 
-  protected SNode getNodeToComment(EditorContext editorContext) {
-    return myNode;
+  public void executeInternal(EditorContext editorContext) {
+    CommentUtil.commentOut(myNode);
   }
+
+  protected RestorableSelection createRestorableSelection(EditorContext editorContext) {
+    RestorableSelection firstSelection = super.createRestorableSelection(editorContext);
+    RestorableSelectionByNode secondSelection = new RestorableSelectionByNode(myNode);
+    return new RestorableSelectionComposite(firstSelection, secondSelection);
+  }
+
 }

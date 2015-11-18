@@ -13,6 +13,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selectionRestoring.LabelCellSelector;
 import jetbrains.mps.nodeEditor.selectionRestoring.WholeCellSelector;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByCell;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 
 public abstract class AbstractCommentAction extends AbstractCellAction {
   protected RestorableSelection createRestorableSelection(EditorContext editorContext) {
@@ -38,6 +41,11 @@ public abstract class AbstractCommentAction extends AbstractCellAction {
     editorContext.flushEvents();
     check_j6szs9_a3a1(restorableSelection, editorContext);
   }
+  protected boolean isNonTrivialSingleSelection(EditorContext editorContext) {
+    Selection selection = editorContext.getSelectionManager().getSelection();
+    return (selection instanceof EditorCellLabelSelection ? ((EditorCellLabelSelection) selection).hasNonTrivialSelection() : selection instanceof SingularSelection);
+  }
+
   protected abstract void executeInternal(EditorContext editorContext);
   private static String check_j6szs9_a0b0a(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {

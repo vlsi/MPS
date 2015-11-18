@@ -6,9 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelection;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionByNode;
 import jetbrains.mps.nodeEditor.selectionRestoring.RestorableSelectionComposite;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -23,7 +23,7 @@ public class CellAction_Uncomment extends AbstractCommentAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    return SNodeOperations.getParent(myNode) != null && eq_yhitdb_a0a0a0f(context.getSelectedNode(), myNode) || eq_yhitdb_a0a0a5(context.getSelectedNode(), SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode")));
+    return SNodeOperations.getParent(myNode) != null && isNonTrivialSingleSelection(context);
   }
 
   protected void executeInternal(EditorContext editorContext) {
@@ -46,14 +46,6 @@ public class CellAction_Uncomment extends AbstractCommentAction {
       RestorableSelectionByNode thirdSelection = new RestorableSelectionByNode(commentedNode);
       return new RestorableSelectionComposite(firstSelection, secondSelection, thirdSelection);
     }
-
-  }
-
-  private static boolean eq_yhitdb_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_yhitdb_a0a0a0f(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_yhitdb_a0c0a1a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

@@ -20,6 +20,7 @@
       <concept id="6822301196700715228" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference" flags="ig" index="2aJ2om">
         <reference id="5944657839026714445" name="hint" index="2$4xQ3" />
       </concept>
+      <concept id="3459162043708467089" name="jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction" flags="in" index="jK8Ss" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="2491174914159318432" name="jetbrains.mps.lang.editor.structure.DominatesRecord" flags="lg" index="2lhJJ2" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
@@ -71,6 +72,7 @@
       <concept id="1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" flags="lg" index="1hA7zw">
         <property id="1139535298778" name="actionId" index="1hAc7j" />
         <property id="1139537298254" name="description" index="1hHO97" />
+        <child id="3459162043708468028" name="canExecuteFunction" index="jK8aL" />
         <child id="1139535280620" name="executeFunction" index="1hA7z_" />
       </concept>
       <concept id="1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" flags="in" index="1hAIg9" />
@@ -484,6 +486,24 @@
               <node concept="liA8E" id="4aotOFCaJXM" role="2OqNvi">
                 <ref role="37wK5l" to="b3bi:~AbstractCommentAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                 <node concept="1Q80Hx" id="4aotOFCaJXN" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="jK8Ss" id="48OeoCZJHxK" role="jK8aL">
+        <node concept="3clFbS" id="48OeoCZJHxL" role="2VODD2">
+          <node concept="3clFbF" id="48OeoCZJHzx" role="3cqZAp">
+            <node concept="2OqwBi" id="48OeoCZJHzz" role="3clFbG">
+              <node concept="2ShNRf" id="48OeoCZJHz$" role="2Oq$k0">
+                <node concept="1pGfFk" id="48OeoCZJHz_" role="2ShVmc">
+                  <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_Uncomment" />
+                  <node concept="0IXxy" id="48OeoCZJHzA" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="liA8E" id="48OeoCZJHzB" role="2OqNvi">
+                <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
+                <node concept="1Q80Hx" id="48OeoCZJHzC" role="37wK5m" />
               </node>
             </node>
           </node>
