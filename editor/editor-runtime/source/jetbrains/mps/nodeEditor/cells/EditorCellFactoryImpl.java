@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -118,7 +119,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     if (result == null) {
       //todo get rid of concept descriptor
-      editor = concept instanceof SInterfaceConcept || concept.isAbstract() ? new DefaultInterfaceEditor() :
+      //todo  simon: tried to get rid of concept descriptor, conept.isAbstract didn't work
+      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
+      editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() :
           AbstractDefaultEditor.createEditor(node, ConceptRegistry.getInstance().getConceptDescriptor(concept));
       result = createCell(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
