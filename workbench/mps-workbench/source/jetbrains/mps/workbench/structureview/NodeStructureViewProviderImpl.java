@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NodeStructureViewProviderImpl implements ApplicationComponent, NodeStructureViewProvider {
@@ -38,8 +39,13 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
   public StructureViewBuilder create(MPSProject mpsProject, SNodeReference np) {
     mpsProject.getModelAccess().checkReadAccess();
 
-    List<RelationDescriptor> tabs = mpsProject.getProject().getComponent(ProjectPluginManager.class).getTabDescriptors();
     SNode node = np.resolve(mpsProject.getRepository());
+
+    List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>();
+    for (RelationDescriptor tab : mpsProject.getProject().getComponent(ProjectPluginManager.class).getTabDescriptors()) {
+      if (!tab.isApplicable(node)) continue;
+      tabs.add(tab);
+    }
 
     for (RelationDescriptor tab : tabs) {
       SNode baseNode = tab.getBaseNode(node);
