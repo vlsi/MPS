@@ -65,7 +65,7 @@ public class CheckpointState {
     return myState.getMappingNameAndInputNodeToOutputNodeMap().keySet();
   }
 
-  public Collection<SNodeId> getInputs(String mappingLabel) {
+  /*package*/ Collection<SNodeId> getInputs(String mappingLabel) {
     Map<SNodeId, Object> values = myState.getMappingNameAndInputNodeToOutputNodeMap().get(mappingLabel);
     assert values != null; // provided getMappingLabels().contains(mappingLabel)
     return values.keySet();
