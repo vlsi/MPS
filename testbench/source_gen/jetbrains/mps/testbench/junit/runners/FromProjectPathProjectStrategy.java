@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.Environment;
 import java.io.File;
+import jetbrains.mps.tool.environment.EnvironmentBase;
 
 public class FromProjectPathProjectStrategy extends ProjectStrategyBase {
   private static final String PROJECT_PATH_PROPERTY = "mps.junit.project";
@@ -35,8 +36,11 @@ public class FromProjectPathProjectStrategy extends ProjectStrategyBase {
   @NotNull
   private Project openProjectIfNotAlreadyOpened(Environment env) {
     File projectFile = new File(myProjectPath);
-    Project openedProject = env.openProject(projectFile);
-    makeOnFirstTimeOpened(openedProject);
+    Project openedProject = ((EnvironmentBase) env).getOpenedProject(projectFile);
+    if (openedProject == null) {
+      openedProject = env.openProject(projectFile);
+      makeOnFirstTimeOpened(openedProject);
+    }
     return openedProject;
   }
 

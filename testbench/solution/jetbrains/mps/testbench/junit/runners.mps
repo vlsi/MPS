@@ -1903,36 +1903,71 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="2BGPXkExbjW" role="3cqZAp">
-          <node concept="3cpWsn" id="2BGPXkExbjX" role="3cpWs9">
+        <node concept="3cpWs8" id="4$cQ78Ho3Is" role="3cqZAp">
+          <node concept="3cpWsn" id="4$cQ78Ho3Iv" role="3cpWs9">
             <property role="TrG5h" value="openedProject" />
-            <node concept="2OqwBi" id="2BGPXkExdcT" role="33vP2m">
-              <node concept="37vLTw" id="2BGPXkExgQI" role="2Oq$k0">
-                <ref role="3cqZAo" node="2BGPXkExge2" resolve="env" />
-              </node>
-              <node concept="liA8E" id="2BGPXkExdki" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
-                <node concept="37vLTw" id="2BGPXkExdmq" role="37wK5m">
+            <node concept="2OqwBi" id="4$cQ78Ho3Iw" role="33vP2m">
+              <node concept="liA8E" id="4$cQ78Ho3Rj" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:r3D6QYaVAR" resolve="getOpenedProject" />
+                <node concept="37vLTw" id="4$cQ78Ho3Zh" role="37wK5m">
                   <ref role="3cqZAo" node="2BGPXkExbjR" resolve="projectFile" />
                 </node>
               </node>
+              <node concept="1eOMI4" id="4$cQ78Ho3UV" role="2Oq$k0">
+                <node concept="10QFUN" id="4$cQ78Ho3Sj" role="1eOMHV">
+                  <node concept="3uibUv" id="4$cQ78Ho3VU" role="10QFUM">
+                    <ref role="3uigEE" to="79ha:3eUNqOk4feo" resolve="EnvironmentBase" />
+                  </node>
+                  <node concept="37vLTw" id="4$cQ78Ho3Ix" role="10QFUP">
+                    <ref role="3cqZAo" node="2BGPXkExge2" resolve="env" />
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="3uibUv" id="2BGPXkExbjY" role="1tU5fm">
+            <node concept="3uibUv" id="4$cQ78Ho3I$" role="1tU5fm">
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2BGPXkExe0J" role="3cqZAp">
-          <node concept="1rXfSq" id="2BGPXkExe0H" role="3clFbG">
-            <ref role="37wK5l" to="79ha:2BGPXkEwSeK" resolve="makeOnFirstTimeOpened" />
-            <node concept="37vLTw" id="2BGPXkExe6J" role="37wK5m">
-              <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
+        <node concept="3clFbJ" id="4$cQ78Ho40_" role="3cqZAp">
+          <node concept="3clFbS" id="4$cQ78Ho40B" role="3clFbx">
+            <node concept="3clFbF" id="4$cQ78Ho4ch" role="3cqZAp">
+              <node concept="37vLTI" id="4$cQ78Ho4dl" role="3clFbG">
+                <node concept="37vLTw" id="4$cQ78Ho4cf" role="37vLTJ">
+                  <ref role="3cqZAo" node="4$cQ78Ho3Iv" resolve="openedProject" />
+                </node>
+                <node concept="2OqwBi" id="2BGPXkExdcT" role="37vLTx">
+                  <node concept="37vLTw" id="2BGPXkExgQI" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2BGPXkExge2" resolve="env" />
+                  </node>
+                  <node concept="liA8E" id="2BGPXkExdki" role="2OqNvi">
+                    <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                    <node concept="37vLTw" id="2BGPXkExdmq" role="37wK5m">
+                      <ref role="3cqZAo" node="2BGPXkExbjR" resolve="projectFile" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2BGPXkExe0J" role="3cqZAp">
+              <node concept="1rXfSq" id="2BGPXkExe0H" role="3clFbG">
+                <ref role="37wK5l" to="79ha:2BGPXkEwSeK" resolve="makeOnFirstTimeOpened" />
+                <node concept="37vLTw" id="2BGPXkExe6J" role="37wK5m">
+                  <ref role="3cqZAo" node="4$cQ78Ho3Iv" resolve="openedProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="4$cQ78Ho4a1" role="3clFbw">
+            <node concept="10Nm6u" id="4$cQ78Ho4aV" role="3uHU7w" />
+            <node concept="37vLTw" id="4$cQ78Ho48$" role="3uHU7B">
+              <ref role="3cqZAo" node="4$cQ78Ho3Iv" resolve="openedProject" />
             </node>
           </node>
         </node>
         <node concept="3cpWs6" id="2BGPXkExbsd" role="3cqZAp">
           <node concept="37vLTw" id="2BGPXkExbvM" role="3cqZAk">
-            <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
+            <ref role="3cqZAo" node="4$cQ78Ho3Iv" resolve="openedProject" />
           </node>
         </node>
       </node>
