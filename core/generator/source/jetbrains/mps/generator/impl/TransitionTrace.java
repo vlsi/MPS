@@ -25,6 +25,11 @@ import org.jetbrains.mps.openapi.util.TreeIterator;
 
 /**
  * Ensures we trace origin of node in a transient model, whether it's original input model or one of previous checkpoint steps.
+ * Keeps traces for each node in the model during transformation phase, and once the phase is over, this trace is used to populate
+ * label mappings information that will persist. Once mappings are ready, the trace is of no use and can be disposed (unless we decide
+ * to use it as a replacement for {@link jetbrains.mps.textgen.trace.TracingUtil} and navigation from transient models back to original one.
+ * FIXME inputNode may not necessarily come from the input model, it might be arbitrary non-transient (or even perhaps checkpoint?!) model,
+ *       thus saving nodeId is not sufficient. OTOH, don't want to save SNodeReference as it's superficial in most regular cases
  * @author Artem Tikhomirov
  */
 class TransitionTrace {
@@ -61,6 +66,11 @@ class TransitionTrace {
 
   public boolean hasOrigin(@NotNull SNode node) {
     return doGet(node) instanceof SNodeId;
+  }
+
+  /*package*/ SNodeId getOrigin(@NotNull SNode node) {
+    Object rv = doGet(node);
+    return rv instanceof SNodeId ? (SNodeId) rv : null;
   }
 
   /**

@@ -45,7 +45,9 @@ public class MappingsMemento {
       myMappingNameAndInputNodeToOutputNodeMap.put(mappingName, new HashMap<SNodeId, Object>());
       currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     }
-    if (value instanceof SNode) {
+    if (value instanceof SNodeId) {
+      currentMapping.put(inputNode, value);
+    } else if (value instanceof SNode) {
       currentMapping.put(inputNode, ((SNode) value).getNodeId());
     } else if (value instanceof Collection) {
       @SuppressWarnings("unchecked")

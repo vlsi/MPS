@@ -523,8 +523,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   /**
-   * For a cross-mode reference, we expect inputNode to point either at original model or one of checkpoint models.
-   * There's no evidence one could get anything but that for a node referenced from another model during generation.
+   * For a cross-mode reference, we expect inputNode to point either at original model (or external non-transient model), or one of checkpoint models.
+   * There's no evidence one could get anything but that for a node referenced from another model during generation (i.e. no chances for inputNode to point
+   * to intermediate transient model).
    */
   @Override
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
@@ -556,11 +557,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // last and next are not necessarily in immediately adjacent generation steps, i.e. cpLast, transfStep1, transfStep2, activeTransformStep, transfStep3, cpNext
     Checkpoint lastPoint = myPlanStep.getLastCheckpoint();
     Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
-    CheckpointState cp = modelHistory.find(lastPoint, targetPoint);
+    CheckpointState cp = modelHistory.find(targetPoint);
     if (cp == null) {
       return null;
     }
-    Collection<SNode> output = cp.resolve(cp.getOutput(mappingName, inputNode.getNodeId()));
+    // FIXME we might want to ensure inputNode comes from the lastPoint checkpoint. However, unless we keep TransitionState along with the
+    //       checkpointState, I see no way to confirm inputNode comes from lastPoint (the moment we've built CheckpointState, we dispose
+    //       TransitionTrace and could not find out what are origins of the node in checkpoint model. Technically, it's not true now,
+    //       as there are user objects in the checkpoint model, however, this might get changed, so I can't rely on that, unless there's
+    //       a conscious decision to keep transition trace and to ensure validity of input nodes and their originating CP).
+    Collection<SNode> output = cp.getOutput(mappingName, inputNode);
     if (output.size() == 1) {
       return output.iterator().next();
     }

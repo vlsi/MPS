@@ -36,9 +36,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
 import org.hamcrest.CoreMatchers;
@@ -86,6 +83,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
         "r:24638668-c917-4da1-8069-8ddef862314d(jetbrains.mps.generator.crossmodel.sandbox.beanmodel1)");
     // "r:53fbbbd7-a01f-458c-a76d-a34ed2d6f25f(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)"
     final SModel m = resolve(mr);
+    final Checkpoint cp1 = new Checkpoint("aaa");
     ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
       @Override
       public ModelGenerationPlan compute() {
@@ -97,7 +95,6 @@ public class CheckpointModelTest extends PlatformMpsTest {
         SLanguage langBaseLang = MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
         final GeneratorRuntime g2 = lr.getLanguage(langBaseLang).getGenerators().iterator().next();
         final Transform step2 = new Transform(getGenerators(g2));
-        final Checkpoint cp1 = new Checkpoint("aaa");
         return new RigidGenerationPlan(step1, cp1, step2);
       }
     });
@@ -111,7 +108,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
     myErrors.checkThat("CrossModelEnvironment.hasState", cme.hasState(mr), CoreMatchers.equalTo(true));
 
     SModule checkpointModule = tmProvider.getCheckpointsModule();
-    final String cpModelName = SModelStereotype.withStereotype(SModelStereotype.withoutStereotype(m.getModelName()), "cp-aaa");
+    final String cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1);
     SModel cpModel = null;
     for (SModel trm : checkpointModule.getModels()) {
       if (cpModelName.equals(trm.getModelName())) {
@@ -121,15 +118,12 @@ public class CheckpointModelTest extends PlatformMpsTest {
     }
     myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
     ModelCheckpoints modelCheckpoints = cme.getState(mr);
-    CheckpointState cpState = modelCheckpoints.find(null, new Checkpoint("aaa"));
+    CheckpointState cpState = modelCheckpoints.find(cp1);
     myErrors.checkThat("CheckpointState present", cpState, CoreMatchers.notNullValue());
-    myErrors.checkThat("Both ModelCheckpoints.find and direct getCheckpoint are identical", cme.getCheckpoint(mr, new Checkpoint("aaa")), CoreMatchers.equalTo(cpState));
+    myErrors.checkThat("Both ModelCheckpoints.find and direct getCheckpoint are identical", cme.getCheckpoint(mr, cp1), CoreMatchers.equalTo(cpState));
     if (cpState != null) {
       Collection<String> mappingLabels = cpState.getMappingLabels();
       myErrors.checkThat("GetterMethod label present", mappingLabels.contains("GetterMethod"), CoreMatchers.equalTo(true));
-      if (mappingLabels.isEmpty()) {
-        myErrors.addError(new Throwable("aaa"));
-      }
     }
   }
 
