@@ -18,8 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
-import jetbrains.mps.generator.impl.CloneUtil;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,6 +52,8 @@ public class CrossModelEnvironment {
   }
 
   /**
+   * FIXME likely, need a way to identify set of checkpoints for selected plan only. Otherwise, not clear what to do if there are
+   *       two plans for the same model, and checkpoints are available only for one of them.
    * @return if there are any recorded checkpoints for the given model
    */
   public boolean hasState(@NotNull SModelReference model) {
@@ -74,7 +75,7 @@ public class CrossModelEnvironment {
       return new ModelCheckpoints(states.toArray(new CheckpointState[states.size()]));
     }
     SModel[] cpModels = getCheckpointModelsFor(model);
-    return new ModelCheckpoints(model, cpModels);
+    return new ModelCheckpoints(cpModels);
   }
 
   private SModel[] getCheckpointModelsFor(SModelReference model) {
@@ -102,22 +103,21 @@ public class CrossModelEnvironment {
     return null;
   }
 
-  public CheckpointState createCheckpoint(SModel originalModel, SModel transientModel, Checkpoint step) {
+  /*package*/ static String createCheckpointModelName(SModelReference originalModel, Checkpoint step) {
     String longName = NameUtil.getModelLongName(originalModel);
     String stereotype = "cp-" + step.getName();
-    final String transientModelName = longName + '@' + stereotype;
-    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
-    SModel checkpointModel = myModule.createTransientModel(mr);
-    new CloneUtil(transientModel, checkpointModel).cloneModel();
-    // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
-    // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well
-    SModelOperations.validateLanguagesAndImports(checkpointModel, false, true);
-    CheckpointState cpState = new CheckpointState(checkpointModel, step, transientModel.getReference());
-    publishCheckpoint(originalModel.getReference(), cpState);
-    return cpState;
+    return SModelStereotype.withStereotype(longName, stereotype);
   }
 
-  private void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
+  // originalModel is just to construct name/reference of the checkpoint model
+  public SModel createBlankCheckpointModel(SModelReference originalModel, Checkpoint step) {
+    final String transientModelName = createCheckpointModelName(originalModel, step);
+    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName);
+    SModel checkpointModel = myModule.createTransientModel(mr);
+    return checkpointModel;
+  }
+
+  public void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
     myModule.addModelToKeep(cpState.getCheckpointModel().getReference(), true);
     List<CheckpointState> checkpoints = myCheckpoints.get(originalModel);
     if (checkpoints == null) {
