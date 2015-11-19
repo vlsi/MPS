@@ -29,6 +29,7 @@ import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.UsedModulesCollector;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -128,31 +129,32 @@ public abstract class ModuleRuntimeLibrariesImporter {
     @Override
     protected Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
       Set<SModule> runtimeDependencies = new HashSet<SModule>();
+      UsedModulesCollector usedModulesCollector = new UsedModulesCollector();
       for (SModuleReference moduleReference : moduleReferences) {
         Language language = ModuleRepositoryFacade.getInstance().getModule(moduleReference, Language.class);
         LOG.assertTrue(language != null, "Can not find language by reference " + moduleReference);
-        collectRuntimeModules(runtimeDependencies, language);
+        collectRuntimeModules(runtimeDependencies, language, usedModulesCollector);
       }
       return runtimeDependencies;
     }
 
-    private void collectRuntimeModules(Set<SModule> runtimeDependencies, Language language) {
+    private void collectRuntimeModules(Set<SModule> runtimeDependencies, Language language, UsedModulesCollector usedModulesCollector) {
       for (SModuleReference runtimeModuleReference : language.getRuntimeModulesReferences()) {
         SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
         if (runtimeModule != null) {
-          collectRuntimeDependencies(runtimeModule, runtimeDependencies);
+          collectRuntimeDependencies(runtimeModule, runtimeDependencies, usedModulesCollector);
         }
       }
     }
 
-    private void collectRuntimeDependencies(SModule module, Set<SModule> result) {
+    private void collectRuntimeDependencies(SModule module, Set<SModule> result, UsedModulesCollector usedModulesCollector) {
       // todo: extract some other methods in GlobalModuleDependenciesManager. Like getDependencies(Iterable<> addedModules, Iterable<> addedUsedModules, Deptype)
       if (result.contains(module)) {
         return;
       }
       result.add(module);
-      for (SModule usedModule : GlobalModuleDependenciesManager.directlyUsedModules0(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
-        collectRuntimeDependencies(usedModule, result);
+      for (SModule usedModule : usedModulesCollector.directlyUsedModules0(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
+        collectRuntimeDependencies(usedModule, result, usedModulesCollector);
       }
     }
   }
