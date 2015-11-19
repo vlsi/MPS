@@ -89,10 +89,19 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         throw new IllegalArgumentException("State is null");
       }
       loadDescriptor(new ElementProjectDataSource(state, getProjectFile()));
-      if (ProjectManager.getInstance().getOpenProjects().contains(this)) {
+      if (ProjectManager.getInstance().getOpenedProjects().contains(this)) {
         update();
       }
     }
+  }
+
+  /**
+   * @deprecated remove in 3.4 and make final
+   */
+  @NotNull
+  @Deprecated
+  public String getErrors() {
+    return super.getErrors();
   }
 
   @Override

@@ -428,7 +428,9 @@
     <pathconvert pathsep=" " targetos="unix" property="manifest.classpath">
       <path refid="long.class.path" />
       <chainedmapper>
-        <regexpmapper from="(.*) (.*)" to="\1%20\2" />
+        <filtermapper>
+          <replacestring from=" " to="%20" />
+        </filtermapper>
         <globmapper from="*" to="file:///*" />
       </chainedmapper>
     </pathconvert>

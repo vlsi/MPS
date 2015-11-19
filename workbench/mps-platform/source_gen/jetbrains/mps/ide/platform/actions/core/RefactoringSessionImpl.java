@@ -28,7 +28,6 @@ public class RefactoringSessionImpl implements RefactoringSession {
   public void commit() {
     for (int i = 0; i < ListSequence.fromList(myChanges).count(); i++) {
       ListSequence.fromList(myChanges).getElement(i).run();
-
     }
   }
 }

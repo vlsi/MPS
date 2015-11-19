@@ -261,7 +261,7 @@ public class ModuleUpdater {
     myRepository.getModelAccess().checkReadAccess();
     if (module.getRepository() == null) return Collections.emptySet();
     Set<ReloadableModule> deps = new LinkedHashSet<ReloadableModule>();
-    Collection<? extends SModule> directlyUsedModules = GlobalModuleDependenciesManager.directlyUsedModules(module, true, true);
+    Collection<? extends SModule> directlyUsedModules = GlobalModuleDependenciesManager.directlyUsedModules0(module, true, true);
     for (SModule dep : directlyUsedModules) {
       if (dep instanceof ReloadableModule) {
         ReloadableModule reloadableModule = (ReloadableModule) dep;

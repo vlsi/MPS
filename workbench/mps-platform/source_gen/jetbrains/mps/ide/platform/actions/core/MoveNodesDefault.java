@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -201,7 +202,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     return node;
   }
 
-  public static void doMove(final MPSProject project, final List<ToMoveItem> toMove, final Runnable callBack) {
+  public static void doMove(final MPSProject project, final List<ToMoveItem> toMove, _FunctionTypes._void_P1_E0<? super RefactoringSession> callBack) {
     Map<SNodeReference, NodeLocation> moveMap = MapSequence.fromMap(new HashMap<SNodeReference, NodeLocation>());
     for (ToMoveItem nodesToMove : ListSequence.fromList(toMove)) {
       for (SNode node : ListSequence.fromList(nodesToMove.nodes())) {
@@ -211,7 +212,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     doMove(project, moveMap, callBack);
   }
 
-  public static void doMove(final MPSProject project, final Map<SNodeReference, NodeLocation> moveMap, final Runnable callBack) {
+  public static void doMove(final MPSProject project, final Map<SNodeReference, NodeLocation> moveMap, final _FunctionTypes._void_P1_E0<? super RefactoringSession> initRefactoringSession) {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -304,11 +305,11 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       public void performAction(RefactoringViewItem refactoringViewItem) {
         project.getRepository().getModelAccess().executeCommand(new Runnable() {
           public void run() {
-            if (callBack != null) {
-              callBack.run();
+            RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
+            if (initRefactoringSession != null) {
+              initRefactoringSession.invoke(refactoringSession);
             }
 
-            RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
 
             Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).getCopyMap();
             final Map<SNodeReference, SNode> resolveMap = MapSequence.fromMap(new HashMap<SNodeReference, SNode>());

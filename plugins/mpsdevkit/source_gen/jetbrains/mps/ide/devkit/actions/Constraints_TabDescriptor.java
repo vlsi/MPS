@@ -12,9 +12,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.LanguageAspect;
 
 public class Constraints_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Constraint;
@@ -54,8 +58,17 @@ public class Constraints_TabDescriptor extends RelationDescriptor {
     return true;
   }
   public SNode getNode(SNode node) {
-    List<SNode> nodes = ((List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.CONSTRAINTS));
-    return (ListSequence.fromList(nodes).isEmpty() ? null : ListSequence.fromList(nodes).first());
+    SModule module = SNodeOperations.getModel(node).getModule();
+    if (!((module instanceof Language))) {
+      return null;
+    }
+
+    SModel aspectModel = LanguageAspect.CONSTRAINTS.get(((Language) module));
+    if (aspectModel == null) {
+      return null;
+    }
+
+    return Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspects", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "4G9PD8$NvPM"), aspectModel))).first();
   }
   public List<SNode> getConcepts(final SNode node) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints").getDeclarationNode());

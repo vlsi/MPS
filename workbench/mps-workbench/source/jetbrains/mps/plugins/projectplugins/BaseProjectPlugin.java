@@ -132,7 +132,11 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
       myInitializedTools.get().add(tool);
     }
     for (BaseProjectPrefsComponent component : prefsToInit) {
-      component.init();
+      try {
+        component.init();
+      } catch (Throwable t) {
+        LOG.error("Exception on a pref component init: " + component, t);
+      }
     }
   }
 

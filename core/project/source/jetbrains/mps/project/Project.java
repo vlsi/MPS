@@ -20,14 +20,17 @@ import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -71,6 +74,26 @@ public abstract class Project implements MPSModuleOwner, IProject {
   @NotNull
   public final ModelAccess getModelAccess() {
     return myRepository.getModelAccess();
+  }
+
+  @NotNull
+  @ToRemove(version = 3.4)
+  public abstract String getName();
+
+  @ToRemove(version = 3.4)
+  public abstract <T> T getComponent(Class<T> t);
+
+  /**
+   * @deprecated the project is not necessarily backed up by file. Left for compatibility
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
+  public File getProjectFile() {
+    if (this instanceof FileBasedProject) {
+      FileBasedProject fileBasedProject = (FileBasedProject) this;
+      return fileBasedProject.getProjectFile();
+    }
+    return null;
   }
 
   /**
@@ -154,6 +177,26 @@ public abstract class Project implements MPSModuleOwner, IProject {
     }
   }
 
+  public void addModule(final SModuleReference moduleReference) {
+    myRepository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SModule module = moduleReference.resolve(myRepository);
+        addModule(module);
+      }
+    });
+  }
+
+  public void removeModule(final SModuleReference moduleReference) {
+    myRepository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        SModule module = moduleReference.resolve(myRepository);
+        removeModule(module);
+      }
+    });
+  }
+
   public boolean isDisposed() {
     return myDisposed;
   }
@@ -161,7 +204,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
   public final class ProjectScope extends DefaultScope {
     @Override
     protected Set<SModule> getInitialModules() {
-      List<Project> openProjects = ProjectManager.getInstance().getOpenProjects();
+      List<Project> openProjects = ProjectManager.getInstance().getOpenedProjects();
       assert openProjects.contains(Project.this) : "trying to get scope on a not-yet-loaded project";
 
       Set<SModule> result = new HashSet<SModule>();

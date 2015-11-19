@@ -8342,7 +8342,7 @@
                     <ref role="37wK5l" to="d94j:~DeleteModelHelper.deleteModel(jetbrains.mps.project.Project,org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.model.SModel,boolean,boolean):void" resolve="deleteModel" />
                     <node concept="2YIFZM" id="56cvcsnH3lS" role="37wK5m">
                       <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+                      <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                       <node concept="37vLTw" id="56cvcsnH3uh" role="37wK5m">
                         <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
                       </node>
@@ -8728,7 +8728,7 @@
                       <ref role="1Pybhc" to="d94j:~DeleteModelHelper" resolve="DeleteModelHelper" />
                       <node concept="2YIFZM" id="4CruXksBBe8" role="37wK5m">
                         <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                         <node concept="37vLTw" id="4CruXksBBe9" role="37wK5m">
                           <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
                         </node>

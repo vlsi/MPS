@@ -14,12 +14,16 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.Disposable;
-import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import com.intellij.ide.structureView.StructureView;
+import javax.swing.JComponent;
+import com.intellij.ide.structureView.StructureViewModel;
+import com.intellij.ide.util.FileStructurePopup;
 
 public class ShowMembers_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -60,18 +64,15 @@ public class ShowMembers_Action extends BaseAction {
       }
     }
     {
-      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
-      if (editorComponent != null && editorComponent.isInvalid()) {
-        editorComponent = null;
-      }
-      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-      if (editorComponent == null) {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
         return false;
       }
     }
     {
-      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
+      FileEditor p = event.getData(PlatformDataKeys.FILE_EDITOR);
+      MapSequence.fromMap(_params).put("fileEditor", p);
       if (p == null) {
         return false;
       }
@@ -82,23 +83,42 @@ public class ShowMembers_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<String> title = new Wrappers._T<String>();
     // model contains only SNodePointers 
-    final Wrappers._T<MemberContainerStructureModel> model = new Wrappers._T<MemberContainerStructureModel>();
+    final MemberContainerStructureModel[] model = new MemberContainerStructureModel[1];
 
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SNode container = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
-        title.value = container.getPresentation();
-        model.value = new MemberContainerStructureModel(container);
+        title.value = (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) ? ((String) BHReflection.invoke(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) : container.getPresentation());
+        model[0] = new MemberContainerStructureModel(container);
       }
     });
 
-    Disposable auxDisposable = new Disposable() {
-      @Override
+    // TODO: MPS-23001 Make fabric for StructureView 
+    StructureView structureView = new StructureView() {
+      public FileEditor getFileEditor() {
+        return ((FileEditor) MapSequence.fromMap(_params).get("fileEditor"));
+      }
+      public boolean navigateToSelectedElement(boolean p0) {
+        return false;
+      }
+      public JComponent getComponent() {
+        return null;
+      }
+      public void centerSelectedRow() {
+      }
+      public void restoreState() {
+      }
+      public void storeState() {
+      }
+      @NotNull
+      public StructureViewModel getTreeModel() {
+        return model[0];
+      }
       public void dispose() {
       }
     };
 
-    FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("ideaProject")), auxDisposable, false);
+    FileStructurePopup popup = new FileStructurePopup(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((FileEditor) MapSequence.fromMap(_params).get("fileEditor")), structureView, true);
     popup.setTitle(title.value);
     popup.show();
   }

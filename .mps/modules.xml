@@ -286,7 +286,6 @@
       <modulePath path="$PROJECT_DIR$/samples/attributes/languages/attr/jetbrains.mps.samples.attribute.mpl" folder="samples.attribute" />
       <modulePath path="$PROJECT_DIR$/samples/attributes/solutions/sandbox/jetbrains.mps.samples.attribute.sandbox.msd" folder="samples.attribute" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/jetbrains.mps.calculator.mpl" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/jetbrains.mps.calculator.pluginSolution.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/languages/complex/jetbrains.mps.samples.complex.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.samples.complex.runtime.msd" folder="samples" />

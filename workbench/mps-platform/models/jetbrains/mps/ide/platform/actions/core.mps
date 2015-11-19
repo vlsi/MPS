@@ -2584,9 +2584,12 @@
       </node>
       <node concept="37vLTG" id="1DR1niAZuH7" role="3clF46">
         <property role="TrG5h" value="callBack" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="1DR1niAZuH8" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        <property role="3TUv4t" value="false" />
+        <node concept="1ajhzC" id="zYDcsyE97y" role="1tU5fm">
+          <node concept="3cqZAl" id="zYDcsyE97z" role="1ajl9A" />
+          <node concept="3uibUv" id="zYDcsyE97$" role="1ajw0F">
+            <ref role="3uigEE" node="3KqYwoBJ0xf" resolve="RefactoringSession" />
+          </node>
         </node>
       </node>
       <node concept="3clFbS" id="1DR1niAZuj1" role="3clF47">
@@ -3479,27 +3482,6 @@
                         <node concept="1QHqEO" id="zWFq_3aLgz" role="3cqZAp">
                           <node concept="1QHqEC" id="zWFq_3aLg_" role="1QHqEI">
                             <node concept="3clFbS" id="zWFq_3aLgB" role="1bW5cS">
-                              <node concept="3clFbJ" id="3BJTP_NtQSx" role="3cqZAp">
-                                <node concept="3clFbS" id="3BJTP_NtQSz" role="3clFbx">
-                                  <node concept="3clFbF" id="3BJTP_NtPn3" role="3cqZAp">
-                                    <node concept="2OqwBi" id="3BJTP_NtPHm" role="3clFbG">
-                                      <node concept="37vLTw" id="3BJTP_NtPn1" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="3BJTP_NtNhW" resolve="callBack" />
-                                      </node>
-                                      <node concept="liA8E" id="3BJTP_NtPJt" role="2OqNvi">
-                                        <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="3y3z36" id="3BJTP_NtRKU" role="3clFbw">
-                                  <node concept="10Nm6u" id="3BJTP_NtS0U" role="3uHU7w" />
-                                  <node concept="37vLTw" id="3BJTP_NtRuy" role="3uHU7B">
-                                    <ref role="3cqZAo" node="3BJTP_NtNhW" resolve="callBack" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbH" id="3BJTP_NoDcZ" role="3cqZAp" />
                               <node concept="3cpWs8" id="FLkVtyCmM9" role="3cqZAp">
                                 <node concept="3cpWsn" id="FLkVtyCmMa" role="3cpWs9">
                                   <property role="TrG5h" value="refactoringSession" />
@@ -3513,6 +3495,27 @@
                                   </node>
                                 </node>
                               </node>
+                              <node concept="3clFbJ" id="3BJTP_NtQSx" role="3cqZAp">
+                                <node concept="3clFbS" id="3BJTP_NtQSz" role="3clFbx">
+                                  <node concept="3clFbF" id="3BJTP_NtPn3" role="3cqZAp">
+                                    <node concept="2Sg_IR" id="zYDcsyEcoD" role="3clFbG">
+                                      <node concept="37vLTw" id="zYDcsyEcoE" role="2SgG2M">
+                                        <ref role="3cqZAo" node="3BJTP_NtNhW" resolve="initRefactoringSession" />
+                                      </node>
+                                      <node concept="37vLTw" id="zYDcsyEdis" role="2SgHGx">
+                                        <ref role="3cqZAo" node="FLkVtyCmMa" resolve="refactoringSession" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3y3z36" id="3BJTP_NtRKU" role="3clFbw">
+                                  <node concept="10Nm6u" id="3BJTP_NtS0U" role="3uHU7w" />
+                                  <node concept="37vLTw" id="3BJTP_NtRuy" role="3uHU7B">
+                                    <ref role="3cqZAo" node="3BJTP_NtNhW" resolve="initRefactoringSession" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbH" id="3BJTP_NoDcZ" role="3cqZAp" />
                               <node concept="3clFbH" id="5Y9QCNC023K" role="3cqZAp" />
                               <node concept="3cpWs8" id="2URczpXHtQl" role="3cqZAp">
                                 <node concept="3cpWsn" id="2URczpXHtQm" role="3cpWs9">
@@ -3907,10 +3910,13 @@
         </node>
       </node>
       <node concept="37vLTG" id="3BJTP_NtNhW" role="3clF46">
-        <property role="TrG5h" value="callBack" />
+        <property role="TrG5h" value="initRefactoringSession" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="3BJTP_NtOge" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        <node concept="1ajhzC" id="zYDcsyE48t" role="1tU5fm">
+          <node concept="3cqZAl" id="zYDcsyE4Og" role="1ajl9A" />
+          <node concept="3uibUv" id="zYDcsyE5B4" role="1ajw0F">
+            <ref role="3uigEE" node="3KqYwoBJ0xf" resolve="RefactoringSession" />
+          </node>
         </node>
       </node>
       <node concept="3cqZAl" id="3BJTP_NlLDE" role="3clF45" />
@@ -6141,7 +6147,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbH" id="5C8QeJD_4t6" role="3cqZAp" />
           </node>
           <node concept="3cpWsn" id="5C8QeJD_4t8" role="1Duv9x">
             <property role="TrG5h" value="i" />

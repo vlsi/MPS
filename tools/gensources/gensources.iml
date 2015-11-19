@@ -633,7 +633,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/attributes/languages/attr/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/attributes/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/source_gen" isTestSource="false" />
@@ -766,7 +766,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/attributes/solutions/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/generator/classes_gen" />

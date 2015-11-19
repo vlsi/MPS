@@ -153,7 +153,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     Project project = ProjectHelper.getProject(repository);
     if (project == null) {
       // Note: the following code can be removed after proper implementation of project repositories 
-      List<Project> openProjects = ProjectManager.getInstance().getOpenProjects();
+      List<Project> openProjects = ProjectManager.getInstance().getOpenedProjects();
       if (openProjects.size() == 1) {
         project = openProjects.get(0);
       }

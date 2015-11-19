@@ -1223,7 +1223,7 @@
             </node>
             <node concept="2YIFZM" id="4NF6yZZWUnA" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="4NF6yZZWUnB" role="37wK5m">
                 <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
               </node>
@@ -1533,7 +1533,7 @@
             </node>
             <node concept="2YIFZM" id="4NF6yZZYcan" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="4NF6yZZYcao" role="37wK5m">
                 <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
               </node>
@@ -1650,7 +1650,7 @@
             </node>
             <node concept="2YIFZM" id="4NF6yZZYf5x" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="4NF6yZZYf5y" role="37wK5m">
                 <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
               </node>
@@ -1800,7 +1800,7 @@
             </node>
             <node concept="2YIFZM" id="4NF6yZZYgnq" role="33vP2m">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="4NF6yZZYgnr" role="37wK5m">
                 <ref role="3cqZAo" node="7vbFQ4bPX_O" resolve="myProject" />
               </node>

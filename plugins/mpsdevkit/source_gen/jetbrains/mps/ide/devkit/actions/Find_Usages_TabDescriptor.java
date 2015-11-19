@@ -10,9 +10,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.smodel.LanguageAspect;
 
 public class Find_Usages_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.UsagesFinder;
@@ -40,7 +45,17 @@ public class Find_Usages_TabDescriptor extends RelationDescriptor {
     return ICON;
   }
   public List<SNode> getNodes(SNode node) {
-    return ((List<SNode>) (List<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspectCollection", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "1n18fON7w20"), LanguageAspect.FIND_USAGES));
+    SModule module = SNodeOperations.getModel(node).getModule();
+    if (!((module instanceof Language))) {
+      return new ArrayList<SNode>();
+    }
+
+    SModel aspectModel = LanguageAspect.FIND_USAGES.get(((Language) module));
+    if (aspectModel == null) {
+      return new ArrayList<SNode>();
+    }
+
+    return Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(node, SMethodTrimmedId.create("findConceptAspects", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "4G9PD8$NvPM"), aspectModel))).toListSequence();
   }
   public boolean isSingle() {
     return false;

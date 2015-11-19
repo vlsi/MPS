@@ -823,19 +823,22 @@
                 </node>
                 <node concept="2pNNFK" id="2qD8WtnELju" role="3o6s8t">
                   <property role="2pNNFO" value="chainedmapper" />
-                  <node concept="2pNNFK" id="2qD8WtnELk7" role="3o6s8t">
-                    <property role="2pNNFO" value="regexpmapper" />
-                    <property role="qg3DV" value="true" />
-                    <node concept="2pNUuL" id="2qD8WtnELkf" role="2pNNFR">
-                      <property role="2pNUuO" value="from" />
-                      <node concept="2pMdtt" id="2qD8WtnELkh" role="2pMdts">
-                        <property role="2pMdty" value="(.*) (.*)" />
+                  <node concept="2pNNFK" id="49qUoEeplmk" role="3o6s8t">
+                    <property role="2pNNFO" value="filtermapper" />
+                    <node concept="2pNNFK" id="2qD8WtnELk7" role="3o6s8t">
+                      <property role="2pNNFO" value="replacestring" />
+                      <property role="qg3DV" value="true" />
+                      <node concept="2pNUuL" id="2qD8WtnELkf" role="2pNNFR">
+                        <property role="2pNUuO" value="from" />
+                        <node concept="2pMdtt" id="2qD8WtnELkh" role="2pMdts">
+                          <property role="2pMdty" value=" " />
+                        </node>
                       </node>
-                    </node>
-                    <node concept="2pNUuL" id="2qD8WtnELkl" role="2pNNFR">
-                      <property role="2pNUuO" value="to" />
-                      <node concept="2pMdtt" id="2qD8WtnELkp" role="2pMdts">
-                        <property role="2pMdty" value="\1%20\2" />
+                      <node concept="2pNUuL" id="2qD8WtnELkl" role="2pNNFR">
+                        <property role="2pNUuO" value="to" />
+                        <node concept="2pMdtt" id="2qD8WtnELkp" role="2pMdts">
+                          <property role="2pMdty" value="%20" />
+                        </node>
                       </node>
                     </node>
                   </node>

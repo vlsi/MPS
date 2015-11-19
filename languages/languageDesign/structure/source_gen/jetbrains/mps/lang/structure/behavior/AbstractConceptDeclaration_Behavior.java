@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.Pair;
@@ -35,8 +36,13 @@ public class AbstractConceptDeclaration_Behavior {
   public static SNode call_findConceptAspect_8360039740498069412(SNode __thisNode__, SModel model) {
     return AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspect_id7g4OXB0yku$(__thisNode__, model);
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static void call_findConceptAspectCollection_8360039740498071686(SNode __thisNode__, SModel model, List<SNode> collection) {
     AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspectCollection_id7g4OXB0yl26(__thisNode__, model, collection);
+  }
+  public static Iterable<SNode> call_findConceptAspects_5407088750806039922(SNode __thisNode__, @NotNull SModel model) {
+    return AbstractConceptDeclaration__BehaviorDescriptor.findConceptAspects_id4G9PD8$NvPM(__thisNode__, model);
   }
   public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode __thisNode__) {
     return AbstractConceptDeclaration__BehaviorDescriptor.findGeneratorFragments_id5zMz2aJEI4B(__thisNode__);

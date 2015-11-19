@@ -927,7 +927,7 @@
           <node concept="37vLTI" id="5wEedBrIrTx" role="3clFbG">
             <node concept="2YIFZM" id="5wEedBrIt$7" role="37vLTx">
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="toMPSProject" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="5wEedBrIuoI" role="37wK5m">
                 <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
               </node>
@@ -2371,7 +2371,7 @@
             </node>
             <node concept="2OqwBi" id="5Wd5tR1DcLs" role="33vP2m">
               <node concept="2YIFZM" id="jG9QpLadH5" role="2Oq$k0">
-                <ref role="37wK5l" to="rkxj:3jGGvHIjLMv" resolve="openDirs" />
+                <ref role="37wK5l" to="rkxj:3jGGvHIjLMv" resolve="flattenDirs" />
                 <ref role="1Pybhc" to="rkxj:3jGGvHIjBRr" resolve="JavaConvertUtil" />
                 <node concept="37vLTw" id="jG9QpLadH6" role="37wK5m">
                   <ref role="3cqZAo" node="3jGGvHIlLKW" resolve="chosenIFiles" />
