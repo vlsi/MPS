@@ -21,8 +21,13 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 
@@ -87,11 +92,19 @@ class CustomGenerationTab extends BaseTab implements FacetTab {
     b.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        ArrayList<SModelReference> models = new ArrayList<SModelReference>();
-        for (SModel m : myModuleFacet.getModule().getModels()) {
-          models.add(m.getReference());
-        }
-        // FIXME for now, restrict to plan models from the same module, generally, shall allow from anywhere
+        // XXX For now, restrict to plan models from the visible modules, generally, shall allow from anywhere
+        ArrayList<SModelReference> models = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<ArrayList<SModelReference>>() {
+          @Override
+          public ArrayList<SModelReference> compute() {
+            ArrayList<SModelReference> rv = new ArrayList<SModelReference>();
+            for (SModule module : new GlobalModuleDependenciesManager(myModuleFacet.getModule()).getModules(Deptype.VISIBLE)) {
+              for (SModel m : module.getModels()) {
+                rv.add(m.getReference());
+              }
+            }
+            return rv;
+          }
+        });
         myActualReference = CommonChoosers.showModelChooser(myProject, "Pick model with a generation plan", models);
         f.setText(myActualReference == null ? "<none>" : myActualReference.getModelName());
       }
