@@ -101,7 +101,13 @@ public class ModelPersistence {
 
   @Nullable
   public static IModelPersistence getPersistence(int version) {
-    if (version == 8) return new ModelPersistence8();
+    if (version == 8) {
+      //todo remove after 3.3
+      LOG.error("Model Persistence 8 has limited support in MPS 3.3 and will be completely removed in the next release.\n" +
+          "Please execute Main Menu->Migration->Migrations->Project Migrations->Migrate v8 Models");
+      return new ModelPersistence8();
+    }
+
     if (version == 9) return new ModelPersistence9();
 
     assert !isSupported(version) : "inconsistent ModelPersistence.isSupported and .getPersistence. Version=" + version;

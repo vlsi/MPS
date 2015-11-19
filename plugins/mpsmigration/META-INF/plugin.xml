@@ -5,7 +5,7 @@
         >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.mpsmigration</id>
-  <name>Migration 3.2</name>
+  <name>Migration 3.3</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
   <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
@@ -15,22 +15,14 @@
   <depends>jetbrains.mps.ide.java</depends>
   <depends>jetbrains.mps.console</depends>
 
-  <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/migration32/Migration32Actions.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/v33/Migration33Actions.xml" xpointer="xpointer(/components/*)"/>
-
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/solution"/>
-
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"></errorHandler>
   </extensions>
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.Migrations32</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.mpsmigration.migration32.migrations.ProjectJavaVersionMigration</implementation-class>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.v33.Migrations33</implementation-class>
     </component>
   </application-components>
-
 </idea-plugin>
