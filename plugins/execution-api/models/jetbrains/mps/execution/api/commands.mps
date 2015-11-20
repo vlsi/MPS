@@ -17,6 +17,7 @@
     <import index="dj99" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.configurations(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -70,6 +71,10 @@
       <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
+      </concept>
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
       </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
@@ -231,6 +236,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
@@ -444,6 +452,24 @@
   </node>
   <node concept="312cEu" id="3oW7HLfqDlu">
     <property role="TrG5h" value="ProcessHandlerBuilder" />
+    <node concept="Wx3nA" id="1q0vCM78BwV" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="LOG" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1q0vCM78AYW" role="1B3o_S" />
+      <node concept="3uibUv" id="1q0vCM78Dst" role="1tU5fm">
+        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
+      </node>
+      <node concept="2YIFZM" id="1q0vCM78DAH" role="33vP2m">
+        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
+        <node concept="3VsKOn" id="1q0vCM78E5w" role="37wK5m">
+          <ref role="3VsUkX" node="3oW7HLfqDlu" resolve="ProcessHandlerBuilder" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1q0vCM78Ed9" role="jymVt" />
     <node concept="3Tm1VV" id="3oW7HLfqDqQ" role="1B3o_S" />
     <node concept="312cEg" id="3oW7HLfqDqJ" role="jymVt">
       <property role="TrG5h" value="myCommandLine" />
@@ -582,7 +608,7 @@
           <node concept="3clFbS" id="3oW7HLfqDmk" role="2LFqv$">
             <node concept="3clFbF" id="3oW7HLfqDml" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyz51s" role="3clFbG">
-                <ref role="37wK5l" node="3oW7HLfqDlz" resolve="append" />
+                <ref role="37wK5l" node="3oW7HLfqDm9" resolve="append" />
                 <node concept="2GrUjf" id="3oW7HLfqDmn" role="37wK5m">
                   <ref role="2Gs0qQ" node="3oW7HLfqDmg" resolve="commandPart" />
                 </node>
@@ -613,7 +639,7 @@
           <node concept="3clFbS" id="3oW7HLfqDmy" role="2LFqv$">
             <node concept="3clFbF" id="3oW7HLfqDmz" role="3cqZAp">
               <node concept="1rXfSq" id="4hiugqyzf8W" role="3clFbG">
-                <ref role="37wK5l" node="3oW7HLfqDlz" resolve="append" />
+                <ref role="37wK5l" node="3oW7HLfqDm9" resolve="append" />
                 <node concept="2GrUjf" id="3oW7HLfqDm_" role="37wK5m">
                   <ref role="2Gs0qQ" node="3oW7HLfqDmw" resolve="commandPart" />
                 </node>
@@ -890,6 +916,22 @@
               </node>
             </node>
             <node concept="3clFbS" id="3oW7HLfqDpr" role="TDEfX">
+              <node concept="3clFbF" id="I9qoPuwAmQ" role="3cqZAp">
+                <node concept="2OqwBi" id="I9qoPuwAqE" role="3clFbG">
+                  <node concept="37vLTw" id="I9qoPuwAmO" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1q0vCM78BwV" resolve="LOG" />
+                  </node>
+                  <node concept="liA8E" id="I9qoPuwAzM" role="2OqNvi">
+                    <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
+                    <node concept="Xl_RD" id="I9qoPuwA_y" role="37wK5m">
+                      <property role="Xl_RC" value="Start process failed" />
+                    </node>
+                    <node concept="37vLTw" id="Z5WckevUTb" role="37wK5m">
+                      <ref role="3cqZAo" node="3oW7HLfqDpp" resolve="e" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="YS8fn" id="3oW7HLfqDps" role="3cqZAp">
                 <node concept="2ShNRf" id="3oW7HLfqDpt" role="YScLw">
                   <node concept="1pGfFk" id="3oW7HLfqDpu" role="2ShVmc">
@@ -924,6 +966,22 @@
               </node>
             </node>
             <node concept="3clFbS" id="3oW7HLfqDpC" role="TDEfX">
+              <node concept="3clFbF" id="I9qoPuwAVL" role="3cqZAp">
+                <node concept="2OqwBi" id="I9qoPuwAZB" role="3clFbG">
+                  <node concept="37vLTw" id="I9qoPuwAVJ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1q0vCM78BwV" resolve="LOG" />
+                  </node>
+                  <node concept="liA8E" id="I9qoPuwB70" role="2OqNvi">
+                    <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
+                    <node concept="Xl_RD" id="I9qoPuwBbf" role="37wK5m">
+                      <property role="Xl_RC" value="Start process failed: one of the command line arguments is null" />
+                    </node>
+                    <node concept="37vLTw" id="Z5WckevVa$" role="37wK5m">
+                      <ref role="3cqZAo" node="3oW7HLfqDpA" resolve="e" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="YS8fn" id="3oW7HLfqDpD" role="3cqZAp">
                 <node concept="2ShNRf" id="3oW7HLfqDpE" role="YScLw">
                   <node concept="1pGfFk" id="3oW7HLfqDpF" role="2ShVmc">
@@ -958,6 +1016,22 @@
               </node>
             </node>
             <node concept="3clFbS" id="3oW7HLfqDpP" role="TDEfX">
+              <node concept="3clFbF" id="I9qoPuwBo8" role="3cqZAp">
+                <node concept="2OqwBi" id="I9qoPuwBrS" role="3clFbG">
+                  <node concept="37vLTw" id="I9qoPuwBo6" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1q0vCM78BwV" resolve="LOG" />
+                  </node>
+                  <node concept="liA8E" id="I9qoPuwBus" role="2OqNvi">
+                    <ref role="37wK5l" to="q7tw:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
+                    <node concept="Xl_RD" id="I9qoPuwB_2" role="37wK5m">
+                      <property role="Xl_RC" value="Start process failed" />
+                    </node>
+                    <node concept="37vLTw" id="Z5WckevVse" role="37wK5m">
+                      <ref role="3cqZAo" node="3oW7HLfqDpN" resolve="t" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="YS8fn" id="3oW7HLfqDpQ" role="3cqZAp">
                 <node concept="2ShNRf" id="3oW7HLfqDpR" role="YScLw">
                   <node concept="1pGfFk" id="3oW7HLfqDpS" role="2ShVmc">
