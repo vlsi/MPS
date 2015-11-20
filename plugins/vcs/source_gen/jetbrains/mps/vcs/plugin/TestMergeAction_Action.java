@@ -23,8 +23,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class TestMergeAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -87,5 +85,4 @@ public class TestMergeAction_Action extends BaseAction {
       }
     });
   }
-  protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
 }

@@ -23,9 +23,9 @@ public class Comment_MultipleStatements_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("3978304464958892784", "3978304464958892787");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectDown_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.SelectNext_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Comment_Action");
     }
   }

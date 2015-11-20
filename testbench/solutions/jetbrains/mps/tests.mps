@@ -638,6 +638,9 @@
     <node concept="lpD6D" id="1OLuskJsIUR" role="lpD6w">
       <ref role="lpD7u" to="e6od:1OLuskJsHkY" resolve="Uncomment_NodeAtLastPosition" />
     </node>
+    <node concept="lpD6D" id="2_1mL0eQWKG" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2_1mL0eQWjc" resolve="Uncomment_NodeByDelete" />
+    </node>
     <node concept="lpD6D" id="4IrZ8JbCdBq" role="lpD6w">
       <ref role="lpD7u" to="e6od:3FNxLZIqrJI" resolve="Uncomment_NodeWithComment" />
     </node>
@@ -652,6 +655,9 @@
     </node>
     <node concept="lpD6D" id="1OLuskJsIW7" role="lpD6w">
       <ref role="lpD7u" to="e6od:1OLuskJsGhT" resolve="Uncomment_StatementAtFirstPosition" />
+    </node>
+    <node concept="lpD6D" id="2_1mL0eQWMf" role="lpD6w">
+      <ref role="lpD7u" to="e6od:2_1mL0eQVWN" resolve="Uncomment_StatementByDelete" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCdHz" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cJ7d" resolve="Uncomment_Type" />
