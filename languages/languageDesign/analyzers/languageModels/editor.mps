@@ -3,10 +3,10 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -166,13 +166,20 @@
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
+        <reference id="1204851882689" name="link" index="26LbJp" />
+      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
+        <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -634,14 +641,18 @@
             <node concept="3clFbS" id="5JXsuoWrbKS" role="2VODD2">
               <node concept="3clFbF" id="5JXsuoWqYsk" role="3cqZAp">
                 <node concept="22lmx$" id="5JXsuoWrczl" role="3clFbG">
-                  <node concept="2OqwBi" id="5JXsuoWrdif" role="3uHU7B">
+                  <node concept="2OqwBi" id="2_1mL0eofVg" role="3uHU7B">
                     <node concept="2OqwBi" id="5JXsuoWrcDJ" role="2Oq$k0">
                       <node concept="pncrf" id="5JXsuoWrcAN" role="2Oq$k0" />
-                      <node concept="3Tsc0h" id="5JXsuoWrcOv" role="2OqNvi">
-                        <ref role="3TtcxE" to="bj1v:3tEjlbSOgR6" />
+                      <node concept="Bykcj" id="2_1mL0eofVd" role="2OqNvi">
+                        <node concept="1aIX9F" id="2_1mL0eofVe" role="1xVPHs">
+                          <node concept="26LbJo" id="2_1mL0eofVf" role="1aIX9E">
+                            <ref role="26LbJp" to="bj1v:3tEjlbSOgR6" />
+                          </node>
+                        </node>
                       </node>
                     </node>
-                    <node concept="3GX2aA" id="5JXsuoWreSm" role="2OqNvi" />
+                    <node concept="3GX2aA" id="2_1mL0eofVh" role="2OqNvi" />
                   </node>
                   <node concept="2EnYce" id="5JXsuoWr1m_" role="3uHU7w">
                     <node concept="2EnYce" id="5JXsuoWqZd4" role="2Oq$k0">
