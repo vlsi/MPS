@@ -34986,7 +34986,7 @@
       <ref role="1bYAoF" node="6R$xsE24aki" resolve="NewElement" />
       <node concept="pLAjd" id="2HiVo5Pctgf" role="Zd501">
         <property role="pLAjf" value="VK_N" />
-        <property role="pLAjc" value="meta" />
+        <property role="pLAjc" value="ctrl+alt" />
       </node>
       <node concept="pLAjd" id="2HiVo5Pctgg" role="Zd501">
         <property role="pLAjf" value="VK_ENTER" />
