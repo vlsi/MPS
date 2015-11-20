@@ -168,18 +168,28 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     FastRuleFinder rf = generator.getRuleManager().getSwitchRules(_switch);
     Collection<SNode> outputNodes = tryToReduce(rf, context);
     if (outputNodes != null) {
+      // XXX it seems odd we do not do TracingUtil.fillOriginalNode(context.getInput(), outputNodes.get(0), false)
+      // to record actual origin for the switch outcome. This ruins scenario like
+      // Rule X -> $SWITCH$ for x.refY
+      // where X is recorded as origin for whatever outcome SWITCH reports.
+      // However, if we do fill proper original node here, this ruins existing scenario, where bl.collections got rules
+      // for AbstractCreator, which switch by type of the creator, so that generated new LingHashSet() points not to 'new linkhashset<>'
+      // creator node, but to value of ((TypeDerivable) parent).deriveType, which might be field declaration
       if (outputNodes.size() == 1 && context.getInputName() != null) {
         SNode reducedNode = outputNodes.iterator().next();
         // register copied node
         generator.registerMappingLabel(context.getInput(), context.getInputName(), reducedNode);
       }
+      generator.recordTransformInputTrace(context.getInput(), outputNodes);
       return outputNodes;
     }
 
     // try the default case
     TemplateSwitchMapping current = generator.getSwitch(_switch);
     if (current != null) {
-      return current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
+      outputNodes = current.applyDefault(this, _switch, context.getInputName(), context); // FIXME TSM.applyDefault without explicit mappingLabel
+      generator.recordTransformInputTrace(context.getInput(), outputNodes);
+      return outputNodes;
     }
     // no switch-case found for the inputNode - continue with templateNode under the $switch$
     return null;
@@ -316,6 +326,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           TracingUtil.fillOriginalNode(inputNode, reducedNode, false);
         }
       }
+      generator.recordTransformInputTrace(inputNode, outputNodes);
       return outputNodes;
     }
     return null;

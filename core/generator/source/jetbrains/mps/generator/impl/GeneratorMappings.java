@@ -221,7 +221,11 @@ public final class GeneratorMappings {
     }
   }
 
-  public void export(CheckpointState cp) {
+  /**
+   * Record MLs into checkpoint state, assuming output nodes of the mappings are from the model being marked as 'checkpoint',
+   * and input nodes being traced with transitionTrace
+   */
+  public void export(CheckpointStateBuilder cp) {
     for (Entry<String, Map<SNode, Object>> o : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
       String label = o.getKey();
       for (Entry<SNode, Object> i : o.getValue().entrySet()) {

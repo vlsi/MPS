@@ -20,6 +20,7 @@ import jetbrains.mps.classloading.GraphHolder.Graph.VertexVisitor;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.AbsentDependencyException;
+import jetbrains.mps.project.dependency.UsedModulesCollector;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -119,6 +120,8 @@ public class ModuleUpdater {
     myRepository.getModelAccess().checkReadAccess();
     synchronized (LOCK) {
       myChangedFlag = false;
+      UsedModulesCollector usedModulesCollector = new UsedModulesCollector();
+
       myDepGraph.checkGraphsCorrectness();
       int wasEdges = myDepGraph.getEdgesCount();
       int wasVertices = myDepGraph.getVerticesCount();
@@ -126,8 +129,8 @@ public class ModuleUpdater {
       myModulesWithAbsentDeps.clear();
       boolean updated = !myModulesToAdd.isEmpty() || !myModulesToRemove.isEmpty();
       updateRemoved(myModulesToRemove);
-      updateAdded(myModulesToAdd);
-      updated |= updateReloaded(myModulesToReload);
+      updateAdded(myModulesToAdd, usedModulesCollector);
+      updated |= updateReloaded(myModulesToReload, usedModulesCollector);
       myModulesToRemove.clear();
       myModulesToAdd.clear();
       myModulesToReload.clear();
@@ -150,20 +153,20 @@ public class ModuleUpdater {
     }
   }
 
-  private void updateAdded(final Set<? extends ReloadableModule> modulesToAdd) {
+  private void updateAdded(final Set<? extends ReloadableModule> modulesToAdd, UsedModulesCollector usedModulesCollector) {
     updateAddedVertices(modulesToAdd);
-    updateAllEdges();
+    updateAllEdges(usedModulesCollector);
   }
 
   /**
    * @return true if actual update happened
    */
-  private boolean updateReloaded(final Set<? extends ReloadableModule> modulesToReload) {
+  private boolean updateReloaded(final Set<? extends ReloadableModule> modulesToReload, UsedModulesCollector usedModulesCollector) {
     if (modulesToReload.isEmpty()) {
       return false;
     }
     boolean updated = updateReloadedVertices(modulesToReload);
-    updated |= updateReloadedEdges(modulesToReload);
+    updated |= updateReloadedEdges(modulesToReload, usedModulesCollector);
     return updated;
   }
 
@@ -181,8 +184,9 @@ public class ModuleUpdater {
    * Also we are going through all the modules in the repository and checking that their dependencies do exist.
    * It checks every module in the current graph and tracks whether it has some unresolved dependencies.
    * If so it puts it to the map {@link #myModulesWithAbsentDeps}.
+   * @param usedModulesCollector
    */
-  private void updateAllEdges() {
+  private void updateAllEdges(UsedModulesCollector usedModulesCollector) {
     myRepository.getModelAccess().checkReadAccess();
     Collection<? extends SModuleReference> allRefs = myDepGraph.getVertices();
     for (SModuleReference ref : allRefs) {
@@ -190,7 +194,7 @@ public class ModuleUpdater {
       assert module != null;
       Collection<? extends ReloadableModule> deps;
       try {
-        deps = getModuleDeps(module);
+        deps = getModuleDeps(module, usedModulesCollector);
       } catch (AbsentDependencyException e) {
         myModulesWithAbsentDeps.put(module, e);
         continue;
@@ -224,7 +228,7 @@ public class ModuleUpdater {
   /**
    * calculates difference in the outgoing edges for each given module
    */
-  private boolean updateReloadedEdges(Set<? extends ReloadableModule> modulesToReload) {
+  private boolean updateReloadedEdges(Set<? extends ReloadableModule> modulesToReload, UsedModulesCollector usedModulesCollector) {
     boolean updated = false;
     myRepository.getModelAccess().checkReadAccess();
     Collection<? extends SModuleReference> allRefs = myDepGraph.getVertices();
@@ -233,7 +237,7 @@ public class ModuleUpdater {
       Collection<? extends SModuleReference> currentDeps = new HashSet<SModuleReference>(myDepGraph.getOutgoingEdges(mRef));
       Collection<? extends ReloadableModule> newModuleDeps;
       try {
-        newModuleDeps = getModuleDeps(module);
+        newModuleDeps = getModuleDeps(module, usedModulesCollector);
       } catch (AbsentDependencyException e) {
         assert myModulesWithAbsentDeps.containsKey(module);
         return true;
@@ -257,11 +261,11 @@ public class ModuleUpdater {
     return updated;
   }
 
-  private Collection<ReloadableModule> getModuleDeps(@NotNull ReloadableModule module) throws AbsentDependencyException {
+  private Collection<ReloadableModule> getModuleDeps(@NotNull ReloadableModule module, UsedModulesCollector usedModulesCollector) throws AbsentDependencyException {
     myRepository.getModelAccess().checkReadAccess();
     if (module.getRepository() == null) return Collections.emptySet();
     Set<ReloadableModule> deps = new LinkedHashSet<ReloadableModule>();
-    Collection<? extends SModule> directlyUsedModules = GlobalModuleDependenciesManager.directlyUsedModules0(module, true, true);
+    Collection<? extends SModule> directlyUsedModules = usedModulesCollector.directlyUsedModules0(module, true, true);
     for (SModule dep : directlyUsedModules) {
       if (dep instanceof ReloadableModule) {
         ReloadableModule reloadableModule = (ReloadableModule) dep;

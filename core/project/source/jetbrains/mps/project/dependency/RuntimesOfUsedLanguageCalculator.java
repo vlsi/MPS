@@ -31,15 +31,18 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
  * Calculates the runtimes of used languages of the given module.
- *
+ * <p/>
  * Behaves differently depending whether the given module has deployed descriptor or it does not.
- *
+ * <p/>
  * Created by apyshkin on 11/12/15.
  */
 class RuntimesOfUsedLanguageCalculator {
@@ -48,11 +51,13 @@ class RuntimesOfUsedLanguageCalculator {
   private final SModule myModule;
   private final boolean myChecked;
   private final Strategy myStrategy;
+  private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache;
 
-  public RuntimesOfUsedLanguageCalculator(@NotNull SModule module, boolean checked) {
+  public RuntimesOfUsedLanguageCalculator(@NotNull SModule module, boolean checked, Map<SLanguage, Collection<SModule>> languageRuntimesCache) {
     myModule = module;
     myChecked = checked;
     myStrategy = isPackaged() ? new DeploymentStrategy() : new SourceStrategy();
+    myLanguageRuntimesCache = languageRuntimesCache;
   }
 
   private boolean isPackaged() {
@@ -126,20 +131,25 @@ class RuntimesOfUsedLanguageCalculator {
             throw new AbsentDependencyException(usedLang);
           }
         }
-        for (SModuleReference runtimeRef : usedLang.getLanguageRuntimes()) {
-          SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
-          if (runtime != null) {
-            result.add(runtime);
-          } else {
-            String message =
-                String.format("The runtime dependency could not be found in the repository: used language %s; runtime solution: %s", usedLang, runtimeRef);
-            if (myChecked) {
-              throw new AbsentDependencyException(message);
+        if (!myLanguageRuntimesCache.containsKey(usedLang)) {
+          List<SModule> runtimes = new ArrayList<SModule>();
+          myLanguageRuntimesCache.put(usedLang, runtimes);
+          for (SModuleReference runtimeRef : usedLang.getLanguageRuntimes()) {
+            SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
+            if (runtime != null) {
+              runtimes.add(runtime);
             } else {
-              LOG.warn(message);
+              String message =
+                  String.format("The runtime dependency could not be found in the repository: used language %s; runtime solution: %s", usedLang, runtimeRef);
+              if (myChecked) {
+                throw new AbsentDependencyException(message);
+              } else {
+                LOG.warn(message);
+              }
             }
           }
         }
+        result.addAll(myLanguageRuntimesCache.get(usedLang));
       }
       return result;
     }

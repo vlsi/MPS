@@ -146,7 +146,7 @@ public abstract class EnvironmentBase implements Environment {
    * Returns null if there is no opened project with such File
    */
   @Nullable
-  protected final Project getOpenedProject(@NotNull File projectFile) {
+  public final Project getOpenedProject(@NotNull File projectFile) {
     checkInitialized();
     return myContainer.getProject(projectFile);
   }
