@@ -38,13 +38,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -131,7 +130,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     if (mySeparateFile != null) {
       return mySeparateFile;
     }
-    MPSProject mpsProject = ProjectHelper.toMPSProject(getProject());
+    Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
     if (mpsProject == null) {
       return null;
     }
@@ -242,7 +241,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
         SNode node = model.getNode(myNodeId);
         if (node == null) return;
 
-        NavigationSupport.getInstance().openNode(ProjectHelper.toMPSProject(getProject()), node, requestFocus, false);
+        NavigationSupport.getInstance().openNode(ProjectHelper.fromIdeaProject(getProject()), node, requestFocus, false);
       }
     });
   }
@@ -305,7 +304,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   public void delete() throws IncorrectOperationException {
     SNodeDeleteProvider deleteProvider = new SNodeDeleteProvider(
       Collections.singletonList(getSNodeReference()),
-      ProjectHelper.toMPSProject(getProject()));
+      ProjectHelper.fromIdeaProject(getProject()));
     getProjectRepository().getModelAccess().executeUndoTransparentCommand(deleteProvider);
   }
 }

@@ -20,9 +20,7 @@ import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.util.Ref;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -35,6 +33,7 @@ import com.intellij.psi.impl.file.impl.FileManager;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.IncorrectOperationException;
+import com.intellij.util.containers.BidirectionalMap;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -45,7 +44,6 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
@@ -57,11 +55,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel.Problem;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
-import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -70,7 +64,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.Icon;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -91,7 +84,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   public static final PsiDirectory[] EMPTY_PSI_DIRECTORIES = new PsiDirectory[0];
   private final SModelReference myModelReference;
   private final Map<SNodeId, MPSPsiNode> myNodes = new HashMap<SNodeId, MPSPsiNode>();
-  private final Map<MPSPsiNodeBase, Integer> myNodesOrder = new HashMap<MPSPsiNodeBase, Integer>();
+  private final BidirectionalMap<MPSPsiNodeBase, Integer> myNodesOrder = new BidirectionalMap<MPSPsiNodeBase, Integer>();
   private VirtualFile mySourceVirtualFile;
   private PsiDirectoryImpl myPsiDirectory;
 
@@ -349,21 +342,21 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     // if it's singe-file model then return that file
     final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<PsiFile>() {
-        @Override
-        public PsiFile compute() {
-          SModel model = myModelReference.resolve(repository);
-          if (model.getSource() instanceof FileDataSource) {
-            IFile iModelFile = ((FileDataSource) model.getSource()).getFile();
-            VirtualFile vModelFile = VirtualFileUtils.getVirtualFile(iModelFile);
-            if (vModelFile == null) {
-              // extra check due to MPS-21363
-              LOG.warn("getContainingFile() -- could not get virtual file by IFile (" + iModelFile + ")");
-              return null;
-            }
-            return PsiManager.getInstance(getProject()).findFile(vModelFile);
-          } else {
+      @Override
+      public PsiFile compute() {
+        SModel model = myModelReference.resolve(repository);
+        if (model.getSource() instanceof FileDataSource) {
+          IFile iModelFile = ((FileDataSource) model.getSource()).getFile();
+          VirtualFile vModelFile = VirtualFileUtils.getVirtualFile(iModelFile);
+          if (vModelFile == null) {
+            // extra check due to MPS-21363
+            LOG.warn("getContainingFile() -- could not get virtual file by IFile (" + iModelFile + ")");
             return null;
           }
+          return PsiManager.getInstance(getProject()).findFile(vModelFile);
+        } else {
+          return null;
+        }
       }
     });
   }
@@ -422,7 +415,6 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   void reload(SModel model) {
-
     clearChildren();
     for (SNode root : model.getRootNodes()) {
       String rootName = null;
@@ -483,7 +475,6 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   }
 
   private MPSPsiNode convert(SNode node) {
-
     MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept(), node.getRoleInParent());
     myNodes.put(node.getNodeId(), psiNode);
 
@@ -538,10 +529,21 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return myNodesOrder.get(node);
   }
 
+  public MPSPsiNodeBase findNodeByPosition(int pos) {
+    List<MPSPsiNodeBase> nodes = myNodesOrder.getKeysByValue(pos);
+    if (nodes == null) {
+      return null;
+    }
+    assert nodes.size() <= 1 : "Non-unique mapping from psi nodes to their positions in the tree";
+    return nodes.isEmpty() ? null : nodes.get(0);
+  }
+
   private String extractName(SNode sNode) {
     return sNode.getName() != null && !sNode.getName().isEmpty() ? sNode.getName() : sNode.getNodeId().toString();
   }
 
+  // todo replace with depth-first; depth is never very big in real models, and memory consumption will be less,
+  // also the order will be more natural
   private void enumerateNodes() {
     myNodesOrder.clear();
     Deque<MPSPsiNodeBase> stack = new ArrayDeque<MPSPsiNodeBase>();

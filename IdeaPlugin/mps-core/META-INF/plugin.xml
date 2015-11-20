@@ -201,6 +201,7 @@
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
                     overrides="true"/>
+    <fileEditorProvider implementation="jetbrains.mps.idea.core.editor.ModelFileToRootDispatchingEditorProvider"></fileEditorProvider>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
