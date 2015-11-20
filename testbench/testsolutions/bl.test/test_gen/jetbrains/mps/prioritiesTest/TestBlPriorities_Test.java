@@ -32,10 +32,10 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_testBitwisePriorities() throws Exception {
-      this.check(_quotation_createNode_hlijcv_a0a0a0(), 1 & 2 | 3 << 4 ^ 5 | 6);
+      this.check(_quotation_createNode_p8h609_a0a0a0c(), 1 & 2 | 3 << 4 ^ 5 | 6);
     }
     public void test_testBooleanAndWithEqualsOperation() throws Exception {
-      this.check(_quotation_createNode_hlijcv_a0a0a1(), true || false == false);
+      this.check(_quotation_createNode_p8h609_a0a0a1c(), true || false == false);
     }
     public void check(SNode expr, Object expectedValue) {
       this.expressionPriorityRebalance(expr);
@@ -94,7 +94,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
-    private static SNode _quotation_createNode_hlijcv_a0a0a0() {
+    private static SNode _quotation_createNode_p8h609_a0a0a0c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
@@ -139,7 +139,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_hlijcv_a0a0a1() {
+    private static SNode _quotation_createNode_p8h609_a0a0a1c() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

@@ -97,7 +97,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     SafeDeleteModuleDependency_Action.this.removeDependency(from, to, _params);
   }
   private void removeDependency(final AbstractModule from, final SModule to, final Map<String, Object> _params) {
-    final ModuleDescriptor descriptor = from.getModuleDescriptor();
+    ModuleDescriptor descriptor = from.getModuleDescriptor();
     Collection<Dependency> dependencies = descriptor.getDependencies();
     List<Dependency> badDeps = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).where(new IWhereFilter<Dependency>() {
       public boolean accept(Dependency it) {

@@ -1103,12 +1103,6 @@ public class ASTConverter {
     }
     return null;
   }
-  private static StringBuilder check_rbndtb_a0a0a0m0r(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.append(checkedDotThisExpression.getTypeName(SLinkOperations.getTarget(par, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
-    }
-    return null;
-  }
   private static StringBuilder check_rbndtb_a7a0a21a71(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.typeReferenceId(arg.type));
