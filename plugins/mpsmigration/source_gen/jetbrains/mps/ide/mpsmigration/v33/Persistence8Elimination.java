@@ -16,6 +16,13 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 
 public class Persistence8Elimination extends BaseProjectMigration {
   public static final String ID = "jetbrains.mps.v8_elimination";
@@ -57,7 +64,40 @@ public class Persistence8Elimination extends BaseProjectMigration {
           ((EditableSModel) model).save();
         }
       });
+
+      Sequence.fromIterable(models).select(new ISelector<PersistenceVersionAware, DataSource>() {
+        public DataSource select(PersistenceVersionAware it) {
+          return it.getSource();
+        }
+      }).select(new ISelector<DataSource, IFile>() {
+        public IFile select(DataSource it) {
+          if (it instanceof FileDataSource) {
+            IFile modelFile = as_jjkivq_a0a0a0a0a0a0a0a0g0d0e(it, FileDataSource.class).getFile();
+            String modelPath = modelFile.getPath();
+            return FileSystem.getInstance().getFileByPath(modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + MPSExtentions.DOT_REFACTORINGS);
+          } else if (it instanceof FilePerRootDataSource) {
+            return as_jjkivq_a0a0a0a0a0a0a0a0g0d0e_0(it, FilePerRootDataSource.class).getFile(MPSExtentions.DOT_REFACTORINGS);
+          } else {
+            return null;
+          }
+        }
+      }).where(new IWhereFilter<IFile>() {
+        public boolean accept(IFile it) {
+          return it != null && it.exists();
+        }
+      }).visitAll(new IVisitor<IFile>() {
+        public void visit(IFile it) {
+          it.delete();
+        }
+      });
     }
+
     return true;
+  }
+  private static <T> T as_jjkivq_a0a0a0a0a0a0a0a0g0d0e(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_jjkivq_a0a0a0a0a0a0a0a0g0d0e_0(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }
