@@ -5494,27 +5494,63 @@
   </node>
   <node concept="24kQdi" id="6MWs_Xbdngr">
     <property role="3GE5qa" value="operation.node" />
-    <ref role="1XX52x" to="tp25:6MWs_Xbdj5c" resolve="Node_ChildAndAttributesAccessOperation" />
+    <ref role="1XX52x" to="tp25:6MWs_Xbdj5c" resolve="Node_GetChildrenAndChildAttributesOperation" />
     <node concept="3EZMnI" id="6MWs_Xbdngt" role="2wV5jI">
-      <node concept="PMmxH" id="6wdJvF5dKv$" role="3EZMnx">
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-      </node>
-      <node concept="3F0ifn" id="6MWs_XbdngE" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;" />
-      </node>
-      <node concept="1iCGBv" id="6MWs_Xbdnh1" role="3EZMnx">
-        <ref role="1NtTu8" to="tp25:6MWs_XbdngM" />
-        <node concept="1sVBvm" id="6MWs_Xbdnh3" role="1sWHZn">
-          <node concept="3F0A7n" id="6MWs_Xbdnhc" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpce:fA0kJcN" resolve="role" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="6MWs_Xbdnhm" role="3EZMnx">
-        <property role="3F0ifm" value="&gt;" />
+      <node concept="PMmxH" id="4dU69VRpn8g" role="3EZMnx">
+        <ref role="PMmxG" node="h$6uJpB" resolve="ReplaceableAliasAndParms_Comp" />
       </node>
       <node concept="l2Vlx" id="6MWs_Xbdngw" role="2iSdaV" />
+    </node>
+    <node concept="3EZMnI" id="4dU69VRpoSp" role="6VMZX">
+      <node concept="3EZMnI" id="4dU69VRpoSq" role="3EZMnx">
+        <node concept="2iRkQZ" id="4dU69VRpoSr" role="2iSdaV" />
+        <node concept="3F0ifn" id="4dU69VRpoSs" role="3EZMnx">
+          <property role="3F0ifm" value="The 'children and child attributes' operation" />
+          <node concept="30gYXW" id="4dU69VRpoSt" role="3F10Kt">
+            <property role="Vb096" value="lightGray" />
+          </node>
+          <node concept="VechU" id="4dU69VRpoSu" role="3F10Kt">
+            <property role="Vb096" value="blue" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="4dU69VRpoSv" role="3EZMnx" />
+        <node concept="3EZMnI" id="4dU69VRpoSw" role="3EZMnx">
+          <node concept="VPM3Z" id="4dU69VRpoSx" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="3F0ifn" id="4dU69VRpoSy" role="3EZMnx">
+            <property role="3F0ifm" value="Returns collection of children and child attributes of this nodes in the same role specified by" />
+            <node concept="Vb9p2" id="4dU69VRpoSz" role="3F10Kt" />
+          </node>
+          <node concept="3F0ifn" id="4dU69VRpoS$" role="3EZMnx">
+            <property role="3F0ifm" value="linkQualifier" />
+          </node>
+          <node concept="3F0ifn" id="4dU69VRpoS_" role="3EZMnx">
+            <property role="3F0ifm" value="parameter" />
+            <node concept="Vb9p2" id="4dU69VRpoSA" role="3F10Kt" />
+          </node>
+          <node concept="2iRfu4" id="4dU69VRpoSB" role="2iSdaV" />
+        </node>
+        <node concept="3F0ifn" id="4dU69VRpoSC" role="3EZMnx" />
+        <node concept="3F0ifn" id="4dU69VRpoSD" role="3EZMnx">
+          <property role="3F0ifm" value="Parameter:" />
+          <node concept="Vb9p2" id="4dU69VRpoSE" role="3F10Kt" />
+        </node>
+        <node concept="3EZMnI" id="4dU69VRpoSF" role="3EZMnx">
+          <node concept="3F0ifn" id="4dU69VRpoSG" role="3EZMnx">
+            <property role="3F0ifm" value="linkQualifier" />
+          </node>
+          <node concept="VPM3Z" id="4dU69VRpoSH" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="3F0ifn" id="4dU69VRpoSI" role="3EZMnx">
+            <property role="3F0ifm" value="LinkDeclaration of corresponding child reference" />
+            <node concept="Vb9p2" id="4dU69VRpoSJ" role="3F10Kt" />
+          </node>
+          <node concept="2iRfu4" id="4dU69VRpoSK" role="2iSdaV" />
+        </node>
+      </node>
+      <node concept="2iRkQZ" id="4dU69VRpoSL" role="2iSdaV" />
     </node>
   </node>
 </model>
