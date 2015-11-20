@@ -186,6 +186,7 @@ public class BehaviorRegistryImpl implements BehaviorRegistry {
 
   @Override
   public void clear() {
+    myBehaviorDescriptors.clear();
     myBHDescriptors.clear();
     myLegacyBehaviorDescriptors.clear();
     myMRO.reset();

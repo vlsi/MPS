@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class TransientModelsNotification {
   private final Project myProject;
-  private TransientModelBallonDisplayer myDisplayer;
   private StatusBar myStatusBar;
   private TransientModelsWidget myWidget;
   public TransientModelsNotification(Project project) {
@@ -27,14 +26,15 @@ public class TransientModelsNotification {
     myStatusBar.addWidget(myWidget);
     myWidget.update();
 
-    myDisplayer = new TransientModelBallonDisplayer(myProject, myWidget);
-    myDisplayer.init();
+    TransientModelBallonDisplayer displayer = new TransientModelBallonDisplayer(myProject, myWidget);
+    Disposer.register(myWidget, displayer);
+    displayer.init();
   }
 
   public void projectClosed() {
     BaseCustomProjectPlugin.HACK_PROJECT_COMPONENT_STATE.set(myProject, null);
     myStatusBar.removeWidget(myWidget.ID());
-    Disposer.dispose(myDisplayer);
+    Disposer.dispose(myWidget);
   }
 
   public static void updateWidgets() {
