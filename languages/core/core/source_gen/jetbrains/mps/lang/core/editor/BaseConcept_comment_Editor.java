@@ -54,7 +54,6 @@ public class BaseConcept_comment_Editor extends DefaultNodeEditor {
       editorContext.getCellFactory().removeCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
       {
         EditorCell editorCell = editorContext.getCellFactory().createEditorCell(node, false, BaseConcept_comment_Editor.class);
-        BaseConcept_comment_Actions.setCellActions(editorCell, node, editorContext);
         return editorCell;
       }
     } finally {
