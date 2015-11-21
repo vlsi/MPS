@@ -144,7 +144,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     final SContainmentLink finalRole = role.value;
     final NodeLocation newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), currentModel.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
       @Override
-      public boolean check(NodeLocation selectedObject, SModel model) {
+      public boolean check(final NodeLocation selectedObject, SModel model) {
         if (selectedObject == null) {
           return false;
         }
@@ -152,8 +152,13 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           if (finalRole == null) {
             return false;
           }
-          Collection<SContainmentLink> containmentLinks = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(project.getRepository()).getConcept().getContainmentLinks();
-          return CollectionSequence.fromCollection(containmentLinks).contains(finalRole);
+          final Wrappers._T<Collection<SContainmentLink>> containmentLinks = new Wrappers._T<Collection<SContainmentLink>>();
+          project.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              containmentLinks.value = ((NodeLocation.NodeLocationChild) selectedObject).getNode().resolve(project.getRepository()).getConcept().getContainmentLinks();
+            }
+          });
+          return CollectionSequence.fromCollection(containmentLinks.value).contains(finalRole);
         } else {
           return true;
         }
