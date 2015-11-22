@@ -3624,6 +3624,10 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fzclF8l" resolve="Statement" />
     </node>
+    <node concept="asaX9" id="4TrdCq8xRJM" role="lGtFl">
+      <property role="YLPcu" value="3.3" />
+      <property role="YLQ7P" value="Use BaseCommentAttribute instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5vlcUuJ5uOU">
     <property role="R4oN_" value="single-line comment" />
