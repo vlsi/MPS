@@ -54,14 +54,14 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     }
   }
 
-  public static class MoveNodeParticipants extends Extension.Default<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>> {
+  public static class MoveNodeParticipants extends Extension.Default<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>> {
     public MoveNodeParticipants() {
       super("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP");
     }
-    public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>> get() {
-      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>() {
-        public RefactoringParticipant.PersistentRefactoringParticipant<?, ?> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
-          return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?>) it;
+    public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> get() {
+      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>>() {
+        public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
+          return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>) it;
         }
       });
     }
@@ -69,18 +69,18 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
 
   public static class SerializingParticipantState<I, F> {
     private MoveNodeRefactoringParticipant<I, F> myParticipant;
-    private RefactoringParticipant.PersistentRefactoringParticipant<I, F> myPersistentParticipant;
+    private RefactoringParticipant.PersistentRefactoringParticipant<I, F, SNode, SNode> myPersistentParticipant;
     public static <I, F> MoveNodeRefactoringLogParticipant.SerializingParticipantState<I, F> create(MoveNodeRefactoringParticipant<I, F> participant) {
       if (!(participant instanceof RefactoringParticipant.PersistentRefactoringParticipant)) {
         return null;
       }
-      return new MoveNodeRefactoringLogParticipant.SerializingParticipantState<I, F>(participant, (RefactoringParticipant.PersistentRefactoringParticipant<I, F>) participant);
+      return new MoveNodeRefactoringLogParticipant.SerializingParticipantState<I, F>(participant, (RefactoringParticipant.PersistentRefactoringParticipant<I, F, SNode, SNode>) participant);
     }
-    public SerializingParticipantState(MoveNodeRefactoringParticipant<I, F> participant, RefactoringParticipant.PersistentRefactoringParticipant<I, F> participantPersistence) {
+    public SerializingParticipantState(MoveNodeRefactoringParticipant<I, F> participant, RefactoringParticipant.PersistentRefactoringParticipant<I, F, SNode, SNode> participantPersistence) {
       myParticipant = participant;
       myPersistentParticipant = participantPersistence;
     }
-    public RefactoringParticipant.PersistentRefactoringParticipant<I, F> getParticipant() {
+    public RefactoringParticipant.PersistentRefactoringParticipant<I, F, SNode, SNode> getParticipant() {
       return myPersistentParticipant;
     }
     public SNode getSerializedInitial(SNode oldNode) {
@@ -258,14 +258,14 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
         MoveNodeRefactoringLogParticipant.LogBuilder logBuilder = MoveNodeRefactoringLogParticipant.LogBuilder.getBuilder(refactoringSession, sourceModule);
         logBuilder.addOptions(selectedOptions);
         {
-          Iterator<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>> participant_it = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>() {
-            public RefactoringParticipant.PersistentRefactoringParticipant<?, ?> select(MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> it) {
+          Iterator<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>> participant_it = ListSequence.fromList(participantStates).select(new ISelector<MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>>() {
+            public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> select(MoveNodeRefactoringLogParticipant.SerializingParticipantState<?, ?> it) {
               return it.getParticipant();
             }
           }).iterator();
           Iterator<SNode> i_it = ListSequence.fromList(initialStates).iterator();
           Iterator<SNode> f_it = ListSequence.fromList(finalStates).iterator();
-          RefactoringParticipant.PersistentRefactoringParticipant<?, ?> participant_var;
+          RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> participant_var;
           SNode i_var;
           SNode f_var;
           while (participant_it.hasNext() && i_it.hasNext() && f_it.hasNext()) {

@@ -230,7 +230,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
 
-    final Map<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> changes = MapSequence.fromMap(new HashMap<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>());
+    final Map<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> changes = MapSequence.fromMap(new HashMap<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>>());
     final Map<SNodeReference, SNodeReference> nodeRoots = MapSequence.fromMap(new HashMap<SNodeReference, SNodeReference>());
     final Wrappers._T<List<RefactoringParticipant.Option>> options = new Wrappers._T<List<RefactoringParticipant.Option>>();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -245,16 +245,16 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           }
         }
         for (MoveNodeRefactoringParticipant<?, ?> participant : Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).toListSequence()) {
-          Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> participantStates = MapSequence.fromMap(new HashMap<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>());
+          Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> participantStates = MapSequence.fromMap(new HashMap<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>());
           MapSequence.fromMap(changes).put(participant, participantStates);
           for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(nodeRoots).keySet())) {
-            MapSequence.fromMap(participantStates).put(nodeRef, MoveNodeRefactoringParticipant.MoveNodeParticipantState.create(participant, resolveNode(nodeRef, project)));
+            MapSequence.fromMap(participantStates).put(nodeRef, RefactoringParticipant.ParticipantState.create(participant, resolveNode(nodeRef, project)));
           }
         }
-        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>>, RefactoringParticipant.Option>() {
-          public Iterable<RefactoringParticipant.Option> translate(IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> it) {
-            return MapSequence.fromMap(it.value()).translate(new ITranslator2<IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>, RefactoringParticipant.Option>() {
-              public Iterable<RefactoringParticipant.Option> translate(IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> it) {
+        options.value = MapSequence.fromMap(changes).translate(new ITranslator2<IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>>, RefactoringParticipant.Option>() {
+          public Iterable<RefactoringParticipant.Option> translate(IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> it) {
+            return MapSequence.fromMap(it.value()).translate(new ITranslator2<IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>, RefactoringParticipant.Option>() {
+              public Iterable<RefactoringParticipant.Option> translate(IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> it) {
                 return it.value().getAvaliableOptions(project.getRepository());
               }
             });
@@ -283,8 +283,8 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantStates : MapSequence.fromMap(changes)) {
-          for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> participantState : MapSequence.fromMap(participantStates.value())) {
+        for (IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> participantStates : MapSequence.fromMap(changes)) {
+          for (IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> participantState : MapSequence.fromMap(participantStates.value())) {
             participantState.value().findChanges(project.getRepository(), selectedOptions, project.getScope());
           }
         }
@@ -297,8 +297,8 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     for (SNodeReference node : SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet())) {
       MapSequence.fromMap(shouldKeep).put(node, false);
     }
-    for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantChanges : MapSequence.fromMap(changes)) {
-      for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
+    for (IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> participantChanges : MapSequence.fromMap(changes)) {
+      for (IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
         for (RefactoringParticipant.Change<?, ?> change : ListSequence.fromList(nodeChanges.value().getChanges())) {
           MapSequence.fromMap(shouldKeep).putValue(MapSequence.fromMap(nodeRoots).get(nodeChanges.key()), MapSequence.fromMap(shouldKeep).get(MapSequence.fromMap(nodeRoots).get(nodeChanges.key())) || (change.needsToPreserveOldNode()));
           searchResults.addAll(change.getSearchResults());
@@ -345,8 +345,8 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
               }
             }
 
-            for (IMapping<MoveNodeRefactoringParticipant, Map<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>>> participantChanges : MapSequence.fromMap(changes)) {
-              for (IMapping<SNodeReference, MoveNodeRefactoringParticipant.MoveNodeParticipantState<?, ?>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
+            for (IMapping<RefactoringParticipant, Map<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> participantChanges : MapSequence.fromMap(changes)) {
+              for (IMapping<SNodeReference, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>> nodeChanges : MapSequence.fromMap(participantChanges.value())) {
                 nodeChanges.value().confirm(MapSequence.fromMap(copyMap).get(MapSequence.fromMap(resolveMap).get(nodeChanges.key())), project.getRepository(), refactoringSession);
               }
             }
