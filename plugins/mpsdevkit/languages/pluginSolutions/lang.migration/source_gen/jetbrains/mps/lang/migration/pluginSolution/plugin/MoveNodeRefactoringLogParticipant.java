@@ -59,9 +59,9 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
       super("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP");
     }
     public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> get() {
-      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>>() {
-        public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
-          return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?, SNode, SNode>) it;
+      return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
+        public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
+          return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>) it;
         }
       });
     }
