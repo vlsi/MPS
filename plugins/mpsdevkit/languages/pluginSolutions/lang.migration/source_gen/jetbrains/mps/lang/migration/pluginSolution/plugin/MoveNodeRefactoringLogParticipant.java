@@ -205,14 +205,14 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
   }
   public List<RefactoringParticipant.Option> getAvailableOptions(SNodeReference initialState, SRepository repository) {
     if (isApplicable(initialState, repository)) {
-      return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
+      return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
     } else {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
     }
   }
 
   public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    if (!(isApplicable(initialState, repository)) || !(ListSequence.fromList(selectedOptions).contains(myOption))) {
+    if (!(isApplicable(initialState, repository)) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     }
     final SNode sourceNode = initialState.resolve(repository);
@@ -280,6 +280,6 @@ public class MoveNodeRefactoringLogParticipant implements MoveNodeRefactoringPar
     return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), change);
   }
 
-  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.writeRefactoringLog", "Write refactoring log");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeRefactoringLog", "Write refactoring log");
 
 }

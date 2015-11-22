@@ -15,13 +15,12 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 
 public class UpdateModelImports implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
@@ -35,7 +34,7 @@ public class UpdateModelImports implements MoveNodeRefactoringParticipant<SNodeR
     }
   }
 
-  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.updateModelImports", "Update model imports");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateModelImports", "Update model imports");
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<SNodeReference, SNodeReference>() {
     public SNodeReference beforeMove(SNode nodeToMove) {
       return nodeToMove.getReference();
@@ -48,10 +47,10 @@ public class UpdateModelImports implements MoveNodeRefactoringParticipant<SNodeR
     return myDataCollector;
   }
   public List<RefactoringParticipant.Option> getAvailableOptions(SNodeReference initialState, SRepository repository) {
-    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
+    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
   }
   public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(SNodeReference initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    if (!(ListSequence.fromList(selectedOptions).contains(myOption))) {
+    if (!(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     }
     return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>(), new RefactoringParticipant.Change<SNodeReference, SNodeReference>() {
@@ -69,46 +68,47 @@ public class UpdateModelImports implements MoveNodeRefactoringParticipant<SNodeR
           public void run() {
             SNode node = finalState.resolve(repository);
             SModel model = node.getModel();
-            SModule module = model.getModule();
-            SModelInternal modelInternal = (SModelInternal) model;
-            AbstractModule abstractModule = (AbstractModule) module;
-            SLanguage usedLanguage = node.getConcept().getLanguage();
-            if (!(modelInternal.importedLanguageIds().contains(usedLanguage))) {
-              modelInternal.addLanguage(usedLanguage);
-            }
+            addLanguageImport(model, node.getConcept().getLanguage());
             for (SReference ref : Sequence.fromIterable(node.getReferences())) {
-              SModelReference targetModelReference = ref.getTargetSModelReference();
-              SModule targetModule = check_lyx41z_a0b0h0a0a0a3a0a0a1a7(check_lyx41z_a0a1a7a0a0a0d0a0a0b0h(targetModelReference, repository));
-              if (targetModelReference == null || targetModule == null) {
-                continue;
-              }
-              if (neq_lyx41z_a0d0h0a0a0a0a0d0a1a1a7(targetModelReference, model.getReference())) {
-                if (!(modelInternal.importedModels().contains(targetModelReference))) {
-                  modelInternal.addModelImport(targetModelReference, true);
-                }
-              }
-              if (!(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(targetModule))) {
-                abstractModule.addDependency(targetModule.getModuleReference(), false);
-              }
+              addModelImport(model, ref.getTargetSModelReference().resolve(repository));
             }
           }
         });
       }
     });
   }
-  private static SModule check_lyx41z_a0b0h0a0a0a3a0a0a1a7(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
+  public static void addLanguageImport(SModel model, SLanguage language) {
+    if (!(model instanceof SModelInternal)) {
+      return;
     }
-    return null;
-  }
-  private static SModel check_lyx41z_a0a1a7a0a0a0d0a0a0b0h(SModelReference checkedDotOperand, SRepository repository) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(repository);
+    SModelInternal modelInternal = (SModelInternal) model;
+    if (!(modelInternal.importedLanguageIds().contains(language))) {
+      modelInternal.addLanguage(language);
     }
-    return null;
   }
-  private static boolean neq_lyx41z_a0d0h0a0a0a0a0d0a1a1a7(Object a, Object b) {
-    return !(((a != null ? a.equals(b) : a == b)));
+  public static void addModelImport(SModel model, SModel targetModel) {
+    if (!(model instanceof SModelInternal)) {
+      return;
+    }
+    if (!(model.getModule() instanceof AbstractModule)) {
+      return;
+    }
+    if (targetModel == null) {
+      return;
+    }
+    if (targetModel.getModule() == null) {
+      return;
+    }
+    SModelInternal modelInternal = (SModelInternal) model;
+    AbstractModule module = (AbstractModule) model.getModule();
+    SModule targetModule = targetModel.getModule();
+    if (targetModel != model) {
+      if (!(modelInternal.importedModels().contains(targetModel.getReference()))) {
+        modelInternal.addModelImport(targetModel.getReference(), true);
+      }
+    }
+    if (!(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(targetModule))) {
+      module.addDependency(targetModule.getModuleReference(), false);
+    }
   }
 }

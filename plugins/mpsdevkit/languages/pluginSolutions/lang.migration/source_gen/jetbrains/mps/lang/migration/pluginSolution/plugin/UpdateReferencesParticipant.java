@@ -72,7 +72,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public String getId() {
     return "moveNode.updateReferences";
   }
-  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references in current project");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references in current project");
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference>() {
     public NamedNodeReference beforeMove(SNode nodeToMove) {
       return new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove));
@@ -86,11 +86,11 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   }
 
   public List<RefactoringParticipant.Option> getAvailableOptions(NamedNodeReference initialState, SRepository repository) {
-    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
+    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
   }
 
-  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    if (!(ListSequence.fromList(selectedOptions).contains(myOption))) {
+  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+    if (!(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>());
     }
     {
@@ -140,6 +140,9 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
                     return;
                   }
                   node.setReference(role, jetbrains.mps.smodel.SReference.create(role, node, finalState.reference().getModelReference(), finalState.reference().getNodeId(), resolveInfo));
+                  if (ListSequence.fromList(selectedOptions).contains(UpdateModelImports.OPTION)) {
+                    UpdateModelImports.addModelImport(node.getModel(), finalState.reference().getModelReference().resolve(repository));
+                  }
                 }
               });
             }

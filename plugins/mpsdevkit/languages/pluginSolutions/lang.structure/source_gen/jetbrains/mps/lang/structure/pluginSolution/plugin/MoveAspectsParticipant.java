@@ -67,7 +67,7 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
   }
   public List<RefactoringParticipant.Option> getAvailableOptions(SNodeReference initialState, SRepository repository) {
     if (isApplicable(initialState, repository)) {
-      return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
+      return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
     } else {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
     }
@@ -80,7 +80,7 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
 
   @Override
   public List<RefactoringParticipant.Change<SNodeReference, SNodeReference>> getChanges(final SNodeReference initialState, final SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, final SearchScope searchScope, final Iterable<RefactoringParticipant.ParticipantState> parents) {
-    if (!((isApplicable(initialState, repository))) || !(ListSequence.fromList(selectedOptions).contains(myOption))) {
+    if (!((isApplicable(initialState, repository))) || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>());
     } else {
       final SNode sourceConcept = SNodeOperations.cast(initialState.resolve(repository), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
@@ -163,5 +163,5 @@ public class MoveAspectsParticipant implements MoveNodeRefactoringParticipant<SN
       }).toListSequence();
     }
   }
-  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.moveConceptAspects", "Move concept aspects");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.moveConceptAspects", "Move concept aspects");
 }

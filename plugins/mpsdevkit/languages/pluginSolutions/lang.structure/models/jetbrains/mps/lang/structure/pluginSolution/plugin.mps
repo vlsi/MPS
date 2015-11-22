@@ -4885,8 +4885,8 @@
                   <node concept="3uibUv" id="37Il31hY4Jv" role="HW$YZ">
                     <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
                   </node>
-                  <node concept="37vLTw" id="37Il31hZ0G$" role="HW$Y0">
-                    <ref role="3cqZAo" node="37Il31hYaVR" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeockI" role="HW$Y0">
+                    <ref role="3cqZAo" node="5z_gLGeo9rj" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -5085,8 +5085,8 @@
                   <ref role="3cqZAo" node="37Il31hYWEP" resolve="selectedOptions" />
                 </node>
                 <node concept="3JPx81" id="37Il31hYZP3" role="2OqNvi">
-                  <node concept="37vLTw" id="37Il31hZ01G" role="25WWJ7">
-                    <ref role="3cqZAo" node="37Il31hYaVR" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeobU3" role="25WWJ7">
+                    <ref role="3cqZAo" node="5z_gLGeo9rj" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -5888,12 +5888,13 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="312cEg" id="37Il31hYaVR" role="jymVt">
-      <property role="TrG5h" value="myOption" />
-      <node concept="3Tm6S6" id="37Il31hYaVS" role="1B3o_S" />
+    <node concept="Wx3nA" id="5z_gLGeo9rj" role="jymVt">
+      <property role="TrG5h" value="OPTION" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="37Il31hYdbI" role="1tU5fm">
         <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
       </node>
+      <node concept="3Tm1VV" id="5z_gLGeobxz" role="1B3o_S" />
       <node concept="2ShNRf" id="37Il31hYdWj" role="33vP2m">
         <node concept="1pGfFk" id="37Il31hYdK3" role="2ShVmc">
           <ref role="37wK5l" to="lfzw:37Il31hWKPu" resolve="RefactoringParticipant.Option" />
@@ -6739,8 +6740,8 @@
                   <node concept="3uibUv" id="37Il31hXlNv" role="HW$YZ">
                     <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
                   </node>
-                  <node concept="37vLTw" id="37Il31hXiIF" role="HW$Y0">
-                    <ref role="3cqZAo" node="37Il31hXcp1" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGenXwD" role="HW$Y0">
+                    <ref role="3cqZAo" node="5z_gLGenVCx" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -6768,12 +6769,13 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="37Il31hXcp1" role="jymVt">
-      <property role="TrG5h" value="myOption" />
-      <node concept="3Tm6S6" id="37Il31hXcp2" role="1B3o_S" />
+    <node concept="Wx3nA" id="5z_gLGenVCx" role="jymVt">
+      <property role="TrG5h" value="OPTION" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="37Il31hXdQf" role="1tU5fm">
         <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
       </node>
+      <node concept="3Tm1VV" id="5z_gLGenZ5q" role="1B3o_S" />
       <node concept="2ShNRf" id="37Il31hXepe" role="33vP2m">
         <node concept="1pGfFk" id="37Il31hXed8" role="2ShVmc">
           <ref role="37wK5l" to="lfzw:37Il31hWKPu" resolve="RefactoringParticipant.Option" />
@@ -6886,8 +6888,8 @@
                   <ref role="3cqZAo" node="PXLOXmzRVY" resolve="selectedOptions" />
                 </node>
                 <node concept="3JPx81" id="37Il31hXH4T" role="2OqNvi">
-                  <node concept="37vLTw" id="37Il31hXHkr" role="25WWJ7">
-                    <ref role="3cqZAo" node="37Il31hXcp1" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGenYQ6" role="25WWJ7">
+                    <ref role="3cqZAo" node="5z_gLGenVCx" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -7843,8 +7845,8 @@
                   <node concept="3uibUv" id="1$U7CScmwgr" role="HW$YZ">
                     <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
                   </node>
-                  <node concept="37vLTw" id="1$U7CScmlT5" role="HW$Y0">
-                    <ref role="3cqZAo" node="1$U7CScmgar" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeo_Rm" role="HW$Y0">
+                    <ref role="3cqZAo" node="5z_gLGeozXI" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -7872,12 +7874,13 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="1$U7CScmgar" role="jymVt">
-      <property role="TrG5h" value="myOption" />
-      <node concept="3Tm6S6" id="1$U7CScmgas" role="1B3o_S" />
+    <node concept="Wx3nA" id="5z_gLGeozXI" role="jymVt">
+      <property role="TrG5h" value="OPTION" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1$U7CScmgat" role="1tU5fm">
         <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
       </node>
+      <node concept="3Tm1VV" id="5z_gLGeo_x$" role="1B3o_S" />
       <node concept="2ShNRf" id="1$U7CScmgau" role="33vP2m">
         <node concept="1pGfFk" id="1$U7CScmgav" role="2ShVmc">
           <ref role="37wK5l" to="lfzw:37Il31hWKPu" resolve="RefactoringParticipant.Option" />
@@ -7990,8 +7993,8 @@
                   <ref role="3cqZAo" node="PXLOXm_2JG" resolve="selectedOptions" />
                 </node>
                 <node concept="3JPx81" id="1$U7CScmA4b" role="2OqNvi">
-                  <node concept="37vLTw" id="1$U7CScmAh0" role="25WWJ7">
-                    <ref role="3cqZAo" node="1$U7CScmgar" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeoBv0" role="25WWJ7">
+                    <ref role="3cqZAo" node="5z_gLGeozXI" resolve="OPTION" />
                   </node>
                 </node>
               </node>
