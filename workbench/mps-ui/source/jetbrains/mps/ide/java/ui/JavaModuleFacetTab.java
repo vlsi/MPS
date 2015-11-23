@@ -87,7 +87,6 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       JBLabel solutionKindLabel = new JBLabel(PropertiesBundle.message("facet.java.solutionkind"));
       myComboBox = new ComboBox(new DefaultComboBoxModel(SolutionKind.values()));
       myComboBox.setSelectedItem(descriptor.getKind());
-      myComboBox.setPreferredSize(new Dimension(300,20));
 
       advancedTab.add(solutionKindLabel, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
       advancedTab.add(myComboBox, new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
