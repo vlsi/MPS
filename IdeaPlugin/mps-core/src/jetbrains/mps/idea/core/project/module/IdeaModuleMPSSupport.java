@@ -18,9 +18,15 @@ package jetbrains.mps.idea.core.project.module;
 
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootManager;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.Collection;
 
 /**
  * Created by danilla on 26/10/15.
@@ -35,5 +41,12 @@ public class IdeaModuleMPSSupport extends ModuleMPSSupport {
   @Override
   public Solution getSolution(Module module) {
     return FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
+  }
+
+  @Override
+  public void fixImports(Module module, Collection<SModuleReference> addedLanguages) {
+    ModifiableRootModel modModel = ModuleRootManager.getInstance(module).getModifiableModel();
+    ModuleRuntimeLibrariesImporter.importForUsedLanguages(module, addedLanguages, modModel);
+    modModel.commit();
   }
 }

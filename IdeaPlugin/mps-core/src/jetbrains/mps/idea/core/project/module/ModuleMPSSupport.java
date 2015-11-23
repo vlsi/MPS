@@ -21,7 +21,10 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+
+import java.util.Collection;
 
 /**
  * This class encapsulates the way an MPS solution is tied to Idea module. It may be either via a module facet
@@ -55,5 +58,11 @@ public abstract class ModuleMPSSupport {
       }
     }
     return null;
+  }
+
+  /**
+   * Called when the model gets new language imports
+   */
+  public void fixImports(Module module, Collection<SModuleReference> addedLanguages) {
   }
 }
