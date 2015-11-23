@@ -45,6 +45,7 @@
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" implicit="true" />
   </imports>
@@ -120,6 +121,7 @@
         <child id="1224071154657" name="classifierType" index="0kSFW" />
         <child id="1224071154656" name="expression" index="0kSFX" />
       </concept>
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -396,6 +398,9 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
@@ -410,6 +415,9 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -832,6 +840,48 @@
     </node>
     <node concept="2ScWuX" id="7BBQIYkR46T" role="tmbBb">
       <node concept="3clFbS" id="7BBQIYkR46U" role="2VODD2">
+        <node concept="3SKdUt" id="3WLTQoxff1b" role="3cqZAp">
+          <node concept="3SKdUq" id="3WLTQoxff4f" role="3SKWNk">
+            <property role="3SKdUp" value="this hack should be removed during rewriting rename refactoring to the new refactoring framework" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="3WLTQoxeRZV" role="3cqZAp">
+          <node concept="3clFbS" id="3WLTQoxeRZX" role="3clFbx">
+            <node concept="3cpWs6" id="3WLTQoxeSJB" role="3cqZAp">
+              <node concept="3clFbT" id="3WLTQoxeSV5" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="22lmx$" id="3WLTQoxf$qk" role="3clFbw">
+            <node concept="2OqwBi" id="3WLTQoxf$Hb" role="3uHU7w">
+              <node concept="2OqwBi" id="3WLTQoxf$wS" role="2Oq$k0">
+                <node concept="2WthIp" id="3WLTQoxf$wV" role="2Oq$k0" />
+                <node concept="3gHZIF" id="3WLTQoxf$wX" role="2OqNvi">
+                  <ref role="2WH_rO" node="7BBQIYkR45U" resolve="target" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="3WLTQoxf$QM" role="2OqNvi">
+                <node concept="chp4Y" id="3WLTQoxf$X8" role="cj9EA">
+                  <ref role="cht4Q" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3WLTQoxeSmi" role="3uHU7B">
+              <node concept="2OqwBi" id="3WLTQoxeSbc" role="2Oq$k0">
+                <node concept="2WthIp" id="3WLTQoxeSbf" role="2Oq$k0" />
+                <node concept="3gHZIF" id="3WLTQoxeSbh" role="2OqNvi">
+                  <ref role="2WH_rO" node="7BBQIYkR45U" resolve="target" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="3WLTQoxeSxr" role="2OqNvi">
+                <node concept="chp4Y" id="3WLTQoxeSAI" role="cj9EA">
+                  <ref role="cht4Q" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7BBQIYkR46V" role="3cqZAp">
           <node concept="3trCAK" id="7BBQIYkR46W" role="3clFbG">
             <ref role="3trCAN" to="2yc6:1aNzB2zVRgC" resolve="Rename" />
