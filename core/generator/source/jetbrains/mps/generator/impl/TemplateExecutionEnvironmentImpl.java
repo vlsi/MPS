@@ -289,15 +289,13 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       return;
     }
     final SContainmentLink role = ((ConceptMetaInfoConverter) contextParentNode.getConcept()).convertAggregation(childRole);
-    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave, null);
+    DefaultTemplateContext templateContext = new DefaultTemplateContext(this, inputNode, null);
+
+    // FIXME using deprecated method for now, as the new one may throw an exception. Once 3.3 is out, just remove this whole method.
+    prepareWeave(new WeaveContextImpl(contextParentNode, templateContext), templateNode).weave(contextParentNode, role, outputNodeToWeave, null);
   }
 
   @NotNull
-  @Override
-  public NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
-    return prepareWeave(new WeaveContextImpl(context.getInput()/*fake non-null node, do not care as this method would cease soon*/, context), templateNode);
-  }
-
   @Override
   public NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode) {
     return new NodeWeaveSupport(context, templateNode, this);
