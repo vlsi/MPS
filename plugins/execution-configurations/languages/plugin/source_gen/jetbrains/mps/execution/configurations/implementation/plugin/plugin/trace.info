@@ -1395,7 +1395,7 @@
         <var name="session" id="5057842142812859050" />
       </scope>
       <scope id="5057842142812534989" at="70,0,92,0" />
-      <unit id="5057842142812605010" at="105,50,110,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$2" />
+      <unit id="5057842142812605010" at="105,50,110,5" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$1" />
       <unit id="8244765753355840208" at="113,0,134,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript$TemporalModuleWithDescriptorFile" />
       <unit id="5057842142812510296" at="44,0,136,0" name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript" />
     </file>

@@ -459,38 +459,6 @@ public class QueriesGenerated {
     quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_6);
     return quotedNode_4;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0a2a0a0dd(Object parameter_1, Object parameter_2) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), (String) parameter_1);
-    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x111576710b3L, "methodName"), (String) parameter_2);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), null, null, false);
-    quotedNode_4.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_4, facade.createModelReference("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), facade.createNodeId("4474271214082912941")));
-    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x111c2c992c2L, "returnType"), quotedNode_4);
-    return quotedNode_3;
-  }
-  private static SNode _quotation_createNode_x583g4_a0a2a0c0a0a18(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_5 = null;
-    SNode quotedNode_6 = null;
-    SNode quotedNode_7 = null;
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall"), null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), (String) parameter_4);
-    SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x111576710b3L, "methodName"), (String) parameter_3);
-    {
-      List<SNode> nodes = (List<SNode>) parameter_1;
-      for (SNode child : nodes) {
-        quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x46d6451be652f35L, "actualArgument"), HUtil.copyIfNecessary(child));
-      }
-    }
-    quotedNode_7 = (SNode) parameter_2;
-    if (quotedNode_7 != null) {
-      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x111c2c992c2L, "returnType"), HUtil.copyIfNecessary(quotedNode_7));
-    }
-    return quotedNode_5;
-  }
   private static SNode _quotation_createNode_x583g4_a0a0ed() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

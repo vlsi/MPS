@@ -4885,8 +4885,8 @@
                   <node concept="3uibUv" id="37Il31hY4Jv" role="HW$YZ">
                     <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
                   </node>
-                  <node concept="37vLTw" id="37Il31hZ0G$" role="HW$Y0">
-                    <ref role="3cqZAo" node="37Il31hYaVR" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeockI" role="HW$Y0">
+                    <ref role="3cqZAo" node="5z_gLGeo9rj" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -4983,8 +4983,8 @@
             </node>
             <node concept="2ShNRf" id="361hHoA2tCE" role="37wK5m">
               <node concept="kMnCb" id="361hHoA2$5l" role="2ShVmc">
-                <node concept="3uibUv" id="361hHoA2_LA" role="kMuH3">
-                  <ref role="3uigEE" to="lfzw:5DMHUkpkQJQ" resolve="RefactoringParticipant.ParticipantState" />
+                <node concept="3uibUv" id="5z_gLGetlm1" role="kMuH3">
+                  <ref role="3uigEE" to="lfzw:5z_gLGerhde" resolve="RefactoringParticipant.ParticipantState" />
                 </node>
               </node>
             </node>
@@ -5029,8 +5029,8 @@
         <property role="TrG5h" value="parents" />
         <property role="3TUv4t" value="true" />
         <node concept="A3Dl8" id="112yVMIA$UV" role="1tU5fm">
-          <node concept="3uibUv" id="112yVMIA$UX" role="A3Ik2">
-            <ref role="3uigEE" to="lfzw:5DMHUkpkQJQ" resolve="RefactoringParticipant.ParticipantState" />
+          <node concept="3uibUv" id="5z_gLGetj3C" role="A3Ik2">
+            <ref role="3uigEE" to="lfzw:5z_gLGerhde" resolve="RefactoringParticipant.ParticipantState" />
           </node>
         </node>
       </node>
@@ -5085,8 +5085,8 @@
                   <ref role="3cqZAo" node="37Il31hYWEP" resolve="selectedOptions" />
                 </node>
                 <node concept="3JPx81" id="37Il31hYZP3" role="2OqNvi">
-                  <node concept="37vLTw" id="37Il31hZ01G" role="25WWJ7">
-                    <ref role="3cqZAo" node="37Il31hYaVR" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeobU3" role="25WWJ7">
+                    <ref role="3cqZAo" node="5z_gLGeo9rj" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -5242,6 +5242,8 @@
                                               <ref role="3uigEE" to="lfzw:112yVMI$YQ8" resolve="RecursiveParticipant.RecursiveParticipantState" />
                                               <node concept="3qTvmN" id="112yVMID1Ol" role="11_B2D" />
                                               <node concept="3qTvmN" id="112yVMID1Om" role="11_B2D" />
+                                              <node concept="3Tqbb2" id="5z_gLGeto7q" role="11_B2D" />
+                                              <node concept="3Tqbb2" id="5z_gLGetsBT" role="11_B2D" />
                                             </node>
                                           </node>
                                         </node>
@@ -5271,6 +5273,8 @@
                                                                   <ref role="3uigEE" to="lfzw:112yVMI$YQ8" resolve="RecursiveParticipant.RecursiveParticipantState" />
                                                                   <node concept="3qTvmN" id="PXLOXmtQt$" role="11_B2D" />
                                                                   <node concept="3qTvmN" id="PXLOXmtQtz" role="11_B2D" />
+                                                                  <node concept="3Tqbb2" id="5z_gLGetwZ$" role="11_B2D" />
+                                                                  <node concept="3Tqbb2" id="5z_gLGet_sU" role="11_B2D" />
                                                                 </node>
                                                                 <node concept="2YIFZM" id="PXLOXmtQtH" role="33vP2m">
                                                                   <ref role="1Pybhc" to="lfzw:112yVMI$YQ8" resolve="RecursiveParticipant.RecursiveParticipantState" />
@@ -5293,7 +5297,7 @@
                                                                   <ref role="3cqZAo" node="PXLOXmtQtG" resolve="participantState" />
                                                                 </node>
                                                                 <node concept="liA8E" id="PXLOXmucBM" role="2OqNvi">
-                                                                  <ref role="37wK5l" to="lfzw:6yOdP6c8t2_" resolve="findChanges" />
+                                                                  <ref role="37wK5l" to="lfzw:5z_gLGerheL" resolve="findChanges" />
                                                                   <node concept="37vLTw" id="PXLOXmue_C" role="37wK5m">
                                                                     <ref role="3cqZAo" node="1DR1niB1oev" resolve="repository" />
                                                                   </node>
@@ -5417,13 +5421,13 @@
                                                               <ref role="3cqZAo" node="5c9yDr4IBc1" resolve="it" />
                                                             </node>
                                                           </node>
-                                                          <node concept="3uibUv" id="112yVMIGv3z" role="10QFUM">
-                                                            <ref role="3uigEE" to="lfzw:5DMHUkpkQJQ" resolve="RefactoringParticipant.ParticipantState" />
+                                                          <node concept="3uibUv" id="5z_gLGetTlV" role="10QFUM">
+                                                            <ref role="3uigEE" to="lfzw:5z_gLGerhde" resolve="RefactoringParticipant.ParticipantState" />
                                                           </node>
                                                         </node>
                                                       </node>
                                                       <node concept="liA8E" id="5c9yDr4IBc0" role="2OqNvi">
-                                                        <ref role="37wK5l" to="lfzw:5DMHUkpkT9A" resolve="getChanges" />
+                                                        <ref role="37wK5l" to="lfzw:5z_gLGerhdt" resolve="getChanges" />
                                                       </node>
                                                     </node>
                                                   </node>
@@ -5550,13 +5554,13 @@
                                                                           <ref role="3cqZAo" node="2wqpb2$LZDh" resolve="it" />
                                                                         </node>
                                                                       </node>
-                                                                      <node concept="3uibUv" id="112yVMIGyrg" role="10QFUM">
-                                                                        <ref role="3uigEE" to="lfzw:5DMHUkpkQJQ" resolve="RefactoringParticipant.ParticipantState" />
+                                                                      <node concept="3uibUv" id="5z_gLGetWcm" role="10QFUM">
+                                                                        <ref role="3uigEE" to="lfzw:5z_gLGerhde" resolve="RefactoringParticipant.ParticipantState" />
                                                                       </node>
                                                                     </node>
                                                                   </node>
                                                                   <node concept="liA8E" id="2wqpb2$ZbWM" role="2OqNvi">
-                                                                    <ref role="37wK5l" to="lfzw:5DMHUkpkT9A" resolve="getChanges" />
+                                                                    <ref role="37wK5l" to="lfzw:5z_gLGerhdt" resolve="getChanges" />
                                                                   </node>
                                                                 </node>
                                                               </node>
@@ -5801,7 +5805,7 @@
                                                                   </node>
                                                                 </node>
                                                                 <node concept="liA8E" id="361hHoA2jBs" role="2OqNvi">
-                                                                  <ref role="37wK5l" to="lfzw:2wqpb2$Ov5Y" resolve="confirm" />
+                                                                  <ref role="37wK5l" to="lfzw:5z_gLGerhfs" resolve="confirm" />
                                                                   <node concept="3EllGN" id="6hSzYdRsHcC" role="37wK5m">
                                                                     <node concept="37vLTw" id="6hSzYdRsGEC" role="3ElQJh">
                                                                       <ref role="3cqZAo" node="6hSzYdRsFGD" resolve="copyMap" />
@@ -5888,12 +5892,13 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="312cEg" id="37Il31hYaVR" role="jymVt">
-      <property role="TrG5h" value="myOption" />
-      <node concept="3Tm6S6" id="37Il31hYaVS" role="1B3o_S" />
+    <node concept="Wx3nA" id="5z_gLGeo9rj" role="jymVt">
+      <property role="TrG5h" value="OPTION" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="37Il31hYdbI" role="1tU5fm">
         <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
       </node>
+      <node concept="3Tm1VV" id="5z_gLGeobxz" role="1B3o_S" />
       <node concept="2ShNRf" id="37Il31hYdWj" role="33vP2m">
         <node concept="1pGfFk" id="37Il31hYdK3" role="2ShVmc">
           <ref role="37wK5l" to="lfzw:37Il31hWKPu" resolve="RefactoringParticipant.Option" />
@@ -5924,6 +5929,8 @@
       <node concept="3uibUv" id="112yVMIAUCU" role="11_B2D">
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
+      <node concept="3Tqbb2" id="5z_gLGetIad" role="11_B2D" />
+      <node concept="3Tqbb2" id="5z_gLGetMBP" role="11_B2D" />
     </node>
   </node>
   <node concept="312cEu" id="3r9sVr9QSkh">
@@ -6739,8 +6746,8 @@
                   <node concept="3uibUv" id="37Il31hXlNv" role="HW$YZ">
                     <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
                   </node>
-                  <node concept="37vLTw" id="37Il31hXiIF" role="HW$Y0">
-                    <ref role="3cqZAo" node="37Il31hXcp1" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGenXwD" role="HW$Y0">
+                    <ref role="3cqZAo" node="5z_gLGenVCx" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -6768,12 +6775,13 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="37Il31hXcp1" role="jymVt">
-      <property role="TrG5h" value="myOption" />
-      <node concept="3Tm6S6" id="37Il31hXcp2" role="1B3o_S" />
+    <node concept="Wx3nA" id="5z_gLGenVCx" role="jymVt">
+      <property role="TrG5h" value="OPTION" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="37Il31hXdQf" role="1tU5fm">
         <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
       </node>
+      <node concept="3Tm1VV" id="5z_gLGenZ5q" role="1B3o_S" />
       <node concept="2ShNRf" id="37Il31hXepe" role="33vP2m">
         <node concept="1pGfFk" id="37Il31hXed8" role="2ShVmc">
           <ref role="37wK5l" to="lfzw:37Il31hWKPu" resolve="RefactoringParticipant.Option" />
@@ -6886,8 +6894,8 @@
                   <ref role="3cqZAo" node="PXLOXmzRVY" resolve="selectedOptions" />
                 </node>
                 <node concept="3JPx81" id="37Il31hXH4T" role="2OqNvi">
-                  <node concept="37vLTw" id="37Il31hXHkr" role="25WWJ7">
-                    <ref role="3cqZAo" node="37Il31hXcp1" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGenYQ6" role="25WWJ7">
+                    <ref role="3cqZAo" node="5z_gLGenVCx" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -7843,8 +7851,8 @@
                   <node concept="3uibUv" id="1$U7CScmwgr" role="HW$YZ">
                     <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
                   </node>
-                  <node concept="37vLTw" id="1$U7CScmlT5" role="HW$Y0">
-                    <ref role="3cqZAo" node="1$U7CScmgar" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeo_Rm" role="HW$Y0">
+                    <ref role="3cqZAo" node="5z_gLGeozXI" resolve="OPTION" />
                   </node>
                 </node>
               </node>
@@ -7872,12 +7880,13 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="1$U7CScmgar" role="jymVt">
-      <property role="TrG5h" value="myOption" />
-      <node concept="3Tm6S6" id="1$U7CScmgas" role="1B3o_S" />
+    <node concept="Wx3nA" id="5z_gLGeozXI" role="jymVt">
+      <property role="TrG5h" value="OPTION" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1$U7CScmgat" role="1tU5fm">
         <ref role="3uigEE" to="lfzw:37Il31hWJ4Z" resolve="RefactoringParticipant.Option" />
       </node>
+      <node concept="3Tm1VV" id="5z_gLGeo_x$" role="1B3o_S" />
       <node concept="2ShNRf" id="1$U7CScmgau" role="33vP2m">
         <node concept="1pGfFk" id="1$U7CScmgav" role="2ShVmc">
           <ref role="37wK5l" to="lfzw:37Il31hWKPu" resolve="RefactoringParticipant.Option" />
@@ -7990,8 +7999,8 @@
                   <ref role="3cqZAo" node="PXLOXm_2JG" resolve="selectedOptions" />
                 </node>
                 <node concept="3JPx81" id="1$U7CScmA4b" role="2OqNvi">
-                  <node concept="37vLTw" id="1$U7CScmAh0" role="25WWJ7">
-                    <ref role="3cqZAo" node="1$U7CScmgar" resolve="myOption" />
+                  <node concept="37vLTw" id="5z_gLGeoBv0" role="25WWJ7">
+                    <ref role="3cqZAo" node="5z_gLGeozXI" resolve="OPTION" />
                   </node>
                 </node>
               </node>

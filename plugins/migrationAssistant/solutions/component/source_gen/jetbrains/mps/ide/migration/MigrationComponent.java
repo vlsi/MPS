@@ -156,7 +156,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     return script;
   }
 
-  public static <I, F> void confirm(RefactoringParticipant.PersistentRefactoringParticipant<I, F> participant, SNode initialStateSerialized, SNode finalStateSerialized, SNode selectedOptionsSerialized, final SRepository repository, SearchScope searchScope, final RefactoringSession session) {
+  public static <I, F> void confirm(RefactoringParticipant.PersistentRefactoringParticipant<I, F, ?, ?> participant, SNode initialStateSerialized, SNode finalStateSerialized, SNode selectedOptionsSerialized, final SRepository repository, SearchScope searchScope, final RefactoringSession session) {
     I initialState = participant.deserializeInitialState(initialStateSerialized);
     final F finalState = participant.deserializeFinalState(finalStateSerialized);
     List<RefactoringParticipant.Option> availableOptions = participant.getAvailableOptions(initialState, repository);
@@ -192,9 +192,9 @@ public class MigrationComponent extends AbstractProjectComponent {
       }
       return null;
     }
-    final Map<String, RefactoringParticipant.PersistentRefactoringParticipant<?, ?>> participants = MapSequence.fromMap(new HashMap<String, RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>());
-    for (RefactoringParticipant.PersistentRefactoringParticipant<?, ?> participant : Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>>("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?>>() {
-      public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>> translate(Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?>> it) {
+    final Map<String, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> participants = MapSequence.fromMap(new HashMap<String, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>());
+    for (RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> participant : Sequence.fromIterable(new ExtensionPoint<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>>("jetbrains.mps.ide.platform.PersistentRefactoringParticipantsEP").getObjects()).translate(new ITranslator2<Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
+      public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> translate(Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> it) {
         return it;
       }
     })) {

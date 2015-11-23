@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.project.module;
 
-import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
@@ -38,7 +37,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
@@ -47,16 +45,11 @@ import java.io.File;
 /**
  * Created by danilla on 26/10/15.
  */
-public class SingleModuleMPSSupport extends ModuleMPSSupport implements ProjectComponent {
+public class SingleModuleMPSSupport extends ModuleMPSSupport {
   @NonNls
   private static final String SOURCE_GEN = "src_gen";
 
-  private Project myProject;
   private Solution mySolution;
-
-  public SingleModuleMPSSupport(Project project) {
-    myProject = project;
-  }
 
   @Override
   public boolean isMPSEnabled(Module module) {
@@ -69,12 +62,12 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport implements ProjectC
   }
 
   @Override
-  public void projectOpened() {
-    Module[] modules = ModuleManager.getInstance(myProject).getModules();
+  public void init(final Project project) {
+    Module[] modules = ModuleManager.getInstance(project).getModules();
     assert modules.length == 1;
     final Module singleModule = modules[0];
 
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     final SRepository repository = mpsProject.getRepository();
     if (repository == null) {
       return;
@@ -87,7 +80,7 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport implements ProjectC
         Solution solution = new SolutionIdea(singleModule, solutionDescriptor);
 
         if (repository.getModule(solution.getModuleId()) != null) {
-          MessagesViewTool.log(myProject, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+          MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
           return;
         }
 
@@ -124,26 +117,5 @@ public class SingleModuleMPSSupport extends ModuleMPSSupport implements ProjectC
 
     descriptor.getModelRootDescriptors().add(modelRootDesc);
     return descriptor;
-  }
-
-  @Override
-  public void projectClosed() {
-
-  }
-
-  @Override
-  public void initComponent() {
-
-  }
-
-  @Override
-  public void disposeComponent() {
-
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "MPS facade secific to single module IDEs, like WebStorm, PhpStorm, CLion, etc.";
   }
 }

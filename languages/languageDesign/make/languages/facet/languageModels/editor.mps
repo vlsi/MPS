@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -167,10 +167,20 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
+        <reference id="1204851882689" name="link" index="26LbJp" />
+      </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
+      <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumMemberType" flags="in" index="2ZThk1">
         <reference id="1240170836027" name="enum" index="2ZWj4r" />
       </concept>
       <concept id="1240171359678" name="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" flags="nn" index="2ZYiMu" />
+      <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
+        <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
+      </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1240930118027" name="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" flags="nn" index="3HcIyF">
         <reference id="1240930118028" name="enumDeclaration" index="3HcIyG" />
@@ -936,14 +946,18 @@
         <node concept="pkWqt" id="75$Aq$6yvU0" role="pqm2j">
           <node concept="3clFbS" id="75$Aq$6yvU1" role="2VODD2">
             <node concept="3clFbF" id="75$Aq$6ywg6" role="3cqZAp">
-              <node concept="2OqwBi" id="75$Aq$6ywgd" role="3clFbG">
+              <node concept="2OqwBi" id="2_1mL0eofVX" role="3clFbG">
                 <node concept="2OqwBi" id="75$Aq$6ywg8" role="2Oq$k0">
                   <node concept="pncrf" id="75$Aq$6ywg7" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="75$Aq$6ywgc" role="2OqNvi">
-                    <ref role="3Tt5mk" to="vvvw:75$Aq$6yvTQ" />
+                  <node concept="Bykcj" id="2_1mL0eofVU" role="2OqNvi">
+                    <node concept="1aIX9F" id="2_1mL0eofVV" role="1xVPHs">
+                      <node concept="26LbJo" id="2_1mL0eofVW" role="1aIX9E">
+                        <ref role="26LbJp" to="vvvw:75$Aq$6yvTQ" />
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="3x8VRR" id="75$Aq$6ywgh" role="2OqNvi" />
+                <node concept="3GX2aA" id="2_1mL0eofVY" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -1003,14 +1017,18 @@
         <node concept="pkWqt" id="75$Aq$6yFQw" role="pqm2j">
           <node concept="3clFbS" id="75$Aq$6yFQx" role="2VODD2">
             <node concept="3clFbF" id="75$Aq$6yFQy" role="3cqZAp">
-              <node concept="2OqwBi" id="75$Aq$6yFQz" role="3clFbG">
+              <node concept="2OqwBi" id="2_1mL0eofW2" role="3clFbG">
                 <node concept="2OqwBi" id="75$Aq$6yFQ$" role="2Oq$k0">
                   <node concept="pncrf" id="75$Aq$6yFQ_" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="75$Aq$6yFQA" role="2OqNvi">
-                    <ref role="3Tt5mk" to="vvvw:75$Aq$6yvTQ" />
+                  <node concept="Bykcj" id="2_1mL0eofVZ" role="2OqNvi">
+                    <node concept="1aIX9F" id="2_1mL0eofW0" role="1xVPHs">
+                      <node concept="26LbJo" id="2_1mL0eofW1" role="1aIX9E">
+                        <ref role="26LbJp" to="vvvw:75$Aq$6yvTQ" />
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="3x8VRR" id="75$Aq$6yFQB" role="2OqNvi" />
+                <node concept="3GX2aA" id="2_1mL0eofW3" role="2OqNvi" />
               </node>
             </node>
           </node>

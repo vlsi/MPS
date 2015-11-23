@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -90,6 +91,7 @@ public class ListOfDrawCommands_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d07e6L, 0x313e78bb265d1023L, "commands")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

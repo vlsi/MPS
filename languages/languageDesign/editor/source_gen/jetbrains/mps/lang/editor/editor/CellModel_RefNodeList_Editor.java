@@ -41,6 +41,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -936,7 +938,7 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_2v2794_a2g3a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0xce215999c843265L, "separatorTextQuery")) != null;
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0xce215999c843265L, "separatorTextQuery"))).isNotEmpty();
   }
   public static class CellModel_RefNodeList_generic_cellMenu_2v2794_a0c6d0 extends AbstractCellMenuPart_Generic_Group {
     public CellModel_RefNodeList_generic_cellMenu_2v2794_a0c6d0() {

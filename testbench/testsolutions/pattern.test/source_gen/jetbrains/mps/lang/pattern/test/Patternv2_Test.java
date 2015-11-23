@@ -53,7 +53,7 @@ public class Patternv2_Test extends BaseTransformationTest {
         return true;
       }
       {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_ofki36_a6a2c());
+        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_ofki36_a0a0a0g0c2());
         List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("patternVar_ifbody"));
         Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
       }
@@ -225,7 +225,7 @@ public class Patternv2_Test extends BaseTransformationTest {
       quotedNode_12.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_5);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_ofki36_a6a2c() {
+    private static SNode _quotation_createNode_ofki36_a0a0a0g0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;

@@ -57,13 +57,13 @@ public class Patternv1_Test extends BaseTransformationTest {
         int i = 0;
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
-          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a2c());
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a0b0a0c0g0c2());
           Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
         }
         i++;
         {
           List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i));
-          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a2c());
+          List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a0b0a0d0g0c2());
           Assert.assertNull("nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", NodesMatcher.matchNodes(nodesBefore, nodesAfter));
         }
         i++;
@@ -186,14 +186,14 @@ public class Patternv1_Test extends BaseTransformationTest {
       quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_o71ow3_a0a2a6a2c() {
+    private static SNode _quotation_createNode_o71ow3_a0a0b0a0c0g0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), null, null, false);
       SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"), "10");
       return quotedNode_1;
     }
-    private static SNode _quotation_createNode_o71ow3_a0a3a6a2c() {
+    private static SNode _quotation_createNode_o71ow3_a0a0b0a0d0g0c2() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), null, null, false);

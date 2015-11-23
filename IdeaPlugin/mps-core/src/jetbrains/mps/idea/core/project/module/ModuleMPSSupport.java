@@ -16,7 +16,9 @@
 
 package jetbrains.mps.idea.core.project.module;
 
+import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -24,10 +26,20 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 /**
  * This class encapsulates the way an MPS solution is tied to Idea module. It may be either via a module facet
  * or by automatically creating the solution at startup. See sub-classes.
- *
+ * <p/>
  * Created by danilla on 26/10/15.
  */
 public abstract class ModuleMPSSupport {
+  public static final ExtensionPointName<ModuleMPSSupport> EP_NAME = ExtensionPointName.create("com.intellij.mps.moduleMpsSupport");
+
+  public static ModuleMPSSupport getInstance() {
+    assert EP_NAME.getExtensions().length > 0;
+    return EP_NAME.getExtensions()[0];
+  }
+
+  public void init(Project project) {
+  }
+
   public abstract boolean isMPSEnabled(Module module);
 
   public abstract Solution getSolution(Module module);
@@ -37,7 +49,7 @@ public abstract class ModuleMPSSupport {
    * DefaultModelRoot, rather FileBasedModelRoot, and corresponding createModel method will have to be added to it)
    */
   public DefaultModelRoot getModelRoot(Module module) {
-    for (ModelRoot root: getSolution(module).getModelRoots()) {
+    for (ModelRoot root : getSolution(module).getModelRoots()) {
       if (root instanceof DefaultModelRoot) {
         return (DefaultModelRoot) root;
       }

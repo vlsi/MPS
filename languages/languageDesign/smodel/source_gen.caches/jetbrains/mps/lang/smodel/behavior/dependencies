@@ -2202,6 +2202,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenAndChildAttributesOperation_BehaviorDescriptor" file="Node_GetChildrenAndChildAttributesOperation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_Behavior" file="Node_GetChildrenOperation_Behavior.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation__BehaviorDescriptor" />

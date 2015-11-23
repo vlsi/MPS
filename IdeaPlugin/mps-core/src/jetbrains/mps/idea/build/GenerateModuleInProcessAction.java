@@ -40,7 +40,7 @@ public class GenerateModuleInProcessAction extends AnAction {
       e.getPresentation().setVisible(false);
       return;
     } else {
-      ModuleMPSSupport mpsSupport = e.getProject().getComponent(ModuleMPSSupport.class);
+      ModuleMPSSupport mpsSupport = ModuleMPSSupport.getInstance();
       boolean thereAreModels = mpsSupport != null && mpsSupport.isMPSEnabled(module) && mpsSupport.getSolution(module).getModels().iterator().hasNext();
       e.getPresentation().setEnabled(thereAreModels);
     }
@@ -49,7 +49,7 @@ public class GenerateModuleInProcessAction extends AnAction {
   @Override
   public void actionPerformed(AnActionEvent anActionEvent) {
     Module module = LangDataKeys.MODULE.getData(anActionEvent.getDataContext());
-    Solution solution = module.getProject().getComponent(ModuleMPSSupport.class).getSolution(module);
+    Solution solution = ModuleMPSSupport.getInstance().getSolution(module);
     new GenerateModelsInProcess(module.getProject(), solution.getModels()).generate();
   }
 }

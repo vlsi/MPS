@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -28,7 +30,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -131,6 +132,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NodesTestCase_Editor.nodesToCheckListHandler_58c6e4_b2a(node, "nodesToCheck", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_nodesToCheck");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b78c37cc6L, "nodesToCheck")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -202,6 +204,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NodesTestCase_Editor.testMethodsListHandler_58c6e4_b5a(node, "testMethods", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_testMethods");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b78c499b5L, "testMethods")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -273,6 +276,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NodesTestCase_Editor.methodsListHandler_58c6e4_b8a(node, "methods", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_methods");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, 0x11b5a762e97L, "methods")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

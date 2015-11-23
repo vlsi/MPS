@@ -7,8 +7,17 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
+public interface RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+
+  public static interface RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
+    public InitialDataObject beforeMove(InitialPoint nodeToMove);
+    public FinalDataObject afterMove(FinalPoint movedNode);
+  }
+
+  public RefactoringParticipant.RefactoringDataCollector<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> getDataCollector();
 
   public static class Option {
     private String myId;
@@ -27,9 +36,9 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
       return myId.hashCode();
     }
     public boolean equals(Object object) {
-      return object instanceof RefactoringParticipant.Option && eq_g5nieh_a0a0a6b(((RefactoringParticipant.Option) object).getId(), this.getId());
+      return object instanceof RefactoringParticipant.Option && eq_g5nieh_a0a0a6f(((RefactoringParticipant.Option) object).getId(), this.getId());
     }
-    private static boolean eq_g5nieh_a0a0a6b(Object a, Object b) {
+    private static boolean eq_g5nieh_a0a0a6f(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
@@ -44,7 +53,7 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
     public void confirm(FinalDataObject finalState, SRepository repository, RefactoringSession refactoringSession);
   }
 
-  public static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject> extends RefactoringParticipant<InitialDataObject, FinalDataObject> {
+  public static interface PersistentRefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> extends RefactoringParticipant<InitialDataObject, FinalDataObject, InitialPoint, FinalPoint> {
     public String getId();
     public SNode serializeInitialState(InitialDataObject initialState);
     public InitialDataObject deserializeInitialState(SNode serialized);
@@ -52,10 +61,44 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject> {
     public FinalDataObject deserializeFinalState(SNode serialized);
   }
 
-  public static interface ParticipantState<I, F> {
-    public RefactoringParticipant<I, F> getParticipant();
-    public I getInitialState();
-    public List<RefactoringParticipant.Change<I, F>> getChanges();
+  public static class ParticipantState<I, F, IP, FP> {
+    private RefactoringParticipant<I, F, IP, FP> myParticipant;
+    private I myInitialState;
+    private List<RefactoringParticipant.Change<I, F>> changes;
+    public List<RefactoringParticipant.Change<I, F>> getChanges() {
+      return changes;
+    }
+    public RefactoringParticipant<I, F, IP, FP> getParticipant() {
+      return myParticipant;
+    }
+    public I getInitialState() {
+      return myInitialState;
+    }
+    public static <I, F, IP, FP> RefactoringParticipant.ParticipantState<I, F, IP, FP> create(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode) {
+      return new RefactoringParticipant.ParticipantState<I, F, IP, FP>(participant, oldNode);
+    }
+    public ParticipantState(RefactoringParticipant<I, F, IP, FP> participant, IP oldNode) {
+      this.myParticipant = participant;
+      myInitialState = this.myParticipant.getDataCollector().beforeMove(oldNode);
+    }
+    public List<RefactoringParticipant.Option> getAvaliableOptions(SRepository repository) {
+      return myParticipant.getAvailableOptions(myInitialState, repository);
+    }
+    public List<RefactoringParticipant.Change<I, F>> findChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+      return changes = initChanges(repository, selectedOptions, searchScope);
+    }
+    protected List<RefactoringParticipant.Change<I, F>> initChanges(SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+      return myParticipant.getChanges(myInitialState, repository, selectedOptions, searchScope);
+    }
+    public void confirm(FP newNode, final SRepository repository, final RefactoringSession session) {
+      final F finalState = this.myParticipant.getDataCollector().afterMove(newNode);
+      ListSequence.fromList(this.changes).visitAll(new IVisitor<RefactoringParticipant.Change<I, F>>() {
+        public void visit(RefactoringParticipant.Change<I, F> it) {
+          it.confirm(finalState, repository, session);
+        }
+      });
+    }
   }
+
 
 }

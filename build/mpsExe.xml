@@ -64,7 +64,7 @@
     <fixcrlf file="${input.dir}/${mps64.exe.vmoptions}" eof="asis" eol="dos"/>
     <copy file="${input.dir}/${mps.exe.vmoptions}" todir="${input.dir}/${MPS}/bin"/>
     <copy file="${input.dir}/${mps64.exe.vmoptions}" todir="${input.dir}/${MPS}/bin"/>
-    <unzip src="${input.dir}/jre.zip" dest="${input.dir}/jre"/>
+    <unzip src="${input.dir}/jre.zip" dest="${input.dir}/jdk/jre"/>
     <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
       <arg file="${input.dir}/install.nsh"/>
       <arg file="${input.dir}/uninstall.nsh"/>
@@ -72,7 +72,7 @@
       <arg file="${input.dir}/${mps.bat}"/>
       <arg file="${input.dir}/${mps.ico}"/>
       <arg file="${input.dir}/${homepage.ico}"/>
-      <arg file="${input.dir}/jre"/>
+      <arg file="${input.dir}/jdk"/>
       <classpath>
         <pathelement path="${input.dir}/${MPS}/lib/mps-workbench.jar"/>
         <pathelement path="${input.dir}/${MPS}/lib/mps-core.jar"/>

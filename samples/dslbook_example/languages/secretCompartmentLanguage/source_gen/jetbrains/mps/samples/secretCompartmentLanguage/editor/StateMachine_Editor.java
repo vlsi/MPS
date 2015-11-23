@@ -18,6 +18,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -112,6 +114,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new StateMachine_Editor.eventListHandler_qpt50r_b3a(node, "event", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_event");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, 0x116bcddb306L, "event")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -227,6 +230,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new StateMachine_Editor.stateListHandler_qpt50r_h0(node, "state", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_state");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL, 0x116c00eaeafL, "state")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

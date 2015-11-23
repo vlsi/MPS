@@ -23,7 +23,7 @@ public class CellAction_Uncomment extends AbstractCommentAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    return SNodeOperations.getParent(myNode) != null;
+    return SNodeOperations.getParent(myNode) != null && isNonTrivialSingleSelection(context);
   }
 
   protected void executeInternal(EditorContext editorContext) {
@@ -46,9 +46,7 @@ public class CellAction_Uncomment extends AbstractCommentAction {
       RestorableSelectionByNode thirdSelection = new RestorableSelectionByNode(commentedNode);
       return new RestorableSelectionComposite(firstSelection, secondSelection, thirdSelection);
     }
-
   }
-
   private static boolean eq_yhitdb_a0c0a1a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

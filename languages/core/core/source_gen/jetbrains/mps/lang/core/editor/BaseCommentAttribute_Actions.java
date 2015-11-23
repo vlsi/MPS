@@ -39,6 +39,13 @@ public class BaseCommentAttribute_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       new CellAction_Uncomment(node).execute(editorContext);
     }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return new CellAction_Uncomment(node).canExecute(editorContext);
+    }
   }
   public static class BaseCommentAttribute_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;

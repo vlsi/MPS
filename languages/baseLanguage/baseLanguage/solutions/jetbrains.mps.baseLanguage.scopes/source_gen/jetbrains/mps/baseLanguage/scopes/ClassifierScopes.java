@@ -21,8 +21,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import java.util.List;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ClassifierScopes {
   private ClassifierScopes() {
@@ -153,7 +151,6 @@ public class ClassifierScopes {
       }
     };
   }
-  protected static Logger LOG = LogManager.getLogger(ClassifierScopes.class);
   private static boolean eq_g9g9i8_a0a0a0a0a0b0d0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -50,7 +50,6 @@
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module()" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module()" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
-    <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -15430,20 +15429,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="73QsZlLE4Gp" role="3cqZAp">
-          <node concept="2OqwBi" id="73QsZlLE4Gm" role="3clFbG">
-            <node concept="10M0yZ" id="73QsZlLE4Gn" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-            </node>
-            <node concept="liA8E" id="73QsZlLE4Go" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="Xl_RD" id="73QsZlLE54x" role="37wK5m">
-                <property role="Xl_RC" value="BBBBBBBB" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7nrhK3uHeUM" role="3cqZAp">
           <node concept="3cpWsn" id="7nrhK3uHeUN" role="3cpWs9">
             <property role="TrG5h" value="paramsMap" />
@@ -16662,6 +16647,50 @@
                     </node>
                     <node concept="3TrEf2" id="7nrhK3uHf26" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3QRcP_gHHo1" role="3cqZAp">
+              <node concept="2OqwBi" id="3QRcP_gHI8o" role="3clFbG">
+                <node concept="2OqwBi" id="3QRcP_gHHwe" role="2Oq$k0">
+                  <node concept="37vLTw" id="3QRcP_gHHnZ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7nrhK3uHf1O" resolve="newCall" />
+                  </node>
+                  <node concept="3Tsc0h" id="3QRcP_gHHI4" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                  </node>
+                </node>
+                <node concept="X8dFx" id="3QRcP_gHJwZ" role="2OqNvi">
+                  <node concept="2OqwBi" id="3QRcP_gHKOw" role="25WWJ7">
+                    <node concept="2GrUjf" id="3QRcP_gHKf8" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="7nrhK3uHf1G" resolve="localCall" />
+                    </node>
+                    <node concept="3Tsc0h" id="3QRcP_gHLMJ" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpee:fz7wK6I" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="3QRcP_gIOgI" role="3cqZAp">
+              <node concept="2OqwBi" id="3QRcP_gIRQa" role="3clFbG">
+                <node concept="2OqwBi" id="3QRcP_gIR6I" role="2Oq$k0">
+                  <node concept="37vLTw" id="3QRcP_gIOgG" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7nrhK3uHf1O" resolve="newCall" />
+                  </node>
+                  <node concept="3Tsc0h" id="3QRcP_gIRl9" role="2OqNvi">
+                    <ref role="3TtcxE" to="tpee:4k0WLUKaBu8" />
+                  </node>
+                </node>
+                <node concept="X8dFx" id="3QRcP_gITHD" role="2OqNvi">
+                  <node concept="2OqwBi" id="3QRcP_gIV06" role="25WWJ7">
+                    <node concept="2GrUjf" id="3QRcP_gIU3q" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="7nrhK3uHf1G" resolve="localCall" />
+                    </node>
+                    <node concept="3Tsc0h" id="3QRcP_gIWb8" role="2OqNvi">
+                      <ref role="3TtcxE" to="tpee:4k0WLUKaBu8" />
                     </node>
                   </node>
                 </node>

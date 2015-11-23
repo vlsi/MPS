@@ -30,14 +30,18 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.projectView.edit.SNodeDeleteProvider;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -49,6 +53,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.Icon;
 import java.util.Collections;
@@ -121,7 +126,26 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Nullable
   @Override
   public VirtualFile getVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference());
+//    return MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference());
+    if (mySeparateFile != null) {
+      return mySeparateFile;
+    }
+    Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    if (mpsProject == null) {
+      return null;
+    }
+    final SRepository repository = mpsProject.getRepository();
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
+      @Override
+      public VirtualFile compute() {
+        SModel sModel = myModel.getSModelReference().resolve(repository);
+        DataSource dataSource = sModel.getSource();
+        if (dataSource instanceof FileDataSource) {
+          return VirtualFileUtils.getVirtualFile(((FileDataSource) dataSource).getFile());
+        }
+        return null;
+      }
+    });
   }
 
   @Override
@@ -217,7 +241,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
         SNode node = model.getNode(myNodeId);
         if (node == null) return;
 
-        NavigationSupport.getInstance().openNode(ProjectHelper.toMPSProject(getProject()), node, requestFocus, false);
+        NavigationSupport.getInstance().openNode(ProjectHelper.fromIdeaProject(getProject()), node, requestFocus, false);
       }
     });
   }
@@ -280,7 +304,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   public void delete() throws IncorrectOperationException {
     SNodeDeleteProvider deleteProvider = new SNodeDeleteProvider(
       Collections.singletonList(getSNodeReference()),
-      ProjectHelper.toMPSProject(getProject()));
+      ProjectHelper.fromIdeaProject(getProject()));
     getProjectRepository().getModelAccess().executeUndoTransparentCommand(deleteProvider);
   }
 }

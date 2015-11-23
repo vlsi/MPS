@@ -17,17 +17,15 @@
 package jetbrains.mps.idea.core.project.module;
 
 import com.intellij.facet.FacetManager;
-import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by danilla on 26/10/15.
  */
-public class IdeaModuleMPSSupport extends ModuleMPSSupport implements ProjectComponent {
+public class IdeaModuleMPSSupport extends ModuleMPSSupport {
   @Override
   public boolean isMPSEnabled(Module module) {
     MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
@@ -37,27 +35,5 @@ public class IdeaModuleMPSSupport extends ModuleMPSSupport implements ProjectCom
   @Override
   public Solution getSolution(Module module) {
     return FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
-  }
-
-  @Override
-  public void initComponent() {
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @Override
-  public void projectOpened() {
-  }
-
-  @Override
-  public void projectClosed() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "MPS facade specific to Idea";
   }
 }

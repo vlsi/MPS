@@ -16516,20 +16516,10 @@
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
       <node concept="1oajcY" id="1tmnzZHuSMC" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="2rUHgdX2EIc" role="1NuT2Z">
-      <property role="TrG5h" value="editorComponent" />
-      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
-      <node concept="1oajcY" id="2rUHgdX2EId" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="2rUHgdX2EIe" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
       <node concept="1oajcY" id="2rUHgdX2EIf" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="2rUHgdX2EIg" role="1NuT2Z">
-      <property role="TrG5h" value="operationContext" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="2rUHgdX2EIh" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="2rUHgdX2EIi" role="1NuT2Z">
       <property role="TrG5h" value="project" />
@@ -16587,25 +16577,10 @@
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CELL" resolve="EDITOR_CELL" />
       <node concept="1oajcY" id="1tmnzZHuSNG" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="2rUHgdX2EIB" role="1NuT2Z">
-      <property role="TrG5h" value="editorComponent" />
-      <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
-      <node concept="1oajcY" id="2rUHgdX2EIC" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="2rUHgdX2EID" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
       <node concept="1oajcY" id="2rUHgdX2EIE" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="2rUHgdX2EIF" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="2rUHgdX2EIG" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="2rUHgdX2EIH" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="2rUHgdX2EII" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="2rUHgdX2EIJ" role="1NuT2Z">
       <property role="TrG5h" value="project" />
@@ -16748,14 +16723,14 @@
           <node concept="3cpWsn" id="2rUHgdX2EJo" role="3cpWs9">
             <property role="TrG5h" value="nodes" />
             <property role="3TUv4t" value="true" />
-            <node concept="_YKpA" id="2rUHgdX2EJp" role="1tU5fm">
-              <node concept="3uibUv" id="2rUHgdX2EJq" role="_ZDj9">
+            <node concept="2hMVRd" id="2aY$7DLGMb9" role="1tU5fm">
+              <node concept="3uibUv" id="2aY$7DLGMbb" role="2hN53Y">
                 <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
               </node>
             </node>
             <node concept="2ShNRf" id="2rUHgdX2EJr" role="33vP2m">
-              <node concept="Tc6Ow" id="2rUHgdX2EJs" role="2ShVmc">
-                <node concept="3uibUv" id="2rUHgdX2EJt" role="HW$YZ">
+              <node concept="2i4dXS" id="2aY$7DLGMVE" role="2ShVmc">
+                <node concept="3uibUv" id="2aY$7DLGMVG" role="HW$YZ">
                   <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                 </node>
               </node>
@@ -17039,8 +17014,11 @@
             <node concept="37vLTw" id="1pHoCUazS44" role="37wK5m">
               <ref role="3cqZAo" node="1pHoCUazS3Y" resolve="title" />
             </node>
-            <node concept="37vLTw" id="1pHoCUazS4e" role="37wK5m">
-              <ref role="3cqZAo" node="2rUHgdX2EJo" resolve="nodes" />
+            <node concept="2OqwBi" id="2aY$7DLGNFp" role="37wK5m">
+              <node concept="37vLTw" id="1pHoCUazS4e" role="2Oq$k0">
+                <ref role="3cqZAo" node="2rUHgdX2EJo" resolve="nodes" />
+              </node>
+              <node concept="ANE8D" id="2aY$7DLGNYe" role="2OqNvi" />
             </node>
             <node concept="2ShNRf" id="1pHoCUazS46" role="37wK5m">
               <node concept="1pGfFk" id="1pHoCUazS47" role="2ShVmc">

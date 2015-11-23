@@ -35,6 +35,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -180,7 +182,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_azr75j_a3a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2d5fabL, "query")) != null;
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L, 0x1143b2d5fabL, "query"))).isNotEmpty();
   }
   public static class ColorStyleClassItem_generic_cellMenu_azr75j_a0d0 extends AbstractCellMenuPart_Generic_Group {
     public ColorStyleClassItem_generic_cellMenu_azr75j_a0d0() {

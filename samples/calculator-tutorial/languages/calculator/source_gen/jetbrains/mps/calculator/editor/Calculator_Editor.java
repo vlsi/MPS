@@ -18,6 +18,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -75,6 +77,7 @@ public class Calculator_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Calculator_Editor.inputFieldListHandler_uh00px_b0(node, "inputField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputField");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, 0x12106fb26e8L, "inputField")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -120,6 +123,7 @@ public class Calculator_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Calculator_Editor.outputFieldListHandler_uh00px_d0(node, "outputField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputField");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0x26b3d6d5b99a4ed6L, 0x83bed2ea6f3627a1L, 0x12106f96410L, 0x12106fddf51L, "outputField")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

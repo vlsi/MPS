@@ -26,8 +26,6 @@ import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 /**
  * Class for analyzing merge driver dumps
@@ -96,5 +94,4 @@ public class TestMergeDialog {
     }
     final String finalResultFile = resultFile;
   }
-  protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
 }
