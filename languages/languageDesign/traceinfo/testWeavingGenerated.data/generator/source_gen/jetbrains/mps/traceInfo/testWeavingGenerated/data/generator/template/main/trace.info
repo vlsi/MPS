@@ -423,11 +423,10 @@
       <node id="6186432342008522510" at="156,146,157,59" concept="9" />
       <node id="6186432342008522510" at="161,156,162,78" concept="8" />
       <node id="6186432342008522510" at="162,78,163,51" concept="8" />
-      <node id="6186432342008522510" at="163,51,164,55" concept="8" />
-      <node id="6186432342008522510" at="164,55,165,231" concept="3" />
-      <node id="6186432342008522510" at="165,231,166,50" concept="9" />
-      <node id="6186432342008522510" at="168,0,169,0" concept="11" trace="propertyMacro_asyc93_c0a0c0b0c0c" />
-      <node id="6186432342008522510" at="169,0,170,0" concept="11" trace="propertyMacro_asyc93_c0a0c0b0b0b0b0c0b0c0b0b0b0b0b0e0c0c" />
+      <node id="6186432342008522510" at="163,51,164,167" concept="3" />
+      <node id="6186432342008522510" at="164,167,165,50" concept="9" />
+      <node id="6186432342008522510" at="167,0,168,0" concept="11" trace="propertyMacro_asyc93_c0a0c0b0c0c" />
+      <node id="6186432342008522510" at="168,0,169,0" concept="11" trace="propertyMacro_asyc93_c0a0c0b0b0b0b0c0b0c0b0b0b0b0b0e0c0c" />
       <node id="6186432342008522510" at="25,0,27,0" concept="1" trace="Templateweave__ChildConceptWeave#()V" />
       <node id="6186432342008522510" at="27,0,30,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6186432342008522510" at="41,9,44,9" concept="6" />
@@ -446,7 +445,7 @@
       <node id="6186432342008522510" at="93,221,98,29" concept="13" />
       <node id="6186432342008522510" at="105,221,110,29" concept="13" />
       <node id="6186432342008522510" at="71,219,77,21" concept="13" />
-      <node id="6186432342008522510" at="160,0,168,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="6186432342008522510" at="160,0,167,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="6186432342008522510" at="35,327,46,7" concept="0" />
       <node id="6186432342008522510" at="46,7,57,7" concept="0" />
       <node id="6186432342008522510" at="91,132,103,27" concept="0" />
@@ -499,12 +498,11 @@
         <var name="context" id="6186432342008522510" />
         <var name="environment" id="6186432342008522510" />
       </scope>
-      <scope id="6186432342008522510" at="161,156,166,50">
-        <var name="contextNode0" id="6186432342008522510" />
+      <scope id="6186432342008522510" at="161,156,165,50">
         <var name="templateContext" id="6186432342008522510" />
         <var name="tnodepart0" id="6186432342008522510" />
       </scope>
-      <scope id="6186432342008522510" at="160,0,168,0">
+      <scope id="6186432342008522510" at="160,0,167,0">
         <var name="weaveContext" id="6186432342008522510" />
         <var name="weaveSupport" id="6186432342008522510" />
       </scope>
@@ -551,7 +549,7 @@
       <scope id="6186432342008522510" at="30,0,155,0">
         <var name="context" id="6186432342008522510" />
       </scope>
-      <unit id="6186432342008522510" at="23,0,171,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeave" />
+      <unit id="6186432342008522510" at="23,0,170,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeave" />
     </file>
   </root>
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008533395">
@@ -751,21 +749,18 @@
       <node id="6186432342008533395" at="475,146,476,94" concept="9" />
       <node id="6186432342008533395" at="480,156,481,78" concept="8" />
       <node id="6186432342008533395" at="481,78,482,51" concept="8" />
-      <node id="6186432342008533395" at="482,51,483,55" concept="8" />
-      <node id="6186432342008533395" at="483,55,484,231" concept="3" />
-      <node id="6186432342008533395" at="484,231,485,51" concept="8" />
-      <node id="6186432342008533395" at="485,51,486,55" concept="8" />
-      <node id="6186432342008533395" at="486,55,487,231" concept="3" />
-      <node id="6186432342008533395" at="487,231,488,51" concept="8" />
-      <node id="6186432342008533395" at="488,51,489,55" concept="8" />
-      <node id="6186432342008533395" at="489,55,490,231" concept="3" />
-      <node id="6186432342008533395" at="490,231,491,67" concept="9" />
-      <node id="6186432342008533395" at="493,0,494,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0c0c" />
-      <node id="6186432342008533395" at="494,0,495,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0b0c0b0b0b0c0b0c0b0b0b0b0b0e0c0c" />
-      <node id="6186432342008533395" at="495,0,496,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0c0d" />
-      <node id="6186432342008533395" at="496,0,497,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0b0c0b0c0b0c0b0c0b0b0b0b0b0e0c0d" />
-      <node id="6186432342008533395" at="497,0,498,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0c0e" />
-      <node id="6186432342008533395" at="498,0,499,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0b0c0b0b0b0c0b0c0b0b0b0b0b0e0c0e" />
+      <node id="6186432342008533395" at="482,51,483,167" concept="3" />
+      <node id="6186432342008533395" at="483,167,484,51" concept="8" />
+      <node id="6186432342008533395" at="484,51,485,167" concept="3" />
+      <node id="6186432342008533395" at="485,167,486,51" concept="8" />
+      <node id="6186432342008533395" at="486,51,487,167" concept="3" />
+      <node id="6186432342008533395" at="487,167,488,67" concept="9" />
+      <node id="6186432342008533395" at="490,0,491,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0c0c" />
+      <node id="6186432342008533395" at="491,0,492,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0b0c0b0b0b0c0b0c0b0b0b0b0b0e0c0c" />
+      <node id="6186432342008533395" at="492,0,493,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0c0d" />
+      <node id="6186432342008533395" at="493,0,494,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0b0c0b0c0b0c0b0c0b0b0b0b0b0e0c0d" />
+      <node id="6186432342008533395" at="494,0,495,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0c0e" />
+      <node id="6186432342008533395" at="495,0,496,0" concept="11" trace="propertyMacro_es4xty_c0a0c0b0b0c0b0b0b0c0b0c0b0b0b0b0b0e0c0e" />
       <node id="6186432342008533395" at="25,0,27,0" concept="1" trace="Templateweave__ChildConceptWeaveMany#()V" />
       <node id="6186432342008533395" at="27,0,30,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6186432342008533395" at="41,9,44,9" concept="6" />
@@ -829,6 +824,7 @@
       <node id="6186432342008533395" at="194,7,205,7" concept="0" />
       <node id="6186432342008533395" at="331,329,342,7" concept="0" />
       <node id="6186432342008533395" at="342,7,353,7" concept="0" />
+      <node id="6186432342008533395" at="479,0,490,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="6186432342008533395" at="95,137,107,31" concept="0" />
       <node id="6186432342008533395" at="107,31,119,31" concept="0" />
       <node id="6186432342008533395" at="126,27,138,27" concept="0" />
@@ -841,7 +837,6 @@
       <node id="6186432342008533395" at="69,124,82,19" concept="0" />
       <node id="6186432342008533395" at="217,125,230,19" concept="0" />
       <node id="6186432342008533395" at="365,125,378,19" concept="0" />
-      <node id="6186432342008533395" at="479,0,493,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="6186432342008533395" at="93,222,121,29" concept="13" />
       <node id="6186432342008533395" at="253,222,281,29" concept="13" />
       <node id="6186432342008533395" at="389,222,417,29" concept="13" />
@@ -986,6 +981,12 @@
         <var name="context" id="6186432342008533395" />
         <var name="environment" id="6186432342008533395" />
       </scope>
+      <scope id="6186432342008533395" at="480,156,488,67">
+        <var name="templateContext" id="6186432342008533395" />
+        <var name="tnodepart0" id="6186432342008533395" />
+        <var name="tnodepart1" id="6186432342008533395" />
+        <var name="tnodepart2" id="6186432342008533395" />
+      </scope>
       <scope id="6186432342008533395" at="36,7,45,31">
         <var name="tnode2" id="6186432342008533395" />
       </scope>
@@ -1040,16 +1041,7 @@
       <scope id="6186432342008533395" at="366,19,377,43">
         <var name="tnode33" id="6186432342008533395" />
       </scope>
-      <scope id="6186432342008533395" at="480,156,491,67">
-        <var name="contextNode0" id="6186432342008533395" />
-        <var name="contextNode1" id="6186432342008533395" />
-        <var name="contextNode2" id="6186432342008533395" />
-        <var name="templateContext" id="6186432342008533395" />
-        <var name="tnodepart0" id="6186432342008533395" />
-        <var name="tnodepart1" id="6186432342008533395" />
-        <var name="tnodepart2" id="6186432342008533395" />
-      </scope>
-      <scope id="6186432342008533395" at="479,0,493,0">
+      <scope id="6186432342008533395" at="479,0,490,0">
         <var name="weaveContext" id="6186432342008533395" />
         <var name="weaveSupport" id="6186432342008533395" />
       </scope>
@@ -1149,7 +1141,7 @@
       <scope id="6186432342008533395" at="326,0,474,0">
         <var name="context" id="6186432342008533395" />
       </scope>
-      <unit id="6186432342008533395" at="23,0,500,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeaveMany" />
+      <unit id="6186432342008533395" at="23,0,497,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeaveMany" />
     </file>
   </root>
 </debug-info>

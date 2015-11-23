@@ -418,10 +418,9 @@ public class TemplateQuotation__to__staticMethodCall extends TemplateDeclaration
 
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveContext.getTemplateContext().subContext(getParametersAsMap());
+    final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(templateContext);
-    SNode contextNode0 = weaveContext.getContextNode();
-    weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), tnodepart0, weaveContext.getAnchorNode(contextNode0, tnodepart0));
+    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), tnodepart0);
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer templateNode_3njegt_c0a1a1a1a2a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396668027");
