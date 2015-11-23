@@ -16,24 +16,43 @@
 
 package jetbrains.mps.idea.core.project.module;
 
-import com.intellij.facet.FacetManager;
-import com.intellij.openapi.module.Module;
-import jetbrains.mps.idea.core.facet.MPSFacet;
-import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.project.Solution;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * Created by danilla on 26/10/15.
+ * Created by danilla on 23/11/15.
  */
-public class IdeaModuleMPSSupport extends ModuleMPSSupport {
-  @Override
-  public boolean isMPSEnabled(Module module) {
-    MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-    return facet != null && facet.wasInitialized();
+public class ModuleMPSSupportInit implements ProjectComponent {
+  private Project myProject;
+
+  public ModuleMPSSupportInit(Project project) {
+    myProject = project;
   }
 
   @Override
-  public Solution getSolution(Module module) {
-    return FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID).getSolution();
+  public void projectOpened() {
+    ModuleMPSSupport.getInstance().init(myProject);
+  }
+
+  @Override
+  public void projectClosed() {
+
+  }
+
+  @Override
+  public void initComponent() {
+
+  }
+
+  @Override
+  public void disposeComponent() {
+
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Initializer for ModuleMPSSupport extension";
   }
 }

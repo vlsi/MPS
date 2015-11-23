@@ -70,8 +70,8 @@ public abstract class NewModelActionBase extends AnAction {
     }
     final VirtualFile targetDir = vFiles[0];
 
-    final ModuleMPSSupport mpsFacade = module.getProject().getComponent(ModuleMPSSupport.class);
-    if (!mpsFacade.isMPSEnabled(module)) {
+    final ModuleMPSSupport mpsFacade = ModuleMPSSupport.getInstance();
+    if (mpsFacade == null || !mpsFacade.isMPSEnabled(module)) {
       return;
     }
 

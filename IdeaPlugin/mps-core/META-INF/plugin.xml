@@ -133,6 +133,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.refactoring.RegisterMoveNodePsiParticipant</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.module.ModuleMPSSupportInit</implementation-class>
+    </component>
   </project-components>
 
   <extensionPoints>
@@ -148,6 +151,8 @@
                     interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder"
                     interface="jetbrains.mps.idea.core.psi.MPS2PsiMapper"/>
+    <extensionPoint qualifiedName="com.intellij.mps.moduleMpsSupport"
+                    interface="jetbrains.mps.idea.core.project.module.ModuleMPSSupport"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

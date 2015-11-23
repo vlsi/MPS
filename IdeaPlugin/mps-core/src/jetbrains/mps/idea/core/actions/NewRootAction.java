@@ -130,8 +130,8 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    final ModuleMPSSupport mpsFacade = module.getProject().getComponent(ModuleMPSSupport.class);
-    if (!mpsFacade.isMPSEnabled(module)) {
+    final ModuleMPSSupport mpsFacade = ModuleMPSSupport.getInstance();
+    if (mpsFacade == null || !mpsFacade.isMPSEnabled(module)) {
       return;
     }
 
