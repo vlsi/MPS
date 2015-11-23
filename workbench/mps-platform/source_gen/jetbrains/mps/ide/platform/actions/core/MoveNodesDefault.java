@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import java.util.Collection;
@@ -28,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -115,7 +115,9 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
         while (oldNode_it.hasNext() && sk_it.hasNext()) {
           oldNode_var = oldNode_it.next();
           sk_var = sk_it.next();
-          MapSequence.fromMap(keepOldNodes).put(oldNode_var, sk_var);
+          for (SNode desc : ListSequence.fromList(SNodeOperations.getNodeDescendants(oldNode_var, null, true, new SAbstractConcept[]{}))) {
+            MapSequence.fromMap(keepOldNodes).put(desc, sk_var);
+          }
           if (!(sk_var)) {
             SNodeOperations.detachNode(oldNode_var);
           }
