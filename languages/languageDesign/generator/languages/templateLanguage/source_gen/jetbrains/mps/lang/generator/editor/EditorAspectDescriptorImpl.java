@@ -32,6 +32,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013931abdL, "jetbrains.mps.lang.generator.structure.DismissTopMappingRule"))) {
         return Collections.<ConceptEditor>singletonList(new DismissTopMappingRule_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, "jetbrains.mps.lang.generator.structure.DropAttributeRule"))) {
+        return Collections.<ConceptEditor>singletonList(new DropAttributeRule_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, "jetbrains.mps.lang.generator.structure.DropRootRule"))) {
         return Collections.<ConceptEditor>singletonList(new DropRootRule_Editor());
       }

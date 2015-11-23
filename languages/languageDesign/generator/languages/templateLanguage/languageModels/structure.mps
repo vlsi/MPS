@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -289,6 +289,12 @@
       <property role="20kJfa" value="exports" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="rrptlDYrFa" resolve="ExportLabel" />
+    </node>
+    <node concept="1TJgyj" id="6uPxrhfjwrr" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="dropAttrubuteRule" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6uPxrhfjpgV" resolve="DropAttributeRule" />
     </node>
   </node>
   <node concept="1TIwiD" id="fWrartG">
@@ -1970,6 +1976,35 @@
       <property role="20kJfa" value="node" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6uPxrhfjph6">
+    <property role="1pbfSe" value="1224533510" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="DropAttributeRule_Condition" />
+    <ref role="1TJDcQ" node="hHd3awK" resolve="TemplateQueryBase" />
+  </node>
+  <node concept="1TIwiD" id="6uPxrhfjpgV">
+    <property role="1pbfSe" value="1224533521" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="DropAttributeRule" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1k7MCQBWRWu" role="1TKVEl">
+      <property role="TrG5h" value="applyToSubConcepts" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyj" id="6uPxrhfjvcB" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="condition" />
+      <ref role="20lvS9" node="6uPxrhfjph6" resolve="DropAttributeRule_Condition" />
+    </node>
+    <node concept="1TJgyj" id="6uPxrhfjpgY" role="1TKVEi">
+      <property role="20kJfa" value="applicableConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+    <node concept="PrWs8" id="6uPxrhfjpgW" role="PzmwI">
+      <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
   </node>
 </model>

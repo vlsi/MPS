@@ -34,6 +34,10 @@ public class TemplateFunctionMethodName {
     return "dropRootRule_Condition_" + function.getNodeId().toString();
   }
 
+  public static String dropAttributeRule_Condition(SNode function) {
+    return "dropAttr_Condition_" + function.getNodeId().toString();
+  }
+
   public static String baseMappingRule_Condition(SNode function) {
     return "baseMappingRule_Condition_" + function.getNodeId().toString();
   }

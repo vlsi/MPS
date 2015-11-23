@@ -313,6 +313,9 @@
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1145572800087" name="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation" flags="nn" index="2Ttrtt" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
+        <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
+      </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
         <child id="1154546920563" name="concept" index="3gmYPZ" />
@@ -5082,6 +5085,48 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="18kY7G" id="6uPxrhfjtIy">
+    <property role="TrG5h" value="check_DropAttributeRule" />
+    <property role="3GE5qa" value="rule" />
+    <node concept="3clFbS" id="6uPxrhfjtIz" role="18ibNy">
+      <node concept="3clFbJ" id="6uPxrhfjuPN" role="3cqZAp">
+        <node concept="3clFbS" id="6uPxrhfjuPP" role="3clFbx">
+          <node concept="2MkqsV" id="6uPxrhfjv3d" role="3cqZAp">
+            <node concept="1YBJjd" id="6uPxrhfjv3s" role="2OEOjV">
+              <ref role="1YBMHb" node="6uPxrhfjtI_" resolve="rule" />
+            </node>
+            <node concept="Xl_RD" id="6uPxrhfjv5U" role="2MkJ7o">
+              <property role="Xl_RC" value="Rule shall specify NodeAttribute subconcept" />
+            </node>
+            <node concept="2OE7Q9" id="6uPxrhfjv3K" role="2OEWyd">
+              <ref role="2OEe5H" to="tpf8:6uPxrhfjpgY" />
+            </node>
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="6uPxrhfjv0N" role="3clFbw">
+          <node concept="2OqwBi" id="6uPxrhfjv0P" role="3fr31v">
+            <node concept="2OqwBi" id="6uPxrhfjv0Q" role="2Oq$k0">
+              <node concept="1YBJjd" id="6uPxrhfjv0R" role="2Oq$k0">
+                <ref role="1YBMHb" node="6uPxrhfjtI_" resolve="rule" />
+              </node>
+              <node concept="3TrEf2" id="6uPxrhfjv0S" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:6uPxrhfjpgY" />
+              </node>
+            </node>
+            <node concept="2Zo12i" id="6uPxrhfjv0T" role="2OqNvi">
+              <node concept="chp4Y" id="6uPxrhfjv0U" role="2Zo12j">
+                <ref role="cht4Q" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6uPxrhfjtI_" role="1YuTPh">
+      <property role="TrG5h" value="rule" />
+      <ref role="1YaFvo" to="tpf8:6uPxrhfjpgV" resolve="DropAttributeRule" />
     </node>
   </node>
 </model>
