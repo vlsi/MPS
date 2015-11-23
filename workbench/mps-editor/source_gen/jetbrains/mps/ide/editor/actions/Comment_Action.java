@@ -8,6 +8,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -15,7 +23,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 public class Comment_Action extends BaseAction {
   private static final Icon ICON = null;
   public Comment_Action() {
-    super("Comment Out", "", ICON);
+    super("Comment", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -26,7 +34,14 @@ public class Comment_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     Selection selection = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection();
-    return selection != null && EditorActionUtils.isWriteActionEnabled(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT), selection.getSelectedCells());
+    if (selection == null || !(EditorActionUtils.isWriteActionEnabled(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT), selection.getSelectedCells()))) {
+      return false;
+    }
+    return ListSequence.fromList(SNodeOperations.getNodeAncestors(((SNode) event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectedNode()), null, true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L, "jetbrains.mps.lang.core.structure.IOldComment")) && Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x39384475a5756fb0L, "jetbrains.mps.lang.core.structure.IOldComment")), SMethodTrimmedId.create("getCommentedNodes", null, "3$Sh7m_tmZE")))).isNotEmpty();
+      }
+    }).isEmpty();
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

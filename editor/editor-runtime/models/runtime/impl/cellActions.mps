@@ -2986,7 +2986,6 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="2VTQtA8$mp3" role="jymVt" />
     <node concept="3clFb_" id="2VTQtA8$mse" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createRestorableSelection" />

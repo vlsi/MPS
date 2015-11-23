@@ -265,6 +265,9 @@
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
+      </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
@@ -1936,7 +1939,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7hmFG5jLeUa">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
     <ref role="13h7C2" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="13hLZK" id="7hmFG5jLeUb" role="13h7CW">
       <node concept="3clFbS" id="7hmFG5jLeUc" role="2VODD2" />
@@ -1974,6 +1977,23 @@
         <node concept="3Tqbb2" id="7hmFG5jLeUn" role="1tU5fm" />
       </node>
       <node concept="10P_77" id="7hmFG5jLeUo" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3$Sh7m_tmZc">
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <ref role="13h7C2" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
+    <node concept="13hLZK" id="3$Sh7m_tmZd" role="13h7CW">
+      <node concept="3clFbS" id="3$Sh7m_tmZe" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3$Sh7m_tmZE" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getCommentedNodes" />
+      <node concept="3Tm1VV" id="3$Sh7m_tmZF" role="1B3o_S" />
+      <node concept="3clFbS" id="3$Sh7m_tmZG" role="3clF47" />
+      <node concept="A3Dl8" id="6KqaYzPFUyF" role="3clF45">
+        <node concept="3Tqbb2" id="6KqaYzPFUyP" role="A3Ik2" />
+      </node>
     </node>
   </node>
 </model>

@@ -168,6 +168,7 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="1225271546410" name="jetbrains.mps.baseLanguage.structure.TrimOperation" flags="nn" index="17S1cR" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -18314,9 +18315,10 @@
           </node>
           <node concept="uaGSO" id="5vlcUuJ702i" role="ucKa5">
             <node concept="3clFbS" id="5vlcUuJ702j" role="2VODD2">
-              <node concept="3clFbF" id="5vlcUuJ70a2" role="3cqZAp">
-                <node concept="3clFbT" id="5vlcUuJ70a3" role="3clFbG">
-                  <property role="3clFbU" value="true" />
+              <node concept="3clFbF" id="3$Sh7m_vAbB" role="3cqZAp">
+                <node concept="2OqwBi" id="3$Sh7m_vAjQ" role="3clFbG">
+                  <node concept="ub8z3" id="3$Sh7m_vAb_" role="2Oq$k0" />
+                  <node concept="17RvpY" id="3$Sh7m_vAwi" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -35344,6 +35346,31 @@
                     <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="37WguZ" id="3$Sh7m_wMrx">
+    <property role="3GE5qa" value="comments" />
+    <property role="TrG5h" value="SingleLineComment_factories" />
+    <node concept="37WvkG" id="3$Sh7m_wMry" role="37WGs$">
+      <property role="3mWdv0" value="SingleLineComment is used only for text comment parts since 3.3" />
+      <ref role="37XkoT" to="tpee:5vlcUuJ5uOU" resolve="SingleLineComment" />
+      <node concept="37Y9Zx" id="3$Sh7m_wMrz" role="37ZfLb">
+        <node concept="3clFbS" id="3$Sh7m_wMr$" role="2VODD2">
+          <node concept="3clFbF" id="3$Sh7m_wMrM" role="3cqZAp">
+            <node concept="2OqwBi" id="3$Sh7m_wN7B" role="3clFbG">
+              <node concept="2OqwBi" id="3$Sh7m_wMuS" role="2Oq$k0">
+                <node concept="1r4Lsj" id="3$Sh7m_wMrL" role="2Oq$k0" />
+                <node concept="3Tsc0h" id="3$Sh7m_wMB9" role="2OqNvi">
+                  <ref role="3TtcxE" to="tpee:5vlcUuJ5JXN" />
+                </node>
+              </node>
+              <node concept="2DeJg1" id="3$Sh7m_wOXJ" role="2OqNvi">
+                <ref role="1A0vxQ" to="tpee:5vlcUuJ5uOX" resolve="TextCommentPart" />
               </node>
             </node>
           </node>

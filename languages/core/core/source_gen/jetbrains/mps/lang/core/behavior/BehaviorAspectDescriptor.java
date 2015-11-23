@@ -26,6 +26,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myPropertyAttribute__BehaviorDescriptor = new PropertyAttribute__BehaviorDescriptor();
   private final BHDescriptor myISuppressErrors__BehaviorDescriptor = new ISuppressErrors__BehaviorDescriptor();
   private final BHDescriptor myScopeProvider__BehaviorDescriptor = new ScopeProvider__BehaviorDescriptor();
+  private final BHDescriptor myIOldComment__BehaviorDescriptor = new IOldComment__BehaviorDescriptor();
   private final BHDescriptor mySuppressErrorsAnnotation__BehaviorDescriptor = new SuppressErrorsAnnotation__BehaviorDescriptor();
   private final BHDescriptor myBaseCommentAttribute__BehaviorDescriptor = new BaseCommentAttribute__BehaviorDescriptor();
   private final BHDescriptor myAttribute__BehaviorDescriptor = new Attribute__BehaviorDescriptor();
@@ -34,7 +35,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[18];
+    myConceptBehaviorIds = new long[19];
     myConceptBehaviorIds[0] = 0x10802efe25aL;
     myConceptBehaviorIds[1] = 0x110396eaaa4L;
     myConceptBehaviorIds[2] = 0x116b17c6e46L;
@@ -49,10 +50,11 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[11] = 0x2eb1ad060897da56L;
     myConceptBehaviorIds[12] = 0x2f16f1b357e19f43L;
     myConceptBehaviorIds[13] = 0x33d23ee961a0cbf3L;
-    myConceptBehaviorIds[14] = 0x3a98b0957fe8e5d2L;
-    myConceptBehaviorIds[15] = 0x3dcc194340c24debL;
-    myConceptBehaviorIds[16] = 0x47bf8397520e5939L;
-    myConceptBehaviorIds[17] = 0x4b498c7787b32cebL;
+    myConceptBehaviorIds[14] = 0x39384475a5756fb0L;
+    myConceptBehaviorIds[15] = 0x3a98b0957fe8e5d2L;
+    myConceptBehaviorIds[16] = 0x3dcc194340c24debL;
+    myConceptBehaviorIds[17] = 0x47bf8397520e5939L;
+    myConceptBehaviorIds[18] = 0x4b498c7787b32cebL;
   }
 
   @Deprecated
@@ -95,12 +97,14 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 13:
         return myScopeProvider__BehaviorDescriptor;
       case 14:
-        return mySuppressErrorsAnnotation__BehaviorDescriptor;
+        return myIOldComment__BehaviorDescriptor;
       case 15:
-        return myBaseCommentAttribute__BehaviorDescriptor;
+        return mySuppressErrorsAnnotation__BehaviorDescriptor;
       case 16:
-        return myAttribute__BehaviorDescriptor;
+        return myBaseCommentAttribute__BehaviorDescriptor;
       case 17:
+        return myAttribute__BehaviorDescriptor;
+      case 18:
         return myExportScope__BehaviorDescriptor;
       default:
         return null;

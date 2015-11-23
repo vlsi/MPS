@@ -202,6 +202,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySingleLineComment__BehaviorDescriptor = new SingleLineComment__BehaviorDescriptor();
   private final BHDescriptor myCommentPart__BehaviorDescriptor = new CommentPart__BehaviorDescriptor();
   private final BHDescriptor myTextCommentPart__BehaviorDescriptor = new TextCommentPart__BehaviorDescriptor();
+  private final BHDescriptor myStatementCommentPart__BehaviorDescriptor = new StatementCommentPart__BehaviorDescriptor();
   private final BHDescriptor myTokens__BehaviorDescriptor = new Tokens__BehaviorDescriptor();
   private final BHDescriptor myIClassifier__BehaviorDescriptor = new IClassifier__BehaviorDescriptor();
   private final BHDescriptor myIClassifierMember__BehaviorDescriptor = new IClassifierMember__BehaviorDescriptor();
@@ -217,7 +218,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[201];
+    myConceptBehaviorIds = new long[202];
     myConceptBehaviorIds[0] = 0xf8c108ca66L;
     myConceptBehaviorIds[1] = 0xf8c108ca68L;
     myConceptBehaviorIds[2] = 0xf8c37a7f6eL;
@@ -408,17 +409,18 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[187] = 0x57d533a7af15ed3aL;
     myConceptBehaviorIds[188] = 0x57d533a7af15ed3bL;
     myConceptBehaviorIds[189] = 0x57d533a7af15ed3dL;
-    myConceptBehaviorIds[190] = 0x5a98df4004080866L;
-    myConceptBehaviorIds[191] = 0x66c71d82c2eb113dL;
-    myConceptBehaviorIds[192] = 0x66c71d82c2eb113eL;
-    myConceptBehaviorIds[193] = 0x66c71d82c2eb7f7eL;
-    myConceptBehaviorIds[194] = 0x6c0ba864df016178L;
-    myConceptBehaviorIds[195] = 0x6c6b6a1e379f9404L;
-    myConceptBehaviorIds[196] = 0x6fea7de6103549b1L;
-    myConceptBehaviorIds[197] = 0x70ea1dc4c5721865L;
-    myConceptBehaviorIds[198] = 0x72de18bba2dc2a73L;
-    myConceptBehaviorIds[199] = 0x759937a5973279b7L;
-    myConceptBehaviorIds[200] = 0x7e4a5cff51167b74L;
+    myConceptBehaviorIds[190] = 0x57d533a7af16ff67L;
+    myConceptBehaviorIds[191] = 0x5a98df4004080866L;
+    myConceptBehaviorIds[192] = 0x66c71d82c2eb113dL;
+    myConceptBehaviorIds[193] = 0x66c71d82c2eb113eL;
+    myConceptBehaviorIds[194] = 0x66c71d82c2eb7f7eL;
+    myConceptBehaviorIds[195] = 0x6c0ba864df016178L;
+    myConceptBehaviorIds[196] = 0x6c6b6a1e379f9404L;
+    myConceptBehaviorIds[197] = 0x6fea7de6103549b1L;
+    myConceptBehaviorIds[198] = 0x70ea1dc4c5721865L;
+    myConceptBehaviorIds[199] = 0x72de18bba2dc2a73L;
+    myConceptBehaviorIds[200] = 0x759937a5973279b7L;
+    myConceptBehaviorIds[201] = 0x7e4a5cff51167b74L;
   }
 
   @Deprecated
@@ -813,26 +815,28 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 189:
         return myTextCommentPart__BehaviorDescriptor;
       case 190:
-        return myTokens__BehaviorDescriptor;
+        return myStatementCommentPart__BehaviorDescriptor;
       case 191:
-        return myIClassifier__BehaviorDescriptor;
+        return myTokens__BehaviorDescriptor;
       case 192:
-        return myIClassifierMember__BehaviorDescriptor;
+        return myIClassifier__BehaviorDescriptor;
       case 193:
-        return myIClassifierType__BehaviorDescriptor;
+        return myIClassifierMember__BehaviorDescriptor;
       case 194:
-        return myLocalInstanceFieldReference__BehaviorDescriptor;
+        return myIClassifierType__BehaviorDescriptor;
       case 195:
-        return myLocalMethodCall__BehaviorDescriptor;
+        return myLocalInstanceFieldReference__BehaviorDescriptor;
       case 196:
-        return myUnaryMinus__BehaviorDescriptor;
+        return myLocalMethodCall__BehaviorDescriptor;
       case 197:
-        return myIYetUnresolved__BehaviorDescriptor;
+        return myUnaryMinus__BehaviorDescriptor;
       case 198:
-        return myITypeApplicable__BehaviorDescriptor;
+        return myIYetUnresolved__BehaviorDescriptor;
       case 199:
-        return myUnknownNameRef__BehaviorDescriptor;
+        return myITypeApplicable__BehaviorDescriptor;
       case 200:
+        return myUnknownNameRef__BehaviorDescriptor;
+      case 201:
         return myUnknownConsCall__BehaviorDescriptor;
       default:
         return null;

@@ -24,7 +24,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,82,0" name="jetbrains.mps.baseLanguage.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,84,0" name="jetbrains.mps.baseLanguage.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="PasteWrappers.java">
       <unit at="38,49,48,5" name="jetbrains.mps.baseLanguage.actions.PasteWrappers$2" />
@@ -6505,6 +6505,21 @@
       <unit id="3767209081964669797" at="2398,53,2426,9" name="jetbrains.mps.baseLanguage.actions.QueriesGenerated$83" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/4123120730936387297">
+    <file name="SingleLineComment_factories.java">
+      <node id="4123120730936387314" at="13,91,14,380" concept="7" />
+      <node id="4123120730936387298" at="13,0,16,0" concept="12" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="4123120730936387298" at="13,91,14,380" />
+      <scope id="4123120730936387298" at="13,0,16,0">
+        <var name="enclosingNode" id="4123120730936387298" />
+        <var name="model" id="4123120730936387298" />
+        <var name="newNode" id="4123120730936387298" />
+        <var name="sampleNode" id="4123120730936387298" />
+      </scope>
+      <unit id="4123120730936387298" at="12,0,17,0" name="jetbrains.mps.baseLanguage.actions.SingleLineComment_factories$NodeFactory_4123120730936387298" />
+      <unit id="4123120730936387297" at="11,0,18,0" name="jetbrains.mps.baseLanguage.actions.SingleLineComment_factories" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/4246727699194754942">
     <file name="QueriesGenerated.java">
       <node id="4246727699194877939" at="4777,94,4778,257" concept="13" />
@@ -7624,7 +7639,7 @@
       <node id="6329021646629503641" at="1348,269,1349,177" concept="7" />
       <node id="6329021646629503656" at="1349,177,1350,26" concept="14" />
       <node id="6329021646629486998" at="1352,42,1353,24" concept="14" />
-      <node id="6329021646629503618" at="1355,83,1356,24" concept="14" />
+      <node id="4123120730936074983" at="1355,83,1356,61" concept="14" />
       <node id="6329021646629503625" at="1358,57,1359,27" concept="14" />
       <node id="6329021646629486998" at="1361,64,1362,44" concept="14" />
       <node id="6329021646629486998" at="1366,5,1367,18" concept="14" />
@@ -7639,7 +7654,7 @@
       <node id="6329021646629486998" at="1341,93,1366,5" concept="1" />
       <node id="6329021646629486998" at="1340,0,1369,0" concept="18" trace="nodeSubstituteActionsBuilder_ActionsFactory_TextCommentPart_6329021646629486998#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="6329021646629486998" at="1352,42,1353,24" />
-      <scope id="6329021646629503123" at="1355,83,1356,24" />
+      <scope id="6329021646629503123" at="1355,83,1356,61" />
       <scope id="6329021646629503624" at="1358,57,1359,27" />
       <scope id="6329021646629486998" at="1361,64,1362,44" />
       <scope id="6329021646629503121" at="1347,94,1350,26">

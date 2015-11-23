@@ -197,7 +197,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 10:
         // Concept: Statement 
         if (myIntentions10 == null) {
-          myIntentions10 = new IntentionFactory[13];
+          myIntentions10 = new IntentionFactory[12];
           myIntentions10[0] = new CreateInternalLabel_Intention();
           myIntentions10[1] = new SurroundWithIf_Intention();
           myIntentions10[2] = new SurroundWithIfElse_Intention();
@@ -210,7 +210,6 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions10[9] = new TryCatchFinally_Intention();
           myIntentions10[10] = new SurroundWithSynchronized_Intention();
           myIntentions10[11] = new SurroundWithBrackets_Intention();
-          myIntentions10[12] = new SurroundWithComment_Intention();
         }
         return Arrays.asList(myIntentions10);
       case 11:
@@ -459,7 +458,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[93];
+    IntentionFactory[] rv = new IntentionFactory[92];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -522,37 +521,36 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[59] = new TryCatchFinally_Intention();
     rv[60] = new SurroundWithSynchronized_Intention();
     rv[61] = new SurroundWithBrackets_Intention();
-    rv[62] = new SurroundWithComment_Intention();
-    rv[63] = new MakeFieldTransient_Intention();
-    rv[64] = new SurroundWithParenthesis_Intention();
-    rv[65] = new SurroundWithTypeCast_Intention();
-    rv[66] = new SurroundWithNegation_Intention();
-    rv[67] = new SurroundWithIfClause_Intention();
-    rv[68] = new SurroundWithIfElseClause_Intention();
-    rv[69] = new AddTypeParameters_Intention();
-    rv[70] = new MakeSynchronized_Intention();
-    rv[71] = new ConvertToClosure_Intention();
-    rv[72] = new UnwrapIfThenBlock_Intention();
-    rv[73] = new UnwrapTryCatch_Intention();
-    rv[74] = new RemoveTVDInAnonymousClass_Intention();
-    rv[75] = new SplitIf_Intention();
-    rv[76] = new ConvertIfConditionToTernaryOperator_Intention();
-    rv[77] = new AddModifiers_Intention();
-    rv[78] = new AddOverrideAnnotation_Intention();
-    rv[79] = new AlterStatementListContainer_Intention();
-    rv[80] = new RemoveStaticFieldModifier_Intention();
-    rv[81] = new AddStaticFieldModifier_Intention();
-    rv[82] = new MakeMethodStatic_Intention();
-    rv[83] = new MakeStaticFieldVolatile_Intention();
-    rv[84] = new MakeStaticFieldTransient_Intention();
-    rv[85] = new OrToAndAndBack_Intention();
-    rv[86] = new SwapTernaryBranches_Intention();
-    rv[87] = new SwitchToCustomPropertyImplementation_Intention();
-    rv[88] = new SwitchToDefaultPropertyImplementation_Intention();
-    rv[89] = new SwitchToCustomConstructorPropertyImplementation_Intention();
-    rv[90] = new CleanUnmatchedParentheses_Intention();
-    rv[91] = new ComputeWholeExpressionValue_Intention();
-    rv[92] = new ComputeExpressionValue_Intention();
+    rv[62] = new MakeFieldTransient_Intention();
+    rv[63] = new SurroundWithParenthesis_Intention();
+    rv[64] = new SurroundWithTypeCast_Intention();
+    rv[65] = new SurroundWithNegation_Intention();
+    rv[66] = new SurroundWithIfClause_Intention();
+    rv[67] = new SurroundWithIfElseClause_Intention();
+    rv[68] = new AddTypeParameters_Intention();
+    rv[69] = new MakeSynchronized_Intention();
+    rv[70] = new ConvertToClosure_Intention();
+    rv[71] = new UnwrapIfThenBlock_Intention();
+    rv[72] = new UnwrapTryCatch_Intention();
+    rv[73] = new RemoveTVDInAnonymousClass_Intention();
+    rv[74] = new SplitIf_Intention();
+    rv[75] = new ConvertIfConditionToTernaryOperator_Intention();
+    rv[76] = new AddModifiers_Intention();
+    rv[77] = new AddOverrideAnnotation_Intention();
+    rv[78] = new AlterStatementListContainer_Intention();
+    rv[79] = new RemoveStaticFieldModifier_Intention();
+    rv[80] = new AddStaticFieldModifier_Intention();
+    rv[81] = new MakeMethodStatic_Intention();
+    rv[82] = new MakeStaticFieldVolatile_Intention();
+    rv[83] = new MakeStaticFieldTransient_Intention();
+    rv[84] = new OrToAndAndBack_Intention();
+    rv[85] = new SwapTernaryBranches_Intention();
+    rv[86] = new SwitchToCustomPropertyImplementation_Intention();
+    rv[87] = new SwitchToDefaultPropertyImplementation_Intention();
+    rv[88] = new SwitchToCustomConstructorPropertyImplementation_Intention();
+    rv[89] = new CleanUnmatchedParentheses_Intention();
+    rv[90] = new ComputeWholeExpressionValue_Intention();
+    rv[91] = new ComputeExpressionValue_Intention();
     return Arrays.asList(rv);
   }
 }

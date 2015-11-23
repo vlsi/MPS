@@ -28,8 +28,9 @@ public final class CommentedStatementsBlock__BehaviorDescriptor extends BaseBHDe
 
   public static final SMethod<List<SNode>> getLocalVariableElements_idi1I$XiP = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocalVariableElements").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i1I$XiP").registry(REGISTRY).build();
   public static final SMethod<Void> collectUncaughtMethodThrowables_id4Gt7ANIVH8f = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectUncaughtMethodThrowables").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Gt7ANIVH8f").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
+  public static final SMethod<Iterable<SNode>> getCommentedNodes_id3$Sh7m_tmZE = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getCommentedNodes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$Sh7m_tmZE").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLocalVariableElements_idi1I$XiP, collectUncaughtMethodThrowables_id4Gt7ANIVH8f);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLocalVariableElements_idi1I$XiP, collectUncaughtMethodThrowables_id4Gt7ANIVH8f, getCommentedNodes_id3$Sh7m_tmZE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -39,6 +40,9 @@ public final class CommentedStatementsBlock__BehaviorDescriptor extends BaseBHDe
   }
   /*package*/ static void collectUncaughtMethodThrowables_id4Gt7ANIVH8f(@NotNull SNode __thisNode__, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     // do nothing 
+  }
+  /*package*/ static Iterable<SNode> getCommentedNodes_id3$Sh7m_tmZE(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, 0x1121e2157e4L, "statement"));
   }
 
   /*package*/ CommentedStatementsBlock__BehaviorDescriptor() {
@@ -62,6 +66,8 @@ public final class CommentedStatementsBlock__BehaviorDescriptor extends BaseBHDe
       case 1:
         collectUncaughtMethodThrowables_id4Gt7ANIVH8f(node, (Set<SNode>) parameters[0], ((boolean) (Boolean) parameters[1]));
         return null;
+      case 2:
+        return (T) ((Iterable<SNode>) getCommentedNodes_id3$Sh7m_tmZE(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

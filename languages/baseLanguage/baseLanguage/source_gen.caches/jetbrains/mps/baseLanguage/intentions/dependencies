@@ -842,7 +842,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SuroundWithTryCatch_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundStatementsWithForEach_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithBrackets_Intention" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithComment_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithDoWhile_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithFor_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.SurroundWithIfClause_Intention" />
@@ -1649,27 +1648,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.SurroundWithBrackets_Intention" file="SurroundWithBrackets_Intention.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutableBase" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.intentions.SurroundWithComment_Intention" file="SurroundWithComment_Intention.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />

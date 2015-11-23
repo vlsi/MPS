@@ -2025,6 +2025,16 @@
     <node concept="PrWs8" id="U99cpalq9I" role="PzmwI">
       <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
+    <node concept="PrWs8" id="6KqaYzPD5fU" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
+    </node>
+    <node concept="PrWs8" id="6KqaYzPCRAF" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="6KqaYzPCRAK" role="lGtFl">
+      <property role="YLPcu" value="3.3" />
+      <property role="YLQ7P" value="Use BaseCommentAttribute instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8MpOA8">
     <property role="R4oN_" value="do... while loop" />
@@ -3627,6 +3637,12 @@
     <node concept="asaX9" id="4TrdCq8xRJM" role="lGtFl">
       <property role="YLPcu" value="3.3" />
       <property role="YLQ7P" value="Use BaseCommentAttribute instead" />
+    </node>
+    <node concept="PrWs8" id="3$Sh7m_ttiL" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
+    </node>
+    <node concept="PrWs8" id="3$Sh7m_tuPA" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
   <node concept="1TIwiD" id="5vlcUuJ5uOU">

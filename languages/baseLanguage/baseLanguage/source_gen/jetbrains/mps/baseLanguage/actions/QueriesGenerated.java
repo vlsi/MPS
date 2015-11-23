@@ -1353,7 +1353,7 @@ public class QueriesGenerated {
             return true;
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return true;
+            return (pattern != null && pattern.length() > 0);
           }
           public String getMatchingText(String pattern) {
             return pattern;
