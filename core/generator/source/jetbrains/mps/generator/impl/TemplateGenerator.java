@@ -173,7 +173,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(ctx, operationContext.getPerformanceTracer())
       : ctx;
-    myPostponedRefs = new PostponedReferenceUpdate(this);
+    myPostponedRefs = new PostponedReferenceUpdate();
     myDynamicRefs = new DynamicReferenceUpdate(this);
     myNewTrace = stepArgs.genTrace;
     myTransitionTrace = stepArgs.transitionTrace;
