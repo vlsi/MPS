@@ -16,8 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration2;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -50,6 +52,7 @@ public class RuleManager {
 
   private final FastRuleFinder<TemplateReductionRule> myReductionRuleFinder;
   private final FastRuleFinder<TemplateDropRootRule> myDropRuleFinder;
+  private final FastRuleFinder<TemplateDropAttributeRule> myDropAttributeFinder;
 
   /**
    *
@@ -64,6 +67,7 @@ public class RuleManager {
     myRoot_MappingRules = new FlattenIterable<TemplateRootMappingRule>(configurations.size());
     myWeaving_MappingRules = new FlattenIterable<TemplateWeavingRule>(configurations.size());
     FlattenIterable<TemplateDropRootRule> dropRootRules = new FlattenIterable<TemplateDropRootRule>(configurations.size());
+    FlattenIterable<TemplateDropAttributeRule> dropAttributeRules = new FlattenIterable<TemplateDropAttributeRule>(configurations.size());
     FlattenIterable<TemplateReductionRule> reductionRules = new FlattenIterable<TemplateReductionRule>();
 
     LinkedList<TemplateMappingScript> postScripts = new LinkedList<TemplateMappingScript>();
@@ -75,6 +79,9 @@ public class RuleManager {
       myWeaving_MappingRules.add(mappingConfig.getWeavingRules());
 
       dropRootRules.add(mappingConfig.getDropRules());
+      if (mappingConfig instanceof TemplateMappingConfiguration2) {
+        dropAttributeRules.add(((TemplateMappingConfiguration2) mappingConfig).getDropAttributeRules());
+      }
       reductionRules.add(mappingConfig.getReductionRules());
       for (TemplateMappingScript postMappingScript : mappingConfig.getPostScripts()) {
         if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
@@ -92,6 +99,7 @@ public class RuleManager {
 
     myReductionRuleFinder = new FastRuleFinder<TemplateReductionRule>(reductionRules);
     myDropRuleFinder = new FastRuleFinder<TemplateDropRootRule>(dropRootRules);
+    myDropAttributeFinder = new FastRuleFinder<TemplateDropAttributeRule>(dropAttributeRules);
 
     myPreScripts = new ScriptManager(preScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(preScripts));
     myPostScripts = new ScriptManager(postScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(postScripts));
@@ -117,6 +125,12 @@ public class RuleManager {
   public List<TemplateDropRootRule> getDropRootRules(SNode inputRootNode) {
     final List<TemplateDropRootRule> rv = myDropRuleFinder.findReductionRules(inputRootNode);
     return rv == null ? Collections.<TemplateDropRootRule>emptyList() : rv;
+  }
+
+  @NotNull
+  public List<TemplateDropAttributeRule> getDropAttributeRules(@NotNull SNode attributeNode) {
+    List<TemplateDropAttributeRule> rules = myDropAttributeFinder.findReductionRules(attributeNode);
+    return rules == null ? Collections.<TemplateDropAttributeRule>emptyList() : rules;
   }
 
   @NotNull
