@@ -26,7 +26,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myPropertyAttribute__BehaviorDescriptor = new PropertyAttribute__BehaviorDescriptor();
   private final BHDescriptor myISuppressErrors__BehaviorDescriptor = new ISuppressErrors__BehaviorDescriptor();
   private final BHDescriptor myScopeProvider__BehaviorDescriptor = new ScopeProvider__BehaviorDescriptor();
-  private final BHDescriptor myIOldComment__BehaviorDescriptor = new IOldComment__BehaviorDescriptor();
+  private final BHDescriptor myIOldCommentContainer__BehaviorDescriptor = new IOldCommentContainer__BehaviorDescriptor();
   private final BHDescriptor mySuppressErrorsAnnotation__BehaviorDescriptor = new SuppressErrorsAnnotation__BehaviorDescriptor();
   private final BHDescriptor myBaseCommentAttribute__BehaviorDescriptor = new BaseCommentAttribute__BehaviorDescriptor();
   private final BHDescriptor myAttribute__BehaviorDescriptor = new Attribute__BehaviorDescriptor();
@@ -97,7 +97,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 13:
         return myScopeProvider__BehaviorDescriptor;
       case 14:
-        return myIOldComment__BehaviorDescriptor;
+        return myIOldCommentContainer__BehaviorDescriptor;
       case 15:
         return mySuppressErrorsAnnotation__BehaviorDescriptor;
       case 16:

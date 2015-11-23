@@ -42,7 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @deprecated use DefContainmentSubstituteInfo
+ * @deprecated use DefaultSChildSubstituteInfo
  */
 
 @Deprecated

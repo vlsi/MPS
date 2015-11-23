@@ -2026,7 +2026,7 @@
       <ref role="PrY4T" to="tpck:2WmWrdnSpX3" resolve="ISuppressErrors" />
     </node>
     <node concept="PrWs8" id="6KqaYzPD5fU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
+      <ref role="PrY4T" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
     </node>
     <node concept="PrWs8" id="6KqaYzPCRAF" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -3638,9 +3638,6 @@
       <property role="YLPcu" value="3.3" />
       <property role="YLQ7P" value="Use BaseCommentAttribute instead" />
     </node>
-    <node concept="PrWs8" id="3$Sh7m_ttiL" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
-    </node>
     <node concept="PrWs8" id="3$Sh7m_tuPA" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -3655,6 +3652,9 @@
     <ref role="1TJDcQ" node="fzclF8l" resolve="Statement" />
     <node concept="PrWs8" id="4vRPkgg2YBr" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
+    <node concept="PrWs8" id="ANVkWUkoi1" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
     </node>
     <node concept="1TJgyj" id="5vlcUuJ5JXN" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

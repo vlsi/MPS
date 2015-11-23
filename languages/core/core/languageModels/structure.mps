@@ -443,7 +443,12 @@
   <node concept="PlHQZ" id="3$Sh7m_tmYK">
     <property role="1pbfSe" value="559041499" />
     <property role="3GE5qa" value="attributes.editing.comment" />
-    <property role="TrG5h" value="IOldComment" />
+    <property role="TrG5h" value="IOldCommentContainer" />
+  </node>
+  <node concept="PlHQZ" id="ANVkWUjg7G">
+    <property role="1pbfSe" value="1140911931" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <property role="TrG5h" value="IOldCommentAnnotation" />
   </node>
 </model>
 
