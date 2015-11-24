@@ -53,9 +53,22 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
     myEnv = env;
     myGenerator = env.getGenerator();
   }
+
+  @NotNull
   @Override
-  public void weave(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) {
-    weave(contextParentNode, childRole, outputNodeToWeave, null);
+  public TemplateContext getTemplateContext() {
+    return myTemplateContext;
+  }
+
+  @Override
+  public void weaveNode(@NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws GenerationFailureException {
+    weaveNode(myWeaveContext.getContextNode(), childRole, outputNodeToWeave);
+  }
+
+  @Override
+  public void weaveNode(@NotNull SNode contextParentNode, @NotNull SContainmentLink childRole, @NotNull SNode outputNodeToWeave) throws
+      GenerationFailureException {
+    weave(contextParentNode, childRole, outputNodeToWeave, myWeaveContext.getAnchorNode(contextParentNode, outputNodeToWeave));
   }
 
   @Override

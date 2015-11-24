@@ -63,7 +63,6 @@ public class IdeaPluginModuleFacetTab extends BaseTab implements FacetTab {
 
     myTextField = new JTextField(myIdeaPluginModuleFacet.getPluginId());
 
-    myTextField.setPreferredSize(new Dimension(300, 20));
     content.add(myTextField, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
         GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 

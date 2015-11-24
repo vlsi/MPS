@@ -266,8 +266,8 @@
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <property id="1184950341882" name="topPriorityGroup" index="3$yP7D" />
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
+        <child id="1167172143858" name="weavingMappingRule" index="30SoJX" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
-        <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
         <child id="1195502100749" name="preMappingScript" index="1puA0r" />
       </concept>
       <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
@@ -283,9 +283,6 @@
         <reference id="1112820671508" name="modifiedSwitch" index="phYkn" />
         <child id="1167340453568" name="reductionMappingRule" index="3aUrZf" />
       </concept>
-      <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
-        <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
-      </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
@@ -295,10 +292,6 @@
         <reference id="1722980698497626483" name="template" index="v9R2y" />
         <child id="1722980698497626405" name="actualArgument" index="v9R3O" />
       </concept>
-      <concept id="3462145372628071891" name="jetbrains.mps.lang.generator.structure.WeaveMacro" flags="ln" index="2Sjzsc">
-        <child id="3462145372628083181" name="ruleConsequence" index="2SjAcM" />
-        <child id="3462145372628083179" name="nodesToWeaveQuery" index="2SjAcO" />
-      </concept>
       <concept id="5133195082121471908" name="jetbrains.mps.lang.generator.structure.LabelMacro" flags="ln" index="2ZBi8u" />
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
@@ -306,6 +299,10 @@
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
+      </concept>
+      <concept id="1167171569011" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" flags="lg" index="30QchW">
+        <child id="1169570368028" name="ruleConsequence" index="1fOSGc" />
+        <child id="1184616230853" name="contextNodeQuery" index="3gCiVm" />
       </concept>
       <concept id="1227303129915" name="jetbrains.mps.lang.generator.structure.AbstractMacro" flags="lg" index="30XT8A">
         <property id="3265704088513289864" name="comment" index="34cw8o" />
@@ -331,9 +328,7 @@
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
-      <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
-        <reference id="1167514355421" name="template" index="3lhOvi" />
-      </concept>
+      <concept id="1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" flags="in" index="3gB$ML" />
       <concept id="1195499912406" name="jetbrains.mps.lang.generator.structure.MappingScript" flags="lg" index="1pmfR0">
         <property id="1195595592106" name="scriptKind" index="1v3f2W" />
         <property id="1195595611951" name="modifiesModel" index="1v3jST" />
@@ -744,24 +739,38 @@
   </registry>
   <node concept="bUwia" id="2L4pT56homW">
     <property role="TrG5h" value="main" />
-    <node concept="3lhOvk" id="ahkU72nmbJ" role="3lj3bC">
+    <node concept="30QchW" id="25Zyg0Odzzq" role="30SoJX">
       <ref role="30HIoZ" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-      <ref role="3lhOvi" node="ahkU72nmbK" resolve="map_BuildProject" />
-      <node concept="30G5F_" id="ahkU72nGnQ" role="30HLyM">
-        <node concept="3clFbS" id="ahkU72nGnR" role="2VODD2">
-          <node concept="3clFbF" id="ahkU72nGnS" role="3cqZAp">
-            <node concept="2OqwBi" id="ahkU72nO5l" role="3clFbG">
-              <node concept="2OqwBi" id="ahkU72nGoe" role="2Oq$k0">
-                <node concept="30H73N" id="ahkU72nGnT" role="2Oq$k0" />
-                <node concept="2Rf3mk" id="ahkU72nO4W" role="2OqNvi">
-                  <node concept="1xMEDy" id="ahkU72nO4X" role="1xVPHs">
-                    <node concept="chp4Y" id="ahkU72nO5r" role="ri$Ld">
+      <node concept="3gB$ML" id="25Zyg0Odzzr" role="3gCiVm">
+        <node concept="3clFbS" id="25Zyg0Odzzs" role="2VODD2">
+          <node concept="3clFbF" id="25Zyg0OdzT2" role="3cqZAp">
+            <node concept="2OqwBi" id="25Zyg0Od$eG" role="3clFbG">
+              <node concept="1iwH7S" id="25Zyg0OdzT1" role="2Oq$k0" />
+              <node concept="2f_y7m" id="25Zyg0Od$fW" role="2OqNvi">
+                <node concept="30H73N" id="25Zyg0Od$gM" role="2f_y78" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="j$656" id="25Zyg0OdCLv" role="1fOSGc">
+        <ref role="v9R2y" node="ahkU72nmbY" resolve="weave_Tasks" />
+      </node>
+      <node concept="30G5F_" id="25Zyg0OdzNV" role="30HLyM">
+        <node concept="3clFbS" id="25Zyg0OdzNW" role="2VODD2">
+          <node concept="3clFbF" id="25Zyg0OdzOy" role="3cqZAp">
+            <node concept="2OqwBi" id="25Zyg0OdzOz" role="3clFbG">
+              <node concept="2OqwBi" id="25Zyg0OdzO$" role="2Oq$k0">
+                <node concept="30H73N" id="25Zyg0OdzO_" role="2Oq$k0" />
+                <node concept="2Rf3mk" id="25Zyg0OdzOA" role="2OqNvi">
+                  <node concept="1xMEDy" id="25Zyg0OdzOB" role="1xVPHs">
+                    <node concept="chp4Y" id="25Zyg0OdzOC" role="ri$Ld">
                       <ref role="cht4Q" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3GX2aA" id="ahkU72nO5q" role="2OqNvi" />
+              <node concept="3GX2aA" id="25Zyg0OdzOD" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -10626,31 +10635,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="1l3spW" id="ahkU72nmbK">
-    <property role="TrG5h" value="map_BuildProject" />
-    <node concept="1l3spV" id="ahkU72nmbL" role="1l3spN" />
-    <node concept="n94m4" id="ahkU72nmbM" role="lGtFl">
-      <ref role="n9lRv" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-    </node>
-    <node concept="2Sjzsc" id="ahkU72nmbU" role="lGtFl">
-      <node concept="j$656" id="9doRgOUury" role="2SjAcM">
-        <ref role="v9R2y" node="ahkU72nmbY" resolve="weave_Tasks" />
-      </node>
-      <node concept="3JmXsc" id="ahkU72nmbW" role="2SjAcO">
-        <node concept="3clFbS" id="ahkU72nmbX" role="2VODD2">
-          <node concept="3clFbF" id="ahkU72nmd6" role="3cqZAp">
-            <node concept="2ShNRf" id="ahkU72nmd7" role="3clFbG">
-              <node concept="2HTt$P" id="ahkU72nqEx" role="2ShVmc">
-                <node concept="3Tqbb2" id="ahkU72nqE$" role="2HTBi0" />
-                <node concept="30H73N" id="ahkU72nqE_" role="2HTEbv" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="29HgVG" id="9doRgP4peR" role="lGtFl" />
   </node>
   <node concept="13MO4I" id="ahkU72nmbY">
     <property role="TrG5h" value="weave_Tasks" />

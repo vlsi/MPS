@@ -37,6 +37,11 @@ import java.util.Collection;
  * and TF.contextNodeQuery has only 2 uses throughout whole MPS. It might be reasonable to do it other way round and to support TF.contextNodeQuery
  * for any templates (not only under weaving). Anyway, template handling shall be identical for weave and apply cases.
  *
+ * Provisional nature of the interface is the reason I left WeaveContext parameter here (although strived to get WC hidden, and only NWF exposed).
+ * Since the method was exposed in few EAP builds, I'd need to introduce a new one, keep both for at least RC round, and then remove the one with
+ * two arguments. As long as TF.contextNodeQuery is history, there would be no reason to have WC there (we use it to get original context node for
+ * template fragment query context), and there's no need in this interface at all.
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */

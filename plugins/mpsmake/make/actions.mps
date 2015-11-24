@@ -7244,6 +7244,16 @@
         <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
       </node>
     </node>
+    <node concept="312cEg" id="3LTvNgPOGvW" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myGenerationSettins" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="3LTvNgPOE8p" role="1B3o_S" />
+      <node concept="3uibUv" id="3LTvNgPOGpp" role="1tU5fm">
+        <ref role="3uigEE" to="ap4t:~IModifiableGenerationSettings" resolve="IModifiableGenerationSettings" />
+      </node>
+    </node>
     <node concept="312cEg" id="1$ZRmkX9e_b" role="jymVt">
       <property role="TrG5h" value="myComponent" />
       <node concept="3Tm6S6" id="1$ZRmkX9e_c" role="1B3o_S" />
@@ -7251,6 +7261,17 @@
         <ref role="3uigEE" node="5J8_5nlyCOs" resolve="TransientModelsPanel" />
       </node>
     </node>
+    <node concept="312cEg" id="7Ir7d9FUv78" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myFocusManager" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="7Ir7d9FUt5S" role="1B3o_S" />
+      <node concept="3uibUv" id="7Ir7d9FUv0z" role="1tU5fm">
+        <ref role="3uigEE" to="z60i:~KeyboardFocusManager" resolve="KeyboardFocusManager" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3LTvNgPOwH9" role="jymVt" />
     <node concept="3clFbW" id="hP8D6fqe6y" role="jymVt">
       <node concept="37vLTG" id="hP8D6fqe6K" role="3clF46">
         <property role="TrG5h" value="bar" />
@@ -7271,53 +7292,23 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1$ZRmkX9e_e" role="3cqZAp">
-          <node concept="37vLTI" id="1$ZRmkX9e_f" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuq3a" role="37vLTJ">
-              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+        <node concept="3clFbF" id="3LTvNgPOI2P" role="3cqZAp">
+          <node concept="37vLTI" id="3LTvNgPOIgM" role="3clFbG">
+            <node concept="37vLTw" id="3LTvNgPOI2N" role="37vLTJ">
+              <ref role="3cqZAo" node="3LTvNgPOGvW" resolve="myGenerationSettins" />
             </node>
-            <node concept="2ShNRf" id="1$ZRmkX9e_j" role="37vLTx">
-              <node concept="1pGfFk" id="1$ZRmkX9e_k" role="2ShVmc">
-                <ref role="37wK5l" node="5J8_5nlyCOu" resolve="TransientModelsPanel" />
-                <node concept="Xjq3P" id="1$ZRmkX9e_l" role="37wK5m" />
+            <node concept="2OqwBi" id="3LTvNgPOwzN" role="37vLTx">
+              <node concept="2YIFZM" id="3LTvNgPOwzO" role="2Oq$k0">
+                <ref role="1Pybhc" to="ap4t:~GenerationSettingsProvider" resolve="GenerationSettingsProvider" />
+                <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getInstance():jetbrains.mps.generator.GenerationSettingsProvider" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="3LTvNgPOwzP" role="2OqNvi">
+                <ref role="37wK5l" to="ap4t:~GenerationSettingsProvider.getGenerationSettings():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getGenerationSettings" />
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbH" id="1Q7UogT4gly" role="3cqZAp" />
-        <node concept="3SKdUt" id="1Q7UogT4zEa" role="3cqZAp">
-          <node concept="3SKdUq" id="1Q7UogT4$ND" role="3SKWNk">
-            <property role="3SKdUp" value="Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="1Q7UogT4gz0" role="3cqZAp">
-          <node concept="2OqwBi" id="1Q7UogT4gz1" role="3clFbG">
-            <node concept="2YIFZM" id="1Q7UogT4qv4" role="2Oq$k0">
-              <ref role="1Pybhc" to="j936:~UISettings" resolve="UISettings" />
-              <ref role="37wK5l" to="j936:~UISettings.getInstance():com.intellij.ide.ui.UISettings" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="1Q7UogT4gz3" role="2OqNvi">
-              <ref role="37wK5l" to="j936:~UISettings.addUISettingsListener(com.intellij.ide.ui.UISettingsListener,com.intellij.openapi.Disposable):void" resolve="addUISettingsListener" />
-              <node concept="Xjq3P" id="1Q7UogT4gz4" role="37wK5m" />
-              <node concept="Xjq3P" id="1Q7UogT4gz5" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1Q7UogT4gz6" role="3cqZAp">
-          <node concept="2OqwBi" id="1Q7UogT4gz7" role="3clFbG">
-            <node concept="2YIFZM" id="1Q7UogT4qv7" role="2Oq$k0">
-              <ref role="1Pybhc" to="z60i:~KeyboardFocusManager" resolve="KeyboardFocusManager" />
-              <ref role="37wK5l" to="z60i:~KeyboardFocusManager.getCurrentKeyboardFocusManager():java.awt.KeyboardFocusManager" resolve="getCurrentKeyboardFocusManager" />
-            </node>
-            <node concept="liA8E" id="1Q7UogT4gz9" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~KeyboardFocusManager.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener):void" resolve="addPropertyChangeListener" />
-              <node concept="Xl_RD" id="1Q7UogT4gza" role="37wK5m">
-                <property role="Xl_RC" value="focusOwner" />
-              </node>
-              <node concept="Xjq3P" id="1Q7UogT4gzb" role="37wK5m" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3clFb_" id="hP8D6fqe6O" role="jymVt">
@@ -7336,7 +7327,51 @@
       </node>
       <node concept="3cqZAl" id="hP8D6fqe6Q" role="3clF45" />
       <node concept="3Tm1VV" id="hP8D6fqe6P" role="1B3o_S" />
-      <node concept="3clFbS" id="hP8D6fqe6U" role="3clF47" />
+      <node concept="3clFbS" id="hP8D6fqe6U" role="3clF47">
+        <node concept="3SKdUt" id="1Q7UogT4zEa" role="3cqZAp">
+          <node concept="3SKdUq" id="1Q7UogT4$ND" role="3SKWNk">
+            <property role="3SKdUp" value="Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Q7UogT4gz0" role="3cqZAp">
+          <node concept="2OqwBi" id="1Q7UogT4gz1" role="3clFbG">
+            <node concept="2YIFZM" id="1Q7UogT4qv4" role="2Oq$k0">
+              <ref role="37wK5l" to="j936:~UISettings.getInstance():com.intellij.ide.ui.UISettings" resolve="getInstance" />
+              <ref role="1Pybhc" to="j936:~UISettings" resolve="UISettings" />
+            </node>
+            <node concept="liA8E" id="1Q7UogT4gz3" role="2OqNvi">
+              <ref role="37wK5l" to="j936:~UISettings.addUISettingsListener(com.intellij.ide.ui.UISettingsListener,com.intellij.openapi.Disposable):void" resolve="addUISettingsListener" />
+              <node concept="Xjq3P" id="1Q7UogT4gz4" role="37wK5m" />
+              <node concept="Xjq3P" id="1Q7UogT4gz5" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7Ir7d9FUxsc" role="3cqZAp">
+          <node concept="37vLTI" id="7Ir7d9FUxRl" role="3clFbG">
+            <node concept="37vLTw" id="7Ir7d9FUxsa" role="37vLTJ">
+              <ref role="3cqZAo" node="7Ir7d9FUv78" resolve="myFocusManager" />
+            </node>
+            <node concept="2YIFZM" id="7Ir7d9FUrMu" role="37vLTx">
+              <ref role="37wK5l" to="z60i:~KeyboardFocusManager.getCurrentKeyboardFocusManager():java.awt.KeyboardFocusManager" resolve="getCurrentKeyboardFocusManager" />
+              <ref role="1Pybhc" to="z60i:~KeyboardFocusManager" resolve="KeyboardFocusManager" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Q7UogT4gz6" role="3cqZAp">
+          <node concept="2OqwBi" id="1Q7UogT4gz7" role="3clFbG">
+            <node concept="37vLTw" id="7Ir7d9FUyQz" role="2Oq$k0">
+              <ref role="3cqZAo" node="7Ir7d9FUv78" resolve="myFocusManager" />
+            </node>
+            <node concept="liA8E" id="1Q7UogT4gz9" role="2OqNvi">
+              <ref role="37wK5l" to="z60i:~KeyboardFocusManager.addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener):void" resolve="addPropertyChangeListener" />
+              <node concept="Xl_RD" id="1Q7UogT4gza" role="37wK5m">
+                <property role="Xl_RC" value="focusOwner" />
+              </node>
+              <node concept="Xjq3P" id="1Q7UogT4gzb" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2AHcQZ" id="3tYsUK_U_hf" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -7410,9 +7445,8 @@
                               <node concept="liA8E" id="hP8D6fqe7t" role="2OqNvi">
                                 <ref role="37wK5l" to="ap4t:~IGenerationSettings.isSaveTransientModels():boolean" resolve="isSaveTransientModels" />
                               </node>
-                              <node concept="2YIFZM" id="hP8D6fqe7s" role="2Oq$k0">
-                                <ref role="1Pybhc" to="o6ex:~GenerationSettings" resolve="GenerationSettings" />
-                                <ref role="37wK5l" to="o6ex:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
+                              <node concept="37vLTw" id="3LTvNgPOJzU" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3LTvNgPOGvW" resolve="myGenerationSettins" />
                               </node>
                             </node>
                             <node concept="10P_77" id="hP8D6fqe7q" role="1tU5fm" />
@@ -7420,10 +7454,6 @@
                         </node>
                         <node concept="3clFbF" id="hP8D6fqe7u" role="3cqZAp">
                           <node concept="2OqwBi" id="hP8D6fqe7v" role="3clFbG">
-                            <node concept="2YIFZM" id="hP8D6fqe7w" role="2Oq$k0">
-                              <ref role="1Pybhc" to="o6ex:~GenerationSettings" resolve="GenerationSettings" />
-                              <ref role="37wK5l" to="o6ex:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
-                            </node>
                             <node concept="liA8E" id="hP8D6fqe7x" role="2OqNvi">
                               <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setSaveTransientModels(boolean):void" resolve="setSaveTransientModels" />
                               <node concept="3fqX7Q" id="hP8D6fqe7y" role="37wK5m">
@@ -7431,6 +7461,9 @@
                                   <ref role="3cqZAo" node="hP8D6fqe7p" resolve="saveTransientModels" />
                                 </node>
                               </node>
+                            </node>
+                            <node concept="37vLTw" id="3LTvNgPOKEW" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3LTvNgPOGvW" resolve="myGenerationSettins" />
                             </node>
                           </node>
                         </node>
@@ -7648,17 +7681,28 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6Z63QvVfU3M" role="jymVt" />
     <node concept="3clFb_" id="2hEKckkLhQa" role="jymVt">
       <property role="TrG5h" value="update" />
       <node concept="3Tm1VV" id="2hEKckkLipr" role="1B3o_S" />
       <node concept="3clFbS" id="2hEKckkLhQd" role="3clF47">
-        <node concept="3clFbF" id="2hEKckkLhQe" role="3cqZAp">
-          <node concept="2OqwBi" id="2hEKckkLhQf" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuMzc" role="2Oq$k0">
-              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+        <node concept="3clFbJ" id="3LTvNgPP_xC" role="3cqZAp">
+          <node concept="3clFbS" id="3LTvNgPP_xE" role="3clFbx">
+            <node concept="3clFbF" id="2hEKckkLhQe" role="3cqZAp">
+              <node concept="2OqwBi" id="2hEKckkLhQf" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeuMzc" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+                </node>
+                <node concept="liA8E" id="2hEKckkLhQh" role="2OqNvi">
+                  <ref role="37wK5l" node="5J8_5nlyCPf" resolve="update" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="2hEKckkLhQh" role="2OqNvi">
-              <ref role="37wK5l" node="5J8_5nlyCPf" resolve="update" />
+          </node>
+          <node concept="3y3z36" id="3LTvNgPPAx2" role="3clFbw">
+            <node concept="10Nm6u" id="3LTvNgPPANy" role="3uHU7w" />
+            <node concept="37vLTw" id="3LTvNgPPA4X" role="3uHU7B">
+              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
             </node>
           </node>
         </node>
@@ -7708,18 +7752,58 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6Z63QvVfVWS" role="jymVt" />
     <node concept="3clFb_" id="hP8D6fqe7U" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="dispose" />
       <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="hP8D6fqe7X" role="3clF47" />
+      <node concept="3clFbS" id="hP8D6fqe7X" role="3clF47">
+        <node concept="3SKdUt" id="6Z63QvVfT1y" role="3cqZAp">
+          <node concept="3SKdUq" id="6Z63QvVfT2r" role="3SKWNk">
+            <property role="3SKdUp" value="no need to removeUISettingsListener as it is registered with Disposable and UISettings removes the listener on dispose" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7Ir7d9FUzzu" role="3cqZAp">
+          <node concept="3clFbS" id="7Ir7d9FUzzw" role="3clFbx">
+            <node concept="3clFbF" id="7Ir7d9FU_vh" role="3cqZAp">
+              <node concept="2OqwBi" id="7Ir7d9FU_S6" role="3clFbG">
+                <node concept="37vLTw" id="7Ir7d9FU_vf" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7Ir7d9FUv78" resolve="myFocusManager" />
+                </node>
+                <node concept="liA8E" id="6Z63QvVfTtl" role="2OqNvi">
+                  <ref role="37wK5l" to="z60i:~KeyboardFocusManager.removePropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener):void" resolve="removePropertyChangeListener" />
+                  <node concept="Xl_RD" id="6Z63QvVfU2J" role="37wK5m">
+                    <property role="Xl_RC" value="focusOwner" />
+                  </node>
+                  <node concept="Xjq3P" id="6Z63QvVfTIw" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="7Ir7d9FUBqn" role="3cqZAp">
+              <node concept="37vLTI" id="7Ir7d9FUBO3" role="3clFbG">
+                <node concept="10Nm6u" id="7Ir7d9FUC5e" role="37vLTx" />
+                <node concept="37vLTw" id="7Ir7d9FUBql" role="37vLTJ">
+                  <ref role="3cqZAo" node="7Ir7d9FUv78" resolve="myFocusManager" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="7Ir7d9FU$yh" role="3clFbw">
+            <node concept="10Nm6u" id="7Ir7d9FU$UN" role="3uHU7w" />
+            <node concept="37vLTw" id="7Ir7d9FU$8k" role="3uHU7B">
+              <ref role="3cqZAo" node="7Ir7d9FUv78" resolve="myFocusManager" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3cqZAl" id="hP8D6fqe7W" role="3clF45" />
       <node concept="3Tm1VV" id="hP8D6fqe7V" role="1B3o_S" />
       <node concept="2AHcQZ" id="3tYsUK_U_h9" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="6Z63QvVfWje" role="jymVt" />
     <node concept="3clFb_" id="hP8D6fqe7Y" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -7808,9 +7892,8 @@
       <node concept="3clFbS" id="7ipB4ZUdPez" role="3clF47">
         <node concept="3clFbF" id="7ipB4ZUdPe_" role="3cqZAp">
           <node concept="2OqwBi" id="hP8D6fqe6D" role="3clFbG">
-            <node concept="2YIFZM" id="hP8D6fqe6E" role="2Oq$k0">
-              <ref role="1Pybhc" to="o6ex:~GenerationSettings" resolve="GenerationSettings" />
-              <ref role="37wK5l" to="o6ex:~GenerationSettings.getInstance():jetbrains.mps.generator.IModifiableGenerationSettings" resolve="getInstance" />
+            <node concept="37vLTw" id="3LTvNgPOLk5" role="2Oq$k0">
+              <ref role="3cqZAo" node="3LTvNgPOGvW" resolve="myGenerationSettins" />
             </node>
             <node concept="liA8E" id="hP8D6fqe6F" role="2OqNvi">
               <ref role="37wK5l" to="ap4t:~IGenerationSettings.isSaveTransientModels():boolean" resolve="isSaveTransientModels" />
@@ -7831,12 +7914,42 @@
       </node>
       <node concept="3Tm1VV" id="1$ZRmkX9bOE" role="1B3o_S" />
       <node concept="3clFbS" id="1$ZRmkX9bOG" role="3clF47">
-        <node concept="3clFbF" id="1$ZRmkX9ey1" role="3cqZAp">
-          <node concept="2OqwBi" id="1$ZRmkX9e_m" role="3clFbG">
-            <node concept="2OwXpG" id="1$ZRmkX9e_o" role="2OqNvi">
-              <ref role="2Oxat5" node="1$ZRmkX9e_b" resolve="myComponent" />
+        <node concept="3clFbJ" id="7yBW3gdGOB4" role="3cqZAp">
+          <node concept="3clFbS" id="7yBW3gdGOB6" role="3clFbx">
+            <node concept="3SKdUt" id="7yBW3gdGVUh" role="3cqZAp">
+              <node concept="3SKdUq" id="7yBW3gdGVVk" role="3SKWNk">
+                <property role="3SKdUp" value="getComponent() is invoked EARLIER than install(), so this is the only place to instantiate panel" />
+              </node>
             </node>
-            <node concept="Xjq3P" id="1$ZRmkX9e_n" role="2Oq$k0" />
+            <node concept="3SKdUt" id="7yBW3gdGWww" role="3cqZAp">
+              <node concept="3SKdUq" id="7yBW3gdGWx_" role="3SKWNk">
+                <property role="3SKdUp" value="except cons of this class (which is bad, because this goes to TMP, which uses it e.g. to getText() on un-initialized instance)" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="7yBW3gdGR5I" role="3cqZAp">
+              <node concept="37vLTI" id="7yBW3gdGRwh" role="3clFbG">
+                <node concept="37vLTw" id="7yBW3gdGR5G" role="37vLTJ">
+                  <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+                </node>
+                <node concept="2ShNRf" id="1$ZRmkX9e_j" role="37vLTx">
+                  <node concept="1pGfFk" id="1$ZRmkX9e_k" role="2ShVmc">
+                    <ref role="37wK5l" node="5J8_5nlyCOu" resolve="TransientModelsPanel" />
+                    <node concept="Xjq3P" id="1$ZRmkX9e_l" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="7yBW3gdGP$J" role="3clFbw">
+            <node concept="10Nm6u" id="7yBW3gdGPQm" role="3uHU7w" />
+            <node concept="37vLTw" id="7yBW3gdGP9y" role="3uHU7B">
+              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="7yBW3gdGSKd" role="3cqZAp">
+          <node concept="37vLTw" id="7yBW3gdGT$h" role="3cqZAk">
+            <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
           </node>
         </node>
       </node>
@@ -7944,14 +8057,9 @@
         </node>
       </node>
       <node concept="3clFbS" id="2LX1rHNIXRA" role="3clF47">
-        <node concept="3clFbF" id="2LX1rHNJ28g" role="3cqZAp">
-          <node concept="2OqwBi" id="2LX1rHNJ2Jj" role="3clFbG">
-            <node concept="37vLTw" id="2LX1rHNJ28f" role="2Oq$k0">
-              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
-            </node>
-            <node concept="liA8E" id="2LX1rHNJ4XW" role="2OqNvi">
-              <ref role="37wK5l" node="5J8_5nlyCPf" resolve="update" />
-            </node>
+        <node concept="3clFbF" id="7yBW3gdGV7m" role="3cqZAp">
+          <node concept="1rXfSq" id="7yBW3gdGV7k" role="3clFbG">
+            <ref role="37wK5l" node="2hEKckkLhQa" resolve="update" />
           </node>
         </node>
       </node>
@@ -7970,14 +8078,9 @@
         </node>
       </node>
       <node concept="3clFbS" id="1tWJVfj_YVo" role="3clF47">
-        <node concept="3clFbF" id="1tWJVfjA0V_" role="3cqZAp">
-          <node concept="2OqwBi" id="1tWJVfjA1TN" role="3clFbG">
-            <node concept="37vLTw" id="1tWJVfjA0V$" role="2Oq$k0">
-              <ref role="3cqZAo" node="1$ZRmkX9e_b" resolve="myComponent" />
-            </node>
-            <node concept="liA8E" id="1tWJVfjA49w" role="2OqNvi">
-              <ref role="37wK5l" node="5J8_5nlyCPf" resolve="update" />
-            </node>
+        <node concept="3clFbF" id="7yBW3gdGVec" role="3cqZAp">
+          <node concept="1rXfSq" id="7yBW3gdGVed" role="3clFbG">
+            <ref role="37wK5l" node="2hEKckkLhQa" resolve="update" />
           </node>
         </node>
       </node>
@@ -9714,13 +9817,6 @@
       </node>
       <node concept="3Tm6S6" id="5do60t9uS2F" role="1B3o_S" />
     </node>
-    <node concept="312cEg" id="5do60t9uS3S" role="jymVt">
-      <property role="TrG5h" value="myDisplayer" />
-      <node concept="3Tm6S6" id="5do60t9uS3T" role="1B3o_S" />
-      <node concept="3uibUv" id="5do60t9uS3W" role="1tU5fm">
-        <ref role="3uigEE" node="C3dcc38Te3" resolve="TransientModelBallonDisplayer" />
-      </node>
-    </node>
     <node concept="312cEg" id="5do60t9v3W2" role="jymVt">
       <property role="TrG5h" value="myStatusBar" />
       <node concept="3uibUv" id="5do60t9v3W4" role="1tU5fm">
@@ -9838,28 +9934,41 @@
           </node>
         </node>
         <node concept="3clFbH" id="5do60t9v48r" role="3cqZAp" />
-        <node concept="3clFbF" id="5do60t9uS49" role="3cqZAp">
-          <node concept="37vLTI" id="5do60t9uS4d" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuk1_" role="37vLTJ">
-              <ref role="3cqZAo" node="5do60t9uS3S" resolve="myDisplayer" />
+        <node concept="3cpWs8" id="3LTvNgPOPyS" role="3cqZAp">
+          <node concept="3cpWsn" id="3LTvNgPOPyT" role="3cpWs9">
+            <property role="TrG5h" value="displayer" />
+            <node concept="3uibUv" id="3LTvNgPOPyR" role="1tU5fm">
+              <ref role="3uigEE" node="C3dcc38Te3" resolve="TransientModelBallonDisplayer" />
             </node>
-            <node concept="2ShNRf" id="14ACydzRgcM" role="37vLTx">
-              <node concept="1pGfFk" id="14ACydzRgcN" role="2ShVmc">
+            <node concept="2ShNRf" id="3LTvNgPOPyU" role="33vP2m">
+              <node concept="1pGfFk" id="3LTvNgPOPyV" role="2ShVmc">
                 <ref role="37wK5l" node="C3dcc38Te5" resolve="TransientModelBallonDisplayer" />
-                <node concept="37vLTw" id="2BHiRxeuFJz" role="37wK5m">
+                <node concept="37vLTw" id="3LTvNgPOPyW" role="37wK5m">
                   <ref role="3cqZAo" node="5do60t9uS2E" resolve="myProject" />
                 </node>
-                <node concept="37vLTw" id="2BHiRxeunfZ" role="37wK5m">
+                <node concept="37vLTw" id="3LTvNgPOPyX" role="37wK5m">
                   <ref role="3cqZAo" node="5do60t9v3W5" resolve="myWidget" />
                 </node>
               </node>
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="3LTvNgPOOAz" role="3cqZAp">
+          <node concept="2YIFZM" id="3LTvNgPOOKL" role="3clFbG">
+            <ref role="37wK5l" to="zn9m:~Disposer.register(com.intellij.openapi.Disposable,com.intellij.openapi.Disposable):void" resolve="register" />
+            <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
+            <node concept="37vLTw" id="3LTvNgPOP56" role="37wK5m">
+              <ref role="3cqZAo" node="5do60t9v3W5" resolve="myWidget" />
+            </node>
+            <node concept="37vLTw" id="3LTvNgPOPZD" role="37wK5m">
+              <ref role="3cqZAo" node="3LTvNgPOPyT" resolve="displayer" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="14ACydzRgcR" role="3cqZAp">
           <node concept="2OqwBi" id="14ACydzRgcS" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeujZF" role="2Oq$k0">
-              <ref role="3cqZAo" node="5do60t9uS3S" resolve="myDisplayer" />
+            <node concept="37vLTw" id="3LTvNgPOQ6W" role="2Oq$k0">
+              <ref role="3cqZAo" node="3LTvNgPOPyT" resolve="displayer" />
             </node>
             <node concept="liA8E" id="14ACydzRgcT" role="2OqNvi">
               <ref role="37wK5l" node="C3dcc38V0G" resolve="init" />
@@ -9914,8 +10023,8 @@
           <node concept="2YIFZM" id="5do60t9uS9K" role="3clFbG">
             <ref role="37wK5l" to="zn9m:~Disposer.dispose(com.intellij.openapi.Disposable):void" resolve="dispose" />
             <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
-            <node concept="37vLTw" id="2BHiRxeuSUf" role="37wK5m">
-              <ref role="3cqZAo" node="5do60t9uS3S" resolve="myDisplayer" />
+            <node concept="37vLTw" id="3LTvNgPOPwb" role="37wK5m">
+              <ref role="3cqZAo" node="5do60t9v3W5" resolve="myWidget" />
             </node>
           </node>
         </node>

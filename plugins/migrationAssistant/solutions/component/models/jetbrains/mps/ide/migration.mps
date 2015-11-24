@@ -6304,6 +6304,8 @@
           <node concept="16syzq" id="39r_V8zJJ1L" role="11_B2D">
             <ref role="16sUi3" node="39r_V8zJIvu" resolve="F" />
           </node>
+          <node concept="3qTvmN" id="5z_gLGeyQ$Q" role="11_B2D" />
+          <node concept="3qTvmN" id="5z_gLGeyRdm" role="11_B2D" />
         </node>
       </node>
       <node concept="37vLTG" id="39r_V8zJb6K" role="3clF46">
@@ -6519,6 +6521,8 @@
                 <ref role="3uigEE" to="lfzw:5DMHUkptmAc" resolve="RefactoringParticipant.PersistentRefactoringParticipant" />
                 <node concept="3qTvmN" id="39r_V8zKx2x" role="11_B2D" />
                 <node concept="3qTvmN" id="39r_V8zKx2y" role="11_B2D" />
+                <node concept="3qTvmN" id="5z_gLGeySma" role="11_B2D" />
+                <node concept="3qTvmN" id="5z_gLGeyU0b" role="11_B2D" />
               </node>
             </node>
             <node concept="2ShNRf" id="39r_V8zKx9Y" role="33vP2m">
@@ -6528,6 +6532,8 @@
                   <ref role="3uigEE" to="lfzw:5DMHUkptmAc" resolve="RefactoringParticipant.PersistentRefactoringParticipant" />
                   <node concept="3qTvmN" id="39r_V8zKx8Z" role="11_B2D" />
                   <node concept="3qTvmN" id="39r_V8zKx90" role="11_B2D" />
+                  <node concept="3qTvmN" id="5z_gLGeyVQT" role="11_B2D" />
+                  <node concept="3qTvmN" id="5z_gLGeyXy7" role="11_B2D" />
                 </node>
               </node>
             </node>

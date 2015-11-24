@@ -169,17 +169,16 @@
       <node id="1006429225401295242" at="294,146,295,59" concept="10" />
       <node id="1006429225401295242" at="299,156,300,78" concept="9" />
       <node id="1006429225401295242" at="300,78,301,51" concept="9" />
-      <node id="1006429225401295242" at="301,51,302,55" concept="9" />
-      <node id="1006429225401295242" at="302,55,303,229" concept="4" />
-      <node id="1006429225401295242" at="303,229,304,50" concept="10" />
-      <node id="1006429225401295242" at="306,0,307,0" concept="13" trace="propertyMacro_7ucwoc_c0a0c0b0b0b0c0c" />
-      <node id="1006429225401295242" at="307,0,308,0" concept="13" trace="loopMacroRef_7ucwoc_b0a0a1a2a1a1a2a2" />
-      <node id="1006429225401295242" at="308,0,309,0" concept="13" trace="propertyMacro_7ucwoc_c0a0c0b0e0d0c0b0b0c0c" />
-      <node id="1006429225401295242" at="309,0,310,0" concept="13" trace="ifMacroRef_7ucwoc_b0a0b0b0b0f0b0b0c0c" />
-      <node id="1006429225401295242" at="310,0,311,0" concept="13" trace="copySrcMacro_7ucwoc_b0a0c0d0b0f0b0b0c0c" />
-      <node id="1006429225401295242" at="311,0,312,0" concept="13" trace="templateNode_7ucwoc_c0a1a1a2a2a2" />
-      <node id="1006429225401295242" at="312,0,313,0" concept="13" trace="loopMacroRef_7ucwoc_b0a0a1a2a1a2a2a2" />
-      <node id="1006429225401295242" at="313,0,314,0" concept="13" trace="copySrcMacro_7ucwoc_b0a0e0c0c0b0c0c0c" />
+      <node id="1006429225401295242" at="301,51,302,165" concept="4" />
+      <node id="1006429225401295242" at="302,165,303,50" concept="10" />
+      <node id="1006429225401295242" at="305,0,306,0" concept="13" trace="propertyMacro_7ucwoc_c0a0c0b0b0b0c0c" />
+      <node id="1006429225401295242" at="306,0,307,0" concept="13" trace="loopMacroRef_7ucwoc_b0a0a1a2a1a1a2a2" />
+      <node id="1006429225401295242" at="307,0,308,0" concept="13" trace="propertyMacro_7ucwoc_c0a0c0b0e0d0c0b0b0c0c" />
+      <node id="1006429225401295242" at="308,0,309,0" concept="13" trace="ifMacroRef_7ucwoc_b0a0b0b0b0f0b0b0c0c" />
+      <node id="1006429225401295242" at="309,0,310,0" concept="13" trace="copySrcMacro_7ucwoc_b0a0c0d0b0f0b0b0c0c" />
+      <node id="1006429225401295242" at="310,0,311,0" concept="13" trace="templateNode_7ucwoc_c0a1a1a2a2a2" />
+      <node id="1006429225401295242" at="311,0,312,0" concept="13" trace="loopMacroRef_7ucwoc_b0a0a1a2a1a2a2a2" />
+      <node id="1006429225401295242" at="312,0,313,0" concept="13" trace="copySrcMacro_7ucwoc_b0a0e0c0c0b0c0c0c" />
       <node id="1006429225401295242" at="31,0,33,0" concept="2" trace="TemplateNodeBuilder__to__methodCall#()V" />
       <node id="1006429225401295242" at="33,0,36,0" concept="8" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1006429225401295242" at="50,45,53,15" concept="7" />
@@ -215,7 +214,7 @@
       <node id="1006429225401295242" at="182,219,187,25" concept="16" />
       <node id="1006429225401295242" at="223,129,228,25" concept="4" />
       <node id="1006429225401295242" at="169,220,175,25" concept="16" />
-      <node id="1006429225401295242" at="298,0,306,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="1006429225401295242" at="298,0,305,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="1006429225401295242" at="206,15,215,15" concept="0" />
       <node id="1006429225401295242" at="221,217,230,21" concept="16" />
       <node id="1006429225401295242" at="83,11,94,11" concept="0" />
@@ -321,8 +320,7 @@
         <var name="context" id="1006429225401295242" />
         <var name="environment" id="1006429225401295242" />
       </scope>
-      <scope id="1006429225401295242" at="299,156,304,50">
-        <var name="contextNode0" id="1006429225401295242" />
+      <scope id="1006429225401295242" at="299,156,303,50">
         <var name="templateContext" id="1006429225401295242" />
         <var name="tnodepart0" id="1006429225401295242" />
       </scope>
@@ -331,7 +329,7 @@
         <var name="copySrcInput20" id="1006429225401295242" />
         <var name="tlist20" id="1006429225401295242" />
       </scope>
-      <scope id="1006429225401295242" at="298,0,306,0">
+      <scope id="1006429225401295242" at="298,0,305,0">
         <var name="weaveContext" id="1006429225401295242" />
         <var name="weaveSupport" id="1006429225401295242" />
       </scope>
@@ -428,7 +426,7 @@
         <var name="context" id="1006429225401295242" />
       </scope>
       <unit id="1006429225401295242" at="224,46,228,23" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateNodeBuilder__to__methodCall$1" />
-      <unit id="1006429225401295242" at="29,0,315,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateNodeBuilder__to__methodCall" />
+      <unit id="1006429225401295242" at="29,0,314,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateNodeBuilder__to__methodCall" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/1025590056396628814">
@@ -737,19 +735,18 @@
       <node id="1025590056396628814" at="415,81,416,69" concept="10" />
       <node id="1025590056396628814" at="420,156,421,111" concept="9" />
       <node id="1025590056396628814" at="421,111,422,51" concept="9" />
-      <node id="1025590056396628814" at="422,51,423,55" concept="9" />
-      <node id="1025590056396628814" at="423,55,424,229" concept="4" />
-      <node id="1025590056396628814" at="424,229,425,50" concept="10" />
-      <node id="1025590056396628814" at="427,0,428,0" concept="13" trace="templateNode_3njegt_c0a1a1a1a2a4" />
-      <node id="1025590056396628814" at="428,0,429,0" concept="13" trace="copySrcListMacro_3njegt_b0a0a1a2a1a1a2a4" />
-      <node id="1025590056396628814" at="429,0,430,0" concept="13" trace="propertyMacro_3njegt_c0a0c0b0b0c0c0e" />
-      <node id="1025590056396628814" at="430,0,431,0" concept="13" trace="loopMacroRef_3njegt_b0a0a1a4a1a2a2a4" />
-      <node id="1025590056396628814" at="431,0,432,0" concept="13" trace="propertyMacro_3njegt_c0a0c0b0d0c0e0b0c0c0e" />
-      <node id="1025590056396628814" at="432,0,433,0" concept="13" trace="loopMacroRef_3njegt_b0a0a1a2a1a5a1a2a2a4" />
-      <node id="1025590056396628814" at="433,0,434,0" concept="13" trace="propertyMacro_3njegt_c0a0c0b0d0b0d0c0c0b0f0b0c0c0e" />
-      <node id="1025590056396628814" at="434,0,435,0" concept="13" trace="callMacro_3njegt_b0a0a1a1a1a3a1a5a1a2a2a4" />
-      <node id="1025590056396628814" at="435,0,436,0" concept="13" trace="loopMacroRef_3njegt_b0a0a1a4a1a5a1a2a2a4" />
-      <node id="1025590056396628814" at="436,0,437,0" concept="13" trace="includeMacro_3njegt_b0a0a0a1a2a1a2a1a1a3a2a4a1a5a1a2a2a4" />
+      <node id="1025590056396628814" at="422,51,423,165" concept="4" />
+      <node id="1025590056396628814" at="423,165,424,50" concept="10" />
+      <node id="1025590056396628814" at="426,0,427,0" concept="13" trace="templateNode_3njegt_c0a1a1a1a2a4" />
+      <node id="1025590056396628814" at="427,0,428,0" concept="13" trace="copySrcListMacro_3njegt_b0a0a1a2a1a1a2a4" />
+      <node id="1025590056396628814" at="428,0,429,0" concept="13" trace="propertyMacro_3njegt_c0a0c0b0b0c0c0e" />
+      <node id="1025590056396628814" at="429,0,430,0" concept="13" trace="loopMacroRef_3njegt_b0a0a1a4a1a2a2a4" />
+      <node id="1025590056396628814" at="430,0,431,0" concept="13" trace="propertyMacro_3njegt_c0a0c0b0d0c0e0b0c0c0e" />
+      <node id="1025590056396628814" at="431,0,432,0" concept="13" trace="loopMacroRef_3njegt_b0a0a1a2a1a5a1a2a2a4" />
+      <node id="1025590056396628814" at="432,0,433,0" concept="13" trace="propertyMacro_3njegt_c0a0c0b0d0b0d0c0c0b0f0b0c0c0e" />
+      <node id="1025590056396628814" at="433,0,434,0" concept="13" trace="callMacro_3njegt_b0a0a1a1a1a3a1a5a1a2a2a4" />
+      <node id="1025590056396628814" at="434,0,435,0" concept="13" trace="loopMacroRef_3njegt_b0a0a1a4a1a5a1a2a2a4" />
+      <node id="1025590056396628814" at="435,0,436,0" concept="13" trace="includeMacro_3njegt_b0a0a0a1a2a1a2a1a1a3a2a4a1a5a1a2a2a4" />
       <node id="1025590056396628814" at="34,0,37,0" concept="2" trace="TemplateQuotation__to__staticMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1025590056396628814" at="37,0,40,0" concept="8" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1025590056396628814" at="58,176,61,13" concept="6" />
@@ -802,7 +799,7 @@
       <node id="1025590056396628814" at="413,0,418,0" concept="8" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="1025590056396628814" at="148,220,154,25" concept="16" />
       <node id="1025590056396628814" at="311,104,318,33" concept="7" />
-      <node id="1025590056396628814" at="419,0,427,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="1025590056396628814" at="419,0,426,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="1025590056396628814" at="54,212,63,11" concept="0" />
       <node id="1025590056396628814" at="287,223,296,27" concept="16" />
       <node id="1025590056396628814" at="328,227,337,31" concept="16" />
@@ -957,16 +954,15 @@
         <var name="child36" id="1025590056396628814" />
       </scope>
       <scope id="1025590056396628814" at="377,0,380,0" />
+      <scope id="1025590056396628814" at="420,156,424,50">
+        <var name="templateContext" id="1025590056396628814" />
+        <var name="tnodepart0" id="1025590056396628814" />
+      </scope>
       <scope id="1025590056396628814" at="40,0,45,0" />
       <scope id="1025590056396628814" at="312,62,317,0" />
       <scope id="1025590056396628814" at="413,0,418,0">
         <var name="context" id="1025590056396628814" />
         <var name="environment" id="1025590056396628814" />
-      </scope>
-      <scope id="1025590056396628814" at="420,156,425,50">
-        <var name="contextNode0" id="1025590056396628814" />
-        <var name="templateContext" id="1025590056396628814" />
-        <var name="tnodepart0" id="1025590056396628814" />
       </scope>
       <scope id="1025590056396628814" at="288,31,294,31" />
       <scope id="1025590056396628814" at="329,35,335,35" />
@@ -975,7 +971,7 @@
         <var name="copyListInput3" id="1025590056396628814" />
         <var name="tlist3" id="1025590056396628814" />
       </scope>
-      <scope id="1025590056396628814" at="419,0,427,0">
+      <scope id="1025590056396628814" at="419,0,426,0">
         <var name="weaveContext" id="1025590056396628814" />
         <var name="weaveSupport" id="1025590056396628814" />
       </scope>
@@ -1110,7 +1106,7 @@
       <unit id="1025590056396628814" at="290,52,294,29" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall$1" />
       <unit id="1025590056396628814" at="331,56,335,33" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall$2" />
       <unit id="1025590056396628814" at="376,46,380,23" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall$3" />
-      <unit id="1025590056396628814" at="31,0,438,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall" />
+      <unit id="1025590056396628814" at="31,0,437,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/1196351886726">
@@ -1939,40 +1935,39 @@
       <node id="1196351886726" at="1517,146,1518,59" concept="10" />
       <node id="1196351886726" at="1522,156,1523,78" concept="9" />
       <node id="1196351886726" at="1523,78,1524,51" concept="9" />
-      <node id="1196351886726" at="1524,51,1525,55" concept="9" />
-      <node id="1196351886726" at="1525,55,1526,228" concept="4" />
-      <node id="1196351886726" at="1526,228,1527,50" concept="10" />
-      <node id="1196351886726" at="1529,0,1530,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0b0c0c" />
-      <node id="1196351886726" at="1530,0,1531,0" concept="13" trace="varMacroRef_swz52f_b0a0a1a1a2a2a2" />
-      <node id="1196351886726" at="1531,0,1532,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a3a1a1a1a1a1a1a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1532,0,1533,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0e0b0b0b0b0b0b0b0b0e0b0c0c0c" />
-      <node id="1196351886726" at="1533,0,1534,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0f0b0b0b0b0b0b0b0b0e0b0c0c0c" />
-      <node id="1196351886726" at="1534,0,1535,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a2a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1535,0,1536,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a4a1a1a3a2a2a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1536,0,1537,0" concept="13" trace="propertyMacro_swz52f_c0a0c0b0b0f0b0b0d0c0c0b0b0e0b0c0c0c" />
-      <node id="1196351886726" at="1537,0,1538,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a3a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1538,0,1539,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a4a1a1a3a2a3a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1539,0,1540,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a4a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1540,0,1541,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1541,0,1542,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a3a1a3a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1542,0,1543,0" concept="13" trace="propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0f0b0d0b0c0b0b0d0c0e0b0b0e0b0c0c0c" />
-      <node id="1196351886726" at="1543,0,1544,0" concept="13" trace="templateNode_swz52f_c0a1a1a2a1a5a1a3a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1544,0,1545,0" concept="13" trace="propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0g0b0d0b0c0b0b0d0c0e0b0b0e0b0c0c0c" />
-      <node id="1196351886726" at="1545,0,1546,0" concept="13" trace="templateNode_swz52f_c0a1a1a2a1a6a1a3a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1546,0,1547,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a5a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1547,0,1548,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a4a1a1a3a2a5a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1548,0,1549,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a6a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1549,0,1550,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a1a1a7a1a1a4a1a2a2a2" />
-      <node id="1196351886726" at="1550,0,1551,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0h0b0b0e0b0c0c0c" />
-      <node id="1196351886726" at="1551,0,1552,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0c0c0c" />
-      <node id="1196351886726" at="1552,0,1553,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a1a1a1a1a2a1a2a1a1a1a1a3a2a2" />
-      <node id="1196351886726" at="1553,0,1554,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0b0b0c0b0c0b0b0b0b0d0c0c" />
-      <node id="1196351886726" at="1554,0,1555,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0d0c0c" />
-      <node id="1196351886726" at="1555,0,1556,0" concept="13" trace="templateNode_swz52f_c0a1a1a1a1a2a1a1a1a1a4a2a2" />
-      <node id="1196351886726" at="1556,0,1557,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a2" />
-      <node id="1196351886726" at="1557,0,1558,0" concept="13" trace="templateNode_swz52f_c0a1a1a3a1a3a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a2" />
-      <node id="1196351886726" at="1558,0,1559,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0b0b0d0b0c0b0b0b0b0e0c0c" />
-      <node id="1196351886726" at="1559,0,1560,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0e0c0c" />
+      <node id="1196351886726" at="1524,51,1525,164" concept="4" />
+      <node id="1196351886726" at="1525,164,1526,50" concept="10" />
+      <node id="1196351886726" at="1528,0,1529,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0b0c0c" />
+      <node id="1196351886726" at="1529,0,1530,0" concept="13" trace="varMacroRef_swz52f_b0a0a1a1a2a2a2" />
+      <node id="1196351886726" at="1530,0,1531,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a3a1a1a1a1a1a1a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1531,0,1532,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0e0b0b0b0b0b0b0b0b0e0b0c0c0c" />
+      <node id="1196351886726" at="1532,0,1533,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0f0b0b0b0b0b0b0b0b0e0b0c0c0c" />
+      <node id="1196351886726" at="1533,0,1534,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a2a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1534,0,1535,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a4a1a1a3a2a2a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1535,0,1536,0" concept="13" trace="propertyMacro_swz52f_c0a0c0b0b0f0b0b0d0c0c0b0b0e0b0c0c0c" />
+      <node id="1196351886726" at="1536,0,1537,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a3a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1537,0,1538,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a4a1a1a3a2a3a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1538,0,1539,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a4a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1539,0,1540,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1540,0,1541,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a3a1a3a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1541,0,1542,0" concept="13" trace="propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0f0b0d0b0c0b0b0d0c0e0b0b0e0b0c0c0c" />
+      <node id="1196351886726" at="1542,0,1543,0" concept="13" trace="templateNode_swz52f_c0a1a1a2a1a5a1a3a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1543,0,1544,0" concept="13" trace="propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0g0b0d0b0c0b0b0d0c0e0b0b0e0b0c0c0c" />
+      <node id="1196351886726" at="1544,0,1545,0" concept="13" trace="templateNode_swz52f_c0a1a1a2a1a6a1a3a1a2a1a1a3a2a4a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1545,0,1546,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a5a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1546,0,1547,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a4a1a1a3a2a5a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1547,0,1548,0" concept="13" trace="loopMacroRef_swz52f_b0a0a1a6a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1548,0,1549,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a1a1a7a1a1a4a1a2a2a2" />
+      <node id="1196351886726" at="1549,0,1550,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0h0b0b0e0b0c0c0c" />
+      <node id="1196351886726" at="1550,0,1551,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0c0c0c" />
+      <node id="1196351886726" at="1551,0,1552,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a1a1a1a1a2a1a2a1a1a1a1a3a2a2" />
+      <node id="1196351886726" at="1552,0,1553,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0b0b0c0b0c0b0b0b0b0d0c0c" />
+      <node id="1196351886726" at="1553,0,1554,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0d0c0c" />
+      <node id="1196351886726" at="1554,0,1555,0" concept="13" trace="templateNode_swz52f_c0a1a1a1a1a2a1a1a1a1a4a2a2" />
+      <node id="1196351886726" at="1555,0,1556,0" concept="13" trace="includeMacro_swz52f_b0a0a0a1a2a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a2" />
+      <node id="1196351886726" at="1556,0,1557,0" concept="13" trace="templateNode_swz52f_c0a1a1a3a1a3a1a2a1a1a1a1a1a1a3a1a2a1a1a1a1a4a2a2" />
+      <node id="1196351886726" at="1557,0,1558,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0b0b0d0b0c0b0b0b0b0e0c0c" />
+      <node id="1196351886726" at="1558,0,1559,0" concept="13" trace="ifMacroRef_swz52f_b0a0b0e0c0c" />
       <node id="1196351886726" at="32,0,34,0" concept="2" trace="TemplateQuotedNode__to__statementList#()V" />
       <node id="1196351886726" at="34,0,37,0" concept="8" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1196351886726" at="59,19,62,19" concept="7" />
@@ -2167,8 +2162,8 @@
       <node id="1196351886726" at="921,105,928,35" concept="7" />
       <node id="1196351886726" at="1160,114,1167,43" concept="7" />
       <node id="1196351886726" at="1418,114,1425,43" concept="7" />
+      <node id="1196351886726" at="1521,0,1528,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="1196351886726" at="866,125,874,23" concept="0" />
-      <node id="1196351886726" at="1521,0,1529,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="1196351886726" at="154,233,163,37" concept="16" />
       <node id="1196351886726" at="204,233,213,37" concept="16" />
       <node id="1196351886726" at="247,223,256,27" concept="16" />
@@ -2757,6 +2752,10 @@
         <var name="context" id="1196351886726" />
         <var name="environment" id="1196351886726" />
       </scope>
+      <scope id="1196351886726" at="1522,156,1526,50">
+        <var name="templateContext" id="1196351886726" />
+        <var name="tnodepart0" id="1196351886726" />
+      </scope>
       <scope id="1196351886726" at="113,62,118,0" />
       <scope id="1196351886726" at="325,60,330,0" />
       <scope id="1196351886726" at="419,60,424,0" />
@@ -2766,11 +2765,6 @@
       <scope id="1196351886726" at="922,64,927,0" />
       <scope id="1196351886726" at="1161,73,1166,0" />
       <scope id="1196351886726" at="1419,73,1424,0" />
-      <scope id="1196351886726" at="1522,156,1527,50">
-        <var name="contextNode0" id="1196351886726" />
-        <var name="templateContext" id="1196351886726" />
-        <var name="tnodepart0" id="1196351886726" />
-      </scope>
       <scope id="1196351886726" at="130,174,136,78">
         <var name="tnode17" id="1196351886726" />
       </scope>
@@ -2799,7 +2793,7 @@
       <scope id="1196351886726" at="1184,49,1190,49" />
       <scope id="1196351886726" at="1305,35,1311,35" />
       <scope id="1196351886726" at="1395,41,1401,41" />
-      <scope id="1196351886726" at="1521,0,1529,0">
+      <scope id="1196351886726" at="1521,0,1528,0">
         <var name="weaveContext" id="1196351886726" />
         <var name="weaveSupport" id="1196351886726" />
       </scope>
@@ -3306,7 +3300,7 @@
       <unit id="1196351886726" at="1186,70,1190,47" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$17" />
       <unit id="1196351886726" at="1307,56,1311,33" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$18" />
       <unit id="1196351886726" at="1397,62,1401,39" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList$19" />
-      <unit id="1196351886726" at="30,0,1561,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
+      <unit id="1196351886726" at="30,0,1560,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/1196351887556">
@@ -3528,19 +3522,17 @@
       <node id="429601079676709776" at="268,146,269,73" concept="10" />
       <node id="429601079676709776" at="273,156,274,78" concept="9" />
       <node id="429601079676709776" at="274,78,275,63" concept="9" />
-      <node id="429601079676709776" at="275,63,276,55" concept="9" />
-      <node id="429601079676709776" at="277,66,278,231" concept="4" />
-      <node id="429601079676709776" at="279,5,280,51" concept="9" />
-      <node id="429601079676709776" at="280,51,281,55" concept="9" />
-      <node id="429601079676709776" at="281,55,282,227" concept="4" />
-      <node id="429601079676709776" at="282,227,283,55" concept="10" />
-      <node id="429601079676709776" at="285,0,286,0" concept="13" trace="varMacroRef_g27wod_b0a0a2a2" />
-      <node id="429601079676709776" at="286,0,287,0" concept="13" trace="propertyMacro_g27wod_c0a0c0b0d0b0f0c" />
-      <node id="429601079676709776" at="287,0,288,0" concept="13" trace="includeMacro_g27wod_b0a0a0a1a3a1a2a3a1a5a2" />
-      <node id="429601079676709776" at="288,0,289,0" concept="13" trace="ifMacroRef_g27wod_b0a0b0e0b0c0d0b0f0c" />
-      <node id="429601079676709776" at="289,0,290,0" concept="13" trace="loopMacroRef_g27wod_b0a0a1a1a1a1a2a3" />
-      <node id="429601079676709776" at="290,0,291,0" concept="13" trace="templArgCall_g27wod_b0a0a1a0b0b0d0c0b0b0b0c0d" />
-      <node id="429601079676709776" at="291,0,292,0" concept="13" trace="templateSwitchNodeNoInput_g27wod_a0a0c0d0c0b0b0b0c0d" />
+      <node id="429601079676709776" at="276,66,277,166" concept="4" />
+      <node id="429601079676709776" at="278,5,279,51" concept="9" />
+      <node id="429601079676709776" at="279,51,280,163" concept="4" />
+      <node id="429601079676709776" at="280,163,281,55" concept="10" />
+      <node id="429601079676709776" at="283,0,284,0" concept="13" trace="varMacroRef_g27wod_b0a0a2a2" />
+      <node id="429601079676709776" at="284,0,285,0" concept="13" trace="propertyMacro_g27wod_c0a0c0b0d0b0f0c" />
+      <node id="429601079676709776" at="285,0,286,0" concept="13" trace="includeMacro_g27wod_b0a0a0a1a3a1a2a3a1a5a2" />
+      <node id="429601079676709776" at="286,0,287,0" concept="13" trace="ifMacroRef_g27wod_b0a0b0e0b0c0d0b0f0c" />
+      <node id="429601079676709776" at="287,0,288,0" concept="13" trace="loopMacroRef_g27wod_b0a0a1a1a1a1a2a3" />
+      <node id="429601079676709776" at="288,0,289,0" concept="13" trace="templArgCall_g27wod_b0a0a1a0b0b0d0c0b0b0b0c0d" />
+      <node id="429601079676709776" at="289,0,290,0" concept="13" trace="templateSwitchNodeNoInput_g27wod_a0a0c0d0c0b0b0b0c0d" />
       <node id="429601079676709776" at="35,0,37,0" concept="2" trace="Templatereduce__NodeBuilderNode#()V" />
       <node id="429601079676709776" at="37,0,40,0" concept="8" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="429601079676709776" at="75,17,78,17" concept="6" />
@@ -3560,7 +3552,7 @@
       <node id="429601079676709776" at="246,15,249,15" concept="7" />
       <node id="429601079676709776" at="250,13,253,13" concept="6" />
       <node id="429601079676709776" at="257,9,260,9" concept="7" />
-      <node id="429601079676709776" at="276,55,279,5" concept="6" />
+      <node id="429601079676709776" at="275,63,278,5" concept="6" />
       <node id="429601079676709776" at="66,47,70,21" concept="16" />
       <node id="429601079676709776" at="119,209,123,19" concept="16" />
       <node id="429601079676709776" at="132,207,136,17" concept="16" />
@@ -3577,10 +3569,10 @@
       <node id="429601079676709776" at="130,15,141,15" concept="0" />
       <node id="429601079676709776" at="141,15,152,15" concept="0" />
       <node id="429601079676709776" at="159,11,170,11" concept="0" />
+      <node id="429601079676709776" at="272,0,283,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="429601079676709776" at="86,127,98,21" concept="0" />
       <node id="429601079676709776" at="219,133,231,25" concept="0" />
       <node id="429601079676709776" at="62,48,75,17" concept="16" />
-      <node id="429601079676709776" at="272,0,285,0" concept="8" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="429601079676709776" at="98,21,114,21" concept="0" />
       <node id="429601079676709776" at="217,223,233,23" concept="16" />
       <node id="429601079676709776" at="60,509,80,15" concept="0" />
@@ -3646,7 +3638,7 @@
       <scope id="429601079676709776" at="251,67,252,164" />
       <scope id="429601079676709776" at="258,30,259,161" />
       <scope id="429601079676709776" at="268,146,269,73" />
-      <scope id="429601079676709776" at="277,66,278,231" />
+      <scope id="429601079676709776" at="276,66,277,166" />
       <scope id="429601079676709776" at="35,0,37,0" />
       <scope id="429601079676709776" at="89,27,91,525" />
       <scope id="429601079676709776" at="222,31,224,551" />
@@ -3664,7 +3656,7 @@
       <scope id="429601079676709776" at="250,13,253,13">
         <var name="child25" id="429601079676709776" />
       </scope>
-      <scope id="429601079676709776" at="276,55,279,5">
+      <scope id="429601079676709776" at="275,63,278,5">
         <var name="nodeToWeave" id="429601079676709776" />
       </scope>
       <scope id="429601079676709776" at="205,17,209,91">
@@ -3678,6 +3670,11 @@
       <scope id="429601079676709776" at="101,27,107,27" />
       <scope id="429601079676709776" at="118,24,124,63">
         <var name="tnode12" id="429601079676709776" />
+      </scope>
+      <scope id="429601079676709776" at="273,156,281,55">
+        <var name="templateContext" id="429601079676709776" />
+        <var name="tlistpart0" id="429601079676709776" />
+        <var name="tnodepart1" id="429601079676709776" />
       </scope>
       <scope id="429601079676709776" at="131,15,140,39">
         <var name="tnode14" id="429601079676709776" />
@@ -3698,18 +3695,11 @@
       <scope id="429601079676709776" at="220,25,230,49">
         <var name="tnode24" id="429601079676709776" />
       </scope>
-      <scope id="429601079676709776" at="273,156,283,55">
-        <var name="contextNode0" id="429601079676709776" />
-        <var name="contextNode1" id="429601079676709776" />
-        <var name="templateContext" id="429601079676709776" />
-        <var name="tlistpart0" id="429601079676709776" />
-        <var name="tnodepart1" id="429601079676709776" />
-      </scope>
-      <scope id="429601079676709776" at="218,27,231,25" />
-      <scope id="429601079676709776" at="272,0,285,0">
+      <scope id="429601079676709776" at="272,0,283,0">
         <var name="weaveContext" id="429601079676709776" />
         <var name="weaveSupport" id="429601079676709776" />
       </scope>
+      <scope id="429601079676709776" at="218,27,231,25" />
       <scope id="429601079676709776" at="99,21,113,45">
         <var name="tnode11" id="429601079676709776" />
       </scope>
@@ -3778,7 +3768,7 @@
         <var name="context" id="429601079676709776" />
       </scope>
       <unit id="429601079676709776" at="103,48,107,25" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Templatereduce__NodeBuilderNode$1" />
-      <unit id="429601079676709776" at="33,0,293,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Templatereduce__NodeBuilderNode" />
+      <unit id="429601079676709776" at="33,0,291,0" name="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Templatereduce__NodeBuilderNode" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)/5756354288100412635">

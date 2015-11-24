@@ -211,13 +211,12 @@
       <node id="3210697320273563034" at="270,146,271,59" concept="7" />
       <node id="3210697320273563034" at="275,156,276,78" concept="6" />
       <node id="3210697320273563034" at="276,78,277,51" concept="6" />
-      <node id="3210697320273563034" at="277,51,278,55" concept="6" />
-      <node id="3210697320273563034" at="278,55,279,227" concept="2" />
-      <node id="3210697320273563034" at="279,227,280,50" concept="7" />
-      <node id="3210697320273563034" at="282,0,283,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273563034" at="283,0,284,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273563034" at="284,0,285,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
-      <node id="3210697320273563034" at="285,0,286,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273563034" at="277,51,278,163" concept="2" />
+      <node id="3210697320273563034" at="278,163,279,50" concept="7" />
+      <node id="3210697320273563034" at="281,0,282,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273563034" at="282,0,283,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273563034" at="283,0,284,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273563034" at="284,0,285,0" concept="9" trace="propertyMacro_mg165o_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
       <node id="3210697320273563034" at="25,0,27,0" concept="1" trace="Templatereduce__BuildWall#()V" />
       <node id="3210697320273563034" at="27,0,30,0" concept="5" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3210697320273563034" at="62,29,65,29" concept="4" />
@@ -248,7 +247,7 @@
       <node id="3210697320273563034" at="145,219,150,25" concept="11" />
       <node id="3210697320273563034" at="169,219,174,25" concept="11" />
       <node id="3210697320273563034" at="212,225,217,33" concept="11" />
-      <node id="3210697320273563034" at="274,0,282,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="3210697320273563034" at="274,0,281,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="3210697320273563034" at="116,19,127,19" concept="0" />
       <node id="3210697320273563034" at="55,526,67,27" concept="0" />
       <node id="3210697320273563034" at="67,27,79,27" concept="0" />
@@ -341,12 +340,11 @@
         <var name="context" id="3210697320273563034" />
         <var name="environment" id="3210697320273563034" />
       </scope>
-      <scope id="3210697320273563034" at="275,156,280,50">
-        <var name="contextNode0" id="3210697320273563034" />
+      <scope id="3210697320273563034" at="275,156,279,50">
         <var name="templateContext" id="3210697320273563034" />
         <var name="tnodepart0" id="3210697320273563034" />
       </scope>
-      <scope id="3210697320273563034" at="274,0,282,0">
+      <scope id="3210697320273563034" at="274,0,281,0">
         <var name="weaveContext" id="3210697320273563034" />
         <var name="weaveSupport" id="3210697320273563034" />
       </scope>
@@ -431,7 +429,7 @@
       <scope id="3210697320273563034" at="30,0,269,0">
         <var name="context" id="3210697320273563034" />
       </scope>
-      <unit id="3210697320273563034" at="23,0,287,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__BuildWall" />
+      <unit id="3210697320273563034" at="23,0,286,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__BuildWall" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273607275">
@@ -540,13 +538,12 @@
       <node id="3210697320273607275" at="259,146,260,59" concept="7" />
       <node id="3210697320273607275" at="264,156,265,78" concept="6" />
       <node id="3210697320273607275" at="265,78,266,51" concept="6" />
-      <node id="3210697320273607275" at="266,51,267,55" concept="6" />
-      <node id="3210697320273607275" at="267,55,268,227" concept="2" />
-      <node id="3210697320273607275" at="268,227,269,50" concept="7" />
-      <node id="3210697320273607275" at="271,0,272,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273607275" at="272,0,273,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273607275" at="273,0,274,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
-      <node id="3210697320273607275" at="274,0,275,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273607275" at="266,51,267,163" concept="2" />
+      <node id="3210697320273607275" at="267,163,268,50" concept="7" />
+      <node id="3210697320273607275" at="270,0,271,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273607275" at="271,0,272,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273607275" at="272,0,273,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273607275" at="273,0,274,0" concept="9" trace="propertyMacro_bs9h6a_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
       <node id="3210697320273607275" at="25,0,27,0" concept="1" trace="Templatereduce__DestroyWall#()V" />
       <node id="3210697320273607275" at="27,0,30,0" concept="5" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3210697320273607275" at="62,29,65,29" concept="4" />
@@ -575,7 +572,7 @@
       <node id="3210697320273607275" at="134,219,139,25" concept="11" />
       <node id="3210697320273607275" at="158,219,163,25" concept="11" />
       <node id="3210697320273607275" at="201,225,206,33" concept="11" />
-      <node id="3210697320273607275" at="263,0,271,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="3210697320273607275" at="263,0,270,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="3210697320273607275" at="55,526,67,27" concept="0" />
       <node id="3210697320273607275" at="67,27,79,27" concept="0" />
       <node id="3210697320273607275" at="97,128,109,23" concept="0" />
@@ -664,12 +661,11 @@
         <var name="context" id="3210697320273607275" />
         <var name="environment" id="3210697320273607275" />
       </scope>
-      <scope id="3210697320273607275" at="264,156,269,50">
-        <var name="contextNode0" id="3210697320273607275" />
+      <scope id="3210697320273607275" at="264,156,268,50">
         <var name="templateContext" id="3210697320273607275" />
         <var name="tnodepart0" id="3210697320273607275" />
       </scope>
-      <scope id="3210697320273607275" at="263,0,271,0">
+      <scope id="3210697320273607275" at="263,0,270,0">
         <var name="weaveContext" id="3210697320273607275" />
         <var name="weaveSupport" id="3210697320273607275" />
       </scope>
@@ -751,7 +747,7 @@
       <scope id="3210697320273607275" at="30,0,258,0">
         <var name="context" id="3210697320273607275" />
       </scope>
-      <unit id="3210697320273607275" at="23,0,276,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DestroyWall" />
+      <unit id="3210697320273607275" at="23,0,275,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DestroyWall" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273612346">
@@ -917,15 +913,14 @@
       <node id="3210697320273612346" at="396,146,397,59" concept="7" />
       <node id="3210697320273612346" at="401,156,402,78" concept="6" />
       <node id="3210697320273612346" at="402,78,403,51" concept="6" />
-      <node id="3210697320273612346" at="403,51,404,55" concept="6" />
-      <node id="3210697320273612346" at="404,55,405,227" concept="2" />
-      <node id="3210697320273612346" at="405,227,406,50" concept="7" />
-      <node id="3210697320273612346" at="408,0,409,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273612346" at="409,0,410,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273612346" at="410,0,411,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273612346" at="411,0,412,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273612346" at="412,0,413,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
-      <node id="3210697320273612346" at="413,0,414,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273612346" at="403,51,404,163" concept="2" />
+      <node id="3210697320273612346" at="404,163,405,50" concept="7" />
+      <node id="3210697320273612346" at="407,0,408,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273612346" at="408,0,409,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273612346" at="409,0,410,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273612346" at="410,0,411,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273612346" at="411,0,412,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273612346" at="412,0,413,0" concept="9" trace="propertyMacro_q5s966_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
       <node id="3210697320273612346" at="25,0,27,0" concept="1" trace="Templatereduce__DropMark#()V" />
       <node id="3210697320273612346" at="27,0,30,0" concept="5" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3210697320273612346" at="66,33,69,33" concept="4" />
@@ -970,7 +965,7 @@
       <node id="3210697320273612346" at="271,219,276,25" concept="11" />
       <node id="3210697320273612346" at="295,219,300,25" concept="11" />
       <node id="3210697320273612346" at="338,225,343,33" concept="11" />
-      <node id="3210697320273612346" at="400,0,408,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="3210697320273612346" at="400,0,407,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="3210697320273612346" at="221,31,232,31" concept="0" />
       <node id="3210697320273612346" at="59,530,71,31" concept="0" />
       <node id="3210697320273612346" at="71,31,83,31" concept="0" />
@@ -1107,12 +1102,11 @@
         <var name="context" id="3210697320273612346" />
         <var name="environment" id="3210697320273612346" />
       </scope>
-      <scope id="3210697320273612346" at="401,156,406,50">
-        <var name="contextNode0" id="3210697320273612346" />
+      <scope id="3210697320273612346" at="401,156,405,50">
         <var name="templateContext" id="3210697320273612346" />
         <var name="tnodepart0" id="3210697320273612346" />
       </scope>
-      <scope id="3210697320273612346" at="400,0,408,0">
+      <scope id="3210697320273612346" at="400,0,407,0">
         <var name="weaveContext" id="3210697320273612346" />
         <var name="weaveSupport" id="3210697320273612346" />
       </scope>
@@ -1238,7 +1232,7 @@
       <scope id="3210697320273612346" at="30,0,395,0">
         <var name="context" id="3210697320273612346" />
       </scope>
-      <unit id="3210697320273612346" at="23,0,415,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DropMark" />
+      <unit id="3210697320273612346" at="23,0,414,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__DropMark" />
     </file>
   </root>
   <root nodeRef="r:262b93f0-fe86-497c-93c5-efd684d05bc6(jetbrains.mps.samples.KajaSceneConstruction.generator.template.main@generator)/3210697320273614443">
@@ -1404,15 +1398,14 @@
       <node id="3210697320273614443" at="396,146,397,59" concept="7" />
       <node id="3210697320273614443" at="401,156,402,78" concept="6" />
       <node id="3210697320273614443" at="402,78,403,51" concept="6" />
-      <node id="3210697320273614443" at="403,51,404,55" concept="6" />
-      <node id="3210697320273614443" at="404,55,405,227" concept="2" />
-      <node id="3210697320273614443" at="405,227,406,50" concept="7" />
-      <node id="3210697320273614443" at="408,0,409,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273614443" at="409,0,410,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273614443" at="410,0,411,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273614443" at="411,0,412,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
-      <node id="3210697320273614443" at="412,0,413,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
-      <node id="3210697320273614443" at="413,0,414,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273614443" at="403,51,404,163" concept="2" />
+      <node id="3210697320273614443" at="404,163,405,50" concept="7" />
+      <node id="3210697320273614443" at="407,0,408,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273614443" at="408,0,409,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273614443" at="409,0,410,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273614443" at="410,0,411,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0d0b0b0b0b0b0c0b0b0b0b0b0b0b0b0c0c" />
+      <node id="3210697320273614443" at="411,0,412,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0b0b0c0b0b0b0b0c0c" />
+      <node id="3210697320273614443" at="412,0,413,0" concept="9" trace="propertyMacro_nmfipz_c0a0c0b0b0c0b0c0b0c0b0b0b0b0c0c" />
       <node id="3210697320273614443" at="25,0,27,0" concept="1" trace="Templatereduce__PickMark#()V" />
       <node id="3210697320273614443" at="27,0,30,0" concept="5" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3210697320273614443" at="62,29,65,29" concept="4" />
@@ -1458,7 +1451,7 @@
       <node id="3210697320273614443" at="260,219,265,25" concept="11" />
       <node id="3210697320273614443" at="284,219,289,25" concept="11" />
       <node id="3210697320273614443" at="327,225,332,33" concept="11" />
-      <node id="3210697320273614443" at="400,0,408,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
+      <node id="3210697320273614443" at="400,0,407,0" concept="5" trace="weave#(Ljetbrains/mps/generator/runtime/NodeWeaveFacility/WeaveContext;Ljetbrains/mps/generator/runtime/NodeWeaveFacility;)Ljava/util/Collection;" />
       <node id="3210697320273614443" at="210,31,221,31" concept="0" />
       <node id="3210697320273614443" at="372,11,383,11" concept="0" />
       <node id="3210697320273614443" at="55,526,67,27" concept="0" />
@@ -1595,12 +1588,11 @@
         <var name="context" id="3210697320273614443" />
         <var name="environment" id="3210697320273614443" />
       </scope>
-      <scope id="3210697320273614443" at="401,156,406,50">
-        <var name="contextNode0" id="3210697320273614443" />
+      <scope id="3210697320273614443" at="401,156,405,50">
         <var name="templateContext" id="3210697320273614443" />
         <var name="tnodepart0" id="3210697320273614443" />
       </scope>
-      <scope id="3210697320273614443" at="400,0,408,0">
+      <scope id="3210697320273614443" at="400,0,407,0">
         <var name="weaveContext" id="3210697320273614443" />
         <var name="weaveSupport" id="3210697320273614443" />
       </scope>
@@ -1725,7 +1717,7 @@
       <scope id="3210697320273614443" at="30,0,395,0">
         <var name="context" id="3210697320273614443" />
       </scope>
-      <unit id="3210697320273614443" at="23,0,415,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__PickMark" />
+      <unit id="3210697320273614443" at="23,0,414,0" name="jetbrains.mps.samples.KajaSceneConstruction.generator.template.main.Templatereduce__PickMark" />
     </file>
   </root>
 </debug-info>

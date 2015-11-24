@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,129 +16,196 @@
 
 package jetbrains.mps.idea.core.actions;
 
-import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VfsUtilCore;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.psi.PsiDirectory;
-import com.intellij.psi.PsiElement;
+import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
-import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.util.FileUtil;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import javax.lang.model.SourceVersion;
 import javax.swing.Icon;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class NewModelAction extends AnAction {
-  protected String myRootForModel;
-  protected String myModelPrefix;
-  protected Project myProject;
-  protected DefaultModelRoot myModelRoot;
-  protected String myRelativePath;
+/**
+ * Created by danilla on 28/10/15.
+ */
+public class NewModelAction extends NewModelActionBase {
+  private static Logger LOG = LogManager.getLogger(NewModelAction.class);
 
-  protected NewModelAction(String text, String desctiption, Icon icon) {
-    super(text, desctiption, icon);
+  public NewModelAction() {
+    super(MPSBundle.message("new.model.action"), null, FileIcons.MODEL_ICON);
   }
 
   @Override
-  public void update(AnActionEvent e) {
-    updateFields(e);
-
-    boolean enabled = isEnabled(e);
-    e.getPresentation().setVisible(enabled);
-    e.getPresentation().setEnabled(enabled);
-  }
-
-  private void updateFields(AnActionEvent e) {
-    myProject = e.getData(PlatformDataKeys.PROJECT);
-    if (myProject == null) {
-      return;
-    }
-    myModelRoot = null;
-    myModelPrefix = null;
-    final Module module = e.getData(LangDataKeys.MODULE);
-    final VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
-    if (module == null || vFiles == null || vFiles.length != 1 || !vFiles[0].isDirectory()) {
-      return;
-    }
-    final VirtualFile targetDir = vFiles[0];
-
-    final ModuleMPSSupport mpsFacade = module.getProject().getComponent(ModuleMPSSupport.class);
-    if (!mpsFacade.isMPSEnabled(module)) {
-      return;
-    }
-
-    String url = targetDir.getUrl();
-    if (!LocalFileSystem.PROTOCOL.equals(VirtualFileManager.extractProtocol(url))) {
-      return;
-    }
-
-    ProjectHelper.toMPSProject(module.getProject()).getModelAccess().runReadAction(new Runnable() {
+  public void actionPerformed(final AnActionEvent anActionEvent) {
+    CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
-      public void run() {
-
-        myModelRoot = mpsFacade.getModelRoot(module);
-        if (myModelRoot == null) {
-          return;
-        }
-        myRootForModel = rootToUse(targetDir.getPath());
-        if (myRootForModel == null) {
+      protected void doOKAction() {
+        final ModelTemplates template = ModelTemplates.valueOf(getKindCombo().getSelectedName());
+        String shortModelName = getNameField().getText().trim();
+        final String modelName = myModelPrefix.isEmpty() ? shortModelName : myModelPrefix + "." + shortModelName;
+        if (!isModelNameValid(modelName)) {
           return;
         }
 
-        myRelativePath = VfsUtilCore.getRelativePath(targetDir, VirtualFileManager.getInstance().findFileByUrl("file://" + myRootForModel));
-        String prefix = myRelativePath;
-        prefix = prefix.replace('/', '.').replace('\\', '.');
-        // in case in the future idea leaves some dangling slashes
-        while (prefix.startsWith(".")) {
-          prefix = prefix.substring(1);
-        }
-        while (prefix.endsWith(".")) {
-          prefix = prefix.substring(0, prefix.length());
-        }
+        final SModel newModel = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<SModel>() {
+          @Override
+          public SModel compute() {
+            final String path = ((PsiDirectory) anActionEvent.getData(LangDataKeys.PSI_ELEMENT)).getVirtualFile().getPath();
 
-        myModelPrefix = prefix;
+            EditableSModel model = null;
+            try {
+              model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+            } catch (IOException e) {
+              LOG.error("Can't create per-root model " + modelName + " under " + path, e);
+            }
 
-        for (ModelRoot modelRoot: mpsFacade.getSolution(module).getModelRoots()) {
-          if (modelRoot instanceof DefaultModelRoot) {
-            myModelRoot = (DefaultModelRoot) modelRoot;
-            break;
+            // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
+            // model.getSModel() ?
+            template.preConfigure(model);
+
+            //Hack for update ProjectView
+            model.addModelListener(new SModelListener() {
+              @Override
+              public void modelLoaded(SModel sModel, boolean b) {
+              }
+
+              @Override
+              public void modelReplaced(SModel sModel) {
+              }
+
+              @Override
+              public void modelUnloaded(SModel sModel) {
+              }
+
+              @Override
+              public void modelSaved(SModel sModel) {
+                ProjectView.getInstance(myProject).refresh();
+                sModel.removeModelListener(this); //need to refresh once
+              }
+
+              @Override
+              public void conflictDetected(SModel sModel) {
+              }
+
+              @Override
+              public void problemsDetected(SModel sModel, Iterable<Problem> problems) {
+              }
+            });
+
+            model.setChanged(true);
+            model.save();
+
+            ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
+            new MissingDependenciesFixer(model).fixModuleDependencies();
+
+            return model;
           }
+        });
+        if (newModel == null) {
+          return;
         }
+
+        processDoNotAskOnOk(OK_EXIT_CODE);
+        if (getOKAction().isEnabled()) {
+          close(OK_EXIT_CODE);
+        }
+
+        //Hack for update ProjectView
+        ProjectHelper.getModelAccess(myProject).runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            ((EditableSModel) newModel).save();
+          }
+        });
       }
-    });
+
+      private boolean isModelNameValid(String modelName) {
+        if (modelName.length() == 0) {
+          showError(MPSBundle.message("create.new.model.dialog.error.empty.name"));
+          return false;
+        }
+
+        if (SModelRepository.getInstance().getModelDescriptor(modelName) != null) {
+          showError(MPSBundle.message("create.new.model.dialog.error.model.exists", modelName));
+          return false;
+        }
+
+        if (modelName.endsWith(".")) {
+          showError(MPSBundle.message("create.new.model.dialog.error.empty.short.name"));
+          return false;
+        }
+
+        if (!(SourceVersion.isName(SModelStereotype.withoutStereotype(modelName)))) {
+          showError(MPSBundle.message("create.new.model.dialog.error.invalid.java", modelName));
+          return false;
+        }
+        return true;
+      }
+    };
+
+    dialog.setTitle(MPSBundle.message("create.new.model.dialog.title"));
+    for (ModelTemplates template : ModelTemplates.values()) {
+      dialog.getKindCombo().addItem(template.getPresentation(), template.getIcon(), template.name());
+      dialog.setTemplateKindComponentsVisible(true);
+    }
+    dialog.show();
   }
 
-  private String rootToUse(String path) {
-    String longestRoot = null;
-    for (String root: myModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
-      if (FileUtil.isSubPath(root, path)) {
-        if (longestRoot == null || longestRoot.length() < root.length()) {
-          longestRoot = root;
-        }
+
+  private enum ModelTemplates {
+    EMPTY(MPSBundle.message("new.model.template.empty.presentation"), FileIcons.MODEL_ICON),
+    JAVA(MPSBundle.message("new.model.template.java.presentation"), MPSIcons.JAVA_MODEL_ICON, "jetbrains.mps.baseLanguage");
+
+    private final String myPresentation;
+    private final Icon myIcon;
+    private List<SLanguage> myLanguagesToImport = new ArrayList<SLanguage>();
+
+    private ModelTemplates(String presentation, Icon icon, String... languagesToImport) {
+      myPresentation = presentation;
+      myIcon = icon;
+
+      for (String languageNamespace : languagesToImport) {
+        SLanguage language = MetaAdapterFactoryByName.getLanguage(languageNamespace);
+        assert language != null : "Language required by model template is not in repository";
+        myLanguagesToImport.add(language);
       }
     }
-    return longestRoot;
-  }
 
-  protected boolean isEnabled(AnActionEvent e) {
-    PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-    if (psiElement == null || !(psiElement instanceof PsiDirectory)) {
-      return false;
+    public String getPresentation() {
+      return myPresentation;
     }
 
-    Module module = e.getData(LangDataKeys.MODULE);
-    if (module == null) {
-      return false;
+    public Icon getIcon() {
+      return myIcon;
     }
 
-    return myRootForModel != null && myModelRoot != null && myProject != null;
+    public void preConfigure(SModel smodel) {
+      for (SLanguage language : myLanguagesToImport) {
+        ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(language);
+      }
+    }
   }
 }

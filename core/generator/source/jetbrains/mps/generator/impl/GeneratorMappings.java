@@ -100,7 +100,12 @@ public final class GeneratorMappings {
     }
 
     Object prev = myCopiedOutputNodeForInputNode.putIfAbsent(inputNode, outputNode);
-    if (prev != null && prev instanceof SNode) {
+    // It's possible for the same pair input->output to get registered more than once,
+    // e.g. when a rule does COPY-SRC for input. Both the copy macro and the rule would
+    // try to register same output, and we shall not treat this as ambiguity. Generally it's
+    // odd to use COPY-SRC for rule's primary transformation, we've had only 1 use like this
+    // (build language, mapBuildProject did $WEAVE$ $COPY-SRC$).
+    if (prev != null && prev instanceof SNode && prev != outputNode) {
       // ambiguity! store prev element (wrapped into Collection)
       myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList(prev));
     }

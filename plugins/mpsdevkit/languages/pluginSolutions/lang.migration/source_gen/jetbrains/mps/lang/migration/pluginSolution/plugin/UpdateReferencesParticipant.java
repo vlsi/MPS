@@ -5,10 +5,10 @@ package jetbrains.mps.lang.migration.pluginSolution.plugin;
 import jetbrains.mps.ide.platform.actions.core.MoveNodeRefactoringParticipant;
 import jetbrains.mps.lang.migration.pluginSolution.plugin.UpdateReferencesParticipant.NamedNodeReference;
 import jetbrains.mps.ide.platform.actions.core.RefactoringParticipant;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.util.NodeReferenceUtil;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -32,12 +32,11 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.platform.actions.core.RefactoringSession;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.lang.migration.behavior.AbstractNodeReference__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference>, RefactoringParticipant.PersistentRefactoringParticipant<NamedNodeReference, NamedNodeReference> {
+public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference>, RefactoringParticipant.PersistentRefactoringParticipant<NamedNodeReference, NamedNodeReference, SNode, SNode> {
 
   public static class UpdateReferencesParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
     public UpdateReferencesParticipant_extension() {
@@ -72,7 +71,7 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   public String getId() {
     return "moveNode.updateReferences";
   }
-  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references in current project");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references in current project");
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference>() {
     public NamedNodeReference beforeMove(SNode nodeToMove) {
       return new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove));
@@ -86,11 +85,11 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
   }
 
   public List<RefactoringParticipant.Option> getAvailableOptions(NamedNodeReference initialState, SRepository repository) {
-    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
+    return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
   }
 
-  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    if (!(ListSequence.fromList(selectedOptions).contains(myOption))) {
+  public List<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>> getChanges(final NamedNodeReference initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+    if (!(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>>());
     }
     {
@@ -130,16 +129,15 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
             public void confirm(final NamedNodeReference finalState, final SRepository repository, final RefactoringSession refactoringSession) {
               refactoringSession.registerChange(new Runnable() {
                 public void run() {
-                  final SNode node = containingNode.resolve(repository);
+                  SNode node = containingNode.resolve(repository);
                   MoveNodesDefault.CopyMapObject copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession);
-                  if (node == null || MapSequence.fromMap(copyMap.getCopyMap()).any(new IWhereFilter<IMapping<SNode, SNode>>() {
-                    public boolean accept(IMapping<SNode, SNode> it) {
-                      return eq_k8iioh_a0a0a0a0a0a0c0a0a0a0a0d0a0a4a0a0a0a0f0b0m(it.key(), node.getReference(role).getTargetNode()) && node.getReference(role).getTargetNode().getModel() != null;
-                    }
-                  })) {
+                  if (node == null || (MapSequence.fromMap(copyMap.getCopyMap()).containsKey(node) && copyMap.whetherKeepNode(node))) {
                     return;
                   }
                   node.setReference(role, jetbrains.mps.smodel.SReference.create(role, node, finalState.reference().getModelReference(), finalState.reference().getNodeId(), resolveInfo));
+                  if (ListSequence.fromList(selectedOptions).contains(UpdateModelImports.OPTION)) {
+                    UpdateModelImports.addModelImport(node.getModel(), finalState.reference().getModelReference().resolve(repository));
+                  }
                 }
               });
             }
@@ -162,9 +160,6 @@ public class UpdateReferencesParticipant implements MoveNodeRefactoringParticipa
     return new NamedNodeReference(AbstractNodeReference__BehaviorDescriptor.getNodeReference_id4uVwhQyQbdz.invoke(serialized), SPropertyOperations.getString(serialized, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x27bf3263be23f0dfL, 0x27bf3263be23f299L, "nodeName")));
   }
   private static boolean eq_k8iioh_a0a0a0a0a0a0a0a4a1a21(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_k8iioh_a0a0a0a0a0a0c0a0a0a0a0d0a0a4a0a0a0a0f0b0m(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

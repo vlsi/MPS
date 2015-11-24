@@ -336,7 +336,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         FileChooserFactory.getInstance().installFileCompletion(genOutPath.getTextField(), outputPathsChooserDescriptor, true, null);
 
         genOutPath.setText(getGenOutPath());
-        genOutPath.setPreferredSize(new Dimension(300, 20));
         panel.add(genOutPath,
             new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
                 GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -551,8 +550,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       @Override
-      public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-        JComboBox combo = (JComboBox) super.getTableCellEditorComponent(table, value, isSelected, row, column);
+      public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, int row, int column) {
+        final JComboBox combo = (JComboBox) super.getTableCellEditorComponent(table, value, isSelected, row, column);
         combo.removeAllItems();
         if (row < 0 || row >= table.getModel().getRowCount()) {
           return combo;
@@ -563,6 +562,21 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           combo.addItem(o);
         }
         combo.setSelectedItem(rowItem.getItem().getScope());
+
+        // MPS-22987 As we don't know height of editor before creation, we need to update row height and return it back after
+        final int tableRowHeight = table.getRowHeight();
+        table.setRowHeight(row, (int)combo.getPreferredSize().getHeight());
+        combo.addFocusListener(new FocusListener() {
+          @Override
+          public void focusGained(FocusEvent e) {}
+
+          @Override
+          public void focusLost(FocusEvent e) {
+            table.setRowHeight(tableRowHeight);
+            combo.removeFocusListener(this);
+          }
+        });
+
         return combo;
       }
 

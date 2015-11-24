@@ -108,7 +108,7 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
   /**
    * @return null is not resolved and not required.
    */
-  public SReference initReplacementReference(TemplateGenerator generator) {
+  public SReference initReplacementReference() {
     if (myReplacementReference != null) {
       return myReplacementReference;
     }

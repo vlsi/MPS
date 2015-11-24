@@ -76,11 +76,10 @@ public class Templatereduce__InputNode extends TemplateDeclarationBase {
 
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveContext.getTemplateContext().subContext(getParametersAsMap());
+    final TemplateContext templateContext = weaveSupport.getTemplateContext().subContext(getParametersAsMap());
     Collection<SNode> tlistpart0 = applyPart0(templateContext);
-    SNode contextNode0 = weaveContext.getContextNode();
     for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), nodeToWeave, weaveContext.getAnchorNode(contextNode0, nodeToWeave));
+      weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"), nodeToWeave);
     }
     return tlistpart0;
   }
