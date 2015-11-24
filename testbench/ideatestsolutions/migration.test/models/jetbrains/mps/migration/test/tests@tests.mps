@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="auc7" ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)" />
@@ -901,7 +901,7 @@
               <node concept="2OqwBi" id="6xdNjwBiI6U" role="2Oq$k0">
                 <node concept="2ShNRf" id="3ZYZaNLMYC0" role="2Oq$k0">
                   <node concept="1pGfFk" id="3ZYZaNLMYC1" role="2ShVmc">
-                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
+                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="MigrationScriptApplied" />
                     <node concept="37vLTw" id="3ZYZaNLMYC2" role="37wK5m">
                       <ref role="3cqZAo" node="$5yWDriIQw" resolve="scriptA0" />
                     </node>
@@ -941,7 +941,7 @@
               <node concept="2OqwBi" id="6xdNjwBiJ9Q" role="2Oq$k0">
                 <node concept="2ShNRf" id="3ZYZaNLMYC6" role="2Oq$k0">
                   <node concept="1pGfFk" id="3ZYZaNLMYC7" role="2ShVmc">
-                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
+                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="MigrationScriptApplied" />
                     <node concept="37vLTw" id="3ZYZaNLMYC8" role="37wK5m">
                       <ref role="3cqZAo" node="$5yWDriM00" resolve="scriptB0" />
                     </node>
@@ -1132,7 +1132,7 @@
               <node concept="2OqwBi" id="6xdNjwBiGAz" role="2Oq$k0">
                 <node concept="2ShNRf" id="3ZYZaNLN2Aw" role="2Oq$k0">
                   <node concept="1pGfFk" id="3ZYZaNLN2Ax" role="2ShVmc">
-                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
+                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="MigrationScriptApplied" />
                     <node concept="37vLTw" id="3ZYZaNLN2Ay" role="37wK5m">
                       <ref role="3cqZAo" node="$5yWDriM00" resolve="scriptB0" />
                     </node>
@@ -1172,7 +1172,7 @@
               <node concept="2OqwBi" id="6xdNjwBiGqb" role="2Oq$k0">
                 <node concept="2ShNRf" id="3ZYZaNLN28k" role="2Oq$k0">
                   <node concept="1pGfFk" id="3ZYZaNLN28l" role="2ShVmc">
-                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
+                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="MigrationScriptApplied" />
                     <node concept="37vLTw" id="3ZYZaNLN2xr" role="37wK5m">
                       <ref role="3cqZAo" node="$5yWDriM00" resolve="scriptB0" />
                     </node>
@@ -1212,7 +1212,7 @@
               <node concept="2OqwBi" id="6xdNjwBiETh" role="2Oq$k0">
                 <node concept="2ShNRf" id="3ZYZaNLN3FH" role="2Oq$k0">
                   <node concept="1pGfFk" id="3ZYZaNLN3FI" role="2ShVmc">
-                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
+                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="MigrationScriptApplied" />
                     <node concept="37vLTw" id="3ZYZaNLN3FJ" role="37wK5m">
                       <ref role="3cqZAo" node="$5yWDriKQn" resolve="scriptA1" />
                     </node>
@@ -1252,7 +1252,7 @@
               <node concept="2OqwBi" id="6xdNjwBiGeg" role="2Oq$k0">
                 <node concept="2ShNRf" id="3ZYZaNLN28q" role="2Oq$k0">
                   <node concept="1pGfFk" id="3ZYZaNLN28r" role="2ShVmc">
-                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="ScriptApplied" />
+                    <ref role="37wK5l" to="bim2:5SsFeroaatn" resolve="MigrationScriptApplied" />
                     <node concept="37vLTw" id="3ZYZaNLN2y_" role="37wK5m">
                       <ref role="3cqZAo" node="$5yWDriKQn" resolve="scriptA1" />
                     </node>

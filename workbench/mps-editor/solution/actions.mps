@@ -9,8 +9,8 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -10925,14 +10925,14 @@
                             </node>
                             <node concept="1mIQ4w" id="urH2OByZBn" role="2OqNvi">
                               <node concept="chp4Y" id="urH2OByZBo" role="cj9EA">
-                                <ref role="cht4Q" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
+                                <ref role="cht4Q" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
                               </node>
                             </node>
                           </node>
                           <node concept="2OqwBi" id="urH2OByZBf" role="3uHU7w">
                             <node concept="2OqwBi" id="urH2OByZBg" role="2Oq$k0">
                               <node concept="1PxgMI" id="urH2OByZBh" role="2Oq$k0">
-                                <ref role="1PxNhF" to="tpck:3$Sh7m_tmYK" resolve="IOldComment" />
+                                <ref role="1PxNhF" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
                                 <node concept="37vLTw" id="urH2OByZBi" role="1PxMeX">
                                   <ref role="3cqZAo" node="urH2OByZBp" resolve="it" />
                                 </node>
