@@ -20,7 +20,6 @@
     <import index="83ig" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench(Testbench/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="ew0j" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.tool.environment(Testbench/)" />
-    <import index="ew0k" ref="fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41/java:jetbrains.mps.tool.environment(jetbrains.mps.core.tool.environment/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -229,7 +228,7 @@
                 <ref role="1Pybhc" to="83ig:~BaseMpsTest" resolve="BaseMpsTest" />
               </node>
               <node concept="liA8E" id="2qqFBg4M2PI" role="2OqNvi">
-                <ref role="37wK5l" to="ew0k:~Environment.createEmptyProject():jetbrains.mps.project.Project" resolve="createEmptyProject" />
+                <ref role="37wK5l" to="ew0j:~Environment.createEmptyProject():jetbrains.mps.project.Project" resolve="createEmptyProject" />
               </node>
             </node>
           </node>
