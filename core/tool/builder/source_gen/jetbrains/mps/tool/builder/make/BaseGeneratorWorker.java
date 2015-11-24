@@ -53,9 +53,11 @@ public class BaseGeneratorWorker extends MpsWorker {
   public BaseGeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }
+
   protected BaseGeneratorWorker.MyMessageHandler getMyMessageHandler() {
     return myMessageHandler;
   }
+
   @Override
   protected void executeTask(final Project project, MpsWorker.ObjectsToProcess go) {
     setGenerationProperties();
@@ -63,6 +65,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       generate(project, go);
     }
   }
+
   protected void setGenerationProperties() {
     GeneratorProperties gp = new GeneratorProperties(myWhatToDo);
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
@@ -143,16 +146,14 @@ public class BaseGeneratorWorker extends MpsWorker {
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
       FileMPSProject p = new FileMPSProject(file);
-      p.init(new FileMPSProject.ProjectDescriptor(file));
       makeProject();
-      p.projectOpened();
 
       info("Loaded project " + p);
 
       executeTask(p, new MpsWorker.ObjectsToProcess(Collections.singleton(p), new HashSet<SModule>(), new HashSet<SModel>()));
 
-      p.projectClosed();
       doneSomething = true;
+      p.dispose();
     }
 
     // the rest -- using dummy project 

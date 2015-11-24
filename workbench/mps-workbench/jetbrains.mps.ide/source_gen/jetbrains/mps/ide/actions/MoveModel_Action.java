@@ -33,6 +33,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -41,7 +42,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SReferenceBase;
-import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 public class MoveModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -140,27 +140,31 @@ public class MoveModel_Action extends BaseAction {
         for (SModel usage : SetSequence.fromSet(usages)) {
           if (SModelStereotype.isUserModel(usage)) {
             ((SModelInternal) usage).addModelImport(newModel.getReference(), true);
-            ListSequence.fromList(SModelOperations.nodes(((SModel) usage), null)).translate(new ITranslator2<SNode, SReference>() {
-              public Iterable<SReference> translate(SNode it) {
-                return SNodeOperations.getReferences(it);
-              }
-            }).where(new IWhereFilter<SReference>() {
-              public boolean accept(SReference it) {
-                return eq_pp3sda_a0a0a0a0a0a1a0a1a0a0a0a31a6(it.getTargetSModelReference(), modelReference);
-              }
-            }).visitAll(new IVisitor<SReference>() {
-              public void visit(SReference it) {
-                ((SReferenceBase) it).setTargetSModelReference(newModel.getReference());
-              }
-            });
+            MoveModel_Action.this.updateUsages(usage, modelReference, newModel.getReference(), _params);
             ((SModelInternal) usage).deleteModelImport(modelReference);
           }
         }
+        MoveModel_Action.this.updateUsages(newModel, modelReference, newModel.getReference(), _params);
         DeleteModelHelper.delete(((SModel) MapSequence.fromMap(_params).get("model")).getModule(), ((SModel) MapSequence.fromMap(_params).get("model")), true);
       }
     });
   }
-  private static boolean eq_pp3sda_a0a0a0a0a0a1a0a1a0a0a0a31a6(Object a, Object b) {
+  private void updateUsages(SModel usageModel, final SModelReference oldModelReference, final SModelReference newModelReference, final Map<String, Object> _params) {
+    ListSequence.fromList(SModelOperations.nodes(usageModel, null)).translate(new ITranslator2<SNode, SReference>() {
+      public Iterable<SReference> translate(SNode it) {
+        return SNodeOperations.getReferences(it);
+      }
+    }).where(new IWhereFilter<SReference>() {
+      public boolean accept(SReference it) {
+        return eq_pp3sda_a0a0a0a0a0a0a7(it.getTargetSModelReference(), oldModelReference);
+      }
+    }).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference it) {
+        ((SReferenceBase) (SReference) it).setTargetSModelReference(newModelReference);
+      }
+    });
+  }
+  private static boolean eq_pp3sda_a0a0a0a0a0a0a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -232,16 +232,8 @@ public class List_Test extends Util_Test {
     Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
   }
   public void test_mps5845() throws Exception {
-    /*
-      List<String> abc = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(abc).addElement(new Integer(123));
-      Assert.assertEquals("123", ListSequence.fromList(abc).first());
-    */
   }
   public void test_mps5818() throws Exception {
-    /*
-      List<Object> abc = ListSequence.fromList(new ArrayList<String>());
-    */
   }
   public void test_mps6093() throws Exception {
     List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C");

@@ -10,7 +10,7 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
@@ -3239,7 +3239,7 @@
                         <node concept="3fl2lp" id="6Y8LBKcdwlq" role="2Oq$k0">
                           <ref role="3fl3PK" to="6bz1:6yt8uwrpTKe" resolve="isApplicable" />
                           <node concept="3B5_sB" id="6Y8LBKcdwlr" role="3fl3PI">
-                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6Y8LBKcdwls" role="2OqNvi">
@@ -3376,7 +3376,7 @@
                         <node concept="3fl2lp" id="6jDmPiUWUr6" role="2Oq$k0">
                           <ref role="3fl3PK" to="6bz1:6jDmPiUSJ$K" resolve="isApplicableInChild" />
                           <node concept="3B5_sB" id="6jDmPiUWUr7" role="3fl3PI">
-                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6jDmPiUWUr8" role="2OqNvi">
@@ -3536,7 +3536,7 @@
                       <node concept="3fl2lp" id="3_zGkPoGTLe" role="2Oq$k0">
                         <ref role="3fl3PK" to="6bz1:2lJOBsqvJqh" resolve="Parameter" />
                         <node concept="3B5_sB" id="3_zGkPoGTLf" role="3fl3PI">
-                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="3_zGkPoGTLg" role="2OqNvi">
@@ -3619,7 +3619,7 @@
                         <node concept="3fl2lp" id="3_zGkPoEs$r" role="2Oq$k0">
                           <ref role="3fl3PK" to="6bz1:6yt8uwrpTsz" resolve="execute" />
                           <node concept="3B5_sB" id="3_zGkPoEs$s" role="3fl3PI">
-                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3_zGkPoEs$t" role="2OqNvi">
@@ -3644,7 +3644,7 @@
                       <node concept="3fl2lp" id="3_zGkPoEzji" role="2Oq$k0">
                         <ref role="3fl3PK" to="6bz1:6yt8uwrpTIM" resolve="description" />
                         <node concept="3B5_sB" id="3_zGkPoEzjj" role="3fl3PI">
-                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="3_zGkPoEzjk" role="2OqNvi">
@@ -3697,7 +3697,7 @@
                         <node concept="3fl2lp" id="4jgyS0Zb_5D" role="2Oq$k0">
                           <ref role="3fl3PK" to="6bz1:2lJOBsqvJqh" resolve="Parameter" />
                           <node concept="3B5_sB" id="4jgyS0Zb$Iy" role="3fl3PI">
-                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4jgyS0Zb_IG" role="2OqNvi">

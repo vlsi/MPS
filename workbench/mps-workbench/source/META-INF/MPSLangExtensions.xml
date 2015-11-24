@@ -245,9 +245,12 @@
                     serviceImplementation="com.intellij.pom.core.impl.PomModelImpl"/>
     <projectService serviceInterface="com.intellij.psi.impl.include.FileIncludeManager"
                     serviceImplementation="com.intellij.psi.impl.include.FileIncludeManagerImpl"/>
-    <projectService serviceInterface="com.intellij.util.CachedValuesFactory"
-                    serviceImplementation="com.intellij.psi.impl.PsiCachedValuesFactory"/>
+    -->
 
+    <projectService serviceInterface="com.intellij.util.CachedValuesFactory"
+                    serviceImplementation="com.intellij.util.DefaultCachedValuesFactory"/>
+
+    <!--
 
     <projectService serviceInterface="com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable"
                     serviceImplementation="com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable"/>

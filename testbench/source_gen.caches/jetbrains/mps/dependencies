@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.CoreMpsTest" file="CoreMpsTest.java">
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
+    <classNode dependClassName="org.junit.AfterClass" />
+    <classNode dependClassName="org.junit.BeforeClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.BaseMpsTest" />
   </dependency>
   <dependency className="jetbrains.mps.MPSLaunch" file="MPSLaunch.java">
@@ -9,7 +14,12 @@
     <classNode dependClassName="java.lang.annotation.RetentionPolicy" />
     <classNode dependClassName="java.lang.annotation.Target" />
   </dependency>
-  <dependency className="jetbrains.mps.WorkbenchMpsTest" file="WorkbenchMpsTest.java">
+  <dependency className="jetbrains.mps.PlatformMpsTest" file="PlatformMpsTest.java">
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
+    <classNode dependClassName="org.junit.AfterClass" />
+    <classNode dependClassName="org.junit.BeforeClass" />
     <classNode extendsClassName="jetbrains.mps.testbench.BaseMpsTest" />
   </dependency>
 </dependenciesRoot>

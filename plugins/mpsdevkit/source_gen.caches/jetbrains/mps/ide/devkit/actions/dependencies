@@ -14,7 +14,9 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Actions_TabDescriptor" file="Actions_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -22,12 +24,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Actions_Order" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.AddAccessoryModel_Action" file="AddAccessoryModel_Action.java">
@@ -79,6 +85,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Behavior_TabDescriptor" file="Behavior_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -89,12 +96,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup" file="BehaviourPopup_ActionGroup.java">
@@ -167,6 +178,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Constraints_TabDescriptor" file="Constraints_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -177,12 +189,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Constraints_Order" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.CreateDefaultEditor_Action" file="CreateDefaultEditor_Action.java">
@@ -222,6 +238,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Data_Flow_TabDescriptor" file="Data_Flow_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -232,12 +249,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DataFlow_Order" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
@@ -292,6 +313,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Editor_TabDescriptor" file="Editor_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -302,13 +324,17 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Editor_Order" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.FindLanguageConceptsUsages_Action" file="FindLanguageConceptsUsages_Action.java">
@@ -374,7 +400,9 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Find_Usages_TabDescriptor" file="Find_Usages_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -382,12 +410,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.FindUsages_Order" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.GenerateEditorPopup_ActionGroup" file="GenerateEditorPopup_ActionGroup.java">
@@ -718,19 +750,25 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.Intentions_TabDescriptor" file="Intentions_TabDescriptor.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Intentions_Order" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.LanguageActionsEx_ActionGroup" file="LanguageActionsEx_ActionGroup.java">
@@ -1130,7 +1168,9 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Refactorings_TabDescriptor" file="Refactorings_TabDescriptor.java">
     <classNode dependClassName="java.lang.Character" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
@@ -1138,12 +1178,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Refactorings_Order" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ReloadAll_Action" file="ReloadAll_Action.java">
@@ -1264,6 +1308,7 @@
   <dependency className="jetbrains.mps.ide.devkit.actions.ShowStructure_Action" file="ShowStructure_Action.java">
     <classNode dependClassName="com.intellij.ide.structureView.StructureView" />
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewBuilder" />
+    <classNode dependClassName="com.intellij.ide.util.FileStructurePopup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
@@ -1275,7 +1320,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
@@ -1326,6 +1370,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.relations.BaseOrder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Textgen_TabDescriptor" file="Textgen_TabDescriptor.java">
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -1336,12 +1381,16 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Textgen_Order" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.TraceActions_ActionGroup" file="TraceActions_ActionGroup.java">

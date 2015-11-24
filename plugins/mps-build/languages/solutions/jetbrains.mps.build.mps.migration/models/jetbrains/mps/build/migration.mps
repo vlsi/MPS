@@ -2,9 +2,9 @@
 <model ref="r:c78f10bd-09b6-4295-ae4d-40d616d8e174(jetbrains.mps.build.migration)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
@@ -339,6 +339,9 @@
             </node>
             <node concept="liA8E" id="75eqTYkq9C7" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
+              <node concept="Xl_RD" id="3FVfMMI1T2E" role="37wK5m">
+                <property role="Xl_RC" value="migrationAssistant" />
+              </node>
               <node concept="10M0yZ" id="75eqTYkrSbz" role="37wK5m">
                 <ref role="3cqZAo" node="75eqTYkqe2J" resolve="MIGRATION_PLUGIN" />
                 <ref role="1PxDUh" node="KL8Aqll4mG" resolve="MigrationWorker" />
@@ -740,16 +743,13 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="60oBoEfB8O" role="3cqZAp">
-              <node concept="2OqwBi" id="60oBoEfBe8" role="3clFbG">
-                <node concept="37vLTw" id="60oBoEfB8M" role="2Oq$k0">
-                  <ref role="3cqZAo" to="jo3e:KL8Aqlj5lM" resolve="myEnvironment" />
+            <node concept="3clFbF" id="6ylsT8BG8Fi" role="3cqZAp">
+              <node concept="2OqwBi" id="6ylsT8BG8PE" role="3clFbG">
+                <node concept="37vLTw" id="6ylsT8BG8Fg" role="2Oq$k0">
+                  <ref role="3cqZAo" node="60oBoEfqOa" resolve="p" />
                 </node>
-                <node concept="liA8E" id="60oBoEfBfP" role="2OqNvi">
-                  <ref role="37wK5l" to="79ha:6rx4kZDk5qB" resolve="closeProject" />
-                  <node concept="37vLTw" id="60oBoEfBgU" role="37wK5m">
-                    <ref role="3cqZAo" node="60oBoEfqOa" resolve="p" />
-                  </node>
+                <node concept="liA8E" id="6ylsT8BG92z" role="2OqNvi">
+                  <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
                 </node>
               </node>
             </node>

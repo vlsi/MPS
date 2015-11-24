@@ -98,7 +98,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     if (!(dialogWrapper.isOK())) {
       return;
     }
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module.getModuleReference());
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module);
     ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
   }
 }

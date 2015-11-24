@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -287,6 +287,9 @@
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
+        <reference id="1204851882689" name="link" index="26LbJp" />
+      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -298,11 +301,15 @@
         <reference id="5253134957341870584" name="conceptDeclaration" index="pqAIh" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
+        <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1437,14 +1444,18 @@
         <node concept="pkWqt" id="hB4nOjK" role="pqm2j">
           <node concept="3clFbS" id="hB4nOjL" role="2VODD2">
             <node concept="3clFbF" id="hB4nOIH" role="3cqZAp">
-              <node concept="3y3z36" id="hB4nQ0Z" role="3clFbG">
-                <node concept="10Nm6u" id="hB4nQjz" role="3uHU7w" />
-                <node concept="2OqwBi" id="hB4nOV6" role="3uHU7B">
+              <node concept="2OqwBi" id="2_1mL0eofZf" role="3clFbG">
+                <node concept="2OqwBi" id="hB4nOV6" role="2Oq$k0">
                   <node concept="pncrf" id="hB4nOII" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="hB4nPMk" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+                  <node concept="Bykcj" id="2_1mL0eofZc" role="2OqNvi">
+                    <node concept="1aIX9F" id="2_1mL0eofZd" role="1xVPHs">
+                      <node concept="26LbJo" id="2_1mL0eofZe" role="1aIX9E">
+                        <ref role="26LbJp" to="tpee:fz3vP1I" />
+                      </node>
+                    </node>
                   </node>
                 </node>
+                <node concept="3GX2aA" id="2_1mL0eofZg" role="2OqNvi" />
               </node>
             </node>
           </node>

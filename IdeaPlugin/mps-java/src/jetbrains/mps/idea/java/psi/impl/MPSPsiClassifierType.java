@@ -108,7 +108,7 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
           @Override
           public PsiSubstitutor getSubstitutor() {
-            if (clas == null) return null;
+            if (clas == null) return PsiSubstitutor.EMPTY;
             PsiType[] params = getParameters();
             PsiSubstitutor subst = PsiSubstitutor.EMPTY;
             return subst.putAll(clas, params);

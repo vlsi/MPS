@@ -478,16 +478,13 @@ public class Templateweave__ChildConceptWeaveMany extends TemplateDeclarationBas
 
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveContext.getTemplateContext();
+    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     SNode tnodepart0 = applyPart0(templateContext);
-    SNode contextNode0 = weaveContext.getContextNode();
-    weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart0, weaveContext.getAnchorNode(contextNode0, tnodepart0));
+    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart0);
     SNode tnodepart1 = applyPart1(templateContext);
-    SNode contextNode1 = weaveContext.getContextNode();
-    weaveSupport.weave(contextNode1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart1, weaveContext.getAnchorNode(contextNode1, tnodepart1));
+    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart1);
     SNode tnodepart2 = applyPart2(templateContext);
-    SNode contextNode2 = weaveContext.getContextNode();
-    weaveSupport.weave(contextNode2, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart2, weaveContext.getAnchorNode(contextNode2, tnodepart2));
+    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), tnodepart2);
     return TemplateUtil.asList(tnodepart0, tnodepart1, tnodepart2);
   }
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0c0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533416");

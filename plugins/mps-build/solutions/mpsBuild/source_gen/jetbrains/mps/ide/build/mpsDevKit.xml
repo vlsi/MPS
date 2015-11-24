@@ -12,6 +12,8 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -25,6 +27,7 @@
   
   <path id="path.jdk.classpath">
     <pathelement path="${java.home}/../Classes/classes.jar" />
+    <pathelement path="${jdk.home}/lib/tools.jar" />
     <fileset dir="${java.home}">
       <include name="lib/*.jar" />
     </fileset>
@@ -553,7 +556,6 @@
       <library file="${artifacts.mpsTesting}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
       <library file="${artifacts.mpsTesting}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mpsTesting}/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
-      <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
@@ -811,6 +813,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit3-2.5.1.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jmock-junit4-2.5.1.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/junit-4.12.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-core-1.3.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/hamcrest-library-1.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -880,9 +884,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
-        <fileset file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.extension.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.quotation.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />

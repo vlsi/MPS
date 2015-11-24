@@ -55,14 +55,17 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
   @NotNull
   @Override
   public PsiElement getDeclarationScope() {
-    // copied from PsiParamImpl, there's more there
-    final PsiElement parent = getParent();
+    // originally copied from PsiParamImpl, there was more there
+
+    // we're supposed to be a grandchild of MPSPsiMethod
+    PsiElement parent = getParent();
     if (parent == null) return this;
 
+    parent = parent.getParent();
     if (parent instanceof PsiMethod) {
       return parent;
     }
-    return null;
+    return this;
   }
 
   @Override

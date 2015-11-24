@@ -50,10 +50,9 @@ public class Templatereduce__Heading extends TemplateDeclarationBase {
 
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveContext.getTemplateContext();
+    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     SNode tnodepart0 = applyPart0(templateContext);
-    SNode contextNode0 = weaveContext.getContextNode();
-    weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnodepart0, weaveContext.getAnchorNode(contextNode0, tnodepart0));
+    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnodepart0);
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer templateNode_tax5tt_c0a1a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4923130412073305297");

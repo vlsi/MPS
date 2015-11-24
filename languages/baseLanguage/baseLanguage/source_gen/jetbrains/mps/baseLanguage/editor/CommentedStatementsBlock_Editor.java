@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -56,6 +58,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_BlockComment(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1121e2102fdL, 0x1121e2157e4L, "statement")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

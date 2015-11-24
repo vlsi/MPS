@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -33,6 +35,7 @@ public class GeneratorDebug_LabelEntry_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new GeneratorDebug_LabelEntry_Editor.entriesListHandler_mfgmav_a0(node, "entries", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

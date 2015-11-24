@@ -567,7 +567,7 @@ public class QueriesGenerated {
     _context.putTransientObject(_context.getNode(), val);
     return val;
   }
-  public static Object propertyMacro_GetPropertyValue_1368513600865905530(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_8715635203077074768(final PropertyMacroContext _context) {
     return "contextNode" + ((Integer) _context.getVariable("index"));
   }
   public static Object propertyMacro_GetPropertyValue_9196441569928398217(final PropertyMacroContext _context) {
@@ -1192,19 +1192,31 @@ public class QueriesGenerated {
 
     return "applyPart" + Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("fragments"))).indexOf(Sequence.fromIterable(selected).first());
   }
-  public static Object referenceMacro_GetReferent_1368513600865905601(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8715635203077074778(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.templateFragment_ContextNodeQuery(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x113c239350bL, "contextNodeQuery")));
   }
-  public static Object referenceMacro_GetReferent_6010412116026849974(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8715635203077074821(final ReferenceMacroContext _context) {
     return ((SNode) SNodeOperations.getParent(_context.getNode()).getContainmentLink().getDeclarationNode());
   }
-  public static Object referenceMacro_GetReferent_6010412116026852476(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8715635203077074836(final ReferenceMacroContext _context) {
     return (SNode) SNodeOperations.getConcept(SNodeOperations.getParent(_context.getNode())).getDeclarationNode();
   }
-  public static Object referenceMacro_GetReferent_6010412116026933880(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8715635203077074860(final ReferenceMacroContext _context) {
     return ((SNode) SNodeOperations.getParent(_context.getNode()).getContainmentLink().getDeclarationNode());
   }
-  public static Object referenceMacro_GetReferent_6010412116026933895(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_8715635203077074875(final ReferenceMacroContext _context) {
+    return (SNode) SNodeOperations.getConcept(SNodeOperations.getParent(_context.getNode())).getDeclarationNode();
+  }
+  public static Object referenceMacro_GetReferent_8715635203077115561(final ReferenceMacroContext _context) {
+    return ((SNode) SNodeOperations.getParent(_context.getNode()).getContainmentLink().getDeclarationNode());
+  }
+  public static Object referenceMacro_GetReferent_8715635203077115576(final ReferenceMacroContext _context) {
+    return (SNode) SNodeOperations.getConcept(SNodeOperations.getParent(_context.getNode())).getDeclarationNode();
+  }
+  public static Object referenceMacro_GetReferent_8715635203077115599(final ReferenceMacroContext _context) {
+    return ((SNode) SNodeOperations.getParent(_context.getNode()).getContainmentLink().getDeclarationNode());
+  }
+  public static Object referenceMacro_GetReferent_8715635203077115614(final ReferenceMacroContext _context) {
     return (SNode) SNodeOperations.getConcept(SNodeOperations.getParent(_context.getNode())).getDeclarationNode();
   }
   public static Object referenceMacro_GetReferent_5577795813925668091(final ReferenceMacroContext _context) {
@@ -1916,10 +1928,14 @@ public class QueriesGenerated {
     String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
     return !(name.startsWith("tnode"));
   }
-  public static boolean ifMacro_Condition_8908685395806714110(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8715635203077074888(final IfMacroContext _context) {
+    String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
+    return !(name.startsWith("tnode"));
+  }
+  public static boolean ifMacro_Condition_8715635203077056613(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, 0x113c239350bL, "contextNodeQuery")) != null);
   }
-  public static boolean ifMacro_Condition_1368513600865902729(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_8715635203077115627(final IfMacroContext _context) {
     String name = (String) _context.getTransientObject(SNodeOperations.getParent(_context.getNode()));
     return !(name.startsWith("tnode"));
   }
@@ -2990,35 +3006,6 @@ public class QueriesGenerated {
     }
   }
   public static void mappingScript_CodeBlock_1199965771120(final MappingScriptContext _context) {
-    /*
-      List<SNode> nodes = SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b471fcL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode"));
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40edb6a16L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return (SNode) IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(it);
-        }
-      }));
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4806ea5d84d8a2caL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return (SNode) IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(it);
-        }
-      }));
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return (SNode) IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(it);
-        }
-      }));
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef"))).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return (SNode) IOperation__BehaviorDescriptor.getDotExpression_idhO_4GYO.invoke(it);
-        }
-      }));
-      for (SNode node : nodes) {
-        SNode replacement = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11763791866L, "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression")));
-        SLinkOperations.setTarget(replacement, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11763791866L, 0x11763794499L, "typeHint"), SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")));
-        SNodeOperations.replaceWithAnother(node, replacement);
-        SLinkOperations.setTarget(replacement, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11763791866L, 0x117637931bcL, "expression"), node);
-      }
-    */
     // There seems to be no reason to keep hint for TemplateFunctionParameter_sourceNode as it gets translated 
     // at the first step, with TLB_main. GenerationContextOp IOperations listed below, however, are processed 
     // when generator model is dropped and only QueriesGenerated class is present - hence can't access types from 

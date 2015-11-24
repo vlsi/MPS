@@ -27,6 +27,8 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.baseLanguage.math.behavior.MathSymbol__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -192,7 +194,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition")) != null;
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition"))).isNotEmpty();
   }
   private EditorCell createRefNode_b0ego6_a3b0(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new MathSymbol_Editor.preconditionSingleRoleHandler_b0ego6_a3b0(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition"), editorContext);

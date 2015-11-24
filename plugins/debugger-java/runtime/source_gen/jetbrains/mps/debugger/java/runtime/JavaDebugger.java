@@ -47,7 +47,10 @@ public class JavaDebugger extends AbstractDebugger implements ApplicationCompone
   @Override
   public void disposeComponent() {
     EvaluationUtils.getInstance().dispose();
-    MirrorUtil.getInstance().dispose();
+    MirrorUtil mirrorUtil = MirrorUtil.getInstance();
+    if (mirrorUtil != null) {
+      mirrorUtil.dispose();
+    }
     myJavaBreakpointsProvider.dispose();
     super.dispose();
   }

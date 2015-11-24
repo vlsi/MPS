@@ -218,6 +218,9 @@ class GenerationSession {
 
         ttrace.push("steps", false);
 
+        TransitionTrace transitionTrace = new TransitionTrace(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
+        transitionTrace.reset(currInputModel);
+
         for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps_().size(); myMajorStep++) {
           Step planStep = myGenerationPlan.getSteps_().get(myMajorStep);
           if (planStep instanceof Transform) {
@@ -232,7 +235,7 @@ class GenerationSession {
             if (myLogger.needsInfo()) {
               myLogger.info("executing step " + (myMajorStep + 1));
             }
-            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep);
+            currOutput = executeMajorStep(monitor.subTask(1), currInputModel, transformStep, transitionTrace);
             monitor.advance(0);
             if (currOutput == null || myLogger.getErrorCount() > 0) {
               break;
@@ -243,18 +246,21 @@ class GenerationSession {
             currInputModel = currOutput;
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
-            CheckpointState cpState = mySessionContext.getCrossModelEnvironment().createCheckpoint(myOriginalInputModel, currInputModel, checkpointStep);
+            SModel checkpointModel = mySessionContext.getCrossModelEnvironment().createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointStep);
+            CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
             // FIXME shall populate state with last generator's MappingLabels. Couldn't use last generator directly as it might be
             // the one from post-processing scripts. What if I add ML in post-processing script?
             //
             // FIXME could keep myStepArguments and access GeneratorMappings from there - myStepArguments is the same for pre/post and main part
             if (myStepArguments != null) {
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
-              stepLabels.export(cpState);
-              SModel checkpointModel = cpState.getCheckpointModel();
+              stepLabels.export(cpBuilder);
               SNode debugMappings = new DebugMappingsBuilder(mySessionContext.getRepository()).build(checkpointModel, stepLabels);
               checkpointModel.addRootNode(debugMappings);
             }
+            mySessionContext.getCrossModelEnvironment().publishCheckpoint(myOriginalInputModel.getReference(), cpBuilder.create(checkpointStep));
+            transitionTrace = new TransitionTrace(checkpointStep);
+            transitionTrace.reset(currInputModel);
             myStepArguments = null;
           }
         }
@@ -304,7 +310,7 @@ class GenerationSession {
     }
   }
 
-  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep) throws GenerationCanceledException, GenerationFailureException {
+  private SModel executeMajorStep(ProgressMonitor progress, SModel inputModel, Transform planStep, TransitionTrace transitionTrace) throws GenerationCanceledException, GenerationFailureException {
     myMinorStep = -1;
 
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(planStep.getTransformations());
@@ -323,7 +329,7 @@ class GenerationSession {
     mySessionContext = new GenerationSessionContext(mySessionContext);
 
     // -- filter mapping configurations
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(null, myDependenciesBuilder, myNewTrace, null));
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myDependenciesBuilder));
     LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
     for (TemplateMappingConfiguration c : mappingConfigurations) {
       if (!c.isApplicable(templateGenerator)) {
@@ -347,7 +353,7 @@ class GenerationSession {
     GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger));
+      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger), transitionTrace);
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");

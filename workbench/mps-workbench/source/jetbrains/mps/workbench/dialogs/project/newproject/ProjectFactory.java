@@ -97,6 +97,7 @@ public class ProjectFactory {
 
     //noinspection ConstantConditions
     final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
+    assert mpsProject != null;
 
     StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
       @Override
@@ -106,12 +107,12 @@ public class ProjectFactory {
           public void run() {
             if (myOptions.getCreateNewLanguage()) {
               myCreatedLanguage = NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
-              mpsProject.addModule(myCreatedLanguage.getModuleReference());
+              mpsProject.addModule(myCreatedLanguage);
             }
 
             if (myOptions.getCreateNewSolution()) {
               myCreatedSolution = NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
-              mpsProject.addModule(myCreatedSolution.getModuleReference());
+              mpsProject.addModule(myCreatedSolution);
             }
 
             if (myCreatedSolution != null && myCreatedLanguage != null) {

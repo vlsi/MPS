@@ -95,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.bookmark.BookmarkManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
@@ -105,8 +106,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.VcsGeneratedFilesPanel" file="VcsGeneratedFilesPanel.java">

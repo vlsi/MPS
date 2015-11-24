@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2gevhcxwwykwhmh1u6qyn5v2jn82iz0">
+<dependencies version="2" modelHash="-9k144owq776ikclhffjfi57ebimijux">
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:com.intellij.openapi.fileEditor(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.actions.descriptor(MPS.Editor/)" />
   <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.actions.runtime.impl(MPS.Editor/)" />
@@ -1440,8 +1440,6 @@
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.SendingContext(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.stub.java.rmi(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.stub.javax.management.remote.rmi(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.relaxng.datatype(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.relaxng.datatype.helpers(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom.bootstrap(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom.css(JDK/)" />
@@ -1456,9 +1454,6 @@
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax.ext(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax.helpers(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.applet(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.applet.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.audio(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.X11(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.color(JDK/)" />
@@ -1474,166 +1469,6 @@
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.shell(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.util(JDK/)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.windows(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.beans.editors(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.beans.infos(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.corba(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.dc.path(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.dc.pr(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.font(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.instrument(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.io(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.loops(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.opengl(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.pipe(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.pipe.hw(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.x11(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jdbc.odbc(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jdbc.odbc.ee(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jkernel(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor.event(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor.remote(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.file(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.local(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.rmi(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.v1_0(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.v2_0(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.counter(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.counter.perf(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.jmxremote(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.jvminstr(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.jvmmib(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.util(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.misc(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.misc.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.dns(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.ftp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.httpserver(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.idn(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.sdp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.smtp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.spi(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.spi.nameservice(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.util(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.audio(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.image(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.text(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.http(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.file(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.ftp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.gopher(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.http(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.https(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.jar(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.mailto(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.netdoc(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.ch(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.cs(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.cs.ext(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.continuations(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.debug(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.jdk11(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.jdk13(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.regexp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.serialize(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.xml(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.print(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.print.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.annotation(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.factory(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.parser(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.reflectiveObjects(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.repository(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.scope(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.tree(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.visitor(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.misc(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.log(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.registry(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.iiop(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.newrmic(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.newrmic.jrmp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.runtime(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.server(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport.proxy(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport.tcp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.acl(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.action(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.ec(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.internal.interfaces(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.internal.spec(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jca(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.krb5(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.spi(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.spnego(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.wrapper(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.ccache(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.crypto(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.crypto.dk(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.ktab(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.rcache(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.util(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.pkcs(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.provider(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.provider.certpath(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.rsa(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.smartcardio(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.timestamp(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.tools(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.util(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.validator(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.x509(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.icon(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf.synth(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf.windows(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.table(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.text(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.text.html(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text.normalizer(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.asm(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.attach(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.hprof(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jar(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jar.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.java(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javac(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javap(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javap.oldjavap(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jinfo(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jmap(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jps(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstack(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstat(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstatd(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.native2ascii(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.native2ascii.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.serialver(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.tree(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.util(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.usagetracker(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.calendar(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.logging.resources(JDK/)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.resources(JDK/)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.annotations(MPS.Core/)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.base(MPS.Core/)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.base.internal(MPS.Core/)" />
@@ -2040,35 +1875,35 @@
   <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
   <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
   <dep model="a3e4657f-a76c-45bb-bbda-c764596ecc65/java:org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5elr3bl41mn9ucvko2lu91n23n1z16a" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="9s4qjllf7k4sdgb1xf6zx4ujrumk0xz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-88zmvbrj6oqfvgu0oulnnfpbgis2n6l" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5ut7qhitsk0l8lgxoaw6nknz4bo9tgs" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-a40133rojlz3xogonc641sly7kdfrjw" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="fh6ovd2nok6hb7aeksocjejf3r1oom" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-69tjf60lln4u3j5vuee6coiem3xvb2s" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="dcdye1rzwh93kj4koiu1enb4kx9uqcx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2slsrztf091jvpaqhrp2hu0dc2n6sxz" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="81hj1mua86hzuytkqop7skprohxw986" />
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-2xu9t22plg7vuzyjlokxiw5hnlkdtne" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-5yjlavwg89b0so5yg1wq6u9z2bvqgv6" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="1mg93gkm3xrzojwazpeeyf16a5aek7a" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="40vqq9nuro15x3ub3sbsvg2jvid9q91" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="1ftbuo3ajwq20b119fza4isyzu6ykgq" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-axu2kjyw98gcqvnuwoua1akp93nigcn" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-wyl67yczs1fev5dntomuqp7ffpgxzb" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="90hdekm7lyc2slhod82ymxx2bbxo5t2" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-30kvnufq1ffz2p3jtpzrni1z0dagcg2" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-9bnxqf1l9hjz5d5mfa7w1h85kmdtqtl" />
-  <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" hash="wex3rvpygoguxzljbrzul7u5cx8hna" />
-  <dep model="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" hash="-5thro1rpl3qnjj913vi2ackpytfgq0e" />
+  <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" hash="9dsvnu133ti5p9jnfmnf4gu1hb2ijsq" />
+  <dep model="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" hash="-3646crxpwhfyfa4tfyguekrprugczoe" />
   <dep model="r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)" hash="dq90sujawjwn85crpem590gko9sd9fc" />
-  <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" hash="-cko74rmspprak0ef4icvinlqgwdncgj" />
-  <dep model="r:83437316-51a8-44ee-b386-4989e30943c4(jetbrains.mps.build.mps.testManifest.behavior)" hash="5d63b6voppkzbfwp8dls0ggkmcjpksj" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ckzjyccgduwqjstc0ftd1eqzfnnd67a" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="18o1zclhzcsu8n5kxa9ke25x0lh7klj" />
-  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="a4sqect5e88awl0bojnoev0fdp1zlfg" />
+  <dep model="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)" hash="-6c3jh68x4brbx29hqr0fkfkh3ce2kaa" />
+  <dep model="r:83437316-51a8-44ee-b386-4989e30943c4(jetbrains.mps.build.mps.testManifest.behavior)" hash="bbzgnlq1ny79avywd45e5hi1t7g3hzz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-91g0lpn8gfmr52ze063lp3pwkkfyn8u" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="281nppbx9q0k4ral04v9k3q4mas7ay2" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-bvcwznsint856mhebaaie0vwafb6nas" />
   <dep model="r:d58a0a69-0655-46ea-90b9-604f6da8b24f(jetbrains.mps.build.mps.testManifest.structure)" hash="1hcp5yk4qhr6i5q6oj7ivasez18f142" />
   <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-ao893wybwq5m2h36x2uedtu1mj8xbyj" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="56y22u25z77tsl94a1qh5a8jsnaodko" />
-  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-b98agelekv5pgamlnze6av863hfv698" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="3g0bc24vbyibrd6aim16km3f0dhlu0k" />
-  <common hash="t6ior1ig51aipdc4i2zyr14z9l1emh" dependsOnNodes="true">
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cjol5b8en1ar14600bn1ejtnvuamg8" />
+  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-7iq1p1b1fq0xb7p071pj628xopmbhpg" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="brok07gfzyqzi8tzknq7pogeqqbzbbl" />
+  <common hash="9ths2b1bzaq7mqnn4w3mgmqln9r1ur6" dependsOnNodes="true">
     <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
@@ -3516,8 +3351,6 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.SendingContext(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.stub.java.rmi(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.stub.javax.management.remote.rmi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.relaxng.datatype(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.relaxng.datatype.helpers(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom.bootstrap(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom.css(JDK/)" />
@@ -3532,9 +3365,6 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax.ext(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax.helpers(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.applet(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.applet.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.audio(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.X11(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.color(JDK/)" />
@@ -3550,166 +3380,6 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.shell(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.util(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.windows(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.beans.editors(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.beans.infos(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.corba(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.dc.path(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.dc.pr(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.font(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.instrument(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.io(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.loops(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.opengl(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.pipe(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.pipe.hw(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.x11(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jdbc.odbc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jdbc.odbc.ee(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jkernel(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor.event(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor.remote(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.file(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.local(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.rmi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.v1_0(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.v2_0(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.counter(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.counter.perf(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.jmxremote(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.jvminstr(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.jvmmib(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.misc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.misc.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.dns(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.ftp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.httpserver(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.idn(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.sdp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.smtp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.spi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.spi.nameservice(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.audio(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.image(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.text(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.http(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.file(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.ftp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.gopher(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.http(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.https(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.jar(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.mailto(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.netdoc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.ch(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.cs(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.cs.ext(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.continuations(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.debug(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.jdk11(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.jdk13(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.regexp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.serialize(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.xml(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.print(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.print.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.annotation(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.factory(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.parser(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.reflectiveObjects(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.repository(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.scope(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.tree(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.visitor(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.misc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.log(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.registry(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.iiop(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.newrmic(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.newrmic.jrmp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.runtime(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.server(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport.proxy(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport.tcp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.acl(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.action(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.ec(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.internal.interfaces(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.internal.spec(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jca(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.krb5(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.spi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.spnego(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.wrapper(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.ccache(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.crypto(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.crypto.dk(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.ktab(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.rcache(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.pkcs(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.provider(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.provider.certpath(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.rsa(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.smartcardio(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.timestamp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.tools(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.validator(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.x509(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.icon(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf.synth(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf.windows(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.table(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.text(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.text.html(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text.normalizer(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.asm(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.attach(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.hprof(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jar(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jar.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.java(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javac(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javap(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javap.oldjavap(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jinfo(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jmap(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jps(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstack(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstat(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstatd(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.native2ascii(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.native2ascii.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.serialver(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.tree(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.usagetracker(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.calendar(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.logging.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.resources(JDK/)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.annotations(MPS.Core/)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.base(MPS.Core/)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.base.internal(MPS.Core/)" />
@@ -5566,8 +5236,6 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.SendingContext(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.stub.java.rmi(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.omg.stub.javax.management.remote.rmi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.relaxng.datatype(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.relaxng.datatype.helpers(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom.bootstrap(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.w3c.dom.css(JDK/)" />
@@ -5582,9 +5250,6 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax.ext(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:org.xml.sax.helpers(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.applet(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.applet.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.audio(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.X11(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.color(JDK/)" />
@@ -5600,166 +5265,6 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.shell(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.util(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.awt.windows(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.beans.editors(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.beans.infos(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.corba(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.dc.path(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.dc.pr(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.font(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.instrument(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.io(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.loops(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.opengl(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.pipe(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.pipe.hw(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.java2d.x11(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jdbc.odbc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jdbc.odbc.ee(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jkernel(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor.event(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.monitor.remote(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.file(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.local(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.protocol.rmi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.v1_0(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.jvmstat.perfdata.monitor.v2_0(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.counter(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.counter.perf(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.jmxremote(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.jvminstr(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.jvmmib(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.management.snmp.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.misc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.misc.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.dns(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.ftp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.httpserver(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.idn(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.sdp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.smtp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.spi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.spi.nameservice(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.audio(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.image(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.content.text(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.http(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.file(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.ftp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.gopher(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.http(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.https(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.jar(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.mailto(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.net.www.protocol.netdoc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.ch(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.cs(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.nio.cs.ext(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.continuations(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.debug(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.jdk11(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.jdk13(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.regexp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.serialize(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.org.mozilla.javascript.internal.xml(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.print(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.print.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.annotation(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.factory(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.parser(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.reflectiveObjects(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.repository(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.scope(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.tree(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.generics.visitor(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.reflect.misc(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.log(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.registry(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.iiop(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.newrmic(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.rmic.newrmic.jrmp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.runtime(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.server(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport.proxy(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.rmi.transport.tcp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.acl(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.action(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.ec(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.internal.interfaces(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.internal.spec(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jca(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.krb5(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.spi(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.spnego(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.jgss.wrapper(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.ccache(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.crypto(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.crypto.dk(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.ktab(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.rcache(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.krb5.internal.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.pkcs(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.provider(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.provider.certpath(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.rsa(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.smartcardio(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.timestamp(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.tools(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.validator(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.security.x509(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.icon(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf.synth(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.plaf.windows(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.table(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.text(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.swing.text.html(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text.normalizer(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.text.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.asm(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.attach(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.hprof(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jar(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jar.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.java(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javac(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javap(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.javap.oldjavap(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jinfo(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jmap(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jps(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstack(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstat(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.jstatd(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.native2ascii(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.native2ascii.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.serialver(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.tree(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.tools.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.usagetracker(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.calendar(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.logging.resources(JDK/)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:sun.util.resources(JDK/)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.annotations(MPS.Core/)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.base(MPS.Core/)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:com.google.common.base.internal(MPS.Core/)" />
@@ -6194,7 +5699,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="TestBuildProject_ActionGroup.java" />
   </source>
-  <source id="8645252814069730936" name="TestModuleBuildProjectTemplate" hash="-9ssz3itngpnpp5oy38mrx3jhwk0qoca">
+  <source id="8645252814069730936" name="TestModuleBuildProjectTemplate" hash="c8j6l1but7wtoxbz7dp429ep8muze7v">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -6214,6 +5719,7 @@
     <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" />
     <dep model="r:5315d75f-2eea-4bf2-899f-f3d94810cea5(jetbrains.mps.build.mps.tests.structure)" />
     <dep model="r:83437316-51a8-44ee-b386-4989e30943c4(jetbrains.mps.build.mps.testManifest.behavior)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <dep model="r:d58a0a69-0655-46ea-90b9-604f6da8b24f(jetbrains.mps.build.mps.testManifest.structure)" />

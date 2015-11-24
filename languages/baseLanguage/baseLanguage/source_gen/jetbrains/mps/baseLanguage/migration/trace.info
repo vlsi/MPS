@@ -127,6 +127,30 @@
       <unit id="1261499155764368696" at="24,0,95,0" name="jetbrains.mps.baseLanguage.migration.RemoveUsagesOfDeprecatedProperty" />
     </file>
   </root>
+  <root nodeRef="r:1dca72a1-44ae-4339-a783-4859610b0285(jetbrains.mps.baseLanguage.migration)/3206075216509581385">
+    <file name="ReplaceOldCommentWithGenericComment_CommentedStatementsBlock.java">
+      <node id="3206075216509581385" at="13,30,14,74" concept="7" />
+      <node id="3206075216509581385" at="17,33,18,17" concept="7" />
+      <node id="3206075216509581393" at="20,41,21,204" concept="2" />
+      <node id="3206075216509581385" at="21,204,22,16" concept="7" />
+      <node id="3206075216509581385" at="24,51,25,147" concept="7" />
+      <node id="3206075216509581385" at="13,0,16,0" concept="5" trace="getCaption#()Ljava/lang/String;" />
+      <node id="3206075216509581385" at="24,0,27,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="3206075216509581385" at="16,0,20,0" concept="5" trace="isRerunnable#()Z" />
+      <node id="3206075216509581385" at="20,0,24,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3206075216509581385" at="13,30,14,74" />
+      <scope id="3206075216509581385" at="17,33,18,17" />
+      <scope id="3206075216509581385" at="24,51,25,147" />
+      <scope id="3206075216509581385" at="20,41,22,16" />
+      <scope id="3206075216509581385" at="13,0,16,0" />
+      <scope id="3206075216509581385" at="24,0,27,0" />
+      <scope id="3206075216509581385" at="16,0,20,0" />
+      <scope id="3206075216509581385" at="20,0,24,0">
+        <var name="m" id="3206075216509581385" />
+      </scope>
+      <unit id="3206075216509581385" at="12,0,28,0" name="jetbrains.mps.baseLanguage.migration.ReplaceOldCommentWithGenericComment_CommentedStatementsBlock" />
+    </file>
+  </root>
   <root nodeRef="r:1dca72a1-44ae-4339-a783-4859610b0285(jetbrains.mps.baseLanguage.migration)/4787009421625770137">
     <file name="AddNecessaryParenthsToNotExpressions.java">
       <node id="4787009421625770137" at="32,30,33,57" concept="7" />

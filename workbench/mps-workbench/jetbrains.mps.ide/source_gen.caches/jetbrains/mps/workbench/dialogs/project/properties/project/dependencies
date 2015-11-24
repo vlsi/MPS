@@ -13,7 +13,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.ModulePath" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.ProjectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" file="ProjectPropertiesComponent.java">
@@ -39,7 +39,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.ModulePath" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" />

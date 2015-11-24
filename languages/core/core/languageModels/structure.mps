@@ -385,7 +385,7 @@
     </node>
   </node>
   <node concept="1TIwiD" id="3Rc6kd0K$RF">
-    <property role="3GE5qa" value="attributes.editing" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
     <property role="TrG5h" value="BaseCommentAttribute" />
     <property role="1pbfSe" value="2123261742" />
     <ref role="1TJDcQ" node="BpxLfMhSxq" resolve="ChildAttribute" />
@@ -439,6 +439,16 @@
   <node concept="PlHQZ" id="1V3wYmOJsDm">
     <property role="TrG5h" value="IDontApplyTypesystemRules" />
     <property role="1pbfSe" value="746500549" />
+  </node>
+  <node concept="PlHQZ" id="3$Sh7m_tmYK">
+    <property role="1pbfSe" value="559041499" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <property role="TrG5h" value="IOldCommentContainer" />
+  </node>
+  <node concept="PlHQZ" id="ANVkWUjg7G">
+    <property role="1pbfSe" value="1140911931" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <property role="TrG5h" value="IOldCommentAnnotation" />
   </node>
 </model>
 

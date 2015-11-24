@@ -30,9 +30,6 @@ public class FinalClosureParameter_Test extends TestCase {
         count.value++;
       }
     });
-    /*
-      System.out.println("count: " + count.value);
-    */
     Assert.assertSame(1, count.value);
   }
   public FinalClosureParameter_Test() {

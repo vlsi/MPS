@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tsh1" ref="r:bef1ed1f-5598-42b2-8784-93f0f1c6e538(jetbrains.mps.persistence)" />
@@ -249,16 +249,12 @@
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2qqFBg4M53R" role="3clF47">
         <node concept="3clFbF" id="2qqFBg4M85Z" role="3cqZAp">
-          <node concept="2OqwBi" id="2qqFBg4M86E" role="3clFbG">
-            <node concept="2YIFZM" id="2qqFBg4M86m" role="2Oq$k0">
-              <ref role="37wK5l" to="83ig:~BaseMpsTest.getEnvironment():jetbrains.mps.tool.environment.Environment" resolve="getEnvironment" />
-              <ref role="1Pybhc" to="83ig:~BaseMpsTest" resolve="BaseMpsTest" />
+          <node concept="2OqwBi" id="2jhQWX29Fsh" role="3clFbG">
+            <node concept="37vLTw" id="2jhQWX29FrQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="2qqFBg4M3Cz" resolve="ourProject" />
             </node>
-            <node concept="liA8E" id="2qqFBg4M87m" role="2OqNvi">
-              <ref role="37wK5l" to="ew0k:~Environment.closeProject(jetbrains.mps.project.Project):void" resolve="closeProject" />
-              <node concept="37vLTw" id="2qqFBg4M87P" role="37wK5m">
-                <ref role="3cqZAo" node="2qqFBg4M3Cz" resolve="ourProject" />
-              </node>
+            <node concept="liA8E" id="2jhQWX29FtM" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
             </node>
           </node>
         </node>

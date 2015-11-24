@@ -9,8 +9,8 @@
   </languages>
   <imports>
     <import index="sroc" ref="r:0bb4ff75-d79d-4390-9b6c-e01faee2c7e6(jetbrains.mps.generator.test.crossmodel.property.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="qz7j" ref="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -59,6 +59,7 @@
       </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <child id="3071639529306477415" name="exports" index="24Zfi7" />
+        <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
@@ -67,6 +68,10 @@
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
+      <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
+        <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
+        <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
+      </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
@@ -82,6 +87,9 @@
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
+      </concept>
+      <concept id="1087833466690" name="jetbrains.mps.lang.generator.structure.NodeMacro" flags="lg" index="17VmuZ">
+        <reference id="1200912223215" name="mappingLabel" index="2rW$FS" />
       </concept>
       <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
         <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
@@ -296,6 +304,11 @@
   </node>
   <node concept="bUwia" id="2aNIkj9MUD_">
     <property role="TrG5h" value="SampleGenerator" />
+    <node concept="2rT7sh" id="1M_p4f1d3s7" role="2rTMjI">
+      <property role="TrG5h" value="EntryOne2Property" />
+      <ref role="2rTdP9" to="qz7j:3LKEueXEmnQ" resolve="Entry" />
+      <ref role="2rZz_L" to="sroc:4NbWtCFCvTK" resolve="BeanProperty" />
+    </node>
     <node concept="1J8HWv" id="2aNIkj9MYP$" role="24Zfi7">
       <property role="TrG5h" value="NodeToBean" />
       <property role="3FvSVG" value="Captures classes generated from NodeA" />
@@ -466,6 +479,7 @@
     <node concept="1BqwYE" id="4vmTtDyRXvX" role="1BqwY$">
       <property role="TrG5h" value="x" />
       <node concept="2b32R4" id="4vmTtDyRXH8" role="lGtFl">
+        <ref role="2rW$FS" node="1M_p4f1d3s7" resolve="EntryOne2Property" />
         <node concept="3JmXsc" id="4vmTtDyRXHb" role="2P8S$">
           <node concept="3clFbS" id="4vmTtDyRXHc" role="2VODD2">
             <node concept="3clFbF" id="4vmTtDyRXHi" role="3cqZAp">

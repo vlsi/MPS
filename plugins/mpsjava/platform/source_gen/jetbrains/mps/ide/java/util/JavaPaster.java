@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -126,7 +127,7 @@ public class JavaPaster {
 
       // trying to resolve names when nodes are already in a model 
       JavaParser.tryResolveUnknowns(nodes);
-      JavaToMpsConverter mfParser = new JavaToMpsConverter(operationContext.getModule(), operationContext.getProject().getRepository());
+      JavaToMpsConverter mfParser = new JavaToMpsConverter(operationContext.getModule(), operationContext.getProject().getRepository(), project.getComponent(MessagesViewTool.class).newHandler());
       mfParser.tryResolveRefs(nodes, featureKind, new EmptyProgressMonitor());
 
     } catch (JavaParseException ex) {

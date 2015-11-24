@@ -16,6 +16,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class TransformationTestLightRunner extends TransformationTestRunner {
+  public TransformationTestLightRunner() {
+    super(new LightEnvironment());
+  }
+
   @Override
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
     final Project testProject = findProject(modelName);
@@ -34,14 +38,14 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
   @Nullable
   private Project findProject(String modelName) {
     SModel contextModel = findModel(modelName);
-    final SModule contextModule = check_1frbnp_a0b0e(contextModel);
+    final SModule contextModule = check_1frbnp_a0b0g(contextModel);
     if (contextModule == null) {
       return null;
     }
     return ModelAccess.instance().runReadAction(new Computable<Project>() {
       public Project compute() {
         Collection<SModule> runtimeDeps = new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
-        for (Project project : ProjectManager.getInstance().getOpenProjects()) {
+        for (Project project : ProjectManager.getInstance().getOpenedProjects()) {
           SRepository repo = project.getRepository();
           boolean found = true;
           for (SModule module : CollectionSequence.fromCollection(runtimeDeps)) {
@@ -57,7 +61,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
       }
     });
   }
-  private static SModule check_1frbnp_a0b0e(SModel checkedDotOperand) {
+  private static SModule check_1frbnp_a0b0g(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

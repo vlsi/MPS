@@ -8,7 +8,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="9oh" ref="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)" />
@@ -50,6 +50,9 @@
     <import index="71xd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tools(MPS.Platform/)" />
     <import index="jh37" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.classpath(MPS.Workbench/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
+    <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
+    <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
   </imports>
   <registry>
@@ -923,8 +926,8 @@
         <node concept="3clFbF" id="5wEedBrIrNc" role="3cqZAp">
           <node concept="37vLTI" id="5wEedBrIrTx" role="3clFbG">
             <node concept="2YIFZM" id="5wEedBrIt$7" role="37vLTx">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="37vLTw" id="5wEedBrIuoI" role="37wK5m">
                 <ref role="3cqZAo" node="5U9rQri5GhU" resolve="project" />
               </node>
@@ -2397,6 +2400,25 @@
                 </node>
                 <node concept="37vLTw" id="2DCMdV5sx$_" role="37wK5m">
                   <ref role="3cqZAo" node="1FKWe04n$UV" resolve="repository" />
+                </node>
+                <node concept="2OqwBi" id="2ETmHUYtHk0" role="37wK5m">
+                  <node concept="2OqwBi" id="2ETmHUYtGqS" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2ETmHUYtJiQ" role="2Oq$k0">
+                      <node concept="2WthIp" id="2ETmHUYtJiT" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="2ETmHUYtJiV" role="2OqNvi">
+                        <ref role="2WH_rO" node="5JozKOuj8xg" resolve="ideaProject" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2ETmHUYtGIm" role="2OqNvi">
+                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                      <node concept="3VsKOn" id="2ETmHUYtH4e" role="37wK5m">
+                        <ref role="3VsUkX" to="57ty:~MessagesViewTool" resolve="MessagesViewTool" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2ETmHUYtHJ9" role="2OqNvi">
+                    <ref role="37wK5l" to="57ty:~MessagesViewTool.newHandler():jetbrains.mps.messages.IMessageHandler" resolve="newHandler" />
+                  </node>
                 </node>
               </node>
             </node>

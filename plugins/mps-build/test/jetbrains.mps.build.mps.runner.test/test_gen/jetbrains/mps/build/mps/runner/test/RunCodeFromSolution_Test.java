@@ -32,7 +32,7 @@ public class RunCodeFromSolution_Test extends TestCase {
     runAndCheck(PROJECT_PATH, "test4.xml");
   }
   public void setUp() {
-    EnvironmentConfig environmentConfig = EnvironmentConfig.emptyEnvironment();
+    EnvironmentConfig environmentConfig = EnvironmentConfig.defaultConfig();
     Environment env = IdeaEnvironment.getOrCreate(environmentConfig);
     env.openProject(new File(PROJECT_PATH));
   }

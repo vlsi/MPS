@@ -2,16 +2,16 @@
 <model ref="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
@@ -2249,8 +2249,8 @@
             </node>
             <node concept="2OqwBi" id="2mWP9pMvBD0" role="33vP2m">
               <node concept="2YIFZM" id="2mWP9pMvBjE" role="2Oq$k0">
-                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                 <node concept="1rXfSq" id="2mWP9pMvBy$" role="37wK5m">
                   <ref role="37wK5l" node="6ysF3v1ncGk" resolve="getProject" />
                 </node>
@@ -4947,14 +4947,14 @@
                   </node>
                   <node concept="3Tm1VV" id="6ysF3v1j_de" role="1B3o_S" />
                   <node concept="2EnYce" id="2wDkRIgd1wc" role="37wK5m">
-                    <node concept="2YIFZM" id="6ysF3v1j_dg" role="2Oq$k0">
-                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                    <node concept="2YIFZM" id="19iE5pnITb6" role="2Oq$k0">
                       <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                      <node concept="2OqwBi" id="6ysF3v1p5tC" role="37wK5m">
-                        <node concept="37vLTw" id="6ysF3v1pk9A" role="2Oq$k0">
+                      <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                      <node concept="2OqwBi" id="19iE5pnITb7" role="37wK5m">
+                        <node concept="37vLTw" id="19iE5pnITb8" role="2Oq$k0">
                           <ref role="3cqZAo" node="6ysF3v1l7YE" resolve="myTool" />
                         </node>
-                        <node concept="liA8E" id="6ysF3v1p5tF" role="2OqNvi">
+                        <node concept="liA8E" id="19iE5pnITb9" role="2OqNvi">
                           <ref role="37wK5l" node="6ysF3v1ncGk" resolve="getProject" />
                         </node>
                       </node>
@@ -5804,8 +5804,8 @@
                   <node concept="3clFbS" id="6ysF3v1j_nb" role="3clF47">
                     <node concept="3clFbF" id="6ysF3v1j_nc" role="3cqZAp">
                       <node concept="2YIFZM" id="6ysF3v1j_nd" role="3clFbG">
-                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                         <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                        <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
                         <node concept="2OqwBi" id="6ysF3v1j_ne" role="37wK5m">
                           <node concept="37vLTw" id="6ysF3v1uLxZ" role="2Oq$k0">
                             <ref role="3cqZAo" node="6ysF3v1l7YE" resolve="myTool" />
@@ -6864,8 +6864,8 @@
               <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
             </node>
             <node concept="2YIFZM" id="7a2y7OsK4io" role="33vP2m">
-              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+              <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
               <node concept="2OqwBi" id="7a2y7OsK4ip" role="37wK5m">
                 <node concept="2OqwBi" id="7a2y7OsK4iq" role="2Oq$k0">
                   <node concept="Xjq3P" id="7a2y7OsK4ir" role="2Oq$k0" />
@@ -8762,6 +8762,9 @@
   </node>
   <node concept="3HP615" id="jysm2GDsTL">
     <property role="TrG5h" value="ConsoleContext" />
+    <node concept="3uibUv" id="5nAnrpAvAFW" role="3HQHJm">
+      <ref role="3uigEE" to="moux:1ycrhFMLI_B" resolve="QueryExecutionContext" />
+    </node>
     <node concept="3clFb_" id="3MPHfSuPT3Y" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="getProject" />
@@ -8781,9 +8784,6 @@
       <node concept="3clFbS" id="7L2VFB5mjvk" role="3clF47" />
     </node>
     <node concept="3Tm1VV" id="jysm2GDsTM" role="1B3o_S" />
-    <node concept="3uibUv" id="5nAnrpAvAFW" role="3HQHJm">
-      <ref role="3uigEE" to="moux:1ycrhFMLI_B" resolve="QueryExecutionContext" />
-    </node>
   </node>
   <node concept="3HP615" id="5WpmwkrQPPk">
     <property role="TrG5h" value="ConsoleStream" />

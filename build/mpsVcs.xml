@@ -14,6 +14,8 @@
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -27,6 +29,7 @@
   
   <path id="path.jdk.classpath">
     <pathelement path="${java.home}/../Classes/classes.jar" />
+    <pathelement path="${jdk.home}/lib/tools.jar" />
     <fileset dir="${java.home}">
       <include name="lib/*.jar" />
     </fileset>
@@ -61,12 +64,30 @@
         </tokenfilter>
       </filterchain>
     </copy>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models">
+      <fileset dir="${mps_home}/plugins/vcs/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-common-models">
+      <fileset dir="${mps_home}/plugins/vcs/common/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-vcs/lib/vcs.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/vcs" />
+      <zipfileset file="${mps_home}/plugins/vcs/jetbrains.mps.ide.vcs.msd" prefix="modules/jetbrains.mps.ide.vcs" />
+      <zipfileset dir="${mps_home}/plugins/vcs" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models" prefix="modules/jetbrains.mps.ide.vcs/models" />
+      <zipfileset file="${mps_home}/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" prefix="modules/jetbrains.mps.ide.vcs.platform" />
+      <zipfileset dir="${mps_home}/plugins/vcs/common" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.platform" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-common-models" prefix="modules/jetbrains.mps.ide.vcs.platform/models" />
       <fileset dir="${build.tmp}/default/vcs.jar" />
     </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models">
+      <fileset dir="${mps_home}/plugins/vcs-core/core/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <jar destfile="${build.layout}/mps-vcs/lib/vcs-core.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/vcs-core" />
+      <zipfileset file="${mps_home}/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" prefix="modules/jetbrains.mps.ide.vcs.core" />
+      <zipfileset dir="${mps_home}/plugins/vcs-core/core" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.core" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models" prefix="modules/jetbrains.mps.ide.vcs.core/models" />
     </jar>
     <mkdir dir="${build.layout}/mps-vcs/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
@@ -148,31 +169,6 @@
       </fileset>
       <zipfileset file="${mps_home}/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-mergehints-languageModels" prefix="module/languageModels" />
-    </jar>
-    <mkdir dir="${build.layout}/mps-vcs/solutions" />
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models">
-      <fileset dir="${mps_home}/plugins/vcs-core/core/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-vcs/solutions/jetbrains.mps.ide.vcs.core.jar" duplicate="preserve">
-      <zipfileset file="${mps_home}/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" prefix="modules/jetbrains.mps.ide.vcs.core" />
-      <zipfileset dir="${mps_home}/plugins/vcs-core/core" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.core" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models" prefix="modules/jetbrains.mps.ide.vcs.core/models" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models">
-      <fileset dir="${mps_home}/plugins/vcs/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-vcs/solutions/jetbrains.mps.ide.vcs.jar" duplicate="preserve">
-      <zipfileset file="${mps_home}/plugins/vcs/jetbrains.mps.ide.vcs.msd" prefix="modules/jetbrains.mps.ide.vcs" />
-      <zipfileset dir="${mps_home}/plugins/vcs" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models" prefix="modules/jetbrains.mps.ide.vcs/models" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-common-models">
-      <fileset dir="${mps_home}/plugins/vcs/common/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-vcs/solutions/jetbrains.mps.ide.vcs.platform.jar" duplicate="preserve">
-      <zipfileset file="${mps_home}/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" prefix="modules/jetbrains.mps.ide.vcs.platform" />
-      <zipfileset dir="${mps_home}/plugins/vcs/common" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.platform" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-common-models" prefix="modules/jetbrains.mps.ide.vcs.platform/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>

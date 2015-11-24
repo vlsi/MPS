@@ -130,6 +130,12 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.ModuleIdSynchronizer</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.refactoring.RegisterMoveNodePsiParticipant</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.module.ModuleMPSSupportInit</implementation-class>
+    </component>
   </project-components>
 
   <extensionPoints>
@@ -145,6 +151,8 @@
                     interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder"
                     interface="jetbrains.mps.idea.core.psi.MPS2PsiMapper"/>
+    <extensionPoint qualifiedName="com.intellij.mps.moduleMpsSupport"
+                    interface="jetbrains.mps.idea.core.project.module.ModuleMPSSupport"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
@@ -198,6 +206,7 @@
     <projectService serviceInterface="com.intellij.psi.search.ProjectScopeBuilder"
                     serviceImplementation="jetbrains.mps.idea.core.project.MPSProjectScopeBuilder"
                     overrides="true"/>
+    <fileEditorProvider implementation="jetbrains.mps.idea.core.editor.ModelFileToRootDispatchingEditorProvider"></fileEditorProvider>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
@@ -239,8 +248,8 @@
       <add-to-group group-id="NewGroup" anchor="first"/>
       <action id="jetbrains.mps.idea.core.actions.NewRootAction"
               class="jetbrains.mps.idea.core.actions.NewRootAction"/>
-      <action id="jetbrains.mps.idea.core.actions.CreateNewModelAction"
-              class="jetbrains.mps.idea.core.actions.CreateNewModelAction"/>
+      <action id="jetbrains.mps.idea.core.actions.NewModelAction"
+              class="jetbrains.mps.idea.core.actions.NewModelAction"/>
       <action id="jetbrains.mps.idea.core.actions.MakeDirAModel"
               class="jetbrains.mps.idea.core.actions.MakeDirAModel"/>
       <separator/>

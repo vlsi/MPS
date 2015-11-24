@@ -29,7 +29,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -164,7 +165,7 @@ __switch__:
     return editorCell;
   }
   private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference")) != null);
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"))).isNotEmpty();
   }
   private EditorCell createRefNode_xk0l2m_a2a(EditorContext editorContext, SNode node) {
     SingleRoleCellProvider provider = new BreakStatement_Editor.loopLabelReferenceSingleRoleHandler_xk0l2m_a2a(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"), editorContext);

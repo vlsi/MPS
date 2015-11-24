@@ -91,8 +91,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.LanguageLibrary dir="/languages"/>
-    <mps.LanguageLibrary dir="/solutions"/>
+    <mps.LanguageLibrary dir="/"/>
 
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
     <mps.TabColorProvider implementation="jetbrains.mps.vcs.changesmanager.roots.NodeTabColorProvider"/>

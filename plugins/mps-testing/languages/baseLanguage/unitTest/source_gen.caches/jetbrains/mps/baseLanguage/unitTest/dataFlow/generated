@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5vfm5we9j9gv99d5m0bj3jchz5e049j">
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="azsfoms8rnryxy4vybsfoxvfqfitnga" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="9s4qjllf7k4sdgb1xf6zx4ujrumk0xz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="8phaka605x727af2zal8woz93ddmv86" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-88zmvbrj6oqfvgu0oulnnfpbgis2n6l" />
+<dependencies version="2" modelHash="-cew72ednew4yp2819uyrj8b1j6zzw4t">
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-3i85ojspfwh0xb0a0fc4g91giuyszb8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dn5xy6dxt5j4wduhxb8gnb53b0es7c8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-73jjfqv9n6wyunwwb0qxthtevh1ydgv" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-a40133rojlz3xogonc641sly7kdfrjw" />
   <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="tmlqnd26edxj0zn3e2ym8076hr1zqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-69tjf60lln4u3j5vuee6coiem3xvb2s" />
-  <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" hash="58dc20tublpdomeuyr6kvvsikcykm63" />
-  <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" hash="3a8yjq4qip6bez6atbfs5txu1ebuuvl" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-30kvnufq1ffz2p3jtpzrni1z0dagcg2" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-ckzjyccgduwqjstc0ftd1eqzfnnd67a" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="56y22u25z77tsl94a1qh5a8jsnaodko" />
-  <common hash="18fi5dnckmn84ug7f1hhqpv5w9mkxbf" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2slsrztf091jvpaqhrp2hu0dc2n6sxz" />
+  <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" hash="-5cja7t5f7kdxxnf90x9e5kopg1wflpw" />
+  <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" hash="c732szmc1su993759l6cwxfn5j0d1yo" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="d5oa0x3vwzys16hq7857gmci0lqz09s" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-91g0lpn8gfmr52ze063lp3pwkkfyn8u" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-5cjol5b8en1ar14600bn1ejtnvuamg8" />
+  <common hash="-d3sv23a3e9k62ja9h55jhn3ltzdb1fm" dependsOnNodes="true">
     <dep root="1207074074329" />
     <dep root="1207074236137" />
     <dep root="1207074444912" />
@@ -38,7 +38,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="AssertTrue_DataFlow.java" />
   </source>
   <source id="1207074236137" name="AssertEquals_DataFlow" hash="5tu9g8qea7j5hylmwtflu3oaizrp4w0">

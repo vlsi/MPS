@@ -92,6 +92,7 @@ public interface ReloadableModule extends SModule {
   /**
    * @return true if it will load classes.
    * For some subclasses it is possible to disable class loading for <code>ReloadableModule</code>.
+   * E.g. solution without idea/mps facet cannot load classes
    * @see jetbrains.mps.project.Solution
    */
   boolean willLoad();

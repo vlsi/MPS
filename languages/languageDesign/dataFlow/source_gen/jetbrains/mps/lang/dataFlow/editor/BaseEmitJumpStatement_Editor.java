@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -137,6 +139,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
 
   }
   private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, 0x1160a375bea5106L, "position")) != null;
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, 0x1160a375bea5106L, "position"))).isNotEmpty();
   }
 }

@@ -25,29 +25,30 @@
       <node id="3042807695808133885" at="13,48,14,94" concept="10" />
       <node id="7745158536326881946" at="14,94,15,111" concept="10" />
       <node id="80916483499265393" at="16,31,17,68" concept="4" />
-      <node id="4971460776563927970" at="18,5,19,114" concept="10" />
-      <node id="4971460776563927951" at="19,114,20,177" concept="11" />
-      <node id="80916483499265421" at="22,62,23,71" concept="11" />
+      <node id="313290880797164604" at="17,68,18,46" concept="4" />
+      <node id="4971460776563927970" at="19,5,20,114" concept="10" />
+      <node id="4971460776563927951" at="20,114,21,177" concept="11" />
+      <node id="80916483499265421" at="23,62,24,71" concept="11" />
       <node id="1016968294606525393" at="11,0,13,0" concept="3" trace="CommandLineGenerator#()V" />
-      <node id="80916483499265388" at="15,111,18,5" concept="8" />
-      <node id="80916483499265399" at="22,0,25,0" concept="15" trace="adaptPathForMsysGit#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1016968294606525398" at="13,0,22,0" concept="15" trace="getCommandLine#(I)Ljava/lang/String;" />
+      <node id="80916483499265399" at="23,0,26,0" concept="15" trace="adaptPathForMsysGit#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="80916483499265388" at="15,111,19,5" concept="8" />
+      <node id="1016968294606525398" at="13,0,23,0" concept="15" trace="getCommandLine#(I)Ljava/lang/String;" />
       <scope id="1016968294606525396" at="11,34,11,34" />
-      <scope id="80916483499265389" at="16,31,17,68" />
-      <scope id="80916483499265402" at="22,62,23,71" />
+      <scope id="80916483499265402" at="23,62,24,71" />
       <scope id="1016968294606525393" at="11,0,13,0" />
-      <scope id="80916483499265399" at="22,0,25,0">
+      <scope id="80916483499265389" at="16,31,18,46" />
+      <scope id="80916483499265399" at="23,0,26,0">
         <var name="path" id="80916483499265405" />
       </scope>
-      <scope id="1016968294606525401" at="13,48,20,177">
+      <scope id="1016968294606525401" at="13,48,21,177">
         <var name="classpathString" id="3042807695808133886" />
         <var name="escapedLogPath" id="4971460776563927971" />
         <var name="javaExecutable" id="7745158536326881947" />
       </scope>
-      <scope id="1016968294606525398" at="13,0,22,0">
+      <scope id="1016968294606525398" at="13,0,23,0">
         <var name="vcs" id="80916483499250388" />
       </scope>
-      <unit id="1016968294606525391" at="10,0,26,0" name="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
+      <unit id="1016968294606525391" at="10,0,27,0" name="jetbrains.mps.vcs.platform.mergedriver.CommandLineGenerator" />
     </file>
   </root>
   <root nodeRef="r:36539f52-7ec3-4937-98bf-1fbc1fbe99fc(jetbrains.mps.vcs.platform.mergedriver)/1376744028423385490">

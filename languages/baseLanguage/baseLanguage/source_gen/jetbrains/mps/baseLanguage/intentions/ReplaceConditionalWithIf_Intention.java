@@ -16,6 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -68,6 +69,10 @@ public final class ReplaceConditionalWithIf_Intention extends IntentionDescripto
         SLinkOperations.setTarget(local, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), variableDeclaration);
         SNodeOperations.insertNextSiblingChild(stmtNode, eStatement);
         stmtNode = SNodeOperations.cast(SNodeOperations.getNextSibling(stmtNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
+      } else if (SNodeOperations.isInstanceOf(stmtNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) && (boolean) ExpressionStatement__BehaviorDescriptor.canServeAsReturn_idi2fkDTg.invoke(SNodeOperations.cast(stmtNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")))) {
+        SNode originalExpression = SLinkOperations.getTarget(SNodeOperations.cast(stmtNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"));
+        stmtNode = SNodeOperations.replaceWithNewChild(stmtNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
+        SLinkOperations.setTarget(SNodeOperations.cast(stmtNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, 0xf8cc6bf96cL, "expression"), originalExpression);
       }
       // Get used nodes 
       SNode nodeParent = SNodeOperations.getParent(node);

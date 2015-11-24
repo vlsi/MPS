@@ -35,6 +35,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -52,8 +53,8 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   public final ErrorCollector myErrors = new ErrorCollector();
 
   @BeforeClass
-  public static void beforeTest() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+  public static void beforeTest(){
+    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @Test
@@ -91,7 +92,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
     for (String path : paths) {
       libraryPaths.add(new LibDescriptor(path));
     }
-    addContributor(SetLibraryContributor.fromSet(libraryPaths));
+    addContributor(SetLibraryContributor.fromSet("Library paths", libraryPaths));
   }
 
   private void addContributor(LibraryContributor contributor) {
@@ -104,11 +105,11 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
     repository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (SModuleReference module : modulesWatcher.getAllModules()) {
-          if (modulesWatcher.isModuleInvalid(module, true)) {
-            final String msg = String.format("Invalid dependencies (%s) for module %s", levelIndicator, module.getModuleName());
-            myErrors.addError(new AssertionError(msg));
-          }
+        Collection<SModuleReference> invalidModules = modulesWatcher.findInvalidModulesAndReport();
+
+        for (SModuleReference mRef : invalidModules) {
+          final String msg = String.format("Invalid dependencies (%s) for module %s", levelIndicator, mRef.getModuleName());
+          myErrors.addError(new AssertionError(msg));
         }
       }
     });

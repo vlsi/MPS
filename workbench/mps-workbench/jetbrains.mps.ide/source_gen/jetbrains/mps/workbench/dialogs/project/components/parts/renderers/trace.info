@@ -14,8 +14,8 @@
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499489409">
     <file name="PathRenderer.java">
       <node id="1560298786499489434" at="15,24,16,26" concept="9" />
-      <node id="1560298786499489437" at="17,5,18,43" concept="8" />
-      <node id="1560298786499489446" at="18,43,19,91" concept="9" />
+      <node id="1560298786499489437" at="17,5,18,49" concept="8" />
+      <node id="1560298786499489446" at="18,49,19,91" concept="9" />
       <node id="1560298786499489412" at="11,0,13,0" concept="2" trace="PathRenderer#()V" />
       <node id="1560298786499489429" at="14,134,17,5" concept="6" />
       <node id="1560298786499489415" at="13,0,21,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
@@ -39,11 +39,11 @@
     <file name="ProjectPathRenderer.java">
       <node id="1560298786499490101" at="15,0,16,0" concept="4" trace="myProject" />
       <node id="1560298786499490109" at="16,50,17,24" concept="3" />
-      <node id="1560298786499490129" at="20,134,21,29" concept="8" />
-      <node id="1560298786499490135" at="21,29,22,103" concept="8" />
+      <node id="1560298786499490129" at="20,134,21,41" concept="8" />
+      <node id="1560298786499490135" at="21,41,22,103" concept="8" />
       <node id="1560298786499490147" at="23,21,24,20" concept="9" />
       <node id="1560298786499490149" at="25,5,26,32" concept="8" />
-      <node id="1560298786499490168" at="28,31,29,27" concept="3" />
+      <node id="1560298786499490168" at="28,47,29,27" concept="3" />
       <node id="1560298786499490172" at="29,27,30,14" concept="1" />
       <node id="1560298786499490173" at="32,5,33,71" concept="8" />
       <node id="1560298786499490192" at="34,58,35,44" concept="3" />
@@ -51,17 +51,17 @@
       <node id="1560298786499490104" at="16,0,19,0" concept="2" trace="ProjectPathRenderer#(Ljetbrains/mps/project/MPSProject;)V" />
       <node id="1560298786499490144" at="22,103,25,5" concept="6" />
       <node id="1560298786499490180" at="33,71,36,5" concept="6" />
-      <node id="1560298786499490162" at="27,75,31,7" concept="6" />
+      <node id="1560298786499490162" at="27,81,31,7" concept="6" />
       <node id="1560298786499490153" at="26,32,32,5" concept="5" />
       <node id="1560298786499490115" at="19,0,39,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
       <scope id="1560298786499490108" at="16,50,17,24" />
       <scope id="1560298786499490146" at="23,21,24,20" />
       <scope id="1560298786499490191" at="34,58,35,44" />
-      <scope id="1560298786499490167" at="28,31,30,14" />
+      <scope id="1560298786499490167" at="28,47,30,14" />
       <scope id="1560298786499490104" at="16,0,19,0">
         <var name="project" id="1560298786499490106" />
       </scope>
-      <scope id="1560298786499490161" at="27,75,31,7" />
+      <scope id="1560298786499490161" at="27,81,31,7" />
       <scope id="1560298786499490153" at="26,32,32,5">
         <var name="p" id="1560298786499490159" />
       </scope>

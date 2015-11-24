@@ -22,13 +22,14 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentChild;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class MappingConfiguration_Editor extends DefaultNodeEditor {
@@ -201,6 +202,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.mappingLabelListHandler_g6pxeq_b1d0(node, "mappingLabel", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mappingLabel");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x1179be725f9L, "mappingLabel")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -285,6 +287,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.exportsListHandler_g6pxeq_b1f0(node, "exports", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_exports");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x2aa0a7e0ae5c5367L, "exports")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -366,6 +369,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MappingConfiguration_Editor.generationParametersListHandler_g6pxeq_b1h0(node, "generationParameters", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_generationParameters");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x2215c240569d3bc2L, "generationParameters")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -526,6 +530,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fbbe00519L, "createRootRule")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -614,6 +619,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fd54c33e7L, "rootMappingRule")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -701,6 +707,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fc0e18af2L, "weavingMappingRule")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -788,6 +795,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fca310cd5L, "reductionMappingRule")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -875,6 +883,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x190d31fe6a177473L, "patternReductionRule")));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -962,6 +971,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x11c0adbe243L, "dropRootRule")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -1050,6 +1060,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x116597a610dL, "preMappingScript")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -1138,6 +1149,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_CommentOrUncommentChild(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x116597e20a5L, "postMappingScript")));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

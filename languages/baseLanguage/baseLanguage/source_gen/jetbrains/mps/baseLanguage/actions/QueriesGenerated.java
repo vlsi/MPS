@@ -76,6 +76,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CommentUtil;
 import jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Interface__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.editor.MemberDeclarationRefactoringUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -1352,7 +1353,7 @@ public class QueriesGenerated {
             return true;
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return true;
+            return (pattern != null && pattern.length() > 0);
           }
           public String getMatchingText(String pattern) {
             return pattern;
@@ -4475,7 +4476,7 @@ __switch__:
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_260226996411742136(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
         SNode result = CommentUtil.commentOut(statement);
@@ -4492,7 +4493,7 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), null));
       }
     });
     return result;
@@ -4502,7 +4503,7 @@ __switch__:
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1100850602736775323(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = SNodeOperations.getNodeAncestor(_context.getSourceNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
         SNode result = CommentUtil.commentOut(statement);
@@ -4519,7 +4520,7 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), null));
       }
     });
     return result;
@@ -4533,7 +4534,7 @@ __switch__:
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Statement_213802071188468761(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = _context.getSourceNode();
         SNode result = CommentUtil.commentOut(statement);
@@ -4550,7 +4551,7 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), null));
       }
     });
     return result;
@@ -4560,7 +4561,7 @@ __switch__:
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Type_260226996411742195(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode statement = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(_context.getSourceNode())), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
         SNode result = CommentUtil.commentOut(statement);
@@ -4577,7 +4578,7 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment").getDeclarationNode(), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute").getDeclarationNode(), null));
       }
     });
     return result;
@@ -6019,6 +6020,8 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireMethodReferences(_context.getSourceNode(), staticMethod);
+
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, staticMethod, "staticModifier", -1);
         return null;
       }
@@ -6247,6 +6250,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration").getDeclarationNode(), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode replacing = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireFieldReferences(_context.getSourceNode(), replacing);
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, replacing, "staticModifier", -1);
         return null;
       }
@@ -6423,6 +6427,8 @@ __switch__:
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
         SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(method, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireMethodReferences(method, staticMethod);
+
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, staticMethod, "staticModifier", -1);
         return null;
       }
@@ -6493,6 +6499,8 @@ __switch__:
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
         SNode staticField = SNodeFactoryOperations.replaceWithNewChild(field, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
+        MemberDeclarationRefactoringUtil.rewireFieldReferences(field, staticField);
+
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, staticField, "staticModifier", -1);
         return null;
 

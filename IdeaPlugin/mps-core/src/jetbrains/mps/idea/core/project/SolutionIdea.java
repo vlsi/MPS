@@ -22,7 +22,17 @@ import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.*;
+import com.intellij.openapi.roots.CompilerModuleExtension;
+import com.intellij.openapi.roots.JdkOrderEntry;
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootEvent;
+import com.intellij.openapi.roots.ModuleRootListener;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.OrderEntry;
+import com.intellij.openapi.roots.OrderEnumerator;
+import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.RootProvider;
 import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
@@ -38,6 +48,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
+import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.idea.core.psi.impl.PsiModelReloadListener;
@@ -46,24 +57,37 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleAdapter;
+import org.jetbrains.mps.openapi.module.SModuleListener;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public class SolutionIdea extends Solution {
   @NotNull
@@ -91,10 +115,14 @@ public class SolutionIdea extends Solution {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
+        for (SModel model : getModels()) {
+          ((SModelInternal) model).addModelListener(MODEL_RUNTIME_IMPORTER);
+        }
       }
     });
     projectLibraryTable.addListener(myLibrariesListener);
     addModuleListener(myModule.getProject().getComponent(PsiModelReloadListener.class));
+    addModuleListener(MODULE_RUNTIME_IMPORTER);
   }
 
   @Override
@@ -150,7 +178,6 @@ public class SolutionIdea extends Solution {
 
   @Override
   protected Iterable<ModelRoot> loadRoots() {
-
     if (myContributedModelRoots == null) {
       myContributedModelRoots = new HashSet<ModelRoot>();
       for (ModelRootContributorEP e : ModelRootContributorEP.EP_NAME.getExtensions()) {
@@ -269,14 +296,6 @@ public class SolutionIdea extends Solution {
     }
     modifiableModel.commit();
     return null;
-  }
-
-  @Override
-  public void addUsedLanguage(SModuleReference langRef) {
-    super.addUsedLanguage(langRef);
-    ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    ModuleRuntimeLibrariesImporter.importForUsedLanguages(myModule, Collections.<SModuleReference>singleton(langRef), modifiableModel);
-    modifiableModel.commit();
   }
 
   @Override
@@ -451,4 +470,20 @@ public class SolutionIdea extends Solution {
   public String toString() {
     return getModuleName() + " [idea module derived solution]";
   }
+
+  private final SModuleListener MODULE_RUNTIME_IMPORTER = new SModuleAdapter() {
+    @Override
+    public void modelAdded(SModule module, SModel model) {
+      if (!(model instanceof SModelInternal)) return;
+      ((SModelInternal) model).addModelListener(MODEL_RUNTIME_IMPORTER);
+    }
+  };
+
+  private final SModelListener MODEL_RUNTIME_IMPORTER = new SModelAdapter() {
+    @Override
+    public void languageAdded(SModelLanguageEvent event) {
+      SModuleReference langRef = event.getLanguageNamespace();
+      ModuleMPSSupport.getInstance().fixImports(myModule, Collections.singleton(langRef));
+    }
+  };
 }

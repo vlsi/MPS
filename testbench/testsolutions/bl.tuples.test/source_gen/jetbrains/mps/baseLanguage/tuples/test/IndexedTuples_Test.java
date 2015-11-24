@@ -30,10 +30,6 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertSame(1, (int) pair._0());
     Assert.assertEquals("a", pair._1());
     Tuples._2<Integer, String> anotherPair = pair;
-    /*
-      // This use case no longer supported (yeah, that's right, just like that!) 
-      Assert.assertFalse(((Object) anotherPair) == ((Object) pair));
-    */
     Assert.assertTrue(((Object) anotherPair) == ((Object) pair));
     Assert.assertTrue(MultiTuple.eq(anotherPair, pair));
     Assert.assertEquals(pair, anotherPair);
@@ -41,10 +37,6 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertEquals("a", anotherPair._1());
     pair._0(111);
     pair._1("aaaa");
-    /*
-      Assert.assertSame(1, (int) anotherPair._0());
-      Assert.assertEquals("a", anotherPair._1());
-    */
     Assert.assertSame(111, (int) anotherPair._0());
     Assert.assertEquals("aaaa", anotherPair._1());
     Assert.assertSame(111, (int) pair._0());

@@ -15,29 +15,20 @@
  */
 package jetbrains.mps.ide.depanalyzer;
 
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.persistence.PersistenceUtil.InMemoryStreamDataSource;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.testbench.WriteAction;
-import jetbrains.mps.util.annotation.Hack;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -47,7 +38,10 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
   @Rule
   public WriteAction wa = new WriteAction(); // FIXME shall pass proper ModelAccess in there
 
-  //------------module depends on solution------------
+  @BeforeClass
+  public static void setUp() {
+    MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+  }
 
   private List<DepLink> findPaths(DepLink root, SModule target) {
     final SModuleReference targetRef = target.getModuleReference();
@@ -80,60 +74,6 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
       }
     }
     assertEquals(numPaths, paths.size());
-  }
-
-  @Hack
-  @Override
-  protected void populate(AbstractModule module) {
-    try {
-      if (module instanceof Language || module instanceof Solution) {
-        // HACK. With used languages of a module being derived from that of owned models,
-        // we need a model to keep this imports
-        InMemoryStreamDataSource ds = new InMemoryStreamDataSource();
-        SModelBase m = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().create(ds, Collections.singletonMap(
-            ModelFactory.OPTION_MODELNAME, "model-for-language-imports"));
-        module.registerModel(m);
-      }
-    } catch (IOException ex) {
-      throw new RuntimeException(ex);
-    }
-  }
-
-  private void addUsedLanguage(AbstractModule client, Language toUse) {
-    addUsedLanguageImpl(client, toUse.getModuleReference(), false);
-  }
-
-  private void addUsedDevKit(AbstractModule client, DevKit toUse) {
-    addUsedLanguageImpl(client, toUse.getModuleReference(), true);
-  }
-
-  @Hack
-  private void addUsedLanguageImpl(final AbstractModule client, final SModuleReference toUse, boolean isDevKit) {
-      for (SModel m : client.getModels()) {
-        if ("model-for-language-imports".equals(m.getModelName())) {
-          // HACK. We set update mode of model data to prevent event dispatching
-          // which otherwise fails in ModelsEventsCollector, registered as command listener, with a check that changes happen inside command.
-          // however, GlobalModelAccess, active during tests, doesn't support commands and listeners, and thus ModelsEventsCollector treats
-          // any change as 'outside command' change, and fails.
-          ((SModelBase) m).getSModel().enterUpdateMode();
-          if (isDevKit) {
-            ((SModelInternal) m).addDevKit(toUse);
-          } else {
-            ((SModelInternal) m).addLanguage(MetaAdapterFactory.getLanguage(toUse));
-          }
-          ((SModelBase) m).getSModel().leaveUpdateMode();
-          // HACK.
-          // DependencyUtil.build looks into dependencies between module descriptors, so we mimic them there,
-          // although the right solution is to <strikeout>throw DependencyUtil away</strikeout> rewrite DependencyUtil to use SModule API
-          if (isDevKit) {
-            client.getModuleDescriptor().getUsedDevkits().add(toUse);
-          } else {
-            client.getModuleDescriptor().getUsedLanguages().add(toUse);
-          }
-          return;
-        }
-      }
-      Assert.fail("No model to keep used language in the module " + client.getModuleName());
   }
 
   @Test

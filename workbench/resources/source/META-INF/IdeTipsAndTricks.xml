@@ -1,6 +1,12 @@
 <idea-plugin version="2">
   <extensions defaultExtensionNs="com.intellij">
     <tipAndTrick file="Welcome.html"/>
+    <tipAndTrick file="ProjectView.html"/>
+    <tipAndTrick file="Organization.html"/>
+    <tipAndTrick file="KindsOfModules.html"/>
+    <tipAndTrick file="Undo.html"/>
+    <tipAndTrick file="PasteHistory.html"/>
+    <tipAndTrick file="CommentOut.html"/>
     <tipAndTrick file="BlockSelection.html"/>
     <tipAndTrick file="Intentions.html"/>
     <tipAndTrick file="SWIntentions.html"/>
@@ -17,6 +23,7 @@
     <tipAndTrick file="IntroduceField.html"/>
     <tipAndTrick file="ExtractMethod.html"/>
     <tipAndTrick file="Inline.html"/>
+    <tipAndTrick file="ExpressionSimplification.html"/>
     <tipAndTrick file="Plugins.html"/>
     <tipAndTrick file="NavigateBack.html"/>
     <tipAndTrick file="NavigationWithTabs.html"/>
@@ -40,6 +47,7 @@
     <tipAndTrick file="ImportRoot.html"/>
     <tipAndTrick file="ShowStructure.html"/>
     <tipAndTrick file="NodeExplorer.html"/>
+    <tipAndTrick file="ReflectiveEditor.html"/>
     <tipAndTrick file="GoToAction.html"/>
     <tipAndTrick file="ToolButtons.html"/>
     <tipAndTrick file="Console.html"/>
@@ -49,6 +57,7 @@
     <tipAndTrick file="ShowHierarchy.html"/>
     <tipAndTrick file="ShowError.html"/>
     <tipAndTrick file="gotoModel.html"/>
+    <tipAndTrick file="CompareTwoNodes.html"/>
     <tipAndTrick file="HelpMenu.html"/>
     <tipAndTrick file="JetBrainsTV.html"/>
 

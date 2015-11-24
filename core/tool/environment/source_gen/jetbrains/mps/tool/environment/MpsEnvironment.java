@@ -20,8 +20,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class MpsEnvironment extends EnvironmentBase {
-  private final ProjectContainer myContainer = new ProjectContainer();
   private Platform myPlatform;
+
+  static {
+    EnvironmentBase.initializeLog4j();
+  }
 
   protected MpsEnvironment(@NotNull EnvironmentConfig config) {
     super(config);
@@ -34,6 +37,7 @@ public class MpsEnvironment extends EnvironmentBase {
   public static Environment getOrCreate(@NotNull EnvironmentConfig config) {
     Environment currentEnv = EnvironmentContainer.get();
     if (currentEnv != null) {
+      currentEnv.retain();
       return currentEnv;
     } else {
       MpsEnvironment mpsEnv = new MpsEnvironment(config);
@@ -75,32 +79,11 @@ public class MpsEnvironment extends EnvironmentBase {
     });
   }
 
-  @Nullable
-  @Override
-  public Project getOpenedProject(@NotNull File projectFile) {
-    checkInitialized();
-    return myContainer.getProject(projectFile);
-  }
-
   @Override
   @NotNull
-  public Project openProject(@NotNull File projectFile) {
-    checkInitialized();
-    Project lastUsedProject = getOpenedProject(projectFile);
-    if (lastUsedProject != null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Using the last created project");
-      }
-      return lastUsedProject;
-    } else {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Opening a new project");
-      }
-      FileMPSProject project = new FileMPSProject(projectFile);
-      project.init(new FileMPSProject.ProjectDescriptor(projectFile));
-      myContainer.addProject(project);
-      return project;
-    }
+  public Project doOpenProject(@NotNull File projectFile) {
+    FileMPSProject project = new FileMPSProject(projectFile);
+    return project;
   }
 
   @NotNull
@@ -110,24 +93,14 @@ public class MpsEnvironment extends EnvironmentBase {
     if (LOG.isInfoEnabled()) {
       LOG.info("Creating an empty project");
     }
-    File projectFile = FileUtil.createTmpFile();
-    FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(null));
+    File projectFile = FileUtil.createTmpDir();
     projectFile.deleteOnExit();
-    myContainer.addProject(project);
+    Project project = openProject(projectFile);
     return project;
   }
 
   @Override
-  public void closeProject(@NotNull Project project) {
-    checkInitialized();
-    myContainer.closeProject(project);
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    myContainer.dispose();
+  public void doDispose() {
     myPlatform.dispose();
     myPlatform = null;
   }

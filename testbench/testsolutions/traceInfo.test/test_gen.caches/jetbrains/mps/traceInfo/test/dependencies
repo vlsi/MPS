@@ -29,16 +29,12 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.testbench.BaseMpsTest" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.IdeaEnvironment" />
     <classNode dependClassName="jetbrains.mps.traceInfo.test.TestClass" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.junit.BeforeClass" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.WorkbenchMpsTest" />
+    <classNode extendsClassName="jetbrains.mps.PlatformMpsTest" />
   </dependency>
 </dependenciesRoot>
 

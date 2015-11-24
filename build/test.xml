@@ -20,12 +20,15 @@
   <loadproperties srcfile="${build.distribution}/build.properties"/>
   <property name="mps.zip" location="${build.distribution}/${mps.build.number}.zip"/>
   <property name="mps_build_home" location="${build.tmp}/MPS ${mpsBootstrapCore.version}"/>
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
 
   <target name="unpack">
     <unzip src="${mps.zip}" dest="${build.tmp}"/>
   </target>
 
   <target name="check-project-structure" depends="unpack">
+    <echo message="JDK HOME: ${jdk.home}"/>
     <mkdir dir="${build.tmp}/buildtests.tmp"/>
     <path id="tests.classpath">
       <fileset dir="${mps_build_home}/lib">
@@ -52,6 +55,7 @@
         <fileset dir="${mps_build_home}/lib">
           <include name="*.jar"/>
         </fileset>
+        <pathelement path="${jdk.home}/lib/tools.jar" />
       </classpath>
     </junit>
   </target>

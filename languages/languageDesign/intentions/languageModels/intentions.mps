@@ -8,7 +8,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -467,7 +467,7 @@
                   <node concept="3fl2lp" id="6jDmPiUWfAh" role="2Oq$k0">
                     <ref role="3fl3PK" to="6bz1:6yt8uwrpTsz" resolve="execute" />
                     <node concept="3B5_sB" id="6jDmPiUWfAi" role="3fl3PI">
-                      <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                      <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="6jDmPiUWfAj" role="2OqNvi">
@@ -495,7 +495,7 @@
                   <node concept="3fl2lp" id="6jDmPiUWfAs" role="2Oq$k0">
                     <ref role="3fl3PK" to="6bz1:6yt8uwrpTIM" resolve="description" />
                     <node concept="3B5_sB" id="6jDmPiUWfAt" role="3fl3PI">
-                      <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                      <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="6jDmPiUWfAu" role="2OqNvi">
@@ -526,7 +526,7 @@
                     <node concept="3fl2lp" id="6jDmPiUY59g" role="2Oq$k0">
                       <ref role="3fl3PK" to="6bz1:6jDmPiUSJ$K" resolve="isApplicableInChild" />
                       <node concept="3B5_sB" id="6jDmPiUY59h" role="3fl3PI">
-                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                       </node>
                     </node>
                   </node>
@@ -537,7 +537,7 @@
                     <node concept="3fl2lp" id="6jDmPiV08NZ" role="2Oq$k0">
                       <ref role="3fl3PK" to="6bz1:6jDmPiUSJ$K" resolve="isApplicableInChild" />
                       <node concept="3B5_sB" id="6jDmPiV08O0" role="3fl3PI">
-                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="6jDmPiV08O1" role="2OqNvi">
@@ -560,7 +560,7 @@
                       <node concept="3fl2lp" id="6jDmPiUWfAB" role="2Oq$k0">
                         <ref role="3fl3PK" to="6bz1:6jDmPiUSJ$K" resolve="isApplicableInChild" />
                         <node concept="3B5_sB" id="6jDmPiUWfAC" role="3fl3PI">
-                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="6jDmPiUWfAD" role="2OqNvi">
@@ -658,7 +658,7 @@
                     <node concept="3fl2lp" id="6jDmPiUWfBC" role="2Oq$k0">
                       <ref role="3fl3PK" to="6bz1:6yt8uwrpTKe" resolve="isApplicable" />
                       <node concept="3B5_sB" id="6jDmPiUWfBD" role="3fl3PI">
-                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                       </node>
                     </node>
                   </node>
@@ -672,7 +672,7 @@
                     <node concept="3fl2lp" id="6jDmPiV0c_4" role="2Oq$k0">
                       <ref role="3fl3PK" to="6bz1:6yt8uwrpTKe" resolve="isApplicable" />
                       <node concept="3B5_sB" id="6jDmPiV0c_5" role="3fl3PI">
-                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                        <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                       </node>
                     </node>
                   </node>
@@ -698,7 +698,7 @@
                       <node concept="3fl2lp" id="6jDmPiUWfBv" role="2Oq$k0">
                         <ref role="3fl3PK" to="6bz1:6yt8uwrpTKe" resolve="isApplicable" />
                         <node concept="3B5_sB" id="6jDmPiUWfBw" role="3fl3PI">
-                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+                          <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
                         </node>
                       </node>
                     </node>

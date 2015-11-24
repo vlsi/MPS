@@ -71,7 +71,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
             }
 
             repository.registerModule(mySolution = solution, myMpsProject);
-            myMpsProject.addModule(mySolution.getModuleReference());
+            myMpsProject.addModule(mySolution);
             LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleName()));
             IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
             String version = descriptor == null ? null : descriptor.getVersion();
@@ -87,11 +87,13 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     if (!wasInitialized()) {
       return;
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myMpsProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleName()));
-        MPSModuleRepository.getInstance().unregisterModule(mySolution, myMpsProject);
+        if (!myMpsProject.isDisposed()) {
+          MPSModuleRepository.getInstance().unregisterModule(mySolution, myMpsProject);
+        }
         mySolution = null;
       }
     });

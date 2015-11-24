@@ -8,7 +8,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -23,9 +23,9 @@
     <import index="6bz1" ref="r:d3905048-7598-4a84-931a-cbbcbcda146d(jetbrains.mps.lang.intentions.methods)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" implicit="true" />
   </imports>
   <registry>
@@ -1369,7 +1369,7 @@
       <node concept="3clFbS" id="UBgfI9gdE7" role="3clF47">
         <node concept="3cpWs6" id="UBgfI9gdWW" role="3cqZAp">
           <node concept="3B5_sB" id="UBgfI9gdWX" role="3cqZAk">
-            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+            <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
           </node>
         </node>
       </node>
@@ -1398,7 +1398,7 @@
           <node concept="3fl2lp" id="6q8H2OTpOWP" role="3clFbG">
             <ref role="3fl3PK" to="6bz1:2lJOBsqvJqh" resolve="Parameter" />
             <node concept="3B5_sB" id="6q8H2OTpOSC" role="3fl3PI">
-              <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="IntentionDeclaration" />
+              <ref role="3B5MYn" to="6bz1:6yt8uwrpQZP" resolve="UniversalIntention" />
             </node>
           </node>
         </node>

@@ -16,14 +16,11 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -38,6 +35,7 @@ import java.util.Set;
  */
 public class GlobalModuleDependenciesManager {
   private Set<SModule> myModules;
+  private UsedModulesCollector myUsedModulesCollector = new UsedModulesCollector();
 
   public GlobalModuleDependenciesManager(Collection<? extends SModule> modules) {
     myModules = new HashSet<SModule>(modules);
@@ -49,8 +47,8 @@ public class GlobalModuleDependenciesManager {
   }
 
   /**
-   * @deprecated Use {@link org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()} directly.
    * @return all languages used by the given modules
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()} directly.
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -72,6 +70,7 @@ public class GlobalModuleDependenciesManager {
     }
     return result;
   }
+
   /**
    * Return all modules of a given dependency type in scope of given
    * <p/>
@@ -103,7 +102,7 @@ public class GlobalModuleDependenciesManager {
   private Set<SModule> collectNeighbours(Deptype depType) {
     HashSet<SModule> result = new HashSet<SModule>();
     for (SModule module : myModules) {
-      result.addAll(directlyUsedModules(module, true, depType.runtimes));
+      result.addAll(myUsedModulesCollector.directlyUsedModules0(module, true, depType.runtimes));
     }
     result.addAll(myModules);
     return result;
@@ -112,7 +111,7 @@ public class GlobalModuleDependenciesManager {
   private void collect(SModule current, Set<SModule> result, Deptype depType) {
     if (result.contains(current)) return;
     result.add(current);
-    for (SModule m : directlyUsedModules(current, depType.reexportAll, depType.runtimes)) {
+    for (SModule m : myUsedModulesCollector.directlyUsedModules0(current, depType.reexportAll, depType.runtimes)) {
       collect(m, result, depType);
     }
   }
@@ -129,50 +128,24 @@ public class GlobalModuleDependenciesManager {
     return result;
   }
 
-  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
-    Set<SModule> result = new HashSet<SModule>();
-    for (SDependency dependency : module.getDeclaredDependencies()) {
-      SModule m = dependency.getTarget();
-      if (m == null) {
-        continue;
-      }
-      // if module A extends module B, and module C depends from A, module B shall always be part of C dependencies along with A.
-      boolean isExport = dependency.isReexport() || dependency.getScope() == SDependencyScope.EXTENDS;
-      if (includeNonReexport || isExport) {
-        result.add(m);
-      }
-    }
-
-    if (includeNonReexport) {
-      if (runtimes) {
-        for (SLanguage l : module.getUsedLanguages()) {
-          if (l.getSourceModule() == null) continue;
-          for (SModuleReference runtimeRef : l.getLanguageRuntimes()) {
-            SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
-            if (runtime != null) {
-              result.add(runtime);
-            }
-          }
-        }
-      }
-    }
-
-    return result;
+  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) throws
+      AbsentDependencyException {
+    return new UsedModulesCollector().directlyUsedModules0(module, includeNonReexport, runtimes, true);
   }
 
   public enum Deptype {
     /**
-     *  All modules visible from given modules
-     *  This includes modules from dependencies, transitive, respecting reexports
-     *  Including initial modules
+     * All modules visible from given modules
+     * This includes modules from dependencies, transitive, respecting reexports
+     * Including initial modules
      */
     VISIBLE(false, false),
 
     /**
-     *  All modules required for compilation of given modules
-     *  This includes visible modules and used language runtimes, respecting reexports
-     *  Including languages with runtime stub paths
-     *  Including initial modules
+     * All modules required for compilation of given modules
+     * This includes visible modules and used language runtimes, respecting reexports
+     * Including languages with runtime stub paths
+     * Including initial modules
      */
     COMPILE(true, false),
 
@@ -185,13 +158,26 @@ public class GlobalModuleDependenciesManager {
      */
     EXECUTE(true, true);
 
-
     public boolean runtimes;
     public boolean reexportAll;
 
     Deptype(boolean runtimes, boolean reexportAll) {
       this.runtimes = runtimes;
       this.reexportAll = reexportAll;
+    }
+  }
+
+  public final static class AbsentDependencyException extends Exception {
+    public AbsentDependencyException(@NotNull SDependency unresolvableDep) {
+      super("The dependency cannot be resolved " + unresolvableDep);
+    }
+
+    public AbsentDependencyException(@NotNull SLanguage languageWithoutSource) {
+      super("SLanguage's source module cannot be resolved " + languageWithoutSource);
+    }
+
+    public AbsentDependencyException(String message) {
+      super(message);
     }
   }
 }

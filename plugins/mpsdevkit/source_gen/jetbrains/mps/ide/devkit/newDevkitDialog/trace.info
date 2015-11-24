@@ -11,69 +11,69 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a8(jetbrains.mps.ide.devkit.newDevkitDialog)/6249396921771873248">
     <file name="NewDevKitDialog.java">
-      <node id="6249396921771873252" at="23,0,24,0" concept="2" trace="myContentPane" />
-      <node id="2012037001068940249" at="24,0,25,0" concept="2" trace="myPathField" />
-      <node id="2012037001068974666" at="25,0,26,0" concept="2" trace="myNameField" />
-      <node id="6249396921771906451" at="27,0,28,0" concept="2" trace="myProject" />
-      <node id="6249396921771906455" at="28,0,29,0" concept="2" trace="myResult" />
-      <node id="6249396921772398005" at="30,72,31,19" concept="8" />
-      <node id="6249396921771873273" at="31,19,32,27" concept="1" />
-      <node id="8412685000766484024" at="32,27,33,27" concept="1" />
-      <node id="8412685000766484027" at="33,27,34,35" concept="1" />
-      <node id="2416721513764784443" at="34,35,35,0" concept="7" />
-      <node id="6558575783352451325" at="35,0,36,52" concept="1" />
-      <node id="6558575783352745733" at="36,52,37,26" concept="1" />
-      <node id="2416721513764783778" at="37,26,38,0" concept="7" />
-      <node id="6249396921771873276" at="38,0,39,11" concept="1" />
-      <node id="6558575783353258609" at="43,44,44,25" concept="6" />
-      <node id="6558575783351595470" at="47,38,48,53" concept="1" />
-      <node id="6558575783353151848" at="48,53,49,60" concept="1" />
-      <node id="2012037001068542529" at="49,60,50,0" concept="7" />
-      <node id="6249396921771906504" at="50,0,51,42" concept="1" />
-      <node id="6249396921771906510" at="51,42,52,54" concept="1" />
-      <node id="6558575783353708684" at="52,54,53,32" concept="1" />
-      <node id="2012037001068536939" at="53,32,54,0" concept="7" />
-      <node id="6249396921771906516" at="54,0,55,44" concept="1" />
-      <node id="6249396921771906522" at="55,44,56,53" concept="1" />
-      <node id="6558575783353741274" at="56,53,57,32" concept="1" />
-      <node id="2012037001068476347" at="57,32,58,0" concept="7" />
-      <node id="6577704909259624818" at="58,0,59,116" concept="1" />
-      <node id="6577704909259603367" at="59,116,60,37" concept="1" />
-      <node id="6577704909259814590" at="64,31,65,46" concept="5" />
-      <node id="6558575783352868371" at="65,46,66,96" concept="5" />
-      <node id="6558575783352868383" at="67,26,68,28" concept="1" />
-      <node id="2416721513764863167" at="68,28,69,13" concept="6" />
-      <node id="6558575783352868387" at="70,5,71,14" concept="1" />
-      <node id="6558575783352868394" at="73,28,74,86" concept="1" />
-      <node id="6249396921771906802" at="79,29,80,25" concept="6" />
-      <node id="6558575783352868392" at="73,0,76,0" concept="4" trace="invoke#()V" />
-      <node id="6249396921771906800" at="79,0,82,0" concept="4" trace="getResult#()Ljetbrains/mps/project/DevKit;" />
-      <node id="6558575783353239827" at="42,0,46,0" concept="4" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
-      <node id="6558575783352868378" at="66,96,70,5" concept="3" />
-      <node id="6558575783352868389" at="71,14,76,7" concept="1" />
-      <node id="6249396921771873268" at="30,0,41,0" concept="0" trace="NewDevKitDialog#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="6558575783352683003" at="47,0,62,0" concept="4" trace="createMainComponent#()V" />
-      <node id="2416721513764796815" at="63,0,78,0" concept="4" trace="doOKAction#()V" />
-      <scope id="6558575783353239832" at="43,44,44,25" />
-      <scope id="6558575783352868393" at="73,28,74,86" />
-      <scope id="6249396921771906801" at="79,29,80,25" />
-      <scope id="6558575783352868382" at="67,26,69,13" />
-      <scope id="6558575783352868392" at="73,0,76,0" />
-      <scope id="6249396921771906800" at="79,0,82,0" />
-      <scope id="6558575783353239827" at="42,0,46,0" />
-      <scope id="6249396921771873272" at="30,72,39,11" />
-      <scope id="6249396921771873268" at="30,0,41,0">
+      <node id="6249396921771873252" at="24,0,25,0" concept="2" trace="myContentPane" />
+      <node id="2012037001068940249" at="25,0,26,0" concept="2" trace="myPathField" />
+      <node id="2012037001068974666" at="26,0,27,0" concept="2" trace="myNameField" />
+      <node id="6249396921771906451" at="28,0,29,0" concept="2" trace="myProject" />
+      <node id="6249396921771906455" at="29,0,30,0" concept="2" trace="myResult" />
+      <node id="6249396921772398005" at="31,43,32,19" concept="8" />
+      <node id="6249396921771873273" at="32,19,33,27" concept="1" />
+      <node id="8412685000766484024" at="33,27,34,27" concept="1" />
+      <node id="8412685000766484027" at="34,27,35,35" concept="1" />
+      <node id="2416721513764784443" at="35,35,36,0" concept="7" />
+      <node id="6558575783352451325" at="36,0,37,55" concept="1" />
+      <node id="6558575783352745733" at="37,55,38,26" concept="1" />
+      <node id="2416721513764783778" at="38,26,39,0" concept="7" />
+      <node id="6249396921771873276" at="39,0,40,11" concept="1" />
+      <node id="6558575783353258609" at="44,44,45,25" concept="6" />
+      <node id="6558575783351595470" at="48,38,49,53" concept="1" />
+      <node id="6558575783353151848" at="49,53,50,60" concept="1" />
+      <node id="2012037001068542529" at="50,60,51,0" concept="7" />
+      <node id="6249396921771906504" at="51,0,52,42" concept="1" />
+      <node id="6249396921771906510" at="52,42,53,54" concept="1" />
+      <node id="6558575783353708684" at="53,54,54,32" concept="1" />
+      <node id="2012037001068536939" at="54,32,55,0" concept="7" />
+      <node id="6249396921771906516" at="55,0,56,44" concept="1" />
+      <node id="6249396921771906522" at="56,44,57,53" concept="1" />
+      <node id="6558575783353741274" at="57,53,58,32" concept="1" />
+      <node id="2012037001068476347" at="58,32,59,0" concept="7" />
+      <node id="6577704909259624818" at="59,0,60,116" concept="1" />
+      <node id="6577704909259603367" at="60,116,61,37" concept="1" />
+      <node id="6577704909259814590" at="65,31,66,46" concept="5" />
+      <node id="6558575783352868371" at="66,46,67,96" concept="5" />
+      <node id="6558575783352868383" at="68,26,69,28" concept="1" />
+      <node id="2416721513764863167" at="69,28,70,13" concept="6" />
+      <node id="6558575783352868387" at="71,5,72,14" concept="1" />
+      <node id="6558575783352868394" at="74,28,75,86" concept="1" />
+      <node id="6249396921771906802" at="80,29,81,25" concept="6" />
+      <node id="6558575783352868392" at="74,0,77,0" concept="4" trace="invoke#()V" />
+      <node id="6249396921771906800" at="80,0,83,0" concept="4" trace="getResult#()Ljetbrains/mps/project/DevKit;" />
+      <node id="6558575783353239827" at="43,0,47,0" concept="4" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
+      <node id="6558575783352868378" at="67,96,71,5" concept="3" />
+      <node id="6558575783352868389" at="72,14,77,7" concept="1" />
+      <node id="6249396921771873268" at="31,0,42,0" concept="0" trace="NewDevKitDialog#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="6558575783352683003" at="48,0,63,0" concept="4" trace="createMainComponent#()V" />
+      <node id="2416721513764796815" at="64,0,79,0" concept="4" trace="doOKAction#()V" />
+      <scope id="6558575783353239832" at="44,44,45,25" />
+      <scope id="6558575783352868393" at="74,28,75,86" />
+      <scope id="6249396921771906801" at="80,29,81,25" />
+      <scope id="6558575783352868382" at="68,26,70,13" />
+      <scope id="6558575783352868392" at="74,0,77,0" />
+      <scope id="6249396921771906800" at="80,0,83,0" />
+      <scope id="6558575783353239827" at="43,0,47,0" />
+      <scope id="6249396921771873272" at="31,43,40,11" />
+      <scope id="6249396921771873268" at="31,0,42,0">
         <var name="project" id="6249396921771873270" />
       </scope>
-      <scope id="2416721513764796819" at="64,31,76,7">
+      <scope id="2416721513764796819" at="65,31,77,7">
         <var name="message" id="6558575783352868372" />
         <var name="path" id="6577704909259814591" />
       </scope>
-      <scope id="6558575783352683006" at="47,38,60,37" />
-      <scope id="6558575783352683003" at="47,0,62,0" />
-      <scope id="2416721513764796815" at="63,0,78,0" />
-      <unit id="6558575783352868392" at="72,51,76,5" name="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog$1" />
-      <unit id="6249396921771873248" at="22,0,83,0" name="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog" />
+      <scope id="6558575783352683006" at="48,38,61,37" />
+      <scope id="6558575783352683003" at="48,0,63,0" />
+      <scope id="2416721513764796815" at="64,0,79,0" />
+      <unit id="6558575783352868392" at="73,51,77,5" name="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog$1" />
+      <unit id="6249396921771873248" at="23,0,84,0" name="jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog" />
     </file>
   </root>
 </debug-info>

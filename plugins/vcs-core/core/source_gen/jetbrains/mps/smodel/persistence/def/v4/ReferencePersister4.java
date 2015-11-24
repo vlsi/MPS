@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -96,7 +96,7 @@ public class ReferencePersister4 implements IReferencePersister {
     SModelReference importedModelReference = model.getReference();
     if (myUseUIDs) {
       if (!(myImportedModelInfo.equals("-1"))) {
-        importedModelReference = PersistenceFacade.getInstance().createModelReference(myImportedModelInfo);
+        importedModelReference = VCSPersistenceUtil.createModelReference(myImportedModelInfo);
       }
     } else
     if (getImportIndex() > -1) {

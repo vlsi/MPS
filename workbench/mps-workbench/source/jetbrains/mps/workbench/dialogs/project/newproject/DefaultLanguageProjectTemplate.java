@@ -76,7 +76,7 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
                                                              public void run() {
                                                                Language language = NewModuleUtil.createLanguage(myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation(),
                                                                    project);
-                                                               project.addModule(language.getModuleReference());
+                                                               project.addModule(language);
 
                                                                try {
                                                                  if (myLanguageSettings.isRuntimeSolutionNeeded()) {

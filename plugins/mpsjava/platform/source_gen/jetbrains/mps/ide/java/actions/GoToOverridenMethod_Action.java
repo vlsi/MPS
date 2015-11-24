@@ -12,9 +12,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
@@ -81,25 +79,8 @@ public class GoToOverridenMethod_Action extends BaseAction {
       }
     }
     {
-      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
-      if (editorComponent != null && editorComponent.isInvalid()) {
-        editorComponent = null;
-      }
-      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-      if (editorComponent == null) {
-        return false;
-      }
-    }
-    {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
       MapSequence.fromMap(_params).put("editorContext", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("operationContext", p);
       if (p == null) {
         return false;
       }

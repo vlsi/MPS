@@ -19,8 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
@@ -51,9 +49,6 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
     return namespace == null || (((exp == null) ? (boolean) ExportScope__BehaviorDescriptor.checkExportDefault_id7auzIIk9gg7.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), ((boolean) isConcept), node, namespace) : (boolean) ExportScope__BehaviorDescriptor.checkExport_id2erkSmBSC_o.invoke(exp, namespace, node)));
   }
   /*package*/ static boolean checkExportDefault_id7auzIIk9gg7(@NotNull SAbstractConcept __thisConcept__, boolean isConcept, SNode node, String namespace) {
-    /*
-      return (isConcept ? true : namespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node)));
-    */
     String targetNamespace = ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), node);
     if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {
       return true;
@@ -67,13 +62,6 @@ public final class ExportScope__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static SNode getExportScope_id3ye0wbzmGx_(@NotNull SAbstractConcept __thisConcept__, SNode node) {
     // return effective ExportScope or null 
-    /*
-      return AttributeOperations.getAttribute(ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope"))) != null);
-        }
-      }), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")));
-    */
     return AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")));
   }
   /*package*/ static String getNamespace_id2erkSmBSCAp(@NotNull SAbstractConcept __thisConcept__, SNode node) {

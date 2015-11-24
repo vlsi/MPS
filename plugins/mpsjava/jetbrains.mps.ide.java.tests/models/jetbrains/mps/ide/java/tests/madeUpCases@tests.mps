@@ -7,7 +7,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -21,6 +21,7 @@
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
+      <concept id="1225467090849" name="jetbrains.mps.lang.test.structure.ProjectExpression" flags="nn" index="1jxXqW" />
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
@@ -1084,6 +1085,7 @@
           <node concept="2YIFZM" id="6YV7lv2CRUk" role="3clFbG">
             <ref role="37wK5l" to="wfc9:LfG6aZ8Ic$" resolve="checkSourceModel" />
             <ref role="1Pybhc" to="wfc9:70HT6wFrGK4" resolve="Utils" />
+            <node concept="1jxXqW" id="5QGPY0GdS0s" role="37wK5m" />
             <node concept="3cpWs3" id="6YV7lv2CRUl" role="37wK5m">
               <node concept="Xl_RD" id="6YV7lv2CRUm" role="3uHU7w">
                 <property role="Xl_RC" value="/plugins/mpsjava/tests/singleFiles/statements" />

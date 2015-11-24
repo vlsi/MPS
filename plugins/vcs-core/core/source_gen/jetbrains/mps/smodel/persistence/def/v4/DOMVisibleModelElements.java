@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.jdom.Element;
 import java.util.List;
 import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 
 /*package*/ class DOMVisibleModelElements implements VisibleModelElements {
   private Map<Integer, SModelReference> myVisibleModelElements = new HashMap<Integer, SModelReference>();
@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
       String indexValue = element.getAttributeValue(VCSPersistenceSupport.MODEL_IMPORT_INDEX);
       int index = Integer.parseInt(indexValue);
       String visibleModelUIDString = element.getAttributeValue(VCSPersistenceSupport.MODEL_UID);
-      myVisibleModelElements.put(index, PersistenceFacade.getInstance().createModelReference(visibleModelUIDString));
+      myVisibleModelElements.put(index, VCSPersistenceUtil.createModelReference(visibleModelUIDString));
       myMaxVisibleModelIndex = Math.max(index, myMaxVisibleModelIndex);
     }
   }

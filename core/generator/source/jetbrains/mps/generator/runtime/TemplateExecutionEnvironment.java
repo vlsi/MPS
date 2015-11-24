@@ -146,6 +146,7 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   /**
    * ReferenceMacro support
+   * @since 3.3
    */
   void resolve(@NotNull ReferenceResolver2 resolver);
 
@@ -169,27 +170,21 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   /**
    * Support for $MAP-SRC$ macro, to substitute and/or process nodes in output model once transformation step is over and output model is <em>almost</em> ready.
    * As MPS documentation put it, "MAP-SRC macro is executed in the end of generator micro-step - after all node- and property-macro but before reference-macro."
+   * @since 3.3
    */
   void postProcess(@NotNull NodePostProcessor postProcessor);
 
   /**
-   * @deprecated use {@link #prepareWeave(WeaveContext, SNodeReference)} instead.
-   * This method was introduces in 3.3 and has never been part of public non-EAP release. Once next EAP/RC is out, remove this method
-   * FIXME PROVISIONAL API
-   * FIXME Consider splitting validation aspect from child addition, which could be generated.
-   * FIXME perhaps, {@link #weaveTemplate(SNodeReference, SNodeReference, TemplateContext, SNode, Object...)} could be part of NodeWeaveFacility as well?
-   * If there's use for 'validate(parent, role, child) elsewhere, shall get rid of distinct weaveNode method as it does nothing but validateChild+addChild
    * @return utility capable of node weaving with respect to the given context
+   * @since 3.3
    */
   @NotNull
-  @Deprecated
-  @ToRemove(version = 3.2)
-  NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode);
-
   NodeWeaveFacility prepareWeave(@NotNull WeaveContext context, @NotNull SNodeReference templateNode);
 
   /**
    * @deprecated use {@link #prepareWeave(WeaveContext, SNodeReference)}} and {@link NodeWeaveFacility} instead
+   * FIXME Consider splitting validation aspect from child addition, which could be generated.
+   * If there's use for 'validate(parent, role, child) elsewhere, shall get rid of distinct weaveNode method as it does nothing but validateChild+addChild
    */
   @Deprecated
   @ToRemove(version = 3.3)

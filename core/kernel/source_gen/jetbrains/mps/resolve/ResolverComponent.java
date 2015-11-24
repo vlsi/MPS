@@ -82,7 +82,7 @@ public class ResolverComponent implements CoreComponent {
   }
   public boolean resolveScopesOnly(SReference reference, SRepository repository) {
     SNode sourceNode = reference.getSourceNode();
-    if (sourceNode == null) {
+    if (sourceNode == null || sourceNode.getReference(reference.getLink()) != reference) {
       return false;
     }
     return myScopeResolver.resolve(reference, sourceNode, repository);

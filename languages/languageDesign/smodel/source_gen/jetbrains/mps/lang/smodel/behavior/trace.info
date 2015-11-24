@@ -264,6 +264,9 @@
     <file name="Node_GetAncestorsOperation_BehaviorDescriptor.java">
       <unit at="15,0,33,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetAncestorsOperation_BehaviorDescriptor" />
     </file>
+    <file name="Node_GetChildrenAndChildAttributesOperation_BehaviorDescriptor.java">
+      <unit at="11,0,20,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenAndChildAttributesOperation_BehaviorDescriptor" />
+    </file>
     <file name="Node_GetChildrenOperation_BehaviorDescriptor.java">
       <unit at="15,0,33,0" name="jetbrains.mps.lang.smodel.behavior.Node_GetChildrenOperation_BehaviorDescriptor" />
     </file>

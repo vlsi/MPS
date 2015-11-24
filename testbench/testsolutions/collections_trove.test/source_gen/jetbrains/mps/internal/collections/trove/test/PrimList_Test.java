@@ -74,9 +74,6 @@ public class PrimList_Test extends TestCase {
     }
     System.gc();
     MemoryMXBean bean = ManagementFactory.getMemoryMXBean();
-    /*
-      System.out.println("HEAP -------> " + bean.getHeapMemoryUsage().toString());
-    */
     return bean.getHeapMemoryUsage().getUsed();
   }
 }

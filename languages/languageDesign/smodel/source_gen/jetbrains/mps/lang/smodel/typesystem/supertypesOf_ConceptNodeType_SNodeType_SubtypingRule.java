@@ -28,11 +28,6 @@ public class supertypesOf_ConceptNodeType_SNodeType_SubtypingRule extends Subtyp
       // in a node of type concept<SomeInterfaceConcept> could be stored a value node<SomeConcreteConcept> 
       // if SomeConcreteConcept is a subconcept of SomeInterfaceConcept. 
       // (see rule supertypesOf_SConceptTypeType_SConceptTypeType) 
-      /*
-        if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
-          return _quotation_createNode_aqm90v_a0a0f0b0b();
-        }
-      */
     }
     return _quotation_createNode_aqm90v_a2a1();
   }
@@ -50,13 +45,6 @@ public class supertypesOf_ConceptNodeType_SNodeType_SubtypingRule extends Subtyp
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), SReference.create(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1071489090640")));
-    return quotedNode_1;
-  }
-  private static SNode _quotation_createNode_aqm90v_a0a0f0b0b() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), SReference.create(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1169125989551")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_aqm90v_a2a1() {

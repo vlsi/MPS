@@ -76,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultRunListener" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.server.TestsContributor" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

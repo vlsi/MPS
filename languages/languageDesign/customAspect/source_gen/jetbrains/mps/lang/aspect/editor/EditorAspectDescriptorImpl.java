@@ -24,6 +24,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x5c2c36f4ea0d3b2fL, "jetbrains.mps.lang.aspect.structure.GenerationDescriptor_Class"))) {
         return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Class_Editor());
       }
+      if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.HelpURL"))) {
+        return Collections.<ConceptEditor>singletonList(new HelpURL_Editor());
+      }
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(cncpt), MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2d72cdccef70b086L, "jetbrains.mps.lang.aspect.structure.LanguageAspectDescriptor"))) {
         return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
       }

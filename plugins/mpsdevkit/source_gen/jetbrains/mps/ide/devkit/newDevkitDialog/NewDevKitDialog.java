@@ -6,8 +6,9 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JPanel;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import javax.swing.JTextField;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -24,16 +25,16 @@ public class NewDevKitDialog extends DialogWrapper {
   private PathField myPathField;
   private JTextField myNameField;
 
-  private Project myProject;
+  private MPSProject myProject;
   private DevKit myResult;
 
-  public NewDevKitDialog(com.intellij.openapi.project.Project project) {
+  public NewDevKitDialog(Project project) {
     super(project);
     setTitle("New DevKit");
     setOKButtonText("&OK");
     setCancelButtonText("Ca&ncel");
 
-    myProject = ProjectHelper.toMPSProject(project);
+    myProject = ProjectHelper.fromIdeaProject(project);
     createMainComponent();
 
     init();

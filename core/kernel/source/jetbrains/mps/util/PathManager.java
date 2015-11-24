@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.InternalFlag;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -30,8 +28,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-
-public class PathManager {
+public final class PathManager {
   private static final Logger LOG = LogManager.getLogger(PathManager.class);
 
   private static final String FILE = "file";
@@ -223,5 +220,9 @@ public class PathManager {
 
   public static String getPreInstalledPluginsPath() {
     return getHomePath() + File.separator + PLUGINS_PATH;
+  }
+
+  public static String getUserDir() {
+    return System.getProperty("user.dir");
   }
 }

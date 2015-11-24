@@ -7,7 +7,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tken" ref="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" />
@@ -39,9 +39,6 @@
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
@@ -1172,20 +1169,6 @@
     </node>
     <node concept="1KhYhu" id="5ODZn30sc6k" role="1KhZu4">
       <node concept="3clFbS" id="5ODZn30sc6l" role="2VODD2">
-        <node concept="1X3_iC" id="47fY$PLJnj3" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3clFbF" id="6NGmNwD8if1" role="8Wnug">
-            <node concept="2YIFZM" id="6NGmNwD8ihe" role="3clFbG">
-              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
-              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
-              <node concept="2YIFZM" id="4uFfrVUzVEK" role="37wK5m">
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="6lHgfBD5DTj" role="3cqZAp">
           <node concept="37vLTI" id="6lHgfBD5DVR" role="3clFbG">
             <node concept="37vLTw" id="6lHgfBD5DTh" role="37vLTJ">
@@ -1195,25 +1178,12 @@
               <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
               <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
               <node concept="2OqwBi" id="47fY$PLJDIC" role="37wK5m">
-                <node concept="2OqwBi" id="47fY$PLJDID" role="2Oq$k0">
-                  <node concept="2OqwBi" id="47fY$PLJDIE" role="2Oq$k0">
-                    <node concept="2YIFZM" id="47fY$PLJDIF" role="2Oq$k0">
-                      <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                      <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
-                    </node>
-                    <node concept="liA8E" id="47fY$PLJDIG" role="2OqNvi">
-                      <ref role="37wK5l" to="79ha:5mza6QqhjgL" resolve="withBootstrapLibraries" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="47fY$PLJDIH" role="2OqNvi">
-                    <ref role="37wK5l" to="79ha:5hfNQWynXUe" resolve="withWorkbenchPath" />
-                  </node>
+                <node concept="2YIFZM" id="63LKn8yOaVC" role="2Oq$k0">
+                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+                  <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
                 </node>
-                <node concept="liA8E" id="47fY$PLJDII" role="2OqNvi">
-                  <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
-                  <node concept="Xl_RD" id="47fY$PLJDIJ" role="37wK5m">
-                    <property role="Xl_RC" value="jetbrains.mps.build" />
-                  </node>
+                <node concept="liA8E" id="ECLZhkqH_i" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:ECLZhkqBgM" resolve="withBuildPlugin" />
                 </node>
               </node>
             </node>
@@ -1238,16 +1208,13 @@
     </node>
     <node concept="1KhZuU" id="47fY$PLJEnX" role="1KhZu3">
       <node concept="3clFbS" id="47fY$PLJEnY" role="2VODD2">
-        <node concept="3clFbF" id="6lHgfBD5E3T" role="3cqZAp">
-          <node concept="2OqwBi" id="6lHgfBD5E4X" role="3clFbG">
-            <node concept="37vLTw" id="6lHgfBD5E3R" role="2Oq$k0">
-              <ref role="3cqZAo" node="6lHgfBD5DJq" resolve="myEnv" />
+        <node concept="3clFbF" id="6ylsT8BG3l_" role="3cqZAp">
+          <node concept="2OqwBi" id="6ylsT8BG3mK" role="3clFbG">
+            <node concept="37vLTw" id="6ylsT8BG3lz" role="2Oq$k0">
+              <ref role="3cqZAo" node="47fY$PLJDZu" resolve="myProject" />
             </node>
-            <node concept="liA8E" id="6lHgfBD5Ecy" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:6rx4kZDk5qB" resolve="closeProject" />
-              <node concept="37vLTw" id="6lHgfBD5Edo" role="37wK5m">
-                <ref role="3cqZAo" node="47fY$PLJDZu" resolve="myProject" />
-              </node>
+            <node concept="liA8E" id="6ylsT8BG3rx" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.dispose():void" resolve="dispose" />
             </node>
           </node>
         </node>

@@ -7,7 +7,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -51,8 +51,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.SNodeFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ReadHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.ElementHandler" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="jetbrains.mps.util.xml.BreakParseSAXException" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -68,6 +68,36 @@
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
     <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" file="ReadHelper.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.persistence.LightModelEnvironmentInfo" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptKind" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.StaticScope" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
   </dependency>
 </dependenciesRoot>
 

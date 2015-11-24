@@ -40,6 +40,6 @@ public class JavaHighlightingLexer extends LayeredLexer {
 
     registerSelfStoppingLayer(docLexer,
       new IElementType[]{JavaTokenType.DOC_COMMENT},
-      new IElementType[]{JavaDocTokenType.DOC_COMMENT_END});
+      IElementType.EMPTY_ARRAY);
   }
 }

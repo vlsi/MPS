@@ -271,15 +271,13 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase {
 
   @Override
   public Collection<SNode> weave(@NotNull NodeWeaveFacility.WeaveContext weaveContext, @NotNull NodeWeaveFacility weaveSupport) throws GenerationException {
-    final TemplateContext templateContext = weaveContext.getTemplateContext();
+    final TemplateContext templateContext = weaveSupport.getTemplateContext();
     Collection<SNode> tlistpart0 = applyPart0(templateContext);
-    SNode contextNode0 = weaveContext.getContextNode();
     for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      weaveSupport.weave(contextNode0, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave, weaveContext.getAnchorNode(contextNode0, nodeToWeave));
+      weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave);
     }
     SNode tnodepart1 = applyPart1(templateContext);
-    SNode contextNode1 = weaveContext.getContextNode();
-    weaveSupport.weave(contextNode1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart1, weaveContext.getAnchorNode(contextNode1, tnodepart1));
+    weaveSupport.weaveNode(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart1);
     return TemplateUtil.asList(tlistpart0, tnodepart1);
   }
   private static SNodePointer varMacroRef_g27wod_b0a0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676845414");

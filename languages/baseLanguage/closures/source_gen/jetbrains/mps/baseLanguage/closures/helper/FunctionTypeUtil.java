@@ -154,11 +154,6 @@ with_meet:
     if ((lFType == null) && (lCType == null)) {
       return;
     }
-    /*
-      if ((lCType != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lCType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")))) {
-        return;
-      }
-    */
     if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
       //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise 
       //  This may cause unexpected results, so please disable in case of difficulties generating some code 

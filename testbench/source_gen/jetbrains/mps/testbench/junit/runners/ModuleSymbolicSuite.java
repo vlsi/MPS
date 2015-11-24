@@ -102,7 +102,7 @@ public class ModuleSymbolicSuite extends BaseMpsRunner {
   }
 
   private static EnvironmentConfig createConfig() {
-    return EnvironmentConfig.defaultConfig();
+    return EnvironmentConfig.defaultConfig().withBuildPlugin().withVcsPlugin();
   }
 
   public static class DelegatingRunner extends Runner {

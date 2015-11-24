@@ -234,7 +234,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       if (module == solutionIdea) {
         solutionIdea.updateModelsSet();
       }
-      myProject.addModule(solutionIdea.getModuleReference());
+      myProject.addModule(solutionIdea);
 
       myJpsToMpsModules.put(mod, solutionIdea);
 

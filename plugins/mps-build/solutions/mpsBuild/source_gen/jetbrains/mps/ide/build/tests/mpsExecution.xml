@@ -15,7 +15,9 @@
   <property name="mps.teamcity.buildConfName" value="${import.mps.mps.teamcity.buildConfName}" />
   <property name="mps.idea.platform.build.number" value="${import.mps.mps.idea.platform.build.number}" />
   <property name="mpsBootstrapCore.version" value="${import.mps.mpsBootstrapCore.version}" />
-  
+  <property name="env.JAVA_HOME" value="${java.home}/.." />
+  <property name="jdk.home" value="${env.JAVA_HOME}" />
+
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
       <include name="javac2.jar" />
@@ -28,6 +30,7 @@
   
   <path id="path.jdk.classpath">
     <pathelement path="${java.home}/../Classes/classes.jar" />
+    <pathelement path="${jdk.home}/lib/tools.jar" />
     <fileset dir="${java.home}">
       <include name="lib/*.jar" />
     </fileset>
@@ -463,7 +466,6 @@
         <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/lib/tools.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -602,40 +604,68 @@
       <pathelement location="${build.layout}/jetbrains.mps.execution.impl.tests.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
+    <path id="long.class.path">
+      <fileset dir="${artifacts.mps}/plugins/mps-build">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+      <fileset dir="${artifacts.mps}/plugins/mps-testing">
+        <include name="lib/**/*.jar" />
+        <include name="languages/**/*.jar" />
+      </fileset>
+    </path>
+    <pathconvert pathsep=" " targetos="unix" property="manifest.classpath">
+      <path refid="long.class.path" />
+      <chainedmapper>
+        <filtermapper>
+          <replacestring from=" " to="%20" />
+        </filtermapper>
+        <globmapper from="*" to="file:///*" />
+      </chainedmapper>
+    </pathconvert>
+    <jar jarfile="${build.tmp}/mps.class.path.jar">
+      <manifest>
+        <attribute name="Class-Path" value="${manifest.classpath}" />
+      </manifest>
+    </jar>
     <junit showoutput="true" fork="true" haltonfailure="false">
       <jvmarg value="-ea" />
       <jvmarg value="-Xss1024k" />
       <jvmarg value="-Xmx1024m" />
       <jvmarg value="-XX:MaxPermSize=256m" />
       <jvmarg value="-XX:+HeapDumpOnOutOfMemoryError" />
-      
+
       <classpath>
         <fileset dir="${artifacts.mps}/lib">
           <include name="**/*.jar" />
         </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-build">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-debugger-api">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-debugger-java">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-execution-api">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-execution-configurations">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-execution-languages">
-          <include name="**/lib/*.jar" />
-        </fileset>
-        <fileset dir="${artifacts.mps}/plugins/mps-testing">
-          <include name="**/lib/*.jar" />
+        <pathelement path="${jdk.home}/lib/tools.jar" />
+        <fileset dir="${build.tmp}">
+          <include name="mps.class.path.jar" />
         </fileset>
       </classpath>
       

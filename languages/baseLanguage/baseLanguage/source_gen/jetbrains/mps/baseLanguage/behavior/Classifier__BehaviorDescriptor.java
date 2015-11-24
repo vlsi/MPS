@@ -169,7 +169,7 @@ public final class Classifier__BehaviorDescriptor extends BaseBHDescriptor {
       return new EmptyScope();
     }
   }
-  /*package*/ static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull final SNode __thisNode__) {
+  /*package*/ static List<SNode> getExtendedClassifierTypes_id1UeCwxlWKny(@NotNull SNode __thisNode__) {
     // todo: maybe use typesystem instead of this method??? 
 
     return new ArrayList<SNode>();

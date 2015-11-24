@@ -7,7 +7,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -57,9 +57,6 @@
       <concept id="1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" flags="nn" index="d57v9" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
-      <concept id="1177326519037" name="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" flags="nn" index="u8gfJ">
-        <child id="1177326540772" name="statement" index="u8lrQ" />
-      </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -250,9 +247,17 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -264,6 +269,9 @@
       </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
@@ -857,8 +865,10 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="checkExportDefault" />
       <node concept="3clFbS" id="7auzIIk9gga" role="3clF47">
-        <node concept="u8gfJ" id="1E21GplYYfI" role="3cqZAp">
-          <node concept="3cpWs6" id="QcYG_4vCxJ" role="u8lrQ">
+        <node concept="1X3_iC" id="35NJMdfpmKZ" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs6" id="QcYG_4vCxJ" role="8Wnug">
             <node concept="3K4zz7" id="QcYG_4vCxL" role="3cqZAk">
               <node concept="3clFbT" id="QcYG_4vCxM" role="3K4E3e">
                 <property role="3clFbU" value="true" />
@@ -1041,8 +1051,10 @@
             <property role="3SKdUp" value="return effective ExportScope or null" />
           </node>
         </node>
-        <node concept="u8gfJ" id="7wyJxlyHkWr" role="3cqZAp">
-          <node concept="3cpWs6" id="7wyJxlyHjol" role="u8lrQ">
+        <node concept="1X3_iC" id="35NJMdfpmL0" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs6" id="7wyJxlyHjol" role="8Wnug">
             <node concept="2OqwBi" id="7wyJxlyHjom" role="3cqZAk">
               <node concept="2OqwBi" id="7wyJxlyHjon" role="2Oq$k0">
                 <node concept="2OqwBi" id="7wyJxlyHjoo" role="2Oq$k0">
@@ -1936,7 +1948,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="7hmFG5jLeUa">
-    <property role="3GE5qa" value="attributes" />
+    <property role="3GE5qa" value="attributes.editing.comment" />
     <ref role="13h7C2" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
     <node concept="13hLZK" id="7hmFG5jLeUb" role="13h7CW">
       <node concept="3clFbS" id="7hmFG5jLeUc" role="2VODD2" />
@@ -1974,6 +1986,23 @@
         <node concept="3Tqbb2" id="7hmFG5jLeUn" role="1tU5fm" />
       </node>
       <node concept="10P_77" id="7hmFG5jLeUo" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3$Sh7m_tmZc">
+    <property role="3GE5qa" value="attributes.editing.comment" />
+    <ref role="13h7C2" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
+    <node concept="13hLZK" id="3$Sh7m_tmZd" role="13h7CW">
+      <node concept="3clFbS" id="3$Sh7m_tmZe" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3$Sh7m_tmZE" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getCommentedNodes" />
+      <node concept="3Tm1VV" id="3$Sh7m_tmZF" role="1B3o_S" />
+      <node concept="3clFbS" id="3$Sh7m_tmZG" role="3clF47" />
+      <node concept="A3Dl8" id="6KqaYzPFUyF" role="3clF45">
+        <node concept="3Tqbb2" id="6KqaYzPFUyP" role="A3Ik2" />
+      </node>
     </node>
   </node>
 </model>

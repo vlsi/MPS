@@ -162,15 +162,15 @@ public class LanguageStructureMigrationParticipant<I, F> implements MoveNodeRefa
 
   public List<RefactoringParticipant.Option> getAvailableOptions(Tuples._2<Language, I> initialState, SRepository repository) {
     if (initialState != null) {
-      return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), myOption);
+      return ListSequence.fromListAndArray(new ArrayList<RefactoringParticipant.Option>(), OPTION);
     } else {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Option>());
     }
   }
-  private RefactoringParticipant.Option myOption = new RefactoringParticipant.Option("moveNode.options.writeMigrationScript", "Write migration script");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeMigrationScript", "Write migration script");
 
   public List<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>> getChanges(final Tuples._2<Language, I> initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
-    if (initialState == null || !(ListSequence.fromList(selectedOptions).contains(myOption))) {
+    if (initialState == null || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<Language, I>, Tuples._2<Language, F>>>());
     }
     final Language sourceModule = initialState._0();

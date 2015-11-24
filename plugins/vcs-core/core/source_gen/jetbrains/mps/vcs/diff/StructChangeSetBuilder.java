@@ -253,19 +253,6 @@ outer:
   }
 
   private static boolean equalsReference(SReference ref1, SReference ref2, final Map<SNode, SNode> oldToNewMap, boolean easy) {
-    /*
-      SNodeId targetNode1 = (ref1 instanceof DynamicReference ? null : check_okvhpb_a0a0a0z(ref1));
-      SNodeId targetNode2 = (ref2 instanceof DynamicReference ? null : check_okvhpb_a0a1a0z(ref2));
-      SModelReference targetModel1 = check_okvhpb_a0c0a52(ref1);
-      if (ref1.getSourceNode().getModel().getReference().equals(targetModel1)) {
-        targetModel1 = null;
-      }
-      SModelReference targetModel2 = check_okvhpb_a0e0a52(ref2);
-      if (ref2.getSourceNode().getModel().getReference().equals(targetModel2)) {
-        targetModel2 = null;
-      }
-      eq_okvhpb_a0a0g0a52(targetNode1, targetNode2) && eq_okvhpb_a0a0g0a52_0(targetModel1, targetModel2) && eq_okvhpb_a0a6a0z(check_okvhpb_a0a6a0z(((jetbrains.mps.smodel.SReference) ref1)), check_okvhpb_a0a6a0z_0(((jetbrains.mps.smodel.SReference) ref2)));
-    */
     SNode target1 = ref1.getTargetNode();
     SNode target2 = ref2.getTargetNode();
     return target1 == target2 || MapSequence.fromMap(oldToNewMap).get(target1) == target2 || easy && ListSequence.fromList(SNodeOperations.getNodeAncestors(target1, null, true)).select(new ISelector<SNode, SNode>() {
@@ -360,51 +347,6 @@ outer:
   }
   private static boolean eq_okvhpb_a0a0b0a0q_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-  private static SNodeId check_okvhpb_a0a0a0z(SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTargetNodeId();
-    }
-    return null;
-  }
-  private static SNodeId check_okvhpb_a0a1a0z(SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTargetNodeId();
-    }
-    return null;
-  }
-  private static SModelReference check_okvhpb_a0c0a52(SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTargetSModelReference();
-    }
-    return null;
-  }
-  private static SModelReference check_okvhpb_a0e0a52(SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTargetSModelReference();
-    }
-    return null;
-  }
-  private static boolean eq_okvhpb_a0a0g0a52(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_okvhpb_a0a0g0a52_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_okvhpb_a0a6a0z(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static String check_okvhpb_a0a6a0z(jetbrains.mps.smodel.SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getResolveInfo();
-    }
-    return null;
-  }
-  private static String check_okvhpb_a0a6a0z_0(jetbrains.mps.smodel.SReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getResolveInfo();
-    }
-    return null;
   }
   private static boolean neq_okvhpb_a0b0bb(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

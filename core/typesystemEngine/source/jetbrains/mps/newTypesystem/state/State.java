@@ -304,10 +304,12 @@ public class State {
 
   public void executeOperation(AbstractOperation operation) {
     if (operation == null) return;
-    if (myTypeCheckingContext instanceof TracingTypecheckingContext || operation.hasEffect()) {
+    if (myTypeCheckingContext instanceof TracingTypecheckingContext) {
       if (!myOperationStack.empty()) {
         myOperationStack.peek().addConsequence(operation);
       }
+    }
+    if (myTypeCheckingContext instanceof TracingTypecheckingContext || operation.hasEffect()) {
       myOperationStack.push(operation);
       operation.execute(this);
       if (!myOperationStack.empty()) {

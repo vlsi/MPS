@@ -15,13 +15,9 @@
   -->
 
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <project-components>
-    <component>
-      <interface-class>jetbrains.mps.idea.core.project.module.ModuleMPSSupport</interface-class>
-      <implementation-class>jetbrains.mps.idea.core.project.module.SingleModuleMPSSupport</implementation-class>
-    </component>
-  </project-components>
-
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.moduleMpsSupport implementation="jetbrains.mps.idea.core.project.module.SingleModuleMPSSupport" order="after idea"/>
+  </extensions>
   <actions>
     <action id="jetbrains.mps.idea.build.GenerateModuleInProcessAction"
             class="jetbrains.mps.idea.build.GenerateModuleInProcessAction">

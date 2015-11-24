@@ -29,23 +29,27 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
 
 public class MigrationsCheckUtil {
-  public static boolean hasCycles(SNode migrationScript, final List<SNode> parentScripts) {
+  public static boolean hasCycles(SNode migrationScript, final List<SNode> parentScripts, final List<SNode> canSkip) {
+    if (ListSequence.fromList(canSkip).contains(migrationScript)) {
+      return false;
+    }
     if (ListSequence.fromList(parentScripts).contains(migrationScript)) {
       return true;
     }
     ListSequence.fromList(parentScripts).insertElement(0, migrationScript);
     if (Sequence.fromIterable(allScriptDependencies(migrationScript)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return hasCycles(it, parentScripts);
+        return hasCycles(it, parentScripts, canSkip);
       }
     })) {
       return true;
     }
     ListSequence.fromList(parentScripts).removeElementAt(0);
+    ListSequence.fromList(canSkip).addElement(migrationScript);
     return false;
   }
   public static boolean hasCycles(SNode migrationScript) {
-    return hasCycles(migrationScript, ListSequence.fromList(new LinkedList<SNode>()));
+    return hasCycles(migrationScript, ListSequence.fromList(new LinkedList<SNode>()), ListSequence.fromList(new LinkedList<SNode>()));
   }
   private static Iterable<SNode> allScriptDependencies(final SNode script) {
     Iterable<SNode> result = Sequence.fromIterable(IMigrationUnit__BehaviorDescriptor.getRequiredData_id7s$_UJMVosT.invoke(script)).where(new IWhereFilter<SNode>() {

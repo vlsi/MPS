@@ -2,7 +2,7 @@
 <model ref="r:8276e029-a527-420e-8e0f-72df2934554c(jetbrains.mps.smodel.persistence.def.v4)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -16,14 +16,10 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="ex0d" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
-    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
     <import index="4it6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.loading(MPS.Core/)" />
     <import index="mdm6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.lines(MPS.Core/)" />
-    <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
   </imports>
@@ -153,7 +149,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -603,16 +599,11 @@
                   <node concept="37vLTw" id="p9Lm3R6G28" role="37wK5m">
                     <ref role="3cqZAo" node="p9Lm3R6G1W" resolve="index" />
                   </node>
-                  <node concept="2OqwBi" id="p9Lm3R6G29" role="37wK5m">
-                    <node concept="2YIFZM" id="p9Lm3R6GJE" role="2Oq$k0">
-                      <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                      <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                    </node>
-                    <node concept="liA8E" id="p9Lm3R6G2b" role="2OqNvi">
-                      <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                      <node concept="37vLTw" id="p9Lm3R6G2c" role="37wK5m">
-                        <ref role="3cqZAo" node="p9Lm3R6G21" resolve="visibleModelUIDString" />
-                      </node>
+                  <node concept="2YIFZM" id="3I8E8teXa1A" role="37wK5m">
+                    <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+                    <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                    <node concept="37vLTw" id="3I8E8teXa4o" role="37wK5m">
+                      <ref role="3cqZAo" node="p9Lm3R6G21" resolve="visibleModelUIDString" />
                     </node>
                   </node>
                 </node>
@@ -1892,20 +1883,15 @@
               <node concept="3clFbS" id="p9Lm3R6G96" role="3clFbx">
                 <node concept="3clFbF" id="p9Lm3R6G97" role="3cqZAp">
                   <node concept="37vLTI" id="p9Lm3R6G98" role="3clFbG">
+                    <node concept="2YIFZM" id="3I8E8teX3Zu" role="37vLTx">
+                      <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+                      <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                      <node concept="37vLTw" id="3I8E8teX41$" role="37wK5m">
+                        <ref role="3cqZAo" node="p9Lm3R6G4N" resolve="myImportedModelInfo" />
+                      </node>
+                    </node>
                     <node concept="37vLTw" id="p9Lm3R6G99" role="37vLTJ">
                       <ref role="3cqZAo" node="p9Lm3R6G8T" resolve="importedModelReference" />
-                    </node>
-                    <node concept="2OqwBi" id="p9Lm3R6G9a" role="37vLTx">
-                      <node concept="2YIFZM" id="p9Lm3R6GVb" role="2Oq$k0">
-                        <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                        <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                      </node>
-                      <node concept="liA8E" id="p9Lm3R6G9c" role="2OqNvi">
-                        <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                        <node concept="37vLTw" id="p9Lm3R6G9d" role="37wK5m">
-                          <ref role="3cqZAo" node="p9Lm3R6G4N" resolve="myImportedModelInfo" />
-                        </node>
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -2533,29 +2519,24 @@
           <node concept="3cpWsn" id="p9Lm3R6Ggk" role="3cpWs9">
             <property role="3TUv4t" value="false" />
             <property role="TrG5h" value="modelReference" />
-            <node concept="3uibUv" id="p9Lm3R6Ggm" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-            </node>
-            <node concept="2OqwBi" id="p9Lm3R6Ggn" role="33vP2m">
-              <node concept="2YIFZM" id="p9Lm3R6GYu" role="2Oq$k0">
-                <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="p9Lm3R6Ggp" role="2OqNvi">
-                <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                <node concept="2OqwBi" id="p9Lm3R6GYy" role="37wK5m">
-                  <node concept="37vLTw" id="p9Lm3R6GYx" role="2Oq$k0">
-                    <ref role="3cqZAo" node="p9Lm3R6Ggg" resolve="rootElement" />
-                  </node>
-                  <node concept="liA8E" id="p9Lm3R6GYz" role="2OqNvi">
-                    <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                    <node concept="10M0yZ" id="p9Lm3R6Ivh" role="37wK5m">
-                      <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
-                      <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
-                    </node>
+            <node concept="2YIFZM" id="3I8E8teX6DU" role="33vP2m">
+              <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+              <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+              <node concept="2OqwBi" id="3I8E8teX7bC" role="37wK5m">
+                <node concept="37vLTw" id="3I8E8teX7bD" role="2Oq$k0">
+                  <ref role="3cqZAo" node="p9Lm3R6Ggg" resolve="rootElement" />
+                </node>
+                <node concept="liA8E" id="3I8E8teX7bE" role="2OqNvi">
+                  <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                  <node concept="10M0yZ" id="3I8E8teX7bF" role="37wK5m">
+                    <ref role="1PxDUh" to="iho:4BapoMDjgzV" resolve="VCSPersistenceSupport" />
+                    <ref role="3cqZAo" to="iho:4BapoMDjgCa" resolve="MODEL_UID" />
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="3uibUv" id="p9Lm3R6Ggm" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
             </node>
           </node>
         </node>
@@ -3162,20 +3143,15 @@
               <node concept="3cpWsn" id="p9Lm3R6Gja" role="3cpWs9">
                 <property role="3TUv4t" value="false" />
                 <property role="TrG5h" value="importedModelReference" />
+                <node concept="2YIFZM" id="3I8E8teX8RD" role="33vP2m">
+                  <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+                  <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                  <node concept="37vLTw" id="3I8E8teX8UM" role="37wK5m">
+                    <ref role="3cqZAo" node="p9Lm3R6GiE" resolve="importedModelUIDString" />
+                  </node>
+                </node>
                 <node concept="3uibUv" id="p9Lm3R6Gjc" role="1tU5fm">
                   <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-                </node>
-                <node concept="2OqwBi" id="p9Lm3R6Gjd" role="33vP2m">
-                  <node concept="2YIFZM" id="p9Lm3R6H0E" role="2Oq$k0">
-                    <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                  </node>
-                  <node concept="liA8E" id="p9Lm3R6Gjf" role="2OqNvi">
-                    <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                    <node concept="37vLTw" id="p9Lm3R6Gjg" role="37wK5m">
-                      <ref role="3cqZAo" node="p9Lm3R6GiE" resolve="importedModelUIDString" />
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>
@@ -3666,16 +3642,11 @@
                     </node>
                     <node concept="liA8E" id="p9Lm3R6GlP" role="2OqNvi">
                       <ref role="37wK5l" to="w1kc:~ImplicitImportsLegacyHolder.addAdditionalModelVersion(org.jetbrains.mps.openapi.model.SModelReference,int):void" resolve="addAdditionalModelVersion" />
-                      <node concept="2OqwBi" id="p9Lm3R6GlQ" role="37wK5m">
-                        <node concept="2YIFZM" id="p9Lm3R6H1V" role="2Oq$k0">
-                          <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                          <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                        </node>
-                        <node concept="liA8E" id="p9Lm3R6GlS" role="2OqNvi">
-                          <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                          <node concept="37vLTw" id="p9Lm3R6GlT" role="37wK5m">
-                            <ref role="3cqZAo" node="p9Lm3R6Gl6" resolve="aspectModelUID" />
-                          </node>
+                      <node concept="2YIFZM" id="3I8E8teX98c" role="37wK5m">
+                        <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+                        <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                        <node concept="37vLTw" id="3I8E8teX9ag" role="37wK5m">
+                          <ref role="3cqZAo" node="p9Lm3R6Gl6" resolve="aspectModelUID" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="p9Lm3R6GlU" role="37wK5m">

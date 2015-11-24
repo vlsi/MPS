@@ -144,7 +144,7 @@ class SelectTabAction extends ToggleAction {
   private static String getActionName(SNode node) {
     String rootName = node.getContainingRoot().getPresentation();
     if (rootName != null) {
-      return rootName.replaceFirst("_", "__");
+      return rootName.replaceAll("_", "__");
     }
     return "<no name>";
   }

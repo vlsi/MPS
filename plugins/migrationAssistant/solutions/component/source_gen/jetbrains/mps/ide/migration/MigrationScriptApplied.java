@@ -62,7 +62,10 @@ public final class MigrationScriptApplied implements ScriptApplied {
   }
   public Iterable<ScriptApplied.ScriptAppliedReference> getDependencies() {
     List<ScriptApplied.ScriptAppliedReference> result = ListSequence.fromList(new ArrayList<ScriptApplied.ScriptAppliedReference>());
-    ListSequence.fromList(result).addElement(new MigrationScriptApplied.MigrationScriptAppliedReference(new MigrationScriptReference(myScript.getDescriptor().getLanguage(), myScript.getDescriptor().getFromVersion() - 1), myModule));
+    int fromVersion = myScript.getDescriptor().getFromVersion();
+    if (fromVersion > 0) {
+      ListSequence.fromList(result).addElement(new MigrationScriptApplied.MigrationScriptAppliedReference(new MigrationScriptReference(myScript.getDescriptor().getLanguage(), fromVersion - 1), myModule));
+    }
     for (MigrationScriptReference script : Sequence.fromIterable(myScript.executeAfter())) {
       ListSequence.fromList(result).addElement(new MigrationScriptApplied.MigrationScriptAppliedReference(script, myModule));
     }

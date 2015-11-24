@@ -355,7 +355,9 @@ public class ClassLoaderManager implements CoreComponent {
 
       LOG.debug("Loading " + modulesToLoad.size() + " modules");
       monitor.advance(1);
-      if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) throw new IllegalStateException("Some modules are not preloaded yet : cannot load them");
+      if (!filterModules(modulesToLoad, myUnloadedCondition).isEmpty()) {
+        LOG.warn("Some modules are not preloaded yet : cannot load them");
+      }
       myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
 
       return modulesToLoad;

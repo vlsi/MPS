@@ -410,5 +410,4 @@ public class ResolveUnknownUtil {
     }
   }
 
-  protected static Logger LOG_180675533 = LogManager.getLogger(ResolveUnknownUtil.class);
 }

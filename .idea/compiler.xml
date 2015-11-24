@@ -64,6 +64,7 @@
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.shared/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/varVariable/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/varVariable/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/core/core/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/core/core/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/access/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/access/source_gen" includeSubdirectories="true" />
@@ -381,8 +382,6 @@
       <directory url="file://$PROJECT_DIR$/samples/attributes/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/attributes/solutions/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/test_gen" includeSubdirectories="true" />
@@ -709,3 +708,4 @@
     <option name="MAXIMUM_HEAP_SIZE" value="1024" />
   </component>
 </project>
+

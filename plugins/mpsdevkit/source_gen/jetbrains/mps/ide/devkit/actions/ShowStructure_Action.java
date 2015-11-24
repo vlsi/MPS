@@ -14,7 +14,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.ide.structureView.StructureView;
-import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
+import com.intellij.ide.util.FileStructurePopup;
 
 public class ShowStructure_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -60,7 +60,7 @@ public class ShowStructure_Action extends BaseAction {
     }
 
     StructureView structureView = structureViewBuilder.createStructureView(event.getData(PlatformDataKeys.FILE_EDITOR), event.getData(CommonDataKeys.PROJECT));
-    FileStructurePopup popup = new FileStructurePopup(structureView.getTreeModel(), event.getData(CommonDataKeys.PROJECT), structureView, true);
+    FileStructurePopup popup = new FileStructurePopup(event.getData(CommonDataKeys.PROJECT), event.getData(PlatformDataKeys.FILE_EDITOR), structureView, true);
     if (event.getData(CommonDataKeys.VIRTUAL_FILE) != null) {
       // todo: look like this action is unnecessary (it's just ctrl+f12 idea action by logic and implementation) 
       popup.setTitle(event.getData(CommonDataKeys.VIRTUAL_FILE).getName());

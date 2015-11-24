@@ -9,7 +9,7 @@
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -6978,11 +6978,11 @@
               <node concept="1pGfFk" id="3SMO48FRWst" role="2ShVmc">
                 <ref role="37wK5l" to="hdhb:42hl10VHaz9" resolve="DiffEditor" />
                 <node concept="2OqwBi" id="3nxgM2zyqWZ" role="37wK5m">
-                  <node concept="liA8E" id="3nxgM2zy$ko" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                  </node>
                   <node concept="37vLTw" id="6y_kxB1YB4j" role="2Oq$k0">
                     <ref role="3cqZAo" node="3SMO48FTf02" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="3nxgM2zy$ko" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="3SMO48FRWsx" role="37wK5m">
@@ -7964,6 +7964,14 @@
           </node>
         </node>
         <node concept="1QHqEM" id="5zPLqcHJBaO" role="3cqZAp">
+          <node concept="2OqwBi" id="6y_kxB1Ys6q" role="ukAjM">
+            <node concept="37vLTw" id="6y_kxB1YrJU" role="2Oq$k0">
+              <ref role="3cqZAo" node="5zPLqcHJBab" resolve="project" />
+            </node>
+            <node concept="liA8E" id="6y_kxB1YsqC" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
           <node concept="1QHqEC" id="5zPLqcHJBaP" role="1QHqEI">
             <node concept="3clFbS" id="5zPLqcHJBaQ" role="1bW5cS">
               <node concept="3clFbJ" id="5zPLqcHJBb9" role="3cqZAp">
@@ -8014,16 +8022,16 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="6y_kxB1Ys6q" role="ukAjM">
-            <node concept="37vLTw" id="6y_kxB1YrJU" role="2Oq$k0">
+        </node>
+        <node concept="1QHqEK" id="5zPLqcHJBbU" role="3cqZAp">
+          <node concept="2OqwBi" id="6y_kxB1YsqX" role="ukAjM">
+            <node concept="37vLTw" id="6y_kxB1YsqY" role="2Oq$k0">
               <ref role="3cqZAo" node="5zPLqcHJBab" resolve="project" />
             </node>
-            <node concept="liA8E" id="6y_kxB1YsqC" role="2OqNvi">
+            <node concept="liA8E" id="6y_kxB1YsqZ" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
-        </node>
-        <node concept="1QHqEK" id="5zPLqcHJBbU" role="3cqZAp">
           <node concept="1QHqEC" id="5zPLqcHJBbV" role="1QHqEI">
             <node concept="3clFbS" id="5zPLqcHJBbW" role="1bW5cS">
               <node concept="3clFbF" id="5zPLqcHJBc2" role="3cqZAp">
@@ -8048,16 +8056,16 @@
               </node>
             </node>
           </node>
-          <node concept="2OqwBi" id="6y_kxB1YsqX" role="ukAjM">
-            <node concept="37vLTw" id="6y_kxB1YsqY" role="2Oq$k0">
+        </node>
+        <node concept="1QHqEM" id="5zPLqcHJBc9" role="3cqZAp">
+          <node concept="2OqwBi" id="6y_kxB1YsCm" role="ukAjM">
+            <node concept="37vLTw" id="6y_kxB1YsCn" role="2Oq$k0">
               <ref role="3cqZAo" node="5zPLqcHJBab" resolve="project" />
             </node>
-            <node concept="liA8E" id="6y_kxB1YsqZ" role="2OqNvi">
+            <node concept="liA8E" id="6y_kxB1YsCo" role="2OqNvi">
               <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
-        </node>
-        <node concept="1QHqEM" id="5zPLqcHJBc9" role="3cqZAp">
           <node concept="1QHqEC" id="5zPLqcHJBca" role="1QHqEI">
             <node concept="3clFbS" id="5zPLqcHJBcb" role="1bW5cS">
               <node concept="3cpWs8" id="5zPLqcHJBcc" role="3cqZAp">
@@ -8118,14 +8126,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6y_kxB1YsCm" role="ukAjM">
-            <node concept="37vLTw" id="6y_kxB1YsCn" role="2Oq$k0">
-              <ref role="3cqZAo" node="5zPLqcHJBab" resolve="project" />
-            </node>
-            <node concept="liA8E" id="6y_kxB1YsCo" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>
@@ -8438,6 +8438,14 @@
           </node>
         </node>
         <node concept="1QHqEM" id="3nINzKYHFB9" role="3cqZAp">
+          <node concept="2OqwBi" id="6y_kxB1YxOa" role="ukAjM">
+            <node concept="37vLTw" id="6y_kxB1YxA$" role="2Oq$k0">
+              <ref role="3cqZAo" node="5zPLqcHJB92" resolve="myProject" />
+            </node>
+            <node concept="liA8E" id="6y_kxB1Yy4J" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
           <node concept="1QHqEC" id="3nINzKYHFBa" role="1QHqEI">
             <node concept="3clFbS" id="3nINzKYHFBb" role="1bW5cS">
               <node concept="3clFbF" id="3nINzKYHFBc" role="3cqZAp">
@@ -8518,14 +8526,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6y_kxB1YxOa" role="ukAjM">
-            <node concept="37vLTw" id="6y_kxB1YxA$" role="2Oq$k0">
-              <ref role="3cqZAo" node="5zPLqcHJB92" resolve="myProject" />
-            </node>
-            <node concept="liA8E" id="6y_kxB1Yy4J" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>
@@ -8852,6 +8852,14 @@
           </node>
         </node>
         <node concept="1QHqEK" id="5zPLqcHJBi7" role="3cqZAp">
+          <node concept="2OqwBi" id="6y_kxB1Ywi5" role="ukAjM">
+            <node concept="37vLTw" id="6y_kxB1YvYc" role="2Oq$k0">
+              <ref role="3cqZAo" node="5zPLqcHJB92" resolve="myProject" />
+            </node>
+            <node concept="liA8E" id="6y_kxB1Yw$K" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
           <node concept="1QHqEC" id="5zPLqcHJBi8" role="1QHqEI">
             <node concept="3clFbS" id="5zPLqcHJBi9" role="1bW5cS">
               <node concept="3cpWs8" id="5zPLqcHJBia" role="3cqZAp">
@@ -9139,14 +9147,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6y_kxB1Ywi5" role="ukAjM">
-            <node concept="37vLTw" id="6y_kxB1YvYc" role="2Oq$k0">
-              <ref role="3cqZAo" node="5zPLqcHJB92" resolve="myProject" />
-            </node>
-            <node concept="liA8E" id="6y_kxB1Yw$K" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>

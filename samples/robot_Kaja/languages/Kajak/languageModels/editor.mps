@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -838,6 +838,7 @@
     <property role="3GE5qa" value="command" />
     <ref role="1XX52x" to="c2kz:2RDssu5W6CZ" resolve="CommandList" />
     <node concept="3EZMnI" id="2RDssu5W6D3" role="2wV5jI">
+      <ref role="1ERwB7" node="7TbFlta4RTJ" resolve="CommandList_Actions" />
       <node concept="3F2HdR" id="2RDssu5W6D6" role="3EZMnx">
         <ref role="1NtTu8" to="c2kz:2RDssu5W6D0" />
         <node concept="l2Vlx" id="2RDssu5W6D7" role="2czzBx" />
@@ -1102,6 +1103,17 @@
       </node>
       <node concept="3F0A7n" id="67X5IgzCSra" role="3EZMnx">
         <ref role="1NtTu8" to="c2kz:67X5IgzCS13" resolve="direction" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="7TbFlta4RTJ">
+    <property role="3GE5qa" value="command" />
+    <property role="TrG5h" value="CommandList_Actions" />
+    <ref role="1h_SK9" to="c2kz:2RDssu5W6CZ" resolve="CommandList" />
+    <node concept="1hA7zw" id="7TbFlta4RV0" role="1h_SK8">
+      <property role="1hAc7j" value="comment_out_action_id" />
+      <node concept="1hAIg9" id="7TbFlta4RV1" role="1hA7z_">
+        <node concept="3clFbS" id="7TbFlta4RV2" role="2VODD2" />
       </node>
     </node>
   </node>

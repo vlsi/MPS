@@ -5,7 +5,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Component;
 import javax.swing.JList;
-import jetbrains.mps.project.structure.project.Path;
+import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.StandaloneMPSProject;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -18,14 +18,14 @@ public class ProjectPathRenderer extends PathRenderer {
   }
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    Path path = (Path) value;
+    ModulePath path = (ModulePath) value;
     Component result = super.getListCellRendererComponent(list, path, index, isSelected, cellHasFocus);
     if (isSelected) {
       return result;
     }
     boolean isContained = false;
-    for (Path p : ((StandaloneMPSProject) myProject).getAllModulePaths()) {
-      if (p.isSamePath(path)) {
+    for (ModulePath p : ((StandaloneMPSProject) myProject).getAllModulePaths()) {
+      if (p.getPath().equals(path.getPath())) {
         isContained = true;
         break;
       }

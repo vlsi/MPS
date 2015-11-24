@@ -7,7 +7,6 @@ import java.util.List;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import java.util.Stack;
 import org.xml.sax.Locator;
-import jetbrains.mps.smodel.persistence.def.LineContentAccumulator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;

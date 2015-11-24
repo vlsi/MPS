@@ -2403,5 +2403,13 @@
       <ref role="20lvS9" node="nJmxU5cSSu" resolve="ModuleIdentity" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6MWs_Xbdj5c">
+    <property role="1pbfSe" value="1208900693" />
+    <property role="3GE5qa" value="operation.node" />
+    <property role="TrG5h" value="Node_GetChildrenAndChildAttributesOperation" />
+    <property role="R4oN_" value="children joint with child attributes of certain role" />
+    <property role="34LRSv" value="childrenAndChildAttributes" />
+    <ref role="1TJDcQ" node="h32TBBB" resolve="Node_GetChildrenOperation" />
+  </node>
 </model>
 

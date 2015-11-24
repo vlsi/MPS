@@ -7,8 +7,8 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1235,6 +1235,26 @@
         <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
       </node>
     </node>
+    <node concept="2YIFZL" id="6h0gpqrHuXk" role="jymVt">
+      <property role="TrG5h" value="jdkToolsRef" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="6h0gpqrHuXl" role="3clF47">
+        <node concept="3clFbF" id="6h0gpqrHuXm" role="3cqZAp">
+          <node concept="37shsh" id="6h0gpqrHuXn" role="3clFbG">
+            <node concept="20RdaH" id="6h0gpqrHvdq" role="37shsm">
+              <property role="20Rdg5" value="b387285c-3448-452c-b3bb-a3f8de8eaf08" />
+              <property role="20Rdg7" value="JDK-tools" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6h0gpqrHuXp" role="1B3o_S" />
+      <node concept="3uibUv" id="6h0gpqrHuXq" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6h0gpqrHuP_" role="jymVt" />
     <node concept="2AHcQZ" id="4fSpAVATV_d" role="2AJF6D">
       <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>

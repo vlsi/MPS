@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -205,8 +205,8 @@
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="Ecfd3cMeKO" role="1B3o_S" />
-      <node concept="3uibUv" id="Ecfd3cMwc6" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="3uibUv" id="15VbAzMFZ5y" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
     <node concept="312cEg" id="1ULwsKEMMAK" role="jymVt">
@@ -315,8 +315,8 @@
       <node concept="3Tm1VV" id="3pY4pKeOMqw" role="1B3o_S" />
       <node concept="37vLTG" id="3pY4pKeOMC0" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="Ecfd3cM2_T" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <node concept="3uibUv" id="15VbAzMFZcv" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="2nvU_IukgSr" role="3clF46">
@@ -378,7 +378,7 @@
                                   <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
                                 </node>
                                 <node concept="liA8E" id="577ABRc4mKk" role="2OqNvi">
-                                  <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                                  <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="577ABRc4mKl" role="2OqNvi">
@@ -395,7 +395,7 @@
                                 <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
                               </node>
                               <node concept="liA8E" id="577ABRc52NN" role="2OqNvi">
-                                <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                                <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
                               </node>
                             </node>
                             <node concept="liA8E" id="577ABRc52NP" role="2OqNvi">
@@ -469,6 +469,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMFZxq" role="jymVt" />
     <node concept="3clFb_" id="1ULwsKEKzNP" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -570,6 +571,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMFZNy" role="jymVt" />
     <node concept="3clFb_" id="60EFvKOypdn" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
@@ -599,7 +601,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="60EFvKOymtl" role="jymVt" />
-    <node concept="2tJIrI" id="Ecfd3cVECm" role="jymVt" />
     <node concept="3clFb_" id="3pY4pKeZj_N" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -617,6 +618,7 @@
         <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMG0Oc" role="jymVt" />
     <node concept="3clFb_" id="Se$IPQWc0D" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -635,6 +637,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="15VbAzMG16l" role="jymVt" />
     <node concept="3clFb_" id="Se$IPQX15o" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="od$2w" value="false" />
@@ -695,15 +698,14 @@
   </node>
   <node concept="312cEu" id="7iZR6YlW8ti">
     <property role="TrG5h" value="NewLanguageDialog" />
-    <node concept="2tJIrI" id="7iZR6YlWmND" role="jymVt" />
     <node concept="312cEg" id="7iZR6YlWmMJ" role="jymVt">
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProject" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="7iZR6YlWmMK" role="1B3o_S" />
-      <node concept="3uibUv" id="7iZR6YlWmML" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="3uibUv" id="15VbAzMG1L7" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
     <node concept="312cEg" id="7iZR6YlWp$$" role="jymVt">
@@ -809,8 +811,8 @@
       <node concept="3Tm1VV" id="7iZR6YlWhb8" role="1B3o_S" />
       <node concept="37vLTG" id="7iZR6YlWmJC" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="7iZR6YlWmJB" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <node concept="3uibUv" id="15VbAzMG2mC" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="2kXvtnbjWiU" role="3clF46">
@@ -878,7 +880,7 @@
                                   <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
                                 </node>
                                 <node concept="liA8E" id="577ABRc5zTf" role="2OqNvi">
-                                  <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                                  <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="577ABRc5zTg" role="2OqNvi">
@@ -895,7 +897,7 @@
                                 <ref role="3cqZAo" node="7iZR6YlWmMJ" resolve="myProject" />
                               </node>
                               <node concept="liA8E" id="577ABRc5zTl" role="2OqNvi">
-                                <ref role="37wK5l" to="z1c3:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
+                                <ref role="37wK5l" to="z1c4:~MPSProject.getProjectFile():java.io.File" resolve="getProjectFile" />
                               </node>
                             </node>
                             <node concept="liA8E" id="577ABRc5zTm" role="2OqNvi">

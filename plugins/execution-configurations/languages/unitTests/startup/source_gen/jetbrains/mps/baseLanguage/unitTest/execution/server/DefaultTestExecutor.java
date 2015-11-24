@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.Request;
 import java.io.IOException;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 
 public class DefaultTestExecutor extends AbstractTestExecutor {
@@ -76,7 +77,10 @@ public class DefaultTestExecutor extends AbstractTestExecutor {
   }
 
   protected void exit() {
-    EnvironmentContainer.dispose();
+    Environment env = EnvironmentContainer.get();
+    if (env != null) {
+      env.dispose();
+    }
 
     DefaultRunListener listener = ((DefaultRunListener) this.getListener());
     if (listener == null) {

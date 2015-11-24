@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="auc7" ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)" />
@@ -1705,12 +1705,15 @@
       <node concept="3clFbS" id="5A5jZrz0cqM" role="3clF47">
         <node concept="3cpWs6" id="5A5jZrz0crW" role="3cqZAp">
           <node concept="2OqwBi" id="5A5jZrz0crX" role="3cqZAk">
-            <node concept="2YIFZM" id="5A5jZrz0crZ" role="2Oq$k0">
+            <node concept="2YIFZM" id="63LKn8yOYkB" role="2Oq$k0">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
             </node>
             <node concept="liA8E" id="5A5jZrz0cs2" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
+              <node concept="Xl_RD" id="3FVfMMI1Xop" role="37wK5m">
+                <property role="Xl_RC" value="migrationAssistant" />
+              </node>
               <node concept="37vLTw" id="5A5jZrz0cs3" role="37wK5m">
                 <ref role="3cqZAo" node="5A5jZrz0b5c" resolve="MIGRATION_ASSISTANT_PLUGIN" />
               </node>

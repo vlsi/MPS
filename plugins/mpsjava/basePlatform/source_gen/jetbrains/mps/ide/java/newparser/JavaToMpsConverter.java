@@ -17,11 +17,14 @@ import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.messages.IMessageHandler;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.io.IOException;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -92,15 +95,17 @@ public class JavaToMpsConverter {
   private boolean wasDefaultPkg = false;
   private int myRootCount = 0;
 
-  public JavaToMpsConverter(SModule module, SRepository repository) {
-    this(module, repository, false, false);
+  private IMessageHandler myMessageHandler;
+
+  public JavaToMpsConverter(SModule module, SRepository repository, IMessageHandler messageHandler) {
+    this(module, repository, false, false, messageHandler);
   }
 
   public Set<SNode> getRootsBuilt() {
     return Collections.<SNode>unmodifiableSet(SetSequence.fromSetWithValues(new HashSet<SNode>(), myAttachedRoots));
   }
 
-  public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot, boolean inPlace) {
+  public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot, boolean inPlace, IMessageHandler messageHandler) {
     // currently perRoot==false and inPlace==true doesn't make it in-place 
     // because of how DefaultModelRoot is implemented 
     myModule = module;
@@ -108,12 +113,14 @@ public class JavaToMpsConverter {
     myCreateInplace = inPlace;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
+    myMessageHandler = messageHandler;
   }
 
-  public JavaToMpsConverter(SModel model, SRepository repository) {
+  public JavaToMpsConverter(SModel model, SRepository repository, IMessageHandler messageHandler) {
     myModel = model;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
+    myMessageHandler = messageHandler;
   }
 
   public void convertToMps(final List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
@@ -132,9 +139,14 @@ public class JavaToMpsConverter {
           try {
             parseFile(file);
             parseProgress.advance(1);
-
           } catch (JavaParseException e) {
+            Message msg = new Message(MessageKind.ERROR, String.format("Parse error: %s", e.getMessage()));
+            if (e.getCause() != null) {
+              msg.setException(e.getCause());
+            }
+            myMessageHandler.handle(msg);
           } catch (IOException e) {
+            myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("IO error when converting (java->mps) file %s", file.getName())).setException(e));
           }
         }
       }
@@ -329,7 +341,7 @@ public class JavaToMpsConverter {
     if (pkg == null) {
       // default package (i.e. none), bad 
       if (!(wasDefaultPkg)) {
-        LOG.error("default package is not supported in java source directory input (first such file in dir: " + file.getName() + ")");
+        myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("default package is not supported in java source directory input (first such file in dir: %s)", file.getName())));
         wasDefaultPkg = true;
       }
       return;
@@ -337,7 +349,7 @@ public class JavaToMpsConverter {
 
     IFile dir = file.getParent();
     if (!(DirParser.checkPackageMatchesSourceDirectory(pkg, dir))) {
-      LOG.error("package " + pkg + " doesn't match directory " + dir.getPath() + " (in file " + file.getName() + ")");
+      myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("package %s doesn't match directory %s (in file %s)", pkg, dir.getPath(), file.getName())));
       return;
     }
 
@@ -1033,7 +1045,7 @@ public class JavaToMpsConverter {
         ModelRoot modelRoot = place._0();
         String sourceRoot = place._1();
         if (modelRoot == null) {
-          LOG.error("Cannot convert to MPS in-place: java sources not under proper model root");
+          myMessageHandler.handle(new Message(MessageKind.ERROR, "Cannot convert to MPS in-place: java sources not under proper model root"));
           return null;
         }
         Map<String, String> options = MapSequence.fromMap(new HashMap<String, String>());
@@ -1047,18 +1059,18 @@ public class JavaToMpsConverter {
       } else {
         ModelRoot modelRoot = getFirstRootToCreateModel(pkgFqName);
         if (modelRoot == null) {
-          LOG.error("Failed to find model root to create model in");
+          myMessageHandler.handle(new Message(MessageKind.ERROR, "Failed to find model root to create model in"));
           return null;
         }
         modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, null, null, PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
       }
 
       if (modelDescr == null) {
-        LOG.error("Failed to create model: createModel returned null");
+        myMessageHandler.handle(new Message(MessageKind.ERROR, String.format("Failed to create model for package %s", pkgFqName)));
         return null;
       }
     } catch (IOException e) {
-      LOG.error("Failed to create model", e);
+      myMessageHandler.handle(new Message(MessageKind.ERROR, "IO error when trying to create model").setException(e));
       return null;
     }
 

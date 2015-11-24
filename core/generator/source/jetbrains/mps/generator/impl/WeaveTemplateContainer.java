@@ -19,6 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility.WeaveContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.WeavingWithAnchor;
@@ -70,12 +71,13 @@ public class WeaveTemplateContainer {
           final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
           assert childRole != null;
 
-          final NodeWeaveFacility weaveSupport = env.weaveNode(context, templateFragment.getReference());
+          WeaveContext weaveContext = new WeaveContextImpl(contextParentNode, context, myAnchorQuery);
+          final NodeWeaveFacility weaveSupport = env.prepareWeave(weaveContext, templateFragment.getReference());
 
           for (SNode outputNodeToWeave : outputNodesToWeave) {
-            SNode anchor = myAnchorQuery.getAnchorNode(context, contextParentNode, outputNodeToWeave);
-            weaveSupport.weave(contextParentNode, childRole, outputNodeToWeave, anchor);
+            weaveSupport.weaveNode(childRole, outputNodeToWeave);
           }
+          env.getGenerator().recordTransformInputTrace(context.getInput(), outputNodesToWeave);
         } catch (DismissTopMappingRuleException e) {
           env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",
               GeneratorUtil.describe(myTemplateNode, "template node"),

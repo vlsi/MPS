@@ -15,7 +15,7 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.ProjectStrategy;
-import jetbrains.mps.testbench.junit.runners.AntProjectStrategy;
+import jetbrains.mps.testbench.junit.runners.MPSCompositeProjectStrategy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,7 +46,7 @@ public class BaseCheckModulesTest {
   protected static void initEnvironment() throws InvocationTargetException, InterruptedException {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
 
-    ProjectStrategy strategy = new AntProjectStrategy();
+    ProjectStrategy strategy = new MPSCompositeProjectStrategy();
     ourContextProject = env.createProject(strategy);
   }
 

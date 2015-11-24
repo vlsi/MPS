@@ -28,10 +28,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * @deprecated use AbstractSubstituteAction
- */
-@Deprecated
 public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
   private SNode mySourceNode;

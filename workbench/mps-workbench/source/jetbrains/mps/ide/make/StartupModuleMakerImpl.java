@@ -108,7 +108,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
     if (InternalFlag.isInternalMode()) {
       return myMPSProject.getRepository().getModules();
     }
-    return myMPSProject.getModules();
+    return myMPSProject.getModulesWithGenerators();
   }
 
   private void reloadClasses(final MPSCompilationResult mpsCompilationResult, final ProgressIndicator indicator, boolean asPreStartup) {

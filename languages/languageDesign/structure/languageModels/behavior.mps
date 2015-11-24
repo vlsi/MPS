@@ -8,7 +8,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1978,6 +1978,76 @@
         <node concept="2I9FWS" id="7g4OXB0yl3u" role="1tU5fm" />
       </node>
       <node concept="3cqZAl" id="7g4OXB0yl6y" role="3clF45" />
+      <node concept="P$JXv" id="4G9PD8$NvEf" role="lGtFl">
+        <node concept="TZ5HI" id="4G9PD8$NvEg" role="3nqlJM">
+          <node concept="TZ5HA" id="4G9PD8$NvEh" role="3HnX3l" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="4G9PD8$NvEi" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="4G9PD8$NvI4" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="4G9PD8$NvPt" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="4G9PD8$NvPF" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="4G9PD8$NvPM" role="13h7CS">
+      <property role="TrG5h" value="findConceptAspects" />
+      <node concept="3Tm1VV" id="4G9PD8$NvPN" role="1B3o_S" />
+      <node concept="3clFbS" id="4G9PD8$NvPO" role="3clF47">
+        <node concept="3clFbF" id="4G9PD8$Nz_w" role="3cqZAp">
+          <node concept="2OqwBi" id="4G9PD8$NzU7" role="3clFbG">
+            <node concept="2OqwBi" id="4G9PD8$NvQa" role="2Oq$k0">
+              <node concept="37vLTw" id="4G9PD8$NvQb" role="2Oq$k0">
+                <ref role="3cqZAo" node="4G9PD8$NvQf" resolve="model" />
+              </node>
+              <node concept="2RRcyG" id="4G9PD8$NvQc" role="2OqNvi">
+                <ref role="2RRcyH" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
+              </node>
+            </node>
+            <node concept="3zZkjj" id="4G9PD8$N_9F" role="2OqNvi">
+              <node concept="1bVj0M" id="4G9PD8$N_9H" role="23t8la">
+                <node concept="3clFbS" id="4G9PD8$N_9I" role="1bW5cS">
+                  <node concept="3clFbF" id="4G9PD8$N_f3" role="3cqZAp">
+                    <node concept="2OqwBi" id="4G9PD8$NvQ4" role="3clFbG">
+                      <node concept="2OqwBi" id="4G9PD8$NvQ5" role="2Oq$k0">
+                        <node concept="37vLTw" id="4G9PD8$N_jT" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4G9PD8$N_9J" resolve="it" />
+                        </node>
+                        <node concept="2qgKlT" id="4G9PD8$NvQ7" role="2OqNvi">
+                          <ref role="37wK5l" node="4$$3zrO3UBG" resolve="getBaseConceptCollection" />
+                        </node>
+                      </node>
+                      <node concept="3JPx81" id="4G9PD8$NvQ8" role="2OqNvi">
+                        <node concept="13iPFW" id="4G9PD8$NvQ9" role="25WWJ7" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="4G9PD8$N_9J" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="4G9PD8$N_9K" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4G9PD8$NvQf" role="3clF46">
+        <property role="TrG5h" value="model" />
+        <node concept="H_c77" id="4G9PD8$NvQg" role="1tU5fm" />
+        <node concept="2AHcQZ" id="4G9PD8$NyNi" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="A3Dl8" id="4G9PD8$N_wH" role="3clF45">
+        <node concept="3Tqbb2" id="4G9PD8$N_wJ" role="A3Ik2" />
+      </node>
     </node>
     <node concept="13i0hz" id="5zMz2aJEI4B" role="13h7CS">
       <property role="TrG5h" value="findGeneratorFragments" />

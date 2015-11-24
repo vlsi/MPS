@@ -18,6 +18,7 @@ package jetbrains.mps.repository;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.newvfs.persistent.PersistentFS;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
@@ -43,7 +44,9 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
    */
   public RepositoryInitializingComponent(MPSCoreComponents coreComponents,
       IRegistryManager registryManager,
-      IdeaPluginFacetComponent ideaPluginFacetComponent) {
+      IdeaPluginFacetComponent ideaPluginFacetComponent,
+      @SuppressWarnings("UnusedParameters") PersistentFS filesystem //see MPS-22970
+  ) {
     myLibraryInitializer = coreComponents.getMPSCore().getLibraryInitializer();
   }
 

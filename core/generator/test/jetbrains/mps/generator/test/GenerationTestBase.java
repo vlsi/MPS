@@ -92,7 +92,7 @@ public class GenerationTestBase {
   @AfterClass
   public static void clean() throws Exception {
     if (CREATED_ENV != null) {
-      CREATED_ENV.dispose();
+      CREATED_ENV.release();
       CREATED_ENV = null;
     }
   }
@@ -321,7 +321,7 @@ public class GenerationTestBase {
   }
 
   protected static void cleanup(final Project p) {
-    CREATED_ENV.closeProject(p);
+    p.dispose();
   }
 
   protected static void assertNoDiff(Map<String, String> expected, Map<String, String> actual) {

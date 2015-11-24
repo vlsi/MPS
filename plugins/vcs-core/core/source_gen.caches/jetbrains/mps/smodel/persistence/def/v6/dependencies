@@ -7,7 +7,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
@@ -48,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.util.xml.BreakParseSAXException" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -76,6 +77,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeLegacy" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -83,7 +85,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
 </dependenciesRoot>
 

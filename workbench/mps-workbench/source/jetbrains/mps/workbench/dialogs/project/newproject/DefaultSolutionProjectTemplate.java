@@ -74,7 +74,7 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
                                                              public void run() {
                                                                Solution
                                                                    solution = NewModuleUtil.createSolution(myNewSolutionSettings.getSolutionName(), myNewSolutionSettings.getSolutionLocation(), project);
-                                                               project.addModule(solution.getModuleReference());
+                                                               project.addModule(solution);
                                                              }
                                                            }
             );

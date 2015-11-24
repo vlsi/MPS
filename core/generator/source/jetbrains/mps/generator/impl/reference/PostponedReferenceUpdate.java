@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.impl.TemplateGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -26,11 +25,9 @@ import java.util.List;
  * @author Artem Tikhomirov
  */
 public class PostponedReferenceUpdate {
-  private final TemplateGenerator myGenerator;
   private final List<PostponedReference> myRefs;
 
-  public PostponedReferenceUpdate(@NotNull TemplateGenerator generator) {
-    myGenerator = generator;
+  public PostponedReferenceUpdate() {
     myRefs = new ArrayList<PostponedReference>(100);
   }
 
@@ -44,7 +41,7 @@ public class PostponedReferenceUpdate {
 
   public void prepare() {
     for (PostponedReference ref : myRefs) {
-      ref.initReplacementReference(myGenerator);
+      ref.initReplacementReference();
     }
   }
 

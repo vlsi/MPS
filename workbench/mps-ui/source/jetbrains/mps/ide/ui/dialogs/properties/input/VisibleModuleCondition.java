@@ -30,6 +30,7 @@ public class VisibleModuleCondition implements Condition<SModule> {
   public VisibleModuleCondition() {
     myVisibleModuleRegistry = VisibleModuleRegistry.getInstance();
   }
+
   @Override
   public boolean met(SModule m) {
     return myVisibleModuleRegistry.isVisible(m);

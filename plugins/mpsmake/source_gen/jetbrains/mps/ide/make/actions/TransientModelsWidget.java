@@ -9,12 +9,13 @@ import java.beans.PropertyChangeListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.wm.StatusBar;
 import javax.swing.Icon;
-import com.intellij.ide.ui.UISettings;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import java.awt.KeyboardFocusManager;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import com.intellij.ide.ui.UISettings;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.util.Consumer;
 import java.awt.event.MouseEvent;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import java.awt.Dimension;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
@@ -27,17 +28,21 @@ import java.beans.PropertyChangeEvent;
   private final StatusBar myStatusBar;
   private final Icon myIcon = IconContainer.ICON_a2;
   private final Icon myIconDisable = IconContainer.ICON_a3;
+  private final IModifiableGenerationSettings myGenerationSettins;
   private TransientModelsPanel myComponent;
+  private KeyboardFocusManager myFocusManager;
+
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
-    myComponent = new TransientModelsPanel(this);
+    myGenerationSettins = GenerationSettingsProvider.getInstance().getGenerationSettings();
 
-    // Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget 
-    UISettings.getInstance().addUISettingsListener(this, this);
-    KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", this);
   }
   @Override
   public void install(@NotNull StatusBar bar) {
+    // Use approach from com.intellij.openapi.wm.impl.status.ToolWindowsWidget 
+    UISettings.getInstance().addUISettingsListener(this, this);
+    myFocusManager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+    myFocusManager.addPropertyChangeListener("focusOwner", this);
   }
   @Nullable
   @Override
@@ -54,8 +59,8 @@ import java.beans.PropertyChangeEvent;
       @Override
       public void consume(MouseEvent e) {
         if (!(e.isPopupTrigger()) && MouseEvent.BUTTON1 == e.getButton()) {
-          boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
-          GenerationSettings.getInstance().setSaveTransientModels(!(saveTransientModels));
+          boolean saveTransientModels = myGenerationSettins.isSaveTransientModels();
+          myGenerationSettins.setSaveTransientModels(!(saveTransientModels));
           TransientModelsNotification.updateWidgets();
         } else if (e.isPopupTrigger() || MouseEvent.BUTTON2 == e.getButton()) {
           WidgetSettingsPanel panel = new WidgetSettingsPanel();
@@ -67,8 +72,11 @@ import java.beans.PropertyChangeEvent;
       }
     };
   }
+
   public void update() {
-    myComponent.update();
+    if (myComponent != null) {
+      myComponent.update();
+    }
     myStatusBar.updateWidget(ID());
   }
   @Nullable
@@ -76,9 +84,16 @@ import java.beans.PropertyChangeEvent;
   public StatusBarWidget.WidgetPresentation getPresentation(@NotNull StatusBarWidget.PlatformType type) {
     return this;
   }
+
   @Override
   public void dispose() {
+    // no need to removeUISettingsListener as it is registered with Disposable and UISettings removes the listener on dispose 
+    if (myFocusManager != null) {
+      myFocusManager.removePropertyChangeListener("focusOwner", this);
+      myFocusManager = null;
+    }
   }
+
   @NotNull
   /*package*/ Icon getIcon() {
     if (isSaveTransientModels()) {
@@ -93,11 +108,16 @@ import java.beans.PropertyChangeEvent;
     return WIDGET_ID;
   }
   public boolean isSaveTransientModels() {
-    return GenerationSettings.getInstance().isSaveTransientModels();
+    return myGenerationSettins.isSaveTransientModels();
   }
   @Override
   public JComponent getComponent() {
-    return this.myComponent;
+    if (myComponent == null) {
+      // getComponent() is invoked EARLIER than install(), so this is the only place to instantiate panel 
+      // except cons of this class (which is bad, because this goes to TMP, which uses it e.g. to getText() on un-initialized instance) 
+      myComponent = new TransientModelsPanel(this);
+    }
+    return myComponent;
   }
   @NotNull
   public String getText() {
@@ -114,9 +134,9 @@ import java.beans.PropertyChangeEvent;
     return JComponent.RIGHT_ALIGNMENT;
   }
   public void uiSettingsChanged(UISettings settings) {
-    myComponent.update();
+    update();
   }
   public void propertyChange(PropertyChangeEvent event) {
-    myComponent.update();
+    update();
   }
 }

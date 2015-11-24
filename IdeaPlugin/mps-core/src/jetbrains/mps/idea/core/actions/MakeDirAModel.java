@@ -41,7 +41,7 @@ import java.io.IOException;
 /**
  * Created by danilla on 28/10/15.
  */
-public class MakeDirAModel extends NewModelAction {
+public class MakeDirAModel extends NewModelActionBase {
   private static Logger LOG = LogManager.getLogger(MakeDirAModel.class);
 
   public MakeDirAModel() {

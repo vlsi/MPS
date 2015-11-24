@@ -6,7 +6,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
@@ -4868,6 +4868,21 @@
                 </node>
                 <node concept="37vLTw" id="3GM_nagTzU5" role="37vLTJ">
                   <ref role="3cqZAo" node="6HWlasQQiar" resolve="javaExecutable" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="hp26lHicgW" role="3cqZAp">
+              <node concept="37vLTI" id="hp26lHicos" role="3clFbG">
+                <node concept="3cpWs3" id="hp26lHicCF" role="37vLTx">
+                  <node concept="Xl_RD" id="hp26lHicH9" role="3uHU7w">
+                    <property role="Xl_RC" value=";" />
+                  </node>
+                  <node concept="37vLTw" id="hp26lHicyx" role="3uHU7B">
+                    <ref role="3cqZAo" node="2CUenDktZFY" resolve="classpathString" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="hp26lHicgU" role="37vLTJ">
+                  <ref role="3cqZAo" node="2CUenDktZFY" resolve="classpathString" />
                 </node>
               </node>
             </node>

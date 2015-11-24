@@ -5,8 +5,6 @@ package jetbrains.mps.closures.test;
 import junit.framework.TestCase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import junit.framework.Assert;
 
@@ -67,134 +65,10 @@ public class FunctionTypes_Test extends TestCase {
       }
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
-      /*
-        throwsOne = throwsTwo;
-      */
     }
   }
   public void test_exceptionsYield() throws Exception {
-    /*
-      _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> throwsOne = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
-        public Iterable<Integer> invoke() {
-          return new Iterable<Integer>() {
-            public Iterator<Integer> iterator() {
-              return new YieldingIterator<Integer>() {
-                private int __CP__ = 0;
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 3:
-                        if (true) {
-                          this.__CP__ = 4;
-                          break;
-                        }
-                        this.__CP__ = 1;
-                        break;
-                      case 2:
-                        this.__CP__ = 3;
-                        this.yield(0);
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      case 4:
-                        throw new IllegalArgumentException();
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      };
-    */
-    /*
-      _FunctionTypes._return_P0_E3<? extends Iterable<Integer>, ? extends IllegalAccessException, ? extends InstantiationException, ? extends InterruptedException> throwsThree = new _FunctionTypes._return_P0_E3<Iterable<Integer>, IllegalAccessException, InstantiationException, InterruptedException>() {
-        public Iterable<Integer> invoke() {
-          return new Iterable<Integer>() {
-            public Iterator<Integer> iterator() {
-              return new YieldingIterator<Integer>() {
-                private int __CP__ = 0;
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        this._2_i = 0;
-                      case 3:
-                        if (!(_2_i < 3)) {
-                          this.__CP__ = 1;
-                          break;
-                        }
-                        this.__CP__ = 4;
-                        break;
-                      case 5:
-                        _2_i++;
-                        this.__CP__ = 3;
-                        break;
-                      case 7:
-                        switch (_2_i) {
-                          case 1:
-                            this.__CP__ = 8;
-                            break __switch__;
-                          case 2:
-                            this.__CP__ = 9;
-                            break __switch__;
-                          case 0:
-                            this.__CP__ = 11;
-                            break __switch__;
-                          default:
-                            this.__CP__ = 15;
-                            break __switch__;
-                        }
-                      case 6:
-                        this.__CP__ = 7;
-                        this.yield(_2_i);
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      case 4:
-                        this.__CP__ = 6;
-                        break;
-                      case 8:
-                        throw new InterruptedException();
-                      case 9:
-                        throw new IllegalAccessException();
-                      case 11:
-                        throw new InstantiationException();
-                      case 15:
-                        this.__CP__ = 5;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-                private int _2_i;
-              };
-            }
-          };
-        }
-      };
-    */
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
-      /*
-        throwsOne = throwsThree;
-      */
     }
   }
   public void test_functionTypeAdapter_complex() throws Exception {

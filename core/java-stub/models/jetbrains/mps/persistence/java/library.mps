@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="3" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -2097,6 +2097,38 @@
             </node>
             <node concept="3clFbJ" id="3mzc6JEnlSB" role="3cqZAp">
               <node concept="3clFbS" id="3mzc6JEnlSD" role="3clFbx">
+                <node concept="3clFbJ" id="Df0hGe06AR" role="3cqZAp">
+                  <node concept="3clFbS" id="Df0hGe06AT" role="3clFbx">
+                    <node concept="3clFbF" id="Df0hGe070f" role="3cqZAp">
+                      <node concept="1rXfSq" id="Df0hGe070d" role="3clFbG">
+                        <ref role="37wK5l" node="5JsnGMj1qkH" resolve="getModelDescriptors" />
+                        <node concept="37vLTw" id="Df0hGe079i" role="37wK5m">
+                          <ref role="3cqZAo" node="5JsnGMj1qkI" resolve="result" />
+                        </node>
+                        <node concept="37vLTw" id="Df0hGe07fl" role="37wK5m">
+                          <ref role="3cqZAo" node="5JsnGMj1ql3" resolve="subdir" />
+                        </node>
+                        <node concept="37vLTw" id="Df0hGe07lx" role="37wK5m">
+                          <ref role="3cqZAo" node="3oDzK78kSOG" resolve="pack" />
+                        </node>
+                        <node concept="37vLTw" id="Df0hGe07sd" role="37wK5m">
+                          <ref role="3cqZAo" node="5JsnGMj1qkT" resolve="module" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="Df0hGe06M6" role="3clFbw">
+                    <node concept="37vLTw" id="Df0hGe06EV" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3mzc6JEn9ey" resolve="myPackageScope" />
+                    </node>
+                    <node concept="liA8E" id="Df0hGe06S8" role="2OqNvi">
+                      <ref role="37wK5l" to="i290:~PackageScopeControl.isAnyChildIncluded(java.lang.String):boolean" resolve="isAnyChildIncluded" />
+                      <node concept="37vLTw" id="Df0hGe06V0" role="37wK5m">
+                        <ref role="3cqZAo" node="3oDzK78kSOG" resolve="pack" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3N13vt" id="3mzc6JEnnyL" role="3cqZAp" />
               </node>
               <node concept="1Wc70l" id="3mzc6JEnmKx" role="3clFbw">

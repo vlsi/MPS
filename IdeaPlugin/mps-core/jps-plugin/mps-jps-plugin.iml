@@ -31,11 +31,20 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="TEST" name="jpsPlatformTests" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jps-builders.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="mps-tool" level="project" />
     <orderEntry type="library" name="mps-collections" level="project" />
     <orderEntry type="library" name="mps-platform" level="project" />
     <orderEntry type="library" name="mps-closures" level="project" />
     <orderEntry type="library" name="mps-tuples" level="project" />
+    <orderEntry type="library" scope="TEST" name="jpsPlatformTests" level="project" />
   </component>
 </module>

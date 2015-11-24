@@ -188,7 +188,7 @@ public class ValidationUtil {
             ((PersistenceVersionAware) model).getPersistenceVersion() < ModelPersistence.LAST_VERSION
         ) {
       if (!processor.process(
-          new ValidationProblem(Severity.WARNING, "Outdated model persistence is used: " + ((PersistenceVersionAware) model).getPersistenceVersion() +
+          new ValidationProblem(Severity.ERROR, "Outdated model persistence is used: " + ((PersistenceVersionAware) model).getPersistenceVersion() +
               ". Please upgrade model persistence"))) return;
     }
 

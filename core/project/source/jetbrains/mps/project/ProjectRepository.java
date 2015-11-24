@@ -46,8 +46,8 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
 
-  public ProjectRepository(Project project) {
-    this.myProject = project;
+  public ProjectRepository(@NotNull Project project) {
+    myProject = project;
     myProjectModelAccess = new ProjectModelAccess(project);
     init();
   }

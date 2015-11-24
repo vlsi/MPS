@@ -67,6 +67,11 @@ public class TracingUtil {
 
   @Nullable
   public static SNode getInputNode(@NotNull SNode output, @NotNull SRepository repo) {
+    // FIXME there are 3 uses of this method in quotations' QueriesGenerated, where we could use context(TQC).getOriginalCopiedInputNode
+    // and two more (TQC and TextPreviewModel_Action) where we have access to input model, so that we could simply do
+    // originalInputModel.getNode(ptr.getNodeId()), no need to (a) resolve through repo; (b) keep whole reference (nodeId suffice)
+    // However, shall look into cases when original input comes from a model different than the one being generated. Perhaps, shall use
+    // different key in that case?
     SNodeReference inputNodePointer = (SNodeReference) output.getUserObject(ORIGINAL_INPUT_NODE);
     if (inputNodePointer == null) {
       return null;

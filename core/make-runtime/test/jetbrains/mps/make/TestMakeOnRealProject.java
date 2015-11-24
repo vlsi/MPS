@@ -18,7 +18,7 @@ package jetbrains.mps.make;
 import com.intellij.openapi.util.Condition;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 import com.intellij.util.FilteringProcessor;
-import jetbrains.mps.WorkbenchMpsTest;
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
@@ -78,7 +78,7 @@ import java.util.Set;
  * TODO rewrite module creation via existing functionality.
  * @see jetbrains.mps.classloading.ModulesReloadTest
  */
-public class TestMakeOnRealProject extends WorkbenchMpsTest {
+public class TestMakeOnRealProject extends CoreMpsTest {
   private static final String TEST_JAVA_FILE = "Test.java";
 
   private static ModelAccess ourModelAccess;
@@ -91,8 +91,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setUp() {
-    Environment ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    ourRepository = ourEnvironment.getPlatform().getCore().getModuleRepository();
+    ourRepository = ENV.getPlatform().getCore().getModuleRepository();
     ourModelAccess = ourRepository.getModelAccess();
   }
 

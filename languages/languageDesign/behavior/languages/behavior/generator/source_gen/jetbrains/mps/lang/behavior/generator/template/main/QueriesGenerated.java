@@ -551,7 +551,6 @@ public class QueriesGenerated {
       ListSequence.fromList(methods).removeSequence(ListSequence.fromList(ConceptDeclaration__BehaviorDescriptor.getAllMethodsInPriorityOrder_id7TwdR6lloFy.invoke(extendsNode)));
     }
 
-    // <node> 
 
     for (SNode method : methods) {
       if (!(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).containsKey(BehaviorMethodNames.getDeclarationName(method)))) {
@@ -570,7 +569,6 @@ public class QueriesGenerated {
       }
     }
 
-    // <node> 
 
     return Sequence.fromIterable(MapSequence.fromMap(generatedNameToConceptMethodDeclaration).values()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
