@@ -46205,16 +46205,6 @@
           <node concept="3SKdUq" id="20QUXkrT9IF" role="3SKWNk">
             <property role="3SKdUp" value="ab" />
           </node>
-          <node concept="3SKdUq" id="20QUXkrT9IG" role="3SKWNk">
-            <property role="3SKdUp" value="" />
-            <node concept="LIFWc" id="20QUXkrT9J8" role="lGtFl">
-              <property role="ZRATv" value="true" />
-              <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="0" />
-              <property role="p6zMs" value="0" />
-              <property role="LIFWd" value="property_text" />
-            </node>
-          </node>
         </node>
         <node concept="3SKdUt" id="20QUXkrT9IW" role="3cqZAp">
           <node concept="3SKdUq" id="20QUXkrT9IX" role="3SKWNk">
