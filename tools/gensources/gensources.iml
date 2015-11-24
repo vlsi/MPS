@@ -692,7 +692,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lightweightDSL/solutions/jetbrains.mps.samples.LightweightDSL.plugin/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/runtimeSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/math/source_gen" isTestSource="false" />
@@ -826,7 +825,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/runtimeSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/solutions/jetbrains.mps.baseLanguage.math.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/math/solutions/pluginSolution/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/decl/classes_gen" />
