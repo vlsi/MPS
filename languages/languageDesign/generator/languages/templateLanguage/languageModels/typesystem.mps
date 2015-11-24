@@ -5098,7 +5098,7 @@
               <ref role="1YBMHb" node="6uPxrhfjtI_" resolve="rule" />
             </node>
             <node concept="Xl_RD" id="6uPxrhfjv5U" role="2MkJ7o">
-              <property role="Xl_RC" value="Rule shall specify NodeAttribute subconcept" />
+              <property role="Xl_RC" value="Rule shall specify Attribute subconcept" />
             </node>
             <node concept="2OE7Q9" id="6uPxrhfjv3K" role="2OEWyd">
               <ref role="2OEe5H" to="tpf8:6uPxrhfjpgY" />
@@ -5116,8 +5116,8 @@
               </node>
             </node>
             <node concept="2Zo12i" id="6uPxrhfjv0T" role="2OqNvi">
-              <node concept="chp4Y" id="6uPxrhfjv0U" role="2Zo12j">
-                <ref role="cht4Q" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+              <node concept="chp4Y" id="5fJDzf1B1Pu" role="2Zo12j">
+                <ref role="cht4Q" to="tpck:4uZwTti3_$T" resolve="Attribute" />
               </node>
             </node>
           </node>

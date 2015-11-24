@@ -328,6 +328,7 @@
         <child id="7830515785164764091" name="condition" index="avys_" />
         <child id="1219952894531" name="dropRootRule" index="aQYdv" />
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
+        <child id="7473026166162327259" name="dropAttrubuteRule" index="CYSdJ" />
         <child id="1167088157977" name="createRootRule" index="2VS0gm" />
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
@@ -367,6 +368,10 @@
       <concept id="1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" flags="ln" index="xERo3">
         <reference id="1194566366375" name="includeTemplate" index="xH3mL" />
         <child id="1194565823413" name="sourceNodeQuery" index="xEYEz" />
+      </concept>
+      <concept id="7473026166162297915" name="jetbrains.mps.lang.generator.structure.DropAttributeRule" flags="lg" index="CY16f">
+        <property id="1515402509390413598" name="applyToSubConcepts" index="2MXbmj" />
+        <reference id="7473026166162297918" name="applicableConcept" index="CY16a" />
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1200923511980" name="label" index="2sBCQV" />
@@ -35759,6 +35764,19 @@
     <property role="TrG5h" value="GenMain" />
     <property role="3$yP7D" value="true" />
     <property role="3GE5qa" value="" />
+    <node concept="CY16f" id="1x$YdBiodk3" role="CYSdJ">
+      <ref role="CY16a" to="tpf8:h0n94ik" resolve="RootTemplateAnnotation" />
+    </node>
+    <node concept="CY16f" id="1x$YdBiodxR" role="CYSdJ">
+      <property role="2MXbmj" value="true" />
+      <ref role="CY16a" to="tpf8:fP7Vmt2" resolve="NodeMacro" />
+    </node>
+    <node concept="CY16f" id="1x$YdBiodMf" role="CYSdJ">
+      <ref role="CY16a" to="tpf8:fPZhdom" resolve="ReferenceMacro" />
+    </node>
+    <node concept="CY16f" id="1x$YdBioe2t" role="CYSdJ">
+      <ref role="CY16a" to="tpf8:fP7UvrK" resolve="PropertyMacro" />
+    </node>
     <node concept="2rT7sh" id="572jgSUumO8" role="2rTMjI">
       <property role="TrG5h" value="QueriesGenerated" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
