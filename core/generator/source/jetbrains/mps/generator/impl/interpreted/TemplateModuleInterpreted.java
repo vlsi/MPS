@@ -160,7 +160,7 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
     for (SDependency dep : generator.getDeclaredDependencies()) {
       SModule referencedGenerator = dep.getTarget();
       if (referencedGenerator instanceof Generator) {
-        GeneratorRuntime grt = LanguageRegistry.getInstance().getGenerator((Generator) referencedGenerator);
+        GeneratorRuntime grt = LanguageRegistry.getInstance(generator.getRepository()).getGenerator((Generator) referencedGenerator);
         if (grt instanceof TemplateModule) {
           result.add(new Pair<SDependencyScope, TemplateModule>(dep.getScope(), (TemplateModule) grt));
         }

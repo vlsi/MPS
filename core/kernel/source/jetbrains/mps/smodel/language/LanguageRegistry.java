@@ -55,7 +55,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   private static LanguageRegistry INSTANCE;
 
   /**
-   * @deprecated use context-specific alternative {@link #getInstance(Project)}
+   * @deprecated use context-specific alternative {@link #getInstance(SRepository)}
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -65,14 +65,14 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   /**
    * At the moment, there's only 1 global LanguageRegistry. However, we move slowly towards independent
-   * projects and thus would need project-specific registries, and use of the method is the proper way to
-   * obtain registry and to think about proper context in the client code right away.
+   * projects/non-global module repositories and thus would need repository-specific registries,
+   * and use of the method is the proper way to  obtain registry and to think about proper
+   * context in the client code right away.
    *
-   * @param mpsProject context to retrieve language registry from
-   * @return collection of languages available in the given project/context
+   * @return collection of languages available in the given context
    */
   @NotNull
-  public static LanguageRegistry getInstance(@NotNull Project mpsProject) {
+  public static LanguageRegistry getInstance(@NotNull SRepository repository) {
     return INSTANCE;
   }
 

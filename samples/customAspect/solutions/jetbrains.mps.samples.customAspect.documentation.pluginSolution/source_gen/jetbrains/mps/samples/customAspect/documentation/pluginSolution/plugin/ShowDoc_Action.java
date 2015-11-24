@@ -30,7 +30,7 @@ public class ShowDoc_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SAbstractConcept concept = event.getData(MPSCommonDataKeys.NODE).getConcept();
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT)).getLanguage(concept.getLanguage());
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()).getLanguage(concept.getLanguage());
     DocumentationAspectDescriptor docDescriptor = languageRuntime.getAspect(DocumentationAspectDescriptor.class);
     return docDescriptor != null;
   }
@@ -60,7 +60,7 @@ public class ShowDoc_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SAbstractConcept concept = event.getData(MPSCommonDataKeys.NODE).getConcept();
-    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT)).getLanguage(concept.getLanguage());
+    LanguageRuntime languageRuntime = LanguageRegistry.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()).getLanguage(concept.getLanguage());
     DocumentationAspectDescriptor docDescriptor = languageRuntime.getAspect(DocumentationAspectDescriptor.class);
     String docText = docDescriptor.getConceptDocumentation(concept);
     if (docText != null) {

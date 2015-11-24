@@ -58,7 +58,7 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase {
       return null;
     }
 
-    myCachedPlanInstance = new GenPlanBuilder(LanguageRegistry.getInstance()).create(planModel.getRootNodes().iterator().next());
+    myCachedPlanInstance = new GenPlanBuilder(LanguageRegistry.getInstance(model.getRepository())).create(planModel.getRootNodes().iterator().next());
     return myCachedPlanInstance;
   }
 

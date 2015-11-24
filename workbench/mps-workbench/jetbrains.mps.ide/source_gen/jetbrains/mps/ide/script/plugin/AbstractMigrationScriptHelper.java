@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 
 /**
  * 
- * @deprecated AbstractHelper noone sub-classes, ORLY? Mostly legacy code for migration scripts executed as nodes. Scope manipulation, if vital, could move closer to uses.
+ * @deprecated AbstractHelper no one sub-classes, ORLY? Mostly legacy code for migration scripts executed as nodes. Scope manipulation, if vital, could move closer to uses.
  */
 @Deprecated
 @ToRemove(version = 3.3)
@@ -55,7 +55,7 @@ public abstract class AbstractMigrationScriptHelper {
     if (!(module instanceof Language)) {
       return null;
     }
-    LanguageRuntime lr = LanguageRegistry.getInstance(contextProject).getLanguage((Language) module);
+    LanguageRuntime lr = LanguageRegistry.getInstance(contextProject.getRepository()).getLanguage((Language) module);
     ScriptAspectDescriptor scriptAspect = (lr == null ? null : lr.getAspect(ScriptAspectDescriptor.class));
     if (scriptAspect == null) {
       return null;
