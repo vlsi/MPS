@@ -17,6 +17,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -171,6 +172,7 @@
   </registry>
   <node concept="312cEu" id="23pLLdlJ3nx">
     <property role="TrG5h" value="Sample" />
+    <node concept="2tJIrI" id="4AHM$b8Xpuw" role="jymVt" />
     <node concept="3Tm1VV" id="23pLLdlJ3ny" role="1B3o_S" />
     <node concept="2YIFZL" id="7Y9o9wCHFlk" role="jymVt">
       <property role="TrG5h" value="main" />
