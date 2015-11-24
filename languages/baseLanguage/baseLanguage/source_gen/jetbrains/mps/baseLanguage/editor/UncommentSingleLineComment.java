@@ -14,8 +14,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UncommentSingleLineComment {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setAction(CellActionType.COMMENT, new UncommentSingleLineComment.UncommentSingleLineComment_COMMENT(node));
     editorCell.setAction(CellActionType.DELETE, new UncommentSingleLineComment.UncommentSingleLineComment_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new UncommentSingleLineComment.UncommentSingleLineComment_BACKSPACE(node));
+  }
+  public static class UncommentSingleLineComment_COMMENT extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public UncommentSingleLineComment_COMMENT(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+    }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return false;
+    }
   }
   public static class UncommentSingleLineComment_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
