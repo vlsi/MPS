@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.ModelListenerTest.AccessCountListener3;
 import jetbrains.mps.smodel.ModelUndoTest.TestUndoHandler;
 import jetbrains.mps.smodel.TestModelFactory.TestModelAccess;
 import jetbrains.mps.smodel.TestModelFactory.TestRepository;
+import org.hamcrest.BaseMatcher;
+import org.hamcrest.Description;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -33,9 +35,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 /**
  * Test to ensure model performance doesn't degrade
@@ -96,8 +96,30 @@ public class ModelPerformanceTest {
         myErrors.checkThat(threads[i].getName(), threads[i].getAllThreadListenerCount(), equalTo(expectedNodeCount * parallelThreads));
         myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount1(), equalTo(expectedNodeCount));
         myErrors.checkThat(threads[i].getName(), threads[i].getThisThreadCount2(), equalTo(expectedNodeCount));
-        myErrors.checkThat(threads[i].getName(), threads[i].getElapsedMillis(), lessThan(baselineMillis));
-        myErrors.checkThat(threads[i].getName(), threads[i].getElapsedMillis(), greaterThan(baselineMillis / 4));
+        myErrors.checkThat(threads[i].getName(), threads[i].getElapsedMillis(), new BaseMatcher<Long>() {
+          @Override
+          public boolean matches(Object item) {
+            if (item instanceof Long) {
+              return ((Long) item) < baselineMillis;
+            }
+            return false;
+          }
+
+          @Override
+          public void describeTo(Description description) {description.appendText(String.format("less than %d", baselineMillis)); }
+        });
+        myErrors.checkThat(threads[i].getName(), threads[i].getElapsedMillis(), new BaseMatcher<Long>() {
+          @Override
+          public boolean matches(Object item) {
+            if (item instanceof Long) {
+              return ((Long) item) > baselineMillis / 4;
+            }
+            return false;
+          }
+
+          @Override
+          public void describeTo(Description description) { description.appendText(String.format("greater than %d", baselineMillis/4)); }
+        });
       }
       return;
     }
@@ -127,7 +149,7 @@ public class ModelPerformanceTest {
     for (int i = 0; i < testRuns; i++) {
       final long start = System.nanoTime();
       ModelListenerTest.readTreeNodes(m1.getRootNodes());
-      elapsed += System.nanoTime()-start;
+      elapsed += System.nanoTime() - start;
     }
     long averageMillis = elapsed / 1000000 / testRuns;
     if (averageMillis > baselineMillis) {
@@ -136,7 +158,8 @@ public class ModelPerformanceTest {
     }
     // guard if it's too fast
     if (averageMillis < baselineMillis / 10) {
-      final String fmt = "Walking model of %d nodes took less than 10%% of baseline. Actual average time for %d runs was %d ms, while baseline is %d ms. Re-consider baseline value";
+      final String fmt =
+          "Walking model of %d nodes took less than 10%% of baseline. Actual average time for %d runs was %d ms, while baseline is %d ms. Re-consider baseline value";
       Assert.fail(String.format(fmt, actualNodes, testRuns, averageMillis, baselineMillis));
     }
   }
@@ -187,6 +210,7 @@ public class ModelPerformanceTest {
     public int getThisThreadCount1() {
       return myCountL2;
     }
+
     public int getThisThreadCount2() {
       return myCountL3;
     }

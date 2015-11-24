@@ -6,7 +6,6 @@
     </modelRoot>
     <modelRoot contentPath="${mps_home}/lib" type="java_classes">
       <sourceRoot location="junit-4.12.jar" />
-      <sourceRoot location="hamcrest-library-1.3.jar" />
       <sourceRoot location="hamcrest-core-1.3.jar" />
     </modelRoot>
   </models>
@@ -19,7 +18,6 @@
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
     <stubModelEntry path="${mps_home}/lib/junit-4.12.jar" />
     <stubModelEntry path="${mps_home}/lib/hamcrest-core-1.3.jar" />
-    <stubModelEntry path="${mps_home}/lib/hamcrest-library-1.3.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

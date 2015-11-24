@@ -47,8 +47,8 @@ import java.util.List;
 import static jetbrains.mps.smodel.TestModelFactory.ourConcept;
 import static jetbrains.mps.smodel.TestModelFactory.ourRef;
 import static jetbrains.mps.smodel.TestModelFactory.ourRole;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
 
 /**
  * Check contemporary and legacy model listener approaches, ensure they (not) get notified as expected.
