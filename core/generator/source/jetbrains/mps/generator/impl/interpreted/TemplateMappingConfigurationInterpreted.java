@@ -74,9 +74,9 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       myRootMappingRules = new ArrayList<TemplateRootMappingRule>(5);
       myWeavingRules = new ArrayList<TemplateWeavingRule>(5);
       myDropRootRules = new ArrayList<TemplateDropRootRule>(5);
+      myDropAttributeRules = new ArrayList<TemplateDropAttributeRule>(5);
       myPreScripts = new ArrayList<TemplateMappingScript>(5);
       myPostScripts = new ArrayList<TemplateMappingScript>(5);
-      myDropAttributeRules = Collections.emptyList();
       ArrayList<TemplateReductionRule> reductionRules = new ArrayList<TemplateReductionRule>(20);
       ArrayList<TemplateReductionRule> patternRules = new ArrayList<TemplateReductionRule>(5);
 
@@ -104,6 +104,8 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
           } else {
             myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
           }
+        } else if (RuleUtil.concept_DropAttributeRule.equals(childConcept)) {
+          myDropAttributeRules.add(new DropAttributeRuleInterpreted(child));
         }
       }
       if (patternRules.isEmpty()) {
