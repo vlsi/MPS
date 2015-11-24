@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.Nullable;
@@ -114,6 +115,13 @@ public class ModuleDescriptor {
     return myDependencies;
   }
 
+  /**
+   * @deprecated Now, used languages of a module are derived from models it owns, and thus
+   * this list is generally empty. Although generally there might be modules that keep their used languages, and ModuleDescriptor
+   * may keep the list, it shall be the list of SLanguage anyway.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Collection<SModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
