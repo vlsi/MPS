@@ -3117,6 +3117,24 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="177WBapcBnP" role="3cqZAp">
+          <node concept="2OqwBi" id="177WBapcBLh" role="3clFbG">
+            <node concept="37vLTw" id="177WBapcBnN" role="2Oq$k0">
+              <ref role="3cqZAo" node="3SJt9bXuxGt" resolve="language" />
+            </node>
+            <node concept="liA8E" id="177WBapcCyB" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolve="setModuleDescriptor" />
+              <node concept="2OqwBi" id="177WBapcCFH" role="37wK5m">
+                <node concept="37vLTw" id="177WBapcCCk" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3SJt9bXuxGt" resolve="language" />
+                </node>
+                <node concept="liA8E" id="177WBapcCYq" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~Language.getModuleDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolve="getModuleDescriptor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="3SJt9bXuxGr" role="3cqZAp">
           <node concept="37vLTw" id="3SJt9bXuxGs" role="3cqZAk">
             <ref role="3cqZAo" node="3SJt9bXuxGf" resolve="oldLanguageVersion" />
