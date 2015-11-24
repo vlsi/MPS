@@ -159,6 +159,10 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
         myChildHandlersStack.push(null);
         return persistenceHandler;
       }
+      if ("maxImportIndex".equals(tagName)) {
+        myChildHandlersStack.push(null);
+        return maxImportIndexHandler;
+      }
       if ("languageAspect".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader5Handler.ChildHandler() {
           @Override
