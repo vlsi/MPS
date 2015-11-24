@@ -10,9 +10,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.VisibleModelElements" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v4.IModelReader" file="IModelReader.java">
@@ -63,6 +63,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
@@ -90,13 +91,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.def.IReferencePersister" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" file="VersionUtil.java">

@@ -15,10 +15,11 @@ import jetbrains.mps.smodel.DefaultSModel;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelLegacy;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
@@ -149,7 +150,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       my_versionsInfoField = new SModelVersionsInfo();
       my_referenceDescriptorsField = new ArrayList<IReferencePersister>();
       my_visibleModelElementsField = new SAXVisibleModelElements();
-      my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
+      my_modelField = new DefaultSModel(VCSPersistenceUtil.createModelReference(attrs.getValue("modelUID")), my_headerParam);
       return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.FULLY_LOADED);
     }
     @Override
@@ -221,7 +222,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_2286463592495498109(Object resultObject, Object value) throws SAXException {
       String[] child = (String[]) value;
       int version = Integer.parseInt(child[1]);
-      my_modelField.getImplicitImportsSupport().addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(child[0]), version);
+      my_modelField.getImplicitImportsSupport().addAdditionalModelVersion(VCSPersistenceUtil.createModelReference(child[0]), version);
     }
     private void handleChild_2286463592495498227(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
@@ -302,7 +303,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SModel.ImportElement createObject(Attributes attrs) throws SAXException {
       int indexValue = Integer.parseInt(attrs.getValue("index"));
       int versionValue = Integer.parseInt(attrs.getValue("version"));
-      return new SModel.ImportElement(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), indexValue, versionValue);
+      return new SModel.ImportElement(VCSPersistenceUtil.createModelReference(attrs.getValue("modelUID")), indexValue, versionValue);
     }
   }
   public class NodeElementHandler extends ModelReader5Handler.ElementHandler {

@@ -10,10 +10,11 @@ import org.jdom.Document;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import java.util.List;
 import jetbrains.mps.smodel.SModelLegacy;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
@@ -37,7 +38,7 @@ public class ModelReader4 implements IModelReader {
   public DefaultSModel readModel(Document document, SModelHeader header) {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
-    SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(VCSPersistenceSupport.MODEL_UID));
+    SModelReference modelReference = VCSPersistenceUtil.createModelReference(rootElement.getAttributeValue(VCSPersistenceSupport.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference, header);
     // languages 
     List languages = rootElement.getChildren(VCSPersistenceSupport.LANGUAGE);
@@ -81,7 +82,7 @@ public class ModelReader4 implements IModelReader {
         LOG.error("Error loading import element for index " + importIndex + " in " + model.getReference());
         continue;
       }
-      SModelReference importedModelReference = PersistenceFacade.getInstance().createModelReference(importedModelUIDString);
+      SModelReference importedModelReference = VCSPersistenceUtil.createModelReference(importedModelUIDString);
       model.addModelImport(new SModel.ImportElement(importedModelReference, importIndex, -1));
     }
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
@@ -123,7 +124,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.getImplicitImportsSupport().addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(aspectModelUID), version);
+        model.getImplicitImportsSupport().addAdditionalModelVersion(VCSPersistenceUtil.createModelReference(aspectModelUID), version);
       }
     }
   }

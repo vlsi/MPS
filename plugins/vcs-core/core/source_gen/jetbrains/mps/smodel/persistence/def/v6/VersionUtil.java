@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -109,7 +109,7 @@ public class VersionUtil {
       return;
     }
     int ix = Integer.parseInt(index);
-    SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelUID);
+    SModelReference modelRef = VCSPersistenceUtil.createModelReference(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ix, version);
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);

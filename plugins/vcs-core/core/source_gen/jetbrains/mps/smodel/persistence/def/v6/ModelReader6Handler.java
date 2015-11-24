@@ -12,9 +12,10 @@ import jetbrains.mps.smodel.DefaultSModel;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelLegacy;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.smodel.persistence.SNodeFactory;
@@ -143,7 +144,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      my_modelField = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), my_headerParam);
+      my_modelField = new DefaultSModel(VCSPersistenceUtil.createModelReference(attrs.getValue("modelUID")), my_headerParam);
       my_helperField = new VersionUtil(my_modelField.getReference());
       return new ModelLoadResult((SModel) my_modelField, ModelLoadingState.NOT_LOADED);
     }

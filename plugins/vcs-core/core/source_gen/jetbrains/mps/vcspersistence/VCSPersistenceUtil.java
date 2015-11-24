@@ -25,6 +25,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class VCSPersistenceUtil {
   public static SModel loadModel(final byte[] content, String extension) {
@@ -124,5 +129,49 @@ public class VCSPersistenceUtil {
     protected boolean saveModel() throws IOException, ModelSaveException {
       throw new UnsupportedOperationException();
     }
+  }
+
+
+  public static SModelReference createModelReference(String modelUID) {
+    Pair<Pair<SModuleId, String>, Pair<SModelId, String>> parseResult = jetbrains.mps.smodel.SModelReference.parseReference_internal(modelUID);
+    SModuleId moduleId = parseResult.o1.o1;
+    String moduleName = parseResult.o1.o2;
+    SModelId modelId = parseResult.o2.o1;
+    String modelName = parseResult.o2.o2;
+    SModuleReference moduleRef = (moduleId != null || moduleName != null ? new ModuleReference(moduleName, moduleId) : null);
+    if (moduleRef == null && !((modelId.isGloballyUnique()))) {
+      // make globally unique anyway to avoid exception for old models without modules 
+      modelId = new VCSPersistenceUtil.SModelIdProxy(modelId);
+    }
+    return new jetbrains.mps.smodel.SModelReference(moduleRef, modelId, modelName);
+  }
+
+  private static class SModelIdProxy implements SModelId {
+    private final SModelId myOldModelId;
+    public SModelIdProxy(SModelId modelId) {
+      myOldModelId = modelId;
+    }
+    public String getType() {
+      return myOldModelId.getType();
+    }
+    public boolean isGloballyUnique() {
+      return true;
+    }
+    public String getModelName() {
+      return myOldModelId.getModelName();
+    }
+    @Override
+    public int hashCode() {
+      return myOldModelId.hashCode();
+    }
+    @Override
+    public boolean equals(Object object) {
+      return object instanceof VCSPersistenceUtil.SModelIdProxy && myOldModelId.equals(((VCSPersistenceUtil.SModelIdProxy) object).myOldModelId);
+    }
+    @Override
+    public String toString() {
+      return myOldModelId.toString();
+    }
+
   }
 }
