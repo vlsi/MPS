@@ -81,9 +81,6 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
         return;
       }
       options.value = dialog.getResult();
-      /*
-        getDefaultOptions().setDefaultSearchOptions(concept.value, options.value);
-      */
     }
     // start 
     final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();

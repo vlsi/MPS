@@ -31,11 +31,6 @@ public class ClassifierAdapters_Test extends TestCase {
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       assert false : "Fix the test";
-      /*
-        _FunctionTypes._return_P1_E0<? extends String, ? super Integer> ft = wrk;
-        int res = 1234;
-        Assert.assertEquals("Done: 1234", ft.invoke(res));
-      */
     }
   }
   public void test_functionTypeAsInterface() throws Exception {
@@ -46,10 +41,6 @@ public class ClassifierAdapters_Test extends TestCase {
     };
     if (!(Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE)) {
       assert false : "Fix the test";
-      /*
-        Worker wrk = cls;
-        Assert.assertEquals("Done: 4321", wrk.doWork(4321));
-      */
     }
   }
   public void test_closureLiteralAsInterface() throws Exception {
@@ -248,18 +239,8 @@ __switch__:
     }
   }
   public void test_mps5315() throws Exception {
-    /*
-      _FunctionTypes._void_P2_E0<? super Integer, ? super String> cls = new _FunctionTypes._void_P2_E0<Integer, String>() {
-        public void invoke(Integer foo, String bar) {
-        }
-      };
-      cls.invoke();
-    */
   }
   public void test_mps5316() throws Exception {
-    /*
-      this.acceptWorker();
-    */
   }
   public void test_compactInvoke() throws Exception {
     final Wrappers._int count = new Wrappers._int(0);

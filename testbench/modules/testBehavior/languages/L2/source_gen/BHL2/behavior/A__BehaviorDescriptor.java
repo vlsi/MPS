@@ -45,10 +45,6 @@ public final class A__BehaviorDescriptor extends BaseBHDescriptor {
     return TestResults.POLYMORPHIC_PARENT;
   }
   /*package*/ static void testCommentGeneration_id1eK5xBtRrre(@NotNull SNode __thisNode__) {
-    /*
-      int a = 0;
-      a = 1;
-    */
   }
 
   /*package*/ A__BehaviorDescriptor() {

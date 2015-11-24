@@ -467,9 +467,6 @@ public class BHTest_Test extends TestCase {
   }
   public void test_seqConcept() throws Exception {
     // fix 
-    // <node> 
-    // <node> 
-    // <node> 
   }
   public void setUp() {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
@@ -848,11 +845,6 @@ public class BHTest_Test extends TestCase {
   private static SNode createA_a2wy8c_a0a0vc0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), null, null, false);
-    return n1;
-  }
-  private static SNode createA_a2wy8c_a0a0a0b0wc0() {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x43359135f67c4a3dL, 0x9fdda3d7dba50995L, 0x54fc4b17de4f24cbL, "BHL1.structure.A"), null, null, false);
     return n1;
   }
 }

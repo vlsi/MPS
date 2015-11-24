@@ -135,11 +135,6 @@ public final class BaseMethodDeclaration__BehaviorDescriptor extends BaseBHDescr
       } else {
         result.append("???");
       }
-      /*
-        if (SPropertyOperations.getString(parm, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) != null) {
-          result.append(" ").append(SPropertyOperations.getString(parm, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-        }
-      */
     }
     result.append(")");
     return result.toString();

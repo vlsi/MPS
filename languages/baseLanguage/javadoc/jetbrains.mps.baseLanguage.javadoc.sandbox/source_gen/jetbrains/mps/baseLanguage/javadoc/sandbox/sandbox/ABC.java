@@ -47,9 +47,6 @@ public class ABC<TT> {
    * @return int :)
    */
   public int foo(int a) throws ArrayStoreException {
-    /*
-      a = 5;
-    */
     System.out.println(3);
     return 7;
   }
