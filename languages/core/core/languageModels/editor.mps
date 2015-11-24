@@ -9,6 +9,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="b3bi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.impl.cellActions(MPS.Editor/)" />
+    <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -485,12 +486,12 @@
             <node concept="2OqwBi" id="4aotOFCaJXI" role="3clFbG">
               <node concept="2ShNRf" id="4aotOFCaJXJ" role="2Oq$k0">
                 <node concept="1pGfFk" id="2fHR8tjPqaV" role="2ShVmc">
-                  <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_Uncomment" />
+                  <ref role="37wK5l" to="wcxw:5FzO4t9hFjp" resolve="CellAction_Uncomment" />
                   <node concept="0IXxy" id="2fHR8tjPqgY" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="4aotOFCaJXM" role="2OqNvi">
-                <ref role="37wK5l" to="b3bi:~AbstractCommentAction.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <ref role="37wK5l" to="wcxw:2VTQtA8$iYQ" resolve="execute" />
                 <node concept="1Q80Hx" id="4aotOFCaJXN" role="37wK5m" />
               </node>
             </node>
@@ -503,12 +504,12 @@
             <node concept="2OqwBi" id="48OeoCZJHzz" role="3clFbG">
               <node concept="2ShNRf" id="48OeoCZJHz$" role="2Oq$k0">
                 <node concept="1pGfFk" id="48OeoCZJHz_" role="2ShVmc">
-                  <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_Uncomment" />
+                  <ref role="37wK5l" to="wcxw:5FzO4t9hFjp" resolve="CellAction_Uncomment" />
                   <node concept="0IXxy" id="48OeoCZJHzA" role="37wK5m" />
                 </node>
               </node>
               <node concept="liA8E" id="48OeoCZJHzB" role="2OqNvi">
-                <ref role="37wK5l" to="b3bi:~CellAction_Uncomment.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean" resolve="canExecute" />
+                <ref role="37wK5l" to="wcxw:5FKjex9iOLs" resolve="canExecute" />
                 <node concept="1Q80Hx" id="48OeoCZJHzC" role="37wK5m" />
               </node>
             </node>
