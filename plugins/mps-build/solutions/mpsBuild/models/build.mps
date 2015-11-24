@@ -7785,6 +7785,24 @@
           <property role="3LESm3" value="1f3698ec-8a44-4aaa-b907-0ac2077d80a4" />
           <property role="2GAjPV" value="false" />
         </node>
+        <node concept="1SiIV0" id="2LYh6L3nbN$" role="3bR37C">
+          <node concept="3bR9La" id="2LYh6L3nbN_" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2LYh6L3nbNA" role="3bR37C">
+          <node concept="3bR9La" id="2LYh6L3nbNB" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2LYh6L3nbNC" role="3bR37C">
+          <node concept="3bR9La" id="2LYh6L3nbND" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1CtrbKI23Wm" resolve="jetbrains.mps.lang.migration" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6L4j" role="2G$12L">
         <property role="BnDLt" value="true" />

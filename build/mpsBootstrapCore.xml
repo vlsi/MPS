@@ -2941,6 +2941,7 @@
           <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
@@ -7368,7 +7369,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.core" depends="java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-generator, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-textgen, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.java.modules.cycle.3, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.core" depends="java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-legacy-api, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-core, java.compile.platform, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.java.modules.cycle.3, fetchDependencies">
     <mkdir dir="${mps_home}/languages/core/core/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.core" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.core" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -7381,7 +7382,6 @@
         <pathelement path="${build.tmp}/java/out/mps-behavior-runtime" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
         <pathelement path="${build.tmp}/java/out/mps-collections" />
-        <pathelement path="${build.tmp}/java/out/mps-generator" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-core-components" />
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
@@ -7389,18 +7389,19 @@
         <pathelement path="${build.tmp}/java/out/mps-project" />
         <pathelement path="${build.tmp}/java/out/mps-behavior-legacy-api" />
         <pathelement path="${build.tmp}/java/out/mps-kernel" />
+        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
+        <pathelement path="${build.tmp}/java/out/mps-editorlang-runtime" />
+        <pathelement path="${build.tmp}/java/out/mps-editor" />
+        <pathelement path="${build.tmp}/java/out/mps-generator" />
         <pathelement path="${build.tmp}/java/out/kernel-resources" />
         <pathelement path="${build.tmp}/java/out/mps-make-rt" />
         <pathelement path="${build.tmp}/java/out/mps-migration" />
         <pathelement path="${build.tmp}/java/out/mps-persistence" />
-        <pathelement path="${build.tmp}/java/out/mps-textgen" />
-        <pathelement path="${build.tmp}/java/out/mps-editor-api" />
-        <pathelement path="${build.tmp}/java/out/mps-editorlang-runtime" />
-        <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/platform" />
         <pathelement path="${build.tmp}/java/out/mps-environment" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/mps-textgen" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.jdom-lib" />
