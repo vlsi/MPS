@@ -9,6 +9,9 @@ import jetbrains.mps.samples.LightweightDSL.plugin.transformRuntime.PipelineElem
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
+/**
+ * Creates a transforming pipeline and processes the integer data printing out the result.
+ */
 public class Demo {
   public List<Integer> getData() {
     return ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
