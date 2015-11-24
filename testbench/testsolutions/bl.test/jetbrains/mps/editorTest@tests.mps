@@ -11048,64 +11048,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="2tTgVY$_$vN">
-    <property role="3GE5qa" value="selection.moveElements" />
-    <property role="TrG5h" value="MoveOutOfCommentedBlock" />
-    <node concept="9aQIb" id="2tTgVY$_$vP" role="LiRBU">
-      <node concept="3clFbS" id="2tTgVY$_$vR" role="9aQI4">
-        <node concept="1X3_iC" id="35NJMdfoNk6" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3clFbF" id="2tTgVY$_FJk" role="8Wnug">
-            <node concept="2OqwBi" id="2tTgVY$_FJg" role="3clFbG">
-              <node concept="10M0yZ" id="2tTgVY$_FJh" role="2Oq$k0">
-                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-              </node>
-              <node concept="liA8E" id="2tTgVY$_FJi" role="2OqNvi">
-                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                <node concept="Xl_RD" id="2tTgVY$_FJj" role="37wK5m">
-                  <property role="Xl_RC" value="" />
-                </node>
-              </node>
-            </node>
-            <node concept="LIFWc" id="2tTgVY$_FPX" role="lGtFl">
-              <property role="ZRATv" value="true" />
-              <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="1" />
-              <property role="p6zMs" value="1" />
-              <property role="LIFWd" value="Constant_zedcwq_b0" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="9aQIb" id="2tTgVY$_G1v" role="LiZbd">
-      <node concept="3clFbS" id="2tTgVY$_G1w" role="9aQI4">
-        <node concept="3clFbF" id="2tTgVY$_G1y" role="3cqZAp">
-          <node concept="2OqwBi" id="2tTgVY$_G1z" role="3clFbG">
-            <node concept="10M0yZ" id="2tTgVY$_G1$" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-            </node>
-            <node concept="liA8E" id="2tTgVY$_G1_" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="Xl_RD" id="2tTgVY$_G1A" role="37wK5m">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="2tTgVY$_JcV" role="LjaKd">
-      <node concept="2HxZob" id="2tTgVY$_JcT" role="3cqZAp">
-        <node concept="1iFQzN" id="2tTgVY$_Jyu" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2pEKBmjmchR" resolve="MoveElementsDown" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="OVlDUncFBr">
     <property role="3GE5qa" value="selection.moveElements" />
     <property role="TrG5h" value="MoveFirstStatementThenMethod" />
@@ -12062,64 +12004,6 @@
       <node concept="2HxZob" id="6bOvqMpbBRG" role="3cqZAp">
         <node concept="1iFQzN" id="6bOvqMpbBRM" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:2pEKBmjmbli" resolve="MoveElementsUp" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="7kMaq7X6jpp">
-    <property role="3GE5qa" value="selection.moveElements" />
-    <property role="TrG5h" value="MoveToCommentedStatement" />
-    <node concept="9aQIb" id="7kMaq7X6ktk" role="LiRBU">
-      <node concept="3clFbS" id="7kMaq7X6ktm" role="9aQI4">
-        <node concept="3clFbF" id="7kMaq7X6lOu" role="3cqZAp">
-          <node concept="2OqwBi" id="7kMaq7X6lOq" role="3clFbG">
-            <node concept="10M0yZ" id="7kMaq7X6lOr" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-            </node>
-            <node concept="liA8E" id="7kMaq7X6lOs" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="Xl_RD" id="7kMaq7X6lOt" role="37wK5m">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
-          </node>
-          <node concept="LIFWc" id="7kMaq7X78A_" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="1" />
-            <property role="p6zMs" value="1" />
-            <property role="LIFWd" value="Constant_zedcwq_b0" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="9aQIb" id="7kMaq7X77TG" role="LiZbd">
-      <node concept="3clFbS" id="7kMaq7X77TH" role="9aQI4">
-        <node concept="1X3_iC" id="35NJMdfoNk7" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3clFbF" id="7kMaq7X77TI" role="8Wnug">
-            <node concept="2OqwBi" id="7kMaq7X77TJ" role="3clFbG">
-              <node concept="10M0yZ" id="7kMaq7X77TK" role="2Oq$k0">
-                <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-              </node>
-              <node concept="liA8E" id="7kMaq7X77TL" role="2OqNvi">
-                <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String):void" resolve="println" />
-                <node concept="Xl_RD" id="7kMaq7X77TM" role="37wK5m">
-                  <property role="Xl_RC" value="" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="7kMaq7X78Wz" role="LjaKd">
-      <node concept="2HxZob" id="7kMaq7X78Wx" role="3cqZAp">
-        <node concept="1iFQzN" id="7kMaq7X79iE" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:2pEKBmjmchR" resolve="MoveElementsDown" />
         </node>
       </node>
     </node>

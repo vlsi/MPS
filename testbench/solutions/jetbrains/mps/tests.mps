@@ -624,7 +624,7 @@
       <ref role="lpD7u" to="e6od:5fIuys0cI6R" resolve="Uncomment_LastStatement" />
     </node>
     <node concept="lpD6D" id="4T4PEv8HaII" role="lpD6w">
-      <ref role="lpD7u" to="e6od:4T4PEv8H3IK" resolve="Uncomment_LineOutsideCommentedNode" />
+      <ref role="lpD7u" to="e6od:4T4PEv8H3IK" resolve="Uncomment_LineOutOfCommentedNode" />
     </node>
     <node concept="lpD6D" id="4IrZ8JbCd_r" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cKzo" resolve="Uncomment_Method" />
@@ -2898,9 +2898,6 @@
     <node concept="lpD6D" id="2tTgVY$IfZy" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6ilENjJfGoe" resolve="MoveNodeRange" />
     </node>
-    <node concept="lpD6D" id="2tTgVY$Ig3H" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:2tTgVY$_$vN" resolve="MoveOutOfCommentedBlock" />
-    </node>
     <node concept="lpD6D" id="2tTgVY$Ig7T" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5pVxOHYO3u$" resolve="MoveOutOfTheBlock" />
     </node>
@@ -2927,9 +2924,6 @@
     </node>
     <node concept="lpD6D" id="2tTgVY$IgDX" role="lpD6w">
       <ref role="lpD7u" to="ryl9:OVlDUncBsT" resolve="MoveToBlock" />
-    </node>
-    <node concept="lpD6D" id="2tTgVY$IgIi" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:7kMaq7X6jpp" resolve="MoveToCommentedStatement" />
     </node>
     <node concept="lpD6D" id="2tTgVY$Ik9d" role="lpD6w">
       <ref role="lpD7u" to="ryl9:6uruNJZpiHO" resolve="MoveToDummyBlock" />
