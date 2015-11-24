@@ -23,7 +23,7 @@
   <!--</project-components>-->
 
   <extensions defaultExtensionNs="com.intellij">
-    <mps.moduleMpsSupport implementation="jetbrains.mps.idea.core.project.module.IdeaModuleMPSSupport"/>
+    <mps.moduleMpsSupport implementation="jetbrains.mps.idea.core.project.module.IdeaModuleMPSSupport" id="idea"/>
   </extensions>
 
   <project-components>
