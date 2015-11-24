@@ -28,7 +28,9 @@ public class CellAction_Comment extends AbstractCommentAction {
   }
 
   public void executeInternal(EditorContext editorContext) {
-    CommentUtil.commentOut(myNode);
+    if (!(SNodeOperations.isInstanceOf(myNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute")))) {
+      CommentUtil.commentOut(myNode);
+    }
   }
 
   protected RestorableSelection createRestorableSelection(EditorContext editorContext) {

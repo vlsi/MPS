@@ -1023,6 +1023,28 @@
       <unit id="6047905657530835410" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncomment_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/7362595478849060640">
+    <file name="Comment_LocalVariableDeclarationStatement_Test.java">
+      <node id="7362595478849060640" at="15,81,16,115" concept="1" />
+      <node id="7362595478849060640" at="16,115,17,136" concept="1" />
+      <node id="7362595478849060640" at="24,51,25,63" concept="1" />
+      <node id="7362595478849060642" at="25,63,26,75" concept="1" />
+      <node id="7362595478849060640" at="12,0,14,0" concept="0" trace="Comment_LocalVariableDeclarationStatement_Test#()V" />
+      <node id="7362595478849060640" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="7362595478849060640" at="14,0,19,0" concept="2" trace="test_Comment_LocalVariableDeclarationStatement#()V" />
+      <node id="7362595478849060640" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7362595478849060640" at="12,59,12,59" />
+      <scope id="7362595478849060640" at="21,23,21,23" />
+      <scope id="7362595478849060640" at="12,0,14,0" />
+      <scope id="7362595478849060640" at="15,81,17,136" />
+      <scope id="7362595478849060640" at="21,0,23,0" />
+      <scope id="7362595478849060640" at="24,51,26,75" />
+      <scope id="7362595478849060640" at="14,0,19,0" />
+      <scope id="7362595478849060640" at="23,0,28,0" />
+      <unit id="7362595478849060640" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Comment_LocalVariableDeclarationStatement_Test$TestBody" />
+      <unit id="7362595478849060640" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Comment_LocalVariableDeclarationStatement_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/7803854675609827855">
     <file name="DelOnChild1ReplaceItWithLinkTarget_Test.java">
       <node id="7803854675609827855" at="15,74,16,115" concept="1" />
