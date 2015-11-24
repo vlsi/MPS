@@ -3881,6 +3881,7 @@
       <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="fDxFjGI" role="3EZMnx">
         <ref role="1NtTu8" to="tpee:fzcpWvL" />
+        <ref role="1ERwB7" node="6oHcphdGjni" resolve="LocalVariableDeclarationStatement_Declaration_Actions" />
       </node>
       <node concept="3F0ifn" id="fDxFjGJ" role="3EZMnx">
         <property role="3F0ifm" value=";" />
@@ -30085,6 +30086,26 @@
                 <ref role="37wK5l" to="wcxw:513LyO4bN8P" resolve="canExecute" />
                 <node concept="1Q80Hx" id="7seBbfiyEku" role="37wK5m" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="6oHcphdGjni">
+    <property role="3GE5qa" value="variables" />
+    <property role="TrG5h" value="LocalVariableDeclarationStatement_Declaration_Actions" />
+    <ref role="1h_SK9" to="tpee:fzcpWvK" resolve="LocalVariableDeclarationStatement" />
+    <node concept="1hA7zw" id="6oHcphdGjnj" role="1h_SK8">
+      <property role="1hAc7j" value="comment_out_action_id" />
+      <node concept="1hAIg9" id="6oHcphdGjnk" role="1hA7z_">
+        <node concept="3clFbS" id="6oHcphdGjnl" role="2VODD2" />
+      </node>
+      <node concept="jK8Ss" id="6oHcphdGjnp" role="jK8aL">
+        <node concept="3clFbS" id="6oHcphdGjnq" role="2VODD2">
+          <node concept="3clFbF" id="6oHcphdGp3V" role="3cqZAp">
+            <node concept="3clFbT" id="6oHcphdGp3U" role="3clFbG">
+              <property role="3clFbU" value="false" />
             </node>
           </node>
         </node>

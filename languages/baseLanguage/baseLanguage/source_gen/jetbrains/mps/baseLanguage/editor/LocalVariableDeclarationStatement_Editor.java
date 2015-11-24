@@ -48,6 +48,7 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
       if (editorCell.getRole() == null) {
         editorCell.setRole("localVariableDeclaration");
       }
+      LocalVariableDeclarationStatement_Declaration_Actions.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
 
 

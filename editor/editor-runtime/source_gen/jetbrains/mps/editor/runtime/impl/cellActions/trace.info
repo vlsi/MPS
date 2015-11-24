@@ -16,6 +16,23 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/1610597955266231096">
+    <file name="CellAction_DeleteSimple.java">
+      <node id="1610597955266235758" at="10,54,11,24" concept="13" />
+      <node id="1610597955266234952" at="14,46,15,29" concept="3" />
+      <node id="1610597955266235403" at="10,0,13,0" concept="2" trace="CellAction_DeleteSimple#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1610597955266234788" at="13,0,17,0" concept="7" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="1610597955266235407" at="10,54,11,24" />
+      <scope id="1610597955266234794" at="14,46,15,29" />
+      <scope id="1610597955266235403" at="10,0,13,0">
+        <var name="semanticNode" id="1610597955266235636" />
+      </scope>
+      <scope id="1610597955266234788" at="13,0,17,0">
+        <var name="context" id="1610597955266234792" />
+      </scope>
+      <unit id="1610597955266231096" at="9,0,18,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple" />
+    </file>
+  </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/2298389068003719485">
     <file name="CellAction_DeleteEasily.java">
       <node id="2298389068003719999" at="16,54,17,24" concept="13" />

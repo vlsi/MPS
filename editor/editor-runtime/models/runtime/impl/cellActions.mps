@@ -4478,5 +4478,57 @@
       <ref role="3uigEE" to="3ahc:~AbstractCellAction" resolve="AbstractCellAction" />
     </node>
   </node>
+  <node concept="312cEu" id="1ppZ$UnBjGS">
+    <property role="TrG5h" value="CellAction_DeleteSimple" />
+    <node concept="3clFbW" id="1ppZ$UnBkKb" role="jymVt">
+      <node concept="3cqZAl" id="1ppZ$UnBkKd" role="3clF45" />
+      <node concept="3Tm1VV" id="1ppZ$UnBkKe" role="1B3o_S" />
+      <node concept="3clFbS" id="1ppZ$UnBkKf" role="3clF47">
+        <node concept="XkiVB" id="1ppZ$UnBkPI" role="3cqZAp">
+          <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="CellAction_DeleteNode" />
+          <node concept="37vLTw" id="1ppZ$UnBkQ$" role="37wK5m">
+            <ref role="3cqZAo" node="1ppZ$UnBkNO" resolve="semanticNode" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1ppZ$UnBkNO" role="3clF46">
+        <property role="TrG5h" value="semanticNode" />
+        <node concept="3Tqbb2" id="1ppZ$UnBkNN" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1ppZ$UnBkA$" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="execute" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="1ppZ$UnBkA_" role="1B3o_S" />
+      <node concept="3cqZAl" id="1ppZ$UnBkAB" role="3clF45" />
+      <node concept="37vLTG" id="1ppZ$UnBkAC" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="1ppZ$UnBkAD" role="1tU5fm">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1ppZ$UnBkAE" role="3clF47">
+        <node concept="3clFbF" id="1ppZ$UnBkD8" role="3cqZAp">
+          <node concept="2OqwBi" id="1ppZ$UnBkFw" role="3clFbG">
+            <node concept="1rXfSq" id="1ppZ$UnBkD6" role="2Oq$k0">
+              <ref role="37wK5l" to="q4oi:~CellAction_DeleteNode.getSourceNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSourceNode" />
+            </node>
+            <node concept="liA8E" id="1ppZ$UnBkJD" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNode.delete():void" resolve="delete" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1ppZ$UnBkAF" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="1ppZ$UnBjGT" role="1B3o_S" />
+    <node concept="3uibUv" id="1ppZ$UnBkAg" role="1zkMxy">
+      <ref role="3uigEE" to="q4oi:~CellAction_DeleteNode" resolve="CellAction_DeleteNode" />
+    </node>
+  </node>
 </model>
 
