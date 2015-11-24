@@ -32,11 +32,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * @deprecated use DefaultSReferenceSubstituteInfo
- */
-
-@Deprecated
 public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private SNode mySourceNode;
   private DefaultReferenceSubstituteInfoActionsFactory myActionFactory;

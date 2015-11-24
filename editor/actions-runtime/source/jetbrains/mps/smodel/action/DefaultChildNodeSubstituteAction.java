@@ -30,10 +30,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Igor Alshannikov
  * Mar 29, 2005
  *
- * @deprecated use jetbrains.mps.smodel.action.DefaultSChildSubstituteAction
  *
  */
-@Deprecated
 public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteAction {
   private static final Logger LOG = LogManager.getLogger(DefaultChildNodeSubstituteAction.class);
 

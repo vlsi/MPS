@@ -37,10 +37,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * @deprecated use jetbrains.mps.lang.editor.cellProviders.SChildListHandler
- */
-@Deprecated
 public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   private SNode myChildConcept;

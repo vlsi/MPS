@@ -41,11 +41,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * @deprecated use DefaultSChildSubstituteInfo
- */
-
-@Deprecated
 public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultChildSubstituteInfo.class));
 

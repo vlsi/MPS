@@ -28,9 +28,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 /**
  * User: Igor Alshannikov
  * Date: Mar 7, 2006
- * @deprecated use DefaultChildSetter
  */
-@Deprecated
 public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
   private static final Logger LOG = LogManager.getLogger(DefaultChildNodeSetter.class);
 

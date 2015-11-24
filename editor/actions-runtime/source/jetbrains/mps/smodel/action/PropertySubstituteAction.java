@@ -24,9 +24,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-/**
- *  @deprecated use SPropertySubstituteAction
- */
 public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   private String myPropertyName;
   private String myPropertyValue;
