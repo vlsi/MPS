@@ -2,11 +2,11 @@
 <model ref="r:83748538-cbc9-4e2d-b0e1-e282b3d0c13d(jetbrains.mps.smodel.persistence.def.v6)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="dcb5a83a-19a8-44ff-a4cb-fc7d324ecc63" name="jetbrains.mps.core.xml.sax" version="0" />
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="dcb5a83a-19a8-44ff-a4cb-fc7d324ecc63" name="jetbrains.mps.core.xml.sax" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="t77w" ref="r:2cdd9596-2ed5-4152-b387-8144a1963c4c(jetbrains.mps.smodel.persistence.def.v5)" />
@@ -21,11 +21,11 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
-    <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="llmc" ref="r:8276e029-a527-420e-8e0f-72df2934554c(jetbrains.mps.smodel.persistence.def.v4)" />
+    <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -145,7 +145,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -551,16 +551,11 @@
               <node concept="2ShNRf" id="6mjRS6akOSm" role="37vLTx">
                 <node concept="1pGfFk" id="6mjRS6akOSn" role="2ShVmc">
                   <ref role="37wK5l" to="w1kc:~DefaultSModel.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,jetbrains.mps.smodel.SModelHeader)" resolve="DefaultSModel" />
-                  <node concept="2OqwBi" id="_hnoInnJs5" role="37wK5m">
-                    <node concept="liA8E" id="_hnoInnKgz" role="2OqNvi">
-                      <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                      <node concept="CQp6E" id="_hnoIno99f" role="37wK5m">
-                        <ref role="CQp6D" node="6mjRS6akOQq" resolve="modelUID" />
-                      </node>
-                    </node>
-                    <node concept="2YIFZM" id="_hnoInnJeY" role="2Oq$k0">
-                      <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                      <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                  <node concept="2YIFZM" id="3I8E8teX0FN" role="37wK5m">
+                    <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+                    <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                    <node concept="CQp6E" id="3I8E8teX0Ix" role="37wK5m">
+                      <ref role="CQp6D" node="6mjRS6akOQq" resolve="modelUID" />
                     </node>
                   </node>
                   <node concept="CQp63" id="QTAzJ3PesJ" role="37wK5m">
@@ -1223,8 +1218,8 @@
     <ref role="CQp1w" node="$9Go3BwKUM" resolve="model" />
     <node concept="CQp6Y" id="6AfXaC8OvMb" role="CQp1A">
       <property role="TrG5h" value="accumulator" />
-      <node concept="3uibUv" id="6AfXaC8Ow1A" role="CQp6X">
-        <ref role="3uigEE" to="5fzo:~LineContentAccumulator" resolve="LineContentAccumulator" />
+      <node concept="3uibUv" id="4YdwlnesbWp" role="CQp6X">
+        <ref role="3uigEE" to="t77w:7E_6zdv1nko" resolve="LineContentAccumulator" />
       </node>
     </node>
     <node concept="CQp6h" id="$9Go3BwKUM" role="CQp1B">
@@ -1263,7 +1258,7 @@
                   <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
                 </node>
                 <node concept="liA8E" id="6AfXaC8Ow2O" role="2OqNvi">
-                  <ref role="37wK5l" to="5fzo:~LineContentAccumulator.popNode(org.xml.sax.Locator):void" resolve="popNode" />
+                  <ref role="37wK5l" to="t77w:7E_6zdv1nk$" resolve="popNode" />
                   <node concept="CQp6e" id="6AfXaC8Ow2P" role="37wK5m" />
                 </node>
               </node>
@@ -1277,7 +1272,7 @@
             <node concept="37vLTI" id="6AfXaC8Ow1D" role="3clFbG">
               <node concept="2ShNRf" id="6AfXaC8Ow1G" role="37vLTx">
                 <node concept="1pGfFk" id="6AfXaC8Ow1H" role="2ShVmc">
-                  <ref role="37wK5l" to="5fzo:~LineContentAccumulator.&lt;init&gt;()" resolve="LineContentAccumulator" />
+                  <ref role="37wK5l" to="t77w:7E_6zdv1nlp" resolve="LineContentAccumulator" />
                 </node>
               </node>
               <node concept="CQp63" id="6AfXaC8Ow1C" role="37vLTJ">
@@ -1291,7 +1286,7 @@
                 <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
               </node>
               <node concept="liA8E" id="6AfXaC8Ow1Q" role="2OqNvi">
-                <ref role="37wK5l" to="5fzo:~LineContentAccumulator.getLineToContentMap():java.util.List" resolve="getLineToContentMap" />
+                <ref role="37wK5l" to="t77w:7E_6zdv1nlv" resolve="getLineToContentMap" />
               </node>
             </node>
           </node>
@@ -1319,7 +1314,7 @@
                       <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
                     </node>
                     <node concept="liA8E" id="6AfXaC8Ow2h" role="2OqNvi">
-                      <ref role="37wK5l" to="5fzo:~LineContentAccumulator.saveProperty(java.lang.String,org.xml.sax.Locator):void" resolve="saveProperty" />
+                      <ref role="37wK5l" to="t77w:7E_6zdv1nkM" resolve="saveProperty" />
                       <node concept="CQp6Q" id="6AfXaC8Ow2i" role="37wK5m" />
                       <node concept="CQp6e" id="6AfXaC8Ow2k" role="37wK5m" />
                     </node>
@@ -1346,7 +1341,7 @@
                       <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
                     </node>
                     <node concept="liA8E" id="6AfXaC8Ow2t" role="2OqNvi">
-                      <ref role="37wK5l" to="5fzo:~LineContentAccumulator.saveReference(java.lang.String,org.xml.sax.Locator):void" resolve="saveReference" />
+                      <ref role="37wK5l" to="t77w:7E_6zdv1nkU" resolve="saveReference" />
                       <node concept="CQp6Q" id="6AfXaC8Ow2u" role="37wK5m" />
                       <node concept="CQp6e" id="6AfXaC8Ow2w" role="37wK5m" />
                     </node>
@@ -1371,7 +1366,7 @@
                   <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
                 </node>
                 <node concept="liA8E" id="6AfXaC8Ow2B" role="2OqNvi">
-                  <ref role="37wK5l" to="5fzo:~LineContentAccumulator.popNode(org.xml.sax.Locator):void" resolve="popNode" />
+                  <ref role="37wK5l" to="t77w:7E_6zdv1nk$" resolve="popNode" />
                   <node concept="CQp6e" id="6AfXaC8Ow2C" role="37wK5m" />
                 </node>
               </node>
@@ -1393,7 +1388,7 @@
                   <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
                 </node>
                 <node concept="liA8E" id="6AfXaC8Ow24" role="2OqNvi">
-                  <ref role="37wK5l" to="5fzo:~LineContentAccumulator.pushNode(org.jetbrains.mps.openapi.model.SNodeId,org.xml.sax.Locator):void" resolve="pushNode" />
+                  <ref role="37wK5l" to="t77w:7E_6zdv1nkp" resolve="pushNode" />
                   <node concept="2YIFZM" id="6AfXaC8Ow26" role="37wK5m">
                     <ref role="37wK5l" to="w1kc:~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolve="fromString" />
                     <ref role="1Pybhc" to="w1kc:~SNodeId" resolve="SNodeId" />
@@ -1470,7 +1465,7 @@
                   <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
                 </node>
                 <node concept="liA8E" id="1HdRFDxl8Vh" role="2OqNvi">
-                  <ref role="37wK5l" to="5fzo:~LineContentAccumulator.popNode(org.xml.sax.Locator):void" resolve="popNode" />
+                  <ref role="37wK5l" to="t77w:7E_6zdv1nk$" resolve="popNode" />
                   <node concept="CQp6e" id="1HdRFDxl8Vi" role="37wK5m" />
                 </node>
               </node>
@@ -1495,7 +1490,7 @@
                 <ref role="CQp62" node="6AfXaC8OvMb" resolve="accumulator" />
               </node>
               <node concept="liA8E" id="6AfXaC8Ow2W" role="2OqNvi">
-                <ref role="37wK5l" to="5fzo:~LineContentAccumulator.processText(java.lang.String,org.xml.sax.Locator):void" resolve="processText" />
+                <ref role="37wK5l" to="t77w:7E_6zdv1nl2" resolve="processText" />
                 <node concept="3kJTZq" id="6AfXaC8Ow2X" role="37wK5m" />
                 <node concept="CQp6e" id="6AfXaC8Ow2Z" role="37wK5m" />
               </node>
@@ -2904,20 +2899,15 @@
           <node concept="3cpWsn" id="p9Lm3R6BHt" role="3cpWs9">
             <property role="3TUv4t" value="false" />
             <property role="TrG5h" value="modelRef" />
+            <node concept="2YIFZM" id="3I8E8teWYe0" role="33vP2m">
+              <ref role="37wK5l" to="iho:3I8E8teWORk" resolve="createModelReference" />
+              <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+              <node concept="37vLTw" id="3I8E8teWYjn" role="37wK5m">
+                <ref role="3cqZAo" node="p9Lm3R6BH1" resolve="modelUID" />
+              </node>
+            </node>
             <node concept="3uibUv" id="p9Lm3R6BHv" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
-            </node>
-            <node concept="2OqwBi" id="p9Lm3R6BHw" role="33vP2m">
-              <node concept="2YIFZM" id="p9Lm3R6BX4" role="2Oq$k0">
-                <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="p9Lm3R6BHy" role="2OqNvi">
-                <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-                <node concept="37vLTw" id="p9Lm3R6BHz" role="37wK5m">
-                  <ref role="3cqZAo" node="p9Lm3R6BH1" resolve="modelUID" />
-                </node>
-              </node>
             </node>
           </node>
         </node>

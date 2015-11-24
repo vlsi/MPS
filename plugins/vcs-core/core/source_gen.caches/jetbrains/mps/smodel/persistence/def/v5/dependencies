@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" file="LineContentAccumulator.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Deque" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.NodeLineContent" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.PropertyLineContent" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.ReferenceLineContent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.xml.sax.Locator" />
+  </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" file="LineToContentMapReader5Handler.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -7,9 +22,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ElementHandler" />
+    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
@@ -59,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ElementHandler" />
+    <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />

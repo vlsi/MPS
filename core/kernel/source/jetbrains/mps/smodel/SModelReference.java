@@ -19,6 +19,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -141,6 +142,17 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Deprecated
   @ToRemove(version = 3.3)
   public static SModelReference parseReference(String s) {
+    Pair<Pair<SModuleId, String>, Pair<SModelId, String>> parseResult = parseReference_internal(s);
+    SModuleId moduleId = parseResult.o1.o1;
+    String moduleName = parseResult.o1.o2;
+    SModelId modelId = parseResult.o2.o1;
+    String modelName = parseResult.o2.o2;
+    SModuleReference moduleRef =
+        moduleId != null || moduleName != null ? new jetbrains.mps.project.structure.modules.ModuleReference(moduleName, moduleId) : null;
+    return new SModelReference(moduleRef, modelId, modelName);
+  }
+
+  public static Pair<Pair<SModuleId, String>, Pair<SModelId, String>> parseReference_internal(String s) {
     if (s == null) return null;
     s = s.trim();
     int lParen = s.indexOf('(');
@@ -210,9 +222,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       modelId = SModelRepository.newJavaPackageStubFromLegacy(modelId);
     }
 
-    SModuleReference moduleRef =
-        moduleId != null || moduleName != null ? new jetbrains.mps.project.structure.modules.ModuleReference(moduleName, moduleId) : null;
-    return new SModelReference(moduleRef, modelId, modelName);
+    return new Pair(new Pair(moduleId, moduleName), new Pair(modelId, modelName));
   }
 
   /**
