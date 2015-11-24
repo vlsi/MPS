@@ -315,6 +315,7 @@ public class CommonPaths {
 
   private static void addTestJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-test.jar");
+    addIfExists(result, "/lib/mps-environment.jar");
     addIfExists(result, "/lib/junit-4.12.jar");
   }
 
