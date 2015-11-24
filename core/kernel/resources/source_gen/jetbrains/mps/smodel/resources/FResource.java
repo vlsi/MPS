@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
+/**
+ * 
+ */
 public class FResource extends MultiTuple._5<String, Map<String, Object>, Map<SNodeReference, String>, SModule, SModel> implements IFResource {
   public FResource() {
     super();

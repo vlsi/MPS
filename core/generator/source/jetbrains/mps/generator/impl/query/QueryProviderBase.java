@@ -16,8 +16,8 @@
 package jetbrains.mps.generator.impl.query;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
@@ -75,6 +75,12 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
   @NotNull
   @Override
   public DropRuleCondition getDropRuleCondition(@NotNull SNode rule) {
+    return new Defaults();
+  }
+
+  @NotNull
+  @Override
+  public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull SNode rule) {
     return new Defaults();
   }
 
@@ -145,7 +151,7 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
    */
   public static class Defaults implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, SourceNodeQuery, SourceNodesQuery,
-      IfMacroCondition, InlineSwitchCaseCondition, WeaveAnchorQuery {
+      IfMacroCondition, InlineSwitchCaseCondition, WeaveAnchorQuery, DropAttributeRuleCondition {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
@@ -159,6 +165,11 @@ public abstract class QueryProviderBase implements GeneratorQueryProvider {
 
     @Override
     public boolean check(@NotNull DropRootRuleContext ctx) {
+      return true;
+    }
+
+    @Override
+    public boolean check(@NotNull DropAttributeRuleContext ctx) {
       return true;
     }
 

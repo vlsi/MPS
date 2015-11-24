@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.interpreted;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.CreateRootCondition;
+import jetbrains.mps.generator.impl.query.DropAttributeRuleCondition;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
@@ -34,6 +35,7 @@ import jetbrains.mps.generator.impl.query.WeaveAnchorQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.generator.template.DropAttributeRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.InlineSwitchCaseContext;
@@ -122,6 +124,17 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       return new Impl(rule.getReference(), conditionMethod, true);
     }
     return super.getDropRuleCondition(rule);
+  }
+
+  @NotNull
+  @Override
+  public DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull SNode rule) {
+    SNode condition = RuleUtil.getDropAttributeRule_Condition(rule);
+    String conditionMethod = condition == null ? null : TemplateFunctionMethodName.dropAttributeRule_Condition(condition);
+    if (conditionMethod != null) {
+      return new Impl(rule.getReference(), conditionMethod, true);
+    }
+    return super.getDropAttributeRuleCondition(rule);
   }
 
   @NotNull
@@ -235,7 +248,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
   private static final class Impl implements CreateRootCondition, MapRootRuleCondition, ReductionRuleCondition, PatternRuleQuery,
       DropRuleCondition, WeaveRuleCondition, WeaveRuleQuery, ScriptCodeBlock, MapConfigurationCondition, IfMacroCondition,
-      InlineSwitchCaseCondition, WeaveAnchorQuery {
+      InlineSwitchCaseCondition, WeaveAnchorQuery, DropAttributeRuleCondition {
 
     private final String myMethodName;
     private final boolean myDefValue;
@@ -290,6 +303,11 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull DropRootRuleContext ctx) {
+      return getMethod(ctx).invoke(ctx);
+    }
+
+    @Override
+    public boolean check(@NotNull DropAttributeRuleContext ctx) {
       return getMethod(ctx).invoke(ctx);
     }
 

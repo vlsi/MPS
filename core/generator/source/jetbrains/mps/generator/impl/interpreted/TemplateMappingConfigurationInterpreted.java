@@ -19,8 +19,10 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
+import jetbrains.mps.generator.runtime.TemplateMappingConfiguration2;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
@@ -28,18 +30,20 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public class TemplateMappingConfigurationInterpreted implements TemplateMappingConfiguration {
+public class TemplateMappingConfigurationInterpreted implements TemplateMappingConfiguration, TemplateMappingConfiguration2 {
 
   private final SNode myMappingConfiguration;
   private final TemplateModel myModel;
@@ -51,6 +55,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   private List<TemplateDropRootRule> myDropRootRules;
   private List<TemplateMappingScript> myPreScripts;
   private List<TemplateMappingScript> myPostScripts;
+  private List<TemplateDropAttributeRule> myDropAttributeRules;
 
   private MapConfigurationCondition myCondition;
   private volatile boolean myInitialized = false;
@@ -69,6 +74,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       myRootMappingRules = new ArrayList<TemplateRootMappingRule>(5);
       myWeavingRules = new ArrayList<TemplateWeavingRule>(5);
       myDropRootRules = new ArrayList<TemplateDropRootRule>(5);
+      myDropAttributeRules = new ArrayList<TemplateDropAttributeRule>(5);
       myPreScripts = new ArrayList<TemplateMappingScript>(5);
       myPostScripts = new ArrayList<TemplateMappingScript>(5);
       ArrayList<TemplateReductionRule> reductionRules = new ArrayList<TemplateReductionRule>(20);
@@ -98,6 +104,8 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
           } else {
             myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
           }
+        } else if (RuleUtil.concept_DropAttributeRule.equals(childConcept)) {
+          myDropAttributeRules.add(new DropAttributeRuleInterpreted(child));
         }
       }
       if (patternRules.isEmpty()) {
@@ -181,6 +189,13 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   public Collection<TemplateMappingScript> getPostScripts() {
     init();
     return myPostScripts;
+  }
+
+  @NotNull
+  @Override
+  public Collection<TemplateDropAttributeRule> getDropAttributeRules() {
+    init();
+    return myDropAttributeRules;
   }
 
   @Override

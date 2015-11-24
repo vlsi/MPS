@@ -325,55 +325,52 @@
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/695262645445904871">
     <file name="FResource.java">
-      <node id="695262645445904871" at="12,22,13,12" concept="12" />
-      <node id="695262645445904871" at="15,143,16,63" concept="12" />
-      <node id="695262645445904871" at="18,43,19,27" concept="10" />
-      <node id="695262645445904871" at="21,66,22,27" concept="10" />
-      <node id="695262645445904871" at="24,87,25,27" concept="10" />
-      <node id="695262645445904871" at="27,40,28,27" concept="10" />
-      <node id="695262645445904871" at="30,37,31,27" concept="10" />
-      <node id="695262645445904871" at="33,31,34,22" concept="10" />
-      <node id="695262645445904871" at="36,41,37,22" concept="10" />
-      <node id="695262645445904871" at="39,54,40,22" concept="10" />
-      <node id="695262645445904871" at="42,27,43,22" concept="10" />
-      <node id="695262645445904871" at="45,25,46,22" concept="10" />
-      <node id="2708838034905939919" at="48,28,49,16" concept="10" />
-      <node id="695262645445904871" at="12,0,15,0" concept="3" trace="FResource#()V" />
-      <node id="695262645445904871" at="15,0,18,0" concept="3" trace="FResource#(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="695262645445904871" at="18,0,21,0" concept="8" trace="packageName#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="695262645445904871" at="21,0,24,0" concept="8" trace="contents#(Ljava/util/Map;)Ljava/util/Map;" />
-      <node id="695262645445904871" at="24,0,27,0" concept="8" trace="rootNodeNames#(Ljava/util/Map;)Ljava/util/Map;" />
-      <node id="695262645445904871" at="27,0,30,0" concept="8" trace="module#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="695262645445904871" at="30,0,33,0" concept="8" trace="model#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="695262645445904871" at="33,0,36,0" concept="8" trace="packageName#()Ljava/lang/String;" />
-      <node id="695262645445904871" at="36,0,39,0" concept="8" trace="contents#()Ljava/util/Map;" />
-      <node id="695262645445904871" at="39,0,42,0" concept="8" trace="rootNodeNames#()Ljava/util/Map;" />
-      <node id="695262645445904871" at="42,0,45,0" concept="8" trace="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="695262645445904871" at="45,0,48,0" concept="8" trace="model#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="2708838034905939915" at="48,0,51,0" concept="8" trace="describe#()Ljava/lang/String;" />
-      <scope id="695262645445904871" at="12,22,13,12" />
-      <scope id="695262645445904871" at="15,143,16,63" />
-      <scope id="695262645445904871" at="18,43,19,27" />
-      <scope id="695262645445904871" at="21,66,22,27" />
-      <scope id="695262645445904871" at="24,87,25,27" />
-      <scope id="695262645445904871" at="27,40,28,27" />
-      <scope id="695262645445904871" at="30,37,31,27" />
-      <scope id="695262645445904871" at="33,31,34,22" />
-      <scope id="695262645445904871" at="36,41,37,22" />
-      <scope id="695262645445904871" at="39,54,40,22" />
-      <scope id="695262645445904871" at="42,27,43,22" />
-      <scope id="695262645445904871" at="45,25,46,22" />
-      <scope id="2708838034905939918" at="48,28,49,16" />
-      <scope id="695262645445904871" at="12,0,15,0" />
-      <scope id="695262645445904871" at="15,0,18,0">
+      <node id="695262645445904871" at="15,22,16,12" concept="12" />
+      <node id="695262645445904871" at="18,143,19,63" concept="12" />
+      <node id="695262645445904871" at="21,43,22,27" concept="10" />
+      <node id="695262645445904871" at="24,66,25,27" concept="10" />
+      <node id="695262645445904871" at="27,87,28,27" concept="10" />
+      <node id="695262645445904871" at="30,40,31,27" concept="10" />
+      <node id="695262645445904871" at="33,37,34,27" concept="10" />
+      <node id="695262645445904871" at="36,31,37,22" concept="10" />
+      <node id="695262645445904871" at="39,41,40,22" concept="10" />
+      <node id="695262645445904871" at="42,54,43,22" concept="10" />
+      <node id="695262645445904871" at="45,27,46,22" concept="10" />
+      <node id="695262645445904871" at="48,25,49,22" concept="10" />
+      <node id="2708838034905939919" at="51,28,52,16" concept="10" />
+      <node id="695262645445904871" at="15,0,18,0" concept="3" trace="FResource#()V" />
+      <node id="695262645445904871" at="18,0,21,0" concept="3" trace="FResource#(Ljava/lang/String;Ljava/util/Map;Ljava/util/Map;Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="695262645445904871" at="21,0,24,0" concept="8" trace="packageName#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="695262645445904871" at="24,0,27,0" concept="8" trace="contents#(Ljava/util/Map;)Ljava/util/Map;" />
+      <node id="695262645445904871" at="27,0,30,0" concept="8" trace="rootNodeNames#(Ljava/util/Map;)Ljava/util/Map;" />
+      <node id="695262645445904871" at="30,0,33,0" concept="8" trace="module#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="695262645445904871" at="33,0,36,0" concept="8" trace="model#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="695262645445904871" at="36,0,39,0" concept="8" trace="packageName#()Ljava/lang/String;" />
+      <node id="695262645445904871" at="39,0,42,0" concept="8" trace="contents#()Ljava/util/Map;" />
+      <node id="695262645445904871" at="42,0,45,0" concept="8" trace="rootNodeNames#()Ljava/util/Map;" />
+      <node id="695262645445904871" at="45,0,48,0" concept="8" trace="module#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="695262645445904871" at="48,0,51,0" concept="8" trace="model#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="2708838034905939915" at="51,0,54,0" concept="8" trace="describe#()Ljava/lang/String;" />
+      <scope id="695262645445904871" at="15,22,16,12" />
+      <scope id="695262645445904871" at="18,143,19,63" />
+      <scope id="695262645445904871" at="21,43,22,27" />
+      <scope id="695262645445904871" at="24,66,25,27" />
+      <scope id="695262645445904871" at="27,87,28,27" />
+      <scope id="695262645445904871" at="30,40,31,27" />
+      <scope id="695262645445904871" at="33,37,34,27" />
+      <scope id="695262645445904871" at="36,31,37,22" />
+      <scope id="695262645445904871" at="39,41,40,22" />
+      <scope id="695262645445904871" at="42,54,43,22" />
+      <scope id="695262645445904871" at="45,27,46,22" />
+      <scope id="695262645445904871" at="48,25,49,22" />
+      <scope id="2708838034905939918" at="51,28,52,16" />
+      <scope id="695262645445904871" at="15,0,18,0" />
+      <scope id="695262645445904871" at="18,0,21,0">
         <var name="contents" id="695262645445904871" />
         <var name="model" id="695262645445904871" />
         <var name="module" id="695262645445904871" />
         <var name="packageName" id="695262645445904871" />
         <var name="rootNodeNames" id="695262645445904871" />
-      </scope>
-      <scope id="695262645445904871" at="18,0,21,0">
-        <var name="value" id="695262645445904871" />
       </scope>
       <scope id="695262645445904871" at="21,0,24,0">
         <var name="value" id="695262645445904871" />
@@ -387,13 +384,16 @@
       <scope id="695262645445904871" at="30,0,33,0">
         <var name="value" id="695262645445904871" />
       </scope>
-      <scope id="695262645445904871" at="33,0,36,0" />
+      <scope id="695262645445904871" at="33,0,36,0">
+        <var name="value" id="695262645445904871" />
+      </scope>
       <scope id="695262645445904871" at="36,0,39,0" />
       <scope id="695262645445904871" at="39,0,42,0" />
       <scope id="695262645445904871" at="42,0,45,0" />
       <scope id="695262645445904871" at="45,0,48,0" />
-      <scope id="2708838034905939915" at="48,0,51,0" />
-      <unit id="695262645445904871" at="11,0,52,0" name="jetbrains.mps.smodel.resources.FResource" />
+      <scope id="695262645445904871" at="48,0,51,0" />
+      <scope id="2708838034905939915" at="51,0,54,0" />
+      <unit id="695262645445904871" at="14,0,55,0" name="jetbrains.mps.smodel.resources.FResource" />
     </file>
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/695262645445911158">
