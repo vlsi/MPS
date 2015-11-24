@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -37,6 +38,8 @@ import java.util.Map;
  * @author simon
  */
 public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
+  private static final jetbrains.mps.logging.Logger LOG = jetbrains.mps.logging.Logger.wrap(LogManager.getLogger(EditorAspectDescriptorBase.class));
+
   private Map<SAbstractConcept, Collection<ConceptEditor>> myEditorsCache = new HashMap<SAbstractConcept, Collection<ConceptEditor>>();
   private Map<Pair<SAbstractConcept, String>, Collection<ConceptEditorComponent>> myEditorComponentsCache =
       new HashMap<Pair<SAbstractConcept, String>, Collection<ConceptEditorComponent>>();
@@ -107,10 +110,17 @@ public class EditorAspectDescriptorBase implements EditorAspectDescriptor {
     SLanguage language = concept.getLanguage();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(language);
     if (languageRuntime == null) {
-      throw new IllegalStateException("No language runtime found: " + language.getQualifiedName());
+      LOG.warning("No language runtime found for language: " + language);
+      return result;
     }
     for (LanguageRuntime extendingLanguage : languageRuntime.getExtendingLanguages()) {
-      EditorAspectDescriptor editorAspect = extendingLanguage.getAspect(EditorAspectDescriptor.class);
+      EditorAspectDescriptor editorAspect = null;
+      try {
+        editorAspect = extendingLanguage.getAspect(EditorAspectDescriptor.class);
+      } catch (NoClassDefFoundError error) {
+        LOG.error("Failed to get editor aspect descriptor for language: " +
+            language + ". Editors of this language will not be taken into account", error);
+      }
       if (editorAspect == null) {
         continue;
       }

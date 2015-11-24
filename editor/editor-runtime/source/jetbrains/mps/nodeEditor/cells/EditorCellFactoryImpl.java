@@ -100,9 +100,9 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends BaseConceptEditor>> excludedEditors) {
-    boolean isPushDefaultEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT);
+    boolean isPushReflectiveEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT);
     SConcept concept = node.getConcept();
-    ConceptEditor editor = isPushDefaultEditorHintInContext ? null : myConceptEditorRegistry.getEditor(concept, excludedEditors);
+    ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : myConceptEditorRegistry.getEditor(concept, excludedEditors);
     EditorCell result = null;
     if (editor != null) {
       try {

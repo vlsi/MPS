@@ -102,9 +102,15 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
     List<T> result = new ArrayList<T>();
     LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(concept.getLanguage());
     if (languageRuntime == null) {
+      LOG.warning("No language runtime found for language: " + concept.getLanguage() + ". Default editor will be used");
       return result;
     }
-    EditorAspectDescriptor aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
+    EditorAspectDescriptor aspectDescriptor = null;
+    try {
+      aspectDescriptor = languageRuntime.getAspect(EditorAspectDescriptor.class);
+    } catch (NoClassDefFoundError error) {
+      LOG.error("Failed to get editor aspect descriptor for language: " + languageRuntime, error);
+    }
     if (aspectDescriptor != null) {
       for (T conceptEditor : getEditors(aspectDescriptor, concept)) {
         if (isApplicableInCurrentContext(conceptEditor)) {

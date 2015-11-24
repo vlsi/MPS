@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -28,6 +30,7 @@ import java.util.Set;
  * @author simon
  */
 public class ValidEditorDescriptorsCache {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ValidEditorDescriptorsCache.class));
   private static ValidEditorDescriptorsCache ourInstance;
 
   private Set<EditorAspectDescriptor> myCachedEditorDescriptors = new HashSet<EditorAspectDescriptor>();
@@ -69,7 +72,12 @@ public class ValidEditorDescriptorsCache {
   }
 
   private void loadEditorDescriptor(LanguageRuntime language, Set<EditorAspectDescriptor> editorDescriptors) {
-    EditorAspectDescriptor descriptor = language.getAspect(EditorAspectDescriptor.class);
+    EditorAspectDescriptor descriptor = null;
+    try {
+      descriptor = language.getAspect(EditorAspectDescriptor.class);
+    } catch (NoClassDefFoundError error) {
+      LOG.error("Failed to get editor aspect descriptor for language: " + language, error);
+    }
     if (descriptor != null) {
       editorDescriptors.add(descriptor);
     }
