@@ -15,26 +15,27 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import java.util.HashMap;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.ide.platform.actions.core.MoveNodesRefactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MoveFeatureUp extends MoveNodesDefault {
   private String myName;
   private String myKind;
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myApplicableToConceptFeature;
-  public MoveFeatureUp(String name, String kind, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> applicableToConceptFeature) {
+  private _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> myNeedToMerge;
+  public MoveFeatureUp(String name, String kind, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> applicableToConceptFeature, _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> needToMerge) {
     myName = name;
     myKind = kind;
     myApplicableToConceptFeature = applicableToConceptFeature;
+    myNeedToMerge = needToMerge;
   }
   public String getName() {
     return myName;
-  }
-  public String getKind() {
-    return myKind;
   }
   public boolean isApplicable(MPSProject project, final List<SNode> nodesToMove) {
     if (!(super.isApplicable(project, nodesToMove))) {
@@ -49,7 +50,7 @@ public class MoveFeatureUp extends MoveNodesDefault {
     return result.value;
   }
   public void apply(final MPSProject project, List<SNode> nodesToMove) {
-    final String featureKind = this.getKind();
+    final String featureKind = this.myKind;
 
     if (ListSequence.fromList(nodesToMove).count() > 1) {
       Messages.showErrorDialog(project.getProject(), "Moving multiple concept elements is not supported.\n" + "Please, select single " + featureKind + ".", "Select single " + featureKind + ".");
@@ -62,7 +63,26 @@ public class MoveFeatureUp extends MoveNodesDefault {
       return;
     }
 
-    MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, NodeLocation>fromMapAndKeysArray(new HashMap<SNodeReference, NodeLocation>(), feature.getReference()).withValues(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink())), null);
+    boolean merge = false;
+
+    SNode mergeTarget = myNeedToMerge.invoke(feature, targetConcept);
+    if (mergeTarget != null) {
+      int wantToMerge;
+      wantToMerge = Messages.showYesNoCancelDialog(project.getProject(), "Target concept already has " + myKind + " with the same name. Do you want to merge?", "Do you want to merge?", null);
+      if (wantToMerge == Messages.YES) {
+        merge = true;
+      } else if (wantToMerge == Messages.NO) {
+        merge = false;
+      } else {
+        return;
+      }
+    }
+
+    if (merge) {
+      MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, MoveNodesDefault.NodeProcessor>fromMapAndKeysArray(new HashMap<SNodeReference, MoveNodesDefault.NodeProcessor>(), feature.getReference()).withValues(new MoveNodesDefault.MergingNodeProcessor(mergeTarget.getReference(), project)), null);
+    } else {
+      MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, MoveNodesDefault.NodeProcessor>fromMapAndKeysArray(new HashMap<SNodeReference, MoveNodesDefault.NodeProcessor>(), feature.getReference()).withValues(new MoveNodesDefault.CopyingNodeProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)), null);
+    }
   }
   public static class MovePropertyUp_extension extends Extension.Default<MoveNodesRefactoring> {
     public MovePropertyUp_extension() {
@@ -73,7 +93,18 @@ public class MoveFeatureUp extends MoveNodesDefault {
         public Boolean invoke(SNode conceptFeature) {
           return SNodeOperations.hasRole(conceptFeature, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"));
         }
+      }, new _FunctionTypes._return_P2_E0<SNode, SNode, SNode>() {
+        public SNode invoke(final SNode node, SNode concept) {
+          return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_g4dz8g_a0a0a0a0a0a0a0a0d0a0a1i(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+            }
+          }).first();
+        }
       });
+    }
+    private static boolean eq_g4dz8g_a0a0a0a0a0a0a0a0d0a0a1i(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class MoveContainmentLinkUp_extension extends Extension.Default<MoveNodesRefactoring> {
@@ -85,7 +116,18 @@ public class MoveFeatureUp extends MoveNodesDefault {
         public Boolean invoke(SNode conceptFeature) {
           return SNodeOperations.hasRole(conceptFeature, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(conceptFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
         }
+      }, new _FunctionTypes._return_P2_E0<SNode, SNode, SNode>() {
+        public SNode invoke(final SNode node, SNode concept) {
+          return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference") && eq_g4dz8g_a0a0a0a0a0a0a0a0a3a0a0b9(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
+            }
+          }).first();
+        }
       });
+    }
+    private static boolean eq_g4dz8g_a0a0a0a0a0a0a0a0a3a0a0b9(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class MoveRefrenceLinkUp_extension extends Extension.Default<MoveNodesRefactoring> {
@@ -97,7 +139,18 @@ public class MoveFeatureUp extends MoveNodesDefault {
         public Boolean invoke(SNode conceptFeature) {
           return SNodeOperations.hasRole(conceptFeature, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(conceptFeature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference");
         }
+      }, new _FunctionTypes._return_P2_E0<SNode, SNode, SNode>() {
+        public SNode invoke(final SNode node, SNode concept) {
+          return ListSequence.fromList(SLinkOperations.getChildren(concept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference") && eq_g4dz8g_a0a0a0a0a0a0a0a0a3a0a0b01(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SPropertyOperations.getString(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
+            }
+          }).first();
+        }
       });
+    }
+    private static boolean eq_g4dz8g_a0a0a0a0a0a0a0a0a3a0a0b01(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

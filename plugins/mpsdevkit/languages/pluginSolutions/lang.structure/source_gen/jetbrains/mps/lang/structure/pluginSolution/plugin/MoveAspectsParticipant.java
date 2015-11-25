@@ -178,7 +178,11 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
                   Language targetLanguage = ((Language) SNodeOperations.getModel(targetConcept).getModule());
                   NodeLocation.NodeLocationRootWithAspectModelCreation newLocation = new NodeLocation.NodeLocationRootWithAspectModelCreation(targetLanguage, mapping.key());
 
-                  List<SNode> copied = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).copy(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect), ListSequence.fromListAndArray(new ArrayList<Boolean>(), needsToPreserveOldNode() || MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).whetherKeepNode(sourceConcept)));
+                  List<SNode> copied = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).copy(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect));
+                  if (!(needsToPreserveOldNode()) && SNodeOperations.getModel(sourceConcept) == null) {
+                    SNodeOperations.detachNode(aspect);
+                  }
+
                   final Map<SNode, SNode> copyMap = MoveNodesDefault.CopyMapObject.getCopyMap(refactoringSession).getCopyMap();
                   newLocation.insertNode(repository, ListSequence.fromList(copied).first());
                   ListSequence.fromList(childparticipantStates).visitAll(new IVisitor<Tuples._2<SNode, RecursiveParticipant.RecursiveParticipantState<?, ?, SNode, SNode>>>() {
