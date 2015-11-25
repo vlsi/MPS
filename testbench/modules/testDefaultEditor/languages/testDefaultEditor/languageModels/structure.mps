@@ -20,6 +20,7 @@
         <child id="7588428831947959310" name="attributed" index="EQaZv" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="1587916991969465369" name="conceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
@@ -80,6 +81,11 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="O7qdvf4M$T" resolve="Developer" />
     </node>
+    <node concept="1TJgyj" id="qgeAIokVe5" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="abstractDeveloper" />
+      <ref role="20lvS9" node="qgeAIokIy8" resolve="AbstractDeveloper" />
+    </node>
     <node concept="PrWs8" id="O7qdvf4Kz1" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -87,7 +93,7 @@
   <node concept="1TIwiD" id="O7qdvf4M$T">
     <property role="TrG5h" value="Developer" />
     <property role="1pbfSe" value="602238448" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" node="qgeAIokIy8" resolve="AbstractDeveloper" />
     <node concept="1TJgyj" id="O7qdvf4VTX" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="friend" />
@@ -183,6 +189,22 @@
       <node concept="trNpa" id="2vlU4mSUaVz" role="EQaZv">
         <ref role="trN6q" node="O7qdvf4M$T" resolve="Developer" />
       </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qgeAIokIy8">
+    <property role="TrG5h" value="AbstractDeveloper" />
+    <property role="1pbfSe" value="1629281549" />
+    <property role="R5$K7" value="true" />
+    <node concept="PrWs8" id="qgeAIokIyh" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="qgeAIokVxL">
+    <property role="1pbfSe" value="1629228324" />
+    <property role="TrG5h" value="NotSubstitutableDeveloper" />
+    <ref role="1TJDcQ" node="qgeAIokIy8" resolve="AbstractDeveloper" />
+    <node concept="PrWs8" id="qgeAIokVxM" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
 </model>

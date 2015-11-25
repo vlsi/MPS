@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class ShowReflectiveEditorForAttribute_Test extends BaseTransformationTest {
-  public ShowReflectiveEditorForAttribute_Test() {
+public class DefaultEditor_ShowReflectiveEditor_Test extends BaseTransformationTest {
+  public DefaultEditor_ShowReflectiveEditor_Test() {
   }
   @Test
-  public void test_ShowReflectiveEditorForAttribute() throws Throwable {
+  public void test_DefaultEditor_ShowReflectiveEditor() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ShowReflectiveEditorForAttribute_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditor_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,7 +22,7 @@ public class ShowReflectiveEditorForAttribute_Test extends BaseTransformationTes
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("587335067072943351", "587335067072943848");
+      initEditor("2746054822153765834", "2746054822153767074");
       this.invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
     }
   }

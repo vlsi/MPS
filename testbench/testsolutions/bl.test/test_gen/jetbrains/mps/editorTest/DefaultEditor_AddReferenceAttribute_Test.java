@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class ShowReflectiveEditor_Test extends BaseTransformationTest {
-  public ShowReflectiveEditor_Test() {
+public class DefaultEditor_AddReferenceAttribute_Test extends BaseTransformationTest {
+  public DefaultEditor_AddReferenceAttribute_Test() {
   }
   @Test
-  public void test_ShowReflectiveEditor() throws Throwable {
+  public void test_DefaultEditor_AddReferenceAttribute() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ShowReflectiveEditor_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_AddReferenceAttribute_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class ShowReflectiveEditor_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2746054822153765834", "2746054822153767074");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
+      initEditor("7548887999679237081", "7548887999679237083");
+      invokeIntention("testDefaultEditor.intentions.AddDefaultReferenceAttribute_Intention", myStart.getNode());
     }
   }
 }

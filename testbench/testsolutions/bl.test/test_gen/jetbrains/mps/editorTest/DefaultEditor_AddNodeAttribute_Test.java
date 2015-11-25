@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class DeleteChild_Test extends BaseTransformationTest {
-  public DeleteChild_Test() {
+public class DefaultEditor_AddNodeAttribute_Test extends BaseTransformationTest {
+  public DefaultEditor_AddNodeAttribute_Test() {
   }
   @Test
-  public void test_DeleteChild() throws Throwable {
+  public void test_DefaultEditor_AddNodeAttribute() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.DeleteChild_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_AddNodeAttribute_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class DeleteChild_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6007318803030048839", "6007318803030048848");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      initEditor("2870455723671260727", "2870455723671261234");
+      invokeIntention("testDefaultEditor.intentions.AddDefaultNodeAttribute_Intention", myStart.getNode());
     }
   }
 }

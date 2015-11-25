@@ -203,6 +203,24 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myMenuEmpty;
   }
 
+  /**
+   * Number of substitute actions suggested by substitute chooser.
+   * Check isVisible() before using this method
+   *
+   * @return number of substitute actions
+   *
+   * @throws java.lang.IllegalStateException if the chooser is not visible
+   */
+  public int getNumberOfActions() {
+    if (!isVisible()) {
+      throw new IllegalStateException("NodeSubstituteChooser is not visible");
+    }
+    if (isMenuEmpty()) {
+      return 0;
+    }
+    return mySubstituteActions.size();
+  }
+
 
   /**
    * Makes the chooser visible or invisible.
