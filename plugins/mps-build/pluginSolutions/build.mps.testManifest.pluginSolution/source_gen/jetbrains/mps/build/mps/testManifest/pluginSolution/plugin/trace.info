@@ -45,8 +45,8 @@
     <file name="RefreshTestProject_Action.java">
       <node id="8645252814069728705" at="45,0,46,0" concept="12" trace="ICON" />
       <node id="8645252814069728705" at="46,38,47,44" concept="14" />
-      <node id="8645252814069728705" at="47,44,48,34" concept="3" />
-      <node id="8645252814069728705" at="48,34,49,40" concept="3" />
+      <node id="8645252814069728705" at="47,44,48,35" concept="3" />
+      <node id="8645252814069728705" at="48,35,49,40" concept="3" />
       <node id="8645252814069728705" at="52,32,53,16" concept="9" />
       <node id="8645252814070416193" at="56,87,57,248" concept="9" />
       <node id="8645252814069728705" at="60,89,61,85" concept="3" />
