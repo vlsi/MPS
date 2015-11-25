@@ -10,13 +10,13 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 @MPSLaunch
-public class ShowReflectiveThenRegularEditor_Test extends BaseTransformationTest {
-  public ShowReflectiveThenRegularEditor_Test() {
+public class DefaultEditor_ShowReflectiveThenRegularEditor_Test extends BaseTransformationTest {
+  public DefaultEditor_ShowReflectiveThenRegularEditor_Test() {
   }
   @Test
-  public void test_ShowReflectiveThenRegularEditor() throws Throwable {
+  public void test_DefaultEditor_ShowReflectiveThenRegularEditor() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ShowReflectiveThenRegularEditor_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {

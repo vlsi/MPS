@@ -2,10 +2,10 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -5370,7 +5370,7 @@
         </node>
         <node concept="1SiIV0" id="2Qa9MYMHwvk" role="3bR37C">
           <node concept="3bR9La" id="2Qa9MYMHwvj" role="1SiIV1">
-            <property role="3bR36h" value="false" />
+            <property role="3bR36h" value="true" />
             <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
@@ -15268,6 +15268,41 @@
     <property role="turDy" value="mpsDistribution.xml" />
     <property role="3GE5qa" value="ide" />
     <property role="2DA0ip" value="../../../../" />
+    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
+      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
+        <property role="TrG5h" value="publishTCArtifacts" />
+        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
+          <property role="TrG5h" value="linuxDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
+          <property role="TrG5h" value="zipDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="55IIr" id="3IKDaVZnIjY" role="auvoZ">
       <node concept="2Ry0Ak" id="3IKDaVZnXlj" role="iGT6I">
         <property role="2Ry0Am" value="build" />
@@ -16497,41 +16532,6 @@
     </node>
     <node concept="2sgV4H" id="3IKDaVZnIk0" role="1l3spa">
       <ref role="1l3spb" node="3IKDaVZmzS6" resolve="mps" />
-    </node>
-    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
-      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
-        <property role="TrG5h" value="publishTCArtifacts" />
-        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
-          <property role="TrG5h" value="linuxDistr" />
-          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
-            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
-              <property role="2pNNFO" value="echo" />
-              <property role="qg3DV" value="true" />
-              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
-                <property role="2pNUuO" value="message" />
-                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
-                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
-          <property role="TrG5h" value="zipDistr" />
-          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
-            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
-              <property role="2pNNFO" value="echo" />
-              <property role="qg3DV" value="true" />
-              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
-                <property role="2pNUuO" value="message" />
-                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
-                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
   </node>
   <node concept="1l3spW" id="3IKDaVZmzS6">

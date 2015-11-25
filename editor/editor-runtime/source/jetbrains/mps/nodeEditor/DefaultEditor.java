@@ -153,7 +153,9 @@ public class DefaultEditor extends AbstractDefaultEditor {
           return cell;
         }
       };
-      addCell(provider.createCell());
+      EditorCell cell = provider.createCell();
+      setIndent(cell);
+      addCell(cell);
     }
   }
 

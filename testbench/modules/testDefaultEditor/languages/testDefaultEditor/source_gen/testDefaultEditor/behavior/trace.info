@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <root>
+    <file name="AbstractDeveloper_BehaviorDescriptor.java">
+      <unit at="14,0,26,0" name="testDefaultEditor.behavior.AbstractDeveloper_BehaviorDescriptor" />
+    </file>
     <file name="Company_BehaviorDescriptor.java">
       <unit at="14,0,26,0" name="testDefaultEditor.behavior.Company_BehaviorDescriptor" />
     </file>
@@ -14,13 +17,16 @@
       <unit at="12,0,21,0" name="testDefaultEditor.behavior.DefaultReferenceAttribute_BehaviorDescriptor" />
     </file>
     <file name="Developer_BehaviorDescriptor.java">
-      <unit at="14,0,26,0" name="testDefaultEditor.behavior.Developer_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="testDefaultEditor.behavior.Developer_BehaviorDescriptor" />
     </file>
     <file name="DummyMethod_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="testDefaultEditor.behavior.DummyMethod_BehaviorDescriptor" />
     </file>
     <file name="Friend_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="testDefaultEditor.behavior.Friend_BehaviorDescriptor" />
+    </file>
+    <file name="NotSubstitutableDeveloper_BehaviorDescriptor.java">
+      <unit at="12,0,21,0" name="testDefaultEditor.behavior.NotSubstitutableDeveloper_BehaviorDescriptor" />
     </file>
     <file name="Team_BehaviorDescriptor.java">
       <unit at="14,0,26,0" name="testDefaultEditor.behavior.Team_BehaviorDescriptor" />

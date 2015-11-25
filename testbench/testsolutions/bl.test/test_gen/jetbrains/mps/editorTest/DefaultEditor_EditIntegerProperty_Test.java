@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class EditEnumProperty_Test extends BaseTransformationTest {
-  public EditEnumProperty_Test() {
+public class DefaultEditor_EditIntegerProperty_Test extends BaseTransformationTest {
+  public DefaultEditor_EditIntegerProperty_Test() {
   }
   @Test
-  public void test_EditEnumProperty() throws Throwable {
+  public void test_DefaultEditor_EditIntegerProperty() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.EditEnumProperty_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_EditIntegerProperty_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,9 +22,8 @@ public class EditEnumProperty_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5987562135989648323", "5987562135989657760");
-      this.typeString("right");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      initEditor("6007318803030052674", "6007318803030052685");
+      this.typeString("22");
     }
   }
 }

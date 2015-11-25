@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class EditStringProperty_Test extends BaseTransformationTest {
-  public EditStringProperty_Test() {
+public class DefaultEditor_TypeName_Test extends BaseTransformationTest {
+  public DefaultEditor_TypeName_Test() {
   }
   @Test
-  public void test_EditStringProperty() throws Throwable {
+  public void test_DefaultEditor_TypeName() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.EditStringProperty_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_TypeName_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class EditStringProperty_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("6007318803030056752", "6007318803030056757");
-      this.typeString("Alperovich");
+      initEditor("938834323431483943", "938834323431485879");
+      this.typeString("JetBrains");
     }
   }
 }

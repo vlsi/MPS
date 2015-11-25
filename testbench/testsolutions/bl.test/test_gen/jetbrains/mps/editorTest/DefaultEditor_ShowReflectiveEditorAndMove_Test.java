@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class ShowReflectiveEditorAndMove_Test extends BaseTransformationTest {
-  public ShowReflectiveEditorAndMove_Test() {
+public class DefaultEditor_ShowReflectiveEditorAndMove_Test extends BaseTransformationTest {
+  public DefaultEditor_ShowReflectiveEditorAndMove_Test() {
   }
   @Test
-  public void test_ShowReflectiveEditorAndMove() throws Throwable {
+  public void test_DefaultEditor_ShowReflectiveEditorAndMove() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ShowReflectiveEditorAndMove_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorAndMove_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {

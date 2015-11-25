@@ -104,6 +104,8 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
     }
     for (SLanguage language : SModelOperations.getAllLanguageImports(model)) {
       for (SAbstractConcept concept : language.getConcepts()) {
+        if (!(concept instanceof SConcept)) continue;
+        if (!SNodeUtil.isDefaultSubstitutable(concept)) continue;
         if (concept.isSubConceptOf(this.myTargetConcept)) {
           concepts.add(concept);
         }
