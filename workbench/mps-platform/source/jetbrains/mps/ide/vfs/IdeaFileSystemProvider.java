@@ -41,7 +41,7 @@ import java.util.List;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystemProvider extends FileSystemProviderComponent implements FileSystemProvider, SafeWriteRequestor, SavingRequestor {
+public class IdeaFileSystemProvider extends FileSystemProviderComponent implements FileSystemProvider, SafeWriteRequestor {
   private static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
