@@ -103,6 +103,10 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   protected void collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext, Set<EditorMessage> messages,
       boolean typesystemErrors, boolean applyQuickFixes) {
     for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors(typesystemErrors)) {
+      if (!ErrorReportUtil.shouldReportError(errorNode.o1)) {
+        // although we might need to check IErrorReporter.getSNode(), I assume pair's first element always match that of IErrorReporter
+        continue;
+      }
       List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
       Collections.sort(errors, new Comparator<IErrorReporter>() {
         @Override
@@ -112,7 +116,6 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
       });
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
-        if (!ErrorReportUtil.shouldReportError(errorReporter.getSNode())) return;
 
         MessageStatus status = errorReporter.getMessageStatus();
         String errorString = errorReporter.reportError();

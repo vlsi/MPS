@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -62,8 +63,8 @@ public abstract class SingleRoleCellProvider {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
     } else {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSimple(child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSimple(child));
     }
     return editorCell;
   }

@@ -106,7 +106,9 @@ public class TextGen {
 
   private static void populateTextGenCompatibilityObjects(TextGenBuffer buffer, SNode node) {
     // BL-specific object, BL shall manage itself
-    buffer.putUserObject(PACKAGE_NAME, NameUtil.getModelLongName(node.getModel()));
+    if (node.getModel() != null) {
+      buffer.putUserObject(PACKAGE_NAME, NameUtil.getModelLongName(node.getModel()));
+    }
     // shall get replaced with TextUnit#getStartNode()
     buffer.putUserObject(ROOT_NODE, node);
     buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
@@ -119,7 +121,7 @@ public class TextGen {
     TextGenTransitionContext tgContext = new TextGenTransitionContext(node, buffer, buffer.getRealBuffer());
 
     final TraceInfoCollector tic;
-    if (withDebugInfo)  {
+    if (withDebugInfo) {
       tic = new TraceInfoCollector();
       // TODO TraceInfoCollector may be part of TextGenTransitionContext, but I shall deal with that along with DEPENDENCY/EXTENDS set
       TraceInfoGenerationUtil.setTraceInfoCollector(tgContext, tic);

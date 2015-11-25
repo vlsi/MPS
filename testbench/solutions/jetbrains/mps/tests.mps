@@ -542,6 +542,18 @@
     <node concept="lpD6D" id="1OLuskJsISq" role="lpD6w">
       <ref role="lpD7u" to="e6od:1OLuskJsHlT" resolve="Comment_CommentUncommentWithSelection" />
     </node>
+    <node concept="lpD6D" id="1trYAiej7S8" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1trYAiej1Cf" resolve="Comment_DeleteMultipleRoleNodeInsideComment" />
+    </node>
+    <node concept="lpD6D" id="1trYAiej7TH" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1trYAiej7PL" resolve="Comment_DeleteMultipleRoleWholeComment" />
+    </node>
+    <node concept="lpD6D" id="1trYAiej7Xv" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1trYAieiZ0Y" resolve="Comment_DeleteSingleRoleNodeInsideComment" />
+    </node>
+    <node concept="lpD6D" id="1trYAiej7Z6" role="lpD6w">
+      <ref role="lpD7u" to="e6od:1trYAieiYBp" resolve="Comment_DeleteSingleRoleWholeComment" />
+    </node>
     <node concept="lpD6D" id="4IrZ8JbCdcV" role="lpD6w">
       <ref role="lpD7u" to="e6od:3FNxLZIq6le" resolve="Comment_EditInsideComment" />
     </node>
@@ -583,6 +595,9 @@
     </node>
     <node concept="lpD6D" id="4T4PEv8Hauv" role="lpD6w">
       <ref role="lpD7u" to="e6od:4T4PEv8H0DI" resolve="Comment_LineOutOfCommentedNode" />
+    </node>
+    <node concept="lpD6D" id="6oHcphdHSgc" role="lpD6w">
+      <ref role="lpD7u" to="e6od:6oHcphdGvWw" resolve="Comment_LocalVariableDeclarationStatement" />
     </node>
     <node concept="lpD6D" id="2_1mL0eBmQT" role="lpD6w">
       <ref role="lpD7u" to="e6od:2_1mL0eBmcC" resolve="Comment_MethodAnnotation" />
@@ -3282,6 +3297,9 @@
     <node concept="lpD6D" id="2TdQhrRPT7S" role="lpD6w">
       <ref role="lpD7u" to="ryl9:50rBX$kF$Ci" resolve="AddSingleLineComment1" />
     </node>
+    <node concept="lpD6D" id="3_j0yXiVc61" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3_j0yXiUVaP" resolve="AddSingleLineComment10" />
+    </node>
     <node concept="lpD6D" id="2TdQhrRPT5J" role="lpD6w">
       <ref role="lpD7u" to="ryl9:50rBX$kFKem" resolve="AddSingleLineComment2" />
     </node>
@@ -3299,6 +3317,15 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT7z" role="lpD6w">
       <ref role="lpD7u" to="ryl9:50rBX$kFSLy" resolve="AddSingleLineComment7" />
+    </node>
+    <node concept="lpD6D" id="3_j0yXiQnYr" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3_j0yXiQm$f" resolve="AddSingleLineComment8" />
+    </node>
+    <node concept="lpD6D" id="3_j0yXiQoaI" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3_j0yXiQngZ" resolve="AddSingleLineComment9" />
+    </node>
+    <node concept="lpD6D" id="3_j0yXiQon2" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3_j0yXiQnOE" resolve="AddSingleLineCommentAndPasteText" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3cS" role="lpD6w">
       <ref role="lpD7u" to="ryl9:hZ88umP" resolve="ComplexTransformTest" />

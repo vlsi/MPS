@@ -42,6 +42,8 @@ public interface GeneratorQueryProvider {
   @NotNull
   DropRuleCondition getDropRuleCondition(@NotNull SNode rule);
   @NotNull
+  DropAttributeRuleCondition getDropAttributeRuleCondition(@NotNull SNode rule);
+  @NotNull
   WeaveRuleCondition getWeaveRuleCondition(@NotNull SNode rule);
   /**
    * @param rule weaving rule

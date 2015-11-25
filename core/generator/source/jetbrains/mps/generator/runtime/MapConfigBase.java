@@ -28,7 +28,7 @@ import java.util.Collections;
  * to facilitate future API changes
  * @author Artem Tikhomirov
  */
-public abstract class MapConfigBase implements TemplateMappingConfiguration {
+public abstract class MapConfigBase implements TemplateMappingConfiguration, TemplateMappingConfiguration2 {
 
   private final SNodeReference myMapConfigNode;
   private final String myName;
@@ -123,6 +123,15 @@ public abstract class MapConfigBase implements TemplateMappingConfiguration {
    */
   @Override
   public Collection<TemplateMappingScript> getPostScripts() {
+    return Collections.emptySet();
+  }
+
+  /**
+   * Default implementation subclasses could rely on to return empty collection
+   */
+  @NotNull
+  @Override
+  public Collection<TemplateDropAttributeRule> getDropAttributeRules() {
     return Collections.emptySet();
   }
 }

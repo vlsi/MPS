@@ -7,10 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.selection.Selection;
-import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 
@@ -32,8 +32,11 @@ public class CellAction_CommentOrUncommentChild extends AbstractCellAction {
     if (eq_z6u0tk_a0b0g(editorContext.getSelectedNode(), myNode)) {
       return true;
     }
-    SNode childToComment = getNodeToProcess(editorContext);
-    return childToComment != null;
+    SNode nodeToProcess = getNodeToProcess(editorContext);
+    if (nodeToProcess == null) {
+      return false;
+    }
+    return SNodeOperations.isInstanceOf(nodeToProcess, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")) || !(SNodeOperations.isInstanceOf(nodeToProcess, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute")));
   }
 
   private boolean isTrivialSelection(EditorContext editorContext) {

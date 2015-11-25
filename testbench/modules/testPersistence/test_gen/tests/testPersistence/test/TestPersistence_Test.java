@@ -22,6 +22,11 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
 
+/**
+ * This is test class for _supported_ persistences. 
+ * Note the difference between supported persistence and vcs persistence.
+ * For info, read doc comments in ModelPersistence/VCSPersistenceSupport classes
+ */
 public class TestPersistence_Test extends TestCase {
   /**
    * should be changed to ModelPersistence.firstSupportedVersion

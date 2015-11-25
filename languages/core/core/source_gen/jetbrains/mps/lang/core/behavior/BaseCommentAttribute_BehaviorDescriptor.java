@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class BaseCommentAttribute_BehaviorDescriptor extends ChildAttribute_BehaviorDescriptor implements ISkipConstraintsChecking_BehaviorDescriptor, IDontApplyTypesystemRules_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
+public class BaseCommentAttribute_BehaviorDescriptor extends ChildAttribute_BehaviorDescriptor implements ISkipConstraintsChecking_BehaviorDescriptor, IDontApplyTypesystemRules_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, IWrapper_BehaviorDescriptor {
   public boolean virtual_suppress_3393165121846091591(SNode __thisNode__, SNode child) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }

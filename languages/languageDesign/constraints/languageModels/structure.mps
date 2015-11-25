@@ -94,7 +94,7 @@
   <node concept="1TIwiD" id="gGEsrNs">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="node in a question" />
+    <property role="R4oN_" value="the node in question" />
     <property role="TrG5h" value="ConstraintsFunctionParameter_node" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
@@ -316,6 +316,7 @@
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="childConcept" />
     <property role="1pbfSe" value="410393905" />
+    <property role="R4oN_" value="the concept of the child/descendant node to test against" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB5Zj" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -329,6 +330,7 @@
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="link" />
     <property role="1pbfSe" value="418761708" />
+    <property role="R4oN_" value="the containment link in question between the parent and the (potential or existing) child" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6$E" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -674,6 +676,7 @@
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="childNode" />
     <property role="1pbfSe" value="1309880494" />
+    <property role="R4oN_" value="the child/descendant node to test against, may be null if is yet to be created" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOH6" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />

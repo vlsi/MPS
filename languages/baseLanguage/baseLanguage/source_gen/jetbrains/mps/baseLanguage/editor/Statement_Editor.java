@@ -25,6 +25,7 @@ public class Statement_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
+    Statement_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new MakeTypeArray());
     editorCell.setDefaultText("");
     return editorCell;

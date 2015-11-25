@@ -77,6 +77,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myMarshalFunction__BehaviorDescriptor = new MarshalFunction__BehaviorDescriptor();
   private final BHDescriptor myUnmarshalFunction__BehaviorDescriptor = new UnmarshalFunction__BehaviorDescriptor();
   private final BHDescriptor myContextVariableProvider__BehaviorDescriptor = new ContextVariableProvider__BehaviorDescriptor();
+  private final BHDescriptor myDropAttributeRule_Condition__BehaviorDescriptor = new DropAttributeRule_Condition__BehaviorDescriptor();
   private final BHDescriptor myMappingConfiguration_Condition__BehaviorDescriptor = new MappingConfiguration_Condition__BehaviorDescriptor();
   private final BHDescriptor myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor = new InlineTemplateWithContext_RuleConsequence__BehaviorDescriptor();
   private final BHDescriptor myNodeIdentity__BehaviorDescriptor = new NodeIdentity__BehaviorDescriptor();
@@ -87,7 +88,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final long[] myConceptBehaviorIds;
 
   public BehaviorAspectDescriptor() {
-    myConceptBehaviorIds = new long[71];
+    myConceptBehaviorIds = new long[72];
     myConceptBehaviorIds[0] = 0xfd47e9f6f0L;
     myConceptBehaviorIds[1] = 0xfd47ed6742L;
     myConceptBehaviorIds[2] = 0xfd7f44d616L;
@@ -153,12 +154,13 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     myConceptBehaviorIds[62] = 0x65a7fcfba8f40208L;
     myConceptBehaviorIds[63] = 0x65a7fcfba8f41ba9L;
     myConceptBehaviorIds[64] = 0x671e792f3d934cacL;
-    myConceptBehaviorIds[65] = 0x6cab949e66d5ae81L;
-    myConceptBehaviorIds[66] = 0x7b85dded0be53d6cL;
-    myConceptBehaviorIds[67] = 0x7d58bd9fd9b5e358L;
-    myConceptBehaviorIds[68] = 0x7d58bd9fd9b64463L;
-    myConceptBehaviorIds[69] = 0x7d58bd9fd9c8b6d3L;
-    myConceptBehaviorIds[70] = 0x7d58bd9fd9c8b8cbL;
+    myConceptBehaviorIds[65] = 0x67b585b44f4d9446L;
+    myConceptBehaviorIds[66] = 0x6cab949e66d5ae81L;
+    myConceptBehaviorIds[67] = 0x7b85dded0be53d6cL;
+    myConceptBehaviorIds[68] = 0x7d58bd9fd9b5e358L;
+    myConceptBehaviorIds[69] = 0x7d58bd9fd9b64463L;
+    myConceptBehaviorIds[70] = 0x7d58bd9fd9c8b6d3L;
+    myConceptBehaviorIds[71] = 0x7d58bd9fd9c8b8cbL;
   }
 
   @Deprecated
@@ -303,16 +305,18 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 64:
         return myContextVariableProvider__BehaviorDescriptor;
       case 65:
-        return myMappingConfiguration_Condition__BehaviorDescriptor;
+        return myDropAttributeRule_Condition__BehaviorDescriptor;
       case 66:
-        return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
+        return myMappingConfiguration_Condition__BehaviorDescriptor;
       case 67:
-        return myNodeIdentity__BehaviorDescriptor;
+        return myInlineTemplateWithContext_RuleConsequence__BehaviorDescriptor;
       case 68:
-        return myTrivialNodeId__BehaviorDescriptor;
+        return myNodeIdentity__BehaviorDescriptor;
       case 69:
-        return myModelIdentity__BehaviorDescriptor;
+        return myTrivialNodeId__BehaviorDescriptor;
       case 70:
+        return myModelIdentity__BehaviorDescriptor;
+      case 71:
         return myTrivialModelId__BehaviorDescriptor;
       default:
         return null;

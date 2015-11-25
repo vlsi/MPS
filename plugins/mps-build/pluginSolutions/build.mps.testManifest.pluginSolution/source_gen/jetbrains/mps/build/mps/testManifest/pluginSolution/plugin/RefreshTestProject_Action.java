@@ -45,7 +45,7 @@ public class RefreshTestProject_Action extends BaseAction {
   private static final Icon ICON = null;
   public RefreshTestProject_Action() {
     super("Refresh Test Project", "", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
   @Override

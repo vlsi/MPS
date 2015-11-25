@@ -47,6 +47,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
+import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
@@ -61,8 +62,8 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -77,7 +78,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
-import org.jetbrains.mps.util.InstanceOfCondition;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -116,6 +116,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private Map<DependenciesReadListener, QueryExecutionContext> myExecutionContextMap;
 
   private final boolean myIsStrict;
+  @ToRemove(version = 3.3)
   private final boolean myDoesCopyNodeAttribute;
   private boolean myAreMappingsReady = false;
 
@@ -165,7 +166,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myPlanStep = stepArgs.planStep;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
-    myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen(); // FIXME use GenerationOptions instead!
+    // Generally, shall use GenerationOptions. However, it's single release flag to ensure backward compatibility, and there's no reason
+    // to add it to 'api-like' GenerationOptions.
+    myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen();
     myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
@@ -763,7 +766,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  void copyNodeAttributes(@NotNull TemplateContext ctx, @NotNull Collection<SNode> outputNodes) {
+  void copyNodeAttributes(@NotNull TemplateContext ctx, @NotNull Collection<SNode> outputNodes) throws GenerationException {
     if (!myDoesCopyNodeAttribute) {
       return;
     }
@@ -772,8 +775,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // context in create root rule might have no input
       return;
     }
-    for (SNode attr : new ConditionalIterable<SNode>(input.getChildren(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute), new InstanceOfCondition(RuleUtil.iface_PersistGeneration))) {
+
+    QueryExecutionContext queryExecutor = ctx.getEnvironment().getQueryExecutor();
+    L1: for (SNode attr : input.getChildren(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute)) {
+      for (TemplateDropAttributeRule dropRule : getRuleManager().getDropAttributeRules(attr)) {
+        if (queryExecutor.isApplicable(dropRule, ctx)) {
+          continue L1;
+        }
+      }
       for (SNode output : outputNodes) {
+        // use of CopyUtil mandates references to attributes won't resolve magically (i.e. by matched node id)
+        // Is it important, do we care about references to attributes at all?
         output.addChild(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute, CopyUtil.copy(attr));
       }
     }

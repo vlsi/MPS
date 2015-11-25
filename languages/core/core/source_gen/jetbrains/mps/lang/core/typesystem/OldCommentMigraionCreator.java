@@ -67,6 +67,7 @@ public class OldCommentMigraionCreator {
   private int increaseLanguageVersion(Language language) {
     int oldLanguageVersion = language.getLanguageVersion();
     language.setLanguageVersion(oldLanguageVersion + 1);
+    language.setModuleDescriptor(language.getModuleDescriptor());
     return oldLanguageVersion;
   }
 

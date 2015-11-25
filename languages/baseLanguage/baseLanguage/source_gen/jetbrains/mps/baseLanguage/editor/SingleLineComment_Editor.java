@@ -34,6 +34,7 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
+    SingleLineComment_ExternalCollection_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_5ng77o_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5ng77o_b0(editorContext, node));
     return editorCell;
