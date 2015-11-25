@@ -140,6 +140,9 @@
       <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
       <ref role="20ksaX" to="tpee:g7MN44b" />
     </node>
+    <node concept="PrWs8" id="51HoQikMfPS" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="i2lGYlf">
     <property role="TrG5h" value="NamedTupleComponentDeclaration" />
