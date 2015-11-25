@@ -235,7 +235,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
       @Override
       public ModelGenerationPlan compute() {
         SModel planModel = resolve(planModelRef);
-        GenPlanBuilder gpBuilder = new GenPlanBuilder(LanguageRegistry.getInstance(mpsProject));
+        GenPlanBuilder gpBuilder = new GenPlanBuilder(LanguageRegistry.getInstance(mpsProject.getRepository()));
         return gpBuilder.create(planModel.getRootNodes().iterator().next());
       }
     });
@@ -268,7 +268,7 @@ public class CheckpointModelTest extends PlatformMpsTest {
 
 
   private static List<TemplateMappingConfiguration> getGenerators(SLanguage language) {
-    final LanguageRegistry lr = LanguageRegistry.getInstance(mpsProject);
+    final LanguageRegistry lr = LanguageRegistry.getInstance(mpsProject.getRepository());
     final GeneratorRuntime g1 = lr.getLanguage(language).getGenerators().iterator().next();
     return getGenerators(g1);
 

@@ -3,27 +3,23 @@
   <models>
     <modelRoot contentPath="${module}/lib" type="java_classes">
       <sourceRoot location="jmock-2.5.1" />
-      <excluded location="jmock-2.5.1/cglib-2.1_3-src.jar" />
-      <excluded location="jmock-2.5.1/jmock-script-2.5.1.jar" />
-      <excluded location="jmock-2.5.1/jmock-legacy-2.5.1.jar" />
+      <sourceRoot location="hamcrest-library-1.3.jar" />
     </modelRoot>
     <modelRoot contentPath="${mps_home}/lib" type="java_classes">
       <sourceRoot location="junit-4.12.jar" />
+      <sourceRoot location="hamcrest-core-1.3.jar" />
     </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <stubModelEntries>
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" />
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/hamcrest-core-1.1.jar" />
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/hamcrest-library-1.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-2.5.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit3-2.5.1.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
-    <stubModelEntry path="${module}/lib/jmock-2.5.1/objenesis-1.0.jar" />
     <stubModelEntry path="${mps_home}/lib/junit-4.12.jar" />
+    <stubModelEntry path="${mps_home}/lib/hamcrest-core-1.3.jar" />
+    <stubModelEntry path="${module}/lib/hamcrest-library-1.3.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

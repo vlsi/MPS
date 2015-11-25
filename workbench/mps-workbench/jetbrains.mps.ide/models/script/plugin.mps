@@ -1038,9 +1038,14 @@
             <node concept="2OqwBi" id="4B2IQdOqLr1" role="33vP2m">
               <node concept="2YIFZM" id="4B2IQdOqLr2" role="2Oq$k0">
                 <ref role="1Pybhc" to="vndm:~LanguageRegistry" resolve="LanguageRegistry" />
-                <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(jetbrains.mps.project.Project):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
-                <node concept="37vLTw" id="4B2IQdOqLr3" role="37wK5m">
-                  <ref role="3cqZAo" node="4B2IQdOqK0a" resolve="contextProject" />
+                <ref role="37wK5l" to="vndm:~LanguageRegistry.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.smodel.language.LanguageRegistry" resolve="getInstance" />
+                <node concept="2OqwBi" id="7QakCu$sgef" role="37wK5m">
+                  <node concept="37vLTw" id="4B2IQdOqLr3" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4B2IQdOqK0a" resolve="contextProject" />
+                  </node>
+                  <node concept="liA8E" id="7QakCu$sgsM" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
                 </node>
               </node>
               <node concept="liA8E" id="4B2IQdOqLr4" role="2OqNvi">
@@ -1588,7 +1593,7 @@
       <node concept="TZ5HI" id="2PhliESuxKC" role="3nqlJM">
         <node concept="TZ5HA" id="2PhliESuxKD" role="3HnX3l">
           <node concept="1dT_AC" id="2PhliESu$d2" role="1dT_Ay">
-            <property role="1dT_AB" value="AbstractHelper noone sub-classes, ORLY? Mostly legacy code for migration scripts executed as nodes. Scope manipulation, if vital, could move closer to uses." />
+            <property role="1dT_AB" value="AbstractHelper no one sub-classes, ORLY? Mostly legacy code for migration scripts executed as nodes. Scope manipulation, if vital, could move closer to uses." />
           </node>
         </node>
       </node>

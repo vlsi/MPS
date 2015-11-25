@@ -494,7 +494,7 @@ public class ValidationUtil {
     }
 
     SRepository repository = module.getRepository();
-    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(); // FIXME shall be getInstance(SRepository)
+    LanguageRegistry languageRegistry = LanguageRegistry.getInstance(repository);
     for (SLanguage lang : module.getUsedLanguages()) {
       if (languageRegistry.getLanguage(lang) != null) {
         continue;

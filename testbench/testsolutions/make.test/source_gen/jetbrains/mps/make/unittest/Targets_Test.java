@@ -22,7 +22,7 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(foo).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("bar")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("bar")})));
       }
     });
     Mockups.allowing(context, foo);
@@ -32,7 +32,7 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(foo2).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("baz")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("baz")})));
       }
     });
     Mockups.allowing(context, foo2);
@@ -57,11 +57,11 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(text).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
         atLeast(1).of(text).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(gen).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
       }
     });
     Mockups.allowing(context, gen);
@@ -82,13 +82,13 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(text).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
         atLeast(1).of(text).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(gen).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(compile).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("text")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("text")})));
       }
     });
     Mockups.allowing(context, gen);
@@ -114,7 +114,7 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(make).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
       }
     });
     Mockups.allowing(context, make);
@@ -132,7 +132,7 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(gen).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cfg")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cfg")})));
       }
     });
     Mockups.allowing(context, cfg);
@@ -158,13 +158,13 @@ public class Targets_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(text).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
         atLeast(1).of(text).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         atLeast(1).of(gen).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("res")})));
         atLeast(1).of(gen).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
       }
     });
     Mockups.allowing(context, res);
