@@ -56,7 +56,6 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
-        <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
@@ -469,7 +468,6 @@
     <property role="TrG5h" value="RefreshTestProject" />
     <property role="2uzpH1" value="Refresh Test Project" />
     <property role="72QZ$" value="true" />
-    <property role="fJN8o" value="true" />
     <node concept="2XrIbr" id="7vU6U507d58" role="32lrUH">
       <property role="TrG5h" value="doExecute" />
       <node concept="37vLTG" id="4KDfkUwMp5U" role="3clF46">

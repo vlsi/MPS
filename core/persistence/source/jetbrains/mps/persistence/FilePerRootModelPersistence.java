@@ -238,7 +238,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
 
     String path = options.containsKey(ModelFactory.OPTION_RELPATH) ? sourceRoot + File.separatorChar + options.get(ModelFactory.OPTION_RELPATH) : sourceRoot;
-    IFile folder = FileSystem.getInstance().getFileByPath(path);
+    IFile folder = FileSystem.getInstance().getFileByPath(path).getDescendant(modelName);
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
       throw new IOException("model already exists");
     }

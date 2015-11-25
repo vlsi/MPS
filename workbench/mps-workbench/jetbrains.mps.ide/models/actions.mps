@@ -36321,7 +36321,7 @@
     <property role="TrG5h" value="ConvertToFilePerRootPersistence" />
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
-    <property role="2uzpH1" value="Convert to file-per-root format" />
+    <property role="2uzpH1" value="Convert to File-Per-Root Format" />
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="38LNA6KbjqE" role="1NuT2Z">
       <property role="TrG5h" value="models" />
