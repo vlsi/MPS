@@ -57,16 +57,20 @@ public class MoveFeatureUp extends MoveNodesDefault {
       return;
     }
 
-    SNode feature = SNodeOperations.cast(ListSequence.fromList(nodesToMove).first(), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
+    final SNode feature = SNodeOperations.cast(ListSequence.fromList(nodesToMove).first(), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
     final SNode targetConcept = MoveUpDialog.getConcept(project, feature, featureKind);
     if (targetConcept == null) {
       return;
     }
 
+    final Wrappers._T<SNode> mergeTarget = new Wrappers._T<SNode>();
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        mergeTarget.value = myNeedToMerge.invoke(feature, targetConcept);
+      }
+    });
     boolean merge = false;
-
-    SNode mergeTarget = myNeedToMerge.invoke(feature, targetConcept);
-    if (mergeTarget != null) {
+    if (mergeTarget.value != null) {
       int wantToMerge;
       wantToMerge = Messages.showYesNoCancelDialog(project.getProject(), "Target concept already has " + myKind + " with the same name. Do you want to merge?", "Do you want to merge?", null);
       if (wantToMerge == Messages.YES) {
@@ -79,7 +83,7 @@ public class MoveFeatureUp extends MoveNodesDefault {
     }
 
     if (merge) {
-      MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, MoveNodesDefault.NodeProcessor>fromMapAndKeysArray(new HashMap<SNodeReference, MoveNodesDefault.NodeProcessor>(), feature.getReference()).withValues(new MoveNodesDefault.MergingNodeProcessor(mergeTarget.getReference(), project)), null);
+      MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, MoveNodesDefault.NodeProcessor>fromMapAndKeysArray(new HashMap<SNodeReference, MoveNodesDefault.NodeProcessor>(), feature.getReference()).withValues(new MoveNodesDefault.MergingNodeProcessor(mergeTarget.value.getReference(), project)), null);
     } else {
       MoveNodesDefault.doMove(project, MapSequence.<SNodeReference, MoveNodesDefault.NodeProcessor>fromMapAndKeysArray(new HashMap<SNodeReference, MoveNodesDefault.NodeProcessor>(), feature.getReference()).withValues(new MoveNodesDefault.CopyingNodeProcessor(new NodeLocation.NodeLocationChild(targetConcept, feature.getContainmentLink()), project)), null);
     }
