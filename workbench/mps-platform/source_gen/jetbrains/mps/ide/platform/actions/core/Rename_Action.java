@@ -16,16 +16,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Rename_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -84,32 +81,33 @@ public class Rename_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.rename");
-    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
 
     final Wrappers._T<String> oldName = new Wrappers._T<String>();
     final Wrappers._boolean canBeRenamed = new Wrappers._boolean();
-    modelAccess.runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         canBeRenamed.value = RenameUtil.canBeRenamed(((SNode) MapSequence.fromMap(_params).get("target")));
         oldName.value = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
     });
     if (!(canBeRenamed.value)) {
-      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Nodes with getter or setter for the \"name\" property can't be renamed", "Node can't be renamed", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
     final String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName.value, "node");
     if (newName == null) {
       return;
     }
-    modelAccess.runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-        if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
-          return;
-        }
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.Rename", Arrays.asList("newName"), Arrays.asList(newName), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+
+    Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> participants = new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.RenameParticipantEP").getObjects();
+    MoveNodesDefault.<SNode,String>performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("project")), participants, Sequence.<SNode>singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends String, ? super SNode>, Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, String>>>, RefactoringSession>() {
+      public _FunctionTypes._return_P1_E0<? extends String, ? super SNode> invoke(Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, String>>> changes, RefactoringSession refactoringSession) {
+        SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
+        return new _FunctionTypes._return_P1_E0<String, SNode>() {
+          public String invoke(SNode nodeToRename) {
+            return newName;
+          }
+        };
       }
     });
   }
