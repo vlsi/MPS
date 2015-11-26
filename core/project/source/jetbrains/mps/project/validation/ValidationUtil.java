@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -64,6 +65,8 @@ import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.io.File;
@@ -206,15 +209,24 @@ public class ValidationUtil {
       return;
     }
 
-    if (
-        !model.isReadOnly() &&
-            (model instanceof PersistenceVersionAware) &&
-            ((PersistenceVersionAware) model).getPersistenceVersion() < ModelPersistence.LAST_VERSION
-        ) {
-      if (!processor.process(
-          new ValidationProblem(Severity.ERROR, "Outdated model persistence is used: " + ((PersistenceVersionAware) model).getPersistenceVersion() +
-              ". Please upgrade model persistence"))) {
-        return;
+    if (!model.isReadOnly() && model instanceof PersistenceVersionAware) {
+      PersistenceVersionAware pvaModel = (PersistenceVersionAware) model;
+      ModelFactory pvaModelFactory = pvaModel.getModelFactory();
+      ModelFactory xmlModelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
+      if (pvaModelFactory != null && (xmlModelFactory == pvaModelFactory || xmlModelFactory.getFileExtension().equals(pvaModelFactory.getFileExtension()))) {
+        // ModelPersistence.LAST_VERSION doesn't make sense for anything but default xml persistence
+        int persistenceVersion = pvaModel.getPersistenceVersion();
+        if (persistenceVersion < ModelPersistence.LAST_VERSION) {
+          String msg;
+          if (persistenceVersion == -1) {
+            msg = "Undefined model persistence version, please check model persistence";
+          } else {
+            msg = String.format("Outdated model persistence is used: %d. Please upgrade model persistence.", persistenceVersion);
+          }
+          if (!processor.process(new ValidationProblem(Severity.ERROR, msg))) {
+            return;
+          }
+        }
       }
     }
 
@@ -460,8 +472,10 @@ public class ValidationUtil {
   //returns true to continue analysing, false to stop
   private static boolean warnMissingTargetLangRuntime(Generator generator, Set<SLanguage> usedLanguages, Processor<ValidationProblem> processor) {
     Language sourceLanguage = generator.getSourceLanguage();
-    usedLanguages.remove(sourceLanguage.getModuleName());
-    if (usedLanguages.isEmpty()) return true;
+    usedLanguages.remove(MetaAdapterByDeclaration.getLanguage(sourceLanguage));
+    if (usedLanguages.isEmpty()) {
+      return true;
+    }
 
     final HashSet<SModuleReference> compileTimeDeps = new HashSet<SModuleReference>();
     for (SModule d : new GlobalModuleDependenciesManager(sourceLanguage).getModules(Deptype.COMPILE)) {
