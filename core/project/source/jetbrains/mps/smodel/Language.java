@@ -259,6 +259,8 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   public void setLanguageVersion(int version) {
     getModuleDescriptor().setLanguageVersion(version);
+    fireChanged();
+    setChanged();
   }
 
   public Collection<Generator> getGenerators() {
