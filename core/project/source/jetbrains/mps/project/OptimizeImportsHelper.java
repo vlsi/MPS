@@ -16,11 +16,14 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelDependencyScanner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -30,12 +33,20 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+// FIXME (1) OrganizeImports (there's no optimization)
+// FIXME (2) anything but empty dialog when OI for a generator module
+// FIXME (3) sort dependencies by name, group by kind(SDependencyScope) to make dependencies look uniform and easy to grasp.
+// FIXME (4) Refactor the class, reporting and breathe some OOP in here
 public class OptimizeImportsHelper {
   public OptimizeImportsHelper() {
 
@@ -81,22 +92,46 @@ public class OptimizeImportsHelper {
   private Result optimizeSolutionImports_internal(Solution solution) {
     List<SModel> modelsToOptimize = solution.getModels();
     Result result = optimizeModelsImports_internal(modelsToOptimize);
-    result.myReport = optimizeModuleImports(solution, result) + "\n\n" + result.myReport;
+    result.myReport = optimizeModuleImports(solution, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
     return result;
   }
 
   private Result optimizeLanguageImports_internal(Language language) {
     List<SModel> modelsToOptimize = new ArrayList<SModel>();
-    modelsToOptimize.addAll(language.getModels());
+    for (SModel model : language.getModels()) {
+      if (SModelStereotype.isDescriptorModelStereotype(SModelStereotype.getStereotype(model)) || SModelStereotype.isStubModel(model)) {
+        // with @desciptor model hosting imports to activate generation of custom aspects, it's not wise to remove these.
+        // stub models aren't best candidates for organize imports, too.
+        continue;
+      }
+      modelsToOptimize.add(model);
+    }
     for (Generator g : language.getGenerators()) {
       modelsToOptimize.addAll(g.getModels());
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize);
-    SModelRepository.getInstance().saveAll();
+    SModelRepository.getInstance().saveAll(); // FIXME pass SRepository into OIH
     for (Generator g : language.getGenerators()) {
-      result.myReport = optimizeModuleImports(g, result) + "\n\n" + result.myReport;
+      HashSet<SModuleReference> referencedGenerators = new HashSet<SModuleReference>();
+      // ArrayDeque doesn't tolerate null, unfortunately
+      LinkedList<MappingConfig_AbstractRef> mcRefs = new LinkedList<MappingConfig_AbstractRef>();
+      for (MappingPriorityRule rule : g.getModuleDescriptor().getPriorityRules()) {
+        mcRefs.add(rule.getLeft());
+        mcRefs.add(rule.getRight());
+      }
+      while (!mcRefs.isEmpty()) {
+        MappingConfig_AbstractRef ref = mcRefs.removeFirst();
+        if (ref instanceof MappingConfig_RefSet) {
+          mcRefs.addAll(((MappingConfig_RefSet) ref).getMappingConfigs());
+          continue;
+        }
+        if (ref instanceof MappingConfig_ExternalRef) {
+          referencedGenerators.add(((MappingConfig_ExternalRef) ref).getGenerator());
+        }
+      }
+      result.myReport = optimizeModuleImports(g, result, referencedGenerators) + "\n\n" + result.myReport;
     }
-    result.myReport = optimizeModuleImports(language, result) + "\n\n" + result.myReport;
+    result.myReport = optimizeModuleImports(language, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
 
     return result;
   }
@@ -180,36 +215,37 @@ public class OptimizeImportsHelper {
 
   //----additional methods--------
 
-  private String optimizeModuleImports(AbstractModule module, Result result) {
+  private String optimizeModuleImports(AbstractModule module, Result result, Collection<SModuleReference> toKeep) {
     List<Dependency> unusedDeps = new ArrayList<Dependency>();
-    for (Dependency d : module.getModuleDescriptor().getDependencies()) {
-      Dependency dep = getUnusedDependency(result, d, module.getModuleReference());
-      if (dep != null) {
-        unusedDeps.add(dep);
+    final SModuleReference optimizedModuleReference = module.getModuleReference();
+    HashSet<SModuleReference> inUse = new HashSet<SModuleReference>(toKeep);
+    SRepository repository = module.getRepository(); // FIXME pass repository to resolve models in as an argument for the OIH itself.
+    // from used models, find out modules we need
+    for (SModelReference mr : result.myUsedModels) {
+      SModuleReference moduleInUse = mr.getModuleReference();
+      if (moduleInUse == null) {
+        if (repository != null) {
+          SModel model = mr.resolve(repository);
+          if (model != null && model.getModule() != null) {
+            inUse.add(model.getModule().getModuleReference());
+          }
+        }
+      } else {
+        inUse.add(moduleInUse);
       }
+    }
+    for (Dependency d : module.getModuleDescriptor().getDependencies()) {
+      if (d.getModuleRef().equals(optimizedModuleReference)) {
+        unusedDeps.add(d);
+        continue;
+      }
+      if (inUse.contains(d.getModuleRef())) {
+        continue;
+      }
+      unusedDeps.add(d);
     }
 
     return removeFromImports(module, unusedDeps);
-  }
-
-  private Dependency getUnusedDependency(Result result, Dependency dep, SModuleReference current) {
-    if (dep.isReexport()) return null;
-    if (dep.getModuleRef().equals(current)) return dep;
-
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(dep.getModuleRef());
-    if (module == null) return null;
-
-    boolean used = false;
-
-    for (SModelReference mr : result.myUsedModels) {
-      SModel md = SModelRepository.getInstance().getModelDescriptor(mr);
-      if (md == null) continue;
-      if (md.getModule() == module) {
-        used = true;
-        break;
-      }
-    }
-    return used ? null : dep;
   }
 
   private SModuleReference getUnusedDevkitRef(Result result, SModuleReference devkitRef) {

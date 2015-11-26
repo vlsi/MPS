@@ -35,7 +35,6 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   private boolean myGenerateTemplates = false;
   private boolean myQueriesViaReflection = true;
-  private boolean myNeedsOpContext = false;
 
   public GeneratorDescriptor() {
     super();
