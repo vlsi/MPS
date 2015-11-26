@@ -13,6 +13,7 @@
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -230,7 +231,9 @@
       </concept>
       <concept id="1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" flags="lg" index="2VPoh5">
         <reference id="1167087469901" name="templateNode" index="2VPoh2" />
+        <child id="1167087469900" name="conditionFunction" index="2VPoh3" />
       </concept>
+      <concept id="1167087518662" name="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" flags="in" index="2VP$b9" />
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
@@ -526,6 +529,27 @@
     </node>
     <node concept="2VPoh5" id="3lidccNIMsn" role="2VS0gm">
       <ref role="2VPoh2" node="3lidccNIMsp" resolve="MigrationDescriptorImpl" />
+      <node concept="2VP$b9" id="4vxJP2wuetK" role="2VPoh3">
+        <node concept="3clFbS" id="4vxJP2wuetL" role="2VODD2">
+          <node concept="3clFbF" id="4vxJP2wufbb" role="3cqZAp">
+            <node concept="2OqwBi" id="4vxJP2wuge8" role="3clFbG">
+              <node concept="2OqwBi" id="4vxJP2wug7c" role="2Oq$k0">
+                <node concept="2OqwBi" id="4vxJP2wufxV" role="2Oq$k0">
+                  <node concept="1iwH7S" id="4vxJP2wufba" role="2Oq$k0" />
+                  <node concept="1st3f0" id="4vxJP2wufKA" role="2OqNvi" />
+                </node>
+                <node concept="LkI2h" id="4vxJP2wug9z" role="2OqNvi" />
+              </node>
+              <node concept="liA8E" id="4vxJP2wugq1" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                <node concept="Xl_RD" id="4vxJP2wugrG" role="37wK5m">
+                  <property role="Xl_RC" value=".migration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3lhOvk" id="3QgUde4xCnL" role="3lj3bC">
       <ref role="3lhOvi" node="3fmQZrgbxak" resolve="MigrationScriptImpl" />
