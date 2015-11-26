@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_Root_MappingRule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -50,6 +51,13 @@ public class check_Root_MappingRule_NonTypesystemRule extends AbstractNonTypesys
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
+      }
+    }
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept"))), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x47bf8397520e5939L, "jetbrains.mps.lang.core.structure.Attribute"))) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new ReferenceMessageTarget("applicableConcept");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(rule, "Attributes are unlikely to be roots of a model", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "2826485732397633059", null, errorTarget);
       }
     }
   }
