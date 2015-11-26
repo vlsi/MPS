@@ -1432,6 +1432,9 @@
         </node>
       </node>
     </node>
+    <node concept="2DRAP_" id="hoHCGhqd8Z" role="2DRAPQ">
+      <property role="2DPR8u" value="set CLASSPATH=%CLASSPATH%;%JDK%\lib\tools.jar" />
+    </node>
     <node concept="2DRAP_" id="1w81suLSXU3" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSXVU" role="2DRAPQ">
       <property role="2DPR8u" value="pushd " />
@@ -1602,7 +1605,16 @@
       <property role="2DPR8u" value="RM=`which rm`" />
     </node>
     <node concept="2DRAP_" id="3T7P3nA9$w5" role="2DRAPQ">
-      <property role="2DPR8u" value="UNAME=`uname`" />
+      <property role="2DPR8u" value="UNAME=`which uname`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhwj_U" role="2DRAPQ">
+      <property role="2DPR8u" value="READLINK=`which readlink`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhwjXi" role="2DRAPQ">
+      <property role="2DPR8u" value="XARGS=`which xargs`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhwkkX" role="2DRAPQ">
+      <property role="2DPR8u" value="DIRNAME=`which dirname`" />
     </node>
     <node concept="2DRAP_" id="3T7P3nA9$Jc" role="2DRAPQ">
       <property role="2DPR8u" value="SCRIPT_PATH=&quot;$0&quot;" />
@@ -1770,23 +1782,165 @@
       </node>
     </node>
     <node concept="2DRAP_" id="3T7P3nA9$gT" role="2DRAPQ" />
-    <node concept="2DRAP_" id="3T7P3nA9SRq" role="2DRAPQ">
-      <property role="2DPR8u" value="if [ -z &quot;${JDK_HOME}&quot; ]; then" />
+    <node concept="2DRAP_" id="hoHCGht60J" role="2DRAPQ" />
+    <node concept="2DRAP_" id="hoHCGht6jb" role="2DRAPQ">
+      <property role="2DPR8u" value="# ---------------------------------------------------------------------" />
     </node>
-    <node concept="2DRAP_" id="3T7P3nA9ToK" role="2DRAPQ">
-      <property role="2DPR8u" value="  JAVA=java" />
+    <node concept="2DRAP_" id="hoHCGht6_C" role="2DRAPQ">
+      <property role="2DPR8u" value="# Locate a JDK installation directory which will be used to run the IDE." />
     </node>
-    <node concept="2DRAP_" id="3T7P3nA9TE3" role="2DRAPQ">
+    <node concept="2DRAP_" id="hoHCGht6S6" role="2DRAPQ">
+      <property role="2DPR8u" value="# Try (in order): JDK_HOME, JAVA_HOME, &quot;java&quot; in PATH." />
+    </node>
+    <node concept="2DRAP_" id="hoHCGht7Xm" role="2DRAPQ">
+      <property role="2DPR8u" value="# ---------------------------------------------------------------------" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGht9YX" role="2DRAPQ">
+      <property role="2DPR8u" value="if [ -n &quot;$JDK_HOME&quot; -a -x &quot;$JDK_HOME/bin/java&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtam1" role="2DRAPQ">
+      <property role="2DPR8u" value="  JDK=&quot;$JDK_HOME&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtaH6" role="2DRAPQ">
+      <property role="2DPR8u" value="elif [ -n &quot;$JAVA_HOME&quot; -a -x &quot;$JAVA_HOME/bin/java&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtb4c" role="2DRAPQ">
+      <property role="2DPR8u" value="  JDK=&quot;$JAVA_HOME&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtbrj" role="2DRAPQ">
       <property role="2DPR8u" value="else" />
     </node>
-    <node concept="2DRAP_" id="3T7P3nA9TVo" role="2DRAPQ">
-      <property role="2DPR8u" value="  JAVA=&quot;${JDK_HOME}/bin/java&quot;" />
+    <node concept="2DRAP_" id="hoHCGhtbMr" role="2DRAPQ">
+      <property role="2DPR8u" value="  JAVA_BIN_PATH=`which java`" />
     </node>
-    <node concept="2DRAP_" id="3T7P3nA9UcJ" role="2DRAPQ">
-      <property role="2DPR8u" value="  echo &quot;$0 info: Using jdk located in ${JDK_HOME}.&quot;" />
+    <node concept="2DRAP_" id="hoHCGhtc9$" role="2DRAPQ">
+      <property role="2DPR8u" value="  if [ -n &quot;$JAVA_BIN_PATH&quot; ]; then" />
     </node>
-    <node concept="2DRAP_" id="3T7P3nA9Uu8" role="2DRAPQ">
+    <node concept="2DRAP_" id="hoHCGhtcwI" role="2DRAPQ">
+      <property role="2DPR8u" value="    if [ &quot;$OS_TYPE&quot; = &quot;FreeBSD&quot; -o &quot;$OS_TYPE&quot; = &quot;MidnightBSD&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtcRT" role="2DRAPQ">
+      <property role="2DPR8u" value="      JAVA_LOCATION=`JAVAVM_DRYRUN=yes java | &quot;$GREP&quot; '^JAVA_HOME' | &quot;$CUT&quot; -c11-`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtdf5" role="2DRAPQ">
+      <property role="2DPR8u" value="      if [ -x &quot;$JAVA_LOCATION/bin/java&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtdAi" role="2DRAPQ">
+      <property role="2DPR8u" value="        JDK=&quot;$JAVA_LOCATION&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtdXw" role="2DRAPQ">
+      <property role="2DPR8u" value="      fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtekJ" role="2DRAPQ">
+      <property role="2DPR8u" value="    elif [ &quot;$OS_TYPE&quot; = &quot;SunOS&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhteFZ" role="2DRAPQ">
+      <property role="2DPR8u" value="      JAVA_LOCATION=&quot;/usr/jdk/latest&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtf3g" role="2DRAPQ">
+      <property role="2DPR8u" value="      if [ -x &quot;$JAVA_LOCATION/bin/java&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtfqy" role="2DRAPQ">
+      <property role="2DPR8u" value="        JDK=&quot;$JAVA_LOCATION&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtfLP" role="2DRAPQ">
+      <property role="2DPR8u" value="      fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtg99" role="2DRAPQ">
+      <property role="2DPR8u" value="    elif [ &quot;$OS_TYPE&quot; = &quot;Darwin&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtgwu" role="2DRAPQ">
+      <property role="2DPR8u" value="      JAVA_LOCATION=`/usr/libexec/java_home`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtgRO" role="2DRAPQ">
+      <property role="2DPR8u" value="      if [ -x &quot;$JAVA_LOCATION/bin/java&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhthfb" role="2DRAPQ">
+      <property role="2DPR8u" value="        JDK=&quot;$JAVA_LOCATION&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhthAz" role="2DRAPQ">
+      <property role="2DPR8u" value="      fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhthXW" role="2DRAPQ">
+      <property role="2DPR8u" value="    fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtilm" role="2DRAPQ" />
+    <node concept="2DRAP_" id="hoHCGhtiGL" role="2DRAPQ">
+      <property role="2DPR8u" value="    if [ -z &quot;$JDK&quot; -a -x &quot;$READLINK&quot; -a -x &quot;$XARGS&quot; -a -x &quot;$DIRNAME&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtj4d" role="2DRAPQ">
+      <property role="2DPR8u" value="      JAVA_LOCATION=`&quot;$READLINK&quot; -f &quot;$JAVA_BIN_PATH&quot;`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtjrE" role="2DRAPQ">
+      <property role="2DPR8u" value="      case &quot;$JAVA_LOCATION&quot; in" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtjN8" role="2DRAPQ">
+      <property role="2DPR8u" value="        */jre/bin/java)" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtkaB" role="2DRAPQ">
+      <property role="2DPR8u" value="          JAVA_LOCATION=`echo &quot;$JAVA_LOCATION&quot; | &quot;$XARGS&quot; &quot;$DIRNAME&quot; | &quot;$XARGS&quot; &quot;$DIRNAME&quot; | &quot;$XARGS&quot; &quot;$DIRNAME&quot;`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtky7" role="2DRAPQ">
+      <property role="2DPR8u" value="          if [ ! -d &quot;$JAVA_LOCATION/bin&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtkTC" role="2DRAPQ">
+      <property role="2DPR8u" value="            JAVA_LOCATION=&quot;$JAVA_LOCATION/jre&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtlha" role="2DRAPQ">
+      <property role="2DPR8u" value="          fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtlCH" role="2DRAPQ">
+      <property role="2DPR8u" value="          ;;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtm0h" role="2DRAPQ">
+      <property role="2DPR8u" value="        *)" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtmnQ" role="2DRAPQ">
+      <property role="2DPR8u" value="          JAVA_LOCATION=`echo &quot;$JAVA_LOCATION&quot; | &quot;$XARGS&quot; &quot;$DIRNAME&quot; | &quot;$XARGS&quot; &quot;$DIRNAME&quot;`" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtmJs" role="2DRAPQ">
+      <property role="2DPR8u" value="          ;;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtn73" role="2DRAPQ">
+      <property role="2DPR8u" value="      esac" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtnuF" role="2DRAPQ">
+      <property role="2DPR8u" value="      if [ -x &quot;$JAVA_LOCATION/bin/java&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtnQk" role="2DRAPQ">
+      <property role="2DPR8u" value="        JDK=&quot;$JAVA_LOCATION&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtodY" role="2DRAPQ">
+      <property role="2DPR8u" value="      fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhto_D" role="2DRAPQ">
+      <property role="2DPR8u" value="    fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtoXl" role="2DRAPQ">
+      <property role="2DPR8u" value="  fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtpl2" role="2DRAPQ">
       <property role="2DPR8u" value="fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtpGK" role="2DRAPQ" />
+    <node concept="2DRAP_" id="hoHCGhtq01" role="2DRAPQ">
+      <property role="2DPR8u" value="if [ -z &quot;$JDK&quot; ]; then" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtqnL" role="2DRAPQ">
+      <property role="2DPR8u" value="  message &quot;No JDK found. Please validate either JDK_HOME or JAVA_HOME environment variable points to valid JDK installation.&quot;" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtqJy" role="2DRAPQ">
+      <property role="2DPR8u" value="  exit 1" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGhtr7k" role="2DRAPQ">
+      <property role="2DPR8u" value="fi" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGht8gm" role="2DRAPQ" />
+    <node concept="2DRAP_" id="3T7P3nA9UcJ" role="2DRAPQ">
+      <property role="2DPR8u" value="echo &quot;$0 info: Using jdk located in ${JDK}.&quot;" />
+    </node>
+    <node concept="2DRAP_" id="3T7P3nA9TVo" role="2DRAPQ">
+      <property role="2DPR8u" value="JAVA=&quot;${JDK}/bin/java&quot;" />
     </node>
     <node concept="2DRAP_" id="3T7P3nA9UJz" role="2DRAPQ" />
     <node concept="2DRAP_" id="3T7P3nA9UKP" role="2DRAPQ">
@@ -2048,7 +2202,10 @@
         </node>
       </node>
     </node>
-    <node concept="2DRAP_" id="3T7P3nAax98" role="2DRAPQ" />
+    <node concept="2DRAP_" id="hoHCGhtrRd" role="2DRAPQ">
+      <property role="2DPR8u" value="CLASSPATH=${CLASSPATH}:${JDK}/lib/tools.jar" />
+    </node>
+    <node concept="2DRAP_" id="hoHCGht4W4" role="2DRAPQ" />
     <node concept="2DRAP_" id="3T7P3nAaxbk" role="2DRAPQ">
       <property role="2DPR8u" value="cd &quot;${PROJECT_HOME}&quot;" />
     </node>

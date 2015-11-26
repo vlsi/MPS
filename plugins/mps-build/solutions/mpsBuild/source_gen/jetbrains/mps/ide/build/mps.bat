@@ -46,6 +46,7 @@ set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\jdom.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\log4j.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\extensions.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\trove4j.jar
+set CLASSPATH=%CLASSPATH%;%JDK%\lib\tools.jar
 
 pushd bin
 start "" "%JAVA%" %JVM_ARGS% %ADDITIONAL_JVM_ARGS% -classpath "%CLASSPATH%" %MAIN_CLASS% %*

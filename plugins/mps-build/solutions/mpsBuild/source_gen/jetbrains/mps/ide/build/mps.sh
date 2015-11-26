@@ -6,7 +6,10 @@
 GREP=`which egrep`
 MKTEMP=`which mktemp`
 RM=`which rm`
-UNAME=`uname`
+UNAME=`which uname`
+READLINK=`which readlink`
+XARGS=`which xargs`
+DIRNAME=`which dirname`
 SCRIPT_PATH="$0"
 if [ "${UNAME}" = "Linux" ]; then
   # readlink resolves symbolic links, but on linux only
@@ -15,12 +18,62 @@ fi
 PROJECT_HOME=`dirname "${SCRIPT_PATH}"`
 PROJECT_HOME_FROM_STARTUP_DIR=..
 
-if [ -z "${JDK_HOME}" ]; then
-  JAVA=java
+
+# ---------------------------------------------------------------------
+# Locate a JDK installation directory which will be used to run the IDE.
+# Try (in order): JDK_HOME, JAVA_HOME, "java" in PATH.
+# ---------------------------------------------------------------------
+if [ -n "$JDK_HOME" -a -x "$JDK_HOME/bin/java" ]; then
+  JDK="$JDK_HOME"
+elif [ -n "$JAVA_HOME" -a -x "$JAVA_HOME/bin/java" ]; then
+  JDK="$JAVA_HOME"
 else
-  JAVA="${JDK_HOME}/bin/java"
-  echo "$0 info: Using jdk located in ${JDK_HOME}."
+  JAVA_BIN_PATH=`which java`
+  if [ -n "$JAVA_BIN_PATH" ]; then
+    if [ "$OS_TYPE" = "FreeBSD" -o "$OS_TYPE" = "MidnightBSD" ]; then
+      JAVA_LOCATION=`JAVAVM_DRYRUN=yes java | "$GREP" '^JAVA_HOME' | "$CUT" -c11-`
+      if [ -x "$JAVA_LOCATION/bin/java" ]; then
+        JDK="$JAVA_LOCATION"
+      fi
+    elif [ "$OS_TYPE" = "SunOS" ]; then
+      JAVA_LOCATION="/usr/jdk/latest"
+      if [ -x "$JAVA_LOCATION/bin/java" ]; then
+        JDK="$JAVA_LOCATION"
+      fi
+    elif [ "$OS_TYPE" = "Darwin" ]; then
+      JAVA_LOCATION=`/usr/libexec/java_home`
+      if [ -x "$JAVA_LOCATION/bin/java" ]; then
+        JDK="$JAVA_LOCATION"
+      fi
+    fi
+
+    if [ -z "$JDK" -a -x "$READLINK" -a -x "$XARGS" -a -x "$DIRNAME" ]; then
+      JAVA_LOCATION=`"$READLINK" -f "$JAVA_BIN_PATH"`
+      case "$JAVA_LOCATION" in
+        */jre/bin/java)
+          JAVA_LOCATION=`echo "$JAVA_LOCATION" | "$XARGS" "$DIRNAME" | "$XARGS" "$DIRNAME" | "$XARGS" "$DIRNAME"`
+          if [ ! -d "$JAVA_LOCATION/bin" ]; then
+            JAVA_LOCATION="$JAVA_LOCATION/jre"
+          fi
+          ;;
+        *)
+          JAVA_LOCATION=`echo "$JAVA_LOCATION" | "$XARGS" "$DIRNAME" | "$XARGS" "$DIRNAME"`
+          ;;
+      esac
+      if [ -x "$JAVA_LOCATION/bin/java" ]; then
+        JDK="$JAVA_LOCATION"
+      fi
+    fi
+  fi
 fi
+
+if [ -z "$JDK" ]; then
+  message "No JDK found. Please validate either JDK_HOME or JAVA_HOME environment variable points to valid JDK installation."
+  exit 1
+fi
+
+echo "$0 info: Using jdk located in ${JDK}."
+JAVA="${JDK}/bin/java"
 
 MAIN_CLASS=jetbrains.mps.Launcher
 
@@ -57,6 +110,7 @@ CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/jdom.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/log4j.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/extensions.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/trove4j.jar
+CLASSPATH=${CLASSPATH}:${JDK}/lib/tools.jar
 
 cd "${PROJECT_HOME}"
 if [ "${UNAME}" = "Darwin" ]; then
