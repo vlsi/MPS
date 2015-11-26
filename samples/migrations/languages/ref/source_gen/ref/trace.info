@@ -4,9 +4,6 @@
     <file name="Language.java">
       <unit at="15,0,51,0" name="ref.Language" />
     </file>
-    <file name="MigrationDescriptorImpl.java">
-      <unit at="11,0,17,0" name="ref.MigrationDescriptorImpl" />
-    </file>
   </root>
 </debug-info>
 
