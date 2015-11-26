@@ -70,7 +70,7 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
   public String getId() {
     return "moveNode.updateReferences";
   }
-  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references in current project");
+  public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.updateReferencesParticipant", "Update references");
   private MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference> myDataCollector = new MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<NamedNodeReference, NamedNodeReference>() {
     public NamedNodeReference beforeMove(SNode nodeToMove) {
       return new NamedNodeReference(nodeToMove.getReference(), NodeReferenceUtil.getNodePresentation(nodeToMove));
@@ -116,9 +116,6 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
           final String resolveInfo = SLinkOperations.getResolveInfo(ref);
           final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), movingNode), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
           RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference> change = new RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>() {
-            public MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference> getParticipant() {
-              return UpdateReferencesParticipant.this;
-            }
             public SearchResults getSearchResults() {
               return searchResults;
             }

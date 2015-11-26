@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.migration.pluginSolution.MoveNodesContributor")};
-  private Extension[] extensions = new Extension[]{new UpdateReferencesParticipant.UpdateReferencesParticipant_extension(), new MoveNodeRefactoringLogParticipant.MoveNodeRefactoringLogParticipant_extension(), new UpdateModelImports.UpdateModelImports_extension(), new LoggableMigrationStepBuilder.LoggableMigrationStepBuilder_extension(), new LocalReferencesMigrationStepBuilder.LocalMigrationStepBuilder_extension(), new LocalInstancesMigrationStepBuilder.LocalInstancesMigrationStepBuilder_extension(), new MoveConceptContributor.MoveConceptContributor_extension(), new MoveNodeRefactoringLogParticipant.MoveNodeParticipants()};
+  private Extension[] extensions = new Extension[]{new UpdateReferencesParticipant.UpdateReferencesParticipant_extension(), new MoveNodeRefactoringLogParticipant.MoveNodeRefactoringLogParticipant_extension(), new UpdateModelImports.UpdateModelImports_extension(), new LoggableMigrationStepBuilder.LoggableMigrationStepBuilder_extension(), new LocalReferencesMigrationStepBuilder.LocalMigrationStepBuilder_extension(), new LocalInstancesMigrationStepBuilder.LocalInstancesMigrationStepBuilder_extension(), new MoveConceptContributor.MoveConceptContributor_extension(), new MoveNodeRefactoringLogParticipant.MoveNodeParticipants(), new RenameReferencesParticipant.RenameReferencesParticipant_extension()};
   public ExtensionDescriptor() {
   }
   @Override
