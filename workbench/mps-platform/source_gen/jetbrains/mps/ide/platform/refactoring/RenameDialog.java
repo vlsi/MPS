@@ -10,6 +10,7 @@ import javax.swing.event.DocumentEvent;
 
 public class RenameDialog extends StringChooserDialog {
   private static String REFACTORING_NAME = RefactoringBundle.message("rename.title");
+
   public RenameDialog(@NotNull Project project, String oldName, String nodeType) {
     super(project, REFACTORING_NAME, "Rename " + nodeType, oldName);
     myTextField.getDocument().addDocumentListener(new DocumentAdapter() {
@@ -20,12 +21,14 @@ public class RenameDialog extends StringChooserDialog {
     });
     update();
   }
+
   public String getName() {
     return myResultString;
   }
+
   private void update() {
     // TODO check for valid name 
-    if (isEmptyString(trim_x29nvn_a0a1a3(myTextField.getText()))) {
+    if (isEmptyString(trim_x29nvn_a0a1a6(myTextField.getText()))) {
       setErrorText("New name cannot be empty");
       getRefactorAction().setEnabled(false);
     } else {
@@ -34,6 +37,7 @@ public class RenameDialog extends StringChooserDialog {
     }
     repaint();
   }
+
   public static String getNewName(Project project, String oldName, String node) {
     RenameDialog dialog = new RenameDialog(project, oldName, node);
     dialog.show();
@@ -42,7 +46,7 @@ public class RenameDialog extends StringChooserDialog {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  public static String trim_x29nvn_a0a1a3(String str) {
+  public static String trim_x29nvn_a0a1a6(String str) {
     return (str == null ? null : str.trim());
   }
 }

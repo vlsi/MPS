@@ -214,65 +214,65 @@
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/1685972956014334002">
     <file name="RenameDialog.java">
       <node id="1685972956014334010" at="12,0,13,0" concept="10" trace="REFACTORING_NAME" />
-      <node id="1685972956014334053" at="13,82,14,68" concept="12" />
-      <node id="6393017501907745861" at="17,52,18,17" concept="2" />
-      <node id="7486055250764314873" at="20,7,21,13" concept="2" />
-      <node id="1685972956014334006" at="23,27,24,26" concept="7" />
-      <node id="5105675557153724678" at="26,25,27,33" concept="8" />
-      <node id="5105675557153710883" at="28,67,29,47" concept="2" />
-      <node id="6393017501907738587" at="29,47,30,44" concept="2" />
-      <node id="6393017501907738617" at="31,12,32,43" concept="2" />
-      <node id="5105675557153710887" at="32,43,33,25" concept="2" />
-      <node id="857347210745350594" at="34,5,35,14" concept="2" />
-      <node id="1685972956014334024" at="37,81,38,67" concept="6" />
-      <node id="1685972956014334032" at="38,67,39,18" concept="2" />
-      <node id="1685972956014334036" at="39,18,40,33" concept="7" />
-      <node id="6393017501907738539" at="42,52,43,44" concept="7" />
-      <node id="5105675557153724675" at="45,55,46,45" concept="7" />
-      <node id="1685972956014334003" at="23,0,26,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="6393017501907738615" at="31,10,34,5" concept="0" />
-      <node id="6393017501907738539" at="42,0,45,0" concept="11" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="5105675557153724675" at="45,0,48,0" concept="11" trace="trim_x29nvn_a0a1a3#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6393017501907737343" at="16,0,20,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
-      <node id="1685972956014334015" at="37,0,42,0" concept="11" trace="getNewName#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="6393017501907616161" at="14,68,20,7" concept="2" />
-      <node id="6393017501907737364" at="27,33,34,5" concept="4" />
-      <node id="1685972956014334042" at="13,0,23,0" concept="1" trace="RenameDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="6393017501907737355" at="26,0,37,0" concept="5" trace="update#()V" />
-      <scope id="6393017501907737348" at="17,52,18,17" />
-      <scope id="1685972956014334005" at="23,27,24,26" />
-      <scope id="6393017501907738539" at="42,52,43,44" />
-      <scope id="5105675557153724675" at="45,55,46,45" />
-      <scope id="6393017501907737366" at="28,67,30,44" />
-      <scope id="6393017501907738616" at="31,12,33,25" />
-      <scope id="1685972956014334003" at="23,0,26,0" />
-      <scope id="1685972956014334023" at="37,81,40,33">
+      <node id="1685972956014334053" at="14,82,15,68" concept="12" />
+      <node id="6393017501907745861" at="18,52,19,17" concept="2" />
+      <node id="7486055250764314873" at="21,7,22,13" concept="2" />
+      <node id="1685972956014334006" at="25,27,26,26" concept="7" />
+      <node id="5105675557153724678" at="29,25,30,33" concept="8" />
+      <node id="5105675557153710883" at="31,67,32,47" concept="2" />
+      <node id="6393017501907738587" at="32,47,33,44" concept="2" />
+      <node id="6393017501907738617" at="34,12,35,43" concept="2" />
+      <node id="5105675557153710887" at="35,43,36,25" concept="2" />
+      <node id="857347210745350594" at="37,5,38,14" concept="2" />
+      <node id="1685972956014334024" at="41,81,42,67" concept="6" />
+      <node id="1685972956014334032" at="42,67,43,18" concept="2" />
+      <node id="1685972956014334036" at="43,18,44,33" concept="7" />
+      <node id="6393017501907738539" at="46,52,47,44" concept="7" />
+      <node id="5105675557153724675" at="49,55,50,45" concept="7" />
+      <node id="1685972956014334003" at="25,0,28,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="6393017501907738615" at="34,10,37,5" concept="0" />
+      <node id="6393017501907738539" at="46,0,49,0" concept="11" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="5105675557153724675" at="49,0,52,0" concept="11" trace="trim_x29nvn_a0a1a6#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6393017501907737343" at="17,0,21,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="1685972956014334015" at="41,0,46,0" concept="11" trace="getNewName#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6393017501907616161" at="15,68,21,7" concept="2" />
+      <node id="6393017501907737364" at="30,33,37,5" concept="4" />
+      <node id="1685972956014334042" at="14,0,24,0" concept="1" trace="RenameDialog#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="6393017501907737355" at="29,0,40,0" concept="5" trace="update#()V" />
+      <scope id="6393017501907737348" at="18,52,19,17" />
+      <scope id="1685972956014334005" at="25,27,26,26" />
+      <scope id="6393017501907738539" at="46,52,47,44" />
+      <scope id="5105675557153724675" at="49,55,50,45" />
+      <scope id="6393017501907737366" at="31,67,33,44" />
+      <scope id="6393017501907738616" at="34,12,36,25" />
+      <scope id="1685972956014334003" at="25,0,28,0" />
+      <scope id="1685972956014334023" at="41,81,44,33">
         <var name="dialog" id="1685972956014334025" />
       </scope>
-      <scope id="6393017501907738539" at="42,0,45,0">
+      <scope id="6393017501907738539" at="46,0,49,0">
         <var name="str" id="6393017501907738539" />
       </scope>
-      <scope id="5105675557153724675" at="45,0,48,0">
+      <scope id="5105675557153724675" at="49,0,52,0">
         <var name="str" id="5105675557153724675" />
       </scope>
-      <scope id="6393017501907737343" at="16,0,20,0">
+      <scope id="6393017501907737343" at="17,0,21,0">
         <var name="p0" id="6393017501907737346" />
       </scope>
-      <scope id="1685972956014334015" at="37,0,42,0">
+      <scope id="1685972956014334015" at="41,0,46,0">
         <var name="node" id="1685972956014334020" />
         <var name="oldName" id="1685972956014334018" />
         <var name="project" id="1685972956014334016" />
       </scope>
-      <scope id="1685972956014334052" at="13,82,21,13" />
-      <scope id="6393017501907737358" at="26,25,35,14" />
-      <scope id="1685972956014334042" at="13,0,23,0">
+      <scope id="1685972956014334052" at="14,82,22,13" />
+      <scope id="6393017501907737358" at="29,25,38,14" />
+      <scope id="1685972956014334042" at="14,0,24,0">
         <var name="nodeType" id="1685972956014334048" />
         <var name="oldName" id="1685972956014334046" />
         <var name="project" id="1685972956014334043" />
       </scope>
-      <scope id="6393017501907737355" at="26,0,37,0" />
-      <unit id="6393017501907737341" at="15,54,20,5" name="jetbrains.mps.ide.platform.refactoring.RenameDialog$1" />
-      <unit id="1685972956014334002" at="11,0,49,0" name="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
+      <scope id="6393017501907737355" at="29,0,40,0" />
+      <unit id="6393017501907737341" at="16,54,21,5" name="jetbrains.mps.ide.platform.refactoring.RenameDialog$1" />
+      <unit id="1685972956014334002" at="11,0,53,0" name="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/1685972956014334070">

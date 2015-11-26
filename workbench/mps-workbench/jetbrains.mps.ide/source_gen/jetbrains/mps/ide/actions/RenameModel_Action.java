@@ -6,16 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import java.awt.Frame;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 
 public class RenameModel_Action extends BaseAction {
@@ -31,13 +27,13 @@ public class RenameModel_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
+    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof Language)) {
       return true;
     }
-    if (!(Language.isLanguageOwnedAccessoryModel(((SModel) MapSequence.fromMap(_params).get("model"))))) {
+    if (!(Language.isLanguageOwnedAccessoryModel(event.getData(MPSCommonDataKeys.MODEL)))) {
       return false;
     }
-    return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
+    return event.getData(MPSCommonDataKeys.MODEL) instanceof EditableSModel;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -49,29 +45,13 @@ public class RenameModel_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
       if (p == null) {
         return false;
       }
     }
     {
       SModel p = event.getData(MPSCommonDataKeys.MODEL);
-      MapSequence.fromMap(_params).put("model", p);
       if (p == null) {
         return false;
       }
@@ -81,7 +61,6 @@ public class RenameModel_Action extends BaseAction {
     }
     {
       SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
-      MapSequence.fromMap(_params).put("module", p);
       if (p == null) {
         return false;
       }
@@ -90,6 +69,6 @@ public class RenameModel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).show();
+    new RenameModelDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), (EditableSModel) event.getData(MPSCommonDataKeys.MODEL)).show();
   }
 }

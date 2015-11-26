@@ -12405,7 +12405,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Model" />
     <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5VIEYrBjMRp" role="tncku">
       <node concept="3clFbS" id="5VIEYrBjMRq" role="2VODD2">
         <node concept="3clFbF" id="5VIEYrBjMRr" role="3cqZAp">
@@ -12415,8 +12414,8 @@
                 <ref role="37wK5l" to="o2jy:29N7xYwTG4A" resolve="RenameModelDialog" />
                 <node concept="2OqwBi" id="5VIEYrBjMRx" role="37wK5m">
                   <node concept="2WthIp" id="5VIEYrBjMRy" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5VIEYrBjMRz" role="2OqNvi">
-                    <ref role="2WH_rO" node="5VIEYrBjMRF" resolve="project" />
+                  <node concept="1DTwFV" id="2sTGsLqfqIC" role="2OqNvi">
+                    <ref role="2WH_rO" node="3_F3cCEPQc" resolve="mpsProject" />
                   </node>
                 </node>
                 <node concept="10QFUN" id="2wNMEwGdFtA" role="37wK5m">
@@ -12430,12 +12429,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="3_F3cCFawX" role="37wK5m">
-                  <node concept="2WthIp" id="3_F3cCFax0" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="3_F3cCFax2" role="2OqNvi">
-                    <ref role="2WH_rO" node="3_F3cCEPQc" resolve="mpsProject" />
-                  </node>
-                </node>
               </node>
             </node>
             <node concept="liA8E" id="5VIEYrBjNnz" role="2OqNvi">
@@ -12445,20 +12438,10 @@
         </node>
       </node>
     </node>
-    <node concept="1DS2jV" id="5VIEYrBjMRF" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7HZe2EwZDkX" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="3_F3cCEPQc" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="3_F3cCEPQd" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="5VIEYrBjMRG" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="7HZe2EwZDmr" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="5VIEYrBjMRR" role="1NuT2Z">
       <property role="TrG5h" value="model" />
@@ -12789,7 +12772,6 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Module" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Solution.Actions" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3fhZBTge84r" role="tncku">
       <node concept="3clFbS" id="3fhZBTge84s" role="2VODD2">
         <node concept="3clFbF" id="3fhZBTgeaEH" role="3cqZAp">
@@ -12797,15 +12779,10 @@
             <node concept="2ShNRf" id="3fhZBTgeaEI" role="2Oq$k0">
               <node concept="1pGfFk" id="3fhZBTgeaEK" role="2ShVmc">
                 <ref role="37wK5l" to="o2jy:29N7xYwTGoY" resolve="RenameModuleDialog" />
-                <node concept="2OqwBi" id="50dRo6PLHen" role="37wK5m">
-                  <node concept="2OqwBi" id="50dRo6PLHdb" role="2Oq$k0">
-                    <node concept="2WthIp" id="50dRo6PLHcQ" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="50dRo6PLHe1" role="2OqNvi">
-                      <ref role="2WH_rO" node="cvGLnZnRlO" resolve="project" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="50dRo6PLHet" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                <node concept="2OqwBi" id="50dRo6PLHdb" role="37wK5m">
+                  <node concept="2WthIp" id="50dRo6PLHcQ" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="50dRo6PLHe1" role="2OqNvi">
+                    <ref role="2WH_rO" node="cvGLnZnRlO" resolve="project" />
                   </node>
                 </node>
                 <node concept="1eOMI4" id="3fhZBTgeaES" role="37wK5m">
@@ -12829,11 +12806,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="3fhZBTgeaEG" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="7HZe2EwZDjd" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="3fhZBTge84u" role="1NuT2Z">
       <property role="TrG5h" value="module" />

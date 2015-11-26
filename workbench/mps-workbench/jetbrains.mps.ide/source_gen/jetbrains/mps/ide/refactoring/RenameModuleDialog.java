@@ -4,11 +4,8 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.AbstractModule;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.refactoring.Renamer;
@@ -16,21 +13,25 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.structure.project.ModulePath;
 
 public class RenameModuleDialog extends RenameDialog {
-  private AbstractModule myModule;
-  public RenameModuleDialog(Project project, AbstractModule module) throws HeadlessException {
-    super(project, module.getModuleName(), "module");
+  private final AbstractModule myModule;
+  private final MPSProject myProject;
+
+  public RenameModuleDialog(MPSProject project, AbstractModule module) throws HeadlessException {
+    super(project.getProject(), module.getModuleName(), "module");
     myModule = module;
+    myProject = project;
     setTitle("Rename Module");
   }
 
   @Override
   protected void doRefactoringAction() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         final String fqName = getCurrentValue();
 
-        final SRepository projectRepository = ProjectHelper.getProjectRepository(getProject());
-        for (final SModule module : projectRepository.getModules()) {
+        // FIXME why validation code is part of change command? Shall refactor into distinct read 
+
+        for (final SModule module : myProject.getRepository().getModules()) {
           // module.getModuleName() can be null 
           if (fqName.equals(module.getModuleName())) {
             setErrorText("Duplicate module name");
@@ -38,35 +39,27 @@ public class RenameModuleDialog extends RenameDialog {
           }
         }
 
-        if (!((fqName.equals(myModule.getModuleName())))) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-              if (mpsProject instanceof StandaloneMPSProject) {
-                StandaloneMPSProject smp = (StandaloneMPSProject) mpsProject;
-                String folder = smp.getFolderFor(myModule);
-                String oldName = myModule.getDescriptorFile().getPath();
+        if (myProject instanceof StandaloneMPSProject) {
+          StandaloneMPSProject smp = (StandaloneMPSProject) myProject;
+          String folder = smp.getFolderFor(myModule);
+          String oldName = myModule.getDescriptorFile().getPath();
 
-                Renamer.renameModule(myModule, fqName);
+          Renamer.renameModule(myModule, fqName);
 
-                // TODO: add moduleRenamed to SRepositoryListener? 
-                // update module path in project descriptor 
-                final ProjectDescriptor projectDescriptor = smp.getProjectDescriptor();
-                String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldName));
-                ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().getPath(), virtualFolder);
-                projectDescriptor.addModulePath(modulePath);
-              } else {
-                Renamer.renameModule(myModule, fqName);
-              }
-            }
-          });
+          // TODO: add moduleRenamed to SRepositoryListener? 
+          // update module path in project descriptor 
+          final ProjectDescriptor projectDescriptor = smp.getProjectDescriptor();
+          String virtualFolder = projectDescriptor.removeModulePath(new ModulePath(oldName));
+          ModulePath modulePath = new ModulePath(myModule.getDescriptorFile().getPath(), virtualFolder);
+          projectDescriptor.addModulePath(modulePath);
+        } else {
+          Renamer.renameModule(myModule, fqName);
         }
-
         callSuper();
       }
     });
-
   }
+
   private void callSuper() {
     super.doRefactoringAction();
   }
