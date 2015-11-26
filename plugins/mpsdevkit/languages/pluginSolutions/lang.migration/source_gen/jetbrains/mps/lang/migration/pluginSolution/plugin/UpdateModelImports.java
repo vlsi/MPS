@@ -26,8 +26,8 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 
 public class UpdateModelImports extends RefactoringParticipantBase<SNodeReference, SNodeReference, SNode, SNode> implements MoveNodeRefactoringParticipant<SNodeReference, SNodeReference> {
 
-  public static class UpdateReferencesParticipant_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
-    public UpdateReferencesParticipant_extension() {
+  public static class UpdateModelImports_extension extends Extension.Default<MoveNodeRefactoringParticipant<?, ?>> {
+    public UpdateModelImports_extension() {
       super("jetbrains.mps.ide.platform.MoveNodeParticipantEP");
     }
     public MoveNodeRefactoringParticipant<?, ?> get() {

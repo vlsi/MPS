@@ -9571,7 +9571,7 @@
     <node concept="2tJIrI" id="2aY$7DLNCc8" role="jymVt" />
     <node concept="1lYeZD" id="2aY$7DLNCXg" role="jymVt">
       <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="UpdateReferencesParticipant_extension" />
+      <property role="TrG5h" value="UpdateModelImports_extension" />
       <ref role="1lYe$Y" to="lfzw:3KqYwoBJieG" resolve="MoveNodeParticipantEP" />
       <node concept="3Tm1VV" id="2aY$7DLNCXh" role="1B3o_S" />
       <node concept="q3mfD" id="2aY$7DLNCXi" role="jymVt">
