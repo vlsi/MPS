@@ -100,7 +100,7 @@ public class Rename_Action extends BaseAction {
     }
 
     Iterable<? extends RefactoringParticipant<?, ?, SNode, String>> participants = new ExtensionPoint<RenameNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.RenameParticipantEP").getObjects();
-    MoveNodesDefault.<SNode,String>performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("project")), participants, Sequence.<SNode>singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends String, ? super SNode>, Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, String>>>, RefactoringSession>() {
+    MoveNodesDefault.<SNode,String>performRefactoring(((MPSProject) MapSequence.fromMap(_params).get("project")), "Rename node", participants, Sequence.<SNode>singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends String, ? super SNode>, Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, String>>>, RefactoringSession>() {
       public _FunctionTypes._return_P1_E0<? extends String, ? super SNode> invoke(Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, String>>> changes, RefactoringSession refactoringSession) {
         SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), newName);
         return new _FunctionTypes._return_P1_E0<String, SNode>() {

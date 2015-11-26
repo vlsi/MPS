@@ -18,11 +18,13 @@ import javax.swing.JLabel;
 public class SelectOptionsDialog extends RefactoringDialog {
 
   private List<String> myOptions;
+  private String myMessage;
   private List<JCheckBox> myCheckBoxes = ListSequence.fromList(new ArrayList<JCheckBox>());
   private List<Integer> mySelected;
-  public SelectOptionsDialog(Project project, List<String> options, String title) {
+  public SelectOptionsDialog(Project project, List<String> options, String title, String message) {
     super(project, true);
     myOptions = options;
+    myMessage = message;
     init();
     setTitle(title);
   }
@@ -40,7 +42,7 @@ public class SelectOptionsDialog extends RefactoringDialog {
       c.weightx = 1;
       c.weighty = 1;
 
-      panel.add(new JLabel("Select participants to execute"), c);
+      panel.add(new JLabel(myMessage), c);
 
     }
 
@@ -69,8 +71,8 @@ public class SelectOptionsDialog extends RefactoringDialog {
     }
     super.doRefactoringAction();
   }
-  public static List<Integer> selectOptions(Project project, List<String> options, String title) {
-    SelectOptionsDialog dialog = new SelectOptionsDialog(project, options, title);
+  public static List<Integer> selectOptions(Project project, List<String> options, String title, String message) {
+    SelectOptionsDialog dialog = new SelectOptionsDialog(project, options, title, message);
     dialog.show();
     return dialog.mySelected;
   }
