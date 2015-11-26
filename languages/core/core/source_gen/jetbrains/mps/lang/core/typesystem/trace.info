@@ -15,9 +15,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
-    <file name="MigrationDescriptorImpl.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.core.typesystem.MigrationDescriptorImpl" />
-    </file>
     <file name="TypesystemDescriptor.java">
       <unit at="8,0,52,0" name="jetbrains.mps.lang.core.typesystem.TypesystemDescriptor" />
     </file>

@@ -11959,6 +11959,7 @@
     <delete dir="${mps_home}/workbench/mps-platform/source_gen" />
     <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/migration/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/plugin/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/slanguage/generator/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/traceable.operations/generator/source_gen" />
