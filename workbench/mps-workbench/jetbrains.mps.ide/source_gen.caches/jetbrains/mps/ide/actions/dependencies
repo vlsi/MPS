@@ -1709,9 +1709,9 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.BehaviorDialogsPersistentOptions_PreferencesComponent" />
     <classNode dependClassName="jetbrains.mps.ide.actions.ModuleDependenies_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.actions.TodoViewer_Tool" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" />
-    <classNode dependClassName="jetbrains.mps.plugins.tool.BaseGeneratedTool" />
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.InternalActionsUtils" file="InternalActionsUtils.java">

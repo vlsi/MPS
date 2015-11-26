@@ -4013,16 +4013,16 @@
       <node id="7162597690968047817" at="27,46,28,44" concept="5" />
       <node id="7162597690968047817" at="28,44,29,47" concept="5" />
       <node id="7162597690968047817" at="29,47,30,18" concept="11" />
-      <node id="7162597690968047817" at="32,64,33,94" concept="10" />
-      <node id="7162597690968047817" at="33,94,34,76" concept="5" />
+      <node id="7162597690968047817" at="32,56,33,76" concept="10" />
+      <node id="7162597690968047817" at="33,76,34,76" concept="5" />
       <node id="7162597690968047817" at="34,76,35,73" concept="5" />
       <node id="7162597690968047817" at="35,73,36,17" concept="11" />
       <node id="7162597690968047817" at="14,0,16,0" concept="3" trace="Mpsdevkit_ProjectPlugin#()V" />
-      <node id="7162597690968047817" at="32,0,38,0" concept="9" trace="initAllTools#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
+      <node id="7162597690968047817" at="32,0,38,0" concept="9" trace="initAllTools1#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
       <node id="7162597690968047817" at="16,0,32,0" concept="9" trace="initTabbedEditors#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
       <scope id="7162597690968047817" at="14,36,14,36" />
       <scope id="7162597690968047817" at="14,0,16,0" />
-      <scope id="7162597690968047817" at="32,64,36,17">
+      <scope id="7162597690968047817" at="32,56,36,17">
         <var name="tools" id="7162597690968047817" />
       </scope>
       <scope id="7162597690968047817" at="32,0,38,0">

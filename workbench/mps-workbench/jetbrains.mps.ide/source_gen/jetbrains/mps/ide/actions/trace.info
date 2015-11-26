@@ -12234,8 +12234,8 @@
       <unit id="7162597690968192621" at="12,0,277,0" name="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
     </file>
     <file name="Ide_ProjectPlugin.java">
-      <node id="7162597690968192621" at="16,64,17,94" concept="11" />
-      <node id="7162597690968192621" at="17,94,18,81" concept="5" />
+      <node id="7162597690968192621" at="16,56,17,76" concept="11" />
+      <node id="7162597690968192621" at="17,76,18,81" concept="5" />
       <node id="7162597690968192621" at="18,81,19,74" concept="5" />
       <node id="7162597690968192621" at="19,74,20,17" concept="12" />
       <node id="7162597690968192621" at="22,87,23,115" concept="11" />
@@ -12243,11 +12243,11 @@
       <node id="7162597690968192621" at="24,0,25,117" concept="5" />
       <node id="7162597690968192621" at="25,117,26,22" concept="12" />
       <node id="7162597690968192621" at="14,0,16,0" concept="3" trace="Ide_ProjectPlugin#()V" />
-      <node id="7162597690968192621" at="16,0,22,0" concept="10" trace="initAllTools#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
+      <node id="7162597690968192621" at="16,0,22,0" concept="10" trace="initAllTools1#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
       <node id="7162597690968192621" at="22,0,28,0" concept="10" trace="createPreferencesComponents#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
       <scope id="7162597690968192621" at="14,30,14,30" />
       <scope id="7162597690968192621" at="14,0,16,0" />
-      <scope id="7162597690968192621" at="16,64,20,17">
+      <scope id="7162597690968192621" at="16,56,20,17">
         <var name="tools" id="7162597690968192621" />
       </scope>
       <scope id="7162597690968192621" at="22,87,26,22">
