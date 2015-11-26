@@ -344,4 +344,12 @@ public abstract class BaseTool {
   protected Project getProject() {
     return myProject;
   }
+
+  public void init(Project project) {
+
+  }
+
+  public void dispose(){
+
+  }
 }

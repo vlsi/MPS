@@ -36,6 +36,7 @@
     <import index="y8sq" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.plugins(MPS.Platform/)" />
     <import index="911s" ref="r:9da2e6e5-b7a9-4059-9bac-c3700f7d675c(jetbrains.mps.core.properties.structure)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="71xd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tools(MPS.Platform/)" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -1116,11 +1117,11 @@
             </node>
           </node>
           <node concept="liA8E" id="2TmYHHddUvy" role="2OqNvi">
-            <ref role="37wK5l" to="xj2j:~ProjectPluginManager.getTool(java.lang.Class):jetbrains.mps.plugins.tool.BaseGeneratedTool" resolve="getTool" />
+            <ref role="37wK5l" to="xj2j:~ProjectPluginManager.getTool(java.lang.Class):jetbrains.mps.ide.tools.BaseTool" resolve="getTool" />
             <node concept="1OoodG" id="4gD2fissWeL" role="37wK5m">
               <node concept="2eloPW" id="4gD2fissWeW" role="1Ooz5N">
                 <property role="2ely0U" value="ToolClass" />
-                <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+                <ref role="3uigEE" to="71xd:~BaseTool" resolve="BaseTool" />
                 <node concept="17Uvod" id="4gD2fissWf2" role="lGtFl">
                   <property role="2qtEX9" value="fqClassName" />
                   <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1174914042989/1174914081067" />
@@ -2577,11 +2578,11 @@
       </node>
     </node>
     <node concept="3clFb_" id="hxczl6S" role="jymVt">
-      <property role="TrG5h" value="initAllTools" />
+      <property role="TrG5h" value="initAllTools1" />
       <node concept="3Tm1VV" id="hxczl6V" role="1B3o_S" />
       <node concept="_YKpA" id="i1ABB0t" role="3clF45">
-        <node concept="3uibUv" id="7aXVInvaj48" role="_ZDj9">
-          <ref role="3uigEE" to="eqyk:~BaseGeneratedTool" resolve="BaseGeneratedTool" />
+        <node concept="3uibUv" id="5g8$AQz66gR" role="_ZDj9">
+          <ref role="3uigEE" to="71xd:~BaseTool" resolve="BaseTool" />
         </node>
       </node>
       <node concept="37vLTG" id="hxKkdAS" role="3clF46">
@@ -2595,14 +2596,14 @@
           <node concept="3cpWsn" id="hD07jyo" role="3cpWs9">
             <property role="TrG5h" value="tools" />
             <node concept="_YKpA" id="i1ABB3x" role="1tU5fm">
-              <node concept="3uibUv" id="7aXVInvaj4b" role="_ZDj9">
-                <ref role="3uigEE" to="eqyk:~BaseGeneratedTool" resolve="BaseGeneratedTool" />
+              <node concept="3uibUv" id="5g8$AQz66pV" role="_ZDj9">
+                <ref role="3uigEE" to="71xd:~BaseTool" resolve="BaseTool" />
               </node>
             </node>
             <node concept="2ShNRf" id="hDX73Rn" role="33vP2m">
               <node concept="Tc6Ow" id="i1ABB8z" role="2ShVmc">
-                <node concept="3uibUv" id="7aXVInvaj4e" role="HW$YZ">
-                  <ref role="3uigEE" to="eqyk:~BaseGeneratedTool" resolve="BaseGeneratedTool" />
+                <node concept="3uibUv" id="5g8$AQz66Gv" role="HW$YZ">
+                  <ref role="3uigEE" to="71xd:~BaseTool" resolve="BaseTool" />
                 </node>
               </node>
             </node>

@@ -29,6 +29,7 @@ import jetbrains.mps.ide.editor.EditorOpenHandler;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.editor.NodeEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
+import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.PluginLoaderRegistry;
 import jetbrains.mps.plugins.PluginReloadingListener;
@@ -147,11 +148,11 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   @Nullable
-  public <T extends BaseGeneratedTool> T getTool(Class<T> toolClass) {
+  public <T extends BaseTool> T getTool(Class<T> toolClass) {
     synchronized (myPluginsLock) {
       for (BaseProjectPlugin plugin : getPlugins()) {
-        List<BaseGeneratedTool> tools = plugin.getTools();
-        for (BaseGeneratedTool tool : tools) {
+        List<BaseTool> tools = plugin.getTools();
+        for (BaseTool tool : tools) {
           if (tool.getClass().getName().equals(toolClass.getName())) {
             return (T) tool;
           }

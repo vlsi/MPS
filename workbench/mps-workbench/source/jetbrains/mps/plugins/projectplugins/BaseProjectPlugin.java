@@ -21,6 +21,7 @@ import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.plugins.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
@@ -41,8 +42,8 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   private Project myProject;
 
-  private List<BaseGeneratedTool> myTools = new ArrayList<BaseGeneratedTool>();
-  private EDTAccessor<List<BaseGeneratedTool>> myInitializedTools = new EDTAccessor<List<BaseGeneratedTool>>(new ArrayList<BaseGeneratedTool>());
+  private List<BaseTool> myTools = new ArrayList<BaseTool>();
+  private EDTAccessor<List<BaseTool>> myInitializedTools = new EDTAccessor<List<BaseTool>>(new ArrayList<BaseTool>());
   private List<BaseCustomProjectPlugin> myCustomPlugins = new ArrayList<BaseCustomProjectPlugin>();
   private List<BaseProjectPrefsComponent> myPrefsComponents = new ArrayList<BaseProjectPrefsComponent>();
   private List<RelationDescriptor> myTabDescriptors = new ArrayList<RelationDescriptor>();
@@ -57,8 +58,13 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return new ArrayList<RelationDescriptor>();
   }
 
+  //remove after 3.3
   protected List<BaseGeneratedTool> initAllTools(Project project) {
     return new ArrayList<BaseGeneratedTool>();
+  }
+
+  protected List<BaseTool> initAllTools1(Project project) {
+    return new ArrayList<BaseTool>();
   }
 
   protected List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
@@ -96,7 +102,8 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
 
   protected void initTools1() {
     try {
-      myTools = initAllTools(myProject);
+      myTools.addAll(initAllTools(myProject));
+      myTools.addAll(initAllTools1(myProject));
     } catch (Throwable t) {
       LOG.error("Exception on tools init:", t);
     }
@@ -119,10 +126,10 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   }
 
   private void registerPrefsAndTools() {
-    final List<BaseGeneratedTool> toolsToInit = new ArrayList<BaseGeneratedTool>(myTools);
+    final List<BaseTool> toolsToInit = new ArrayList<BaseTool>(myTools);
     final List<BaseProjectPrefsComponent> prefsToInit = new ArrayList<BaseProjectPrefsComponent>(myPrefsComponents);
 
-    for (BaseGeneratedTool tool : toolsToInit) {
+    for (BaseTool tool : toolsToInit) {
       try {
         tool.init(myProject);
         tool.register();
@@ -168,8 +175,8 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     }
   }
 
-  private void disposeTools(List<BaseGeneratedTool> toolsToDispose) {
-    for (BaseGeneratedTool tool : toolsToDispose) {
+  private void disposeTools(List<BaseTool> toolsToDispose) {
+    for (BaseTool tool : toolsToDispose) {
       if (myInitializedTools.get().contains(tool)) {
         try {
           tool.unregister();
@@ -198,7 +205,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return Collections.unmodifiableList(myPrefsComponents);
   }
 
-  public List<BaseGeneratedTool> getTools() {
+  public List<BaseTool> getTools() {
     return Collections.unmodifiableList(myTools);
   }
 
