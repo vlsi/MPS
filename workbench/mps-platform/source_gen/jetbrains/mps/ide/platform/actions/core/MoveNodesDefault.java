@@ -352,7 +352,11 @@ outer:
     });
 
     Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.ide.platform.MoveNodeParticipantEP").getObjects();
-    performRefactoring(project, "Move nodes", participants, MapSequence.fromMap(moveMap).keySet(), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>>, RefactoringSession>() {
+    performRefactoring(project, "Move nodes", participants, SetSequence.fromSet(MapSequence.fromMap(moveMap).keySet()).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
+      }
+    }), new _FunctionTypes._return_P2_E0<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>, Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>>, RefactoringSession>() {
       public _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> invoke(final Map<RefactoringParticipant, Map<SNode, RefactoringParticipant.ParticipantState<?, ?, SNode, SNode>>> changes, RefactoringSession refactoringSession) {
         if (initRefactoringSession != null) {
           initRefactoringSession.invoke(refactoringSession);

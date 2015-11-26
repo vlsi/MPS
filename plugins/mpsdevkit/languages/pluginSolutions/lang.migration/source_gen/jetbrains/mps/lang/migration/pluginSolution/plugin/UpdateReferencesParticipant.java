@@ -98,10 +98,10 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
           return scope;
         }
       };
-      final SNode movedNode = initialState.reference().resolve(repository);
+      final SNode movingNode = initialState.reference().resolve(repository);
       Collection<SReference> usages;
-      if (movedNode != null) {
-        usages = CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), movedNode);
+      if (movingNode != null) {
+        usages = CommandUtil.usages(CommandUtil.createConsoleScope(null, false, context), movingNode);
       } else {
         usages = Sequence.fromIterable(CommandUtil.references(CommandUtil.createConsoleScope(null, false, context))).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -114,7 +114,7 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
           final SNodeReference containingNode = ref.getSourceNode().getReference();
           final SReferenceLink role = ref.getLink();
           final String resolveInfo = SLinkOperations.getResolveInfo(ref);
-          final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), movedNode), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
+          final SearchResults searchResults = new SearchResults(SetSequence.fromSetAndArray(new HashSet<SNode>(), movingNode), ListSequence.fromListAndArray(new ArrayList<SearchResult<SNode>>(), new SearchResult<SNode>(ref.getSourceNode(), "reference")));
           RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference> change = new RefactoringParticipant.Change<NamedNodeReference, NamedNodeReference>() {
             public MoveNodeRefactoringParticipant<NamedNodeReference, NamedNodeReference> getParticipant() {
               return UpdateReferencesParticipant.this;
@@ -129,7 +129,7 @@ public class UpdateReferencesParticipant extends RefactoringParticipantBase<Name
               refactoringSession.registerChange(new Runnable() {
                 public void run() {
                   SNode node = containingNode.resolve(repository);
-                  if (node == null || (node.getModel() != null)) {
+                  if (node == null || (movingNode != null && movingNode.getModel() != null)) {
                     return;
                   }
                   node.setReference(role, jetbrains.mps.smodel.SReference.create(role, node, finalState.reference().getModelReference(), finalState.reference().getNodeId(), resolveInfo));
