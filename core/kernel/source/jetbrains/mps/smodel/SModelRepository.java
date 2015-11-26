@@ -21,6 +21,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
@@ -31,6 +33,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -44,6 +47,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import sun.text.resources.FormatData_ar_SA;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -136,12 +140,37 @@ public class SModelRepository implements CoreComponent {
     removeModelDescriptor(d);
 
     DataSource source = d.getSource();
-    if (source instanceof FileDataSource) {
-      IFile modelFile = ((FileDataSource) source).getFile();
-
-      if (modelFile != null && modelFile.exists()) {
-        modelFile.delete();
+    String modelName = d.getModelName();
+    if (source instanceof FileSystemBasedDataSource) {
+      for (IFile file : getFilesToDelete((FileSystemBasedDataSource) source, modelName)) {
+        if (file.exists()) {
+          file.delete();
+        }
       }
+    }
+  }
+
+  // Fix MPS-23060 File-per-root model files are not deleted when the model is deleted
+  // TODO FileSystemBasedDataSource must have a method to tell all its files, not enclosing directories
+  // We don't want to just delete all getAffectedFiles() including dirs, because a per-root model directory can contain
+  // other models inside of it, if the namespace of the former is a strict prefix of the latter. Actually it may contain
+  // any files not related to the model
+  private Iterable<IFile> getFilesToDelete(FileSystemBasedDataSource source, String modelName) {
+    if (source instanceof FileDataSource) {
+      return Collections.singletonList(((FileDataSource) source).getFile());
+    } else if (source instanceof FolderDataSource) {
+      FolderDataSource folderSource = (FolderDataSource) source;
+      List<IFile> files = new ArrayList<IFile>();
+      for (String stream : folderSource.getAvailableStreams()) {
+        IFile file = folderSource.getFile(stream);
+        if (file != null) {
+          files.add(file);
+        }
+      }
+      return files;
+    } else {
+      LOG.warning(String.format("Cannot safely guess the file set for the model %s to delete; data source is %s", modelName, source.getClass().getName()));
+      return Collections.emptyList();
     }
   }
 
@@ -156,7 +185,7 @@ public class SModelRepository implements CoreComponent {
 
   /**
    * @deprecated this method makes sense for {@link SModelId#isGloballyUnique() globally unique} model id only, but doesn't manifest this contract.
-   *             Use {@link SModelReference#resolve(SRepository)} instead
+   * Use {@link SModelReference#resolve(SRepository)} instead
    */
   @Deprecated
   @Nullable
@@ -166,12 +195,12 @@ public class SModelRepository implements CoreComponent {
 
   /**
    * @deprecated this method makes sense for {@link SModelId#isGloballyUnique() globally unique} model id only, but doesn't manifest this contract.
-   *             Use {@link SModelReference#resolve(SRepository)} instead
+   * Use {@link SModelReference#resolve(SRepository)} instead
    */
   @Deprecated
   public SModel getModelDescriptor(SModelId id) {
     SModel value = myIdToModelDescriptorMap.get(id);
-    if (value == null && isVerboseJavaStubModelId(id) ) {
+    if (value == null && isVerboseJavaStubModelId(id)) {
       // basically, we've changed stub references to new on reference read/parse, and I don't see how we could
       // get here, but doesn't hurt to be extra cautious here.
       // The reason why we don't try new modelId here is that new ids are not global and never get into myIdToModelDescriptorMap
@@ -187,6 +216,7 @@ public class SModelRepository implements CoreComponent {
 
   /**
    * Compatibility code to migrate stub model id with module id to an 'honest' model id without module id.
+   *
    * @return <code>true</code> if it's model id of java stub and it includes module id as it used to do in MPS 3.2 and earlier
    */
   @Deprecated
@@ -229,7 +259,7 @@ public class SModelRepository implements CoreComponent {
     // pre: isLegacyJavaStubModel()
     String idValue = ((ForeignSModelId) id).getId();
     int lastHash = idValue.lastIndexOf('#');
-    return PersistenceFacade.getInstance().createModelId(LanguageID.JAVA + ':' + idValue.substring(lastHash+1));
+    return PersistenceFacade.getInstance().createModelId(LanguageID.JAVA + ':' + idValue.substring(lastHash + 1));
   }
 
 
