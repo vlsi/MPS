@@ -1903,6 +1903,10 @@
   <node concept="PlHQZ" id="6pv6r6HKtLr">
     <property role="TrG5h" value="PersistGeneration" />
     <property role="1pbfSe" value="337704460" />
+    <node concept="asaX9" id="2sTGsLqhuWR" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="This is provisional interface we've utilized to prototype x-model generation. Use drop attribute rules if need to avoid attributes being copied duirng transformation" />
+    </node>
   </node>
   <node concept="1TIwiD" id="SFyHGUI$GV">
     <property role="1pbfSe" value="1223022102" />
