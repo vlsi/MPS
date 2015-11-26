@@ -29,14 +29,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.project.ProjectHelper;
-import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
@@ -46,6 +45,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.ArrayList;
 import java.util.Iterator;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -230,24 +230,7 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
       }
     });
 
-    List<Integer> selectedOptionIndices;
-    if (ListSequence.fromList(options.value).isNotEmpty()) {
-      selectedOptionIndices = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(options.value).select(new ISelector<RefactoringParticipant.Option, String>() {
-        public String select(RefactoringParticipant.Option it) {
-          return it.getDescription();
-        }
-      }).toListSequence(), "Refactoring Options", "Select participants to execute");
-    } else {
-      selectedOptionIndices = ListSequence.fromList(new ArrayList<Integer>());
-    }
-    if (selectedOptionIndices == null) {
-      return null;
-    }
-    final List<RefactoringParticipant.Option> selectedOptions = ListSequence.fromList(selectedOptionIndices).select(new ISelector<Integer, RefactoringParticipant.Option>() {
-      public RefactoringParticipant.Option select(Integer i) {
-        return ListSequence.fromList(options.value).getElement(i);
-      }
-    }).toListSequence();
+    final List<RefactoringParticipant.Option> selectedOptions = selectParticipants(project, options.value);
 
     final Wrappers._boolean cancelled = new Wrappers._boolean(false);
     ProgressManager.getInstance().run(new Task.Modal(project.getProject(), "Refactoring", true) {
@@ -285,6 +268,25 @@ outer:
       return null;
     }
     return changes;
+  }
+
+  public static List<RefactoringParticipant.Option> selectParticipants(Project project, final List<RefactoringParticipant.Option> options) {
+    if (ListSequence.fromList(options).isEmpty()) {
+      return options;
+    }
+    List<Integer> selectedOptionIndices = SelectOptionsDialog.selectOptions(ProjectHelper.toIdeaProject(project), ListSequence.fromList(options).select(new ISelector<RefactoringParticipant.Option, String>() {
+      public String select(RefactoringParticipant.Option it) {
+        return it.getDescription();
+      }
+    }).toListSequence(), "Select Participants", "Select how to update usages:");
+    if (selectedOptionIndices == null) {
+      return null;
+    }
+    return ListSequence.fromList(selectedOptionIndices).select(new ISelector<Integer, RefactoringParticipant.Option>() {
+      public RefactoringParticipant.Option select(Integer i) {
+        return ListSequence.fromList(options).getElement(i);
+      }
+    }).toListSequence();
   }
 
   public static <T, S> void performRefactoring(final MPSProject project, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, T, S>> participants, Iterable<T> nodes, final _FunctionTypes._return_P2_E0<? extends _FunctionTypes._return_P1_E0<? extends S, ? super T>, ? super Map<RefactoringParticipant, Map<T, RefactoringParticipant.ParticipantState<?, ?, T, S>>>, ? super RefactoringSession> doRefactor) {
