@@ -5,26 +5,6 @@
       <sourceRoot location="languageModels" />
       <sourceRoot path="${module}/languageAccessories" />
     </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot path="${module}/languageAccessories" />
-    </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot path="${module}/languageAccessories" />
-    </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot path="${module}/languageAccessories" />
-    </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot path="${module}/languageAccessories" />
-    </modelRoot>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
-      <sourceRoot path="${module}/languageAccessories" />
-    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" />
