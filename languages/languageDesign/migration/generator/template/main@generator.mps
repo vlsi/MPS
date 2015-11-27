@@ -61,6 +61,10 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
@@ -531,19 +535,17 @@
       <ref role="2VPoh2" node="3lidccNIMsp" resolve="MigrationDescriptorImpl" />
       <node concept="2VP$b9" id="4vxJP2wuetK" role="2VPoh3">
         <node concept="3clFbS" id="4vxJP2wuetL" role="2VODD2">
-          <node concept="3clFbF" id="4vxJP2wufbb" role="3cqZAp">
-            <node concept="2OqwBi" id="4vxJP2wuge8" role="3clFbG">
-              <node concept="2OqwBi" id="4vxJP2wug7c" role="2Oq$k0">
-                <node concept="2OqwBi" id="4vxJP2wufxV" role="2Oq$k0">
+          <node concept="3clFbF" id="4Mhous78Bd7" role="3cqZAp">
+            <node concept="2OqwBi" id="4Mhous78Bkz" role="3clFbG">
+              <node concept="Rm8GO" id="4Mhous78Bfw" role="2Oq$k0">
+                <ref role="Rm8GQ" to="w1kc:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
+                <ref role="1Px2BO" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
+              </node>
+              <node concept="liA8E" id="4Mhous78BuY" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2OqwBi" id="4vxJP2wufxV" role="37wK5m">
                   <node concept="1iwH7S" id="4vxJP2wufba" role="2Oq$k0" />
                   <node concept="1st3f0" id="4vxJP2wufKA" role="2OqNvi" />
-                </node>
-                <node concept="LkI2h" id="4vxJP2wug9z" role="2OqNvi" />
-              </node>
-              <node concept="liA8E" id="4vxJP2wugq1" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                <node concept="Xl_RD" id="4vxJP2wugrG" role="37wK5m">
-                  <property role="Xl_RC" value=".migration" />
                 </node>
               </node>
             </node>
