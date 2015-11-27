@@ -2081,6 +2081,17 @@
         <ref role="35c_gD" to="tpf8:h8gft7C" resolve="InlineTemplate_RuleConsequence" />
       </node>
     </node>
+    <node concept="Wx3nA" id="4ouU5QeCttt" role="jymVt">
+      <property role="3TUv4t" value="true" />
+      <property role="TrG5h" value="concept_AbandonInput_RuleConsequence" />
+      <node concept="3Tm1VV" id="4ouU5QeCttu" role="1B3o_S" />
+      <node concept="3uibUv" id="4ouU5QeCttv" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="4ouU5QeCttw" role="33vP2m">
+        <ref role="35c_gD" to="tpf8:hwb5Tbr" resolve="AbandonInput_RuleConsequence" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="7o2bp9i5iBI" role="jymVt">
       <property role="3TUv4t" value="true" />
       <property role="TrG5h" value="concept_MappingScript" />

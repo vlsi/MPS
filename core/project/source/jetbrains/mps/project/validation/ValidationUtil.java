@@ -17,6 +17,7 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
+import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.AbstractModule;
@@ -31,6 +32,8 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.Language;
@@ -584,9 +587,15 @@ public class ValidationUtil {
       usedLanguages.addAll(ms.getTargetLanguages());
     }
     if (ms.getTargetLanguages().isEmpty() && ms.getQueryLanguages().isEmpty()) {
-      String m = String.format("Generator Model %s got no target nor query language. Is it empty?", model.getModelName());
-      // quickFix possible, remove model
-      return processor.process(new ValidationProblem(Severity.WARNING, m));
+      FastNodeFinder fnf = FastNodeFinderManager.get(model);
+      boolean noModifyRules = fnf.getNodes(RuleUtil.concept_AbandonInput_RuleConsequence, false).isEmpty();
+      noModifyRules = noModifyRules && fnf.getNodes(RuleUtil.concept_DropRootRule, false).isEmpty();
+      noModifyRules = noModifyRules && fnf.getNodes(RuleUtil.concept_DropAttributeRule, false).isEmpty();
+      if (noModifyRules) {
+        String m = String.format("Generator Model %s got no target nor query language. No rules to modify an input. Is it empty?", model.getModelName());
+        // TODO quickFix possible, remove model
+        return processor.process(new ValidationProblem(Severity.WARNING, m));
+      }
     }
     return true;
   }
