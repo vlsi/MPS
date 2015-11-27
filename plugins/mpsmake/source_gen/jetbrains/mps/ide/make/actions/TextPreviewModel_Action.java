@@ -102,9 +102,11 @@ public class TextPreviewModel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final DefaultMakeMessageHandler msgHandler = new DefaultMakeMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    final Project ideaProject = event.getData(CommonDataKeys.PROJECT);
+    final DefaultMakeMessageHandler msgHandler = new DefaultMakeMessageHandler(mpsProject);
     msgHandler.clear();
-    MakeSession session = new MakeSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), msgHandler, true);
+    MakeSession session = new MakeSession(mpsProject, msgHandler, true);
     final SNodeReference contextNode = (event.getData(MPSCommonDataKeys.NODE) == null ? null : event.getData(MPSCommonDataKeys.NODE).getReference());
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
       IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
@@ -115,13 +117,13 @@ public class TextPreviewModel_Action extends BaseAction {
         public void run() {
           try {
             final IResult result = future.get();
-            final List<TextPreviewFile> previewFiles = new ModelAccessHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess()).runReadAction(new Computable<List<TextPreviewFile>>() {
+            final List<TextPreviewFile> previewFiles = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<TextPreviewFile>>() {
               public List<TextPreviewFile> compute() {
                 ArrayList<TextPreviewFile> rv = new ArrayList<TextPreviewFile>();
                 for (TextGenOutcomeResource tgr : Sequence.fromIterable(result.output()).ofType(TextGenOutcomeResource.class)) {
                   // XXX don't see too much value in modelName, shall drop? 
                   String modelName = NameUtil.compactNamespace(tgr.getModel().getModelName());
-                  final SRepository repo = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
+                  final SRepository repo = mpsProject.getRepository();
                   SNode cn = (contextNode == null ? null : contextNode.resolve(repo));
                   List<SNode> ancestors = (cn == null ? new ArrayList<SNode>() : SNodeOperations.getNodeAncestors(cn, null, true));
                   for (TextUnit tu : tgr.getTextGenResult().getUnits()) {
@@ -162,15 +164,14 @@ public class TextPreviewModel_Action extends BaseAction {
                   }
                   previewFiles.add(new TextPreviewFile("TextGen", message.toString(), model2generateRef.getModelName()));
                 }
-                Project p = event.getData(CommonDataKeys.PROJECT);
-                FileEditorManager fem = FileEditorManager.getInstance(p);
+                FileEditorManager fem = FileEditorManager.getInstance(ideaProject);
                 for (TextPreviewFile f : ListSequence.fromList(previewFiles)) {
-                  fem.openTextEditor(new OpenFileDescriptor(p, f), true);
+                  fem.openTextEditor(new OpenFileDescriptor(ideaProject, f), true);
                 }
               }
             });
             // to update tree to reveal transient models. is it still necessary? 
-            ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT)).rebuild();
+            ProjectPane.getInstance(mpsProject).rebuild();
           } catch (Exception e) {
             msgHandler.handle(new Message(MessageKind.ERROR, "TextPreviewModel", e.toString()).setException(e));
           }
