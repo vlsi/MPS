@@ -11614,11 +11614,6 @@
       <property role="TrG5h" value="editorComponent" />
       <ref role="1DUlNI" to="k3nr:~MPSEditorDataKeys.EDITOR_COMPONENT" resolve="EDITOR_COMPONENT" />
     </node>
-    <node concept="1DS2jV" id="4NbzjXXKNEh" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDmK" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="4NbzjXXKNEl" role="1NuT2Z">
       <property role="TrG5h" value="contextModel" />
       <property role="1Ld5UQ" value="false" />
@@ -11692,10 +11687,10 @@
                   <ref role="2WH_rO" node="4NbzjXXKNEl" resolve="contextModel" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="241570iWL4i" role="37wK5m">
-                <node concept="2WthIp" id="241570iWL4j" role="2Oq$k0" />
-                <node concept="1DTwFV" id="241570iWL4k" role="2OqNvi">
-                  <ref role="2WH_rO" node="4NbzjXXKNEh" resolve="context" />
+              <node concept="2OqwBi" id="6X$LxHCKGOh" role="37wK5m">
+                <node concept="2WthIp" id="6X$LxHCKGOk" role="2Oq$k0" />
+                <node concept="1DTwFV" id="6X$LxHCKGOm" role="2OqNvi">
+                  <ref role="2WH_rO" node="7nlecdCD_TC" resolve="project" />
                 </node>
               </node>
             </node>

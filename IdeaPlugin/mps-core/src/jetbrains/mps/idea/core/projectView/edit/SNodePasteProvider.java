@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -69,16 +68,15 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
   public void run() {
     // Should be executed inside read action
     PasteNodeData nodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(myModel);
-    IOperationContext operationContext = new ModuleContext(myModel.getModule(), myProject);
-    SwingUtilities.invokeLater(getAddImportsRunnable(nodeData, operationContext));
+    SwingUtilities.invokeLater(getAddImportsRunnable(nodeData));
   }
 
-  private Runnable getAddImportsRunnable(final PasteNodeData nodeData, final IOperationContext operationContext) {
+  private Runnable getAddImportsRunnable(final PasteNodeData nodeData) {
     // Should be executed outside of read action in UI thread
     return new Runnable() {
       @Override
       public void run() {
-        Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, operationContext);
+        Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(nodeData, myModel, myProject);
         myProject.getModelAccess().executeCommandInEDT(getPasteRunnable(nodeData, addImportsRunnable));
       }
     };

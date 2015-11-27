@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.util.Pair;
@@ -74,13 +73,6 @@ public class PasteNode_Action extends BaseAction {
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
       MapSequence.fromMap(_params).put("contextModel", p);
       if (p == null) {
@@ -107,7 +99,7 @@ public class PasteNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess();
     PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(modelAccess, _params);
-    final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
     final List<SNode> pasteNodes = pasteNodeData.getNodes();
     final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
     if (pasteNodes == null || pasteNodes.size() == 0) {

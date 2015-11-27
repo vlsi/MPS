@@ -19,6 +19,7 @@ import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -37,6 +38,7 @@ import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
@@ -157,12 +159,20 @@ public class CellAction_PasteNode extends AbstractCellAction {
     // sometimes model is not in repository (paste in merge dialog)
     final boolean inRepository = modelToPaste.getReference().resolve(context.getRepository()) != null;
 
+    // FIXME relationship between Project and Editor needs attention, it's bad to extract
+    final Project mpsProject = ProjectHelper.getProject(context.getRepository());
+    if (mpsProject == null) {
+      LOG.warning("Paste needs a project to show a dialog for additional imports");
+      return;
+    }
+
     final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(modelToPaste);
 
+    // FIXME why SwingUtlities? Is it necessary to execute in EDT thread? If yes, use ThreadUtils. If not, use any other thread than UI, e.g. app's pooled one.
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
-        final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, context.getOperationContext());
+        final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, mpsProject);
         context.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
           @Override
           public void run() {

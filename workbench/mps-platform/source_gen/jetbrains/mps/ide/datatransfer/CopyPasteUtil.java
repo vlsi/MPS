@@ -35,8 +35,8 @@ import org.apache.log4j.Level;
 import java.util.Collection;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.SLanguageHierarchy;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -280,7 +280,7 @@ public final class CopyPasteUtil {
   }
 
   @Nullable
-  public static Runnable addImportsWithDialog(final SModel targetModel, final Collection<SLanguage> necessaryLanguages, final Collection<SModelReference> necessaryImports, Project mpsProject) {
+  public static Runnable addImportsWithDialog(final SModel targetModel, final Collection<SLanguage> necessaryLanguages, final Collection<SModelReference> necessaryImports, final Project mpsProject) {
     if (targetModel.getModule() == null) {
       return null;
     }
@@ -293,6 +293,8 @@ public final class CopyPasteUtil {
       @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
+        //  XXX in fact, allImportedModels doesn't give us implicit imports, while one in necessaryImports may actually be imported already as implicit 
+        // need better way to deal with implicit imports. 
         for (SModel sm : SModelOperations.allImportedModels(targetModel)) {
           allImportedModels.add(sm.getReference());
         }
@@ -305,7 +307,8 @@ public final class CopyPasteUtil {
             additionalModels.add(modelReference);
           }
         }
-        Set<SLanguage> allVisibleLanguages = new SLanguageHierarchy(SModelOperations.getAllLanguageImports(targetModel)).getExtended();
+        LanguageRegistry langReg = LanguageRegistry.getInstance(mpsProject.getRepository());
+        Set<SLanguage> allVisibleLanguages = new SLanguageHierarchy(langReg, SModelOperations.getAllLanguageImports(targetModel)).getExtended();
         for (SLanguage lang : necessaryLanguages) {
           if (!(allVisibleLanguages.contains(lang))) {
             additionalLanguages.add(lang);
@@ -317,7 +320,7 @@ public final class CopyPasteUtil {
       return null;
     }
 
-    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(mpsProject, necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new SLanguage[necessaryLanguages.size()]));
+    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(mpsProject, additionalModels.toArray(new SModelReference[necessaryImports.size()]), additionalLanguages.toArray(new SLanguage[necessaryLanguages.size()]));
     dialog.show();
     if (dialog.isOK()) {
       return addImports(mpsProject, targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
@@ -326,15 +329,15 @@ public final class CopyPasteUtil {
     }
   }
   @Nullable
-  public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
+  public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, Project mpsProject) {
     // shows dialog if necessary and pasted nodes were taken not from the same model 
     SModelReference oldModel = pasteNodeData.getSourceModel();
     // no dialog if copying from the same model 
-    if (oldModel != null && jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(targetModel).equals(oldModel.getModelName())) {
+    if (oldModel != null && targetModel.getReference().equals(oldModel)) {
       return null;
     }
 
-    return CopyPasteUtil.addImportsWithDialog(targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context.getProject());
+    return CopyPasteUtil.addImportsWithDialog(targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), mpsProject);
   }
   private static Runnable addImports(final Project p, final SModel targetModel, @NotNull final SLanguage[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
     if (requiredLanguages.length == 0 && requiredImports.length == 0) {
