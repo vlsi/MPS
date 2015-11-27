@@ -651,9 +651,7 @@
             <ref role="1PxDUh" to="jkny:~ToolWindowAnchor" resolve="ToolWindowAnchor" />
             <ref role="3cqZAo" to="jkny:~ToolWindowAnchor.RIGHT" resolve="RIGHT" />
           </node>
-          <node concept="3clFbT" id="3P7s6VtYkvw" role="37wK5m">
-            <property role="3clFbU" value="true" />
-          </node>
+          <node concept="3clFbT" id="3P7s6VtYkvw" role="37wK5m" />
         </node>
       </node>
     </node>

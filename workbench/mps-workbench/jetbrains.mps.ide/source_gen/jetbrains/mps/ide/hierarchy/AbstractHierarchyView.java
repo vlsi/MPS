@@ -48,7 +48,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   public JScrollPane myScrollPane;
   private OccurenceNavigatorSupport myOccurenceNavigator;
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
-    super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
+    super(project, id, number, icon, ToolWindowAnchor.RIGHT, false);
   }
   public MPSProject getMPSProject() {
     return getProject().getComponent(MPSProject.class);
