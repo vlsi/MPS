@@ -220,21 +220,17 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     final boolean isModelRootInLanguage = modelRoot.getModule() instanceof Language;
 
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
-      String tmpSR = null;
+      sourceRoot = null;
       for (String sr : sourceRoots) {
         if (isModelRootInLanguage && DefaultModelRoot.isLanguageAspectsSourceRoot(sr)) {
           continue;
         }
-        if(sourceRoot != null && FileUtil.isSubPath(sr, sourceRoot)) {
-          tmpSR = sourceRoot;
-          break;
-        }
-        tmpSR = tmpSR == null ? sr : tmpSR;
+        sourceRoot = sr;
+        break;
       }
-      if (tmpSR == null) {
+      if (sourceRoot == null) {
         throw new IOException("no suitable source root found");
       }
-      sourceRoot = (sourceRoot != null && sourceRoot.equals(tmpSR)) ? sourceRoot : tmpSR;
     }
 
     IFile folder;
