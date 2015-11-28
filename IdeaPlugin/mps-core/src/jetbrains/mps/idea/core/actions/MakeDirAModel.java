@@ -19,6 +19,9 @@ package jetbrains.mps.idea.core.actions;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
@@ -35,8 +38,11 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by danilla on 28/10/15.
@@ -69,13 +75,23 @@ public class MakeDirAModel extends NewModelActionBase {
     return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
+        Module module = e.getData(LangDataKeys.MODULE);
         final PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
         final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
 
         final String modelName = myModelPrefix;
         EditableSModel model = null;
         try {
-          model = (EditableSModel) myModelRoot.createModel(modelName, targetDir.getPath(), null,
+          String relPath = null;
+          for (VirtualFile sr : ModuleRootManager.getInstance(module).getSourceRoots()) {
+            relPath = VfsUtilCore.getRelativePath(targetDir, sr);
+            if (relPath != null) {
+              break;
+            }
+          }
+          Map<String, String> options = new HashMap<String, String>();
+          options.put(ModelFactory.OPTION_RELPATH, relPath);
+          model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, options,
             PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
         } catch (IOException ioException) {
           LOG.error("Can't create per-root model " + modelName + " under " + myRootForModel, ioException);
