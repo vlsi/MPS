@@ -68,6 +68,12 @@ public class JavaModuleOperations {
     return collectExecuteClasspath(new HashSet<SModule>(Arrays.asList(modules)));
   }
 
+  /**
+   *
+   * @param classPath a sequence of paths to classes
+   * @param requestor debug info describing the caller of this method
+   * @return constructed CompositeClassPathItem
+   */
   public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
     CompositeClassPathItem classPathItem = new CompositeClassPathItem(false);
 

@@ -166,8 +166,14 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
     return FileSystem.getInstance().getFileByPath(file);
   }
 
-  public static interface TraceInfoResourceProvider {
-    public URL getResource(SModule module, String resourceName);
+  public interface TraceInfoResourceProvider {
+    /**
+     * Provider returns url to the requested trace.info resource file with respect to the particular module
+     * @param module which is supposed to own the requested trace.info resource file
+     * @param resourceName full path to the trace.info resource file
+     * @return null if the trace.info could not be found
+     */
+    @Nullable URL getResource(@NotNull SModule module, String resourceName);
   }
 
   private class CacheGen implements CacheGenerator {

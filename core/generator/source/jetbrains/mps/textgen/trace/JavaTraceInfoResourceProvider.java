@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 package jetbrains.mps.textgen.trace;
 
 import java.net.URL;
+
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.reloading.CommonPaths;
@@ -29,13 +29,14 @@ class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoResourceP
   }
 
   @Override
-  public URL getResource(SModule module, String resourceName) {
-    ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
-    if (SModuleOperations.isCompileInMps(module) || (descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty()))) {
-      return JavaModuleOperations.createClassPathItem(module.getFacet(JavaModuleFacet.class).getClassPath(), JavaTraceInfoResourceProvider.class.getName()).getResource(resourceName);
-    }
-    if (SModuleOperations.isCompileInIdea(module)) {
-      return CommonPaths.getMPSClassPath().getResource(resourceName);
+  public URL getResource(@NotNull SModule module, String resourceName) {
+    JavaModuleFacet javaModuleFacet = module.getFacet(JavaModuleFacet.class);
+    if (javaModuleFacet != null) {
+      CompositeClassPathItem paths = JavaModuleOperations.createClassPathItem(javaModuleFacet.getClassPath(), JavaTraceInfoResourceProvider.class.getName());
+      if (!javaModuleFacet.isCompileInMps()) {
+        paths.add(CommonPaths.getMPSClassPath()); // all mps core jars (however no plugins)
+      }
+      return paths.getResource(resourceName);
     }
     return null;
   }
