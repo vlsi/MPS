@@ -31,20 +31,21 @@ public class Templatereduce__Looking extends TemplateDeclarationBase {
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073306264");
       environment.resolveInTemplateLater(tnode1, "baseMethodDeclaration", templateNode_pmalv5_c0a1a2a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/7060824959893184061", "heading", context);
+      TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
         {
-          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7060824959896242619(new SourceSubstituteMacroNodeContext(context, switchMacroRef_pmalv5_b0a0a0a1a2a2a2));
+          final SNode switchInput2 = QueriesGenerated.sourceNodeQuery_7060824959896242619(new SourceSubstituteMacroNodeContext(context1, switchMacroRef_pmalv5_b0a0a0a1a3a2a2));
           if (switchInput2 == null) {
             tlist2 = Collections.emptyList();
           } else {
             TemplateContext switchContext2;
-            switchContext2 = context.subContext(null, switchInput2);
-            tlist2 = environment.trySwitch(templateSwitchNode_pmalv5_a0a0c0a1a1a2a2a2, switchContext2);
+            switchContext2 = context1.subContext(null, switchInput2);
+            tlist2 = environment.trySwitch(templateSwitchNode_pmalv5_a0a0c0a1a1a3a2a2, switchContext2);
             if (tlist2 == null) {
               final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
               try {
-                environment.nodeCopied(context, tnode3, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/7060824959893184051");
+                environment.nodeCopied(context1, tnode3, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/7060824959893184051");
               } finally {
               }
               if (tnode3 != null) {
@@ -75,6 +76,6 @@ public class Templatereduce__Looking extends TemplateDeclarationBase {
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer templateNode_pmalv5_c0a1a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4923130412073306264");
-  private static SNodePointer switchMacroRef_pmalv5_b0a0a0a1a2a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "2238065674976419305");
-  private static SNodePointer templateSwitchNode_pmalv5_a0a0c0a1a1a2a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896164452");
+  private static SNodePointer switchMacroRef_pmalv5_b0a0a0a1a3a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "2238065674976419305");
+  private static SNodePointer templateSwitchNode_pmalv5_a0a0c0a1a1a3a2a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959896164452");
 }

@@ -32,10 +32,11 @@ public class TemplateOutputRoot__by__MappingRule extends TemplateDeclarationBase
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
       SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "OutputRoot_by_MappingRule");
       SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x116455e8bf1L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(new PropertyMacroContext(context, "OutputRoot by MappingRule", propertyMacro_d5hm2j_c0a0c0c0b0c))));
+      TemplateContext context1 = context.subContext();
       {
         Collection<SNode> tlist2 = null;
-        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_d5hm2j_b0a0a1a3a1a2));
-        tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_d5hm2j_b0a0a1a3a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195170418623", context);
+        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_1195170582047(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_d5hm2j_b0a0a1a4a1a2));
+        tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_d5hm2j_b0a0a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195170418623", context1);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child3);
         }
@@ -47,5 +48,5 @@ public class TemplateOutputRoot__by__MappingRule extends TemplateDeclarationBase
   }
   private static SNodePointer template_d5hm2j_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
   private static SNodePointer propertyMacro_d5hm2j_c0a0c0c0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195598330257");
-  private static SNodePointer copySrcListMacro_d5hm2j_b0a0a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170582046");
+  private static SNodePointer copySrcListMacro_d5hm2j_b0a0a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170582046");
 }
