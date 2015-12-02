@@ -12,13 +12,12 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
@@ -35,13 +34,12 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
+  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h);
@@ -49,10 +47,10 @@ public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescript
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, final Project project) {
-    final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(PersistenceFacade.getInstance().createModuleId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
+  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, final MPSProject project) {
+    final SModule module = project.getRepository().getModule(PersistenceFacade.getInstance().createModuleId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
 
-    final MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(module, ProjectHelper.toMPSProject(project));
+    final MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(module, project);
     Iterable<Tab> tabs = Sequence.fromClosure(new ISequenceClosure<Tab>() {
       public Iterable<Tab> iterable() {
         return new Iterable<Tab>() {
@@ -111,7 +109,7 @@ __switch__:
         configurable.selectTab(it);
       }
     });
-    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(ProjectHelper.toMPSProject(project)), configurable, "#MPSPropertiesConfigurable");
+    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(project.getProject(), configurable, "#MPSPropertiesConfigurable");
     configurable.setParentForCallBack(configurableEditor);
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -141,7 +139,7 @@ __switch__:
     }
     switch (methodIndex) {
       case 0:
-        execute_id7oNS25df64x(node, (Project) parameters[0]);
+        execute_id7oNS25df64x(node, (MPSProject) parameters[0]);
         return null;
       case 1:
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
@@ -172,12 +170,6 @@ __switch__:
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-  private static SRepository check_cte1s_a0a0a0(jetbrains.mps.project.Project checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getRepository();
-    }
-    return null;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

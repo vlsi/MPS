@@ -12,15 +12,14 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -30,7 +29,7 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
+  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
   public static final SMethod<String> getTextWhenBroken_idigjXyuNrou = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTextWhenBroken").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("igjXyuNrou").registry(REGISTRY).build();
 
@@ -39,13 +38,9 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, Project project) {
+  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, MPSProject project) {
     SNode targetNode = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
-    if (mpsProject == null) {
-      return;
-    }
-    NavigationSupport.getInstance().openNode(mpsProject, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
+    NavigationSupport.getInstance().openNode(project, targetNode, true, (SNodeOperations.getParent(targetNode) != null));
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")) != null;
@@ -71,7 +66,7 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
     }
     switch (methodIndex) {
       case 0:
-        execute_id7oNS25df64x(node, (Project) parameters[0]);
+        execute_id7oNS25df64x(node, (MPSProject) parameters[0]);
         return null;
       case 1:
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));

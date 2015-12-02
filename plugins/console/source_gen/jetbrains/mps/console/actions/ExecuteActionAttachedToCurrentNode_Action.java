@@ -7,14 +7,13 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BHReflection;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 
 public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,7 +28,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((boolean) (Boolean) BHReflection.invoke(((SNode) event.getData(MPSCommonDataKeys.NODE)), SMethodTrimmedId.create("canExecute", null, "2QdC0h7dh1h")));
+    return ((boolean) (Boolean) BHReflection.invoke(event.getData(MPSCommonDataKeys.NODE), SMethodTrimmedId.create("canExecute", null, "2QdC0h7dh1h")));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -41,13 +40,16 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
       return false;
     }
     {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      if (!(SNodeOperations.isInstanceOf(p, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder")))) {
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder")))) {
+        node = null;
+      }
+      if (node == null) {
         return false;
       }
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
@@ -56,6 +58,6 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    BHReflection.invoke((SNodeOperations.cast(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder"))), SMethodTrimmedId.create("execute", null, "7oNS25df64x"), event.getData(CommonDataKeys.PROJECT));
+    BHReflection.invoke(event.getData(MPSCommonDataKeys.NODE), SMethodTrimmedId.create("execute", null, "7oNS25df64x"), event.getData(MPSCommonDataKeys.MPS_PROJECT));
   }
 }

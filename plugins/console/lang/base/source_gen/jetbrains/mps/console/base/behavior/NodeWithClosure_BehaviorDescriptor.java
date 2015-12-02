@@ -5,7 +5,7 @@ package jetbrains.mps.console.base.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 
 /**
  * Will be removed after 3.3
@@ -17,7 +17,7 @@ public class NodeWithClosure_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public boolean virtual_canExecute_3282455643657932881(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public void virtual_execute_8517397753922085153(SNode __thisNode__, Project project) {
+  public void virtual_execute_8517397753922085153(SNode __thisNode__, MPSProject project) {
   }
 
   @Override

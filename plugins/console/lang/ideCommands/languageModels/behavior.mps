@@ -2,14 +2,14 @@
 <model ref="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -42,6 +42,7 @@
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
     <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -155,7 +156,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -234,9 +235,6 @@
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
-    </language>
-    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
-      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1200830824066" name="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" flags="nn" index="2n63Yl">
@@ -620,11 +618,6 @@
         <node concept="3cpWs8" id="1El5OLrIAxj" role="3cqZAp">
           <node concept="3cpWsn" id="1El5OLrIAxm" role="3cpWs9">
             <property role="TrG5h" value="modules" />
-            <node concept="A3Dl8" id="1El5OLrIAxh" role="1tU5fm">
-              <node concept="3uibUv" id="1El5OLrIAxA" role="A3Ik2">
-                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="1sZSvV3JTv5" role="33vP2m">
               <node concept="2OqwBi" id="1sZSvV3JTjS" role="2Oq$k0">
                 <node concept="2OqwBi" id="1sZSvV3JT9k" role="2Oq$k0">
@@ -641,6 +634,11 @@
               </node>
               <node concept="liA8E" id="1sZSvV3JTCY" role="2OqNvi">
                 <ref role="37wK5l" to="lui2:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
+              </node>
+            </node>
+            <node concept="A3Dl8" id="1El5OLrIAxh" role="1tU5fm">
+              <node concept="3uibUv" id="1El5OLrIAxA" role="A3Ik2">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
               </node>
             </node>
           </node>
@@ -2298,15 +2296,11 @@
               <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
             </node>
             <node concept="2OqwBi" id="3ob4OZ0l0oi" role="33vP2m">
-              <node concept="2EnYce" id="3ob4OZ0mL2a" role="2Oq$k0">
-                <node concept="2YIFZM" id="3ob4OZ0kXYL" role="2Oq$k0">
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <node concept="37vLTw" id="3ob4OZ0kXZ3" role="37wK5m">
-                    <ref role="3cqZAo" node="3ob4OZ0kOYv" resolve="project" />
-                  </node>
+              <node concept="2OqwBi" id="1DI6ieaMioy" role="2Oq$k0">
+                <node concept="37vLTw" id="1DI6ieaMhKy" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3ob4OZ0kOYv" resolve="project" />
                 </node>
-                <node concept="liA8E" id="3ob4OZ0l0eF" role="2OqNvi">
+                <node concept="liA8E" id="1DI6ieaMiC$" role="2OqNvi">
                   <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                 </node>
               </node>
@@ -2340,16 +2334,12 @@
             </node>
             <node concept="2ShNRf" id="3GE7ucjMMtk" role="33vP2m">
               <node concept="1pGfFk" id="3GE7ucjMNJ9" role="2ShVmc">
-                <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.Project)" resolve="ModulePropertiesConfigurable" />
+                <ref role="37wK5l" to="gsnq:~ModulePropertiesConfigurable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModule,jetbrains.mps.project.MPSProject)" resolve="ModulePropertiesConfigurable" />
                 <node concept="37vLTw" id="3ob4OZ0pXkR" role="37wK5m">
                   <ref role="3cqZAo" node="3ob4OZ0llyB" resolve="module" />
                 </node>
-                <node concept="2YIFZM" id="3ob4OZ0pXYB" role="37wK5m">
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <node concept="37vLTw" id="3ob4OZ0pXYC" role="37wK5m">
-                    <ref role="3cqZAo" node="3ob4OZ0kOYv" resolve="project" />
-                  </node>
+                <node concept="37vLTw" id="1DI6ieaMj9n" role="37wK5m">
+                  <ref role="3cqZAo" node="3ob4OZ0kOYv" resolve="project" />
                 </node>
               </node>
             </node>
@@ -2480,15 +2470,12 @@
             <node concept="2ShNRf" id="78MpzK$YNLp" role="33vP2m">
               <node concept="1pGfFk" id="78MpzK$YNSj" role="2ShVmc">
                 <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.options.Configurable,java.lang.String)" resolve="SingleConfigurableEditor" />
-                <node concept="2YIFZM" id="3GE7ucjMPwk" role="37wK5m">
-                  <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                  <ref role="37wK5l" to="alof:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <node concept="2YIFZM" id="3ob4OZ0pZoM" role="37wK5m">
-                    <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                    <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                    <node concept="37vLTw" id="3ob4OZ0pZoN" role="37wK5m">
-                      <ref role="3cqZAo" node="3ob4OZ0kOYv" resolve="project" />
-                    </node>
+                <node concept="2OqwBi" id="1DI6ieaMxaq" role="37wK5m">
+                  <node concept="37vLTw" id="1DI6ieaMx6C" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3ob4OZ0kOYv" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="1DI6ieaMxiK" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="18UX1JGbxCW" role="37wK5m">
@@ -2557,8 +2544,8 @@
       <node concept="37vLTG" id="3ob4OZ0kOYv" role="3clF46">
         <property role="TrG5h" value="project" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="3ob4OZ0kPcU" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        <node concept="3uibUv" id="1DI6ieaMhtR" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="3cqZAl" id="3ob4OZ0kOYx" role="3clF45" />

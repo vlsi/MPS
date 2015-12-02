@@ -6,7 +6,7 @@ import jetbrains.mps.lang.smodel.behavior.AbstractNodeRefExpression_BehaviorDesc
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.DefaultValuesHolder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 
 /**
  * Will be removed after 3.3
@@ -18,7 +18,7 @@ public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpre
   public boolean virtual_canExecute_3282455643657932881(SNode __thisNode__) {
     return DefaultValuesHolder.defaultValue(Boolean.TYPE);
   }
-  public void virtual_execute_8517397753922085153(SNode __thisNode__, Project project) {
+  public void virtual_execute_8517397753922085153(SNode __thisNode__, MPSProject project) {
   }
   public SNode virtual_getTargetNode_3575813534625153815(SNode __thisNode__) {
     return null;
