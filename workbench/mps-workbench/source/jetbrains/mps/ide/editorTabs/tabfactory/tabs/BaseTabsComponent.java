@@ -129,6 +129,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     SNode baseNode = myBaseNode.resolve(getProject().getRepository());
     if (baseNode == null) return result;
+    //see MPS-23013; if the node was just deleted and the command is not yet finished, the ref can still be resolved (unregistered nodes?)
+    if (baseNode.getModel() == null) return result;
 
     for (RelationDescriptor d : myPossibleTabs) {
       MultiMap<SNodeReference, SNodeReference> topToUses = new MultiMap<SNodeReference, SNodeReference>();
