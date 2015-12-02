@@ -1187,7 +1187,7 @@
                 </node>
               </node>
               <node concept="liA8E" id="2TmYHHddUn$" role="2OqNvi">
-                <ref role="37wK5l" to="z1c4:~IProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                <ref role="37wK5l" to="z1c4:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                 <node concept="3VsKOn" id="2TmYHHddUnF" role="37wK5m">
                   <ref role="3VsUkX" to="xj2j:~ProjectPluginManager" resolve="ProjectPluginManager" />
                 </node>
@@ -1195,23 +1195,25 @@
             </node>
             <node concept="liA8E" id="2TmYHHddRCe" role="2OqNvi">
               <ref role="37wK5l" to="xj2j:~ProjectPluginManager.getPrefsComponent(java.lang.Class):jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent" resolve="getPrefsComponent" />
-              <node concept="3VsKOn" id="21bsj6xflF4" role="37wK5m">
-                <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
-                <node concept="1ZhdrF" id="21bsj6xfpod" role="lGtFl">
-                  <property role="2qtEX8" value="classifier" />
-                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" />
-                  <node concept="3$xsQk" id="21bsj6xfpoe" role="3$ytzL">
-                    <node concept="3clFbS" id="21bsj6xfpof" role="2VODD2">
-                      <node concept="3clFbF" id="21bsj6xfptS" role="3cqZAp">
-                        <node concept="2OqwBi" id="21bsj6xfpzc" role="3clFbG">
-                          <node concept="1iwH7S" id="21bsj6xfptR" role="2Oq$k0" />
-                          <node concept="1iwH70" id="21bsj6xfpSf" role="2OqNvi">
-                            <ref role="1iwH77" to="tp4l:hB4rlDR" resolve="map_PreferenceComponentClass" />
-                            <node concept="2OqwBi" id="4gD2fissWff" role="1iwH7V">
-                              <node concept="30H73N" id="4gD2fissWfg" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="4gD2fissWfk" role="2OqNvi">
+              <node concept="1OoodG" id="2TcvkTvIepE" role="37wK5m">
+                <node concept="2eloPW" id="2TcvkTvIepF" role="1Ooz5N">
+                  <property role="2ely0U" value="ToolClass" />
+                  <ref role="3uigEE" to="sclo:~BaseProjectPrefsComponent" resolve="BaseProjectPrefsComponent" />
+                  <node concept="17Uvod" id="2TcvkTvIepG" role="lGtFl">
+                    <property role="2qtEX9" value="fqClassName" />
+                    <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1174914042989/1174914081067" />
+                    <node concept="3zFVjK" id="2TcvkTvIepH" role="3zH0cK">
+                      <node concept="3clFbS" id="2TcvkTvIepI" role="2VODD2">
+                        <node concept="3clFbF" id="2TcvkTvIepJ" role="3cqZAp">
+                          <node concept="2OqwBi" id="2TcvkTvIepK" role="3clFbG">
+                            <node concept="2OqwBi" id="2TcvkTvIepL" role="2Oq$k0">
+                              <node concept="30H73N" id="2TcvkTvIepM" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="2TcvkTvIfit" role="2OqNvi">
                                 <ref role="3Tt5mk" to="tgbt:_QrTcSEy4p" />
                               </node>
+                            </node>
+                            <node concept="2qgKlT" id="2TcvkTvIjwY" role="2OqNvi">
+                              <ref role="37wK5l" to="tp4s:4gD2fissWfp" resolve="getGeneratedClassFQName" />
                             </node>
                           </node>
                         </node>
