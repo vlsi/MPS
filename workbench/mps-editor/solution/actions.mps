@@ -9,9 +9,8 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -296,7 +295,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -7428,21 +7427,14 @@
           </node>
         </node>
         <node concept="3cpWs6" id="2M3H3BXpUEX" role="3cqZAp">
-          <node concept="3y3z36" id="2M3H3BXpUEY" role="3cqZAk">
-            <node concept="2OqwBi" id="2M3H3BXpUEZ" role="3uHU7B">
-              <node concept="2OqwBi" id="2M3H3BXpUF0" role="2Oq$k0">
-                <node concept="37vLTw" id="3GM_nagTzp2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2M3H3BXpUEP" resolve="group" />
-                </node>
-                <node concept="liA8E" id="2M3H3BXpUF2" role="2OqNvi">
-                  <ref role="37wK5l" to="qkt:~ActionGroup.getChildren(com.intellij.openapi.actionSystem.AnActionEvent):com.intellij.openapi.actionSystem.AnAction[]" resolve="getChildren" />
-                  <node concept="tl45R" id="2M3H3BXpUF3" role="37wK5m" />
-                </node>
+          <node concept="3fqX7Q" id="2LxECFpGWP3" role="3cqZAk">
+            <node concept="2YIFZM" id="2LxECFpGWP5" role="3fr31v">
+              <ref role="1Pybhc" to="qkt:~ActionGroupUtil" resolve="ActionGroupUtil" />
+              <ref role="37wK5l" to="qkt:~ActionGroupUtil.isGroupEmpty(com.intellij.openapi.actionSystem.ActionGroup,com.intellij.openapi.actionSystem.AnActionEvent):boolean" resolve="isGroupEmpty" />
+              <node concept="37vLTw" id="2LxECFpGWP6" role="37wK5m">
+                <ref role="3cqZAo" node="2M3H3BXpUEP" resolve="group" />
               </node>
-              <node concept="1Rwk04" id="2M3H3BXpUF4" role="2OqNvi" />
-            </node>
-            <node concept="3cmrfG" id="2M3H3BXpUF5" role="3uHU7w">
-              <property role="3cmrfH" value="0" />
+              <node concept="tl45R" id="2LxECFpGWP7" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -8344,6 +8336,12 @@
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Add Language Import" />
     <property role="1teQrl" value="true" />
+    <node concept="1QGGSu" id="5PCQuKdirjz" role="3Uehp1">
+      <node concept="10M0yZ" id="5PCQuKdiD5E" role="3xaMm5">
+        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Language" resolve="Language" />
+      </node>
+    </node>
     <node concept="1DS2jV" id="30tYQkHUrmS" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -8441,12 +8439,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="1QGGSu" id="5PCQuKdirjz" role="3Uehp1">
-      <node concept="10M0yZ" id="5PCQuKdiD5E" role="3xaMm5">
-        <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
-        <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Language" resolve="Language" />
       </node>
     </node>
   </node>
