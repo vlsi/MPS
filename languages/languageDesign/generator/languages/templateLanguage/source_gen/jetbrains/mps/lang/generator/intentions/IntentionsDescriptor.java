@@ -28,9 +28,10 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   private IntentionFactory[] myIntentions13;
   private IntentionFactory[] myIntentions14;
   private IntentionFactory[] myIntentions15;
+  private IntentionFactory[] myIntentions16;
 
   public IntentionsDescriptor() {
-    myId2Index = new long[16];
+    myId2Index = new long[17];
     myId2Index[0] = 0xf8c108ca66L;
     myId2Index[1] = 0x10313ed7688L;
     myId2Index[2] = 0x10313f84dd6L;
@@ -47,6 +48,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     myId2Index[13] = 0x11644fa2edeL;
     myId2Index[14] = 0x11644fdbf49L;
     myId2Index[15] = 0x116597b27aaL;
+    myId2Index[16] = 0x11dc0f7933bL;
   }
 
   @Override
@@ -180,6 +182,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
           myIntentions15[0] = new CreateScript_Intention();
         }
         return Arrays.asList(myIntentions15);
+      case 16:
+        // Concept: AbstractMacro 
+        if (myIntentions16 == null) {
+          myIntentions16 = new IntentionFactory[1];
+          myIntentions16[0] = new DeleteTemplateMacro_Intention();
+        }
+        return Arrays.asList(myIntentions16);
       default:
         return null;
     }
@@ -188,7 +197,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[30];
+    IntentionFactory[] rv = new IntentionFactory[31];
     rv[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
     rv[1] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
     rv[2] = new AddNodeMacro_Intention();
@@ -219,6 +228,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[27] = new AddContext_Intention();
     rv[28] = new ConvertLoopWithCopySrc_Intention();
     rv[29] = new ConvertSwitchToParameterized_Intention();
+    rv[30] = new DeleteTemplateMacro_Intention();
     return Arrays.asList(rv);
   }
 }

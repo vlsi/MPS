@@ -51,6 +51,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_macroStart(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, true);
     editorCell.getStyle().putAll(style);
     PropertyMacroActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

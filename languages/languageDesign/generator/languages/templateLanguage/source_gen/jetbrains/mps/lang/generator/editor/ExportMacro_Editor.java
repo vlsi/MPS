@@ -20,8 +20,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -44,9 +42,8 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_gzv99m_a0(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_gzv99m_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_gzv99m_c0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_gzv99m_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_gzv99m_b0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_gzv99m_c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_gzv99m_a0(EditorContext editorContext, SNode node) {
@@ -54,6 +51,8 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_gzv99m_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_macroStart(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -72,19 +71,12 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-  private EditorCell createEmpty_gzv99m_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
-    editorCell.setCellId("Empty_gzv99m_b0");
-    return editorCell;
-  }
-  private EditorCell createRefCell_gzv99m_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_gzv99m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExportMacro_Editor._Inline_gzv99m_a2a());
+    provider.setAuxiliaryCellProvider(new ExportMacro_Editor._Inline_gzv99m_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -99,17 +91,17 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  public static class _Inline_gzv99m_a2a extends InlineCellProvider {
-    public _Inline_gzv99m_a2a() {
+  public static class _Inline_gzv99m_a1a extends InlineCellProvider {
+    public _Inline_gzv99m_a1a() {
       super();
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_gzv99m_a0c0(editorContext, node);
+      return this.createProperty_gzv99m_a0b0(editorContext, node);
     }
-    private EditorCell createProperty_gzv99m_a0c0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_gzv99m_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -130,7 +122,7 @@ public class ExportMacro_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-  private EditorCell createAttributedNodeCell_gzv99m_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_gzv99m_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     Style style = new StyleImpl();

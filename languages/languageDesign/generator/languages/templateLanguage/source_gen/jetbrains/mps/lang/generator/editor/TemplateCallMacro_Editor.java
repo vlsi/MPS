@@ -62,6 +62,8 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_nnob7w_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_macroStart(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
@@ -98,6 +100,8 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_reference(style, editorCell);
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, 0, "template");
     style.set(StyleAttributes.EDITABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
