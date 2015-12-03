@@ -189,7 +189,7 @@
     <node concept="1TJgyj" id="31Tct3TiJtC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="module" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
@@ -202,7 +202,7 @@
     <node concept="1TJgyj" id="31Tct3Tk$xf" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="model" />
-      <property role="20lbJX" value="1..n" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>

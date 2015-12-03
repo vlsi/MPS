@@ -6,7 +6,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
-      <unit at="13,0,34,0" name="jetbrains.mps.lang.smodel.query.actions.ActionAspectDescriptorImpl" />
+      <unit at="13,0,30,0" name="jetbrains.mps.lang.smodel.query.actions.ActionAspectDescriptorImpl" />
     </file>
     <file name="QueriesGenerated.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.query.actions.QueriesGenerated" />
@@ -14,37 +14,17 @@
   </root>
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.lang.smodel.query.actions)/3492877759608901704">
     <file name="ScopeParameterLiteral_factories.java">
-      <node id="3492877759608901836" at="13,91,14,384" concept="1" />
-      <node id="3492877759608986173" at="18,91,19,381" concept="1" />
-      <node id="3492877759609298948" at="23,91,24,374" concept="1" />
-      <node id="3492877759608901705" at="13,0,16,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="3492877759608986170" at="18,0,21,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="3492877759609298945" at="23,0,26,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="3492877759608901705" at="13,91,14,384" />
-      <scope id="3492877759608986170" at="18,91,19,381" />
-      <scope id="3492877759609298945" at="23,91,24,374" />
-      <scope id="3492877759608901705" at="13,0,16,0">
-        <var name="enclosingNode" id="3492877759608901705" />
-        <var name="model" id="3492877759608901705" />
-        <var name="newNode" id="3492877759608901705" />
-        <var name="sampleNode" id="3492877759608901705" />
-      </scope>
-      <scope id="3492877759608986170" at="18,0,21,0">
-        <var name="enclosingNode" id="3492877759608986170" />
-        <var name="model" id="3492877759608986170" />
-        <var name="newNode" id="3492877759608986170" />
-        <var name="sampleNode" id="3492877759608986170" />
-      </scope>
-      <scope id="3492877759609298945" at="23,0,26,0">
+      <node id="3492877759609298948" at="13,91,14,374" concept="1" />
+      <node id="3492877759609298945" at="13,0,16,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="3492877759609298945" at="13,91,14,374" />
+      <scope id="3492877759609298945" at="13,0,16,0">
         <var name="enclosingNode" id="3492877759609298945" />
         <var name="model" id="3492877759609298945" />
         <var name="newNode" id="3492877759609298945" />
         <var name="sampleNode" id="3492877759609298945" />
       </scope>
-      <unit id="3492877759608901705" at="12,0,17,0" name="jetbrains.mps.lang.smodel.query.actions.ScopeParameterLiteral_factories$NodeFactory_3492877759608901705" />
-      <unit id="3492877759608986170" at="17,0,22,0" name="jetbrains.mps.lang.smodel.query.actions.ScopeParameterLiteral_factories$NodeFactory_3492877759608986170" />
-      <unit id="3492877759609298945" at="22,0,27,0" name="jetbrains.mps.lang.smodel.query.actions.ScopeParameterLiteral_factories$NodeFactory_3492877759609298945" />
-      <unit id="3492877759608901704" at="11,0,28,0" name="jetbrains.mps.lang.smodel.query.actions.ScopeParameterLiteral_factories" />
+      <unit id="3492877759609298945" at="12,0,17,0" name="jetbrains.mps.lang.smodel.query.actions.ScopeParameterLiteral_factories$NodeFactory_3492877759609298945" />
+      <unit id="3492877759608901704" at="11,0,18,0" name="jetbrains.mps.lang.smodel.query.actions.ScopeParameterLiteral_factories" />
     </file>
   </root>
   <root nodeRef="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.lang.smodel.query.actions)/4307205004138627839">

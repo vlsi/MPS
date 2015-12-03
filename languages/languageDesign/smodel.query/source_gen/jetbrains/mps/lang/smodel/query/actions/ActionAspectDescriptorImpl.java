@@ -19,15 +19,11 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
         case 0:
           return Collections.<NodeFactory>singletonList(new ScopeParameterLiteral_factories.NodeFactory_3492877759609298945());
         case 1:
-          return Collections.<NodeFactory>singletonList(new ScopeParameterLiteral_factories.NodeFactory_3492877759608986170());
-        case 2:
-          return Collections.<NodeFactory>singletonList(new ScopeParameterLiteral_factories.NodeFactory_3492877759608901705());
-        case 3:
           return Collections.<NodeFactory>singletonList(new QueryExpression_NodeFactories.NodeFactory_4307205004138627840());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"CustomScope", "ModelScope", "ModulesScope", "QueryExpression"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"CustomScope", "QueryExpression"};
 }
