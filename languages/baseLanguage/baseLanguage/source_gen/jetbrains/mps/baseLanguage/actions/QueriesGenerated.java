@@ -1647,7 +1647,7 @@ public class QueriesGenerated {
               String name = IncompleteMemberHelper.buildMethodName(pattern);
               if (IncompleteMemberHelper.isValidCandidateMethodName(curr, name)) {
                 if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                  return (strictly ? ((pattern.endsWith("()") || pattern.endsWith(" ") ? true : false)) : true);
+                  return (strictly ? ((pattern.endsWith("(") || pattern.endsWith("()") || pattern.endsWith(" ") ? true : false)) : true);
                 }
               }
             }
@@ -2180,7 +2180,7 @@ public class QueriesGenerated {
               String name = IncompleteMemberHelper.buildMethodName(pattern);
               if (IncompleteMemberHelper.isValidCandidateMethodName(curr, name)) {
                 if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                  return (strictly ? ((pattern.endsWith("()") || pattern.endsWith(" ") ? true : false)) : true);
+                  return (strictly ? ((pattern.endsWith("(") || pattern.endsWith("()") || pattern.endsWith(" ") ? true : false)) : true);
                 }
               }
             }
