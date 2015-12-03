@@ -199,7 +199,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug" />
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -1310,6 +1310,21 @@
         <node concept="3SKdUt" id="6pumIWoCG1J" role="3cqZAp">
           <node concept="3SKdUq" id="6pumIWoCG1K" role="3SKWNk">
             <property role="3SKdUp" value="remove subordinate template fragments" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3lPtXx0ZSOD" role="3cqZAp">
+          <node concept="3SKdUq" id="3lPtXx0ZSOF" role="3SKWNk">
+            <property role="3SKdUp" value="XXX (1) not quite clear why we go only 1 level deep. Why not descendants. Guess, TF could be anywhere?" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3lPtXx0ZSS9" role="3cqZAp">
+          <node concept="3SKdUq" id="3lPtXx0ZSSb" role="3SKWNk">
+            <property role="3SKdUp" value="(2) What if there's attribute (not NodeMacro) with TF attached? We don't remove it here then, and may face " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3lPtXx0ZSVn" role="3cqZAp">
+          <node concept="3SKdUq" id="3lPtXx0ZSVp" role="3SKWNk">
+            <property role="3SKdUp" value="issues like https://youtrack.jetbrains.com/issue/MPS-20691" />
           </node>
         </node>
         <node concept="3cpWs8" id="hz3pL_7" role="3cqZAp">
