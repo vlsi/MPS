@@ -47,6 +47,9 @@ public interface EditorComponent {
 
   List<SNode> getSelectedNodes();
 
+  /**
+   * @return Non-null root cell if this {@link EditorComponent} was not disposed yet
+   */
   EditorCell getRootCell();
 
   EditorCell findNodeCell(SNode node);
