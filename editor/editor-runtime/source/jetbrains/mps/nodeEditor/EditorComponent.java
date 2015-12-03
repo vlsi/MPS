@@ -287,7 +287,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
-          if (myDisposed || isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
+          if (isDisposed() || isModuleDisposed() || isProjectDisposed() || isNodeDisposed()) return;
           rebuildEditorContent();
           myNodeSubstituteChooser.clearContent();
         }
@@ -373,6 +373,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myUpdater = createUpdater();
     myUpdater.addListener(new UpdaterEventDispatcher());
     setEditorContext(null, repository);
+    myRootCell = new EditorCell_Constant(getEditorContext(), null, "");
+    myRootCell.setSelectable(false);
 
     setBackground(StyleRegistry.getInstance().getEditorBackground());
 
@@ -529,7 +531,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return;
         }
         jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
-        boolean inSelectedCell = myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell;
+        boolean inSelectedCell = selectedCell != null && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell;
         if (inSelectedCell) {
           Selection selection = getSelectionManager().getSelection();
           if (selection.canExecuteAction(CellActionType.CLICK)) {
@@ -732,6 +734,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
       @Override
       public void propertyChange(PropertyChangeEvent evt) {
+        if (isDisposed()) {
+          return;
+        }
         Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
         if (EditorComponent.this.isAncestorOf(focusOwner)) {
           Component current = focusOwner;
@@ -936,7 +941,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ModelAccess.instance().tryRead(new Computable<String>() {
       @Override
       public String compute() {
-        if (myRootCell == null) {
+        if (isDisposed()) {
           return null;
         }
 
@@ -954,7 +959,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ModelAccess.instance().tryRead(new Computable<Point>() {
       @Override
       public Point compute() {
-        if (myRootCell == null) {
+        if (isDisposed()) {
           return null;
         }
 
@@ -1566,7 +1571,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     sb.append("\n");
     sb.append("EditorComponent.myDisposed == ");
-    sb.append(myDisposed);
+    sb.append(isDisposed());
     sb.append("\n");
     return sb.toString();
   }
@@ -1598,7 +1603,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return isDisposed() || getEditedNode() == null;
   }
 
-  public void setRootCell(jetbrains.mps.openapi.editor.cells.EditorCell rootCell) {
+  public void setRootCell(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell rootCell) {
     boolean cellSwapInProgress = myCellSwapInProgress;
     try {
       myCellSwapInProgress = true;
@@ -1606,15 +1611,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (getComponents().length > 0) {
         removeAll();
       }
-      if (myRootCell != null) {
-        ((EditorCell_Basic) myRootCell).onRemove();
-      }
+      ((EditorCell_Basic) myRootCell).onRemove();
 
       myRootCell = (EditorCell) rootCell;
 
-      if (myRootCell != null) {
-        ((EditorCell_Basic) myRootCell).onAdd();
-      }
+      ((EditorCell_Basic) myRootCell).onAdd();
       for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
         add(component.getComponent());
       }
@@ -1750,7 +1751,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void doRelayout() {
-    if (myRootCell == null) return;
+    // TODO: check for myDisposed in all methods calling this one
+    if (isDisposed()) {
+      return;
+    }
 
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
@@ -2331,11 +2335,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
-    if (myRootCell != null) {
-      myRootCell.relayout();
+    if (isDisposed()) {
+      return;
     }
+    myRootCell.relayout();
 
-    if (myRootCell != null && myRootCell.isInClipRegion(g)) {
+    if (myRootCell.isInClipRegion(g)) {
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
       g.drawLine(boundPosition, 0, boundPosition, getHeight());
@@ -2352,15 +2357,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   Dimension getPreferredComponentSize() {
-    if (myRootCell != null) {
-      return new Dimension(myRootCell.getWidth() + myShiftX + 10, myRootCell.getHeight() + myShiftY + 10);
-    }
-    if (myHasUI) {
-      JViewport viewport = myScrollPane.getViewport();
-      Rectangle viewRect = viewport.getViewRect();
-      return new Dimension(viewRect.width, viewRect.height);
-    }
-    return new Dimension(0, 0);
+    return isDisposed() ? new Dimension(0, 0) : new Dimension(myRootCell.getWidth() + myShiftX + 10, myRootCell.getHeight() + myShiftY + 10);
   }
 
   @Override
@@ -2882,6 +2879,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (mySearchPanel != null && mySearchPanel.isVisible() && mySearchPanel.isTextFieldFocused()) {
       return null;
     }
+    if (isDisposed()) {
+      return null;
+    }
     //MPSDK
     if (dataId.equals(MPSCommonDataKeys.NODE.getName())) return getSelectedNode();
     if (dataId.equals(MPSCommonDataKeys.NODES.getName())) return getSelectedNodes();
@@ -3109,6 +3109,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         public void mouseMoved(MouseEvent e) {
           if (!myEditorContext.getNodeEditorComponent().isFocusOwner()) return;
+          if (isDisposed()) {
+            myLastReferenceCell = null;
+            return;
+          }
 
           clearControlOver();
           if (!(com.intellij.openapi.util.SystemInfo.isMac ? e.isMetaDown() : e.isControlDown())) {
@@ -3116,10 +3120,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             return;
           }
 
-          if (myRootCell == null) {
-            myLastReferenceCell = null;
-            return;
-          }
           final jetbrains.mps.openapi.editor.cells.EditorCell editorCell = myRootCell.findLeaf(e.getX(), e.getY());
           if (editorCell == null) {
             myLastReferenceCell = null;
