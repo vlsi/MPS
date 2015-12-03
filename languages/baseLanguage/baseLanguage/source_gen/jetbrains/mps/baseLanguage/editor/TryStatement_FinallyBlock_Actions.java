@@ -12,9 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.IContainsStatementList__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class TryStatement_FinallyBlock_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -32,7 +29,7 @@ public class TryStatement_FinallyBlock_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, final SNode node) {
+    public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement")));
         SLinkOperations.setTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f383e83d4L, "body"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10cacec83aeL, "body")));
@@ -40,13 +37,7 @@ public class TryStatement_FinallyBlock_Actions {
         ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))));
         SNodeOperations.deleteNode(node);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
-        ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            SNodeOperations.insertPrevSiblingChild(node, it);
-          }
-        });
-        SNodeOperations.deleteNode(node);
+        UnwrapStatementsUtil.unwrapIContainsStatementList(node);
       }
     }
   }
@@ -61,7 +52,7 @@ public class TryStatement_FinallyBlock_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, final SNode node) {
+    public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement")));
         SLinkOperations.setTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f383e83d4L, "body"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10cacec83aeL, "body")));
@@ -69,13 +60,7 @@ public class TryStatement_FinallyBlock_Actions {
         ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))));
         SNodeOperations.deleteNode(node);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
-        ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            SNodeOperations.insertPrevSiblingChild(node, it);
-          }
-        });
-        SNodeOperations.deleteNode(node);
+        UnwrapStatementsUtil.unwrapIContainsStatementList(node);
       }
     }
   }

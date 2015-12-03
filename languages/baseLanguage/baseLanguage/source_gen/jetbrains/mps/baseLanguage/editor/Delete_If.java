@@ -22,7 +22,7 @@ public class Delete_If {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      DeleteIfUtil.unwrapIf(node);
+      UnwrapStatementsUtil.unwrapIf(node);
     }
   }
   public static class Delete_If_BACKSPACE extends AbstractCellAction {
@@ -34,7 +34,7 @@ public class Delete_If {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      DeleteIfUtil.unwrapIf(node);
+      UnwrapStatementsUtil.unwrapIf(node);
     }
   }
 }

@@ -10,10 +10,6 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.List;
-import jetbrains.mps.baseLanguage.behavior.IContainsStatementList__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TryCatchStatement_DeleteBodyEndingBrace {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,17 +24,11 @@ public class TryCatchStatement_DeleteBodyEndingBrace {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, final SNode node) {
+    public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).count() >= 1) {
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).removeElementAt(0);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
-        ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            SNodeOperations.insertPrevSiblingChild(node, it);
-          }
-        });
-        SNodeOperations.deleteNode(node);
+        UnwrapStatementsUtil.unwrapIContainsStatementList(node);
       }
     }
   }
@@ -50,17 +40,11 @@ public class TryCatchStatement_DeleteBodyEndingBrace {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, final SNode node) {
+    public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).count() >= 1) {
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, 0x10f39a8ba1fL, "catchClause"))).removeElementAt(0);
       } else {
-        List<SNode> statements = SLinkOperations.getChildren(IContainsStatementList__BehaviorDescriptor.getStatementList_idi0zv5tb.invoke(node), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
-        ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            SNodeOperations.insertPrevSiblingChild(node, it);
-          }
-        });
-        SNodeOperations.deleteNode(node);
+        UnwrapStatementsUtil.unwrapIContainsStatementList(node);
       }
     }
   }

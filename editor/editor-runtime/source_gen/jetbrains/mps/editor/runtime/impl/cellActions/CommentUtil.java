@@ -13,9 +13,14 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 public class CommentUtil {
@@ -76,6 +81,29 @@ public class CommentUtil {
     SNodeOperations.deleteNode(attribute);
     return commentedNode;
   }
+
+  public static Iterable<SNode> uncommentAll(SNode container) {
+    List<SNode> uncommented = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(uncommented).addSequence(Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SNodeOperations.getChildren(container)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"));
+      }
+    }), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return uncomment(it);
+      }
+    }));
+    return uncommented;
+  }
+
+  public static void commentOutAll(Iterable<SNode> nodes) {
+    Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        commentOut(it);
+      }
+    });
+  }
+
   @NotNull
   private static SNode createAndInsertNewComment(SNode parent, SContainmentLink containmentLink, SNode anchor) {
     SNode newComment = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
