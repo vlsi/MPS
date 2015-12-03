@@ -23,7 +23,7 @@ public class NativeMethod3_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("8347245235044858826", "8347245235044858830");
-      this.typeString("native final void foo()");
+      this.typeString("native final void foo(");
     }
   }
 }

@@ -23,7 +23,7 @@ public class TypeMethodCaret_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("9032151315009630216", "3378334413599967885");
-      this.typeString("publicstaticvoidmain()");
+      this.typeString("publicstaticvoidmain(");
     }
   }
 }

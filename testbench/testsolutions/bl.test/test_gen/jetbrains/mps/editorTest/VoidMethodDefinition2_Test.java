@@ -23,7 +23,7 @@ public class VoidMethodDefinition2_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("284804022074404126", "284804022074404131");
-      this.typeString("bar()");
+      this.typeString("bar(");
     }
   }
 }

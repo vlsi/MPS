@@ -2812,7 +2812,7 @@
       <node id="284804022074404125" at="15,61,16,107" concept="2" />
       <node id="284804022074404125" at="16,107,17,102" concept="2" />
       <node id="284804022074404125" at="24,51,25,61" concept="2" />
-      <node id="284804022074404138" at="25,61,26,31" concept="2" />
+      <node id="284804022074404138" at="25,61,26,30" concept="2" />
       <node id="284804022074404125" at="12,0,14,0" concept="1" trace="VoidMethodDefinition2_Test#()V" />
       <node id="284804022074404125" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="284804022074404125" at="14,0,19,0" concept="5" trace="test_VoidMethodDefinition2#()V" />
@@ -2822,7 +2822,7 @@
       <scope id="284804022074404125" at="12,0,14,0" />
       <scope id="284804022074404125" at="15,61,17,102" />
       <scope id="284804022074404125" at="21,0,23,0" />
-      <scope id="284804022074404125" at="24,51,26,31" />
+      <scope id="284804022074404125" at="24,51,26,30" />
       <scope id="284804022074404125" at="14,0,19,0" />
       <scope id="284804022074404125" at="23,0,28,0" />
       <unit id="284804022074404125" at="19,0,29,0" name="jetbrains.mps.editorTest.VoidMethodDefinition2_Test$TestBody" />
@@ -4595,7 +4595,7 @@
       <node id="346011455438314460" at="15,56,16,107" concept="2" />
       <node id="346011455438314460" at="16,107,17,97" concept="2" />
       <node id="346011455438314460" at="24,51,25,61" concept="2" />
-      <node id="346011455438314470" at="25,61,26,43" concept="2" />
+      <node id="346011455438314470" at="25,61,26,42" concept="2" />
       <node id="346011455438314460" at="12,0,14,0" concept="1" trace="AddMethodAllowed_Test#()V" />
       <node id="346011455438314460" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="346011455438314460" at="14,0,19,0" concept="5" trace="test_AddMethodAllowed#()V" />
@@ -4605,7 +4605,7 @@
       <scope id="346011455438314460" at="12,0,14,0" />
       <scope id="346011455438314460" at="15,56,17,97" />
       <scope id="346011455438314460" at="21,0,23,0" />
-      <scope id="346011455438314460" at="24,51,26,43" />
+      <scope id="346011455438314460" at="24,51,26,42" />
       <scope id="346011455438314460" at="14,0,19,0" />
       <scope id="346011455438314460" at="23,0,28,0" />
       <unit id="346011455438314460" at="19,0,29,0" name="jetbrains.mps.editorTest.AddMethodAllowed_Test$TestBody" />
@@ -5225,7 +5225,7 @@
       <node id="3543341247930491828" at="15,55,16,107" concept="2" />
       <node id="3543341247930491828" at="16,107,17,96" concept="2" />
       <node id="3543341247930491828" at="24,51,25,63" concept="2" />
-      <node id="3543341247930491830" at="25,63,26,43" concept="2" />
+      <node id="3543341247930491830" at="25,63,26,42" concept="2" />
       <node id="3543341247930491828" at="12,0,14,0" concept="1" trace="CreationMethod1_Test#()V" />
       <node id="3543341247930491828" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="3543341247930491828" at="14,0,19,0" concept="5" trace="test_CreationMethod1#()V" />
@@ -5235,7 +5235,7 @@
       <scope id="3543341247930491828" at="12,0,14,0" />
       <scope id="3543341247930491828" at="15,55,17,96" />
       <scope id="3543341247930491828" at="21,0,23,0" />
-      <scope id="3543341247930491828" at="24,51,26,43" />
+      <scope id="3543341247930491828" at="24,51,26,42" />
       <scope id="3543341247930491828" at="14,0,19,0" />
       <scope id="3543341247930491828" at="23,0,28,0" />
       <unit id="3543341247930491828" at="19,0,29,0" name="jetbrains.mps.editorTest.CreationMethod1_Test$TestBody" />
@@ -5247,7 +5247,7 @@
       <node id="3543341247930492413" at="15,55,16,107" concept="2" />
       <node id="3543341247930492413" at="16,107,17,96" concept="2" />
       <node id="3543341247930492413" at="24,51,25,63" concept="2" />
-      <node id="3543341247930492415" at="25,63,26,42" concept="2" />
+      <node id="3543341247930492415" at="25,63,26,41" concept="2" />
       <node id="3543341247930492413" at="12,0,14,0" concept="1" trace="CreationMethod2_Test#()V" />
       <node id="3543341247930492413" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="3543341247930492413" at="14,0,19,0" concept="5" trace="test_CreationMethod2#()V" />
@@ -5257,7 +5257,7 @@
       <scope id="3543341247930492413" at="12,0,14,0" />
       <scope id="3543341247930492413" at="15,55,17,96" />
       <scope id="3543341247930492413" at="21,0,23,0" />
-      <scope id="3543341247930492413" at="24,51,26,42" />
+      <scope id="3543341247930492413" at="24,51,26,41" />
       <scope id="3543341247930492413" at="14,0,19,0" />
       <scope id="3543341247930492413" at="23,0,28,0" />
       <unit id="3543341247930492413" at="19,0,29,0" name="jetbrains.mps.editorTest.CreationMethod2_Test$TestBody" />
@@ -5291,7 +5291,7 @@
       <node id="3543341247930504257" at="15,55,16,107" concept="2" />
       <node id="3543341247930504257" at="16,107,17,96" concept="2" />
       <node id="3543341247930504257" at="24,51,25,63" concept="2" />
-      <node id="3543341247930504259" at="25,63,26,35" concept="2" />
+      <node id="3543341247930504259" at="25,63,26,34" concept="2" />
       <node id="3543341247930504257" at="12,0,14,0" concept="1" trace="CreationMethod4_Test#()V" />
       <node id="3543341247930504257" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="3543341247930504257" at="14,0,19,0" concept="5" trace="test_CreationMethod4#()V" />
@@ -5301,7 +5301,7 @@
       <scope id="3543341247930504257" at="12,0,14,0" />
       <scope id="3543341247930504257" at="15,55,17,96" />
       <scope id="3543341247930504257" at="21,0,23,0" />
-      <scope id="3543341247930504257" at="24,51,26,35" />
+      <scope id="3543341247930504257" at="24,51,26,34" />
       <scope id="3543341247930504257" at="14,0,19,0" />
       <scope id="3543341247930504257" at="23,0,28,0" />
       <unit id="3543341247930504257" at="19,0,29,0" name="jetbrains.mps.editorTest.CreationMethod4_Test$TestBody" />
@@ -13358,7 +13358,7 @@
       <node id="7915352553124239105" at="15,53,16,107" concept="2" />
       <node id="7915352553124239105" at="16,107,17,94" concept="2" />
       <node id="7915352553124239105" at="24,51,25,63" concept="2" />
-      <node id="7915352553124239107" at="25,63,26,42" concept="2" />
+      <node id="7915352553124239107" at="25,63,26,41" concept="2" />
       <node id="7915352553124239105" at="12,0,14,0" concept="1" trace="StaticMethod1_Test#()V" />
       <node id="7915352553124239105" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="7915352553124239105" at="14,0,19,0" concept="5" trace="test_StaticMethod1#()V" />
@@ -13368,7 +13368,7 @@
       <scope id="7915352553124239105" at="12,0,14,0" />
       <scope id="7915352553124239105" at="15,53,17,94" />
       <scope id="7915352553124239105" at="21,0,23,0" />
-      <scope id="7915352553124239105" at="24,51,26,42" />
+      <scope id="7915352553124239105" at="24,51,26,41" />
       <scope id="7915352553124239105" at="14,0,19,0" />
       <scope id="7915352553124239105" at="23,0,28,0" />
       <unit id="7915352553124239105" at="19,0,29,0" name="jetbrains.mps.editorTest.StaticMethod1_Test$TestBody" />
@@ -13380,7 +13380,7 @@
       <node id="7915352553125356670" at="15,53,16,107" concept="2" />
       <node id="7915352553125356670" at="16,107,17,94" concept="2" />
       <node id="7915352553125356670" at="24,51,25,63" concept="2" />
-      <node id="7915352553125356672" at="25,63,26,49" concept="2" />
+      <node id="7915352553125356672" at="25,63,26,48" concept="2" />
       <node id="7915352553125356670" at="12,0,14,0" concept="1" trace="StaticMethod2_Test#()V" />
       <node id="7915352553125356670" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="7915352553125356670" at="14,0,19,0" concept="5" trace="test_StaticMethod2#()V" />
@@ -13390,7 +13390,7 @@
       <scope id="7915352553125356670" at="12,0,14,0" />
       <scope id="7915352553125356670" at="15,53,17,94" />
       <scope id="7915352553125356670" at="21,0,23,0" />
-      <scope id="7915352553125356670" at="24,51,26,49" />
+      <scope id="7915352553125356670" at="24,51,26,48" />
       <scope id="7915352553125356670" at="14,0,19,0" />
       <scope id="7915352553125356670" at="23,0,28,0" />
       <unit id="7915352553125356670" at="19,0,29,0" name="jetbrains.mps.editorTest.StaticMethod2_Test$TestBody" />
@@ -14550,7 +14550,7 @@
       <node id="8347245235044858825" at="15,53,16,107" concept="2" />
       <node id="8347245235044858825" at="16,107,17,94" concept="2" />
       <node id="8347245235044858825" at="24,51,25,63" concept="2" />
-      <node id="8347245235044858838" at="25,63,26,49" concept="2" />
+      <node id="8347245235044858838" at="25,63,26,48" concept="2" />
       <node id="8347245235044858825" at="12,0,14,0" concept="1" trace="NativeMethod3_Test#()V" />
       <node id="8347245235044858825" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="8347245235044858825" at="14,0,19,0" concept="5" trace="test_NativeMethod3#()V" />
@@ -14560,7 +14560,7 @@
       <scope id="8347245235044858825" at="12,0,14,0" />
       <scope id="8347245235044858825" at="15,53,17,94" />
       <scope id="8347245235044858825" at="21,0,23,0" />
-      <scope id="8347245235044858825" at="24,51,26,49" />
+      <scope id="8347245235044858825" at="24,51,26,48" />
       <scope id="8347245235044858825" at="14,0,19,0" />
       <scope id="8347245235044858825" at="23,0,28,0" />
       <unit id="8347245235044858825" at="19,0,29,0" name="jetbrains.mps.editorTest.NativeMethod3_Test$TestBody" />
@@ -14863,7 +14863,7 @@
       <node id="8551480281481326446" at="15,57,16,107" concept="2" />
       <node id="8551480281481326446" at="16,107,17,98" concept="2" />
       <node id="8551480281481326446" at="24,51,25,63" concept="2" />
-      <node id="8551480281481326455" at="25,63,26,40" concept="2" />
+      <node id="8551480281481326455" at="25,63,26,39" concept="2" />
       <node id="8551480281481326446" at="12,0,14,0" concept="1" trace="MissingTypeFocus1_Test#()V" />
       <node id="8551480281481326446" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="8551480281481326446" at="14,0,19,0" concept="5" trace="test_MissingTypeFocus1#()V" />
@@ -14873,7 +14873,7 @@
       <scope id="8551480281481326446" at="12,0,14,0" />
       <scope id="8551480281481326446" at="15,57,17,98" />
       <scope id="8551480281481326446" at="21,0,23,0" />
-      <scope id="8551480281481326446" at="24,51,26,40" />
+      <scope id="8551480281481326446" at="24,51,26,39" />
       <scope id="8551480281481326446" at="14,0,19,0" />
       <scope id="8551480281481326446" at="23,0,28,0" />
       <unit id="8551480281481326446" at="19,0,29,0" name="jetbrains.mps.editorTest.MissingTypeFocus1_Test$TestBody" />
@@ -14885,7 +14885,7 @@
       <node id="8551480281481354035" at="15,57,16,107" concept="2" />
       <node id="8551480281481354035" at="16,107,17,98" concept="2" />
       <node id="8551480281481354035" at="24,51,25,63" concept="2" />
-      <node id="8551480281481354046" at="25,63,26,44" concept="2" />
+      <node id="8551480281481354046" at="25,63,26,43" concept="2" />
       <node id="8551480281481354035" at="12,0,14,0" concept="1" trace="MissingTypeFocus2_Test#()V" />
       <node id="8551480281481354035" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="8551480281481354035" at="14,0,19,0" concept="5" trace="test_MissingTypeFocus2#()V" />
@@ -14895,7 +14895,7 @@
       <scope id="8551480281481354035" at="12,0,14,0" />
       <scope id="8551480281481354035" at="15,57,17,98" />
       <scope id="8551480281481354035" at="21,0,23,0" />
-      <scope id="8551480281481354035" at="24,51,26,44" />
+      <scope id="8551480281481354035" at="24,51,26,43" />
       <scope id="8551480281481354035" at="14,0,19,0" />
       <scope id="8551480281481354035" at="23,0,28,0" />
       <unit id="8551480281481354035" at="19,0,29,0" name="jetbrains.mps.editorTest.MissingTypeFocus2_Test$TestBody" />
@@ -14951,7 +14951,7 @@
       <node id="8551480281493451611" at="15,57,16,107" concept="2" />
       <node id="8551480281493451611" at="16,107,17,98" concept="2" />
       <node id="8551480281493451611" at="24,51,25,63" concept="2" />
-      <node id="8551480281493451622" at="25,63,26,44" concept="2" />
+      <node id="8551480281493451622" at="25,63,26,43" concept="2" />
       <node id="8551480281493451611" at="12,0,14,0" concept="1" trace="CorrectTypeFocus1_Test#()V" />
       <node id="8551480281493451611" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="8551480281493451611" at="14,0,19,0" concept="5" trace="test_CorrectTypeFocus1#()V" />
@@ -14961,7 +14961,7 @@
       <scope id="8551480281493451611" at="12,0,14,0" />
       <scope id="8551480281493451611" at="15,57,17,98" />
       <scope id="8551480281493451611" at="21,0,23,0" />
-      <scope id="8551480281493451611" at="24,51,26,44" />
+      <scope id="8551480281493451611" at="24,51,26,43" />
       <scope id="8551480281493451611" at="14,0,19,0" />
       <scope id="8551480281493451611" at="23,0,28,0" />
       <unit id="8551480281493451611" at="19,0,29,0" name="jetbrains.mps.editorTest.CorrectTypeFocus1_Test$TestBody" />
@@ -14973,7 +14973,7 @@
       <node id="8551480281493452202" at="15,57,16,107" concept="2" />
       <node id="8551480281493452202" at="16,107,17,98" concept="2" />
       <node id="8551480281493452202" at="24,51,25,63" concept="2" />
-      <node id="8551480281493452214" at="25,63,26,42" concept="2" />
+      <node id="8551480281493452214" at="25,63,26,41" concept="2" />
       <node id="8551480281493452202" at="12,0,14,0" concept="1" trace="CorrectTypeFocus2_Test#()V" />
       <node id="8551480281493452202" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="8551480281493452202" at="14,0,19,0" concept="5" trace="test_CorrectTypeFocus2#()V" />
@@ -14983,7 +14983,7 @@
       <scope id="8551480281493452202" at="12,0,14,0" />
       <scope id="8551480281493452202" at="15,57,17,98" />
       <scope id="8551480281493452202" at="21,0,23,0" />
-      <scope id="8551480281493452202" at="24,51,26,42" />
+      <scope id="8551480281493452202" at="24,51,26,41" />
       <scope id="8551480281493452202" at="14,0,19,0" />
       <scope id="8551480281493452202" at="23,0,28,0" />
       <unit id="8551480281493452202" at="19,0,29,0" name="jetbrains.mps.editorTest.CorrectTypeFocus2_Test$TestBody" />
@@ -15627,7 +15627,7 @@
       <node id="9032151315009630188" at="15,55,16,107" concept="2" />
       <node id="9032151315009630188" at="16,107,17,96" concept="2" />
       <node id="9032151315009630188" at="24,51,25,63" concept="2" />
-      <node id="3378334413600016525" at="25,63,26,48" concept="2" />
+      <node id="3378334413600016525" at="25,63,26,47" concept="2" />
       <node id="9032151315009630188" at="12,0,14,0" concept="1" trace="TypeMethodCaret_Test#()V" />
       <node id="9032151315009630188" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="9032151315009630188" at="14,0,19,0" concept="5" trace="test_TypeMethodCaret#()V" />
@@ -15637,7 +15637,7 @@
       <scope id="9032151315009630188" at="12,0,14,0" />
       <scope id="9032151315009630188" at="15,55,17,96" />
       <scope id="9032151315009630188" at="21,0,23,0" />
-      <scope id="9032151315009630188" at="24,51,26,48" />
+      <scope id="9032151315009630188" at="24,51,26,47" />
       <scope id="9032151315009630188" at="14,0,19,0" />
       <scope id="9032151315009630188" at="23,0,28,0" />
       <unit id="9032151315009630188" at="19,0,29,0" name="jetbrains.mps.editorTest.TypeMethodCaret_Test$TestBody" />

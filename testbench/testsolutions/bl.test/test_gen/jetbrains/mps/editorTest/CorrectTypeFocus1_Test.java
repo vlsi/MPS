@@ -23,7 +23,7 @@ public class CorrectTypeFocus1_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("8551480281493451612", "8551480281493451616");
-      this.typeString("abstract int foo()");
+      this.typeString("abstract int foo(");
     }
   }
 }

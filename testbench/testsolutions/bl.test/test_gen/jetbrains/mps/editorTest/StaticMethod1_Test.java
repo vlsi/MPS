@@ -23,7 +23,7 @@ public class StaticMethod1_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("7915352553124239108", "7915352553124239112");
-      this.typeString("static int foo()");
+      this.typeString("static int foo(");
     }
   }
 }

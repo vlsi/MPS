@@ -23,7 +23,7 @@ public class AddMethodAllowed_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("346011455438314461", "346011455438314465");
-      this.typeString("privatevoid foo()");
+      this.typeString("privatevoid foo(");
     }
   }
 }

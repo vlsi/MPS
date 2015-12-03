@@ -12819,7 +12819,7 @@
     </node>
     <node concept="3clFbS" id="2VygjZZ6Oye" role="LjaKd">
       <node concept="2TK7Tu" id="2VygjZZ6Oyd" role="3cqZAp">
-        <property role="2TTd_B" value="publicstaticvoidmain()" />
+        <property role="2TTd_B" value="publicstaticvoidmain(" />
       </node>
     </node>
   </node>
@@ -24510,7 +24510,7 @@
     </node>
     <node concept="3clFbS" id="fNOVZ6meOD" role="LjaKd">
       <node concept="2TK7Tu" id="fNOVZ6meOE" role="3cqZAp">
-        <property role="2TTd_B" value="bar()" />
+        <property role="2TTd_B" value="bar(" />
       </node>
     </node>
   </node>
@@ -25613,7 +25613,7 @@
     </node>
     <node concept="3clFbS" id="jdhTnxBtJ_" role="LjaKd">
       <node concept="2TK7Tu" id="jdhTnxBtJA" role="3cqZAp">
-        <property role="2TTd_B" value="privatevoid foo()" />
+        <property role="2TTd_B" value="privatevoid foo(" />
       </node>
     </node>
   </node>
@@ -27483,7 +27483,7 @@
     </node>
     <node concept="3clFbS" id="7qGXw8xsUXQ" role="LjaKd">
       <node concept="2TK7Tu" id="7qGXw8xsUXR" role="3cqZAp">
-        <property role="2TTd_B" value="abstract foo()" />
+        <property role="2TTd_B" value="abstract foo(" />
       </node>
     </node>
   </node>
@@ -27524,7 +27524,7 @@
     </node>
     <node concept="3clFbS" id="7qGXw8xt1GX" role="LjaKd">
       <node concept="2TK7Tu" id="7qGXw8xt1GY" role="3cqZAp">
-        <property role="2TTd_B" value="final static foo()" />
+        <property role="2TTd_B" value="final static foo(" />
       </node>
     </node>
   </node>
@@ -27649,7 +27649,7 @@
     </node>
     <node concept="3clFbS" id="7qGXw8ybbd_" role="LjaKd">
       <node concept="2TK7Tu" id="7qGXw8ybbdA" role="3cqZAp">
-        <property role="2TTd_B" value="abstract int foo()" />
+        <property role="2TTd_B" value="abstract int foo(" />
       </node>
     </node>
   </node>
@@ -27691,7 +27691,7 @@
     </node>
     <node concept="3clFbS" id="7qGXw8ybbmP" role="LjaKd">
       <node concept="2TK7Tu" id="7qGXw8ybbmQ" role="3cqZAp">
-        <property role="2TTd_B" value="static int foo()" />
+        <property role="2TTd_B" value="static int foo(" />
       </node>
     </node>
   </node>
@@ -28434,7 +28434,7 @@
     <property role="3GE5qa" value="incompleteMember.interface" />
     <node concept="3clFbS" id="34GuxtKSIeP" role="LjaKd">
       <node concept="2TK7Tu" id="34GuxtKSIeQ" role="3cqZAp">
-        <property role="2TTd_B" value="public void foo()" />
+        <property role="2TTd_B" value="public void foo(" />
       </node>
     </node>
     <node concept="3HP615" id="34GuxtKSIeR" role="LiRBU">
@@ -28477,7 +28477,7 @@
     <property role="3GE5qa" value="incompleteMember.interface" />
     <node concept="3clFbS" id="34GuxtKSInY" role="LjaKd">
       <node concept="2TK7Tu" id="34GuxtKSInZ" role="3cqZAp">
-        <property role="2TTd_B" value="static int foo()" />
+        <property role="2TTd_B" value="static int foo(" />
       </node>
     </node>
     <node concept="3HP615" id="34GuxtKSIo0" role="LiRBU">
@@ -28559,7 +28559,7 @@
     <property role="3GE5qa" value="incompleteMember.interface" />
     <node concept="3clFbS" id="34GuxtKSLh2" role="LjaKd">
       <node concept="2TK7Tu" id="34GuxtKSLh3" role="3cqZAp">
-        <property role="2TTd_B" value="int foo()" />
+        <property role="2TTd_B" value="int foo(" />
       </node>
     </node>
     <node concept="3HP615" id="34GuxtKSLh4" role="LiRBU">
@@ -29110,7 +29110,7 @@
     </node>
     <node concept="3clFbS" id="7fnnP3fUVJl" role="LjaKd">
       <node concept="2TK7Tu" id="7fnnP3fUVJm" role="3cqZAp">
-        <property role="2TTd_B" value="native final void foo()" />
+        <property role="2TTd_B" value="native final void foo(" />
       </node>
     </node>
   </node>
@@ -34288,7 +34288,7 @@
     <property role="3GE5qa" value="incompleteMember.interface" />
     <node concept="3clFbS" id="6RoYNmKWTs2" role="LjaKd">
       <node concept="2TK7Tu" id="6RoYNmKWTs3" role="3cqZAp">
-        <property role="2TTd_B" value="static int foo()" />
+        <property role="2TTd_B" value="static int foo(" />
       </node>
     </node>
     <node concept="3HP615" id="6RoYNmKWTs4" role="LiRBU">
@@ -34331,7 +34331,7 @@
     <property role="3GE5qa" value="incompleteMember.interface" />
     <node concept="3clFbS" id="6RoYNmL1ahZ" role="LjaKd">
       <node concept="2TK7Tu" id="6RoYNmL1ai0" role="3cqZAp">
-        <property role="2TTd_B" value="public static int foo()" />
+        <property role="2TTd_B" value="public static int foo(" />
       </node>
     </node>
     <node concept="3HP615" id="6RoYNmL1ai1" role="LiRBU">

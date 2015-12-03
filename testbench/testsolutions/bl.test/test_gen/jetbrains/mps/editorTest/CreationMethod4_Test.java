@@ -23,7 +23,7 @@ public class CreationMethod4_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("3543341247930504260", "3543341247930504264");
-      this.typeString("int foo()");
+      this.typeString("int foo(");
     }
   }
 }
