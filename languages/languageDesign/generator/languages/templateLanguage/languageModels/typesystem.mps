@@ -130,6 +130,7 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -299,6 +300,9 @@
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
+      <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
+        <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
+      </concept>
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
@@ -317,6 +321,7 @@
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
         <child id="1154546920563" name="concept" index="3gmYPZ" />
       </concept>
@@ -5189,6 +5194,104 @@
     <node concept="1YaCAy" id="6uPxrhfjtI_" role="1YuTPh">
       <property role="TrG5h" value="rule" />
       <ref role="1YaFvo" to="tpf8:6uPxrhfjpgV" resolve="DropAttributeRule" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3lPtXx0ZW3e">
+    <property role="TrG5h" value="check_TemplateFragment" />
+    <property role="3GE5qa" value="template" />
+    <node concept="3clFbS" id="3lPtXx0ZW3f" role="18ibNy">
+      <node concept="3cpWs8" id="3lPtXx101e2" role="3cqZAp">
+        <node concept="3cpWsn" id="3lPtXx101e3" role="3cpWs9">
+          <property role="TrG5h" value="fragmentNode" />
+          <node concept="3Tqbb2" id="3lPtXx101e0" role="1tU5fm" />
+          <node concept="2OqwBi" id="3lPtXx101e4" role="33vP2m">
+            <node concept="1YBJjd" id="3lPtXx101e5" role="2Oq$k0">
+              <ref role="1YBMHb" node="3lPtXx0ZW3h" resolve="tf" />
+            </node>
+            <node concept="1mfA1w" id="3lPtXx101e6" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3lPtXx0ZWr7" role="3cqZAp">
+        <node concept="3clFbS" id="3lPtXx0ZWr9" role="3clFbx">
+          <node concept="2MkqsV" id="3lPtXx0ZZtC" role="3cqZAp">
+            <node concept="Xl_RD" id="3lPtXx0ZZKm" role="2MkJ7o">
+              <property role="Xl_RC" value="More than one template fragment for a node. Are there node attributes with template macros?" />
+            </node>
+            <node concept="1YBJjd" id="3lPtXx0ZZxl" role="2OEOjV">
+              <ref role="1YBMHb" node="3lPtXx0ZW3h" resolve="tf" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eOSWO" id="3lPtXx0ZZpZ" role="3clFbw">
+          <node concept="3cmrfG" id="3lPtXx0ZZq2" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+          <node concept="2OqwBi" id="3lPtXx0ZYSt" role="3uHU7B">
+            <node concept="2OqwBi" id="3lPtXx0ZXs$" role="2Oq$k0">
+              <node concept="2OqwBi" id="3lPtXx0ZWC_" role="2Oq$k0">
+                <node concept="37vLTw" id="3lPtXx101e7" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3lPtXx101e3" resolve="fragmentNode" />
+                </node>
+                <node concept="3CFZ6_" id="3lPtXx0ZX2w" role="2OqNvi">
+                  <node concept="3CFTEB" id="3lPtXx0ZX3h" role="3CFYIz" />
+                </node>
+              </node>
+              <node concept="v3k3i" id="3lPtXx0ZYOg" role="2OqNvi">
+                <node concept="chp4Y" id="3lPtXx0ZYPf" role="v3oSu">
+                  <ref role="cht4Q" to="tpf8:fWrartG" resolve="TemplateFragment" />
+                </node>
+              </node>
+            </node>
+            <node concept="34oBXx" id="3lPtXx0ZYXt" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3lPtXx0ZW5$" role="3cqZAp">
+        <node concept="3clFbS" id="3lPtXx0ZW5_" role="3clFbx">
+          <node concept="3SKdUt" id="3lPtXx101F9" role="3cqZAp">
+            <node concept="3SKdUq" id="3lPtXx101Fb" role="3SKWNk">
+              <property role="3SKdUp" value="https://youtrack.jetbrains.com/issue/MPS-20691" />
+            </node>
+          </node>
+          <node concept="2MkqsV" id="3lPtXx1012z" role="3cqZAp">
+            <node concept="37vLTw" id="3lPtXx101e8" role="2OEOjV">
+              <ref role="3cqZAo" node="3lPtXx101e3" resolve="fragmentNode" />
+            </node>
+            <node concept="Xl_RD" id="3lPtXx101ut" role="2MkJ7o">
+              <property role="Xl_RC" value="Node Attribute is a template fragment, and its attributed node is a template fragment as well. Generator doesn't support such templates" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="3lPtXx1004D" role="3clFbw">
+          <node concept="2OqwBi" id="3lPtXx100Pp" role="3uHU7w">
+            <node concept="2OqwBi" id="3lPtXx100$Z" role="2Oq$k0">
+              <node concept="2OqwBi" id="3lPtXx100qp" role="2Oq$k0">
+                <node concept="37vLTw" id="3lPtXx101e9" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3lPtXx101e3" resolve="fragmentNode" />
+                </node>
+                <node concept="1mfA1w" id="3lPtXx100vL" role="2OqNvi" />
+              </node>
+              <node concept="3CFZ6_" id="3lPtXx100E_" role="2OqNvi">
+                <node concept="3CFYIy" id="3lPtXx100IV" role="3CFYIz">
+                  <ref role="3CFYIx" to="tpf8:fWrartG" resolve="TemplateFragment" />
+                </node>
+              </node>
+            </node>
+            <node concept="3x8VRR" id="3lPtXx100Ym" role="2OqNvi" />
+          </node>
+          <node concept="2OqwBi" id="3lPtXx0ZWng" role="3uHU7B">
+            <node concept="37vLTw" id="3lPtXx101ea" role="2Oq$k0">
+              <ref role="3cqZAo" node="3lPtXx101e3" resolve="fragmentNode" />
+            </node>
+            <node concept="32XrjI" id="3lPtXx0ZWqL" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3lPtXx0ZW3h" role="1YuTPh">
+      <property role="TrG5h" value="tf" />
+      <ref role="1YaFvo" to="tpf8:fWrartG" resolve="TemplateFragment" />
     </node>
   </node>
 </model>

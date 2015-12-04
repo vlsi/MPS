@@ -54,6 +54,8 @@ public class VarMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cubyf7_a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_macroStart(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, false);
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

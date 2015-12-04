@@ -148,6 +148,9 @@ public final class EditingUtil {
   public static void createTemplateFragment(final SNode node) {
     SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment")));
     // remove subordinate template fragments 
+    // XXX (1) not quite clear why we go only 1 level deep. Why not descendants. Guess, TF could be anywhere? 
+    // (2) What if there's attribute (not NodeMacro) with TF attached? We don't remove it here then, and may face  
+    // issues like https://youtrack.jetbrains.com/issue/MPS-20691 
     Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));

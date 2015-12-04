@@ -8955,5 +8955,28 @@
       </node>
     </node>
   </node>
+  <node concept="2S6QgY" id="1x7fy1y9msU">
+    <property role="TrG5h" value="DeleteTemplateMacro" />
+    <ref role="2ZfgGC" to="tpf8:hR0XTcV" resolve="AbstractMacro" />
+    <node concept="2Sbjvc" id="1x7fy1y9msV" role="2ZfgGD">
+      <node concept="3clFbS" id="1x7fy1y9msW" role="2VODD2">
+        <node concept="3clFbF" id="1x7fy1y9vHu" role="3cqZAp">
+          <node concept="2OqwBi" id="1x7fy1y9vJq" role="3clFbG">
+            <node concept="2Sf5sV" id="1x7fy1y9vHt" role="2Oq$k0" />
+            <node concept="1PgB_6" id="1x7fy1y9vZ$" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2S6ZIM" id="1x7fy1y9msX" role="2ZfVej">
+      <node concept="3clFbS" id="1x7fy1y9msY" role="2VODD2">
+        <node concept="3clFbF" id="1x7fy1y9vDt" role="3cqZAp">
+          <node concept="Xl_RD" id="1x7fy1y9vDs" role="3clFbG">
+            <property role="Xl_RC" value="Remove template macro" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="CommentAttribute2_BehaviorDescriptor.java">
-      <unit at="13,0,22,0" name="jetbrains.mps.samples.attribute.behavior.CommentAttribute2_BehaviorDescriptor" />
+      <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.CommentAttribute2_BehaviorDescriptor" />
     </file>
     <file name="CommentAttribute_BehaviorDescriptor.java">
       <unit at="12,0,21,0" name="jetbrains.mps.samples.attribute.behavior.CommentAttribute_BehaviorDescriptor" />

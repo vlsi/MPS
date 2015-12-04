@@ -14,13 +14,12 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -30,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
 public class NodeMacro_postfix implements ConceptEditorComponent {
@@ -47,42 +45,32 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.HORIZONTAL_GAP, 0, new Padding(3, Measure.PIXELS));
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createEmpty_crgygw_a0(editorContext, node));
+    if (renderingCondition_crgygw_a0a(node, editorContext)) {
+      editorCell.addEditorCell(this.createCollection_crgygw_a0(editorContext, node));
+    }
     if (renderingCondition_crgygw_a1a(node, editorContext)) {
-      editorCell.addEditorCell(this.createCollection_crgygw_b0(editorContext, node));
+      editorCell.addEditorCell(this.createRefCell_crgygw_b0(editorContext, node));
     }
-    if (renderingCondition_crgygw_a2a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefCell_crgygw_c0(editorContext, node));
-    }
-    editorCell.addEditorCell(this.createAttributedNodeCell_crgygw_d0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_crgygw_c0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createEmpty_crgygw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
-    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
-    editorCell.setCellId("Empty_crgygw_a0");
-    return editorCell;
-  }
-  private EditorCell createCollection_crgygw_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_crgygw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_crgygw_b0");
-    editorCell.addEditorCell(this.createConstant_crgygw_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_crgygw_b1a(editorContext, node));
+    editorCell.setCellId("Collection_crgygw_a0");
+    editorCell.addEditorCell(this.createConstant_crgygw_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_crgygw_b0a(editorContext, node));
     return editorCell;
   }
-  private static boolean renderingCondition_crgygw_a1a(SNode node, EditorContext editorContext) {
-    String actualRole = node.getRoleInParent();
-    String expectedRole = "smodelAttribute";
-    return !(actualRole.equals(expectedRole));
+  private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext) {
+    return neq_crgygw_a0a0e(node.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
   }
-  private EditorCell createConstant_crgygw_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_crgygw_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bad role:");
-    editorCell.setCellId("Constant_crgygw_a1a");
+    editorCell.setCellId("Constant_crgygw_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createReadOnlyModelAccessor_crgygw_b1a(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_crgygw_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return node.getRoleInParent();
@@ -95,18 +83,18 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_crgygw_b1a");
+    editorCell.setCellId("ReadOnlyModelAccessor_crgygw_b0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private EditorCell createRefCell_crgygw_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_crgygw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no mappingLabel>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a2a());
+    provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline_crgygw_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -121,17 +109,17 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-  public static class _Inline_crgygw_a2a extends InlineCellProvider {
-    public _Inline_crgygw_a2a() {
+  public static class _Inline_crgygw_a1a extends InlineCellProvider {
+    public _Inline_crgygw_a1a() {
       super();
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_crgygw_a0c0(editorContext, node);
+      return this.createProperty_crgygw_a0b0(editorContext, node);
     }
-    private EditorCell createProperty_crgygw_a0c0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_crgygw_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -152,15 +140,18 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       return editorCell;
     }
   }
-  private static boolean renderingCondition_crgygw_a2a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_crgygw_a1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
   }
-  private EditorCell createAttributedNodeCell_crgygw_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_crgygw_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
+  }
+  private static boolean neq_crgygw_a0a0e(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }
