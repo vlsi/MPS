@@ -56,7 +56,7 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   @NotNull
   @Override
-  public ProjectScope getScope() {
+  public final ProjectScope getScope() {
     return myScope;
   }
 
@@ -80,14 +80,14 @@ public abstract class Project implements MPSModuleOwner, IProject {
   @ToRemove(version = 3.4)
   public abstract String getName();
 
-  @ToRemove(version = 3.4)
+  @ToRemove(version = 3.3)
   public abstract <T> T getComponent(Class<T> t);
 
   /**
    * @deprecated the project is not necessarily backed up by file. Left for compatibility
    */
   @Deprecated
-  @ToRemove(version = 3.4)
+  @ToRemove(version = 3.3)
   public File getProjectFile() {
     if (this instanceof FileBasedProject) {
       FileBasedProject fileBasedProject = (FileBasedProject) this;
@@ -177,6 +177,11 @@ public abstract class Project implements MPSModuleOwner, IProject {
     }
   }
 
+  /**
+   * @deprecated use {@link #addModule(SModule)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void addModule(final SModuleReference moduleReference) {
     myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
@@ -187,6 +192,11 @@ public abstract class Project implements MPSModuleOwner, IProject {
     });
   }
 
+  /**
+   * @deprecated use {@link #removeModule(SModule)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void removeModule(final SModuleReference moduleReference) {
     myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
