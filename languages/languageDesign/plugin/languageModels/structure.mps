@@ -1657,7 +1657,7 @@
     <property role="TrG5h" value="ActionDeclaration" />
     <property role="3GE5qa" value="Actions.Action" />
     <property role="34LRSv" value="Action" />
-    <property role="2Bxbrw" value="http://confluence.jetbrains.com/display/MPSD32/Plugin#Plugin-actionsandactiongroups" />
+    <property role="2Bxbrw" value="http://confluence.jetbrains.com/display/MPSD33/Plugin#Plugin-actionsandactiongroups" />
     <property role="1pbfSe" value="480804176" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hwtmbzj" role="1TKVEi">
