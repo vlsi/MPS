@@ -2309,6 +2309,79 @@
       <unit id="2671731496587878888" at="12,0,38,0" name="jetbrains.mps.editorTest.Post_ThisRemovingClassConcept_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/269224923864759355">
+    <file name="StatementContainerConversion1_Test.java">
+      <node id="269224923864759355" at="15,69,16,107" concept="2" />
+      <node id="269224923864759355" at="16,107,17,110" concept="2" />
+      <node id="269224923864759355" at="24,51,25,61" concept="2" />
+      <node id="269224923864759397" at="25,61,26,77" concept="2" />
+      <node id="269224923864791704" at="26,77,27,77" concept="2" />
+      <node id="269224923864792151" at="27,77,28,31" concept="2" />
+      <node id="269224923864759355" at="12,0,14,0" concept="1" trace="StatementContainerConversion1_Test#()V" />
+      <node id="269224923864759355" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="269224923864759355" at="14,0,19,0" concept="5" trace="test_StatementContainerConversion1#()V" />
+      <node id="269224923864759355" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="269224923864759355" at="12,47,12,47" />
+      <scope id="269224923864759355" at="21,23,21,23" />
+      <scope id="269224923864759355" at="12,0,14,0" />
+      <scope id="269224923864759355" at="15,69,17,110" />
+      <scope id="269224923864759355" at="21,0,23,0" />
+      <scope id="269224923864759355" at="24,51,28,31" />
+      <scope id="269224923864759355" at="14,0,19,0" />
+      <scope id="269224923864759355" at="23,0,30,0" />
+      <unit id="269224923864759355" at="19,0,31,0" name="jetbrains.mps.editorTest.StatementContainerConversion1_Test$TestBody" />
+      <unit id="269224923864759355" at="10,0,32,0" name="jetbrains.mps.editorTest.StatementContainerConversion1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/269224923864792506">
+    <file name="StatementContainerConversion2_Test.java">
+      <node id="269224923864792506" at="15,69,16,107" concept="2" />
+      <node id="269224923864792506" at="16,107,17,110" concept="2" />
+      <node id="269224923864792506" at="24,51,25,61" concept="2" />
+      <node id="269224923864792532" at="25,61,26,77" concept="2" />
+      <node id="269224923864792534" at="26,77,27,77" concept="2" />
+      <node id="269224923864792536" at="27,77,28,28" concept="2" />
+      <node id="269224923864792506" at="12,0,14,0" concept="1" trace="StatementContainerConversion2_Test#()V" />
+      <node id="269224923864792506" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="269224923864792506" at="14,0,19,0" concept="5" trace="test_StatementContainerConversion2#()V" />
+      <node id="269224923864792506" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="269224923864792506" at="12,47,12,47" />
+      <scope id="269224923864792506" at="21,23,21,23" />
+      <scope id="269224923864792506" at="12,0,14,0" />
+      <scope id="269224923864792506" at="15,69,17,110" />
+      <scope id="269224923864792506" at="21,0,23,0" />
+      <scope id="269224923864792506" at="24,51,28,28" />
+      <scope id="269224923864792506" at="14,0,19,0" />
+      <scope id="269224923864792506" at="23,0,30,0" />
+      <unit id="269224923864792506" at="19,0,31,0" name="jetbrains.mps.editorTest.StatementContainerConversion2_Test$TestBody" />
+      <unit id="269224923864792506" at="10,0,32,0" name="jetbrains.mps.editorTest.StatementContainerConversion2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/269224923864795066">
+    <file name="StatementContainerConversion3_Test.java">
+      <node id="269224923864795066" at="15,69,16,107" concept="2" />
+      <node id="269224923864795066" at="16,107,17,110" concept="2" />
+      <node id="269224923864795066" at="24,51,25,61" concept="2" />
+      <node id="269224923864795092" at="25,61,26,77" concept="2" />
+      <node id="269224923864795094" at="26,77,27,77" concept="2" />
+      <node id="269224923864797531" at="27,77,28,77" concept="2" />
+      <node id="269224923864795096" at="28,77,29,28" concept="2" />
+      <node id="269224923864795066" at="12,0,14,0" concept="1" trace="StatementContainerConversion3_Test#()V" />
+      <node id="269224923864795066" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="269224923864795066" at="14,0,19,0" concept="5" trace="test_StatementContainerConversion3#()V" />
+      <node id="269224923864795066" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="269224923864795066" at="12,47,12,47" />
+      <scope id="269224923864795066" at="21,23,21,23" />
+      <scope id="269224923864795066" at="12,0,14,0" />
+      <scope id="269224923864795066" at="15,69,17,110" />
+      <scope id="269224923864795066" at="21,0,23,0" />
+      <scope id="269224923864795066" at="14,0,19,0" />
+      <scope id="269224923864795066" at="24,51,29,28" />
+      <scope id="269224923864795066" at="23,0,31,0" />
+      <unit id="269224923864795066" at="19,0,32,0" name="jetbrains.mps.editorTest.StatementContainerConversion3_Test$TestBody" />
+      <unit id="269224923864795066" at="10,0,33,0" name="jetbrains.mps.editorTest.StatementContainerConversion3_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2707740038604155061">
     <file name="DeleteIfPossibleMethod_Test.java">
       <node id="2707740038604155061" at="15,62,16,107" concept="2" />
