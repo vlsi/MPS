@@ -223,13 +223,10 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (PlatformDataKeys.PASTE_PROVIDER.is(dataName)) {
       return getModelProvider(selectedNode, PASTE_PROVIDER_FACTORY);
     }
-    if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName)) {
+    if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataName) || MPSCommonDataKeys.MODEL.is(dataName)) {
       return getModel(selectedNode);
     }
-    if (MPSCommonDataKeys.MODEL.is(dataName)) {
-      return getModel(selectedNode);
-    }
-    if (MPSCommonDataKeys.MODULE.is(dataName)) {
+    if (MPSCommonDataKeys.CONTEXT_MODULE.is(dataName) || MPSCommonDataKeys.MODULE.is(dataName)) {
       return getModule(selectedNode);
     }
     if (LangDataKeys.MODULE.is(dataName)) {
