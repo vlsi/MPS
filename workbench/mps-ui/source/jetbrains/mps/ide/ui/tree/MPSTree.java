@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.ide.ui.tree;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFocusManager;
-import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeUIHelper;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
@@ -200,45 +196,53 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   void myMousePressed(final MouseEvent e) {
-    Project p = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(this));
-    IdeFocusManager focusManager;
-    if (p != null) {
-      focusManager = IdeFocusManager.getInstance(p);
-    } else {
-      focusManager = IdeFocusManagerHeadless.INSTANCE;
+    IdeFocusManager.findInstanceByComponent(this).requestFocus(this, true);
+
+    if (e.getButton() == 0) {
+      // This is a workaround for handling context menu button
+      TreePath path = getSelectionPath();
+      if (path == null) return;
+      int rowNum = getRowForPath(path);
+      Rectangle r = getRowBounds(rowNum);
+      showPopup(r.x, r.y);
+      return;
     }
 
-    focusManager.requestFocus(this, true);
+    if (e.isPopupTrigger()) {
+      showPopup(e.getX(), e.getY());
+      return;
+    }
 
     TreePath path = getClosestPathForLocation(e.getX(), e.getY());
     if (path == null) return;
 
-    Object lastPathComponent = path.getLastPathComponent();
-    MPSTreeNode nodeToClick=null;
-    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
-      nodeToClick = (MPSTreeNode) lastPathComponent;
+    MPSTreeNode nodeToClick = getOpenableNode(e);
+    if (nodeToClick != null) {
       if ((e.getClickCount() == 1 && isAutoOpen())) {
         autoscroll(nodeToClick);
-      } else if (e.getClickCount() == 2) {
-        e.consume();
-      }
-    } else if (e.getButton() == MouseEvent.BUTTON3) {
-      if (!isPathSelected(path)) {
-        setSelectionPath(path);
       }
     }
+  }
 
-    //workaround for context acquiers
-    final MPSTreeNode node2dc = e.getClickCount()==2?nodeToClick:null;
-    focusManager.doWhenFocusSettlesDown(new Runnable() {
-      @Override
-      public void run() {
-        if (node2dc != null) {
-          doubleClick(node2dc);
-        }
-        if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
-      }
-    });
+  private void myMouseClicked(MouseEvent e) {
+    if (e.isPopupTrigger()) {
+      showPopup(e.getX(), e.getY());
+      return;
+    }
+
+    MPSTreeNode nodeToClick = getOpenableNode(e);
+    if (nodeToClick != null && e.getClickCount() == 2) {
+      doubleClick(nodeToClick);
+    }
+  }
+
+  private MPSTreeNode getOpenableNode(MouseEvent e) {
+    MPSTreeNode node = getNodeFromPath(getClosestPathForLocation(e.getX(), e.getY()));
+
+    if (node == null) return null;
+    if (!node.canBeOpened()) return null;
+
+    return node;
   }
 
   @Nullable
@@ -321,7 +325,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (node != null) {
       JPopupMenu menu = createPopupMenu(node);
       if (menu != null) {
-        if (!getSelectedPaths().contains(pathToString(path))) {
+        if (!isPathSelected(path)) {
           setSelectionPath(path);
         }
         menu.show(this, x, y);
@@ -791,22 +795,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private class MyMouseAdapter extends MouseAdapter {
     @Override
     public void mousePressed(MouseEvent e) {
-      //this is a workaround for handling context menu button
-      if (e.getButton() == 0) {
-        TreePath path = getSelectionPath();
-        if (path == null) return;
-        int rowNum = getRowForPath(path);
-        Rectangle r = getRowBounds(rowNum);
-        showPopup(r.x, r.y);
-      } else {
-        requestFocus();
-        myMousePressed(e);
-      }
+      myMousePressed(e);
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
       myMouseReleased(e);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+      myMouseClicked(e);
     }
 
     @Override
