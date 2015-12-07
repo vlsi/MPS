@@ -52,6 +52,7 @@
       <param name="output.dir" value="${build.layout}/"/>
     </antcall>
     <delete dir="${build.tmp}"/>
+    <echo message="##teamcity[publishArtifacts '${build.layout}/${buildMPS.build.number}-windows.exe']"/>
   </target>
 
   <target name="exe" if="windows">

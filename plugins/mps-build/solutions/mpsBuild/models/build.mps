@@ -2,13 +2,24 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
   </languages>
   <imports />
   <registry>
+    <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
+      <concept id="2769948622284546675" name="jetbrains.mps.build.workflow.structure.BwfTask" flags="ng" index="2VaFvF">
+        <child id="2769948622284546679" name="subTasks" index="2VaFvJ" />
+      </concept>
+      <concept id="2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" flags="ng" index="2VaFvH">
+        <child id="2769948622284606050" name="statements" index="2VaTZU" />
+      </concept>
+      <concept id="2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" flags="ng" index="2Vbh7Z">
+        <child id="2769948622284768360" name="element" index="2Vbh7K" />
+      </concept>
+    </language>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
       <concept id="6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" flags="ng" index="2pMdtt">
         <property id="6666499814681541920" name="text" index="2pMdty" />
@@ -172,6 +183,9 @@
       </concept>
       <concept id="8577651205286814211" name="jetbrains.mps.build.structure.BuildLayout_Tar" flags="ng" index="1tmT9g">
         <property id="1979010778009209128" name="compression" index="AB_bT" />
+      </concept>
+      <concept id="4701820937132281259" name="jetbrains.mps.build.structure.BuildCustomWorkflow" flags="ng" index="1y0Vig">
+        <child id="4701820937132281260" name="parts" index="1y0Vin" />
       </concept>
       <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
         <child id="7389400916848037006" name="children" index="39821P" />
@@ -15254,6 +15268,41 @@
     <property role="turDy" value="mpsDistribution.xml" />
     <property role="3GE5qa" value="ide" />
     <property role="2DA0ip" value="../../../../" />
+    <node concept="1y0Vig" id="51Om8uYHgQW" role="1hWBAP">
+      <node concept="2VaFvF" id="51Om8uYHgQY" role="1y0Vin">
+        <property role="TrG5h" value="publishTCArtifacts" />
+        <node concept="2VaFvH" id="51Om8uYHUaq" role="2VaFvJ">
+          <property role="TrG5h" value="linuxDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYHUas" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYHUaw" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5k" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5m" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}-linux.tar.gz']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2VaFvH" id="51Om8uYIzui" role="2VaFvJ">
+          <property role="TrG5h" value="zipDistr" />
+          <node concept="2Vbh7Z" id="51Om8uYIzuo" role="2VaTZU">
+            <node concept="2pNNFK" id="51Om8uYIzup" role="2Vbh7K">
+              <property role="2pNNFO" value="echo" />
+              <property role="qg3DV" value="true" />
+              <node concept="2pNUuL" id="51Om8uYJQ5r" role="2pNNFR">
+                <property role="2pNUuO" value="message" />
+                <node concept="2pMdtt" id="51Om8uYJQ5t" role="2pMdts">
+                  <property role="2pMdty" value="##teamcity[publishArtifacts '${build.layout}/${build.number}.zip']" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="55IIr" id="3IKDaVZnIjY" role="auvoZ">
       <node concept="2Ry0Ak" id="3IKDaVZnXlj" role="iGT6I">
         <property role="2Ry0Am" value="build" />

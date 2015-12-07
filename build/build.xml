@@ -13,6 +13,7 @@
   <target name="base" depends="platform">
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="buildDependents"/>
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="assemble"/>
+    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="publishTCArtifacts"/>
   </target>
 
   <target name="signed" depends="base">
