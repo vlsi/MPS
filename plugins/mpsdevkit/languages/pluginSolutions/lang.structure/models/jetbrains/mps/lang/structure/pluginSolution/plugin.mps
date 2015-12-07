@@ -1423,10 +1423,10 @@
               </node>
             </node>
             <node concept="3clFbF" id="4KDfkUwM9ib" role="3cqZAp">
-              <node concept="2YIFZM" id="4KDfkUwM9ic" role="3clFbG">
+              <node concept="2YIFZM" id="3qqTSRHLtir" role="3clFbG">
+                <ref role="37wK5l" to="ddhc:~BrowserUtil.browse(java.lang.String):void" resolve="browse" />
                 <ref role="1Pybhc" to="ddhc:~BrowserUtil" resolve="BrowserUtil" />
-                <ref role="37wK5l" to="ddhc:~BrowserUtil.launchBrowser(java.lang.String):void" resolve="launchBrowser" />
-                <node concept="37vLTw" id="7IH442cTzh6" role="37wK5m">
+                <node concept="37vLTw" id="3qqTSRHLtis" role="37wK5m">
                   <ref role="3cqZAo" node="7IH442cTzh3" resolve="url" />
                 </node>
               </node>
@@ -1435,15 +1435,15 @@
           <node concept="9aQIb" id="4KDfkUwM9ij" role="9aQIa">
             <node concept="3clFbS" id="4KDfkUwM9ik" role="9aQI4">
               <node concept="3clFbF" id="4KDfkUwM9il" role="3cqZAp">
-                <node concept="2YIFZM" id="4KDfkUwM9im" role="3clFbG">
+                <node concept="2YIFZM" id="3qqTSRHLtex" role="3clFbG">
+                  <ref role="37wK5l" to="ddhc:~BrowserUtil.browse(java.lang.String):void" resolve="browse" />
                   <ref role="1Pybhc" to="ddhc:~BrowserUtil" resolve="BrowserUtil" />
-                  <ref role="37wK5l" to="ddhc:~BrowserUtil.launchBrowser(java.lang.String):void" resolve="launchBrowser" />
-                  <node concept="3cpWs3" id="1O7ez6GlMC_" role="37wK5m">
-                    <node concept="10M0yZ" id="1O7ez6GlMDF" role="3uHU7B">
+                  <node concept="3cpWs3" id="3qqTSRHLtey" role="37wK5m">
+                    <node concept="10M0yZ" id="3qqTSRHLtez" role="3uHU7B">
                       <ref role="1PxDUh" to="w1kc:~LanguageAspect" resolve="LanguageAspect" />
                       <ref role="3cqZAo" to="w1kc:~LanguageAspect.CONFLUENCE_BASE" resolve="CONFLUENCE_BASE" />
                     </node>
-                    <node concept="Xl_RD" id="4KDfkUwM9in" role="3uHU7w">
+                    <node concept="Xl_RD" id="3qqTSRHLte$" role="3uHU7w">
                       <property role="Xl_RC" value="Generator#Generator-aboutgenerator" />
                     </node>
                   </node>
@@ -1480,18 +1480,18 @@
       <property role="TrG5h" value="showHelpForRoot" />
       <node concept="3clFbS" id="4KDfkUwM9it" role="3clF47">
         <node concept="3clFbF" id="4KDfkUwM9iu" role="3cqZAp">
-          <node concept="2YIFZM" id="4KDfkUwM9iv" role="3clFbG">
+          <node concept="2YIFZM" id="3qqTSRHLtnY" role="3clFbG">
+            <ref role="37wK5l" to="ddhc:~BrowserUtil.browse(java.lang.String):void" resolve="browse" />
             <ref role="1Pybhc" to="ddhc:~BrowserUtil" resolve="BrowserUtil" />
-            <ref role="37wK5l" to="ddhc:~BrowserUtil.launchBrowser(java.lang.String):void" resolve="launchBrowser" />
-            <node concept="2OqwBi" id="4KDfkUwM9iw" role="37wK5m">
-              <node concept="3TrcHB" id="4KDfkUwM9iA" role="2OqNvi">
+            <node concept="2OqwBi" id="3qqTSRHLtnZ" role="37wK5m">
+              <node concept="3TrcHB" id="3qqTSRHLto0" role="2OqNvi">
                 <ref role="3TsBF5" to="tpce:28RKVM5GRls" resolve="helpURL" />
               </node>
-              <node concept="2OqwBi" id="4KDfkUwM9ix" role="2Oq$k0">
-                <node concept="3NT_Vc" id="4KDfkUwM9i_" role="2OqNvi" />
-                <node concept="2OqwBi" id="4KDfkUwM9iy" role="2Oq$k0">
-                  <node concept="2Rxl7S" id="4KDfkUwM9i$" role="2OqNvi" />
-                  <node concept="37vLTw" id="2BHiRxgm9eZ" role="2Oq$k0">
+              <node concept="2OqwBi" id="3qqTSRHLto1" role="2Oq$k0">
+                <node concept="3NT_Vc" id="3qqTSRHLto2" role="2OqNvi" />
+                <node concept="2OqwBi" id="3qqTSRHLto3" role="2Oq$k0">
+                  <node concept="2Rxl7S" id="3qqTSRHLto4" role="2OqNvi" />
+                  <node concept="37vLTw" id="3qqTSRHLto5" role="2Oq$k0">
                     <ref role="3cqZAo" node="4KDfkUwM9ir" resolve="node" />
                   </node>
                 </node>
@@ -1511,17 +1511,17 @@
       <property role="TrG5h" value="showHelpForNode" />
       <node concept="3clFbS" id="4KDfkUwM9iG" role="3clF47">
         <node concept="3clFbF" id="4KDfkUwM9iH" role="3cqZAp">
-          <node concept="2YIFZM" id="4KDfkUwM9iI" role="3clFbG">
-            <ref role="37wK5l" to="ddhc:~BrowserUtil.launchBrowser(java.lang.String):void" resolve="launchBrowser" />
+          <node concept="2YIFZM" id="3qqTSRHLtqt" role="3clFbG">
+            <ref role="37wK5l" to="ddhc:~BrowserUtil.browse(java.lang.String):void" resolve="browse" />
             <ref role="1Pybhc" to="ddhc:~BrowserUtil" resolve="BrowserUtil" />
-            <node concept="2OqwBi" id="4KDfkUwM9iJ" role="37wK5m">
-              <node concept="2OqwBi" id="4KDfkUwM9iK" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxgl1zD" role="2Oq$k0">
+            <node concept="2OqwBi" id="3qqTSRHLtqu" role="37wK5m">
+              <node concept="2OqwBi" id="3qqTSRHLtqv" role="2Oq$k0">
+                <node concept="37vLTw" id="3qqTSRHLtqw" role="2Oq$k0">
                   <ref role="3cqZAo" node="4KDfkUwM9iE" resolve="node" />
                 </node>
-                <node concept="3NT_Vc" id="4KDfkUwM9iM" role="2OqNvi" />
+                <node concept="3NT_Vc" id="3qqTSRHLtqx" role="2OqNvi" />
               </node>
-              <node concept="3TrcHB" id="4KDfkUwM9iN" role="2OqNvi">
+              <node concept="3TrcHB" id="3qqTSRHLtqy" role="2OqNvi">
                 <ref role="3TsBF5" to="tpce:28RKVM5GRls" resolve="helpURL" />
               </node>
             </node>
@@ -1789,12 +1789,6 @@
   <node concept="Zd50a" id="4KDfkUwM9jZ">
     <property role="Zd52Q" value="$default" />
     <property role="TrG5h" value="Default" />
-    <node concept="Zd509" id="4KDfkUwM9k0" role="Zd508">
-      <ref role="1bYAoF" node="4KDfkUwM9dg" resolve="ShowDefaultHelp" />
-      <node concept="pLAjd" id="4KDfkUwM9k1" role="Zd501">
-        <property role="pLAjf" value="VK_F1" />
-      </node>
-    </node>
     <node concept="Zd509" id="4KDfkUwM9k2" role="Zd508">
       <ref role="1bYAoF" node="4KDfkUwM9v_" resolve="RenameConcept" />
       <node concept="pLAjd" id="4KDfkUwM9k3" role="Zd501">
