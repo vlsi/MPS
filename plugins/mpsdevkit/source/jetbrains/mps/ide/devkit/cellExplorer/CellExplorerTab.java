@@ -20,6 +20,7 @@ import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.actions.CloseTabToolbarAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.DumbAware;
@@ -92,7 +93,7 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
     splitter.setSecondComponent(ScrollPaneFactory.createScrollPane(myCellDetailTree, true));
 
     myComponent = new SimpleToolWindowPanel(false, true);
-    myComponent.setToolbar(createToolbar());
+    myComponent.setToolbar(createToolbar(myCellsTree));
     myComponent.setContent(splitter);
   }
 
@@ -140,19 +141,14 @@ public class CellExplorerTab implements IComponentDisposer<JComponent> {
     return myEditorComponent == null;
   }
 
-  private JComponent createToolbar() {
+  private JComponent createToolbar(JComponent targetComponent) {
     DefaultActionGroup group = ActionUtils.groupFromActions(
         new CloseAction(),
-        new PinToolwindowTabAction() {
-          @Override
-          public void update(AnActionEvent event) {
-            super.update(event);
-            event.getPresentation().setIcon(AllIcons.General.Pin_tab);
-            event.getPresentation().setEnabledAndVisible(true);
-          }
-        },
+        PinToolwindowTabAction.getPinAction(),
         new SelectInEditorAction());
-    return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    actionToolbar.setTargetComponent(targetComponent);
+    return actionToolbar.getComponent();
   }
 
   private class CloseAction extends CloseTabToolbarAction {

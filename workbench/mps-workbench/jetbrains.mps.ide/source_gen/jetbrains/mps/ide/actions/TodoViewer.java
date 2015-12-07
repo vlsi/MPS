@@ -80,7 +80,7 @@ public class TodoViewer extends JPanel {
       public void actionPerformed(@NotNull AnActionEvent p0) {
         getTool().makeUnavailableLater();
       }
-    }, new PinToolwindowTabAction());
+    }, PinToolwindowTabAction.getPinAction());
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
     searchTodoAction.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(new ProjectScope(myProject)));
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
