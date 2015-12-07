@@ -388,10 +388,10 @@ public class QueriesGenerated {
       }
     });
   }
-  public static Iterable<SNode> sourceNodesQuery_1820665478710840047(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3342058859868692955(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845957030bL, 0x25c3f2845957030cL, "refs"));
   }
-  public static Iterable<SNode> sourceNodesQuery_1820665478710839750(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_3342058859868612555(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x19bfb4173fb5210bL, "priorityRules"));
   }
   public static Iterable<SNode> sourceNodesQuery_1250389701475344450(final SourceSubstituteMacroNodesContext _context) {

@@ -25,8 +25,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.template.MapRootRuleContext;
@@ -338,22 +336,11 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
         tnode1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), tnode1, PersistenceFacade.getInstance().createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.runtime(MPS.Core/)"), PersistenceFacade.getInstance().createNodeId("~TemplateUtil")));
         TemplateContext context1 = context.subContext();
         {
-          final List<SNode> tlist2 = new ArrayList<SNode>();
-          final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1820665478710840047(new SourceSubstituteMacroNodesContext(context1, loopMacroRef_417xrn_b0a0a1a4a2a1m));
-          for (SNode itnode2 : loopList2) {
-            if (itnode2 == null) {
-              continue;
-            }
-            TemplateContext context2 = context1.subContext(itnode2);
-            Collection<SNode> tlist3 = null;
-            final SNode copySrcInput3 = context2.getInput();
-            tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_417xrn_b0a0e0c0e0c0b21, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840044", context2);
-            if (tlist3 != null) {
-              tlist2.addAll(tlist3);
-            }
-          }
-          for (SNode child4 : TemplateUtil.asNotNull(tlist2)) {
-            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child4);
+          Collection<SNode> tlist2 = null;
+          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3342058859868692955(new SourceSubstituteMacroNodesContext(context1, copySrcListMacro_417xrn_b0a0a1a4a2a1m));
+          tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_417xrn_b0a0a1a4a2a1m, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840044", context1);
+          for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
+            tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child3);
           }
           // TODO validate child 
         }
@@ -417,6 +404,5 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
   private static SNodePointer copySrcMacro_417xrn_b0a0c0f0c0b8 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840111");
   private static SNodePointer propertyMacro_417xrn_c0a0c0b0b0e0c0b9 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840069");
   private static SNodePointer propertyMacro_417xrn_c0a0c0b0b0f0c0b9 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840072");
-  private static SNodePointer loopMacroRef_417xrn_b0a0a1a4a2a1m = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840046");
-  private static SNodePointer copySrcMacro_417xrn_b0a0e0c0e0c0b21 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840050");
+  private static SNodePointer copySrcListMacro_417xrn_b0a0a1a4a2a1m = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "3342058859868692953");
 }

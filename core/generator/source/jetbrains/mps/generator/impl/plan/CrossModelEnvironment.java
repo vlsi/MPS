@@ -18,6 +18,8 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +30,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -42,6 +45,7 @@ import java.util.List;
  * @since 3.3
  */
 public class CrossModelEnvironment {
+  // FIXME instead of HashMap, shall keep ModelCheckpoints here.
   private final HashMap<SModelReference, List<CheckpointState>> myCheckpoints = new HashMap<SModelReference, List<CheckpointState>>();
   private final TransientModelsModule myModule;
 
@@ -123,12 +127,13 @@ public class CrossModelEnvironment {
     if (checkpoints == null) {
       myCheckpoints.put(originalModel, checkpoints = new ArrayList<CheckpointState>(3));
     } else {
+      HashSet<SModelReference> forgottenCheckpoints = new HashSet<SModelReference>();
       for (Iterator<CheckpointState> it = checkpoints.iterator(); it.hasNext(); ) {
         CheckpointState next = it.next();
         if (next.getCheckpoint().equals(cpState.getCheckpoint())) {
           // XXX once checkpoint model is removed, any other checkpoint model referencing it is broken, i.e.
           // m1@cp1 and m2@cp1, latter referencing the former, and we rebuild m1. Once we get here, we'd schedule m1@cp1 for removal
-          // and at the end of the day we've got m1'@sp1 and m2@cp1 with references pointing to no-longer-existing m1@cp1.
+          // and at the end of the day we've got m1'@cp1 and m2@cp1 with references pointing to no-longer-existing m1@cp1.
           // Then, if there'd m3 to generate with the same plan, which references both m1 and m2, it's not clear how to match the two.
           // The question is, do we need to update references in other @cp1 models, shall we keep all models to preserve any other
           // checkpoint models (i.e. no forgetModel), or perhaps a dedicated SModelReference that resolves to whatever checkpoint is there.
@@ -136,9 +141,28 @@ public class CrossModelEnvironment {
           // Present approach is to drop any model that depends on the one re-generated (resolve to latest CP model might still leave
           // broken references if m1 is changed, and it's not easy to match nodes of old m1@cp1 versus new m1@cp1, model reference won't suffice
           // as node id might be different, and we got no control over nodes as they are outcome of black-box ReferenceResolver code.
-          myModule.forgetModel(next.getCheckpointModel().getReference(), true);
+          SModelReference cpReference = next.getCheckpointModel().getReference();
+          forgottenCheckpoints.add(cpReference);
+          myModule.forgetModel(cpReference, true);
           it.remove();
           break;
+        }
+      }
+      // drop any other checkpoints that may reference the one removed. We've scheduled for removal their respective
+      // transient models already (above with forgetModel(..., true)), now it's time to forget CheckpointState.
+      // Perhaps, shall forget models here explicitly, rather than do the same in TransientModelsModule.forgetModel(..., true)
+      for (List<CheckpointState> cpStates : myCheckpoints.values()) {
+        // intentionally  don't skip cpStates == checkpoints - we need to drop any further checkpoint models not only for
+        // external dependencies, but for subsequent cp models of the same original one, provided they reference the one we've dropped.
+        // Note that the cycle above drops only relevant cp model (compares checkpoint name).
+        for (Iterator<CheckpointState> it = cpStates.iterator(); it.hasNext(); ) {
+          CheckpointState next = it.next();
+          for (ImportElement importElement : ((SModelInternal) next.getCheckpointModel()).importedModels()) {
+            if (forgottenCheckpoints.contains(importElement.getModelReference())) {
+              it.remove();
+              break; // skip other imports, check another state
+            }
+          }
         }
       }
     }
