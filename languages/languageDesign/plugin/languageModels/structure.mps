@@ -1976,6 +1976,10 @@
     <property role="34LRSv" value="IdeaComponents.xml" />
     <property role="1pbfSe" value="985153541" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="RJsmGEmaP_" role="1TKVEl">
+      <property role="TrG5h" value="outputPath" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="PrWs8" id="2LXdEGeeK_r" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>

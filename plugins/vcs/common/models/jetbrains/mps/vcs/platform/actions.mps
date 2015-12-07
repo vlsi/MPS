@@ -9,9 +9,8 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
   </languages>
   <imports>
     <import index="lsse" ref="r:06e50ed3-c893-4772-ba4a-878fc9de01d0(jetbrains.mps.vcs.changesmanager.editor)" />
@@ -108,6 +107,7 @@
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
       <concept id="3205778618063718746" name="jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml" flags="ng" index="yhzZL">
+        <property id="1004145947012803941" name="outputPath" index="BHXKe" />
         <child id="3205778618063718748" name="actions" index="yhzZR" />
       </concept>
       <concept id="331224023792854814" name="jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor" flags="lg" index="2zDL_w">
@@ -1526,6 +1526,7 @@
   </node>
   <node concept="yhzZL" id="78RbNhWi9Rj">
     <property role="TrG5h" value="MPSVcs" />
+    <property role="BHXKe" value="../META-INF/" />
     <node concept="2zDL_w" id="78RbNhWi9Rk" role="yhzZR">
       <node concept="2zDL_x" id="78RbNhWi9Rl" role="2zDL_s">
         <ref role="2zDL_u" node="78RbNhWi9LZ" resolve="ChangesStrip" />
