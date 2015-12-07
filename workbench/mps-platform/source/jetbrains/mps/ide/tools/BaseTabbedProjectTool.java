@@ -51,7 +51,9 @@ public abstract class BaseTabbedProjectTool extends BaseProjectTool {
   public void closeTab(JComponent component) {
     ContentManager contentManager = getContentManager();
     Content content = contentManager.getContent(component);
-    contentManager.removeContent(content, true);
+    if (content != null) {
+      contentManager.removeContent(content, true);
+    }
   }
 
   public <T extends JComponent> void addTab(final T tabComponent, @NotNull String title, Icon icon,
