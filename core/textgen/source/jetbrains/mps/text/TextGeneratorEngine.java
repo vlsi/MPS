@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.text.impl.ModelOutline;
 import jetbrains.mps.text.rt.TextGenAspectBase;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
-import jetbrains.mps.textGen.TextGenRegistry;
+import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.util.NamedThreadFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;

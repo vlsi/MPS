@@ -19,7 +19,6 @@ import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
-import jetbrains.mps.textGen.TextGenRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;

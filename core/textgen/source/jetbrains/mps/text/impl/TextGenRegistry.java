@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.textGen;
+package jetbrains.mps.text.impl;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.Language;
@@ -30,6 +30,7 @@ import jetbrains.mps.text.LegacyTextGenAdapter;
 import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenDescriptor;
+import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -51,6 +52,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * FIXME For the time being, it's initialized together with ConceptRegistry from MPSCore, though shall be separate ComponentPlugin,
  * like MPSGenerator, and initialized from MPSCoreComponents and alike.
  * @author Artem Tikhomirov
+ * @since 3.3
  */
 public class TextGenRegistry implements CoreComponent, LanguageRegistryListener {
   private static TextGenRegistry INSTANCE;
