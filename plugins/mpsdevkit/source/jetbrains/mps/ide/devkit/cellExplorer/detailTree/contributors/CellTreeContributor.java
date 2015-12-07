@@ -13,19 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui.tree;
+package jetbrains.mps.ide.devkit.cellExplorer.detailTree.contributors;
 
-import javax.swing.Icon;
+import jetbrains.mps.ide.devkit.cellExplorer.detailTree.TreeBuilder;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
-public class TextTreeNode extends MPSTreeNode {
-  public TextTreeNode(String text) {
-    super(text);
-    setText(text);
-    setNodeIdentifier(text.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " "));
-  }
-
-  public TextTreeNode(Icon icon, String text) {
-    this(text);
-    setIcon(icon);
-  }
+public interface CellTreeContributor {
+  /**
+   * Uses {@code builder} to create nodes describing {@code cell}.
+   */
+  void contribute(EditorCell cell, TreeBuilder builder);
 }
