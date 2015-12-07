@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 
 /**
@@ -24,6 +25,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class BrokenCacheException extends GenerationFailureException {
 
   public BrokenCacheException(SModel model) {
-    super("cache is broken for " + jetbrains.mps.util.SNodeOperations.getModelLongName(model) + ": try to regenerate");
+    super("cache is broken for " + NameUtil.getModelLongName(model) + ": try to regenerate");
   }
 }

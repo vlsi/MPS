@@ -24,7 +24,6 @@ import org.jetbrains.annotations.Nullable;
  */
 public class DismissTopMappingRuleException extends GenerationException {
   private final MessageType myMessageType;
-  private TemplateContext myContext;
 
   public DismissTopMappingRuleException(MessageType messageType) {
     this(messageType, null);
@@ -33,21 +32,6 @@ public class DismissTopMappingRuleException extends GenerationException {
   public DismissTopMappingRuleException(MessageType messageType, String message) {
     super(message);
     myMessageType = messageType;
-  }
-
-  /**
-   * Record context of template evaluation at the time exception is thrown.
-   * It's an optional information to help better locate origin of an issue.
-   */
-  public void setTemplateContext(@Nullable TemplateContext context) {
-    myContext = context;
-  }
-
-  /**
-   * @return template context at the time exception was thrown, if any
-   */
-  public TemplateContext getTemplateContext() {
-    return myContext;
   }
 
   public boolean isLoggingNeeded() {
