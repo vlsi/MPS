@@ -241,6 +241,15 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     });
   }
 
+  @Nullable
+  private MPSTreeNode getNodeFromPath(@Nullable TreePath path) {
+    if (path == null) return null;
+    Object lastPathComponent = path.getLastPathComponent();
+
+    if (!(lastPathComponent instanceof MPSTreeNode)) return null;
+    return (MPSTreeNode) lastPathComponent;
+  }
+
   /**
    * Gives owning tree a chance to process double-click event.
    * By default, delegates to {@link MPSTreeNode#doubleClick()}
@@ -281,8 +290,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   @Override
   public String getToolTipText(MouseEvent event) {
     TreePath path = getPathForLocation(event.getX(), event.getY());
-    if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
-      final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+    MPSTreeNode node = getNodeFromPath(path);
+    if (node != null) {
       return node.getTooltipText();
     }
     return null;
@@ -308,8 +317,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private void showPopup(int x, int y) {
     TreePath path = getPathForLocation(x, y);
-    if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
-      final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+    final MPSTreeNode node = getNodeFromPath(path);
+    if (node != null) {
       JPopupMenu menu = createPopupMenu(node);
       if (menu != null) {
         if (!getSelectedPaths().contains(pathToString(path))) {
@@ -511,15 +520,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public MPSTreeNode getCurrentNode() {
-    javax.swing.tree.TreePath path = getLeadSelectionPath();
-    if (path == null) {
-      return null;
-    }
-    Object obj = path.getLastPathComponent();
-    if (!(obj instanceof TreeNode)) {
-      return null;
-    }
-    return (MPSTreeNode) obj;
+    return getNodeFromPath(getLeadSelectionPath());
   }
 
   public void setCurrentNode(MPSTreeNode node) {
@@ -708,13 +709,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   @Override
   public int getToggleClickCount() {
-    TreePath selection = getSelectionPath();
-    if (selection == null) return -1;
-    if (selection.getLastPathComponent() instanceof MPSTreeNode) {
-      MPSTreeNode node = (MPSTreeNode) selection.getLastPathComponent();
-      return node.getToggleClickCount();
-    }
-    return -1;
+    MPSTreeNode node = getNodeFromPath(getSelectionPath());
+    if (node == null) return -1;
+    return node.getToggleClickCount();
   }
 
   public boolean isDisposed() {
@@ -755,10 +752,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private class MyTreeWillExpandListener implements TreeWillExpandListener {
     @Override
     public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
-      TreePath path = event.getPath();
-      Object node = path.getLastPathComponent();
-      MPSTreeNode treeNode = (MPSTreeNode) node;
-      treeNode.init();
+      MPSTreeNode treeNode = getNodeFromPath(event.getPath());
+      if (treeNode != null) treeNode.init();
     }
 
     @Override
@@ -772,9 +767,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       if (!myAutoExpandEnabled) return;
 
       TreePath eventPath = event.getPath();
-      MPSTreeNode node = (MPSTreeNode) eventPath.getLastPathComponent();
+      MPSTreeNode node = getNodeFromPath(eventPath);
 
-      if (node.getChildCount() == 1) {
+      if (node != null && node.getChildCount() == 1) {
         List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
         for (Object item : eventPath.getPath()) {
           path.add((MPSTreeNode) item);
@@ -829,9 +824,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private class MyOpenNodeAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
-      TreePath selPath = getSelectionPath();
-      if (selPath == null) return;
-      MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+      MPSTreeNode selNode = getNodeFromPath(getSelectionPath());
+      if (selNode == null) return;
+
       doubleClick(selNode);
     }
   }
