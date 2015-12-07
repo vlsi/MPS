@@ -55,6 +55,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -364,7 +365,15 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   /* package */
 
   MPSPsiNode reload(SNodeId sNodeId) {
-    ModelAccess.assertLegalWrite();
+    SRepository repository = getProjectRepository();
+    repository.getModelAccess().checkWriteAccess();
+    SModel sModel = myModelReference.resolve(repository);
+    // make sure the model files are up-to-date
+    // below we rely on VirtualFiles, if root has been renamed then the new VirtualFile will not be found
+    // if we don't save the model
+    if (sModel instanceof EditableSModel) {
+      ((EditableSModel) sModel).save();
+    }
     MPSPsiNode mpsPsiNode = lookupNode(sNodeId);
     if (mpsPsiNode == null) return null;
 

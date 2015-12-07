@@ -32,7 +32,7 @@ public class DefaultRenameContributor implements RenameRefactoringContributor {
     final String newName = RenameDialog.getNewName(project, oldName, "node");
     if (newName == null) return;
 
-    if (node.getModel() == null || SNodeUtil.isAccessible(node, mpsProject.getRepository())) {
+    if (!SNodeUtil.isAccessible(node, mpsProject.getRepository())) {
       return;
     }
 

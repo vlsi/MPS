@@ -252,7 +252,9 @@
               class="jetbrains.mps.idea.core.actions.NewModelAction"/>
       <action id="jetbrains.mps.idea.core.actions.MakeDirAModel"
               class="jetbrains.mps.idea.core.actions.MakeDirAModel"/>
-      <separator/>
+      <action id="jetbrains.mps.idea.core.actions.AddFirstLanguageImport"
+              class="jetbrains.mps.idea.core.actions.AddFirstLanguageImport">
+      </action>
     </group>
   </actions>
 </idea-plugin>
