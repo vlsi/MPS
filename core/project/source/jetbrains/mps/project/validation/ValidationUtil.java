@@ -30,6 +30,8 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.FastNodeFinder;
@@ -408,6 +410,10 @@ public class ValidationUtil {
       }
     }
 
+    if (!checkPriorityRules(generator, processor)) {
+      return;
+    }
+
     Set<SLanguage> usedLanguages = new HashSet<SLanguage>();
     ModelDependencyScanner depScan = new ModelDependencyScanner();
     depScan.crossModelReferences(true).usedLanguages(false);
@@ -441,6 +447,28 @@ public class ValidationUtil {
         processor.process(new ValidationProblem(Severity.WARNING, "No template models in the generator, generator is no-op"));
       }
     }
+  }
+
+  private static boolean checkPriorityRules(Generator generator, Processor<ValidationProblem> processor) {
+    boolean goOn = true;
+    for (MappingPriorityRule mpr : generator.getModuleDescriptor().getPriorityRules()) {
+      if (!goOn) {
+        return false;
+      }
+      MappingConfig_AbstractRef left = mpr.getLeft();
+      MappingConfig_AbstractRef right = mpr.getRight();
+      if (left == null || right == null) {
+        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Broken priority rule: %s", mpr.toString())));
+        continue;
+      }
+      if (left.isIncomplete()) {
+        goOn = processor.process(new ValidationProblem(Severity.ERROR, String.format("Left-hand side of rule %s is incomplete", mpr.toString())));
+      }
+      if (right.isIncomplete()) {
+        goOn &= processor.process(new ValidationProblem(Severity.ERROR, String.format("Right-hand side of rule %s is incomplete", mpr.toString())));
+      }
+    }
+    return true;
   }
 
   //returns true to continue analysing, false to stop
