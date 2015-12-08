@@ -209,7 +209,6 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
-      <plugin path="${artifacts.mpsMakePlugin}/mps-make" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -284,7 +283,6 @@
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
-      <library file="${artifacts.mpsMakePlugin}/mps-make/solutions/jetbrains.mps.ide.make.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
