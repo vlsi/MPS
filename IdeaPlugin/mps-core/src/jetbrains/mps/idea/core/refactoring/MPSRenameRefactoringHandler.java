@@ -8,18 +8,12 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.refactoring.rename.RenameHandler;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
-
-import java.util.Arrays;
 
 /**
  * danilla 5/29/13
@@ -30,7 +24,7 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
 
   @Override
   public boolean isAvailableOnDataContext(DataContext dataContext) {
-    SNode currentNode = (SNode) dataContext.getData(MPSCommonDataKeys.NODE.getName());
+    SNode currentNode = MPSCommonDataKeys.NODE.getData(dataContext);
     return currentNode != null;
   }
 
@@ -46,7 +40,6 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
 
   @Override
   public void invoke(@NotNull final Project project, @NotNull PsiElement[] elements, final DataContext dataContext) {
-
     // we ignore 'elements' and take current node from dataContext
     // because Idea takes the root node as the element for our editor
 
@@ -54,16 +47,18 @@ public class MPSRenameRefactoringHandler implements RenameHandler {
     final SRepository repository = mpsProject.getRepository();
     ModelAccess modelAccess = repository.getModelAccess();
 
-    final SNode node = (SNode) dataContext.getData(MPSCommonDataKeys.NODE.getName());
+    // taking NODE from dataContext outside of readInEDT because we can't take anything
+    // from dataContext after we've invoked something in EDT;
+    // see DataManagerImpl.getData() LOG.error() cannot share data context ...
+    // also see IdeKeyEventDispatcher.processAction() for place where initial event count is set
+    final SNode node = MPSCommonDataKeys.NODE.getData(dataContext);
 
     modelAccess.runReadInEDT(new Runnable() {
       @Override
       public void run() {
-
-        if (node.getModel() == null) {
+        if (!SNodeUtil.isAccessible(node, repository)) {
           return;
         }
-
         // trying to apply sequentially, the first one wins and we go no further
         for (RenameRefactoringContributorEP ep : RenameRefactoringContributorEP.EP_NAME.getExtensions()) {
           RenameRefactoringContributor contributor = ep.getContribitor();
