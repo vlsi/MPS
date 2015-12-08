@@ -1,26 +1,18 @@
 package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Ref;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiReference;
 import com.intellij.refactoring.move.MoveCallback;
 import com.intellij.refactoring.move.MoveHandlerDelegate;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * danilla 6/13/13
