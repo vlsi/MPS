@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class GenerationUtil {
-  public static String SCRIPTS_TARGET_PROPERTY = GenerationUtil.class.getPackage().getName() + ".scripts.dir";
   public GenerationUtil() {
   }
   public static <K, V> ConcurrentMap<K, V> getSessionMap(SNode project, TemplateQueryContext genContext, String prefix) {

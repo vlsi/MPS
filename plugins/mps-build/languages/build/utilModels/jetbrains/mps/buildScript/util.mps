@@ -3411,29 +3411,6 @@
   </node>
   <node concept="312cEu" id="GW8_CbbIo_">
     <property role="TrG5h" value="GenerationUtil" />
-    <node concept="Wx3nA" id="GW8_CbbIoF" role="jymVt">
-      <property role="TrG5h" value="SCRIPTS_TARGET_PROPERTY" />
-      <node concept="3Tm1VV" id="GW8_CbbT7h" role="1B3o_S" />
-      <node concept="3cpWs3" id="GW8_CbbLDd" role="33vP2m">
-        <node concept="Xl_RD" id="GW8_CbbLDg" role="3uHU7w">
-          <property role="Xl_RC" value=".scripts.dir" />
-        </node>
-        <node concept="2OqwBi" id="GW8_CbbLD4" role="3uHU7B">
-          <node concept="liA8E" id="GW8_CbbLDa" role="2OqNvi">
-            <ref role="37wK5l" to="wyt6:~Package.getName():java.lang.String" resolve="getName" />
-          </node>
-          <node concept="2OqwBi" id="GW8_CbbIP_" role="2Oq$k0">
-            <node concept="liA8E" id="GW8_CbbLD1" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Class.getPackage():java.lang.Package" resolve="getPackage" />
-            </node>
-            <node concept="3VsKOn" id="GW8_CbbIu6" role="2Oq$k0">
-              <ref role="3VsUkX" node="GW8_CbbIo_" resolve="GenerationUtil" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="17QB3L" id="GW8_CbbIu3" role="1tU5fm" />
-    </node>
     <node concept="3clFbW" id="GW8_CbbIoB" role="jymVt">
       <node concept="3clFbS" id="GW8_CbbIoE" role="3clF47" />
       <node concept="3Tm1VV" id="GW8_CbbIoD" role="1B3o_S" />

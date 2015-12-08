@@ -48,6 +48,7 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.CopyFacetUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -1406,8 +1407,7 @@ public class QueriesGenerated {
     if (!(relativePath.endsWith("/"))) {
       relativePath = relativePath + "/";
     }
-
-    _context.getOutputNode().putUserObject("jetbrains.mps.build.util.scripts.dir", basePath + relativePath + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
+    CopyFacetUtil.setTargetPath(_context.getOutputNode(), basePath + relativePath + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_5508914264443147579(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_BaseToolClass");

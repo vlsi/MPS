@@ -23,8 +23,8 @@
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
     <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -90,9 +90,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -14704,22 +14701,15 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="GW8_Cbc7y$" role="3cqZAp">
-              <node concept="2OqwBi" id="GW8_Cbc7yC" role="3clFbG">
-                <node concept="2JrnkZ" id="GW8_Cbc7yK" role="2Oq$k0">
-                  <node concept="2GrUjf" id="GW8_Cbc7y_" role="2JrQYb">
-                    <ref role="2Gs0qQ" node="GW8_Cbc7yk" resolve="buildProject" />
-                  </node>
+            <node concept="3clFbF" id="6pfW_ju5ZbF" role="3cqZAp">
+              <node concept="2YIFZM" id="6pfW_ju5ZjE" role="3clFbG">
+                <ref role="37wK5l" to="18ew:~CopyFacetUtil.setTargetPath(org.jetbrains.mps.openapi.model.SNode,java.lang.String):void" resolve="setTargetPath" />
+                <ref role="1Pybhc" to="18ew:~CopyFacetUtil" resolve="CopyFacetUtil" />
+                <node concept="2GrUjf" id="6pfW_ju5ZjO" role="37wK5m">
+                  <ref role="2Gs0qQ" node="GW8_Cbc7yk" resolve="buildProject" />
                 </node>
-                <node concept="liA8E" id="GW8_Cbc7yO" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SNode.putUserObject(java.lang.Object,java.lang.Object):void" resolve="putUserObject" />
-                  <node concept="10M0yZ" id="GW8_CbbT9d" role="37wK5m">
-                    <ref role="3cqZAo" to="o3n2:GW8_CbbIoF" resolve="SCRIPTS_TARGET_PROPERTY" />
-                    <ref role="1PxDUh" to="o3n2:GW8_CbbIo_" resolve="GenerationUtil" />
-                  </node>
-                  <node concept="37vLTw" id="3GM_nagTr3N" role="37wK5m">
-                    <ref role="3cqZAo" node="4gSHdTptyvQ" resolve="fileName" />
-                  </node>
+                <node concept="37vLTw" id="6pfW_ju5Zri" role="37wK5m">
+                  <ref role="3cqZAo" node="4gSHdTptyvQ" resolve="fileName" />
                 </node>
               </node>
             </node>

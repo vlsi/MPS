@@ -2676,70 +2676,69 @@
   </root>
   <root nodeRef="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)/809559803149870629">
     <file name="GenerationUtil.java">
-      <node id="809559803149870635" at="15,0,16,0" concept="15" trace="SCRIPTS_TARGET_PROPERTY" />
-      <node id="7128123785277832937" at="18,121,19,53" concept="11" />
-      <node id="7128123785277833012" at="19,53,20,85" concept="11" />
-      <node id="7128123785277833093" at="21,22,22,42" concept="5" />
-      <node id="7128123785277833129" at="22,42,23,44" concept="5" />
-      <node id="7128123785277833039" at="24,5,25,15" concept="12" />
-      <node id="1330375798091912570" at="27,123,28,53" concept="11" />
-      <node id="1330375798091912577" at="28,53,29,87" concept="11" />
-      <node id="1330375798091912592" at="30,22,31,42" concept="5" />
-      <node id="1330375798091912599" at="31,42,32,46" concept="5" />
-      <node id="1330375798091912609" at="33,5,34,15" concept="12" />
-      <node id="8332525718356577133" at="36,119,37,53" concept="11" />
-      <node id="8332525718356577141" at="37,53,38,87" concept="11" />
-      <node id="8332525718356577156" at="39,22,40,39" concept="5" />
-      <node id="8332525718356577161" at="40,39,41,44" concept="5" />
-      <node id="8332525718356577166" at="42,5,43,15" concept="12" />
-      <node id="8332525718356577179" at="45,95,46,256" concept="12" />
-      <node id="809559803149870631" at="16,0,18,0" concept="3" trace="GenerationUtil#()V" />
-      <node id="8332525718356577171" at="45,0,48,0" concept="16" trace="getKey#(Ljava/lang/String;Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="7128123785277833041" at="20,85,24,5" concept="9" />
-      <node id="1330375798091912590" at="29,87,33,5" concept="9" />
-      <node id="8332525718356577150" at="38,87,42,5" concept="9" />
-      <node id="7128123785277832920" at="18,0,27,0" concept="16" trace="getSessionMap#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/String;)Ljava/util/concurrent/ConcurrentMap;" />
-      <node id="1330375798091912568" at="27,0,36,0" concept="16" trace="getTransientMap#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/String;)Ljava/util/concurrent/ConcurrentMap;" />
-      <node id="8332525718356577123" at="36,0,45,0" concept="16" trace="getSessionSet#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/String;)Ljetbrains/mps/util/containers/ConcurrentHashSet;" />
-      <scope id="809559803149870634" at="16,27,16,27" />
-      <scope id="8332525718356577178" at="45,95,46,256" />
-      <scope id="809559803149870631" at="16,0,18,0" />
-      <scope id="7128123785277833042" at="21,22,23,44" />
-      <scope id="1330375798091912591" at="30,22,32,46" />
-      <scope id="8332525718356577155" at="39,22,41,44" />
-      <scope id="8332525718356577171" at="45,0,48,0">
+      <node id="7128123785277832937" at="17,121,18,53" concept="11" />
+      <node id="7128123785277833012" at="18,53,19,85" concept="11" />
+      <node id="7128123785277833093" at="20,22,21,42" concept="5" />
+      <node id="7128123785277833129" at="21,42,22,44" concept="5" />
+      <node id="7128123785277833039" at="23,5,24,15" concept="12" />
+      <node id="1330375798091912570" at="26,123,27,53" concept="11" />
+      <node id="1330375798091912577" at="27,53,28,87" concept="11" />
+      <node id="1330375798091912592" at="29,22,30,42" concept="5" />
+      <node id="1330375798091912599" at="30,42,31,46" concept="5" />
+      <node id="1330375798091912609" at="32,5,33,15" concept="12" />
+      <node id="8332525718356577133" at="35,119,36,53" concept="11" />
+      <node id="8332525718356577141" at="36,53,37,87" concept="11" />
+      <node id="8332525718356577156" at="38,22,39,39" concept="5" />
+      <node id="8332525718356577161" at="39,39,40,44" concept="5" />
+      <node id="8332525718356577166" at="41,5,42,15" concept="12" />
+      <node id="8332525718356577179" at="44,95,45,256" concept="12" />
+      <node id="809559803149870631" at="15,0,17,0" concept="3" trace="GenerationUtil#()V" />
+      <node id="8332525718356577171" at="44,0,47,0" concept="16" trace="getKey#(Ljava/lang/String;Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="7128123785277833041" at="19,85,23,5" concept="9" />
+      <node id="1330375798091912590" at="28,87,32,5" concept="9" />
+      <node id="8332525718356577150" at="37,87,41,5" concept="9" />
+      <node id="7128123785277832920" at="17,0,26,0" concept="16" trace="getSessionMap#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/String;)Ljava/util/concurrent/ConcurrentMap;" />
+      <node id="1330375798091912568" at="26,0,35,0" concept="16" trace="getTransientMap#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/String;)Ljava/util/concurrent/ConcurrentMap;" />
+      <node id="8332525718356577123" at="35,0,44,0" concept="16" trace="getSessionSet#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;Ljava/lang/String;)Ljetbrains/mps/util/containers/ConcurrentHashSet;" />
+      <scope id="809559803149870634" at="15,27,15,27" />
+      <scope id="8332525718356577178" at="44,95,45,256" />
+      <scope id="809559803149870631" at="15,0,17,0" />
+      <scope id="7128123785277833042" at="20,22,22,44" />
+      <scope id="1330375798091912591" at="29,22,31,46" />
+      <scope id="8332525718356577155" at="38,22,40,44" />
+      <scope id="8332525718356577171" at="44,0,47,0">
         <var name="genContext" id="8332525718356577174" />
         <var name="prefix" id="8332525718356577172" />
         <var name="project" id="8332525718356577176" />
       </scope>
-      <scope id="7128123785277832923" at="18,121,25,15">
+      <scope id="7128123785277832923" at="17,121,24,15">
         <var name="key" id="7128123785277832938" />
         <var name="map" id="7128123785277833013" />
       </scope>
-      <scope id="1330375798091912569" at="27,123,34,15">
+      <scope id="1330375798091912569" at="26,123,33,15">
         <var name="key" id="1330375798091912571" />
         <var name="map" id="1330375798091912578" />
       </scope>
-      <scope id="8332525718356577131" at="36,119,43,15">
+      <scope id="8332525718356577131" at="35,119,42,15">
         <var name="key" id="8332525718356577132" />
         <var name="set" id="8332525718356577140" />
       </scope>
-      <scope id="7128123785277832920" at="18,0,27,0">
+      <scope id="7128123785277832920" at="17,0,26,0">
         <var name="genContext" id="7128123785277831018" />
         <var name="prefix" id="7128123785277831224" />
         <var name="project" id="7128123785277831029" />
       </scope>
-      <scope id="1330375798091912568" at="27,0,36,0">
+      <scope id="1330375798091912568" at="26,0,35,0">
         <var name="genContext" id="1330375798091912619" />
         <var name="prefix" id="1330375798091912621" />
         <var name="project" id="1330375798093532715" />
       </scope>
-      <scope id="8332525718356577123" at="36,0,45,0">
+      <scope id="8332525718356577123" at="35,0,44,0">
         <var name="genContext" id="8332525718356577127" />
         <var name="prefix" id="8332525718356577129" />
         <var name="project" id="8332525718356577125" />
       </scope>
-      <unit id="809559803149870629" at="14,0,49,0" name="jetbrains.mps.build.util.GenerationUtil" />
+      <unit id="809559803149870629" at="14,0,48,0" name="jetbrains.mps.build.util.GenerationUtil" />
     </file>
   </root>
   <root nodeRef="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)/927724900262328575">
