@@ -53,19 +53,17 @@ public class FilePerRootFormatUtil {
   private static final Logger LOG = LogManager.getLogger(FilePerRootFormatUtil.class);
 
   public static SModelHeader loadDescriptor(MultiStreamDataSource dataSource) throws ModelReadException {
-    final SModelHeader result = new SModelHeader();
     InputStream in = null;
     try {
       in = dataSource.openInputStream(FilePerRootDataSource.HEADER_FILE);
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
-      ModelPersistence.loadDescriptor(result, source);
+      return ModelPersistence.loadDescriptor(source);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read descriptor from " + dataSource.getLocation() + ": " + e.getMessage(), e);
     } finally {
       FileUtil.closeFileSafe(in);
     }
-    return result;
   }
 
   public static ModelLoadResult readModel(SModelHeader header, MultiStreamDataSource dataSource, ModelLoadingState targetState) throws ModelReadException {
@@ -79,12 +77,13 @@ public class FilePerRootFormatUtil {
     try {
       in = dataSource.openInputStream(FilePerRootDataSource.HEADER_FILE);
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-      ModelPersistence.parseAndHandleExceptions(source, headerHandler, ".model");
+      ModelPersistence.parseAndHandleExceptions(source, headerHandler);
       if (headerHandler.getResult().getContentKind() != ContentKind.MODEL_HEADER) {
         throw new ModelReadException("Couldn't read model: .model file is broken", null);
       }
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
+    } catch (Exception e) {
+      Throwable th = e.getCause() == null ? e : e.getCause();
+      throw new ModelReadException(String.format("Couldn't read .model file: %s", th.getMessage()), e, header);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -103,7 +102,7 @@ public class FilePerRootFormatUtil {
       try {
         in = dataSource.openInputStream(stream);
         InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-        ModelPersistence.parseAndHandleExceptions(source, rootHandler, stream);
+        ModelPersistence.parseAndHandleExceptions(source, rootHandler);
         if (rootHandler.getResult().getContentKind() != ContentKind.MODEL_ROOT) {
           throw new ModelReadException("Couldn't read model: " + stream + " root file is broken", null);
         }
@@ -115,7 +114,7 @@ public class FilePerRootFormatUtil {
         model.enterUpdateMode();
         for (SNode rootNode : model.getRootNodes()) {
           if (count != 0) {
-            throw new ModelReadException("Couldn't read model: " + stream + " root file is broken - contains more than one roots", null);
+            throw new ModelReadException(String.format("Couldn't read model from stream %s: root file is broken - contains more than one roots", stream), null);
           }
           count++;
           // detach it from its spurious model, which is just a container for this single root
@@ -124,8 +123,9 @@ public class FilePerRootFormatUtil {
           result.addRootNode(rootNode);
         }
         model.leaveUpdateMode();
-      } catch (IOException e) {
-        throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
+      } catch (Exception e) {
+        Throwable th = e.getCause() == null ? e : e.getCause();
+        throw new ModelReadException(String.format("Couldn't read model from stream %s: %s", stream, th.getMessage()), th, header);
       } finally {
         FileUtil.closeFileSafe(in);
       }

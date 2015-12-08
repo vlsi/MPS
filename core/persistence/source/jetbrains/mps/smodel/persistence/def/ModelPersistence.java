@@ -43,13 +43,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -115,40 +113,35 @@ public class ModelPersistence {
     return null;
   }
 
-  private static void loadDescriptor(SModelHeader result, StreamDataSource dataSource) throws ModelReadException {
+  @NotNull
+  public static SModelHeader loadDescriptor(InputSource source) throws ModelReadException {
+    try {
+      SModelHeader result = new SModelHeader();
+      parseAndHandleExceptions(source, new HeaderOnlyHandler(result));
+      return result;
+    } catch(Exception ex) {
+      Throwable th = ex.getCause() == null ? ex : ex.getCause();
+      throw new ModelReadException(String.format("Failed to read model header: %s", th.getMessage()), th);
+    }
+  }
+
+  @NotNull
+  public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
     InputStream in = null;
     try {
-      in = dataSource.openInputStream();
-      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
-
-      loadDescriptor(result, source);
-    } catch (IOException e) {
-      throw new ModelReadException("Couldn't read descriptor from " + dataSource.getLocation() + ": " + e.getMessage(), e);
+      in = source.openInputStream();
+      final SModelHeader result = new SModelHeader();
+      parseAndHandleExceptions(new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET)), new HeaderOnlyHandler(result));
+      return result;
+    } catch (Exception e) {
+      Throwable th = e.getCause() == null ? e : e.getCause();
+      throw new ModelReadException(String.format("Couldn't read descriptor from %s: %s", source.getLocation(), th.getMessage()), th);
     } finally {
       FileUtil.closeFileSafe(in);
     }
   }
 
-  @NotNull
-  public static SModelHeader loadDescriptor(InputSource source) throws IOException {
-    SModelHeader result = new SModelHeader();
-    loadDescriptor(result, source);
-    return result;
-  }
-
-  @NotNull
-  public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
-    final SModelHeader result = new SModelHeader();
-    loadDescriptor(result, source);
-    return result;
-  }
-
-  static void loadDescriptor(SModelHeader result, InputSource source) throws IOException {
-    parseAndHandleExceptions(source, new MyDescriptorHandler(result), "model descriptor");
-  }
-
-  private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws IOException,
-      ModelReadException {
+  private static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull InputSource source, ModelLoadingState state) throws ModelReadException {
     int ver = header.getPersistenceVersion();
     if (ver < 0) throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
 
@@ -163,11 +156,15 @@ public class ModelPersistence {
       String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
       throw new PersistenceVersionNotFoundException(String.format(m, header.getModelReference()));
     }
-
-    parseAndHandleExceptions(source, handler, "model");
-    // in case persistence version could change during IModelPersistence activities, might need to update header:
-    // header.setPersistenceVersion(mp.getVersion());
-    return handler.getResult();
+    try {
+      parseAndHandleExceptions(source, handler);
+      // in case persistence version could change during IModelPersistence activities, might need to update header:
+      // header.setPersistenceVersion(mp.getVersion());
+      return handler.getResult();
+    } catch (Exception ex) {
+      Throwable th = ex.getCause() == null ? ex : ex.getCause();
+      throw new ModelReadException(String.format("Failed to load model: %s", th.getMessage()), th, header);
+    }
   }
 
   @NotNull
@@ -188,7 +185,8 @@ public class ModelPersistence {
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) throws ModelReadException {
     try {
-      SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
+      SModelHeader header = new SModelHeader();
+      parseAndHandleExceptions(new InputSource(new StringReader(content)), new HeaderOnlyHandler(header));
       IModelPersistence mp = getPersistence(header.getPersistenceVersion());
 
       if (mp == null) return null;
@@ -196,10 +194,11 @@ public class ModelPersistence {
       XMLSAXHandler<List<LineContent>> handler = mp.getLineToContentMapReaderHandler();
       if (handler == null) return null;
 
-      parseAndHandleExceptions(new InputSource(new StringReader(content)), handler, "line to content map");
+      parseAndHandleExceptions(new InputSource(new StringReader(content)), handler);
       return handler.getResult();
-    } catch (IOException ex) {
-      throw new ModelReadException(ex.toString(), ex);
+    } catch (Exception ex) {
+      Throwable th = ex.getCause() == null ? ex : ex.getCause();
+      throw new ModelReadException(String.format("Failed to load line to content map: %s", th.getMessage()), th);
     }
   }
 
@@ -269,7 +268,7 @@ public class ModelPersistence {
     return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
   }
 
-  public static Map<String, String> calculateHashes(String content) throws IOException {
+  public static Map<String, String> calculateHashes(String content) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
     IModelPersistence mp = getPersistence(header.getPersistenceVersion());
     Map<String, String> result;
@@ -293,13 +292,9 @@ public class ModelPersistence {
 
   @NotNull
   public static DefaultSModel readModel(@NotNull final String content, boolean interfaceOnly) throws ModelReadException {
-    try {
-      SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
-      ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
-      return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
-    } catch (IOException ex) {
-      throw new ModelReadException(ex.toString(), ex);
-    }
+    SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
+    ModelLoadingState state = interfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED;
+    return (DefaultSModel) readModel(header, new InputSource(new StringReader(content)), state).getModel();
   }
 
   @NotNull
@@ -312,37 +307,46 @@ public class ModelPersistence {
     }));
   }
 
-  static void parseAndHandleExceptions(InputSource source, DefaultHandler handler, String what) throws IOException {
+  // propagates exceptions that had happened during read, except for special case when we deliberately stop parsing process
+  // wrap certain errors as exceptions to facilitate broken model instead of broken MPS
+  static void parseAndHandleExceptions(InputSource source, DefaultHandler handler) throws Exception {
     try {
       JDOMUtil.createSAXParser().parse(source, handler);
     } catch (BreakParseSAXException e) {
       /* used to break SAX parsing flow */
-    } catch (ParserConfigurationException e) {
-      LOG.error(e.toString(), e);
-      throw new IOException(String.format("Couldn't read %s: %s", what, e.getMessage()), e);
-    } catch (SAXException e) {
-      throw new IOException(String.format("Couldn't read %s: %s", what, e.getMessage()), e);
+    } catch (AssertionError er) {
+      // just in case something goes wrong deep inside our persistence implementation, let MPS go on with broken model
+      throw new Exception(er);
     }
   }
 
   public static void index(byte[] data, Callback newConsumer) throws IOException {
-    SModelHeader header = loadDescriptor(new InputSource(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET)));
-    IModelPersistence mp = getPersistence(header.getPersistenceVersion());
-    if (!(mp instanceof XMLPersistence)){
-      LOG.error("Can't index old persistence. Please update persistence of old models.\n" +
-          "Persistence version: " + header.getPersistenceVersion()+"\n"+
-          "Model: "+header.getModelReference().getModelName());
-      return;
-    }
+    try {
+      SModelHeader header = new SModelHeader();
+      InputSource source = new InputSource(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
+      parseAndHandleExceptions(source, new HeaderOnlyHandler(header));
+      IModelPersistence mp = getPersistence(header.getPersistenceVersion());
+      if (!(mp instanceof XMLPersistence)) {
+        LOG.error("Can't index old persistence. Please update persistence of old models.\n" +
+            "Persistence version: " + header.getPersistenceVersion() + "\n" +
+            "Model: " + header.getModelReference().getModelName());
+        return;
+      }
 
-    Indexer indexSupport = ((XMLPersistence) mp).getIndexSupport(newConsumer);
-    indexSupport.index(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
+      Indexer indexSupport = ((XMLPersistence) mp).getIndexSupport(newConsumer);
+      indexSupport.index(new InputStreamReader(new ByteArrayInputStream(data), FileUtil.DEFAULT_CHARSET));
+    } catch (IOException ex) {
+      throw ex;
+    } catch (Exception ex) {
+      Throwable th = ex.getCause() == null ? ex : ex.getCause();
+      throw new IOException(th);
+    }
   }
 
-  private static class MyDescriptorHandler extends DefaultHandler {
+  private static class HeaderOnlyHandler extends DefaultHandler {
     private final SModelHeader myResult;
 
-    public MyDescriptorHandler(SModelHeader result) {
+    public HeaderOnlyHandler(SModelHeader result) {
       myResult = result;
     }
 

@@ -145,8 +145,11 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
       in = ((MultiStreamDataSource) dataSource).openInputStream(FilePerRootDataSource.HEADER_FILE);
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
+      // FIXME replace with SingleStreamSource
       SModelHeader header = ModelPersistence.loadDescriptor(source);
       return header.getPersistenceVersion() < ModelPersistence.LAST_VERSION;
+    } catch (ModelReadException ex) {
+      throw new IOException(ex);
     } finally {
       FileUtil.closeFileSafe(in);
     }

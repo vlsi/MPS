@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
-import org.xml.sax.InputSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -165,16 +164,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
-
-    InputStream in = null;
     try {
-      in = ((StreamDataSource) dataSource).openInputStream();
-      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
-      SModelHeader header = ModelPersistence.loadDescriptor(source);
+      SModelHeader header = ModelPersistence.loadDescriptor((StreamDataSource) dataSource);
       return header.getPersistenceVersion() < ModelPersistence.LAST_VERSION;
-    } finally {
-      FileUtil.closeFileSafe(in);
+    } catch (ModelReadException ex) {
+      throw new IOException(ex);
     }
   }
 
@@ -248,7 +243,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   public static Map<String, String> getDigestMap(Reader input) {
     try {
       return ModelPersistence.calculateHashes(FileUtil.read(input));
-    } catch (IOException e) {
+    } catch (ModelReadException e) {
       return null;
     }
   }
