@@ -1526,7 +1526,7 @@
   </node>
   <node concept="yhzZL" id="78RbNhWi9Rj">
     <property role="TrG5h" value="MPSVcs" />
-    <property role="BHXKe" value="../META-INF/" />
+    <property role="BHXKe" value="${module}/../META-INF/" />
     <node concept="2zDL_w" id="78RbNhWi9Rk" role="yhzZR">
       <node concept="2zDL_x" id="78RbNhWi9Rl" role="2zDL_s">
         <ref role="2zDL_u" node="78RbNhWi9LZ" resolve="ChangesStrip" />

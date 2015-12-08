@@ -52,8 +52,9 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.CopyFacetUtil" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
+    <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

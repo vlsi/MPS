@@ -47,7 +47,8 @@ import java.util.Collections;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.CopyFacetUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -1389,25 +1390,12 @@ public class QueriesGenerated {
     if (!(module instanceof AbstractModule)) {
       return;
     }
-    IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
-    if (descriptorFile == null) {
+    MacroHelper macroHelper = MacrosFactory.forModule((AbstractModule) module);
+    if (macroHelper == null) {
       return;
     }
-
-    String basePath = descriptorFile.getParent().getPath();
-    basePath = basePath.replace("\\", "/");
-    if (!(basePath.endsWith("/"))) {
-      basePath = basePath + "/";
-    }
-
-    String relativePath = SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, 0xdef716b2a58ad65L, "outputPath")).replace("\\", "/");
-    if (relativePath.startsWith("./")) {
-      relativePath = relativePath.substring(2);
-    }
-    if (!(relativePath.endsWith("/"))) {
-      relativePath = relativePath + "/";
-    }
-    CopyFacetUtil.setTargetPath(_context.getOutputNode(), basePath + relativePath + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
+    String outputPath = macroHelper.expandPath(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7d36ab0e3b095aL, 0xdef716b2a58ad65L, "outputPath")));
+    CopyFacetUtil.setTargetPath(_context.getOutputNode(), outputPath + "/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_5508914264443147579(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_BaseToolClass");
