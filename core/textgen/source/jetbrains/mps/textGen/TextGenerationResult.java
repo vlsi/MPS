@@ -19,6 +19,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,8 +30,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * @deprecated External code shall not use legacy api. Instead, classes of {@link jetbrains.mps.text} package shall be employed
 * Evgeny Gryaznov, 1/18/11
 */
+@Deprecated
+@ToRemove(version = 3.3)
 public class TextGenerationResult {
   private final SNode myRoot;
   private Object myResult;

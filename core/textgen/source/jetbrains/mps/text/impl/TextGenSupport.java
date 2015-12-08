@@ -24,7 +24,6 @@ import jetbrains.mps.text.TextMark;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
-import jetbrains.mps.textGen.TextGenRegistry;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;

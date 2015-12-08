@@ -284,12 +284,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   public void executeScript(TemplateMappingScript script) throws GenerationFailureException {
-    try {
     getDefaultExecutionContext(null).executeScript(script, myInputModel);
-    } catch (Exception t) {
-      getLogger().error(script.getScriptNode(), String.format("error executing script %s (see exception)", script.getLongName()));
-      throw new GenerationFailureException(t);
-    }
   }
 
   protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {

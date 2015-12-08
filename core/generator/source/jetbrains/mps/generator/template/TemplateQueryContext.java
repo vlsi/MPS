@@ -267,6 +267,7 @@ public class TemplateQueryContext {
   /**
    * Node in template model most close to the query being evaluated. For macro nodes, however
    * shall point to macro's parent node (genContext.templateNode op contract)
+   * FIXME doesn't make sense for generated templates? Shall refactor/replace with templateNodeRef or drop altogether
    */
   public SNode getTemplateNode() {
     SNodeReference tnr = getTemplateNodeRef();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -139,8 +138,11 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch(Throwable th) {
+      // FIXME technically, this catch shall be inside DefaultQueryExecutionContext, where all such catch are kept. But there's no corresponding method in DQEC
       generator.getLogger().error(getMappingNode(), "error executing condition (see exception)");
-      throw new GenerationFailureException(th);
+      GenerationFailureException ex = new GenerationFailureException(th);
+      ex.setTemplateModelLocation(getMappingNode());
+      throw ex;
     }
   }
 
