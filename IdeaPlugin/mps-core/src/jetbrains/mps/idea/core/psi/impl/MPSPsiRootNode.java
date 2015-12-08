@@ -71,18 +71,15 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   private VirtualFile mySeparateFile;
 
   public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
-    this(nodeId, name, containingModel, manager, null);
-    mySeparateFile = null;
-  }
-
-  public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @Nullable VirtualFile virtualFile) {
     super(manager);
     myNodeId = nodeId;
     myModel = containingModel;
-
     myName = name;
     myViewProvider = new SingleRootFileViewProvider(manager, MPSNodesVirtualFileSystem.getInstance().getFileFor(getSNodeReference()), false);
-//    myViewProvider = new SingleRootFileViewProvider(manager, virtualFile == null ? new LightVirtualFile() : virtualFile, false);
+  }
+
+  public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
+    this(nodeId, name, containingModel, manager);
     mySeparateFile = virtualFile;
   }
 

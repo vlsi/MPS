@@ -54,20 +54,16 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
 
   @Override
   public void invoke(@NotNull final Project project, @NotNull SNode node) {
-
     MPSProject mpsProject = project.getComponent(MPSProject.class);
     String oldName = node.getName();
-
     final RenameMethodDialog d = new RenameMethodDialog(project, oldName);
     d.show();
-
     final String newName = d.getName();
     if (newName == null) {
       return;
     }
 
-    // Q: not needed? since we're called with read lock
-    if (!(node.getModel() != null) || SNodeUtil.isAccessible(node,mpsProject.getRepository())) {
+    if (!SNodeUtil.isAccessible(node, mpsProject.getRepository())) {
       return;
     }
 
