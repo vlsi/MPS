@@ -51,7 +51,7 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
-import jetbrains.mps.textGen.TextGenRegistry;
+import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.NotNull;

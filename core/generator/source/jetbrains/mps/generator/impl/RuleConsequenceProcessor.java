@@ -45,9 +45,7 @@ public abstract class RuleConsequenceProcessor {
    * Factory method for rule consequences
    */
   public static RuleConsequenceProcessor prepare(@NotNull SNode ruleConsequence) {
-    ConsequenceHandler h = new ConsequenceHandler();
-    RuleConsequenceProcessor rv = h.dispatch(ruleConsequence);
-    return rv;
+    return new ConsequenceHandler().dispatch(ruleConsequence);
   }
 
   @NotNull
@@ -75,9 +73,10 @@ public abstract class RuleConsequenceProcessor {
       }
       SNode defaultConsequence = RuleUtil.getInlineSwitch_defaultConsequence(mySwitchNode);
       if (defaultConsequence == null) {
-        IGeneratorLogger log = context.getEnvironment().getLogger();
-        log.error(mySwitchNode.getReference(), "no default consequence in switch", GeneratorUtil.describeInput(context));
-        throw new GenerationFailureException("no default consequence in switch");
+        GenerationFailureException ex = new GenerationFailureException("no default consequence in switch");
+        ex.setTemplateContext(context);
+        ex.setTemplateModelLocation(mySwitchNode.getReference());
+        throw ex;
       } else {
         RuleConsequenceProcessor rcp = RuleConsequenceProcessor.prepare(defaultConsequence);
         return rcp.processRuleConsequence(context);
@@ -116,18 +115,29 @@ public abstract class RuleConsequenceProcessor {
   }
 
   private static class AbandonRuleControlFlowConsequence extends RuleConsequenceProcessor {
+    private final SNodeReference myLocation;
+
+    public AbandonRuleControlFlowConsequence(SNodeReference location) {
+      myLocation = location;
+    }
+
     @NotNull
     @Override
     public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws AbandonRuleInputException {
-      throw new AbandonRuleInputException();
+      AbandonRuleInputException ex = new AbandonRuleInputException();
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(myLocation);
+      throw ex;
     }
   }
 
   private static class DismissRuleControlFlowConsequence extends RuleConsequenceProcessor {
+    private final SNodeReference myLocation;
     private final DismissTopMappingRuleException.MessageType myMessageType;
     private final String myText;
 
-    public DismissRuleControlFlowConsequence(DismissTopMappingRuleException.MessageType messageType, String text) {
+    public DismissRuleControlFlowConsequence(SNodeReference location, DismissTopMappingRuleException.MessageType messageType, String text) {
+      myLocation = location;
       myMessageType = messageType;
       myText = text;
     }
@@ -135,7 +145,10 @@ public abstract class RuleConsequenceProcessor {
     @NotNull
     @Override
     public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws DismissTopMappingRuleException {
-      throw new DismissTopMappingRuleException(myMessageType, myText);
+      DismissTopMappingRuleException ex = new DismissTopMappingRuleException(myMessageType, myText);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(myLocation);
+      throw ex;
     }
   }
 
@@ -153,7 +166,10 @@ public abstract class RuleConsequenceProcessor {
     public List<SNode> processRuleConsequence(@NotNull TemplateContext context) throws GenerationFailureException {
       IGeneratorLogger log = context.getEnvironment().getLogger();
       log.error(myConsequence.getReference(), myMessage, GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException(myMessage);
+      GenerationFailureException ex = new GenerationFailureException(myMessage);
+      ex.setTemplateModelLocation(myConsequence.getReference());
+      ex.setTemplateContext(context);
+      throw ex;
     }
   }
 
@@ -233,7 +249,7 @@ public abstract class RuleConsequenceProcessor {
 
     @Override
     public void abandonInput(SNode ruleConsequence) {
-      myConsequence = new AbandonRuleControlFlowConsequence();
+      myConsequence = new AbandonRuleControlFlowConsequence(ruleConsequence.getReference());
     }
 
     @Override
@@ -241,7 +257,7 @@ public abstract class RuleConsequenceProcessor {
       SNode message = RuleUtil.getDismissTopRule_message(ruleConsequence);
       DismissTopMappingRuleException.MessageType messageType = GeneratorUtilEx.getGeneratorMessage_kind(message);
       String text = GeneratorUtilEx.getGeneratorMessage_text(message);
-      myConsequence = new DismissRuleControlFlowConsequence(messageType, text);
+      myConsequence = new DismissRuleControlFlowConsequence(ruleConsequence.getReference(), messageType, text);
     }
 
     @Override

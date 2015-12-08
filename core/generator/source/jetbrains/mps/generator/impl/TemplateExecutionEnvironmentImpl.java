@@ -384,6 +384,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       throw ex;
     } catch (GenerationException ex) {
       // ignore
+      // shall not happen provided we know all subclasses of GenerationException.
+      // XXX why log? perhaps, could throw as GenerationFailureException? Meanwhile, did what TemplateGenerator#applyCreateRoot does
+      getLogger().error(reductionRule == null ? null : reductionRule.getRuleNode(), "internal error: " + ex.toString());
     }
     return null;
   }

@@ -65,12 +65,26 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
-    return condition.check(context);
+    try {
+      return condition.check(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "condition of inline switch failed");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override
   public boolean evaluate(@NotNull IfMacroCondition condition, @NotNull IfMacroContext context) throws GenerationFailureException {
+    try {
     return condition.check(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "IF macro condition failed");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override
@@ -84,7 +98,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (Throwable t) {
       getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: mapping func failed, exception was thrown", GeneratorUtil.describeInput(
           context));
-      throw new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(mapSrcNodeOrListMacro.getReference());
+      throw ex;
     }
   }
 
@@ -101,20 +118,37 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (Throwable t) {
       getLog().error(mapSrcNodeOrListMacro.getReference(), "cannot evaluate macro: post-processing failed, exception was thrown",
           GeneratorUtil.describeIfExists(inputNode, "input node"));
-      throw new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(mapSrcNodeOrListMacro.getReference());
+      throw ex;
     }
   }
 
   @Nullable
   @Override
   public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
-    return query.evaluate(context);
+    try {
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate property value");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Nullable
   @Override
   public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
-    return query.evaluate(context);
+    try {
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate source node query");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override
@@ -150,7 +184,14 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   @NotNull
   @Override
   public Collection<SNode> evaluate(@NotNull SourceNodesQuery query, @NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
-    return query.evaluate(context);
+    try {
+      return query.evaluate(context);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      context.showErrorMessage(null, "failed to evaluate source nodes query");
+      throw new GenerationFailureException(t);
+    }
   }
 
   @Override
@@ -231,8 +272,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "error executing pattern/condition (see exception)");
-      throw new GenerationFailureException(t);
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "error applying reduction rule (see exception)");
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(rule.getRuleNode());
+      throw ex;
     }
   }
 
@@ -244,7 +288,10 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       throw ex;
     } catch (Throwable t) {
       context.getEnvironment().getLogger().error(rule.getRuleNode(), "error executing condition (see exception)");
-      throw new GenerationFailureException(t);
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(rule.getRuleNode());
+      throw ex;
     }
   }
 
@@ -254,9 +301,12 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return rule.apply(context);
     } catch (GenerationException ex) {
       throw ex;
-    } catch (Throwable th) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying rule");
-      throw new GenerationFailureException(th);
+    } catch (Throwable t) {
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying root rule");
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(rule.getRuleNode());
+      throw ex;
     }
   }
 
@@ -266,9 +316,11 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return rule.apply(environment);
     } catch (GenerationException ex) {
       throw ex;
-    } catch (Throwable th) {
-      environment.getLogger().error(rule.getRuleNode(), "unexpected exception when applying rule");
-      throw new GenerationFailureException(th);
+    } catch (Throwable t) {
+      environment.getLogger().error(rule.getRuleNode(), "unexpected exception when applying create root rule");
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateModelLocation(rule.getRuleNode());
+      throw ex;
     }
   }
 
@@ -278,9 +330,12 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return rule.apply(context.getEnvironment(), context, outputContextNode);
     } catch (GenerationException ex) {
       throw ex;
-    } catch (Throwable th) {
-      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying rule");
-      throw new GenerationFailureException(th);
+    } catch (Throwable t) {
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying weaving rule");
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(rule.getRuleNode());
+      throw ex;
     }
   }
 
@@ -290,15 +345,27 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return rule.getContextNode(context.getEnvironment(), context);
     } catch (GenerationFailureException ex) {
       throw ex;
-    } catch (Throwable e) {
+    } catch (Throwable t) {
       context.getEnvironment().getLogger().error(rule.getRuleNode(), "cannot evaluate rule context query ", GeneratorUtil.describeInput(context));
-      throw new GenerationFailureException(e);
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateContext(context);
+      ex.setTemplateModelLocation(rule.getRuleNode());
+      throw ex;
     }
   }
 
   @Override
   public void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException {
-    mappingScript.apply(model, myGenerator);
+    try {
+      mappingScript.apply(model, myGenerator);
+    } catch (GenerationFailureException ex) {
+      throw ex;
+    } catch (Throwable t) {
+      myGenerator.getLogger().error(mappingScript.getScriptNode(), String.format("error executing script %s (see exception)", mappingScript.getLongName()));
+      GenerationFailureException ex = new GenerationFailureException(t);
+      ex.setTemplateModelLocation(mappingScript.getScriptNode());
+      throw ex;
+    }
   }
 
   @Override

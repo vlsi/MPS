@@ -446,6 +446,9 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     public Object evaluate(@NotNull PropertyMacroContext context) throws GenerationFailureException {
       if (myMethod == null) {
         myMethod = getMethod(context);
+        // FIXME why do we treat missing method for a property macro as GFE, while check or sourceNode queries
+        //       got default implementation? We could have here null default value. Or shall report GFE/dedicated subclass
+        //       from any getMethod() in this class.
       }
       return myMethod.invoke(context);
     }

@@ -21,6 +21,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.TextBuffer;
+import jetbrains.mps.text.impl.TextGenRegistry;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
