@@ -38,6 +38,26 @@ public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_ErrorMessagesCheck6640766779615226140", true);
   }
+  @Test
+  public void test_ErrorMessagesCheck4400998065754588523() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_ErrorMessagesCheck4400998065754588523", true);
+  }
+  @Test
+  public void test_NodeFieldCanBeConvertedIntoCheck4400998065754643596() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck4400998065754643596", true);
+  }
+  @Test
+  public void test_NodeFieldCanBeConvertedIntoCheck4400998065754644137() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck4400998065754644137", true);
+  }
+  @Test
+  public void test_NodeFieldCanBeConvertedIntoCheck4400998065754644682() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeFieldCanBeConvertedIntoCheck4400998065754644682", true);
+  }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_NodeFieldCanBeConvertedIntoCheck6923385624929411102() throws Exception {
@@ -59,6 +79,22 @@ public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
     public void test_ErrorMessagesCheck6640766779615226140() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6640766779615226140"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("6640766779615024588"));
+    }
+    public void test_ErrorMessagesCheck4400998065754588523() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4400998065754588523"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("4400998065754588042"));
+    }
+    public void test_NodeFieldCanBeConvertedIntoCheck4400998065754643596() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4400998065754643596"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("4400998065754615248"));
+    }
+    public void test_NodeFieldCanBeConvertedIntoCheck4400998065754644137() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4400998065754644137"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("4400998065754615554"));
+    }
+    public void test_NodeFieldCanBeConvertedIntoCheck4400998065754644682() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4400998065754644682"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      NodeCheckOperation__BehaviorDescriptor.perform_iddCRb6FLnvk.invoke(operation, this.getRealNodeById("4400998065754615268"));
     }
   }
 }

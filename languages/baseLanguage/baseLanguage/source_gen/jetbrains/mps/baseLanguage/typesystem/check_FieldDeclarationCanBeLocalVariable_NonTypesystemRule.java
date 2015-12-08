@@ -13,8 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import java.util.ArrayList;
@@ -34,26 +34,42 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableDeclaration, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")))) {
       return;
     }
+
     Iterable<SNode> refs = ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(variableDeclaration), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")) == variableDeclaration;
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false, false) == null);
+        return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false, false) == null) && (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) == null);
       }
     });
-    if (Sequence.fromIterable(refs).isEmpty()) {
+    Iterable<SNode> ops = (SNodeOperations.isInstanceOf(variableDeclaration, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) ? ListSequence.fromList(SNodeOperations.getNodeDescendants(SNodeOperations.getContainingRoot(variableDeclaration), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_pk5n8v_a0a0a0a0a0a0a0e0b(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration")), variableDeclaration);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false, false) == null) && (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) == null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.getParent(it);
+      }
+    }) : null);
+    Iterable<SNode> alls = Sequence.fromIterable(refs).union(Sequence.fromIterable(ops));
+
+    if (Sequence.fromIterable(alls).isEmpty()) {
       return;
     }
-    if (Sequence.fromIterable(refs).any(new IWhereFilter<SNode>() {
+    if (Sequence.fromIterable(alls).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false) == null);
       }
     })) {
       return;
     }
-    final Iterable<SNode> methods = Sequence.fromIterable(refs).select(new ISelector<SNode, SNode>() {
+    final Iterable<SNode> methods = Sequence.fromIterable(alls).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), false, false);
       }
@@ -61,7 +77,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
 
     if (Sequence.fromIterable(methods).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_pk5n8v_a0a0a0a0a0h0b(it, Sequence.fromIterable(methods).first());
+        return eq_pk5n8v_a0a0a0a0a0l0b(it, Sequence.fromIterable(methods).first());
       }
     })) {
       SNode method = Sequence.fromIterable(methods).first();
@@ -70,7 +86,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
       // find a read instruction for variableDeclaration not preceeded by a write instruction 
       boolean uninitializedRead = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<ReadInstruction>(), program.getUninitializedReads())).any(new IWhereFilter<ReadInstruction>() {
         public boolean accept(ReadInstruction it) {
-          return eq_pk5n8v_a0a0a0a0a0a4a7a1(it.getVariable(), variableDeclaration);
+          return eq_pk5n8v_a0a0a0a0a0a4a11a1(it.getVariable(), variableDeclaration);
         }
       });
 
@@ -81,7 +97,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.ConvertFieldToLocalVariable_QuickFix", false);
             intentionProvider.putArgument("method", Sequence.fromIterable(methods).first());
-            intentionProvider.putArgument("refs", refs);
+            intentionProvider.putArgument("alls", alls);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }
@@ -98,10 +114,13 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
   public boolean overrides() {
     return false;
   }
-  private static boolean eq_pk5n8v_a0a0a0a0a0a4a7a1(Object a, Object b) {
+  private static boolean eq_pk5n8v_a0a0a0a0a0a0a0e0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_pk5n8v_a0a0a0a0a0h0b(Object a, Object b) {
+  private static boolean eq_pk5n8v_a0a0a0a0a0a4a11a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_pk5n8v_a0a0a0a0a0l0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
